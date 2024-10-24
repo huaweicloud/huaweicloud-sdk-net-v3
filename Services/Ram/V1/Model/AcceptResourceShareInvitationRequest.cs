@@ -17,6 +17,13 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
     {
 
         /// <summary>
+        /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+        /// </summary>
+        [SDKProperty("X-Security-Token", IsHeader = true)]
+        [JsonProperty("X-Security-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string XSecurityToken { get; set; }
+
+        /// <summary>
         /// 资源共享邀请的ID。
         /// </summary>
         [SDKProperty("resource_share_invitation_id", IsPath = true)]
@@ -32,6 +39,7 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AcceptResourceShareInvitationRequest {\n");
+            sb.Append("  xSecurityToken: ").Append(XSecurityToken).Append("\n");
             sb.Append("  resourceShareInvitationId: ").Append(ResourceShareInvitationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -51,6 +59,7 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         public bool Equals(AcceptResourceShareInvitationRequest input)
         {
             if (input == null) return false;
+            if (this.XSecurityToken != input.XSecurityToken || (this.XSecurityToken != null && !this.XSecurityToken.Equals(input.XSecurityToken))) return false;
             if (this.ResourceShareInvitationId != input.ResourceShareInvitationId || (this.ResourceShareInvitationId != null && !this.ResourceShareInvitationId.Equals(input.ResourceShareInvitationId))) return false;
 
             return true;
@@ -64,6 +73,7 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.XSecurityToken != null) hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
                 if (this.ResourceShareInvitationId != null) hashCode = hashCode * 59 + this.ResourceShareInvitationId.GetHashCode();
                 return hashCode;
             }

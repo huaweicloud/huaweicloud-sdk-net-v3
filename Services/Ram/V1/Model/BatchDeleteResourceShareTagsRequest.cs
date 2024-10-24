@@ -24,6 +24,13 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         public string ResourceShareId { get; set; }
 
         /// <summary>
+        /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+        /// </summary>
+        [SDKProperty("X-Security-Token", IsHeader = true)]
+        [JsonProperty("X-Security-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string XSecurityToken { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
@@ -40,6 +47,7 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
             var sb = new StringBuilder();
             sb.Append("class BatchDeleteResourceShareTagsRequest {\n");
             sb.Append("  resourceShareId: ").Append(ResourceShareId).Append("\n");
+            sb.Append("  xSecurityToken: ").Append(XSecurityToken).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -60,6 +68,7 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             if (input == null) return false;
             if (this.ResourceShareId != input.ResourceShareId || (this.ResourceShareId != null && !this.ResourceShareId.Equals(input.ResourceShareId))) return false;
+            if (this.XSecurityToken != input.XSecurityToken || (this.XSecurityToken != null && !this.XSecurityToken.Equals(input.XSecurityToken))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
@@ -74,6 +83,7 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
             {
                 var hashCode = 41;
                 if (this.ResourceShareId != null) hashCode = hashCode * 59 + this.ResourceShareId.GetHashCode();
+                if (this.XSecurityToken != null) hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// 码率。  单位：bps。取值范围：0 - 104,857,600（100Mbps）
+        /// 码率。  单位：bps。取值范围：(0,104,857,600]（100Mbps）
         /// </summary>
         [JsonProperty("bitrate", NullValueHandling = NullValueHandling.Ignore)]
         public int? Bitrate { get; set; }

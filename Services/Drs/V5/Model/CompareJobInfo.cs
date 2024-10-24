@@ -221,10 +221,22 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public Dictionary<string, string> CompareJobTag { get; set; }
 
         /// <summary>
+        /// 对比任务选项。
+        /// </summary>
+        [JsonProperty("options", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> Options { get; set; }
+
+        /// <summary>
         /// 失败原因。
         /// </summary>
         [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorMsg { get; set; }
+
+        /// <summary>
+        /// 动态比对时延。
+        /// </summary>
+        [JsonProperty("dynamic_compare_delay", NullValueHandling = NullValueHandling.Ignore)]
+        public long? DynamicCompareDelay { get; set; }
 
 
 
@@ -244,7 +256,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  exportStatus: ").Append(ExportStatus).Append("\n");
             sb.Append("  reportRemainSeconds: ").Append(ReportRemainSeconds).Append("\n");
             sb.Append("  compareJobTag: ").Append(CompareJobTag).Append("\n");
+            sb.Append("  options: ").Append(Options).Append("\n");
             sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
+            sb.Append("  dynamicCompareDelay: ").Append(DynamicCompareDelay).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -272,7 +286,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.ExportStatus != input.ExportStatus || (this.ExportStatus != null && !this.ExportStatus.Equals(input.ExportStatus))) return false;
             if (this.ReportRemainSeconds != input.ReportRemainSeconds || (this.ReportRemainSeconds != null && !this.ReportRemainSeconds.Equals(input.ReportRemainSeconds))) return false;
             if (this.CompareJobTag != input.CompareJobTag || (this.CompareJobTag != null && input.CompareJobTag != null && !this.CompareJobTag.SequenceEqual(input.CompareJobTag))) return false;
+            if (this.Options != input.Options || (this.Options != null && input.Options != null && !this.Options.SequenceEqual(input.Options))) return false;
             if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
+            if (this.DynamicCompareDelay != input.DynamicCompareDelay || (this.DynamicCompareDelay != null && !this.DynamicCompareDelay.Equals(input.DynamicCompareDelay))) return false;
 
             return true;
         }
@@ -294,7 +310,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.ExportStatus != null) hashCode = hashCode * 59 + this.ExportStatus.GetHashCode();
                 if (this.ReportRemainSeconds != null) hashCode = hashCode * 59 + this.ReportRemainSeconds.GetHashCode();
                 if (this.CompareJobTag != null) hashCode = hashCode * 59 + this.CompareJobTag.GetHashCode();
+                if (this.Options != null) hashCode = hashCode * 59 + this.Options.GetHashCode();
                 if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                if (this.DynamicCompareDelay != null) hashCode = hashCode * 59 + this.DynamicCompareDelay.GetHashCode();
                 return hashCode;
             }
         }

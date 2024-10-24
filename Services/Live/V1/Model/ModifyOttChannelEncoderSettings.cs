@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("encoder_settings", NullValueHandling = NullValueHandling.Ignore)]
         public List<ModifyOttChannelEncoderSettingsEncoderSettings> EncoderSettings { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("encoder_settings_expand", NullValueHandling = NullValueHandling.Ignore)]
+        public EncoderSettingsExpand EncoderSettingsExpand { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  appName: ").Append(AppName).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  encoderSettings: ").Append(EncoderSettings).Append("\n");
+            sb.Append("  encoderSettingsExpand: ").Append(EncoderSettingsExpand).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.EncoderSettings != input.EncoderSettings || (this.EncoderSettings != null && input.EncoderSettings != null && !this.EncoderSettings.SequenceEqual(input.EncoderSettings))) return false;
+            if (this.EncoderSettingsExpand != input.EncoderSettingsExpand || (this.EncoderSettingsExpand != null && !this.EncoderSettingsExpand.Equals(input.EncoderSettingsExpand))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.EncoderSettings != null) hashCode = hashCode * 59 + this.EncoderSettings.GetHashCode();
+                if (this.EncoderSettingsExpand != null) hashCode = hashCode * 59 + this.EncoderSettingsExpand.GetHashCode();
                 return hashCode;
             }
         }

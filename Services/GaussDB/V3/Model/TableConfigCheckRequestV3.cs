@@ -58,6 +58,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("table_repl_config", NullValueHandling = NullValueHandling.Ignore)]
         public TableReplConfig TableReplConfig { get; set; }
 
+        /// <summary>
+        /// 目标数据库名。字符长度限制3~128位，仅支持英文大小写字母、数字以及下划线。
+        /// </summary>
+        [JsonProperty("target_database_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetDatabaseName { get; set; }
+
+        /// <summary>
+        /// 是否创建同步任务
+        /// </summary>
+        [JsonProperty("is_create_task", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsCreateTask { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +86,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  dbConfigs: ").Append(DbConfigs).Append("\n");
             sb.Append("  tablesConfigs: ").Append(TablesConfigs).Append("\n");
             sb.Append("  tableReplConfig: ").Append(TableReplConfig).Append("\n");
+            sb.Append("  targetDatabaseName: ").Append(TargetDatabaseName).Append("\n");
+            sb.Append("  isCreateTask: ").Append(IsCreateTask).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +113,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.DbConfigs != input.DbConfigs || (this.DbConfigs != null && input.DbConfigs != null && !this.DbConfigs.SequenceEqual(input.DbConfigs))) return false;
             if (this.TablesConfigs != input.TablesConfigs || (this.TablesConfigs != null && input.TablesConfigs != null && !this.TablesConfigs.SequenceEqual(input.TablesConfigs))) return false;
             if (this.TableReplConfig != input.TableReplConfig || (this.TableReplConfig != null && !this.TableReplConfig.Equals(input.TableReplConfig))) return false;
+            if (this.TargetDatabaseName != input.TargetDatabaseName || (this.TargetDatabaseName != null && !this.TargetDatabaseName.Equals(input.TargetDatabaseName))) return false;
+            if (this.IsCreateTask != input.IsCreateTask || (this.IsCreateTask != null && !this.IsCreateTask.Equals(input.IsCreateTask))) return false;
 
             return true;
         }
@@ -118,6 +134,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.DbConfigs != null) hashCode = hashCode * 59 + this.DbConfigs.GetHashCode();
                 if (this.TablesConfigs != null) hashCode = hashCode * 59 + this.TablesConfigs.GetHashCode();
                 if (this.TableReplConfig != null) hashCode = hashCode * 59 + this.TableReplConfig.GetHashCode();
+                if (this.TargetDatabaseName != null) hashCode = hashCode * 59 + this.TargetDatabaseName.GetHashCode();
+                if (this.IsCreateTask != null) hashCode = hashCode * 59 + this.IsCreateTask.GetHashCode();
                 return hashCode;
             }
         }

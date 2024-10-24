@@ -46,12 +46,6 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
-        /// <summary>
-        /// 推流URL列表。创建频道时，只有入流协议为RTMP_PUSH时，会返回推流URL列表
-        /// </summary>
-        [JsonProperty("sources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SourceRsp> Sources { get; set; }
-
 
 
         /// <summary>
@@ -66,7 +60,6 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  appName: ").Append(AppName).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  sources: ").Append(Sources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,7 +83,6 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
-            if (this.Sources != input.Sources || (this.Sources != null && input.Sources != null && !this.Sources.SequenceEqual(input.Sources))) return false;
 
             return true;
         }
@@ -108,7 +100,6 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Sources != null) hashCode = hashCode * 59 + this.Sources.GetHashCode();
                 return hashCode;
             }
         }

@@ -491,6 +491,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool? EnableMasterVolumeEncryption { get; set; }
 
         /// <summary>
+        /// 集群开启对分布式云支持。创建CCE Turbo集群时，可在创建集群过程中，开启对分布式云(cloudpond)支持。
+        /// </summary>
+        [JsonProperty("enableDistMgt", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableDistMgt { get; set; }
+
+        /// <summary>
         /// 覆盖集群默认组件配置  若指定了不支持的组件或组件不支持的参数，该配置项将被忽略。  当前支持的可配置组件及其参数详见 [[配置管理](https://support.huaweicloud.com/usermanual-cce/cce_10_0213.html)](tag:hws) [[配置管理](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0213.html)](tag:hws_hk) 
         /// </summary>
         [JsonProperty("configurationsOverride", NullValueHandling = NullValueHandling.Ignore)]
@@ -527,6 +533,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("  supportIstio: ").Append(SupportIstio).Append("\n");
             sb.Append("  enableMasterVolumeEncryption: ").Append(EnableMasterVolumeEncryption).Append("\n");
+            sb.Append("  enableDistMgt: ").Append(EnableDistMgt).Append("\n");
             sb.Append("  configurationsOverride: ").Append(ConfigurationsOverride).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -568,6 +575,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
             if (this.SupportIstio != input.SupportIstio || (this.SupportIstio != null && !this.SupportIstio.Equals(input.SupportIstio))) return false;
             if (this.EnableMasterVolumeEncryption != input.EnableMasterVolumeEncryption || (this.EnableMasterVolumeEncryption != null && !this.EnableMasterVolumeEncryption.Equals(input.EnableMasterVolumeEncryption))) return false;
+            if (this.EnableDistMgt != input.EnableDistMgt || (this.EnableDistMgt != null && !this.EnableDistMgt.Equals(input.EnableDistMgt))) return false;
             if (this.ConfigurationsOverride != input.ConfigurationsOverride || (this.ConfigurationsOverride != null && input.ConfigurationsOverride != null && !this.ConfigurationsOverride.SequenceEqual(input.ConfigurationsOverride))) return false;
 
             return true;
@@ -603,6 +611,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 if (this.SupportIstio != null) hashCode = hashCode * 59 + this.SupportIstio.GetHashCode();
                 if (this.EnableMasterVolumeEncryption != null) hashCode = hashCode * 59 + this.EnableMasterVolumeEncryption.GetHashCode();
+                if (this.EnableDistMgt != null) hashCode = hashCode * 59 + this.EnableDistMgt.GetHashCode();
                 if (this.ConfigurationsOverride != null) hashCode = hashCode * 59 + this.ConfigurationsOverride.GetHashCode();
                 return hashCode;
             }

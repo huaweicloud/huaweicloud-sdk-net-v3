@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string Comment { get; set; }
 
         /// <summary>
-        /// 是否创建高权限用户。 • 若为true，则不用传hosts、databases参数。
+        /// 是否创建高权限用户。 • 默认为false，暂不支持设置为true
         /// </summary>
         [JsonProperty("is_privilege", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsPrivilege { get; set; }

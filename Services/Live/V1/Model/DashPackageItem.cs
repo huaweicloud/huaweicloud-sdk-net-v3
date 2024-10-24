@@ -15,9 +15,124 @@ namespace HuaweiCloud.SDK.Live.V1.Model
     /// </summary>
     public class DashPackageItem 
     {
+        /// <summary>
+        /// 广告标识。  DASH取值：\&quot;xml+bin\&quot;。 
+        /// </summary>
+        /// <value>广告标识。  DASH取值：\&quot;xml+bin\&quot;。 </value>
+        [JsonConverter(typeof(EnumClassConverter<AdMarkerEnum>))]
+        public class AdMarkerEnum
+        {
+            /// <summary>
+            /// Enum XML_BIN for value: xml+bin
+            /// </summary>
+            public static readonly AdMarkerEnum XML_BIN = new AdMarkerEnum("xml+bin");
+
+            /// <summary>
+            /// Enum XML for value: xml
+            /// </summary>
+            public static readonly AdMarkerEnum XML = new AdMarkerEnum("xml");
+
+            private static readonly Dictionary<string, AdMarkerEnum> StaticFields =
+            new Dictionary<string, AdMarkerEnum>()
+            {
+                { "xml+bin", XML_BIN },
+                { "xml", XML },
+            };
+
+            private string _value;
+
+            public AdMarkerEnum()
+            {
+
+            }
+
+            public AdMarkerEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static AdMarkerEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as AdMarkerEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(AdMarkerEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(AdMarkerEnum a, AdMarkerEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(AdMarkerEnum a, AdMarkerEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 客户自定义的拉流地址，包括方法、域名、路径和参数
+        /// 客户自定义的拉流地址，包括方法、域名、路径
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
@@ -29,7 +144,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public List<StreamSelectionItem> StreamSelection { get; set; }
 
         /// <summary>
-        /// 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10
+        /// 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10 &gt; 修改分片时长会影响已录制内容的时移和回看服务，请谨慎修改！
         /// </summary>
         [JsonProperty("segment_duration_seconds", NullValueHandling = NullValueHandling.Ignore)]
         public int? SegmentDurationSeconds { get; set; }
@@ -64,6 +179,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("request_args", NullValueHandling = NullValueHandling.Ignore)]
         public PackageRequestArgs RequestArgs { get; set; }
 
+        /// <summary>
+        /// 广告标识。  DASH取值：\&quot;xml+bin\&quot;。 
+        /// </summary>
+        [JsonProperty("ad_marker", NullValueHandling = NullValueHandling.Ignore)]
+        public AdMarkerEnum AdMarker { get; set; }
 
 
         /// <summary>
@@ -81,6 +201,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  ads: ").Append(Ads).Append("\n");
             sb.Append("  extArgs: ").Append(ExtArgs).Append("\n");
             sb.Append("  requestArgs: ").Append(RequestArgs).Append("\n");
+            sb.Append("  adMarker: ").Append(AdMarker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +228,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.Ads != input.Ads || (this.Ads != null && !this.Ads.Equals(input.Ads))) return false;
             if (this.ExtArgs != input.ExtArgs || (this.ExtArgs != null && !this.ExtArgs.Equals(input.ExtArgs))) return false;
             if (this.RequestArgs != input.RequestArgs || (this.RequestArgs != null && !this.RequestArgs.Equals(input.RequestArgs))) return false;
+            if (this.AdMarker != input.AdMarker) return false;
 
             return true;
         }
@@ -127,6 +249,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.Ads != null) hashCode = hashCode * 59 + this.Ads.GetHashCode();
                 if (this.ExtArgs != null) hashCode = hashCode * 59 + this.ExtArgs.GetHashCode();
                 if (this.RequestArgs != null) hashCode = hashCode * 59 + this.RequestArgs.GetHashCode();
+                hashCode = hashCode * 59 + this.AdMarker.GetHashCode();
                 return hashCode;
             }
         }

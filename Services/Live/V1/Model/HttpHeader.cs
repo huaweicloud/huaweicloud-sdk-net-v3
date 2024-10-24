@@ -11,28 +11,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Live.V1.Model
 {
     /// <summary>
-    /// 从全量流中过滤出一个码率在[min, max]区间的流。如果不需要码率过滤可不选。
+    /// drm加密信息,添加在请求头中的鉴权信息
     /// </summary>
-    public class StreamSelectionItem 
+    public class HttpHeader 
     {
 
         /// <summary>
-        /// 拉流URL中用于码率过滤的参数
+        /// 请求头中key字段名
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 最大码率，单位：bps  取值范围：0 - 104,857,600（100Mbps）
+        /// 请求头中key对应的value值
         /// </summary>
-        [JsonProperty("max_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MaxBandwidth { get; set; }
-
-        /// <summary>
-        /// 最小码率，单位：bps  取值范围：0 - 104,857,600（100Mbps）
-        /// </summary>
-        [JsonProperty("min_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MinBandwidth { get; set; }
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
+        public string Value { get; set; }
 
 
 
@@ -42,10 +36,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class StreamSelectionItem {\n");
+            sb.Append("class HttpHeader {\n");
             sb.Append("  key: ").Append(Key).Append("\n");
-            sb.Append("  maxBandwidth: ").Append(MaxBandwidth).Append("\n");
-            sb.Append("  minBandwidth: ").Append(MinBandwidth).Append("\n");
+            sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -55,18 +48,17 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as StreamSelectionItem);
+            return this.Equals(input as HttpHeader);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(StreamSelectionItem input)
+        public bool Equals(HttpHeader input)
         {
             if (input == null) return false;
             if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
-            if (this.MaxBandwidth != input.MaxBandwidth || (this.MaxBandwidth != null && !this.MaxBandwidth.Equals(input.MaxBandwidth))) return false;
-            if (this.MinBandwidth != input.MinBandwidth || (this.MinBandwidth != null && !this.MinBandwidth.Equals(input.MinBandwidth))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
 
             return true;
         }
@@ -80,8 +72,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             {
                 var hashCode = 41;
                 if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.MaxBandwidth != null) hashCode = hashCode * 59 + this.MaxBandwidth.GetHashCode();
-                if (this.MinBandwidth != null) hashCode = hashCode * 59 + this.MinBandwidth.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

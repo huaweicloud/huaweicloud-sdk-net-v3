@@ -132,10 +132,21 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
 
 
         /// <summary>
-        /// 机器id
+        /// 主机id
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
+
+        /// <summary>
+        /// 任务结果, successful成功，error失败
+        /// </summary>
+        [JsonProperty("ret_status", NullValueHandling = NullValueHandling.Ignore)]
+        public RetStatusEnum RetStatus { get; set; }
+        /// <summary>
+        /// 错误信息
+        /// </summary>
+        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
+        public string ErrorMsg { get; set; }
 
         /// <summary>
         /// 任务id
@@ -144,21 +155,10 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         public string InvocationId { get; set; }
 
         /// <summary>
-        /// 任务结果, successful成功，error失败
-        /// </summary>
-        [JsonProperty("ret_status", NullValueHandling = NullValueHandling.Ignore)]
-        public RetStatusEnum RetStatus { get; set; }
-        /// <summary>
         /// 错误码
         /// </summary>
         [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorCode { get; set; }
-
-        /// <summary>
-        /// 错误信息
-        /// </summary>
-        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorMsg { get; set; }
 
 
 
@@ -170,10 +170,10 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             var sb = new StringBuilder();
             sb.Append("class BatchCreateInvocationInfo {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  invocationId: ").Append(InvocationId).Append("\n");
             sb.Append("  retStatus: ").Append(RetStatus).Append("\n");
-            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
             sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
+            sb.Append("  invocationId: ").Append(InvocationId).Append("\n");
+            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -193,10 +193,10 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         {
             if (input == null) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.InvocationId != input.InvocationId || (this.InvocationId != null && !this.InvocationId.Equals(input.InvocationId))) return false;
             if (this.RetStatus != input.RetStatus) return false;
-            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
             if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
+            if (this.InvocationId != input.InvocationId || (this.InvocationId != null && !this.InvocationId.Equals(input.InvocationId))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
 
             return true;
         }
@@ -210,10 +210,10 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             {
                 var hashCode = 41;
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InvocationId != null) hashCode = hashCode * 59 + this.InvocationId.GetHashCode();
                 hashCode = hashCode * 59 + this.RetStatus.GetHashCode();
-                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
                 if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                if (this.InvocationId != null) hashCode = hashCode * 59 + this.InvocationId.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
                 return hashCode;
             }
         }

@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public string AppName { get; set; }
 
         /// <summary>
-        /// 频道ID。频道唯一标识，为必填项。频道ID不建议输入下划线“_”，否则会影响转码和截图任务
+        /// 频道ID。频道唯一标识，为必填项。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -184,6 +184,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("endpoints", NullValueHandling = NullValueHandling.Ignore)]
         public List<EndpointItem> Endpoints { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("encoder_settings_expand", NullValueHandling = NullValueHandling.Ignore)]
+        public EncoderSettingsExpand EncoderSettingsExpand { get; set; }
+
 
 
         /// <summary>
@@ -202,6 +208,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  encoderSettings: ").Append(EncoderSettings).Append("\n");
             sb.Append("  recordSettings: ").Append(RecordSettings).Append("\n");
             sb.Append("  endpoints: ").Append(Endpoints).Append("\n");
+            sb.Append("  encoderSettingsExpand: ").Append(EncoderSettingsExpand).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -229,6 +236,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.EncoderSettings != input.EncoderSettings || (this.EncoderSettings != null && input.EncoderSettings != null && !this.EncoderSettings.SequenceEqual(input.EncoderSettings))) return false;
             if (this.RecordSettings != input.RecordSettings || (this.RecordSettings != null && !this.RecordSettings.Equals(input.RecordSettings))) return false;
             if (this.Endpoints != input.Endpoints || (this.Endpoints != null && input.Endpoints != null && !this.Endpoints.SequenceEqual(input.Endpoints))) return false;
+            if (this.EncoderSettingsExpand != input.EncoderSettingsExpand || (this.EncoderSettingsExpand != null && !this.EncoderSettingsExpand.Equals(input.EncoderSettingsExpand))) return false;
 
             return true;
         }
@@ -250,6 +258,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.EncoderSettings != null) hashCode = hashCode * 59 + this.EncoderSettings.GetHashCode();
                 if (this.RecordSettings != null) hashCode = hashCode * 59 + this.RecordSettings.GetHashCode();
                 if (this.Endpoints != null) hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
+                if (this.EncoderSettingsExpand != null) hashCode = hashCode * 59 + this.EncoderSettingsExpand.GetHashCode();
                 return hashCode;
             }
         }

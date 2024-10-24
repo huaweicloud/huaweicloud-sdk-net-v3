@@ -24,6 +24,13 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         public string PermissionId { get; set; }
 
         /// <summary>
+        /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+        /// </summary>
+        [SDKProperty("X-Security-Token", IsHeader = true)]
+        [JsonProperty("X-Security-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string XSecurityToken { get; set; }
+
+        /// <summary>
         /// 资源权限版本。
         /// </summary>
         [SDKProperty("permission_version", IsQuery = true)]
@@ -40,6 +47,7 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ShowPermissionRequest {\n");
             sb.Append("  permissionId: ").Append(PermissionId).Append("\n");
+            sb.Append("  xSecurityToken: ").Append(XSecurityToken).Append("\n");
             sb.Append("  permissionVersion: ").Append(PermissionVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -60,6 +68,7 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             if (input == null) return false;
             if (this.PermissionId != input.PermissionId || (this.PermissionId != null && !this.PermissionId.Equals(input.PermissionId))) return false;
+            if (this.XSecurityToken != input.XSecurityToken || (this.XSecurityToken != null && !this.XSecurityToken.Equals(input.XSecurityToken))) return false;
             if (this.PermissionVersion != input.PermissionVersion || (this.PermissionVersion != null && !this.PermissionVersion.Equals(input.PermissionVersion))) return false;
 
             return true;
@@ -74,6 +83,7 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
             {
                 var hashCode = 41;
                 if (this.PermissionId != null) hashCode = hashCode * 59 + this.PermissionId.GetHashCode();
+                if (this.XSecurityToken != null) hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
                 if (this.PermissionVersion != null) hashCode = hashCode * 59 + this.PermissionVersion.GetHashCode();
                 return hashCode;
             }

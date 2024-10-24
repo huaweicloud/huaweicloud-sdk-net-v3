@@ -11,16 +11,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Live.V1.Model
 {
     /// <summary>
-    /// 回看录制的配置信息。
+    /// PID选择器
     /// </summary>
-    public class ModifyOttChannelRecordSettingsRecordSettings 
+    public class AudioSelectorPidSelection 
     {
 
         /// <summary>
-        /// 最大回看录制时长。在此时间段内会连续不断的录制，为必选项  单位：秒。取值为“0”时，表示不支持录制；最大支持录制14天。
+        /// 设置PID的值
         /// </summary>
-        [JsonProperty("rollingbuffer_duration", NullValueHandling = NullValueHandling.Ignore)]
-        public int? RollingbufferDuration { get; set; }
+        [JsonProperty("pid", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Pid { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ModifyOttChannelRecordSettingsRecordSettings {\n");
-            sb.Append("  rollingbufferDuration: ").Append(RollingbufferDuration).Append("\n");
+            sb.Append("class AudioSelectorPidSelection {\n");
+            sb.Append("  pid: ").Append(Pid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +41,16 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ModifyOttChannelRecordSettingsRecordSettings);
+            return this.Equals(input as AudioSelectorPidSelection);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ModifyOttChannelRecordSettingsRecordSettings input)
+        public bool Equals(AudioSelectorPidSelection input)
         {
             if (input == null) return false;
-            if (this.RollingbufferDuration != input.RollingbufferDuration || (this.RollingbufferDuration != null && !this.RollingbufferDuration.Equals(input.RollingbufferDuration))) return false;
+            if (this.Pid != input.Pid || (this.Pid != null && !this.Pid.Equals(input.Pid))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.RollingbufferDuration != null) hashCode = hashCode * 59 + this.RollingbufferDuration.GetHashCode();
+                if (this.Pid != null) hashCode = hashCode * 59 + this.Pid.GetHashCode();
                 return hashCode;
             }
         }

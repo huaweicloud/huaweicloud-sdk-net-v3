@@ -1,3 +1,171 @@
+# 3.1.117 2024-10-24
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowCluster**
+    - changes of response param
+      - `+ spec.enableDistMgt`
+  - **UpdateCluster**
+    - changes of response param
+      - `+ spec.enableDistMgt`
+  - **DeleteCluster**
+    - changes of response param
+      - `+ spec.enableDistMgt`
+  - **CreateCluster**
+    - changes of request param
+      - `+ spec.enableDistMgt`
+    - changes of response param
+      - `+ spec.enableDistMgt`
+  - **ListClusters**
+    - changes of response param
+      - `+ items.spec.enableDistMgt`
+
+### HuaweiCloud SDK CES
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchCreateAgentInvocations**
+    - changes of request param
+      - `+ version`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.compare_result.data_compare_task_list.options`
+      - `+ jobs.compare_result.data_compare_task_list.dynamic_compare_delay`
+  - **ShowJobDetail**
+    - changes of response param
+      - `+ job.compare_result.data_compare_task_list.options`
+      - `+ job.compare_result.data_compare_task_list.dynamic_compare_delay`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CheckTableConfig**
+    - changes of request param
+      - `+ target_database_name`
+      - `+ is_create_task`
+
+### HuaweiCloud SDK RAM
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **EnableOrganizationShare**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **DisableOrganizationShare**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **ShowOrganizationShare**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **AssociateResourceSharePermission**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **DisassociateResourceSharePermission**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **AcceptResourceShareInvitation**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **RejectResourceShareInvitation**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **SearchResourceShareInvitation**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **ListPermissions**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **ShowPermission**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **AssociateResourceShare**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **DisassociateResourceShare**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **SearchResourceShareAssociations**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **ListResourceShareTags**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **SearchResourceShareCountByTags**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **BatchCreateResourceShareTags**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **BatchDeleteResourceShareTags**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **ListResourceSharePermissions**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **SearchSharedResources**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **SearchSharedPrincipals**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **ListResourceTypes**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **ListPermissionVersions**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **CreateResourceShare**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **SearchResourceShares**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **DeleteResourceShare**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **UpdateResourceShare**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **ListResourceSharesByTags**
+    - changes of request param
+      - `+ X-Security-Token`
+  - **ListQuota**
+    - changes of request param
+      - `+ X-Security-Token`
+
 # 3.1.116 2024-10-17
 
 ### HuaweiCloud SDK CDN

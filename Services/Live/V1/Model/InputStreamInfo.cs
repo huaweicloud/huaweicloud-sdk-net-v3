@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
     public class InputStreamInfo 
     {
         /// <summary>
-        /// 频道入流协议 - FLV_PULL - RTMP_PUSH - RTMP_PULL - HLS_PULL - SRT_PULL - SRT_PUSH
+        /// 频道入流协议 - FLV_PULL - RTMP_PUSH - HLS_PULL - SRT_PULL - SRT_PUSH
         /// </summary>
-        /// <value>频道入流协议 - FLV_PULL - RTMP_PUSH - RTMP_PULL - HLS_PULL - SRT_PULL - SRT_PUSH</value>
+        /// <value>频道入流协议 - FLV_PULL - RTMP_PUSH - HLS_PULL - SRT_PULL - SRT_PUSH</value>
         [JsonConverter(typeof(EnumClassConverter<InputProtocolEnum>))]
         public class InputProtocolEnum
         {
@@ -31,11 +31,6 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             /// Enum RTMP_PUSH for value: RTMP_PUSH
             /// </summary>
             public static readonly InputProtocolEnum RTMP_PUSH = new InputProtocolEnum("RTMP_PUSH");
-
-            /// <summary>
-            /// Enum RTMP_PULL for value: RTMP_PULL
-            /// </summary>
-            public static readonly InputProtocolEnum RTMP_PULL = new InputProtocolEnum("RTMP_PULL");
 
             /// <summary>
             /// Enum HLS_PULL for value: HLS_PULL
@@ -57,7 +52,6 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             {
                 { "FLV_PULL", FLV_PULL },
                 { "RTMP_PUSH", RTMP_PUSH },
-                { "RTMP_PULL", RTMP_PULL },
                 { "HLS_PULL", HLS_PULL },
                 { "SRT_PULL", SRT_PULL },
                 { "SRT_PUSH", SRT_PUSH },
@@ -156,7 +150,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
 
         /// <summary>
-        /// 频道入流协议 - FLV_PULL - RTMP_PUSH - RTMP_PULL - HLS_PULL - SRT_PULL - SRT_PUSH
+        /// 频道入流协议 - FLV_PULL - RTMP_PUSH - HLS_PULL - SRT_PULL - SRT_PUSH
         /// </summary>
         [JsonProperty("input_protocol", NullValueHandling = NullValueHandling.Ignore)]
         public InputProtocolEnum InputProtocol { get; set; }
@@ -179,7 +173,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public FailoverConditions FailoverConditions { get; set; }
 
         /// <summary>
-        /// 当入流协议为HLS_PULL时，最大带宽限制。 未配置会默认选择BANDWIDTH最高的流
+        /// 当入流协议为HLS_PULL时，需要配置的最大带宽。  用户提供的拉流URL中，针对不同码率的音视频，均会携带带宽参数“BANDWIDTH”。 - 如果这里配置最大带宽，媒体直播服务从URL拉流时，会选择小于最大带宽且码率最大的音视频流，推流到源站。 - 如果这里未配置最大带宽，媒体直播服务从URL拉流时，会默认选择“BANDWIDTH”最高的音视频流，推流到源站。
         /// </summary>
         [JsonProperty("max_bandwidth_limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxBandwidthLimit { get; set; }
@@ -189,6 +183,30 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         [JsonProperty("ip_port_mode", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IpPortMode { get; set; }
+
+        /// <summary>
+        /// SRT_PUSH类型时，客户push ip白名单
+        /// </summary>
+        [JsonProperty("ip_whitelist", NullValueHandling = NullValueHandling.Ignore)]
+        public string IpWhitelist { get; set; }
+
+        /// <summary>
+        /// 广告的scte35信号源。  仅HLS_PULL类型的频道支持此配置，且目前仅支持SEGMENTS。
+        /// </summary>
+        [JsonProperty("scte35_source", NullValueHandling = NullValueHandling.Ignore)]
+        public string Scte35Source { get; set; }
+
+        /// <summary>
+        /// 广告触发器配置。  包含如下取值： - Splice insert：拼接插入 - Provider advertisement：提供商广告 - Distributor advertisement：分销商广告 - Provider placement opportunity：提供商置放机会 - Distributor placement opportunity：分销商置放机会
+        /// </summary>
+        [JsonProperty("ad_triggers", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AdTriggers { get; set; }
+
+        /// <summary>
+        /// 设置音频选择器，最多设置8个音频选择器
+        /// </summary>
+        [JsonProperty("audio_selectors", NullValueHandling = NullValueHandling.Ignore)]
+        public List<InputAudioSelector> AudioSelectors { get; set; }
 
 
 
@@ -205,6 +223,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  failoverConditions: ").Append(FailoverConditions).Append("\n");
             sb.Append("  maxBandwidthLimit: ").Append(MaxBandwidthLimit).Append("\n");
             sb.Append("  ipPortMode: ").Append(IpPortMode).Append("\n");
+            sb.Append("  ipWhitelist: ").Append(IpWhitelist).Append("\n");
+            sb.Append("  scte35Source: ").Append(Scte35Source).Append("\n");
+            sb.Append("  adTriggers: ").Append(AdTriggers).Append("\n");
+            sb.Append("  audioSelectors: ").Append(AudioSelectors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -229,6 +251,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.FailoverConditions != input.FailoverConditions || (this.FailoverConditions != null && !this.FailoverConditions.Equals(input.FailoverConditions))) return false;
             if (this.MaxBandwidthLimit != input.MaxBandwidthLimit || (this.MaxBandwidthLimit != null && !this.MaxBandwidthLimit.Equals(input.MaxBandwidthLimit))) return false;
             if (this.IpPortMode != input.IpPortMode || (this.IpPortMode != null && !this.IpPortMode.Equals(input.IpPortMode))) return false;
+            if (this.IpWhitelist != input.IpWhitelist || (this.IpWhitelist != null && !this.IpWhitelist.Equals(input.IpWhitelist))) return false;
+            if (this.Scte35Source != input.Scte35Source || (this.Scte35Source != null && !this.Scte35Source.Equals(input.Scte35Source))) return false;
+            if (this.AdTriggers != input.AdTriggers || (this.AdTriggers != null && input.AdTriggers != null && !this.AdTriggers.SequenceEqual(input.AdTriggers))) return false;
+            if (this.AudioSelectors != input.AudioSelectors || (this.AudioSelectors != null && input.AudioSelectors != null && !this.AudioSelectors.SequenceEqual(input.AudioSelectors))) return false;
 
             return true;
         }
@@ -247,6 +273,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.FailoverConditions != null) hashCode = hashCode * 59 + this.FailoverConditions.GetHashCode();
                 if (this.MaxBandwidthLimit != null) hashCode = hashCode * 59 + this.MaxBandwidthLimit.GetHashCode();
                 if (this.IpPortMode != null) hashCode = hashCode * 59 + this.IpPortMode.GetHashCode();
+                if (this.IpWhitelist != null) hashCode = hashCode * 59 + this.IpWhitelist.GetHashCode();
+                if (this.Scte35Source != null) hashCode = hashCode * 59 + this.Scte35Source.GetHashCode();
+                if (this.AdTriggers != null) hashCode = hashCode * 59 + this.AdTriggers.GetHashCode();
+                if (this.AudioSelectors != null) hashCode = hashCode * 59 + this.AudioSelectors.GetHashCode();
                 return hashCode;
             }
         }

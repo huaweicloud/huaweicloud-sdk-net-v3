@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// 码率。无需直播转码时，此参数为必填项  单位：bps。取值范围：0 - 104,857,600（100Mbps）
+        /// 码率。无需直播转码时，此参数为必填项  单位：bps。取值范围：(0,104,857,600]（100Mbps）
         /// </summary>
         [JsonProperty("bitrate", NullValueHandling = NullValueHandling.Ignore)]
         public int? Bitrate { get; set; }
@@ -65,13 +65,13 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public List<string> BackupUrls { get; set; }
 
         /// <summary>
-        /// 协议为SRT_PULL时，拉流地址的streamid
+        /// 频道为SRT_PULL类型时，拉流地址的Stream ID。
         /// </summary>
         [JsonProperty("stream_id", NullValueHandling = NullValueHandling.Ignore)]
         public string StreamId { get; set; }
 
         /// <summary>
-        /// 协议为SRT_PULL时，拉流时延
+        /// 频道为SRT_PULL类型时的拉流时延。
         /// </summary>
         [JsonProperty("latency", NullValueHandling = NullValueHandling.Ignore)]
         public int? Latency { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
     {
 
         /// <summary>
-        /// 客户自定义的拉流地址，包括方法、域名、路径和参数
+        /// 客户自定义的拉流地址，包括方法、域名、路径
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public List<StreamSelectionItem> StreamSelection { get; set; }
 
         /// <summary>
-        /// 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10
+        /// 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10 &gt; 修改分片时长会影响已录制内容的时移和回看服务，请谨慎修改！
         /// </summary>
         [JsonProperty("segment_duration_seconds", NullValueHandling = NullValueHandling.Ignore)]
         public int? SegmentDurationSeconds { get; set; }

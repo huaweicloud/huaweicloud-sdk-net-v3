@@ -520,6 +520,12 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         /// </summary>
         [JsonProperty("origin", NullValueHandling = NullValueHandling.Ignore)]
         public OriginEnum Origin { get; set; }
+        /// <summary>
+        /// 版本号
+        /// </summary>
+        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
+        public string Version { get; set; }
+
 
 
         /// <summary>
@@ -535,6 +541,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             sb.Append("  invocationIds: ").Append(InvocationIds).Append("\n");
             sb.Append("  versionType: ").Append(VersionType).Append("\n");
             sb.Append("  origin: ").Append(Origin).Append("\n");
+            sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -559,6 +566,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             if (this.InvocationIds != input.InvocationIds || (this.InvocationIds != null && input.InvocationIds != null && !this.InvocationIds.SequenceEqual(input.InvocationIds))) return false;
             if (this.VersionType != input.VersionType) return false;
             if (this.Origin != input.Origin) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
 
             return true;
         }
@@ -577,6 +585,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
                 if (this.InvocationIds != null) hashCode = hashCode * 59 + this.InvocationIds.GetHashCode();
                 hashCode = hashCode * 59 + this.VersionType.GetHashCode();
                 hashCode = hashCode * 59 + this.Origin.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }
