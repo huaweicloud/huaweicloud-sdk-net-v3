@@ -17,22 +17,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 错误码
-        /// </summary>
-        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorCode { get; set; }
-
-        /// <summary>
-        /// 错误描述
-        /// </summary>
-        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorMsg { get; set; }
-
-        /// <summary>
-        /// 执行结果
+        /// 
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Data { get; set; }
+        public GetCreateFirewallJobResponseData Data { get; set; }
 
 
 
@@ -43,8 +31,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListJobResponse {\n");
-            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
-            sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
             sb.Append("  data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -64,8 +50,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public bool Equals(ListJobResponse input)
         {
             if (input == null) return false;
-            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
-            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
             if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
 
             return true;
@@ -79,8 +63,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }

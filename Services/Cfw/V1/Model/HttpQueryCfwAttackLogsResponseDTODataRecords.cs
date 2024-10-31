@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class HttpQueryCfwAttackLogsResponseDTODataRecords 
     {
         /// <summary>
-        /// 方向，有内到外和外到内两种
+        /// 方向，包含in2out，out2in
         /// </summary>
-        /// <value>方向，有内到外和外到内两种</value>
+        /// <value>方向，包含in2out，out2in</value>
         [JsonConverter(typeof(EnumClassConverter<DirectionEnum>))]
         public class DirectionEnum
         {
@@ -132,12 +132,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 方向，有内到外和外到内两种
+        /// 方向，包含in2out，out2in
         /// </summary>
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public DirectionEnum Direction { get; set; }
         /// <summary>
-        /// 动作
+        /// 动作包含permit，deny
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
@@ -161,7 +161,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string AttackRule { get; set; }
 
         /// <summary>
-        /// 威胁等级
+        /// 威胁等级，包括CRITICAL、HIGH、MEDIUM、LOW
         /// </summary>
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public string Level { get; set; }
@@ -221,7 +221,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? DstPort { get; set; }
 
         /// <summary>
-        /// 协议
+        /// 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }
@@ -233,7 +233,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Packet { get; set; }
 
         /// <summary>
-        /// 应用协议
+        /// 规则应用类型包括：“HTTP”，\&quot;HTTPS\&quot;，\&quot;TLS1\&quot;，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
         /// </summary>
         [JsonProperty("app", NullValueHandling = NullValueHandling.Ignore)]
         public string App { get; set; }

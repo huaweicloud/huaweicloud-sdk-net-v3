@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Type { get; set; }
 
         /// <summary>
-        /// 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+        /// 协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1,手动类型不为空，自动类型为空
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public int? Protocol { get; set; }
 
         /// <summary>
-        /// 协议列表，协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+        /// 协议列表，协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1,手动类型不为空，自动类型为空
         /// </summary>
         [JsonProperty("protocols", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> Protocols { get; set; }
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string DestPort { get; set; }
 
         /// <summary>
-        /// 服务组id，手动类型为空，自动类型为非空
+        /// 服务组id
         /// </summary>
         [JsonProperty("service_set_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceSetId { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public List<ServiceItem> CustomService { get; set; }
 
         /// <summary>
-        /// 服务组列表
+        /// 服务组id列表
         /// </summary>
         [JsonProperty("service_group", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ServiceGroup { get; set; }

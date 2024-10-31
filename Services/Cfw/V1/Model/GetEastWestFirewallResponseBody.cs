@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为1的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
         /// </summary>
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// 租户project_id
+        /// 项目ID, 可以从调API处获取，也可以从控制台获取。[项目ID获取方式](cfw_02_0015.xml)
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
@@ -33,12 +33,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("er_associated_subnet", NullValueHandling = NullValueHandling.Ignore)]
-        public SubnetInfo ErAssociatedSubnet { get; set; }
 
         /// <summary>
         /// 云防火墙关联子网信息
@@ -83,16 +77,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 防护模式
+        /// 防护模式，值为er
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
-
-        /// <summary>
-        /// 东西向路由限制
-        /// </summary>
-        [JsonProperty("ew_vpc_route_limit", NullValueHandling = NullValueHandling.Ignore)]
-        public int? EwVpcRouteLimit { get; set; }
 
 
 
@@ -106,7 +94,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  objectId: ").Append(ObjectId).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  erAssociatedSubnet: ").Append(ErAssociatedSubnet).Append("\n");
             sb.Append("  firewallAssociatedSubnets: ").Append(FirewallAssociatedSubnets).Append("\n");
             sb.Append("  er: ").Append(Er).Append("\n");
             sb.Append("  inspectionVpc: ").Append(InspectionVpc).Append("\n");
@@ -115,7 +102,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
-            sb.Append("  ewVpcRouteLimit: ").Append(EwVpcRouteLimit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -137,7 +123,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
-            if (this.ErAssociatedSubnet != input.ErAssociatedSubnet || (this.ErAssociatedSubnet != null && !this.ErAssociatedSubnet.Equals(input.ErAssociatedSubnet))) return false;
             if (this.FirewallAssociatedSubnets != input.FirewallAssociatedSubnets || (this.FirewallAssociatedSubnets != null && input.FirewallAssociatedSubnets != null && !this.FirewallAssociatedSubnets.SequenceEqual(input.FirewallAssociatedSubnets))) return false;
             if (this.Er != input.Er || (this.Er != null && !this.Er.Equals(input.Er))) return false;
             if (this.InspectionVpc != input.InspectionVpc || (this.InspectionVpc != null && !this.InspectionVpc.Equals(input.InspectionVpc))) return false;
@@ -146,7 +131,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
-            if (this.EwVpcRouteLimit != input.EwVpcRouteLimit || (this.EwVpcRouteLimit != null && !this.EwVpcRouteLimit.Equals(input.EwVpcRouteLimit))) return false;
 
             return true;
         }
@@ -162,7 +146,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ErAssociatedSubnet != null) hashCode = hashCode * 59 + this.ErAssociatedSubnet.GetHashCode();
                 if (this.FirewallAssociatedSubnets != null) hashCode = hashCode * 59 + this.FirewallAssociatedSubnets.GetHashCode();
                 if (this.Er != null) hashCode = hashCode * 59 + this.Er.GetHashCode();
                 if (this.InspectionVpc != null) hashCode = hashCode * 59 + this.InspectionVpc.GetHashCode();
@@ -171,7 +154,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.EwVpcRouteLimit != null) hashCode = hashCode * 59 + this.EwVpcRouteLimit.GetHashCode();
                 return hashCode;
             }
         }

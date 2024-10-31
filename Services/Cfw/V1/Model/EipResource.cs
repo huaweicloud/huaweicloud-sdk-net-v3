@@ -149,37 +149,37 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 弹性公网IP,IPV6
+        /// 弹性公网IP,IPV6类型
         /// </summary>
         [JsonProperty("public_ipv6", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIpv6 { get; set; }
 
         /// <summary>
-        /// 企业项目id
+        /// Eip所在账户企业项目id
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 设备id
+        /// EIP绑定设备（如ecs，nat）id
         /// </summary>
         [JsonProperty("device_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DeviceId { get; set; }
 
         /// <summary>
-        /// 设备名称
+        /// EIP绑定设备（如ecs，nat）名称
         /// </summary>
         [JsonProperty("device_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DeviceName { get; set; }
 
         /// <summary>
-        /// 设备拥有者
+        /// EIP绑定设备（如ecs，nat）拥有者
         /// </summary>
         [JsonProperty("device_owner", NullValueHandling = NullValueHandling.Ignore)]
         public string DeviceOwner { get; set; }
 
         /// <summary>
-        /// 关联实例类型
+        /// 关联实例类型，包括：NATGW，ELB，PORT等。
         /// </summary>
         [JsonProperty("associate_instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AssociateInstanceType { get; set; }
@@ -203,7 +203,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string FwEnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
         /// </summary>
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }
@@ -215,19 +215,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Tags { get; set; }
 
         /// <summary>
-        /// EIP所属用户
+        /// EIP所属用户id，可通过[获取账号、IAM用户、项目、用户组、区域、委托的名称和ID](cfw_02_0030.xml)获取。
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 所属用户的名称
-        /// </summary>
-        [JsonProperty("owner", NullValueHandling = NullValueHandling.Ignore)]
-        public string Owner { get; set; }
-
-        /// <summary>
-        /// 防火墙所属用户
+        /// 防火墙所属用户，可通过[获取账号、IAM用户、项目、用户组、区域、委托的名称和ID](cfw_02_0030.xml)获取。
         /// </summary>
         [JsonProperty("fw_domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwDomainId { get; set; }
@@ -256,7 +250,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  objectId: ").Append(ObjectId).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
-            sb.Append("  owner: ").Append(Owner).Append("\n");
             sb.Append("  fwDomainId: ").Append(FwDomainId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -291,7 +284,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
             if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
-            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
             if (this.FwDomainId != input.FwDomainId || (this.FwDomainId != null && !this.FwDomainId.Equals(input.FwDomainId))) return false;
 
             return true;
@@ -320,7 +312,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
                 if (this.FwDomainId != null) hashCode = hashCode * 59 + this.FwDomainId.GetHashCode();
                 return hashCode;
             }

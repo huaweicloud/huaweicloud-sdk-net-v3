@@ -17,55 +17,55 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 防火墙id
+        /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
         /// </summary>
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
 
         /// <summary>
-        /// 是否开启LTS
+        /// 是否开启LTS，1表示是，0表示不是
         /// </summary>
         [JsonProperty("lts_enable", NullValueHandling = NullValueHandling.Ignore)]
         public int? LtsEnable { get; set; }
 
         /// <summary>
-        /// LTS日志分组id
+        /// LTS日志分组id,可通过查询LTS（云日志服务）下查询账号下所有日志组接口获得，通过返回值中的log_groups.log_group_id（.表示各对象之间层级的区分）获得
         /// </summary>
         [JsonProperty("lts_log_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LtsLogGroupId { get; set; }
 
         /// <summary>
-        /// 攻击日志流id
+        /// 攻击日志流id,可通过查询LTS（云日志服务）下查询指定日志组下的所有日志流接口获得，通过返回值中的log_streams.log_stream_id（.表示各对象之间层级的区分）获得
         /// </summary>
         [JsonProperty("lts_attack_log_stream_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LtsAttackLogStreamId { get; set; }
 
         /// <summary>
-        /// 是否开启攻击日志流
+        /// 是否开启攻击日志流，1表示是，0表示不是
         /// </summary>
         [JsonProperty("lts_attack_log_stream_enable", NullValueHandling = NullValueHandling.Ignore)]
         public int? LtsAttackLogStreamEnable { get; set; }
 
         /// <summary>
-        /// 访问控制日志流id
+        /// 访问控制日志流id,可通过查询LTS（云日志服务）下查询指定日志组下的所有日志流接口获得，通过返回值中的log_streams.log_stream_id（.表示各对象之间层级的区分）获得
         /// </summary>
         [JsonProperty("lts_access_log_stream_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LtsAccessLogStreamId { get; set; }
 
         /// <summary>
-        /// 是否开启访问控制流
+        /// 是否开启访问控制流，1表示是，0表示不是
         /// </summary>
         [JsonProperty("lts_access_log_stream_enable", NullValueHandling = NullValueHandling.Ignore)]
         public int? LtsAccessLogStreamEnable { get; set; }
 
         /// <summary>
-        /// 流量日志id
+        /// 流量日志id,可通过查询LTS（云日志服务）下查询指定日志组下的所有日志流接口获得，通过返回值中的log_streams.log_stream_id（.表示各对象之间层级的区分）获得
         /// </summary>
         [JsonProperty("lts_flow_log_stream_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LtsFlowLogStreamId { get; set; }
 
         /// <summary>
-        /// 是否开启流量日志
+        /// 是否开启流量日志，1表示是，0表示不是
         /// </summary>
         [JsonProperty("lts_flow_log_stream_enable", NullValueHandling = NullValueHandling.Ignore)]
         public int? LtsFlowLogStreamEnable { get; set; }

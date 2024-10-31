@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 总数
+        /// 防火墙总数量
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

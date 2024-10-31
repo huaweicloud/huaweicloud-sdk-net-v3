@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 记录的总数
+        /// 服务组成员总数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

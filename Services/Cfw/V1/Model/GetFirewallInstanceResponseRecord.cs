@@ -15,190 +15,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     /// </summary>
     public class GetFirewallInstanceResponseRecord 
     {
-        /// <summary>
-        /// 防火墙状态列表，包括-1：等待支付，0：创建中，1，删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
-        /// </summary>
-        /// <value>防火墙状态列表，包括-1：等待支付，0：创建中，1，删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败</value>
-        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
-        public class StatusEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_MINUS_1 for value: -1
-            /// </summary>
-            public static readonly StatusEnum NUMBER_MINUS_1 = new StatusEnum(-1);
-
-            /// <summary>
-            /// Enum NUMBER_0 for value: 0
-            /// </summary>
-            public static readonly StatusEnum NUMBER_0 = new StatusEnum(0);
-
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly StatusEnum NUMBER_1 = new StatusEnum(1);
-
-            /// <summary>
-            /// Enum NUMBER_2 for value: 2
-            /// </summary>
-            public static readonly StatusEnum NUMBER_2 = new StatusEnum(2);
-
-            /// <summary>
-            /// Enum NUMBER_3 for value: 3
-            /// </summary>
-            public static readonly StatusEnum NUMBER_3 = new StatusEnum(3);
-
-            /// <summary>
-            /// Enum NUMBER_4 for value: 4
-            /// </summary>
-            public static readonly StatusEnum NUMBER_4 = new StatusEnum(4);
-
-            /// <summary>
-            /// Enum NUMBER_5 for value: 5
-            /// </summary>
-            public static readonly StatusEnum NUMBER_5 = new StatusEnum(5);
-
-            /// <summary>
-            /// Enum NUMBER_6 for value: 6
-            /// </summary>
-            public static readonly StatusEnum NUMBER_6 = new StatusEnum(6);
-
-            /// <summary>
-            /// Enum NUMBER_7 for value: 7
-            /// </summary>
-            public static readonly StatusEnum NUMBER_7 = new StatusEnum(7);
-
-            /// <summary>
-            /// Enum NUMBER_8 for value: 8
-            /// </summary>
-            public static readonly StatusEnum NUMBER_8 = new StatusEnum(8);
-
-            /// <summary>
-            /// Enum NUMBER_9 for value: 9
-            /// </summary>
-            public static readonly StatusEnum NUMBER_9 = new StatusEnum(9);
-
-            /// <summary>
-            /// Enum NUMBER_10 for value: 10
-            /// </summary>
-            public static readonly StatusEnum NUMBER_10 = new StatusEnum(10);
-
-            /// <summary>
-            /// Enum NUMBER_11 for value: 11
-            /// </summary>
-            public static readonly StatusEnum NUMBER_11 = new StatusEnum(11);
-
-            private static readonly Dictionary<int?, StatusEnum> StaticFields =
-            new Dictionary<int?, StatusEnum>()
-            {
-                { -1, NUMBER_MINUS_1 },
-                { 0, NUMBER_0 },
-                { 1, NUMBER_1 },
-                { 2, NUMBER_2 },
-                { 3, NUMBER_3 },
-                { 4, NUMBER_4 },
-                { 5, NUMBER_5 },
-                { 6, NUMBER_6 },
-                { 7, NUMBER_7 },
-                { 8, NUMBER_8 },
-                { 9, NUMBER_9 },
-                { 10, NUMBER_10 },
-                { 11, NUMBER_11 },
-            };
-
-            private int? _value;
-
-            public StatusEnum()
-            {
-
-            }
-
-            public StatusEnum(int? value)
-            {
-                _value = value;
-            }
-
-            public static StatusEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as StatusEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(StatusEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(StatusEnum a, StatusEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(StatusEnum a, StatusEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)。
+        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id。，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
         /// </summary>
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
@@ -210,7 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 集群类型
+        /// 集群类型，包含主备（0）和集群（1）两种方式，主备模式包含四个节点，2个主节点构成集群，剩余两个节点为主节点的备节点，集群模式仅拉起两个节点作为集群。
         /// </summary>
         [JsonProperty("ha_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? HaType { get; set; }
@@ -222,13 +41,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? ChargeMode { get; set; }
 
         /// <summary>
-        /// 服务类型
+        /// 防火墙防护类型，目前仅支持0，互联网防护
         /// </summary>
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? ServiceType { get; set; }
 
         /// <summary>
-        /// 引擎类型
+        /// 引擎类型，0：自研引擎 1：山石引擎 3：天融信引擎
         /// </summary>
         [JsonProperty("engine_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? EngineType { get; set; }
@@ -249,7 +68,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 防火墙状态列表，包括-1：等待支付，0：创建中，1，删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public StatusEnum Status { get; set; }
+        public int? Status { get; set; }
+
         /// <summary>
         /// 是否为旧引擎，true表示是，false表示不是
         /// </summary>
@@ -257,13 +77,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public bool? IsOldFirewallInstance { get; set; }
 
         /// <summary>
-        /// 是否支持obs
+        /// 是否支持obs，true表示是，false表示不是
         /// </summary>
         [JsonProperty("is_available_obs", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAvailableObs { get; set; }
 
         /// <summary>
-        /// 是否支持威胁标签
+        /// 是否支持威胁情报标签，true表示是，false表示不是
         /// </summary>
         [JsonProperty("is_support_threat_tags", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSupportThreatTags { get; set; }
@@ -293,13 +113,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string FwInstanceName { get; set; }
 
         /// <summary>
-        /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+        /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 资源id
+        /// 防火墙资源id，同fw_instance_id
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
@@ -311,7 +131,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public bool? SupportUrlFiltering { get; set; }
 
         /// <summary>
-        /// 标签列表
+        /// 标签列表，标签键值map转化的json字符串，如\&quot;{\\\&quot;key\\\&quot;:\\\&quot;value\\\&quot;}\&quot;
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }
@@ -371,7 +191,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.EngineType != input.EngineType || (this.EngineType != null && !this.EngineType.Equals(input.EngineType))) return false;
             if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
             if (this.ProtectObjects != input.ProtectObjects || (this.ProtectObjects != null && input.ProtectObjects != null && !this.ProtectObjects.SequenceEqual(input.ProtectObjects))) return false;
-            if (this.Status != input.Status) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.IsOldFirewallInstance != input.IsOldFirewallInstance || (this.IsOldFirewallInstance != null && !this.IsOldFirewallInstance.Equals(input.IsOldFirewallInstance))) return false;
             if (this.IsAvailableObs != input.IsAvailableObs || (this.IsAvailableObs != null && !this.IsAvailableObs.Equals(input.IsAvailableObs))) return false;
             if (this.IsSupportThreatTags != input.IsSupportThreatTags || (this.IsSupportThreatTags != null && !this.IsSupportThreatTags.Equals(input.IsSupportThreatTags))) return false;
@@ -403,7 +223,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.EngineType != null) hashCode = hashCode * 59 + this.EngineType.GetHashCode();
                 if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.ProtectObjects != null) hashCode = hashCode * 59 + this.ProtectObjects.GetHashCode();
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.IsOldFirewallInstance != null) hashCode = hashCode * 59 + this.IsOldFirewallInstance.GetHashCode();
                 if (this.IsAvailableObs != null) hashCode = hashCode * 59 + this.IsAvailableObs.GetHashCode();
                 if (this.IsSupportThreatTags != null) hashCode = hashCode * 59 + this.IsSupportThreatTags.GetHashCode();

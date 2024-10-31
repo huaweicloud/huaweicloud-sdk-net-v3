@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 返回数量
+        /// 查询访问控制日志记录总数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 记录
+        /// 查询访问控制日志记录
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public List<HttpQueryCfwAccessControllerLogsResponseDTODataRecords> Records { get; set; }

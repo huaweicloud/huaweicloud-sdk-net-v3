@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? AddressSetType { get; set; }
 
         /// <summary>
-        /// 地址组名称
+        /// 关联IP地址组名称，可通过[查询地址组列表接口](ListAddressSets.xml)查询获得，通过返回值中的data.records.name（.表示各对象之间层级的区分）获得。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 地址组id
+        /// 关联IP地址组ID，可通过[查询地址组列表接口](ListAddressSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。
         /// </summary>
         [JsonProperty("set_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SetId { get; set; }

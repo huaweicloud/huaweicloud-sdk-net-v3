@@ -283,7 +283,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         /// <summary>
         /// 修改东西向防火墙防护状态
         ///
-        /// 东西向防护资源防护开启/关闭
+        /// 东西向防护开启/关闭
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -307,7 +307,7 @@ namespace HuaweiCloud.SDK.Cfw.V1
         /// <summary>
         /// 创建抓包任务
         ///
-        /// 创建抓包任务
+        /// 创建抓包任务，每个任务只能执行一次。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -481,9 +481,9 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
-        /// 删除抓包任务
+        /// 批量删除抓包任务
         ///
-        /// 删除抓包任务
+        /// 批量删除抓包任务
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

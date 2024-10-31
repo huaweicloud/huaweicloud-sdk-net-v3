@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// 查询攻击日志返回值
+    /// 查询攻击日志返回值数据
     /// </summary>
     public class HttpQueryCfwAttackLogsResponseDTOData 
     {
 
         /// <summary>
-        /// 返回数量
+        /// 返回攻击数据总数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 记录
+        /// 攻击日志记录列表
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public List<HttpQueryCfwAttackLogsResponseDTODataRecords> Records { get; set; }

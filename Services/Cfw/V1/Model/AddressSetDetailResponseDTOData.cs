@@ -15,121 +15,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     /// </summary>
     public class AddressSetDetailResponseDTOData 
     {
-        /// <summary>
-        /// 地址类型0 ipv4,1 ipv6
-        /// </summary>
-        /// <value>地址类型0 ipv4,1 ipv6</value>
-        [JsonConverter(typeof(EnumClassConverter<AddressTypeEnum>))]
-        public class AddressTypeEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_0 for value: 0
-            /// </summary>
-            public static readonly AddressTypeEnum NUMBER_0 = new AddressTypeEnum(0);
-
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly AddressTypeEnum NUMBER_1 = new AddressTypeEnum(1);
-
-            private static readonly Dictionary<int?, AddressTypeEnum> StaticFields =
-            new Dictionary<int?, AddressTypeEnum>()
-            {
-                { 0, NUMBER_0 },
-                { 1, NUMBER_1 },
-            };
-
-            private int? _value;
-
-            public AddressTypeEnum()
-            {
-
-            }
-
-            public AddressTypeEnum(int? value)
-            {
-                _value = value;
-            }
-
-            public static AddressTypeEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as AddressTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(AddressTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(AddressTypeEnum a, AddressTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(AddressTypeEnum a, AddressTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 地址组id
@@ -156,10 +41,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? AddressSetType { get; set; }
 
         /// <summary>
-        /// 地址类型0 ipv4,1 ipv6
+        /// 地址类型0 ipv4，1 ipv6
         /// </summary>
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AddressTypeEnum AddressType { get; set; }
+        public int? AddressType { get; set; }
+
 
 
         /// <summary>
@@ -196,7 +82,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.AddressSetType != input.AddressSetType || (this.AddressSetType != null && !this.AddressSetType.Equals(input.AddressSetType))) return false;
-            if (this.AddressType != input.AddressType) return false;
+            if (this.AddressType != input.AddressType || (this.AddressType != null && !this.AddressType.Equals(input.AddressType))) return false;
 
             return true;
         }
@@ -213,7 +99,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.AddressSetType != null) hashCode = hashCode * 59 + this.AddressSetType.GetHashCode();
-                hashCode = hashCode * 59 + this.AddressType.GetHashCode();
+                if (this.AddressType != null) hashCode = hashCode * 59 + this.AddressType.GetHashCode();
                 return hashCode;
             }
         }

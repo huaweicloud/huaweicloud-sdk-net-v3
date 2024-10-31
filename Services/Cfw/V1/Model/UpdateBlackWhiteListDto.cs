@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Direction { get; set; }
 
         /// <summary>
-        /// 地址类型0：ipv4,1:ipv6
+        /// 地址类型0：ipv4，1:ipv6
         /// </summary>
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? AddressType { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Address { get; set; }
 
         /// <summary>
-        /// 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1
+        /// 协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public int? Protocol { get; set; }

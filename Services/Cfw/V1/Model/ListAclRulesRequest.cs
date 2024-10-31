@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class ListAclRulesRequest 
     {
         /// <summary>
-        /// 规则Type0：互联网规则,1：vpc规则, 2:nat规则
+        /// 规则类型，0：互联网规则，1：vpc规则，2：nat规则
         /// </summary>
-        /// <value>规则Type0：互联网规则,1：vpc规则, 2:nat规则</value>
+        /// <value>规则类型，0：互联网规则，1：vpc规则，2：nat规则</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 规则下发状态 0：禁用,1：启用
+        /// 规则下发状态 0：禁用，1：启用
         /// </summary>
-        /// <value>规则下发状态 0：禁用,1：启用</value>
+        /// <value>规则下发状态 0：禁用，1：启用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -252,9 +252,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 动作0：permit,1：deny
+        /// 动作0：permit，1：deny
         /// </summary>
-        /// <value>动作0：permit,1：deny</value>
+        /// <value>动作0：permit，1：deny</value>
         [JsonConverter(typeof(EnumClassConverter<ActionTypeEnum>))]
         public class ActionTypeEnum
         {
@@ -367,9 +367,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 地址类型0 ipv4
+        /// 地址类型，0表示ipv4，1表示ipv6
         /// </summary>
-        /// <value>地址类型0 ipv4</value>
+        /// <value>地址类型，0表示ipv4，1表示ipv6</value>
         [JsonConverter(typeof(EnumClassConverter<AddressTypeEnum>))]
         public class AddressTypeEnum
         {
@@ -383,17 +383,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             /// </summary>
             public static readonly AddressTypeEnum NUMBER_1 = new AddressTypeEnum(1);
 
-            /// <summary>
-            /// Enum NUMBER_2 for value: 2
-            /// </summary>
-            public static readonly AddressTypeEnum NUMBER_2 = new AddressTypeEnum(2);
-
             private static readonly Dictionary<int?, AddressTypeEnum> StaticFields =
             new Dictionary<int?, AddressTypeEnum>()
             {
                 { 0, NUMBER_0 },
                 { 1, NUMBER_1 },
-                { 2, NUMBER_2 },
             };
 
             private int? _value;
@@ -489,14 +483,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id，type可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得
         /// </summary>
         [SDKProperty("object_id", IsQuery = true)]
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// 规则Type0：互联网规则,1：vpc规则, 2:nat规则
+        /// 规则类型，0：互联网规则，1：vpc规则，2：nat规则
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
@@ -509,7 +503,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Ip { get; set; }
 
         /// <summary>
-        /// 名称
+        /// 规则名称
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -523,19 +517,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Direction { get; set; }
 
         /// <summary>
-        /// 规则下发状态 0：禁用,1：启用
+        /// 规则下发状态 0：禁用，1：启用
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 动作0：permit,1：deny
+        /// 动作0：permit，1：deny
         /// </summary>
         [SDKProperty("action_type", IsQuery = true)]
         [JsonProperty("action_type", NullValueHandling = NullValueHandling.Ignore)]
         public ActionTypeEnum ActionType { get; set; }
         /// <summary>
-        /// 地址类型0 ipv4
+        /// 地址类型，0表示ipv4，1表示ipv6
         /// </summary>
         [SDKProperty("address_type", IsQuery = true)]
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -555,21 +549,21 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+        /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+        /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
         /// </summary>
         [SDKProperty("fw_instance_id", IsQuery = true)]
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
 
         /// <summary>
-        /// 标签id
+        /// 规则标签id，创建规则时产生。
         /// </summary>
         [SDKProperty("tags_id", IsQuery = true)]
         [JsonProperty("tags_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -597,7 +591,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Service { get; set; }
 
         /// <summary>
-        /// 应用
+        /// 规则应用类型包括：“HTTP”，\&quot;HTTPS\&quot;，\&quot;TLS1\&quot;，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
         /// </summary>
         [SDKProperty("application", IsQuery = true)]
         [JsonProperty("application", NullValueHandling = NullValueHandling.Ignore)]

@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public string Language { get; set; }
 
+        /// <summary>
+        /// 返回音频片段结果的策略。可选值如下： false：返回风险等级为非pass的音频片段结果 true：返回所有风险等级的音频片段结果 说明： 1. 默认值为false； 2. 每隔10秒返回一次最近10秒音频流的审核结果。
+        /// </summary>
+        [JsonProperty("return_all_results", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnAllResults { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             sb.Append("class AudioStreamCreateRequestData {\n");
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  language: ").Append(Language).Append("\n");
+            sb.Append("  returnAllResults: ").Append(ReturnAllResults).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             if (input == null) return false;
             if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
             if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
+            if (this.ReturnAllResults != input.ReturnAllResults || (this.ReturnAllResults != null && !this.ReturnAllResults.Equals(input.ReturnAllResults))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
                 var hashCode = 41;
                 if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.ReturnAllResults != null) hashCode = hashCode * 59 + this.ReturnAllResults.GetHashCode();
                 return hashCode;
             }
         }

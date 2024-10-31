@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Cfw.V1.Model
+namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
-    /// 响应体
+    /// Response Object
     /// </summary>
-    public class SuccessRspData 
+    public class StopInstanceResponse : SdkResponse
     {
 
         /// <summary>
-        /// 标识ID
+        /// 停止数据库的异步任务ID。
         /// </summary>
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SuccessRspData {\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("class StopInstanceResponse {\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +41,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SuccessRspData);
+            return this.Equals(input as StopInstanceResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(SuccessRspData input)
+        public bool Equals(StopInstanceResponse input)
         {
             if (input == null) return false;
-            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 描述
+        /// 域名组描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 引用次数
+        /// 域名组被规则引用次数
         /// </summary>
         [JsonProperty("ref_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? RefCount { get; set; }
@@ -47,16 +47,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? DomainSetType { get; set; }
 
         /// <summary>
-        /// 配置状态
+        /// 配置状态，-1表示未配置态，0表示配置失败，1表示配置成功，2表示配置中，3表示正常，4表示配置异常
         /// </summary>
         [JsonProperty("config_status", NullValueHandling = NullValueHandling.Ignore)]
         public int? ConfigStatus { get; set; }
-
-        /// <summary>
-        /// 异常信息
-        /// </summary>
-        [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
-        public string Message { get; set; }
 
         /// <summary>
         /// 使用规则id列表
@@ -79,7 +73,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  refCount: ").Append(RefCount).Append("\n");
             sb.Append("  domainSetType: ").Append(DomainSetType).Append("\n");
             sb.Append("  configStatus: ").Append(ConfigStatus).Append("\n");
-            sb.Append("  message: ").Append(Message).Append("\n");
             sb.Append("  rules: ").Append(Rules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -105,7 +98,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.RefCount != input.RefCount || (this.RefCount != null && !this.RefCount.Equals(input.RefCount))) return false;
             if (this.DomainSetType != input.DomainSetType || (this.DomainSetType != null && !this.DomainSetType.Equals(input.DomainSetType))) return false;
             if (this.ConfigStatus != input.ConfigStatus || (this.ConfigStatus != null && !this.ConfigStatus.Equals(input.ConfigStatus))) return false;
-            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
             if (this.Rules != input.Rules || (this.Rules != null && input.Rules != null && !this.Rules.SequenceEqual(input.Rules))) return false;
 
             return true;
@@ -125,7 +117,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.RefCount != null) hashCode = hashCode * 59 + this.RefCount.GetHashCode();
                 if (this.DomainSetType != null) hashCode = hashCode * 59 + this.DomainSetType.GetHashCode();
                 if (this.ConfigStatus != null) hashCode = hashCode * 59 + this.ConfigStatus.GetHashCode();
-                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.Rules != null) hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 return hashCode;
             }

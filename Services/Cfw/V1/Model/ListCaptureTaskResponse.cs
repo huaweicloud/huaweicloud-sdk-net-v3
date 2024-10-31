@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 查询抓包任务返回值。
+        /// 
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public List<HttpQueryCaptureTaskResponseData> Data { get; set; }
+        public HttpQueryCaptureTaskResponseData Data { get; set; }
 
 
 
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public bool Equals(ListCaptureTaskResponse input)
         {
             if (input == null) return false;
-            if (this.Data != input.Data || (this.Data != null && input.Data != null && !this.Data.SequenceEqual(input.Data))) return false;
+            if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
 
             return true;
         }

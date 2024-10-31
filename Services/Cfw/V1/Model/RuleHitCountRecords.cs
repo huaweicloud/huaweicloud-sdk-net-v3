@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 总数
+        /// 获取规则击中次数总条数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 规则击中次数列表
+        /// 规则击中次数信息列表
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public List<RuleHitCountObject> Records { get; set; }

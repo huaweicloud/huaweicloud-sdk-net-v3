@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class Flavor 
     {
         /// <summary>
-        /// 防火墙版本，0：标准版，1：专业版，2：铂金版，3：基础版，购买时，当防火墙“charge_mode”为“postPaid”时，仅支持专业版。“charge_mode”为“prePaid”时，支持标准版、专业版。
+        /// 防火墙版本，0：标准版，1：专业版，3：基础版，购买时，当防火墙“charge_mode”为“postPaid”时，仅支持专业版。“charge_mode”为“prePaid”时，支持标准版、专业版。
         /// </summary>
-        /// <value>防火墙版本，0：标准版，1：专业版，2：铂金版，3：基础版，购买时，当防火墙“charge_mode”为“postPaid”时，仅支持专业版。“charge_mode”为“prePaid”时，支持标准版、专业版。</value>
+        /// <value>防火墙版本，0：标准版，1：专业版，3：基础版，购买时，当防火墙“charge_mode”为“postPaid”时，仅支持专业版。“charge_mode”为“prePaid”时，支持标准版、专业版。</value>
         [JsonConverter(typeof(EnumClassConverter<VersionEnum>))]
         public class VersionEnum
         {
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 防火墙版本，0：标准版，1：专业版，2：铂金版，3：基础版，购买时，当防火墙“charge_mode”为“postPaid”时，仅支持专业版。“charge_mode”为“prePaid”时，支持标准版、专业版。
+        /// 防火墙版本，0：标准版，1：专业版，3：基础版，购买时，当防火墙“charge_mode”为“postPaid”时，仅支持专业版。“charge_mode”为“prePaid”时，支持标准版、专业版。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public VersionEnum Version { get; set; }
@@ -161,37 +161,37 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? VpcCount { get; set; }
 
         /// <summary>
-        /// 带宽
+        /// 带宽，单位为mbps
         /// </summary>
         [JsonProperty("bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public int? Bandwidth { get; set; }
 
         /// <summary>
-        /// 日志存储
+        /// 日志存储，单位为byte
         /// </summary>
         [JsonProperty("log_storage", NullValueHandling = NullValueHandling.Ignore)]
         public int? LogStorage { get; set; }
 
         /// <summary>
-        /// 默认防火墙带宽
+        /// 默认防火墙带宽，单位为mbps，标准版为10，专业版为50，按需专业版为200
         /// </summary>
         [JsonProperty("default_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public int? DefaultBandwidth { get; set; }
 
         /// <summary>
-        /// 默认eip数
+        /// 默认eip数，标准版为20，专业版为50，按需专业版为1000
         /// </summary>
         [JsonProperty("default_eip_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? DefaultEipCount { get; set; }
 
         /// <summary>
-        /// 默认日志存储
+        /// 默认日志存储，单位为byte，默认为0
         /// </summary>
         [JsonProperty("default_log_storage", NullValueHandling = NullValueHandling.Ignore)]
         public int? DefaultLogStorage { get; set; }
 
         /// <summary>
-        /// 默认vpc数
+        /// 默认vpc数，标准版为0，专业版为2，按需专业版为5
         /// </summary>
         [JsonProperty("default_vpc_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? DefaultVpcCount { get; set; }

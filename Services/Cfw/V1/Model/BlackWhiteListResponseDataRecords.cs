@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Direction { get; set; }
 
         /// <summary>
-        /// IP地址类型0：ipv4,1:ipv6
+        /// ip地址类型0：ipv4，1:ipv6
         /// </summary>
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? AddressType { get; set; }

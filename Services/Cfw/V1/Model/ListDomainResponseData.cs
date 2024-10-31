@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 租户项目id
+        /// 项目ID
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string SetId { get; set; }
 
         /// <summary>
-        /// 总数
+        /// 域名总数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 动作0：permit,1：deny
+        /// 动作0：permit，1：deny
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string RuleName { get; set; }
 
         /// <summary>
-        /// 规则ID
+        /// 规则id
         /// </summary>
         [JsonProperty("rule_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleId { get; set; }
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Protocol { get; set; }
 
         /// <summary>
-        /// 应用协议
+        /// 规则应用类型包括：“HTTP”，\&quot;HTTPS\&quot;，\&quot;TLS1\&quot;，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”，“BGP”等。
         /// </summary>
         [JsonProperty("app", NullValueHandling = NullValueHandling.Ignore)]
         public string App { get; set; }

@@ -15,252 +15,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     /// </summary>
     public class ListEipsRequest 
     {
-        /// <summary>
-        /// 防护状态 null-全部 0-开启防护 1-关闭防护
-        /// </summary>
-        /// <value>防护状态 null-全部 0-开启防护 1-关闭防护</value>
-        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
-        public class StatusEnum
-        {
-            /// <summary>
-            /// Enum NULL for value: null
-            /// </summary>
-            public static readonly StatusEnum NULL = new StatusEnum("null");
-
-            /// <summary>
-            /// Enum _0 for value: 0
-            /// </summary>
-            public static readonly StatusEnum _0 = new StatusEnum("0");
-
-            /// <summary>
-            /// Enum _1 for value: 1
-            /// </summary>
-            public static readonly StatusEnum _1 = new StatusEnum("1");
-
-            private static readonly Dictionary<string, StatusEnum> StaticFields =
-            new Dictionary<string, StatusEnum>()
-            {
-                { "null", NULL },
-                { "0", _0 },
-                { "1", _1 },
-            };
-
-            private string _value;
-
-            public StatusEnum()
-            {
-
-            }
-
-            public StatusEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static StatusEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as StatusEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(StatusEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(StatusEnum a, StatusEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(StatusEnum a, StatusEnum b)
-            {
-                return !(a == b);
-            }
-        }
 
         /// <summary>
-        /// 是否同步租户EIP数据 0-不同步 1-同步
-        /// </summary>
-        /// <value>是否同步租户EIP数据 0-不同步 1-同步</value>
-        [JsonConverter(typeof(EnumClassConverter<SyncEnum>))]
-        public class SyncEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_0 for value: 0
-            /// </summary>
-            public static readonly SyncEnum NUMBER_0 = new SyncEnum(0);
-
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly SyncEnum NUMBER_1 = new SyncEnum(1);
-
-            private static readonly Dictionary<int?, SyncEnum> StaticFields =
-            new Dictionary<int?, SyncEnum>()
-            {
-                { 0, NUMBER_0 },
-                { 1, NUMBER_1 },
-            };
-
-            private int? _value;
-
-            public SyncEnum()
-            {
-
-            }
-
-            public SyncEnum(int? value)
-            {
-                _value = value;
-            }
-
-            public static SyncEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as SyncEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(SyncEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(SyncEnum a, SyncEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(SyncEnum a, SyncEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-
-        /// <summary>
-        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
         /// </summary>
         [SDKProperty("object_id", IsQuery = true)]
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// 弹性公网ID/弹性公网IP
+        /// 查询防护EIP列表关键字，可选用弹性公网ID和弹性公网IP
         /// </summary>
         [SDKProperty("key_word", IsQuery = true)]
         [JsonProperty("key_word", NullValueHandling = NullValueHandling.Ignore)]
@@ -271,13 +35,15 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public StatusEnum Status { get; set; }
+        public string Status { get; set; }
+
         /// <summary>
         /// 是否同步租户EIP数据 0-不同步 1-同步
         /// </summary>
         [SDKProperty("sync", IsQuery = true)]
         [JsonProperty("sync", NullValueHandling = NullValueHandling.Ignore)]
-        public SyncEnum Sync { get; set; }
+        public int? Sync { get; set; }
+
         /// <summary>
         /// 每页显示个数，范围为1-1024
         /// </summary>
@@ -293,49 +59,49 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+        /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 设备键
+        /// 设备关键字，是eip绑定的资产的名称或id
         /// </summary>
         [SDKProperty("device_key", IsQuery = true)]
         [JsonProperty("device_key", NullValueHandling = NullValueHandling.Ignore)]
         public string DeviceKey { get; set; }
 
         /// <summary>
-        /// 地址类型0 ipv4,1 ipv6
+        /// 地址类型0 ipv4，1 ipv6
         /// </summary>
         [SDKProperty("address_type", IsQuery = true)]
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? AddressType { get; set; }
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+        /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
         /// </summary>
         [SDKProperty("fw_instance_id", IsQuery = true)]
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
 
         /// <summary>
-        /// 所绑定防火墙id防火墙名称
+        /// 防火墙关键字，可使用防火墙id或名称查询，可通过[防火墙ID获取方式](cfw_02_0028.xml)
         /// </summary>
         [SDKProperty("fw_key_word", IsQuery = true)]
         [JsonProperty("fw_key_word", NullValueHandling = NullValueHandling.Ignore)]
         public string FwKeyWord { get; set; }
 
         /// <summary>
-        /// 弹性公网ip的企业项目id
+        /// 弹性公网ip的企业项目id，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，租户未开启企业项目时为0
         /// </summary>
         [SDKProperty("eps_id", IsQuery = true)]
         [JsonProperty("eps_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EpsId { get; set; }
 
         /// <summary>
-        /// 标签列表信息
+        /// 标签列表信息可通过查询EIP服务界面列表标签页签获得
         /// </summary>
         [SDKProperty("tags", IsQuery = true)]
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -383,8 +149,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (input == null) return false;
             if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
             if (this.KeyWord != input.KeyWord || (this.KeyWord != null && !this.KeyWord.Equals(input.KeyWord))) return false;
-            if (this.Status != input.Status) return false;
-            if (this.Sync != input.Sync) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Sync != input.Sync || (this.Sync != null && !this.Sync.Equals(input.Sync))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
@@ -408,8 +174,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 var hashCode = 41;
                 if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
                 if (this.KeyWord != null) hashCode = hashCode * 59 + this.KeyWord.GetHashCode();
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
-                hashCode = hashCode * 59 + this.Sync.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Sync != null) hashCode = hashCode * 59 + this.Sync.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();

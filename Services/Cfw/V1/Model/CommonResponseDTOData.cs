@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// object
+    /// 修改ips防护模式返回值数据
     /// </summary>
     public class CommonResponseDTOData 
     {

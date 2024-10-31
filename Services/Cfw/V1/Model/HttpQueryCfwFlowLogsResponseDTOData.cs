@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// 查询流日志返回值
+    /// 查询流日志返回值数据
     /// </summary>
     public class HttpQueryCfwFlowLogsResponseDTOData 
     {
 
         /// <summary>
-        /// 返回数量
+        /// 查询流日志返回值记录总数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

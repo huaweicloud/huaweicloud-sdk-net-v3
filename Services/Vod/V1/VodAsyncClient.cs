@@ -1023,6 +1023,30 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 查询媒资降冷配置
+        ///
+        /// 查询媒资降冷配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowStorageModeTypeResponse> ShowStorageModeTypeAsync(ShowStorageModeTypeRequest showStorageModeTypeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode-type", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStorageModeTypeRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowStorageModeTypeResponse>(response);
+        }
+
+        public AsyncInvoker<ShowStorageModeTypeResponse> ShowStorageModeTypeAsyncInvoker(ShowStorageModeTypeRequest showStorageModeTypeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode-type", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStorageModeTypeRequest);
+            return new AsyncInvoker<ShowStorageModeTypeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStorageModeTypeResponse>);
+        }
+        
+        /// <summary>
         /// 查询取回数据信息
         ///
         /// ## 典型场景 ##
@@ -1247,6 +1271,32 @@ namespace HuaweiCloud.SDK.Vod.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStorageModeRequest);
             return new AsyncInvoker<UpdateStorageModeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStorageModeResponse>);
+        }
+        
+        /// <summary>
+        /// 修改媒资降冷粒度
+        ///
+        /// 修改媒资降冷粒度。
+        /// 
+        /// 默认为整个媒资粒度，支持转为仅原文件。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateStorageModeTypeResponse> UpdateStorageModeTypeAsync(UpdateStorageModeTypeRequest updateStorageModeTypeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode-type", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStorageModeTypeRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateStorageModeTypeResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateStorageModeTypeResponse> UpdateStorageModeTypeAsyncInvoker(UpdateStorageModeTypeRequest updateStorageModeTypeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode-type", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStorageModeTypeRequest);
+            return new AsyncInvoker<UpdateStorageModeTypeResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateStorageModeTypeResponse>);
         }
         
         /// <summary>

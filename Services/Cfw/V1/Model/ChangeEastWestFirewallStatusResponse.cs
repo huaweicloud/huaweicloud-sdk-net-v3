@@ -20,13 +20,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public SuccessRspData Data { get; set; }
-
-        /// <summary>
-        /// trace id
-        /// </summary>
-        [JsonProperty("trace_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TraceId { get; set; }
+        public ChangeEastWestFirewallStatusResponseData Data { get; set; }
 
 
 
@@ -38,7 +32,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ChangeEastWestFirewallStatusResponse {\n");
             sb.Append("  data: ").Append(Data).Append("\n");
-            sb.Append("  traceId: ").Append(TraceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,7 +51,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             if (input == null) return false;
             if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
-            if (this.TraceId != input.TraceId || (this.TraceId != null && !this.TraceId.Equals(input.TraceId))) return false;
 
             return true;
         }
@@ -72,7 +64,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             {
                 var hashCode = 41;
                 if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
-                if (this.TraceId != null) hashCode = hashCode * 59 + this.TraceId.GetHashCode();
                 return hashCode;
             }
         }

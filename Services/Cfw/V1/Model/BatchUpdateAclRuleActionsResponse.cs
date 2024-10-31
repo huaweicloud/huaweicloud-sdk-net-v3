@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 批量更新acl规则id
+        /// 批量更新acl规则id，为请求体中传入的规则id
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Data { get; set; }

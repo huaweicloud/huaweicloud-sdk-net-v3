@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 源类型0手工输入,1关联IP地址组,2域名，3地理位置，4域名组，5多对象，6域名组-DNS解析，7域名组-URL过滤。
+        /// 地址类型0手工输入，1关联IP地址组，2域名，3地理位置，4域名组，5多对象，6域名组-DNS解析，7域名组-应用型。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public int? Type { get; set; }
 
         /// <summary>
-        /// 源类型0 ipv4,1 ipv6
+        /// 地址类型0 ipv4，1 ipv6，当type为0手动输入类型时不能为空
         /// </summary>
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? AddressType { get; set; }
 
         /// <summary>
-        /// 源IP，手动类型不能为空，自动及domain类型为空
+        /// IP地址信息
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }
 
         /// <summary>
-        /// 关联IP地址组ID，自动类型不能为空，手动类型合domain类型为空
+        /// 关联IP地址组ID
         /// </summary>
         [JsonProperty("address_set_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AddressSetId { get; set; }
@@ -47,19 +47,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string AddressSetName { get; set; }
 
         /// <summary>
-        /// 域名地址名称，域名类型时不能为空，手动类型及自动类型时为空
+        /// 域名地址名称
         /// </summary>
         [JsonProperty("domain_address_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainAddressName { get; set; }
 
         /// <summary>
-        /// 规则region列表json值
+        /// 规则地域列表json值
         /// </summary>
         [JsonProperty("region_list_json", NullValueHandling = NullValueHandling.Ignore)]
         public string RegionListJson { get; set; }
 
         /// <summary>
-        /// 规则region列表
+        /// 规则地域列表
         /// </summary>
         [JsonProperty("region_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpRegionDto> RegionList { get; set; }
@@ -83,7 +83,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public List<string> IpAddress { get; set; }
 
         /// <summary>
-        /// 地址组列表
+        /// 地址组id列表
         /// </summary>
         [JsonProperty("address_group", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AddressGroup { get; set; }

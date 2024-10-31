@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 标签id
+        /// 规则id
         /// </summary>
         [JsonProperty("tag_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TagId { get; set; }
 
         /// <summary>
-        /// 标签键
+        /// 规则标签键
         /// </summary>
         [JsonProperty("tag_key", NullValueHandling = NullValueHandling.Ignore)]
         public string TagKey { get; set; }
 
         /// <summary>
-        /// 标签值
+        /// 规则标签值
         /// </summary>
         [JsonProperty("tag_value", NullValueHandling = NullValueHandling.Ignore)]
         public string TagValue { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// ER实例id
+        /// ER ID，创建ER时产生的ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -29,31 +29,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// ER状态
-        /// </summary>
-        [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public string State { get; set; }
-
-        /// <summary>
-        /// 企业租户id
-        /// </summary>
-        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string EnterpriseProjectId { get; set; }
-
-        /// <summary>
-        /// 租户id
+        /// 项目ID, 可以从调API处获取，也可以从控制台获取。[项目ID获取方式](cfw_02_0015.xml)
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 是否开启ipv6
-        /// </summary>
-        [JsonProperty("enable_ipv6", NullValueHandling = NullValueHandling.Ignore)]
-        public string EnableIpv6 { get; set; }
-
-        /// <summary>
-        /// 连接id
+        /// 企业路由器连接id，该连接用于连接防火墙和企业路由器，此字段可在通过id在ER界面查询指定er后在管理连接界面查询连接了解连接具体情况。
         /// </summary>
         [JsonProperty("attachment_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AttachmentId { get; set; }
@@ -69,10 +51,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("class ErInstance {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  state: ").Append(State).Append("\n");
-            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
-            sb.Append("  enableIpv6: ").Append(EnableIpv6).Append("\n");
             sb.Append("  attachmentId: ").Append(AttachmentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -94,10 +73,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
-            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
-            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
-            if (this.EnableIpv6 != input.EnableIpv6 || (this.EnableIpv6 != null && !this.EnableIpv6.Equals(input.EnableIpv6))) return false;
             if (this.AttachmentId != input.AttachmentId || (this.AttachmentId != null && !this.AttachmentId.Equals(input.AttachmentId))) return false;
 
             return true;
@@ -113,10 +89,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.EnableIpv6 != null) hashCode = hashCode * 59 + this.EnableIpv6.GetHashCode();
                 if (this.AttachmentId != null) hashCode = hashCode * 59 + this.AttachmentId.GetHashCode();
                 return hashCode;
             }

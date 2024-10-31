@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// 查询黑白名单返回值
+    /// 查询黑白名单返回值数据
     /// </summary>
     public class BlackWhiteListResponseData 
     {
@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 查询的总条数
+        /// 查询黑白名单总条数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 黑白名单记录
+        /// 黑白名单列表
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public List<BlackWhiteListResponseDataRecords> Records { get; set; }

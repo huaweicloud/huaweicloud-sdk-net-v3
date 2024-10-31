@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
+        /// 规则类型，0：互联网规则，1：vpc规则，2：nat规则
         /// </summary>
-        /// <value>规则type，0：互联网规则，1：vpc规则，2：nat规则</value>
+        /// <value>规则类型，0：互联网规则，1：vpc规则，2：nat规则</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -259,7 +259,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string RuleId { get; set; }
 
         /// <summary>
-        /// 地址类型0 ipv4,1 ipv6
+        /// 地址类型0 ipv4，1 ipv6
         /// </summary>
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? AddressType { get; set; }
@@ -276,13 +276,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public DirectionEnum Direction { get; set; }
         /// <summary>
-        /// 动作0：permit,1：deny
+        /// 动作0：permit，1：deny
         /// </summary>
         [JsonProperty("action_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? ActionType { get; set; }
 
         /// <summary>
-        /// 规则下发状态 0：禁用,1：启用
+        /// 规则下发状态 0：禁用，1：启用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
@@ -306,13 +306,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? LongConnectEnable { get; set; }
 
         /// <summary>
-        /// 长连接时长小时
+        /// 长连接时长对应小时
         /// </summary>
         [JsonProperty("long_connect_time_hour", NullValueHandling = NullValueHandling.Ignore)]
         public long? LongConnectTimeHour { get; set; }
 
         /// <summary>
-        /// 长连接时长分钟
+        /// 长连接时长对应分钟
         /// </summary>
         [JsonProperty("long_connect_time_minute", NullValueHandling = NullValueHandling.Ignore)]
         public long? LongConnectTimeMinute { get; set; }
@@ -342,18 +342,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public RuleServiceDtoForResponse Service { get; set; }
 
         /// <summary>
-        /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
+        /// 规则类型，0：互联网规则，1：vpc规则，2：nat规则
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 创建时间
+        /// 规则创建时间，例如：\&quot;2024-08-12 08:40:00\&quot;
         /// </summary>
         [JsonProperty("created_date", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedDate { get; set; }
 
         /// <summary>
-        /// 最后开启时间
+        /// 规则最后开启时间，例如：\&quot;2024-08-12 08:40:00\&quot;
         /// </summary>
         [JsonProperty("last_open_time", NullValueHandling = NullValueHandling.Ignore)]
         public string LastOpenTime { get; set; }

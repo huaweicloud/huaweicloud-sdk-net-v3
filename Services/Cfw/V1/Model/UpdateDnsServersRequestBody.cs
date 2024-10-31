@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// DNS服务器
+        /// DNS服务器列表
         /// </summary>
         [JsonProperty("dns_server", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpdateDnsServersRequestBodyDnsServer> DnsServer { get; set; }
 
         /// <summary>
-        /// 健康检查域名
+        /// 健康检查域名，可通过[查询dns服务器列表接口](ListDnsServers.xml)查询获得，通过返回值中的data.health_check_domain_name（.表示各对象之间层级的区分）获得。
         /// </summary>
         [JsonProperty("health_check_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string HealthCheckDomainName { get; set; }

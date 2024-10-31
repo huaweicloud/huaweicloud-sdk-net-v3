@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class HttpQueryCfwFlowLogsResponseDTODataRecords 
     {
         /// <summary>
-        /// 方向，有内到外和外到内两种
+        /// 方向，有内到外（in2out）和外到内（out2in）两种
         /// </summary>
-        /// <value>方向，有内到外和外到内两种</value>
+        /// <value>方向，有内到外（in2out）和外到内（out2in）两种</value>
         [JsonConverter(typeof(EnumClassConverter<DirectionEnum>))]
         public class DirectionEnum
         {
@@ -138,12 +138,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public double? Bytes { get; set; }
 
         /// <summary>
-        /// 方向，有内到外和外到内两种
+        /// 方向，有内到外（in2out）和外到内（out2in）两种
         /// </summary>
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public DirectionEnum Direction { get; set; }
         /// <summary>
-        /// 包
+        /// 字节包数
         /// </summary>
         [JsonProperty("packets", NullValueHandling = NullValueHandling.Ignore)]
         public int? Packets { get; set; }
@@ -185,7 +185,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string DstIp { get; set; }
 
         /// <summary>
-        /// 应用协议
+        /// 规则应用类型包括：“HTTP”，\&quot;HTTPS\&quot;，\&quot;TLS1\&quot;，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
         /// </summary>
         [JsonProperty("app", NullValueHandling = NullValueHandling.Ignore)]
         public string App { get; set; }

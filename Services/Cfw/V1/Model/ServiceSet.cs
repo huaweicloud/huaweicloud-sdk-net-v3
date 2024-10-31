@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string SetId { get; set; }
 
         /// <summary>
-        /// 名称
+        /// 服务组名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 描述
+        /// 服务组描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -41,19 +41,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? ServiceSetType { get; set; }
 
         /// <summary>
-        /// 引用次数
+        /// 服务组被规则引用次数
         /// </summary>
         [JsonProperty("ref_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? RefCount { get; set; }
 
         /// <summary>
-        /// 项目id
+        /// 项目ID
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 协议类型列表
+        /// 协议列表，协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1,type为0手动类型时不能为空。
         /// </summary>
         [JsonProperty("protocols", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> Protocols { get; set; }

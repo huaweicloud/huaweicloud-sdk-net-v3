@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 弹性公网IP数据ID
+        /// 弹性公网IP ID，可通过调用弹性IP列表查询接口获得，通过返回值中的data.records.id（.表示各对象之间层级的区分）获得。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 弹性公网IP地址
+        /// 弹性公网IP IPv4地址，可通过调用弹性IP列表查询接口获得，通过返回值中的data.records.public_ip（.表示各对象之间层级的区分）获得。
         /// </summary>
         [JsonProperty("public_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIp { get; set; }
 
         /// <summary>
-        /// 弹性公网IP地址IPV6
+        /// 弹性公网IP IPv6地址，可通过调用弹性IP列表查询接口获得，通过返回值中的data.records.public_ipv6（.表示各对象之间层级的区分）获得。
         /// </summary>
         [JsonProperty("public_ipv6", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIpv6 { get; set; }

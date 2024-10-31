@@ -17,28 +17,22 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// id
+        /// 创建引流VPC产生的随机UUID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 名称
+        /// 引流VPC名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// vpc cidr
+        /// 功能说明：虚拟私有云下可用子网的范围 取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24 不指定cidr时，默认值为空 约束：必须是cidr格式，例如:192.168.0.0/16
         /// </summary>
         [JsonProperty("cidr", NullValueHandling = NullValueHandling.Ignore)]
         public string Cidr { get; set; }
-
-        /// <summary>
-        /// 状态
-        /// </summary>
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
 
 
 
@@ -52,7 +46,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  cidr: ").Append(Cidr).Append("\n");
-            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,7 +67,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
-            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
             return true;
         }
@@ -90,7 +82,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

@@ -23,22 +23,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string DomainAddressId { get; set; }
 
         /// <summary>
-        /// 域名
+        /// 域名，如www.test.com
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 描述
+        /// 域名描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
-
-        /// <summary>
-        /// 域名服务器列表
-        /// </summary>
-        [JsonProperty("dns_ips", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> DnsIps { get; set; }
 
 
 
@@ -52,7 +46,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  domainAddressId: ").Append(DomainAddressId).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  dnsIps: ").Append(DnsIps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,7 +67,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.DomainAddressId != input.DomainAddressId || (this.DomainAddressId != null && !this.DomainAddressId.Equals(input.DomainAddressId))) return false;
             if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
-            if (this.DnsIps != input.DnsIps || (this.DnsIps != null && input.DnsIps != null && !this.DnsIps.SequenceEqual(input.DnsIps))) return false;
 
             return true;
         }
@@ -90,7 +82,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.DomainAddressId != null) hashCode = hashCode * 59 + this.DomainAddressId.GetHashCode();
                 if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.DnsIps != null) hashCode = hashCode * 59 + this.DnsIps.GetHashCode();
                 return hashCode;
             }
         }

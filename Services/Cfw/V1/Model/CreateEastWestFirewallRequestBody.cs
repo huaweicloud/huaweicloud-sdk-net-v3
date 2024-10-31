@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 出方向关联ER实例id
+        /// 出方向关联ER ID,可通过ER服务查询企业路由器列表接口获得，返回值中instances.id即为erid（.表示各对象之间层级的区分）
         /// </summary>
         [JsonProperty("er_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ErId { get; set; }
 
         /// <summary>
-        /// inspection cidr
+        /// 创建引流VPC时使用的网段
         /// </summary>
         [JsonProperty("inspection_cidr", NullValueHandling = NullValueHandling.Ignore)]
         public string InspectionCidr { get; set; }

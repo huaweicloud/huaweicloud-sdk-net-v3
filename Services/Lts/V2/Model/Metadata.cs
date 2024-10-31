@@ -64,6 +64,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("lts_alarm_type", NullValueHandling = NullValueHandling.Ignore)]
         public string LtsAlarmType { get; set; }
 
+        /// <summary>
+        /// 日志组原始名称
+        /// </summary>
+        [JsonProperty("log_group_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupName { get; set; }
+
+        /// <summary>
+        /// 日志流原始名称
+        /// </summary>
+        [JsonProperty("log_stream_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogStreamName { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +93,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  resourceProvider: ").Append(ResourceProvider).Append("\n");
             sb.Append("  ltsAlarmType: ").Append(LtsAlarmType).Append("\n");
+            sb.Append("  logGroupName: ").Append(LogGroupName).Append("\n");
+            sb.Append("  logStreamName: ").Append(LogStreamName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +121,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
             if (this.ResourceProvider != input.ResourceProvider || (this.ResourceProvider != null && !this.ResourceProvider.Equals(input.ResourceProvider))) return false;
             if (this.LtsAlarmType != input.LtsAlarmType || (this.LtsAlarmType != null && !this.LtsAlarmType.Equals(input.LtsAlarmType))) return false;
+            if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
+            if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
 
             return true;
         }
@@ -127,6 +143,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.ResourceProvider != null) hashCode = hashCode * 59 + this.ResourceProvider.GetHashCode();
                 if (this.LtsAlarmType != null) hashCode = hashCode * 59 + this.LtsAlarmType.GetHashCode();
+                if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
+                if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
                 return hashCode;
             }
         }

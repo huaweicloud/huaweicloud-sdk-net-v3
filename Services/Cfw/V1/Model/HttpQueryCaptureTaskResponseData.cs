@@ -23,22 +23,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
-        /// </summary>
-        [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ObjectId { get; set; }
-
-        /// <summary>
         /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
-
-        /// <summary>
-        /// 租户project_id
-        /// </summary>
-        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProjectId { get; set; }
 
         /// <summary>
         /// 抓包任务总数
@@ -62,9 +50,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             var sb = new StringBuilder();
             sb.Append("class HttpQueryCaptureTaskResponseData {\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  objectId: ").Append(ObjectId).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
-            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("  records: ").Append(Records).Append("\n");
             sb.Append("}\n");
@@ -86,9 +72,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             if (input == null) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
-            if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
-            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
             if (this.Records != input.Records || (this.Records != null && input.Records != null && !this.Records.SequenceEqual(input.Records))) return false;
 
@@ -104,9 +88,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             {
                 var hashCode = 41;
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 if (this.Records != null) hashCode = hashCode * 59 + this.Records.GetHashCode();
                 return hashCode;

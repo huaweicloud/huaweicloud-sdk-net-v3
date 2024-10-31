@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 总数
+        /// 地址组成员总数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string SetId { get; set; }
 
         /// <summary>
-        /// 成员信息
+        /// 地址组成员记录列表
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public List<AddressItemListResponseDTODataRecords> Records { get; set; }

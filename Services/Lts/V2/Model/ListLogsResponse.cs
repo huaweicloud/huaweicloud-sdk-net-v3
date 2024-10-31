@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// 分析日志返回响应体
         /// </summary>
         [JsonProperty("analysisLogs", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Dictionary<string, string>> AnalysisLogs { get; set; }
+        public List<Object> AnalysisLogs { get; set; }
 
 
 

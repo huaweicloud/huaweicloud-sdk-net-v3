@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+        /// 防火墙实例id，创建云防火墙后用于标记防火墙由系统自动生成的id。
         /// </summary>
         [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FwInstanceId { get; set; }
 
         /// <summary>
-        /// 资源id
+        /// 资源id，与防火墙实例id fw_instance_id相同
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 防火墙创建时间戳
+        /// 创建防火墙时的时间戳
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 集群类型
+        /// 集群类型，包含主备（0）和集群（1）两种方式，主备模式包含四个节点，2个主节点构成集群，剩余两个节点为主节点的备节点，集群模式仅拉起两个节点作为集群。
         /// </summary>
         [JsonProperty("ha_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? HaType { get; set; }
@@ -59,13 +59,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? ChargeMode { get; set; }
 
         /// <summary>
-        /// 服务类型
+        /// 防火墙防护类型，目前仅支持0，互联网防护。
         /// </summary>
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? ServiceType { get; set; }
 
         /// <summary>
-        /// 引擎类型
+        /// 引擎类型，0：自研引擎 1：山石引擎 3：天融信引擎
         /// </summary>
         [JsonProperty("engine_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? EngineType { get; set; }
@@ -77,13 +77,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public Flavor Flavor { get; set; }
 
         /// <summary>
-        /// 防火墙状态列表，包括-1：等待支付，0：创建中，1，删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
+        /// 防火墙状态列表，包括-1：等待支付，0：创建中，1：删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
 
         /// <summary>
-        /// 标签列表
+        /// 标签列表，标签键值map转化的json字符串，如\&quot;{\\\&quot;key\\\&quot;:\\\&quot;value\\\&quot;}\&quot;
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }

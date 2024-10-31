@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public CaptureRuleAddressDto Destination { get; set; }
 
         /// <summary>
-        /// 抓包时长
+        /// 抓包时长，以分钟为单位
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
         public int? Duration { get; set; }
 
         /// <summary>
-        /// 最大抓包数
+        /// 最大抓包数，以个为单位
         /// </summary>
         [JsonProperty("max_packets", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxPackets { get; set; }

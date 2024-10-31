@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cfw.V1.Model
 {
     /// <summary>
-    /// data
+    /// 查询规则列表返回值数据
     /// </summary>
     public class RuleAclListResponseDTOData 
     {
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 查询总条数
+        /// 查询规则列表总条数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// records
+        /// 查询规则列表记录
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public List<RuleAclListResponseDTODataRecords> Records { get; set; }

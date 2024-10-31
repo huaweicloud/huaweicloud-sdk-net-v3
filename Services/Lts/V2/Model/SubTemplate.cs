@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("content", NullValueHandling = NullValueHandling.Ignore)]
         public string Content { get; set; }
 
+        /// <summary>
+        /// 邮件主题,只有sub_type&#x3D;email时生效
+        /// </summary>
+        [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
+        public string Topic { get; set; }
+
 
 
         /// <summary>
@@ -171,6 +177,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("class SubTemplate {\n");
             sb.Append("  subType: ").Append(SubType).Append("\n");
             sb.Append("  content: ").Append(Content).Append("\n");
+            sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -191,6 +198,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (input == null) return false;
             if (this.SubType != input.SubType) return false;
             if (this.Content != input.Content || (this.Content != null && !this.Content.Equals(input.Content))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
 
             return true;
         }
@@ -205,6 +213,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.SubType.GetHashCode();
                 if (this.Content != null) hashCode = hashCode * 59 + this.Content.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
                 return hashCode;
             }
         }

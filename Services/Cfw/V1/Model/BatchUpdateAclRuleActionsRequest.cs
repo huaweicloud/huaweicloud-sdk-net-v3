@@ -17,11 +17,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+        /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+        /// </summary>
+        [SDKProperty("fw_instance_id", IsQuery = true)]
+        [JsonProperty("fw_instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string FwInstanceId { get; set; }
 
         /// <summary>
         /// 
@@ -40,6 +47,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             var sb = new StringBuilder();
             sb.Append("class BatchUpdateAclRuleActionsRequest {\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -60,6 +68,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             if (input == null) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.FwInstanceId != input.FwInstanceId || (this.FwInstanceId != null && !this.FwInstanceId.Equals(input.FwInstanceId))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
@@ -74,6 +83,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             {
                 var hashCode = 41;
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.FwInstanceId != null) hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }

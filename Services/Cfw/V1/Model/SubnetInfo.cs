@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 子网id
+        /// 子网所在的可用区标识，从终端节点获取，参考[终端节点](cfw_02_0003.xml)
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// vpc cidr
+        /// 功能说明：虚拟私有云下可用子网的范围 取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24 不指定cidr时，默认值为空 约束：必须是cidr格式，例如:192.168.0.0/16
         /// </summary>
         [JsonProperty("cidr", NullValueHandling = NullValueHandling.Ignore)]
         public string Cidr { get; set; }
@@ -41,22 +41,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 子网网关ip
+        /// 子网的网关，取值范围为子网网段cidr中的ip地址
         /// </summary>
         [JsonProperty("gateway_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string GatewayIp { get; set; }
 
         /// <summary>
-        /// vpc id
+        /// 创建vpc产生的uuid
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
-
-        /// <summary>
-        /// 子网的状态
-        /// </summary>
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
 
         /// <summary>
         /// 是否支持ipv6，boolean值为true表示是，false表示否
@@ -79,7 +73,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  gatewayIp: ").Append(GatewayIp).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
-            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -105,7 +98,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.GatewayIp != input.GatewayIp || (this.GatewayIp != null && !this.GatewayIp.Equals(input.GatewayIp))) return false;
             if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
-            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Ipv6Enable != input.Ipv6Enable || (this.Ipv6Enable != null && !this.Ipv6Enable.Equals(input.Ipv6Enable))) return false;
 
             return true;
@@ -125,7 +117,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.GatewayIp != null) hashCode = hashCode * 59 + this.GatewayIp.GetHashCode();
                 if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Ipv6Enable != null) hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 return hashCode;
             }

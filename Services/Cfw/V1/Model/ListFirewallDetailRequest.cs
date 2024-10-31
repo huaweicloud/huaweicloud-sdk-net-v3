@@ -15,121 +15,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     /// </summary>
     public class ListFirewallDetailRequest 
     {
-        /// <summary>
-        /// 服务类型 0 南北向防火墙 1 东西向防火墙
-        /// </summary>
-        /// <value>服务类型 0 南北向防火墙 1 东西向防火墙</value>
-        [JsonConverter(typeof(EnumClassConverter<ServiceTypeEnum>))]
-        public class ServiceTypeEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_0 for value: 0
-            /// </summary>
-            public static readonly ServiceTypeEnum NUMBER_0 = new ServiceTypeEnum(0);
-
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly ServiceTypeEnum NUMBER_1 = new ServiceTypeEnum(1);
-
-            private static readonly Dictionary<int?, ServiceTypeEnum> StaticFields =
-            new Dictionary<int?, ServiceTypeEnum>()
-            {
-                { 0, NUMBER_0 },
-                { 1, NUMBER_1 },
-            };
-
-            private int? _value;
-
-            public ServiceTypeEnum()
-            {
-
-            }
-
-            public ServiceTypeEnum(int? value)
-            {
-                _value = value;
-            }
-
-            public static ServiceTypeEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ServiceTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ServiceTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ServiceTypeEnum a, ServiceTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ServiceTypeEnum a, ServiceTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
@@ -146,13 +31,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 服务类型 0 南北向防火墙 1 东西向防火墙
+        /// 服务类型，目前仅支持0互联网防护
         /// </summary>
         [SDKProperty("service_type", IsQuery = true)]
         [JsonProperty("service_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ServiceTypeEnum ServiceType { get; set; }
+        public int? ServiceType { get; set; }
+
         /// <summary>
-        /// 企业项目id，用户支持企业项目后，由企业项目生成的id。
+        /// 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -207,7 +93,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (input == null) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
-            if (this.ServiceType != input.ServiceType) return false;
+            if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.FwInstanceId != input.FwInstanceId || (this.FwInstanceId != null && !this.FwInstanceId.Equals(input.FwInstanceId))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
@@ -225,7 +111,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 var hashCode = 41;
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.FwInstanceId != null) hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();

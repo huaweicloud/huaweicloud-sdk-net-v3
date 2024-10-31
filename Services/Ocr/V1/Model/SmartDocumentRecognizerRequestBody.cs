@@ -29,10 +29,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  未传入该参数时默认为false，即默认图片中的字段为多朝向 
+        /// 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  图片文字方向一致时，打开该开关可提升识别精度；图片文字方向不一致时，关闭该开关可支持多朝向文字识别。未传入该参数时默认为true，既默认图片中的字段为单朝向。 
         /// </summary>
         [JsonProperty("single_orientation_mode", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SingleOrientationMode { get; set; }
+
+        /// <summary>
+        /// 语种选择，未传入该参数时默认为中英文识别模式。参考[华为云通用文字支持语种](https://support.huaweicloud.com/api-ocr/ocr_03_0042.html)。 
+        /// </summary>
+        [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
+        public string Language { get; set; }
 
         /// <summary>
         /// 是否进行键值对（key-value）提取。若是，结果会以“kv_result”这一关键字返回。 
@@ -65,7 +71,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? Form { get; set; }
 
         /// <summary>
-        /// 是否进行公式识别，识别结果为latex序列。若是，结果会以“formula_result”这一关键字返回。 当前仅支持文档（例如论文）中的公式识别，不支持公式切片图像。 
+        /// 是否进行公式识别，识别结果为latex序列。若是，结果会以“formula_result”这一关键字返回。  - 开启公式识别后会降低响应速度。 - 当前仅支持3行以内公式识别，不支持3行以上的多行公式。 
         /// </summary>
         [JsonProperty("formula", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Formula { get; set; }
@@ -94,6 +100,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  data: ").Append(Data).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
             sb.Append("  singleOrientationMode: ").Append(SingleOrientationMode).Append("\n");
+            sb.Append("  language: ").Append(Language).Append("\n");
             sb.Append("  kv: ").Append(Kv).Append("\n");
             sb.Append("  table: ").Append(Table).Append("\n");
             sb.Append("  layout: ").Append(Layout).Append("\n");
@@ -123,6 +130,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
             if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
             if (this.SingleOrientationMode != input.SingleOrientationMode || (this.SingleOrientationMode != null && !this.SingleOrientationMode.Equals(input.SingleOrientationMode))) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
             if (this.Kv != input.Kv || (this.Kv != null && !this.Kv.Equals(input.Kv))) return false;
             if (this.Table != input.Table || (this.Table != null && !this.Table.Equals(input.Table))) return false;
             if (this.Layout != input.Layout || (this.Layout != null && !this.Layout.Equals(input.Layout))) return false;
@@ -146,6 +154,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
                 if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
                 if (this.SingleOrientationMode != null) hashCode = hashCode * 59 + this.SingleOrientationMode.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.Kv != null) hashCode = hashCode * 59 + this.Kv.GetHashCode();
                 if (this.Table != null) hashCode = hashCode * 59 + this.Table.GetHashCode();
                 if (this.Layout != null) hashCode = hashCode * 59 + this.Layout.GetHashCode();

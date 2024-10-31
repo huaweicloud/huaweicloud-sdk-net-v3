@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public int? AddressType { get; set; }
 
         /// <summary>
-        /// 地址组
+        /// 地址信息
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }

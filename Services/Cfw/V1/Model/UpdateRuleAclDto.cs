@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     public class UpdateRuleAclDto 
     {
         /// <summary>
-        /// 地址类型，0 ipv4,1 ipv6
+        /// 地址类型，0表示ipv4，1表示ipv6
         /// </summary>
-        /// <value>地址类型，0 ipv4,1 ipv6</value>
+        /// <value>地址类型，0表示ipv4，1表示ipv6</value>
         [JsonConverter(typeof(EnumClassConverter<AddressTypeEnum>))]
         public class AddressTypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 方向：0表示外到内，1表示内到外【说明：规则type&#x3D;0：互联网规则 | 2：nat规则时方向值必填】
+        /// 方向：0表示外到内，1表示内到外,规则type&#x3D;0（互联网规则）或者type&#x3D; 2（nat规则）时方向值必填
         /// </summary>
-        /// <value>方向：0表示外到内，1表示内到外【说明：规则type&#x3D;0：互联网规则 | 2：nat规则时方向值必填】</value>
+        /// <value>方向：0表示外到内，1表示内到外,规则type&#x3D;0（互联网规则）或者type&#x3D; 2（nat规则）时方向值必填</value>
         [JsonConverter(typeof(EnumClassConverter<DirectionEnum>))]
         public class DirectionEnum
         {
@@ -246,9 +246,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 动作0：permit,1：deny
+        /// 规则动作，0表示允许通行（permit），1表示拒绝通行（deny）
         /// </summary>
-        /// <value>动作0：permit,1：deny</value>
+        /// <value>规则动作，0表示允许通行（permit），1表示拒绝通行（deny）</value>
         [JsonConverter(typeof(EnumClassConverter<ActionTypeEnum>))]
         public class ActionTypeEnum
         {
@@ -476,9 +476,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         }
 
         /// <summary>
-        /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
+        /// 规则类型，0：互联网规则，1：vpc规则，2：nat规则
         /// </summary>
-        /// <value>规则type，0：互联网规则，1：vpc规则，2：nat规则</value>
+        /// <value>规则类型，0：互联网规则，1：vpc规则，2：nat规则</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -598,7 +598,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
 
         /// <summary>
-        /// 地址类型，0 ipv4,1 ipv6
+        /// 地址类型，0表示ipv4，1表示ipv6
         /// </summary>
         [JsonProperty("address_type", NullValueHandling = NullValueHandling.Ignore)]
         public AddressTypeEnum AddressType { get; set; }
@@ -609,53 +609,41 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("sequence", NullValueHandling = NullValueHandling.Ignore)]
-        public OrderRuleAclDto Sequence { get; set; }
-
-        /// <summary>
-        /// 方向：0表示外到内，1表示内到外【说明：规则type&#x3D;0：互联网规则 | 2：nat规则时方向值必填】
+        /// 方向：0表示外到内，1表示内到外,规则type&#x3D;0（互联网规则）或者type&#x3D; 2（nat规则）时方向值必填
         /// </summary>
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public DirectionEnum Direction { get; set; }
         /// <summary>
-        /// 动作0：permit,1：deny
+        /// 规则动作，0表示允许通行（permit），1表示拒绝通行（deny）
         /// </summary>
         [JsonProperty("action_type", NullValueHandling = NullValueHandling.Ignore)]
         public ActionTypeEnum ActionType { get; set; }
         /// <summary>
-        /// 规则下发状态 0：禁用,1：启用
+        /// 规则启用状态，0表示禁用，1表示启用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
 
         /// <summary>
-        /// 应用列表
+        /// 规则应用列表，规则应用类型包括：“HTTP”，\&quot;HTTPS\&quot;，\&quot;TLS1\&quot;，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
         /// </summary>
         [JsonProperty("applications", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Applications { get; set; }
 
         /// <summary>
-        /// 应用列表转化为字符串
-        /// </summary>
-        [JsonProperty("applicationsJsonString", NullValueHandling = NullValueHandling.Ignore)]
-        public string ApplicationsJsonString { get; set; }
-
-        /// <summary>
-        /// 描述
+        /// 规则描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 长连接时长小时
+        /// 长连接时长对应小时
         /// </summary>
         [JsonProperty("long_connect_time_hour", NullValueHandling = NullValueHandling.Ignore)]
         public long? LongConnectTimeHour { get; set; }
 
         /// <summary>
-        /// 长连接时长分钟
+        /// 长连接时长对应分钟
         /// </summary>
         [JsonProperty("long_connect_time_minute", NullValueHandling = NullValueHandling.Ignore)]
         public long? LongConnectTimeMinute { get; set; }
@@ -696,7 +684,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public RuleServiceDto Service { get; set; }
 
         /// <summary>
-        /// 规则type，0：互联网规则，1：vpc规则，2：nat规则
+        /// 规则类型，0：互联网规则，1：vpc规则，2：nat规则
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
@@ -717,12 +705,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("class UpdateRuleAclDto {\n");
             sb.Append("  addressType: ").Append(AddressType).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  sequence: ").Append(Sequence).Append("\n");
             sb.Append("  direction: ").Append(Direction).Append("\n");
             sb.Append("  actionType: ").Append(ActionType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  applications: ").Append(Applications).Append("\n");
-            sb.Append("  applicationsJsonString: ").Append(ApplicationsJsonString).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  longConnectTimeHour: ").Append(LongConnectTimeHour).Append("\n");
             sb.Append("  longConnectTimeMinute: ").Append(LongConnectTimeMinute).Append("\n");
@@ -754,12 +740,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (input == null) return false;
             if (this.AddressType != input.AddressType) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
-            if (this.Sequence != input.Sequence || (this.Sequence != null && !this.Sequence.Equals(input.Sequence))) return false;
             if (this.Direction != input.Direction) return false;
             if (this.ActionType != input.ActionType) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Applications != input.Applications || (this.Applications != null && input.Applications != null && !this.Applications.SequenceEqual(input.Applications))) return false;
-            if (this.ApplicationsJsonString != input.ApplicationsJsonString || (this.ApplicationsJsonString != null && !this.ApplicationsJsonString.Equals(input.ApplicationsJsonString))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.LongConnectTimeHour != input.LongConnectTimeHour || (this.LongConnectTimeHour != null && !this.LongConnectTimeHour.Equals(input.LongConnectTimeHour))) return false;
             if (this.LongConnectTimeMinute != input.LongConnectTimeMinute || (this.LongConnectTimeMinute != null && !this.LongConnectTimeMinute.Equals(input.LongConnectTimeMinute))) return false;
@@ -785,12 +769,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.AddressType.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Sequence != null) hashCode = hashCode * 59 + this.Sequence.GetHashCode();
                 hashCode = hashCode * 59 + this.Direction.GetHashCode();
                 hashCode = hashCode * 59 + this.ActionType.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Applications != null) hashCode = hashCode * 59 + this.Applications.GetHashCode();
-                if (this.ApplicationsJsonString != null) hashCode = hashCode * 59 + this.ApplicationsJsonString.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.LongConnectTimeHour != null) hashCode = hashCode * 59 + this.LongConnectTimeHour.GetHashCode();
                 if (this.LongConnectTimeMinute != null) hashCode = hashCode * 59 + this.LongConnectTimeMinute.GetHashCode();

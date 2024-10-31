@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 防护资源类型：0 VPC，1 VGW
+        /// 防护资源类型：0 VPC，1 VGW，2 VPN，3 PEERING
         /// </summary>
         [JsonProperty("protected_resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProtectedResourceType { get; set; }
@@ -35,31 +35,31 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string ProtectedResourceId { get; set; }
 
         /// <summary>
-        /// 防护资源nat网关名称
+        /// 防护资源nat网关名称，专业版防火墙支持NAT规则，此字段表示防护连接的NAT的名称。
         /// </summary>
         [JsonProperty("protected_resource_nat_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectedResourceNatName { get; set; }
 
         /// <summary>
-        /// 防护资源nat网关id
+        /// 防护资源nat网关id，专业版防火墙支持NAT规则，此字段表示防护连接的NAT的id。
         /// </summary>
         [JsonProperty("protected_resource_nat_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectedResourceNatId { get; set; }
 
         /// <summary>
-        /// 防护资源租户id
+        /// 防火墙支持跨账户防护，此处为防护资源租户id
         /// </summary>
         [JsonProperty("protected_resource_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectedResourceProjectId { get; set; }
 
         /// <summary>
-        /// 防护资源模式
+        /// 防护资源模式，为er
         /// </summary>
         [JsonProperty("protected_resource_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectedResourceMode { get; set; }
 
         /// <summary>
-        /// 防护VPC的防护状态，0表示已关联，1表示未关联。
+        /// 防护资源的防护状态，0表示已关联，1表示未关联。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }

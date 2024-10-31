@@ -8,25 +8,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Cfw.V1.Model
+namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
-    /// 失败时返回的错误对象
+    /// 
     /// </summary>
-    public class ErrorRsp 
+    public class CreateLimitTaskNodeOption 
     {
 
         /// <summary>
-        /// 错误码
+        /// 节点id。
         /// </summary>
-        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorCode { get; set; }
+        [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string NodeId { get; set; }
 
         /// <summary>
-        /// 错误描述
+        /// 该节点执行的sql语句id。如果类型为SQL_ID，必须与limit_type_value值一致。
         /// </summary>
-        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorMsg { get; set; }
+        [JsonProperty("sql_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SqlId { get; set; }
 
 
 
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ErrorRsp {\n");
-            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
-            sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
+            sb.Append("class CreateLimitTaskNodeOption {\n");
+            sb.Append("  nodeId: ").Append(NodeId).Append("\n");
+            sb.Append("  sqlId: ").Append(SqlId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,17 +48,17 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ErrorRsp);
+            return this.Equals(input as CreateLimitTaskNodeOption);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ErrorRsp input)
+        public bool Equals(CreateLimitTaskNodeOption input)
         {
             if (input == null) return false;
-            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
-            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
+            if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
+            if (this.SqlId != input.SqlId || (this.SqlId != null && !this.SqlId.Equals(input.SqlId))) return false;
 
             return true;
         }
@@ -71,8 +71,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                if (this.SqlId != null) hashCode = hashCode * 59 + this.SqlId.GetHashCode();
                 return hashCode;
             }
         }

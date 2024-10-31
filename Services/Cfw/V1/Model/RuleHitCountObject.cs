@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string RuleId { get; set; }
 
         /// <summary>
-        /// 规则击中次数
+        /// 规则击中次数，当acl规则被触发时，对应规则id的击中次数会添加一次。
         /// </summary>
         [JsonProperty("rule_hit_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? RuleHitCount { get; set; }

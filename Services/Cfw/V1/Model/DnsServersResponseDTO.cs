@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// id
+        /// 域名服务器id
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int? Id { get; set; }
 
         /// <summary>
-        /// 是否应用，0否 1是
+        /// 域名服务器是否应用，0否 1是
         /// </summary>
         [JsonProperty("is_applied", NullValueHandling = NullValueHandling.Ignore)]
         public int? IsApplied { get; set; }
 
         /// <summary>
-        /// 是否是用户自定义的dns服务器，0否 1是
+        /// 域名服务器是否是用户自定义的dns服务器，0否 1是
         /// </summary>
         [JsonProperty("is_customized", NullValueHandling = NullValueHandling.Ignore)]
         public int? IsCustomized { get; set; }

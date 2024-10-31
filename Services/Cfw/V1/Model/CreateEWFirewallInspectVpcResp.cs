@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// vpc id
+        /// 引流VPC的ID
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 子网列表
+        /// 创建的引流VPC的子网ID列表
         /// </summary>
         [JsonProperty("subnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SubnetIds { get; set; }
