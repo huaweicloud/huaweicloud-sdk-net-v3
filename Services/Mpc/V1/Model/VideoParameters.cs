@@ -149,6 +149,18 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public int? Codec { get; set; }
 
         /// <summary>
+        /// 视频恒定码率控制因子。  取值范围为[0, 51] 
+        /// </summary>
+        [JsonProperty("crf", NullValueHandling = NullValueHandling.Ignore)]
+        public Object Crf { get; set; }
+
+        /// <summary>
+        /// 输出最大码率  单位：kbit/s  带crf时使用，参考原片的平均码率进行设置（一般为1.5倍） 
+        /// </summary>
+        [JsonProperty("max_bitrate", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MaxBitrate { get; set; }
+
+        /// <summary>
         /// 输出平均码率。  取值范围：0或[40,30000]之间的整数。  单位：kbit/s  若设置为0，则输出平均码率为自适应值。 
         /// </summary>
         [JsonProperty("bitrate", NullValueHandling = NullValueHandling.Ignore)]
@@ -219,6 +231,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("class VideoParameters {\n");
             sb.Append("  outputPolicy: ").Append(OutputPolicy).Append("\n");
             sb.Append("  codec: ").Append(Codec).Append("\n");
+            sb.Append("  crf: ").Append(Crf).Append("\n");
+            sb.Append("  maxBitrate: ").Append(MaxBitrate).Append("\n");
             sb.Append("  bitrate: ").Append(Bitrate).Append("\n");
             sb.Append("  profile: ").Append(Profile).Append("\n");
             sb.Append("  level: ").Append(Level).Append("\n");
@@ -249,6 +263,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (input == null) return false;
             if (this.OutputPolicy != input.OutputPolicy) return false;
             if (this.Codec != input.Codec || (this.Codec != null && !this.Codec.Equals(input.Codec))) return false;
+            if (this.Crf != input.Crf || (this.Crf != null && !this.Crf.Equals(input.Crf))) return false;
+            if (this.MaxBitrate != input.MaxBitrate || (this.MaxBitrate != null && !this.MaxBitrate.Equals(input.MaxBitrate))) return false;
             if (this.Bitrate != input.Bitrate || (this.Bitrate != null && !this.Bitrate.Equals(input.Bitrate))) return false;
             if (this.Profile != input.Profile || (this.Profile != null && !this.Profile.Equals(input.Profile))) return false;
             if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
@@ -273,6 +289,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.OutputPolicy.GetHashCode();
                 if (this.Codec != null) hashCode = hashCode * 59 + this.Codec.GetHashCode();
+                if (this.Crf != null) hashCode = hashCode * 59 + this.Crf.GetHashCode();
+                if (this.MaxBitrate != null) hashCode = hashCode * 59 + this.MaxBitrate.GetHashCode();
                 if (this.Bitrate != null) hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
                 if (this.Profile != null) hashCode = hashCode * 59 + this.Profile.GetHashCode();
                 if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();

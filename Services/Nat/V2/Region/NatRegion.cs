@@ -59,6 +59,8 @@ namespace HuaweiCloud.SDK.Nat.V2
             "https://nat.eu-west-101.myhuaweicloud.eu");
         public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
             "https://nat.my-kualalumpur-1.myhuaweicloud.com");
+        public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
+            "https://nat.ru-moscow-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("NAT");
 
@@ -90,6 +92,7 @@ namespace HuaweiCloud.SDK.Nat.V2
                 { "cn-south-4", CN_SOUTH_4 },
                 { "eu-west-101", EU_WEST_101 },
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
+                { "ru-moscow-1", RU_MOSCOW_1 },
         };
 
         public static Region ValueOf(string regionId)

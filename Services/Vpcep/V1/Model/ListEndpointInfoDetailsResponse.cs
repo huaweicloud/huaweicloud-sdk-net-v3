@@ -128,7 +128,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// 
         /// </summary>
         [JsonProperty("error", NullValueHandling = NullValueHandling.Ignore)]
-        public QueryError Error { get; set; }
+        public List<QueryError> Error { get; set; }
 
         /// <summary>
         /// 控制访问终端节点的白名单。 若未创建，则返回空列表。 创建连接Interface类型终端节点服务的终端节点时，显示此参数。
@@ -257,7 +257,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
-            if (this.Error != input.Error || (this.Error != null && !this.Error.Equals(input.Error))) return false;
+            if (this.Error != input.Error || (this.Error != null && input.Error != null && !this.Error.SequenceEqual(input.Error))) return false;
             if (this.Whitelist != input.Whitelist || (this.Whitelist != null && input.Whitelist != null && !this.Whitelist.SequenceEqual(input.Whitelist))) return false;
             if (this.EnableWhitelist != input.EnableWhitelist || (this.EnableWhitelist != null && !this.EnableWhitelist.Equals(input.EnableWhitelist))) return false;
             if (this.Routetables != input.Routetables || (this.Routetables != null && input.Routetables != null && !this.Routetables.SequenceEqual(input.Routetables))) return false;

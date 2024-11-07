@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("sync", NullValueHandling = NullValueHandling.Ignore)]
         public int? Sync { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("encryption", NullValueHandling = NullValueHandling.Ignore)]
+        public Encryption Encryption { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  output: ").Append(Output).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
             sb.Append("  sync: ").Append(Sync).Append("\n");
+            sb.Append("  encryption: ").Append(Encryption).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
             if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
             if (this.Sync != input.Sync || (this.Sync != null && !this.Sync.Equals(input.Sync))) return false;
+            if (this.Encryption != input.Encryption || (this.Encryption != null && !this.Encryption.Equals(input.Encryption))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
                 if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
                 if (this.Sync != null) hashCode = hashCode * 59 + this.Sync.GetHashCode();
+                if (this.Encryption != null) hashCode = hashCode * 59 + this.Encryption.GetHashCode();
                 return hashCode;
             }
         }

@@ -266,6 +266,32 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 统计设备下的历史命令总数
+        ///
+        /// 统计设备下的历史命令总数。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CountAsyncHistoryCommandsResponse> CountAsyncHistoryCommandsAsync(CountAsyncHistoryCommandsRequest countAsyncHistoryCommandsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", countAsyncHistoryCommandsRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands-history/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countAsyncHistoryCommandsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CountAsyncHistoryCommandsResponse>(response);
+        }
+
+        public AsyncInvoker<CountAsyncHistoryCommandsResponse> CountAsyncHistoryCommandsAsyncInvoker(CountAsyncHistoryCommandsRequest countAsyncHistoryCommandsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", countAsyncHistoryCommandsRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands-history/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countAsyncHistoryCommandsRequest);
+            return new AsyncInvoker<CountAsyncHistoryCommandsResponse>(this, "POST", request, JsonUtils.DeSerialize<CountAsyncHistoryCommandsResponse>);
+        }
+        
+        /// <summary>
         /// 下发异步设备命令
         ///
         /// 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发异步命令，以实现对设备的控制。平台负责将命令发送给设备，并将设备执行命令结果异步通知应用服务器。 命令执行结果支持灵活的数据流转，应用服务器通过调用物联网平台的创建规则触发条件（Resource:device.command.status，Event:update）、创建规则动作并激活规则后，当命令状态变更时，物联网平台会根据规则将结果发送到规则指定的服务器，如用户自定义的HTTP服务器，AMQP服务器，以及华为云的其他储存服务器等, 详情参考[[设备命令状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01212.html)](tag:hws)[[设备命令状态变更通知](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_01212.html)](tag:hws_hk)。
@@ -292,6 +318,58 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAsyncCommandRequest);
             return new AsyncInvoker<CreateAsyncCommandResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAsyncCommandResponse>);
+        }
+        
+        /// <summary>
+        /// 查询设备下队列中的命令
+        ///
+        /// 查询设备下队列中的命令（处理中的命令），包含PENDING、SENT、DELIVERED三种状态，注意：DELIVERED状态的命令经过系统设定的一段时间（具体以系统配置为准）仍然没有更新，就会从队列中移除，变为历史命令。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAsyncCommandsResponse> ListAsyncCommandsAsync(ListAsyncCommandsRequest listAsyncCommandsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", listAsyncCommandsRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncCommandsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAsyncCommandsResponse>(response);
+        }
+
+        public AsyncInvoker<ListAsyncCommandsResponse> ListAsyncCommandsAsyncInvoker(ListAsyncCommandsRequest listAsyncCommandsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", listAsyncCommandsRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncCommandsRequest);
+            return new AsyncInvoker<ListAsyncCommandsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAsyncCommandsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询设备下的历史命令
+        ///
+        /// 查询设备下发的历史异步命令，包含EXPIRED、SUCCESSFUL、FAILED、TIMEOUT、DELIVERED五种状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAsyncHistoryCommandsResponse> ListAsyncHistoryCommandsAsync(ListAsyncHistoryCommandsRequest listAsyncHistoryCommandsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", listAsyncHistoryCommandsRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands-history", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncHistoryCommandsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAsyncHistoryCommandsResponse>(response);
+        }
+
+        public AsyncInvoker<ListAsyncHistoryCommandsResponse> ListAsyncHistoryCommandsAsyncInvoker(ListAsyncHistoryCommandsRequest listAsyncHistoryCommandsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", listAsyncHistoryCommandsRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/async-commands-history", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncHistoryCommandsRequest);
+            return new AsyncInvoker<ListAsyncHistoryCommandsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAsyncHistoryCommandsResponse>);
         }
         
         /// <summary>
@@ -1997,6 +2075,80 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/routing-rule/flowcontrol-policy/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRoutingFlowControlPolicyRequest);
             return new AsyncInvoker<UpdateRoutingFlowControlPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRoutingFlowControlPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 创建编解码函数
+        ///
+        /// 提供创建编解码函数的功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddFunctionsResponse> AddFunctionsAsync(AddFunctionsRequest addFunctionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/product-functions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFunctionsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AddFunctionsResponse>(response);
+        }
+
+        public AsyncInvoker<AddFunctionsResponse> AddFunctionsAsyncInvoker(AddFunctionsRequest addFunctionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/product-functions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFunctionsRequest);
+            return new AsyncInvoker<AddFunctionsResponse>(this, "POST", request, JsonUtils.DeSerialize<AddFunctionsResponse>);
+        }
+        
+        /// <summary>
+        /// 删除编解码函数
+        ///
+        /// 提供删除编解码函数的功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteFunctionsResponse> DeleteFunctionsAsync(DeleteFunctionsRequest deleteFunctionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_id", deleteFunctionsRequest.FunctionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/product-functions/{function_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionsRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteFunctionsResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteFunctionsResponse> DeleteFunctionsAsyncInvoker(DeleteFunctionsRequest deleteFunctionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("function_id", deleteFunctionsRequest.FunctionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/product-functions/{function_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionsRequest);
+            return new AsyncInvoker<DeleteFunctionsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFunctionsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询编解码函数
+        ///
+        /// 提供查询编解码函数的功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest listFunctionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/product-functions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListFunctionsResponse>(response);
+        }
+
+        public AsyncInvoker<ListFunctionsResponse> ListFunctionsAsyncInvoker(ListFunctionsRequest listFunctionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/product-functions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionsRequest);
+            return new AsyncInvoker<ListFunctionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFunctionsResponse>);
         }
         
         /// <summary>

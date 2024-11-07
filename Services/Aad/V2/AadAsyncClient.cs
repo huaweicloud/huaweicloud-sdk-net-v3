@@ -40,6 +40,30 @@ namespace HuaweiCloud.SDK.Aad.V2
         }
         
         /// <summary>
+        /// 删除防护域名
+        ///
+        /// 删除防护域名
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest deleteDomainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteDomainResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDomainResponse> DeleteDomainAsyncInvoker(DeleteDomainRequest deleteDomainRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainRequest);
+            return new AsyncInvoker<DeleteDomainResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDomainResponse>);
+        }
+        
+        /// <summary>
         /// 查询DDoS攻击事件列表
         ///
         /// 查询DDoS攻击事件列表
@@ -455,30 +479,6 @@ namespace HuaweiCloud.SDK.Aad.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeInstanceSpecRequest);
             return new AsyncInvoker<UpgradeInstanceSpecResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpgradeInstanceSpecResponse>);
-        }
-        
-        /// <summary>
-        /// 删除防护域名
-        ///
-        /// 删除防护域名
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest deleteDomainRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainRequest);
-            var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerialize<DeleteDomainResponse>(response);
-        }
-
-        public AsyncInvoker<DeleteDomainResponse> DeleteDomainAsyncInvoker(DeleteDomainRequest deleteDomainRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainRequest);
-            return new AsyncInvoker<DeleteDomainResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDomainResponse>);
         }
         
     }

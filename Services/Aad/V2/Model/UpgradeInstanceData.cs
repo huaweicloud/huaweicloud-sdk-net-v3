@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         [JsonProperty("bind_domain_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? BindDomainNum { get; set; }
 
+        /// <summary>
+        /// 弹性业务带宽,0-关闭，3-月95
+        /// </summary>
+        [JsonProperty("elastic_service_bandwidth_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ElasticServiceBandwidthType { get; set; }
+
+        /// <summary>
+        /// 弹性业务带宽增加值
+        /// </summary>
+        [JsonProperty("elastic_service_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ElasticServiceBandwidth { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +72,8 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
             sb.Append("  serviceBandwidth: ").Append(ServiceBandwidth).Append("\n");
             sb.Append("  portNum: ").Append(PortNum).Append("\n");
             sb.Append("  bindDomainNum: ").Append(BindDomainNum).Append("\n");
+            sb.Append("  elasticServiceBandwidthType: ").Append(ElasticServiceBandwidthType).Append("\n");
+            sb.Append("  elasticServiceBandwidth: ").Append(ElasticServiceBandwidth).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +97,8 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
             if (this.ServiceBandwidth != input.ServiceBandwidth || (this.ServiceBandwidth != null && !this.ServiceBandwidth.Equals(input.ServiceBandwidth))) return false;
             if (this.PortNum != input.PortNum || (this.PortNum != null && !this.PortNum.Equals(input.PortNum))) return false;
             if (this.BindDomainNum != input.BindDomainNum || (this.BindDomainNum != null && !this.BindDomainNum.Equals(input.BindDomainNum))) return false;
+            if (this.ElasticServiceBandwidthType != input.ElasticServiceBandwidthType || (this.ElasticServiceBandwidthType != null && !this.ElasticServiceBandwidthType.Equals(input.ElasticServiceBandwidthType))) return false;
+            if (this.ElasticServiceBandwidth != input.ElasticServiceBandwidth || (this.ElasticServiceBandwidth != null && !this.ElasticServiceBandwidth.Equals(input.ElasticServiceBandwidth))) return false;
 
             return true;
         }
@@ -100,6 +116,8 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
                 if (this.ServiceBandwidth != null) hashCode = hashCode * 59 + this.ServiceBandwidth.GetHashCode();
                 if (this.PortNum != null) hashCode = hashCode * 59 + this.PortNum.GetHashCode();
                 if (this.BindDomainNum != null) hashCode = hashCode * 59 + this.BindDomainNum.GetHashCode();
+                if (this.ElasticServiceBandwidthType != null) hashCode = hashCode * 59 + this.ElasticServiceBandwidthType.GetHashCode();
+                if (this.ElasticServiceBandwidth != null) hashCode = hashCode * 59 + this.ElasticServiceBandwidth.GetHashCode();
                 return hashCode;
             }
         }

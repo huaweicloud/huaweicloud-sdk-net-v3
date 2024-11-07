@@ -67,6 +67,30 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 批量数据库补丁升级
+        ///
+        /// 批量升级数据库补丁版本。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchUpgradeDatabaseVersionResponse BatchUpgradeDatabaseVersion(BatchUpgradeDatabaseVersionRequest batchUpgradeDatabaseVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/db-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpgradeDatabaseVersionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchUpgradeDatabaseVersionResponse>(response);
+        }
+
+        public SyncInvoker<BatchUpgradeDatabaseVersionResponse> BatchUpgradeDatabaseVersionInvoker(BatchUpgradeDatabaseVersionRequest batchUpgradeDatabaseVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/db-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpgradeDatabaseVersionRequest);
+            return new SyncInvoker<BatchUpgradeDatabaseVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchUpgradeDatabaseVersionResponse>);
+        }
+        
+        /// <summary>
         /// 校验实例是否可以与指定实例建立/解除容灾关系
         ///
         /// 校验实例是否可以与指定实例建立/解除容灾关系。若接口返回成功，表示可以与指定实例建立/解除容灾关系。

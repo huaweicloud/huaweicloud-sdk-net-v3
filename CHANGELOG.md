@@ -1,3 +1,89 @@
+# 3.1.119 2024-11-07
+
+### HuaweiCloud SDK AAD
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpgradeInstanceSpec**
+    - changes of request param
+      - `+ upgrade_data.elastic_service_bandwidth_type`
+      - `+ upgrade_data.elastic_service_bandwidth`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `BatchUpgradeDatabaseVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IoTDA
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the following APIs:
+    - `ListAsyncHistoryCommands`
+    - `CountAsyncHistoryCommands`
+    - `ListFunctions`
+    - `AddFunctions`
+    - `DeleteFunctions`
+    - `ListAsyncCommands`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK MPC
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateExtractTask**
+    - changes of request param
+      - `+ encryption`
+  - **CreateTranscodingTask**
+    - changes of request param
+      - `+ av_parameters.video.crf`
+      - `+ av_parameters.video.max_bitrate`
+  - **ListTranscodingTask**
+    - changes of response param
+      - `+ task_array.av_parameters.video.crf`
+      - `+ task_array.av_parameters.video.max_bitrate`
+  - **CreateEditingJob**
+    - changes of request param
+      - `+ concats.av_parameters.video.crf`
+      - `+ concats.av_parameters.video.max_bitrate`
+  - **ListEditingJob**
+    - changes of response param
+      - `+ jobs.edit_task_req.concats.av_parameters.video.crf`
+      - `+ jobs.edit_task_req.concats.av_parameters.video.max_bitrate`
+
+### HuaweiCloud SDK VPCEP
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListEndpointInfoDetails**
+    - changes of response param
+      - `* error: object<QueryError> -> list<QueryError>`
+
 # 3.1.118 2024-10-31
 
 ### HuaweiCloud SDK CFW
