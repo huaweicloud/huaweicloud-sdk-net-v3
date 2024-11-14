@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// 关键词，仅当任务类型为SQL_TYPE时，返回该值且与请求参数相同。
         /// </summary>
         [JsonProperty("key_words", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> KeyWords { get; set; }
+        public string KeyWords { get; set; }
 
         /// <summary>
         /// 限流任务状态，当前支持：CREATING，UPDATEING，DELETING，WAIT_EXCUTE，EXCUTING，TIME_OVER，DELETED，CREATE_FAILED，UPDATE_FAILED，DELETE_FAILED，EXCEPTION，NODE_SHUT_DOWN。
@@ -145,7 +145,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// 工作流ID。
         /// </summary>
-        [JsonProperty("jobId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
 
@@ -204,7 +204,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.Databases != input.Databases || (this.Databases != null && !this.Databases.Equals(input.Databases))) return false;
             if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
             if (this.SqlModel != input.SqlModel || (this.SqlModel != null && !this.SqlModel.Equals(input.SqlModel))) return false;
-            if (this.KeyWords != input.KeyWords || (this.KeyWords != null && input.KeyWords != null && !this.KeyWords.SequenceEqual(input.KeyWords))) return false;
+            if (this.KeyWords != input.KeyWords || (this.KeyWords != null && !this.KeyWords.Equals(input.KeyWords))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.RuleName != input.RuleName || (this.RuleName != null && !this.RuleName.Equals(input.RuleName))) return false;

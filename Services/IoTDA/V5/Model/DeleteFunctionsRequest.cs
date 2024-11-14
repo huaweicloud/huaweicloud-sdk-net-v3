@@ -24,20 +24,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// **参数说明**：Sp用户Token。通过调用IoBPS服务获取SP用户Token。
-        /// </summary>
-        [SDKProperty("Sp-Auth-Token", IsHeader = true)]
-        [JsonProperty("Sp-Auth-Token", NullValueHandling = NullValueHandling.Ignore)]
-        public string SpAuthToken { get; set; }
-
-        /// <summary>
-        /// **参数说明**：Stage用户的Token, 仅提供给IoStage服务使用。
-        /// </summary>
-        [SDKProperty("Stage-Auth-Token", IsHeader = true)]
-        [JsonProperty("Stage-Auth-Token", NullValueHandling = NullValueHandling.Ignore)]
-        public string StageAuthToken { get; set; }
-
-        /// <summary>
         /// **参数说明**：函数ID。
         /// </summary>
         [SDKProperty("function_id", IsPath = true)]
@@ -54,8 +40,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             var sb = new StringBuilder();
             sb.Append("class DeleteFunctionsRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  spAuthToken: ").Append(SpAuthToken).Append("\n");
-            sb.Append("  stageAuthToken: ").Append(StageAuthToken).Append("\n");
             sb.Append("  functionId: ").Append(FunctionId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -76,8 +60,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             if (input == null) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.SpAuthToken != input.SpAuthToken || (this.SpAuthToken != null && !this.SpAuthToken.Equals(input.SpAuthToken))) return false;
-            if (this.StageAuthToken != input.StageAuthToken || (this.StageAuthToken != null && !this.StageAuthToken.Equals(input.StageAuthToken))) return false;
             if (this.FunctionId != input.FunctionId || (this.FunctionId != null && !this.FunctionId.Equals(input.FunctionId))) return false;
 
             return true;
@@ -92,8 +74,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             {
                 var hashCode = 41;
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.SpAuthToken != null) hashCode = hashCode * 59 + this.SpAuthToken.GetHashCode();
-                if (this.StageAuthToken != null) hashCode = hashCode * 59 + this.StageAuthToken.GetHashCode();
                 if (this.FunctionId != null) hashCode = hashCode * 59 + this.FunctionId.GetHashCode();
                 return hashCode;
             }

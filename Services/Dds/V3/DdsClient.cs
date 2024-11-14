@@ -119,6 +119,30 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 批量删除手动备份
+        ///
+        /// 批量删除数据库实例的手动备份。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteBackupResponse BatchDeleteBackup(BatchDeleteBackupRequest batchDeleteBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteBackupRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteBackupResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteBackupResponse> BatchDeleteBackupInvoker(BatchDeleteBackupRequest batchDeleteBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteBackupRequest);
+            return new SyncInvoker<BatchDeleteBackupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<BatchDeleteBackupResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加或删除资源标签
         ///
         /// 批量添加或删除指定实例的标签。
@@ -145,6 +169,30 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 批量数据库补丁升级
+        ///
+        /// 批量升级数据库补丁版本。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchUpgradeDatabaseVersionResponse BatchUpgradeDatabaseVersion(BatchUpgradeDatabaseVersionRequest batchUpgradeDatabaseVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/db-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpgradeDatabaseVersionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchUpgradeDatabaseVersionResponse>(response);
+        }
+
+        public SyncInvoker<BatchUpgradeDatabaseVersionResponse> BatchUpgradeDatabaseVersionInvoker(BatchUpgradeDatabaseVersionRequest batchUpgradeDatabaseVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/db-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpgradeDatabaseVersionRequest);
+            return new SyncInvoker<BatchUpgradeDatabaseVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchUpgradeDatabaseVersionResponse>);
+        }
+        
+        /// <summary>
         /// 解绑弹性公网IP
         ///
         /// 解绑实例下节点已经绑定的弹性公网IP。
@@ -168,6 +216,32 @@ namespace HuaweiCloud.SDK.Dds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nodes/{node_id}/unbind-eip", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelEipRequest);
             return new SyncInvoker<CancelEipResponse>(this, "POST", request, JsonUtils.DeSerialize<CancelEipResponse>);
+        }
+        
+        /// <summary>
+        /// 取消定时任务
+        ///
+        /// 根据任务ID取消定时任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CancelScheduledTaskResponse CancelScheduledTask(CancelScheduledTaskRequest cancelScheduledTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", cancelScheduledTaskRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/scheduled-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelScheduledTaskRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<CancelScheduledTaskResponse>(response);
+        }
+
+        public SyncInvoker<CancelScheduledTaskResponse> CancelScheduledTaskInvoker(CancelScheduledTaskRequest cancelScheduledTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", cancelScheduledTaskRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/scheduled-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelScheduledTaskRequest);
+            return new SyncInvoker<CancelScheduledTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<CancelScheduledTaskResponse>);
         }
         
         /// <summary>
@@ -1415,6 +1489,30 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询定时任务
+        ///
+        /// 根据指定条件查询定时任务列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListScheduledTasksResponse ListScheduledTasks(ListScheduledTasksRequest listScheduledTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/scheduled-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScheduledTasksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListScheduledTasksResponse>(response);
+        }
+
+        public SyncInvoker<ListScheduledTasksResponse> ListScheduledTasksInvoker(ListScheduledTasksRequest listScheduledTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/scheduled-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScheduledTasksRequest);
+            return new SyncInvoker<ListScheduledTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScheduledTasksResponse>);
+        }
+        
+        /// <summary>
         /// 查询实例节点会话
         ///
         /// 查询实例节点会话。
@@ -1797,6 +1895,30 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 设置磁盘自动扩容策略
+        ///
+        /// 设置磁盘自动扩容策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetAutoEnlargePoliciesResponse SetAutoEnlargePolicies(SetAutoEnlargePoliciesRequest setAutoEnlargePoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/auto-enlarge-volume-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAutoEnlargePoliciesRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<SetAutoEnlargePoliciesResponse>(response);
+        }
+
+        public SyncInvoker<SetAutoEnlargePoliciesResponse> SetAutoEnlargePoliciesInvoker(SetAutoEnlargePoliciesRequest setAutoEnlargePoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/auto-enlarge-volume-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAutoEnlargePoliciesRequest);
+            return new SyncInvoker<SetAutoEnlargePoliciesResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetAutoEnlargePoliciesResponse>);
+        }
+        
+        /// <summary>
         /// 设置自动备份策略
         ///
         /// 设置自动备份策略。
@@ -1924,6 +2046,32 @@ namespace HuaweiCloud.SDK.Dds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auditlog-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditlogPolicyRequest);
             return new SyncInvoker<ShowAuditlogPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAuditlogPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询磁盘自动扩容策略
+        ///
+        /// 查询磁盘自动扩容策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAutoEnlargePolicyResponse ShowAutoEnlargePolicy(ShowAutoEnlargePolicyRequest showAutoEnlargePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAutoEnlargePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-enlarge-volume-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoEnlargePolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutoEnlargePolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowAutoEnlargePolicyResponse> ShowAutoEnlargePolicyInvoker(ShowAutoEnlargePolicyRequest showAutoEnlargePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAutoEnlargePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-enlarge-volume-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoEnlargePolicyRequest);
+            return new SyncInvoker<ShowAutoEnlargePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoEnlargePolicyResponse>);
         }
         
         /// <summary>
@@ -2156,6 +2304,32 @@ namespace HuaweiCloud.SDK.Dds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEntityConfigurationRequest);
             return new SyncInvoker<ShowEntityConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEntityConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例参数的修改历史
+        ///
+        /// 查询实例参数的修改历史。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceConfigurationModifyHistoryResponse ShowInstanceConfigurationModifyHistory(ShowInstanceConfigurationModifyHistoryRequest showInstanceConfigurationModifyHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceConfigurationModifyHistoryRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configuration-histories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigurationModifyHistoryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceConfigurationModifyHistoryResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceConfigurationModifyHistoryResponse> ShowInstanceConfigurationModifyHistoryInvoker(ShowInstanceConfigurationModifyHistoryRequest showInstanceConfigurationModifyHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceConfigurationModifyHistoryRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configuration-histories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigurationModifyHistoryRequest);
+            return new SyncInvoker<ShowInstanceConfigurationModifyHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceConfigurationModifyHistoryResponse>);
         }
         
         /// <summary>
@@ -2882,6 +3056,30 @@ namespace HuaweiCloud.SDK.Dds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDatabaseVersionRequest);
             return new SyncInvoker<UpgradeDatabaseVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeDatabaseVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 校验参数模板名称是否存在
+        ///
+        /// 校验参数模板名称是否存在。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ValidateConfigurationNameResponse ValidateConfigurationName(ValidateConfigurationNameRequest validateConfigurationNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/name-validation", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConfigurationNameRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ValidateConfigurationNameResponse>(response);
+        }
+
+        public SyncInvoker<ValidateConfigurationNameResponse> ValidateConfigurationNameInvoker(ValidateConfigurationNameRequest validateConfigurationNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/name-validation", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConfigurationNameRequest);
+            return new SyncInvoker<ValidateConfigurationNameResponse>(this, "GET", request, JsonUtils.DeSerialize<ValidateConfigurationNameResponse>);
         }
         
         /// <summary>

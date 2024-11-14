@@ -79,7 +79,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// 工作流ID。
         /// </summary>
-        [JsonProperty("jobId", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
 

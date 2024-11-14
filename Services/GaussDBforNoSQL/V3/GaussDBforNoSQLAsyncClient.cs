@@ -42,6 +42,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 应用参数模板
+        ///
+        /// 将参数模板应用到实例，可以指定一个或多个实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ApplyConfigurationToInstancesResponse> ApplyConfigurationToInstancesAsync(ApplyConfigurationToInstancesRequest applyConfigurationToInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", applyConfigurationToInstancesRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/configurations/{config_id}/apply", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyConfigurationToInstancesRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ApplyConfigurationToInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ApplyConfigurationToInstancesResponse> ApplyConfigurationToInstancesAsyncInvoker(ApplyConfigurationToInstancesRequest applyConfigurationToInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("config_id", applyConfigurationToInstancesRequest.ConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/configurations/{config_id}/apply", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyConfigurationToInstancesRequest);
+            return new AsyncInvoker<ApplyConfigurationToInstancesResponse>(this, "PUT", request, JsonUtils.DeSerialize<ApplyConfigurationToInstancesResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加或删除资源标签
         ///
         /// 批量添加或删除指定数据库实例的标签。
@@ -89,6 +115,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpgradeDatabaseVersionRequest);
             return new AsyncInvoker<BatchUpgradeDatabaseVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchUpgradeDatabaseVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 取消定时任务
+        ///
+        /// 取消定时任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CancelInstanceScheduleWindowResponse> CancelInstanceScheduleWindowAsync(CancelInstanceScheduleWindowRequest cancelInstanceScheduleWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", cancelInstanceScheduleWindowRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/scheduled-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelInstanceScheduleWindowRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<CancelInstanceScheduleWindowResponse>(response);
+        }
+
+        public AsyncInvoker<CancelInstanceScheduleWindowResponse> CancelInstanceScheduleWindowAsyncInvoker(CancelInstanceScheduleWindowRequest cancelInstanceScheduleWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", cancelInstanceScheduleWindowRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/scheduled-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelInstanceScheduleWindowRequest);
+            return new AsyncInvoker<CancelInstanceScheduleWindowResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<CancelInstanceScheduleWindowResponse>);
         }
         
         /// <summary>
@@ -269,6 +321,54 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 创建内存加速映射
+        ///
+        /// 创建内存加速映射。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateDbCacheMappingResponse> CreateDbCacheMappingAsync(CreateDbCacheMappingRequest createDbCacheMappingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/mapping", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDbCacheMappingRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateDbCacheMappingResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDbCacheMappingResponse> CreateDbCacheMappingAsyncInvoker(CreateDbCacheMappingRequest createDbCacheMappingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/mapping", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDbCacheMappingRequest);
+            return new AsyncInvoker<CreateDbCacheMappingResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDbCacheMappingResponse>);
+        }
+        
+        /// <summary>
+        /// 创建内存加速规则
+        ///
+        /// 创建内存加速规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateDbCacheRuleResponse> CreateDbCacheRuleAsync(CreateDbCacheRuleRequest createDbCacheRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDbCacheRuleRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateDbCacheRuleResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDbCacheRuleResponse> CreateDbCacheRuleAsyncInvoker(CreateDbCacheRuleRequest createDbCacheRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDbCacheRuleRequest);
+            return new AsyncInvoker<CreateDbCacheRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDbCacheRuleResponse>);
+        }
+        
+        /// <summary>
         /// 创建Redis数据库账号
         ///
         /// 在Redis实例中创建数据库帐号。
@@ -394,6 +494,54 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
             return new AsyncInvoker<DeleteConfigurationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 解除内存加速映射
+        ///
+        /// 解除指定内存加速映射。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDbCacheMappingResponse> DeleteDbCacheMappingAsync(DeleteDbCacheMappingRequest deleteDbCacheMappingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/mapping", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDbCacheMappingRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteDbCacheMappingResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDbCacheMappingResponse> DeleteDbCacheMappingAsyncInvoker(DeleteDbCacheMappingRequest deleteDbCacheMappingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/mapping", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDbCacheMappingRequest);
+            return new AsyncInvoker<DeleteDbCacheMappingResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDbCacheMappingResponse>);
+        }
+        
+        /// <summary>
+        /// 删除内存加速规则
+        ///
+        /// 删除内存加速规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDbCacheRuleResponse> DeleteDbCacheRuleAsync(DeleteDbCacheRuleRequest deleteDbCacheRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDbCacheRuleRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDbCacheRuleResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDbCacheRuleResponse> DeleteDbCacheRuleAsyncInvoker(DeleteDbCacheRuleRequest deleteDbCacheRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDbCacheRuleRequest);
+            return new AsyncInvoker<DeleteDbCacheRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDbCacheRuleResponse>);
         }
         
         /// <summary>
@@ -727,6 +875,54 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询内存加速映射列表和详情
+        ///
+        /// 根据指定条件查询内存加速映射关系列表和详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDbCacheMappingsResponse> ListDbCacheMappingsAsync(ListDbCacheMappingsRequest listDbCacheMappingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/mappings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbCacheMappingsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDbCacheMappingsResponse>(response);
+        }
+
+        public AsyncInvoker<ListDbCacheMappingsResponse> ListDbCacheMappingsAsyncInvoker(ListDbCacheMappingsRequest listDbCacheMappingsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/mappings", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbCacheMappingsRequest);
+            return new AsyncInvoker<ListDbCacheMappingsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDbCacheMappingsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询内存加速规则列表和详情
+        ///
+        /// 查询内存加速规则列表和详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDbCacheRulesResponse> ListDbCacheRulesAsync(ListDbCacheRulesRequest listDbCacheRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbCacheRulesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDbCacheRulesResponse>(response);
+        }
+
+        public AsyncInvoker<ListDbCacheRulesResponse> ListDbCacheRulesAsyncInvoker(ListDbCacheRulesRequest listDbCacheRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbCacheRulesRequest);
+            return new AsyncInvoker<ListDbCacheRulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDbCacheRulesResponse>);
+        }
+        
+        /// <summary>
         /// 获取Redis数据库账号列表和详情
         ///
         /// 获取Redis数据库账号列表和详情。
@@ -898,6 +1094,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDatabasesRequest);
             return new AsyncInvoker<ListInstanceDatabasesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceDatabasesResponse>);
+        }
+        
+        /// <summary>
+        /// 
+        ///
+        /// 查询实例可维护时间段
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstanceMaintenanceWindowResponse> ListInstanceMaintenanceWindowAsync(ListInstanceMaintenanceWindowRequest listInstanceMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceMaintenanceWindowRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops-window", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceMaintenanceWindowRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceMaintenanceWindowResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstanceMaintenanceWindowResponse> ListInstanceMaintenanceWindowAsyncInvoker(ListInstanceMaintenanceWindowRequest listInstanceMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceMaintenanceWindowRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops-window", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceMaintenanceWindowRequest);
+            return new AsyncInvoker<ListInstanceMaintenanceWindowResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceMaintenanceWindowResponse>);
         }
         
         /// <summary>
@@ -1151,6 +1373,30 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询定时任务列表
+        ///
+        /// 根据指定条件查询定时任务列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListNosqlTaskListResponse> ListNosqlTaskListAsync(ListNosqlTaskListRequest listNosqlTaskListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/scheduled-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNosqlTaskListRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListNosqlTaskListResponse>(response);
+        }
+
+        public AsyncInvoker<ListNosqlTaskListResponse> ListNosqlTaskListAsyncInvoker(ListNosqlTaskListRequest listNosqlTaskListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/scheduled-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNosqlTaskListRequest);
+            return new AsyncInvoker<ListNosqlTaskListResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNosqlTaskListResponse>);
+        }
+        
+        /// <summary>
         /// 查询项目标签
         ///
         /// 查询指定项目的标签信息。
@@ -1376,6 +1622,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/enterprise-projects/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyEpsQuotasRequest);
             return new AsyncInvoker<ModifyEpsQuotasResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ModifyEpsQuotasResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例可维护时间段
+        ///
+        /// 设置指定实例可维护时间段。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyInstanceMaintenanceWindowResponse> ModifyInstanceMaintenanceWindowAsync(ModifyInstanceMaintenanceWindowRequest modifyInstanceMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyInstanceMaintenanceWindowRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/maintenance-window", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyInstanceMaintenanceWindowRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<ModifyInstanceMaintenanceWindowResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyInstanceMaintenanceWindowResponse> ModifyInstanceMaintenanceWindowAsyncInvoker(ModifyInstanceMaintenanceWindowRequest modifyInstanceMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyInstanceMaintenanceWindowRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/maintenance-window", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyInstanceMaintenanceWindowRequest);
+            return new AsyncInvoker<ModifyInstanceMaintenanceWindowResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ModifyInstanceMaintenanceWindowResponse>);
         }
         
         /// <summary>
@@ -1797,6 +2069,33 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 开启/关闭实例数据导出
+        ///
+        /// 开启/关闭实例数据导出。
+        /// 当前支持将InfluxDB数据转为parquet格式文件然后上传到指定的OBS桶中。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetInstanceDataDumpResponse> SetInstanceDataDumpAsync(SetInstanceDataDumpRequest setInstanceDataDumpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setInstanceDataDumpRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/data-dump", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setInstanceDataDumpRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<SetInstanceDataDumpResponse>(response);
+        }
+
+        public AsyncInvoker<SetInstanceDataDumpResponse> SetInstanceDataDumpAsyncInvoker(SetInstanceDataDumpRequest setInstanceDataDumpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setInstanceDataDumpRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/data-dump", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setInstanceDataDumpRequest);
+            return new AsyncInvoker<SetInstanceDataDumpResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetInstanceDataDumpResponse>);
+        }
+        
+        /// <summary>
         /// 设置回收策略
         ///
         /// 设置已删除实例保留天数，修改保留天数后删除的实例按照新的天数保留，修改之前已在回收站的实例保留天数不变。
@@ -1943,6 +2242,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoEnlargePolicyRequest);
             return new AsyncInvoker<ShowAutoEnlargePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoEnlargePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询自动备份策略
+        ///
+        /// 查询自动备份策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowBackupPoliciesResponse> ShowBackupPoliciesAsync(ShowBackupPoliciesRequest showBackupPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showBackupPoliciesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/backups/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupPoliciesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowBackupPoliciesResponse>(response);
+        }
+
+        public AsyncInvoker<ShowBackupPoliciesResponse> ShowBackupPoliciesAsyncInvoker(ShowBackupPoliciesRequest showBackupPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showBackupPoliciesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/backups/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupPoliciesRequest);
+            return new AsyncInvoker<ShowBackupPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupPoliciesResponse>);
         }
         
         /// <summary>
@@ -2356,6 +2681,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询秒级监控配置
+        ///
+        /// 查询秒级监控配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSecondLevelMonitoringStatusResponse> ShowSecondLevelMonitoringStatusAsync(ShowSecondLevelMonitoringStatusRequest showSecondLevelMonitoringStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showSecondLevelMonitoringStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/monitoring-by-seconds/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecondLevelMonitoringStatusRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowSecondLevelMonitoringStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSecondLevelMonitoringStatusResponse> ShowSecondLevelMonitoringStatusAsyncInvoker(ShowSecondLevelMonitoringStatusRequest showSecondLevelMonitoringStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showSecondLevelMonitoringStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/monitoring-by-seconds/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecondLevelMonitoringStatusRequest);
+            return new AsyncInvoker<ShowSecondLevelMonitoringStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecondLevelMonitoringStatusResponse>);
+        }
+        
+        /// <summary>
         /// 查询慢日志脱敏状态
         ///
         /// 查询慢日志脱敏状态。
@@ -2431,6 +2782,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb/access-control", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchIpGroupRequest);
             return new AsyncInvoker<SwitchIpGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SwitchIpGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 开启/关闭秒级监控
+        ///
+        /// 开启或关闭指定实例的5秒级监控。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SwitchSecondLevelMonitoringResponse> SwitchSecondLevelMonitoringAsync(SwitchSecondLevelMonitoringRequest switchSecondLevelMonitoringRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchSecondLevelMonitoringRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/monitoring-by-seconds/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSecondLevelMonitoringRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<SwitchSecondLevelMonitoringResponse>(response);
+        }
+
+        public AsyncInvoker<SwitchSecondLevelMonitoringResponse> SwitchSecondLevelMonitoringAsyncInvoker(SwitchSecondLevelMonitoringRequest switchSecondLevelMonitoringRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchSecondLevelMonitoringRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/monitoring-by-seconds/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSecondLevelMonitoringRequest);
+            return new AsyncInvoker<SwitchSecondLevelMonitoringResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SwitchSecondLevelMonitoringResponse>);
         }
         
         /// <summary>
@@ -2616,6 +2993,30 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 修改内存加速规则
+        ///
+        /// 修改指定内存加速规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateDbCacheRuleResponse> UpdateDbCacheRuleAsync(UpdateDbCacheRuleRequest updateDbCacheRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDbCacheRuleRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateDbCacheRuleResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDbCacheRuleResponse> UpdateDbCacheRuleAsyncInvoker(UpdateDbCacheRuleRequest updateDbCacheRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dbcache/rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDbCacheRuleRequest);
+            return new AsyncInvoker<UpdateDbCacheRuleResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDbCacheRuleResponse>);
+        }
+        
+        /// <summary>
         /// 修改高危命令
         ///
         /// 批量修改高危命令
@@ -2665,6 +3066,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationRequest);
             return new AsyncInvoker<UpdateInstanceConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 修改指定实例的参数
+        ///
+        /// 修改指定实例的参数。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateInstanceConfigurationsResponse> UpdateInstanceConfigurationsAsync(UpdateInstanceConfigurationsRequest updateInstanceConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceConfigurationsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateInstanceConfigurationsResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateInstanceConfigurationsResponse> UpdateInstanceConfigurationsAsyncInvoker(UpdateInstanceConfigurationsRequest updateInstanceConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceConfigurationsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationsRequest);
+            return new AsyncInvoker<UpdateInstanceConfigurationsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceConfigurationsResponse>);
         }
         
         /// <summary>

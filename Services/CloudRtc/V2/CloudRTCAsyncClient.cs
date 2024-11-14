@@ -465,32 +465,6 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
         }
         
         /// <summary>
-        /// 查询访问控制参数
-        ///
-        /// 查询应用鉴权配置参数
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowUrlAuthResponse> ShowUrlAuthAsync(ShowUrlAuthRequest showUrlAuthRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", showUrlAuthRequest.AppId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/authentication", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUrlAuthRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowUrlAuthResponse>(response);
-        }
-
-        public AsyncInvoker<ShowUrlAuthResponse> ShowUrlAuthAsyncInvoker(ShowUrlAuthRequest showUrlAuthRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", showUrlAuthRequest.AppId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/authentication", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUrlAuthRequest);
-            return new AsyncInvoker<ShowUrlAuthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUrlAuthResponse>);
-        }
-        
-        /// <summary>
         /// 启用应用
         ///
         /// 调用此接口启用单个应用。
@@ -740,32 +714,6 @@ namespace HuaweiCloud.SDK.CloudRtc.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/record-rules/{rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateRecordRuleRequest);
             return new AsyncInvoker<UpdateRecordRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecordRuleResponse>);
-        }
-        
-        /// <summary>
-        /// 开关访问控制
-        ///
-        /// 调用此接口开启或关闭URL鉴权。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdateUrlAuthResponse> UpdateUrlAuthAsync(UpdateUrlAuthRequest updateUrlAuthRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", updateUrlAuthRequest.AppId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/authentication", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUrlAuthRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateUrlAuthResponse>(response);
-        }
-
-        public AsyncInvoker<UpdateUrlAuthResponse> UpdateUrlAuthAsyncInvoker(UpdateUrlAuthRequest updateUrlAuthRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", updateUrlAuthRequest.AppId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/apps/{app_id}/authentication", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUrlAuthRequest);
-            return new AsyncInvoker<UpdateUrlAuthResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateUrlAuthResponse>);
         }
         
         /// <summary>

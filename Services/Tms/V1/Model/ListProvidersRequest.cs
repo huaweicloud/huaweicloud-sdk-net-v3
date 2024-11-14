@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Tms.V1.Model
         [JsonProperty("locale", NullValueHandling = NullValueHandling.Ignore)]
         public LocaleEnum Locale { get; set; }
         /// <summary>
-        /// 查询记录数默认为200，limit最多为200，最小值为1。
+        /// 查询记录数默认为10，limit最多为200，最小值为1。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

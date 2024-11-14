@@ -70,30 +70,6 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
-        /// 修改云硬盘计费模式
-        ///
-        /// 将挂载状态下的云硬盘的计费模式有按需转成包周期，且到期时间和挂载的虚拟机保持一致。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ChangeVolumeChargeModeResponse ChangeVolumeChargeMode(ChangeVolumeChargeModeRequest changeVolumeChargeModeRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/change-charge-mode", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeVolumeChargeModeRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<ChangeVolumeChargeModeResponse>(response);
-        }
-
-        public SyncInvoker<ChangeVolumeChargeModeResponse> ChangeVolumeChargeModeInvoker(ChangeVolumeChargeModeRequest changeVolumeChargeModeRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/change-charge-mode", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeVolumeChargeModeRequest);
-            return new SyncInvoker<ChangeVolumeChargeModeResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ChangeVolumeChargeModeResponse>);
-        }
-        
-        /// <summary>
         /// 接受云硬盘过户
         ///
         /// 通过云硬盘过户记录ID以及身份认证密钥来接受云硬盘过户。
@@ -712,39 +688,6 @@ namespace HuaweiCloud.SDK.Evs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeTagsRequest);
             return new SyncInvoker<ShowVolumeTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVolumeTagsResponse>);
-        }
-        
-        /// <summary>
-        /// 退订包周期计费模式的云硬盘
-        ///
-        /// 退订包周期计费模式的云硬盘，有如下约束：
-        /// -  系统盘、启动盘不可使用当前接口退订，必须和弹性云服务器一起退订
-        /// -  接口的请求body体最多可以传60个云硬盘id
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public UnsubscribePostpaidVolumeResponse UnsubscribePostpaidVolume(UnsubscribePostpaidVolumeRequest unsubscribePostpaidVolumeRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/unsubscribe", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", unsubscribePostpaidVolumeRequest);
-            var response = DoHttpRequestSync("POST", request);
-            var unsubscribePostpaidVolumeResponse = JsonUtils.DeSerializeNull<UnsubscribePostpaidVolumeResponse>(response);
-            unsubscribePostpaidVolumeResponse.Body = JsonUtils.DeSerializeList<UnsubscribeVolumeResponseBody>(response);
-            return unsubscribePostpaidVolumeResponse;
-        }
-
-        public SyncInvoker<UnsubscribePostpaidVolumeResponse> UnsubscribePostpaidVolumeInvoker(UnsubscribePostpaidVolumeRequest unsubscribePostpaidVolumeRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/unsubscribe", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", unsubscribePostpaidVolumeRequest);
-            return new SyncInvoker<UnsubscribePostpaidVolumeResponse>(this, "POST", request, response =>
-            {
-                var unsubscribePostpaidVolumeResponse = JsonUtils.DeSerializeNull<UnsubscribePostpaidVolumeResponse>(response);
-                unsubscribePostpaidVolumeResponse.Body = JsonUtils.DeSerializeList<UnsubscribeVolumeResponseBody>(response);
-                return unsubscribePostpaidVolumeResponse;
-            });
         }
         
         /// <summary>

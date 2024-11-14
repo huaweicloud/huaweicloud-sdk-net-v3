@@ -24,20 +24,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// **参数说明**：Sp用户Token。通过调用IoBPS服务获取SP用户Token。
-        /// </summary>
-        [SDKProperty("Sp-Auth-Token", IsHeader = true)]
-        [JsonProperty("Sp-Auth-Token", NullValueHandling = NullValueHandling.Ignore)]
-        public string SpAuthToken { get; set; }
-
-        /// <summary>
-        /// **参数说明**：Stage用户的Token, 仅提供给IoStage服务使用。
-        /// </summary>
-        [SDKProperty("Stage-Auth-Token", IsHeader = true)]
-        [JsonProperty("Stage-Auth-Token", NullValueHandling = NullValueHandling.Ignore)]
-        public string StageAuthToken { get; set; }
-
-        /// <summary>
         /// **参数说明**：资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，可以携带该参数查询指定资源空间下的产品列表，不携带该参数则会查询该用户下所有产品列表。 **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
         /// </summary>
         [SDKProperty("app_id", IsQuery = true)]
@@ -61,8 +47,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             var sb = new StringBuilder();
             sb.Append("class ListFunctionsRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  spAuthToken: ").Append(SpAuthToken).Append("\n");
-            sb.Append("  stageAuthToken: ").Append(StageAuthToken).Append("\n");
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
             sb.Append("}\n");
@@ -84,8 +68,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             if (input == null) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.SpAuthToken != input.SpAuthToken || (this.SpAuthToken != null && !this.SpAuthToken.Equals(input.SpAuthToken))) return false;
-            if (this.StageAuthToken != input.StageAuthToken || (this.StageAuthToken != null && !this.StageAuthToken.Equals(input.StageAuthToken))) return false;
             if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
 
@@ -101,8 +83,6 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             {
                 var hashCode = 41;
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.SpAuthToken != null) hashCode = hashCode * 59 + this.SpAuthToken.GetHashCode();
-                if (this.StageAuthToken != null) hashCode = hashCode * 59 + this.StageAuthToken.GetHashCode();
                 if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
                 return hashCode;

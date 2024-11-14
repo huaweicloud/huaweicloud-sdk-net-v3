@@ -128,9 +128,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// <summary>
         /// 告警所属的企业项目id。
         /// </summary>
-        [SDKProperty("x-enterprise-prject-id", IsHeader = true)]
-        [JsonProperty("x-enterprise-prject-id", NullValueHandling = NullValueHandling.Ignore)]
-        public string XEnterprisePrjectId { get; set; }
+        [SDKProperty("enterprise-project-id", IsHeader = true)]
+        [JsonProperty("enterprise-project-id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
 
         /// <summary>
         /// 接口请求动作。action&#x3D;clear代表清除告警，不传或者传其他值默认为上报动作。
@@ -154,7 +154,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class PushEventsRequest {\n");
-            sb.Append("  xEnterprisePrjectId: ").Append(XEnterprisePrjectId).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -175,7 +175,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public bool Equals(PushEventsRequest input)
         {
             if (input == null) return false;
-            if (this.XEnterprisePrjectId != input.XEnterprisePrjectId || (this.XEnterprisePrjectId != null && !this.XEnterprisePrjectId.Equals(input.XEnterprisePrjectId))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Action != input.Action) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
@@ -190,7 +190,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.XEnterprisePrjectId != null) hashCode = hashCode * 59 + this.XEnterprisePrjectId.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 hashCode = hashCode * 59 + this.Action.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
