@@ -28,15 +28,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             public static readonly OperationTypeEnum BACKUP = new OperationTypeEnum("backup");
 
             /// <summary>
-            /// Enum _REPLICATION for value:  replication
+            /// Enum REPLICATION for value: replication
             /// </summary>
-            public static readonly OperationTypeEnum _REPLICATION = new OperationTypeEnum(" replication");
+            public static readonly OperationTypeEnum REPLICATION = new OperationTypeEnum("replication");
 
             private static readonly Dictionary<string, OperationTypeEnum> StaticFields =
             new Dictionary<string, OperationTypeEnum>()
             {
                 { "backup", BACKUP },
-                { " replication", _REPLICATION },
+                { "replication", REPLICATION },
             };
 
             private string _value;

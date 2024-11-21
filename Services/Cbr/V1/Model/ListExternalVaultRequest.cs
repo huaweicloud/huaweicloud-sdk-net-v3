@@ -15,115 +15,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     /// </summary>
     public class ListExternalVaultRequest 
     {
-        /// <summary>
-        /// [保护类型。取值为backup，replication和hybrid。](tag:hws,hws_hk) [保护类型。取值为backup和replication。](tag:ocb) [保护类型。取值为backup。](tag:g42,hk-g42,sbc,dt,fcs_vm,ctc,tm,tlf,cmcc,hcso_dt)
-        /// </summary>
-        /// <value>[保护类型。取值为backup，replication和hybrid。](tag:hws,hws_hk) [保护类型。取值为backup和replication。](tag:ocb) [保护类型。取值为backup。](tag:g42,hk-g42,sbc,dt,fcs_vm,ctc,tm,tlf,cmcc,hcso_dt)</value>
-        [JsonConverter(typeof(EnumClassConverter<ProtectTypeEnum>))]
-        public class ProtectTypeEnum
-        {
-            /// <summary>
-            /// Enum BACKUP_REPLICATION_HYBRID for value: backup;replication;hybrid
-            /// </summary>
-            public static readonly ProtectTypeEnum BACKUP_REPLICATION_HYBRID = new ProtectTypeEnum("backup;replication;hybrid");
-
-            private static readonly Dictionary<string, ProtectTypeEnum> StaticFields =
-            new Dictionary<string, ProtectTypeEnum>()
-            {
-                { "backup;replication;hybrid", BACKUP_REPLICATION_HYBRID },
-            };
-
-            private string _value;
-
-            public ProtectTypeEnum()
-            {
-
-            }
-
-            public ProtectTypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static ProtectTypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ProtectTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ProtectTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ProtectTypeEnum a, ProtectTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ProtectTypeEnum a, ProtectTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 其他区域的项目ID
@@ -151,7 +42,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         [SDKProperty("protect_type", IsQuery = true)]
         [JsonProperty("protect_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ProtectTypeEnum ProtectType { get; set; }
+        public string ProtectType { get; set; }
+
         /// <summary>
         /// 区域ID
         /// </summary>
@@ -218,7 +110,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.ExternalProjectId != input.ExternalProjectId || (this.ExternalProjectId != null && !this.ExternalProjectId.Equals(input.ExternalProjectId))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
-            if (this.ProtectType != input.ProtectType) return false;
+            if (this.ProtectType != input.ProtectType || (this.ProtectType != null && !this.ProtectType.Equals(input.ProtectType))) return false;
             if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
             if (this.ObjcetType != input.ObjcetType || (this.ObjcetType != null && !this.ObjcetType.Equals(input.ObjcetType))) return false;
             if (this.CloudType != input.CloudType || (this.CloudType != null && !this.CloudType.Equals(input.CloudType))) return false;
@@ -238,7 +130,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.ExternalProjectId != null) hashCode = hashCode * 59 + this.ExternalProjectId.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                hashCode = hashCode * 59 + this.ProtectType.GetHashCode();
+                if (this.ProtectType != null) hashCode = hashCode * 59 + this.ProtectType.GetHashCode();
                 if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
                 if (this.ObjcetType != null) hashCode = hashCode * 59 + this.ObjcetType.GetHashCode();
                 if (this.CloudType != null) hashCode = hashCode * 59 + this.CloudType.GetHashCode();

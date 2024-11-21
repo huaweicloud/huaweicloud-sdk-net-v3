@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
         public int? Threshold { get; set; }
 
+        /// <summary>
+        /// 用于标识当前存储库是否已锁定
+        /// </summary>
+        [JsonProperty("locked", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Locked { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  autoExpand: ").Append(AutoExpand).Append("\n");
             sb.Append("  smnNotify: ").Append(SmnNotify).Append("\n");
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
+            sb.Append("  locked: ").Append(Locked).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.AutoExpand != input.AutoExpand || (this.AutoExpand != null && !this.AutoExpand.Equals(input.AutoExpand))) return false;
             if (this.SmnNotify != input.SmnNotify || (this.SmnNotify != null && !this.SmnNotify.Equals(input.SmnNotify))) return false;
             if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
+            if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.AutoExpand != null) hashCode = hashCode * 59 + this.AutoExpand.GetHashCode();
                 if (this.SmnNotify != null) hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
                 if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
+                if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
                 return hashCode;
             }
         }

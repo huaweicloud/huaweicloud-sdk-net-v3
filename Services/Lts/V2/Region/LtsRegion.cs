@@ -11,6 +11,8 @@ namespace HuaweiCloud.SDK.Lts.V2
             "https://lts.cn-east-2.myhuaweicloud.com");
         public static readonly Region CN_EAST_3 = new Region("cn-east-3",
             "https://lts.cn-east-3.myhuaweicloud.com");
+        public static readonly Region CN_EAST_5 = new Region("cn-east-5",
+            "https://lts.cn-east-5.myhuaweicloud.com");
         public static readonly Region CN_NORTH_1 = new Region("cn-north-1",
             "https://lts.cn-north-1.myhuaweicloud.com");
         public static readonly Region CN_NORTH_2 = new Region("cn-north-2",
@@ -62,6 +64,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         {
                 { "cn-east-2", CN_EAST_2 },
                 { "cn-east-3", CN_EAST_3 },
+                { "cn-east-5", CN_EAST_5 },
                 { "cn-north-1", CN_NORTH_1 },
                 { "cn-north-2", CN_NORTH_2 },
                 { "cn-north-4", CN_NORTH_4 },

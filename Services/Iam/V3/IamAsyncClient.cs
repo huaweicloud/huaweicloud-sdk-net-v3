@@ -632,7 +632,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCustomPolicyRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteCustomPolicyResponse>(response);
+            return JsonUtils.DeSerialize<DeleteCustomPolicyResponse>(response);
         }
 
         public AsyncInvoker<DeleteCustomPolicyResponse> DeleteCustomPolicyAsyncInvoker(DeleteCustomPolicyRequest deleteCustomPolicyRequest)
@@ -641,7 +641,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             urlParam.Add("role_id", deleteCustomPolicyRequest.RoleId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCustomPolicyRequest);
-            return new AsyncInvoker<DeleteCustomPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteCustomPolicyResponse>);
+            return new AsyncInvoker<DeleteCustomPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteCustomPolicyResponse>);
         }
         
         /// <summary>

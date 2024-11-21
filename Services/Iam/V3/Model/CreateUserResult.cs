@@ -124,6 +124,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("password_expires_at", NullValueHandling = NullValueHandling.Ignore)]
         public string PasswordExpiresAt { get; set; }
 
+        /// <summary>
+        /// 用户默认的项目ID。
+        /// </summary>
+        [JsonProperty("default_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DefaultProjectId { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +157,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  xdomainType: ").Append(XdomainType).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  passwordExpiresAt: ").Append(PasswordExpiresAt).Append("\n");
+            sb.Append("  defaultProjectId: ").Append(DefaultProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +194,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (this.XdomainType != input.XdomainType || (this.XdomainType != null && !this.XdomainType.Equals(input.XdomainType))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.PasswordExpiresAt != input.PasswordExpiresAt || (this.PasswordExpiresAt != null && !this.PasswordExpiresAt.Equals(input.PasswordExpiresAt))) return false;
+            if (this.DefaultProjectId != input.DefaultProjectId || (this.DefaultProjectId != null && !this.DefaultProjectId.Equals(input.DefaultProjectId))) return false;
 
             return true;
         }
@@ -217,6 +225,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 if (this.XdomainType != null) hashCode = hashCode * 59 + this.XdomainType.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.PasswordExpiresAt != null) hashCode = hashCode * 59 + this.PasswordExpiresAt.GetHashCode();
+                if (this.DefaultProjectId != null) hashCode = hashCode * 59 + this.DefaultProjectId.GetHashCode();
                 return hashCode;
             }
         }

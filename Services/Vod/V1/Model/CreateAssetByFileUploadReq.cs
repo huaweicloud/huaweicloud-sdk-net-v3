@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         }
 
         /// <summary>
-        /// 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：0。
+        /// 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：1。
         /// </summary>
-        /// <value>是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：0。</value>
+        /// <value>是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：1。</value>
         [JsonConverter(typeof(EnumClassConverter<AutoPublishEnum>))]
         public class AutoPublishEnum
         {
@@ -306,7 +306,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public string Tags { get; set; }
 
         /// <summary>
-        /// 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：0。
+        /// 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：1。
         /// </summary>
         [JsonProperty("auto_publish", NullValueHandling = NullValueHandling.Ignore)]
         public AutoPublishEnum AutoPublish { get; set; }

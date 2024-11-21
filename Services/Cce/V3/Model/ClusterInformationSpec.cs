@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("hostNetwork", NullValueHandling = NullValueHandling.Ignore)]
         public ClusterInformationSpecHostNetwork HostNetwork { get; set; }
 
+        /// <summary>
+        /// 集群删除保护，默认为false关闭，如果开启后用户将无法删除该集群。
+        /// </summary>
+        [JsonProperty("deletionProtection", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DeletionProtection { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  containerNetwork: ").Append(ContainerNetwork).Append("\n");
             sb.Append("  eniNetwork: ").Append(EniNetwork).Append("\n");
             sb.Append("  hostNetwork: ").Append(HostNetwork).Append("\n");
+            sb.Append("  deletionProtection: ").Append(DeletionProtection).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.ContainerNetwork != input.ContainerNetwork || (this.ContainerNetwork != null && !this.ContainerNetwork.Equals(input.ContainerNetwork))) return false;
             if (this.EniNetwork != input.EniNetwork || (this.EniNetwork != null && !this.EniNetwork.Equals(input.EniNetwork))) return false;
             if (this.HostNetwork != input.HostNetwork || (this.HostNetwork != null && !this.HostNetwork.Equals(input.HostNetwork))) return false;
+            if (this.DeletionProtection != input.DeletionProtection || (this.DeletionProtection != null && !this.DeletionProtection.Equals(input.DeletionProtection))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.ContainerNetwork != null) hashCode = hashCode * 59 + this.ContainerNetwork.GetHashCode();
                 if (this.EniNetwork != null) hashCode = hashCode * 59 + this.EniNetwork.GetHashCode();
                 if (this.HostNetwork != null) hashCode = hashCode * 59 + this.HostNetwork.GetHashCode();
+                if (this.DeletionProtection != null) hashCode = hashCode * 59 + this.DeletionProtection.GetHashCode();
                 return hashCode;
             }
         }

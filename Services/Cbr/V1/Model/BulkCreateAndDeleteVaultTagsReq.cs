@@ -28,15 +28,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             public static readonly ActionEnum CREATE = new ActionEnum("create");
 
             /// <summary>
-            /// Enum _DELETE for value:  delete
+            /// Enum DELETE for value: delete
             /// </summary>
-            public static readonly ActionEnum _DELETE = new ActionEnum(" delete");
+            public static readonly ActionEnum DELETE = new ActionEnum("delete");
 
             private static readonly Dictionary<string, ActionEnum> StaticFields =
             new Dictionary<string, ActionEnum>()
             {
                 { "create", CREATE },
-                { " delete", _DELETE },
+                { "delete", DELETE },
             };
 
             private string _value;

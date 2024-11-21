@@ -15,121 +15,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     /// </summary>
     public class VaultCreate 
     {
-        /// <summary>
-        /// 用于标识SMB服务，您可以设置为SMB或者空
-        /// </summary>
-        /// <value>用于标识SMB服务，您可以设置为SMB或者空</value>
-        [JsonConverter(typeof(EnumClassConverter<SysLockSourceServiceEnum>))]
-        public class SysLockSourceServiceEnum
-        {
-            /// <summary>
-            /// Enum SMB for value: SMB
-            /// </summary>
-            public static readonly SysLockSourceServiceEnum SMB = new SysLockSourceServiceEnum("SMB");
-
-            /// <summary>
-            /// Enum EMPTY for value: 
-            /// </summary>
-            public static readonly SysLockSourceServiceEnum EMPTY = new SysLockSourceServiceEnum("");
-
-            private static readonly Dictionary<string, SysLockSourceServiceEnum> StaticFields =
-            new Dictionary<string, SysLockSourceServiceEnum>()
-            {
-                { "SMB", SMB },
-                { "", EMPTY },
-            };
-
-            private string _value;
-
-            public SysLockSourceServiceEnum()
-            {
-
-            }
-
-            public SysLockSourceServiceEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static SysLockSourceServiceEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as SysLockSourceServiceEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(SysLockSourceServiceEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(SysLockSourceServiceEnum a, SysLockSourceServiceEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(SysLockSourceServiceEnum a, SysLockSourceServiceEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 备份策略ID，不设置时为null，不自动备份。
@@ -219,7 +104,14 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 用于标识SMB服务，您可以设置为SMB或者空
         /// </summary>
         [JsonProperty("sys_lock_source_service", NullValueHandling = NullValueHandling.Ignore)]
-        public SysLockSourceServiceEnum SysLockSourceService { get; set; }
+        public string SysLockSourceService { get; set; }
+
+        /// <summary>
+        /// 用于标识该存储库是否已锁定
+        /// </summary>
+        [JsonProperty("locked", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Locked { get; set; }
+
 
 
         /// <summary>
@@ -244,6 +136,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  backupNamePrefix: ").Append(BackupNamePrefix).Append("\n");
             sb.Append("  demandBilling: ").Append(DemandBilling).Append("\n");
             sb.Append("  sysLockSourceService: ").Append(SysLockSourceService).Append("\n");
+            sb.Append("  locked: ").Append(Locked).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -276,7 +169,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.SmnNotify != input.SmnNotify || (this.SmnNotify != null && !this.SmnNotify.Equals(input.SmnNotify))) return false;
             if (this.BackupNamePrefix != input.BackupNamePrefix || (this.BackupNamePrefix != null && !this.BackupNamePrefix.Equals(input.BackupNamePrefix))) return false;
             if (this.DemandBilling != input.DemandBilling || (this.DemandBilling != null && !this.DemandBilling.Equals(input.DemandBilling))) return false;
-            if (this.SysLockSourceService != input.SysLockSourceService) return false;
+            if (this.SysLockSourceService != input.SysLockSourceService || (this.SysLockSourceService != null && !this.SysLockSourceService.Equals(input.SysLockSourceService))) return false;
+            if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
 
             return true;
         }
@@ -303,7 +197,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.SmnNotify != null) hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
                 if (this.BackupNamePrefix != null) hashCode = hashCode * 59 + this.BackupNamePrefix.GetHashCode();
                 if (this.DemandBilling != null) hashCode = hashCode * 59 + this.DemandBilling.GetHashCode();
-                hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
+                if (this.SysLockSourceService != null) hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
+                if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
                 return hashCode;
             }
         }

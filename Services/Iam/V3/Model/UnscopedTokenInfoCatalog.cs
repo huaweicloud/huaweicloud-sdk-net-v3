@@ -23,28 +23,28 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 接口类型，描述接口在该终端节点的可见性。值为“public”，表示该接口为公开接口。
+        /// 服务名称。
         /// </summary>
-        [JsonProperty("interface", NullValueHandling = NullValueHandling.Ignore)]
-        public string Interface { get; set; }
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// 终端节点所属区域。
+        /// 该接口所属服务。
         /// </summary>
-        [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
-        public string Region { get; set; }
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
 
         /// <summary>
-        /// 终端节点所属区域ID。
+        /// 
         /// </summary>
-        [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string RegionId { get; set; }
+        [JsonProperty("endpoints", NullValueHandling = NullValueHandling.Ignore)]
+        public List<UnscopedTokenInfoCatalogEndpoints> Endpoints { get; set; }
 
         /// <summary>
-        /// 终端节点的URL。
+        /// 
         /// </summary>
-        [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
-        public string Url { get; set; }
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public Object Description { get; set; }
 
 
 
@@ -56,10 +56,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             var sb = new StringBuilder();
             sb.Append("class UnscopedTokenInfoCatalog {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  Interface: ").Append(Interface).Append("\n");
-            sb.Append("  region: ").Append(Region).Append("\n");
-            sb.Append("  regionId: ").Append(RegionId).Append("\n");
-            sb.Append("  url: ").Append(Url).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  endpoints: ").Append(Endpoints).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,10 +79,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
-            if (this.Interface != input.Interface || (this.Interface != null && !this.Interface.Equals(input.Interface))) return false;
-            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
-            if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
-            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Endpoints != input.Endpoints || (this.Endpoints != null && input.Endpoints != null && !this.Endpoints.SequenceEqual(input.Endpoints))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
             return true;
         }
@@ -96,10 +96,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             {
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Interface != null) hashCode = hashCode * 59 + this.Interface.GetHashCode();
-                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
-                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Endpoints != null) hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

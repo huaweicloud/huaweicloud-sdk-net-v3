@@ -28,12 +28,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("group", NullValueHandling = NullValueHandling.Ignore)]
         public RulesLocalGroup Group { get; set; }
 
-        /// <summary>
-        /// 联邦用户在本系统中所属用户组列表
-        /// </summary>
-        [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
-        public string Groups { get; set; }
-
 
 
         /// <summary>
@@ -45,7 +39,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("class RulesLocal {\n");
             sb.Append("  user: ").Append(User).Append("\n");
             sb.Append("  group: ").Append(Group).Append("\n");
-            sb.Append("  groups: ").Append(Groups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,7 +59,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (input == null) return false;
             if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
             if (this.Group != input.Group || (this.Group != null && !this.Group.Equals(input.Group))) return false;
-            if (this.Groups != input.Groups || (this.Groups != null && !this.Groups.Equals(input.Groups))) return false;
 
             return true;
         }
@@ -81,7 +73,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 var hashCode = 41;
                 if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
                 if (this.Group != null) hashCode = hashCode * 59 + this.Group.GetHashCode();
-                if (this.Groups != null) hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 return hashCode;
             }
         }

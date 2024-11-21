@@ -15,6 +15,133 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     /// </summary>
     public class ListAlarmHistoriesRequest 
     {
+        /// <summary>
+        /// 按关键字排序, 默认为update_time, {first_alarm_time: 告警产生时间, update_time: 更新时间, alarm_level: 告警级别, record_id：表记录主键} 
+        /// </summary>
+        /// <value>按关键字排序, 默认为update_time, {first_alarm_time: 告警产生时间, update_time: 更新时间, alarm_level: 告警级别, record_id：表记录主键} </value>
+        [JsonConverter(typeof(EnumClassConverter<OrderByEnum>))]
+        public class OrderByEnum
+        {
+            /// <summary>
+            /// Enum FIRST_ALARM_TIME for value: first_alarm_time
+            /// </summary>
+            public static readonly OrderByEnum FIRST_ALARM_TIME = new OrderByEnum("first_alarm_time");
+
+            /// <summary>
+            /// Enum UPDATE_TIME for value: update_time
+            /// </summary>
+            public static readonly OrderByEnum UPDATE_TIME = new OrderByEnum("update_time");
+
+            /// <summary>
+            /// Enum ALARM_LEVEL for value: alarm_level
+            /// </summary>
+            public static readonly OrderByEnum ALARM_LEVEL = new OrderByEnum("alarm_level");
+
+            /// <summary>
+            /// Enum RECORD_ID for value: record_id
+            /// </summary>
+            public static readonly OrderByEnum RECORD_ID = new OrderByEnum("record_id");
+
+            private static readonly Dictionary<string, OrderByEnum> StaticFields =
+            new Dictionary<string, OrderByEnum>()
+            {
+                { "first_alarm_time", FIRST_ALARM_TIME },
+                { "update_time", UPDATE_TIME },
+                { "alarm_level", ALARM_LEVEL },
+                { "record_id", RECORD_ID },
+            };
+
+            private string _value;
+
+            public OrderByEnum()
+            {
+
+            }
+
+            public OrderByEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static OrderByEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as OrderByEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(OrderByEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(OrderByEnum a, OrderByEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(OrderByEnum a, OrderByEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 告警ID,以al开头，后跟22位由字母或数字组成的字符串
@@ -86,6 +213,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// 按关键字排序, 默认为update_time, {first_alarm_time: 告警产生时间, update_time: 更新时间, alarm_level: 告警级别, record_id：表记录主键} 
+        /// </summary>
+        [SDKProperty("order_by", IsQuery = true)]
+        [JsonProperty("order_by", NullValueHandling = NullValueHandling.Ignore)]
+        public OrderByEnum OrderBy { get; set; }
 
 
         /// <summary>
@@ -105,6 +238,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  to: ").Append(To).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  orderBy: ").Append(OrderBy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,6 +267,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.To != input.To || (this.To != null && !this.To.Equals(input.To))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.OrderBy != input.OrderBy) return false;
 
             return true;
         }
@@ -155,6 +290,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.To != null) hashCode = hashCode * 59 + this.To.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                hashCode = hashCode * 59 + this.OrderBy.GetHashCode();
                 return hashCode;
             }
         }

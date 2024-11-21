@@ -257,6 +257,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public LanguageEnum Language { get; set; }
         /// <summary>
+        /// subtitle name
+        /// </summary>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        public string Name { get; set; }
+
+        /// <summary>
         /// 字幕文件的MD5值。
         /// </summary>
         [JsonProperty("md5", NullValueHandling = NullValueHandling.Ignore)]
@@ -280,6 +286,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  language: ").Append(Language).Append("\n");
+            sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  md5: ").Append(Md5).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
@@ -303,6 +310,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Type != input.Type) return false;
             if (this.Language != input.Language) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Md5 != input.Md5 || (this.Md5 != null && !this.Md5.Equals(input.Md5))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
@@ -320,6 +328,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Md5 != null) hashCode = hashCode * 59 + this.Md5.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;

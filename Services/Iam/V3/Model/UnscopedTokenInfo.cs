@@ -47,10 +47,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public List<UnscopedTokenInfoRoles> Roles { get; set; }
 
         /// <summary>
-        /// catalog信息。
+        /// 
         /// </summary>
         [JsonProperty("catalog", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UnscopedTokenInfoCatalog> Catalog { get; set; }
+        public UnscopedTokenInfoCatalog Catalog { get; set; }
 
 
 
@@ -90,7 +90,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (this.IssuedAt != input.IssuedAt || (this.IssuedAt != null && !this.IssuedAt.Equals(input.IssuedAt))) return false;
             if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
             if (this.Roles != input.Roles || (this.Roles != null && input.Roles != null && !this.Roles.SequenceEqual(input.Roles))) return false;
-            if (this.Catalog != input.Catalog || (this.Catalog != null && input.Catalog != null && !this.Catalog.SequenceEqual(input.Catalog))) return false;
+            if (this.Catalog != input.Catalog || (this.Catalog != null && !this.Catalog.Equals(input.Catalog))) return false;
 
             return true;
         }

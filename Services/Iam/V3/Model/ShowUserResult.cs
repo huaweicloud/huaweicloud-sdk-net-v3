@@ -124,6 +124,18 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// IAM用户密码创建更新时间。
+        /// </summary>
+        [JsonProperty("pwd_create_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string PwdCreateTime { get; set; }
+
+        /// <summary>
+        /// IAM用户更新时间。
+        /// </summary>
+        [JsonProperty("modify_pwd_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string ModifyPwdTime { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +163,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  isDomainOwner: ").Append(IsDomainOwner).Append("\n");
             sb.Append("  accessMode: ").Append(AccessMode).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  pwdCreateTime: ").Append(PwdCreateTime).Append("\n");
+            sb.Append("  modifyPwdTime: ").Append(ModifyPwdTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +201,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (this.IsDomainOwner != input.IsDomainOwner || (this.IsDomainOwner != null && !this.IsDomainOwner.Equals(input.IsDomainOwner))) return false;
             if (this.AccessMode != input.AccessMode || (this.AccessMode != null && !this.AccessMode.Equals(input.AccessMode))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.PwdCreateTime != input.PwdCreateTime || (this.PwdCreateTime != null && !this.PwdCreateTime.Equals(input.PwdCreateTime))) return false;
+            if (this.ModifyPwdTime != input.ModifyPwdTime || (this.ModifyPwdTime != null && !this.ModifyPwdTime.Equals(input.ModifyPwdTime))) return false;
 
             return true;
         }
@@ -217,6 +233,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 if (this.IsDomainOwner != null) hashCode = hashCode * 59 + this.IsDomainOwner.GetHashCode();
                 if (this.AccessMode != null) hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.PwdCreateTime != null) hashCode = hashCode * 59 + this.PwdCreateTime.GetHashCode();
+                if (this.ModifyPwdTime != null) hashCode = hashCode * 59 + this.ModifyPwdTime.GetHashCode();
                 return hashCode;
             }
         }

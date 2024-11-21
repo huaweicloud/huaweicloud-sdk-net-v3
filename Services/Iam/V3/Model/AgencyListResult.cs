@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     /// <summary>
     /// 
     /// </summary>
-    public class AgencyResult 
+    public class AgencyListResult 
     {
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AgencyResult {\n");
+            sb.Append("class AgencyListResult {\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
@@ -97,13 +97,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AgencyResult);
+            return this.Equals(input as AgencyListResult);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AgencyResult input)
+        public bool Equals(AgencyListResult input)
         {
             if (input == null) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;

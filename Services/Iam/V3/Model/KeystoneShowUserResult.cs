@@ -70,6 +70,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
 
+        /// <summary>
+        /// IAM用户访问方式。 - default：默认访问模式，编程访问和管理控制台访问。 - programmatic：编程访问。 - console：管理控制台访问。
+        /// </summary>
+        [JsonProperty("access_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccessMode { get; set; }
+
 
 
         /// <summary>
@@ -88,6 +94,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  links: ").Append(Links).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  enabled: ").Append(Enabled).Append("\n");
+            sb.Append("  accessMode: ").Append(AccessMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.AccessMode != input.AccessMode || (this.AccessMode != null && !this.AccessMode.Equals(input.AccessMode))) return false;
 
             return true;
         }
@@ -136,6 +144,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.AccessMode != null) hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
                 return hashCode;
             }
         }

@@ -26,13 +26,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 权限信息列表。
         /// </summary>
         [JsonProperty("roles", NullValueHandling = NullValueHandling.Ignore)]
-        public List<RoleResult> Roles { get; set; }
-
-        /// <summary>
-        /// 在查询参数存在domain_id时，返回自定义策略总数
-        /// </summary>
-        [JsonProperty("total_number", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TotalNumber { get; set; }
+        public List<InheritedRoleResult> Roles { get; set; }
 
 
 
@@ -45,7 +39,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("class KeystoneListAllProjectPermissionsForGroupResponse {\n");
             sb.Append("  links: ").Append(Links).Append("\n");
             sb.Append("  roles: ").Append(Roles).Append("\n");
-            sb.Append("  totalNumber: ").Append(TotalNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,7 +59,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (input == null) return false;
             if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
             if (this.Roles != input.Roles || (this.Roles != null && input.Roles != null && !this.Roles.SequenceEqual(input.Roles))) return false;
-            if (this.TotalNumber != input.TotalNumber || (this.TotalNumber != null && !this.TotalNumber.Equals(input.TotalNumber))) return false;
 
             return true;
         }
@@ -81,7 +73,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 var hashCode = 41;
                 if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
                 if (this.Roles != null) hashCode = hashCode * 59 + this.Roles.GetHashCode();
-                if (this.TotalNumber != null) hashCode = hashCode * 59 + this.TotalNumber.GetHashCode();
                 return hashCode;
             }
         }

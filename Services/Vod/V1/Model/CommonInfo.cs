@@ -523,9 +523,124 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             }
         }
 
+        /// <summary>
+        /// 分片的封装格式，目前支持TS和FMP4，默认TS格式。 
+        /// </summary>
+        /// <value>分片的封装格式，目前支持TS和FMP4，默认TS格式。 </value>
+        [JsonConverter(typeof(EnumClassConverter<HlsSegmentTypeEnum>))]
+        public class HlsSegmentTypeEnum
+        {
+            /// <summary>
+            /// Enum TS for value: TS
+            /// </summary>
+            public static readonly HlsSegmentTypeEnum TS = new HlsSegmentTypeEnum("TS");
+
+            /// <summary>
+            /// Enum FMP4 for value: FMP4
+            /// </summary>
+            public static readonly HlsSegmentTypeEnum FMP4 = new HlsSegmentTypeEnum("FMP4");
+
+            private static readonly Dictionary<string, HlsSegmentTypeEnum> StaticFields =
+            new Dictionary<string, HlsSegmentTypeEnum>()
+            {
+                { "TS", TS },
+                { "FMP4", FMP4 },
+            };
+
+            private string _value;
+
+            public HlsSegmentTypeEnum()
+            {
+
+            }
+
+            public HlsSegmentTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static HlsSegmentTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as HlsSegmentTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(HlsSegmentTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(HlsSegmentTypeEnum a, HlsSegmentTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(HlsSegmentTypeEnum a, HlsSegmentTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// pvc开关&lt;br/&gt; 
+        /// 高清低码开关&lt;br/&gt; 
         /// </summary>
         [JsonProperty("pvc", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Pvc { get; set; }
@@ -568,6 +683,29 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         [JsonProperty("adaptation", NullValueHandling = NullValueHandling.Ignore)]
         public AdaptationEnum Adaptation { get; set; }
+        /// <summary>
+        /// 编码质量等级，取值[0,2] 0表示当前现网方式默认方式，1表示转码效率优先，2表示转码质量优先。&lt;br/&gt; 
+        /// </summary>
+        [JsonProperty("preset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Preset { get; set; }
+
+        /// <summary>
+        /// I帧最大间隔，取值范围：[2，10]。默认值：5，单位秒。&lt;br/&gt; 
+        /// </summary>
+        [JsonProperty("max_iframes_interval", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MaxIframesInterval { get; set; }
+
+        /// <summary>
+        /// 转码后音频是否独立存储。&lt;br/&gt; 
+        /// </summary>
+        [JsonProperty("hls_audio_separate", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? HlsAudioSeparate { get; set; }
+
+        /// <summary>
+        /// 分片的封装格式，目前支持TS和FMP4，默认TS格式。 
+        /// </summary>
+        [JsonProperty("hls_segment_type", NullValueHandling = NullValueHandling.Ignore)]
+        public HlsSegmentTypeEnum HlsSegmentType { get; set; }
 
 
         /// <summary>
@@ -585,6 +723,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("  hlsInterval: ").Append(HlsInterval).Append("\n");
             sb.Append("  upsample: ").Append(Upsample).Append("\n");
             sb.Append("  adaptation: ").Append(Adaptation).Append("\n");
+            sb.Append("  preset: ").Append(Preset).Append("\n");
+            sb.Append("  maxIframesInterval: ").Append(MaxIframesInterval).Append("\n");
+            sb.Append("  hlsAudioSeparate: ").Append(HlsAudioSeparate).Append("\n");
+            sb.Append("  hlsSegmentType: ").Append(HlsSegmentType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -611,6 +753,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             if (this.HlsInterval != input.HlsInterval || (this.HlsInterval != null && !this.HlsInterval.Equals(input.HlsInterval))) return false;
             if (this.Upsample != input.Upsample || (this.Upsample != null && !this.Upsample.Equals(input.Upsample))) return false;
             if (this.Adaptation != input.Adaptation) return false;
+            if (this.Preset != input.Preset || (this.Preset != null && !this.Preset.Equals(input.Preset))) return false;
+            if (this.MaxIframesInterval != input.MaxIframesInterval || (this.MaxIframesInterval != null && !this.MaxIframesInterval.Equals(input.MaxIframesInterval))) return false;
+            if (this.HlsAudioSeparate != input.HlsAudioSeparate || (this.HlsAudioSeparate != null && !this.HlsAudioSeparate.Equals(input.HlsAudioSeparate))) return false;
+            if (this.HlsSegmentType != input.HlsSegmentType) return false;
 
             return true;
         }
@@ -631,6 +777,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 if (this.HlsInterval != null) hashCode = hashCode * 59 + this.HlsInterval.GetHashCode();
                 if (this.Upsample != null) hashCode = hashCode * 59 + this.Upsample.GetHashCode();
                 hashCode = hashCode * 59 + this.Adaptation.GetHashCode();
+                if (this.Preset != null) hashCode = hashCode * 59 + this.Preset.GetHashCode();
+                if (this.MaxIframesInterval != null) hashCode = hashCode * 59 + this.MaxIframesInterval.GetHashCode();
+                if (this.HlsAudioSeparate != null) hashCode = hashCode * 59 + this.HlsAudioSeparate.GetHashCode();
+                hashCode = hashCode * 59 + this.HlsSegmentType.GetHashCode();
                 return hashCode;
             }
         }

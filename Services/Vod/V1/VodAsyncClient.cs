@@ -1077,7 +1077,7 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// <summary>
         /// 查询源站统计信息
         ///
-        /// 查询点播源站的统计数据，包括流量、存储空间、转码时长。
+        /// 查询点播源站的统计数据，包括存储空间、转码时长。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

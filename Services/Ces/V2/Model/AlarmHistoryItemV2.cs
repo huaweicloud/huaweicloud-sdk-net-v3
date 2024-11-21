@@ -316,6 +316,24 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public DateTime? EndTime { get; set; }
 
         /// <summary>
+        /// 第一次告警时间戳，UTC时间
+        /// </summary>
+        [JsonProperty("first_alarm_time", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? FirstAlarmTime { get; set; }
+
+        /// <summary>
+        /// 最后一次告警时间，UTC时间
+        /// </summary>
+        [JsonProperty("last_alarm_time", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? LastAlarmTime { get; set; }
+
+        /// <summary>
+        /// 告警恢复时间，UTC时间
+        /// </summary>
+        [JsonProperty("alarm_recovery_time", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? AlarmRecoveryTime { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("metric", NullValueHandling = NullValueHandling.Ignore)]
@@ -369,6 +387,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  actionEnabled: ").Append(ActionEnabled).Append("\n");
             sb.Append("  beginTime: ").Append(BeginTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  firstAlarmTime: ").Append(FirstAlarmTime).Append("\n");
+            sb.Append("  lastAlarmTime: ").Append(LastAlarmTime).Append("\n");
+            sb.Append("  alarmRecoveryTime: ").Append(AlarmRecoveryTime).Append("\n");
             sb.Append("  metric: ").Append(Metric).Append("\n");
             sb.Append("  condition: ").Append(Condition).Append("\n");
             sb.Append("  additionalInfo: ").Append(AdditionalInfo).Append("\n");
@@ -402,6 +423,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.ActionEnabled != input.ActionEnabled || (this.ActionEnabled != null && !this.ActionEnabled.Equals(input.ActionEnabled))) return false;
             if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.FirstAlarmTime != input.FirstAlarmTime || (this.FirstAlarmTime != null && !this.FirstAlarmTime.Equals(input.FirstAlarmTime))) return false;
+            if (this.LastAlarmTime != input.LastAlarmTime || (this.LastAlarmTime != null && !this.LastAlarmTime.Equals(input.LastAlarmTime))) return false;
+            if (this.AlarmRecoveryTime != input.AlarmRecoveryTime || (this.AlarmRecoveryTime != null && !this.AlarmRecoveryTime.Equals(input.AlarmRecoveryTime))) return false;
             if (this.Metric != input.Metric || (this.Metric != null && !this.Metric.Equals(input.Metric))) return false;
             if (this.Condition != input.Condition || (this.Condition != null && !this.Condition.Equals(input.Condition))) return false;
             if (this.AdditionalInfo != input.AdditionalInfo || (this.AdditionalInfo != null && !this.AdditionalInfo.Equals(input.AdditionalInfo))) return false;
@@ -429,6 +453,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.ActionEnabled != null) hashCode = hashCode * 59 + this.ActionEnabled.GetHashCode();
                 if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.FirstAlarmTime != null) hashCode = hashCode * 59 + this.FirstAlarmTime.GetHashCode();
+                if (this.LastAlarmTime != null) hashCode = hashCode * 59 + this.LastAlarmTime.GetHashCode();
+                if (this.AlarmRecoveryTime != null) hashCode = hashCode * 59 + this.AlarmRecoveryTime.GetHashCode();
                 if (this.Metric != null) hashCode = hashCode * 59 + this.Metric.GetHashCode();
                 if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
                 if (this.AdditionalInfo != null) hashCode = hashCode * 59 + this.AdditionalInfo.GetHashCode();

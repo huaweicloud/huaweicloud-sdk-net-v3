@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
     public class Common 
     {
         /// <summary>
-        /// pvc开关。
+        /// 高清低码开关。
         /// </summary>
-        /// <value>pvc开关。</value>
+        /// <value>高清低码开关。</value>
         [JsonConverter(typeof(EnumClassConverter<PvcEnum>))]
         public class PvcEnum
         {
@@ -392,12 +392,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
 
         /// <summary>
-        /// pvc开关。
+        /// 高清低码开关。
         /// </summary>
         [JsonProperty("pvc", NullValueHandling = NullValueHandling.Ignore)]
         public PvcEnum Pvc { get; set; }
         /// <summary>
-        /// pvc版本。
+        /// 高清低码版本。
         /// </summary>
         [JsonProperty("pvc_version", NullValueHandling = NullValueHandling.Ignore)]
         public string PvcVersion { get; set; }

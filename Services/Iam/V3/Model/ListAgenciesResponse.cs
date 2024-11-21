@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 委托信息列表。
         /// </summary>
         [JsonProperty("agencies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AgencyResult> Agencies { get; set; }
+        public List<AgencyListResult> Agencies { get; set; }
 
 
 

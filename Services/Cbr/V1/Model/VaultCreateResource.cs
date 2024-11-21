@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("sys_lock_source_service", NullValueHandling = NullValueHandling.Ignore)]
         public string SysLockSourceService { get; set; }
 
+        /// <summary>
+        /// 用于标识该存储库是否已锁定
+        /// </summary>
+        [JsonProperty("locked", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Locked { get; set; }
+
 
 
         /// <summary>
@@ -193,6 +199,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  cbcDeleteCount: ").Append(CbcDeleteCount).Append("\n");
             sb.Append("  frozen: ").Append(Frozen).Append("\n");
             sb.Append("  sysLockSourceService: ").Append(SysLockSourceService).Append("\n");
+            sb.Append("  locked: ").Append(Locked).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,6 +242,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.CbcDeleteCount != input.CbcDeleteCount || (this.CbcDeleteCount != null && !this.CbcDeleteCount.Equals(input.CbcDeleteCount))) return false;
             if (this.Frozen != input.Frozen || (this.Frozen != null && !this.Frozen.Equals(input.Frozen))) return false;
             if (this.SysLockSourceService != input.SysLockSourceService || (this.SysLockSourceService != null && !this.SysLockSourceService.Equals(input.SysLockSourceService))) return false;
+            if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
 
             return true;
         }
@@ -271,6 +279,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.CbcDeleteCount != null) hashCode = hashCode * 59 + this.CbcDeleteCount.GetHashCode();
                 if (this.Frozen != null) hashCode = hashCode * 59 + this.Frozen.GetHashCode();
                 if (this.SysLockSourceService != null) hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
+                if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
                 return hashCode;
             }
         }

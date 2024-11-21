@@ -28,15 +28,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             public static readonly CloudTypeEnum PUBLIC = new CloudTypeEnum("public");
 
             /// <summary>
-            /// Enum _HYBRID for value:  hybrid
+            /// Enum HYBRID for value: hybrid
             /// </summary>
-            public static readonly CloudTypeEnum _HYBRID = new CloudTypeEnum(" hybrid");
+            public static readonly CloudTypeEnum HYBRID = new CloudTypeEnum("hybrid");
 
             private static readonly Dictionary<string, CloudTypeEnum> StaticFields =
             new Dictionary<string, CloudTypeEnum>()
             {
                 { "public", PUBLIC },
-                { " hybrid", _HYBRID },
+                { "hybrid", HYBRID },
             };
 
             private string _value;

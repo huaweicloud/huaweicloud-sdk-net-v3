@@ -118,6 +118,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("sys_lock_source_service", NullValueHandling = NullValueHandling.Ignore)]
         public string SysLockSourceService { get; set; }
 
+        /// <summary>
+        /// 用于标识该存储库是否已锁定
+        /// </summary>
+        [JsonProperty("locked", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Locked { get; set; }
+
 
 
         /// <summary>
@@ -144,6 +150,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  smnNotify: ").Append(SmnNotify).Append("\n");
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
             sb.Append("  sysLockSourceService: ").Append(SysLockSourceService).Append("\n");
+            sb.Append("  locked: ").Append(Locked).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -179,6 +186,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.SmnNotify != input.SmnNotify || (this.SmnNotify != null && !this.SmnNotify.Equals(input.SmnNotify))) return false;
             if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
             if (this.SysLockSourceService != input.SysLockSourceService || (this.SysLockSourceService != null && !this.SysLockSourceService.Equals(input.SysLockSourceService))) return false;
+            if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
 
             return true;
         }
@@ -208,6 +216,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.SmnNotify != null) hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
                 if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
                 if (this.SysLockSourceService != null) hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
+                if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
                 return hashCode;
             }
         }

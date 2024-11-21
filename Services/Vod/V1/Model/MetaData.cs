@@ -533,10 +533,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public long? Width { get; set; }
 
         /// <summary>
-        /// 视频高度（单位：像素）。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
+        /// 视频高度（单位：像素）。该字段会逐渐废弃，请使用height字段。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
         /// </summary>
         [JsonProperty("hight", NullValueHandling = NullValueHandling.Ignore)]
         public long? Hight { get; set; }
+
+        /// <summary>
+        /// 视频高度（单位：像素）。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
+        /// </summary>
+        [JsonProperty("height", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Height { get; set; }
 
         /// <summary>
         /// 视频平均码率。
@@ -577,6 +583,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("  videoSize: ").Append(VideoSize).Append("\n");
             sb.Append("  width: ").Append(Width).Append("\n");
             sb.Append("  hight: ").Append(Hight).Append("\n");
+            sb.Append("  height: ").Append(Height).Append("\n");
             sb.Append("  bitRate: ").Append(BitRate).Append("\n");
             sb.Append("  frameRate: ").Append(FrameRate).Append("\n");
             sb.Append("  quality: ").Append(Quality).Append("\n");
@@ -605,6 +612,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             if (this.VideoSize != input.VideoSize || (this.VideoSize != null && !this.VideoSize.Equals(input.VideoSize))) return false;
             if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
             if (this.Hight != input.Hight || (this.Hight != null && !this.Hight.Equals(input.Hight))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
             if (this.BitRate != input.BitRate || (this.BitRate != null && !this.BitRate.Equals(input.BitRate))) return false;
             if (this.FrameRate != input.FrameRate || (this.FrameRate != null && !this.FrameRate.Equals(input.FrameRate))) return false;
             if (this.Quality != input.Quality || (this.Quality != null && !this.Quality.Equals(input.Quality))) return false;
@@ -627,6 +635,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 if (this.VideoSize != null) hashCode = hashCode * 59 + this.VideoSize.GetHashCode();
                 if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
                 if (this.Hight != null) hashCode = hashCode * 59 + this.Hight.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
                 if (this.BitRate != null) hashCode = hashCode * 59 + this.BitRate.GetHashCode();
                 if (this.FrameRate != null) hashCode = hashCode * 59 + this.FrameRate.GetHashCode();
                 if (this.Quality != null) hashCode = hashCode * 59 + this.Quality.GetHashCode();

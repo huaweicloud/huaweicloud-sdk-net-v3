@@ -94,6 +94,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("auto_expand", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AutoExpand { get; set; }
 
+        /// <summary>
+        /// 用于标识当前存储库是否已锁定
+        /// </summary>
+        [JsonProperty("locked", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Locked { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  smnNotify: ").Append(SmnNotify).Append("\n");
             sb.Append("  parameters: ").Append(Parameters).Append("\n");
             sb.Append("  autoExpand: ").Append(AutoExpand).Append("\n");
+            sb.Append("  locked: ").Append(Locked).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,6 +154,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.SmnNotify != input.SmnNotify || (this.SmnNotify != null && !this.SmnNotify.Equals(input.SmnNotify))) return false;
             if (this.Parameters != input.Parameters || (this.Parameters != null && !this.Parameters.Equals(input.Parameters))) return false;
             if (this.AutoExpand != input.AutoExpand || (this.AutoExpand != null && !this.AutoExpand.Equals(input.AutoExpand))) return false;
+            if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
 
             return true;
         }
@@ -172,6 +180,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.SmnNotify != null) hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
                 if (this.Parameters != null) hashCode = hashCode * 59 + this.Parameters.GetHashCode();
                 if (this.AutoExpand != null) hashCode = hashCode * 59 + this.AutoExpand.GetHashCode();
+                if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
                 return hashCode;
             }
         }

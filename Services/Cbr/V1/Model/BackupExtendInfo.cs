@@ -28,21 +28,21 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             public static readonly SupportedRestoreModeEnum NA = new SupportedRestoreModeEnum("na");
 
             /// <summary>
-            /// Enum _BACKUP for value:  backup
+            /// Enum BACKUP for value: backup
             /// </summary>
-            public static readonly SupportedRestoreModeEnum _BACKUP = new SupportedRestoreModeEnum(" backup");
+            public static readonly SupportedRestoreModeEnum BACKUP = new SupportedRestoreModeEnum("backup");
 
             /// <summary>
-            /// Enum _SNAPSHOT for value:  snapshot
+            /// Enum SNAPSHOT for value: snapshot
             /// </summary>
-            public static readonly SupportedRestoreModeEnum _SNAPSHOT = new SupportedRestoreModeEnum(" snapshot");
+            public static readonly SupportedRestoreModeEnum SNAPSHOT = new SupportedRestoreModeEnum("snapshot");
 
             private static readonly Dictionary<string, SupportedRestoreModeEnum> StaticFields =
             new Dictionary<string, SupportedRestoreModeEnum>()
             {
                 { "na", NA },
-                { " backup", _BACKUP },
-                { " snapshot", _SNAPSHOT },
+                { "backup", BACKUP },
+                { "snapshot", SNAPSHOT },
             };
 
             private string _value;
