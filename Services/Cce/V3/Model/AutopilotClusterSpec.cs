@@ -478,12 +478,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("configurationsOverride", NullValueHandling = NullValueHandling.Ignore)]
         public List<AutopilotPackageConfiguration> ConfigurationsOverride { get; set; }
 
-        /// <summary>
-        /// 集群删除保护，开启后禁止用户通过API或console调用删除集群，true表示开启，默认值false关闭。
-        /// </summary>
-        [JsonProperty("deletionProtection", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? DeletionProtection { get; set; }
-
 
 
         /// <summary>
@@ -516,7 +510,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  az: ").Append(Az).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("  configurationsOverride: ").Append(ConfigurationsOverride).Append("\n");
-            sb.Append("  deletionProtection: ").Append(DeletionProtection).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -558,7 +551,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Az != input.Az || (this.Az != null && !this.Az.Equals(input.Az))) return false;
             if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
             if (this.ConfigurationsOverride != input.ConfigurationsOverride || (this.ConfigurationsOverride != null && input.ConfigurationsOverride != null && !this.ConfigurationsOverride.SequenceEqual(input.ConfigurationsOverride))) return false;
-            if (this.DeletionProtection != input.DeletionProtection || (this.DeletionProtection != null && !this.DeletionProtection.Equals(input.DeletionProtection))) return false;
 
             return true;
         }
@@ -594,7 +586,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.Az != null) hashCode = hashCode * 59 + this.Az.GetHashCode();
                 if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 if (this.ConfigurationsOverride != null) hashCode = hashCode * 59 + this.ConfigurationsOverride.GetHashCode();
-                if (this.DeletionProtection != null) hashCode = hashCode * 59 + this.DeletionProtection.GetHashCode();
                 return hashCode;
             }
         }

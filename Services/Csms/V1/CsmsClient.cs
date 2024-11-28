@@ -41,6 +41,30 @@ namespace HuaweiCloud.SDK.Csms.V1
         }
         
         /// <summary>
+        /// 创建服务委托
+        ///
+        /// 创建服务委托。用于创建凭据管理服务相关委托和函数工作流相关委托。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAgencyResponse CreateAgency(CreateAgencyRequest createAgencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/agencies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAgencyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateAgencyResponse>(response);
+        }
+
+        public SyncInvoker<CreateAgencyResponse> CreateAgencyInvoker(CreateAgencyRequest createAgencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/agencies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAgencyRequest);
+            return new SyncInvoker<CreateAgencyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAgencyResponse>);
+        }
+        
+        /// <summary>
         /// 创建凭据
         ///
         /// 创建新的凭据，并将凭据值存入凭据的初始版本。
@@ -429,6 +453,30 @@ namespace HuaweiCloud.SDK.Csms.V1
         }
         
         /// <summary>
+        /// 查询任务列表
+        ///
+        /// 查询任务列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSecretTaskResponse ListSecretTask(ListSecretTaskRequest listSecretTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSecretTaskResponse>(response);
+        }
+
+        public SyncInvoker<ListSecretTaskResponse> ListSecretTaskInvoker(ListSecretTaskRequest listSecretTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretTaskRequest);
+            return new SyncInvoker<ListSecretTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecretTaskResponse>);
+        }
+        
+        /// <summary>
         /// 查询凭据的版本列表
         ///
         /// 查询指定凭据下的版本列表信息。
@@ -531,6 +579,30 @@ namespace HuaweiCloud.SDK.Csms.V1
         }
         
         /// <summary>
+        /// 查看是否有服务委托
+        ///
+        /// 查看是否有服务委托
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAgencyResponse ShowAgency(ShowAgencyRequest showAgencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/agencies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAgencyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAgencyResponse>(response);
+        }
+
+        public SyncInvoker<ShowAgencyResponse> ShowAgencyInvoker(ShowAgencyRequest showAgencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/agencies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAgencyRequest);
+            return new SyncInvoker<ShowAgencyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAgencyResponse>);
+        }
+        
+        /// <summary>
         /// 查询凭据
         ///
         /// 查询指定凭据的信息。
@@ -580,6 +652,30 @@ namespace HuaweiCloud.SDK.Csms.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretEventRequest);
             return new SyncInvoker<ShowSecretEventResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretEventResponse>);
+        }
+        
+        /// <summary>
+        /// 获取凭据轮转函数模板
+        ///
+        /// 获取凭据轮转函数模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSecretFunctionTemplatesResponse ShowSecretFunctionTemplates(ShowSecretFunctionTemplatesRequest showSecretFunctionTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/function-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretFunctionTemplatesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSecretFunctionTemplatesResponse>(response);
+        }
+
+        public SyncInvoker<ShowSecretFunctionTemplatesResponse> ShowSecretFunctionTemplatesInvoker(ShowSecretFunctionTemplatesRequest showSecretFunctionTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/function-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretFunctionTemplatesRequest);
+            return new SyncInvoker<ShowSecretFunctionTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretFunctionTemplatesResponse>);
         }
         
         /// <summary>

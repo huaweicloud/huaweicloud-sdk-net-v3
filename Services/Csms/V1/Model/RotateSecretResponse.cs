@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         [JsonProperty("secret_name", NullValueHandling = NullValueHandling.Ignore)]
         public string SecretName { get; set; }
 
+        /// <summary>
+        /// 凭据轮转任务ID。
+        /// </summary>
+        [JsonProperty("rotation_task_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RotationTaskId { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
             sb.Append("class RotateSecretResponse {\n");
             sb.Append("  versionId: ").Append(VersionId).Append("\n");
             sb.Append("  secretName: ").Append(SecretName).Append("\n");
+            sb.Append("  rotationTaskId: ").Append(RotationTaskId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
             if (input == null) return false;
             if (this.VersionId != input.VersionId || (this.VersionId != null && !this.VersionId.Equals(input.VersionId))) return false;
             if (this.SecretName != input.SecretName || (this.SecretName != null && !this.SecretName.Equals(input.SecretName))) return false;
+            if (this.RotationTaskId != input.RotationTaskId || (this.RotationTaskId != null && !this.RotationTaskId.Equals(input.RotationTaskId))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
                 var hashCode = 41;
                 if (this.VersionId != null) hashCode = hashCode * 59 + this.VersionId.GetHashCode();
                 if (this.SecretName != null) hashCode = hashCode * 59 + this.SecretName.GetHashCode();
+                if (this.RotationTaskId != null) hashCode = hashCode * 59 + this.RotationTaskId.GetHashCode();
                 return hashCode;
             }
         }

@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     /// </summary>
     public class ReinstallNodeSpec 
     {
+        /// <summary>
+        /// **参数解释**： 指定节点安全加固类型，当前仅支持HCE2.0镜像等保2.0三级安全加固。 等保加固会对身份鉴别、访问控制、安全审计、入侵防范、恶意代码防范进行检查并加固。详情请参见[Huawei Cloud EulerOS 2.0等保2.0三级版镜像概述](https://support.huaweicloud.com/productdesc-hce/hce_sec_0001.html)。 若未指定此参数，则尝试用原有的值补全。如：原先HCE2.0镜像已配置安全加固，更新节点池时未指定此参数，则仍旧保持安全加固配置，若要取消，需显式指定参数值为\&quot;null\&quot;。 **约束限制**： 不涉及 **取值范围**： 取值范围：[&#39;null&#39;, cybersecurity]; **默认取值**： 不涉及
+        /// </summary>
+        /// <value>**参数解释**： 指定节点安全加固类型，当前仅支持HCE2.0镜像等保2.0三级安全加固。 等保加固会对身份鉴别、访问控制、安全审计、入侵防范、恶意代码防范进行检查并加固。详情请参见[Huawei Cloud EulerOS 2.0等保2.0三级版镜像概述](https://support.huaweicloud.com/productdesc-hce/hce_sec_0001.html)。 若未指定此参数，则尝试用原有的值补全。如：原先HCE2.0镜像已配置安全加固，更新节点池时未指定此参数，则仍旧保持安全加固配置，若要取消，需显式指定参数值为\&quot;null\&quot;。 **约束限制**： 不涉及 **取值范围**： 取值范围：[&#39;null&#39;, cybersecurity]; **默认取值**： 不涉及</value>
+        [JsonConverter(typeof(EnumClassConverter<SecurityReinforcementTypeEnum>))]
+        public class SecurityReinforcementTypeEnum
+        {
+            /// <summary>
+            /// Enum NULL for value: null
+            /// </summary>
+            public static readonly SecurityReinforcementTypeEnum NULL = new SecurityReinforcementTypeEnum("null");
+
+            /// <summary>
+            /// Enum CYBERSECURITY for value: cybersecurity
+            /// </summary>
+            public static readonly SecurityReinforcementTypeEnum CYBERSECURITY = new SecurityReinforcementTypeEnum("cybersecurity");
+
+            private static readonly Dictionary<string, SecurityReinforcementTypeEnum> StaticFields =
+            new Dictionary<string, SecurityReinforcementTypeEnum>()
+            {
+                { "null", NULL },
+                { "cybersecurity", CYBERSECURITY },
+            };
+
+            private string _value;
+
+            public SecurityReinforcementTypeEnum()
+            {
+
+            }
+
+            public SecurityReinforcementTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SecurityReinforcementTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SecurityReinforcementTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SecurityReinforcementTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SecurityReinforcementTypeEnum a, SecurityReinforcementTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SecurityReinforcementTypeEnum a, SecurityReinforcementTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 操作系统。指定自定义镜像场景将以IMS镜像的实际操作系统版本为准。请选择当前集群支持的操作系统版本，例如EulerOS 2.5、CentOS 7.6、EulerOS 2.8。 
@@ -82,6 +197,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("hostnameConfig", NullValueHandling = NullValueHandling.Ignore)]
         public HostnameConfig HostnameConfig { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 指定节点安全加固类型，当前仅支持HCE2.0镜像等保2.0三级安全加固。 等保加固会对身份鉴别、访问控制、安全审计、入侵防范、恶意代码防范进行检查并加固。详情请参见[Huawei Cloud EulerOS 2.0等保2.0三级版镜像概述](https://support.huaweicloud.com/productdesc-hce/hce_sec_0001.html)。 若未指定此参数，则尝试用原有的值补全。如：原先HCE2.0镜像已配置安全加固，更新节点池时未指定此参数，则仍旧保持安全加固配置，若要取消，需显式指定参数值为\&quot;null\&quot;。 **约束限制**： 不涉及 **取值范围**： 取值范围：[&#39;null&#39;, cybersecurity]; **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("securityReinforcementType", NullValueHandling = NullValueHandling.Ignore)]
+        public SecurityReinforcementTypeEnum SecurityReinforcementType { get; set; }
 
 
         /// <summary>
@@ -102,6 +222,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  initializedConditions: ").Append(InitializedConditions).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("  hostnameConfig: ").Append(HostnameConfig).Append("\n");
+            sb.Append("  securityReinforcementType: ").Append(SecurityReinforcementType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +252,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.InitializedConditions != input.InitializedConditions || (this.InitializedConditions != null && input.InitializedConditions != null && !this.InitializedConditions.SequenceEqual(input.InitializedConditions))) return false;
             if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
             if (this.HostnameConfig != input.HostnameConfig || (this.HostnameConfig != null && !this.HostnameConfig.Equals(input.HostnameConfig))) return false;
+            if (this.SecurityReinforcementType != input.SecurityReinforcementType) return false;
 
             return true;
         }
@@ -154,6 +276,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.InitializedConditions != null) hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();
                 if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 if (this.HostnameConfig != null) hashCode = hashCode * 59 + this.HostnameConfig.GetHashCode();
+                hashCode = hashCode * 59 + this.SecurityReinforcementType.GetHashCode();
                 return hashCode;
             }
         }

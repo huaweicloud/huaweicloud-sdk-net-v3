@@ -5356,6 +5356,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 复制数据库
+        ///
+        /// 复制数据库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CopyDatabaseResponse CopyDatabase(CopyDatabaseRequest copyDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", copyDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/procedure", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyDatabaseRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CopyDatabaseResponse>(response);
+        }
+
+        public SyncInvoker<CopyDatabaseResponse> CopyDatabaseInvoker(CopyDatabaseRequest copyDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", copyDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/procedure", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyDatabaseRequest);
+            return new SyncInvoker<CopyDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyDatabaseResponse>);
+        }
+        
+        /// <summary>
         /// 创建数据库
         ///
         /// 创建数据库。
@@ -5405,6 +5431,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db_user", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSqlserverDbUserRequest);
             return new SyncInvoker<CreateSqlserverDbUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSqlserverDbUserResponse>);
+        }
+        
+        /// <summary>
+        /// 删除MSDTC
+        ///
+        /// 删除MSDTC相关主机host地址
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteMsdtcLocalHostResponse DeleteMsdtcLocalHost(DeleteMsdtcLocalHostRequest deleteMsdtcLocalHostRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteMsdtcLocalHostRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/host", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMsdtcLocalHostRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteMsdtcLocalHostResponse>(response);
+        }
+
+        public SyncInvoker<DeleteMsdtcLocalHostResponse> DeleteMsdtcLocalHostInvoker(DeleteMsdtcLocalHostRequest deleteMsdtcLocalHostRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteMsdtcLocalHostRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/host", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMsdtcLocalHostRequest);
+            return new SyncInvoker<DeleteMsdtcLocalHostResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteMsdtcLocalHostResponse>);
         }
         
         /// <summary>

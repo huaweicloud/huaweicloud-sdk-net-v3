@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     /// </summary>
     public class NodeSpecUpdate 
     {
+        /// <summary>
+        /// **参数解释**： 指定节点安全加固类型，当前仅支持HCE2.0镜像等保2.0三级安全加固。 等保加固会对身份鉴别、访问控制、安全审计、入侵防范、恶意代码防范进行检查并加固。详情请参见[Huawei Cloud EulerOS 2.0等保2.0三级版镜像概述](https://support.huaweicloud.com/productdesc-hce/hce_sec_0001.html)。 若未指定此参数，则尝试用原有的值补全。如：原先HCE2.0镜像已配置安全加固，更新节点池时未指定此参数，则仍旧保持安全加固配置，若要取消，需显式指定参数值为\&quot;null\&quot;。 **约束限制**： 不涉及 **取值范围**： 取值范围：[&#39;null&#39;, cybersecurity]; **默认取值**： 不涉及
+        /// </summary>
+        /// <value>**参数解释**： 指定节点安全加固类型，当前仅支持HCE2.0镜像等保2.0三级安全加固。 等保加固会对身份鉴别、访问控制、安全审计、入侵防范、恶意代码防范进行检查并加固。详情请参见[Huawei Cloud EulerOS 2.0等保2.0三级版镜像概述](https://support.huaweicloud.com/productdesc-hce/hce_sec_0001.html)。 若未指定此参数，则尝试用原有的值补全。如：原先HCE2.0镜像已配置安全加固，更新节点池时未指定此参数，则仍旧保持安全加固配置，若要取消，需显式指定参数值为\&quot;null\&quot;。 **约束限制**： 不涉及 **取值范围**： 取值范围：[&#39;null&#39;, cybersecurity]; **默认取值**： 不涉及</value>
+        [JsonConverter(typeof(EnumClassConverter<SecurityReinforcementTypeEnum>))]
+        public class SecurityReinforcementTypeEnum
+        {
+            /// <summary>
+            /// Enum NULL for value: null
+            /// </summary>
+            public static readonly SecurityReinforcementTypeEnum NULL = new SecurityReinforcementTypeEnum("null");
+
+            /// <summary>
+            /// Enum CYBERSECURITY for value: cybersecurity
+            /// </summary>
+            public static readonly SecurityReinforcementTypeEnum CYBERSECURITY = new SecurityReinforcementTypeEnum("cybersecurity");
+
+            private static readonly Dictionary<string, SecurityReinforcementTypeEnum> StaticFields =
+            new Dictionary<string, SecurityReinforcementTypeEnum>()
+            {
+                { "null", NULL },
+                { "cybersecurity", CYBERSECURITY },
+            };
+
+            private string _value;
+
+            public SecurityReinforcementTypeEnum()
+            {
+
+            }
+
+            public SecurityReinforcementTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SecurityReinforcementTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SecurityReinforcementTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SecurityReinforcementTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SecurityReinforcementTypeEnum a, SecurityReinforcementTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SecurityReinforcementTypeEnum a, SecurityReinforcementTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 支持给创建出来的节点加Taints来设置反亲和性，taints配置不超过20条。默认值为空。每条Taints包含以下3个参数：  - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。 - Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。  示例：  &#x60;&#x60;&#x60; \&quot;taints\&quot;: [{   \&quot;key\&quot;: \&quot;status\&quot;,   \&quot;value\&quot;: \&quot;unavailable\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }, {   \&quot;key\&quot;: \&quot;looks\&quot;,   \&quot;value\&quot;: \&quot;bad\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }] &#x60;&#x60;&#x60; &gt; 参数未指定或者为空数组时将删除节点池的自定义Taints 
@@ -58,6 +173,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("nodeNicSpecUpdate", NullValueHandling = NullValueHandling.Ignore)]
         public NodeSpecUpdateNodeNicSpecUpdate NodeNicSpecUpdate { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 指定节点安全加固类型，当前仅支持HCE2.0镜像等保2.0三级安全加固。 等保加固会对身份鉴别、访问控制、安全审计、入侵防范、恶意代码防范进行检查并加固。详情请参见[Huawei Cloud EulerOS 2.0等保2.0三级版镜像概述](https://support.huaweicloud.com/productdesc-hce/hce_sec_0001.html)。 若未指定此参数，则尝试用原有的值补全。如：原先HCE2.0镜像已配置安全加固，更新节点池时未指定此参数，则仍旧保持安全加固配置，若要取消，需显式指定参数值为\&quot;null\&quot;。 **约束限制**： 不涉及 **取值范围**： 取值范围：[&#39;null&#39;, cybersecurity]; **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("securityReinforcementType", NullValueHandling = NullValueHandling.Ignore)]
+        public SecurityReinforcementTypeEnum SecurityReinforcementType { get; set; }
 
 
         /// <summary>
@@ -74,6 +194,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  login: ").Append(Login).Append("\n");
             sb.Append("  serverEnterpriseProjectID: ").Append(ServerEnterpriseProjectID).Append("\n");
             sb.Append("  nodeNicSpecUpdate: ").Append(NodeNicSpecUpdate).Append("\n");
+            sb.Append("  securityReinforcementType: ").Append(SecurityReinforcementType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +220,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Login != input.Login || (this.Login != null && !this.Login.Equals(input.Login))) return false;
             if (this.ServerEnterpriseProjectID != input.ServerEnterpriseProjectID || (this.ServerEnterpriseProjectID != null && !this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))) return false;
             if (this.NodeNicSpecUpdate != input.NodeNicSpecUpdate || (this.NodeNicSpecUpdate != null && !this.NodeNicSpecUpdate.Equals(input.NodeNicSpecUpdate))) return false;
+            if (this.SecurityReinforcementType != input.SecurityReinforcementType) return false;
 
             return true;
         }
@@ -118,6 +240,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.Login != null) hashCode = hashCode * 59 + this.Login.GetHashCode();
                 if (this.ServerEnterpriseProjectID != null) hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
                 if (this.NodeNicSpecUpdate != null) hashCode = hashCode * 59 + this.NodeNicSpecUpdate.GetHashCode();
+                hashCode = hashCode * 59 + this.SecurityReinforcementType.GetHashCode();
                 return hashCode;
             }
         }

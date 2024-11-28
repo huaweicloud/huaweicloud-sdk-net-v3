@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         public string Limit { get; set; }
 
         /// <summary>
-        /// 分页查询起始的资源id，为空时为查询第一页
+        /// 分页查询起始的事件名称，为空时为查询第一页
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]

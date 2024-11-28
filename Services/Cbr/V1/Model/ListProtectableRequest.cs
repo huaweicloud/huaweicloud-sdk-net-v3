@@ -32,11 +32,29 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             /// </summary>
             public static readonly ProtectableTypeEnum DISK = new ProtectableTypeEnum("disk");
 
+            /// <summary>
+            /// Enum TURBO for value: turbo
+            /// </summary>
+            public static readonly ProtectableTypeEnum TURBO = new ProtectableTypeEnum("turbo");
+
+            /// <summary>
+            /// Enum WORKSPACE for value: workspace
+            /// </summary>
+            public static readonly ProtectableTypeEnum WORKSPACE = new ProtectableTypeEnum("workspace");
+
+            /// <summary>
+            /// Enum WORKSPACE_V2 for value: workspace_v2
+            /// </summary>
+            public static readonly ProtectableTypeEnum WORKSPACE_V2 = new ProtectableTypeEnum("workspace_v2");
+
             private static readonly Dictionary<string, ProtectableTypeEnum> StaticFields =
             new Dictionary<string, ProtectableTypeEnum>()
             {
                 { "server", SERVER },
                 { "disk", DISK },
+                { "turbo", TURBO },
+                { "workspace", WORKSPACE },
+                { "workspace_v2", WORKSPACE_V2 },
             };
 
             private string _value;

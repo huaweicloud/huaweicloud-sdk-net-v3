@@ -842,6 +842,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 获取慢日志下载链接
+        ///
+        /// 获取慢日志下载链接
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadSlowLogFileResponse> DownloadSlowLogFileAsync(DownloadSlowLogFileRequest downloadSlowLogFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadSlowLogFileRequest.InstanceId.ToString());
+            urlParam.Add("node_id", downloadSlowLogFileRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/slowlog-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowLogFileRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<DownloadSlowLogFileResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadSlowLogFileResponse> DownloadSlowLogFileAsyncInvoker(DownloadSlowLogFileRequest downloadSlowLogFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadSlowLogFileRequest.InstanceId.ToString());
+            urlParam.Add("node_id", downloadSlowLogFileRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/slowlog-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowLogFileRequest);
+            return new AsyncInvoker<DownloadSlowLogFileResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadSlowLogFileResponse>);
+        }
+        
+        /// <summary>
         /// 包周期存储扩容
         ///
         /// 包周期存储扩容。
@@ -2473,6 +2501,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询多租特性开关状态
+        ///
+        /// 查询多租特性开关状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowMultiTenantResponse> ShowMultiTenantAsync(ShowMultiTenantRequest showMultiTenantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showMultiTenantRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/multi-tenant", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMultiTenantRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowMultiTenantResponse>(response);
+        }
+
+        public AsyncInvoker<ShowMultiTenantResponse> ShowMultiTenantAsyncInvoker(ShowMultiTenantRequest showMultiTenantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showMultiTenantRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/multi-tenant", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMultiTenantRequest);
+            return new AsyncInvoker<ShowMultiTenantResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMultiTenantResponse>);
+        }
+        
+        /// <summary>
         /// 查询数据库代理内核参数。
         ///
         /// 查询数据库代理内核参数。
@@ -2606,6 +2660,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restore/tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestoreTablesRequest);
             return new AsyncInvoker<ShowRestoreTablesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRestoreTablesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询慢日志统计信息
+        ///
+        /// 查询慢日志统计信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSlowLogStatisticsResponse> ShowSlowLogStatisticsAsync(ShowSlowLogStatisticsRequest showSlowLogStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showSlowLogStatisticsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slow-logs/statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showSlowLogStatisticsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowSlowLogStatisticsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSlowLogStatisticsResponse> ShowSlowLogStatisticsAsyncInvoker(ShowSlowLogStatisticsRequest showSlowLogStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showSlowLogStatisticsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slow-logs/statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showSlowLogStatisticsRequest);
+            return new AsyncInvoker<ShowSlowLogStatisticsResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowSlowLogStatisticsResponse>);
         }
         
         /// <summary>
@@ -3209,6 +3289,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/monitor-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceMonitorRequest);
             return new AsyncInvoker<UpdateInstanceMonitorResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceMonitorResponse>);
+        }
+        
+        /// <summary>
+        /// 开启或者关闭多租特性
+        ///
+        /// 开启或者关闭多租特性。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateMultiTenantResponse> UpdateMultiTenantAsync(UpdateMultiTenantRequest updateMultiTenantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateMultiTenantRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/multi-tenant", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMultiTenantRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateMultiTenantResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateMultiTenantResponse> UpdateMultiTenantAsyncInvoker(UpdateMultiTenantRequest updateMultiTenantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateMultiTenantRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/multi-tenant", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMultiTenantRequest);
+            return new AsyncInvoker<UpdateMultiTenantResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateMultiTenantResponse>);
         }
         
         /// <summary>

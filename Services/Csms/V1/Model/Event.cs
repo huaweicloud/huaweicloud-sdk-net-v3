@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
     public class Event 
     {
         /// <summary>
-        /// 本次事件通知的基础事件列表，基础事件类型如下。  SECRET_VERSION_CREATED：版本创建 SECRET_VERSION_EXPIRED：版本过期 SECRET_ROTATED：凭据轮转 SECRET_DELETED：凭据删除  列表包含的基础事件类型不能重复。 
+        /// 本次事件通知的基础事件列表，基础事件类型如下。  SECRET_VERSION_CREATED：版本创建 SECRET_VERSION_EXPIRED：版本过期 SECRET_ROTATED：凭据轮转 SECRET_DELETED：凭据删除  列表包含的基础事件类型不能重复。
         /// </summary>
-        /// <value>本次事件通知的基础事件列表，基础事件类型如下。  SECRET_VERSION_CREATED：版本创建 SECRET_VERSION_EXPIRED：版本过期 SECRET_ROTATED：凭据轮转 SECRET_DELETED：凭据删除  列表包含的基础事件类型不能重复。 </value>
+        /// <value>本次事件通知的基础事件列表，基础事件类型如下。  SECRET_VERSION_CREATED：版本创建 SECRET_VERSION_EXPIRED：版本过期 SECRET_ROTATED：凭据轮转 SECRET_DELETED：凭据删除  列表包含的基础事件类型不能重复。</value>
         [JsonConverter(typeof(EnumClassConverter<EventTypesEnum>))]
         public class EventTypesEnum
         {
@@ -42,6 +42,11 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
             /// </summary>
             public static readonly EventTypesEnum SECRET_DELETED = new EventTypesEnum("SECRET_DELETED");
 
+            /// <summary>
+            /// Enum SECRET_ROTATED_FAILED for value: SECRET_ROTATED_FAILED
+            /// </summary>
+            public static readonly EventTypesEnum SECRET_ROTATED_FAILED = new EventTypesEnum("SECRET_ROTATED_FAILED");
+
             private static readonly Dictionary<string, EventTypesEnum> StaticFields =
             new Dictionary<string, EventTypesEnum>()
             {
@@ -49,6 +54,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
                 { "SECRET_VERSION_EXPIRED", SECRET_VERSION_EXPIRED },
                 { "SECRET_ROTATED", SECRET_ROTATED },
                 { "SECRET_DELETED", SECRET_DELETED },
+                { "SECRET_ROTATED_FAILED", SECRET_ROTATED_FAILED },
             };
 
             private string _value;
@@ -144,9 +150,9 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
 
 
         /// <summary>
-        /// 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态 
+        /// 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态
         /// </summary>
-        /// <value>事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态 </value>
+        /// <value>事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态</value>
         [JsonConverter(typeof(EnumClassConverter<StateEnum>))]
         public class StateEnum
         {
@@ -272,17 +278,17 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         public string EventId { get; set; }
 
         /// <summary>
-        /// 设置事件的基础事件类型列表,。  约束：数组大小：最小1，最大12。 
+        /// 设置事件的基础事件类型列表,。  约束：数组大小：最小1，最大12。
         /// </summary>
         [JsonProperty("event_types", NullValueHandling = NullValueHandling.Ignore)]
         public List<EventTypesEnum> EventTypes { get; set; }
         /// <summary>
-        /// 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态 
+        /// 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
         public StateEnum State { get; set; }
         /// <summary>
-        /// 事件通知创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 
+        /// 事件通知创建时间，时间戳，即从1970年1月1日至该时间的总秒数。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }

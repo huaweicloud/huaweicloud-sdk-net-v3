@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public int? Duration { get; set; }
 
         /// <summary>
+        /// 视频时长，单位毫秒。
+        /// </summary>
+        [JsonProperty("duration_ms", NullValueHandling = NullValueHandling.Ignore)]
+        public long? DurationMs { get; set; }
+
+        /// <summary>
         /// 媒资原始大小。  单位：字节。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,6 +65,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("  assetId: ").Append(AssetId).Append("\n");
             sb.Append("  title: ").Append(Title).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
+            sb.Append("  durationMs: ").Append(DurationMs).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -82,6 +89,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
             if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
             if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.DurationMs != input.DurationMs || (this.DurationMs != null && !this.DurationMs.Equals(input.DurationMs))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
 
             return true;
@@ -99,6 +107,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
                 if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.DurationMs != null) hashCode = hashCode * 59 + this.DurationMs.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 return hashCode;
             }

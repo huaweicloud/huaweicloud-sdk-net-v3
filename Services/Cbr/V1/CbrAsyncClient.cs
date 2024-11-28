@@ -177,6 +177,31 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 变更
+        ///
+        /// 订单更新，调用该接口更新包周期产品订单信息,返回待支付订单信息。
+        /// &gt; 该接口目前属于公测阶段，部分region暂时无法使用
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeOrderResponse> ChangeOrderAsync(ChangeOrderRequest changeOrderRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/orders/change", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeOrderRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ChangeOrderResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeOrderResponse> ChangeOrderAsyncInvoker(ChangeOrderRequest changeOrderRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/orders/change", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeOrderRequest);
+            return new AsyncInvoker<ChangeOrderResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeOrderResponse>);
+        }
+        
+        /// <summary>
         /// 查询agent状态
         ///
         /// 检查应用一致性Agent状态
@@ -1682,9 +1707,9 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
-        /// 变更
+        /// 变更（废弃）
         ///
-        /// 订单更新，支付cbc订单后，调用该接口更新包周期产品订单信息。
+        /// 订单更新，支付cbc订单后，调用该接口更新包周期产品订单信息。该接口已废弃。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

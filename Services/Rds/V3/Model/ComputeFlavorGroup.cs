@@ -23,10 +23,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string GroupType { get; set; }
 
         /// <summary>
-        /// 
+        /// 计算规格列表
         /// </summary>
         [JsonProperty("compute_flavors", NullValueHandling = NullValueHandling.Ignore)]
-        public ComputeFlavor ComputeFlavors { get; set; }
+        public List<ComputeFlavor> ComputeFlavors { get; set; }
 
 
 
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             if (input == null) return false;
             if (this.GroupType != input.GroupType || (this.GroupType != null && !this.GroupType.Equals(input.GroupType))) return false;
-            if (this.ComputeFlavors != input.ComputeFlavors || (this.ComputeFlavors != null && !this.ComputeFlavors.Equals(input.ComputeFlavors))) return false;
+            if (this.ComputeFlavors != input.ComputeFlavors || (this.ComputeFlavors != null && input.ComputeFlavors != null && !this.ComputeFlavors.SequenceEqual(input.ComputeFlavors))) return false;
 
             return true;
         }

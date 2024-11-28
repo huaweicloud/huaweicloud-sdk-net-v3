@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cbr.V1.Model
 {
     /// <summary>
-    /// 备份共享目标用户的项目id。
+    /// 备份共享目标用户的信息。
     /// </summary>
     public class AddMembersReq 
     {
@@ -21,6 +21,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         [JsonProperty("members", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Members { get; set; }
+
+        /// <summary>
+        /// 列表，待添加备份共享成员的domain_id。 &gt; 该特性目前属于公测阶段，部分region可能无法使用.
+        /// </summary>
+        [JsonProperty("domains", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Domains { get; set; }
 
 
 
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             var sb = new StringBuilder();
             sb.Append("class AddMembersReq {\n");
             sb.Append("  members: ").Append(Members).Append("\n");
+            sb.Append("  domains: ").Append(Domains).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             if (input == null) return false;
             if (this.Members != input.Members || (this.Members != null && input.Members != null && !this.Members.SequenceEqual(input.Members))) return false;
+            if (this.Domains != input.Domains || (this.Domains != null && input.Domains != null && !this.Domains.SequenceEqual(input.Domains))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             {
                 var hashCode = 41;
                 if (this.Members != null) hashCode = hashCode * 59 + this.Members.GetHashCode();
+                if (this.Domains != null) hashCode = hashCode * 59 + this.Domains.GetHashCode();
                 return hashCode;
             }
         }

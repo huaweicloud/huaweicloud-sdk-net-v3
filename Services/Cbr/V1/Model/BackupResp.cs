@@ -16,245 +16,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
     public class BackupResp 
     {
         /// <summary>
-        /// 备份类型
+        /// 备份状态 - available: 可用 - protecting: 保护中 - deleting: 删除中 - restoring: 恢复中 - error: 异常 - waiting_protect: 等待保护 - waiting_delete: 等待删除 - waiting_restore: 等待恢复
         /// </summary>
-        /// <value>备份类型</value>
-        [JsonConverter(typeof(EnumClassConverter<ImageTypeEnum>))]
-        public class ImageTypeEnum
-        {
-            /// <summary>
-            /// Enum BACKUP for value: backup
-            /// </summary>
-            public static readonly ImageTypeEnum BACKUP = new ImageTypeEnum("backup");
-
-            /// <summary>
-            /// Enum REPLICATION for value: replication
-            /// </summary>
-            public static readonly ImageTypeEnum REPLICATION = new ImageTypeEnum("replication");
-
-            private static readonly Dictionary<string, ImageTypeEnum> StaticFields =
-            new Dictionary<string, ImageTypeEnum>()
-            {
-                { "backup", BACKUP },
-                { "replication", REPLICATION },
-            };
-
-            private string _value;
-
-            public ImageTypeEnum()
-            {
-
-            }
-
-            public ImageTypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static ImageTypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ImageTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ImageTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ImageTypeEnum a, ImageTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ImageTypeEnum a, ImageTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// 资源类型: 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 云桌面：OS::Workspace::DesktopV2
-        /// </summary>
-        /// <value>资源类型: 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 云桌面：OS::Workspace::DesktopV2</value>
-        [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
-        public class ResourceTypeEnum
-        {
-            /// <summary>
-            /// Enum OS_NOVA_SERVER for value: OS::Nova::Server
-            /// </summary>
-            public static readonly ResourceTypeEnum OS_NOVA_SERVER = new ResourceTypeEnum("OS::Nova::Server");
-
-            /// <summary>
-            /// Enum OS_CINDER_VOLUME for value: OS::Cinder::Volume
-            /// </summary>
-            public static readonly ResourceTypeEnum OS_CINDER_VOLUME = new ResourceTypeEnum("OS::Cinder::Volume");
-
-            /// <summary>
-            /// Enum OS_WORKSPACE_DESKTOPV2 for value: OS::Workspace::DesktopV2
-            /// </summary>
-            public static readonly ResourceTypeEnum OS_WORKSPACE_DESKTOPV2 = new ResourceTypeEnum("OS::Workspace::DesktopV2");
-
-            private static readonly Dictionary<string, ResourceTypeEnum> StaticFields =
-            new Dictionary<string, ResourceTypeEnum>()
-            {
-                { "OS::Nova::Server", OS_NOVA_SERVER },
-                { "OS::Cinder::Volume", OS_CINDER_VOLUME },
-                { "OS::Workspace::DesktopV2", OS_WORKSPACE_DESKTOPV2 },
-            };
-
-            private string _value;
-
-            public ResourceTypeEnum()
-            {
-
-            }
-
-            public ResourceTypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static ResourceTypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ResourceTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ResourceTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ResourceTypeEnum a, ResourceTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ResourceTypeEnum a, ResourceTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// 备份状态
-        /// </summary>
-        /// <value>备份状态</value>
+        /// <value>备份状态 - available: 可用 - protecting: 保护中 - deleting: 删除中 - restoring: 恢复中 - error: 异常 - waiting_protect: 等待保护 - waiting_delete: 等待删除 - waiting_restore: 等待恢复</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -440,10 +204,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 备份类型
+        /// [备份类型。取值为backup和replication。](tag:hws,hws_hk,ocb) [备份类型。取值为backup。](tag:g42,hk_g42,sbc,dt,fcs_vm,ctc,tm,tlf,cmcc,hcso_dt)
         /// </summary>
         [JsonProperty("image_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ImageTypeEnum ImageType { get; set; }
+        public string ImageType { get; set; }
+
         /// <summary>
         /// 备份名称
         /// </summary>
@@ -493,12 +258,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public int? ResourceSize { get; set; }
 
         /// <summary>
-        /// 资源类型: 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 云桌面：OS::Workspace::DesktopV2
+        /// [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Ironic::BareMetalServer, OS::Native::Server, OS::Sfs::Turbo, OS::Workspace::DesktopV2](tag:hws,hws_hk) [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Sfs::Turbo](tag:hk_g42,sbc,dt) [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Ironic::BareMetalServer, OS::Sfs::Turbo](tag:fcs_vm,ctc,ocb,tm) [资源类型: OS::Nova::Server, OS::Cinder::Volume](tag:tlf,cmcc,hcso_dt) [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Sfs::Turbo, OS::Workspace::DesktopV2](tag:g42)
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourceTypeEnum ResourceType { get; set; }
+        public string ResourceType { get; set; }
+
         /// <summary>
-        /// 备份状态
+        /// 备份状态 - available: 可用 - protecting: 保护中 - deleting: 删除中 - restoring: 恢复中 - error: 异常 - waiting_protect: 等待保护 - waiting_delete: 等待删除 - waiting_restore: 等待恢复
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -527,7 +293,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 备份提供商ID，用于区分备份对象。当前取值包含  0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881， 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。
+        /// 备份提供商ID，用于区分备份对象。当前取值包含： [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881， 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。](tag:hws,hws_hk) [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881，该值代表备份对象为SFS Turbo。](tag:ocb,tlf,sbc,fcs_vm,g42,tm,dt,cmcc) [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881，该值代表备份对象为SFS Turbo。86a80900-71bf-4961-956a-d52df944f84a，该值代表备份对象为Workspace。](tag:ctc) [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("provider_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProviderId { get; set; }
@@ -543,6 +309,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         [JsonProperty("incremental", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Incremental { get; set; }
+
+        /// <summary>
+        /// 备份副本快照类型
+        /// </summary>
+        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Version { get; set; }
 
 
 
@@ -577,6 +349,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  providerId: ").Append(ProviderId).Append("\n");
             sb.Append("  children: ").Append(Children).Append("\n");
             sb.Append("  incremental: ").Append(Incremental).Append("\n");
+            sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -601,7 +374,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.ExpiredAt != input.ExpiredAt || (this.ExpiredAt != null && !this.ExpiredAt.Equals(input.ExpiredAt))) return false;
             if (this.ExtendInfo != input.ExtendInfo || (this.ExtendInfo != null && !this.ExtendInfo.Equals(input.ExtendInfo))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
-            if (this.ImageType != input.ImageType) return false;
+            if (this.ImageType != input.ImageType || (this.ImageType != null && !this.ImageType.Equals(input.ImageType))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.ParentId != input.ParentId || (this.ParentId != null && !this.ParentId.Equals(input.ParentId))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
@@ -610,7 +383,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
             if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
             if (this.ResourceSize != input.ResourceSize || (this.ResourceSize != null && !this.ResourceSize.Equals(input.ResourceSize))) return false;
-            if (this.ResourceType != input.ResourceType) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
             if (this.Status != input.Status) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.VaultId != input.VaultId || (this.VaultId != null && !this.VaultId.Equals(input.VaultId))) return false;
@@ -619,6 +392,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.ProviderId != input.ProviderId || (this.ProviderId != null && !this.ProviderId.Equals(input.ProviderId))) return false;
             if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
             if (this.Incremental != input.Incremental || (this.Incremental != null && !this.Incremental.Equals(input.Incremental))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
 
             return true;
         }
@@ -637,7 +411,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.ExpiredAt != null) hashCode = hashCode * 59 + this.ExpiredAt.GetHashCode();
                 if (this.ExtendInfo != null) hashCode = hashCode * 59 + this.ExtendInfo.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
-                hashCode = hashCode * 59 + this.ImageType.GetHashCode();
+                if (this.ImageType != null) hashCode = hashCode * 59 + this.ImageType.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.ParentId != null) hashCode = hashCode * 59 + this.ParentId.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
@@ -646,7 +420,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 if (this.ResourceSize != null) hashCode = hashCode * 59 + this.ResourceSize.GetHashCode();
-                hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.VaultId != null) hashCode = hashCode * 59 + this.VaultId.GetHashCode();
@@ -655,6 +429,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.ProviderId != null) hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
                 if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
                 if (this.Incremental != null) hashCode = hashCode * 59 + this.Incremental.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

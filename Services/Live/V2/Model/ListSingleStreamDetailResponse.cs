@@ -47,12 +47,6 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         public List<StreamDetail> VideoBitrate { get; set; }
 
         /// <summary>
-        /// 展示流音频帧率情况，帧率单位为fps。  如果出现断流则会出现多个时间段流信息，如： &#x60;&#x60;&#x60; \&quot;audio_framerate\&quot;: [     {       \&quot;start_time\&quot;: \&quot;2022-02-04T07:00:00Z\&quot;,       \&quot;end_time\&quot;: \&quot;2022-02-04T07:00:02Z\&quot;,       \&quot;data_list\&quot;: [         10,         17       ]     },     {       \&quot;start_time\&quot;: \&quot;2022-02-04T07:00:05Z\&quot;,       \&quot;end_time\&quot;: \&quot;2022-02-04T07:00:06Z\&quot;,       \&quot;data_list\&quot;: [         31,         33       ]     }   ] 
-        /// </summary>
-        [JsonProperty("audio_framerate", NullValueHandling = NullValueHandling.Ignore)]
-        public List<StreamDetail> AudioFramerate { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("X-Request-Id", IsHeader = true)]
@@ -73,7 +67,6 @@ namespace HuaweiCloud.SDK.Live.V2.Model
             sb.Append("  stream: ").Append(Stream).Append("\n");
             sb.Append("  videoFramerate: ").Append(VideoFramerate).Append("\n");
             sb.Append("  videoBitrate: ").Append(VideoBitrate).Append("\n");
-            sb.Append("  audioFramerate: ").Append(AudioFramerate).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -98,7 +91,6 @@ namespace HuaweiCloud.SDK.Live.V2.Model
             if (this.Stream != input.Stream || (this.Stream != null && !this.Stream.Equals(input.Stream))) return false;
             if (this.VideoFramerate != input.VideoFramerate || (this.VideoFramerate != null && input.VideoFramerate != null && !this.VideoFramerate.SequenceEqual(input.VideoFramerate))) return false;
             if (this.VideoBitrate != input.VideoBitrate || (this.VideoBitrate != null && input.VideoBitrate != null && !this.VideoBitrate.SequenceEqual(input.VideoBitrate))) return false;
-            if (this.AudioFramerate != input.AudioFramerate || (this.AudioFramerate != null && input.AudioFramerate != null && !this.AudioFramerate.SequenceEqual(input.AudioFramerate))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
             return true;
@@ -117,7 +109,6 @@ namespace HuaweiCloud.SDK.Live.V2.Model
                 if (this.Stream != null) hashCode = hashCode * 59 + this.Stream.GetHashCode();
                 if (this.VideoFramerate != null) hashCode = hashCode * 59 + this.VideoFramerate.GetHashCode();
                 if (this.VideoBitrate != null) hashCode = hashCode * 59 + this.VideoBitrate.GetHashCode();
-                if (this.AudioFramerate != null) hashCode = hashCode * 59 + this.AudioFramerate.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }

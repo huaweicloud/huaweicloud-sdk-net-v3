@@ -15,6 +15,127 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
     /// </summary>
     public class CreateSecretRequestBody 
     {
+        /// <summary>
+        /// 凭据类型   - COMMON：通用凭据(默认)。用于应用系统中的各种敏感信息储存。  - RDS：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。（已不支持，使用RDS-FG替代）  - RDS-FG：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。  - GaussDB-FG：GaussDB凭据。专门针对GaussDB的凭据，用于存储GaussDB的账号信息。
+        /// </summary>
+        /// <value>凭据类型   - COMMON：通用凭据(默认)。用于应用系统中的各种敏感信息储存。  - RDS：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。（已不支持，使用RDS-FG替代）  - RDS-FG：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。  - GaussDB-FG：GaussDB凭据。专门针对GaussDB的凭据，用于存储GaussDB的账号信息。</value>
+        [JsonConverter(typeof(EnumClassConverter<SecretTypeEnum>))]
+        public class SecretTypeEnum
+        {
+            /// <summary>
+            /// Enum COMMON for value: COMMON
+            /// </summary>
+            public static readonly SecretTypeEnum COMMON = new SecretTypeEnum("COMMON");
+
+            /// <summary>
+            /// Enum RDS_FG for value: RDS-FG
+            /// </summary>
+            public static readonly SecretTypeEnum RDS_FG = new SecretTypeEnum("RDS-FG");
+
+            /// <summary>
+            /// Enum GAUSSDB_FG for value: GaussDB-FG
+            /// </summary>
+            public static readonly SecretTypeEnum GAUSSDB_FG = new SecretTypeEnum("GaussDB-FG");
+
+            private static readonly Dictionary<string, SecretTypeEnum> StaticFields =
+            new Dictionary<string, SecretTypeEnum>()
+            {
+                { "COMMON", COMMON },
+                { "RDS-FG", RDS_FG },
+                { "GaussDB-FG", GAUSSDB_FG },
+            };
+
+            private string _value;
+
+            public SecretTypeEnum()
+            {
+
+            }
+
+            public SecretTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SecretTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SecretTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SecretTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SecretTypeEnum a, SecretTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SecretTypeEnum a, SecretTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 待创建凭据的名称。  约束：取值范围为1到64个字符，满足正则匹配“^[a-zA-Z0-9_-]{1,64}$”。
@@ -35,7 +156,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 二进制类型凭据在base64编码后的明文，凭据管理服务将其加密后，存入凭据的初始版本中。  类型：base64编码的二进制数据对象。  约束：secret_binary和secret_string必须且只能设置一个，最大32K。 当secret_type为RDS时。凭据值格式为： \&quot;{&#39;users&#39;:[{&#39;name&#39;:&#39;&#39;,&#39;password&#39;:&#39;&#39;}]}\&quot; 其中name为RDS实例账号名称，password为RDS实例账号口令
+        /// 二进制类型凭据在base64编码后的明文，凭据管理服务将其加密后，存入凭据的初始版本中。  类型：base64编码的二进制数据对象。  约束：secret_binary和secret_string必须且只能设置一个，最大32K。
         /// </summary>
         [JsonProperty("secret_binary", NullValueHandling = NullValueHandling.Ignore)]
         public string SecretBinary { get; set; }
@@ -47,11 +168,10 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         public string SecretString { get; set; }
 
         /// <summary>
-        /// 凭据类型  取值 ： COMMON ：通用凭据(默认)。用于应用系统中的各种敏感信息储存。         RDS ：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。
+        /// 凭据类型   - COMMON：通用凭据(默认)。用于应用系统中的各种敏感信息储存。  - RDS：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。（已不支持，使用RDS-FG替代）  - RDS-FG：RDS凭据 。专门针对RDS的凭据，用于存储RDS的账号信息。  - GaussDB-FG：GaussDB凭据。专门针对GaussDB的凭据，用于存储GaussDB的账号信息。
         /// </summary>
         [JsonProperty("secret_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string SecretType { get; set; }
-
+        public SecretTypeEnum SecretType { get; set; }
         /// <summary>
         /// 自动轮转  取值：true 开启 ,false 关闭 (默认)
         /// </summary>
@@ -65,7 +185,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         public string RotationPeriod { get; set; }
 
         /// <summary>
-        /// 轮转配置  约束：范围不超过1024个字符。  当secret_type为RDS时，配置为{\&quot;rds_instance_id\&quot;:\&quot;\&quot;,\&quot;Secret_sub_type\&quot;:\&quot;\&quot;}  说明：当secret_type为RDS时，必须填写该值  rds_instance_id为RDS的实例ID,Secret_sub_type为轮转子类型，取值为：SingleUser，MultiUser。  SingleUser：指定轮转类型为单用户模式轮转，每次轮转将指定账号重置为新的口令。  MultiUser：指定轮转类型为双用户模式轮转，SYSCURRENT和SYSPREVIOUS分别引用其中一个账号。凭据轮转时，SYSPREVIOUS引用的账号口令会被重置为新的随机口令，随后凭据交换SYSCURRENT和SYSPREVIOUS对RDS账号的引用。
+        /// 轮转配置  约束：范围不超过1024个字符。  当secret_type为RDS-FG、GaussDB-FG时，配置为{\&quot;InstanceId\&quot;:\&quot;\&quot;,\&quot;SecretSubType\&quot;:\&quot;\&quot;}  说明：当secret_type为RDS-FG、GaussDB-FG时，必须填写该值  InstanceId为实例ID,SecretSubType为轮转子类型，取值为：SingleUser，MultiUser。  SingleUser：指定轮转类型为单用户模式轮转，每次轮转将指定账号重置为新的口令。  MultiUser：指定轮转类型为双用户模式轮转，SYSCURRENT和SYSPREVIOUS分别引用其中一个账号。凭据轮转时，SYSPREVIOUS引用的账号口令会被重置为新的随机口令，随后凭据交换SYSCURRENT和SYSPREVIOUS对账号的引用。
         /// </summary>
         [JsonProperty("rotation_config", NullValueHandling = NullValueHandling.Ignore)]
         public string RotationConfig { get; set; }
@@ -81,6 +201,12 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// FunctionGraph函数的urn。
+        /// </summary>
+        [JsonProperty("rotation_func_urn", NullValueHandling = NullValueHandling.Ignore)]
+        public string RotationFuncUrn { get; set; }
 
 
 
@@ -102,6 +228,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
             sb.Append("  rotationConfig: ").Append(RotationConfig).Append("\n");
             sb.Append("  eventSubscriptions: ").Append(EventSubscriptions).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  rotationFuncUrn: ").Append(RotationFuncUrn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -125,12 +252,13 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.SecretBinary != input.SecretBinary || (this.SecretBinary != null && !this.SecretBinary.Equals(input.SecretBinary))) return false;
             if (this.SecretString != input.SecretString || (this.SecretString != null && !this.SecretString.Equals(input.SecretString))) return false;
-            if (this.SecretType != input.SecretType || (this.SecretType != null && !this.SecretType.Equals(input.SecretType))) return false;
+            if (this.SecretType != input.SecretType) return false;
             if (this.AutoRotation != input.AutoRotation || (this.AutoRotation != null && !this.AutoRotation.Equals(input.AutoRotation))) return false;
             if (this.RotationPeriod != input.RotationPeriod || (this.RotationPeriod != null && !this.RotationPeriod.Equals(input.RotationPeriod))) return false;
             if (this.RotationConfig != input.RotationConfig || (this.RotationConfig != null && !this.RotationConfig.Equals(input.RotationConfig))) return false;
             if (this.EventSubscriptions != input.EventSubscriptions || (this.EventSubscriptions != null && input.EventSubscriptions != null && !this.EventSubscriptions.SequenceEqual(input.EventSubscriptions))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.RotationFuncUrn != input.RotationFuncUrn || (this.RotationFuncUrn != null && !this.RotationFuncUrn.Equals(input.RotationFuncUrn))) return false;
 
             return true;
         }
@@ -148,12 +276,13 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.SecretBinary != null) hashCode = hashCode * 59 + this.SecretBinary.GetHashCode();
                 if (this.SecretString != null) hashCode = hashCode * 59 + this.SecretString.GetHashCode();
-                if (this.SecretType != null) hashCode = hashCode * 59 + this.SecretType.GetHashCode();
+                hashCode = hashCode * 59 + this.SecretType.GetHashCode();
                 if (this.AutoRotation != null) hashCode = hashCode * 59 + this.AutoRotation.GetHashCode();
                 if (this.RotationPeriod != null) hashCode = hashCode * 59 + this.RotationPeriod.GetHashCode();
                 if (this.RotationConfig != null) hashCode = hashCode * 59 + this.RotationConfig.GetHashCode();
                 if (this.EventSubscriptions != null) hashCode = hashCode * 59 + this.EventSubscriptions.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.RotationFuncUrn != null) hashCode = hashCode * 59 + this.RotationFuncUrn.GetHashCode();
                 return hashCode;
             }
         }

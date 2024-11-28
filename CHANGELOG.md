@@ -1,3 +1,345 @@
+# 3.1.122 2024-11-28
+
+### HuaweiCloud SDK CBR
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `ChangeOrder`
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddAgentPath**
+    - changes of request param
+      - `+ exclude_path`
+  - **AddMember**
+    - changes of request param
+      - `+ domains`
+  - **ShowAgent**
+    - changes of response param
+      - `+ agent.paths.exclude_paths`
+  - **UpdateAgent**
+    - changes of response param
+      - `+ agent.paths.exclude_paths`
+  - **ListAgent**
+    - changes of response param
+      - `+ agents.paths.exclude_paths`
+  - **RegisterAgent**
+    - changes of response param
+      - `+ agent.paths.exclude_paths`
+  - **ShowBackup**
+    - changes of response param
+      - `+ backup.version`
+      - `- backup.image_type: enum value [backup,replication]`
+      - `- backup.resource_type: enum value [OS::Nova::Server,OS::Cinder::Volume,OS::Workspace::DesktopV2]`
+  - **UpdateBackup**
+    - changes of response param
+      - `+ backup.version`
+      - `- backup.image_type: enum value [backup,replication]`
+      - `- backup.resource_type: enum value [OS::Nova::Server,OS::Cinder::Volume,OS::Workspace::DesktopV2]`
+  - **ListBackups**
+    - changes of response param
+      - `+ backups.version`
+      - `- backups.image_type: enum value [backup,replication]`
+      - `- backups.resource_type: enum value [OS::Nova::Server,OS::Cinder::Volume,OS::Workspace::DesktopV2]`
+  - **ListOrganizationPolicies**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+  - **ListProtectable**
+    - changes of request param
+      - `+ protectable_type: enum value [turbo,workspace,workspace_v2]`
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowCluster**
+    - changes of response param
+      - `+ spec.encryptionConfig`
+  - **UpdateCluster**
+    - changes of response param
+      - `+ spec.encryptionConfig`
+  - **DeleteCluster**
+    - changes of response param
+      - `+ spec.encryptionConfig`
+  - **ShowAutopilotCluster**
+    - changes of response param
+      - `- spec.deletionProtection`
+  - **UpdateAutopilotCluster**
+    - changes of response param
+      - `- spec.deletionProtection`
+  - **DeleteAutopilotCluster**
+    - changes of response param
+      - `- spec.deletionProtection`
+  - **CreateCluster**
+    - changes of request param
+      - `+ spec.encryptionConfig`
+    - changes of response param
+      - `+ spec.encryptionConfig`
+  - **ListClusters**
+    - changes of response param
+      - `+ items.spec.encryptionConfig`
+  - **CreateAutopilotCluster**
+    - changes of request param
+      - `- spec.deletionProtection`
+    - changes of response param
+      - `- spec.deletionProtection`
+  - **ListAutopilotClusters**
+    - changes of response param
+      - `- items.spec.deletionProtection`
+  - **ShowNode**
+    - changes of response param
+      - `+ spec.extendParam.securityReinforcementType`
+  - **UpdateNode**
+    - changes of response param
+      - `+ spec.extendParam.securityReinforcementType`
+  - **DeleteNode**
+    - changes of response param
+      - `+ spec.extendParam.securityReinforcementType`
+  - **CreateNode**
+    - changes of request param
+      - `+ spec.extendParam.securityReinforcementType`
+    - changes of response param
+      - `+ spec.extendParam.securityReinforcementType`
+  - **ListNodes**
+    - changes of response param
+      - `+ items.spec.extendParam.securityReinforcementType`
+  - **ShowNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.securityReinforcementType`
+  - **UpdateNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.securityReinforcementType`
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.securityReinforcementType`
+  - **DeleteNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.securityReinforcementType`
+  - **AddNode**
+    - changes of request param
+      - `+ nodeList.spec.securityReinforcementType`
+  - **ResetNode**
+    - changes of request param
+      - `+ nodeList.spec.securityReinforcementType`
+  - **CreateNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.extendParam.securityReinforcementType`
+    - changes of response param
+      - `+ spec.nodeTemplate.extendParam.securityReinforcementType`
+  - **ListNodePools**
+    - changes of response param
+      - `+ items.spec.nodeTemplate.extendParam.securityReinforcementType`
+
+### HuaweiCloud SDK CSMS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListSecretTask`, `ShowAgency`, `CreateAgency`, `ShowSecretFunctionTemplates`
+- _Bug Fix_
+  - None
+- _Change_
+  - **RotateSecret**
+    - changes of response param
+      - `+ rotation_task_id`
+  - **ListSecrets**
+    - changes of response param
+      - `+ secrets.rotation_func_urn`
+      - `+ secrets.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **CreateSecret**
+    - changes of request param
+      - `+ rotation_func_urn`
+      - `+ secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+    - changes of response param
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **ShowSecret**
+    - changes of response param
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **UpdateSecret**
+    - changes of request param
+      - `+ rotation_func_urn`
+    - changes of response param
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **UploadSecretBlob**
+    - changes of response param
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **DeleteSecretForSchedule**
+    - changes of response param
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **RestoreSecret**
+    - changes of response param
+      - `+ secret.rotation_func_urn`
+      - `+ secret.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **ListNotificationRecords**
+    - changes of request param
+      - `- limit`
+      - `- marker`
+    - changes of response param
+      - `+ records.trigger_event_type: enum value [SECRET_VERSION_CREATED,SECRET_VERSION_EXPIRED,SECRET_ROTATED,SECRET_DELETED,SECRET_ROTATED_FAILED]`
+      - `+ records.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+      - `+ records.notification_status: enum value [SUCCESS,FAIL,INVALID]`
+  - **ListResourceInstances**
+    - changes of response param
+      - `+ resources.resource_detail.rotation_func_urn`
+      - `+ resources.resource_detail.secret_type: enum value [COMMON,RDS-FG,GaussDB-FG]`
+  - **ListSecretEvents**
+    - changes of response param
+      - `+ events.event_types: enum value [SECRET_ROTATED_FAILED]`
+  - **CreateSecretEvent**
+    - changes of request param
+      - `+ event_types: enum value [SECRET_VERSION_CREATED,SECRET_VERSION_EXPIRED,SECRET_ROTATED,SECRET_DELETED,SECRET_ROTATED_FAILED]`
+    - changes of response param
+      - `+ event.event_types: enum value [SECRET_ROTATED_FAILED]`
+  - **ShowSecretEvent**
+    - changes of response param
+      - `+ event.event_types: enum value [SECRET_ROTATED_FAILED]`
+  - **UpdateSecretEvent**
+    - changes of request param
+      - `+ event_types: enum value [SECRET_VERSION_CREATED,SECRET_VERSION_EXPIRED,SECRET_ROTATED,SECRET_DELETED,SECRET_ROTATED_FAILED]`
+    - changes of response param
+      - `+ event.event_types: enum value [SECRET_ROTATED_FAILED]`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ShowSlowLogStatistics`, `DownloadSlowLogFile`, `ShowMultiTenant`, `UpdateMultiTenant`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ShowRedisPitrPolicy`
+    - `SetRedisPitrPolicy`
+    - `ListRedisPitrRestoreTime`
+    - `ShowRedisPitrInfo`
+    - `RestoreRedisPitr`
+    - `StopBackup`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK KMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `AssociateAlias`, `ListAliases`, `CreateAlias`, `DeleteAlias`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSupportRegions**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+
+### HuaweiCloud SDK KPS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `BatchImportKeypair`, `BatchExportPrivateKey`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSingleStreamDetail**
+    - changes of response param
+      - `- audio_framerate`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeGeneralText**
+    - changes of request param
+      - `+ pdf_page_number`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `CopyDatabase`, `DeleteMsdtcLocalHost`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlavorsResize**
+    - changes of response param
+      - `* flavor_groups.compute_flavors: object<ComputeFlavor> -> list<ComputeFlavor>`
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTopStatistics**
+    - changes of response param
+      - `+ top_urls.duration_ms`
+  - **ListAssetList**
+    - changes of response param
+      - `+ assets.duration_ms`
+  - **ModifySubtitle**
+    - changes of request param
+      - `+ repackage_mode`
+      - `+ delete_mode`
+  - **ShowTakeOverAssetDetails**
+    - changes of response param
+      - `+ base_info.meta_data.duration_ms`
+  - **PublishAssets**
+    - changes of response param
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **UnpublishAssets**
+    - changes of response param
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **ShowAssetMeta**
+    - changes of response param
+      - `+ asset_info_array.base_info.meta_data.duration_ms`
+  - **ShowAssetDetail**
+    - changes of response param
+      - `+ base_info.meta_data.duration_ms`
+  - **ShowTakeOverTaskDetails**
+    - changes of response param
+      - `+ assets.base_info.meta_data.duration_ms`
+
 # 3.1.121 2024-11-21
 
 ### HuaweiCloud SDK AOM

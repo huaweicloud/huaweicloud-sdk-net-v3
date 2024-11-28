@@ -16,6 +16,31 @@ namespace HuaweiCloud.SDK.Kms.V2
 
         
         /// <summary>
+        /// 
+        ///
+        /// 关联别名。
+        /// 你可以将别名从原密钥关联到另一个新的密钥
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AssociateAliasResponse> AssociateAliasAsync(AssociateAliasRequest associateAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/alias/associate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateAliasRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AssociateAliasResponse>(response);
+        }
+
+        public AsyncInvoker<AssociateAliasResponse> AssociateAliasAsyncInvoker(AssociateAliasRequest associateAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/alias/associate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateAliasRequest);
+            return new AsyncInvoker<AssociateAliasResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateAliasResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加删除密钥标签
         ///
         /// - 功能介绍：批量添加删除密钥标签。
@@ -121,6 +146,29 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/retire-grant", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cancelSelfGrantRequest);
             return new AsyncInvoker<CancelSelfGrantResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CancelSelfGrantResponse>);
+        }
+        
+        /// <summary>
+        /// 
+        ///
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest createAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/aliases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAliasRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAliasResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAliasResponse> CreateAliasAsyncInvoker(CreateAliasRequest createAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/aliases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAliasRequest);
+            return new AsyncInvoker<CreateAliasResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAliasResponse>);
         }
         
         /// <summary>
@@ -369,6 +417,30 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/decrypt-datakey", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", decryptDatakeyRequest);
             return new AsyncInvoker<DecryptDatakeyResponse>(this, "POST", request, JsonUtils.DeSerialize<DecryptDatakeyResponse>);
+        }
+        
+        /// <summary>
+        /// 
+        ///
+        /// 删除别名
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest deleteAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/aliases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAliasRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAliasResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteAliasResponse> DeleteAliasAsyncInvoker(DeleteAliasRequest deleteAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/aliases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAliasRequest);
+            return new AsyncInvoker<DeleteAliasResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAliasResponse>);
         }
         
         /// <summary>
@@ -720,6 +792,37 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/import-key-material", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importKeyMaterialRequest);
             return new AsyncInvoker<ImportKeyMaterialResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ImportKeyMaterialResponse>);
+        }
+        
+        /// <summary>
+        /// 
+        ///
+        /// 查询一个密钥关联的所有别名
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest listAliasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/aliases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAliasesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listAliasesResponse = JsonUtils.DeSerializeNull<ListAliasesResponse>(response);
+            listAliasesResponse.Body = JsonUtils.DeSerializeList<ListAliasResponseBody>(response);
+            return listAliasesResponse;
+        }
+
+        public AsyncInvoker<ListAliasesResponse> ListAliasesAsyncInvoker(ListAliasesRequest listAliasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/aliases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAliasesRequest);
+            return new AsyncInvoker<ListAliasesResponse>(this, "GET", request, response =>
+            {
+                var listAliasesResponse = JsonUtils.DeSerializeNull<ListAliasesResponse>(response);
+                listAliasesResponse.Body = JsonUtils.DeSerializeList<ListAliasResponseBody>(response);
+                return listAliasesResponse;
+            });
         }
         
         /// <summary>

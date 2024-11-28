@@ -508,6 +508,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("configurationsOverride", NullValueHandling = NullValueHandling.Ignore)]
         public List<PackageConfiguration> ConfigurationsOverride { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("encryptionConfig", NullValueHandling = NullValueHandling.Ignore)]
+        public EncryptionConfig EncryptionConfig { get; set; }
+
 
 
         /// <summary>
@@ -542,6 +548,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  enableDistMgt: ").Append(EnableDistMgt).Append("\n");
             sb.Append("  deletionProtection: ").Append(DeletionProtection).Append("\n");
             sb.Append("  configurationsOverride: ").Append(ConfigurationsOverride).Append("\n");
+            sb.Append("  encryptionConfig: ").Append(EncryptionConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -585,6 +592,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.EnableDistMgt != input.EnableDistMgt || (this.EnableDistMgt != null && !this.EnableDistMgt.Equals(input.EnableDistMgt))) return false;
             if (this.DeletionProtection != input.DeletionProtection || (this.DeletionProtection != null && !this.DeletionProtection.Equals(input.DeletionProtection))) return false;
             if (this.ConfigurationsOverride != input.ConfigurationsOverride || (this.ConfigurationsOverride != null && input.ConfigurationsOverride != null && !this.ConfigurationsOverride.SequenceEqual(input.ConfigurationsOverride))) return false;
+            if (this.EncryptionConfig != input.EncryptionConfig || (this.EncryptionConfig != null && !this.EncryptionConfig.Equals(input.EncryptionConfig))) return false;
 
             return true;
         }
@@ -622,6 +630,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.EnableDistMgt != null) hashCode = hashCode * 59 + this.EnableDistMgt.GetHashCode();
                 if (this.DeletionProtection != null) hashCode = hashCode * 59 + this.DeletionProtection.GetHashCode();
                 if (this.ConfigurationsOverride != null) hashCode = hashCode * 59 + this.ConfigurationsOverride.GetHashCode();
+                if (this.EncryptionConfig != null) hashCode = hashCode * 59 + this.EncryptionConfig.GetHashCode();
                 return hashCode;
             }
         }

@@ -573,6 +573,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public int? Duration { get; set; }
 
         /// <summary>
+        /// 视频时长，单位毫秒。
+        /// </summary>
+        [JsonProperty("duration_ms", NullValueHandling = NullValueHandling.Ignore)]
+        public long? DurationMs { get; set; }
+
+        /// <summary>
         /// 媒资大小。  单位：字节。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
@@ -647,6 +653,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("  title: ").Append(Title).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
+            sb.Append("  durationMs: ").Append(DurationMs).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  originalUrl: ").Append(OriginalUrl).Append("\n");
             sb.Append("  category: ").Append(Category).Append("\n");
@@ -680,6 +687,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.DurationMs != input.DurationMs || (this.DurationMs != null && !this.DurationMs.Equals(input.DurationMs))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.OriginalUrl != input.OriginalUrl || (this.OriginalUrl != null && !this.OriginalUrl.Equals(input.OriginalUrl))) return false;
             if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
@@ -707,6 +715,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.DurationMs != null) hashCode = hashCode * 59 + this.DurationMs.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.OriginalUrl != null) hashCode = hashCode * 59 + this.OriginalUrl.GetHashCode();
                 if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();

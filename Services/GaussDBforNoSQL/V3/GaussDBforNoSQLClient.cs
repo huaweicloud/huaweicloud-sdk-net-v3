@@ -1444,6 +1444,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询Redis可恢复时间点
+        ///
+        /// 查询Redis可恢复时间点。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRedisPitrRestoreTimeResponse ListRedisPitrRestoreTime(ListRedisPitrRestoreTimeRequest listRedisPitrRestoreTimeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRedisPitrRestoreTimeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/pitr/restorable-time-periods", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRedisPitrRestoreTimeRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListRedisPitrRestoreTimeResponse>(response);
+        }
+
+        public SyncInvoker<ListRedisPitrRestoreTimeResponse> ListRedisPitrRestoreTimeInvoker(ListRedisPitrRestoreTimeRequest listRedisPitrRestoreTimeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listRedisPitrRestoreTimeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/pitr/restorable-time-periods", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRedisPitrRestoreTimeRequest);
+            return new SyncInvoker<ListRedisPitrRestoreTimeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRedisPitrRestoreTimeResponse>);
+        }
+        
+        /// <summary>
         /// 查询GeminiDB(for Redis)数据库慢日志
         ///
         /// 查询GeminiDB(for Redis)数据库慢日志信息，支持日志关键字搜索。
@@ -1992,6 +2018,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 恢复当前Redis实例到指定时间点
+        ///
+        /// 恢复当前Redis实例到指定时间点。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RestoreRedisPitrResponse RestoreRedisPitr(RestoreRedisPitrRequest restoreRedisPitrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restoreRedisPitrRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/pitr", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreRedisPitrRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<RestoreRedisPitrResponse>(response);
+        }
+
+        public SyncInvoker<RestoreRedisPitrResponse> RestoreRedisPitrInvoker(RestoreRedisPitrRequest restoreRedisPitrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restoreRedisPitrRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/pitr", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreRedisPitrRequest);
+            return new SyncInvoker<RestoreRedisPitrResponse>(this, "PUT", request, JsonUtils.DeSerialize<RestoreRedisPitrResponse>);
+        }
+        
+        /// <summary>
         /// 关联LTS日志流
         ///
         /// - 将实例日志与LTS日志流关联，后台将自动上传实例日志到关联的LTS日志流里。
@@ -2116,6 +2168,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecyclePolicyRequest);
             return new SyncInvoker<SetRecyclePolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetRecyclePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 设置Redis恢复到指定时间点策略
+        ///
+        /// 设置Redis恢复到指定时间点策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetRedisPitrPolicyResponse SetRedisPitrPolicy(SetRedisPitrPolicyRequest setRedisPitrPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setRedisPitrPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/pitr/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRedisPitrPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<SetRedisPitrPolicyResponse>(response);
+        }
+
+        public SyncInvoker<SetRedisPitrPolicyResponse> SetRedisPitrPolicyInvoker(SetRedisPitrPolicyRequest setRedisPitrPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setRedisPitrPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/pitr/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRedisPitrPolicyRequest);
+            return new SyncInvoker<SetRedisPitrPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetRedisPitrPolicyResponse>);
         }
         
         /// <summary>
@@ -2654,6 +2732,58 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询Redis实例指定时间点恢复所占用的存储空间
+        ///
+        /// 查询Redis实例指定时间点恢复所占用的存储空间。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRedisPitrInfoResponse ShowRedisPitrInfo(ShowRedisPitrInfoRequest showRedisPitrInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRedisPitrInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/pitr", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRedisPitrInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRedisPitrInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowRedisPitrInfoResponse> ShowRedisPitrInfoInvoker(ShowRedisPitrInfoRequest showRedisPitrInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRedisPitrInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/pitr", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRedisPitrInfoRequest);
+            return new SyncInvoker<ShowRedisPitrInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRedisPitrInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Redis恢复到指定时间点策略
+        ///
+        /// 查询Redis恢复到指定时间点策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRedisPitrPolicyResponse ShowRedisPitrPolicy(ShowRedisPitrPolicyRequest showRedisPitrPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRedisPitrPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/pitr/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRedisPitrPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRedisPitrPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowRedisPitrPolicyResponse> ShowRedisPitrPolicyInvoker(ShowRedisPitrPolicyRequest showRedisPitrPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRedisPitrPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/pitr/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRedisPitrPolicyRequest);
+            return new SyncInvoker<ShowRedisPitrPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRedisPitrPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 查询可恢复的实例列表
         ///
         /// 查询用户可恢复的实例列表
@@ -2755,6 +2885,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/reduce-node", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", shrinkInstanceNodeRequest);
             return new SyncInvoker<ShrinkInstanceNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<ShrinkInstanceNodeResponse>);
+        }
+        
+        /// <summary>
+        /// 停止备份
+        ///
+        /// 支持紧急情况下停止备份功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StopBackupResponse StopBackup(StopBackupRequest stopBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("backup_id", stopBackupRequest.BackupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopBackupRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<StopBackupResponse>(response);
+        }
+
+        public SyncInvoker<StopBackupResponse> StopBackupInvoker(StopBackupRequest stopBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("backup_id", stopBackupRequest.BackupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopBackupRequest);
+            return new SyncInvoker<StopBackupResponse>(this, "PUT", request, JsonUtils.DeSerialize<StopBackupResponse>);
         }
         
         /// <summary>

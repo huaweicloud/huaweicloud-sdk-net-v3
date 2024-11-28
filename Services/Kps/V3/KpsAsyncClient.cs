@@ -64,6 +64,54 @@ namespace HuaweiCloud.SDK.Kps.V3
         }
         
         /// <summary>
+        /// 批量导出密钥对私钥
+        ///
+        /// 批量导出密钥对私钥，单次最多导出10条数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchExportPrivateKeyResponse> BatchExportPrivateKeyAsync(BatchExportPrivateKeyRequest batchExportPrivateKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/private-key/batch-export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchExportPrivateKeyRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchExportPrivateKeyResponse>(response);
+        }
+
+        public AsyncInvoker<BatchExportPrivateKeyResponse> BatchExportPrivateKeyAsyncInvoker(BatchExportPrivateKeyRequest batchExportPrivateKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/private-key/batch-export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchExportPrivateKeyRequest);
+            return new AsyncInvoker<BatchExportPrivateKeyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchExportPrivateKeyResponse>);
+        }
+        
+        /// <summary>
+        /// 批量导入SSH密钥对
+        ///
+        /// 批量导入SSH密钥对,单次批量导入不得超过10条记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchImportKeypairResponse> BatchImportKeypairAsync(BatchImportKeypairRequest batchImportKeypairRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/batch-import", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchImportKeypairRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchImportKeypairResponse>(response);
+        }
+
+        public AsyncInvoker<BatchImportKeypairResponse> BatchImportKeypairAsyncInvoker(BatchImportKeypairRequest batchImportKeypairRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/keypairs/batch-import", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchImportKeypairRequest);
+            return new AsyncInvoker<BatchImportKeypairResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchImportKeypairResponse>);
+        }
+        
+        /// <summary>
         /// 清除私钥
         ///
         /// 清除SSH密钥对私钥。

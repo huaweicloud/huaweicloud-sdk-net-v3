@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public int? ResourceSizeMeasureId { get; set; }
 
         /// <summary>
-        /// 用户购买云服务产品的资源规格 Enum: [vault.backup.server.normal，vault.backup.turbo.normal, vault.backup.database.normal，vault.backup.volume.normal，vault.backup.rds.normal，vault.replication.server.normal，vault.hybrid.server.normal]
+        /// 用户购买云服务产品的资源规格 Enum:  - vault.backup.server.normal - vault.backup.turbo.normal - vault.backup.database.normal - vault.backup.volume.normal - vault.backup.rds.normal - vault.replication.server.normal - vault.hybrid.server.normal
         /// </summary>
         [JsonProperty("resourceSpecCode", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceSpecCode { get; set; }

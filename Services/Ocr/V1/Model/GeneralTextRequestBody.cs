@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
-        /// 与url二选一  图像数据，base64编码，要求base64编码后大小不超过10MB。图片最小边不小于15px，最长边不超过4096px。支持JPEG、JPG、PNG、BMP、TIFF格式。  图片文件Base64编码字符串，[点击[这里](https://support.huaweicloud.com/ocr_faq/ocr_01_0032.html)](tag:hc)[点击[这里](https://support.huaweicloud.com/intl/zh-cn/ocr_faq/ocr_01_0032.html)](tag:hk)查看详细获取方式。     
+        /// 与url二选一  图像数据，base64编码，要求base64编码后大小不超过10MB。图片最小边不小于15px，最长边不超过4096px。支持JPEG、JPG、PNG、BMP、GIF、TIFF、WEBP、PCX、ICO、PSD、PDF格式。  图片文件Base64编码字符串，[点击[这里](https://support.huaweicloud.com/ocr_faq/ocr_01_0032.html)](tag:hc)[点击[这里](https://support.huaweicloud.com/intl/zh-cn/ocr_faq/ocr_01_0032.html)](tag:hk)查看详细获取方式。     
         /// </summary>
         [JsonProperty("image", NullValueHandling = NullValueHandling.Ignore)]
         public string Image { get; set; }
@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("single_orientation_mode", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SingleOrientationMode { get; set; }
 
+        /// <summary>
+        /// 指定PDF页码识别。传入该参数时，则识别指定页码的内容。如果不传该参数，则默认识别第1页。 
+        /// </summary>
+        [JsonProperty("pdf_page_number", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PdfPageNumber { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  characterMode: ").Append(CharacterMode).Append("\n");
             sb.Append("  language: ").Append(Language).Append("\n");
             sb.Append("  singleOrientationMode: ").Append(SingleOrientationMode).Append("\n");
+            sb.Append("  pdfPageNumber: ").Append(PdfPageNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.CharacterMode != input.CharacterMode || (this.CharacterMode != null && !this.CharacterMode.Equals(input.CharacterMode))) return false;
             if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
             if (this.SingleOrientationMode != input.SingleOrientationMode || (this.SingleOrientationMode != null && !this.SingleOrientationMode.Equals(input.SingleOrientationMode))) return false;
+            if (this.PdfPageNumber != input.PdfPageNumber || (this.PdfPageNumber != null && !this.PdfPageNumber.Equals(input.PdfPageNumber))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.CharacterMode != null) hashCode = hashCode * 59 + this.CharacterMode.GetHashCode();
                 if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.SingleOrientationMode != null) hashCode = hashCode * 59 + this.SingleOrientationMode.GetHashCode();
+                if (this.PdfPageNumber != null) hashCode = hashCode * 59 + this.PdfPageNumber.GetHashCode();
                 return hashCode;
             }
         }

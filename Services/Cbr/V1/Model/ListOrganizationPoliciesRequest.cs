@@ -23,6 +23,20 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("operation_type", NullValueHandling = NullValueHandling.Ignore)]
         public string OperationType { get; set; }
 
+        /// <summary>
+        /// 每页显示的条目数量，正整数
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 偏移值，正整数
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
 
 
         /// <summary>
@@ -33,6 +47,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ListOrganizationPoliciesRequest {\n");
             sb.Append("  operationType: ").Append(OperationType).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -52,6 +68,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             if (input == null) return false;
             if (this.OperationType != input.OperationType || (this.OperationType != null && !this.OperationType.Equals(input.OperationType))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
 
             return true;
         }
@@ -65,6 +83,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             {
                 var hashCode = 41;
                 if (this.OperationType != null) hashCode = hashCode * 59 + this.OperationType.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 return hashCode;
             }
         }
