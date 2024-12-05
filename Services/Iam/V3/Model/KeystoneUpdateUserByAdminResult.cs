@@ -70,12 +70,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("extra", NullValueHandling = NullValueHandling.Ignore)]
-        public KeystoneUserResultExtra Extra { get; set; }
-
 
 
         /// <summary>
@@ -94,7 +88,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  links: ").Append(Links).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  enabled: ").Append(Enabled).Append("\n");
-            sb.Append("  extra: ").Append(Extra).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -122,7 +115,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
-            if (this.Extra != input.Extra || (this.Extra != null && !this.Extra.Equals(input.Extra))) return false;
 
             return true;
         }
@@ -144,7 +136,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.Extra != null) hashCode = hashCode * 59 + this.Extra.GetHashCode();
                 return hashCode;
             }
         }

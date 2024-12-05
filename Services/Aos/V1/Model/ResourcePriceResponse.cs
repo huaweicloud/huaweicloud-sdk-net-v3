@@ -316,6 +316,24 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("period_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodCount { get; set; }
 
+        /// <summary>
+        /// 该资源的最优折扣类型  对于按需计费资源的折扣类型 合同商务优惠类型：605 （华为云商务-折扣率，一口价，华为云用户）、606 （渠道商务-折扣率，一口价，BP用户） 伙伴折扣优惠类型：607 (合作伙伴授予折扣-折扣率)  对于包周期计费资源的折扣类型 合同商务折扣：605（华为云BE场景下的合同商务折扣）、606（分销商BE场景下的合同商务折扣） 伙伴授予折扣：607 促销折扣：700  如果该资源存在折扣，则返回该字段；如果该资源不存在折扣，则不返回该字段。
+        /// </summary>
+        [JsonProperty("best_discount_type", NullValueHandling = NullValueHandling.Ignore)]
+        public int? BestDiscountType { get; set; }
+
+        /// <summary>
+        /// 最优折扣优惠额，保留小数点后2位，向上取整，默认单位是元。  如果该资源存在折扣，则返回该字段；如果该资源不存在折扣，则不返回该字段。
+        /// </summary>
+        [JsonProperty("best_discount_price", NullValueHandling = NullValueHandling.Ignore)]
+        public double? BestDiscountPrice { get; set; }
+
+        /// <summary>
+        /// 官网价优惠额，保留小数点后2位，向上取整，默认单位是元。  如果该资源存在官网价优惠额，则返回该字段；如果该资源不存在官网价优惠额，则不返回该字段。
+        /// </summary>
+        [JsonProperty("official_website_discount_price", NullValueHandling = NullValueHandling.Ignore)]
+        public double? OfficialWebsiteDiscountPrice { get; set; }
+
 
 
         /// <summary>
@@ -331,6 +349,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  originalPrice: ").Append(OriginalPrice).Append("\n");
             sb.Append("  periodType: ").Append(PeriodType).Append("\n");
             sb.Append("  periodCount: ").Append(PeriodCount).Append("\n");
+            sb.Append("  bestDiscountType: ").Append(BestDiscountType).Append("\n");
+            sb.Append("  bestDiscountPrice: ").Append(BestDiscountPrice).Append("\n");
+            sb.Append("  officialWebsiteDiscountPrice: ").Append(OfficialWebsiteDiscountPrice).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -355,6 +376,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             if (this.OriginalPrice != input.OriginalPrice || (this.OriginalPrice != null && !this.OriginalPrice.Equals(input.OriginalPrice))) return false;
             if (this.PeriodType != input.PeriodType) return false;
             if (this.PeriodCount != input.PeriodCount || (this.PeriodCount != null && !this.PeriodCount.Equals(input.PeriodCount))) return false;
+            if (this.BestDiscountType != input.BestDiscountType || (this.BestDiscountType != null && !this.BestDiscountType.Equals(input.BestDiscountType))) return false;
+            if (this.BestDiscountPrice != input.BestDiscountPrice || (this.BestDiscountPrice != null && !this.BestDiscountPrice.Equals(input.BestDiscountPrice))) return false;
+            if (this.OfficialWebsiteDiscountPrice != input.OfficialWebsiteDiscountPrice || (this.OfficialWebsiteDiscountPrice != null && !this.OfficialWebsiteDiscountPrice.Equals(input.OfficialWebsiteDiscountPrice))) return false;
 
             return true;
         }
@@ -373,6 +397,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                 if (this.OriginalPrice != null) hashCode = hashCode * 59 + this.OriginalPrice.GetHashCode();
                 hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
                 if (this.PeriodCount != null) hashCode = hashCode * 59 + this.PeriodCount.GetHashCode();
+                if (this.BestDiscountType != null) hashCode = hashCode * 59 + this.BestDiscountType.GetHashCode();
+                if (this.BestDiscountPrice != null) hashCode = hashCode * 59 + this.BestDiscountPrice.GetHashCode();
+                if (this.OfficialWebsiteDiscountPrice != null) hashCode = hashCode * 59 + this.OfficialWebsiteDiscountPrice.GetHashCode();
                 return hashCode;
             }
         }

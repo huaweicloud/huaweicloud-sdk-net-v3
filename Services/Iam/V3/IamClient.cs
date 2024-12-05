@@ -1363,6 +1363,33 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 查询联邦用户可以访问的项目列表
+        ///
+        /// 该接口可以用于查询联邦用户可以访问的项目列表。
+        /// 
+        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+        /// &gt; - 推荐使用[查询IAM用户可以访问的项目列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;KeystoneListAccessibleProjectsToUser)，该接口可以返回相同的响应格式。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public KeystoneListFederationProjectsResponse KeystoneListFederationProjects(KeystoneListFederationProjectsRequest keystoneListFederationProjectsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/projects", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListFederationProjectsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<KeystoneListFederationProjectsResponse>(response);
+        }
+
+        public SyncInvoker<KeystoneListFederationProjectsResponse> KeystoneListFederationProjectsInvoker(KeystoneListFederationProjectsRequest keystoneListFederationProjectsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/projects", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListFederationProjectsRequest);
+            return new SyncInvoker<KeystoneListFederationProjectsResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneListFederationProjectsResponse>);
+        }
+        
+        /// <summary>
         /// 查询用户组列表
         ///
         /// 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组列表。

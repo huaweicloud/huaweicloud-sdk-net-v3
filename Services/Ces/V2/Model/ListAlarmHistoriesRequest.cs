@@ -151,6 +151,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string AlarmId { get; set; }
 
         /// <summary>
+        /// 告警记录ID,以ah开头，后跟22位由字母或数字组成的字符串
+        /// </summary>
+        [SDKProperty("record_id", IsQuery = true)]
+        [JsonProperty("record_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RecordId { get; set; }
+
+        /// <summary>
         /// 告警规则名称
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
@@ -229,6 +236,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListAlarmHistoriesRequest {\n");
             sb.Append("  alarmId: ").Append(AlarmId).Append("\n");
+            sb.Append("  recordId: ").Append(RecordId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  level: ").Append(Level).Append("\n");
@@ -258,6 +266,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             if (input == null) return false;
             if (this.AlarmId != input.AlarmId || (this.AlarmId != null && !this.AlarmId.Equals(input.AlarmId))) return false;
+            if (this.RecordId != input.RecordId || (this.RecordId != null && !this.RecordId.Equals(input.RecordId))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
@@ -281,6 +290,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             {
                 var hashCode = 41;
                 if (this.AlarmId != null) hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
+                if (this.RecordId != null) hashCode = hashCode * 59 + this.RecordId.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();

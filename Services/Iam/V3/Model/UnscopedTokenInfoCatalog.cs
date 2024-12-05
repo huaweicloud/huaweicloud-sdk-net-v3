@@ -38,13 +38,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [JsonProperty("endpoints", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UnscopedTokenInfoCatalogEndpoints> Endpoints { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Description { get; set; }
+        public List<UnscopedTokenInfoEndpoints> Endpoints { get; set; }
 
 
 
@@ -59,7 +53,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  endpoints: ").Append(Endpoints).Append("\n");
-            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,7 +75,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Endpoints != input.Endpoints || (this.Endpoints != null && input.Endpoints != null && !this.Endpoints.SequenceEqual(input.Endpoints))) return false;
-            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
             return true;
         }
@@ -99,7 +91,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Endpoints != null) hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
-                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

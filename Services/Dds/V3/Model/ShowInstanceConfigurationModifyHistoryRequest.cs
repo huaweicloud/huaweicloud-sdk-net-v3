@@ -24,6 +24,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
+        /// 实例ID或组ID或节点ID。可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+        /// </summary>
+        [SDKProperty("entity_id", IsQuery = true)]
+        [JsonProperty("entity_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EntityId { get; set; }
+
+        /// <summary>
         /// 索引位置，偏移量。  从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。 取值必须为数字，不能为负数。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
@@ -47,6 +54,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ShowInstanceConfigurationModifyHistoryRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  entityId: ").Append(EntityId).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
@@ -68,6 +76,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             if (input == null) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.EntityId != input.EntityId || (this.EntityId != null && !this.EntityId.Equals(input.EntityId))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
@@ -83,6 +92,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             {
                 var hashCode = 41;
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.EntityId != null) hashCode = hashCode * 59 + this.EntityId.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;

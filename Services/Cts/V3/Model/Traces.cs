@@ -274,6 +274,18 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         [JsonProperty("resource_account_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceAccountId { get; set; }
 
+        /// <summary>
+        /// 标识用户请求是不是只读。
+        /// </summary>
+        [JsonProperty("read_only", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReadOnly { get; set; }
+
+        /// <summary>
+        /// 记录事件对应的操作ID。
+        /// </summary>
+        [JsonProperty("operation_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OperationId { get; set; }
+
 
 
         /// <summary>
@@ -306,6 +318,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
             sb.Append("  resourceUrl: ").Append(ResourceUrl).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  resourceAccountId: ").Append(ResourceAccountId).Append("\n");
+            sb.Append("  readOnly: ").Append(ReadOnly).Append("\n");
+            sb.Append("  operationId: ").Append(OperationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -347,6 +361,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
             if (this.ResourceUrl != input.ResourceUrl || (this.ResourceUrl != null && !this.ResourceUrl.Equals(input.ResourceUrl))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.ResourceAccountId != input.ResourceAccountId || (this.ResourceAccountId != null && !this.ResourceAccountId.Equals(input.ResourceAccountId))) return false;
+            if (this.ReadOnly != input.ReadOnly || (this.ReadOnly != null && !this.ReadOnly.Equals(input.ReadOnly))) return false;
+            if (this.OperationId != input.OperationId || (this.OperationId != null && !this.OperationId.Equals(input.OperationId))) return false;
 
             return true;
         }
@@ -382,6 +398,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
                 if (this.ResourceUrl != null) hashCode = hashCode * 59 + this.ResourceUrl.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.ResourceAccountId != null) hashCode = hashCode * 59 + this.ResourceAccountId.GetHashCode();
+                if (this.ReadOnly != null) hashCode = hashCode * 59 + this.ReadOnly.GetHashCode();
+                if (this.OperationId != null) hashCode = hashCode * 59 + this.OperationId.GetHashCode();
                 return hashCode;
             }
         }

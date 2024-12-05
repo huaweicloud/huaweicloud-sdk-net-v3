@@ -182,7 +182,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// 异步调用结束时间（格式为YYYY-MM-DD&#39;T&#39;HH:mm:ss,UTC时间）。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? EndTime { get; set; }
+        public string EndTime { get; set; }
 
 
 

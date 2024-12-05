@@ -1,3 +1,143 @@
+# 3.1.123 2024-12-05
+
+### HuaweiCloud SDK AOS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **EstimateExecutionPlanPrice**
+    - changes of response param
+      - `+ items.resource_price.best_discount_type`
+      - `+ items.resource_price.best_discount_price`
+      - `+ items.resource_price.official_website_discount_price`
+
+### HuaweiCloud SDK CES
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAlarmHistories**
+    - changes of request param
+      - `+ record_id`
+
+### HuaweiCloud SDK CTS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTraces**
+    - changes of response param
+      - `+ traces.read_only`
+      - `+ traces.operation_id`
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowInstanceConfigurationModifyHistory**
+    - changes of request param
+      - `+ entity_id`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAsyncJobDetail**
+    - changes of response param
+      - `+ jobs.compare_result.data_compare_task_list.dynamic_compare_delay`
+  - **ShowJobDetail**
+    - changes of response param
+      - `+ job.compare_result.data_compare_task_list.dynamic_compare_delay`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAsyncInvocations**
+    - changes of response param
+      - `* invocations.end_time: date-time -> string`
+  - **ListActiveAsyncInvocations**
+    - changes of response param
+      - `* invocations.end_time: date-time -> string`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `SwitchOver`
+    - `BatchDeleteManualBackup`
+    - `ShowDisasterRecoverySettings`
+    - `SetDisasterRecoverySettings`
+    - `ShowRedisHotKeys`
+    - `ShowRedisDisabledCommands`
+    - `SaveRedisDisabledCommands`
+    - `DeleteRedisDisabledCommands`
+    - `ListInstanceSessions`
+    - `ClearInstanceSessions`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IAM
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `KeystoneListFederationProjects`
+- _Bug Fix_
+  - None
+- _Change_
+  - **KeystoneListUsersForGroupByAdmin**
+    - changes of response param
+      - `- users.extra`
+  - **UpdateUser**
+    - changes of request param
+      - `- user.create_time`
+      - `- user.xdomain_id`
+      - `- user.xdomain_type`
+      - `- user.is_domain_owner`
+    - changes of response param
+      - `+ user.create_time`
+      - `+ user.xdomain_id`
+      - `+ user.xdomain_type`
+      - `+ user.is_domain_owner`
+  - **KeystoneUpdateUserByAdmin**
+    - changes of response param
+      - `- user.extra`
+  - **CreateUnscopedTokenWithIdToken**
+    - changes of response param
+      - `* token.catalog: object -> list<object>`
+
 # 3.1.122 2024-11-28
 
 ### HuaweiCloud SDK CBR

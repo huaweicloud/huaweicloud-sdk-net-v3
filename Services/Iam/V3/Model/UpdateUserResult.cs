@@ -100,6 +100,30 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("password_expires_at", NullValueHandling = NullValueHandling.Ignore)]
         public string PasswordExpiresAt { get; set; }
 
+        /// <summary>
+        /// UTC时间，格式为YYYY-MM-DDTHH:mm:ss.ssssss，日期和时间戳格式如：2023-06-28T08:56:33.710000。
+        /// </summary>
+        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// IAM用户在外部系统中的ID。 &gt;外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。
+        /// </summary>
+        [JsonProperty("xdomain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string XdomainId { get; set; }
+
+        /// <summary>
+        /// IAM用户在外部系统中的类型。 &gt;外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。 
+        /// </summary>
+        [JsonProperty("xdomain_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string XdomainType { get; set; }
+
+        /// <summary>
+        /// IAM用户是否为账号管理员。
+        /// </summary>
+        [JsonProperty("is_domain_owner", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsDomainOwner { get; set; }
+
 
 
         /// <summary>
@@ -123,6 +147,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  links: ").Append(Links).Append("\n");
             sb.Append("  passwordExpiresAt: ").Append(PasswordExpiresAt).Append("\n");
+            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  xdomainId: ").Append(XdomainId).Append("\n");
+            sb.Append("  xdomainType: ").Append(XdomainType).Append("\n");
+            sb.Append("  isDomainOwner: ").Append(IsDomainOwner).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -155,6 +183,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
             if (this.PasswordExpiresAt != input.PasswordExpiresAt || (this.PasswordExpiresAt != null && !this.PasswordExpiresAt.Equals(input.PasswordExpiresAt))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.XdomainId != input.XdomainId || (this.XdomainId != null && !this.XdomainId.Equals(input.XdomainId))) return false;
+            if (this.XdomainType != input.XdomainType || (this.XdomainType != null && !this.XdomainType.Equals(input.XdomainType))) return false;
+            if (this.IsDomainOwner != input.IsDomainOwner || (this.IsDomainOwner != null && !this.IsDomainOwner.Equals(input.IsDomainOwner))) return false;
 
             return true;
         }
@@ -181,6 +213,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
                 if (this.PasswordExpiresAt != null) hashCode = hashCode * 59 + this.PasswordExpiresAt.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.XdomainId != null) hashCode = hashCode * 59 + this.XdomainId.GetHashCode();
+                if (this.XdomainType != null) hashCode = hashCode * 59 + this.XdomainType.GetHashCode();
+                if (this.IsDomainOwner != null) hashCode = hashCode * 59 + this.IsDomainOwner.GetHashCode();
                 return hashCode;
             }
         }

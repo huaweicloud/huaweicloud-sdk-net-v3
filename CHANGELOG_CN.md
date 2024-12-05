@@ -1,3 +1,143 @@
+# 3.1.123 2024-12-05
+
+### HuaweiCloud SDK AOS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **EstimateExecutionPlanPrice**
+    - 响应参数变更
+      - `+ items.resource_price.best_discount_type`
+      - `+ items.resource_price.best_discount_price`
+      - `+ items.resource_price.official_website_discount_price`
+
+### HuaweiCloud SDK CES
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAlarmHistories**
+    - 请求参数变更
+      - `+ record_id`
+
+### HuaweiCloud SDK CTS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListTraces**
+    - 响应参数变更
+      - `+ traces.read_only`
+      - `+ traces.operation_id`
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowInstanceConfigurationModifyHistory**
+    - 请求参数变更
+      - `+ entity_id`
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAsyncJobDetail**
+    - 响应参数变更
+      - `+ jobs.compare_result.data_compare_task_list.dynamic_compare_delay`
+  - **ShowJobDetail**
+    - 响应参数变更
+      - `+ job.compare_result.data_compare_task_list.dynamic_compare_delay`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAsyncInvocations**
+    - 响应参数变更
+      - `* invocations.end_time: date-time -> string`
+  - **ListActiveAsyncInvocations**
+    - 响应参数变更
+      - `* invocations.end_time: date-time -> string`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `SwitchOver`
+    - `BatchDeleteManualBackup`
+    - `ShowDisasterRecoverySettings`
+    - `SetDisasterRecoverySettings`
+    - `ShowRedisHotKeys`
+    - `ShowRedisDisabledCommands`
+    - `SaveRedisDisabledCommands`
+    - `DeleteRedisDisabledCommands`
+    - `ListInstanceSessions`
+    - `ClearInstanceSessions`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IAM
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`KeystoneListFederationProjects`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **KeystoneListUsersForGroupByAdmin**
+    - 响应参数变更
+      - `- users.extra`
+  - **UpdateUser**
+    - 请求参数变更
+      - `- user.create_time`
+      - `- user.xdomain_id`
+      - `- user.xdomain_type`
+      - `- user.is_domain_owner`
+    - 响应参数变更
+      - `+ user.create_time`
+      - `+ user.xdomain_id`
+      - `+ user.xdomain_type`
+      - `+ user.is_domain_owner`
+  - **KeystoneUpdateUserByAdmin**
+    - 响应参数变更
+      - `- user.extra`
+  - **CreateUnscopedTokenWithIdToken**
+    - 响应参数变更
+      - `* token.catalog: object -> list<object>`
+
 # 3.1.122 2024-11-28
 
 ### HuaweiCloud SDK CBR

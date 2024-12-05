@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// catalog信息
         /// </summary>
         [JsonProperty("catalog", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UnscopedTokenInfoCatalogEndpoints> Catalog { get; set; }
+        public List<UnscopedTokenInfoEndpoints> Catalog { get; set; }
 
 
 

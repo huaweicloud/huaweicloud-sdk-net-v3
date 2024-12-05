@@ -232,6 +232,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorMsg { get; set; }
 
+        /// <summary>
+        /// 动态比对时延。
+        /// </summary>
+        [JsonProperty("dynamic_compare_delay", NullValueHandling = NullValueHandling.Ignore)]
+        public long? DynamicCompareDelay { get; set; }
+
 
 
         /// <summary>
@@ -252,6 +258,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  compareJobTag: ").Append(CompareJobTag).Append("\n");
             sb.Append("  options: ").Append(Options).Append("\n");
             sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
+            sb.Append("  dynamicCompareDelay: ").Append(DynamicCompareDelay).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -281,6 +288,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.CompareJobTag != input.CompareJobTag || (this.CompareJobTag != null && input.CompareJobTag != null && !this.CompareJobTag.SequenceEqual(input.CompareJobTag))) return false;
             if (this.Options != input.Options || (this.Options != null && input.Options != null && !this.Options.SequenceEqual(input.Options))) return false;
             if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
+            if (this.DynamicCompareDelay != input.DynamicCompareDelay || (this.DynamicCompareDelay != null && !this.DynamicCompareDelay.Equals(input.DynamicCompareDelay))) return false;
 
             return true;
         }
@@ -304,6 +312,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.CompareJobTag != null) hashCode = hashCode * 59 + this.CompareJobTag.GetHashCode();
                 if (this.Options != null) hashCode = hashCode * 59 + this.Options.GetHashCode();
                 if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                if (this.DynamicCompareDelay != null) hashCode = hashCode * 59 + this.DynamicCompareDelay.GetHashCode();
                 return hashCode;
             }
         }

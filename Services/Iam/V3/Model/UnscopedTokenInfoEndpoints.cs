@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     /// <summary>
     /// 
     /// </summary>
-    public class UnscopedTokenInfoCatalogEndpoints 
+    public class UnscopedTokenInfoEndpoints 
     {
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UnscopedTokenInfoCatalogEndpoints {\n");
+            sb.Append("class UnscopedTokenInfoEndpoints {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  Interface: ").Append(Interface).Append("\n");
             sb.Append("  region: ").Append(Region).Append("\n");
@@ -69,13 +69,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UnscopedTokenInfoCatalogEndpoints);
+            return this.Equals(input as UnscopedTokenInfoEndpoints);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UnscopedTokenInfoCatalogEndpoints input)
+        public bool Equals(UnscopedTokenInfoEndpoints input)
         {
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;

@@ -17,30 +17,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
     {
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreateTime { get; set; }
-
-        /// <summary>
-        /// IAM用户在外部系统中的ID。 &gt;外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。
-        /// </summary>
-        [JsonProperty("xdomain_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string XdomainId { get; set; }
-
-        /// <summary>
-        /// IAM用户在外部系统中的类型。 &gt;外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。 
-        /// </summary>
-        [JsonProperty("xdomain_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string XdomainType { get; set; }
-
-        /// <summary>
-        /// IAM用户是否为账号管理员。
-        /// </summary>
-        [JsonProperty("is_domain_owner", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsDomainOwner { get; set; }
-
-        /// <summary>
         /// IAM用户访问方式。 - default：默认访问模式，编程访问和管理控制台访问。 - programmatic：编程访问。 - console：管理控制台访问。
         /// </summary>
         [JsonProperty("access_mode", NullValueHandling = NullValueHandling.Ignore)]
@@ -115,10 +91,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class UpdateUserOption {\n");
-            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  xdomainId: ").Append(XdomainId).Append("\n");
-            sb.Append("  xdomainType: ").Append(XdomainType).Append("\n");
-            sb.Append("  isDomainOwner: ").Append(IsDomainOwner).Append("\n");
             sb.Append("  accessMode: ").Append(AccessMode).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
@@ -148,10 +120,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public bool Equals(UpdateUserOption input)
         {
             if (input == null) return false;
-            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
-            if (this.XdomainId != input.XdomainId || (this.XdomainId != null && !this.XdomainId.Equals(input.XdomainId))) return false;
-            if (this.XdomainType != input.XdomainType || (this.XdomainType != null && !this.XdomainType.Equals(input.XdomainType))) return false;
-            if (this.IsDomainOwner != input.IsDomainOwner || (this.IsDomainOwner != null && !this.IsDomainOwner.Equals(input.IsDomainOwner))) return false;
             if (this.AccessMode != input.AccessMode || (this.AccessMode != null && !this.AccessMode.Equals(input.AccessMode))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
@@ -175,10 +143,6 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.XdomainId != null) hashCode = hashCode * 59 + this.XdomainId.GetHashCode();
-                if (this.XdomainType != null) hashCode = hashCode * 59 + this.XdomainType.GetHashCode();
-                if (this.IsDomainOwner != null) hashCode = hashCode * 59 + this.IsDomainOwner.GetHashCode();
                 if (this.AccessMode != null) hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
