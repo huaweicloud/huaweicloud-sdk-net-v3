@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
 
 
         /// <summary>
-        /// 数据库分类 - RDS: RDS数据库 - ECS:自建数据库
+        /// 数据库分类 - ECS:自建数据库
         /// </summary>
         [JsonProperty("db_classification", NullValueHandling = NullValueHandling.Ignore)]
         public string DbClassification { get; set; }

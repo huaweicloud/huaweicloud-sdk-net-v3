@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 数据库类型 - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - MARIADB - GAUSSDBOPENGAUSS
+        /// 数据库类型 - MYSQL - POSTGRESQL - SQLSERVER - TAURUS - DWS - MARIADB - GAUSSDBOPENGAUSS
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// 偏移量
+        /// 偏移量，默认0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public string Offset { get; set; }
 
         /// <summary>
-        /// 查询记录数
+        /// 查询记录数，默认100，最大1000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

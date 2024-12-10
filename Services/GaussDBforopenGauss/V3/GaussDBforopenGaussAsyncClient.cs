@@ -1004,6 +1004,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询实例特性列表
+        ///
+        /// 查询当前实例高级特性列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFeaturesResponse> ListFeaturesAsync(ListFeaturesRequest listFeaturesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listFeaturesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/advance-features", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFeaturesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListFeaturesResponse>(response);
+        }
+
+        public AsyncInvoker<ListFeaturesResponse> ListFeaturesAsyncInvoker(ListFeaturesRequest listFeaturesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listFeaturesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/advance-features", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFeaturesRequest);
+            return new AsyncInvoker<ListFeaturesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFeaturesResponse>);
+        }
+        
+        /// <summary>
         /// 查询数据库规格
         ///
         /// 查询数据库的规格信息。
@@ -2434,6 +2460,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switch-shard", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchShardRequest);
             return new AsyncInvoker<SwitchShardResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchShardResponse>);
+        }
+        
+        /// <summary>
+        /// 开启特性
+        ///
+        /// 打开高级特性开关。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateFeaturesResponse> UpdateFeaturesAsync(UpdateFeaturesRequest updateFeaturesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateFeaturesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/advance-features", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateFeaturesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UpdateFeaturesResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateFeaturesResponse> UpdateFeaturesAsyncInvoker(UpdateFeaturesRequest updateFeaturesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateFeaturesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/advance-features", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateFeaturesRequest);
+            return new AsyncInvoker<UpdateFeaturesResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateFeaturesResponse>);
         }
         
         /// <summary>

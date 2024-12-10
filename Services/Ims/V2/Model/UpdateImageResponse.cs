@@ -1846,6 +1846,18 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("__support_amd", NullValueHandling = NullValueHandling.Ignore)]
         public string SupportAmd { get; set; }
 
+        /// <summary>
+        /// 如果镜像支持sriov直通，取值为true，否则无需增加该属性。
+        /// </summary>
+        [JsonProperty("__support_kvm_hi1822_hisriov", NullValueHandling = NullValueHandling.Ignore)]
+        public string SupportKvmHi1822Hisriov { get; set; }
+
+        /// <summary>
+        /// 如果镜像支持Virtio-net直通规格，取值为true，否则无需增加该属性。
+        /// </summary>
+        [JsonProperty("__support_kvm_hi1822_hivirtionet", NullValueHandling = NullValueHandling.Ignore)]
+        public string SupportKvmHi1822Hivirtionet { get; set; }
+
 
 
         /// <summary>
@@ -1915,6 +1927,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  supportAgentList: ").Append(SupportAgentList).Append("\n");
             sb.Append("  imageDisplayname: ").Append(ImageDisplayname).Append("\n");
             sb.Append("  supportAmd: ").Append(SupportAmd).Append("\n");
+            sb.Append("  supportKvmHi1822Hisriov: ").Append(SupportKvmHi1822Hisriov).Append("\n");
+            sb.Append("  supportKvmHi1822Hivirtionet: ").Append(SupportKvmHi1822Hivirtionet).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1993,6 +2007,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             if (this.SupportAgentList != input.SupportAgentList || (this.SupportAgentList != null && !this.SupportAgentList.Equals(input.SupportAgentList))) return false;
             if (this.ImageDisplayname != input.ImageDisplayname || (this.ImageDisplayname != null && !this.ImageDisplayname.Equals(input.ImageDisplayname))) return false;
             if (this.SupportAmd != input.SupportAmd || (this.SupportAmd != null && !this.SupportAmd.Equals(input.SupportAmd))) return false;
+            if (this.SupportKvmHi1822Hisriov != input.SupportKvmHi1822Hisriov || (this.SupportKvmHi1822Hisriov != null && !this.SupportKvmHi1822Hisriov.Equals(input.SupportKvmHi1822Hisriov))) return false;
+            if (this.SupportKvmHi1822Hivirtionet != input.SupportKvmHi1822Hivirtionet || (this.SupportKvmHi1822Hivirtionet != null && !this.SupportKvmHi1822Hivirtionet.Equals(input.SupportKvmHi1822Hivirtionet))) return false;
 
             return true;
         }
@@ -2065,6 +2081,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                 if (this.SupportAgentList != null) hashCode = hashCode * 59 + this.SupportAgentList.GetHashCode();
                 if (this.ImageDisplayname != null) hashCode = hashCode * 59 + this.ImageDisplayname.GetHashCode();
                 if (this.SupportAmd != null) hashCode = hashCode * 59 + this.SupportAmd.GetHashCode();
+                if (this.SupportKvmHi1822Hisriov != null) hashCode = hashCode * 59 + this.SupportKvmHi1822Hisriov.GetHashCode();
+                if (this.SupportKvmHi1822Hivirtionet != null) hashCode = hashCode * 59 + this.SupportKvmHi1822Hivirtionet.GetHashCode();
                 return hashCode;
             }
         }

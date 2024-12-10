@@ -183,6 +183,34 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 创建镜像tag
+        ///
+        /// 创建镜像tag
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateRepoTagResponse> CreateRepoTagAsync(CreateRepoTagRequest createRepoTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace", createRepoTagRequest.Namespace.ToString());
+            urlParam.Add("repository", createRepoTagRequest.Repository.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoTagRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateRepoTagResponse>(response);
+        }
+
+        public AsyncInvoker<CreateRepoTagResponse> CreateRepoTagAsyncInvoker(CreateRepoTagRequest createRepoTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace", createRepoTagRequest.Namespace.ToString());
+            urlParam.Add("repository", createRepoTagRequest.Repository.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoTagRequest);
+            return new AsyncInvoker<CreateRepoTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateRepoTagResponse>);
+        }
+        
+        /// <summary>
         /// 创建镜像老化规则
         ///
         /// 创建镜像老化规则
@@ -890,6 +918,65 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 获取租户总览信息
+        ///
+        /// 获取租户总览信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDomainOverviewResponse> ShowDomainOverviewAsync(ShowDomainOverviewRequest showDomainOverviewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/overview", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainOverviewRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainOverviewResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDomainOverviewResponse> ShowDomainOverviewAsyncInvoker(ShowDomainOverviewRequest showDomainOverviewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/overview", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainOverviewRequest);
+            return new AsyncInvoker<ShowDomainOverviewResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainOverviewResponse>);
+        }
+        
+        /// <summary>
+        /// 获取租户资源统计信息
+        ///
+        /// 获取租户资源统计信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDomainResourceReportsResponse> ShowDomainResourceReportsAsync(ShowDomainResourceReportsRequest showDomainResourceReportsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", showDomainResourceReportsRequest.ResourceType.ToString());
+            urlParam.Add("frequency", showDomainResourceReportsRequest.Frequency.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/reports/{resource_type}/{frequency}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainResourceReportsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var showDomainResourceReportsResponse = JsonUtils.DeSerializeNull<ShowDomainResourceReportsResponse>(response);
+            showDomainResourceReportsResponse.Body = JsonUtils.DeSerializeList<ReportData>(response);
+            return showDomainResourceReportsResponse;
+        }
+
+        public AsyncInvoker<ShowDomainResourceReportsResponse> ShowDomainResourceReportsAsyncInvoker(ShowDomainResourceReportsRequest showDomainResourceReportsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", showDomainResourceReportsRequest.ResourceType.ToString());
+            urlParam.Add("frequency", showDomainResourceReportsRequest.Frequency.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/reports/{resource_type}/{frequency}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainResourceReportsRequest);
+            return new AsyncInvoker<ShowDomainResourceReportsResponse>(this, "GET", request, response =>
+            {
+                var showDomainResourceReportsResponse = JsonUtils.DeSerializeNull<ShowDomainResourceReportsResponse>(response);
+                showDomainResourceReportsResponse.Body = JsonUtils.DeSerializeList<ReportData>(response);
+                return showDomainResourceReportsResponse;
+            });
+        }
+        
+        /// <summary>
         /// 获取组织详情
         ///
         /// 获取组织详情
@@ -997,6 +1084,30 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRetentionRequest);
             return new AsyncInvoker<ShowRetentionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRetentionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询服务特性开关信息
+        ///
+        /// 查询服务特性开关信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowShareFeatureGatesResponse> ShowShareFeatureGatesAsync(ShowShareFeatureGatesRequest showShareFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/projects/{project_id}/feature-gates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShareFeatureGatesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowShareFeatureGatesResponse>(response);
+        }
+
+        public AsyncInvoker<ShowShareFeatureGatesResponse> ShowShareFeatureGatesAsyncInvoker(ShowShareFeatureGatesRequest showShareFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/projects/{project_id}/feature-gates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShareFeatureGatesRequest);
+            return new AsyncInvoker<ShowShareFeatureGatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowShareFeatureGatesResponse>);
         }
         
         /// <summary>

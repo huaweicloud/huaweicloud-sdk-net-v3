@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// <summary>
         /// 响应状态
         /// </summary>
-        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public string Result { get; set; }
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SwitchAuditDatabaseResponse {\n");
-            sb.Append("  result: ").Append(Result).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public bool Equals(SwitchAuditDatabaseResponse input)
         {
             if (input == null) return false;
-            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

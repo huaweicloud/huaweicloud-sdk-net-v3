@@ -66,6 +66,30 @@ namespace HuaweiCloud.SDK.Csms.V1
         }
         
         /// <summary>
+        /// 授权操作
+        ///
+        /// 授权操作
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateGrantsResponse> CreateGrantsAsync(CreateGrantsRequest createGrantsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/grants", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGrantsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateGrantsResponse>(response);
+        }
+
+        public AsyncInvoker<CreateGrantsResponse> CreateGrantsAsyncInvoker(CreateGrantsRequest createGrantsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/grants", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGrantsRequest);
+            return new AsyncInvoker<CreateGrantsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGrantsResponse>);
+        }
+        
+        /// <summary>
         /// 创建凭据
         ///
         /// 创建新的凭据，并将凭据值存入凭据的初始版本。
@@ -167,6 +191,30 @@ namespace HuaweiCloud.SDK.Csms.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretVersionRequest);
             return new AsyncInvoker<CreateSecretVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSecretVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 删除授权
+        ///
+        /// 删除授权
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteGrantResponse> DeleteGrantAsync(DeleteGrantRequest deleteGrantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/grants", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGrantRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteGrantResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteGrantResponse> DeleteGrantAsyncInvoker(DeleteGrantRequest deleteGrantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/grants", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGrantRequest);
+            return new AsyncInvoker<DeleteGrantResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGrantResponse>);
         }
         
         /// <summary>
@@ -327,6 +375,54 @@ namespace HuaweiCloud.SDK.Csms.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/backup", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSecretBlobRequest);
             return new AsyncInvoker<DownloadSecretBlobResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadSecretBlobResponse>);
+        }
+        
+        /// <summary>
+        /// 
+        ///
+        /// 生成随机密码
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<GenerateRandomPasswordResponse> GenerateRandomPasswordAsync(GenerateRandomPasswordRequest generateRandomPasswordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/generate-password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", generateRandomPasswordRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<GenerateRandomPasswordResponse>(response);
+        }
+
+        public AsyncInvoker<GenerateRandomPasswordResponse> GenerateRandomPasswordAsyncInvoker(GenerateRandomPasswordRequest generateRandomPasswordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/generate-password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", generateRandomPasswordRequest);
+            return new AsyncInvoker<GenerateRandomPasswordResponse>(this, "POST", request, JsonUtils.DeSerialize<GenerateRandomPasswordResponse>);
+        }
+        
+        /// <summary>
+        /// 授权列表
+        ///
+        /// 授权列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListGrantsResponse> ListGrantsAsync(ListGrantsRequest listGrantsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/grants", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGrantsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListGrantsResponse>(response);
+        }
+
+        public AsyncInvoker<ListGrantsResponse> ListGrantsAsyncInvoker(ListGrantsRequest listGrantsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/grants", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGrantsRequest);
+            return new AsyncInvoker<ListGrantsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGrantsResponse>);
         }
         
         /// <summary>
@@ -525,6 +621,30 @@ namespace HuaweiCloud.SDK.Csms.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretsRequest);
             return new AsyncInvoker<ListSecretsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecretsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用户列表
+        ///
+        /// 查询用户列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListUsersResponse> ListUsersAsync(ListUsersRequest listUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListUsersResponse>(response);
+        }
+
+        public AsyncInvoker<ListUsersResponse> ListUsersAsyncInvoker(ListUsersRequest listUsersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/users", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
+            return new AsyncInvoker<ListUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUsersResponse>);
         }
         
         /// <summary>
@@ -734,6 +854,30 @@ namespace HuaweiCloud.SDK.Csms.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretVersionRequest);
             return new AsyncInvoker<ShowSecretVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 更新授权
+        ///
+        /// 更新授权
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateGrantResponse> UpdateGrantAsync(UpdateGrantRequest updateGrantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/grants", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGrantRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateGrantResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateGrantResponse> UpdateGrantAsyncInvoker(UpdateGrantRequest updateGrantRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/grants", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGrantRequest);
+            return new AsyncInvoker<UpdateGrantResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGrantResponse>);
         }
         
         /// <summary>

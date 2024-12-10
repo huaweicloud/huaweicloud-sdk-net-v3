@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class ListRdsDatabasesRequest 
     {
         /// <summary>
-        /// 数据库类型 - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - MARIADB - GAUSSDBOPENGAUSS
+        /// 数据库类型 - MYSQL - POSTGRESQL - SQLSERVER - TAURUS - DWS - MARIADB - GAUSSDBOPENGAUSS
         /// </summary>
-        /// <value>数据库类型 - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - MARIADB - GAUSSDBOPENGAUSS</value>
+        /// <value>数据库类型 - MYSQL - POSTGRESQL - SQLSERVER - TAURUS - DWS - MARIADB - GAUSSDBOPENGAUSS</value>
         [JsonConverter(typeof(EnumClassConverter<DbTypeEnum>))]
         public class DbTypeEnum
         {
@@ -26,11 +26,6 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             /// Enum MYSQL for value: MYSQL
             /// </summary>
             public static readonly DbTypeEnum MYSQL = new DbTypeEnum("MYSQL");
-
-            /// <summary>
-            /// Enum ORACLE for value: ORACLE
-            /// </summary>
-            public static readonly DbTypeEnum ORACLE = new DbTypeEnum("ORACLE");
 
             /// <summary>
             /// Enum POSTGRESQL for value: POSTGRESQL
@@ -43,11 +38,6 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             public static readonly DbTypeEnum SQLSERVER = new DbTypeEnum("SQLSERVER");
 
             /// <summary>
-            /// Enum DAMENG for value: DAMENG
-            /// </summary>
-            public static readonly DbTypeEnum DAMENG = new DbTypeEnum("DAMENG");
-
-            /// <summary>
             /// Enum TAURUS for value: TAURUS
             /// </summary>
             public static readonly DbTypeEnum TAURUS = new DbTypeEnum("TAURUS");
@@ -56,11 +46,6 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             /// Enum DWS for value: DWS
             /// </summary>
             public static readonly DbTypeEnum DWS = new DbTypeEnum("DWS");
-
-            /// <summary>
-            /// Enum KINGBASE for value: KINGBASE
-            /// </summary>
-            public static readonly DbTypeEnum KINGBASE = new DbTypeEnum("KINGBASE");
 
             /// <summary>
             /// Enum MARIADB for value: MARIADB
@@ -76,13 +61,10 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             new Dictionary<string, DbTypeEnum>()
             {
                 { "MYSQL", MYSQL },
-                { "ORACLE", ORACLE },
                 { "POSTGRESQL", POSTGRESQL },
                 { "SQLSERVER", SQLSERVER },
-                { "DAMENG", DAMENG },
                 { "TAURUS", TAURUS },
                 { "DWS", DWS },
-                { "KINGBASE", KINGBASE },
                 { "MARIADB", MARIADB },
                 { "GAUSSDBOPENGAUSS", GAUSSDBOPENGAUSS },
             };
@@ -180,7 +162,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
 
 
         /// <summary>
-        /// 数据库类型 - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - MARIADB - GAUSSDBOPENGAUSS
+        /// 数据库类型 - MYSQL - POSTGRESQL - SQLSERVER - TAURUS - DWS - MARIADB - GAUSSDBOPENGAUSS
         /// </summary>
         [SDKProperty("db_type", IsQuery = true)]
         [JsonProperty("db_type", NullValueHandling = NullValueHandling.Ignore)]

@@ -59,6 +59,8 @@ namespace HuaweiCloud.SDK.Swr.V2
             "https://swr-api.me-east-1.myhuaweicloud.com");
         public static readonly Region EU_WEST_0 = new Region("eu-west-0",
             "https://swr-api.eu-west-0.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
+            "https://swr-api.ap-southeast-5.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("SWR");
 
@@ -90,6 +92,7 @@ namespace HuaweiCloud.SDK.Swr.V2
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
                 { "me-east-1", ME_EAST_1 },
                 { "eu-west-0", EU_WEST_0 },
+                { "ap-southeast-5", AP_SOUTHEAST_5 },
         };
 
         public static Region ValueOf(string regionId)
