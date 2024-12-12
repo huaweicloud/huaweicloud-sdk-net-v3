@@ -2065,34 +2065,6 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
-        /// 同步nodePool配置到存量节点
-        ///
-        /// 该API用于同步nodePool配置到存量节点。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public SyncNodePoolResponse SyncNodePool(SyncNodePoolRequest syncNodePoolRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", syncNodePoolRequest.ClusterId.ToString());
-            urlParam.Add("nodepool_id", syncNodePoolRequest.NodepoolId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/api/v3.1/projects/{project_id}/clusters/{cluster_id}/nodepool/{nodepool_id}/sync", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncNodePoolRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerializeNull<SyncNodePoolResponse>(response);
-        }
-
-        public SyncInvoker<SyncNodePoolResponse> SyncNodePoolInvoker(SyncNodePoolRequest syncNodePoolRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", syncNodePoolRequest.ClusterId.ToString());
-            urlParam.Add("nodepool_id", syncNodePoolRequest.NodepoolId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/api/v3.1/projects/{project_id}/clusters/{cluster_id}/nodepool/{nodepool_id}/sync", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncNodePoolRequest);
-            return new SyncInvoker<SyncNodePoolResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SyncNodePoolResponse>);
-        }
-        
-        /// <summary>
         /// 更新AddonInstance
         ///
         /// 更新插件实例的功能。

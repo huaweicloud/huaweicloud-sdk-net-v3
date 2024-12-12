@@ -27,6 +27,8 @@ namespace HuaweiCloud.SDK.Aos.V1
             "https://rfs.ap-southeast-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
             "https://rfs.ap-southeast-4.myhuaweicloud.com");
+        public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
+            "https://rfs.my-kualalumpur-1.myhuaweicloud.com");
         public static readonly Region ME_EAST_1 = new Region("me-east-1",
             "https://rfs.me-east-1.myhuaweicloud.com");
         public static readonly Region TR_WEST_1 = new Region("tr-west-1",
@@ -64,6 +66,7 @@ namespace HuaweiCloud.SDK.Aos.V1
                 { "ap-southeast-2", AP_SOUTHEAST_2 },
                 { "ap-southeast-1", AP_SOUTHEAST_1 },
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
+                { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
                 { "me-east-1", ME_EAST_1 },
                 { "tr-west-1", TR_WEST_1 },
                 { "la-south-2", LA_SOUTH_2 },

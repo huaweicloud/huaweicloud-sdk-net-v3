@@ -155,6 +155,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public string TargetId { get; set; }
 
         /// <summary>
+        /// 待变更规格的节点组ID列表，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 对于集群实例，变更mongos节点规格时，不传该参数；变更单个shard组规格时，不传该参数；变更config组规格时，不传该参数；批量变更多个shard组规格时，取值为相应的多个shard组ID，最多支持16个shard组批量变更。 - 对于副本集实例，不传该参数。 - 对于单节点实例，不传该参数。
+        /// </summary>
+        [JsonProperty("target_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> TargetIds { get; set; }
+
+        /// <summary>
         /// 变更至新规格的资源规格编码。
         /// </summary>
         [JsonProperty("target_spec_code", NullValueHandling = NullValueHandling.Ignore)]
@@ -171,6 +177,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("class ResizeInstanceOption {\n");
             sb.Append("  targetType: ").Append(TargetType).Append("\n");
             sb.Append("  targetId: ").Append(TargetId).Append("\n");
+            sb.Append("  targetIds: ").Append(TargetIds).Append("\n");
             sb.Append("  targetSpecCode: ").Append(TargetSpecCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -192,6 +199,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             if (input == null) return false;
             if (this.TargetType != input.TargetType) return false;
             if (this.TargetId != input.TargetId || (this.TargetId != null && !this.TargetId.Equals(input.TargetId))) return false;
+            if (this.TargetIds != input.TargetIds || (this.TargetIds != null && input.TargetIds != null && !this.TargetIds.SequenceEqual(input.TargetIds))) return false;
             if (this.TargetSpecCode != input.TargetSpecCode || (this.TargetSpecCode != null && !this.TargetSpecCode.Equals(input.TargetSpecCode))) return false;
 
             return true;
@@ -207,6 +215,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.TargetType.GetHashCode();
                 if (this.TargetId != null) hashCode = hashCode * 59 + this.TargetId.GetHashCode();
+                if (this.TargetIds != null) hashCode = hashCode * 59 + this.TargetIds.GetHashCode();
                 if (this.TargetSpecCode != null) hashCode = hashCode * 59 + this.TargetSpecCode.GetHashCode();
                 return hashCode;
             }

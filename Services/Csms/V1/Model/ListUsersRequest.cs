@@ -40,9 +40,9 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// <summary>
         /// 最长64位，用户名，支持模糊查询
         /// </summary>
-        [SDKProperty("user_name", IsQuery = true)]
-        [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string UserName { get; set; }
+        [SDKProperty("user_info", IsQuery = true)]
+        [JsonProperty("user_info", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserInfo { get; set; }
 
 
 
@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
             sb.Append("  orgId: ").Append(OrgId).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  userInfo: ").Append(UserInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -78,7 +78,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
             if (this.OrgId != input.OrgId || (this.OrgId != null && !this.OrgId.Equals(input.OrgId))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
-            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.UserInfo != input.UserInfo || (this.UserInfo != null && !this.UserInfo.Equals(input.UserInfo))) return false;
 
             return true;
         }
@@ -94,7 +94,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
                 if (this.OrgId != null) hashCode = hashCode * 59 + this.OrgId.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.UserInfo != null) hashCode = hashCode * 59 + this.UserInfo.GetHashCode();
                 return hashCode;
             }
         }

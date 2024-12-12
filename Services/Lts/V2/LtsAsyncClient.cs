@@ -1027,6 +1027,34 @@ namespace HuaweiCloud.SDK.Lts.V2
         }
         
         /// <summary>
+        /// 查询上下文日志
+        ///
+        /// 查询上下文日志 该接口用于查询指定日志前（上文）后（下文）的若干条日志。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListLogContextResponse> ListLogContextAsync(ListLogContextRequest listLogContextRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("log_group_id", listLogContextRequest.LogGroupId.ToString());
+            urlParam.Add("log_stream_id", listLogContextRequest.LogStreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/context", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listLogContextRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListLogContextResponse>(response);
+        }
+
+        public AsyncInvoker<ListLogContextResponse> ListLogContextAsyncInvoker(ListLogContextRequest listLogContextRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("log_group_id", listLogContextRequest.LogGroupId.ToString());
+            urlParam.Add("log_stream_id", listLogContextRequest.LogStreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/context", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listLogContextRequest);
+            return new AsyncInvoker<ListLogContextResponse>(this, "POST", request, JsonUtils.DeSerialize<ListLogContextResponse>);
+        }
+        
+        /// <summary>
         /// 查询账号下所有日志组
         ///
         /// 该接口用于查询账号下所有日志组。

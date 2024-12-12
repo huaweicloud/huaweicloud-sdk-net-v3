@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Cce.V3.Model
+namespace HuaweiCloud.SDK.Aos.V1.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class SyncNodePoolResp 
+    public class DeletePrivateModuleResponse : SdkResponse
     {
 
 

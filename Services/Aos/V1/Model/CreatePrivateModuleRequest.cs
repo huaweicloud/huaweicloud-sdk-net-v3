@@ -8,19 +8,27 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Cce.V3.Model
+namespace HuaweiCloud.SDK.Aos.V1.Model
 {
     /// <summary>
-    /// Response Object
+    /// Request Object
     /// </summary>
-    public class SyncNodePoolResponse : SdkResponse
+    public class CreatePrivateModuleRequest 
     {
+
+        /// <summary>
+        /// 用户指定的，对于此请求的唯一Id，用于定位某个请求，推荐使用UUID
+        /// </summary>
+        [SDKProperty("Client-Request-Id", IsHeader = true)]
+        [JsonProperty("Client-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClientRequestId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public string Body { get; set; }
+        public CreatePrivateModuleRequestBody Body { get; set; }
 
 
 
@@ -30,7 +38,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SyncNodePoolResponse {\n");
+            sb.Append("class CreatePrivateModuleRequest {\n");
+            sb.Append("  clientRequestId: ").Append(ClientRequestId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -41,15 +50,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SyncNodePoolResponse);
+            return this.Equals(input as CreatePrivateModuleRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(SyncNodePoolResponse input)
+        public bool Equals(CreatePrivateModuleRequest input)
         {
             if (input == null) return false;
+            if (this.ClientRequestId != input.ClientRequestId || (this.ClientRequestId != null && !this.ClientRequestId.Equals(input.ClientRequestId))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
@@ -63,6 +73,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.ClientRequestId != null) hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }

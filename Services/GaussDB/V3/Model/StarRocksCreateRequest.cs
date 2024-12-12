@@ -214,6 +214,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("pay_info", NullValueHandling = NullValueHandling.Ignore)]
+        public StarRocksCreateRequestPayInfo PayInfo { get; set; }
+
+        /// <summary>
+        /// 可用区。包周期场景必填。
+        /// </summary>
+        [JsonProperty("region_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string RegionCode { get; set; }
+
 
 
         /// <summary>
@@ -238,6 +250,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  timeZone: ").Append(TimeZone).Append("\n");
             sb.Append("  tagsInfo: ").Append(TagsInfo).Append("\n");
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
+            sb.Append("  payInfo: ").Append(PayInfo).Append("\n");
+            sb.Append("  regionCode: ").Append(RegionCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -271,6 +285,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
             if (this.TagsInfo != input.TagsInfo || (this.TagsInfo != null && !this.TagsInfo.Equals(input.TagsInfo))) return false;
             if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && !this.SecurityGroupId.Equals(input.SecurityGroupId))) return false;
+            if (this.PayInfo != input.PayInfo || (this.PayInfo != null && !this.PayInfo.Equals(input.PayInfo))) return false;
+            if (this.RegionCode != input.RegionCode || (this.RegionCode != null && !this.RegionCode.Equals(input.RegionCode))) return false;
 
             return true;
         }
@@ -298,6 +314,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
                 if (this.TagsInfo != null) hashCode = hashCode * 59 + this.TagsInfo.GetHashCode();
                 if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                if (this.PayInfo != null) hashCode = hashCode * 59 + this.PayInfo.GetHashCode();
+                if (this.RegionCode != null) hashCode = hashCode * 59 + this.RegionCode.GetHashCode();
                 return hashCode;
             }
         }

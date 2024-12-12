@@ -250,6 +250,60 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("logK8s", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> LogK8s { get; set; }
 
+        /// <summary>
+        /// 是否允许此文件重复采集
+        /// </summary>
+        [JsonProperty("repeat_collect", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? RepeatCollect { get; set; }
+
+        /// <summary>
+        /// 系统内置字段：配置日志接入规则时，可以配置系统内置字段，上报日志后，每条日志数据的标签数据中将会有系统字段 采集场景为主机文件的内置字段为：hostName、hostId、hostIP、pathFile、hostIPv6、category、collectTime、__host_group__ 采集场景为K8S集群容器文件的内置字段为：hostName、hostId、hostIP、pathFile、hostIPv6、clusterId、podName、appName、containerName、nameSpace、category、collectTime、__host_group__、serviceID、podIp、clusterName、workloadType 若修改时传入此字段，将覆盖原有配置
+        /// </summary>
+        [JsonProperty("system_fields", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SystemFields { get; set; }
+
+        /// <summary>
+        /// 自定义键值对：配置日志接入规则时，可以配置自定义键值对规则，上报日志后，每条日志数据的标签数据中将会有用户自定义的键值对字段，键值对数量不超过20 键的长度限制为128，允许的字符有a-zA-Z0-9_- 值的长度限制为1024
+        /// </summary>
+        [JsonProperty("custom_key_value", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> CustomKeyValue { get; set; }
+
+        /// <summary>
+        /// 容器 Label白名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+        /// </summary>
+        [JsonProperty("includeLabelsLogical", NullValueHandling = NullValueHandling.Ignore)]
+        public string IncludeLabelsLogical { get; set; }
+
+        /// <summary>
+        /// 容器 Label黑名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+        /// </summary>
+        [JsonProperty("excludeLabelsLogical", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExcludeLabelsLogical { get; set; }
+
+        /// <summary>
+        /// K8S Label白名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+        /// </summary>
+        [JsonProperty("includeK8sLabelsLogical", NullValueHandling = NullValueHandling.Ignore)]
+        public string IncludeK8sLabelsLogical { get; set; }
+
+        /// <summary>
+        /// K8S Label黑名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+        /// </summary>
+        [JsonProperty("excludeK8sLabelsLogical", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExcludeK8sLabelsLogical { get; set; }
+
+        /// <summary>
+        /// 环境变量白名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+        /// </summary>
+        [JsonProperty("includeEnvsLogical", NullValueHandling = NullValueHandling.Ignore)]
+        public string IncludeEnvsLogical { get; set; }
+
+        /// <summary>
+        /// 环境变量黑名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+        /// </summary>
+        [JsonProperty("excludeEnvsLogical", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExcludeEnvsLogical { get; set; }
+
 
 
         /// <summary>
@@ -278,6 +332,15 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  includeK8sLabels: ").Append(IncludeK8sLabels).Append("\n");
             sb.Append("  excludeK8sLabels: ").Append(ExcludeK8sLabels).Append("\n");
             sb.Append("  logK8s: ").Append(LogK8s).Append("\n");
+            sb.Append("  repeatCollect: ").Append(RepeatCollect).Append("\n");
+            sb.Append("  systemFields: ").Append(SystemFields).Append("\n");
+            sb.Append("  customKeyValue: ").Append(CustomKeyValue).Append("\n");
+            sb.Append("  includeLabelsLogical: ").Append(IncludeLabelsLogical).Append("\n");
+            sb.Append("  excludeLabelsLogical: ").Append(ExcludeLabelsLogical).Append("\n");
+            sb.Append("  includeK8sLabelsLogical: ").Append(IncludeK8sLabelsLogical).Append("\n");
+            sb.Append("  excludeK8sLabelsLogical: ").Append(ExcludeK8sLabelsLogical).Append("\n");
+            sb.Append("  includeEnvsLogical: ").Append(IncludeEnvsLogical).Append("\n");
+            sb.Append("  excludeEnvsLogical: ").Append(ExcludeEnvsLogical).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -315,6 +378,15 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.IncludeK8sLabels != input.IncludeK8sLabels || (this.IncludeK8sLabels != null && input.IncludeK8sLabels != null && !this.IncludeK8sLabels.SequenceEqual(input.IncludeK8sLabels))) return false;
             if (this.ExcludeK8sLabels != input.ExcludeK8sLabels || (this.ExcludeK8sLabels != null && input.ExcludeK8sLabels != null && !this.ExcludeK8sLabels.SequenceEqual(input.ExcludeK8sLabels))) return false;
             if (this.LogK8s != input.LogK8s || (this.LogK8s != null && input.LogK8s != null && !this.LogK8s.SequenceEqual(input.LogK8s))) return false;
+            if (this.RepeatCollect != input.RepeatCollect || (this.RepeatCollect != null && !this.RepeatCollect.Equals(input.RepeatCollect))) return false;
+            if (this.SystemFields != input.SystemFields || (this.SystemFields != null && input.SystemFields != null && !this.SystemFields.SequenceEqual(input.SystemFields))) return false;
+            if (this.CustomKeyValue != input.CustomKeyValue || (this.CustomKeyValue != null && input.CustomKeyValue != null && !this.CustomKeyValue.SequenceEqual(input.CustomKeyValue))) return false;
+            if (this.IncludeLabelsLogical != input.IncludeLabelsLogical || (this.IncludeLabelsLogical != null && !this.IncludeLabelsLogical.Equals(input.IncludeLabelsLogical))) return false;
+            if (this.ExcludeLabelsLogical != input.ExcludeLabelsLogical || (this.ExcludeLabelsLogical != null && !this.ExcludeLabelsLogical.Equals(input.ExcludeLabelsLogical))) return false;
+            if (this.IncludeK8sLabelsLogical != input.IncludeK8sLabelsLogical || (this.IncludeK8sLabelsLogical != null && !this.IncludeK8sLabelsLogical.Equals(input.IncludeK8sLabelsLogical))) return false;
+            if (this.ExcludeK8sLabelsLogical != input.ExcludeK8sLabelsLogical || (this.ExcludeK8sLabelsLogical != null && !this.ExcludeK8sLabelsLogical.Equals(input.ExcludeK8sLabelsLogical))) return false;
+            if (this.IncludeEnvsLogical != input.IncludeEnvsLogical || (this.IncludeEnvsLogical != null && !this.IncludeEnvsLogical.Equals(input.IncludeEnvsLogical))) return false;
+            if (this.ExcludeEnvsLogical != input.ExcludeEnvsLogical || (this.ExcludeEnvsLogical != null && !this.ExcludeEnvsLogical.Equals(input.ExcludeEnvsLogical))) return false;
 
             return true;
         }
@@ -346,6 +418,15 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.IncludeK8sLabels != null) hashCode = hashCode * 59 + this.IncludeK8sLabels.GetHashCode();
                 if (this.ExcludeK8sLabels != null) hashCode = hashCode * 59 + this.ExcludeK8sLabels.GetHashCode();
                 if (this.LogK8s != null) hashCode = hashCode * 59 + this.LogK8s.GetHashCode();
+                if (this.RepeatCollect != null) hashCode = hashCode * 59 + this.RepeatCollect.GetHashCode();
+                if (this.SystemFields != null) hashCode = hashCode * 59 + this.SystemFields.GetHashCode();
+                if (this.CustomKeyValue != null) hashCode = hashCode * 59 + this.CustomKeyValue.GetHashCode();
+                if (this.IncludeLabelsLogical != null) hashCode = hashCode * 59 + this.IncludeLabelsLogical.GetHashCode();
+                if (this.ExcludeLabelsLogical != null) hashCode = hashCode * 59 + this.ExcludeLabelsLogical.GetHashCode();
+                if (this.IncludeK8sLabelsLogical != null) hashCode = hashCode * 59 + this.IncludeK8sLabelsLogical.GetHashCode();
+                if (this.ExcludeK8sLabelsLogical != null) hashCode = hashCode * 59 + this.ExcludeK8sLabelsLogical.GetHashCode();
+                if (this.IncludeEnvsLogical != null) hashCode = hashCode * 59 + this.IncludeEnvsLogical.GetHashCode();
+                if (this.ExcludeEnvsLogical != null) hashCode = hashCode * 59 + this.ExcludeEnvsLogical.GetHashCode();
                 return hashCode;
             }
         }

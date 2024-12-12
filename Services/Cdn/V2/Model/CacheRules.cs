@@ -53,6 +53,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string FollowOrigin { get; set; }
 
         /// <summary>
+        /// 强制缓存：CDN节点缓存过期时间是否忽略源站响应头Cache-Control中的no-cache、private、no-store字段，默认关闭强制缓存功能。强制缓存与缓存过期时间来源功能配合使用，具体使用限制及配置效果请参考CDN用户指南的配置节点缓存规则章节。on：打开强制缓存，off：关闭强制缓存
+        /// </summary>
+        [JsonProperty("force_cache", NullValueHandling = NullValueHandling.Ignore)]
+        public string ForceCache { get; set; }
+
+        /// <summary>
         /// URL参数： - del_params：忽略指定URL参数， - reserve_params：保留指定URL参数， - ignore_url_params：忽略全部URL参数， - full_url：使用完整URL参数。   &gt; 不传此参数时，默认为full_url。
         /// </summary>
         [JsonProperty("url_parameter_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -79,6 +85,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  ttlUnit: ").Append(TtlUnit).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  followOrigin: ").Append(FollowOrigin).Append("\n");
+            sb.Append("  forceCache: ").Append(ForceCache).Append("\n");
             sb.Append("  urlParameterType: ").Append(UrlParameterType).Append("\n");
             sb.Append("  urlParameterValue: ").Append(UrlParameterValue).Append("\n");
             sb.Append("}\n");
@@ -105,6 +112,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.TtlUnit != input.TtlUnit || (this.TtlUnit != null && !this.TtlUnit.Equals(input.TtlUnit))) return false;
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
             if (this.FollowOrigin != input.FollowOrigin || (this.FollowOrigin != null && !this.FollowOrigin.Equals(input.FollowOrigin))) return false;
+            if (this.ForceCache != input.ForceCache || (this.ForceCache != null && !this.ForceCache.Equals(input.ForceCache))) return false;
             if (this.UrlParameterType != input.UrlParameterType || (this.UrlParameterType != null && !this.UrlParameterType.Equals(input.UrlParameterType))) return false;
             if (this.UrlParameterValue != input.UrlParameterValue || (this.UrlParameterValue != null && !this.UrlParameterValue.Equals(input.UrlParameterValue))) return false;
 
@@ -125,6 +133,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.TtlUnit != null) hashCode = hashCode * 59 + this.TtlUnit.GetHashCode();
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.FollowOrigin != null) hashCode = hashCode * 59 + this.FollowOrigin.GetHashCode();
+                if (this.ForceCache != null) hashCode = hashCode * 59 + this.ForceCache.GetHashCode();
                 if (this.UrlParameterType != null) hashCode = hashCode * 59 + this.UrlParameterType.GetHashCode();
                 if (this.UrlParameterValue != null) hashCode = hashCode * 59 + this.UrlParameterValue.GetHashCode();
                 return hashCode;

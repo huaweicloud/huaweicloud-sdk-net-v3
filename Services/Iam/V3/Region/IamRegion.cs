@@ -55,6 +55,10 @@ namespace HuaweiCloud.SDK.Iam.V3
             "https://iam.ap-southeast-4.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://iam.ae-ad-1.myhuaweicloud.com");
+        public static readonly Region CN_EAST_4 = new Region("cn-east-4",
+            "https://iam.cn-east-4.myhuaweicloud.com");
+        public static readonly Region CN_EAST_5 = new Region("cn-east-5",
+            "https://iam.cn-east-5.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("IAM");
 
@@ -84,6 +88,8 @@ namespace HuaweiCloud.SDK.Iam.V3
                 { "me-east-1", ME_EAST_1 },
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
                 { "ae-ad-1", AE_AD_1 },
+                { "cn-east-4", CN_EAST_4 },
+                { "cn-east-5", CN_EAST_5 },
         };
 
         public static Region ValueOf(string regionId)

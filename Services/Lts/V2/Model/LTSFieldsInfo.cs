@@ -37,12 +37,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             /// </summary>
             public static readonly FieldTypeEnum FLOAT = new FieldTypeEnum("float");
 
+            /// <summary>
+            /// Enum JSON for value: json
+            /// </summary>
+            public static readonly FieldTypeEnum JSON = new FieldTypeEnum("json");
+
             private static readonly Dictionary<string, FieldTypeEnum> StaticFields =
             new Dictionary<string, FieldTypeEnum>()
             {
                 { "string", STRING },
                 { "long", LONG },
                 { "float", FLOAT },
+                { "json", JSON },
             };
 
             private string _value;
@@ -178,6 +184,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("ascii", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ascii { get; set; }
 
+        /// <summary>
+        /// json字段信息
+        /// </summary>
+        [JsonProperty("ltsSubFieldsInfoList", NullValueHandling = NullValueHandling.Ignore)]
+        public List<LTSSubFieldsInfo> LtsSubFieldsInfoList { get; set; }
+
 
 
         /// <summary>
@@ -194,6 +206,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  tokenizer: ").Append(Tokenizer).Append("\n");
             sb.Append("  quickAnalysis: ").Append(QuickAnalysis).Append("\n");
             sb.Append("  ascii: ").Append(Ascii).Append("\n");
+            sb.Append("  ltsSubFieldsInfoList: ").Append(LtsSubFieldsInfoList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -219,6 +232,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.Tokenizer != input.Tokenizer || (this.Tokenizer != null && !this.Tokenizer.Equals(input.Tokenizer))) return false;
             if (this.QuickAnalysis != input.QuickAnalysis || (this.QuickAnalysis != null && !this.QuickAnalysis.Equals(input.QuickAnalysis))) return false;
             if (this.Ascii != input.Ascii || (this.Ascii != null && input.Ascii != null && !this.Ascii.SequenceEqual(input.Ascii))) return false;
+            if (this.LtsSubFieldsInfoList != input.LtsSubFieldsInfoList || (this.LtsSubFieldsInfoList != null && input.LtsSubFieldsInfoList != null && !this.LtsSubFieldsInfoList.SequenceEqual(input.LtsSubFieldsInfoList))) return false;
 
             return true;
         }
@@ -238,6 +252,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.Tokenizer != null) hashCode = hashCode * 59 + this.Tokenizer.GetHashCode();
                 if (this.QuickAnalysis != null) hashCode = hashCode * 59 + this.QuickAnalysis.GetHashCode();
                 if (this.Ascii != null) hashCode = hashCode * 59 + this.Ascii.GetHashCode();
+                if (this.LtsSubFieldsInfoList != null) hashCode = hashCode * 59 + this.LtsSubFieldsInfoList.GetHashCode();
                 return hashCode;
             }
         }
