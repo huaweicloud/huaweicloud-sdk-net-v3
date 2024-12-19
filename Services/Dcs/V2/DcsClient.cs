@@ -191,6 +191,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 指定实例节点启停开关
+        ///
+        /// 实例节点启停。执行节点关机操作前的24小时内，需要对实例（单机实例除外）进行数据备份。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ChangeNodesStartStopStatusResponse ChangeNodesStartStopStatus(ChangeNodesStartStopStatusRequest changeNodesStartStopStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeNodesStartStopStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/nodes/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeNodesStartStopStatusRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<ChangeNodesStartStopStatusResponse>(response);
+        }
+
+        public SyncInvoker<ChangeNodesStartStopStatusResponse> ChangeNodesStartStopStatusInvoker(ChangeNodesStartStopStatusRequest changeNodesStartStopStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", changeNodesStartStopStatusRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/nodes/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeNodesStartStopStatusRequest);
+            return new SyncInvoker<ChangeNodesStartStopStatusResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ChangeNodesStartStopStatusResponse>);
+        }
+        
+        /// <summary>
         /// 备份指定实例
         ///
         /// 备份指定的缓存实例。
@@ -748,6 +774,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 删除实例带宽弹性伸缩策略
+        ///
+        /// 删除实例带宽弹性伸缩策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceBandwidthAutoScalingPolicyResponse DeleteInstanceBandwidthAutoScalingPolicy(DeleteInstanceBandwidthAutoScalingPolicyRequest deleteInstanceBandwidthAutoScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceBandwidthAutoScalingPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autoscaling-policy/bandwidth", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceBandwidthAutoScalingPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceBandwidthAutoScalingPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceBandwidthAutoScalingPolicyResponse> DeleteInstanceBandwidthAutoScalingPolicyInvoker(DeleteInstanceBandwidthAutoScalingPolicyRequest deleteInstanceBandwidthAutoScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceBandwidthAutoScalingPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autoscaling-policy/bandwidth", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceBandwidthAutoScalingPolicyRequest);
+            return new SyncInvoker<DeleteInstanceBandwidthAutoScalingPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceBandwidthAutoScalingPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 域名摘除IP
         ///
         /// 将只读副本的IP从域名中摘除，摘除成功后，只读域名不会再解析到该副本IP。
@@ -799,6 +851,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-tasks/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteMigrationTaskRequest);
             return new SyncInvoker<DeleteMigrationTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteMigrationTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 关闭实例公网访问
+        ///
+        /// 关闭实例公网访问。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeletePublicIpResponse DeletePublicIp(DeletePublicIpRequest deletePublicIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deletePublicIpRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/public-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicIpRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeletePublicIpResponse>(response);
+        }
+
+        public SyncInvoker<DeletePublicIpResponse> DeletePublicIpInvoker(DeletePublicIpRequest deletePublicIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deletePublicIpRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/public-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicIpRequest);
+            return new SyncInvoker<DeletePublicIpResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePublicIpResponse>);
         }
         
         /// <summary>
@@ -2039,6 +2117,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 获取实例分片带宽
+        ///
+        /// 获取实例各个分片带宽。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBandwidthsResponse ShowBandwidths(ShowBandwidthsRequest showBandwidthsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showBandwidthsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bandwidths", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBandwidthsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowBandwidthsResponse>(response);
+        }
+
+        public SyncInvoker<ShowBandwidthsResponse> ShowBandwidthsInvoker(ShowBandwidthsRequest showBandwidthsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showBandwidthsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bandwidths", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBandwidthsRequest);
+            return new SyncInvoker<ShowBandwidthsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBandwidthsResponse>);
+        }
+        
+        /// <summary>
         /// 查询大key自动分析配置
         ///
         /// 查询大key自动分析配置。
@@ -2305,6 +2409,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 查询实例带宽弹性伸缩策略
+        ///
+        /// 查询实例带宽弹性伸缩策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceBandwidthAutoScalingPolicyResponse ShowInstanceBandwidthAutoScalingPolicy(ShowInstanceBandwidthAutoScalingPolicyRequest showInstanceBandwidthAutoScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceBandwidthAutoScalingPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autoscaling-policy/bandwidth", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceBandwidthAutoScalingPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceBandwidthAutoScalingPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceBandwidthAutoScalingPolicyResponse> ShowInstanceBandwidthAutoScalingPolicyInvoker(ShowInstanceBandwidthAutoScalingPolicyRequest showInstanceBandwidthAutoScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceBandwidthAutoScalingPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autoscaling-policy/bandwidth", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceBandwidthAutoScalingPolicyRequest);
+            return new SyncInvoker<ShowInstanceBandwidthAutoScalingPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceBandwidthAutoScalingPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 查询实例SSL信息
         ///
         /// 查询实例SSL信息。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
@@ -2328,6 +2458,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ssl", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceSslDetailRequest);
             return new SyncInvoker<ShowInstanceSslDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceSslDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 根据实例ID获取实例内核版本信息
+        ///
+        /// 获取对应实例内核版本号。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceVersionResponse ShowInstanceVersion(ShowInstanceVersionRequest showInstanceVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceVersionRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceVersionResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceVersionResponse> ShowInstanceVersionInvoker(ShowInstanceVersionRequest showInstanceVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceVersionRequest);
+            return new SyncInvoker<ShowInstanceVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceVersionResponse>);
         }
         
         /// <summary>
@@ -2684,6 +2840,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 修改实例分片带宽
+        ///
+        /// 修改实例分片带宽。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateBandwidthResponse UpdateBandwidth(UpdateBandwidthRequest updateBandwidthRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateBandwidthRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bandwidths", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBandwidthRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateBandwidthResponse>(response);
+        }
+
+        public SyncInvoker<UpdateBandwidthResponse> UpdateBandwidthInvoker(UpdateBandwidthRequest updateBandwidthRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateBandwidthRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/bandwidths", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBandwidthRequest);
+            return new SyncInvoker<UpdateBandwidthResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateBandwidthResponse>);
+        }
+        
+        /// <summary>
         /// 设置大key自动分析配置
         ///
         /// 设置大key自动分析配置。
@@ -2892,6 +3074,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 更新实例带宽弹性伸缩策略
+        ///
+        /// 更新实例带宽弹性伸缩策略。暂不支持实例带宽自动回缩。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceBandwidthAutoScalingPolicyResponse UpdateInstanceBandwidthAutoScalingPolicy(UpdateInstanceBandwidthAutoScalingPolicyRequest updateInstanceBandwidthAutoScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceBandwidthAutoScalingPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autoscaling-policy/bandwidth", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceBandwidthAutoScalingPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateInstanceBandwidthAutoScalingPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceBandwidthAutoScalingPolicyResponse> UpdateInstanceBandwidthAutoScalingPolicyInvoker(UpdateInstanceBandwidthAutoScalingPolicyRequest updateInstanceBandwidthAutoScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceBandwidthAutoScalingPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autoscaling-policy/bandwidth", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceBandwidthAutoScalingPolicyRequest);
+            return new SyncInvoker<UpdateInstanceBandwidthAutoScalingPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceBandwidthAutoScalingPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 异步修改实例配置参数
         ///
         /// 为了确保分布式缓存服务发挥出最优性能，您可以根据自己的业务情况对DCS缓存实例的运行参数进行调整。
@@ -2970,6 +3178,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 开启/修改实例公网访问
+        ///
+        /// 开启/修改实例公网访问。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdatePublicIpResponse UpdatePublicIp(UpdatePublicIpRequest updatePublicIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePublicIpRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/public-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePublicIpRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdatePublicIpResponse>(response);
+        }
+
+        public SyncInvoker<UpdatePublicIpResponse> UpdatePublicIpInvoker(UpdatePublicIpRequest updatePublicIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updatePublicIpRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/public-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePublicIpRequest);
+            return new SyncInvoker<UpdatePublicIpResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdatePublicIpResponse>);
+        }
+        
+        /// <summary>
         /// 设置备节点优先级
         ///
         /// 设置副本优先级，主节点故障时，权重越小的备节点切换为主节点的优先级越高。
@@ -3023,6 +3257,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ssl", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSslSwitchRequest);
             return new SyncInvoker<UpdateSslSwitchResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSslSwitchResponse>);
+        }
+        
+        /// <summary>
+        /// 升级实例小版本
+        ///
+        /// 升级实例小版本。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpgradeInstanceMinorVersionResponse UpgradeInstanceMinorVersion(UpgradeInstanceMinorVersionRequest upgradeInstanceMinorVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeInstanceMinorVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/minor-version/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeInstanceMinorVersionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpgradeInstanceMinorVersionResponse>(response);
+        }
+
+        public SyncInvoker<UpgradeInstanceMinorVersionResponse> UpgradeInstanceMinorVersionInvoker(UpgradeInstanceMinorVersionRequest upgradeInstanceMinorVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeInstanceMinorVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/minor-version/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeInstanceMinorVersionRequest);
+            return new SyncInvoker<UpgradeInstanceMinorVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeInstanceMinorVersionResponse>);
         }
         
         /// <summary>

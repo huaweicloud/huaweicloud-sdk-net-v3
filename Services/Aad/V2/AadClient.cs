@@ -15,6 +15,30 @@ namespace HuaweiCloud.SDK.Aad.V2
 
         
         /// <summary>
+        /// 防护策略web-cc黑白名单-创建黑白名单规则
+        ///
+        /// 防护策略web-cc黑白名单-创建黑白名单规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddWafWhiteIpRuleResponse AddWafWhiteIpRule(AddWafWhiteIpRuleRequest addWafWhiteIpRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/policies/waf/blackwhite-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addWafWhiteIpRuleRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<AddWafWhiteIpRuleResponse>(response);
+        }
+
+        public SyncInvoker<AddWafWhiteIpRuleResponse> AddWafWhiteIpRuleInvoker(AddWafWhiteIpRuleRequest addWafWhiteIpRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/policies/waf/blackwhite-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addWafWhiteIpRuleRequest);
+            return new SyncInvoker<AddWafWhiteIpRuleResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddWafWhiteIpRuleResponse>);
+        }
+        
+        /// <summary>
         /// 创建防护域名
         ///
         /// 创建防护域名
@@ -60,6 +84,30 @@ namespace HuaweiCloud.SDK.Aad.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainRequest);
             return new SyncInvoker<DeleteDomainResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDomainResponse>);
+        }
+        
+        /// <summary>
+        /// 防护策略web-cc黑白名单-删除黑白名单规则
+        ///
+        /// 防护策略web-cc黑白名单-删除黑白名单规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteWafWhiteIpRuleResponse DeleteWafWhiteIpRule(DeleteWafWhiteIpRuleRequest deleteWafWhiteIpRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/policies/waf/blackwhite-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWafWhiteIpRuleRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteWafWhiteIpRuleResponse>(response);
+        }
+
+        public SyncInvoker<DeleteWafWhiteIpRuleResponse> DeleteWafWhiteIpRuleInvoker(DeleteWafWhiteIpRuleRequest deleteWafWhiteIpRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/policies/waf/blackwhite-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWafWhiteIpRuleRequest);
+            return new SyncInvoker<DeleteWafWhiteIpRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteWafWhiteIpRuleResponse>);
         }
         
         /// <summary>

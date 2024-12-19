@@ -398,6 +398,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         public int? MinDisk { get; set; }
 
         /// <summary>
+        /// 操作系统使用的许可证类型。取值范围： platform：华为云官方许可证 byol：自带许可证（Bring Your Own License） 目前仅Windows操作系统支持设置该参数。
+        /// </summary>
+        [JsonProperty("license_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string LicenseType { get; set; }
+
+        /// <summary>
         /// 镜像标签列表。默认为空。 tags和image_tags只能使用一个。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -444,6 +450,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  osVersion: ").Append(OsVersion).Append("\n");
             sb.Append("  imageUrl: ").Append(ImageUrl).Append("\n");
             sb.Append("  minDisk: ").Append(MinDisk).Append("\n");
+            sb.Append("  licenseType: ").Append(LicenseType).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -473,6 +480,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             if (this.OsVersion != input.OsVersion || (this.OsVersion != null && !this.OsVersion.Equals(input.OsVersion))) return false;
             if (this.ImageUrl != input.ImageUrl || (this.ImageUrl != null && !this.ImageUrl.Equals(input.ImageUrl))) return false;
             if (this.MinDisk != input.MinDisk || (this.MinDisk != null && !this.MinDisk.Equals(input.MinDisk))) return false;
+            if (this.LicenseType != input.LicenseType || (this.LicenseType != null && !this.LicenseType.Equals(input.LicenseType))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.Type != input.Type) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
@@ -496,6 +504,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                 if (this.OsVersion != null) hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
                 if (this.ImageUrl != null) hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
                 if (this.MinDisk != null) hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
+                if (this.LicenseType != null) hashCode = hashCode * 59 + this.LicenseType.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();

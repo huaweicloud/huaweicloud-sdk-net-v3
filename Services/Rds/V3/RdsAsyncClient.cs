@@ -2064,6 +2064,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询高级备份策略
+        ///
+        /// 查询高级备份策略，可查看自定义稀疏备份等
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListUpdateBackupEnhancePolicyResponse> ListUpdateBackupEnhancePolicyAsync(ListUpdateBackupEnhancePolicyRequest listUpdateBackupEnhancePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listUpdateBackupEnhancePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/enhance-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpdateBackupEnhancePolicyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListUpdateBackupEnhancePolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ListUpdateBackupEnhancePolicyResponse> ListUpdateBackupEnhancePolicyAsyncInvoker(ListUpdateBackupEnhancePolicyRequest listUpdateBackupEnhancePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listUpdateBackupEnhancePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/enhance-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpdateBackupEnhancePolicyRequest);
+            return new AsyncInvoker<ListUpdateBackupEnhancePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUpdateBackupEnhancePolicyResponse>);
+        }
+        
+        /// <summary>
         /// 
         ///
         /// 查询实例大版本升级历史信息。

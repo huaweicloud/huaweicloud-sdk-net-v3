@@ -692,6 +692,39 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 退订包周期计费模式的云硬盘
+        ///
+        /// 退订包周期计费模式的云硬盘，有如下约束：
+        /// -  系统盘、启动盘不可使用当前接口退订，必须和弹性云服务器一起退订
+        /// -  接口的请求body体最多可以传60个云硬盘id
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UnsubscribePostpaidVolumeResponse> UnsubscribePostpaidVolumeAsync(UnsubscribePostpaidVolumeRequest unsubscribePostpaidVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/unsubscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", unsubscribePostpaidVolumeRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            var unsubscribePostpaidVolumeResponse = JsonUtils.DeSerializeNull<UnsubscribePostpaidVolumeResponse>(response);
+            unsubscribePostpaidVolumeResponse.Body = JsonUtils.DeSerializeList<UnsubscribeVolumeResponseBody>(response);
+            return unsubscribePostpaidVolumeResponse;
+        }
+
+        public AsyncInvoker<UnsubscribePostpaidVolumeResponse> UnsubscribePostpaidVolumeAsyncInvoker(UnsubscribePostpaidVolumeRequest unsubscribePostpaidVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/unsubscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", unsubscribePostpaidVolumeRequest);
+            return new AsyncInvoker<UnsubscribePostpaidVolumeResponse>(this, "POST", request, response =>
+            {
+                var unsubscribePostpaidVolumeResponse = JsonUtils.DeSerializeNull<UnsubscribePostpaidVolumeResponse>(response);
+                unsubscribePostpaidVolumeResponse.Body = JsonUtils.DeSerializeList<UnsubscribeVolumeResponseBody>(response);
+                return unsubscribePostpaidVolumeResponse;
+            });
+        }
+        
+        /// <summary>
         /// 更新云硬盘快照
         ///
         /// 更新云硬盘快照。支持企业项目授权功能。

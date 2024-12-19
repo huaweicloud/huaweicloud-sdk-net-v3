@@ -1,3 +1,188 @@
+# 3.1.126 2024-12-19
+
+### HuaweiCloud SDK AAD
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`AddWafWhiteIpRule`、`DeleteWafWhiteIpRule`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK AS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListScalingActivityLogs**
+    - 响应参数变更
+      - `+ scaling_activity_log.status: enum value [DOING]`
+      - `- scaling_activity_log.status: enum value [DING]`
+  - **ListScalingActivityV2Logs**
+    - 响应参数变更
+      - `+ scaling_activity_log.status: enum value [DOING]`
+      - `- scaling_activity_log.status: enum value [DING]`
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowAddonInstance**
+    - 响应参数变更
+      - `+ status.currentVersion.supportVersions.category`
+  - **UpdateAddonInstance**
+    - 响应参数变更
+      - `+ status.currentVersion.supportVersions.category`
+  - **RollbackAddonInstance**
+    - 响应参数变更
+      - `+ status.currentVersion.supportVersions.category`
+  - **ShowAutopilotAddonInstance**
+    - 响应参数变更
+      - `+ status.currentVersion.supportVersions.category`
+  - **UpdateAutopilotAddonInstance**
+    - 响应参数变更
+      - `+ status.currentVersion.supportVersions.category`
+  - **RollbackAutopilotAddonInstance**
+    - 响应参数变更
+      - `+ status.currentVersion.supportVersions.category`
+  - **CreateAddonInstance**
+    - 响应参数变更
+      - `+ status.currentVersion.supportVersions.category`
+  - **ListAddonInstances**
+    - 响应参数变更
+      - `+ items.status.currentVersion.supportVersions.category`
+  - **ListAddonTemplates**
+    - 响应参数变更
+      - `+ items.spec.versions.supportVersions.category`
+  - **CreateAutopilotAddonInstance**
+    - 响应参数变更
+      - `+ status.currentVersion.supportVersions.category`
+  - **ListAutopilotAddonInstances**
+    - 响应参数变更
+      - `+ items.status.currentVersion.supportVersions.category`
+  - **ListAutopilotAddonTemplates**
+    - 响应参数变更
+      - `+ items.spec.versions.supportVersions.category`
+
+### HuaweiCloud SDK DCS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ShowBandwidths`
+    - `UpdateBandwidth`
+    - `ShowInstanceBandwidthAutoScalingPolicy`
+    - `UpdateInstanceBandwidthAutoScalingPolicy`
+    - `DeleteInstanceBandwidthAutoScalingPolicy`
+    - `UpdatePublicIp`
+    - `DeletePublicIp`
+    - `ChangeNodesStartStopStatus`
+    - `ShowInstanceVersion`
+    - `UpgradeInstanceMinorVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EVS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`UnsubscribePostpaidVolume`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CinderListQuotas**
+    - 响应参数变更
+      - `+ quota_set.gigabytes_ESSD`
+      - `+ quota_set.snapshots_ESSD`
+      - `+ quota_set.volumes_ESSD`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ListRestorableInstancesDetails`
+    - `ListRecycleInstancesDetails`
+    - `ShowParameterGroupDetail`
+    - `ShowSourceInstanceDetail`
+    - `AllowDbRolePrivileges`
+    - `ListDatabaseRoles`
+    - `CreateDbRole`
+    - `ListDatastoresDetails`
+    - `ListDatabaseInstances`
+    - `ListParameterGroupTemplates`
+    - `ShowInstanceParamGroupDetail`
+    - `ShowUpgradeCandidateVersionsDetails`
+    - `BatchShowUpgradeCandidateVersions`
+    - `ListFlavorsDetails`
+    - `ListBackupsDetails`
+    - `SyncLimitData`
+    - `DeleteDatabaseSchema`
+    - `CreateDatabaseInstance`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowUpgradeCandidateVersions**
+    - 响应参数变更
+      - `* hotfix_upgrade_infos: object<HotfixUpgradeInfos> -> list<HotfixUpgradeInfos>`
+      - `* hotfix_rollback_infos: object<HotfixRollbackInfos> -> list<HotfixRollbackInfos>`
+
+### HuaweiCloud SDK IMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ImportImageQuick**
+    - 请求参数变更
+      - `+ license_type`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeAutoClassification**
+    - 请求参数变更
+      - `+ pdf_page_number`
+  - **RecognizeSmartDocumentRecognizer**
+    - 请求参数变更
+      - `+ erase_seal`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListUpdateBackupEnhancePolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.125 2024-12-12
 
 ### HuaweiCloud SDK AOS

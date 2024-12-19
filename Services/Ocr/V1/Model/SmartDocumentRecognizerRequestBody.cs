@@ -83,6 +83,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string KvMap { get; set; }
 
         /// <summary>
+        /// 是否进行印章擦除。开启后，可提升印章遮挡区域的文字识别精度。 
+        /// </summary>
+        [JsonProperty("erase_seal", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EraseSeal { get; set; }
+
+        /// <summary>
         /// 指定PDF页码识别。传入该参数时，则识别指定页码的内容。如果不传该参数，则默认识别第1页。 
         /// </summary>
         [JsonProperty("pdf_page_number", NullValueHandling = NullValueHandling.Ignore)]
@@ -108,6 +114,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  form: ").Append(Form).Append("\n");
             sb.Append("  formula: ").Append(Formula).Append("\n");
             sb.Append("  kvMap: ").Append(KvMap).Append("\n");
+            sb.Append("  eraseSeal: ").Append(EraseSeal).Append("\n");
             sb.Append("  pdfPageNumber: ").Append(PdfPageNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -138,6 +145,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.Form != input.Form || (this.Form != null && !this.Form.Equals(input.Form))) return false;
             if (this.Formula != input.Formula || (this.Formula != null && !this.Formula.Equals(input.Formula))) return false;
             if (this.KvMap != input.KvMap || (this.KvMap != null && !this.KvMap.Equals(input.KvMap))) return false;
+            if (this.EraseSeal != input.EraseSeal || (this.EraseSeal != null && !this.EraseSeal.Equals(input.EraseSeal))) return false;
             if (this.PdfPageNumber != input.PdfPageNumber || (this.PdfPageNumber != null && !this.PdfPageNumber.Equals(input.PdfPageNumber))) return false;
 
             return true;
@@ -162,6 +170,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.Form != null) hashCode = hashCode * 59 + this.Form.GetHashCode();
                 if (this.Formula != null) hashCode = hashCode * 59 + this.Formula.GetHashCode();
                 if (this.KvMap != null) hashCode = hashCode * 59 + this.KvMap.GetHashCode();
+                if (this.EraseSeal != null) hashCode = hashCode * 59 + this.EraseSeal.GetHashCode();
                 if (this.PdfPageNumber != null) hashCode = hashCode * 59 + this.PdfPageNumber.GetHashCode();
                 return hashCode;
             }

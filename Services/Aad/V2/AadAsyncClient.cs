@@ -16,6 +16,30 @@ namespace HuaweiCloud.SDK.Aad.V2
 
         
         /// <summary>
+        /// 防护策略web-cc黑白名单-创建黑白名单规则
+        ///
+        /// 防护策略web-cc黑白名单-创建黑白名单规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddWafWhiteIpRuleResponse> AddWafWhiteIpRuleAsync(AddWafWhiteIpRuleRequest addWafWhiteIpRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/policies/waf/blackwhite-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addWafWhiteIpRuleRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<AddWafWhiteIpRuleResponse>(response);
+        }
+
+        public AsyncInvoker<AddWafWhiteIpRuleResponse> AddWafWhiteIpRuleAsyncInvoker(AddWafWhiteIpRuleRequest addWafWhiteIpRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/policies/waf/blackwhite-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addWafWhiteIpRuleRequest);
+            return new AsyncInvoker<AddWafWhiteIpRuleResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddWafWhiteIpRuleResponse>);
+        }
+        
+        /// <summary>
         /// 创建防护域名
         ///
         /// 创建防护域名
@@ -61,6 +85,30 @@ namespace HuaweiCloud.SDK.Aad.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainRequest);
             return new AsyncInvoker<DeleteDomainResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDomainResponse>);
+        }
+        
+        /// <summary>
+        /// 防护策略web-cc黑白名单-删除黑白名单规则
+        ///
+        /// 防护策略web-cc黑白名单-删除黑白名单规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteWafWhiteIpRuleResponse> DeleteWafWhiteIpRuleAsync(DeleteWafWhiteIpRuleRequest deleteWafWhiteIpRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/policies/waf/blackwhite-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWafWhiteIpRuleRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteWafWhiteIpRuleResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteWafWhiteIpRuleResponse> DeleteWafWhiteIpRuleAsyncInvoker(DeleteWafWhiteIpRuleRequest deleteWafWhiteIpRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/policies/waf/blackwhite-list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWafWhiteIpRuleRequest);
+            return new AsyncInvoker<DeleteWafWhiteIpRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteWafWhiteIpRuleResponse>);
         }
         
         /// <summary>

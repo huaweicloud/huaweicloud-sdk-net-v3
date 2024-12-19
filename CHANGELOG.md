@@ -1,3 +1,188 @@
+# 3.1.126 2024-12-19
+
+### HuaweiCloud SDK AAD
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `AddWafWhiteIpRule`, `DeleteWafWhiteIpRule`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK AS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListScalingActivityLogs**
+    - changes of response param
+      - `+ scaling_activity_log.status: enum value [DOING]`
+      - `- scaling_activity_log.status: enum value [DING]`
+  - **ListScalingActivityV2Logs**
+    - changes of response param
+      - `+ scaling_activity_log.status: enum value [DOING]`
+      - `- scaling_activity_log.status: enum value [DING]`
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowAddonInstance**
+    - changes of response param
+      - `+ status.currentVersion.supportVersions.category`
+  - **UpdateAddonInstance**
+    - changes of response param
+      - `+ status.currentVersion.supportVersions.category`
+  - **RollbackAddonInstance**
+    - changes of response param
+      - `+ status.currentVersion.supportVersions.category`
+  - **ShowAutopilotAddonInstance**
+    - changes of response param
+      - `+ status.currentVersion.supportVersions.category`
+  - **UpdateAutopilotAddonInstance**
+    - changes of response param
+      - `+ status.currentVersion.supportVersions.category`
+  - **RollbackAutopilotAddonInstance**
+    - changes of response param
+      - `+ status.currentVersion.supportVersions.category`
+  - **CreateAddonInstance**
+    - changes of response param
+      - `+ status.currentVersion.supportVersions.category`
+  - **ListAddonInstances**
+    - changes of response param
+      - `+ items.status.currentVersion.supportVersions.category`
+  - **ListAddonTemplates**
+    - changes of response param
+      - `+ items.spec.versions.supportVersions.category`
+  - **CreateAutopilotAddonInstance**
+    - changes of response param
+      - `+ status.currentVersion.supportVersions.category`
+  - **ListAutopilotAddonInstances**
+    - changes of response param
+      - `+ items.status.currentVersion.supportVersions.category`
+  - **ListAutopilotAddonTemplates**
+    - changes of response param
+      - `+ items.spec.versions.supportVersions.category`
+
+### HuaweiCloud SDK DCS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ShowBandwidths`
+    - `UpdateBandwidth`
+    - `ShowInstanceBandwidthAutoScalingPolicy`
+    - `UpdateInstanceBandwidthAutoScalingPolicy`
+    - `DeleteInstanceBandwidthAutoScalingPolicy`
+    - `UpdatePublicIp`
+    - `DeletePublicIp`
+    - `ChangeNodesStartStopStatus`
+    - `ShowInstanceVersion`
+    - `UpgradeInstanceMinorVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EVS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `UnsubscribePostpaidVolume`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CinderListQuotas**
+    - changes of response param
+      - `+ quota_set.gigabytes_ESSD`
+      - `+ quota_set.snapshots_ESSD`
+      - `+ quota_set.volumes_ESSD`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListRestorableInstancesDetails`
+    - `ListRecycleInstancesDetails`
+    - `ShowParameterGroupDetail`
+    - `ShowSourceInstanceDetail`
+    - `AllowDbRolePrivileges`
+    - `ListDatabaseRoles`
+    - `CreateDbRole`
+    - `ListDatastoresDetails`
+    - `ListDatabaseInstances`
+    - `ListParameterGroupTemplates`
+    - `ShowInstanceParamGroupDetail`
+    - `ShowUpgradeCandidateVersionsDetails`
+    - `BatchShowUpgradeCandidateVersions`
+    - `ListFlavorsDetails`
+    - `ListBackupsDetails`
+    - `SyncLimitData`
+    - `DeleteDatabaseSchema`
+    - `CreateDatabaseInstance`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowUpgradeCandidateVersions**
+    - changes of response param
+      - `* hotfix_upgrade_infos: object<HotfixUpgradeInfos> -> list<HotfixUpgradeInfos>`
+      - `* hotfix_rollback_infos: object<HotfixRollbackInfos> -> list<HotfixRollbackInfos>`
+
+### HuaweiCloud SDK IMS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ImportImageQuick**
+    - changes of request param
+      - `+ license_type`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeAutoClassification**
+    - changes of request param
+      - `+ pdf_page_number`
+  - **RecognizeSmartDocumentRecognizer**
+    - changes of request param
+      - `+ erase_seal`
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ListUpdateBackupEnhancePolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.125 2024-12-12
 
 ### HuaweiCloud SDK AOS

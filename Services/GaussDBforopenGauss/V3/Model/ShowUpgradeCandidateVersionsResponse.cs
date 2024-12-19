@@ -65,16 +65,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public List<string> HotfixRollbackCandidateVersions { get; set; }
 
         /// <summary>
-        /// 
+        /// 可以升级的热补丁信息。
         /// </summary>
         [JsonProperty("hotfix_upgrade_infos", NullValueHandling = NullValueHandling.Ignore)]
-        public HotfixUpgradeInfos HotfixUpgradeInfos { get; set; }
+        public List<HotfixUpgradeInfos> HotfixUpgradeInfos { get; set; }
 
         /// <summary>
-        /// 
+        /// 可以回滚的热补丁信息。
         /// </summary>
         [JsonProperty("hotfix_rollback_infos", NullValueHandling = NullValueHandling.Ignore)]
-        public HotfixRollbackInfos HotfixRollbackInfos { get; set; }
+        public List<HotfixRollbackInfos> HotfixRollbackInfos { get; set; }
 
 
 
@@ -121,8 +121,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.UpgradeCandidateVersions != input.UpgradeCandidateVersions || (this.UpgradeCandidateVersions != null && input.UpgradeCandidateVersions != null && !this.UpgradeCandidateVersions.SequenceEqual(input.UpgradeCandidateVersions))) return false;
             if (this.HotfixUpgradeCandidateVersions != input.HotfixUpgradeCandidateVersions || (this.HotfixUpgradeCandidateVersions != null && input.HotfixUpgradeCandidateVersions != null && !this.HotfixUpgradeCandidateVersions.SequenceEqual(input.HotfixUpgradeCandidateVersions))) return false;
             if (this.HotfixRollbackCandidateVersions != input.HotfixRollbackCandidateVersions || (this.HotfixRollbackCandidateVersions != null && input.HotfixRollbackCandidateVersions != null && !this.HotfixRollbackCandidateVersions.SequenceEqual(input.HotfixRollbackCandidateVersions))) return false;
-            if (this.HotfixUpgradeInfos != input.HotfixUpgradeInfos || (this.HotfixUpgradeInfos != null && !this.HotfixUpgradeInfos.Equals(input.HotfixUpgradeInfos))) return false;
-            if (this.HotfixRollbackInfos != input.HotfixRollbackInfos || (this.HotfixRollbackInfos != null && !this.HotfixRollbackInfos.Equals(input.HotfixRollbackInfos))) return false;
+            if (this.HotfixUpgradeInfos != input.HotfixUpgradeInfos || (this.HotfixUpgradeInfos != null && input.HotfixUpgradeInfos != null && !this.HotfixUpgradeInfos.SequenceEqual(input.HotfixUpgradeInfos))) return false;
+            if (this.HotfixRollbackInfos != input.HotfixRollbackInfos || (this.HotfixRollbackInfos != null && input.HotfixRollbackInfos != null && !this.HotfixRollbackInfos.SequenceEqual(input.HotfixRollbackInfos))) return false;
 
             return true;
         }

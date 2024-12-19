@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 文字块的区域位置信息，列表形式，包含文字区域四个顶点的二维坐标（x,y）;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+        /// 票证的区域位置信息，列表形式，包含票证区域四个顶点的二维坐标（x,y）;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
         /// </summary>
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<int?>> Location { get; set; }

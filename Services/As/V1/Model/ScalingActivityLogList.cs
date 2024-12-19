@@ -33,16 +33,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
             public static readonly StatusEnum FAIL = new StatusEnum("FAIL");
 
             /// <summary>
-            /// Enum DING for value: DING
+            /// Enum DOING for value: DOING
             /// </summary>
-            public static readonly StatusEnum DING = new StatusEnum("DING");
+            public static readonly StatusEnum DOING = new StatusEnum("DOING");
 
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
                 { "SUCCESS", SUCCESS },
                 { "FAIL", FAIL },
-                { "DING", DING },
+                { "DOING", DOING },
             };
 
             private string _value;
