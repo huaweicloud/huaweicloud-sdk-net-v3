@@ -263,6 +263,121 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             }
         }
 
+        /// <summary>
+        /// 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
+        /// </summary>
+        /// <value>云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。</value>
+        [JsonConverter(typeof(EnumClassConverter<HwFirmwareTypeEnum>))]
+        public class HwFirmwareTypeEnum
+        {
+            /// <summary>
+            /// Enum BIOS for value: bios
+            /// </summary>
+            public static readonly HwFirmwareTypeEnum BIOS = new HwFirmwareTypeEnum("bios");
+
+            /// <summary>
+            /// Enum UEFI for value: uefi
+            /// </summary>
+            public static readonly HwFirmwareTypeEnum UEFI = new HwFirmwareTypeEnum("uefi");
+
+            private static readonly Dictionary<string, HwFirmwareTypeEnum> StaticFields =
+            new Dictionary<string, HwFirmwareTypeEnum>()
+            {
+                { "bios", BIOS },
+                { "uefi", UEFI },
+            };
+
+            private string _value;
+
+            public HwFirmwareTypeEnum()
+            {
+
+            }
+
+            public HwFirmwareTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static HwFirmwareTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as HwFirmwareTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(HwFirmwareTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(HwFirmwareTypeEnum a, HwFirmwareTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(HwFirmwareTypeEnum a, HwFirmwareTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 需要转换的数据盘信息，其中，当使用云服务器上的数据盘进行私有数据盘镜像创建时，该字段必选。 如果不是用于制作数据盘镜像，该字段默认为空。
@@ -370,6 +485,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("volume_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeId { get; set; }
 
+        /// <summary>
+        /// 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
+        /// </summary>
+        [JsonProperty("hw_firmware_type", NullValueHandling = NullValueHandling.Ignore)]
+        public HwFirmwareTypeEnum HwFirmwareType { get; set; }
 
 
         /// <summary>
@@ -397,6 +517,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  isQuickImport: ").Append(IsQuickImport).Append("\n");
             sb.Append("  architecture: ").Append(Architecture).Append("\n");
             sb.Append("  volumeId: ").Append(VolumeId).Append("\n");
+            sb.Append("  hwFirmwareType: ").Append(HwFirmwareType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -433,6 +554,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             if (this.IsQuickImport != input.IsQuickImport || (this.IsQuickImport != null && !this.IsQuickImport.Equals(input.IsQuickImport))) return false;
             if (this.Architecture != input.Architecture) return false;
             if (this.VolumeId != input.VolumeId || (this.VolumeId != null && !this.VolumeId.Equals(input.VolumeId))) return false;
+            if (this.HwFirmwareType != input.HwFirmwareType) return false;
 
             return true;
         }
@@ -463,6 +585,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                 if (this.IsQuickImport != null) hashCode = hashCode * 59 + this.IsQuickImport.GetHashCode();
                 hashCode = hashCode * 59 + this.Architecture.GetHashCode();
                 if (this.VolumeId != null) hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
+                hashCode = hashCode * 59 + this.HwFirmwareType.GetHashCode();
                 return hashCode;
             }
         }

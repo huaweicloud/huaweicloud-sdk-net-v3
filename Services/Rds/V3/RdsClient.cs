@@ -1004,6 +1004,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询容灾管理列表
+        ///
+        /// 查询容灾管理列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDrInfosResponse ListDrInfos(ListDrInfosRequest listDrInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disaster-recovery-infos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDrInfosRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListDrInfosResponse>(response);
+        }
+
+        public SyncInvoker<ListDrInfosResponse> ListDrInfosInvoker(ListDrInfosRequest listDrInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disaster-recovery-infos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDrInfosRequest);
+            return new SyncInvoker<ListDrInfosResponse>(this, "POST", request, JsonUtils.DeSerialize<ListDrInfosResponse>);
+        }
+        
+        /// <summary>
         /// 
         ///
         /// 批量查询容灾实例信息

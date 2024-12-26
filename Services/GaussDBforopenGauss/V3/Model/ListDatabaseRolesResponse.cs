@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// 数据库用户/角色总数。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
-        public long? TotalCount { get; set; }
+        public int? TotalCount { get; set; }
 
 
 

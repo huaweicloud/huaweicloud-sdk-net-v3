@@ -234,6 +234,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 批量删除域名组
+        ///
+        /// 批量删除域名组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteDomainSetResponse> BatchDeleteDomainSetAsync(BatchDeleteDomainSetRequest batchDeleteDomainSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain-sets/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteDomainSetRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeleteDomainSetResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteDomainSetResponse> BatchDeleteDomainSetAsyncInvoker(BatchDeleteDomainSetRequest batchDeleteDomainSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain-sets/batch-delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteDomainSetRequest);
+            return new AsyncInvoker<BatchDeleteDomainSetResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteDomainSetResponse>);
+        }
+        
+        /// <summary>
         /// 批量删除服务组成员信息
         ///
         /// 批量删除服务组成员信息
@@ -906,6 +930,32 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 获取域名地址解析结果
+        ///
+        /// 获取域名地址解析结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDomainParseIpResponse> ListDomainParseIpAsync(ListDomainParseIpRequest listDomainParseIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_address_id", listDomainParseIpRequest.DomainAddressId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/parse-ip-list/{domain_address_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainParseIpRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDomainParseIpResponse>(response);
+        }
+
+        public AsyncInvoker<ListDomainParseIpResponse> ListDomainParseIpAsyncInvoker(ListDomainParseIpRequest listDomainParseIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_address_id", listDomainParseIpRequest.DomainAddressId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/parse-ip-list/{domain_address_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainParseIpRequest);
+            return new AsyncInvoker<ListDomainParseIpResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainParseIpResponse>);
+        }
+        
+        /// <summary>
         /// 查询域名组列表
         ///
         /// 查询域名组列表
@@ -1102,6 +1152,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 查询标签信息
+        ///
+        /// 查询标签信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListProjectTagsResponse> ListProjectTagsAsync(ListProjectTagsRequest listProjectTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-cfw/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListProjectTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListProjectTagsResponse> ListProjectTagsAsyncInvoker(ListProjectTagsRequest listProjectTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-cfw/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectTagsRequest);
+            return new AsyncInvoker<ListProjectTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectTagsResponse>);
+        }
+        
+        /// <summary>
         /// 查询防护VPC数
         ///
         /// 查询防护vpc信息
@@ -1123,6 +1197,32 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpcs/protection", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProtectedVpcsRequest);
             return new AsyncInvoker<ListProtectedVpcsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProtectedVpcsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询资源标签信息
+        ///
+        /// 查询资源标签信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListResourceTagsResponse> ListResourceTagsAsync(ListResourceTagsRequest listResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("fw_instance_id", listResourceTagsRequest.FwInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-cfw/{fw_instance_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListResourceTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListResourceTagsResponse> ListResourceTagsAsyncInvoker(ListResourceTagsRequest listResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("fw_instance_id", listResourceTagsRequest.FwInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-cfw/{fw_instance_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceTagsRequest);
+            return new AsyncInvoker<ListResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListResourceTagsResponse>);
         }
         
         /// <summary>
@@ -1200,6 +1300,130 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 保存资源标签接口
+        ///
+        /// 保存资源标签接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SaveTagsResponse> SaveTagsAsync(SaveTagsRequest saveTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("fw_instance_id", saveTagsRequest.FwInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-cfw/{fw_instance_id}/tags/save", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveTagsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<SaveTagsResponse>(response);
+        }
+
+        public AsyncInvoker<SaveTagsResponse> SaveTagsAsyncInvoker(SaveTagsRequest saveTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("fw_instance_id", saveTagsRequest.FwInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-cfw/{fw_instance_id}/tags/save", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveTagsRequest);
+            return new AsyncInvoker<SaveTagsResponse>(this, "PUT", request, JsonUtils.DeSerialize<SaveTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取告警配置信息
+        ///
+        /// 获取告警配置信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAlarmConfigResponse> ShowAlarmConfigAsync(ShowAlarmConfigRequest showAlarmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cfw/alarm/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlarmConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAlarmConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAlarmConfigResponse> ShowAlarmConfigAsyncInvoker(ShowAlarmConfigRequest showAlarmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cfw/alarm/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlarmConfigRequest);
+            return new AsyncInvoker<ShowAlarmConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAlarmConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 获取防火墙反病毒规则信息
+        ///
+        /// 获取防火墙反病毒规则信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAntiVirusRuleResponse> ShowAntiVirusRuleAsync(ShowAntiVirusRuleRequest showAntiVirusRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/anti-virus/rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAntiVirusRuleRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAntiVirusRuleResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAntiVirusRuleResponse> ShowAntiVirusRuleAsyncInvoker(ShowAntiVirusRuleRequest showAntiVirusRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/anti-virus/rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAntiVirusRuleRequest);
+            return new AsyncInvoker<ShowAntiVirusRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAntiVirusRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 查看反病毒开关
+        ///
+        /// 查看反病毒开关
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAntiVirusSwitchResponse> ShowAntiVirusSwitchAsync(ShowAntiVirusSwitchRequest showAntiVirusSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/anti-virus/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAntiVirusSwitchRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAntiVirusSwitchResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAntiVirusSwitchResponse> ShowAntiVirusSwitchAsyncInvoker(ShowAntiVirusSwitchRequest showAntiVirusSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/anti-virus/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAntiVirusSwitchRequest);
+            return new AsyncInvoker<ShowAntiVirusSwitchResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAntiVirusSwitchResponse>);
+        }
+        
+        /// <summary>
+        /// 查看域名组详情
+        ///
+        /// 查看域名组详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDomainSetDetailResponse> ShowDomainSetDetailAsync(ShowDomainSetDetailRequest showDomainSetDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_set_id", showDomainSetDetailRequest.DomainSetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain-set/{domain_set_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainSetDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainSetDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDomainSetDetailResponse> ShowDomainSetDetailAsyncInvoker(ShowDomainSetDetailRequest showDomainSetDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_set_id", showDomainSetDetailRequest.DomainSetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain-set/{domain_set_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainSetDetailRequest);
+            return new AsyncInvoker<ShowDomainSetDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainSetDetailResponse>);
+        }
+        
+        /// <summary>
         /// 更新地址组信息
         ///
         /// 更新地址组信息
@@ -1223,6 +1447,78 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/address-sets/{set_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAddressSetRequest);
             return new AsyncInvoker<UpdateAddressSetResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAddressSetResponse>);
+        }
+        
+        /// <summary>
+        /// 修改告警配置接口
+        ///
+        /// 修改告警配置接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateAlarmConfigResponse> UpdateAlarmConfigAsync(UpdateAlarmConfigRequest updateAlarmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cfw/alarm/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmConfigRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAlarmConfigResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateAlarmConfigResponse> UpdateAlarmConfigAsyncInvoker(UpdateAlarmConfigRequest updateAlarmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cfw/alarm/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmConfigRequest);
+            return new AsyncInvoker<UpdateAlarmConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAlarmConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 修改反病毒规则
+        ///
+        /// 修改反病毒规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateAntiVirusRuleResponse> UpdateAntiVirusRuleAsync(UpdateAntiVirusRuleRequest updateAntiVirusRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/anti-virus/rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAntiVirusRuleRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAntiVirusRuleResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateAntiVirusRuleResponse> UpdateAntiVirusRuleAsyncInvoker(UpdateAntiVirusRuleRequest updateAntiVirusRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/anti-virus/rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAntiVirusRuleRequest);
+            return new AsyncInvoker<UpdateAntiVirusRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAntiVirusRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 修改反病毒开关
+        ///
+        /// 修改反病毒开关
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateAntiVirusSwitchResponse> UpdateAntiVirusSwitchAsync(UpdateAntiVirusSwitchRequest updateAntiVirusSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/anti-virus/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAntiVirusSwitchRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAntiVirusSwitchResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateAntiVirusSwitchResponse> UpdateAntiVirusSwitchAsyncInvoker(UpdateAntiVirusSwitchRequest updateAntiVirusSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/anti-virus/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAntiVirusSwitchRequest);
+            return new AsyncInvoker<UpdateAntiVirusSwitchResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAntiVirusSwitchResponse>);
         }
         
         /// <summary>
@@ -1522,6 +1818,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 查看region列表
+        ///
+        /// 查看region列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListRegionsResponse> ListRegionsAsync(ListRegionsRequest listRegionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/regions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRegionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListRegionsResponse>(response);
+        }
+
+        public AsyncInvoker<ListRegionsResponse> ListRegionsAsyncInvoker(ListRegionsRequest listRegionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/regions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRegionsRequest);
+            return new AsyncInvoker<ListRegionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRegionsResponse>);
+        }
+        
+        /// <summary>
         /// 查询规则标签
         ///
         /// 查询规则标签
@@ -1543,6 +1863,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-acl/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRuleAclTagsRequest);
             return new AsyncInvoker<ListRuleAclTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRuleAclTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查看导入状态接口
+        ///
+        /// 查看导入状态接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowImportStatusResponse> ShowImportStatusAsync(ShowImportStatusRequest showImportStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/acl-rule/import-status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImportStatusRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowImportStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowImportStatusResponse> ShowImportStatusAsyncInvoker(ShowImportStatusRequest showImportStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/acl-rule/import-status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImportStatusRequest);
+            return new AsyncInvoker<ShowImportStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowImportStatusResponse>);
         }
         
         /// <summary>
@@ -1622,6 +1966,32 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 查看eip告警白名单
+        ///
+        /// 查看eip告警白名单
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAlarmWhitelistResponse> ListAlarmWhitelistAsync(ListAlarmWhitelistRequest listAlarmWhitelistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("fw_instance_id", listAlarmWhitelistRequest.FwInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/eip/alarm-whitelist/{fw_instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAlarmWhitelistRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAlarmWhitelistResponse>(response);
+        }
+
+        public AsyncInvoker<ListAlarmWhitelistResponse> ListAlarmWhitelistAsyncInvoker(ListAlarmWhitelistRequest listAlarmWhitelistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("fw_instance_id", listAlarmWhitelistRequest.FwInstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/eip/alarm-whitelist/{fw_instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAlarmWhitelistRequest);
+            return new AsyncInvoker<ListAlarmWhitelistResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAlarmWhitelistResponse>);
+        }
+        
+        /// <summary>
         /// 查询Eip个数
         ///
         /// 查询Eip个数
@@ -1672,6 +2042,56 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 获取eip自动防护状态信息
+        ///
+        /// 获取eip自动防护状态信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutoProtectStatusResponse> ShowAutoProtectStatusAsync(ShowAutoProtectStatusRequest showAutoProtectStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("object_id", showAutoProtectStatusRequest.ObjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/eip/auto-protect-status/{object_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoProtectStatusRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutoProtectStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutoProtectStatusResponse> ShowAutoProtectStatusAsyncInvoker(ShowAutoProtectStatusRequest showAutoProtectStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("object_id", showAutoProtectStatusRequest.ObjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/eip/auto-protect-status/{object_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoProtectStatusRequest);
+            return new AsyncInvoker<ShowAutoProtectStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoProtectStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 修改eip自动防护开关
+        ///
+        /// 修改eip自动防护开关
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SwitchAutoProtectStatusResponse> SwitchAutoProtectStatusAsync(SwitchAutoProtectStatusRequest switchAutoProtectStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/eip/auto-protect-status/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchAutoProtectStatusRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<SwitchAutoProtectStatusResponse>(response);
+        }
+
+        public AsyncInvoker<SwitchAutoProtectStatusResponse> SwitchAutoProtectStatusAsyncInvoker(SwitchAutoProtectStatusRequest switchAutoProtectStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/eip/auto-protect-status/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchAutoProtectStatusRequest);
+            return new AsyncInvoker<SwitchAutoProtectStatusResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchAutoProtectStatusResponse>);
+        }
+        
+        /// <summary>
         /// 切换防护模式
         ///
         /// 切换防护模式
@@ -1693,6 +2113,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ips/protect", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeIpsProtectModeRequest);
             return new AsyncInvoker<ChangeIpsProtectModeResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeIpsProtectModeResponse>);
+        }
+        
+        /// <summary>
+        /// 改变ips规则模式
+        ///
+        /// 改变ips规则模式
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeIpsRuleModeResponse> ChangeIpsRuleModeAsync(ChangeIpsRuleModeRequest changeIpsRuleModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ips-rule/mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeIpsRuleModeRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ChangeIpsRuleModeResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeIpsRuleModeResponse> ChangeIpsRuleModeAsyncInvoker(ChangeIpsRuleModeRequest changeIpsRuleModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ips-rule/mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", changeIpsRuleModeRequest);
+            return new AsyncInvoker<ChangeIpsRuleModeResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeIpsRuleModeResponse>);
         }
         
         /// <summary>
@@ -1720,6 +2164,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 获取自定义ips规则
+        ///
+        /// 获取自定义ips规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListCustomerIpsResponse> ListCustomerIpsAsync(ListCustomerIpsRequest listCustomerIpsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ips/custom-rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCustomerIpsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListCustomerIpsResponse>(response);
+        }
+
+        public AsyncInvoker<ListCustomerIpsResponse> ListCustomerIpsAsyncInvoker(ListCustomerIpsRequest listCustomerIpsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ips/custom-rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCustomerIpsRequest);
+            return new AsyncInvoker<ListCustomerIpsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCustomerIpsResponse>);
+        }
+        
+        /// <summary>
         /// 查询防护模式
         ///
         /// 查询防护模式
@@ -1744,6 +2212,54 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 查询频率ips规则信息
+        ///
+        /// 查询频率ips规则信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListIpsRulesResponse> ListIpsRulesAsync(ListIpsRulesRequest listIpsRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/advanced-ips-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpsRulesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListIpsRulesResponse>(response);
+        }
+
+        public AsyncInvoker<ListIpsRulesResponse> ListIpsRulesAsyncInvoker(ListIpsRulesRequest listIpsRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/advanced-ips-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpsRulesRequest);
+            return new AsyncInvoker<ListIpsRulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIpsRulesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取ips规则列表
+        ///
+        /// 获取ips规则列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListIpsRules1Response> ListIpsRules1Async(ListIpsRules1Request listIpsRules1Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ips-rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpsRules1Request);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListIpsRules1Response>(response);
+        }
+
+        public AsyncInvoker<ListIpsRules1Response> ListIpsRules1AsyncInvoker(ListIpsRules1Request listIpsRules1Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ips-rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpsRules1Request);
+            return new AsyncInvoker<ListIpsRules1Response>(this, "GET", request, JsonUtils.DeSerialize<ListIpsRules1Response>);
+        }
+        
+        /// <summary>
         /// 查询IPS特性开关状态
         ///
         /// 查询IPS特性开关状态
@@ -1765,6 +2281,54 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ips/switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpsSwitchStatusRequest);
             return new AsyncInvoker<ListIpsSwitchStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIpsSwitchStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 获取ips规则细节
+        ///
+        /// 获取ips规则细节
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowIpsUpdateTimeResponse> ShowIpsUpdateTimeAsync(ShowIpsUpdateTimeRequest showIpsUpdateTimeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ips-rule/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpsUpdateTimeRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowIpsUpdateTimeResponse>(response);
+        }
+
+        public AsyncInvoker<ShowIpsUpdateTimeResponse> ShowIpsUpdateTimeAsyncInvoker(ShowIpsUpdateTimeRequest showIpsUpdateTimeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ips-rule/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpsUpdateTimeRequest);
+            return new AsyncInvoker<ShowIpsUpdateTimeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIpsUpdateTimeResponse>);
+        }
+        
+        /// <summary>
+        /// 创建频率ips规则
+        ///
+        /// 创建频率ips规则
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateAdvancedIpsRuleResponse> UpdateAdvancedIpsRuleAsync(UpdateAdvancedIpsRuleRequest updateAdvancedIpsRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/advanced-ips-rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAdvancedIpsRuleRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<UpdateAdvancedIpsRuleResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateAdvancedIpsRuleResponse> UpdateAdvancedIpsRuleAsyncInvoker(UpdateAdvancedIpsRuleRequest updateAdvancedIpsRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/advanced-ips-rule", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAdvancedIpsRuleRequest);
+            return new AsyncInvoker<UpdateAdvancedIpsRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateAdvancedIpsRuleResponse>);
         }
         
     }

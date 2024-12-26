@@ -35,10 +35,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool? LockStatus { get; set; }
 
         /// <summary>
-        /// 用户/角色的权限属性。
+        /// 
         /// </summary>
         [JsonProperty("attribute", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Attribute { get; set; }
+        public GaussDBListDatabaseRolesPriv Attribute { get; set; }
 
 
 

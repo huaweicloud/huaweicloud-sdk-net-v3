@@ -1118,3 +1118,22 @@ namespace WpfApp1
     }
 }
 ```
+
+3 How to use in Cloud Service Alliance Scenarios
+
+``` csharp
+// Specify the endpoint, take the endpoint of VPC service in region of eu-west-101 for example
+String endpoint = "https://vpc.eu-west-101.myhuaweicloud.com";
+
+// Initialize the credentials, you should provide projectId or domainId in this way, take initializing BasicCredentials for example
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var projectId = "{your projectId string}";
+Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
+
+// Initialize specified {Service}Client instance, take initializing the regional service VPC's VpcClient for example
+VpcClient vpcClient = VpcClient.NewBuilder()
+    .WithCredential(basicCredentials)
+    .WithEndPoint(endpoint)
+    .Build();
+```

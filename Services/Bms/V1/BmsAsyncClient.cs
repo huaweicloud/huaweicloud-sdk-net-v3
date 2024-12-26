@@ -93,7 +93,7 @@ namespace HuaweiCloud.SDK.Bms.V1
         }
         
         /// <summary>
-        /// 批量删除l裸金属服务器标签
+        /// 批量删除裸金属服务器标签
         ///
         /// - 为指定云服务器批量删除标签。
         /// 
@@ -217,7 +217,7 @@ namespace HuaweiCloud.SDK.Bms.V1
         }
         
         /// <summary>
-        /// 
+        /// 切换裸金属服务器的操作系统
         ///
         /// 切换裸金属服务器的操作系统。切换操作系统支持密码或者密钥注入，该接口支持企业项目细粒度权限的校验，具体细粒度请参见 bms:servers:changeOS
         /// 

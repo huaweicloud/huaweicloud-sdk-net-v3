@@ -378,6 +378,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             public static readonly ObjectTypeEnum DISK = new ObjectTypeEnum("disk");
 
             /// <summary>
+            /// Enum TURBO for value: turbo
+            /// </summary>
+            public static readonly ObjectTypeEnum TURBO = new ObjectTypeEnum("turbo");
+
+            /// <summary>
             /// Enum WORKSPACE for value: workspace
             /// </summary>
             public static readonly ObjectTypeEnum WORKSPACE = new ObjectTypeEnum("workspace");
@@ -402,6 +407,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             {
                 { "server", SERVER },
                 { "disk", DISK },
+                { "turbo", TURBO },
                 { "workspace", WORKSPACE },
                 { "vmware", VMWARE },
                 { "rds", RDS },
@@ -637,11 +643,35 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             /// </summary>
             public static readonly SpecCodeEnum VAULT_BACKUP_VOLUME_NORMAL = new SpecCodeEnum("vault.backup.volume.normal");
 
+            /// <summary>
+            /// Enum VAULT_BACKUP_TURBO_NORMAL for value: vault.backup.turbo.normal
+            /// </summary>
+            public static readonly SpecCodeEnum VAULT_BACKUP_TURBO_NORMAL = new SpecCodeEnum("vault.backup.turbo.normal");
+
+            /// <summary>
+            /// Enum VAULT_BACKUP_DATABASE_NORMAL for value: vault.backup.database.normal
+            /// </summary>
+            public static readonly SpecCodeEnum VAULT_BACKUP_DATABASE_NORMAL = new SpecCodeEnum("vault.backup.database.normal");
+
+            /// <summary>
+            /// Enum VAULT_HYBRID_SERVER_NORMAL for value: vault.hybrid.server.normal
+            /// </summary>
+            public static readonly SpecCodeEnum VAULT_HYBRID_SERVER_NORMAL = new SpecCodeEnum("vault.hybrid.server.normal");
+
+            /// <summary>
+            /// Enum VAULT_REPLICATION_SERVER_NORMAL for value: vault.replication.server.normal
+            /// </summary>
+            public static readonly SpecCodeEnum VAULT_REPLICATION_SERVER_NORMAL = new SpecCodeEnum("vault.replication.server.normal");
+
             private static readonly Dictionary<string, SpecCodeEnum> StaticFields =
             new Dictionary<string, SpecCodeEnum>()
             {
                 { "vault.backup.server.normal", VAULT_BACKUP_SERVER_NORMAL },
                 { "vault.backup.volume.normal", VAULT_BACKUP_VOLUME_NORMAL },
+                { "vault.backup.turbo.normal", VAULT_BACKUP_TURBO_NORMAL },
+                { "vault.backup.database.normal", VAULT_BACKUP_DATABASE_NORMAL },
+                { "vault.hybrid.server.normal", VAULT_HYBRID_SERVER_NORMAL },
+                { "vault.replication.server.normal", VAULT_REPLICATION_SERVER_NORMAL },
             };
 
             private string _value;

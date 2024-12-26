@@ -723,6 +723,33 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         }
         
         /// <summary>
+        /// 升级终端节点服务
+        ///
+        /// 升级终端节点服务，使终端节点服务支持创建专业型终端节点实例
+        /// 该接口仅支持在华东二、中东-利雅得、华东-青岛、非洲-开罗局点调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpgradeEndpointServiceResponse> UpgradeEndpointServiceAsync(UpgradeEndpointServiceRequest upgradeEndpointServiceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_endpoint_service_id", upgradeEndpointServiceRequest.VpcEndpointServiceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeEndpointServiceRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<UpgradeEndpointServiceResponse>(response);
+        }
+
+        public AsyncInvoker<UpgradeEndpointServiceResponse> UpgradeEndpointServiceAsyncInvoker(UpgradeEndpointServiceRequest upgradeEndpointServiceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("vpc_endpoint_service_id", upgradeEndpointServiceRequest.VpcEndpointServiceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeEndpointServiceRequest);
+            return new AsyncInvoker<UpgradeEndpointServiceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpgradeEndpointServiceResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加或删除资源标签接口
         ///
         /// 为指定Endpoint Service或Endpoint批量添加或删除标签。

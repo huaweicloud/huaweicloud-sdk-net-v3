@@ -30,20 +30,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("log_stream_name", NullValueHandling = NullValueHandling.Ignore)]
         public string LogStreamName { get; set; }
 
-        /// <summary>
-        /// 查询游标，初始传入0，后续从上一次的返回值中获取
-        /// </summary>
-        [SDKProperty("offset", IsQuery = true)]
-        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Offset { get; set; }
-
-        /// <summary>
-        /// 每页数据量，最大值为100
-        /// </summary>
-        [SDKProperty("limit", IsQuery = true)]
-        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Limit { get; set; }
-
 
 
         /// <summary>
@@ -55,8 +41,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("class ListLogStreamsRequest {\n");
             sb.Append("  logGroupName: ").Append(LogGroupName).Append("\n");
             sb.Append("  logStreamName: ").Append(LogStreamName).Append("\n");
-            sb.Append("  offset: ").Append(Offset).Append("\n");
-            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -77,8 +61,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (input == null) return false;
             if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
             if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
-            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
-            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
             return true;
         }
@@ -93,8 +75,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 var hashCode = 41;
                 if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
                 if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
-                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

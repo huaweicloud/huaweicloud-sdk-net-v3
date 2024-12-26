@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 保留时长（天）
         /// </summary>
         [JsonProperty("retention_days", NullValueHandling = NullValueHandling.Ignore)]
-        public string RetentionDays { get; set; }
+        public int? RetentionDays { get; set; }
 
 
 

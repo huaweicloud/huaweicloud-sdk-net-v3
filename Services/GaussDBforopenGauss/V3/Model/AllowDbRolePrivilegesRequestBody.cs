@@ -23,10 +23,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string DbName { get; set; }
 
         /// <summary>
-        /// 角色权限信息。
+        /// 
         /// </summary>
         [JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
-        public Object User { get; set; }
+        public GaussDBforOpenGaussRoleAttributes User { get; set; }
 
 
 

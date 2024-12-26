@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string AccessConfigId { get; set; }
 
         /// <summary>
+        /// 日志接入名称。 满足正则表达式：^(?!.)(?!)(?!.*?.$)[\\u4e00-\\u9fa5a-zA-Z0-9-.]{1,64}$
+        /// </summary>
+        [JsonProperty("access_config_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccessConfigName { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("access_config_detail", NullValueHandling = NullValueHandling.Ignore)]
@@ -122,6 +128,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateAccessConfigRequestBody {\n");
             sb.Append("  accessConfigId: ").Append(AccessConfigId).Append("\n");
+            sb.Append("  accessConfigName: ").Append(AccessConfigName).Append("\n");
             sb.Append("  accessConfigDetail: ").Append(AccessConfigDetail).Append("\n");
             sb.Append("  hostGroupInfo: ").Append(HostGroupInfo).Append("\n");
             sb.Append("  accessConfigTag: ").Append(AccessConfigTag).Append("\n");
@@ -156,6 +163,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             if (input == null) return false;
             if (this.AccessConfigId != input.AccessConfigId || (this.AccessConfigId != null && !this.AccessConfigId.Equals(input.AccessConfigId))) return false;
+            if (this.AccessConfigName != input.AccessConfigName || (this.AccessConfigName != null && !this.AccessConfigName.Equals(input.AccessConfigName))) return false;
             if (this.AccessConfigDetail != input.AccessConfigDetail || (this.AccessConfigDetail != null && !this.AccessConfigDetail.Equals(input.AccessConfigDetail))) return false;
             if (this.HostGroupInfo != input.HostGroupInfo || (this.HostGroupInfo != null && !this.HostGroupInfo.Equals(input.HostGroupInfo))) return false;
             if (this.AccessConfigTag != input.AccessConfigTag || (this.AccessConfigTag != null && input.AccessConfigTag != null && !this.AccessConfigTag.SequenceEqual(input.AccessConfigTag))) return false;
@@ -184,6 +192,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             {
                 var hashCode = 41;
                 if (this.AccessConfigId != null) hashCode = hashCode * 59 + this.AccessConfigId.GetHashCode();
+                if (this.AccessConfigName != null) hashCode = hashCode * 59 + this.AccessConfigName.GetHashCode();
                 if (this.AccessConfigDetail != null) hashCode = hashCode * 59 + this.AccessConfigDetail.GetHashCode();
                 if (this.HostGroupInfo != null) hashCode = hashCode * 59 + this.HostGroupInfo.GetHashCode();
                 if (this.AccessConfigTag != null) hashCode = hashCode * 59 + this.AccessConfigTag.GetHashCode();

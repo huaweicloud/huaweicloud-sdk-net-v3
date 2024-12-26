@@ -256,6 +256,30 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Tags { get; set; }
 
+        /// <summary>
+        /// dms转储JSON格式选填，可以转储tag字段
+        /// </summary>
+        [JsonProperty("lts_tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> LtsTags { get; set; }
+
+        /// <summary>
+        /// dms转储JSON格式选填，可以转储日志流标签字段
+        /// </summary>
+        [JsonProperty("stream_tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> StreamTags { get; set; }
+
+        /// <summary>
+        /// dms转储JSON格式选填，可以转储结构化字段
+        /// </summary>
+        [JsonProperty("struct_fields", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> StructFields { get; set; }
+
+        /// <summary>
+        /// dms转储JSON格式选填，无效字段填充
+        /// </summary>
+        [JsonProperty("invalid_field_value", NullValueHandling = NullValueHandling.Ignore)]
+        public string InvalidFieldValue { get; set; }
+
 
 
         /// <summary>
@@ -281,6 +305,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  obsTimeZone: ").Append(ObsTimeZone).Append("\n");
             sb.Append("  obsTimeZoneId: ").Append(ObsTimeZoneId).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  ltsTags: ").Append(LtsTags).Append("\n");
+            sb.Append("  streamTags: ").Append(StreamTags).Append("\n");
+            sb.Append("  structFields: ").Append(StructFields).Append("\n");
+            sb.Append("  invalidFieldValue: ").Append(InvalidFieldValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -315,6 +343,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.ObsTimeZone != input.ObsTimeZone || (this.ObsTimeZone != null && !this.ObsTimeZone.Equals(input.ObsTimeZone))) return false;
             if (this.ObsTimeZoneId != input.ObsTimeZoneId || (this.ObsTimeZoneId != null && !this.ObsTimeZoneId.Equals(input.ObsTimeZoneId))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.LtsTags != input.LtsTags || (this.LtsTags != null && input.LtsTags != null && !this.LtsTags.SequenceEqual(input.LtsTags))) return false;
+            if (this.StreamTags != input.StreamTags || (this.StreamTags != null && input.StreamTags != null && !this.StreamTags.SequenceEqual(input.StreamTags))) return false;
+            if (this.StructFields != input.StructFields || (this.StructFields != null && input.StructFields != null && !this.StructFields.SequenceEqual(input.StructFields))) return false;
+            if (this.InvalidFieldValue != input.InvalidFieldValue || (this.InvalidFieldValue != null && !this.InvalidFieldValue.Equals(input.InvalidFieldValue))) return false;
 
             return true;
         }
@@ -343,6 +375,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.ObsTimeZone != null) hashCode = hashCode * 59 + this.ObsTimeZone.GetHashCode();
                 if (this.ObsTimeZoneId != null) hashCode = hashCode * 59 + this.ObsTimeZoneId.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.LtsTags != null) hashCode = hashCode * 59 + this.LtsTags.GetHashCode();
+                if (this.StreamTags != null) hashCode = hashCode * 59 + this.StreamTags.GetHashCode();
+                if (this.StructFields != null) hashCode = hashCode * 59 + this.StructFields.GetHashCode();
+                if (this.InvalidFieldValue != null) hashCode = hashCode * 59 + this.InvalidFieldValue.GetHashCode();
                 return hashCode;
             }
         }

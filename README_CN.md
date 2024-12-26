@@ -1100,3 +1100,22 @@ namespace WpfApp1
     }
 }
 ```
+
+3、云联盟场景如何调用
+
+``` csharp
+// 指定终端节点，以 云联盟都柏林节点调用 VPC 服务为例
+String endpoint = "https://vpc.eu-west-101.myhuaweicloud.com";
+
+// 初始化客户端认证信息，需要填写相应 projectId/domainId，以初始化 BasicCredentials 为例
+var ak = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_AK");
+var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
+var projectId = "{your projectId string}";
+Credentials basicCredentials = new BasicCredentials(ak, sk, projectId);
+
+// 初始化指定云服务的客户端 {Service}Client，以初始化 Region 级服务 VPC 的 VpcClient 为例
+VpcClient vpcClient = VpcClient.NewBuilder()
+    .WithCredential(basicCredentials)
+    .WithEndPoint(endpoint)
+    .Build();
+```

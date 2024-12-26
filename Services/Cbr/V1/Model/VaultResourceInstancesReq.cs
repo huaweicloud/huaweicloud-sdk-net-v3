@@ -147,11 +147,41 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             /// </summary>
             public static readonly ObjectTypeEnum DISK = new ObjectTypeEnum("disk");
 
+            /// <summary>
+            /// Enum TURBO for value: turbo
+            /// </summary>
+            public static readonly ObjectTypeEnum TURBO = new ObjectTypeEnum("turbo");
+
+            /// <summary>
+            /// Enum WORKSPACE for value: workspace
+            /// </summary>
+            public static readonly ObjectTypeEnum WORKSPACE = new ObjectTypeEnum("workspace");
+
+            /// <summary>
+            /// Enum VMWARE for value: vmware
+            /// </summary>
+            public static readonly ObjectTypeEnum VMWARE = new ObjectTypeEnum("vmware");
+
+            /// <summary>
+            /// Enum RDS for value: rds
+            /// </summary>
+            public static readonly ObjectTypeEnum RDS = new ObjectTypeEnum("rds");
+
+            /// <summary>
+            /// Enum FILE for value: file
+            /// </summary>
+            public static readonly ObjectTypeEnum FILE = new ObjectTypeEnum("file");
+
             private static readonly Dictionary<string, ObjectTypeEnum> StaticFields =
             new Dictionary<string, ObjectTypeEnum>()
             {
                 { "server", SERVER },
                 { "disk", DISK },
+                { "turbo", TURBO },
+                { "workspace", WORKSPACE },
+                { "vmware", VMWARE },
+                { "rds", RDS },
+                { "file", FILE },
             };
 
             private string _value;
