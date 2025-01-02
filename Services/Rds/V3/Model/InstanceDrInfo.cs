@@ -83,6 +83,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string SlaveRegion { get; set; }
 
         /// <summary>
+        /// 搭建流程。master表示配置主实例容灾能力流程。slave表示配置灾备实例容灾能力流程。
+        /// </summary>
+        [JsonProperty("build_process", NullValueHandling = NullValueHandling.Ignore)]
+        public string BuildProcess { get; set; }
+
+        /// <summary>
         /// 灾备搭建时间
         /// </summary>
         [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
@@ -108,6 +114,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  masterRegion: ").Append(MasterRegion).Append("\n");
             sb.Append("  slaveInstanceId: ").Append(SlaveInstanceId).Append("\n");
             sb.Append("  slaveRegion: ").Append(SlaveRegion).Append("\n");
+            sb.Append("  buildProcess: ").Append(BuildProcess).Append("\n");
             sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -138,6 +145,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.MasterRegion != input.MasterRegion || (this.MasterRegion != null && !this.MasterRegion.Equals(input.MasterRegion))) return false;
             if (this.SlaveInstanceId != input.SlaveInstanceId || (this.SlaveInstanceId != null && !this.SlaveInstanceId.Equals(input.SlaveInstanceId))) return false;
             if (this.SlaveRegion != input.SlaveRegion || (this.SlaveRegion != null && !this.SlaveRegion.Equals(input.SlaveRegion))) return false;
+            if (this.BuildProcess != input.BuildProcess || (this.BuildProcess != null && !this.BuildProcess.Equals(input.BuildProcess))) return false;
             if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
 
             return true;
@@ -162,6 +170,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.MasterRegion != null) hashCode = hashCode * 59 + this.MasterRegion.GetHashCode();
                 if (this.SlaveInstanceId != null) hashCode = hashCode * 59 + this.SlaveInstanceId.GetHashCode();
                 if (this.SlaveRegion != null) hashCode = hashCode * 59 + this.SlaveRegion.GetHashCode();
+                if (this.BuildProcess != null) hashCode = hashCode * 59 + this.BuildProcess.GetHashCode();
                 if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 return hashCode;
             }

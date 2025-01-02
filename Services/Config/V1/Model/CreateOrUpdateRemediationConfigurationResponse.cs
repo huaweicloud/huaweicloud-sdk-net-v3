@@ -35,6 +35,18 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         public string TargetId { get; set; }
 
         /// <summary>
+        /// 修正执行的目标的regionId。如果修正方式为RFS，该字段为空则Config服务会默认配置北京四（中国站）或香港一（国际站）的regionId；如果修正方式为FGS，该字段为空则Config服务会根据实例urn自动配置。指定target_project_id字段则该字段必选。
+        /// </summary>
+        [JsonProperty("target_region_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetRegionId { get; set; }
+
+        /// <summary>
+        /// 修正执行的目标的projectId。如果修正方式为RFS，该字段为空则Config服务会默认配置北京四（中国站）或香港一（国际站）的主projectId；如果修正方式为FGS，该字段为空则Config服务会根据实例urn自动配置。指定target_region_id字段则该字段必选。
+        /// </summary>
+        [JsonProperty("target_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetProjectId { get; set; }
+
+        /// <summary>
         /// 修正执行的参数。
         /// </summary>
         [JsonProperty("static_parameter", NullValueHandling = NullValueHandling.Ignore)]
@@ -100,6 +112,8 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             sb.Append("  automatic: ").Append(Automatic).Append("\n");
             sb.Append("  targetType: ").Append(TargetType).Append("\n");
             sb.Append("  targetId: ").Append(TargetId).Append("\n");
+            sb.Append("  targetRegionId: ").Append(TargetRegionId).Append("\n");
+            sb.Append("  targetProjectId: ").Append(TargetProjectId).Append("\n");
             sb.Append("  staticParameter: ").Append(StaticParameter).Append("\n");
             sb.Append("  resourceParameter: ").Append(ResourceParameter).Append("\n");
             sb.Append("  maximumAttempts: ").Append(MaximumAttempts).Append("\n");
@@ -130,6 +144,8 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             if (this.Automatic != input.Automatic || (this.Automatic != null && !this.Automatic.Equals(input.Automatic))) return false;
             if (this.TargetType != input.TargetType || (this.TargetType != null && !this.TargetType.Equals(input.TargetType))) return false;
             if (this.TargetId != input.TargetId || (this.TargetId != null && !this.TargetId.Equals(input.TargetId))) return false;
+            if (this.TargetRegionId != input.TargetRegionId || (this.TargetRegionId != null && !this.TargetRegionId.Equals(input.TargetRegionId))) return false;
+            if (this.TargetProjectId != input.TargetProjectId || (this.TargetProjectId != null && !this.TargetProjectId.Equals(input.TargetProjectId))) return false;
             if (this.StaticParameter != input.StaticParameter || (this.StaticParameter != null && input.StaticParameter != null && !this.StaticParameter.SequenceEqual(input.StaticParameter))) return false;
             if (this.ResourceParameter != input.ResourceParameter || (this.ResourceParameter != null && !this.ResourceParameter.Equals(input.ResourceParameter))) return false;
             if (this.MaximumAttempts != input.MaximumAttempts || (this.MaximumAttempts != null && !this.MaximumAttempts.Equals(input.MaximumAttempts))) return false;
@@ -154,6 +170,8 @@ namespace HuaweiCloud.SDK.Config.V1.Model
                 if (this.Automatic != null) hashCode = hashCode * 59 + this.Automatic.GetHashCode();
                 if (this.TargetType != null) hashCode = hashCode * 59 + this.TargetType.GetHashCode();
                 if (this.TargetId != null) hashCode = hashCode * 59 + this.TargetId.GetHashCode();
+                if (this.TargetRegionId != null) hashCode = hashCode * 59 + this.TargetRegionId.GetHashCode();
+                if (this.TargetProjectId != null) hashCode = hashCode * 59 + this.TargetProjectId.GetHashCode();
                 if (this.StaticParameter != null) hashCode = hashCode * 59 + this.StaticParameter.GetHashCode();
                 if (this.ResourceParameter != null) hashCode = hashCode * 59 + this.ResourceParameter.GetHashCode();
                 if (this.MaximumAttempts != null) hashCode = hashCode * 59 + this.MaximumAttempts.GetHashCode();

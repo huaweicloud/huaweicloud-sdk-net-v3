@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         /// 
         /// </summary>
         [JsonProperty("resource", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourceEntity Resource { get; set; }
+        public BaseResourceEntity Resource { get; set; }
 
 
 

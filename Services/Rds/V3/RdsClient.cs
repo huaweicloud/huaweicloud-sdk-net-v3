@@ -1753,6 +1753,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询只读实例可恢复到主实例的库
+        ///
+        /// 查询只读实例可恢复到主实例的库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListReadOnlyReplayDatabaseResponse ListReadOnlyReplayDatabase(ListReadOnlyReplayDatabaseRequest listReadOnlyReplayDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listReadOnlyReplayDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/log-replay/database", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReadOnlyReplayDatabaseRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListReadOnlyReplayDatabaseResponse>(response);
+        }
+
+        public SyncInvoker<ListReadOnlyReplayDatabaseResponse> ListReadOnlyReplayDatabaseInvoker(ListReadOnlyReplayDatabaseRequest listReadOnlyReplayDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listReadOnlyReplayDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/log-replay/database", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listReadOnlyReplayDatabaseRequest);
+            return new SyncInvoker<ListReadOnlyReplayDatabaseResponse>(this, "GET", request, JsonUtils.DeSerialize<ListReadOnlyReplayDatabaseResponse>);
+        }
+        
+        /// <summary>
         /// 查询回收站
         ///
         /// 查询回收站实例信息
@@ -2267,6 +2293,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/recovery", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreExistInstanceRequest);
             return new SyncInvoker<RestoreExistInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreExistInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 延迟库只读，恢复库到主实例
+        ///
+        /// 延迟库只读，恢复库到主实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RestoreLogReplayDatabaseResponse RestoreLogReplayDatabase(RestoreLogReplayDatabaseRequest restoreLogReplayDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restoreLogReplayDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/log-replay/database", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreLogReplayDatabaseRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RestoreLogReplayDatabaseResponse>(response);
+        }
+
+        public SyncInvoker<RestoreLogReplayDatabaseResponse> RestoreLogReplayDatabaseInvoker(RestoreLogReplayDatabaseRequest restoreLogReplayDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", restoreLogReplayDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/log-replay/database", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreLogReplayDatabaseRequest);
+            return new SyncInvoker<RestoreLogReplayDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreLogReplayDatabaseResponse>);
         }
         
         /// <summary>

@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Config.V1.Model
 {
     /// <summary>
-    /// Response Object
+    /// 资源对象
     /// </summary>
-    public class ShowResourceByIdResponse : SdkResponse
+    public class BaseResourceEntity 
     {
 
         /// <summary>
@@ -106,12 +106,6 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         [JsonProperty("properties", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Object> Properties { get; set; }
 
-        /// <summary>
-        /// 资源状态，保有中（Normal）/已删除(Deleted)
-        /// </summary>
-        [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public string State { get; set; }
-
 
 
         /// <summary>
@@ -120,7 +114,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ShowResourceByIdResponse {\n");
+            sb.Append("class BaseResourceEntity {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  provider: ").Append(Provider).Append("\n");
@@ -136,7 +130,6 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             sb.Append("  provisioningState: ").Append(ProvisioningState).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  properties: ").Append(Properties).Append("\n");
-            sb.Append("  state: ").Append(State).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -146,13 +139,13 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ShowResourceByIdResponse);
+            return this.Equals(input as BaseResourceEntity);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ShowResourceByIdResponse input)
+        public bool Equals(BaseResourceEntity input)
         {
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
@@ -170,7 +163,6 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             if (this.ProvisioningState != input.ProvisioningState || (this.ProvisioningState != null && !this.ProvisioningState.Equals(input.ProvisioningState))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.Properties != input.Properties || (this.Properties != null && input.Properties != null && !this.Properties.SequenceEqual(input.Properties))) return false;
-            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
 
             return true;
         }
@@ -198,7 +190,6 @@ namespace HuaweiCloud.SDK.Config.V1.Model
                 if (this.ProvisioningState != null) hashCode = hashCode * 59 + this.ProvisioningState.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Properties != null) hashCode = hashCode * 59 + this.Properties.GetHashCode();
-                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 return hashCode;
             }
         }

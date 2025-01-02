@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Cfw.V1.Model
+namespace HuaweiCloud.SDK.Rds.V3.Model
 {
     /// <summary>
-    /// Response Object
+    /// 库回放请求体
     /// </summary>
-    public class ListCustomerIpsResponse : SdkResponse
+    public class LogReplayDatabaseReq 
     {
 
         /// <summary>
-        /// 
+        /// 需要恢复的库名列表
         /// </summary>
-        [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public HttpListCustomerIpsResponseData Data { get; set; }
+        [JsonProperty("databases", NullValueHandling = NullValueHandling.Ignore)]
+        public List<RestoreInfo> Databases { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListCustomerIpsResponse {\n");
-            sb.Append("  data: ").Append(Data).Append("\n");
+            sb.Append("class LogReplayDatabaseReq {\n");
+            sb.Append("  databases: ").Append(Databases).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +41,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListCustomerIpsResponse);
+            return this.Equals(input as LogReplayDatabaseReq);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListCustomerIpsResponse input)
+        public bool Equals(LogReplayDatabaseReq input)
         {
             if (input == null) return false;
-            if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
+            if (this.Databases != input.Databases || (this.Databases != null && input.Databases != null && !this.Databases.SequenceEqual(input.Databases))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.Databases != null) hashCode = hashCode * 59 + this.Databases.GetHashCode();
                 return hashCode;
             }
         }

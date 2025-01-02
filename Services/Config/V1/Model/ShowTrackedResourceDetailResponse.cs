@@ -95,12 +95,6 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         public string ProvisioningState { get; set; }
 
         /// <summary>
-        /// 资源状态，保有中（Normal）/已删除(Deleted)
-        /// </summary>
-        [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public string State { get; set; }
-
-        /// <summary>
         /// 资源Tag
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
@@ -111,6 +105,12 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         /// </summary>
         [JsonProperty("properties", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Object> Properties { get; set; }
+
+        /// <summary>
+        /// 资源状态，保有中（Normal）/已删除(Deleted)
+        /// </summary>
+        [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
+        public string State { get; set; }
 
 
 
@@ -134,9 +134,9 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
             sb.Append("  provisioningState: ").Append(ProvisioningState).Append("\n");
-            sb.Append("  state: ").Append(State).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  properties: ").Append(Properties).Append("\n");
+            sb.Append("  state: ").Append(State).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -168,9 +168,9 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
             if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
             if (this.ProvisioningState != input.ProvisioningState || (this.ProvisioningState != null && !this.ProvisioningState.Equals(input.ProvisioningState))) return false;
-            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.Properties != input.Properties || (this.Properties != null && input.Properties != null && !this.Properties.SequenceEqual(input.Properties))) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
 
             return true;
         }
@@ -196,9 +196,9 @@ namespace HuaweiCloud.SDK.Config.V1.Model
                 if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
                 if (this.ProvisioningState != null) hashCode = hashCode * 59 + this.ProvisioningState.GetHashCode();
-                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Properties != null) hashCode = hashCode * 59 + this.Properties.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 return hashCode;
             }
         }

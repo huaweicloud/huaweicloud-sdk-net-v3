@@ -40,18 +40,6 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         [JsonProperty("agency_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AgencyName { get; set; }
 
-        /// <summary>
-        /// 账号ID
-        /// </summary>
-        [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DomainId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("frozen_status", NullValueHandling = NullValueHandling.Ignore)]
-        public FrozenStatus FrozenStatus { get; set; }
-
 
 
         /// <summary>
@@ -65,8 +53,6 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             sb.Append("  selector: ").Append(Selector).Append("\n");
             sb.Append("  retentionPeriodInDays: ").Append(RetentionPeriodInDays).Append("\n");
             sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
-            sb.Append("  domainId: ").Append(DomainId).Append("\n");
-            sb.Append("  frozenStatus: ").Append(FrozenStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -89,8 +75,6 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             if (this.Selector != input.Selector || (this.Selector != null && !this.Selector.Equals(input.Selector))) return false;
             if (this.RetentionPeriodInDays != input.RetentionPeriodInDays || (this.RetentionPeriodInDays != null && !this.RetentionPeriodInDays.Equals(input.RetentionPeriodInDays))) return false;
             if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
-            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
-            if (this.FrozenStatus != input.FrozenStatus || (this.FrozenStatus != null && !this.FrozenStatus.Equals(input.FrozenStatus))) return false;
 
             return true;
         }
@@ -107,8 +91,6 @@ namespace HuaweiCloud.SDK.Config.V1.Model
                 if (this.Selector != null) hashCode = hashCode * 59 + this.Selector.GetHashCode();
                 if (this.RetentionPeriodInDays != null) hashCode = hashCode * 59 + this.RetentionPeriodInDays.GetHashCode();
                 if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
-                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.FrozenStatus != null) hashCode = hashCode * 59 + this.FrozenStatus.GetHashCode();
                 return hashCode;
             }
         }

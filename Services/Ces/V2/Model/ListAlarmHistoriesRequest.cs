@@ -16,6 +16,121 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListAlarmHistoriesRequest 
     {
         /// <summary>
+        /// 告警类型，event：查询事件类型告警，metric：查询指标类型告警
+        /// </summary>
+        /// <value>告警类型，event：查询事件类型告警，metric：查询指标类型告警</value>
+        [JsonConverter(typeof(EnumClassConverter<AlarmTypeEnum>))]
+        public class AlarmTypeEnum
+        {
+            /// <summary>
+            /// Enum EVENT for value: event
+            /// </summary>
+            public static readonly AlarmTypeEnum EVENT = new AlarmTypeEnum("event");
+
+            /// <summary>
+            /// Enum METRIC for value: metric
+            /// </summary>
+            public static readonly AlarmTypeEnum METRIC = new AlarmTypeEnum("metric");
+
+            private static readonly Dictionary<string, AlarmTypeEnum> StaticFields =
+            new Dictionary<string, AlarmTypeEnum>()
+            {
+                { "event", EVENT },
+                { "metric", METRIC },
+            };
+
+            private string _value;
+
+            public AlarmTypeEnum()
+            {
+
+            }
+
+            public AlarmTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static AlarmTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as AlarmTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(AlarmTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(AlarmTypeEnum a, AlarmTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(AlarmTypeEnum a, AlarmTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 按关键字排序, 默认为update_time, {first_alarm_time: 告警产生时间, update_time: 更新时间, alarm_level: 告警级别, record_id：表记录主键} 
         /// </summary>
         /// <value>按关键字排序, 默认为update_time, {first_alarm_time: 告警产生时间, update_time: 更新时间, alarm_level: 告警级别, record_id：表记录主键} </value>
@@ -165,6 +280,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// 告警类型，event：查询事件类型告警，metric：查询指标类型告警
+        /// </summary>
+        [SDKProperty("alarm_type", IsQuery = true)]
+        [JsonProperty("alarm_type", NullValueHandling = NullValueHandling.Ignore)]
+        public AlarmTypeEnum AlarmType { get; set; }
+        /// <summary>
         /// 告警规则状态, ok为正常，alarm为告警，invalid为已失效
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
@@ -238,6 +359,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  alarmId: ").Append(AlarmId).Append("\n");
             sb.Append("  recordId: ").Append(RecordId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  alarmType: ").Append(AlarmType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  level: ").Append(Level).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
@@ -268,6 +390,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.AlarmId != input.AlarmId || (this.AlarmId != null && !this.AlarmId.Equals(input.AlarmId))) return false;
             if (this.RecordId != input.RecordId || (this.RecordId != null && !this.RecordId.Equals(input.RecordId))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.AlarmType != input.AlarmType) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
             if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
@@ -292,6 +415,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.AlarmId != null) hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
                 if (this.RecordId != null) hashCode = hashCode * 59 + this.RecordId.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.AlarmType.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();
                 if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();

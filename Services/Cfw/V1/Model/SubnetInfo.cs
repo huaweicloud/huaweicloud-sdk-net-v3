@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// 子网所在的可用区标识，从终端节点获取，参考[终端节点](cfw_02_0003.xml)
+        /// 子网所在的可用区标识，从终端节点获取，参考[终端节点](cfw_02_0000.xml)
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }

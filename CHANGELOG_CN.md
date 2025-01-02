@@ -1,3 +1,119 @@
+# 3.1.128 2025-01-02
+
+### HuaweiCloud SDK CES
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateAlarmTemplate**
+    - 请求参数变更
+      - `+ template_type`
+  - **ListAlarmHistories**
+    - 请求参数变更
+      - `+ alarm_type`
+
+### HuaweiCloud SDK CFW
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowIpsUpdateTime**
+    - 响应参数变更
+      - `- trace_id`
+      - `- error_description`
+      - `- job_id`
+      - `- error_code`
+      - `- fail_reason`
+      - `- order_id`
+  - **ListCustomerIps**
+    - 响应参数变更
+      - `* data: object<PageInfo«CustomerIpsListVO»> -> object<HttpListCustomerIpsResponseData>`
+
+### HuaweiCloud SDK Config
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowRemediationConfiguration**
+    - 响应参数变更
+      - `+ target_region_id`
+      - `+ target_project_id`
+  - **CreateOrUpdateRemediationConfiguration**
+    - 请求参数变更
+      - `+ target_region_id`
+      - `+ target_project_id`
+    - 响应参数变更
+      - `+ target_region_id`
+      - `+ target_project_id`
+  - **CreateTrackerConfig**
+    - 请求参数变更
+      - `- domain_id`
+      - `- agency_name`
+      - `- channel`
+      - `- retention_period_in_days`
+      - `- frozen_status`
+      - `- selector`
+  - **ShowResourceHistory**
+    - 响应参数变更
+      - `- provisioning_state`
+      - `- created`
+      - `- region_id`
+      - `- type`
+      - `- project_name`
+      - `- ep_id`
+      - `- tags`
+      - `- provider`
+      - `- project_id`
+      - `- name`
+      - `- checksum`
+      - `- id`
+      - `- state`
+      - `- ep_name`
+      - `- updated`
+      - `- properties`
+      - `- items.resource.state`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListReadOnlyReplayDatabase`、`RestoreLogReplayDatabase`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAuditlogs**
+    - 响应参数变更
+      - `* auditlogs.size: int64 -> double`
+  - **ListDrInfos**
+    - 响应参数变更
+      - `+ instance_dr_infos.build_process`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListVpcs**
+    - 请求参数变更
+      - `+ enterprise_project_id`
+
 # 3.1.127 2024-12-26
 
 ### HuaweiCloud SDK CBR
