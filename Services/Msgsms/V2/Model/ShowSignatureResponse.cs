@@ -160,6 +160,18 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         [JsonProperty("signature_usage", NullValueHandling = NullValueHandling.Ignore)]
         public string SignatureUsage { get; set; }
 
+        /// <summary>
+        /// 资质ID
+        /// </summary>
+        [JsonProperty("qualification_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string QualificationId { get; set; }
+
+        /// <summary>
+        /// 资质名
+        /// </summary>
+        [JsonProperty("qualification_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string QualificationName { get; set; }
+
 
 
         /// <summary>
@@ -193,6 +205,8 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
             sb.Append("  appKey: ").Append(AppKey).Append("\n");
             sb.Append("  sourceTitleContent: ").Append(SourceTitleContent).Append("\n");
             sb.Append("  signatureUsage: ").Append(SignatureUsage).Append("\n");
+            sb.Append("  qualificationId: ").Append(QualificationId).Append("\n");
+            sb.Append("  qualificationName: ").Append(QualificationName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,6 +249,8 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
             if (this.AppKey != input.AppKey || (this.AppKey != null && !this.AppKey.Equals(input.AppKey))) return false;
             if (this.SourceTitleContent != input.SourceTitleContent || (this.SourceTitleContent != null && !this.SourceTitleContent.Equals(input.SourceTitleContent))) return false;
             if (this.SignatureUsage != input.SignatureUsage || (this.SignatureUsage != null && !this.SignatureUsage.Equals(input.SignatureUsage))) return false;
+            if (this.QualificationId != input.QualificationId || (this.QualificationId != null && !this.QualificationId.Equals(input.QualificationId))) return false;
+            if (this.QualificationName != input.QualificationName || (this.QualificationName != null && !this.QualificationName.Equals(input.QualificationName))) return false;
 
             return true;
         }
@@ -271,6 +287,8 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
                 if (this.AppKey != null) hashCode = hashCode * 59 + this.AppKey.GetHashCode();
                 if (this.SourceTitleContent != null) hashCode = hashCode * 59 + this.SourceTitleContent.GetHashCode();
                 if (this.SignatureUsage != null) hashCode = hashCode * 59 + this.SignatureUsage.GetHashCode();
+                if (this.QualificationId != null) hashCode = hashCode * 59 + this.QualificationId.GetHashCode();
+                if (this.QualificationName != null) hashCode = hashCode * 59 + this.QualificationName.GetHashCode();
                 return hashCode;
             }
         }

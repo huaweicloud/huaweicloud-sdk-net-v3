@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public string Priority { get; set; }
 
+        /// <summary>
+        /// 功能说明：是否启用安全组规则。 取值范围：true, false。 约束：默认值为true。
+        /// </summary>
+        [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Enabled { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  remoteAddressGroupId: ").Append(RemoteAddressGroupId).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
+            sb.Append("  enabled: ").Append(Enabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +138,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             if (this.RemoteAddressGroupId != input.RemoteAddressGroupId || (this.RemoteAddressGroupId != null && !this.RemoteAddressGroupId.Equals(input.RemoteAddressGroupId))) return false;
             if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
 
             return true;
         }
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                 if (this.RemoteAddressGroupId != null) hashCode = hashCode * 59 + this.RemoteAddressGroupId.GetHashCode();
                 if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
                 return hashCode;
             }
         }

@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         public string FileId { get; set; }
 
         /// <summary>
-        /// 是否涉及第三方权益 1. Yes: 是 2. No:
+        /// 是否涉及第三方权益 1. Yes: 是 2. No: 
         /// </summary>
         [JsonProperty("is_involved_third", NullValueHandling = NullValueHandling.Ignore)]
         public string IsInvolvedThird { get; set; }
@@ -70,6 +70,12 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         [JsonProperty("source_title_content", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceTitleContent { get; set; }
 
+        /// <summary>
+        /// 资质ID ，当前考虑存量应用的接口兼容性，代码未做强制校验，但创建签名时请务必携带资质ID，否则会导致资质审核失败
+        /// </summary>
+        [JsonProperty("qualification_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string QualificationId { get; set; }
+
 
 
         /// <summary>
@@ -88,6 +94,7 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
             sb.Append("  signatureSource: ").Append(SignatureSource).Append("\n");
             sb.Append("  signatureType: ").Append(SignatureType).Append("\n");
             sb.Append("  sourceTitleContent: ").Append(SourceTitleContent).Append("\n");
+            sb.Append("  qualificationId: ").Append(QualificationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,7 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
             if (this.SignatureSource != input.SignatureSource || (this.SignatureSource != null && !this.SignatureSource.Equals(input.SignatureSource))) return false;
             if (this.SignatureType != input.SignatureType || (this.SignatureType != null && !this.SignatureType.Equals(input.SignatureType))) return false;
             if (this.SourceTitleContent != input.SourceTitleContent || (this.SourceTitleContent != null && !this.SourceTitleContent.Equals(input.SourceTitleContent))) return false;
+            if (this.QualificationId != input.QualificationId || (this.QualificationId != null && !this.QualificationId.Equals(input.QualificationId))) return false;
 
             return true;
         }
@@ -136,6 +144,7 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
                 if (this.SignatureSource != null) hashCode = hashCode * 59 + this.SignatureSource.GetHashCode();
                 if (this.SignatureType != null) hashCode = hashCode * 59 + this.SignatureType.GetHashCode();
                 if (this.SourceTitleContent != null) hashCode = hashCode * 59 + this.SourceTitleContent.GetHashCode();
+                if (this.QualificationId != null) hashCode = hashCode * 59 + this.QualificationId.GetHashCode();
                 return hashCode;
             }
         }

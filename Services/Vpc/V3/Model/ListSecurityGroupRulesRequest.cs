@@ -73,7 +73,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         public string Direction { get; set; }
 
         /// <summary>
-        /// 功能说明：安全组规则生效策略
+        /// 功能说明：安全组规则生效策略。 取值范围：allow表示允许，deny表示拒绝。
         /// </summary>
         [SDKProperty("action", IsQuery = true)]
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
@@ -85,6 +85,34 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [SDKProperty("remote_ip_prefix", IsQuery = true)]
         [JsonProperty("remote_ip_prefix", NullValueHandling = NullValueHandling.Ignore)]
         public string RemoteIpPrefix { get; set; }
+
+        /// <summary>
+        /// 功能说明：优先级，支持多条过滤。
+        /// </summary>
+        [SDKProperty("priority", IsQuery = true)]
+        [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int?> Priority { get; set; }
+
+        /// <summary>
+        /// 功能说明：IP协议类型，支持多条过滤。 取值范围：IPv4,IPv6,ipv4,ipv6
+        /// </summary>
+        [SDKProperty("ethertype", IsQuery = true)]
+        [JsonProperty("ethertype", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Ethertype { get; set; }
+
+        /// <summary>
+        /// 功能说明：远端IP地址组ID，支持多ID过滤。
+        /// </summary>
+        [SDKProperty("remote_address_group_id", IsQuery = true)]
+        [JsonProperty("remote_address_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> RemoteAddressGroupId { get; set; }
+
+        /// <summary>
+        /// 功能说明：是否启用安全组规则，不支持多值过滤。 取值范围：true, false。
+        /// </summary>
+        [SDKProperty("enabled", IsQuery = true)]
+        [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Enabled { get; set; }
 
 
 
@@ -105,6 +133,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  direction: ").Append(Direction).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  remoteIpPrefix: ").Append(RemoteIpPrefix).Append("\n");
+            sb.Append("  priority: ").Append(Priority).Append("\n");
+            sb.Append("  ethertype: ").Append(Ethertype).Append("\n");
+            sb.Append("  remoteAddressGroupId: ").Append(RemoteAddressGroupId).Append("\n");
+            sb.Append("  enabled: ").Append(Enabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,6 +165,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             if (this.Direction != input.Direction || (this.Direction != null && !this.Direction.Equals(input.Direction))) return false;
             if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
             if (this.RemoteIpPrefix != input.RemoteIpPrefix || (this.RemoteIpPrefix != null && !this.RemoteIpPrefix.Equals(input.RemoteIpPrefix))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && input.Priority != null && !this.Priority.SequenceEqual(input.Priority))) return false;
+            if (this.Ethertype != input.Ethertype || (this.Ethertype != null && input.Ethertype != null && !this.Ethertype.SequenceEqual(input.Ethertype))) return false;
+            if (this.RemoteAddressGroupId != input.RemoteAddressGroupId || (this.RemoteAddressGroupId != null && input.RemoteAddressGroupId != null && !this.RemoteAddressGroupId.SequenceEqual(input.RemoteAddressGroupId))) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
 
             return true;
         }
@@ -155,6 +191,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                 if (this.Direction != null) hashCode = hashCode * 59 + this.Direction.GetHashCode();
                 if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
                 if (this.RemoteIpPrefix != null) hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.Ethertype != null) hashCode = hashCode * 59 + this.Ethertype.GetHashCode();
+                if (this.RemoteAddressGroupId != null) hashCode = hashCode * 59 + this.RemoteAddressGroupId.GetHashCode();
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
                 return hashCode;
             }
         }

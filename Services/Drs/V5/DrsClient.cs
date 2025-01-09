@@ -1271,6 +1271,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询委托权限详情
+        ///
+        /// 查询委托权限详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAgencyInfoResponse ShowAgencyInfo(ShowAgencyInfoRequest showAgencyInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("agency_name", showAgencyInfoRequest.AgencyName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/agency/{agency_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAgencyInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAgencyInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowAgencyInfoResponse> ShowAgencyInfoInvoker(ShowAgencyInfoRequest showAgencyInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("agency_name", showAgencyInfoRequest.AgencyName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/agency/{agency_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAgencyInfoRequest);
+            return new SyncInvoker<ShowAgencyInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAgencyInfoResponse>);
+        }
+        
+        /// <summary>
         /// 获取指定数据库表列信息
         ///
         /// 获取指定数据库表列信息
@@ -2034,6 +2060,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/update-driver", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncUserJdbcDriverRequest);
             return new SyncInvoker<SyncUserJdbcDriverResponse>(this, "PUT", request, JsonUtils.DeSerialize<SyncUserJdbcDriverResponse>);
+        }
+        
+        /// <summary>
+        /// 更新委托权限策略
+        ///
+        /// 更新委托权限策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAgencyPolicyResponse UpdateAgencyPolicy(UpdateAgencyPolicyRequest updateAgencyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("agency_name", updateAgencyPolicyRequest.AgencyName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/agency/{agency_name}/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAgencyPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAgencyPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAgencyPolicyResponse> UpdateAgencyPolicyInvoker(UpdateAgencyPolicyRequest updateAgencyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("agency_name", updateAgencyPolicyRequest.AgencyName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/agency/{agency_name}/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAgencyPolicyRequest);
+            return new SyncInvoker<UpdateAgencyPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAgencyPolicyResponse>);
         }
         
         /// <summary>

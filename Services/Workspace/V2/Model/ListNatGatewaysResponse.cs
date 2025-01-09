@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Workspace.V2.Model
+{
+    /// <summary>
+    /// Response Object
+    /// </summary>
+    public class ListNatGatewaysResponse : SdkResponse
+    {
+
+        /// <summary>
+        /// 网关实例信息列表。
+        /// </summary>
+        [JsonProperty("nat_gateways", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NatGateway> NatGateways { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ListNatGatewaysResponse {\n");
+            sb.Append("  natGateways: ").Append(NatGateways).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ListNatGatewaysResponse);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ListNatGatewaysResponse input)
+        {
+            if (input == null) return false;
+            if (this.NatGateways != input.NatGateways || (this.NatGateways != null && input.NatGateways != null && !this.NatGateways.SequenceEqual(input.NatGateways))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.NatGateways != null) hashCode = hashCode * 59 + this.NatGateways.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         [JsonProperty("variable_attributes", NullValueHandling = NullValueHandling.Ignore)]
         public List<SmsTemplateVariableAttrReq> VariableAttributes { get; set; }
 
+        /// <summary>
+        /// 流程状态 1. Pending: 待提交 2. Reviewing: 待审核 3. Disable：停用
+        /// </summary>
+        [JsonProperty("flow_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string FlowStatus { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
             sb.Append("  templateType: ").Append(TemplateType).Append("\n");
             sb.Append("  universalTemplate: ").Append(UniversalTemplate).Append("\n");
             sb.Append("  variableAttributes: ").Append(VariableAttributes).Append("\n");
+            sb.Append("  flowStatus: ").Append(FlowStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +138,7 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
             if (this.TemplateType != input.TemplateType || (this.TemplateType != null && !this.TemplateType.Equals(input.TemplateType))) return false;
             if (this.UniversalTemplate != input.UniversalTemplate || (this.UniversalTemplate != null && !this.UniversalTemplate.Equals(input.UniversalTemplate))) return false;
             if (this.VariableAttributes != input.VariableAttributes || (this.VariableAttributes != null && input.VariableAttributes != null && !this.VariableAttributes.SequenceEqual(input.VariableAttributes))) return false;
+            if (this.FlowStatus != input.FlowStatus || (this.FlowStatus != null && !this.FlowStatus.Equals(input.FlowStatus))) return false;
 
             return true;
         }
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
                 if (this.TemplateType != null) hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
                 if (this.UniversalTemplate != null) hashCode = hashCode * 59 + this.UniversalTemplate.GetHashCode();
                 if (this.VariableAttributes != null) hashCode = hashCode * 59 + this.VariableAttributes.GetHashCode();
+                if (this.FlowStatus != null) hashCode = hashCode * 59 + this.FlowStatus.GetHashCode();
                 return hashCode;
             }
         }
