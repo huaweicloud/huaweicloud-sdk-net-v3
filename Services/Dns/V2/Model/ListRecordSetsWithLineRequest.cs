@@ -45,6 +45,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public int? Offset { get; set; }
 
         /// <summary>
+        /// zone的ID。
+        /// </summary>
+        [SDKProperty("zone_id", IsQuery = true)]
+        [JsonProperty("zone_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ZoneId { get; set; }
+
+        /// <summary>
         /// 解析线路ID。
         /// </summary>
         [SDKProperty("line_id", IsQuery = true)]
@@ -80,7 +87,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 待查询的Record Set的id包含此id。  搜索模式默认为模糊搜索。  默认值为空。
+        /// 待查询的Record Set的id包含此id。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
@@ -94,7 +101,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Records { get; set; }
 
         /// <summary>
-        /// 查询结果中Record Set列表的排序字段。  取值范围：  name：域名 type：记录集类型 默认值为空，表示不排序。
+        /// 查询结果中Record Set列表的排序字段。  取值范围：  name：记录集名称 type：记录集类型 默认值为空，表示不排序。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
@@ -134,6 +141,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  zoneId: ").Append(ZoneId).Append("\n");
             sb.Append("  lineId: ").Append(LineId).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
@@ -167,6 +175,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.ZoneId != input.ZoneId || (this.ZoneId != null && !this.ZoneId.Equals(input.ZoneId))) return false;
             if (this.LineId != input.LineId || (this.LineId != null && !this.LineId.Equals(input.LineId))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
@@ -194,6 +203,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.ZoneId != null) hashCode = hashCode * 59 + this.ZoneId.GetHashCode();
                 if (this.LineId != null) hashCode = hashCode * 59 + this.LineId.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();

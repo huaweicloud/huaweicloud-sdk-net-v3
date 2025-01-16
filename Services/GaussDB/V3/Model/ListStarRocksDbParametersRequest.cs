@@ -30,6 +30,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public string XLanguage { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  新增子任务的场景，用于区分库参数是否支持修改。  **约束限制**：  非必填。  **取值范围**：  不涉及。  **默认值**：  不涉及。
+        /// </summary>
+        [SDKProperty("add_task_scenario", IsQuery = true)]
+        [JsonProperty("add_task_scenario", NullValueHandling = NullValueHandling.Ignore)]
+        public string AddTaskScenario { get; set; }
+
 
 
         /// <summary>
@@ -41,6 +48,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("class ListStarRocksDbParametersRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  addTaskScenario: ").Append(AddTaskScenario).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -61,6 +69,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (input == null) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
+            if (this.AddTaskScenario != input.AddTaskScenario || (this.AddTaskScenario != null && !this.AddTaskScenario.Equals(input.AddTaskScenario))) return false;
 
             return true;
         }
@@ -75,6 +84,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 var hashCode = 41;
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.AddTaskScenario != null) hashCode = hashCode * 59 + this.AddTaskScenario.GetHashCode();
                 return hashCode;
             }
         }

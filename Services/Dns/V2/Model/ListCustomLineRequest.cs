@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 每页返回的资源个数。  取值范围：0~500  取值一般为10，20，50。默认值为500。
+        /// 每页返回的资源个数。 当查询详细信息时：取值范围：0~100取值一般为10，20，50默认为100。 当查询概要信息时：取值范围：0~3000默认为3000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,6 +51,20 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         [JsonProperty("show_detail", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ShowDetail { get; set; }
 
+        /// <summary>
+        /// 资源状态。
+        /// </summary>
+        [SDKProperty("status", IsQuery = true)]
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// IP地址范围。
+        /// </summary>
+        [SDKProperty("ip", IsQuery = true)]
+        [JsonProperty("ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string Ip { get; set; }
+
 
 
         /// <summary>
@@ -65,6 +79,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  showDetail: ").Append(ShowDetail).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  ip: ").Append(Ip).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,6 +104,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.ShowDetail != input.ShowDetail || (this.ShowDetail != null && !this.ShowDetail.Equals(input.ShowDetail))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
 
             return true;
         }
@@ -105,6 +123,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.ShowDetail != null) hashCode = hashCode * 59 + this.ShowDetail.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
                 return hashCode;
             }
         }

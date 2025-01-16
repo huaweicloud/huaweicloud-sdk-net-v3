@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string ZoneType { get; set; }
 
         /// <summary>
-        /// 管理该zone的管理员邮箱。
+        /// 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
         /// </summary>
         [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
         public string Email { get; set; }

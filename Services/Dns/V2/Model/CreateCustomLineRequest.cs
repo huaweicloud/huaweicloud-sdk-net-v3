@@ -21,7 +21,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateCustomLines Body { get; set; }
+        public CreateCustomLineRequestBody Body { get; set; }
 
 
 

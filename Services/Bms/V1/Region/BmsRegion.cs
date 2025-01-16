@@ -43,6 +43,20 @@ namespace HuaweiCloud.SDK.Bms.V1
             "https://bms.cn-south-2.myhuaweicloud.com");
         public static readonly Region NA_MEXICO_1 = new Region("na-mexico-1",
             "https://bms.na-mexico-1.myhuaweicloud.com");
+        public static readonly Region CN_EAST_5 = new Region("cn-east-5",
+            "https://bms.cn-east-5.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
+            "https://bms.ap-southeast-4.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_11 = new Region("cn-north-11",
+            "https://bms.cn-north-11.myhuaweicloud.com");
+        public static readonly Region TR_WEST_1 = new Region("tr-west-1",
+            "https://bms.tr-west-1.myhuaweicloud.com");
+        public static readonly Region ME_EAST_1 = new Region("me-east-1",
+            "https://bms.me-east-1.myhuaweicloud.com");
+        public static readonly Region CN_EAST_4 = new Region("cn-east-4",
+            "https://bms.cn-east-4.myhuaweicloud.com");
+        public static readonly Region AF_NORTH_1 = new Region("af-north-1",
+            "https://bms.af-north-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("BMS");
 
@@ -66,6 +80,13 @@ namespace HuaweiCloud.SDK.Bms.V1
                 { "la-north-2", LA_NORTH_2 },
                 { "cn-south-2", CN_SOUTH_2 },
                 { "na-mexico-1", NA_MEXICO_1 },
+                { "cn-east-5", CN_EAST_5 },
+                { "ap-southeast-4", AP_SOUTHEAST_4 },
+                { "cn-north-11", CN_NORTH_11 },
+                { "tr-west-1", TR_WEST_1 },
+                { "me-east-1", ME_EAST_1 },
+                { "cn-east-4", CN_EAST_4 },
+                { "af-north-1", AF_NORTH_1 },
         };
 
         public static Region ValueOf(string regionId)

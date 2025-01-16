@@ -11,16 +11,28 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class BatchUpdateRecordSetWithLineReq 
+    public class BatchSetRecordSetsStatusResponse : SdkResponse
     {
 
         /// <summary>
-        /// RecordSet 列表。
+        /// 
+        /// </summary>
+        [JsonProperty("links", NullValueHandling = NullValueHandling.Ignore)]
+        public Link Links { get; set; }
+
+        /// <summary>
+        /// 设置record set的列表响应。
         /// </summary>
         [JsonProperty("recordsets", NullValueHandling = NullValueHandling.Ignore)]
-        public List<BatchUpdateRecordSet> Recordsets { get; set; }
+        public List<RecordsetData> Recordsets { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public Metadata Metadata { get; set; }
 
 
 
@@ -30,8 +42,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class BatchUpdateRecordSetWithLineReq {\n");
+            sb.Append("class BatchSetRecordSetsStatusResponse {\n");
+            sb.Append("  links: ").Append(Links).Append("\n");
             sb.Append("  recordsets: ").Append(Recordsets).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +55,18 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BatchUpdateRecordSetWithLineReq);
+            return this.Equals(input as BatchSetRecordSetsStatusResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(BatchUpdateRecordSetWithLineReq input)
+        public bool Equals(BatchSetRecordSetsStatusResponse input)
         {
             if (input == null) return false;
+            if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
             if (this.Recordsets != input.Recordsets || (this.Recordsets != null && input.Recordsets != null && !this.Recordsets.SequenceEqual(input.Recordsets))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
 
             return true;
         }
@@ -63,7 +79,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
                 if (this.Recordsets != null) hashCode = hashCode * 59 + this.Recordsets.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

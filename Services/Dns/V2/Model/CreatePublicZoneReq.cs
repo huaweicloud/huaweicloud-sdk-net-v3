@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Zone类型,取值public。
+        /// 域名类型。取值：public。
         /// </summary>
         [JsonProperty("zone_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneType { get; set; }
 
         /// <summary>
-        /// 管理该zone的管理员邮箱
+        /// 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
         /// </summary>
         [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
         public string Email { get; set; }

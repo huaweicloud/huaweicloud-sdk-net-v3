@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         [JsonProperty("can_manage", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CanManage { get; set; }
 
+        /// <summary>
+        /// 是否有复制主机权限
+        /// </summary>
+        [JsonProperty("can_copy", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CanCopy { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  canDelete: ").Append(CanDelete).Append("\n");
             sb.Append("  canAddHost: ").Append(CanAddHost).Append("\n");
             sb.Append("  canManage: ").Append(CanManage).Append("\n");
+            sb.Append("  canCopy: ").Append(CanCopy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             if (this.CanDelete != input.CanDelete || (this.CanDelete != null && !this.CanDelete.Equals(input.CanDelete))) return false;
             if (this.CanAddHost != input.CanAddHost || (this.CanAddHost != null && !this.CanAddHost.Equals(input.CanAddHost))) return false;
             if (this.CanManage != input.CanManage || (this.CanManage != null && !this.CanManage.Equals(input.CanManage))) return false;
+            if (this.CanCopy != input.CanCopy || (this.CanCopy != null && !this.CanCopy.Equals(input.CanCopy))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                 if (this.CanDelete != null) hashCode = hashCode * 59 + this.CanDelete.GetHashCode();
                 if (this.CanAddHost != null) hashCode = hashCode * 59 + this.CanAddHost.GetHashCode();
                 if (this.CanManage != null) hashCode = hashCode * 59 + this.CanManage.GetHashCode();
+                if (this.CanCopy != null) hashCode = hashCode * 59 + this.CanCopy.GetHashCode();
                 return hashCode;
             }
         }

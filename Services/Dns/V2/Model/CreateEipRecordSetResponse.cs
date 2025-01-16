@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public int? Ttl { get; set; }
 
         /// <summary>
-        /// 弹性IP的IP地址。
+        /// 弹性公网IP的IP地址。
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }

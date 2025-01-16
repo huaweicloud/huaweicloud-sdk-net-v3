@@ -884,6 +884,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询可用区列表
+        ///
+        /// 查询可用区列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
+        public async Task<ListServerAzInfoResponse> ListServerAzInfoAsync(ListServerAzInfoRequest listServerAzInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/availability-zones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerAzInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListServerAzInfoResponse>(response);
+        }
+
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
+        public AsyncInvoker<ListServerAzInfoResponse> ListServerAzInfoAsyncInvoker(ListServerAzInfoRequest listServerAzInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/availability-zones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerAzInfoRequest);
+            return new AsyncInvoker<ListServerAzInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListServerAzInfoResponse>);
+        }
+        
+        /// <summary>
         /// 查询弹性云服务器挂载磁盘列表详情信息
         ///
         /// 查询弹性云服务器挂载的磁盘信息。

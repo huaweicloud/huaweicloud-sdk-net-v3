@@ -52,11 +52,18 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Tags { get; set; }
 
         /// <summary>
-        /// zone名称。
+        /// Zone名称。  搜索模式默认为模糊搜索。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Zone ID。
+        /// </summary>
+        [SDKProperty("id", IsQuery = true)]
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
 
         /// <summary>
         /// 资源状态。
@@ -73,11 +80,32 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string SearchMode { get; set; }
 
         /// <summary>
-        /// 域名关联的企业项目ID，长度不超过36个字符。  默认值为0。
+        /// 查询结果中zone列表的排序字段。  取值范围为：  name：域名 created_at：创建时间 updated_at：更新时间 默认值为空，表示不排序。
+        /// </summary>
+        [SDKProperty("sort_key", IsQuery = true)]
+        [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string SortKey { get; set; }
+
+        /// <summary>
+        /// 查询结果中zone列表的排序方式。  取值范围：  desc：降序排序 asc：升序排序 默认值为空，表示不排序。
+        /// </summary>
+        [SDKProperty("sort_dir", IsQuery = true)]
+        [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
+        public string SortDir { get; set; }
+
+        /// <summary>
+        /// 域名关联的企业项目ID，长度不超过36个字符。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 关联VPC的ID。
+        /// </summary>
+        [SDKProperty("router_id", IsQuery = true)]
+        [JsonProperty("router_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RouterId { get; set; }
 
 
 
@@ -94,9 +122,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  searchMode: ").Append(SearchMode).Append("\n");
+            sb.Append("  sortKey: ").Append(SortKey).Append("\n");
+            sb.Append("  sortDir: ").Append(SortDir).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  routerId: ").Append(RouterId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,9 +153,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.SearchMode != input.SearchMode || (this.SearchMode != null && !this.SearchMode.Equals(input.SearchMode))) return false;
+            if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
+            if (this.SortDir != input.SortDir || (this.SortDir != null && !this.SortDir.Equals(input.SortDir))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.RouterId != input.RouterId || (this.RouterId != null && !this.RouterId.Equals(input.RouterId))) return false;
 
             return true;
         }
@@ -142,9 +178,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.SearchMode != null) hashCode = hashCode * 59 + this.SearchMode.GetHashCode();
+                if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                if (this.SortDir != null) hashCode = hashCode * 59 + this.SortDir.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.RouterId != null) hashCode = hashCode * 59 + this.RouterId.GetHashCode();
                 return hashCode;
             }
         }

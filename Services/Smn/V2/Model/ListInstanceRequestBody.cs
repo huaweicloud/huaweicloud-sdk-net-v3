@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [JsonProperty("matches", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagMatch> Matches { get; set; }
 
+        /// <summary>
+        /// 不包含任意一个标签。该字段为true时查询所有不带标签的资源，此时忽略“tags”、“tags_any”、“not_tags”、“not_tags_any”字段。
+        /// </summary>
+        [JsonProperty("without_any_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WithoutAnyTag { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  matches: ").Append(Matches).Append("\n");
+            sb.Append("  withoutAnyTag: ").Append(WithoutAnyTag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
             if (this.Matches != input.Matches || (this.Matches != null && input.Matches != null && !this.Matches.SequenceEqual(input.Matches))) return false;
+            if (this.WithoutAnyTag != input.WithoutAnyTag || (this.WithoutAnyTag != null && !this.WithoutAnyTag.Equals(input.WithoutAnyTag))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
                 if (this.Matches != null) hashCode = hashCode * 59 + this.Matches.GetHashCode();
+                if (this.WithoutAnyTag != null) hashCode = hashCode * 59 + this.WithoutAnyTag.GetHashCode();
                 return hashCode;
             }
         }

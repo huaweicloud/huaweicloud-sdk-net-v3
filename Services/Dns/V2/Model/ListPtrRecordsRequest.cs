@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 反向解析关联的企业项目ID，长度不超过36个字符。  默认值为0。
+        /// 反向解析关联的企业项目ID，长度不超过36个字符。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

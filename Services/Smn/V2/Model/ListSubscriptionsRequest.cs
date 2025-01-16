@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 协议名称， 枚举值：http、https、sms、email、functionstage、dms、application。
+        /// 协议名称， 枚举值：http、https、sms、email、functionstage。
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]

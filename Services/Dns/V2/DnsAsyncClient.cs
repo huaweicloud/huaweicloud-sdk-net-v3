@@ -16,6 +16,110 @@ namespace HuaweiCloud.SDK.Dns.V2
 
         
         /// <summary>
+        /// 批量删除Record Set
+        ///
+        /// 批量删除Record Set。
+        /// 响应结果中只包含本次实际删除的Record Set。
+        /// 支持批量删除公网域名和内网域名的记录集。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteRecordSetsResponse> BatchDeleteRecordSetsAsync(BatchDeleteRecordSetsRequest batchDeleteRecordSetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRecordSetsRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<BatchDeleteRecordSetsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteRecordSetsResponse> BatchDeleteRecordSetsAsyncInvoker(BatchDeleteRecordSetsRequest batchDeleteRecordSetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRecordSetsRequest);
+            return new AsyncInvoker<BatchDeleteRecordSetsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteRecordSetsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除Zone
+        ///
+        /// 批量删除Zone。
+        /// 本接口为原子操作，所有记录应全部删除成功或全部失败。
+        /// 仅支持公网Zone、内网Zone。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteZonesResponse> BatchDeleteZonesAsync(BatchDeleteZonesRequest batchDeleteZonesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteZonesRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<BatchDeleteZonesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteZonesResponse> BatchDeleteZonesAsyncInvoker(BatchDeleteZonesRequest batchDeleteZonesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteZonesRequest);
+            return new AsyncInvoker<BatchDeleteZonesResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteZonesResponse>);
+        }
+        
+        /// <summary>
+        /// 批量设置Record Set状态
+        ///
+        /// 批量设置Record Set状态。
+        /// 响应结果中只包含本次实际更新的Record Set。
+        /// 支持公网域名和内网域名的记录集。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchSetRecordSetsStatusResponse> BatchSetRecordSetsStatusAsync(BatchSetRecordSetsStatusRequest batchSetRecordSetsStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/statuses", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetRecordSetsStatusRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<BatchSetRecordSetsStatusResponse>(response);
+        }
+
+        public AsyncInvoker<BatchSetRecordSetsStatusResponse> BatchSetRecordSetsStatusAsyncInvoker(BatchSetRecordSetsStatusRequest batchSetRecordSetsStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/statuses", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetRecordSetsStatusRequest);
+            return new AsyncInvoker<BatchSetRecordSetsStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchSetRecordSetsStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 批量设置Zone状态
+        ///
+        /// 批量设置Zone状态。
+        /// 响应结果中只包含本次实际更新的Zone。
+        /// 仅支持公网Zone、内网Zone。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchSetZonesStatusResponse> BatchSetZonesStatusAsync(BatchSetZonesStatusRequest batchSetZonesStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/statuses", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetZonesStatusRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<BatchSetZonesStatusResponse>(response);
+        }
+
+        public AsyncInvoker<BatchSetZonesStatusResponse> BatchSetZonesStatusAsyncInvoker(BatchSetZonesStatusRequest batchSetZonesStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/statuses", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchSetZonesStatusRequest);
+            return new AsyncInvoker<BatchSetZonesStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchSetZonesStatusResponse>);
+        }
+        
+        /// <summary>
         /// 创建单个自定义线路
         ///
         /// 创建单个自定义线路
@@ -340,9 +444,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 设置弹性IP的PTR记录
+        /// 设置弹性公网IP的PTR记录
         ///
-        /// 设置弹性IP的PTR记录
+        /// 设置弹性公网IP的PTR记录
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -368,9 +472,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询租户弹性IP的PTR记录列表
+        /// 查询租户弹性公网IP的PTR记录列表
         ///
-        /// 查询租户弹性IP的PTR记录列表
+        /// 查询租户弹性公网IP的PTR记录列表
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -392,9 +496,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 将弹性IP的PTR记录恢复为默认值
+        /// 将弹性公网IP的PTR记录恢复为默认值
         ///
-        /// 将弹性IP的PTR记录恢复为默认值
+        /// 将弹性公网IP的PTR记录恢复为默认值
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -420,9 +524,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询单个弹性IP的PTR记录
+        /// 查询单个弹性公网IP的PTR记录
         ///
-        /// 查询单个弹性IP的PTR记录
+        /// 查询单个弹性公网IP的PTR记录
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -448,9 +552,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 修改弹性IP的PTR记录
+        /// 修改弹性公网IP的PTR记录
         ///
-        /// 修改弹性IP的PTR记录
+        /// 修改弹性公网IP的PTR记录
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

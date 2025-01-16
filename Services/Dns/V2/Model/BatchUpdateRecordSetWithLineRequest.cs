@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public BatchUpdateRecordSetWithLineReq Body { get; set; }
+        public BatchUpdateRecordSetWithLineRequestBody Body { get; set; }
 
 
 

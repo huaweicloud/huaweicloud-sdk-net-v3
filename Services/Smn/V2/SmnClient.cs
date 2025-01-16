@@ -247,6 +247,32 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 创建通知策略
+        ///
+        /// 创建通知策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateNotifyPolicyResponse CreateNotifyPolicy(CreateNotifyPolicyRequest createNotifyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", createNotifyPolicyRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createNotifyPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateNotifyPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateNotifyPolicyResponse> CreateNotifyPolicyInvoker(CreateNotifyPolicyRequest createNotifyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", createNotifyPolicyRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createNotifyPolicyRequest);
+            return new SyncInvoker<CreateNotifyPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateNotifyPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 添加资源标签
         ///
         /// 一个资源上最多有10个标签。此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
@@ -351,6 +377,34 @@ namespace HuaweiCloud.SDK.Smn.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/message_template/{message_template_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMessageTemplateRequest);
             return new SyncInvoker<DeleteMessageTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteMessageTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 删除通知策略
+        ///
+        /// 删除通知策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteNotifyPolicyResponse DeleteNotifyPolicy(DeleteNotifyPolicyRequest deleteNotifyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", deleteNotifyPolicyRequest.TopicUrn.ToString());
+            urlParam.Add("notify_policy_id", deleteNotifyPolicyRequest.NotifyPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNotifyPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteNotifyPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteNotifyPolicyResponse> DeleteNotifyPolicyInvoker(DeleteNotifyPolicyRequest deleteNotifyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", deleteNotifyPolicyRequest.TopicUrn.ToString());
+            urlParam.Add("notify_policy_id", deleteNotifyPolicyRequest.NotifyPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNotifyPolicyRequest);
+            return new SyncInvoker<DeleteNotifyPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNotifyPolicyResponse>);
         }
         
         /// <summary>
@@ -822,7 +876,8 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// <summary>
         /// 消息发布
         ///
-        /// 将消息发送给Topic的所有订阅端点。当返回消息ID时，该消息已被保存并开始尝试将其推送给Topic的订阅者。三种消息发送方式
+        /// 将消息发送给Topic的所有订阅端点。当返回消息ID时，该消息已被保存并开始尝试将其推送给Topic的订阅者。为确保您的消息能够成功推送到各个订阅者，请确保您的消息内容符合当地法律法规要求。
+        /// 三种消息发送方式
         /// 
         /// message
         /// 
@@ -883,6 +938,32 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 查询通知策略
+        ///
+        /// 查询通知策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowNotifyPolicyResponse ShowNotifyPolicy(ShowNotifyPolicyRequest showNotifyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", showNotifyPolicyRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNotifyPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowNotifyPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowNotifyPolicyResponse> ShowNotifyPolicyInvoker(ShowNotifyPolicyRequest showNotifyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", showNotifyPolicyRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNotifyPolicyRequest);
+            return new SyncInvoker<ShowNotifyPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNotifyPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 更新云日志
         ///
         /// 更新指定Topic绑定的云日志。
@@ -934,6 +1015,34 @@ namespace HuaweiCloud.SDK.Smn.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/message_template/{message_template_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMessageTemplateRequest);
             return new SyncInvoker<UpdateMessageTemplateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateMessageTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 修改通知策略
+        ///
+        /// 修改通知策略，该接口仅支持全量修改，不支持部分修改。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateNotifyPolicyResponse UpdateNotifyPolicy(UpdateNotifyPolicyRequest updateNotifyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", updateNotifyPolicyRequest.TopicUrn.ToString());
+            urlParam.Add("notify_policy_id", updateNotifyPolicyRequest.NotifyPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateNotifyPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateNotifyPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateNotifyPolicyResponse> UpdateNotifyPolicyInvoker(UpdateNotifyPolicyRequest updateNotifyPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", updateNotifyPolicyRequest.TopicUrn.ToString());
+            urlParam.Add("notify_policy_id", updateNotifyPolicyRequest.NotifyPolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateNotifyPolicyRequest);
+            return new SyncInvoker<UpdateNotifyPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateNotifyPolicyResponse>);
         }
         
         /// <summary>

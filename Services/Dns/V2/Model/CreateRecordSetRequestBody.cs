@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 资源状态。
+        /// 解析记录的状态。 取值范围： ENABLE：启用 DISABLE：暂停 默认值为ENABLE。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     {
 
         /// <summary>
+        /// 行驶证类型：  - normal: 纸质行驶证  - electronic: 电子行驶证 
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
+        /// <summary>
         /// 号牌号码。 
         /// </summary>
         [JsonProperty("number", NullValueHandling = NullValueHandling.Ignore)]
@@ -155,6 +161,24 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string EnergyType { get; set; }
 
         /// <summary>
+        /// 车身颜色。 
+        /// </summary>
+        [JsonProperty("color", NullValueHandling = NullValueHandling.Ignore)]
+        public string Color { get; set; }
+
+        /// <summary>
+        /// 强制报废日期。 
+        /// </summary>
+        [JsonProperty("mandatory_scrapping_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string MandatoryScrappingDate { get; set; }
+
+        /// <summary>
+        /// 状态。 
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Status { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("front", NullValueHandling = NullValueHandling.Ignore)]
@@ -175,6 +199,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class VehicleLicenseResult {\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  number: ").Append(Number).Append("\n");
             sb.Append("  vehicleType: ").Append(VehicleType).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
@@ -198,6 +223,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  codeNumber: ").Append(CodeNumber).Append("\n");
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
             sb.Append("  energyType: ").Append(EnergyType).Append("\n");
+            sb.Append("  color: ").Append(Color).Append("\n");
+            sb.Append("  mandatoryScrappingDate: ").Append(MandatoryScrappingDate).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  front: ").Append(Front).Append("\n");
             sb.Append("  back: ").Append(Back).Append("\n");
             sb.Append("}\n");
@@ -218,6 +246,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool Equals(VehicleLicenseResult input)
         {
             if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
             if (this.VehicleType != input.VehicleType || (this.VehicleType != null && !this.VehicleType.Equals(input.VehicleType))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
@@ -241,6 +270,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.CodeNumber != input.CodeNumber || (this.CodeNumber != null && !this.CodeNumber.Equals(input.CodeNumber))) return false;
             if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
             if (this.EnergyType != input.EnergyType || (this.EnergyType != null && !this.EnergyType.Equals(input.EnergyType))) return false;
+            if (this.Color != input.Color || (this.Color != null && !this.Color.Equals(input.Color))) return false;
+            if (this.MandatoryScrappingDate != input.MandatoryScrappingDate || (this.MandatoryScrappingDate != null && !this.MandatoryScrappingDate.Equals(input.MandatoryScrappingDate))) return false;
+            if (this.Status != input.Status || (this.Status != null && input.Status != null && !this.Status.SequenceEqual(input.Status))) return false;
             if (this.Front != input.Front || (this.Front != null && !this.Front.Equals(input.Front))) return false;
             if (this.Back != input.Back || (this.Back != null && !this.Back.Equals(input.Back))) return false;
 
@@ -255,6 +287,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
                 if (this.VehicleType != null) hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
@@ -278,6 +311,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.CodeNumber != null) hashCode = hashCode * 59 + this.CodeNumber.GetHashCode();
                 if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 if (this.EnergyType != null) hashCode = hashCode * 59 + this.EnergyType.GetHashCode();
+                if (this.Color != null) hashCode = hashCode * 59 + this.Color.GetHashCode();
+                if (this.MandatoryScrappingDate != null) hashCode = hashCode * 59 + this.MandatoryScrappingDate.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Front != null) hashCode = hashCode * 59 + this.Front.GetHashCode();
                 if (this.Back != null) hashCode = hashCode * 59 + this.Back.GetHashCode();
                 return hashCode;

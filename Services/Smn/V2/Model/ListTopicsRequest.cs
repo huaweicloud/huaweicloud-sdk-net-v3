@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 企业项目id，默认企业项目id为0。
+        /// 企业项目id。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]

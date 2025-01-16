@@ -41,10 +41,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? ReturnIssuingAuthority { get; set; }
 
         /// <summary>
-        /// 识别到的文字块的区域位置信息。可选值包括：  - true：返回各个文字块区域  - false：不返回各个文字块区域  如果无该参数，系统默认不返回文字块区域。如果输入参数不是Boolean类型，则会报非法参数错误。 
+        /// 识别到的文字块的区域位置信息。取值范围：  - true：返回各个文字块区域  - false：不返回各个文字块区域  如果无该参数，系统默认不返回文字块区域。如果输入参数不是Boolean类型，则会报非法参数错误。 
         /// </summary>
         [JsonProperty("return_text_location", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ReturnTextLocation { get; set; }
+
+        /// <summary>
+        /// 是否支持识别电子行驶证，取值范围：  - true：支持识别电子行驶证  - false：不支持识别电子行驶证  默认不支持识别电子行驶证。如果输入参数不是Boolean类型，则会报非法参数错误。 
+        /// </summary>
+        [JsonProperty("recognize_electronic_license", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? RecognizeElectronicLicense { get; set; }
 
 
 
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  side: ").Append(Side).Append("\n");
             sb.Append("  returnIssuingAuthority: ").Append(ReturnIssuingAuthority).Append("\n");
             sb.Append("  returnTextLocation: ").Append(ReturnTextLocation).Append("\n");
+            sb.Append("  recognizeElectronicLicense: ").Append(RecognizeElectronicLicense).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.Side != input.Side || (this.Side != null && !this.Side.Equals(input.Side))) return false;
             if (this.ReturnIssuingAuthority != input.ReturnIssuingAuthority || (this.ReturnIssuingAuthority != null && !this.ReturnIssuingAuthority.Equals(input.ReturnIssuingAuthority))) return false;
             if (this.ReturnTextLocation != input.ReturnTextLocation || (this.ReturnTextLocation != null && !this.ReturnTextLocation.Equals(input.ReturnTextLocation))) return false;
+            if (this.RecognizeElectronicLicense != input.RecognizeElectronicLicense || (this.RecognizeElectronicLicense != null && !this.RecognizeElectronicLicense.Equals(input.RecognizeElectronicLicense))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.Side != null) hashCode = hashCode * 59 + this.Side.GetHashCode();
                 if (this.ReturnIssuingAuthority != null) hashCode = hashCode * 59 + this.ReturnIssuingAuthority.GetHashCode();
                 if (this.ReturnTextLocation != null) hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
+                if (this.RecognizeElectronicLicense != null) hashCode = hashCode * 59 + this.RecognizeElectronicLicense.GetHashCode();
                 return hashCode;
             }
         }

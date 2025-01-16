@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Language { get; set; }
 
         /// <summary>
-        /// 单朝向模式开关。可选值包括： - true：打开单朝向模式  - false：关闭单朝向模式  图片文字方向一致时，打开该开关可提升识别精度；图片文字方向不一致时，关闭该开关可支持多朝向文字识别。未传入该参数时默认为false，即默认图片中的字段为多朝向。 
+        /// 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  图片文字方向一致时，打开该开关可提升识别精度；图片文字方向不一致时，关闭该开关可支持多朝向文字识别。未传入该参数时默认为false，即默认图片中的字段为多朝向。 
         /// </summary>
         [JsonProperty("single_orientation_mode", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SingleOrientationMode { get; set; }

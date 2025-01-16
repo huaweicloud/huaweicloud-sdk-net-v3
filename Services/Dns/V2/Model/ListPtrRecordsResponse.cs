@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public Metadata Metadata { get; set; }
 
         /// <summary>
-        /// 弹性IP的PTR记录ID列表信息。
+        /// 弹性公网IP的PTR记录ID列表信息。
         /// </summary>
         [JsonProperty("floatingips", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListPtrRecordsFloatingResp> Floatingips { get; set; }

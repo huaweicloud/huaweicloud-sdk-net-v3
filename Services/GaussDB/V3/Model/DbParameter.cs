@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  新增子任务的场景，用于区分库参数是否支持修改。  **取值范围**：  不涉及。
+        /// </summary>
+        [JsonProperty("is_modifiable", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsModifiable { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  defaultValue: ").Append(DefaultValue).Append("\n");
             sb.Append("  valueRange: ").Append(ValueRange).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  isModifiable: ").Append(IsModifiable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.DefaultValue != input.DefaultValue || (this.DefaultValue != null && !this.DefaultValue.Equals(input.DefaultValue))) return false;
             if (this.ValueRange != input.ValueRange || (this.ValueRange != null && !this.ValueRange.Equals(input.ValueRange))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.IsModifiable != input.IsModifiable || (this.IsModifiable != null && !this.IsModifiable.Equals(input.IsModifiable))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.DefaultValue != null) hashCode = hashCode * 59 + this.DefaultValue.GetHashCode();
                 if (this.ValueRange != null) hashCode = hashCode * 59 + this.ValueRange.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.IsModifiable != null) hashCode = hashCode * 59 + this.IsModifiable.GetHashCode();
                 return hashCode;
             }
         }

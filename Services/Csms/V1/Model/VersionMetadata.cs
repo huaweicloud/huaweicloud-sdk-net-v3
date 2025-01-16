@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         public string SecretName { get; set; }
 
         /// <summary>
-        /// 凭据版本被标记的状态列表。每个版本标签对于凭据对象下版本是唯一存在的，如果你创建版本时，指定的是同一凭据对象下的一个已经标记在其他版本上的状态，该标签将自动从其他版本上删除，并附加到此版本上。  如果未指定version_stage的值，则凭据管理服务会自动移动临时标签SYSCURRENT到此新版本。
+        /// 凭据版本被标记的状态列表。每个版本标签对于凭据对象下版本是唯一存在的，如果创建版本时，指定的是同一凭据对象下的一个已经标记在其他版本上的状态，该标签将自动从其他版本上删除，并附加到此版本上。  如果未指定version_stage的值，则凭据管理服务会自动移动临时标签SYSCURRENT到此新版本。
         /// </summary>
         [JsonProperty("version_stages", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> VersionStages { get; set; }

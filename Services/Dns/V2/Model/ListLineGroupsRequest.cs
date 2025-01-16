@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 每页返回的资源个数。  当查询详细信息时：取值范围：0~100取值一般为10，20，50默认为100。  当查询概要信息时：取值范围：0~3000默认为3000。
+        /// 每页返回的资源个数。  取值范围：0~500  取值一般为10，20，50。默认值为500。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

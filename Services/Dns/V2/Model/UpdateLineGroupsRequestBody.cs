@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class UpdateLineGroupsBody 
+    public class UpdateLineGroupsRequestBody 
     {
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdateLineGroupsBody {\n");
+            sb.Append("class UpdateLineGroupsRequestBody {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  lines: ").Append(Lines).Append("\n");
@@ -55,13 +55,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateLineGroupsBody);
+            return this.Equals(input as UpdateLineGroupsRequestBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdateLineGroupsBody input)
+        public bool Equals(UpdateLineGroupsRequestBody input)
         {
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;

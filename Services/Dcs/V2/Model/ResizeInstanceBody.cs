@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
     public class ResizeInstanceBody 
     {
         /// <summary>
-        /// 变更类型，Redis 4.0或者5.0主备实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 
+        /// 变更类型，Redis 4.0或者5.0实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 - addSharding: 添加分片 - instanceType: 实例类型变更[，目前仅支持Redis 4.0/5.0/6.0实例中的主备实例/读写分离实例变更为proxy集群实例、proxy集群实例变更为主备实例/读写分离实例](tag:hws,hws_hk,hws_eu,ctc,sbc,hk_sbc,g42,hk_g42,otc)。 
         /// </summary>
-        /// <value>变更类型，Redis 4.0或者5.0主备实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 </value>
+        /// <value>变更类型，Redis 4.0或者5.0实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 - addSharding: 添加分片 - instanceType: 实例类型变更[，目前仅支持Redis 4.0/5.0/6.0实例中的主备实例/读写分离实例变更为proxy集群实例、proxy集群实例变更为主备实例/读写分离实例](tag:hws,hws_hk,hws_eu,ctc,sbc,hk_sbc,g42,hk_g42,otc)。 </value>
         [JsonConverter(typeof(EnumClassConverter<ChangeTypeEnum>))]
         public class ChangeTypeEnum
         {
@@ -32,11 +32,23 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             /// </summary>
             public static readonly ChangeTypeEnum DELETEREPLICATION = new ChangeTypeEnum("deleteReplication");
 
+            /// <summary>
+            /// Enum ADDSHARDING for value: addSharding
+            /// </summary>
+            public static readonly ChangeTypeEnum ADDSHARDING = new ChangeTypeEnum("addSharding");
+
+            /// <summary>
+            /// Enum INSTANCETYPE for value: instanceType
+            /// </summary>
+            public static readonly ChangeTypeEnum INSTANCETYPE = new ChangeTypeEnum("instanceType");
+
             private static readonly Dictionary<string, ChangeTypeEnum> StaticFields =
             new Dictionary<string, ChangeTypeEnum>()
             {
                 { "createReplication", CREATEREPLICATION },
                 { "deleteReplication", DELETEREPLICATION },
+                { "addSharding", ADDSHARDING },
+                { "instanceType", INSTANCETYPE },
             };
 
             private string _value;
@@ -156,7 +168,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public List<string> ReservedIp { get; set; }
 
         /// <summary>
-        /// 变更类型，Redis 4.0或者5.0主备实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 
+        /// 变更类型，Redis 4.0或者5.0实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 - addSharding: 添加分片 - instanceType: 实例类型变更[，目前仅支持Redis 4.0/5.0/6.0实例中的主备实例/读写分离实例变更为proxy集群实例、proxy集群实例变更为主备实例/读写分离实例](tag:hws,hws_hk,hws_eu,ctc,sbc,hk_sbc,g42,hk_g42,otc)。 
         /// </summary>
         [JsonProperty("change_type", NullValueHandling = NullValueHandling.Ignore)]
         public ChangeTypeEnum ChangeType { get; set; }

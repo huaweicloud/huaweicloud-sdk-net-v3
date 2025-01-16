@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 待更新的线路分组ID。
+        /// 线路分组ID
         /// </summary>
         [SDKProperty("linegroup_id", IsPath = true)]
         [JsonProperty("linegroup_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateLineGroupsBody Body { get; set; }
+        public UpdateLineGroupsRequestBody Body { get; set; }
 
 
 

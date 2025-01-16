@@ -76,6 +76,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("task_running", NullValueHandling = NullValueHandling.Ignore)]
         public bool? TaskRunning { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 实例基准带宽。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("assured_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AssuredBandwidth { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 节点最大带宽。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("max_bandwidth_for_node", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MaxBandwidthForNode { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +107,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  expandIntervalTime: ").Append(ExpandIntervalTime).Append("\n");
             sb.Append("  maxExpandCount: ").Append(MaxExpandCount).Append("\n");
             sb.Append("  taskRunning: ").Append(TaskRunning).Append("\n");
+            sb.Append("  assuredBandwidth: ").Append(AssuredBandwidth).Append("\n");
+            sb.Append("  maxBandwidthForNode: ").Append(MaxBandwidthForNode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +137,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             if (this.ExpandIntervalTime != input.ExpandIntervalTime || (this.ExpandIntervalTime != null && !this.ExpandIntervalTime.Equals(input.ExpandIntervalTime))) return false;
             if (this.MaxExpandCount != input.MaxExpandCount || (this.MaxExpandCount != null && !this.MaxExpandCount.Equals(input.MaxExpandCount))) return false;
             if (this.TaskRunning != input.TaskRunning || (this.TaskRunning != null && !this.TaskRunning.Equals(input.TaskRunning))) return false;
+            if (this.AssuredBandwidth != input.AssuredBandwidth || (this.AssuredBandwidth != null && !this.AssuredBandwidth.Equals(input.AssuredBandwidth))) return false;
+            if (this.MaxBandwidthForNode != input.MaxBandwidthForNode || (this.MaxBandwidthForNode != null && !this.MaxBandwidthForNode.Equals(input.MaxBandwidthForNode))) return false;
 
             return true;
         }
@@ -145,6 +161,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 if (this.ExpandIntervalTime != null) hashCode = hashCode * 59 + this.ExpandIntervalTime.GetHashCode();
                 if (this.MaxExpandCount != null) hashCode = hashCode * 59 + this.MaxExpandCount.GetHashCode();
                 if (this.TaskRunning != null) hashCode = hashCode * 59 + this.TaskRunning.GetHashCode();
+                if (this.AssuredBandwidth != null) hashCode = hashCode * 59 + this.AssuredBandwidth.GetHashCode();
+                if (this.MaxBandwidthForNode != null) hashCode = hashCode * 59 + this.MaxBandwidthForNode.GetHashCode();
                 return hashCode;
             }
         }

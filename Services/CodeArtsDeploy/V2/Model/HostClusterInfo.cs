@@ -53,12 +53,6 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public string SlaveClusterId { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("created_by", NullValueHandling = NullValueHandling.Ignore)]
-        public UserInfo CreatedBy { get; set; }
-
-        /// <summary>
         /// 描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -82,6 +76,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         [JsonProperty("env_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? EnvCount { get; set; }
 
+        /// <summary>
+        /// 主机集群是否为代理机接入模式， 1：是 0：否
+        /// </summary>
+        [JsonProperty("is_proxy_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public int? IsProxyMode { get; set; }
+
 
 
         /// <summary>
@@ -97,11 +97,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  os: ").Append(Os).Append("\n");
             sb.Append("  slaveClusterId: ").Append(SlaveClusterId).Append("\n");
-            sb.Append("  createdBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  permission: ").Append(Permission).Append("\n");
             sb.Append("  nickName: ").Append(NickName).Append("\n");
             sb.Append("  envCount: ").Append(EnvCount).Append("\n");
+            sb.Append("  isProxyMode: ").Append(IsProxyMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -126,11 +126,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.Os != input.Os || (this.Os != null && !this.Os.Equals(input.Os))) return false;
             if (this.SlaveClusterId != input.SlaveClusterId || (this.SlaveClusterId != null && !this.SlaveClusterId.Equals(input.SlaveClusterId))) return false;
-            if (this.CreatedBy != input.CreatedBy || (this.CreatedBy != null && !this.CreatedBy.Equals(input.CreatedBy))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Permission != input.Permission || (this.Permission != null && !this.Permission.Equals(input.Permission))) return false;
             if (this.NickName != input.NickName || (this.NickName != null && !this.NickName.Equals(input.NickName))) return false;
             if (this.EnvCount != input.EnvCount || (this.EnvCount != null && !this.EnvCount.Equals(input.EnvCount))) return false;
+            if (this.IsProxyMode != input.IsProxyMode || (this.IsProxyMode != null && !this.IsProxyMode.Equals(input.IsProxyMode))) return false;
 
             return true;
         }
@@ -149,11 +149,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Os != null) hashCode = hashCode * 59 + this.Os.GetHashCode();
                 if (this.SlaveClusterId != null) hashCode = hashCode * 59 + this.SlaveClusterId.GetHashCode();
-                if (this.CreatedBy != null) hashCode = hashCode * 59 + this.CreatedBy.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Permission != null) hashCode = hashCode * 59 + this.Permission.GetHashCode();
                 if (this.NickName != null) hashCode = hashCode * 59 + this.NickName.GetHashCode();
                 if (this.EnvCount != null) hashCode = hashCode * 59 + this.EnvCount.GetHashCode();
+                if (this.IsProxyMode != null) hashCode = hashCode * 59 + this.IsProxyMode.GetHashCode();
                 return hashCode;
             }
         }

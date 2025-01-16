@@ -1,3 +1,142 @@
+# 3.1.130 2025-01-16
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListHostClusters**
+    - changes of response param
+      - `+ result.is_proxy_mode`
+      - `- result.created_by`
+      - `+ result.permission.can_copy`
+  - **ShowHostClusterDetail**
+    - changes of response param
+      - `+ result.permission.can_copy`
+
+### HuaweiCloud SDK DCS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ResizeInstance**
+    - changes of request param
+      - `+ change_type: enum value [addSharding,instanceType]`
+  - **ShowInstance**
+    - changes of response param
+      - `+ bandwidth_info.assured_bandwidth`
+      - `+ bandwidth_info.max_bandwidth_for_node`
+
+### HuaweiCloud SDK DNS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `BatchDeleteZones`, `BatchSetZonesStatus`, `BatchSetRecordSetsStatus`, `BatchDeleteRecordSets`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateCustomLine**
+    - changes of request param
+      - `* body: object<UpdateCustomsLineReq> -> object<UpdateCustomLineRequestBody>`
+  - **UpdateLineGroups**
+    - changes of request param
+      - `* body: object<UpdateLineGroupsBody> -> object<UpdateLineGroupsRequestBody>`
+  - **CreateCustomLine**
+    - changes of request param
+      - `* body: object<CreateCustomLines> -> object<CreateCustomLineRequestBody>`
+  - **ListCustomLine**
+    - changes of request param
+      - `+ status`
+      - `+ ip`
+  - **ShowRecordSetByZone**
+    - changes of response param
+      - `+ recordsets.created_at`
+      - `+ recordsets.updated_at`
+      - `- recordsets.create_at`
+      - `- recordsets.update_at`
+  - **ListPublicZones**
+    - changes of request param
+      - `+ id`
+      - `+ sort_key`
+      - `+ sort_dir`
+  - **ListPrivateZones**
+    - changes of request param
+      - `+ id`
+      - `+ sort_key`
+      - `+ sort_dir`
+      - `+ router_id`
+  - **ListRecordSetsWithLine**
+    - changes of request param
+      - `+ zone_id`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `UpgradeSrKernelVersion`, `ListStarRocksDataReplicationConfigByDataBase`, `ModifyDataSync`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListStarRocksDbParameters**
+    - changes of request param
+      - `+ add_task_scenario`
+    - changes of response param
+      - `+ db_parameters.is_modifiable`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeVehicleLicense**
+    - changes of request param
+      - `+ recognize_electronic_license`
+    - changes of response param
+      - `+ result.type`
+      - `+ result.color`
+      - `+ result.mandatory_scrapping_date`
+      - `+ result.status`
+
+### HuaweiCloud SDK SMN
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `ShowNotifyPolicy`, `CreateNotifyPolicy`, `UpdateNotifyPolicy`, `DeleteNotifyPolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - **PublishMessage**
+    - changes of request param
+      - `+ locale`
+  - **AddSubscription**
+    - changes of request param
+      - `+ subscriptions`
+      - `+ extension.header`
+      - `+ extension.app_key`
+      - `+ extension.app_secret`
+      - `+ extension.robot_code`
+  - **ListResourceInstances**
+    - changes of request param
+      - `+ without_any_tag`
+  - **ListTopicAttributes**
+    - changes of request param
+      - `* name: required -> optional`
+
 # 3.1.129 2025-01-09
 
 ### HuaweiCloud SDK DRS
