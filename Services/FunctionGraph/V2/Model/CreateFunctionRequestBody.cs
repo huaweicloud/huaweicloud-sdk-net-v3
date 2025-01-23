@@ -700,6 +700,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("enable_dynamic_memory", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableDynamicMemory { get; set; }
 
+        /// <summary>
+        /// 自定义日志标签。函数执行时，可以按照自定义标签配置上报标签到云日志服务(LTS)，用户可以通过标签对日志进行过滤筛选。
+        /// </summary>
+        [JsonProperty("lts_custom_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> LtsCustomTag { get; set; }
+
 
 
         /// <summary>
@@ -740,6 +746,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  networkController: ").Append(NetworkController).Append("\n");
             sb.Append("  isStatefulFunction: ").Append(IsStatefulFunction).Append("\n");
             sb.Append("  enableDynamicMemory: ").Append(EnableDynamicMemory).Append("\n");
+            sb.Append("  ltsCustomTag: ").Append(LtsCustomTag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -789,6 +796,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.NetworkController != input.NetworkController || (this.NetworkController != null && !this.NetworkController.Equals(input.NetworkController))) return false;
             if (this.IsStatefulFunction != input.IsStatefulFunction || (this.IsStatefulFunction != null && !this.IsStatefulFunction.Equals(input.IsStatefulFunction))) return false;
             if (this.EnableDynamicMemory != input.EnableDynamicMemory || (this.EnableDynamicMemory != null && !this.EnableDynamicMemory.Equals(input.EnableDynamicMemory))) return false;
+            if (this.LtsCustomTag != input.LtsCustomTag || (this.LtsCustomTag != null && input.LtsCustomTag != null && !this.LtsCustomTag.SequenceEqual(input.LtsCustomTag))) return false;
 
             return true;
         }
@@ -832,6 +840,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.NetworkController != null) hashCode = hashCode * 59 + this.NetworkController.GetHashCode();
                 if (this.IsStatefulFunction != null) hashCode = hashCode * 59 + this.IsStatefulFunction.GetHashCode();
                 if (this.EnableDynamicMemory != null) hashCode = hashCode * 59 + this.EnableDynamicMemory.GetHashCode();
+                if (this.LtsCustomTag != null) hashCode = hashCode * 59 + this.LtsCustomTag.GetHashCode();
                 return hashCode;
             }
         }

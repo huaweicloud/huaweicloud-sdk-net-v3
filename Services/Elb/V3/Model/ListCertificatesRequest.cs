@@ -80,6 +80,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Type { get; set; }
 
         /// <summary>
+        /// SCM证书ID。  支持多值查询，查询条件格式：scm_certificate_id&#x3D;xxx&amp;scm_certificate_id&#x3D;xxx。
+        /// </summary>
+        [SDKProperty("scm_certificate_id", IsQuery = true)]
+        [JsonProperty("scm_certificate_id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ScmCertificateId { get; set; }
+
+        /// <summary>
         /// 证书的主域名。  支持多值查询，查询条件格式：common_name&#x3D;xxx&amp;common_name&#x3D;xxx。
         /// </summary>
         [SDKProperty("common_name", IsQuery = true)]
@@ -111,6 +118,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
             sb.Append("  domain: ").Append(Domain).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  scmCertificateId: ").Append(ScmCertificateId).Append("\n");
             sb.Append("  commonName: ").Append(CommonName).Append("\n");
             sb.Append("  fingerprint: ").Append(Fingerprint).Append("\n");
             sb.Append("}\n");
@@ -140,6 +148,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
             if (this.Domain != input.Domain || (this.Domain != null && input.Domain != null && !this.Domain.SequenceEqual(input.Domain))) return false;
             if (this.Type != input.Type || (this.Type != null && input.Type != null && !this.Type.SequenceEqual(input.Type))) return false;
+            if (this.ScmCertificateId != input.ScmCertificateId || (this.ScmCertificateId != null && input.ScmCertificateId != null && !this.ScmCertificateId.SequenceEqual(input.ScmCertificateId))) return false;
             if (this.CommonName != input.CommonName || (this.CommonName != null && input.CommonName != null && !this.CommonName.SequenceEqual(input.CommonName))) return false;
             if (this.Fingerprint != input.Fingerprint || (this.Fingerprint != null && input.Fingerprint != null && !this.Fingerprint.SequenceEqual(input.Fingerprint))) return false;
 
@@ -163,6 +172,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
                 if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ScmCertificateId != null) hashCode = hashCode * 59 + this.ScmCertificateId.GetHashCode();
                 if (this.CommonName != null) hashCode = hashCode * 59 + this.CommonName.GetHashCode();
                 if (this.Fingerprint != null) hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
                 return hashCode;

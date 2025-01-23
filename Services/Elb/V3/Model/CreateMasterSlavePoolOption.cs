@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 后端服务器组支持的IP版本。  [取值： - 共享型：固定为v4； -  独享型：取值dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。  当协议为HTTP时，ip_version为v4。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs)  [取值：dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。 当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
+        /// 后端服务器组支持的IP版本。  [取值： - 共享型：固定为v4； -  独享型：取值dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。  当协议为HTTP时，ip_version为v4。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,srg,fcs)  [取值：dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。 当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
         /// </summary>
         [JsonProperty("ip_version", NullValueHandling = NullValueHandling.Ignore)]
         public string IpVersion { get; set; }
@@ -106,6 +106,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("connection_drain", NullValueHandling = NullValueHandling.Ignore)]
         public ConnectionDrain ConnectionDrain { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("quic_cid_hash_strategy", NullValueHandling = NullValueHandling.Ignore)]
+        public QuicCidHashStrategy QuicCidHashStrategy { get; set; }
+
 
 
         /// <summary>
@@ -130,6 +136,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  healthmonitor: ").Append(Healthmonitor).Append("\n");
             sb.Append("  anyPortEnable: ").Append(AnyPortEnable).Append("\n");
             sb.Append("  connectionDrain: ").Append(ConnectionDrain).Append("\n");
+            sb.Append("  quicCidHashStrategy: ").Append(QuicCidHashStrategy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +170,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.Healthmonitor != input.Healthmonitor || (this.Healthmonitor != null && !this.Healthmonitor.Equals(input.Healthmonitor))) return false;
             if (this.AnyPortEnable != input.AnyPortEnable || (this.AnyPortEnable != null && !this.AnyPortEnable.Equals(input.AnyPortEnable))) return false;
             if (this.ConnectionDrain != input.ConnectionDrain || (this.ConnectionDrain != null && !this.ConnectionDrain.Equals(input.ConnectionDrain))) return false;
+            if (this.QuicCidHashStrategy != input.QuicCidHashStrategy || (this.QuicCidHashStrategy != null && !this.QuicCidHashStrategy.Equals(input.QuicCidHashStrategy))) return false;
 
             return true;
         }
@@ -190,6 +198,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.Healthmonitor != null) hashCode = hashCode * 59 + this.Healthmonitor.GetHashCode();
                 if (this.AnyPortEnable != null) hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
                 if (this.ConnectionDrain != null) hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
+                if (this.QuicCidHashStrategy != null) hashCode = hashCode * 59 + this.QuicCidHashStrategy.GetHashCode();
                 return hashCode;
             }
         }

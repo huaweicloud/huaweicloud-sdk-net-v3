@@ -94,7 +94,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> LbAlgorithm { get; set; }
 
         /// <summary>
-        /// 企业项目ID。不传时查询default企业项目\&quot;0\&quot;下的资源，鉴权按照default企业项目鉴权； 如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。  支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+        /// 参数解释：所属的企业项目ID。 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:pools:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  支持多值查询，查询条件格式： *enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -185,11 +185,25 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AnyPortEnable { get; set; }
 
         /// <summary>
-        /// 可用区组
+        /// 网络公共边界组
         /// </summary>
         [SDKProperty("public_border_group", IsQuery = true)]
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
+
+        /// <summary>
+        /// 查询相同QUIC CID策略配置的后端服务器组，仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*quic_cid_len&#x3D;3&amp;quic_cid_len&#x3D;5*
+        /// </summary>
+        [SDKProperty("quic_cid_len", IsQuery = true)]
+        [JsonProperty("quic_cid_len", NullValueHandling = NullValueHandling.Ignore)]
+        public int? QuicCidLen { get; set; }
+
+        /// <summary>
+        /// 查询相同QUIC CID策略配置的后端服务器组，仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*quic_cid_offset&#x3D;1&amp;quic_cid_offset&#x3D;3*
+        /// </summary>
+        [SDKProperty("quic_cid_offset", IsQuery = true)]
+        [JsonProperty("quic_cid_offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? QuicCidOffset { get; set; }
 
 
 
@@ -225,6 +239,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  poolHealth: ").Append(PoolHealth).Append("\n");
             sb.Append("  anyPortEnable: ").Append(AnyPortEnable).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  quicCidLen: ").Append(QuicCidLen).Append("\n");
+            sb.Append("  quicCidOffset: ").Append(QuicCidOffset).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -268,6 +284,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.PoolHealth != input.PoolHealth || (this.PoolHealth != null && !this.PoolHealth.Equals(input.PoolHealth))) return false;
             if (this.AnyPortEnable != input.AnyPortEnable || (this.AnyPortEnable != null && !this.AnyPortEnable.Equals(input.AnyPortEnable))) return false;
             if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
+            if (this.QuicCidLen != input.QuicCidLen || (this.QuicCidLen != null && !this.QuicCidLen.Equals(input.QuicCidLen))) return false;
+            if (this.QuicCidOffset != input.QuicCidOffset || (this.QuicCidOffset != null && !this.QuicCidOffset.Equals(input.QuicCidOffset))) return false;
 
             return true;
         }
@@ -305,6 +323,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.PoolHealth != null) hashCode = hashCode * 59 + this.PoolHealth.GetHashCode();
                 if (this.AnyPortEnable != null) hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
                 if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.QuicCidLen != null) hashCode = hashCode * 59 + this.QuicCidLen.GetHashCode();
+                if (this.QuicCidOffset != null) hashCode = hashCode * 59 + this.QuicCidOffset.GetHashCode();
                 return hashCode;
             }
         }

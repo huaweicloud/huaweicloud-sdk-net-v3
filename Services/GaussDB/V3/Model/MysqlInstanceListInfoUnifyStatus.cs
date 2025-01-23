@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public List<string> PrivateIps { get; set; }
 
         /// <summary>
-        /// 实例读写分离IP地址列表。GaussDB(for MySQL)实例开启代理成功后该值存在，其他情况下为空列表。
+        /// 实例读写分离IP地址列表。TaurusDB实例开启代理成功后该值存在，其他情况下为空列表。
         /// </summary>
         [JsonProperty("proxy_ips", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ProxyIps { get; set; }

@@ -71,6 +71,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string OperatingStatus { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("reason", NullValueHandling = NullValueHandling.Ignore)]
+        public MemberHealthCheckFailedReason Reason { get; set; }
+
+        /// <summary>
         /// 后端服务器监听器粒度的的健康状态。 若绑定的监听器在该字段中，则以该字段中监听器对应的operating_stauts为准。 若绑定的监听器不在该字段中，则以外层的operating_status为准。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -95,13 +101,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string PortId { get; set; }
 
         /// <summary>
-        /// 创建时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+        /// 创建时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 更新时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+        /// 更新时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
@@ -124,6 +130,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  weight: ").Append(Weight).Append("\n");
             sb.Append("  address: ").Append(Address).Append("\n");
             sb.Append("  operatingStatus: ").Append(OperatingStatus).Append("\n");
+            sb.Append("  reason: ").Append(Reason).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  memberType: ").Append(MemberType).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
@@ -157,6 +164,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.Weight != input.Weight || (this.Weight != null && !this.Weight.Equals(input.Weight))) return false;
             if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
             if (this.OperatingStatus != input.OperatingStatus || (this.OperatingStatus != null && !this.OperatingStatus.Equals(input.OperatingStatus))) return false;
+            if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
             if (this.Status != input.Status || (this.Status != null && input.Status != null && !this.Status.SequenceEqual(input.Status))) return false;
             if (this.MemberType != input.MemberType || (this.MemberType != null && !this.MemberType.Equals(input.MemberType))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
@@ -184,6 +192,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.Weight != null) hashCode = hashCode * 59 + this.Weight.GetHashCode();
                 if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
                 if (this.OperatingStatus != null) hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
+                if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.MemberType != null) hashCode = hashCode * 59 + this.MemberType.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();

@@ -55,8 +55,6 @@ namespace HuaweiCloud.SDK.Bms.V1
             "https://bms.me-east-1.myhuaweicloud.com");
         public static readonly Region CN_EAST_4 = new Region("cn-east-4",
             "https://bms.cn-east-4.myhuaweicloud.com");
-        public static readonly Region AF_NORTH_1 = new Region("af-north-1",
-            "https://bms.af-north-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("BMS");
 
@@ -86,7 +84,6 @@ namespace HuaweiCloud.SDK.Bms.V1
                 { "tr-west-1", TR_WEST_1 },
                 { "me-east-1", ME_EAST_1 },
                 { "cn-east-4", CN_EAST_4 },
-                { "af-north-1", AF_NORTH_1 },
         };
 
         public static Region ValueOf(string regionId)

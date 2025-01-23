@@ -65,6 +65,34 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("shared", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Shared { get; set; }
 
+        /// <summary>
+        /// 站点pbg。  支持多值查询，查询条件格式：*public_border_group&#x3D;xxx&amp;public_border_group&#x3D;xxx*。
+        /// </summary>
+        [SDKProperty("public_border_group", IsQuery = true)]
+        [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> PublicBorderGroup { get; set; }
+
+        /// <summary>
+        /// 站点category。  支持多值查询，查询条件格式：*category&#x3D;xxx&amp;category&#x3D;xxx*。
+        /// </summary>
+        [SDKProperty("category", IsQuery = true)]
+        [JsonProperty("category", NullValueHandling = NullValueHandling.Ignore)]
+        public List<int?> Category { get; set; }
+
+        /// <summary>
+        /// 设置list_all&#x3D;true时，返回当前租户所有的弹性上限规格（l4_elastic_max、l7__elastic_max）。否则只返回该租户弹性上限规格中最大的规格（l4类型优先比较cps指标，然后是带宽；l7类型优先比较https cps指标然后是qps指标）。
+        /// </summary>
+        [SDKProperty("list_all", IsQuery = true)]
+        [JsonProperty("list_all", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ListAll { get; set; }
+
+        /// <summary>
+        /// 参数解释： [是否售罄。](tag:hws) [是否无法购买该规格的LB。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,dt_test,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,ct)  取值范围： - true：[已售罄，将](tag:hws)无法购买该规格的LB。 - false：[未售罄，](tag:hws)可购买该规格的LB。
+        /// </summary>
+        [SDKProperty("flavor_sold_out", IsQuery = true)]
+        [JsonProperty("flavor_sold_out", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? FlavorSoldOut { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +109,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  shared: ").Append(Shared).Append("\n");
+            sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  category: ").Append(Category).Append("\n");
+            sb.Append("  listAll: ").Append(ListAll).Append("\n");
+            sb.Append("  flavorSoldOut: ").Append(FlavorSoldOut).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +138,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
             if (this.Type != input.Type || (this.Type != null && input.Type != null && !this.Type.SequenceEqual(input.Type))) return false;
             if (this.Shared != input.Shared || (this.Shared != null && !this.Shared.Equals(input.Shared))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && input.PublicBorderGroup != null && !this.PublicBorderGroup.SequenceEqual(input.PublicBorderGroup))) return false;
+            if (this.Category != input.Category || (this.Category != null && input.Category != null && !this.Category.SequenceEqual(input.Category))) return false;
+            if (this.ListAll != input.ListAll || (this.ListAll != null && !this.ListAll.Equals(input.ListAll))) return false;
+            if (this.FlavorSoldOut != input.FlavorSoldOut || (this.FlavorSoldOut != null && !this.FlavorSoldOut.Equals(input.FlavorSoldOut))) return false;
 
             return true;
         }
@@ -125,6 +161,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Shared != null) hashCode = hashCode * 59 + this.Shared.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.ListAll != null) hashCode = hashCode * 59 + this.ListAll.GetHashCode();
+                if (this.FlavorSoldOut != null) hashCode = hashCode * 59 + this.FlavorSoldOut.GetHashCode();
                 return hashCode;
             }
         }

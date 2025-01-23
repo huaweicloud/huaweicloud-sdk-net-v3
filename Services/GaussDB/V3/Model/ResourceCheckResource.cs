@@ -185,7 +185,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// HTAP实例子网即GaussDBForMySQL实例子网。 获取方法请参见[获取子网ID](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
+        /// HTAP实例子网即TaurusDB实例子网。 获取方法请参见[获取子网ID](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }

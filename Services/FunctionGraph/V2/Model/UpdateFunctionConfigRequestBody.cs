@@ -347,6 +347,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public FuncVpc FuncVpc { get; set; }
 
         /// <summary>
+        /// VPC对等连接网段。您可以声明代码中使用到的VPC网段，用以检测是否与服务使用VPC网段冲突。网段间使用分号分隔且不能超过5个。
+        /// </summary>
+        [JsonProperty("peering_cidr", NullValueHandling = NullValueHandling.Ignore)]
+        public string PeeringCidr { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("mount_config", NullValueHandling = NullValueHandling.Ignore)]
@@ -466,6 +472,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("enable_class_isolation", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableClassIsolation { get; set; }
 
+        /// <summary>
+        /// 自定义日志标签。函数执行时，可以按照自定义标签配置上报标签到云日志服务(LTS)，用户可以通过标签对日志进行过滤筛选。
+        /// </summary>
+        [JsonProperty("lts_custom_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> LtsCustomTag { get; set; }
+
 
 
         /// <summary>
@@ -488,6 +500,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  appXrole: ").Append(AppXrole).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  funcVpc: ").Append(FuncVpc).Append("\n");
+            sb.Append("  peeringCidr: ").Append(PeeringCidr).Append("\n");
             sb.Append("  mountConfig: ").Append(MountConfig).Append("\n");
             sb.Append("  strategyConfig: ").Append(StrategyConfig).Append("\n");
             sb.Append("  customImage: ").Append(CustomImage).Append("\n");
@@ -508,6 +521,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  restoreHookTimeout: ").Append(RestoreHookTimeout).Append("\n");
             sb.Append("  heartbeatHandler: ").Append(HeartbeatHandler).Append("\n");
             sb.Append("  enableClassIsolation: ").Append(EnableClassIsolation).Append("\n");
+            sb.Append("  ltsCustomTag: ").Append(LtsCustomTag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -539,6 +553,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.AppXrole != input.AppXrole || (this.AppXrole != null && !this.AppXrole.Equals(input.AppXrole))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.FuncVpc != input.FuncVpc || (this.FuncVpc != null && !this.FuncVpc.Equals(input.FuncVpc))) return false;
+            if (this.PeeringCidr != input.PeeringCidr || (this.PeeringCidr != null && !this.PeeringCidr.Equals(input.PeeringCidr))) return false;
             if (this.MountConfig != input.MountConfig || (this.MountConfig != null && !this.MountConfig.Equals(input.MountConfig))) return false;
             if (this.StrategyConfig != input.StrategyConfig || (this.StrategyConfig != null && !this.StrategyConfig.Equals(input.StrategyConfig))) return false;
             if (this.CustomImage != input.CustomImage || (this.CustomImage != null && !this.CustomImage.Equals(input.CustomImage))) return false;
@@ -559,6 +574,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.RestoreHookTimeout != input.RestoreHookTimeout || (this.RestoreHookTimeout != null && !this.RestoreHookTimeout.Equals(input.RestoreHookTimeout))) return false;
             if (this.HeartbeatHandler != input.HeartbeatHandler || (this.HeartbeatHandler != null && !this.HeartbeatHandler.Equals(input.HeartbeatHandler))) return false;
             if (this.EnableClassIsolation != input.EnableClassIsolation || (this.EnableClassIsolation != null && !this.EnableClassIsolation.Equals(input.EnableClassIsolation))) return false;
+            if (this.LtsCustomTag != input.LtsCustomTag || (this.LtsCustomTag != null && input.LtsCustomTag != null && !this.LtsCustomTag.SequenceEqual(input.LtsCustomTag))) return false;
 
             return true;
         }
@@ -584,6 +600,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.AppXrole != null) hashCode = hashCode * 59 + this.AppXrole.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.FuncVpc != null) hashCode = hashCode * 59 + this.FuncVpc.GetHashCode();
+                if (this.PeeringCidr != null) hashCode = hashCode * 59 + this.PeeringCidr.GetHashCode();
                 if (this.MountConfig != null) hashCode = hashCode * 59 + this.MountConfig.GetHashCode();
                 if (this.StrategyConfig != null) hashCode = hashCode * 59 + this.StrategyConfig.GetHashCode();
                 if (this.CustomImage != null) hashCode = hashCode * 59 + this.CustomImage.GetHashCode();
@@ -604,6 +621,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.RestoreHookTimeout != null) hashCode = hashCode * 59 + this.RestoreHookTimeout.GetHashCode();
                 if (this.HeartbeatHandler != null) hashCode = hashCode * 59 + this.HeartbeatHandler.GetHashCode();
                 if (this.EnableClassIsolation != null) hashCode = hashCode * 59 + this.EnableClassIsolation.GetHashCode();
+                if (this.LtsCustomTag != null) hashCode = hashCode * 59 + this.LtsCustomTag.GetHashCode();
                 return hashCode;
             }
         }

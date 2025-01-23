@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string SourceInstanceId { get; set; }
 
         /// <summary>
-        /// 源节点ID。GaussDB(for MySQL)只读节点ID。如为空，则取GaussDB(for MySQL)主节点ID。
+        /// 源节点ID。TaurusDB只读节点ID。如为空，则取TaurusDB主节点ID。
         /// </summary>
         [JsonProperty("source_node_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceNodeId { get; set; }

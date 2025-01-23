@@ -112,6 +112,24 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("listeners_per_loadbalancer", NullValueHandling = NullValueHandling.Ignore)]
         public int? ListenersPerLoadbalancer { get; set; }
 
+        /// <summary>
+        /// 单个监听器下的IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// </summary>
+        [JsonProperty("ipgroups_per_listener", NullValueHandling = NullValueHandling.Ignore)]
+        public int? IpgroupsPerListener { get; set; }
+
+        /// <summary>
+        /// 单个转发策略下的后端服务器组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// </summary>
+        [JsonProperty("pools_per_l7policy", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PoolsPerL7policy { get; set; }
+
+        /// <summary>
+        /// 单个监听器下的转发策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// </summary>
+        [JsonProperty("l7policies_per_listener", NullValueHandling = NullValueHandling.Ignore)]
+        public int? L7policiesPerListener { get; set; }
+
 
 
         /// <summary>
@@ -137,6 +155,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  ipgroupMaxLength: ").Append(IpgroupMaxLength).Append("\n");
             sb.Append("  securityPolicy: ").Append(SecurityPolicy).Append("\n");
             sb.Append("  listenersPerLoadbalancer: ").Append(ListenersPerLoadbalancer).Append("\n");
+            sb.Append("  ipgroupsPerListener: ").Append(IpgroupsPerListener).Append("\n");
+            sb.Append("  poolsPerL7policy: ").Append(PoolsPerL7policy).Append("\n");
+            sb.Append("  l7policiesPerListener: ").Append(L7policiesPerListener).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -171,6 +192,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.IpgroupMaxLength != input.IpgroupMaxLength || (this.IpgroupMaxLength != null && !this.IpgroupMaxLength.Equals(input.IpgroupMaxLength))) return false;
             if (this.SecurityPolicy != input.SecurityPolicy || (this.SecurityPolicy != null && !this.SecurityPolicy.Equals(input.SecurityPolicy))) return false;
             if (this.ListenersPerLoadbalancer != input.ListenersPerLoadbalancer || (this.ListenersPerLoadbalancer != null && !this.ListenersPerLoadbalancer.Equals(input.ListenersPerLoadbalancer))) return false;
+            if (this.IpgroupsPerListener != input.IpgroupsPerListener || (this.IpgroupsPerListener != null && !this.IpgroupsPerListener.Equals(input.IpgroupsPerListener))) return false;
+            if (this.PoolsPerL7policy != input.PoolsPerL7policy || (this.PoolsPerL7policy != null && !this.PoolsPerL7policy.Equals(input.PoolsPerL7policy))) return false;
+            if (this.L7policiesPerListener != input.L7policiesPerListener || (this.L7policiesPerListener != null && !this.L7policiesPerListener.Equals(input.L7policiesPerListener))) return false;
 
             return true;
         }
@@ -199,6 +223,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.IpgroupMaxLength != null) hashCode = hashCode * 59 + this.IpgroupMaxLength.GetHashCode();
                 if (this.SecurityPolicy != null) hashCode = hashCode * 59 + this.SecurityPolicy.GetHashCode();
                 if (this.ListenersPerLoadbalancer != null) hashCode = hashCode * 59 + this.ListenersPerLoadbalancer.GetHashCode();
+                if (this.IpgroupsPerListener != null) hashCode = hashCode * 59 + this.IpgroupsPerListener.GetHashCode();
+                if (this.PoolsPerL7policy != null) hashCode = hashCode * 59 + this.PoolsPerL7policy.GetHashCode();
+                if (this.L7policiesPerListener != null) hashCode = hashCode * 59 + this.L7policiesPerListener.GetHashCode();
                 return hashCode;
             }
         }

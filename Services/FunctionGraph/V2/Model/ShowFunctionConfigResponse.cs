@@ -696,6 +696,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public FuncVpc FuncVpc { get; set; }
 
         /// <summary>
+        /// VPC对等连接网段。您可以声明代码中使用到的VPC网段，用以检测是否与服务使用VPC网段冲突。网段间使用分号分隔且不能超过5个。
+        /// </summary>
+        [JsonProperty("peering_cidr", NullValueHandling = NullValueHandling.Ignore)]
+        public string PeeringCidr { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("mount_config", NullValueHandling = NullValueHandling.Ignore)]
@@ -856,6 +862,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("is_return_stream", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsReturnStream { get; set; }
 
+        /// <summary>
+        /// 自定义日志标签。函数执行时，可以按照自定义标签配置上报标签到云日志服务(LTS)，用户可以通过标签对日志进行过滤筛选。
+        /// </summary>
+        [JsonProperty("lts_custom_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> LtsCustomTag { get; set; }
+
 
 
         /// <summary>
@@ -895,6 +907,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  lastModified: ").Append(LastModified).Append("\n");
             sb.Append("  ephemeralStorage: ").Append(EphemeralStorage).Append("\n");
             sb.Append("  funcVpc: ").Append(FuncVpc).Append("\n");
+            sb.Append("  peeringCidr: ").Append(PeeringCidr).Append("\n");
             sb.Append("  mountConfig: ").Append(MountConfig).Append("\n");
             sb.Append("  dependList: ").Append(DependList).Append("\n");
             sb.Append("  dependVersionList: ").Append(DependVersionList).Append("\n");
@@ -922,6 +935,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  allowEphemeralStorage: ").Append(AllowEphemeralStorage).Append("\n");
             sb.Append("  networkController: ").Append(NetworkController).Append("\n");
             sb.Append("  isReturnStream: ").Append(IsReturnStream).Append("\n");
+            sb.Append("  ltsCustomTag: ").Append(LtsCustomTag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -970,6 +984,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.LastModified != input.LastModified || (this.LastModified != null && !this.LastModified.Equals(input.LastModified))) return false;
             if (this.EphemeralStorage != input.EphemeralStorage || (this.EphemeralStorage != null && !this.EphemeralStorage.Equals(input.EphemeralStorage))) return false;
             if (this.FuncVpc != input.FuncVpc || (this.FuncVpc != null && !this.FuncVpc.Equals(input.FuncVpc))) return false;
+            if (this.PeeringCidr != input.PeeringCidr || (this.PeeringCidr != null && !this.PeeringCidr.Equals(input.PeeringCidr))) return false;
             if (this.MountConfig != input.MountConfig || (this.MountConfig != null && !this.MountConfig.Equals(input.MountConfig))) return false;
             if (this.DependList != input.DependList || (this.DependList != null && input.DependList != null && !this.DependList.SequenceEqual(input.DependList))) return false;
             if (this.DependVersionList != input.DependVersionList || (this.DependVersionList != null && input.DependVersionList != null && !this.DependVersionList.SequenceEqual(input.DependVersionList))) return false;
@@ -997,6 +1012,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.AllowEphemeralStorage != input.AllowEphemeralStorage || (this.AllowEphemeralStorage != null && !this.AllowEphemeralStorage.Equals(input.AllowEphemeralStorage))) return false;
             if (this.NetworkController != input.NetworkController || (this.NetworkController != null && !this.NetworkController.Equals(input.NetworkController))) return false;
             if (this.IsReturnStream != input.IsReturnStream || (this.IsReturnStream != null && !this.IsReturnStream.Equals(input.IsReturnStream))) return false;
+            if (this.LtsCustomTag != input.LtsCustomTag || (this.LtsCustomTag != null && input.LtsCustomTag != null && !this.LtsCustomTag.SequenceEqual(input.LtsCustomTag))) return false;
 
             return true;
         }
@@ -1039,6 +1055,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.LastModified != null) hashCode = hashCode * 59 + this.LastModified.GetHashCode();
                 if (this.EphemeralStorage != null) hashCode = hashCode * 59 + this.EphemeralStorage.GetHashCode();
                 if (this.FuncVpc != null) hashCode = hashCode * 59 + this.FuncVpc.GetHashCode();
+                if (this.PeeringCidr != null) hashCode = hashCode * 59 + this.PeeringCidr.GetHashCode();
                 if (this.MountConfig != null) hashCode = hashCode * 59 + this.MountConfig.GetHashCode();
                 if (this.DependList != null) hashCode = hashCode * 59 + this.DependList.GetHashCode();
                 if (this.DependVersionList != null) hashCode = hashCode * 59 + this.DependVersionList.GetHashCode();
@@ -1066,6 +1083,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.AllowEphemeralStorage != null) hashCode = hashCode * 59 + this.AllowEphemeralStorage.GetHashCode();
                 if (this.NetworkController != null) hashCode = hashCode * 59 + this.NetworkController.GetHashCode();
                 if (this.IsReturnStream != null) hashCode = hashCode * 59 + this.IsReturnStream.GetHashCode();
+                if (this.LtsCustomTag != null) hashCode = hashCode * 59 + this.LtsCustomTag.GetHashCode();
                 return hashCode;
             }
         }

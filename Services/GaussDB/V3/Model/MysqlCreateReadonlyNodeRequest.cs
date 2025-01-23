@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string IsAutoPay { get; set; }
 
         /// <summary>
-        /// 可用区。可指定可用区创建只读节点，不传该参数时默认为自动选择可用区。  调用[查询数据库规格](https://support.huaweicloud.com/api-gaussdbformysql/ShowGaussMySqlFlavors.html)获取，其中az_status中的key为availability_zone。  注：指定可用区创建只读节点，可能由于资源不足创建失败。
+        /// 可用区。可指定可用区创建只读节点，不传该参数时默认为自动选择可用区。  调用[查询数据库规格](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlFlavors.html)获取，其中az_status中的key为availability_zone。  注：指定可用区创建只读节点，可能由于资源不足创建失败。
         /// </summary>
         [JsonProperty("availability_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailabilityZones { get; set; }

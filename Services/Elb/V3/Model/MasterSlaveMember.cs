@@ -77,6 +77,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string OperatingStatus { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("reason", NullValueHandling = NullValueHandling.Ignore)]
+        public MemberHealthCheckFailedReason Reason { get; set; }
+
+        /// <summary>
         /// 后端服务器的类型。  取值： - ip：跨VPC的member。 - instance：关联到ECS的member。
         /// </summary>
         [JsonProperty("member_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -119,6 +125,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  deviceOwner: ").Append(DeviceOwner).Append("\n");
             sb.Append("  deviceId: ").Append(DeviceId).Append("\n");
             sb.Append("  operatingStatus: ").Append(OperatingStatus).Append("\n");
+            sb.Append("  reason: ").Append(Reason).Append("\n");
             sb.Append("  memberType: ").Append(MemberType).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  role: ").Append(Role).Append("\n");
@@ -151,6 +158,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.DeviceOwner != input.DeviceOwner || (this.DeviceOwner != null && !this.DeviceOwner.Equals(input.DeviceOwner))) return false;
             if (this.DeviceId != input.DeviceId || (this.DeviceId != null && !this.DeviceId.Equals(input.DeviceId))) return false;
             if (this.OperatingStatus != input.OperatingStatus || (this.OperatingStatus != null && !this.OperatingStatus.Equals(input.OperatingStatus))) return false;
+            if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
             if (this.MemberType != input.MemberType || (this.MemberType != null && !this.MemberType.Equals(input.MemberType))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.Role != input.Role || (this.Role != null && !this.Role.Equals(input.Role))) return false;
@@ -177,6 +185,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.DeviceOwner != null) hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
                 if (this.DeviceId != null) hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
                 if (this.OperatingStatus != null) hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
+                if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
                 if (this.MemberType != null) hashCode = hashCode * 59 + this.MemberType.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Role != null) hashCode = hashCode * 59 + this.Role.GetHashCode();

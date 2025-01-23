@@ -191,7 +191,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
         public ProtectionStatusEnum ProtectionStatus { get; set; }
         /// <summary>
-        /// 设置保护的原因 &gt;仅当protection_status为consoleProtection时有效。
+        /// 参数解释：设置保护的原因。作为protection_status的转态设置的原因。  约束限制：仅当protection_status为consoleProtection时有效。  取值范围：除&#39;&lt;&#39;和&#39;&gt;&#39;外通用Unicode字符集字符，最大255个字符。
         /// </summary>
         [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectionReason { get; set; }
@@ -213,6 +213,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         [JsonProperty("pool_health", NullValueHandling = NullValueHandling.Ignore)]
         public PoolHealth PoolHealth { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("quic_cid_hash_strategy", NullValueHandling = NullValueHandling.Ignore)]
+        public QuicCidHashStrategy QuicCidHashStrategy { get; set; }
 
 
 
@@ -237,6 +243,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  anyPortEnable: ").Append(AnyPortEnable).Append("\n");
             sb.Append("  connectionDrain: ").Append(ConnectionDrain).Append("\n");
             sb.Append("  poolHealth: ").Append(PoolHealth).Append("\n");
+            sb.Append("  quicCidHashStrategy: ").Append(QuicCidHashStrategy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -269,6 +276,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.AnyPortEnable != input.AnyPortEnable || (this.AnyPortEnable != null && !this.AnyPortEnable.Equals(input.AnyPortEnable))) return false;
             if (this.ConnectionDrain != input.ConnectionDrain || (this.ConnectionDrain != null && !this.ConnectionDrain.Equals(input.ConnectionDrain))) return false;
             if (this.PoolHealth != input.PoolHealth || (this.PoolHealth != null && !this.PoolHealth.Equals(input.PoolHealth))) return false;
+            if (this.QuicCidHashStrategy != input.QuicCidHashStrategy || (this.QuicCidHashStrategy != null && !this.QuicCidHashStrategy.Equals(input.QuicCidHashStrategy))) return false;
 
             return true;
         }
@@ -295,6 +303,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.AnyPortEnable != null) hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
                 if (this.ConnectionDrain != null) hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
                 if (this.PoolHealth != null) hashCode = hashCode * 59 + this.PoolHealth.GetHashCode();
+                if (this.QuicCidHashStrategy != null) hashCode = hashCode * 59 + this.QuicCidHashStrategy.GetHashCode();
                 return hashCode;
             }
         }

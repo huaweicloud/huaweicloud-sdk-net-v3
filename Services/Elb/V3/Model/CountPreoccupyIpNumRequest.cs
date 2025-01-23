@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 负载均衡器七层规格的ID。传入该字段表示计算创建该规格的LB，或变更LB的原七层规格到该规格所需要的预占IP。  适用场景：创建负LB，变更LB规格。  [不支持传入l7_flavor_id](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+        /// 负载均衡器七层规格的ID。传入该字段表示计算创建该规格的LB的预占IP数量，或变更LB的原七层规格到该规格所需要的新增预占IP数量。  适用场景：创建负LB，变更LB规格。  [不支持传入l7_flavor_id。](tag:hcso,hk_vdf,srg,fcs)
         /// </summary>
         [SDKProperty("l7_flavor_id", IsQuery = true)]
         [JsonProperty("l7_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7FlavorId { get; set; }
 
         /// <summary>
-        /// 是否开启跨VPC转发。  取值true表示计算创建或变更为开启跨VPC转发的LB的预占IP。  取值false表示计算创建或变更为不开启跨VPC转发的LB的预占IP。不传等价false。  适用场景：创建LB，变更LB规格。  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
+        /// 跨VPC后端转发开关。  取值true表示计算创建开启跨VPC后端转发的LB的预占IP数量，或开启LB跨VPC后端转发所需要的新增预占IP数量。  取值false表示计算创建不开启跨VPC后端转发的LB的预占IP。  不传等价false。  适用场景：创建LB，LB开启跨VPC后端转发。  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
         /// </summary>
         [SDKProperty("ip_target_enable", IsQuery = true)]
         [JsonProperty("ip_target_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,18 +38,32 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? IpVersion { get; set; }
 
         /// <summary>
-        /// 负载均衡器ID。计算LB规格变更或创建LB中的第一个七层监听器的预占IP。  适用场景：变更LB规格，创建LB中的第一个七层监听器。
+        /// 负载均衡器ID。计算LB变更或创建LB中的第一个七层监听器的新增预占IP。  适用场景：变更LB规格，开启跨VPC后端转发，开启/不开启地址族转换功能，创建LB中的第一个七层监听器。
         /// </summary>
         [SDKProperty("loadbalancer_id", IsQuery = true)]
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LoadbalancerId { get; set; }
 
         /// <summary>
-        /// 计算创建AZ列表为availability_zone_id的负载局衡器实例的预占IP。  适用场景：创建LB。  使用说明：传入loadbalancer_id时，该参数无效。
+        /// 计算创建AZ列表为availability_zone_id的负载均衡器实例的预占IP。  适用场景：创建LB。  使用说明：传入loadbalancer_id时，该参数无效。
         /// </summary>
         [SDKProperty("availability_zone_id", IsQuery = true)]
         [JsonProperty("availability_zone_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailabilityZoneId { get; set; }
+
+        /// <summary>
+        /// 参数解释：计算共享型升级为独享型ELB负载均衡器实例的所需预占IP。  约束限制：必须同时传入loadbalancer_id。  取值范围：UPGRADE - 共享型升级为独享型ELB场景。
+        /// </summary>
+        [SDKProperty("scene", IsQuery = true)]
+        [JsonProperty("scene", NullValueHandling = NullValueHandling.Ignore)]
+        public string Scene { get; set; }
+
+        /// <summary>
+        /// 参数解释： 开启地址族转换。传入该字段表示计算创建LB及该LB下开启/不开启地址族转换特性的监听器所需要的预占IP，或者指定LB创建开启/不开启地址族转换特性的监听器所需要的新增预占IP。  取值范围： true：开启地址族转换特性。 false：不开启地址族转换特性。  默认取值： false
+        /// </summary>
+        [SDKProperty("nat64_enable", IsQuery = true)]
+        [JsonProperty("nat64_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Nat64Enable { get; set; }
 
 
 
@@ -65,6 +79,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  loadbalancerId: ").Append(LoadbalancerId).Append("\n");
             sb.Append("  availabilityZoneId: ").Append(AvailabilityZoneId).Append("\n");
+            sb.Append("  scene: ").Append(Scene).Append("\n");
+            sb.Append("  nat64Enable: ").Append(Nat64Enable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -88,6 +104,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.IpVersion != input.IpVersion || (this.IpVersion != null && !this.IpVersion.Equals(input.IpVersion))) return false;
             if (this.LoadbalancerId != input.LoadbalancerId || (this.LoadbalancerId != null && !this.LoadbalancerId.Equals(input.LoadbalancerId))) return false;
             if (this.AvailabilityZoneId != input.AvailabilityZoneId || (this.AvailabilityZoneId != null && input.AvailabilityZoneId != null && !this.AvailabilityZoneId.SequenceEqual(input.AvailabilityZoneId))) return false;
+            if (this.Scene != input.Scene || (this.Scene != null && !this.Scene.Equals(input.Scene))) return false;
+            if (this.Nat64Enable != input.Nat64Enable || (this.Nat64Enable != null && !this.Nat64Enable.Equals(input.Nat64Enable))) return false;
 
             return true;
         }
@@ -105,6 +123,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 if (this.LoadbalancerId != null) hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
                 if (this.AvailabilityZoneId != null) hashCode = hashCode * 59 + this.AvailabilityZoneId.GetHashCode();
+                if (this.Scene != null) hashCode = hashCode * 59 + this.Scene.GetHashCode();
+                if (this.Nat64Enable != null) hashCode = hashCode * 59 + this.Nat64Enable.GetHashCode();
                 return hashCode;
             }
         }

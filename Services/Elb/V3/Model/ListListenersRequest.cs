@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> ProtocolPort { get; set; }
 
         /// <summary>
-        /// 监听器的监听协议。  [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC、TLS。 说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt)  [取值：TCP、UDP、HTTP、HTTPS。](tag:hcso_dt) [取值：TCP、UDP、IP、HTTP、HTTPS。IP为网关型LB上的监听器独有的协议。](tag:hws_eu)  支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
+        /// 监听器的监听协议。  [取值：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC、TLS。 说明：TERMINATED_HTTPS为共享型LB上的监听器独有的协议。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,srg,fcs,dt)  [取值：TCP、UDP、HTTP、HTTPS。](tag:hcso_dt) [取值：TCP、UDP、IP、HTTP、HTTPS。IP为网关型LB上的监听器独有的协议。](tag:hws_eu)  支持多值查询，查询条件格式：*protocol&#x3D;xxx&amp;protocol&#x3D;xxx*。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
         /// </summary>
         [SDKProperty("protocol", IsQuery = true)]
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> MemberDeviceId { get; set; }
 
         /// <summary>
-        /// 企业项目ID。不传时查询default企业项目\&quot;0\&quot;下的资源，鉴权按照default企业项目鉴权； 如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。  支持多值查询，查询条件格式：*enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+        /// 参数解释：所属的企业项目ID。 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:listeners:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  支持多值查询，查询条件格式： *enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -157,28 +157,28 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? EnableMemberRetry { get; set; }
 
         /// <summary>
-        /// 等待后端服务器响应超时时间。请求转发后端服务器后，在等待超时member_timeout时长没有响应，负载均衡将终止等待，并返回 HTTP504错误码。  取值：1-3600s。  支持多值查询，查询条件格式：*member_timeout&#x3D;xxx&amp;member_timeout&#x3D;xxx*。
+        /// 等待后端服务器响应超时时间。请求转发后端服务器后，在等待超时member_timeout时长没有响应，负载均衡将终止等待，并返回HTTP504错误码。  取值：1-300s。  支持多值查询，查询条件格式：*member_timeout&#x3D;xxx&amp;member_timeout&#x3D;xxx*。
         /// </summary>
         [SDKProperty("member_timeout", IsQuery = true)]
         [JsonProperty("member_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> MemberTimeout { get; set; }
 
         /// <summary>
-        /// 等待客户端请求超时时间，包括两种情况： - 读取整个客户端请求头的超时时长：如果客户端未在超时时长内发送完整个请求头，则请求将被中断 - 两个连续body体的数据包到达LB的时间间隔，超出client_timeout将会断开连接。  取值：1-3600s。  支持多值查询，查询条件格式：*client_timeout&#x3D;xxx&amp;client_timeout&#x3D;xxx*。
+        /// 等待客户端请求超时时间，包括两种情况： - 读取整个客户端请求头的超时时长：如果客户端未在超时时长内发送完整个请求头，则请求将被中断 - 两个连续body体的数据包到达LB的时间间隔，超出client_timeout将会断开连接。  取值：1-300s。  支持多值查询，查询条件格式：*client_timeout&#x3D;xxx&amp;client_timeout&#x3D;xxx*。
         /// </summary>
         [SDKProperty("client_timeout", IsQuery = true)]
         [JsonProperty("client_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> ClientTimeout { get; set; }
 
         /// <summary>
-        /// 客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求， 负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  取值： - TCP监听器[和IP监听器](tag:hws_eu)：10-4000s。 - HTTP/HTTPS/TERMINATED_HTTPS监听器：0-4000s。 [- 共享型实例的UDP监听器不支持此字段。](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,fcs,dt,dt_test,hk_tm)  支持多值查询，查询条件格式：*keepalive_timeout&#x3D;xxx&amp;keepalive_timeout&#x3D;xxx*。
+        /// 参数解释：客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  约束限制：共享型实例的UDP监听器不支持此字段。  取值范围： - TCP监听器[和IP监听器](tag:hws_eu)：10-4000s，默认值为300s。 - 若为HTTP/HTTPS/TERMINATED_HTTPS监听器，取值范围为（0-4000s）默认值为60s。  支持多值查询，查询条件格式：*keepalive_timeout&#x3D;xxx&amp;keepalive_timeout&#x3D;xxx*。
         /// </summary>
         [SDKProperty("keepalive_timeout", IsQuery = true)]
         [JsonProperty("keepalive_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> KeepaliveTimeout { get; set; }
 
         /// <summary>
-        /// 是否透传客户端IP地址。开启后客户端IP地址将透传到后端服务器。  [仅作用于共享型LB的TCP/UDP监听器。取值：true开启，false不开启。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+        /// 是否透传客户端IP地址。开启后客户端IP地址将透传到后端服务器。  [仅作用于共享型LB的TCP/UDP监听器。取值：true开启，false不开启。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
         /// </summary>
         [SDKProperty("transparent_client_ip_enable", IsQuery = true)]
         [JsonProperty("transparent_client_ip_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -211,6 +211,20 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [SDKProperty("protection_status", IsQuery = true)]
         [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ProtectionStatus { get; set; }
+
+        /// <summary>
+        /// 参数解释：监听器0-RTT能力开关。
+        /// </summary>
+        [SDKProperty("ssl_early_data_enable", IsQuery = true)]
+        [JsonProperty("ssl_early_data_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SslEarlyDataEnable { get; set; }
+
+        /// <summary>
+        /// 是否开启nat64地址族转换功能。  取值：true 开启，false 不开启。
+        /// </summary>
+        [SDKProperty("nat64_enable", IsQuery = true)]
+        [JsonProperty("nat64_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Nat64Enable { get; set; }
 
 
 
@@ -249,6 +263,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  enhanceL7policyEnable: ").Append(EnhanceL7policyEnable).Append("\n");
             sb.Append("  memberInstanceId: ").Append(MemberInstanceId).Append("\n");
             sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
+            sb.Append("  sslEarlyDataEnable: ").Append(SslEarlyDataEnable).Append("\n");
+            sb.Append("  nat64Enable: ").Append(Nat64Enable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -295,6 +311,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.EnhanceL7policyEnable != input.EnhanceL7policyEnable || (this.EnhanceL7policyEnable != null && !this.EnhanceL7policyEnable.Equals(input.EnhanceL7policyEnable))) return false;
             if (this.MemberInstanceId != input.MemberInstanceId || (this.MemberInstanceId != null && input.MemberInstanceId != null && !this.MemberInstanceId.SequenceEqual(input.MemberInstanceId))) return false;
             if (this.ProtectionStatus != input.ProtectionStatus || (this.ProtectionStatus != null && input.ProtectionStatus != null && !this.ProtectionStatus.SequenceEqual(input.ProtectionStatus))) return false;
+            if (this.SslEarlyDataEnable != input.SslEarlyDataEnable || (this.SslEarlyDataEnable != null && !this.SslEarlyDataEnable.Equals(input.SslEarlyDataEnable))) return false;
+            if (this.Nat64Enable != input.Nat64Enable || (this.Nat64Enable != null && !this.Nat64Enable.Equals(input.Nat64Enable))) return false;
 
             return true;
         }
@@ -335,6 +353,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.EnhanceL7policyEnable != null) hashCode = hashCode * 59 + this.EnhanceL7policyEnable.GetHashCode();
                 if (this.MemberInstanceId != null) hashCode = hashCode * 59 + this.MemberInstanceId.GetHashCode();
                 if (this.ProtectionStatus != null) hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.SslEarlyDataEnable != null) hashCode = hashCode * 59 + this.SslEarlyDataEnable.GetHashCode();
+                if (this.Nat64Enable != null) hashCode = hashCode * 59 + this.Nat64Enable.GetHashCode();
                 return hashCode;
             }
         }

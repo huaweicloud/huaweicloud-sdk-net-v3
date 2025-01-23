@@ -398,7 +398,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
 
 
         /// <summary>
-        /// GaussDB(for MySQL)数据库。
+        /// TaurusDB数据库。
         /// </summary>
         [JsonProperty("source_database", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceDatabase { get; set; }

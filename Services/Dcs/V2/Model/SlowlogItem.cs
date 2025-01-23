@@ -58,6 +58,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 节点类型。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("node_role", NullValueHandling = NullValueHandling.Ignore)]
+        public string NodeRole { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 客户端IP地址。 **取值范围**： 不涉及。 
+        /// </summary>
+        [JsonProperty("client_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClientIp { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +86,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  shardName: ").Append(ShardName).Append("\n");
             sb.Append("  databaseId: ").Append(DatabaseId).Append("\n");
             sb.Append("  username: ").Append(Username).Append("\n");
+            sb.Append("  nodeRole: ").Append(NodeRole).Append("\n");
+            sb.Append("  clientIp: ").Append(ClientIp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +113,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             if (this.ShardName != input.ShardName || (this.ShardName != null && !this.ShardName.Equals(input.ShardName))) return false;
             if (this.DatabaseId != input.DatabaseId || (this.DatabaseId != null && !this.DatabaseId.Equals(input.DatabaseId))) return false;
             if (this.Username != input.Username || (this.Username != null && !this.Username.Equals(input.Username))) return false;
+            if (this.NodeRole != input.NodeRole || (this.NodeRole != null && !this.NodeRole.Equals(input.NodeRole))) return false;
+            if (this.ClientIp != input.ClientIp || (this.ClientIp != null && !this.ClientIp.Equals(input.ClientIp))) return false;
 
             return true;
         }
@@ -118,6 +134,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 if (this.ShardName != null) hashCode = hashCode * 59 + this.ShardName.GetHashCode();
                 if (this.DatabaseId != null) hashCode = hashCode * 59 + this.DatabaseId.GetHashCode();
                 if (this.Username != null) hashCode = hashCode * 59 + this.Username.GetHashCode();
+                if (this.NodeRole != null) hashCode = hashCode * 59 + this.NodeRole.GetHashCode();
+                if (this.ClientIp != null) hashCode = hashCode * 59 + this.ClientIp.GetHashCode();
                 return hashCode;
             }
         }

@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? MaxRetriesDown { get; set; }
 
         /// <summary>
-        /// 健康检查端口号。取值：1-65535，不可传入空，但可传入null，表示使用后端服务器端口号。[当pool协议为IP时，monitor_port必须指定为非0值。](tag:hws_eu)
+        /// 参数解释：健康检查端口号。 [约束限制：当pool协议为IP时，monitor_port必须指定为非0值。](tag:hws_eu) 取值范围：1-65535和null，传null表示使用后端服务器端口号。
         /// </summary>
         [JsonProperty("monitor_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? MonitorPort { get; set; }

@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\&quot;,\&quot;分割，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\&quot;.\&quot;分割，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\&quot;-\&quot;，且必须以字母或数字开头和结尾。例：www.test.com。  泛域名：在普通域名的基础上仅允许首字母为\&quot;\\*\&quot;。例：\\*.test.com
+        /// 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\&quot;,\&quot;分隔，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\&quot;.\&quot;分隔，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\&quot;-\&quot;，且必须以字母或数字开头和结尾。例：www.test.com。  泛域名：在普通域名的基础上仅允许首字母为\&quot;\\*\&quot;。例：\\*.test.com
         /// </summary>
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
         public string Domain { get; set; }
@@ -101,7 +101,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string EncPrivateKey { get; set; }
 
         /// <summary>
-        /// 证书主域名
+        /// SCM证书ID
+        /// </summary>
+        [JsonProperty("scm_certificate_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScmCertificateId { get; set; }
+
+        /// <summary>
+        /// 证书绑定的主域名。
         /// </summary>
         [JsonProperty("common_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CommonName { get; set; }
@@ -113,7 +119,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Fingerprint { get; set; }
 
         /// <summary>
-        /// 证书全部域名
+        /// 证书绑定的所有域名。
         /// </summary>
         [JsonProperty("subject_alternative_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SubjectAlternativeNames { get; set; }
@@ -141,6 +147,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  encCertificate: ").Append(EncCertificate).Append("\n");
             sb.Append("  encPrivateKey: ").Append(EncPrivateKey).Append("\n");
+            sb.Append("  scmCertificateId: ").Append(ScmCertificateId).Append("\n");
             sb.Append("  commonName: ").Append(CommonName).Append("\n");
             sb.Append("  fingerprint: ").Append(Fingerprint).Append("\n");
             sb.Append("  subjectAlternativeNames: ").Append(SubjectAlternativeNames).Append("\n");
@@ -176,6 +183,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.EncCertificate != input.EncCertificate || (this.EncCertificate != null && !this.EncCertificate.Equals(input.EncCertificate))) return false;
             if (this.EncPrivateKey != input.EncPrivateKey || (this.EncPrivateKey != null && !this.EncPrivateKey.Equals(input.EncPrivateKey))) return false;
+            if (this.ScmCertificateId != input.ScmCertificateId || (this.ScmCertificateId != null && !this.ScmCertificateId.Equals(input.ScmCertificateId))) return false;
             if (this.CommonName != input.CommonName || (this.CommonName != null && !this.CommonName.Equals(input.CommonName))) return false;
             if (this.Fingerprint != input.Fingerprint || (this.Fingerprint != null && !this.Fingerprint.Equals(input.Fingerprint))) return false;
             if (this.SubjectAlternativeNames != input.SubjectAlternativeNames || (this.SubjectAlternativeNames != null && input.SubjectAlternativeNames != null && !this.SubjectAlternativeNames.SequenceEqual(input.SubjectAlternativeNames))) return false;
@@ -205,6 +213,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.EncCertificate != null) hashCode = hashCode * 59 + this.EncCertificate.GetHashCode();
                 if (this.EncPrivateKey != null) hashCode = hashCode * 59 + this.EncPrivateKey.GetHashCode();
+                if (this.ScmCertificateId != null) hashCode = hashCode * 59 + this.ScmCertificateId.GetHashCode();
                 if (this.CommonName != null) hashCode = hashCode * 59 + this.CommonName.GetHashCode();
                 if (this.Fingerprint != null) hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
                 if (this.SubjectAlternativeNames != null) hashCode = hashCode * 59 + this.SubjectAlternativeNames.GetHashCode();

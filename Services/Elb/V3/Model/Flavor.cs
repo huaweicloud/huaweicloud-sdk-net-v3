@@ -53,19 +53,19 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 参数解释：[是否售罄。](tag:hws,hk,hws_eu,otc,tlf,sbc,g42,hk_g42,dt_test,mix,hk_sbc,hws_ocb,dt) [是否无法购买该规格的LB](tag:ctc,cmcc,ocb,tm,fcs,fcs_dt,hcso,hcso_dt,hk_vdf)  取值范围： - true：[已售罄，将](tag:hws,hk,hws_eu,otc,tlf,sbc,g42,hk_g42,dt_test,mix,hk_sbc,hws_ocb,dt)无法购买该规格的LB。 - false：[未售罄，](tag:hws,hk,hws_eu,otc,tlf,sbc,g42,hk_g42,dt_test,mix,hk_sbc,hws_ocb,dt)可购买该规格的LB。
+        /// 参数解释： [是否售罄。](tag:hws) [是否无法购买该规格的LB。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,dt_test,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,ct)  取值范围： - true：[已售罄，将](tag:hws)无法购买该规格的LB。 - false：[未售罄，](tag:hws)可购买该规格的LB。
         /// </summary>
         [JsonProperty("flavor_sold_out", NullValueHandling = NullValueHandling.Ignore)]
         public bool? FlavorSoldOut { get; set; }
 
         /// <summary>
-        /// 参数解释：可用区组，如：center
+        /// 参数解释：网络公共边界组，如：center
         /// </summary>
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
 
         /// <summary>
-        /// 参数解释：可用区组编码。  取值范围：0表示center，21表示homezone。
+        /// 参数解释：网络公共边界组编码。  取值范围：0表示center，21表示homezone。
         /// </summary>
         [JsonProperty("category", NullValueHandling = NullValueHandling.Ignore)]
         public int? Category { get; set; }

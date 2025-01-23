@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string AzCode { get; set; }
 
         /// <summary>
-        /// 时区。默认为所属GaussDB(for MySQL)实例时区。
+        /// 时区。默认为所属TaurusDB实例时区。
         /// </summary>
         [JsonProperty("time_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZone { get; set; }

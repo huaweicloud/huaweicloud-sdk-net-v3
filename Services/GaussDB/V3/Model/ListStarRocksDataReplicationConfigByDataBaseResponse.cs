@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     {
 
         /// <summary>
-        /// GaussDB(for MySQL)实例ID。
+        /// TaurusDB实例ID。
         /// </summary>
         [JsonProperty("source_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceInstanceId { get; set; }
 
         /// <summary>
-        /// GaussDB(for MySQL)节点ID。
+        /// TaurusDB节点ID。
         /// </summary>
         [JsonProperty("source_node_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceNodeId { get; set; }

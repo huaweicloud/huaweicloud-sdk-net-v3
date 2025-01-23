@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\&quot;,\&quot;分割，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\&quot;.\&quot;分割，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\&quot;-\&quot;，且必须以字母或数字开头和结尾。例：www.test.com；  泛域名：在普通域名的基础上仅允许首字母为\&quot;\\*\&quot;。例：\\*.test.com
+        /// 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\&quot;,\&quot;分隔，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\&quot;.\&quot;分隔，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\&quot;-\&quot;，且必须以字母或数字开头和结尾。例：www.test.com；  泛域名：在普通域名的基础上仅允许首字母为\&quot;\\*\&quot;。例：\\*.test.com
         /// </summary>
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
         public string Domain { get; set; }
@@ -196,6 +196,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("enc_private_key", NullValueHandling = NullValueHandling.Ignore)]
         public string EncPrivateKey { get; set; }
 
+        /// <summary>
+        /// SM证书ID。
+        /// </summary>
+        [JsonProperty("scm_certificate_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScmCertificateId { get; set; }
+
 
 
         /// <summary>
@@ -216,6 +222,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  encCertificate: ").Append(EncCertificate).Append("\n");
             sb.Append("  encPrivateKey: ").Append(EncPrivateKey).Append("\n");
+            sb.Append("  scmCertificateId: ").Append(ScmCertificateId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -245,6 +252,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.EncCertificate != input.EncCertificate || (this.EncCertificate != null && !this.EncCertificate.Equals(input.EncCertificate))) return false;
             if (this.EncPrivateKey != input.EncPrivateKey || (this.EncPrivateKey != null && !this.EncPrivateKey.Equals(input.EncPrivateKey))) return false;
+            if (this.ScmCertificateId != input.ScmCertificateId || (this.ScmCertificateId != null && !this.ScmCertificateId.Equals(input.ScmCertificateId))) return false;
 
             return true;
         }
@@ -268,6 +276,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.EncCertificate != null) hashCode = hashCode * 59 + this.EncCertificate.GetHashCode();
                 if (this.EncPrivateKey != null) hashCode = hashCode * 59 + this.EncPrivateKey.GetHashCode();
+                if (this.ScmCertificateId != null) hashCode = hashCode * 59 + this.ScmCertificateId.GetHashCode();
                 return hashCode;
             }
         }

@@ -17,11 +17,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 参数解释：可用区组。
+        /// 参数解释：网络公共边界组。
         /// </summary>
         [SDKProperty("public_border_group", IsQuery = true)]
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
+
+        /// <summary>
+        /// 参数解释：负载均衡器ID。
+        /// </summary>
+        [SDKProperty("loadbalancer_id", IsQuery = true)]
+        [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LoadbalancerId { get; set; }
 
 
 
@@ -33,6 +40,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListAvailabilityZonesRequest {\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
+            sb.Append("  loadbalancerId: ").Append(LoadbalancerId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -52,6 +60,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             if (input == null) return false;
             if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
+            if (this.LoadbalancerId != input.LoadbalancerId || (this.LoadbalancerId != null && !this.LoadbalancerId.Equals(input.LoadbalancerId))) return false;
 
             return true;
         }
@@ -65,6 +74,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             {
                 var hashCode = 41;
                 if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.LoadbalancerId != null) hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
                 return hashCode;
             }
         }

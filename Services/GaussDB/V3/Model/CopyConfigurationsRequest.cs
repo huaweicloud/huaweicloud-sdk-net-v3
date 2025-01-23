@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string XLanguage { get; set; }
 
         /// <summary>
-        /// 参数组ID。  通过调用[查询参数模板](https://support.huaweicloud.com/api-gaussdbformysql/ListGaussMySqlConfigurations.html)接口获取。  请求响应成功后在响应消息体中包含的“id”的值即为configuration_id值。
+        /// 参数组ID。  通过调用[查询参数模板](https://support.huaweicloud.com/api-taurusdb/ListGaussMySqlConfigurations.html)接口获取。  请求响应成功后在响应消息体中包含的“id”的值即为configuration_id值。
         /// </summary>
         [SDKProperty("configuration_id", IsPath = true)]
         [JsonProperty("configuration_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 可选的HTTP头插入，可以将从负载均衡器到后端服务器的路径中需要被后端服务器用到的信息写入HTTP中，随报文传递到后端服务器使。例如可通过X-Forwarded-ELB-IP开关，将负载均衡器的弹性公网IP传到后端服务器。
+    /// 可选的HTTP头插入，可以将从负载均衡器到后端服务器的路径中需要被后端服务器用到的信息写入HTTP中，随报文传递到后端服务器。例如可通过X-Forwarded-ELB-IP开关，将负载均衡器的弹性公网IP传到后端服务器。
     /// </summary>
     public class ListenerInsertHeaders 
     {

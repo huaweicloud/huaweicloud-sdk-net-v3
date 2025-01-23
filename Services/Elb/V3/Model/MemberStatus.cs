@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OperatingStatus { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("reason", NullValueHandling = NullValueHandling.Ignore)]
+        public MemberHealthCheckFailedReason Reason { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("class MemberStatus {\n");
             sb.Append("  listenerId: ").Append(ListenerId).Append("\n");
             sb.Append("  operatingStatus: ").Append(OperatingStatus).Append("\n");
+            sb.Append("  reason: ").Append(Reason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (input == null) return false;
             if (this.ListenerId != input.ListenerId || (this.ListenerId != null && !this.ListenerId.Equals(input.ListenerId))) return false;
             if (this.OperatingStatus != input.OperatingStatus || (this.OperatingStatus != null && !this.OperatingStatus.Equals(input.OperatingStatus))) return false;
+            if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 var hashCode = 41;
                 if (this.ListenerId != null) hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
                 if (this.OperatingStatus != null) hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
+                if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
                 return hashCode;
             }
         }

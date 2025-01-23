@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     {
 
         /// <summary>
-        /// GaussDBForMySQL数据库实例ID，严格匹配UUID规则。
+        /// TaurusDB数据库实例ID，严格匹配UUID规则。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
