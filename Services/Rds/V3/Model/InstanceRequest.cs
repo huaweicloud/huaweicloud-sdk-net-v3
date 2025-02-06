@@ -184,6 +184,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("serverless_info", NullValueHandling = NullValueHandling.Ignore)]
         public ServerlessInfo ServerlessInfo { get; set; }
 
+        /// <summary>
+        /// 是否开启自动小版本升级，默认为false，仅支持PostgreSQL。 - true：开启自动小版本升级。 - false：不开启自动小版本升级。
+        /// </summary>
+        [JsonProperty("is_auto_upgrade", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsAutoUpgrade { get; set; }
+
 
 
         /// <summary>
@@ -221,6 +227,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  dryRun: ").Append(DryRun).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  serverlessInfo: ").Append(ServerlessInfo).Append("\n");
+            sb.Append("  isAutoUpgrade: ").Append(IsAutoUpgrade).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -267,6 +274,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
             if (this.ServerlessInfo != input.ServerlessInfo || (this.ServerlessInfo != null && !this.ServerlessInfo.Equals(input.ServerlessInfo))) return false;
+            if (this.IsAutoUpgrade != input.IsAutoUpgrade || (this.IsAutoUpgrade != null && !this.IsAutoUpgrade.Equals(input.IsAutoUpgrade))) return false;
 
             return true;
         }
@@ -307,6 +315,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.ServerlessInfo != null) hashCode = hashCode * 59 + this.ServerlessInfo.GetHashCode();
+                if (this.IsAutoUpgrade != null) hashCode = hashCode * 59 + this.IsAutoUpgrade.GetHashCode();
                 return hashCode;
             }
         }

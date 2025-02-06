@@ -19,28 +19,28 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// <summary>
         /// 集群ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
         /// </summary>
-        [SDKProperty("cluster_id", IsPath = true)]
+        [SDKProperty("cluster_id", IsQuery = true)]
         [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterId { get; set; }
 
         /// <summary>
         /// 集群类型，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
         /// </summary>
-        [SDKProperty("cluster_type", IsPath = true)]
+        [SDKProperty("cluster_type", IsQuery = true)]
         [JsonProperty("cluster_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterType { get; set; }
 
         /// <summary>
         /// 集群版本，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
         /// </summary>
-        [SDKProperty("cluster_version", IsPath = true)]
+        [SDKProperty("cluster_version", IsQuery = true)]
         [JsonProperty("cluster_version", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterVersion { get; set; }
 
         /// <summary>
         /// 集群网络类型，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
         /// </summary>
-        [SDKProperty("network_mode", IsPath = true)]
+        [SDKProperty("network_mode", IsQuery = true)]
         [JsonProperty("network_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string NetworkMode { get; set; }
 

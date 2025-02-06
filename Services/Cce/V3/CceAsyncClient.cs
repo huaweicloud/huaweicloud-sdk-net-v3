@@ -1602,10 +1602,6 @@ namespace HuaweiCloud.SDK.Cce.V3
         public async Task<ShowClusterSupportConfigurationResponse> ShowClusterSupportConfigurationAsync(ShowClusterSupportConfigurationRequest showClusterSupportConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", showClusterSupportConfigurationRequest.ClusterId.ToString());
-            urlParam.Add("cluster_type", showClusterSupportConfigurationRequest.ClusterType.ToString());
-            urlParam.Add("cluster_version", showClusterSupportConfigurationRequest.ClusterVersion.ToString());
-            urlParam.Add("network_mode", showClusterSupportConfigurationRequest.NetworkMode.ToString());
             var urlPath = HttpUtils.AddUrlPath("/api/v3/clusters/configuration/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterSupportConfigurationRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1617,10 +1613,6 @@ namespace HuaweiCloud.SDK.Cce.V3
         public AsyncInvoker<ShowClusterSupportConfigurationResponse> ShowClusterSupportConfigurationAsyncInvoker(ShowClusterSupportConfigurationRequest showClusterSupportConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", showClusterSupportConfigurationRequest.ClusterId.ToString());
-            urlParam.Add("cluster_type", showClusterSupportConfigurationRequest.ClusterType.ToString());
-            urlParam.Add("cluster_version", showClusterSupportConfigurationRequest.ClusterVersion.ToString());
-            urlParam.Add("network_mode", showClusterSupportConfigurationRequest.NetworkMode.ToString());
             var urlPath = HttpUtils.AddUrlPath("/api/v3/clusters/configuration/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterSupportConfigurationRequest);
             return new AsyncInvoker<ShowClusterSupportConfigurationResponse>(this, "GET", request, response =>

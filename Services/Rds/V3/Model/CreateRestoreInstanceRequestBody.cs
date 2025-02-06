@@ -166,6 +166,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("dry_run", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DryRun { get; set; }
 
+        /// <summary>
+        /// 是否开启自动小版本升级，默认为false，仅支持PostgreSQL。 - true：开启自动小版本升级。 - false：不开启自动小版本升级。
+        /// </summary>
+        [JsonProperty("is_auto_upgrade", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsAutoUpgrade { get; set; }
+
 
 
         /// <summary>
@@ -200,6 +206,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  serverlessInfo: ").Append(ServerlessInfo).Append("\n");
             sb.Append("  dryRun: ").Append(DryRun).Append("\n");
+            sb.Append("  isAutoUpgrade: ").Append(IsAutoUpgrade).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -243,6 +250,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.ServerlessInfo != input.ServerlessInfo || (this.ServerlessInfo != null && !this.ServerlessInfo.Equals(input.ServerlessInfo))) return false;
             if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
+            if (this.IsAutoUpgrade != input.IsAutoUpgrade || (this.IsAutoUpgrade != null && !this.IsAutoUpgrade.Equals(input.IsAutoUpgrade))) return false;
 
             return true;
         }
@@ -280,6 +288,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.ServerlessInfo != null) hashCode = hashCode * 59 + this.ServerlessInfo.GetHashCode();
                 if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                if (this.IsAutoUpgrade != null) hashCode = hashCode * 59 + this.IsAutoUpgrade.GetHashCode();
                 return hashCode;
             }
         }

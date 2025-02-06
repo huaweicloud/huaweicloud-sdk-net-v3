@@ -1029,7 +1029,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 批量查询容灾实例信息
         ///
         /// 批量查询容灾实例信息
         /// 
@@ -2453,6 +2453,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 设置实例内核小版本自动升级策略
+        ///
+        /// 设置实例内核小版本自动升级策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetAutoUpgradePolicyResponse> SetAutoUpgradePolicyAsync(SetAutoUpgradePolicyRequest setAutoUpgradePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setAutoUpgradePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-auto-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAutoUpgradePolicyRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<SetAutoUpgradePolicyResponse>(response);
+        }
+
+        public AsyncInvoker<SetAutoUpgradePolicyResponse> SetAutoUpgradePolicyAsyncInvoker(SetAutoUpgradePolicyRequest setAutoUpgradePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setAutoUpgradePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-auto-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAutoUpgradePolicyRequest);
+            return new AsyncInvoker<SetAutoUpgradePolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetAutoUpgradePolicyResponse>);
+        }
+        
+        /// <summary>
         /// 设置自动备份策略
         ///
         /// 设置自动备份策略。
@@ -2745,6 +2771,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询实例内核小版本自动升级策略
+        ///
+        /// 查询实例内核小版本自动升级策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutoUpgradePolicyResponse> ShowAutoUpgradePolicyAsync(ShowAutoUpgradePolicyRequest showAutoUpgradePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAutoUpgradePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-auto-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoUpgradePolicyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutoUpgradePolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutoUpgradePolicyResponse> ShowAutoUpgradePolicyAsyncInvoker(ShowAutoUpgradePolicyRequest showAutoUpgradePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAutoUpgradePolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-auto-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoUpgradePolicyRequest);
+            return new AsyncInvoker<ShowAutoUpgradePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoUpgradePolicyResponse>);
+        }
+        
+        /// <summary>
         /// 
         ///
         /// 查询实例可升级的目标版本
@@ -2870,6 +2922,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConfigurationRequest);
             return new AsyncInvoker<ShowConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 查询库级备份包含的库
+        ///
+        /// 查询库级备份包含的库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDatabaseLevelDatabaseResponse> ShowDatabaseLevelDatabaseAsync(ShowDatabaseLevelDatabaseRequest showDatabaseLevelDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showDatabaseLevelDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/db-table-name", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDatabaseLevelDatabaseRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDatabaseLevelDatabaseResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDatabaseLevelDatabaseResponse> ShowDatabaseLevelDatabaseAsyncInvoker(ShowDatabaseLevelDatabaseRequest showDatabaseLevelDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showDatabaseLevelDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database/db-table-name", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDatabaseLevelDatabaseRequest);
+            return new AsyncInvoker<ShowDatabaseLevelDatabaseResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDatabaseLevelDatabaseResponse>);
         }
         
         /// <summary>
