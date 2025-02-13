@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public List<OutputVideoPara> OutputVideoParas { get; set; }
 
         /// <summary>
+        /// 被替换的子索引文件 
+        /// </summary>
+        [JsonProperty("replace_sub_index", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ReplaceSubIndex { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("output_thumbnail_para", NullValueHandling = NullValueHandling.Ignore)]
@@ -58,6 +64,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  features: ").Append(Features).Append("\n");
             sb.Append("  originPara: ").Append(OriginPara).Append("\n");
             sb.Append("  outputVideoParas: ").Append(OutputVideoParas).Append("\n");
+            sb.Append("  replaceSubIndex: ").Append(ReplaceSubIndex).Append("\n");
             sb.Append("  outputThumbnailPara: ").Append(OutputThumbnailPara).Append("\n");
             sb.Append("  outputWatermarkParas: ").Append(OutputWatermarkParas).Append("\n");
             sb.Append("}\n");
@@ -81,6 +88,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Features != input.Features || (this.Features != null && input.Features != null && !this.Features.SequenceEqual(input.Features))) return false;
             if (this.OriginPara != input.OriginPara || (this.OriginPara != null && !this.OriginPara.Equals(input.OriginPara))) return false;
             if (this.OutputVideoParas != input.OutputVideoParas || (this.OutputVideoParas != null && input.OutputVideoParas != null && !this.OutputVideoParas.SequenceEqual(input.OutputVideoParas))) return false;
+            if (this.ReplaceSubIndex != input.ReplaceSubIndex || (this.ReplaceSubIndex != null && input.ReplaceSubIndex != null && !this.ReplaceSubIndex.SequenceEqual(input.ReplaceSubIndex))) return false;
             if (this.OutputThumbnailPara != input.OutputThumbnailPara || (this.OutputThumbnailPara != null && !this.OutputThumbnailPara.Equals(input.OutputThumbnailPara))) return false;
             if (this.OutputWatermarkParas != input.OutputWatermarkParas || (this.OutputWatermarkParas != null && !this.OutputWatermarkParas.Equals(input.OutputWatermarkParas))) return false;
 
@@ -98,6 +106,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Features != null) hashCode = hashCode * 59 + this.Features.GetHashCode();
                 if (this.OriginPara != null) hashCode = hashCode * 59 + this.OriginPara.GetHashCode();
                 if (this.OutputVideoParas != null) hashCode = hashCode * 59 + this.OutputVideoParas.GetHashCode();
+                if (this.ReplaceSubIndex != null) hashCode = hashCode * 59 + this.ReplaceSubIndex.GetHashCode();
                 if (this.OutputThumbnailPara != null) hashCode = hashCode * 59 + this.OutputThumbnailPara.GetHashCode();
                 if (this.OutputWatermarkParas != null) hashCode = hashCode * 59 + this.OutputWatermarkParas.GetHashCode();
                 return hashCode;

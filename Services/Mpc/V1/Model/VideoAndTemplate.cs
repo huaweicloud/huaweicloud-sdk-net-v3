@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("bitrate", NullValueHandling = NullValueHandling.Ignore)]
         public int? Bitrate { get; set; }
 
+        /// <summary>
+        /// 流名称 
+        /// </summary>
+        [JsonProperty("stream_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string StreamName { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  width: ").Append(Width).Append("\n");
             sb.Append("  height: ").Append(Height).Append("\n");
             sb.Append("  bitrate: ").Append(Bitrate).Append("\n");
+            sb.Append("  streamName: ").Append(StreamName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
             if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
             if (this.Bitrate != input.Bitrate || (this.Bitrate != null && !this.Bitrate.Equals(input.Bitrate))) return false;
+            if (this.StreamName != input.StreamName || (this.StreamName != null && !this.StreamName.Equals(input.StreamName))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
                 if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
                 if (this.Bitrate != null) hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
+                if (this.StreamName != null) hashCode = hashCode * 59 + this.StreamName.GetHashCode();
                 return hashCode;
             }
         }

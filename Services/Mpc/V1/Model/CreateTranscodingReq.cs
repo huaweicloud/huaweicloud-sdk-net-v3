@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public List<AvParameters> AvParameters { get; set; }
 
         /// <summary>
+        /// 主索引定制参数。 
+        /// </summary>
+        [JsonProperty("additional_manifests", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AdditionalManifests> AdditionalManifests { get; set; }
+
+        /// <summary>
         /// 输出文件名称，每一路转码输出对应一个名称，需要与转码模板ID数组的顺序对应。  - 若设置该参数，表示输出文件按该参数命名。 - 若不设置该参数，表示输出文件按默认方式命名。 
         /// </summary>
         [JsonProperty("output_filenames", NullValueHandling = NullValueHandling.Ignore)]
@@ -125,6 +131,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  output: ").Append(Output).Append("\n");
             sb.Append("  transTemplateId: ").Append(TransTemplateId).Append("\n");
             sb.Append("  avParameters: ").Append(AvParameters).Append("\n");
+            sb.Append("  additionalManifests: ").Append(AdditionalManifests).Append("\n");
             sb.Append("  outputFilenames: ").Append(OutputFilenames).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
             sb.Append("  watermarks: ").Append(Watermarks).Append("\n");
@@ -159,6 +166,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
             if (this.TransTemplateId != input.TransTemplateId || (this.TransTemplateId != null && input.TransTemplateId != null && !this.TransTemplateId.SequenceEqual(input.TransTemplateId))) return false;
             if (this.AvParameters != input.AvParameters || (this.AvParameters != null && input.AvParameters != null && !this.AvParameters.SequenceEqual(input.AvParameters))) return false;
+            if (this.AdditionalManifests != input.AdditionalManifests || (this.AdditionalManifests != null && input.AdditionalManifests != null && !this.AdditionalManifests.SequenceEqual(input.AdditionalManifests))) return false;
             if (this.OutputFilenames != input.OutputFilenames || (this.OutputFilenames != null && input.OutputFilenames != null && !this.OutputFilenames.SequenceEqual(input.OutputFilenames))) return false;
             if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
             if (this.Watermarks != input.Watermarks || (this.Watermarks != null && input.Watermarks != null && !this.Watermarks.SequenceEqual(input.Watermarks))) return false;
@@ -187,6 +195,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
                 if (this.TransTemplateId != null) hashCode = hashCode * 59 + this.TransTemplateId.GetHashCode();
                 if (this.AvParameters != null) hashCode = hashCode * 59 + this.AvParameters.GetHashCode();
+                if (this.AdditionalManifests != null) hashCode = hashCode * 59 + this.AdditionalManifests.GetHashCode();
                 if (this.OutputFilenames != null) hashCode = hashCode * 59 + this.OutputFilenames.GetHashCode();
                 if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
                 if (this.Watermarks != null) hashCode = hashCode * 59 + this.Watermarks.GetHashCode();

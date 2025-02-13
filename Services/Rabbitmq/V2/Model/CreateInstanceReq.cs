@@ -403,7 +403,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string EngineVersion { get; set; }
 
         /// <summary>
-        /// 消息存储空间，单位GB。   [- 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)    [- 单机RabbitMQ实例的存储空间的取值范围100GB~30000GB。](tag:hcs)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB*节点数~90000GB、200GB*节点数~90000GB、300GB*节点数~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB乘以代理数~30000GB乘以代理数。](tag:hcs) 
+        /// ACL访问控制（仅AMQP版本支持此参数）
+        /// </summary>
+        [JsonProperty("enable_acl", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAcl { get; set; }
+
+        /// <summary>
+        /// 消息存储空间，单位GB。   [- 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。](tag:hws,hws_eu,hws_hk,ctc,g42,hk_g42,tm,hk_tm,sbc)    [- 单机RabbitMQ实例的存储空间的取值范围100GB~30000GB。](tag:hcs)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB*节点数~90000GB、200GB*节点数~90000GB、300GB*节点数~90000GB。](tag:hws,hws_eu,hws_hk,ctc,g42,hk_g42,tm,hk_tm,sbc)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB乘以代理数~30000GB乘以代理数。](tag:hcs) 
         /// </summary>
         [JsonProperty("storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? StorageSpace { get; set; }
@@ -445,7 +451,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 产品标识。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,cmcc,hws_eu,g42,hk_g42,tm,hk_tm,ocb,hws_ocb) [产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:hk_sbc,sbc) [产品ID可以从“其他接口 &gt; 查询产品规格列表”获取。](tag:hcs)  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
+        /// 产品标识。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,hws_eu,g42,hk_g42,tm,hk_tm,sbc,hcs) [产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:cmcc)  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
@@ -521,6 +527,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  engine: ").Append(Engine).Append("\n");
             sb.Append("  engineVersion: ").Append(EngineVersion).Append("\n");
+            sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
             sb.Append("  storageSpace: ").Append(StorageSpace).Append("\n");
             sb.Append("  accessUser: ").Append(AccessUser).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
@@ -561,6 +568,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Engine != input.Engine) return false;
             if (this.EngineVersion != input.EngineVersion || (this.EngineVersion != null && !this.EngineVersion.Equals(input.EngineVersion))) return false;
+            if (this.EnableAcl != input.EnableAcl || (this.EnableAcl != null && !this.EnableAcl.Equals(input.EnableAcl))) return false;
             if (this.StorageSpace != input.StorageSpace || (this.StorageSpace != null && !this.StorageSpace.Equals(input.StorageSpace))) return false;
             if (this.AccessUser != input.AccessUser || (this.AccessUser != null && !this.AccessUser.Equals(input.AccessUser))) return false;
             if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
@@ -595,6 +603,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 hashCode = hashCode * 59 + this.Engine.GetHashCode();
                 if (this.EngineVersion != null) hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
+                if (this.EnableAcl != null) hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
                 if (this.StorageSpace != null) hashCode = hashCode * 59 + this.StorageSpace.GetHashCode();
                 if (this.AccessUser != null) hashCode = hashCode * 59 + this.AccessUser.GetHashCode();
                 if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();

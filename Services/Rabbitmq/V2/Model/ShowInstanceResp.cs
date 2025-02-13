@@ -306,10 +306,34 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public int? UsedStorageSpace { get; set; }
 
         /// <summary>
-        /// 实例连接IP地址。
+        /// 实例是否开启域名访问功能。 - true：开启 - false：未开启
+        /// </summary>
+        [JsonProperty("dns_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DnsEnable { get; set; }
+
+        /// <summary>
+        /// 实例内网连接IP地址。
         /// </summary>
         [JsonProperty("connect_address", NullValueHandling = NullValueHandling.Ignore)]
         public string ConnectAddress { get; set; }
+
+        /// <summary>
+        /// 实例内网连接域名。
+        /// </summary>
+        [JsonProperty("connect_domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConnectDomainName { get; set; }
+
+        /// <summary>
+        /// 实例公网连接IP地址。
+        /// </summary>
+        [JsonProperty("public_connect_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicConnectAddress { get; set; }
+
+        /// <summary>
+        /// 实例公网连接域名。
+        /// </summary>
+        [JsonProperty("public_connect_domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicConnectDomainName { get; set; }
 
         /// <summary>
         /// 实例连接端口。
@@ -336,7 +360,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 资源规格标识。   [- dms.instance.rabbitmq.single.c3.2u4g：RabbitMQ单机，vm规格2u4g   - dms.instance.rabbitmq.single.c3.4u8g：RabbitMQ单机，vm规格4u8g   - dms.instance.rabbitmq.single.c3.8u16g：RabbitMQ单机，vm规格8u16g   - dms.instance.rabbitmq.single.c3.16u32g：RabbitMQ单机，vm规格16u32g   - dms.instance.rabbitmq.cluster.c3.4u8g.3：RabbitMQ集群，vm规格4u8g，3个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.5：RabbitMQ集群，vm规格4u8g，5个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.7：RabbitMQ集群，vm规格4u8g，7个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.3：RabbitMQ集群，vm规格8u16g，3个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.5：RabbitMQ集群，vm规格8u16g，5个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.7：RabbitMQ集群，vm规格8u16g，7个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.3：RabbitMQ集群，vm规格16u32g，3个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.5：RabbitMQ集群，vm规格16u32g，5个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.7：RabbitMQ集群，vm规格16u32g，7个节点](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)
+        /// 资源规格标识。   [- dms.instance.rabbitmq.single.c3.2u4g：RabbitMQ单机，vm规格2u4g   - dms.instance.rabbitmq.single.c3.4u8g：RabbitMQ单机，vm规格4u8g   - dms.instance.rabbitmq.single.c3.8u16g：RabbitMQ单机，vm规格8u16g   - dms.instance.rabbitmq.single.c3.16u32g：RabbitMQ单机，vm规格16u32g   - dms.instance.rabbitmq.cluster.c3.4u8g.3：RabbitMQ集群，vm规格4u8g，3个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.5：RabbitMQ集群，vm规格4u8g，5个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.7：RabbitMQ集群，vm规格4u8g，7个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.3：RabbitMQ集群，vm规格8u16g，3个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.5：RabbitMQ集群，vm规格8u16g，5个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.7：RabbitMQ集群，vm规格8u16g，7个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.3：RabbitMQ集群，vm规格16u32g，3个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.5：RabbitMQ集群，vm规格16u32g，5个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.7：RabbitMQ集群，vm规格16u32g，7个节点](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,sbc)
         /// </summary>
         [JsonProperty("resource_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceSpecCode { get; set; }
@@ -420,6 +444,24 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string ManagementConnectAddress { get; set; }
 
         /// <summary>
+        /// RabbitMQ实例的管理域名。
+        /// </summary>
+        [JsonProperty("management_connect_domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ManagementConnectDomainName { get; set; }
+
+        /// <summary>
+        /// RabbitMQ实例的公网管理地址。
+        /// </summary>
+        [JsonProperty("public_management_connect_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicManagementConnectAddress { get; set; }
+
+        /// <summary>
+        /// RabbitMQ实例的公网管理域名。
+        /// </summary>
+        [JsonProperty("public_management_connect_domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicManagementConnectDomainName { get; set; }
+
+        /// <summary>
         /// 是否开启安全认证。   - true：开启   - false：未开启
         /// </summary>
         [JsonProperty("ssl_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -479,6 +521,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
+        /// 实例节点所在的可用区，返回“可用区名称”。
+        /// </summary>
+        [JsonProperty("available_zone_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AvailableZoneNames { get; set; }
+
+        /// <summary>
         /// 总共消息存储空间，单位：GB。
         /// </summary>
         [JsonProperty("total_storage_space", NullValueHandling = NullValueHandling.Ignore)]
@@ -531,7 +579,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  specification: ").Append(Specification).Append("\n");
             sb.Append("  storageSpace: ").Append(StorageSpace).Append("\n");
             sb.Append("  usedStorageSpace: ").Append(UsedStorageSpace).Append("\n");
+            sb.Append("  dnsEnable: ").Append(DnsEnable).Append("\n");
             sb.Append("  connectAddress: ").Append(ConnectAddress).Append("\n");
+            sb.Append("  connectDomainName: ").Append(ConnectDomainName).Append("\n");
+            sb.Append("  publicConnectAddress: ").Append(PublicConnectAddress).Append("\n");
+            sb.Append("  publicConnectDomainName: ").Append(PublicConnectDomainName).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -550,6 +602,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  publicipAddress: ").Append(PublicipAddress).Append("\n");
             sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
             sb.Append("  managementConnectAddress: ").Append(ManagementConnectAddress).Append("\n");
+            sb.Append("  managementConnectDomainName: ").Append(ManagementConnectDomainName).Append("\n");
+            sb.Append("  publicManagementConnectAddress: ").Append(PublicManagementConnectAddress).Append("\n");
+            sb.Append("  publicManagementConnectDomainName: ").Append(PublicManagementConnectDomainName).Append("\n");
             sb.Append("  sslEnable: ").Append(SslEnable).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  isLogicalVolume: ").Append(IsLogicalVolume).Append("\n");
@@ -560,6 +615,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  securityGroupName: ").Append(SecurityGroupName).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  availableZones: ").Append(AvailableZones).Append("\n");
+            sb.Append("  availableZoneNames: ").Append(AvailableZoneNames).Append("\n");
             sb.Append("  totalStorageSpace: ").Append(TotalStorageSpace).Append("\n");
             sb.Append("  storageResourceId: ").Append(StorageResourceId).Append("\n");
             sb.Append("  storageSpecCode: ").Append(StorageSpecCode).Append("\n");
@@ -592,7 +648,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (this.Specification != input.Specification || (this.Specification != null && !this.Specification.Equals(input.Specification))) return false;
             if (this.StorageSpace != input.StorageSpace || (this.StorageSpace != null && !this.StorageSpace.Equals(input.StorageSpace))) return false;
             if (this.UsedStorageSpace != input.UsedStorageSpace || (this.UsedStorageSpace != null && !this.UsedStorageSpace.Equals(input.UsedStorageSpace))) return false;
+            if (this.DnsEnable != input.DnsEnable || (this.DnsEnable != null && !this.DnsEnable.Equals(input.DnsEnable))) return false;
             if (this.ConnectAddress != input.ConnectAddress || (this.ConnectAddress != null && !this.ConnectAddress.Equals(input.ConnectAddress))) return false;
+            if (this.ConnectDomainName != input.ConnectDomainName || (this.ConnectDomainName != null && !this.ConnectDomainName.Equals(input.ConnectDomainName))) return false;
+            if (this.PublicConnectAddress != input.PublicConnectAddress || (this.PublicConnectAddress != null && !this.PublicConnectAddress.Equals(input.PublicConnectAddress))) return false;
+            if (this.PublicConnectDomainName != input.PublicConnectDomainName || (this.PublicConnectDomainName != null && !this.PublicConnectDomainName.Equals(input.PublicConnectDomainName))) return false;
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
@@ -611,6 +671,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (this.PublicipAddress != input.PublicipAddress || (this.PublicipAddress != null && !this.PublicipAddress.Equals(input.PublicipAddress))) return false;
             if (this.PublicipId != input.PublicipId || (this.PublicipId != null && !this.PublicipId.Equals(input.PublicipId))) return false;
             if (this.ManagementConnectAddress != input.ManagementConnectAddress || (this.ManagementConnectAddress != null && !this.ManagementConnectAddress.Equals(input.ManagementConnectAddress))) return false;
+            if (this.ManagementConnectDomainName != input.ManagementConnectDomainName || (this.ManagementConnectDomainName != null && !this.ManagementConnectDomainName.Equals(input.ManagementConnectDomainName))) return false;
+            if (this.PublicManagementConnectAddress != input.PublicManagementConnectAddress || (this.PublicManagementConnectAddress != null && !this.PublicManagementConnectAddress.Equals(input.PublicManagementConnectAddress))) return false;
+            if (this.PublicManagementConnectDomainName != input.PublicManagementConnectDomainName || (this.PublicManagementConnectDomainName != null && !this.PublicManagementConnectDomainName.Equals(input.PublicManagementConnectDomainName))) return false;
             if (this.SslEnable != input.SslEnable || (this.SslEnable != null && !this.SslEnable.Equals(input.SslEnable))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.IsLogicalVolume != input.IsLogicalVolume || (this.IsLogicalVolume != null && !this.IsLogicalVolume.Equals(input.IsLogicalVolume))) return false;
@@ -621,6 +684,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (this.SecurityGroupName != input.SecurityGroupName || (this.SecurityGroupName != null && !this.SecurityGroupName.Equals(input.SecurityGroupName))) return false;
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
             if (this.AvailableZones != input.AvailableZones || (this.AvailableZones != null && input.AvailableZones != null && !this.AvailableZones.SequenceEqual(input.AvailableZones))) return false;
+            if (this.AvailableZoneNames != input.AvailableZoneNames || (this.AvailableZoneNames != null && input.AvailableZoneNames != null && !this.AvailableZoneNames.SequenceEqual(input.AvailableZoneNames))) return false;
             if (this.TotalStorageSpace != input.TotalStorageSpace || (this.TotalStorageSpace != null && !this.TotalStorageSpace.Equals(input.TotalStorageSpace))) return false;
             if (this.StorageResourceId != input.StorageResourceId || (this.StorageResourceId != null && !this.StorageResourceId.Equals(input.StorageResourceId))) return false;
             if (this.StorageSpecCode != input.StorageSpecCode || (this.StorageSpecCode != null && !this.StorageSpecCode.Equals(input.StorageSpecCode))) return false;
@@ -647,7 +711,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 if (this.Specification != null) hashCode = hashCode * 59 + this.Specification.GetHashCode();
                 if (this.StorageSpace != null) hashCode = hashCode * 59 + this.StorageSpace.GetHashCode();
                 if (this.UsedStorageSpace != null) hashCode = hashCode * 59 + this.UsedStorageSpace.GetHashCode();
+                if (this.DnsEnable != null) hashCode = hashCode * 59 + this.DnsEnable.GetHashCode();
                 if (this.ConnectAddress != null) hashCode = hashCode * 59 + this.ConnectAddress.GetHashCode();
+                if (this.ConnectDomainName != null) hashCode = hashCode * 59 + this.ConnectDomainName.GetHashCode();
+                if (this.PublicConnectAddress != null) hashCode = hashCode * 59 + this.PublicConnectAddress.GetHashCode();
+                if (this.PublicConnectDomainName != null) hashCode = hashCode * 59 + this.PublicConnectDomainName.GetHashCode();
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
@@ -666,6 +734,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 if (this.PublicipAddress != null) hashCode = hashCode * 59 + this.PublicipAddress.GetHashCode();
                 if (this.PublicipId != null) hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
                 if (this.ManagementConnectAddress != null) hashCode = hashCode * 59 + this.ManagementConnectAddress.GetHashCode();
+                if (this.ManagementConnectDomainName != null) hashCode = hashCode * 59 + this.ManagementConnectDomainName.GetHashCode();
+                if (this.PublicManagementConnectAddress != null) hashCode = hashCode * 59 + this.PublicManagementConnectAddress.GetHashCode();
+                if (this.PublicManagementConnectDomainName != null) hashCode = hashCode * 59 + this.PublicManagementConnectDomainName.GetHashCode();
                 if (this.SslEnable != null) hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.IsLogicalVolume != null) hashCode = hashCode * 59 + this.IsLogicalVolume.GetHashCode();
@@ -676,6 +747,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 if (this.SecurityGroupName != null) hashCode = hashCode * 59 + this.SecurityGroupName.GetHashCode();
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.AvailableZones != null) hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
+                if (this.AvailableZoneNames != null) hashCode = hashCode * 59 + this.AvailableZoneNames.GetHashCode();
                 if (this.TotalStorageSpace != null) hashCode = hashCode * 59 + this.TotalStorageSpace.GetHashCode();
                 if (this.StorageResourceId != null) hashCode = hashCode * 59 + this.StorageResourceId.GetHashCode();
                 if (this.StorageSpecCode != null) hashCode = hashCode * 59 + this.StorageSpecCode.GetHashCode();

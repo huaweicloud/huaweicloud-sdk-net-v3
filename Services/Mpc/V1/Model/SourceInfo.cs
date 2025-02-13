@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public long? Size { get; set; }
 
         /// <summary>
+        /// 独立mpd索引文件名 
+        /// </summary>
+        [JsonProperty("manifest_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ManifestName { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("video_info", NullValueHandling = NullValueHandling.Ignore)]
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  durationMs: ").Append(DurationMs).Append("\n");
             sb.Append("  format: ").Append(Format).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
+            sb.Append("  manifestName: ").Append(ManifestName).Append("\n");
             sb.Append("  videoInfo: ").Append(VideoInfo).Append("\n");
             sb.Append("  audioInfo: ").Append(AudioInfo).Append("\n");
             sb.Append("}\n");
@@ -89,6 +96,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.DurationMs != input.DurationMs || (this.DurationMs != null && !this.DurationMs.Equals(input.DurationMs))) return false;
             if (this.Format != input.Format || (this.Format != null && !this.Format.Equals(input.Format))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.ManifestName != input.ManifestName || (this.ManifestName != null && !this.ManifestName.Equals(input.ManifestName))) return false;
             if (this.VideoInfo != input.VideoInfo || (this.VideoInfo != null && !this.VideoInfo.Equals(input.VideoInfo))) return false;
             if (this.AudioInfo != input.AudioInfo || (this.AudioInfo != null && input.AudioInfo != null && !this.AudioInfo.SequenceEqual(input.AudioInfo))) return false;
 
@@ -107,6 +115,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.DurationMs != null) hashCode = hashCode * 59 + this.DurationMs.GetHashCode();
                 if (this.Format != null) hashCode = hashCode * 59 + this.Format.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.ManifestName != null) hashCode = hashCode * 59 + this.ManifestName.GetHashCode();
                 if (this.VideoInfo != null) hashCode = hashCode * 59 + this.VideoInfo.GetHashCode();
                 if (this.AudioInfo != null) hashCode = hashCode * 59 + this.AudioInfo.GetHashCode();
                 return hashCode;

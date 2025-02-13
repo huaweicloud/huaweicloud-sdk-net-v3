@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string StepLength { get; set; }
 
         /// <summary>
-        /// 每个Broker的最大对列。
+        /// 每个Broker的最大队列。
         /// </summary>
         [JsonProperty("max_queue_per_broker", NullValueHandling = NullValueHandling.Ignore)]
         public string MaxQueuePerBroker { get; set; }

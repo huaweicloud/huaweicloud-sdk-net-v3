@@ -53,6 +53,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public string FileName { get; set; }
 
         /// <summary>
+        /// 独立mpd索引文件名 
+        /// </summary>
+        [JsonProperty("manifest_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ManifestName { get; set; }
+
+        /// <summary>
         /// 折算后视频时长 
         /// </summary>
         [JsonProperty("conver_duration", NullValueHandling = NullValueHandling.Ignore)]
@@ -79,6 +85,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  video: ").Append(Video).Append("\n");
             sb.Append("  audio: ").Append(Audio).Append("\n");
             sb.Append("  fileName: ").Append(FileName).Append("\n");
+            sb.Append("  manifestName: ").Append(ManifestName).Append("\n");
             sb.Append("  converDuration: ").Append(ConverDuration).Append("\n");
             sb.Append("  error: ").Append(Error).Append("\n");
             sb.Append("}\n");
@@ -105,6 +112,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Video != input.Video || (this.Video != null && !this.Video.Equals(input.Video))) return false;
             if (this.Audio != input.Audio || (this.Audio != null && !this.Audio.Equals(input.Audio))) return false;
             if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.ManifestName != input.ManifestName || (this.ManifestName != null && !this.ManifestName.Equals(input.ManifestName))) return false;
             if (this.ConverDuration != input.ConverDuration || (this.ConverDuration != null && !this.ConverDuration.Equals(input.ConverDuration))) return false;
             if (this.Error != input.Error || (this.Error != null && !this.Error.Equals(input.Error))) return false;
 
@@ -125,6 +133,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Video != null) hashCode = hashCode * 59 + this.Video.GetHashCode();
                 if (this.Audio != null) hashCode = hashCode * 59 + this.Audio.GetHashCode();
                 if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.ManifestName != null) hashCode = hashCode * 59 + this.ManifestName.GetHashCode();
                 if (this.ConverDuration != null) hashCode = hashCode * 59 + this.ConverDuration.GetHashCode();
                 if (this.Error != null) hashCode = hashCode * 59 + this.Error.GetHashCode();
                 return hashCode;

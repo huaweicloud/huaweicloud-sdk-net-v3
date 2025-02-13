@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
     public class DashPackageItem 
     {
         /// <summary>
-        /// 广告标识。  DASH取值：\&quot;xml+bin\&quot;。 
+        /// 广告标识。DASH取值：\&quot;xml+bin\&quot;
         /// </summary>
-        /// <value>广告标识。  DASH取值：\&quot;xml+bin\&quot;。 </value>
+        /// <value>广告标识。DASH取值：\&quot;xml+bin\&quot;</value>
         [JsonConverter(typeof(EnumClassConverter<AdMarkerEnum>))]
         public class AdMarkerEnum
         {
@@ -180,10 +180,28 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public PackageRequestArgs RequestArgs { get; set; }
 
         /// <summary>
-        /// 广告标识。  DASH取值：\&quot;xml+bin\&quot;。 
+        /// 广告标识。DASH取值：\&quot;xml+bin\&quot;
         /// </summary>
         [JsonProperty("ad_marker", NullValueHandling = NullValueHandling.Ignore)]
         public AdMarkerEnum AdMarker { get; set; }
+        /// <summary>
+        /// 建议播放延迟。单位：秒。取值范围：[1 - 120]
+        /// </summary>
+        [JsonProperty("suggested_presentation_delay", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SuggestedPresentationDelay { get; set; }
+
+        /// <summary>
+        /// 索引最短更新周期。单位：秒。取值范围：[1 - 120]
+        /// </summary>
+        [JsonProperty("minimum_update_period", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MinimumUpdatePeriod { get; set; }
+
+        /// <summary>
+        /// 最小缓冲时间。单位：秒。取值范围：[1 - 120]
+        /// </summary>
+        [JsonProperty("min_buffer_time", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MinBufferTime { get; set; }
+
 
 
         /// <summary>
@@ -202,6 +220,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  extArgs: ").Append(ExtArgs).Append("\n");
             sb.Append("  requestArgs: ").Append(RequestArgs).Append("\n");
             sb.Append("  adMarker: ").Append(AdMarker).Append("\n");
+            sb.Append("  suggestedPresentationDelay: ").Append(SuggestedPresentationDelay).Append("\n");
+            sb.Append("  minimumUpdatePeriod: ").Append(MinimumUpdatePeriod).Append("\n");
+            sb.Append("  minBufferTime: ").Append(MinBufferTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -229,6 +250,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.ExtArgs != input.ExtArgs || (this.ExtArgs != null && !this.ExtArgs.Equals(input.ExtArgs))) return false;
             if (this.RequestArgs != input.RequestArgs || (this.RequestArgs != null && !this.RequestArgs.Equals(input.RequestArgs))) return false;
             if (this.AdMarker != input.AdMarker) return false;
+            if (this.SuggestedPresentationDelay != input.SuggestedPresentationDelay || (this.SuggestedPresentationDelay != null && !this.SuggestedPresentationDelay.Equals(input.SuggestedPresentationDelay))) return false;
+            if (this.MinimumUpdatePeriod != input.MinimumUpdatePeriod || (this.MinimumUpdatePeriod != null && !this.MinimumUpdatePeriod.Equals(input.MinimumUpdatePeriod))) return false;
+            if (this.MinBufferTime != input.MinBufferTime || (this.MinBufferTime != null && !this.MinBufferTime.Equals(input.MinBufferTime))) return false;
 
             return true;
         }
@@ -250,6 +274,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.ExtArgs != null) hashCode = hashCode * 59 + this.ExtArgs.GetHashCode();
                 if (this.RequestArgs != null) hashCode = hashCode * 59 + this.RequestArgs.GetHashCode();
                 hashCode = hashCode * 59 + this.AdMarker.GetHashCode();
+                if (this.SuggestedPresentationDelay != null) hashCode = hashCode * 59 + this.SuggestedPresentationDelay.GetHashCode();
+                if (this.MinimumUpdatePeriod != null) hashCode = hashCode * 59 + this.MinimumUpdatePeriod.GetHashCode();
+                if (this.MinBufferTime != null) hashCode = hashCode * 59 + this.MinBufferTime.GetHashCode();
                 return hashCode;
             }
         }

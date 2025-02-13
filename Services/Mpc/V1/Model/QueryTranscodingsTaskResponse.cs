@@ -268,6 +268,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("av_parameters", NullValueHandling = NullValueHandling.Ignore)]
         public List<AvParameters> AvParameters { get; set; }
 
+        /// <summary>
+        /// 主索引定制参数。 
+        /// </summary>
+        [JsonProperty("additional_manifests", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AdditionalManifests> AdditionalManifests { get; set; }
+
 
 
         /// <summary>
@@ -295,6 +301,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  thumbnailOutputname: ").Append(ThumbnailOutputname).Append("\n");
             sb.Append("  picInfo: ").Append(PicInfo).Append("\n");
             sb.Append("  avParameters: ").Append(AvParameters).Append("\n");
+            sb.Append("  additionalManifests: ").Append(AdditionalManifests).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -331,6 +338,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.ThumbnailOutputname != input.ThumbnailOutputname || (this.ThumbnailOutputname != null && !this.ThumbnailOutputname.Equals(input.ThumbnailOutputname))) return false;
             if (this.PicInfo != input.PicInfo || (this.PicInfo != null && input.PicInfo != null && !this.PicInfo.SequenceEqual(input.PicInfo))) return false;
             if (this.AvParameters != input.AvParameters || (this.AvParameters != null && input.AvParameters != null && !this.AvParameters.SequenceEqual(input.AvParameters))) return false;
+            if (this.AdditionalManifests != input.AdditionalManifests || (this.AdditionalManifests != null && input.AdditionalManifests != null && !this.AdditionalManifests.SequenceEqual(input.AdditionalManifests))) return false;
 
             return true;
         }
@@ -361,6 +369,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.ThumbnailOutputname != null) hashCode = hashCode * 59 + this.ThumbnailOutputname.GetHashCode();
                 if (this.PicInfo != null) hashCode = hashCode * 59 + this.PicInfo.GetHashCode();
                 if (this.AvParameters != null) hashCode = hashCode * 59 + this.AvParameters.GetHashCode();
+                if (this.AdditionalManifests != null) hashCode = hashCode * 59 + this.AdditionalManifests.GetHashCode();
                 return hashCode;
             }
         }

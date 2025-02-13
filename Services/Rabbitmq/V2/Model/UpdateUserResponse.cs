@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string SecretKey { get; set; }
 
         /// <summary>
-        /// 需要配置权限的 Vhost，一个用户可以配置多个Vhost下的资源权限。
+        /// 需要配置权限的Vhost，一个用户可以配置多个Vhost下的资源权限。
         /// </summary>
         [JsonProperty("vhosts", NullValueHandling = NullValueHandling.Ignore)]
         public List<AMQPUserPerm> Vhosts { get; set; }

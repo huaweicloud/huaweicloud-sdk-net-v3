@@ -394,7 +394,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNotifyPolicyRequest);
             var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteNotifyPolicyResponse>(response);
+            return JsonUtils.DeSerialize<DeleteNotifyPolicyResponse>(response);
         }
 
         public SyncInvoker<DeleteNotifyPolicyResponse> DeleteNotifyPolicyInvoker(DeleteNotifyPolicyRequest deleteNotifyPolicyRequest)
@@ -404,7 +404,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             urlParam.Add("notify_policy_id", deleteNotifyPolicyRequest.NotifyPolicyId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNotifyPolicyRequest);
-            return new SyncInvoker<DeleteNotifyPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNotifyPolicyResponse>);
+            return new SyncInvoker<DeleteNotifyPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteNotifyPolicyResponse>);
         }
         
         /// <summary>
@@ -1032,7 +1032,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateNotifyPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerializeNull<UpdateNotifyPolicyResponse>(response);
+            return JsonUtils.DeSerialize<UpdateNotifyPolicyResponse>(response);
         }
 
         public SyncInvoker<UpdateNotifyPolicyResponse> UpdateNotifyPolicyInvoker(UpdateNotifyPolicyRequest updateNotifyPolicyRequest)
@@ -1042,7 +1042,7 @@ namespace HuaweiCloud.SDK.Smn.V2
             urlParam.Add("notify_policy_id", updateNotifyPolicyRequest.NotifyPolicyId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateNotifyPolicyRequest);
-            return new SyncInvoker<UpdateNotifyPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateNotifyPolicyResponse>);
+            return new SyncInvoker<UpdateNotifyPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateNotifyPolicyResponse>);
         }
         
         /// <summary>

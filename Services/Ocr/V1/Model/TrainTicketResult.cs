@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string SeatNumber { get; set; }
 
         /// <summary>
-        /// 票价。 
+        /// 票价，当为退票凭证时，表示退票费。 
         /// </summary>
         [JsonProperty("ticket_price", NullValueHandling = NullValueHandling.Ignore)]
         public string TicketPrice { get; set; }
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string SeatCategory { get; set; }
 
         /// <summary>
-        /// 是否改签票, \&quot;Yes\&quot;表示改签票，\&quot;No\&quot;表示非改签票。 
+        /// 标识信息，包含始发改签、退票、差额退票等。 
         /// </summary>
         [JsonProperty("ticket_changing", NullValueHandling = NullValueHandling.Ignore)]
         public string TicketChanging { get; set; }
@@ -119,7 +119,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string SaleLocation { get; set; }
 
         /// <summary>
-        /// 类型。包含以下几种类型： - paper：纸质火车票 - electronic：电子发票 - refund_old：旧版退票凭证 - refund_new：新版退票凭证 
+        /// 类型。包含以下几种类型： - paper：纸质火车票 - electronic：铁路电子客票 - refund_old：退票费报销凭证 - refund_new：纸质火车票退票凭证  - refund_electronic：铁路电子客票退票凭证 
         /// </summary>
         [JsonProperty("invoice_style", NullValueHandling = NullValueHandling.Ignore)]
         public string InvoiceStyle { get; set; }
@@ -233,7 +233,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public Object Confidence { get; set; }
 
         /// <summary>
-        /// 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
+        /// 对应所有在原图上识别到的字段位置信息，包含所有文字区域四个顶点的二维坐标（x,y）。采用图像坐标系，坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。  &gt; 说明：输入数据格式是OFD时，返回的字段坐标为空列表。 
         /// </summary>
         [JsonProperty("text_location", NullValueHandling = NullValueHandling.Ignore)]
         public Object TextLocation { get; set; }

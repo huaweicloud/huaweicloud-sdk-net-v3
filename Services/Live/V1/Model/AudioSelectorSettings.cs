@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("audio_pid_selection", NullValueHandling = NullValueHandling.Ignore)]
         public AudioSelectorPidSelection AudioPidSelection { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("audio_hls_selection", NullValueHandling = NullValueHandling.Ignore)]
+        public AudioSelectorHlsSelection AudioHlsSelection { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("class AudioSelectorSettings {\n");
             sb.Append("  audioLanguageSelection: ").Append(AudioLanguageSelection).Append("\n");
             sb.Append("  audioPidSelection: ").Append(AudioPidSelection).Append("\n");
+            sb.Append("  audioHlsSelection: ").Append(AudioHlsSelection).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (input == null) return false;
             if (this.AudioLanguageSelection != input.AudioLanguageSelection || (this.AudioLanguageSelection != null && !this.AudioLanguageSelection.Equals(input.AudioLanguageSelection))) return false;
             if (this.AudioPidSelection != input.AudioPidSelection || (this.AudioPidSelection != null && !this.AudioPidSelection.Equals(input.AudioPidSelection))) return false;
+            if (this.AudioHlsSelection != input.AudioHlsSelection || (this.AudioHlsSelection != null && !this.AudioHlsSelection.Equals(input.AudioHlsSelection))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 var hashCode = 41;
                 if (this.AudioLanguageSelection != null) hashCode = hashCode * 59 + this.AudioLanguageSelection.GetHashCode();
                 if (this.AudioPidSelection != null) hashCode = hashCode * 59 + this.AudioPidSelection.GetHashCode();
+                if (this.AudioHlsSelection != null) hashCode = hashCode * 59 + this.AudioHlsSelection.GetHashCode();
                 return hashCode;
             }
         }

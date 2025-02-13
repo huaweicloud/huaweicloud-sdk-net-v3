@@ -208,6 +208,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("black_cut", NullValueHandling = NullValueHandling.Ignore)]
         public int? BlackCut { get; set; }
 
+        /// <summary>
+        /// 流名称 
+        /// </summary>
+        [JsonProperty("stream_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string StreamName { get; set; }
+
 
 
         /// <summary>
@@ -229,6 +235,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  width: ").Append(Width).Append("\n");
             sb.Append("  height: ").Append(Height).Append("\n");
             sb.Append("  blackCut: ").Append(BlackCut).Append("\n");
+            sb.Append("  streamName: ").Append(StreamName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -259,6 +266,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
             if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
             if (this.BlackCut != input.BlackCut || (this.BlackCut != null && !this.BlackCut.Equals(input.BlackCut))) return false;
+            if (this.StreamName != input.StreamName || (this.StreamName != null && !this.StreamName.Equals(input.StreamName))) return false;
 
             return true;
         }
@@ -283,6 +291,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
                 if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
                 if (this.BlackCut != null) hashCode = hashCode * 59 + this.BlackCut.GetHashCode();
+                if (this.StreamName != null) hashCode = hashCode * 59 + this.StreamName.GetHashCode();
                 return hashCode;
             }
         }

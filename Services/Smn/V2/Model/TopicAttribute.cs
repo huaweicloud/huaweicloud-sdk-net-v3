@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
     {
 
         /// <summary>
-        /// 
+        /// topic的访问策略
         /// </summary>
         [JsonProperty("access_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public AccessPolicy AccessPolicy { get; set; }
+        public string AccessPolicy { get; set; }
 
         /// <summary>
         /// topic的简介

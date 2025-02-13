@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("input_file", NullValueHandling = NullValueHandling.Ignore)]
         public SourceInfo InputFile { get; set; }
 
+        /// <summary>
+        /// 被替换的子索引文件 
+        /// </summary>
+        [JsonProperty("replace_sub_index", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ReplaceSubIndex { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("class TranscodeDetail {\n");
             sb.Append("  multitaskInfo: ").Append(MultitaskInfo).Append("\n");
             sb.Append("  inputFile: ").Append(InputFile).Append("\n");
+            sb.Append("  replaceSubIndex: ").Append(ReplaceSubIndex).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (input == null) return false;
             if (this.MultitaskInfo != input.MultitaskInfo || (this.MultitaskInfo != null && input.MultitaskInfo != null && !this.MultitaskInfo.SequenceEqual(input.MultitaskInfo))) return false;
             if (this.InputFile != input.InputFile || (this.InputFile != null && !this.InputFile.Equals(input.InputFile))) return false;
+            if (this.ReplaceSubIndex != input.ReplaceSubIndex || (this.ReplaceSubIndex != null && input.ReplaceSubIndex != null && !this.ReplaceSubIndex.SequenceEqual(input.ReplaceSubIndex))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 var hashCode = 41;
                 if (this.MultitaskInfo != null) hashCode = hashCode * 59 + this.MultitaskInfo.GetHashCode();
                 if (this.InputFile != null) hashCode = hashCode * 59 + this.InputFile.GetHashCode();
+                if (this.ReplaceSubIndex != null) hashCode = hashCode * 59 + this.ReplaceSubIndex.GetHashCode();
                 return hashCode;
             }
         }

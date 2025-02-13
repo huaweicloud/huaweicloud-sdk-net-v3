@@ -94,7 +94,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         /// <summary>
         /// 创建实例
         ///
-        /// 创建实例[，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc)计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc)。
+        /// 创建实例[，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc)计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc,sbc)。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -223,6 +223,32 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
             return new AsyncInvoker<DeleteUserResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteUserResponse>);
+        }
+        
+        /// <summary>
+        /// 开启RabbitMQ实例域名访问能力
+        ///
+        /// 开启RabbitMQ实例域名访问功能后，客户端可以通过域名连接RabbitMQ实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<EnableDnsResponse> EnableDnsAsync(EnableDnsRequest enableDnsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", enableDnsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/instances/{instance_id}/dns", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<EnableDnsResponse>(response);
+        }
+
+        public AsyncInvoker<EnableDnsResponse> EnableDnsAsyncInvoker(EnableDnsRequest enableDnsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", enableDnsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/instances/{instance_id}/dns", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
+            return new AsyncInvoker<EnableDnsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableDnsResponse>);
         }
         
         /// <summary>
@@ -643,6 +669,30 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/instances/maintain-windows", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMaintainWindowsRequest);
             return new AsyncInvoker<ShowMaintainWindowsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMaintainWindowsResponse>);
+        }
+        
+        /// <summary>
+        /// 查看租户配额
+        ///
+        /// 查询租户最大可以创建的实例个数和已创建的实例个数，以及每个实例最大可以创建标签的个数。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowQuotasResponse> ShowQuotasAsync(ShowQuotasRequest showQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowQuotasResponse>(response);
+        }
+
+        public AsyncInvoker<ShowQuotasResponse> ShowQuotasAsyncInvoker(ShowQuotasRequest showQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotasRequest);
+            return new AsyncInvoker<ShowQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotasResponse>);
         }
         
         /// <summary>
