@@ -1960,6 +1960,32 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 展示时间轴
+        ///
+        /// 指定不同的任务ID可以展示当前任务创建时间、启动时间、重试、重置等操作的时间轴信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTimelineResponse> ShowTimelineAsync(ShowTimelineRequest showTimelineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showTimelineRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/timelines", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTimelineRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTimelineResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTimelineResponse> ShowTimelineAsyncInvoker(ShowTimelineRequest showTimelineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showTimelineRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/timelines", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTimelineRequest);
+            return new AsyncInvoker<ShowTimelineResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTimelineResponse>);
+        }
+        
+        /// <summary>
         /// 获取对象保存进度
         ///
         /// 获取对象保存进度。

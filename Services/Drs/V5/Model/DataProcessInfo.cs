@@ -130,9 +130,124 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             }
         }
 
+        /// <summary>
+        /// 数据加工规则作用级别 - table 表示数据同步时的过滤 - combinations 表示组合集，对多个表的操作  当进行数据过滤规则校验，必填 当需要更新数据加工规则（数据过滤、列加工等）时，必填
+        /// </summary>
+        /// <value>数据加工规则作用级别 - table 表示数据同步时的过滤 - combinations 表示组合集，对多个表的操作  当进行数据过滤规则校验，必填 当需要更新数据加工规则（数据过滤、列加工等）时，必填</value>
+        [JsonConverter(typeof(EnumClassConverter<ProcessRuleLevelEnum>))]
+        public class ProcessRuleLevelEnum
+        {
+            /// <summary>
+            /// Enum TABLE for value: table
+            /// </summary>
+            public static readonly ProcessRuleLevelEnum TABLE = new ProcessRuleLevelEnum("table");
+
+            /// <summary>
+            /// Enum COMBINATIONS for value: combinations
+            /// </summary>
+            public static readonly ProcessRuleLevelEnum COMBINATIONS = new ProcessRuleLevelEnum("combinations");
+
+            private static readonly Dictionary<string, ProcessRuleLevelEnum> StaticFields =
+            new Dictionary<string, ProcessRuleLevelEnum>()
+            {
+                { "table", TABLE },
+                { "combinations", COMBINATIONS },
+            };
+
+            private string _value;
+
+            public ProcessRuleLevelEnum()
+            {
+
+            }
+
+            public ProcessRuleLevelEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ProcessRuleLevelEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ProcessRuleLevelEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ProcessRuleLevelEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ProcessRuleLevelEnum a, ProcessRuleLevelEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ProcessRuleLevelEnum a, ProcessRuleLevelEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 指定任务数据加工规则请求体
+        /// 指定任务数据加工规则请求体,  当进行数据过滤规则校验，必填 当数据过滤规则校验通过，需要更新数据过滤规则时，必填
         /// </summary>
         [JsonProperty("filter_conditions", NullValueHandling = NullValueHandling.Ignore)]
         public List<DataFilteringCondition> FilterConditions { get; set; }
@@ -190,6 +305,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
         public SourceEnum Source { get; set; }
+        /// <summary>
+        /// 数据加工规则作用级别 - table 表示数据同步时的过滤 - combinations 表示组合集，对多个表的操作  当进行数据过滤规则校验，必填 当需要更新数据加工规则（数据过滤、列加工等）时，必填
+        /// </summary>
+        [JsonProperty("process_rule_level", NullValueHandling = NullValueHandling.Ignore)]
+        public ProcessRuleLevelEnum ProcessRuleLevel { get; set; }
 
 
         /// <summary>
@@ -209,6 +329,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  dbObject: ").Append(DbObject).Append("\n");
             sb.Append("  isSynchronized: ").Append(IsSynchronized).Append("\n");
             sb.Append("  source: ").Append(Source).Append("\n");
+            sb.Append("  processRuleLevel: ").Append(ProcessRuleLevel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -237,6 +358,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.DbObject != input.DbObject || (this.DbObject != null && !this.DbObject.Equals(input.DbObject))) return false;
             if (this.IsSynchronized != input.IsSynchronized || (this.IsSynchronized != null && !this.IsSynchronized.Equals(input.IsSynchronized))) return false;
             if (this.Source != input.Source) return false;
+            if (this.ProcessRuleLevel != input.ProcessRuleLevel) return false;
 
             return true;
         }
@@ -259,6 +381,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.DbObject != null) hashCode = hashCode * 59 + this.DbObject.GetHashCode();
                 if (this.IsSynchronized != null) hashCode = hashCode * 59 + this.IsSynchronized.GetHashCode();
                 hashCode = hashCode * 59 + this.Source.GetHashCode();
+                hashCode = hashCode * 59 + this.ProcessRuleLevel.GetHashCode();
                 return hashCode;
             }
         }

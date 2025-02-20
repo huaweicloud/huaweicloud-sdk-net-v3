@@ -145,7 +145,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 对比任务类型： - contents： 内容对比。 - lines：行数对比。 - random：抽样对比。 - objects_comparison：对象对比。
+        /// 对比任务类型： - contents： 内容对比。 - lines：行数对比。 - random：抽样对比。 - objects_comparison：对象对比。 - repair_data：数据修复。
         /// </summary>
         [SDKProperty("compare_type", IsQuery = true)]
         [JsonProperty("compare_type", NullValueHandling = NullValueHandling.Ignore)]

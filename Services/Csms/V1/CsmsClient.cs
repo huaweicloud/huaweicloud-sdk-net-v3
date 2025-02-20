@@ -41,6 +41,30 @@ namespace HuaweiCloud.SDK.Csms.V1
         }
         
         /// <summary>
+        /// 批量导入凭据
+        ///
+        /// 批量导入凭据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchImportSecretsResponse BatchImportSecrets(BatchImportSecretsRequest batchImportSecretsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/batch-import", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchImportSecretsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchImportSecretsResponse>(response);
+        }
+
+        public SyncInvoker<BatchImportSecretsResponse> BatchImportSecretsInvoker(BatchImportSecretsRequest batchImportSecretsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/batch-import", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchImportSecretsRequest);
+            return new SyncInvoker<BatchImportSecretsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchImportSecretsResponse>);
+        }
+        
+        /// <summary>
         /// 创建服务委托
         ///
         /// 创建服务委托。用于创建凭据管理服务相关委托和函数工作流相关委托。
@@ -853,6 +877,32 @@ namespace HuaweiCloud.SDK.Csms.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretVersionRequest);
             return new SyncInvoker<ShowSecretVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 获取用户详情
+        ///
+        /// 根据用户id查询用户详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowUserDetailResponse ShowUserDetail(ShowUserDetailRequest showUserDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("user_id", showUserDetailRequest.UserId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/users/{user_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowUserDetailResponse>(response);
+        }
+
+        public SyncInvoker<ShowUserDetailResponse> ShowUserDetailInvoker(ShowUserDetailRequest showUserDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("user_id", showUserDetailRequest.UserId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/users/{user_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserDetailRequest);
+            return new SyncInvoker<ShowUserDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserDetailResponse>);
         }
         
         /// <summary>

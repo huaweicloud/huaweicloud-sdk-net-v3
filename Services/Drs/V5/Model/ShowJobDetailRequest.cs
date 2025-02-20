@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         }
 
         /// <summary>
-        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。
+        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。
         /// </summary>
-        /// <value>任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。</value>
+        /// <value>任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -187,6 +187,31 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly TypeEnum CLOUD_CONNECTION = new TypeEnum("cloud_connection");
 
+            /// <summary>
+            /// Enum DIAGNOSIS for value: diagnosis
+            /// </summary>
+            public static readonly TypeEnum DIAGNOSIS = new TypeEnum("diagnosis");
+
+            /// <summary>
+            /// Enum DIAGNOSIS_HISTORY for value: diagnosis_history
+            /// </summary>
+            public static readonly TypeEnum DIAGNOSIS_HISTORY = new TypeEnum("diagnosis_history");
+
+            /// <summary>
+            /// Enum REPAIR_PROGRESS for value: repair_progress
+            /// </summary>
+            public static readonly TypeEnum REPAIR_PROGRESS = new TypeEnum("repair_progress");
+
+            /// <summary>
+            /// Enum REPAIR_DETAIL for value: repair_detail
+            /// </summary>
+            public static readonly TypeEnum REPAIR_DETAIL = new TypeEnum("repair_detail");
+
+            /// <summary>
+            /// Enum REPAIR_EXPORT_STATUS for value: repair_export_status
+            /// </summary>
+            public static readonly TypeEnum REPAIR_EXPORT_STATUS = new TypeEnum("repair_export_status");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
@@ -200,6 +225,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "file", FILE },
                 { "is_writable", IS_WRITABLE },
                 { "cloud_connection", CLOUD_CONNECTION },
+                { "diagnosis", DIAGNOSIS },
+                { "diagnosis_history", DIAGNOSIS_HISTORY },
+                { "repair_progress", REPAIR_PROGRESS },
+                { "repair_detail", REPAIR_DETAIL },
+                { "repair_export_status", REPAIR_EXPORT_STATUS },
             };
 
             private string _value;
@@ -798,7 +828,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。
+        /// 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

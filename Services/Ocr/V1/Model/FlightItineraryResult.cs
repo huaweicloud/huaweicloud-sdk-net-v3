@@ -161,6 +161,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string IssueStatus { get; set; }
 
         /// <summary>
+        /// gp单号。 
+        /// </summary>
+        [JsonProperty("gp_number", NullValueHandling = NullValueHandling.Ignore)]
+        public string GpNumber { get; set; }
+
+        /// <summary>
         /// 机票行程列表。 
         /// </summary>
         [JsonProperty("itinerary_list", NullValueHandling = NullValueHandling.Ignore)]
@@ -205,6 +211,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  number: ").Append(Number).Append("\n");
             sb.Append("  internationalFlag: ").Append(InternationalFlag).Append("\n");
             sb.Append("  issueStatus: ").Append(IssueStatus).Append("\n");
+            sb.Append("  gpNumber: ").Append(GpNumber).Append("\n");
             sb.Append("  itineraryList: ").Append(ItineraryList).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("}\n");
@@ -249,6 +256,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
             if (this.InternationalFlag != input.InternationalFlag || (this.InternationalFlag != null && !this.InternationalFlag.Equals(input.InternationalFlag))) return false;
             if (this.IssueStatus != input.IssueStatus || (this.IssueStatus != null && !this.IssueStatus.Equals(input.IssueStatus))) return false;
+            if (this.GpNumber != input.GpNumber || (this.GpNumber != null && !this.GpNumber.Equals(input.GpNumber))) return false;
             if (this.ItineraryList != input.ItineraryList || (this.ItineraryList != null && input.ItineraryList != null && !this.ItineraryList.SequenceEqual(input.ItineraryList))) return false;
             if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
@@ -287,6 +295,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
                 if (this.InternationalFlag != null) hashCode = hashCode * 59 + this.InternationalFlag.GetHashCode();
                 if (this.IssueStatus != null) hashCode = hashCode * 59 + this.IssueStatus.GetHashCode();
+                if (this.GpNumber != null) hashCode = hashCode * 59 + this.GpNumber.GetHashCode();
                 if (this.ItineraryList != null) hashCode = hashCode * 59 + this.ItineraryList.GetHashCode();
                 if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;

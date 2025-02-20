@@ -592,6 +592,30 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         [JsonProperty("is_writable", NullValueHandling = NullValueHandling.Ignore)]
         public IsWritableEnum IsWritable { get; set; }
+        /// <summary>
+        /// 一键诊断结果。
+        /// </summary>
+        [JsonProperty("diagnoses", NullValueHandling = NullValueHandling.Ignore)]
+        public List<QueryDiagnosisResult> Diagnoses { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("repair_progress_info", NullValueHandling = NullValueHandling.Ignore)]
+        public JobDetailRespRepairProgressInfo RepairProgressInfo { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("repair_detail_info", NullValueHandling = NullValueHandling.Ignore)]
+        public QueryRepairDetailResp RepairDetailInfo { get; set; }
+
+        /// <summary>
+        /// 修复SQL导出状态。
+        /// </summary>
+        [JsonProperty("repair_export_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string RepairExportStatus { get; set; }
+
 
 
         /// <summary>
@@ -632,6 +656,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  bindPublicIpState: ").Append(BindPublicIpState).Append("\n");
             sb.Append("  children: ").Append(Children).Append("\n");
             sb.Append("  isWritable: ").Append(IsWritable).Append("\n");
+            sb.Append("  diagnoses: ").Append(Diagnoses).Append("\n");
+            sb.Append("  repairProgressInfo: ").Append(RepairProgressInfo).Append("\n");
+            sb.Append("  repairDetailInfo: ").Append(RepairDetailInfo).Append("\n");
+            sb.Append("  repairExportStatus: ").Append(RepairExportStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -681,6 +709,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.BindPublicIpState != input.BindPublicIpState || (this.BindPublicIpState != null && !this.BindPublicIpState.Equals(input.BindPublicIpState))) return false;
             if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
             if (this.IsWritable != input.IsWritable) return false;
+            if (this.Diagnoses != input.Diagnoses || (this.Diagnoses != null && input.Diagnoses != null && !this.Diagnoses.SequenceEqual(input.Diagnoses))) return false;
+            if (this.RepairProgressInfo != input.RepairProgressInfo || (this.RepairProgressInfo != null && !this.RepairProgressInfo.Equals(input.RepairProgressInfo))) return false;
+            if (this.RepairDetailInfo != input.RepairDetailInfo || (this.RepairDetailInfo != null && !this.RepairDetailInfo.Equals(input.RepairDetailInfo))) return false;
+            if (this.RepairExportStatus != input.RepairExportStatus || (this.RepairExportStatus != null && !this.RepairExportStatus.Equals(input.RepairExportStatus))) return false;
 
             return true;
         }
@@ -724,6 +756,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.BindPublicIpState != null) hashCode = hashCode * 59 + this.BindPublicIpState.GetHashCode();
                 if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
                 hashCode = hashCode * 59 + this.IsWritable.GetHashCode();
+                if (this.Diagnoses != null) hashCode = hashCode * 59 + this.Diagnoses.GetHashCode();
+                if (this.RepairProgressInfo != null) hashCode = hashCode * 59 + this.RepairProgressInfo.GetHashCode();
+                if (this.RepairDetailInfo != null) hashCode = hashCode * 59 + this.RepairDetailInfo.GetHashCode();
+                if (this.RepairExportStatus != null) hashCode = hashCode * 59 + this.RepairExportStatus.GetHashCode();
                 return hashCode;
             }
         }

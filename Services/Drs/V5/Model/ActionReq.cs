@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
     public class ActionReq 
     {
         /// <summary>
-        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。
+        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。 - diagnosis：一键诊断。 - start_repair：开始数据修复。 - stop_repair：停止数据修复。
         /// </summary>
-        /// <value>操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。</value>
+        /// <value>操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。 - diagnosis：一键诊断。 - start_repair：开始数据修复。 - stop_repair：停止数据修复。</value>
         [JsonConverter(typeof(EnumClassConverter<ActionNameEnum>))]
         public class ActionNameEnum
         {
@@ -107,6 +107,21 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             /// </summary>
             public static readonly ActionNameEnum SET_READONLY = new ActionNameEnum("set_readonly");
 
+            /// <summary>
+            /// Enum DIAGNOSIS_ for value: diagnosis：一键诊断。
+            /// </summary>
+            public static readonly ActionNameEnum DIAGNOSIS_ = new ActionNameEnum("diagnosis：一键诊断。");
+
+            /// <summary>
+            /// Enum START_REPAIR_ for value: start_repair：开始数据修复。
+            /// </summary>
+            public static readonly ActionNameEnum START_REPAIR_ = new ActionNameEnum("start_repair：开始数据修复。");
+
+            /// <summary>
+            /// Enum STOP_REPAIR_ for value: stop_repair：停止数据修复。
+            /// </summary>
+            public static readonly ActionNameEnum STOP_REPAIR_ = new ActionNameEnum("stop_repair：停止数据修复。");
+
             private static readonly Dictionary<string, ActionNameEnum> StaticFields =
             new Dictionary<string, ActionNameEnum>()
             {
@@ -127,6 +142,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "set_writable", SET_WRITABLE },
                 { "cloud_connection", CLOUD_CONNECTION },
                 { "set_readonly", SET_READONLY },
+                { "diagnosis：一键诊断。", DIAGNOSIS_ },
+                { "start_repair：开始数据修复。", START_REPAIR_ },
+                { "stop_repair：停止数据修复。", STOP_REPAIR_ },
             };
 
             private string _value;
@@ -228,7 +246,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。
+        /// 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。 - diagnosis：一键诊断。 - start_repair：开始数据修复。 - stop_repair：停止数据修复。
         /// </summary>
         [JsonProperty("action_name", NullValueHandling = NullValueHandling.Ignore)]
         public ActionNameEnum ActionName { get; set; }

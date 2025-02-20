@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     {
 
         /// <summary>
-        /// 客户端证书配置开关，1：打开；0：关闭。
+        /// 客户端证书配置开关，on：打开；off：关闭。
         /// </summary>
-        [JsonProperty("validation", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Validation { get; set; }
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
 
         /// <summary>
         /// 客户端CA证书的内容，仅支持PEM格式。
@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ClientCert {\n");
-            sb.Append("  validation: ").Append(Validation).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  trustedCert: ").Append(TrustedCert).Append("\n");
             sb.Append("  hosts: ").Append(Hosts).Append("\n");
             sb.Append("}\n");
@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public bool Equals(ClientCert input)
         {
             if (input == null) return false;
-            if (this.Validation != input.Validation || (this.Validation != null && !this.Validation.Equals(input.Validation))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.TrustedCert != input.TrustedCert || (this.TrustedCert != null && !this.TrustedCert.Equals(input.TrustedCert))) return false;
             if (this.Hosts != input.Hosts || (this.Hosts != null && !this.Hosts.Equals(input.Hosts))) return false;
 
@@ -79,7 +79,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Validation != null) hashCode = hashCode * 59 + this.Validation.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.TrustedCert != null) hashCode = hashCode * 59 + this.TrustedCert.GetHashCode();
                 if (this.Hosts != null) hashCode = hashCode * 59 + this.Hosts.GetHashCode();
                 return hashCode;

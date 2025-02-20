@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("replay_config", NullValueHandling = NullValueHandling.Ignore)]
         public ReplayConfigInfo ReplayConfig { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("repair_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionParamsRepairInfo RepairInfo { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             sb.Append("  forceDelete: ").Append(ForceDelete).Append("\n");
             sb.Append("  publicIpConfig: ").Append(PublicIpConfig).Append("\n");
             sb.Append("  replayConfig: ").Append(ReplayConfig).Append("\n");
+            sb.Append("  repairInfo: ").Append(RepairInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +138,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             if (this.ForceDelete != input.ForceDelete || (this.ForceDelete != null && !this.ForceDelete.Equals(input.ForceDelete))) return false;
             if (this.PublicIpConfig != input.PublicIpConfig || (this.PublicIpConfig != null && !this.PublicIpConfig.Equals(input.PublicIpConfig))) return false;
             if (this.ReplayConfig != input.ReplayConfig || (this.ReplayConfig != null && !this.ReplayConfig.Equals(input.ReplayConfig))) return false;
+            if (this.RepairInfo != input.RepairInfo || (this.RepairInfo != null && !this.RepairInfo.Equals(input.RepairInfo))) return false;
 
             return true;
         }
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 if (this.ForceDelete != null) hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
                 if (this.PublicIpConfig != null) hashCode = hashCode * 59 + this.PublicIpConfig.GetHashCode();
                 if (this.ReplayConfig != null) hashCode = hashCode * 59 + this.ReplayConfig.GetHashCode();
+                if (this.RepairInfo != null) hashCode = hashCode * 59 + this.RepairInfo.GetHashCode();
                 return hashCode;
             }
         }
