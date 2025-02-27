@@ -113,7 +113,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string CommonName { get; set; }
 
         /// <summary>
-        /// 证书指纹
+        /// 证书指纹。
         /// </summary>
         [JsonProperty("fingerprint", NullValueHandling = NullValueHandling.Ignore)]
         public string Fingerprint { get; set; }

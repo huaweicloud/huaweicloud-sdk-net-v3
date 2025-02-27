@@ -498,7 +498,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         public List<PublicIpInfo> Publicips { get; set; }
 
         /// <summary>
-        /// 收费模式。取值：  flavor：按规格计费 lcu：按使用量计费 说明：弹性扩缩容实例该字段无效，按lcu收费；包周期实例该字段无效，预付费收费。
+        /// 收费模式。取值：  flavor：按规格计费 lcu：按使用量计费 说明：弹性扩缩容实例该字段无效，按lcu收费；包周期实例该字段无效，按预付费收费。
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ChargeMode { get; set; }

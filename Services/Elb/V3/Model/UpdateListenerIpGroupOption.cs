@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string IpgroupId { get; set; }
 
         /// <summary>
-        /// 参数解释：访问控制组的状态。 开启访问控制的监听器，允许直接删除。  取值范围： - true:开启访问控制。 - flase：关闭访问控制。
+        /// 参数解释：访问控制组的状态。 开启访问控制的监听器，允许直接删除。  取值范围： - true:开启访问控制。 - false：关闭访问控制。
         /// </summary>
         [JsonProperty("enable_ipgroup", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableIpgroup { get; set; }

@@ -160,6 +160,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 创建计划录制任务
+        ///
+        /// 通过使用指定录制模板ID对应的配置创建一个在指定时间启动、结束的录制任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateScheduleRecordTasksResponse> CreateScheduleRecordTasksAsync(CreateScheduleRecordTasksRequest createScheduleRecordTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/schedule/record/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createScheduleRecordTasksRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateScheduleRecordTasksResponse>(response);
+        }
+
+        public AsyncInvoker<CreateScheduleRecordTasksResponse> CreateScheduleRecordTasksAsyncInvoker(CreateScheduleRecordTasksRequest createScheduleRecordTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/schedule/record/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createScheduleRecordTasksRequest);
+            return new AsyncInvoker<CreateScheduleRecordTasksResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateScheduleRecordTasksResponse>);
+        }
+        
+        /// <summary>
         /// 创建直播截图配置
         ///
         /// 创建直播截图配置接口
@@ -425,6 +449,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/referer-chain", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRefererChainRequest);
             return new AsyncInvoker<DeleteRefererChainResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRefererChainResponse>);
+        }
+        
+        /// <summary>
+        /// 停止计划录制任务
+        ///
+        /// 停止计划录制任务，当前的录制任务会中止并生产录制文件。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteScheduleRecordTasksResponse> DeleteScheduleRecordTasksAsync(DeleteScheduleRecordTasksRequest deleteScheduleRecordTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/schedule/record/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScheduleRecordTasksRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteScheduleRecordTasksResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteScheduleRecordTasksResponse> DeleteScheduleRecordTasksAsyncInvoker(DeleteScheduleRecordTasksRequest deleteScheduleRecordTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/schedule/record/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScheduleRecordTasksRequest);
+            return new AsyncInvoker<DeleteScheduleRecordTasksResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteScheduleRecordTasksResponse>);
         }
         
         /// <summary>
@@ -740,6 +788,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordRulesRequest);
             return new AsyncInvoker<ListRecordRulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecordRulesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询计划录制任务
+        ///
+        /// 查询指定时间范围内启动和结束的计划录制任务列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListScheduleRecordTasksResponse> ListScheduleRecordTasksAsync(ListScheduleRecordTasksRequest listScheduleRecordTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/schedule/record/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScheduleRecordTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListScheduleRecordTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListScheduleRecordTasksResponse> ListScheduleRecordTasksAsyncInvoker(ListScheduleRecordTasksRequest listScheduleRecordTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/schedule/record/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScheduleRecordTasksRequest);
+            return new AsyncInvoker<ListScheduleRecordTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScheduleRecordTasksResponse>);
         }
         
         /// <summary>

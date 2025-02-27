@@ -80,14 +80,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<int?> Category { get; set; }
 
         /// <summary>
-        /// 设置list_all&#x3D;true时，返回当前租户所有的弹性上限规格（l4_elastic_max、l7__elastic_max）。否则只返回该租户弹性上限规格中最大的规格（l4类型优先比较cps指标，然后是带宽；l7类型优先比较https cps指标然后是qps指标）。
+        /// 设置list_all&#x3D;true时，返回当前租户所有的弹性上限规格（l4_elastic_max、l7_elastic_max）。否则只返回该租户弹性上限规格中最大的规格（l4类型优先比较cps指标，然后是带宽；l7类型优先比较https cps指标然后是qps指标）。
         /// </summary>
         [SDKProperty("list_all", IsQuery = true)]
         [JsonProperty("list_all", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ListAll { get; set; }
 
         /// <summary>
-        /// 参数解释： [是否售罄。](tag:hws) [是否无法购买该规格的LB。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,dt_test,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,ct)  取值范围： - true：[已售罄，将](tag:hws)无法购买该规格的LB。 - false：[未售罄，](tag:hws)可购买该规格的LB。
+        /// 参数解释： [是否售罄。](tag:hws) [是否无法购买该规格的LB。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,ct)  取值范围： - true：[已售罄，将](tag:hws)无法购买该规格的LB。 - false：[未售罄，](tag:hws)可购买该规格的LB。
         /// </summary>
         [SDKProperty("flavor_sold_out", IsQuery = true)]
         [JsonProperty("flavor_sold_out", NullValueHandling = NullValueHandling.Ignore)]

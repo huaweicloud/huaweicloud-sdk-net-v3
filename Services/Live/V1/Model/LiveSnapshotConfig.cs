@@ -130,6 +130,121 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             }
         }
 
+        /// <summary>
+        /// 截图存储文件访问协议， 仅支持http、https格式
+        /// </summary>
+        /// <value>截图存储文件访问协议， 仅支持http、https格式</value>
+        [JsonConverter(typeof(EnumClassConverter<ImageAccessProtocolEnum>))]
+        public class ImageAccessProtocolEnum
+        {
+            /// <summary>
+            /// Enum HTTP for value: http
+            /// </summary>
+            public static readonly ImageAccessProtocolEnum HTTP = new ImageAccessProtocolEnum("http");
+
+            /// <summary>
+            /// Enum HTTPS for value: https
+            /// </summary>
+            public static readonly ImageAccessProtocolEnum HTTPS = new ImageAccessProtocolEnum("https");
+
+            private static readonly Dictionary<string, ImageAccessProtocolEnum> StaticFields =
+            new Dictionary<string, ImageAccessProtocolEnum>()
+            {
+                { "http", HTTP },
+                { "https", HTTPS },
+            };
+
+            private string _value;
+
+            public ImageAccessProtocolEnum()
+            {
+
+            }
+
+            public ImageAccessProtocolEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ImageAccessProtocolEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ImageAccessProtocolEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ImageAccessProtocolEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ImageAccessProtocolEnum a, ImageAccessProtocolEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ImageAccessProtocolEnum a, ImageAccessProtocolEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 直播推流域名
@@ -178,6 +293,17 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("call_back_url", NullValueHandling = NullValueHandling.Ignore)]
         public string CallBackUrl { get; set; }
 
+        /// <summary>
+        /// 截图存储文件访问协议， 仅支持http、https格式
+        /// </summary>
+        [JsonProperty("image_access_protocol", NullValueHandling = NullValueHandling.Ignore)]
+        public ImageAccessProtocolEnum ImageAccessProtocol { get; set; }
+        /// <summary>
+        /// 截图存储文件访问域名
+        /// </summary>
+        [JsonProperty("image_access_domain", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageAccessDomain { get; set; }
+
 
 
         /// <summary>
@@ -195,6 +321,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  obsLocation: ").Append(ObsLocation).Append("\n");
             sb.Append("  callBackEnable: ").Append(CallBackEnable).Append("\n");
             sb.Append("  callBackUrl: ").Append(CallBackUrl).Append("\n");
+            sb.Append("  imageAccessProtocol: ").Append(ImageAccessProtocol).Append("\n");
+            sb.Append("  imageAccessDomain: ").Append(ImageAccessDomain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -221,6 +349,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.ObsLocation != input.ObsLocation || (this.ObsLocation != null && !this.ObsLocation.Equals(input.ObsLocation))) return false;
             if (this.CallBackEnable != input.CallBackEnable) return false;
             if (this.CallBackUrl != input.CallBackUrl || (this.CallBackUrl != null && !this.CallBackUrl.Equals(input.CallBackUrl))) return false;
+            if (this.ImageAccessProtocol != input.ImageAccessProtocol) return false;
+            if (this.ImageAccessDomain != input.ImageAccessDomain || (this.ImageAccessDomain != null && !this.ImageAccessDomain.Equals(input.ImageAccessDomain))) return false;
 
             return true;
         }
@@ -241,6 +371,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.ObsLocation != null) hashCode = hashCode * 59 + this.ObsLocation.GetHashCode();
                 hashCode = hashCode * 59 + this.CallBackEnable.GetHashCode();
                 if (this.CallBackUrl != null) hashCode = hashCode * 59 + this.CallBackUrl.GetHashCode();
+                hashCode = hashCode * 59 + this.ImageAccessProtocol.GetHashCode();
+                if (this.ImageAccessDomain != null) hashCode = hashCode * 59 + this.ImageAccessDomain.GetHashCode();
                 return hashCode;
             }
         }

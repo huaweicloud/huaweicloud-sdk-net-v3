@@ -1,3 +1,159 @@
+# 3.1.135 2025-02-27
+
+### HuaweiCloud SDK CSMS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `UpdateUserPassword`
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchImportSecrets**
+    - changes of request param
+      - `- total`
+
+### HuaweiCloud SDK ELB
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowCertificate**
+    - changes of response param
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+  - **UpdateCertificate**
+    - changes of request param
+      - `+ source`
+      - `+ protection_status`
+      - `+ protection_reason`
+    - changes of response param
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+  - **CreateCertificate**
+    - changes of request param
+      - `+ source`
+      - `+ protection_status`
+      - `+ protection_reason`
+    - changes of response param
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+  - **ListCertificates**
+    - changes of request param
+      - `+ source`
+      - `+ protection_status`
+      - `+ protection_reason`
+    - changes of response param
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+      - `+ certificates.source`
+      - `+ certificates.protection_status`
+      - `+ certificates.protection_reason`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListStarRocksDbParameters**
+    - changes of request param
+      - `+ main_task_name`
+
+### HuaweiCloud SDK IAM
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainConsoleAclPolicy**
+    - changes of response param
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyResult> -> object<ConsoleAclPolicyResult>`
+  - **UpdateDomainConsoleAclPolicy**
+    - changes of request param
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyOption> -> object<ConsoleAclPolicyOption>`
+    - changes of response param
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyResult> -> object<ConsoleAclPolicyResult>`
+
+### HuaweiCloud SDK IoTDA
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the API `ChangeGateway`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListScheduleRecordTasks`, `CreateScheduleRecordTasks`, `DeleteScheduleRecordTasks`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateSnapshotConfig**
+    - changes of request param
+      - `+ image_access_protocol`
+      - `+ image_access_domain`
+  - **CreateSnapshotConfig**
+    - changes of request param
+      - `+ image_access_protocol`
+      - `+ image_access_domain`
+  - **ListSnapshotConfigs**
+    - changes of response param
+      - `+ snapshot_config_list.image_access_protocol`
+      - `+ snapshot_config_list.image_access_domain`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeVatInvoice**
+    - changes of response param
+      - `+ result.passenger_travel_item_list`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPorts**
+    - changes of request param
+      - `* id: string -> list<string>`
+
 # 3.1.134 2025-02-20
 
 ### HuaweiCloud SDK CCE

@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
     /// </summary>
     public class CreateCertificateRequestBody 
     {
+        /// <summary>
+        /// 参数解释： 修改保护状态  约束限制： 无  取值范围：  - nonProtection: 不保护 - consoleProtection: 控制台修改保护  默认取值： nonProtection
+        /// </summary>
+        /// <value>参数解释： 修改保护状态  约束限制： 无  取值范围：  - nonProtection: 不保护 - consoleProtection: 控制台修改保护  默认取值： nonProtection</value>
+        [JsonConverter(typeof(EnumClassConverter<ProtectionStatusEnum>))]
+        public class ProtectionStatusEnum
+        {
+            /// <summary>
+            /// Enum NONPROTECTION for value: nonProtection
+            /// </summary>
+            public static readonly ProtectionStatusEnum NONPROTECTION = new ProtectionStatusEnum("nonProtection");
+
+            /// <summary>
+            /// Enum CONSOLEPROTECTION for value: consoleProtection
+            /// </summary>
+            public static readonly ProtectionStatusEnum CONSOLEPROTECTION = new ProtectionStatusEnum("consoleProtection");
+
+            private static readonly Dictionary<string, ProtectionStatusEnum> StaticFields =
+            new Dictionary<string, ProtectionStatusEnum>()
+            {
+                { "nonProtection", NONPROTECTION },
+                { "consoleProtection", CONSOLEPROTECTION },
+            };
+
+            private string _value;
+
+            public ProtectionStatusEnum()
+            {
+
+            }
+
+            public ProtectionStatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ProtectionStatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ProtectionStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ProtectionStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ProtectionStatusEnum a, ProtectionStatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ProtectionStatusEnum a, ProtectionStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 服务端公有密钥证书或者用于认证客户端证书的CA证书，由type字段区分。 格式：证书为PEM格式。
@@ -64,6 +179,23 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 参数解释： 证书来源  约束限制： 当scm_certificate_id不为空，且未传入source时，默认取值为“scm”。  取值范围： 无  默认取值： 当scm_certificate_id不为空，且未传入source时，默认取值为“scm”； 其他情况下默认为空。
+        /// </summary>
+        [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
+        public string Source { get; set; }
+
+        /// <summary>
+        /// 参数解释： 修改保护状态  约束限制： 无  取值范围：  - nonProtection: 不保护 - consoleProtection: 控制台修改保护  默认取值： nonProtection
+        /// </summary>
+        [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
+        public ProtectionStatusEnum ProtectionStatus { get; set; }
+        /// <summary>
+        /// 参数解释： 设置修改保护的原因  约束限制： 仅当protection_status为consoleProtection时有效  取值范围： 无  默认取值： 空
+        /// </summary>
+        [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProtectionReason { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +213,9 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  source: ").Append(Source).Append("\n");
+            sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
+            sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +242,9 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Source != input.Source || (this.Source != null && !this.Source.Equals(input.Source))) return false;
+            if (this.ProtectionStatus != input.ProtectionStatus) return false;
+            if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && !this.ProtectionReason.Equals(input.ProtectionReason))) return false;
 
             return true;
         }
@@ -127,6 +265,9 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                 if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
                 return hashCode;
             }
         }

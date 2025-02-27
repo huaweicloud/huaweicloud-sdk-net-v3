@@ -1381,6 +1381,38 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 修改设备网关
+        ///
+        /// 应用服务器可调用此接口在物联网平台修改子设备网关。
+        /// - 只允许子设备修改网关。
+        /// - 目标网关必须和当前设备在同一个资源空间。
+        /// - 网关id不能和当前子设备网关id相同。
+        /// - 设备如果有下级子设备，则不允许切换网关。
+        /// - 支持多级子设备，当前最大支持二级子设备。
+        /// - 该接口仅支持创建单个设备切换网关，如需批量切换设备网关，请参见 [[创建批量任务](https://support.huaweicloud.com/api-iothub/iot_06_v5_0045.html)](tag:hws)[[创建批量任务](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_0045.html)](tag:hws_hk)。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeGatewayResponse> ChangeGatewayAsync(ChangeGatewayRequest changeGatewayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", changeGatewayRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/change-gateway", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeGatewayRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<ChangeGatewayResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeGatewayResponse> ChangeGatewayAsyncInvoker(ChangeGatewayRequest changeGatewayRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", changeGatewayRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/change-gateway", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeGatewayRequest);
+            return new AsyncInvoker<ChangeGatewayResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ChangeGatewayResponse>);
+        }
+        
+        /// <summary>
         /// 删除设备
         ///
         /// 应用服务器可调用此接口在物联网平台上删除指定设备。若设备下连接了非直连设备，则必须把设备下的非直连设备都删除后，才能删除该设备。该接口仅支持删除单个设备，如需批量删除设备，请参见 [[创建批量任务](https://support.huaweicloud.com/api-iothub/iot_06_v5_0045.html)](tag:hws)[[创建批量任务](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_0045.html)](tag:hws_hk)。
