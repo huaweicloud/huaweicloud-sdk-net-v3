@@ -889,7 +889,6 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListServerAzInfoResponse ListServerAzInfo(ListServerAzInfoRequest listServerAzInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -899,7 +898,6 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<ListServerAzInfoResponse>(response);
         }
 
-        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListServerAzInfoResponse> ListServerAzInfoInvoker(ListServerAzInfoRequest listServerAzInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1285,6 +1283,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public NovaListAvailabilityZonesResponse NovaListAvailabilityZones(NovaListAvailabilityZonesRequest novaListAvailabilityZonesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1294,6 +1293,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaListAvailabilityZonesResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<NovaListAvailabilityZonesResponse> NovaListAvailabilityZonesInvoker(NovaListAvailabilityZonesRequest novaListAvailabilityZonesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1950,6 +1950,34 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/block_device/{volume_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerBlockDeviceRequest);
             return new SyncInvoker<UpdateServerBlockDeviceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServerBlockDeviceResponse>);
+        }
+        
+        /// <summary>
+        /// 更新云服务器网卡挂载信息
+        ///
+        /// 更新云服务器网卡挂载信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateServerInterfaceResponse UpdateServerInterface(UpdateServerInterfaceRequest updateServerInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateServerInterfaceRequest.ServerId.ToString());
+            urlParam.Add("port_id", updateServerInterfaceRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-interface/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerInterfaceRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateServerInterfaceResponse>(response);
+        }
+
+        public SyncInvoker<UpdateServerInterfaceResponse> UpdateServerInterfaceInvoker(UpdateServerInterfaceRequest updateServerInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateServerInterfaceRequest.ServerId.ToString());
+            urlParam.Add("port_id", updateServerInterfaceRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-interface/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerInterfaceRequest);
+            return new SyncInvoker<UpdateServerInterfaceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServerInterfaceResponse>);
         }
         
         /// <summary>

@@ -294,6 +294,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public string CallBackUrl { get; set; }
 
         /// <summary>
+        /// 截图存储文件命名规则， 仅支持jpg格式 包含 - &#39;{obs_object}&#39; OBS存储路径，即obs_location.object的值  - &#39;{domain}&#39; 域名 - &#39;{app}&#39; 应用名 - &#39;{stream}&#39;  流名  其中实时截图模式下  - &#39;{unix_time}&#39;  时间戳，秒 - &#39;{unix_time_milli}&#39;  时间戳，毫秒 - &#39;{fmt_time_utc}&#39;   格式化UTC时间, 格式：YYYYMMDDhhmmss, 如20060102070405 - &#39;{fmt_time_local}&#39;  格式化本地时间, 格式：YYYYMMDDhhmmss，如20060102150405 必选一个时间类型模板
+        /// </summary>
+        [JsonProperty("image_object_format", NullValueHandling = NullValueHandling.Ignore)]
+        public string ImageObjectFormat { get; set; }
+
+        /// <summary>
         /// 截图存储文件访问协议， 仅支持http、https格式
         /// </summary>
         [JsonProperty("image_access_protocol", NullValueHandling = NullValueHandling.Ignore)]
@@ -321,6 +327,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  obsLocation: ").Append(ObsLocation).Append("\n");
             sb.Append("  callBackEnable: ").Append(CallBackEnable).Append("\n");
             sb.Append("  callBackUrl: ").Append(CallBackUrl).Append("\n");
+            sb.Append("  imageObjectFormat: ").Append(ImageObjectFormat).Append("\n");
             sb.Append("  imageAccessProtocol: ").Append(ImageAccessProtocol).Append("\n");
             sb.Append("  imageAccessDomain: ").Append(ImageAccessDomain).Append("\n");
             sb.Append("}\n");
@@ -349,6 +356,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.ObsLocation != input.ObsLocation || (this.ObsLocation != null && !this.ObsLocation.Equals(input.ObsLocation))) return false;
             if (this.CallBackEnable != input.CallBackEnable) return false;
             if (this.CallBackUrl != input.CallBackUrl || (this.CallBackUrl != null && !this.CallBackUrl.Equals(input.CallBackUrl))) return false;
+            if (this.ImageObjectFormat != input.ImageObjectFormat || (this.ImageObjectFormat != null && !this.ImageObjectFormat.Equals(input.ImageObjectFormat))) return false;
             if (this.ImageAccessProtocol != input.ImageAccessProtocol) return false;
             if (this.ImageAccessDomain != input.ImageAccessDomain || (this.ImageAccessDomain != null && !this.ImageAccessDomain.Equals(input.ImageAccessDomain))) return false;
 
@@ -371,6 +379,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.ObsLocation != null) hashCode = hashCode * 59 + this.ObsLocation.GetHashCode();
                 hashCode = hashCode * 59 + this.CallBackEnable.GetHashCode();
                 if (this.CallBackUrl != null) hashCode = hashCode * 59 + this.CallBackUrl.GetHashCode();
+                if (this.ImageObjectFormat != null) hashCode = hashCode * 59 + this.ImageObjectFormat.GetHashCode();
                 hashCode = hashCode * 59 + this.ImageAccessProtocol.GetHashCode();
                 if (this.ImageAccessDomain != null) hashCode = hashCode * 59 + this.ImageAccessDomain.GetHashCode();
                 return hashCode;

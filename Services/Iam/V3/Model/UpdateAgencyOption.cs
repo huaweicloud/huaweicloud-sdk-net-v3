@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 委托的期限，单位为“天”。默认为FOREVER。取值为“FOREVER\&quot;表示委托的期限为永久，取值为\&quot;ONEDAY\&quot;表示委托的期限为一天,取值为自定义天数表示委托的期限为有限天数，如20。四个参数至少填写一个。
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
-        public string Duration { get; set; }
+        public Object Duration { get; set; }
 
 
 

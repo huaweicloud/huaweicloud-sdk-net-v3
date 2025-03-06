@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 实例类型。 - 取值为“Cluster”，表示GeminiDB Redis集群实例类型。
+        /// 实例类型。 -  取值为“Cluster”，表示GeminiDB Redis经典部署模式集群实例类型。 -  取值为“CloudNativeCluster”，表示GeminiDB Redis云原生部署模式集群实例类型。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }

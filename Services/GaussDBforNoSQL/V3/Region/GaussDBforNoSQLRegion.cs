@@ -33,8 +33,6 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             "https://gaussdb-nosql.cn-south-2.myhuaweicloud.com");
         public static readonly Region CN_NORTH_2 = new Region("cn-north-2",
             "https://gaussdb-nosql.cn-north-2.myhuaweicloud.com");
-        public static readonly Region NA_MEXICO_1 = new Region("na-mexico-1",
-            "https://gaussdb-nosql.na-mexico-1.myhuaweicloud.com");
         public static readonly Region LA_NORTH_2 = new Region("la-north-2",
             "https://gaussdb-nosql.la-north-2.myhuaweicloud.com");
         public static readonly Region SA_BRAZIL_1 = new Region("sa-brazil-1",
@@ -63,7 +61,6 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
                 { "ru-northwest-2", RU_NORTHWEST_2 },
                 { "cn-south-2", CN_SOUTH_2 },
                 { "cn-north-2", CN_NORTH_2 },
-                { "na-mexico-1", NA_MEXICO_1 },
                 { "la-north-2", LA_NORTH_2 },
                 { "sa-brazil-1", SA_BRAZIL_1 },
                 { "la-south-2", LA_SOUTH_2 },

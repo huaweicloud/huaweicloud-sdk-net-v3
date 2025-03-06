@@ -174,6 +174,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<BatchTagActionResponse> BatchTagActionAsync(BatchTagActionRequest batchTagActionRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -185,6 +186,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerializeNull<BatchTagActionResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<BatchTagActionResponse> BatchTagActionAsyncInvoker(BatchTagActionRequest batchTagActionRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -311,6 +313,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<CollectDbObjectsAsyncResponse> CollectDbObjectsAsyncAsync(CollectDbObjectsAsyncRequest collectDbObjectsAsyncRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -321,6 +324,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<CollectDbObjectsAsyncResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<CollectDbObjectsAsyncResponse> CollectDbObjectsAsyncAsyncInvoker(CollectDbObjectsAsyncRequest collectDbObjectsAsyncRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -870,6 +874,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListDbObjectsResponse> ListDbObjectsAsync(ListDbObjectsRequest listDbObjectsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -880,6 +885,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<ListDbObjectsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListDbObjectsResponse> ListDbObjectsAsyncInvoker(ListDbObjectsRequest listDbObjectsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1102,6 +1108,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListProjectTagsResponse> ListProjectTagsAsync(ListProjectTagsRequest listProjectTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1112,6 +1119,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<ListProjectTagsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListProjectTagsResponse> ListProjectTagsAsyncInvoker(ListProjectTagsRequest listProjectTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1697,6 +1705,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ShowInstanceTagsResponse> ShowInstanceTagsAsync(ShowInstanceTagsRequest showInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1708,6 +1717,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<ShowInstanceTagsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ShowInstanceTagsResponse> ShowInstanceTagsAsyncInvoker(ShowInstanceTagsRequest showInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();

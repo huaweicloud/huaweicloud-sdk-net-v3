@@ -890,7 +890,6 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<ListServerAzInfoResponse> ListServerAzInfoAsync(ListServerAzInfoRequest listServerAzInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -900,7 +899,6 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<ListServerAzInfoResponse>(response);
         }
 
-        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<ListServerAzInfoResponse> ListServerAzInfoAsyncInvoker(ListServerAzInfoRequest listServerAzInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1286,6 +1284,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public async Task<NovaListAvailabilityZonesResponse> NovaListAvailabilityZonesAsync(NovaListAvailabilityZonesRequest novaListAvailabilityZonesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1295,6 +1294,7 @@ namespace HuaweiCloud.SDK.Ecs.V2
             return JsonUtils.DeSerialize<NovaListAvailabilityZonesResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public AsyncInvoker<NovaListAvailabilityZonesResponse> NovaListAvailabilityZonesAsyncInvoker(NovaListAvailabilityZonesRequest novaListAvailabilityZonesRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1951,6 +1951,34 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/block_device/{volume_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerBlockDeviceRequest);
             return new AsyncInvoker<UpdateServerBlockDeviceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServerBlockDeviceResponse>);
+        }
+        
+        /// <summary>
+        /// 更新云服务器网卡挂载信息
+        ///
+        /// 更新云服务器网卡挂载信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateServerInterfaceResponse> UpdateServerInterfaceAsync(UpdateServerInterfaceRequest updateServerInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateServerInterfaceRequest.ServerId.ToString());
+            urlParam.Add("port_id", updateServerInterfaceRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-interface/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerInterfaceRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateServerInterfaceResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateServerInterfaceResponse> UpdateServerInterfaceAsyncInvoker(UpdateServerInterfaceRequest updateServerInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateServerInterfaceRequest.ServerId.ToString());
+            urlParam.Add("port_id", updateServerInterfaceRequest.PortId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-interface/{port_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerInterfaceRequest);
+            return new AsyncInvoker<UpdateServerInterfaceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServerInterfaceResponse>);
         }
         
         /// <summary>
