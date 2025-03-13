@@ -1,3 +1,47 @@
+# 3.1.137 2025-03-13
+
+### HuaweiCloud SDK AOS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreatePrivateProvider**
+    - changes of request param
+      - `+ provider_agency_urn`
+      - `+ provider_agency_name`
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ShowAutopilotMaintenanceWindow`
+    - `UpdateAutopilotMaintenanceWindow`
+    - `CreateAutopilotMaintenanceWindow`
+    - `DeleteAutopilotMaintenanceWindow`
+    - `ListAutopilotUpgradePlans`
+    - `UpdateAutopilotUpgradePlan`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ListVolumeInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.136 2025-03-06
 
 ### HuaweiCloud SDK CFW

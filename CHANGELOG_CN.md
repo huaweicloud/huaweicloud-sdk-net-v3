@@ -1,3 +1,47 @@
+# 3.1.137 2025-03-13
+
+### HuaweiCloud SDK AOS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreatePrivateProvider**
+    - 请求参数变更
+      - `+ provider_agency_urn`
+      - `+ provider_agency_name`
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ShowAutopilotMaintenanceWindow`
+    - `UpdateAutopilotMaintenanceWindow`
+    - `CreateAutopilotMaintenanceWindow`
+    - `DeleteAutopilotMaintenanceWindow`
+    - `ListAutopilotUpgradePlans`
+    - `UpdateAutopilotUpgradePlan`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListVolumeInfo`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.136 2025-03-06
 
 ### HuaweiCloud SDK CFW
