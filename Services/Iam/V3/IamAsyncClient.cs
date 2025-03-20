@@ -535,6 +535,35 @@ namespace HuaweiCloud.SDK.Iam.V3
         }
         
         /// <summary>
+        /// 获取联邦认证unscoped token(IdP initiated)
+        ///
+        /// 该接口可以用于通过IdP initiated的联邦认证方式获取unscoped token。
+        /// 
+        /// Unscoped token不能用来鉴权，若联邦用户需要使用token进行鉴权，请参考[获取联邦认证scoped token](https://support.huaweicloud.com/api-iam/iam_13_0604.html)获取scoped token。
+        /// 
+        /// 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+        /// &gt; - 该接口支持在命令行侧调用，需要客户端使用IdP initiated的联邦认证方式获取SAMLResponse，并采用浏览器提交表单数据的方式，获取unscoped token。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateUnscopeTokenByIdpInitiatedResponse> CreateUnscopeTokenByIdpInitiatedAsync(CreateUnscopeTokenByIdpInitiatedRequest createUnscopeTokenByIdpInitiatedRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/tokens", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/x-www-form-urlencoded", createUnscopeTokenByIdpInitiatedRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateUnscopeTokenByIdpInitiatedResponse>(response);
+        }
+
+        public AsyncInvoker<CreateUnscopeTokenByIdpInitiatedResponse> CreateUnscopeTokenByIdpInitiatedAsyncInvoker(CreateUnscopeTokenByIdpInitiatedRequest createUnscopeTokenByIdpInitiatedRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/tokens", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/x-www-form-urlencoded", createUnscopeTokenByIdpInitiatedRequest);
+            return new AsyncInvoker<CreateUnscopeTokenByIdpInitiatedResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUnscopeTokenByIdpInitiatedResponse>);
+        }
+        
+        /// <summary>
         /// 获取联邦认证unscoped token(OpenId Connect Id token方式)
         ///
         /// 获取联邦认证token(OpenId Connect Id token方式)。

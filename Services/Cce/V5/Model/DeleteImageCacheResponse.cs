@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Moderation.V3.Model
+namespace HuaweiCloud.SDK.Cce.V5.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class RunCloseVideoStreamModerationJobResponse : SdkResponse
+    public class DeleteImageCacheResponse : SdkResponse
     {
 
         /// <summary>
-        /// 关闭视频流内容审核作业结果
+        /// 
         /// </summary>
-        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public string Result { get; set; }
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public Object Body { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RunCloseVideoStreamModerationJobResponse {\n");
-            sb.Append("  result: ").Append(Result).Append("\n");
+            sb.Append("class DeleteImageCacheResponse {\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +41,16 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RunCloseVideoStreamModerationJobResponse);
+            return this.Equals(input as DeleteImageCacheResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RunCloseVideoStreamModerationJobResponse input)
+        public bool Equals(DeleteImageCacheResponse input)
         {
             if (input == null) return false;
-            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

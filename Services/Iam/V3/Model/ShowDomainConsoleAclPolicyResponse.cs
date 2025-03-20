@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 
         /// </summary>
         [JsonProperty("console_acl_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public ConsoleAclPolicyResult ConsoleAclPolicy { get; set; }
+        public AclPolicyResult ConsoleAclPolicy { get; set; }
 
 
 

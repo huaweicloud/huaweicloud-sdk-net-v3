@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Moderation.V3.Model
+namespace HuaweiCloud.SDK.Ecs.V2.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class DocumentQueryResponseResultSegments 
+    public class ListServerVolumeAttachmentsResponse : SdkResponse
     {
 
         /// <summary>
-        /// 命中的敏感词
+        /// 云服务器挂载信息列表
         /// </summary>
-        [JsonProperty("segment", NullValueHandling = NullValueHandling.Ignore)]
-        public string Segment { get; set; }
+        [JsonProperty("volumeAttachments", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ServerVolumeAttachment> VolumeAttachments { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DocumentQueryResponseResultSegments {\n");
-            sb.Append("  segment: ").Append(Segment).Append("\n");
+            sb.Append("class ListServerVolumeAttachmentsResponse {\n");
+            sb.Append("  volumeAttachments: ").Append(VolumeAttachments).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +41,16 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DocumentQueryResponseResultSegments);
+            return this.Equals(input as ListServerVolumeAttachmentsResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DocumentQueryResponseResultSegments input)
+        public bool Equals(ListServerVolumeAttachmentsResponse input)
         {
             if (input == null) return false;
-            if (this.Segment != input.Segment || (this.Segment != null && !this.Segment.Equals(input.Segment))) return false;
+            if (this.VolumeAttachments != input.VolumeAttachments || (this.VolumeAttachments != null && input.VolumeAttachments != null && !this.VolumeAttachments.SequenceEqual(input.VolumeAttachments))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Segment != null) hashCode = hashCode * 59 + this.Segment.GetHashCode();
+                if (this.VolumeAttachments != null) hashCode = hashCode * 59 + this.VolumeAttachments.GetHashCode();
                 return hashCode;
             }
         }

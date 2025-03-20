@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Moderation.V3.Model
+namespace HuaweiCloud.SDK.Cce.V5.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class RunCreateDocumentModerationJobRequest 
+    public class CreateImageCacheRequest 
     {
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public DocumentCreateRequest Body { get; set; }
+        public CreateImageCacheRequestBody Body { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RunCreateDocumentModerationJobRequest {\n");
+            sb.Append("class CreateImageCacheRequest {\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -42,13 +42,13 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RunCreateDocumentModerationJobRequest);
+            return this.Equals(input as CreateImageCacheRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RunCreateDocumentModerationJobRequest input)
+        public bool Equals(CreateImageCacheRequest input)
         {
             if (input == null) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;

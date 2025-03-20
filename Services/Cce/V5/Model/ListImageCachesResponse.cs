@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Moderation.V3.Model
+namespace HuaweiCloud.SDK.Cce.V5.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class DocumentVideoImageDetailSegments 
+    public class ListImageCachesResponse : SdkResponse
     {
 
         /// <summary>
-        /// 命中的风险片段
+        /// 镜像缓存列表。
         /// </summary>
-        [JsonProperty("segment", NullValueHandling = NullValueHandling.Ignore)]
-        public string Segment { get; set; }
+        [JsonProperty("image_caches", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ImageCacheDetail> ImageCaches { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DocumentVideoImageDetailSegments {\n");
-            sb.Append("  segment: ").Append(Segment).Append("\n");
+            sb.Append("class ListImageCachesResponse {\n");
+            sb.Append("  imageCaches: ").Append(ImageCaches).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +41,16 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DocumentVideoImageDetailSegments);
+            return this.Equals(input as ListImageCachesResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DocumentVideoImageDetailSegments input)
+        public bool Equals(ListImageCachesResponse input)
         {
             if (input == null) return false;
-            if (this.Segment != input.Segment || (this.Segment != null && !this.Segment.Equals(input.Segment))) return false;
+            if (this.ImageCaches != input.ImageCaches || (this.ImageCaches != null && input.ImageCaches != null && !this.ImageCaches.SequenceEqual(input.ImageCaches))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Segment != null) hashCode = hashCode * 59 + this.Segment.GetHashCode();
+                if (this.ImageCaches != null) hashCode = hashCode * 59 + this.ImageCaches.GetHashCode();
                 return hashCode;
             }
         }

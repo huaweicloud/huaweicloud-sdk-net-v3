@@ -8,20 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Moderation.V3.Model
+namespace HuaweiCloud.SDK.Cce.V5.Model
 {
     /// <summary>
-    /// Request Object
+    /// Response Object
     /// </summary>
-    public class RunQueryDocumentModerationJobRequest 
+    public class ShowImageCacheResponse : SdkResponse
     {
 
         /// <summary>
-        /// 创建作业成功时，接口返回的job_id。
+        /// 
         /// </summary>
-        [SDKProperty("job_id", IsPath = true)]
-        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobId { get; set; }
+        [JsonProperty("image_cache", NullValueHandling = NullValueHandling.Ignore)]
+        public ImageCacheDetail ImageCache { get; set; }
 
 
 
@@ -31,8 +30,8 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RunQueryDocumentModerationJobRequest {\n");
-            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("class ShowImageCacheResponse {\n");
+            sb.Append("  imageCache: ").Append(ImageCache).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,16 +41,16 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RunQueryDocumentModerationJobRequest);
+            return this.Equals(input as ShowImageCacheResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(RunQueryDocumentModerationJobRequest input)
+        public bool Equals(ShowImageCacheResponse input)
         {
             if (input == null) return false;
-            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ImageCache != input.ImageCache || (this.ImageCache != null && !this.ImageCache.Equals(input.ImageCache))) return false;
 
             return true;
         }
@@ -64,7 +63,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ImageCache != null) hashCode = hashCode * 59 + this.ImageCache.GetHashCode();
                 return hashCode;
             }
         }

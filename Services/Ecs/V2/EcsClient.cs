@@ -1011,6 +1011,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询弹性云服务器挂载磁盘列表信息
+        ///
+        /// 查询弹性云服务器挂载的磁盘信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListServerVolumeAttachmentsResponse ListServerVolumeAttachments(ListServerVolumeAttachmentsRequest listServerVolumeAttachmentsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", listServerVolumeAttachmentsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-volume_attachments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerVolumeAttachmentsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListServerVolumeAttachmentsResponse>(response);
+        }
+
+        public SyncInvoker<ListServerVolumeAttachmentsResponse> ListServerVolumeAttachmentsInvoker(ListServerVolumeAttachmentsRequest listServerVolumeAttachmentsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", listServerVolumeAttachmentsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/os-volume_attachments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerVolumeAttachmentsRequest);
+            return new SyncInvoker<ListServerVolumeAttachmentsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListServerVolumeAttachmentsResponse>);
+        }
+        
+        /// <summary>
         /// 按标签查询云服务器列表
         ///
         /// 使用标签过滤弹性云服务器，并返回云服务器使用的所有标签和资源列表。
