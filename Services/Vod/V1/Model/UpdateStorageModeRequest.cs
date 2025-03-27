@@ -17,6 +17,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
     {
 
         /// <summary>
+        /// 使用AK/SK方式认证时必选，请求的发生时间。 
+        /// </summary>
+        [SDKProperty("X-Sdk-Date", IsHeader = true)]
+        [JsonProperty("X-Sdk-Date", NullValueHandling = NullValueHandling.Ignore)]
+        public string XSdkDate { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
@@ -32,6 +39,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class UpdateStorageModeRequest {\n");
+            sb.Append("  xSdkDate: ").Append(XSdkDate).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -51,6 +59,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public bool Equals(UpdateStorageModeRequest input)
         {
             if (input == null) return false;
+            if (this.XSdkDate != input.XSdkDate || (this.XSdkDate != null && !this.XSdkDate.Equals(input.XSdkDate))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
@@ -64,6 +73,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.XSdkDate != null) hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }

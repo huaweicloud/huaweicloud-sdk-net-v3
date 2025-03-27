@@ -202,6 +202,31 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 修改付费模式
+        ///
+        /// 修改资源的付费模式，暂时只支持按需资源转包周期资源。
+        /// &gt; 该接口目前输入公测阶段，部分region暂时无法使用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ChangeVaultChargeModeResponse> ChangeVaultChargeModeAsync(ChangeVaultChargeModeRequest changeVaultChargeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vaults/change-charge-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeVaultChargeModeRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ChangeVaultChargeModeResponse>(response);
+        }
+
+        public AsyncInvoker<ChangeVaultChargeModeResponse> ChangeVaultChargeModeAsyncInvoker(ChangeVaultChargeModeRequest changeVaultChargeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vaults/change-charge-mode", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeVaultChargeModeRequest);
+            return new AsyncInvoker<ChangeVaultChargeModeResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeVaultChargeModeResponse>);
+        }
+        
+        /// <summary>
         /// 查询agent状态
         ///
         /// 检查应用一致性Agent状态

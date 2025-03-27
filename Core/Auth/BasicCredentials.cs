@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             var derivedFunc = DerivedPredicate;
             DerivedPredicate = null;
 
-            IamEndpoint = string.IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
+            IamEndpoint = string.IsNullOrEmpty(IamEndpoint) ? IamService.GetEndpoint(regionId) : IamEndpoint;
             var logger = client.GetLogger();
             logger.LogInformation("Project id of region '{}' not found in BasicCredentials, trying to obtain project id from IAM service: {}",
                 regionId, IamEndpoint);

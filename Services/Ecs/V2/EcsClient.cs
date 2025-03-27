@@ -883,6 +883,31 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询计划事件列表
+        ///
+        /// 查询计划事件列表
+        /// 支持查看过去7天内计划事件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListScheduledEventsResponse ListScheduledEvents(ListScheduledEventsRequest listScheduledEventsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance-scheduled-events", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScheduledEventsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListScheduledEventsResponse>(response);
+        }
+
+        public SyncInvoker<ListScheduledEventsResponse> ListScheduledEventsInvoker(ListScheduledEventsRequest listScheduledEventsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance-scheduled-events", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScheduledEventsRequest);
+            return new SyncInvoker<ListScheduledEventsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScheduledEventsResponse>);
+        }
+        
+        /// <summary>
         /// 查询可用区列表
         ///
         /// 查询可用区列表

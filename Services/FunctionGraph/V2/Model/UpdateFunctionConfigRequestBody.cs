@@ -473,6 +473,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public bool? EnableClassIsolation { get; set; }
 
         /// <summary>
+        /// 是否开启日志。
+        /// </summary>
+        [JsonProperty("enable_lts_log", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableLtsLog { get; set; }
+
+        /// <summary>
         /// 自定义日志标签。函数执行时，可以按照自定义标签配置上报标签到云日志服务(LTS)，用户可以通过标签对日志进行过滤筛选。
         /// </summary>
         [JsonProperty("lts_custom_tag", NullValueHandling = NullValueHandling.Ignore)]
@@ -521,6 +527,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  restoreHookTimeout: ").Append(RestoreHookTimeout).Append("\n");
             sb.Append("  heartbeatHandler: ").Append(HeartbeatHandler).Append("\n");
             sb.Append("  enableClassIsolation: ").Append(EnableClassIsolation).Append("\n");
+            sb.Append("  enableLtsLog: ").Append(EnableLtsLog).Append("\n");
             sb.Append("  ltsCustomTag: ").Append(LtsCustomTag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -574,6 +581,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.RestoreHookTimeout != input.RestoreHookTimeout || (this.RestoreHookTimeout != null && !this.RestoreHookTimeout.Equals(input.RestoreHookTimeout))) return false;
             if (this.HeartbeatHandler != input.HeartbeatHandler || (this.HeartbeatHandler != null && !this.HeartbeatHandler.Equals(input.HeartbeatHandler))) return false;
             if (this.EnableClassIsolation != input.EnableClassIsolation || (this.EnableClassIsolation != null && !this.EnableClassIsolation.Equals(input.EnableClassIsolation))) return false;
+            if (this.EnableLtsLog != input.EnableLtsLog || (this.EnableLtsLog != null && !this.EnableLtsLog.Equals(input.EnableLtsLog))) return false;
             if (this.LtsCustomTag != input.LtsCustomTag || (this.LtsCustomTag != null && input.LtsCustomTag != null && !this.LtsCustomTag.SequenceEqual(input.LtsCustomTag))) return false;
 
             return true;
@@ -621,6 +629,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.RestoreHookTimeout != null) hashCode = hashCode * 59 + this.RestoreHookTimeout.GetHashCode();
                 if (this.HeartbeatHandler != null) hashCode = hashCode * 59 + this.HeartbeatHandler.GetHashCode();
                 if (this.EnableClassIsolation != null) hashCode = hashCode * 59 + this.EnableClassIsolation.GetHashCode();
+                if (this.EnableLtsLog != null) hashCode = hashCode * 59 + this.EnableLtsLog.GetHashCode();
                 if (this.LtsCustomTag != null) hashCode = hashCode * 59 + this.LtsCustomTag.GetHashCode();
                 return hashCode;
             }

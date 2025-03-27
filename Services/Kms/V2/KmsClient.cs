@@ -219,6 +219,30 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 创建EC数据密钥对
+        ///
+        /// - 功能介绍：创建EC数据密钥对，返回结果包含明文公钥和密文私钥，根据参数决定是否返回明文私钥。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateEcDatakeyPairResponse CreateEcDatakeyPair(CreateEcDatakeyPairRequest createEcDatakeyPairRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-ec-datakey-pair", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createEcDatakeyPairRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateEcDatakeyPairResponse>(response);
+        }
+
+        public SyncInvoker<CreateEcDatakeyPairResponse> CreateEcDatakeyPairInvoker(CreateEcDatakeyPairRequest createEcDatakeyPairRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-ec-datakey-pair", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createEcDatakeyPairRequest);
+            return new SyncInvoker<CreateEcDatakeyPairResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateEcDatakeyPairResponse>);
+        }
+        
+        /// <summary>
         /// 创建授权
         ///
         /// - 功能介绍：创建授权，被授权用户可以对授权密钥进行操作。
@@ -368,6 +392,30 @@ namespace HuaweiCloud.SDK.Kms.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/gen-random", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRandomRequest);
             return new SyncInvoker<CreateRandomResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRandomResponse>);
+        }
+        
+        /// <summary>
+        /// 创建RSA数据密钥对
+        ///
+        /// - 功能介绍：创建rsa数据密钥对，返回结果包含明文公钥和密文私钥，根据参数决定是否返回明文私钥。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateRsaDatakeyPairResponse CreateRsaDatakeyPair(CreateRsaDatakeyPairRequest createRsaDatakeyPairRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-rsa-datakey-pair", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRsaDatakeyPairRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateRsaDatakeyPairResponse>(response);
+        }
+
+        public SyncInvoker<CreateRsaDatakeyPairResponse> CreateRsaDatakeyPairInvoker(CreateRsaDatakeyPairRequest createRsaDatakeyPairRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-rsa-datakey-pair", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRsaDatakeyPairRequest);
+            return new SyncInvoker<CreateRsaDatakeyPairResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRsaDatakeyPairResponse>);
         }
         
         /// <summary>

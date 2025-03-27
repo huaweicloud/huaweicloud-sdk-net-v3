@@ -94,7 +94,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string NotificationEndTime { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID，不填时会使用默认的企业项目ID
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
