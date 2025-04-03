@@ -111,6 +111,17 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("notification_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotificationEnabled { get; set; }
 
+        /// <summary>
+        /// 产品层级跨纬规则创建时需要指明的规则产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;
+        /// </summary>
+        [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProductName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
+        public ResourceLevel ResourceLevel { get; set; }
 
 
         /// <summary>
@@ -136,6 +147,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  enabled: ").Append(Enabled).Append("\n");
             sb.Append("  notificationEnabled: ").Append(NotificationEnabled).Append("\n");
+            sb.Append("  productName: ").Append(ProductName).Append("\n");
+            sb.Append("  resourceLevel: ").Append(ResourceLevel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -170,6 +183,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
             if (this.NotificationEnabled != input.NotificationEnabled || (this.NotificationEnabled != null && !this.NotificationEnabled.Equals(input.NotificationEnabled))) return false;
+            if (this.ProductName != input.ProductName || (this.ProductName != null && !this.ProductName.Equals(input.ProductName))) return false;
+            if (this.ResourceLevel != input.ResourceLevel) return false;
 
             return true;
         }
@@ -198,6 +213,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
                 if (this.NotificationEnabled != null) hashCode = hashCode * 59 + this.NotificationEnabled.GetHashCode();
+                if (this.ProductName != null) hashCode = hashCode * 59 + this.ProductName.GetHashCode();
+                hashCode = hashCode * 59 + this.ResourceLevel.GetHashCode();
                 return hashCode;
             }
         }

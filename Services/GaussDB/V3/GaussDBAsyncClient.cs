@@ -3538,6 +3538,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 修改只读节点的读内网地址
+        ///
+        /// 修改只读节点的读内网地址。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTaurusNodeDataIpResponse> UpdateTaurusNodeDataIpAsync(UpdateTaurusNodeDataIpRequest updateTaurusNodeDataIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateTaurusNodeDataIpRequest.InstanceId.ToString());
+            urlParam.Add("node_id", updateTaurusNodeDataIpRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/internal-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateTaurusNodeDataIpRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateTaurusNodeDataIpResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTaurusNodeDataIpResponse> UpdateTaurusNodeDataIpAsyncInvoker(UpdateTaurusNodeDataIpRequest updateTaurusNodeDataIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateTaurusNodeDataIpRequest.InstanceId.ToString());
+            urlParam.Add("node_id", updateTaurusNodeDataIpRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/internal-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateTaurusNodeDataIpRequest);
+            return new AsyncInvoker<UpdateTaurusNodeDataIpResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTaurusNodeDataIpResponse>);
+        }
+        
+        /// <summary>
         /// 设置proxy事务拆分
         ///
         /// 设置proxy事务拆分。

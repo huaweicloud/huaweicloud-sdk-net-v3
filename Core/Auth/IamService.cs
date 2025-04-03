@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Core.Auth
     internal class IamResponse : SdkResponse
     {
         [SDKProperty(propertyName: "X-IAM-Trace-Id", IsHeader = true)]
-        public string TraceId { get; set;}
+        public string TraceId { get; set; }
     }
 
     internal class KeystoneListProjectsResponse : IamResponse
@@ -80,7 +80,7 @@ namespace HuaweiCloud.SDK.Core.Auth
   1. Manually specify domainId when initializing the credentials, var credentials = new GlobalCredentials(ak, sk, domainId);
   2. Use the domain account to grant IAM read permission to the current account
   3. Replace the ak/sk of the IAM account with the ak/sk of the domain account";
-        
+
         private const string EndpointsResourceName = "Core.Resources.iam_endpoints.json";
 
         private const string IamEndpointEnv = "HUAWEICLOUD_SDK_IAM_ENDPOINT";
@@ -101,11 +101,15 @@ namespace HuaweiCloud.SDK.Core.Auth
                 using (var reader = new StreamReader(stream))
                 {
                     var content = reader.ReadToEnd();
+                    if (string.IsNullOrEmpty(content))
+                    {
+                        return new Dictionary<string, string>();
+                    }
                     try
                     {
                         return JsonConvert.DeserializeObject<Dictionary<string, string>>(content);
                     }
-                    catch (JsonException)
+                    catch (Exception)
                     {
                         return new Dictionary<string, string>();
                     }
@@ -128,7 +132,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             return _endpoints;
         }
 
-        public static string GetEndpoint(string regionId=null)
+        public static string GetEndpoint(string regionId = null)
         {
             var endpointFromEnv = Environment.GetEnvironmentVariable(IamEndpointEnv);
             if (endpointFromEnv != null)
@@ -144,8 +148,8 @@ namespace HuaweiCloud.SDK.Core.Auth
             {
                 return DefaultIamEndpoint;
             }
-            
-            
+
+
             return GetEndpoints().TryGetValue(regionId, out var endpoint) ? endpoint : DefaultIamEndpoint;
         }
 
@@ -171,7 +175,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
             return request;
         }
-    
+
         [Obsolete("This method is for internal use only and is deprecated. It will be removed in a future release.")]
         public static string KeystoneListProjects(SdkHttpClient client, HttpRequest request)
         {
@@ -202,7 +206,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                 throw ExceptionUtils.HandleException(aggregateException);
             }
         }
-        
+
         internal static KeystoneListProjectsResponse InternalKeystoneListProjects(SdkHttpClient client, HttpRequest request)
         {
             var message = client.InitHttpRequest(request, true);
@@ -243,7 +247,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
             return request;
         }
-        
+
         [Obsolete("This method is for internal use only and is deprecated. It will be removed in a future release.")]
         public static string KeystoneListAuthDomains(SdkHttpClient client, HttpRequest request)
         {
@@ -269,7 +273,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                 throw ExceptionUtils.HandleException(aggregateException);
             }
         }
-        
+
         internal static KeystoneListAuthDomainsResponse InternalKeystoneListAuthDomains(SdkHttpClient client, HttpRequest request)
         {
             var message = client.InitHttpRequest(request, true);

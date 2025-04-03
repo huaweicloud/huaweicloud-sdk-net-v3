@@ -1,3 +1,97 @@
+# 3.1.140 2025-04-03
+
+### HuaweiCloud SDK AOM
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddOrUpdateMetricOrEventAlarmRule**
+    - changes of request param
+      - `* metric_alarm_spec.trigger_conditions.trigger_times: string -> int32`
+  - **ListMetricOrEventAlarmRule**
+    - changes of response param
+      - `* alarm_rules.metric_alarm_spec.trigger_conditions.trigger_times: string -> int32`
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpgradeCluster**
+    - changes of request param
+      - `+ spec.clusterUpgradeAction.isOnlyUpgrade`
+  - **UpgradeAutopilotCluster**
+    - changes of request param
+      - `+ spec.clusterUpgradeAction.isOnlyUpgrade`
+
+### HuaweiCloud SDK CES
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAlarmRulePolicies**
+    - changes of response param
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+  - **UpdateAlarmRulePolicies**
+    - changes of request param
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+    - changes of response param
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+  - **ListAlarmRules**
+    - changes of response param
+      - `+ alarms.product_name`
+      - `+ alarms.resource_level`
+      - `+ alarms.policies.namespace`
+      - `+ alarms.policies.dimension_name`
+  - **CreateAlarmRules**
+    - changes of request param
+      - `+ product_name`
+      - `+ resource_level`
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `UpdateTaurusNodeDataIp`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VPCEP
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListServiceDetails**
+    - changes of response param
+      - `+ supported_editions`
+  - **ListEndpointService**
+    - changes of response param
+      - `+ endpoint_services.supported_editions`
+
 # 3.1.139 2025-03-27
 
 ### HuaweiCloud SDK Core

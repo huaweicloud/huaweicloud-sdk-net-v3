@@ -396,12 +396,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool? EnableSWRImageAccess { get; set; }
 
         /// <summary>
-        /// 是否为Autopilot集群。
-        /// </summary>
-        [JsonProperty("enableAutopilot", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? EnableAutopilot { get; set; }
-
-        /// <summary>
         /// 集群是否使用IPv6模式。
         /// </summary>
         [JsonProperty("ipv6enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -496,7 +490,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  customSan: ").Append(CustomSan).Append("\n");
             sb.Append("  enableSnat: ").Append(EnableSnat).Append("\n");
             sb.Append("  enableSWRImageAccess: ").Append(EnableSWRImageAccess).Append("\n");
-            sb.Append("  enableAutopilot: ").Append(EnableAutopilot).Append("\n");
             sb.Append("  ipv6enable: ").Append(Ipv6enable).Append("\n");
             sb.Append("  hostNetwork: ").Append(HostNetwork).Append("\n");
             sb.Append("  containerNetwork: ").Append(ContainerNetwork).Append("\n");
@@ -537,7 +530,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.CustomSan != input.CustomSan || (this.CustomSan != null && input.CustomSan != null && !this.CustomSan.SequenceEqual(input.CustomSan))) return false;
             if (this.EnableSnat != input.EnableSnat || (this.EnableSnat != null && !this.EnableSnat.Equals(input.EnableSnat))) return false;
             if (this.EnableSWRImageAccess != input.EnableSWRImageAccess || (this.EnableSWRImageAccess != null && !this.EnableSWRImageAccess.Equals(input.EnableSWRImageAccess))) return false;
-            if (this.EnableAutopilot != input.EnableAutopilot || (this.EnableAutopilot != null && !this.EnableAutopilot.Equals(input.EnableAutopilot))) return false;
             if (this.Ipv6enable != input.Ipv6enable || (this.Ipv6enable != null && !this.Ipv6enable.Equals(input.Ipv6enable))) return false;
             if (this.HostNetwork != input.HostNetwork || (this.HostNetwork != null && !this.HostNetwork.Equals(input.HostNetwork))) return false;
             if (this.ContainerNetwork != input.ContainerNetwork || (this.ContainerNetwork != null && !this.ContainerNetwork.Equals(input.ContainerNetwork))) return false;
@@ -572,7 +564,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.CustomSan != null) hashCode = hashCode * 59 + this.CustomSan.GetHashCode();
                 if (this.EnableSnat != null) hashCode = hashCode * 59 + this.EnableSnat.GetHashCode();
                 if (this.EnableSWRImageAccess != null) hashCode = hashCode * 59 + this.EnableSWRImageAccess.GetHashCode();
-                if (this.EnableAutopilot != null) hashCode = hashCode * 59 + this.EnableAutopilot.GetHashCode();
                 if (this.Ipv6enable != null) hashCode = hashCode * 59 + this.Ipv6enable.GetHashCode();
                 if (this.HostNetwork != null) hashCode = hashCode * 59 + this.HostNetwork.GetHashCode();
                 if (this.ContainerNetwork != null) hashCode = hashCode * 59 + this.ContainerNetwork.GetHashCode();

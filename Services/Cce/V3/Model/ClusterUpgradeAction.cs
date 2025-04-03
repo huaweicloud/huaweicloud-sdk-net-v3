@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("targetVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetVersion { get; set; }
 
+        /// <summary>
+        /// 是否在集群升级流程中执行升级前检查。默认为false，表示会执行升级前检查，如果您在集群升级编排中调用了升级前检查的API，则升级时可用将该字段置为false，不再额外执行一次检查
+        /// </summary>
+        [JsonProperty("isOnlyUpgrade", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOnlyUpgrade { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  nodePoolOrder: ").Append(NodePoolOrder).Append("\n");
             sb.Append("  strategy: ").Append(Strategy).Append("\n");
             sb.Append("  targetVersion: ").Append(TargetVersion).Append("\n");
+            sb.Append("  isOnlyUpgrade: ").Append(IsOnlyUpgrade).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.NodePoolOrder != input.NodePoolOrder || (this.NodePoolOrder != null && input.NodePoolOrder != null && !this.NodePoolOrder.SequenceEqual(input.NodePoolOrder))) return false;
             if (this.Strategy != input.Strategy || (this.Strategy != null && !this.Strategy.Equals(input.Strategy))) return false;
             if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
+            if (this.IsOnlyUpgrade != input.IsOnlyUpgrade || (this.IsOnlyUpgrade != null && !this.IsOnlyUpgrade.Equals(input.IsOnlyUpgrade))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.NodePoolOrder != null) hashCode = hashCode * 59 + this.NodePoolOrder.GetHashCode();
                 if (this.Strategy != null) hashCode = hashCode * 59 + this.Strategy.GetHashCode();
                 if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                if (this.IsOnlyUpgrade != null) hashCode = hashCode * 59 + this.IsOnlyUpgrade.GetHashCode();
                 return hashCode;
             }
         }

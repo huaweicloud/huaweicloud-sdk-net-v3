@@ -1,3 +1,97 @@
+# 3.1.140 2025-04-03
+
+### HuaweiCloud SDK AOM
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AddOrUpdateMetricOrEventAlarmRule**
+    - 请求参数变更
+      - `* metric_alarm_spec.trigger_conditions.trigger_times: string -> int32`
+  - **ListMetricOrEventAlarmRule**
+    - 响应参数变更
+      - `* alarm_rules.metric_alarm_spec.trigger_conditions.trigger_times: string -> int32`
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpgradeCluster**
+    - 请求参数变更
+      - `+ spec.clusterUpgradeAction.isOnlyUpgrade`
+  - **UpgradeAutopilotCluster**
+    - 请求参数变更
+      - `+ spec.clusterUpgradeAction.isOnlyUpgrade`
+
+### HuaweiCloud SDK CES
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAlarmRulePolicies**
+    - 响应参数变更
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+  - **UpdateAlarmRulePolicies**
+    - 请求参数变更
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+    - 响应参数变更
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+  - **ListAlarmRules**
+    - 响应参数变更
+      - `+ alarms.product_name`
+      - `+ alarms.resource_level`
+      - `+ alarms.policies.namespace`
+      - `+ alarms.policies.dimension_name`
+  - **CreateAlarmRules**
+    - 请求参数变更
+      - `+ product_name`
+      - `+ resource_level`
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`UpdateTaurusNodeDataIp`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VPCEP
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListServiceDetails**
+    - 响应参数变更
+      - `+ supported_editions`
+  - **ListEndpointService**
+    - 响应参数变更
+      - `+ endpoint_services.supported_editions`
+
 # 3.1.139 2025-03-27
 
 ### HuaweiCloud SDK Core
