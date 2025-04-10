@@ -146,6 +146,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 取消定时任务
+        ///
+        /// 取消定时任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CancelScheduleTaskResponse> CancelScheduleTaskAsync(CancelScheduleTaskRequest cancelScheduleTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id", cancelScheduleTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/schedule-task/{task_id}/cancel", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelScheduleTaskRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<CancelScheduleTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CancelScheduleTaskResponse> CancelScheduleTaskAsyncInvoker(CancelScheduleTaskRequest cancelScheduleTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id", cancelScheduleTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/schedule-task/{task_id}/cancel", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelScheduleTaskRequest);
+            return new AsyncInvoker<CancelScheduleTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<CancelScheduleTaskResponse>);
+        }
+        
+        /// <summary>
         /// 备份恢复到目标实例数据后执行数据确认
         ///
         /// 确认备份恢复到目标实例的数据正常。
@@ -219,6 +245,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createConfigurationTemplateRequest);
             return new AsyncInvoker<CreateConfigurationTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConfigurationTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 搭建容灾关系
+        ///
+        /// 搭建容灾关系（从主实例端下发）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateCrossCloudConstructDisasterResponse> CreateCrossCloudConstructDisasterAsync(CreateCrossCloudConstructDisasterRequest createCrossCloudConstructDisasterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createCrossCloudConstructDisasterRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/construct", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createCrossCloudConstructDisasterRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateCrossCloudConstructDisasterResponse>(response);
+        }
+
+        public AsyncInvoker<CreateCrossCloudConstructDisasterResponse> CreateCrossCloudConstructDisasterAsyncInvoker(CreateCrossCloudConstructDisasterRequest createCrossCloudConstructDisasterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createCrossCloudConstructDisasterRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/construct", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createCrossCloudConstructDisasterRequest);
+            return new AsyncInvoker<CreateCrossCloudConstructDisasterResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateCrossCloudConstructDisasterResponse>);
         }
         
         /// <summary>
@@ -470,6 +522,30 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 批量实例内核版本定时升级
+        ///
+        /// 批量实例内核版本定时升级
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateScheduleTaskResponse> CreateScheduleTaskAsync(CreateScheduleTaskRequest createScheduleTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/db-upgrade/schedule-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScheduleTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateScheduleTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CreateScheduleTaskResponse> CreateScheduleTaskAsyncInvoker(CreateScheduleTaskRequest createScheduleTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/db-upgrade/schedule-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createScheduleTaskRequest);
+            return new AsyncInvoker<CreateScheduleTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateScheduleTaskResponse>);
+        }
+        
+        /// <summary>
         /// 创建慢日志下载信息
         ///
         /// 创建慢日志下载信息
@@ -678,6 +754,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 删除定时任务信息
+        ///
+        /// 删除定时任务信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteScheduleTaskResponse> DeleteScheduleTaskAsync(DeleteScheduleTaskRequest deleteScheduleTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id", deleteScheduleTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/schedule-task/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScheduleTaskRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteScheduleTaskResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteScheduleTaskResponse> DeleteScheduleTaskAsyncInvoker(DeleteScheduleTaskRequest deleteScheduleTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id", deleteScheduleTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/schedule-task/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteScheduleTaskRequest);
+            return new AsyncInvoker<DeleteScheduleTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteScheduleTaskResponse>);
+        }
+        
+        /// <summary>
         /// 获取备份下载链接
         ///
         /// 获取备份下载链接。
@@ -699,6 +801,214 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backup-files", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadBackupRequest);
             return new AsyncInvoker<DownloadBackupResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadBackupResponse>);
+        }
+        
+        /// <summary>
+        /// 主实例结束容灾日志保持
+        ///
+        /// 结束stream流式容灾的日志保持功能，目前只有stream流容灾支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExecuteCrossCloudDisasterDataCacheEndResponse> ExecuteCrossCloudDisasterDataCacheEndAsync(ExecuteCrossCloudDisasterDataCacheEndRequest executeCrossCloudDisasterDataCacheEndRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterDataCacheEndRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/keep-log-stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterDataCacheEndRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteCrossCloudDisasterDataCacheEndResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteCrossCloudDisasterDataCacheEndResponse> ExecuteCrossCloudDisasterDataCacheEndAsyncInvoker(ExecuteCrossCloudDisasterDataCacheEndRequest executeCrossCloudDisasterDataCacheEndRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterDataCacheEndRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/keep-log-stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterDataCacheEndRequest);
+            return new AsyncInvoker<ExecuteCrossCloudDisasterDataCacheEndResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteCrossCloudDisasterDataCacheEndResponse>);
+        }
+        
+        /// <summary>
+        /// 开始日志保持
+        ///
+        /// 主实例开始容灾日志保持，目前只有stream流容灾支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExecuteCrossCloudDisasterDataCacheStartResponse> ExecuteCrossCloudDisasterDataCacheStartAsync(ExecuteCrossCloudDisasterDataCacheStartRequest executeCrossCloudDisasterDataCacheStartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterDataCacheStartRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/keep-log-start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterDataCacheStartRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteCrossCloudDisasterDataCacheStartResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteCrossCloudDisasterDataCacheStartResponse> ExecuteCrossCloudDisasterDataCacheStartAsyncInvoker(ExecuteCrossCloudDisasterDataCacheStartRequest executeCrossCloudDisasterDataCacheStartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterDataCacheStartRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/keep-log-start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterDataCacheStartRequest);
+            return new AsyncInvoker<ExecuteCrossCloudDisasterDataCacheStartResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteCrossCloudDisasterDataCacheStartResponse>);
+        }
+        
+        /// <summary>
+        /// 结束容灾演练
+        ///
+        /// 灾备实例结束容灾演练，目前只有stream流容灾支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExecuteCrossCloudDisasterEndSimulationResponse> ExecuteCrossCloudDisasterEndSimulationAsync(ExecuteCrossCloudDisasterEndSimulationRequest executeCrossCloudDisasterEndSimulationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterEndSimulationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/simulation-stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterEndSimulationRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteCrossCloudDisasterEndSimulationResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteCrossCloudDisasterEndSimulationResponse> ExecuteCrossCloudDisasterEndSimulationAsyncInvoker(ExecuteCrossCloudDisasterEndSimulationRequest executeCrossCloudDisasterEndSimulationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterEndSimulationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/simulation-stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterEndSimulationRequest);
+            return new AsyncInvoker<ExecuteCrossCloudDisasterEndSimulationResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteCrossCloudDisasterEndSimulationResponse>);
+        }
+        
+        /// <summary>
+        /// 备实例容灾升主
+        ///
+        /// 容灾升主failover（灾备实例端下发）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExecuteCrossCloudDisasterRecoveryFailoverResponse> ExecuteCrossCloudDisasterRecoveryFailoverAsync(ExecuteCrossCloudDisasterRecoveryFailoverRequest executeCrossCloudDisasterRecoveryFailoverRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterRecoveryFailoverRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/failover", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterRecoveryFailoverRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteCrossCloudDisasterRecoveryFailoverResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteCrossCloudDisasterRecoveryFailoverResponse> ExecuteCrossCloudDisasterRecoveryFailoverAsyncInvoker(ExecuteCrossCloudDisasterRecoveryFailoverRequest executeCrossCloudDisasterRecoveryFailoverRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterRecoveryFailoverRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/failover", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterRecoveryFailoverRequest);
+            return new AsyncInvoker<ExecuteCrossCloudDisasterRecoveryFailoverResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteCrossCloudDisasterRecoveryFailoverResponse>);
+        }
+        
+        /// <summary>
+        /// 重建容灾关系
+        ///
+        /// 流容灾备升主选择支持容灾回切，实现容灾关系的重建任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExecuteCrossCloudDisasterRestoreResponse> ExecuteCrossCloudDisasterRestoreAsync(ExecuteCrossCloudDisasterRestoreRequest executeCrossCloudDisasterRestoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterRestoreRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/restore", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterRestoreRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteCrossCloudDisasterRestoreResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteCrossCloudDisasterRestoreResponse> ExecuteCrossCloudDisasterRestoreAsyncInvoker(ExecuteCrossCloudDisasterRestoreRequest executeCrossCloudDisasterRestoreRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterRestoreRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/restore", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterRestoreRequest);
+            return new AsyncInvoker<ExecuteCrossCloudDisasterRestoreResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteCrossCloudDisasterRestoreResponse>);
+        }
+        
+        /// <summary>
+        /// 开始容灾演练
+        ///
+        /// 开始容灾演练，目前只有stream流容灾支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExecuteCrossCloudDisasterStartSimulationResponse> ExecuteCrossCloudDisasterStartSimulationAsync(ExecuteCrossCloudDisasterStartSimulationRequest executeCrossCloudDisasterStartSimulationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterStartSimulationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/simulation-start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterStartSimulationRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteCrossCloudDisasterStartSimulationResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteCrossCloudDisasterStartSimulationResponse> ExecuteCrossCloudDisasterStartSimulationAsyncInvoker(ExecuteCrossCloudDisasterStartSimulationRequest executeCrossCloudDisasterStartSimulationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterStartSimulationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/simulation-start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterStartSimulationRequest);
+            return new AsyncInvoker<ExecuteCrossCloudDisasterStartSimulationResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteCrossCloudDisasterStartSimulationResponse>);
+        }
+        
+        /// <summary>
+        /// 灾备实例主从切换
+        ///
+        /// 容灾switchover（可在主备任一一端下发）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExecuteCrossCloudDisasterSwitchoverResponse> ExecuteCrossCloudDisasterSwitchoverAsync(ExecuteCrossCloudDisasterSwitchoverRequest executeCrossCloudDisasterSwitchoverRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterSwitchoverRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/switchover", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterSwitchoverRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteCrossCloudDisasterSwitchoverResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteCrossCloudDisasterSwitchoverResponse> ExecuteCrossCloudDisasterSwitchoverAsyncInvoker(ExecuteCrossCloudDisasterSwitchoverRequest executeCrossCloudDisasterSwitchoverRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudDisasterSwitchoverRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/switchover", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudDisasterSwitchoverRequest);
+            return new AsyncInvoker<ExecuteCrossCloudDisasterSwitchoverResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteCrossCloudDisasterSwitchoverResponse>);
+        }
+        
+        /// <summary>
+        /// 解除容灾关系
+        ///
+        /// 解除容灾（从容灾主集群下发）。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExecuteCrossCloudReleaseDisasterResponse> ExecuteCrossCloudReleaseDisasterAsync(ExecuteCrossCloudReleaseDisasterRequest executeCrossCloudReleaseDisasterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudReleaseDisasterRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/release", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudReleaseDisasterRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteCrossCloudReleaseDisasterResponse>(response);
+        }
+
+        public AsyncInvoker<ExecuteCrossCloudReleaseDisasterResponse> ExecuteCrossCloudReleaseDisasterAsyncInvoker(ExecuteCrossCloudReleaseDisasterRequest executeCrossCloudReleaseDisasterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeCrossCloudReleaseDisasterRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/release", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeCrossCloudReleaseDisasterRequest);
+            return new AsyncInvoker<ExecuteCrossCloudReleaseDisasterResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteCrossCloudReleaseDisasterResponse>);
         }
         
         /// <summary>
@@ -1204,6 +1514,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询操作记录
+        ///
+        /// 查询容灾操作记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDisasterRecoveryRecordResponse> ListDisasterRecoveryRecordAsync(ListDisasterRecoveryRecordRequest listDisasterRecoveryRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listDisasterRecoveryRecordRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/records", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDisasterRecoveryRecordRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDisasterRecoveryRecordResponse>(response);
+        }
+
+        public AsyncInvoker<ListDisasterRecoveryRecordResponse> ListDisasterRecoveryRecordAsyncInvoker(ListDisasterRecoveryRecordRequest listDisasterRecoveryRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listDisasterRecoveryRecordRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disaster-recovery/records", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDisasterRecoveryRecordRequest);
+            return new AsyncInvoker<ListDisasterRecoveryRecordResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDisasterRecoveryRecordResponse>);
+        }
+        
+        /// <summary>
         /// 查询企业项目配额组
         ///
         /// 查询企业项目配额组信息。
@@ -1373,6 +1709,30 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3.2/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDetailsRequest);
             return new AsyncInvoker<ListInstanceDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceDetailsResponse>);
+        }
+        
+        /// <summary>
+        /// 查看实例引擎版本分布
+        ///
+        /// 查看实例引擎版本分布
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstanceEngineDetailResponse> ListInstanceEngineDetailAsync(ListInstanceEngineDetailRequest listInstanceEngineDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastore/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceEngineDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceEngineDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstanceEngineDetailResponse> ListInstanceEngineDetailAsyncInvoker(ListInstanceEngineDetailRequest listInstanceEngineDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastore/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceEngineDetailRequest);
+            return new AsyncInvoker<ListInstanceEngineDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceEngineDetailResponse>);
         }
         
         /// <summary>
@@ -1761,6 +2121,30 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查看定时任务列表
+        ///
+        /// 查看定时任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListScheduleTaskResponse> ListScheduleTaskAsync(ListScheduleTaskRequest listScheduleTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/schedule-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScheduleTaskRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListScheduleTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ListScheduleTaskResponse> ListScheduleTaskAsyncInvoker(ListScheduleTaskRequest listScheduleTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/schedule-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScheduleTaskRequest);
+            return new AsyncInvoker<ListScheduleTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScheduleTaskResponse>);
+        }
+        
+        /// <summary>
         /// 查询数据库磁盘类型
         ///
         /// 查询指定数据库引擎对应的磁盘类型。
@@ -1913,6 +2297,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/reset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetConfigurationRequest);
             return new AsyncInvoker<ResetConfigurationResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 重置容灾配置
+        ///
+        /// 重置容灾网络等配置。1.将自动“创建委托”以授权DBS云服务访问VPC资源信息、查询IAAS接口。2.重置实例容灾网络等配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ResetDrConfigResponse> ResetDrConfigAsync(ResetDrConfigRequest resetDrConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resetDrConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/reset-dr-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetDrConfigRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<ResetDrConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ResetDrConfigResponse> ResetDrConfigAsyncInvoker(ResetDrConfigRequest resetDrConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resetDrConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/reset-dr-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetDrConfigRequest);
+            return new AsyncInvoker<ResetDrConfigResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetDrConfigResponse>);
         }
         
         /// <summary>
@@ -2323,6 +2733,56 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConfigurationDetailRequest);
             return new AsyncInvoker<ShowConfigurationDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowConfigurationDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例容灾监控实时状态
+        ///
+        /// 查询实例容灾监控实时状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowCrossCloudDisasterInstanceMonitorResponse> ShowCrossCloudDisasterInstanceMonitorAsync(ShowCrossCloudDisasterInstanceMonitorRequest showCrossCloudDisasterInstanceMonitorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showCrossCloudDisasterInstanceMonitorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/monitor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCrossCloudDisasterInstanceMonitorRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowCrossCloudDisasterInstanceMonitorResponse>(response);
+        }
+
+        public AsyncInvoker<ShowCrossCloudDisasterInstanceMonitorResponse> ShowCrossCloudDisasterInstanceMonitorAsyncInvoker(ShowCrossCloudDisasterInstanceMonitorRequest showCrossCloudDisasterInstanceMonitorRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showCrossCloudDisasterInstanceMonitorRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/monitor", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCrossCloudDisasterInstanceMonitorRequest);
+            return new AsyncInvoker<ShowCrossCloudDisasterInstanceMonitorResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCrossCloudDisasterInstanceMonitorResponse>);
+        }
+        
+        /// <summary>
+        /// 查询容灾关系列表
+        ///
+        /// 查询容灾关系列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowCrossCloudDisasterRelationsResponse> ShowCrossCloudDisasterRelationsAsync(ShowCrossCloudDisasterRelationsRequest showCrossCloudDisasterRelationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/disaster-recovery/relations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCrossCloudDisasterRelationsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowCrossCloudDisasterRelationsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowCrossCloudDisasterRelationsResponse> ShowCrossCloudDisasterRelationsAsyncInvoker(ShowCrossCloudDisasterRelationsRequest showCrossCloudDisasterRelationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3.5/{project_id}/disaster-recovery/relations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCrossCloudDisasterRelationsRequest);
+            return new AsyncInvoker<ShowCrossCloudDisasterRelationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCrossCloudDisasterRelationsResponse>);
         }
         
         /// <summary>

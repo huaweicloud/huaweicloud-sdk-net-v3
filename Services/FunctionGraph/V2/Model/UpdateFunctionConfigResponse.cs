@@ -809,6 +809,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         public bool? IsReturnStream { get; set; }
 
         /// <summary>
+        /// 是否开启日志。
+        /// </summary>
+        [JsonProperty("enable_lts_log", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableLtsLog { get; set; }
+
+        /// <summary>
         /// 自定义日志标签。函数执行时，可以按照自定义标签配置上报标签到云日志服务(LTS)，用户可以通过标签对日志进行过滤筛选。
         /// </summary>
         [JsonProperty("lts_custom_tag", NullValueHandling = NullValueHandling.Ignore)]
@@ -872,6 +878,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  enableAuthInHeader: ").Append(EnableAuthInHeader).Append("\n");
             sb.Append("  customImage: ").Append(CustomImage).Append("\n");
             sb.Append("  isReturnStream: ").Append(IsReturnStream).Append("\n");
+            sb.Append("  enableLtsLog: ").Append(EnableLtsLog).Append("\n");
             sb.Append("  ltsCustomTag: ").Append(LtsCustomTag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -940,6 +947,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.EnableAuthInHeader != input.EnableAuthInHeader || (this.EnableAuthInHeader != null && !this.EnableAuthInHeader.Equals(input.EnableAuthInHeader))) return false;
             if (this.CustomImage != input.CustomImage || (this.CustomImage != null && !this.CustomImage.Equals(input.CustomImage))) return false;
             if (this.IsReturnStream != input.IsReturnStream || (this.IsReturnStream != null && !this.IsReturnStream.Equals(input.IsReturnStream))) return false;
+            if (this.EnableLtsLog != input.EnableLtsLog || (this.EnableLtsLog != null && !this.EnableLtsLog.Equals(input.EnableLtsLog))) return false;
             if (this.LtsCustomTag != input.LtsCustomTag || (this.LtsCustomTag != null && input.LtsCustomTag != null && !this.LtsCustomTag.SequenceEqual(input.LtsCustomTag))) return false;
 
             return true;
@@ -1002,6 +1010,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.EnableAuthInHeader != null) hashCode = hashCode * 59 + this.EnableAuthInHeader.GetHashCode();
                 if (this.CustomImage != null) hashCode = hashCode * 59 + this.CustomImage.GetHashCode();
                 if (this.IsReturnStream != null) hashCode = hashCode * 59 + this.IsReturnStream.GetHashCode();
+                if (this.EnableLtsLog != null) hashCode = hashCode * 59 + this.EnableLtsLog.GetHashCode();
                 if (this.LtsCustomTag != null) hashCode = hashCode * 59 + this.LtsCustomTag.GetHashCode();
                 return hashCode;
             }

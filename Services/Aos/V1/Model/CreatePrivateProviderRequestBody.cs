@@ -46,6 +46,18 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [JsonProperty("function_graph_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string FunctionGraphUrn { get; set; }
 
+        /// <summary>
+        /// 自定义provider所绑定的IAM委托URN，provider_agency_name和provider_agency_urn最多只能提供一个。
+        /// </summary>
+        [JsonProperty("provider_agency_urn", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProviderAgencyUrn { get; set; }
+
+        /// <summary>
+        /// 自定义provider所绑定的IAM委托名称，provider_agency_name和provider_agency_urn最多只能提供一个。
+        /// </summary>
+        [JsonProperty("provider_agency_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProviderAgencyName { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +72,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  providerVersion: ").Append(ProviderVersion).Append("\n");
             sb.Append("  versionDescription: ").Append(VersionDescription).Append("\n");
             sb.Append("  functionGraphUrn: ").Append(FunctionGraphUrn).Append("\n");
+            sb.Append("  providerAgencyUrn: ").Append(ProviderAgencyUrn).Append("\n");
+            sb.Append("  providerAgencyName: ").Append(ProviderAgencyName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +97,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             if (this.ProviderVersion != input.ProviderVersion || (this.ProviderVersion != null && !this.ProviderVersion.Equals(input.ProviderVersion))) return false;
             if (this.VersionDescription != input.VersionDescription || (this.VersionDescription != null && !this.VersionDescription.Equals(input.VersionDescription))) return false;
             if (this.FunctionGraphUrn != input.FunctionGraphUrn || (this.FunctionGraphUrn != null && !this.FunctionGraphUrn.Equals(input.FunctionGraphUrn))) return false;
+            if (this.ProviderAgencyUrn != input.ProviderAgencyUrn || (this.ProviderAgencyUrn != null && !this.ProviderAgencyUrn.Equals(input.ProviderAgencyUrn))) return false;
+            if (this.ProviderAgencyName != input.ProviderAgencyName || (this.ProviderAgencyName != null && !this.ProviderAgencyName.Equals(input.ProviderAgencyName))) return false;
 
             return true;
         }
@@ -100,6 +116,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                 if (this.ProviderVersion != null) hashCode = hashCode * 59 + this.ProviderVersion.GetHashCode();
                 if (this.VersionDescription != null) hashCode = hashCode * 59 + this.VersionDescription.GetHashCode();
                 if (this.FunctionGraphUrn != null) hashCode = hashCode * 59 + this.FunctionGraphUrn.GetHashCode();
+                if (this.ProviderAgencyUrn != null) hashCode = hashCode * 59 + this.ProviderAgencyUrn.GetHashCode();
+                if (this.ProviderAgencyName != null) hashCode = hashCode * 59 + this.ProviderAgencyName.GetHashCode();
                 return hashCode;
             }
         }

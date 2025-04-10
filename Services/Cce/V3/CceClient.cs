@@ -10,7 +10,7 @@ namespace HuaweiCloud.SDK.Cce.V3
     {
         public static ClientBuilder<CceClient> NewBuilder()
         {
-            return new ClientBuilder<CceClient>();
+            return new ClientBuilder<CceClient>().WithExceptionHandler(new CceExceptionHandler());
         }
 
         
@@ -2552,7 +2552,7 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// <summary>
         /// 创建集群
         ///
-        /// 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。请在调用本接口完成集群创建之后，通过[创建节点](cce_02_0242.xml)添加节点。
+        /// 该API用于创建一个空集群（即只有控制节点Master，没有工作节点Node）。
         /// 
         /// 
         /// &gt;   - 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
@@ -2627,6 +2627,32 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/clustercert", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotKubernetesClusterCertRequest);
             return new SyncInvoker<CreateAutopilotKubernetesClusterCertResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAutopilotKubernetesClusterCertResponse>);
+        }
+        
+        /// <summary>
+        /// 创建集群维护窗口
+        ///
+        /// 该API用于创建集群维护窗口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAutopilotMaintenanceWindowResponse CreateAutopilotMaintenanceWindow(CreateAutopilotMaintenanceWindowRequest createAutopilotMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotMaintenanceWindowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotMaintenanceWindowRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateAutopilotMaintenanceWindowResponse>(response);
+        }
+
+        public SyncInvoker<CreateAutopilotMaintenanceWindowResponse> CreateAutopilotMaintenanceWindowInvoker(CreateAutopilotMaintenanceWindowRequest createAutopilotMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", createAutopilotMaintenanceWindowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAutopilotMaintenanceWindowRequest);
+            return new SyncInvoker<CreateAutopilotMaintenanceWindowResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAutopilotMaintenanceWindowResponse>);
         }
         
         /// <summary>
@@ -2811,6 +2837,32 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotClusterRequest);
             return new SyncInvoker<DeleteAutopilotClusterResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAutopilotClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 删除集群维护窗口
+        ///
+        /// 该API用于删除集群维护窗口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteAutopilotMaintenanceWindowResponse DeleteAutopilotMaintenanceWindow(DeleteAutopilotMaintenanceWindowRequest deleteAutopilotMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", deleteAutopilotMaintenanceWindowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotMaintenanceWindowRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteAutopilotMaintenanceWindowResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAutopilotMaintenanceWindowResponse> DeleteAutopilotMaintenanceWindowInvoker(DeleteAutopilotMaintenanceWindowRequest deleteAutopilotMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", deleteAutopilotMaintenanceWindowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotMaintenanceWindowRequest);
+            return new SyncInvoker<DeleteAutopilotMaintenanceWindowResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAutopilotMaintenanceWindowResponse>);
         }
         
         /// <summary>
@@ -3132,6 +3184,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 获取自动升级计划
+        ///
+        /// 该API用于获取集群自动升级计划。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAutopilotUpgradePlansResponse ListAutopilotUpgradePlans(ListAutopilotUpgradePlansRequest listAutopilotUpgradePlansRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotUpgradePlansRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/upgradeplans", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotUpgradePlansRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAutopilotUpgradePlansResponse>(response);
+        }
+
+        public SyncInvoker<ListAutopilotUpgradePlansResponse> ListAutopilotUpgradePlansInvoker(ListAutopilotUpgradePlansRequest listAutopilotUpgradePlansRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", listAutopilotUpgradePlansRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/upgradeplans", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotUpgradePlansRequest);
+            return new SyncInvoker<ListAutopilotUpgradePlansResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutopilotUpgradePlansResponse>);
+        }
+        
+        /// <summary>
         /// 获取UpgradeWorkFlows列表
         ///
         /// 获取历史集群升级引导任务列表
@@ -3397,6 +3475,32 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotJobRequest);
             return new SyncInvoker<ShowAutopilotJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotJobResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群维护窗口
+        ///
+        /// 该API用于获取集群维护窗口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAutopilotMaintenanceWindowResponse ShowAutopilotMaintenanceWindow(ShowAutopilotMaintenanceWindowRequest showAutopilotMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotMaintenanceWindowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotMaintenanceWindowRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotMaintenanceWindowResponse>(response);
+        }
+
+        public SyncInvoker<ShowAutopilotMaintenanceWindowResponse> ShowAutopilotMaintenanceWindowInvoker(ShowAutopilotMaintenanceWindowRequest showAutopilotMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", showAutopilotMaintenanceWindowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotMaintenanceWindowRequest);
+            return new SyncInvoker<ShowAutopilotMaintenanceWindowResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotMaintenanceWindowResponse>);
         }
         
         /// <summary>
@@ -3707,6 +3811,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 更新集群维护窗口
+        ///
+        /// 该API用于更新集群维护窗口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAutopilotMaintenanceWindowResponse UpdateAutopilotMaintenanceWindow(UpdateAutopilotMaintenanceWindowRequest updateAutopilotMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateAutopilotMaintenanceWindowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAutopilotMaintenanceWindowRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAutopilotMaintenanceWindowResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAutopilotMaintenanceWindowResponse> UpdateAutopilotMaintenanceWindowInvoker(UpdateAutopilotMaintenanceWindowRequest updateAutopilotMaintenanceWindowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateAutopilotMaintenanceWindowRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAutopilotMaintenanceWindowRequest);
+            return new SyncInvoker<UpdateAutopilotMaintenanceWindowResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAutopilotMaintenanceWindowResponse>);
+        }
+        
+        /// <summary>
         /// 更新指定模板实例
         ///
         /// 更新指定模板实例
@@ -3734,6 +3864,34 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/autopilot/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAutopilotReleaseRequest);
             return new SyncInvoker<UpdateAutopilotReleaseResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAutopilotReleaseResponse>);
+        }
+        
+        /// <summary>
+        /// 延期自动升级计划
+        ///
+        /// 该API用于延期集群自动升级计划。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAutopilotUpgradePlanResponse UpdateAutopilotUpgradePlan(UpdateAutopilotUpgradePlanRequest updateAutopilotUpgradePlanRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateAutopilotUpgradePlanRequest.ClusterId.ToString());
+            urlParam.Add("upgrade_plan_id", updateAutopilotUpgradePlanRequest.UpgradePlanId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/upgradeplans/{upgrade_plan_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAutopilotUpgradePlanRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAutopilotUpgradePlanResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAutopilotUpgradePlanResponse> UpdateAutopilotUpgradePlanInvoker(UpdateAutopilotUpgradePlanRequest updateAutopilotUpgradePlanRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", updateAutopilotUpgradePlanRequest.ClusterId.ToString());
+            urlParam.Add("upgrade_plan_id", updateAutopilotUpgradePlanRequest.UpgradePlanId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/upgradeplans/{upgrade_plan_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAutopilotUpgradePlanRequest);
+            return new SyncInvoker<UpdateAutopilotUpgradePlanResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAutopilotUpgradePlanResponse>);
         }
         
         /// <summary>

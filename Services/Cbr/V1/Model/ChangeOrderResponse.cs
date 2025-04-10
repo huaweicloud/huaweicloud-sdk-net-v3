@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// 变更状态码
         /// </summary>
         [JsonProperty("retCode", NullValueHandling = NullValueHandling.Ignore)]
-        public string RetCode { get; set; }
+        public decimal? RetCode { get; set; }
 
         /// <summary>
         /// 变更信息

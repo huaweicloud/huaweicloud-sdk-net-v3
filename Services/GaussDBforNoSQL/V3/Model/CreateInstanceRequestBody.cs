@@ -65,10 +65,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Password { get; set; }
 
         /// <summary>
-        /// 实例类型。   - GeminiDB Cassandra支持集群类型，取值为“Cluster”。   - GeminiDB Mongo4.0版本支持副本集类型，取值为“ReplicaSet”。   - GeminiDB Influx支持集群类型，取值为“Cluster”。   - GeminiDB Influx支持单节点类型，取值为“InfluxdbSingle”。   - GeminiDB redis支持集群类型，取值为“Cluster”。   - GeminiDB redis支持主备类型，取值为“Replication”。
+        /// 实例类型。   -  GeminiDB Cassandra支持经典部署模式集群类型，取值为“Cluster”。   -  GeminiDB Cassandra支持云原生部署模式集群类型，取值“CloudNativeCluster”。   -  GeminiDB Mongo4.0版本支持副本集类型，取值为“ReplicaSet”。   -  GeminiDB Influx支持经典部署模式集群类型，取值为“Cluster”。   -  GeminiDB Influx支持云原生部署模式集群类型，取值为“CloudNativeCluster”。   -  GeminiDB Influx支持经典部署模式单节点类型，取值为“InfluxdbSingle”。   -  GeminiDB Redis支持经典部署模式Proxy集群类型，取值为“Cluster”。   -  GeminiDB redis支持云原生部署模式集群类型，取值为“CloudNativeCluster”。   -  GeminiDB Redis支持经典部署模式Cluster集群类型，取值为“RedisCluster”   -  GeminiDB Redis支持经典部署模式主备类型，取值为“Replication”。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
+
+        /// <summary>
+        /// 产品类型   -  Capacity 容量型   -  Standard 标准型 当创建GeminiDB Redis云原生部署模式集群类型必传此参数。
+        /// </summary>
+        [JsonProperty("product_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProductType { get; set; }
 
         /// <summary>
         /// 实例规格详情。获取方法请参见查询所有实例规格信息中响应“flavors”字段下参数的值。
@@ -125,10 +131,22 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Port { get; set; }
 
         /// <summary>
+        /// 是否启用IPv6。默认 - true: 启用IPv6。 - false: 不启用IPv6，默认为不启用。
+        /// </summary>
+        [JsonProperty("ipv6_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Ipv6Enabled { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("availability_zone_detail", NullValueHandling = NullValueHandling.Ignore)]
         public AvailabilityZoneDetail AvailabilityZoneDetail { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("lb_access_control_settings", NullValueHandling = NullValueHandling.Ignore)]
+        public LbAccessControlSettings LbAccessControlSettings { get; set; }
 
 
 
@@ -148,6 +166,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  securityGroupId: ").Append(SecurityGroupId).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
+            sb.Append("  productType: ").Append(ProductType).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  configurationId: ").Append(ConfigurationId).Append("\n");
             sb.Append("  backupStrategy: ").Append(BackupStrategy).Append("\n");
@@ -157,7 +176,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
             sb.Append("  restoreInfo: ").Append(RestoreInfo).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
+            sb.Append("  ipv6Enabled: ").Append(Ipv6Enabled).Append("\n");
             sb.Append("  availabilityZoneDetail: ").Append(AvailabilityZoneDetail).Append("\n");
+            sb.Append("  lbAccessControlSettings: ").Append(LbAccessControlSettings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -185,6 +206,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && !this.SecurityGroupId.Equals(input.SecurityGroupId))) return false;
             if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
             if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
+            if (this.ProductType != input.ProductType || (this.ProductType != null && !this.ProductType.Equals(input.ProductType))) return false;
             if (this.Flavor != input.Flavor || (this.Flavor != null && input.Flavor != null && !this.Flavor.SequenceEqual(input.Flavor))) return false;
             if (this.ConfigurationId != input.ConfigurationId || (this.ConfigurationId != null && !this.ConfigurationId.Equals(input.ConfigurationId))) return false;
             if (this.BackupStrategy != input.BackupStrategy || (this.BackupStrategy != null && !this.BackupStrategy.Equals(input.BackupStrategy))) return false;
@@ -194,7 +216,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.ChargeInfo != input.ChargeInfo || (this.ChargeInfo != null && !this.ChargeInfo.Equals(input.ChargeInfo))) return false;
             if (this.RestoreInfo != input.RestoreInfo || (this.RestoreInfo != null && !this.RestoreInfo.Equals(input.RestoreInfo))) return false;
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.Ipv6Enabled != input.Ipv6Enabled || (this.Ipv6Enabled != null && !this.Ipv6Enabled.Equals(input.Ipv6Enabled))) return false;
             if (this.AvailabilityZoneDetail != input.AvailabilityZoneDetail || (this.AvailabilityZoneDetail != null && !this.AvailabilityZoneDetail.Equals(input.AvailabilityZoneDetail))) return false;
+            if (this.LbAccessControlSettings != input.LbAccessControlSettings || (this.LbAccessControlSettings != null && !this.LbAccessControlSettings.Equals(input.LbAccessControlSettings))) return false;
 
             return true;
         }
@@ -216,6 +240,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
                 if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
                 if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.ProductType != null) hashCode = hashCode * 59 + this.ProductType.GetHashCode();
                 if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.ConfigurationId != null) hashCode = hashCode * 59 + this.ConfigurationId.GetHashCode();
                 if (this.BackupStrategy != null) hashCode = hashCode * 59 + this.BackupStrategy.GetHashCode();
@@ -225,7 +250,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.ChargeInfo != null) hashCode = hashCode * 59 + this.ChargeInfo.GetHashCode();
                 if (this.RestoreInfo != null) hashCode = hashCode * 59 + this.RestoreInfo.GetHashCode();
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.Ipv6Enabled != null) hashCode = hashCode * 59 + this.Ipv6Enabled.GetHashCode();
                 if (this.AvailabilityZoneDetail != null) hashCode = hashCode * 59 + this.AvailabilityZoneDetail.GetHashCode();
+                if (this.LbAccessControlSettings != null) hashCode = hashCode * 59 + this.LbAccessControlSettings.GetHashCode();
                 return hashCode;
             }
         }

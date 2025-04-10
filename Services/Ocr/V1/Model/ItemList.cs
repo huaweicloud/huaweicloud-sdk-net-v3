@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string UnitPrice { get; set; }
 
         /// <summary>
-        /// 车牌号码。 当“type”被识别为“toll”且 “advanced_mode”设置为“true” 时才返回。 
+        /// 车牌号码。 当\&quot;type\&quot;被识别为\&quot;toll\&quot;且\&quot;advanced_mode\&quot;设置为“true”时才返回。 
         /// </summary>
         [JsonProperty("license_plate_number", NullValueHandling = NullValueHandling.Ignore)]
         public string LicensePlateNumber { get; set; }
@@ -71,19 +71,19 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Tax { get; set; }
 
         /// <summary>
-        /// 通行日期止。 当“type”被识别为“toll”且“advanced_mode”设置为“true”时才返回。 
+        /// 通行日期止。 当\&quot;type\&quot;被识别为\&quot;toll\&quot;且\&quot;advanced_mode\&quot;设置为“true”时才返回。 
         /// </summary>
         [JsonProperty("end_date", NullValueHandling = NullValueHandling.Ignore)]
         public string EndDate { get; set; }
 
         /// <summary>
-        /// 通行日期起。 当“type”被识别为“toll”且“advanced_mode”设置为“true”时才返回。 
+        /// 通行日期起。 当\&quot;type\&quot;被识别为\&quot;toll\&quot;且\&quot;advanced_mode\&quot;设置为“true”时才返回。 
         /// </summary>
         [JsonProperty("start_date", NullValueHandling = NullValueHandling.Ignore)]
         public string StartDate { get; set; }
 
         /// <summary>
-        /// 车辆类型。 当“type”被识别为“toll”且“advanced_mode”设置为“true”时才返回。 
+        /// 车辆类型。 当\&quot;type\&quot;被识别为\&quot;toll\&quot;且\&quot;advanced_mode\&quot;设置为“true”时才返回。 
         /// </summary>
         [JsonProperty("vehicle_type", NullValueHandling = NullValueHandling.Ignore)]
         public string VehicleType { get; set; }

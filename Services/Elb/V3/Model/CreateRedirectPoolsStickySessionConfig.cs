@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? Enable { get; set; }
 
         /// <summary>
-        /// 参数解释：会话保持的时间。  取值范围：1-1440（分钟）  默认取值：1440  [荷兰region不支持QUIC。](tag:dt,dt_test)
+        /// 参数解释：会话保持的时间。  取值范围：1-1440（分钟）  默认取值：1440  [荷兰region不支持QUIC。](tag:dt)
         /// </summary>
         [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? Timeout { get; set; }

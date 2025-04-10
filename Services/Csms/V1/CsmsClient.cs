@@ -1010,6 +1010,30 @@ namespace HuaweiCloud.SDK.Csms.V1
         }
         
         /// <summary>
+        /// 修改用户密码
+        ///
+        /// 修改用户密码
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateUserPasswordResponse UpdateUserPassword(UpdateUserPasswordRequest updateUserPasswordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/users/change-password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserPasswordRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateUserPasswordResponse>(response);
+        }
+
+        public SyncInvoker<UpdateUserPasswordResponse> UpdateUserPasswordInvoker(UpdateUserPasswordRequest updateUserPasswordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/csms/users/change-password", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserPasswordRequest);
+            return new SyncInvoker<UpdateUserPasswordResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateUserPasswordResponse>);
+        }
+        
+        /// <summary>
         /// 更新凭据版本
         ///
         /// 当前支持更新指定凭据版本的有效期，只能更新ENABLED状态的凭据。在关联订阅的事件包含“版本过期”基础事件类型时，每次更新版本有效期后仅会触发一次事件通知。

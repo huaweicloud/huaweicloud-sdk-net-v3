@@ -65,6 +65,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string ServiceType { get; set; }
 
         /// <summary>
+        /// 终端节点服务支持的类型，取值范围为profession-专业型，basic-基础型
+        /// </summary>
+        [JsonProperty("supported_editions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SupportedEditions { get; set; }
+
+        /// <summary>
         /// 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
@@ -147,6 +153,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  approvalEnabled: ").Append(ApprovalEnabled).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  serviceType: ").Append(ServiceType).Append("\n");
+            sb.Append("  supportedEditions: ").Append(SupportedEditions).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
@@ -184,6 +191,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             if (this.ApprovalEnabled != input.ApprovalEnabled || (this.ApprovalEnabled != null && !this.ApprovalEnabled.Equals(input.ApprovalEnabled))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
+            if (this.SupportedEditions != input.SupportedEditions || (this.SupportedEditions != null && input.SupportedEditions != null && !this.SupportedEditions.SequenceEqual(input.SupportedEditions))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
@@ -215,6 +223,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 if (this.ApprovalEnabled != null) hashCode = hashCode * 59 + this.ApprovalEnabled.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                if (this.SupportedEditions != null) hashCode = hashCode * 59 + this.SupportedEditions.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();

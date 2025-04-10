@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? MembersPerPool { get; set; }
 
         /// <summary>
-        /// 单个监听器下的pool的配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// 单个pool器关联的监听器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("listeners_per_pool", NullValueHandling = NullValueHandling.Ignore)]
         public int? ListenersPerPool { get; set; }

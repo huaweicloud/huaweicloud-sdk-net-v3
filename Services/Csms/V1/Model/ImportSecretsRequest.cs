@@ -22,12 +22,6 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         [JsonProperty("secrets", NullValueHandling = NullValueHandling.Ignore)]
         public List<CreateSecretRequestBody> Secrets { get; set; }
 
-        /// <summary>
-        /// 导入数据条数
-        /// </summary>
-        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Total { get; set; }
-
 
 
         /// <summary>
@@ -38,7 +32,6 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ImportSecretsRequest {\n");
             sb.Append("  secrets: ").Append(Secrets).Append("\n");
-            sb.Append("  total: ").Append(Total).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,7 +51,6 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             if (input == null) return false;
             if (this.Secrets != input.Secrets || (this.Secrets != null && input.Secrets != null && !this.Secrets.SequenceEqual(input.Secrets))) return false;
-            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
             return true;
         }
@@ -72,7 +64,6 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
             {
                 var hashCode = 41;
                 if (this.Secrets != null) hashCode = hashCode * 59 + this.Secrets.GetHashCode();
-                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

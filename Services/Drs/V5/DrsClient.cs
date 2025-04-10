@@ -173,6 +173,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public BatchTagActionResponse BatchTagAction(BatchTagActionRequest batchTagActionRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -184,6 +185,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerializeNull<BatchTagActionResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<BatchTagActionResponse> BatchTagActionInvoker(BatchTagActionRequest batchTagActionRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -310,6 +312,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public CollectDbObjectsAsyncResponse CollectDbObjectsAsync(CollectDbObjectsAsyncRequest collectDbObjectsAsyncRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -320,6 +323,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<CollectDbObjectsAsyncResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<CollectDbObjectsAsyncResponse> CollectDbObjectsAsyncInvoker(CollectDbObjectsAsyncRequest collectDbObjectsAsyncRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -869,6 +873,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListDbObjectsResponse ListDbObjects(ListDbObjectsRequest listDbObjectsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -879,6 +884,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<ListDbObjectsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListDbObjectsResponse> ListDbObjectsInvoker(ListDbObjectsRequest listDbObjectsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1101,6 +1107,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ListProjectTagsResponse ListProjectTags(ListProjectTagsRequest listProjectTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1111,6 +1118,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<ListProjectTagsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ListProjectTagsResponse> ListProjectTagsInvoker(ListProjectTagsRequest listProjectTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1696,6 +1704,7 @@ namespace HuaweiCloud.SDK.Drs.V5
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public ShowInstanceTagsResponse ShowInstanceTags(ShowInstanceTagsRequest showInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
@@ -1707,6 +1716,7 @@ namespace HuaweiCloud.SDK.Drs.V5
             return JsonUtils.DeSerialize<ShowInstanceTagsResponse>(response);
         }
 
+        [Obsolete("This method is deprecated and will be removed in the future versions")]
         public SyncInvoker<ShowInstanceTagsResponse> ShowInstanceTagsInvoker(ShowInstanceTagsRequest showInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();

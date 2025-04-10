@@ -17,10 +17,12 @@
         <Company>Huawei Technologies Co., Ltd.</Company>
         <Description>HuaweiCloud .net SDK</Description>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
         <None Include="..\LICENSE" Pack="true" PackagePath="" />
+        <None Include="..\README.md" Pack="true" PackagePath="" />
         <PackageReference Include="BouncyCastle.Cryptography" Version="2.3.1" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
         <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.5" />
@@ -29,5 +31,6 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.5" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="YamlDotNet" Version="13.3.1" />
+        <EmbeddedResource Include="Resources\iam_endpoints.json" />
     </ItemGroup>
 </Project>

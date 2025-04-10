@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string DatastoreVersionName { get; set; }
 
         /// <summary>
-        /// 数据库名称。
+        /// 数据库名称。 【取值范围】 cassandra：表示支持GeminiDB Cassandra实例。 redis：表示支持GeminiDB Redis实例。 influxdb：表示支持GeminiDB Influx实例。 mongodb： 表示支持GeminiDB Mongo实例。
         /// </summary>
         [JsonProperty("datastore_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DatastoreName { get; set; }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Updated { get; set; }
 
         /// <summary>
-        /// 数据库实例类型。 GeminiDB Cassandra集群类型为\&quot;Cluster\&quot;。 GeminiDB Mongo副本集类型为\&quot;ReplicaSet\&quot;。 GeminiDB Mongo集群类型为\&quot;Sharding\&quot;。 GeminiDB Influx集群类型为\&quot;Cluster\&quot;。 GeminiDB Influx单节点类型为\&quot;InfluxdbSingle\&quot;。 GeminiDB Redis集群类型为“Cluster”。 GeminiDB Redis主备类型为“Replication”。
+        /// 数据库实例类型。 GeminiDB Cassandra经典部署模式集群类型为\&quot;Cluster\&quot;。 GeminiDB Cassandra云原生部署模式集群类型为\&quot;CloudNativeCluster\&quot;。 GeminiDB Mongo副本集类型为\&quot;ReplicaSet\&quot;。 GeminiDB Mongo集群类型为\&quot;Sharding\&quot;。 GeminiDB Influx经典部署模式集群类型为\&quot;Cluster\&quot;。 GeminiDB Influx经典部署模式单节点类型为\&quot;InfluxdbSingle\&quot;。 GeminiDB Redis经典部署模式集群类型为“Cluster”。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }

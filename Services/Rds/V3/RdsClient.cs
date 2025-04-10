@@ -2165,6 +2165,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询实例的磁盘信息
+        ///
+        /// 查询实例的磁盘信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListVolumeInfoResponse ListVolumeInfo(ListVolumeInfoRequest listVolumeInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listVolumeInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/volumes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVolumeInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerializeNull<ListVolumeInfoResponse>(response);
+        }
+
+        public SyncInvoker<ListVolumeInfoResponse> ListVolumeInfoInvoker(ListVolumeInfoRequest listVolumeInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listVolumeInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/volumes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVolumeInfoRequest);
+            return new SyncInvoker<ListVolumeInfoResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ListVolumeInfoResponse>);
+        }
+        
+        /// <summary>
         /// 查询扩展日志文件列表
         ///
         /// 查询扩展日志文件列表。

@@ -16,6 +16,30 @@ namespace HuaweiCloud.SDK.Swr.V2
 
         
         /// <summary>
+        /// 生成增强型登录指令(新)
+        ///
+        /// 调用该接口，通过获取响应消息头的X-Swr-Dockerlogin的值及响应消息体的host值，可生成增强型登录指令,注：此接口只支持IAM新平面的调用方式。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAuthorizationTokenResponse> CreateAuthorizationTokenAsync(CreateAuthorizationTokenRequest createAuthorizationTokenRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/utils/authorizationtoken", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAuthorizationTokenRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateAuthorizationTokenResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAuthorizationTokenResponse> CreateAuthorizationTokenAsyncInvoker(CreateAuthorizationTokenRequest createAuthorizationTokenRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/utils/authorizationtoken", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAuthorizationTokenRequest);
+            return new AsyncInvoker<CreateAuthorizationTokenResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAuthorizationTokenResponse>);
+        }
+        
+        /// <summary>
         /// 创建镜像自动同步任务
         ///
         /// 创建镜像自动同步任务，帮助您把最新推送的镜像自动同步到其他区域镜像仓库内。 镜像自动同步帮助您把最新推送的镜像自动同步到其他区域镜像仓库内，后期镜像有更新时，目标仓库的镜像也会自动更新，但已有的镜像不会自动同步。已有镜像的同步需要手动操作，详情请参见手动同步镜像。

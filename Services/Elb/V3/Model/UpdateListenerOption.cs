@@ -132,13 +132,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// 参数解释：监听器的管理状态。  约束限制：只支持更新为true。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+        /// 参数解释：监听器的管理状态。  约束限制：只支持更新为true。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
         /// </summary>
         [JsonProperty("admin_state_up", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 参数解释：监听器使用的CA证书ID。  约束限制： - 当且仅当type&#x3D;client时，才会使用该字段对应的证书。 - 监听器协议为QUIC时不支持该字段。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
+        /// 参数解释：监听器使用的CA证书ID。  约束限制： - 当且仅当type&#x3D;client时，才会使用该字段对应的证书。 - 监听器协议为QUIC时不支持该字段。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt)
         /// </summary>
         [JsonProperty("client_ca_tls_container_ref", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientCaTlsContainerRef { get; set; }
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 参数解释：客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  约束限制： - 仅HTTPS协议监听器有效。 - QUIC监听器不能设置该字段，固定返回为true。 - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
+        /// 参数解释：客户端与LB之间的HTTPS请求的HTTP2功能的开启状态。 开启后，可提升客户端与LB间的访问性能，但LB与后端服务器间仍采用HTTP1.X协议。  约束限制： - 仅HTTPS协议监听器有效。 - QUIC监听器不能设置该字段，固定返回为true。 - 其他协议的监听器可设置该字段但无效，无论取值如何都不影响监听器正常运行。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt)
         /// </summary>
         [JsonProperty("http2_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Http2Enable { get; set; }
@@ -204,7 +204,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string SecurityPolicyId { get; set; }
 
         /// <summary>
-        /// 参数解释：是否开启后端服务器的重试。  [约束限制： - 若关联是共享型LB，仅在protocol为HTTP、TERMINATED_HTTPS时才能传入该字段。 - 若关联是独享型LB，仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt)  [约束限制： - 仅在protocol为HTTP、HTTPS时才能传入该字段。](tag:hws_eu,hcso_dt)  取值范围：true 开启重试；false 不开启重试。  默认取值：true。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test)
+        /// 参数解释：是否开启后端服务器的重试。  [约束限制： - 若关联是共享型LB，仅在protocol为HTTP、TERMINATED_HTTPS时才能传入该字段。 - 若关联是独享型LB，仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt)  [约束限制： - 仅在protocol为HTTP、HTTPS时才能传入该字段。](tag:hws_eu,hcso_dt)  取值范围：true 开启重试；false 不开启重试。  默认取值：true。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt)
         /// </summary>
         [JsonProperty("enable_member_retry", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableMemberRetry { get; set; }
@@ -246,7 +246,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? ProxyProtocolEnable { get; set; }
 
         /// <summary>
-        /// 参数解释：是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。  开启后支持如下场景： - 转发策略的action字段支持指定为REDIRECT_TO_URL, FIXED_RESPONSE，即支持URL重定向和响应固定的内容给客户端。 - 转发策略支持指定priority、redirect_url_config、fixed_response_config字段。 - 转发规则rule的type可以指定METHOD, HEADER, QUERY_STRING, SOURCE_IP这几种取值。 - 转发规则rule的type为HOST_NAME时，转发规则rule的value支持通配符*。 - 转发规则支持指定conditions字段。  约束限制： - 开启后不支持关闭。 - 开启高级转发策略后，监听器关联的转发策略的匹配优先级由转发策略的priority字段来决定，不再自动排序。具体说明详见转发策略的priority字段的说明。  取值范围：true开启，false不开启。  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
+        /// 参数解释：是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。  开启后支持如下场景： - 转发策略的action字段支持指定为REDIRECT_TO_URL, FIXED_RESPONSE，即支持URL重定向和响应固定的内容给客户端。 - 转发策略支持指定priority、redirect_url_config、fixed_response_config字段。 - 转发规则rule的type可以指定METHOD, HEADER, QUERY_STRING, SOURCE_IP这几种取值。 - 转发规则rule的type为HOST_NAME时，转发规则rule的value支持通配符*。 - 转发规则支持指定conditions字段。  约束限制： - 开启后不支持关闭。 - 开启高级转发策略后，监听器关联的转发策略的匹配优先级由转发策略的priority字段来决定，不再自动排序。具体说明详见转发策略的priority字段的说明。  取值范围：true开启，false不开启。  [荷兰region不支持该字段，请勿使用。](tag:dt)
         /// </summary>
         [JsonProperty("enhance_l7policy_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnhanceL7policyEnable { get; set; }
@@ -269,7 +269,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProtectionReason { get; set; }
 
         /// <summary>
-        /// 参数解释：ELB是否开启gzip压缩。  [约束限制：仅HTTP/HTTPS类型监听器支持配置。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt,dt_test) [约束限制：仅HTTP/HTTPS/QUIC类型监听器支持配置。](tag:hws,hws_hk,hws_test,hcs,hcs_sm,hcso,hk_vdf,srg,fcs,fcs_vm,mix,ocb,ctc,cmcc,ct,sbc,hws_ocb,hk_sbc)  默认取值：false
+        /// 参数解释：ELB是否开启gzip压缩。  [约束限制：仅HTTP/HTTPS类型监听器支持配置。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt) [约束限制：仅HTTP/HTTPS/QUIC类型监听器支持配置。](tag:hws,hws_hk,hws_test,hcs,hcs_sm,hcso,hk_vdf,srg,fcs,fcs_vm,mix,ocb,ctc,cmcc,ct,sbc,hws_ocb,hk_sbc)  默认取值：false
         /// </summary>
         [JsonProperty("gzip_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? GzipEnable { get; set; }

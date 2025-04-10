@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 对实例的操作: - flush:清理数据
+        /// 对实例的操作:  flush:清理数据
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }

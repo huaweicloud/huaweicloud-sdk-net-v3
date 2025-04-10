@@ -300,7 +300,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 所属企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+        /// 所属企业项目ID。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

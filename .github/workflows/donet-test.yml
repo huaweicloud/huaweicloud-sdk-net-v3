@@ -1,0 +1,17 @@
+name: .NET Test
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: '0 0 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+    - name: Build
+      run: dotnet build
+    - name: Test
+      run: dotnet test Test/Test.csproj --logger:"console;verbosity=detailed"

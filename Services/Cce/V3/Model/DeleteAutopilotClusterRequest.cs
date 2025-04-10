@@ -681,45 +681,33 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         }
 
         /// <summary>
-        /// 是否删除LTS LogStream（日志流）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+        /// 是否删除LTS资源（日志组/日志流）。 枚举取值： - Delete_Log_Group：删除日志组，失败则忽略，并继续执行后续流程。 - Delete_Master_Log_Stream：删除Master接入日志流，失败则忽略，并继续执行后续流程，默认选项。 - Retain：跳过删除流程。
         /// </summary>
-        /// <value>是否删除LTS LogStream（日志流）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)</value>
+        /// <value>是否删除LTS资源（日志组/日志流）。 枚举取值： - Delete_Log_Group：删除日志组，失败则忽略，并继续执行后续流程。 - Delete_Master_Log_Stream：删除Master接入日志流，失败则忽略，并继续执行后续流程，默认选项。 - Retain：跳过删除流程。</value>
         [JsonConverter(typeof(EnumClassConverter<LtsReclaimPolicyEnum>))]
         public class LtsReclaimPolicyEnum
         {
             /// <summary>
-            /// Enum TRUE for value: true
+            /// Enum DELETE_LOG_GROUP for value: Delete_Log_Group
             /// </summary>
-            public static readonly LtsReclaimPolicyEnum TRUE = new LtsReclaimPolicyEnum("true");
+            public static readonly LtsReclaimPolicyEnum DELETE_LOG_GROUP = new LtsReclaimPolicyEnum("Delete_Log_Group");
 
             /// <summary>
-            /// Enum BLOCK for value: block
+            /// Enum DELETE_MASTER_LOG_STREAM for value: Delete_Master_Log_Stream
             /// </summary>
-            public static readonly LtsReclaimPolicyEnum BLOCK = new LtsReclaimPolicyEnum("block");
+            public static readonly LtsReclaimPolicyEnum DELETE_MASTER_LOG_STREAM = new LtsReclaimPolicyEnum("Delete_Master_Log_Stream");
 
             /// <summary>
-            /// Enum TRY for value: try
+            /// Enum RETAIN for value: Retain
             /// </summary>
-            public static readonly LtsReclaimPolicyEnum TRY = new LtsReclaimPolicyEnum("try");
-
-            /// <summary>
-            /// Enum FALSE for value: false
-            /// </summary>
-            public static readonly LtsReclaimPolicyEnum FALSE = new LtsReclaimPolicyEnum("false");
-
-            /// <summary>
-            /// Enum SKIP for value: skip
-            /// </summary>
-            public static readonly LtsReclaimPolicyEnum SKIP = new LtsReclaimPolicyEnum("skip");
+            public static readonly LtsReclaimPolicyEnum RETAIN = new LtsReclaimPolicyEnum("Retain");
 
             private static readonly Dictionary<string, LtsReclaimPolicyEnum> StaticFields =
             new Dictionary<string, LtsReclaimPolicyEnum>()
             {
-                { "true", TRUE },
-                { "block", BLOCK },
-                { "try", TRY },
-                { "false", FALSE },
-                { "skip", SKIP },
+                { "Delete_Log_Group", DELETE_LOG_GROUP },
+                { "Delete_Master_Log_Stream", DELETE_MASTER_LOG_STREAM },
+                { "Retain", RETAIN },
             };
 
             private string _value;
@@ -852,7 +840,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("delete_sfs30", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteSfs30Enum DeleteSfs30 { get; set; }
         /// <summary>
-        /// 是否删除LTS LogStream（日志流）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+        /// 是否删除LTS资源（日志组/日志流）。 枚举取值： - Delete_Log_Group：删除日志组，失败则忽略，并继续执行后续流程。 - Delete_Master_Log_Stream：删除Master接入日志流，失败则忽略，并继续执行后续流程，默认选项。 - Retain：跳过删除流程。
         /// </summary>
         [SDKProperty("lts_reclaim_policy", IsQuery = true)]
         [JsonProperty("lts_reclaim_policy", NullValueHandling = NullValueHandling.Ignore)]

@@ -94,7 +94,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string NotificationEndTime { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID，不填时会使用默认的企业项目ID
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -105,6 +105,17 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("alarm_template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmTemplateId { get; set; }
 
+        /// <summary>
+        /// 产品层级跨纬规则创建时需要指明的规则产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;
+        /// </summary>
+        [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProductName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
+        public ResourceLevel ResourceLevel { get; set; }
 
 
         /// <summary>
@@ -129,6 +140,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  notificationEndTime: ").Append(NotificationEndTime).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  alarmTemplateId: ").Append(AlarmTemplateId).Append("\n");
+            sb.Append("  productName: ").Append(ProductName).Append("\n");
+            sb.Append("  resourceLevel: ").Append(ResourceLevel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -162,6 +175,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.NotificationEndTime != input.NotificationEndTime || (this.NotificationEndTime != null && !this.NotificationEndTime.Equals(input.NotificationEndTime))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.AlarmTemplateId != input.AlarmTemplateId || (this.AlarmTemplateId != null && !this.AlarmTemplateId.Equals(input.AlarmTemplateId))) return false;
+            if (this.ProductName != input.ProductName || (this.ProductName != null && !this.ProductName.Equals(input.ProductName))) return false;
+            if (this.ResourceLevel != input.ResourceLevel) return false;
 
             return true;
         }
@@ -189,6 +204,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.NotificationEndTime != null) hashCode = hashCode * 59 + this.NotificationEndTime.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.AlarmTemplateId != null) hashCode = hashCode * 59 + this.AlarmTemplateId.GetHashCode();
+                if (this.ProductName != null) hashCode = hashCode * 59 + this.ProductName.GetHashCode();
+                hashCode = hashCode * 59 + this.ResourceLevel.GetHashCode();
                 return hashCode;
             }
         }

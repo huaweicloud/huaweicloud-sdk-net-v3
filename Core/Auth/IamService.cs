@@ -21,8 +21,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using Newtonsoft.Json;
 
 namespace HuaweiCloud.SDK.Core.Auth
@@ -39,7 +41,7 @@ namespace HuaweiCloud.SDK.Core.Auth
     internal class IamResponse : SdkResponse
     {
         [SDKProperty(propertyName: "X-IAM-Trace-Id", IsHeader = true)]
-        public string TraceId { get; set;}
+        public string TraceId { get; set; }
     }
 
     internal class KeystoneListProjectsResponse : IamResponse
@@ -79,6 +81,78 @@ namespace HuaweiCloud.SDK.Core.Auth
   2. Use the domain account to grant IAM read permission to the current account
   3. Replace the ak/sk of the IAM account with the ak/sk of the domain account";
 
+        private const string EndpointsResourceName = "Core.Resources.iam_endpoints.json";
+
+        private const string IamEndpointEnv = "HUAWEICLOUD_SDK_IAM_ENDPOINT";
+
+        private static readonly object Lock = new object();
+
+        private static Dictionary<string, string> _endpoints;
+
+        private static Dictionary<string, string> ProcessEndpoints()
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            using (var stream = assembly.GetManifestResourceStream(EndpointsResourceName))
+            {
+                if (stream == null)
+                {
+                    return new Dictionary<string, string>();
+                }
+                using (var reader = new StreamReader(stream))
+                {
+                    var content = reader.ReadToEnd();
+                    if (string.IsNullOrEmpty(content))
+                    {
+                        return new Dictionary<string, string>();
+                    }
+                    try
+                    {
+                        return JsonConvert.DeserializeObject<Dictionary<string, string>>(content);
+                    }
+                    catch (Exception)
+                    {
+                        return new Dictionary<string, string>();
+                    }
+                }
+            }
+        }
+
+        private static Dictionary<string, string> GetEndpoints()
+        {
+            if (_endpoints == null)
+            {
+                lock (Lock)
+                {
+                    if (_endpoints == null)
+                    {
+                        _endpoints = ProcessEndpoints();
+                    }
+                }
+            }
+            return _endpoints;
+        }
+
+        public static string GetEndpoint(string regionId = null)
+        {
+            var endpointFromEnv = Environment.GetEnvironmentVariable(IamEndpointEnv);
+            if (endpointFromEnv != null)
+            {
+                if (!endpointFromEnv.StartsWith("https://"))
+                {
+                    endpointFromEnv += "https://";
+                }
+                return endpointFromEnv;
+            }
+
+            if (regionId == null)
+            {
+                return DefaultIamEndpoint;
+            }
+
+
+            return GetEndpoints().TryGetValue(regionId, out var endpoint) ? endpoint : DefaultIamEndpoint;
+        }
+
         public static HttpRequest GetKeystoneListProjectsRequest(string iamEndpoint, string regionId, HttpConfig httpConfig)
         {
             var urlParam = new Dictionary<string, string>();
@@ -101,7 +175,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
             return request;
         }
-    
+
         [Obsolete("This method is for internal use only and is deprecated. It will be removed in a future release.")]
         public static string KeystoneListProjects(SdkHttpClient client, HttpRequest request)
         {
@@ -132,7 +206,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                 throw ExceptionUtils.HandleException(aggregateException);
             }
         }
-        
+
         internal static KeystoneListProjectsResponse InternalKeystoneListProjects(SdkHttpClient client, HttpRequest request)
         {
             var message = client.InitHttpRequest(request, true);
@@ -173,7 +247,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
             return request;
         }
-        
+
         [Obsolete("This method is for internal use only and is deprecated. It will be removed in a future release.")]
         public static string KeystoneListAuthDomains(SdkHttpClient client, HttpRequest request)
         {
@@ -199,7 +273,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                 throw ExceptionUtils.HandleException(aggregateException);
             }
         }
-        
+
         internal static KeystoneListAuthDomainsResponse InternalKeystoneListAuthDomains(SdkHttpClient client, HttpRequest request)
         {
             var message = client.InitHttpRequest(request, true);

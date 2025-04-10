@@ -134,7 +134,7 @@ namespace ListVpcsSolution
             var sk = Environment.GetEnvironmentVariable("HUAWEICLOUD_SDK_SK");
             var projectId = "{your projectId string}";
             var auth = new BasicCredentials(ak, sk, projectId: projectId)
-                // Configure the SDK built-in IAM service endpoint, default is https://iam.myhuaweicloud.com
+                // Configure the SDK built-in IAM service endpoint
                 .WithIamEndpoint("https://iam.cn-north-4.myhuaweicloud.com");
 
             // Use default configuration
@@ -582,7 +582,11 @@ IamClient iamClient = IamClient.NewBuilder()
 
 ##### 3.3.1 IAM endpoint configuration [:top:](#user-manual-top)
 
-Automatically acquiring projectId/domainId will invoke the [KeystoneListProjects](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListProjects) /[KeystoneListAuthDomains](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListAuthDomains) interface of IAM service. The default iam enpoint is `https://iam.myhuaweicloud.com`, **European station users need to specify the endpoint as https://iam.eu-west-101.myhuaweicloud.eu**, you can modify the endpoint in the following two ways:
+Automatically acquiring projectId/domainId will invoke the [KeystoneListProjects](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListProjects) /[KeystoneListAuthDomains](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=KeystoneListAuthDomains) interface of IAM service.
+
+The endpoint being called will be queried from the [mapping table](./Core/Resources/iam_endpoints.json), and if it cannot be found, the default value **https://iam.myhuaweicloud.com** will be used.
+
+**European station users need to specify the endpoint as https://iam.eu-west-101.myhuaweicloud.eu**, you can modify the endpoint in the following two ways.
 
 ###### 3.3.1.1 Global scope [:top:](#user-manual-top)
 

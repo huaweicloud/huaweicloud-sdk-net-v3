@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         [JsonProperty("elastic_service_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public int? ElasticServiceBandwidth { get; set; }
 
+        /// <summary>
+        /// 业务QPS(如果实例没购买过QPS，需要在页面上升级一次规格开通QPS，之后才可以通过接口修改规格)
+        /// </summary>
+        [JsonProperty("basic_qps", NullValueHandling = NullValueHandling.Ignore)]
+        public int? BasicQps { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
             sb.Append("  bindDomainNum: ").Append(BindDomainNum).Append("\n");
             sb.Append("  elasticServiceBandwidthType: ").Append(ElasticServiceBandwidthType).Append("\n");
             sb.Append("  elasticServiceBandwidth: ").Append(ElasticServiceBandwidth).Append("\n");
+            sb.Append("  basicQps: ").Append(BasicQps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
             if (this.BindDomainNum != input.BindDomainNum || (this.BindDomainNum != null && !this.BindDomainNum.Equals(input.BindDomainNum))) return false;
             if (this.ElasticServiceBandwidthType != input.ElasticServiceBandwidthType || (this.ElasticServiceBandwidthType != null && !this.ElasticServiceBandwidthType.Equals(input.ElasticServiceBandwidthType))) return false;
             if (this.ElasticServiceBandwidth != input.ElasticServiceBandwidth || (this.ElasticServiceBandwidth != null && !this.ElasticServiceBandwidth.Equals(input.ElasticServiceBandwidth))) return false;
+            if (this.BasicQps != input.BasicQps || (this.BasicQps != null && !this.BasicQps.Equals(input.BasicQps))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
                 if (this.BindDomainNum != null) hashCode = hashCode * 59 + this.BindDomainNum.GetHashCode();
                 if (this.ElasticServiceBandwidthType != null) hashCode = hashCode * 59 + this.ElasticServiceBandwidthType.GetHashCode();
                 if (this.ElasticServiceBandwidth != null) hashCode = hashCode * 59 + this.ElasticServiceBandwidth.GetHashCode();
+                if (this.BasicQps != null) hashCode = hashCode * 59 + this.BasicQps.GetHashCode();
                 return hashCode;
             }
         }

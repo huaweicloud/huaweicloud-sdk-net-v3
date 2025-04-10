@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
     public class DeleteSubtitle 
     {
         /// <summary>
-        /// 字幕类型，字幕封装当前仅支持VTT
+        /// 字幕类型，字幕封装当前仅支持VTT和SRT
         /// </summary>
-        /// <value>字幕类型，字幕封装当前仅支持VTT</value>
+        /// <value>字幕类型，字幕封装当前仅支持VTT和SRT</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -27,10 +27,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             /// </summary>
             public static readonly TypeEnum VTT = new TypeEnum("VTT");
 
+            /// <summary>
+            /// Enum SRT for value: SRT
+            /// </summary>
+            public static readonly TypeEnum SRT = new TypeEnum("SRT");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
                 { "VTT", VTT },
+                { "SRT", SRT },
             };
 
             private string _value;
@@ -126,7 +132,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
 
         /// <summary>
-        /// 字幕类型，字幕封装当前仅支持VTT
+        /// 字幕类型，字幕封装当前仅支持VTT和SRT
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

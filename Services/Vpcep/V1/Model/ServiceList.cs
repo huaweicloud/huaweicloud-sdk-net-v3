@@ -131,6 +131,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// 终端节点服务支持的类型，取值范围为profession-专业型，basic-基础型
+        /// </summary>
+        [JsonProperty("supported_editions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> SupportedEditions { get; set; }
+
+        /// <summary>
         /// 终端节点服务对应Pool的Public Border Group信息
         /// </summary>
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
@@ -170,6 +176,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  tcpProxy: ").Append(TcpProxy).Append("\n");
             sb.Append("  error: ").Append(Error).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  supportedEditions: ").Append(SupportedEditions).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("  enablePolicy: ").Append(EnablePolicy).Append("\n");
             sb.Append("}\n");
@@ -209,6 +216,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             if (this.TcpProxy != input.TcpProxy || (this.TcpProxy != null && !this.TcpProxy.Equals(input.TcpProxy))) return false;
             if (this.Error != input.Error || (this.Error != null && input.Error != null && !this.Error.SequenceEqual(input.Error))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.SupportedEditions != input.SupportedEditions || (this.SupportedEditions != null && input.SupportedEditions != null && !this.SupportedEditions.SequenceEqual(input.SupportedEditions))) return false;
             if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
             if (this.EnablePolicy != input.EnablePolicy || (this.EnablePolicy != null && !this.EnablePolicy.Equals(input.EnablePolicy))) return false;
 
@@ -242,6 +250,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 if (this.TcpProxy != null) hashCode = hashCode * 59 + this.TcpProxy.GetHashCode();
                 if (this.Error != null) hashCode = hashCode * 59 + this.Error.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.SupportedEditions != null) hashCode = hashCode * 59 + this.SupportedEditions.GetHashCode();
                 if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 if (this.EnablePolicy != null) hashCode = hashCode * 59 + this.EnablePolicy.GetHashCode();
                 return hashCode;

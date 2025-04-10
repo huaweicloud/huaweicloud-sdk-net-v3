@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 订单号[（只有批量创建包周期示例的场景返回该字段）](tag:hws)  [不支持该字段，请勿使用](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,srg,fcs,fcs_vm,dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,ct)
+        /// 订单号[（只有批量创建包周期实例的场景返回该字段）](tag:hws)  [不支持该字段，请勿使用](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,srg,fcs,fcs_vm,dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,ct)
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }

@@ -853,9 +853,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
-        /// 查询支持参数模板的引擎信息
+        /// 查询支持参数模板的接口信息
         ///
-        /// 查询支持参数模板的引擎信息
+        /// 查询支持参数模板的接口信息
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2069,9 +2069,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
-        /// 重启实例的数据库服务
+        /// 重启实例或节点
         ///
-        /// 重启实例的数据库服务。
+        /// 重启实例或节点的数据库服务。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2681,9 +2681,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
-        /// 获取指定实例的参数
+        /// 查询实例参数配置
         ///
-        /// 获取指定实例的参数信息。
+        /// 查询实例参数配置。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3171,7 +3171,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         /// <summary>
         /// Redis主备切换
         ///
-        /// 切换实例下的主备节点
+        /// 切换实例的主备节点。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

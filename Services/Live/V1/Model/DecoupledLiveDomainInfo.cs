@@ -409,9 +409,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         }
 
         /// <summary>
-        /// 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 
+        /// 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球加速区域 
         /// </summary>
-        /// <value>域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 </value>
+        /// <value>域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球加速区域 </value>
         [JsonConverter(typeof(EnumClassConverter<ServiceAreaEnum>))]
         public class ServiceAreaEnum
         {
@@ -425,11 +425,17 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             /// </summary>
             public static readonly ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
 
+            /// <summary>
+            /// Enum GLOBAL for value: global
+            /// </summary>
+            public static readonly ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
+
             private static readonly Dictionary<string, ServiceAreaEnum> StaticFields =
             new Dictionary<string, ServiceAreaEnum>()
             {
                 { "mainland_china", MAINLAND_CHINA },
                 { "outside_mainland_china", OUTSIDE_MAINLAND_CHINA },
+                { "global", GLOBAL },
             };
 
             private string _value;
@@ -523,6 +529,121 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             }
         }
 
+        /// <summary>
+        /// 域名支持的拉流协议；仅domain_type为pull时生效。若不填写此字段，视为默认支持FLV、RTMP拉流协议 - flv_rtmp表示支持FLV、RTMP协议 - hls表示支持HLS协议 
+        /// </summary>
+        /// <value>域名支持的拉流协议；仅domain_type为pull时生效。若不填写此字段，视为默认支持FLV、RTMP拉流协议 - flv_rtmp表示支持FLV、RTMP协议 - hls表示支持HLS协议 </value>
+        [JsonConverter(typeof(EnumClassConverter<PullProtocolEnum>))]
+        public class PullProtocolEnum
+        {
+            /// <summary>
+            /// Enum FLV_RTMP for value: flv_rtmp
+            /// </summary>
+            public static readonly PullProtocolEnum FLV_RTMP = new PullProtocolEnum("flv_rtmp");
+
+            /// <summary>
+            /// Enum HLS for value: hls
+            /// </summary>
+            public static readonly PullProtocolEnum HLS = new PullProtocolEnum("hls");
+
+            private static readonly Dictionary<string, PullProtocolEnum> StaticFields =
+            new Dictionary<string, PullProtocolEnum>()
+            {
+                { "flv_rtmp", FLV_RTMP },
+                { "hls", HLS },
+            };
+
+            private string _value;
+
+            public PullProtocolEnum()
+            {
+
+            }
+
+            public PullProtocolEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static PullProtocolEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PullProtocolEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PullProtocolEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(PullProtocolEnum a, PullProtocolEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PullProtocolEnum a, PullProtocolEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 直播域名
@@ -576,7 +697,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public string StatusDescribe { get; set; }
 
         /// <summary>
-        /// 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 
+        /// 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球加速区域 
         /// </summary>
         [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
         public ServiceAreaEnum ServiceArea { get; set; }
@@ -586,6 +707,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 域名支持的拉流协议；仅domain_type为pull时生效。若不填写此字段，视为默认支持FLV、RTMP拉流协议 - flv_rtmp表示支持FLV、RTMP协议 - hls表示支持HLS协议 
+        /// </summary>
+        [JsonProperty("pull_protocol", NullValueHandling = NullValueHandling.Ignore)]
+        public PullProtocolEnum PullProtocol { get; set; }
         /// <summary>
         /// IPV6开关是否开启，默认关闭，true为开启；false或空为关闭
         /// </summary>
@@ -612,6 +738,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  statusDescribe: ").Append(StatusDescribe).Append("\n");
             sb.Append("  serviceArea: ").Append(ServiceArea).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  pullProtocol: ").Append(PullProtocol).Append("\n");
             sb.Append("  isIpv6: ").Append(IsIpv6).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -642,6 +769,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.StatusDescribe != input.StatusDescribe || (this.StatusDescribe != null && !this.StatusDescribe.Equals(input.StatusDescribe))) return false;
             if (this.ServiceArea != input.ServiceArea) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.PullProtocol != input.PullProtocol) return false;
             if (this.IsIpv6 != input.IsIpv6 || (this.IsIpv6 != null && !this.IsIpv6.Equals(input.IsIpv6))) return false;
 
             return true;
@@ -666,6 +794,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.StatusDescribe != null) hashCode = hashCode * 59 + this.StatusDescribe.GetHashCode();
                 hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.PullProtocol.GetHashCode();
                 if (this.IsIpv6 != null) hashCode = hashCode * 59 + this.IsIpv6.GetHashCode();
                 return hashCode;
             }

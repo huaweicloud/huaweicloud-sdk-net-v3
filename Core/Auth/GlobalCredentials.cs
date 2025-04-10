@@ -109,7 +109,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             var derivedFunc = DerivedPredicate;
             DerivedPredicate = null;
 
-            IamEndpoint = string.IsNullOrEmpty(IamEndpoint) ? IamService.DefaultIamEndpoint : IamEndpoint;
+            IamEndpoint = string.IsNullOrEmpty(IamEndpoint) ? IamService.GetEndpoint(regionId) : IamEndpoint;
             var logger = client.GetLogger();
             logger.LogInformation("Domain id not found in BasicCredentials, trying to obtain domain id from IAM service: {}", IamEndpoint);
             var request = IamService.GetKeystoneListAuthDomainsRequest(IamEndpoint, client.GetHttpConfig());

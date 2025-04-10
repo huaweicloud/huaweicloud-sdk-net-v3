@@ -15,6 +15,133 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
     /// </summary>
     public class ListVolumesRequest 
     {
+        /// <summary>
+        /// 查询不包含所选元数据的云硬盘
+        /// </summary>
+        /// <value>查询不包含所选元数据的云硬盘</value>
+        [JsonConverter(typeof(EnumClassConverter<NotMetadataEnum>))]
+        public class NotMetadataEnum
+        {
+            /// <summary>
+            /// Enum _HW_PASSTHROUGH_TRUE_ for value: {\"hw:passthrough\":true}
+            /// </summary>
+            public static readonly NotMetadataEnum _HW_PASSTHROUGH_TRUE_ = new NotMetadataEnum("{\"hw:passthrough\":true}");
+
+            /// <summary>
+            /// Enum _HW_PASSTHROUGH_FALSE_ for value: {\"hw:passthrough\":false}
+            /// </summary>
+            public static readonly NotMetadataEnum _HW_PASSTHROUGH_FALSE_ = new NotMetadataEnum("{\"hw:passthrough\":false}");
+
+            /// <summary>
+            /// Enum ___SYSTEM__ENCRYPTED_1_ for value: {\"__system__encrypted\":1}
+            /// </summary>
+            public static readonly NotMetadataEnum ___SYSTEM__ENCRYPTED_1_ = new NotMetadataEnum("{\"__system__encrypted\":1}");
+
+            /// <summary>
+            /// Enum ___SYSTEM__ENCRYPTED_0_ for value: {\"__system__encrypted\":0}
+            /// </summary>
+            public static readonly NotMetadataEnum ___SYSTEM__ENCRYPTED_0_ = new NotMetadataEnum("{\"__system__encrypted\":0}");
+
+            private static readonly Dictionary<string, NotMetadataEnum> StaticFields =
+            new Dictionary<string, NotMetadataEnum>()
+            {
+                { "{\"hw:passthrough\":true}", _HW_PASSTHROUGH_TRUE_ },
+                { "{\"hw:passthrough\":false}", _HW_PASSTHROUGH_FALSE_ },
+                { "{\"__system__encrypted\":1}", ___SYSTEM__ENCRYPTED_1_ },
+                { "{\"__system__encrypted\":0}", ___SYSTEM__ENCRYPTED_0_ },
+            };
+
+            private string _value;
+
+            public NotMetadataEnum()
+            {
+
+            }
+
+            public NotMetadataEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static NotMetadataEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as NotMetadataEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(NotMetadataEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(NotMetadataEnum a, NotMetadataEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(NotMetadataEnum a, NotMetadataEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 通过云硬盘ID进行分页查询。默认为查询第一页数据。
@@ -142,6 +269,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         [JsonProperty("server_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerId { get; set; }
 
+        /// <summary>
+        /// 查询不包含所选元数据的云硬盘
+        /// </summary>
+        [SDKProperty("not_metadata", IsQuery = true)]
+        [JsonProperty("not_metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public NotMetadataEnum NotMetadata { get; set; }
 
 
         /// <summary>
@@ -169,6 +302,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  ids: ").Append(Ids).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  serverId: ").Append(ServerId).Append("\n");
+            sb.Append("  notMetadata: ").Append(NotMetadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -205,6 +339,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             if (this.Ids != input.Ids || (this.Ids != null && !this.Ids.Equals(input.Ids))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.NotMetadata != input.NotMetadata) return false;
 
             return true;
         }
@@ -235,6 +370,7 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                 if (this.Ids != null) hashCode = hashCode * 59 + this.Ids.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                hashCode = hashCode * 59 + this.NotMetadata.GetHashCode();
                 return hashCode;
             }
         }

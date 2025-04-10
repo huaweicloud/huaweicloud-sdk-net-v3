@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Title { get; set; }
 
         /// <summary>
-        /// 增值税发票类型，可选值包括： - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - special_electronic: 增值税电子专用发票  - toll: 增值税电子普通发票（通行费）  - roll: 增值税普通发票（卷票）  - fully_digitalized_special_electronic: 全电专用发票  - fully_digitalized_normal_electronic: 全电普通发票 
+        /// 增值税发票类型，取值包括： - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - special_electronic: 增值税电子专用发票  - toll: 增值税电子普通发票（通行费）  - roll: 增值税普通发票（卷票）  - fully_digitalized_special_electronic: 全电专用发票  - fully_digitalized_normal_electronic: 全电普通发票 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 增值税发票左上角标志。当“advanced_mode”设置为“true”时才返回。包含：通行费、代开。 
+        /// 增值税发票左上角标志。取值包含：通行费、代开、成品油、收购、机动车、旅客运输服务。 当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("invoice_tag", NullValueHandling = NullValueHandling.Ignore)]
         public string InvoiceTag { get; set; }
@@ -47,19 +47,19 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string SumTax { get; set; }
 
         /// <summary>
-        /// 发票联次。 当“advanced_mode”设置为“true”时才返回。 
+        /// 发票联次。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("serial_number", NullValueHandling = NullValueHandling.Ignore)]
         public string SerialNumber { get; set; }
 
         /// <summary>
-        /// 发票归属地。 当“advanced_mode”设置为“true”时才返回。 
+        /// 发票归属地。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("attribution", NullValueHandling = NullValueHandling.Ignore)]
         public string Attribution { get; set; }
 
         /// <summary>
-        /// 发票监制章。 当“advanced_mode”设置为“true”时才返回。 
+        /// 发票监制章。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("supervision_seal", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SupervisionSeal { get; set; }
@@ -71,19 +71,19 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Code { get; set; }
 
         /// <summary>
-        /// 机打代码。当“advanced_mode”设置为“true”时才返回。 
+        /// 机打代码。 当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("print_code", NullValueHandling = NullValueHandling.Ignore)]
         public string PrintCode { get; set; }
 
         /// <summary>
-        /// 机器编号。 当“advanced_mode”设置为“true”时才返回。 
+        /// 机器编号。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("machine_number", NullValueHandling = NullValueHandling.Ignore)]
         public string MachineNumber { get; set; }
 
         /// <summary>
-        /// 机打号码。 当“advanced_mode”设置为“true”时才返回 
+        /// 机打号码。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("print_number", NullValueHandling = NullValueHandling.Ignore)]
         public string PrintNumber { get; set; }
@@ -179,37 +179,37 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Total { get; set; }
 
         /// <summary>
-        /// 价税合计（大写）。 当“advanced_mode”设置为“true”时才返回。 
+        /// 价税合计（大写）。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("total_in_words", NullValueHandling = NullValueHandling.Ignore)]
         public string TotalInWords { get; set; }
 
         /// <summary>
-        /// 备注。 当“advanced_mode”设置为“true”时才返回。 
+        /// 备注。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("remarks", NullValueHandling = NullValueHandling.Ignore)]
         public string Remarks { get; set; }
 
         /// <summary>
-        /// 收款人。 当“advanced_mode”设置为“true”时才返回。 
+        /// 收款人。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("receiver", NullValueHandling = NullValueHandling.Ignore)]
         public string Receiver { get; set; }
 
         /// <summary>
-        /// 复核。 当“advanced_mode”设置为“true”时才返回。 
+        /// 复核。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("reviewer", NullValueHandling = NullValueHandling.Ignore)]
         public string Reviewer { get; set; }
 
         /// <summary>
-        /// 开票人。 当“advanced_mode”设置为“true”时才返回。 
+        /// 开票人。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("issuer", NullValueHandling = NullValueHandling.Ignore)]
         public string Issuer { get; set; }
 
         /// <summary>
-        /// 销售方发票专用章。 当“advanced_mode”设置为“true”时才返回。 
+        /// 销售方发票专用章。  当\&quot;advanced_mode\&quot;设置为\&quot;true\&quot;时才返回。 
         /// </summary>
         [JsonProperty("seller_seal", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SellerSeal { get; set; }
@@ -239,7 +239,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public Object Confidence { get; set; }
 
         /// <summary>
-        /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+        /// 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当\&quot;return_text_location\&quot;设置为“true”时才返回。 
         /// </summary>
         [JsonProperty("text_location", NullValueHandling = NullValueHandling.Ignore)]
         public Object TextLocation { get; set; }
@@ -340,6 +340,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("belong_item_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<BelongItemList> BelongItemList { get; set; }
 
+        /// <summary>
+        /// 旅客运输服务的出行信息列表。 当传入图片为旅客运输服务发票时返回此字段。 
+        /// </summary>
+        [JsonProperty("passenger_travel_item_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PassengerTravelItemList> PassengerTravelItemList { get; set; }
+
 
 
         /// <summary>
@@ -403,6 +409,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  belongDiscountAmount: ").Append(BelongDiscountAmount).Append("\n");
             sb.Append("  belongDiscountTax: ").Append(BelongDiscountTax).Append("\n");
             sb.Append("  belongItemList: ").Append(BelongItemList).Append("\n");
+            sb.Append("  passengerTravelItemList: ").Append(PassengerTravelItemList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -475,6 +482,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.BelongDiscountAmount != input.BelongDiscountAmount || (this.BelongDiscountAmount != null && !this.BelongDiscountAmount.Equals(input.BelongDiscountAmount))) return false;
             if (this.BelongDiscountTax != input.BelongDiscountTax || (this.BelongDiscountTax != null && !this.BelongDiscountTax.Equals(input.BelongDiscountTax))) return false;
             if (this.BelongItemList != input.BelongItemList || (this.BelongItemList != null && input.BelongItemList != null && !this.BelongItemList.SequenceEqual(input.BelongItemList))) return false;
+            if (this.PassengerTravelItemList != input.PassengerTravelItemList || (this.PassengerTravelItemList != null && input.PassengerTravelItemList != null && !this.PassengerTravelItemList.SequenceEqual(input.PassengerTravelItemList))) return false;
 
             return true;
         }
@@ -541,6 +549,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.BelongDiscountAmount != null) hashCode = hashCode * 59 + this.BelongDiscountAmount.GetHashCode();
                 if (this.BelongDiscountTax != null) hashCode = hashCode * 59 + this.BelongDiscountTax.GetHashCode();
                 if (this.BelongItemList != null) hashCode = hashCode * 59 + this.BelongItemList.GetHashCode();
+                if (this.PassengerTravelItemList != null) hashCode = hashCode * 59 + this.PassengerTravelItemList.GetHashCode();
                 return hashCode;
             }
         }

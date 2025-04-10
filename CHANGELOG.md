@@ -1,3 +1,714 @@
+# 3.1.141 2025-04-10
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ResetParamGroupTemplate**
+    - changes of request param
+      - `- x-auth-token`
+  - **OfflineNodes**
+    - changes of request param
+      - `- x-auth-token`
+  - **ShowRedisBigKeys**
+    - changes of request param
+      - `- x-auth-token`
+  - **ListConfigurations**
+    - changes of request param
+      - `+ datastore_name`
+      - `+ mode`
+  - **CreateConfiguration**
+    - changes of response param
+      - `+ configuration.mode`
+  - **ListConfigurationTemplates**
+    - changes of request param
+      - `+ datastore_name`
+      - `+ mode`
+  - **ShowConfigurationDetail**
+    - changes of response param
+      - `+ mode`
+  - **ListNosqlTaskList**
+    - changes of response param
+      - `* total_count: int32 -> string`
+      - `- schedules.job_id`
+      - `- schedules.job_name`
+      - `- schedules.job_status`
+      - `- schedules.instance_id`
+      - `- schedules.instance_name`
+      - `- schedules.instance_status`
+      - `- schedules.datastore_type`
+      - `- schedules.create_time`
+      - `- schedules.start_time`
+      - `- schedules.end_time`
+  - **CreateInstance**
+    - changes of request param
+      - `+ ipv6_enabled`
+      - `+ lb_access_control_settings`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListDisasterRecoveryRecord`
+    - `ResetDrConfig`
+    - `ShowCrossCloudDisasterInstanceMonitor`
+    - `CreateCrossCloudConstructDisaster`
+    - `ShowCrossCloudDisasterRelations`
+    - `ExecuteCrossCloudDisasterRecoveryFailover`
+    - `ExecuteCrossCloudReleaseDisaster`
+    - `ExecuteCrossCloudDisasterSwitchover`
+    - `ExecuteCrossCloudDisasterRestore`
+    - `ExecuteCrossCloudDisasterStartSimulation`
+    - `ExecuteCrossCloudDisasterEndSimulation`
+    - `ExecuteCrossCloudDisasterDataCacheStart`
+    - `ExecuteCrossCloudDisasterDataCacheEnd`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IAM
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainConsoleAclPolicy**
+    - changes of response param
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyResult> -> object<ConsoleAclPolicyResult>`
+  - **UpdateDomainConsoleAclPolicy**
+    - changes of request param
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyOption> -> object<ConsoleAclPolicyOption>`
+    - changes of response param
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyResult> -> object<ConsoleAclPolicyResult>`
+
+# 3.1.140 2025-04-03
+
+### HuaweiCloud SDK AOM
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddOrUpdateMetricOrEventAlarmRule**
+    - changes of request param
+      - `* metric_alarm_spec.trigger_conditions.trigger_times: string -> int32`
+  - **ListMetricOrEventAlarmRule**
+    - changes of response param
+      - `* alarm_rules.metric_alarm_spec.trigger_conditions.trigger_times: string -> int32`
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpgradeCluster**
+    - changes of request param
+      - `+ spec.clusterUpgradeAction.isOnlyUpgrade`
+  - **UpgradeAutopilotCluster**
+    - changes of request param
+      - `+ spec.clusterUpgradeAction.isOnlyUpgrade`
+
+### HuaweiCloud SDK CES
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAlarmRulePolicies**
+    - changes of response param
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+  - **UpdateAlarmRulePolicies**
+    - changes of request param
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+    - changes of response param
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+  - **ListAlarmRules**
+    - changes of response param
+      - `+ alarms.product_name`
+      - `+ alarms.resource_level`
+      - `+ alarms.policies.namespace`
+      - `+ alarms.policies.dimension_name`
+  - **CreateAlarmRules**
+    - changes of request param
+      - `+ product_name`
+      - `+ resource_level`
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `UpdateTaurusNodeDataIp`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VPCEP
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListServiceDetails**
+    - changes of response param
+      - `+ supported_editions`
+  - **ListEndpointService**
+    - changes of response param
+      - `+ endpoint_services.supported_editions`
+
+# 3.1.139 2025-03-27
+
+### HuaweiCloud SDK Core
+
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Optimize the process of automatically obtaining account IDs.
+
+### HuaweiCloud SDK CBR
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `ChangeVaultChargeMode`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ChangeOrder**
+    - changes of response param
+      - `* retCode: string -> number`
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeleteAutopilotCluster**
+    - changes of request param
+      - `+ lts_reclaim_policy: enum value [Delete_Log_Group,Delete_Master_Log_Stream,Retain]`
+      - `+ lts_reclaim_policy: enum value [true,block,try,false,skip]`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListScheduledEvents`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK FunctionGraph
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateFunction**
+    - changes of request param
+      - `+ enable_lts_log`
+    - changes of response param
+      - `+ enable_lts_log`
+  - **ShowFunctionConfig**
+    - changes of response param
+      - `+ enable_lts_log`
+  - **UpdateFunctionConfig**
+    - changes of request param
+      - `+ enable_lts_log`
+    - changes of response param
+      - `+ enable_lts_log`
+
+### HuaweiCloud SDK KMS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `CreateRsaDatakeyPair`, `CreateEcDatakeyPair`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateStorageMode**
+    - changes of request param
+      - `+ X-Sdk-Date`
+  - **ModifySubtitle**
+    - changes of request param
+      - `+ X-Sdk-Date`
+      - `+ delete_subtitles.type: enum value [SRT]`
+      - `+ add_subtitles.type: enum value [SRT]`
+  - **DeleteTranscodeProduct**
+    - changes of request param
+      - `+ X-Sdk-Date`
+
+# 3.1.138 2025-03-20
+
+### HuaweiCloud SDK AAD
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpgradeInstanceSpec**
+    - changes of request param
+      - `+ upgrade_data.basic_qps`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListServerVolumeAttachments`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK EVS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListVolumes**
+    - changes of request param
+      - `+ not_metadata`
+
+### HuaweiCloud SDK IAM
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `CreateUnscopeTokenByIdpInitiated`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainConsoleAclPolicy**
+    - changes of response param
+      - `- console_acl_policy.allow_address_netmasks_ipv6`
+      - `- console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<ConsoleAclPolicyResult> -> object<AclPolicyResult>`
+  - **UpdateDomainConsoleAclPolicy**
+    - changes of request param
+      - `- console_acl_policy.allow_address_netmasks_ipv6`
+      - `- console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<ConsoleAclPolicyOption> -> object<AclPolicyOption>`
+    - changes of response param
+      - `- console_acl_policy.allow_address_netmasks_ipv6`
+      - `- console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<ConsoleAclPolicyResult> -> object<AclPolicyResult>`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateDomain**
+    - changes of response param
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+  - **CreateDomain**
+    - changes of request param
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+    - changes of response param
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+  - **ShowDomain**
+    - changes of response param
+      - `+ domain_info.pull_protocol`
+      - `+ domain_info.service_area: enum value [global]`
+
+### HuaweiCloud SDK Moderation
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `RunCreateDocumentModerationJob`, `RunQueryDocumentModerationJob`, `RunCreateVideoStreamModerationJob`, `RunCloseVideoStreamModerationJob`
+
+# 3.1.137 2025-03-13
+
+### HuaweiCloud SDK AOS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreatePrivateProvider**
+    - changes of request param
+      - `+ provider_agency_urn`
+      - `+ provider_agency_name`
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ShowAutopilotMaintenanceWindow`
+    - `UpdateAutopilotMaintenanceWindow`
+    - `CreateAutopilotMaintenanceWindow`
+    - `DeleteAutopilotMaintenanceWindow`
+    - `ListAutopilotUpgradePlans`
+    - `UpdateAutopilotUpgradePlan`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ListVolumeInfo`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+# 3.1.136 2025-03-06
+
+### HuaweiCloud SDK CFW
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAclRules**
+    - changes of response param
+      - `+ data.records.applications`
+
+### HuaweiCloud SDK DRS
+
+- _API Version_
+  - V5
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the following APIs:
+    - `CollectDbObjectsAsync`
+    - `BatchTagAction`
+    - `ListProjectTags`
+    - `ShowInstanceTags`
+    - `ListDbObjects`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `UpdateServerInterface`
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the API `NovaListAvailabilityZones`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlavorInfos**
+    - changes of request param
+      - `+ mode`
+      - `+ product_type`
+  - **ShowQuotas**
+    - changes of request param
+      - `+ product_type`
+  - **ListRecycleInstances**
+    - changes of response param
+      - `+ instances.product_type`
+  - **CreateInstance**
+    - changes of request param
+      - `+ product_type`
+  - **ListInstances**
+    - changes of response param
+      - `+ instances.product_type`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `ListScheduleTask`
+    - `CancelScheduleTask`
+    - `DeleteScheduleTask`
+    - `ListInstanceEngineDetail`
+    - `CreateScheduleTask`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK IAM
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateAgency**
+    - changes of request param
+      - `* agency.duration: string -> object`
+  - **UpdateAgency**
+    - changes of request param
+      - `* agency.duration: string -> object`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeBankReceipt**
+    - changes of request param
+      - `+ single_orientation_mode`
+      - `+ erase_seal`
+
+# 3.1.135 2025-02-27
+
+### HuaweiCloud SDK CSMS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `UpdateUserPassword`
+- _Bug Fix_
+  - None
+- _Change_
+  - **BatchImportSecrets**
+    - changes of request param
+      - `- total`
+
+### HuaweiCloud SDK ELB
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowCertificate**
+    - changes of response param
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+  - **UpdateCertificate**
+    - changes of request param
+      - `+ source`
+      - `+ protection_status`
+      - `+ protection_reason`
+    - changes of response param
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+  - **CreateCertificate**
+    - changes of request param
+      - `+ source`
+      - `+ protection_status`
+      - `+ protection_reason`
+    - changes of response param
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+  - **ListCertificates**
+    - changes of request param
+      - `+ source`
+      - `+ protection_status`
+      - `+ protection_reason`
+    - changes of response param
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+      - `+ certificates.source`
+      - `+ certificates.protection_status`
+      - `+ certificates.protection_reason`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListStarRocksDbParameters**
+    - changes of request param
+      - `+ main_task_name`
+
+### HuaweiCloud SDK IAM
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowDomainConsoleAclPolicy**
+    - changes of response param
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyResult> -> object<ConsoleAclPolicyResult>`
+  - **UpdateDomainConsoleAclPolicy**
+    - changes of request param
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyOption> -> object<ConsoleAclPolicyOption>`
+    - changes of response param
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyResult> -> object<ConsoleAclPolicyResult>`
+
+### HuaweiCloud SDK IoTDA
+
+- _API Version_
+  - V5
+- _Features_
+  - Support the API `ChangeGateway`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListScheduleRecordTasks`, `CreateScheduleRecordTasks`, `DeleteScheduleRecordTasks`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateSnapshotConfig**
+    - changes of request param
+      - `+ image_access_protocol`
+      - `+ image_access_domain`
+  - **CreateSnapshotConfig**
+    - changes of request param
+      - `+ image_access_protocol`
+      - `+ image_access_domain`
+  - **ListSnapshotConfigs**
+    - changes of response param
+      - `+ snapshot_config_list.image_access_protocol`
+      - `+ snapshot_config_list.image_access_domain`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RecognizeVatInvoice**
+    - changes of response param
+      - `+ result.passenger_travel_item_list`
+
+### HuaweiCloud SDK VPC
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListPorts**
+    - changes of request param
+      - `* id: string -> list<string>`
+
 # 3.1.134 2025-02-20
 
 ### HuaweiCloud SDK CCE

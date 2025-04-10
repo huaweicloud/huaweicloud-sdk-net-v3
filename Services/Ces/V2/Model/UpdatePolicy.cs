@@ -76,6 +76,18 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public int? Level { get; set; }
 
+        /// <summary>
+        /// 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+        /// </summary>
+        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
+        public string Namespace { get; set; }
+
+        /// <summary>
+        /// 资源维度，必须以字母开头，多维度用\&quot;,\&quot;分割，只能包含0-9/a-z/A-Z/_/-，每个维度的最大长度为32
+        /// </summary>
+        [JsonProperty("dimension_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DimensionName { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +107,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  suppressDuration: ").Append(SuppressDuration).Append("\n");
             sb.Append("  level: ").Append(Level).Append("\n");
+            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  dimensionName: ").Append(DimensionName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +137,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
             if (this.SuppressDuration != input.SuppressDuration || (this.SuppressDuration != null && !this.SuppressDuration.Equals(input.SuppressDuration))) return false;
             if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.DimensionName != input.DimensionName || (this.DimensionName != null && !this.DimensionName.Equals(input.DimensionName))) return false;
 
             return true;
         }
@@ -145,6 +161,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.SuppressDuration != null) hashCode = hashCode * 59 + this.SuppressDuration.GetHashCode();
                 if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.DimensionName != null) hashCode = hashCode * 59 + this.DimensionName.GetHashCode();
                 return hashCode;
             }
         }

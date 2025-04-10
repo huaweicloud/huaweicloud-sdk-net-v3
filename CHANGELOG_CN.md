@@ -1,3 +1,714 @@
+# 3.1.141 2025-04-10
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ResetParamGroupTemplate**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **OfflineNodes**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ShowRedisBigKeys**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListConfigurations**
+    - 请求参数变更
+      - `+ datastore_name`
+      - `+ mode`
+  - **CreateConfiguration**
+    - 响应参数变更
+      - `+ configuration.mode`
+  - **ListConfigurationTemplates**
+    - 请求参数变更
+      - `+ datastore_name`
+      - `+ mode`
+  - **ShowConfigurationDetail**
+    - 响应参数变更
+      - `+ mode`
+  - **ListNosqlTaskList**
+    - 响应参数变更
+      - `* total_count: int32 -> string`
+      - `- schedules.job_id`
+      - `- schedules.job_name`
+      - `- schedules.job_status`
+      - `- schedules.instance_id`
+      - `- schedules.instance_name`
+      - `- schedules.instance_status`
+      - `- schedules.datastore_type`
+      - `- schedules.create_time`
+      - `- schedules.start_time`
+      - `- schedules.end_time`
+  - **CreateInstance**
+    - 请求参数变更
+      - `+ ipv6_enabled`
+      - `+ lb_access_control_settings`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ListDisasterRecoveryRecord`
+    - `ResetDrConfig`
+    - `ShowCrossCloudDisasterInstanceMonitor`
+    - `CreateCrossCloudConstructDisaster`
+    - `ShowCrossCloudDisasterRelations`
+    - `ExecuteCrossCloudDisasterRecoveryFailover`
+    - `ExecuteCrossCloudReleaseDisaster`
+    - `ExecuteCrossCloudDisasterSwitchover`
+    - `ExecuteCrossCloudDisasterRestore`
+    - `ExecuteCrossCloudDisasterStartSimulation`
+    - `ExecuteCrossCloudDisasterEndSimulation`
+    - `ExecuteCrossCloudDisasterDataCacheStart`
+    - `ExecuteCrossCloudDisasterDataCacheEnd`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IAM
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainConsoleAclPolicy**
+    - 响应参数变更
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyResult> -> object<ConsoleAclPolicyResult>`
+  - **UpdateDomainConsoleAclPolicy**
+    - 请求参数变更
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyOption> -> object<ConsoleAclPolicyOption>`
+    - 响应参数变更
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyResult> -> object<ConsoleAclPolicyResult>`
+
+# 3.1.140 2025-04-03
+
+### HuaweiCloud SDK AOM
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AddOrUpdateMetricOrEventAlarmRule**
+    - 请求参数变更
+      - `* metric_alarm_spec.trigger_conditions.trigger_times: string -> int32`
+  - **ListMetricOrEventAlarmRule**
+    - 响应参数变更
+      - `* alarm_rules.metric_alarm_spec.trigger_conditions.trigger_times: string -> int32`
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpgradeCluster**
+    - 请求参数变更
+      - `+ spec.clusterUpgradeAction.isOnlyUpgrade`
+  - **UpgradeAutopilotCluster**
+    - 请求参数变更
+      - `+ spec.clusterUpgradeAction.isOnlyUpgrade`
+
+### HuaweiCloud SDK CES
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAlarmRulePolicies**
+    - 响应参数变更
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+  - **UpdateAlarmRulePolicies**
+    - 请求参数变更
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+    - 响应参数变更
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+  - **ListAlarmRules**
+    - 响应参数变更
+      - `+ alarms.product_name`
+      - `+ alarms.resource_level`
+      - `+ alarms.policies.namespace`
+      - `+ alarms.policies.dimension_name`
+  - **CreateAlarmRules**
+    - 请求参数变更
+      - `+ product_name`
+      - `+ resource_level`
+      - `+ policies.namespace`
+      - `+ policies.dimension_name`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`UpdateTaurusNodeDataIp`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VPCEP
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListServiceDetails**
+    - 响应参数变更
+      - `+ supported_editions`
+  - **ListEndpointService**
+    - 响应参数变更
+      - `+ endpoint_services.supported_editions`
+
+# 3.1.139 2025-03-27
+
+### HuaweiCloud SDK Core
+
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 优化自动获取账号ID流程
+
+### HuaweiCloud SDK CBR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ChangeVaultChargeMode`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ChangeOrder**
+    - 响应参数变更
+      - `* retCode: string -> number`
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeleteAutopilotCluster**
+    - 请求参数变更
+      - `+ lts_reclaim_policy: enum value [Delete_Log_Group,Delete_Master_Log_Stream,Retain]`
+      - `+ lts_reclaim_policy: enum value [true,block,try,false,skip]`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListScheduledEvents`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK FunctionGraph
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateFunction**
+    - 请求参数变更
+      - `+ enable_lts_log`
+    - 响应参数变更
+      - `+ enable_lts_log`
+  - **ShowFunctionConfig**
+    - 响应参数变更
+      - `+ enable_lts_log`
+  - **UpdateFunctionConfig**
+    - 请求参数变更
+      - `+ enable_lts_log`
+    - 响应参数变更
+      - `+ enable_lts_log`
+
+### HuaweiCloud SDK KMS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`CreateRsaDatakeyPair`、`CreateEcDatakeyPair`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateStorageMode**
+    - 请求参数变更
+      - `+ X-Sdk-Date`
+  - **ModifySubtitle**
+    - 请求参数变更
+      - `+ X-Sdk-Date`
+      - `+ delete_subtitles.type: enum value [SRT]`
+      - `+ add_subtitles.type: enum value [SRT]`
+  - **DeleteTranscodeProduct**
+    - 请求参数变更
+      - `+ X-Sdk-Date`
+
+# 3.1.138 2025-03-20
+
+### HuaweiCloud SDK AAD
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpgradeInstanceSpec**
+    - 请求参数变更
+      - `+ upgrade_data.basic_qps`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListServerVolumeAttachments`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK EVS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListVolumes**
+    - 请求参数变更
+      - `+ not_metadata`
+
+### HuaweiCloud SDK IAM
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`CreateUnscopeTokenByIdpInitiated`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainConsoleAclPolicy**
+    - 响应参数变更
+      - `- console_acl_policy.allow_address_netmasks_ipv6`
+      - `- console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<ConsoleAclPolicyResult> -> object<AclPolicyResult>`
+  - **UpdateDomainConsoleAclPolicy**
+    - 请求参数变更
+      - `- console_acl_policy.allow_address_netmasks_ipv6`
+      - `- console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<ConsoleAclPolicyOption> -> object<AclPolicyOption>`
+    - 响应参数变更
+      - `- console_acl_policy.allow_address_netmasks_ipv6`
+      - `- console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<ConsoleAclPolicyResult> -> object<AclPolicyResult>`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateDomain**
+    - 响应参数变更
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+  - **CreateDomain**
+    - 请求参数变更
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+    - 响应参数变更
+      - `+ pull_protocol`
+      - `+ service_area: enum value [global]`
+  - **ShowDomain**
+    - 响应参数变更
+      - `+ domain_info.pull_protocol`
+      - `+ domain_info.service_area: enum value [global]`
+
+### HuaweiCloud SDK Moderation
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`RunCreateDocumentModerationJob`、`RunQueryDocumentModerationJob`、`RunCreateVideoStreamModerationJob`、`RunCloseVideoStreamModerationJob`
+
+# 3.1.137 2025-03-13
+
+### HuaweiCloud SDK AOS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreatePrivateProvider**
+    - 请求参数变更
+      - `+ provider_agency_urn`
+      - `+ provider_agency_name`
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ShowAutopilotMaintenanceWindow`
+    - `UpdateAutopilotMaintenanceWindow`
+    - `CreateAutopilotMaintenanceWindow`
+    - `DeleteAutopilotMaintenanceWindow`
+    - `ListAutopilotUpgradePlans`
+    - `UpdateAutopilotUpgradePlan`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ListVolumeInfo`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+# 3.1.136 2025-03-06
+
+### HuaweiCloud SDK CFW
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAclRules**
+    - 响应参数变更
+      - `+ data.records.applications`
+
+### HuaweiCloud SDK DRS
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃以下接口：
+    - `CollectDbObjectsAsync`
+    - `BatchTagAction`
+    - `ListProjectTags`
+    - `ShowInstanceTags`
+    - `ListDbObjects`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`UpdateServerInterface`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃接口`NovaListAvailabilityZones`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListFlavorInfos**
+    - 请求参数变更
+      - `+ mode`
+      - `+ product_type`
+  - **ShowQuotas**
+    - 请求参数变更
+      - `+ product_type`
+  - **ListRecycleInstances**
+    - 响应参数变更
+      - `+ instances.product_type`
+  - **CreateInstance**
+    - 请求参数变更
+      - `+ product_type`
+  - **ListInstances**
+    - 响应参数变更
+      - `+ instances.product_type`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ListScheduleTask`
+    - `CancelScheduleTask`
+    - `DeleteScheduleTask`
+    - `ListInstanceEngineDetail`
+    - `CreateScheduleTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK IAM
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateAgency**
+    - 请求参数变更
+      - `* agency.duration: string -> object`
+  - **UpdateAgency**
+    - 请求参数变更
+      - `* agency.duration: string -> object`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeBankReceipt**
+    - 请求参数变更
+      - `+ single_orientation_mode`
+      - `+ erase_seal`
+
+# 3.1.135 2025-02-27
+
+### HuaweiCloud SDK CSMS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`UpdateUserPassword`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchImportSecrets**
+    - 请求参数变更
+      - `- total`
+
+### HuaweiCloud SDK ELB
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowCertificate**
+    - 响应参数变更
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+  - **UpdateCertificate**
+    - 请求参数变更
+      - `+ source`
+      - `+ protection_status`
+      - `+ protection_reason`
+    - 响应参数变更
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+  - **CreateCertificate**
+    - 请求参数变更
+      - `+ source`
+      - `+ protection_status`
+      - `+ protection_reason`
+    - 响应参数变更
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+  - **ListCertificates**
+    - 请求参数变更
+      - `+ source`
+      - `+ protection_status`
+      - `+ protection_reason`
+    - 响应参数变更
+      - `+ protection_status`
+      - `+ source`
+      - `+ protection_reason`
+      - `+ certificates.source`
+      - `+ certificates.protection_status`
+      - `+ certificates.protection_reason`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListStarRocksDbParameters**
+    - 请求参数变更
+      - `+ main_task_name`
+
+### HuaweiCloud SDK IAM
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainConsoleAclPolicy**
+    - 响应参数变更
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyResult> -> object<ConsoleAclPolicyResult>`
+  - **UpdateDomainConsoleAclPolicy**
+    - 请求参数变更
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyOption> -> object<ConsoleAclPolicyOption>`
+    - 响应参数变更
+      - `+ console_acl_policy.allow_address_netmasks_ipv6`
+      - `+ console_acl_policy.allow_ip_ranges_ipv6`
+      - `* console_acl_policy: object<AclPolicyResult> -> object<ConsoleAclPolicyResult>`
+
+### HuaweiCloud SDK IoTDA
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持接口`ChangeGateway`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListScheduleRecordTasks`、`CreateScheduleRecordTasks`、`DeleteScheduleRecordTasks`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateSnapshotConfig**
+    - 请求参数变更
+      - `+ image_access_protocol`
+      - `+ image_access_domain`
+  - **CreateSnapshotConfig**
+    - 请求参数变更
+      - `+ image_access_protocol`
+      - `+ image_access_domain`
+  - **ListSnapshotConfigs**
+    - 响应参数变更
+      - `+ snapshot_config_list.image_access_protocol`
+      - `+ snapshot_config_list.image_access_domain`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeVatInvoice**
+    - 响应参数变更
+      - `+ result.passenger_travel_item_list`
+
+### HuaweiCloud SDK VPC
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListPorts**
+    - 请求参数变更
+      - `* id: string -> list<string>`
+
 # 3.1.134 2025-02-20
 
 ### HuaweiCloud SDK CCE

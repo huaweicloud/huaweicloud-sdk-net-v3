@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 企业项目ID
+    /// 企业项目ID，不填时会使用默认的企业项目ID
     /// </summary>
     public class EnterpriseProjectID 
     {
