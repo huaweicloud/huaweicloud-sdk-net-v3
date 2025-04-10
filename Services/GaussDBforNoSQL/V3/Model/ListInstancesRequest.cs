@@ -31,18 +31,18 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 实例类型。   - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis集群实例类型。   - 取值为“Sharding”，表示GeminiDB Mongo集群实例类型。   - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。   - 取值为“InfluxdbCluster”，表示GeminiDB Influx集群实例类型。   - 取值为“InfluxdbSingle”，表示GeminiDB Influx单节点实例类型。   - 取值为“RedisReplica”，表示GeminiDB Redis性能版实例类型。   - 取值为“Replication”，表示GeminiDB Redis主备版实例类型。
-        /// </summary>
-        [SDKProperty("mode", IsQuery = true)]
-        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
-        public string Mode { get; set; }
-
-        /// <summary>
         /// 数据库类型。   - 取值为“cassandra”，表示查询GeminiDB Cassandra数据库实例。   - 取值为“mongodb”，表示查询GeminiDB Mongo数据库实例。   - 取值为“influxdb”，表示查询GeminiDB Influx数据库实例。   - 取值为“redis”，表示查询GeminiDB Redis数据库实例。   - 如果不传该参数，表示查询所有数据库实例。
         /// </summary>
         [SDKProperty("datastore_type", IsQuery = true)]
         [JsonProperty("datastore_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DatastoreType { get; set; }
+
+        /// <summary>
+        /// 实例类型。   -  取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis Proxy经典部署模式集群实例类型。    -  取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。   -  取值为“RedisCluster”，表示GeminiDB Redis Cluster经典部署模式集群实例类型。   -  取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。    -  取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点实例类型。   -  取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。   -  如果不传datastore_type参数，自动忽略该参数设置。   -  默认取值：不涉及。
+        /// </summary>
+        [SDKProperty("mode", IsQuery = true)]
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string Mode { get; set; }
 
         /// <summary>
         /// 虚拟私有云ID，获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考查询VPC列表。
@@ -83,8 +83,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("class ListInstancesRequest {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  datastoreType: ").Append(DatastoreType).Append("\n");
+            sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
@@ -109,8 +109,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
-            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
             if (this.DatastoreType != input.DatastoreType || (this.DatastoreType != null && !this.DatastoreType.Equals(input.DatastoreType))) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
             if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
@@ -129,8 +129,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.DatastoreType != null) hashCode = hashCode * 59 + this.DatastoreType.GetHashCode();
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();

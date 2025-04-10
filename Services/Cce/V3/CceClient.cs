@@ -10,7 +10,7 @@ namespace HuaweiCloud.SDK.Cce.V3
     {
         public static ClientBuilder<CceClient> NewBuilder()
         {
-            return new ClientBuilder<CceClient>();
+            return new ClientBuilder<CceClient>().WithExceptionHandler(new CceExceptionHandler());
         }
 
         

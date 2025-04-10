@@ -11,7 +11,7 @@ namespace HuaweiCloud.SDK.Cce.V5
     {
         public static ClientBuilder<CceAsyncClient> NewBuilder()
         {
-            return new ClientBuilder<CceAsyncClient>();
+            return new ClientBuilder<CceAsyncClient>().WithExceptionHandler(new CceExceptionHandler());
         }
 
         

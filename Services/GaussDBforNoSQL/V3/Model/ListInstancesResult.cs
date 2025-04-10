@@ -41,18 +41,6 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Port { get; set; }
 
         /// <summary>
-        /// 实例类型。 -  取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis Proxy经典部署模式集群实例类型。  -  取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。 -  取值为“RedisCluster”，表示GeminiDB Redis Cluster经典部署模式集群实例类型。 -  取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。  -  取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点实例类型。 -  取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。 -  如果不传datastore_type参数，自动忽略该参数设置。 -  默认取值：不涉及。
-        /// </summary>
-        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
-        public string Mode { get; set; }
-
-        /// <summary>
-        /// 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
-        /// </summary>
-        [JsonProperty("product_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProductType { get; set; }
-
-        /// <summary>
         /// 实例所在区域。
         /// </summary>
         [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
@@ -63,6 +51,18 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         [JsonProperty("datastore", NullValueHandling = NullValueHandling.Ignore)]
         public ListInstancesDatastoreResult Datastore { get; set; }
+
+        /// <summary>
+        /// 实例类型。与请求参数相同。
+        /// </summary>
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string Mode { get; set; }
+
+        /// <summary>
+        /// 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
+        /// </summary>
+        [JsonProperty("product_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProductType { get; set; }
 
         /// <summary>
         /// 存储引擎。取值为“rocksDB”。
@@ -185,10 +185,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
-            sb.Append("  mode: ").Append(Mode).Append("\n");
-            sb.Append("  productType: ").Append(ProductType).Append("\n");
             sb.Append("  region: ").Append(Region).Append("\n");
             sb.Append("  datastore: ").Append(Datastore).Append("\n");
+            sb.Append("  mode: ").Append(Mode).Append("\n");
+            sb.Append("  productType: ").Append(ProductType).Append("\n");
             sb.Append("  engine: ").Append(Engine).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
@@ -229,10 +229,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
-            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
-            if (this.ProductType != input.ProductType || (this.ProductType != null && !this.ProductType.Equals(input.ProductType))) return false;
             if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
             if (this.Datastore != input.Datastore || (this.Datastore != null && !this.Datastore.Equals(input.Datastore))) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
+            if (this.ProductType != input.ProductType || (this.ProductType != null && !this.ProductType.Equals(input.ProductType))) return false;
             if (this.Engine != input.Engine || (this.Engine != null && !this.Engine.Equals(input.Engine))) return false;
             if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
             if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
@@ -267,10 +267,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.ProductType != null) hashCode = hashCode * 59 + this.ProductType.GetHashCode();
                 if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
                 if (this.Datastore != null) hashCode = hashCode * 59 + this.Datastore.GetHashCode();
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.ProductType != null) hashCode = hashCode * 59 + this.ProductType.GetHashCode();
                 if (this.Engine != null) hashCode = hashCode * 59 + this.Engine.GetHashCode();
                 if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();

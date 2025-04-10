@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string DatastoreName { get; set; }
 
         /// <summary>
+        /// 【参数解释】 数据库实例类型。 【取值范围】 GeminiDB Cassandra经典部署模式集群类型为\&quot;Cluster\&quot;。 GeminiDB Cassandra云原生部署模式集群类型为\&quot;CloudNativeCluster\&quot;。 GeminiDB Mongo副本集类型为\&quot;ReplicaSet\&quot;。 GeminiDB Mongo集群类型为\&quot;Sharding\&quot;。 GeminiDB Influx经典部署模式集群类型为\&quot;Cluster\&quot;。 GeminiDB Redis经典部署模式集群类型为“Cluster”。
+        /// </summary>
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string Mode { get; set; }
+
+        /// <summary>
         /// 创建时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
         /// </summary>
         [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
@@ -78,6 +84,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  datastoreVersionName: ").Append(DatastoreVersionName).Append("\n");
             sb.Append("  datastoreName: ").Append(DatastoreName).Append("\n");
+            sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
             sb.Append("  updated: ").Append(Updated).Append("\n");
             sb.Append("  configurationParameters: ").Append(ConfigurationParameters).Append("\n");
@@ -104,6 +111,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.DatastoreVersionName != input.DatastoreVersionName || (this.DatastoreVersionName != null && !this.DatastoreVersionName.Equals(input.DatastoreVersionName))) return false;
             if (this.DatastoreName != input.DatastoreName || (this.DatastoreName != null && !this.DatastoreName.Equals(input.DatastoreName))) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
             if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
             if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
             if (this.ConfigurationParameters != input.ConfigurationParameters || (this.ConfigurationParameters != null && input.ConfigurationParameters != null && !this.ConfigurationParameters.SequenceEqual(input.ConfigurationParameters))) return false;
@@ -124,6 +132,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.DatastoreVersionName != null) hashCode = hashCode * 59 + this.DatastoreVersionName.GetHashCode();
                 if (this.DatastoreName != null) hashCode = hashCode * 59 + this.DatastoreName.GetHashCode();
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
                 if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
                 if (this.ConfigurationParameters != null) hashCode = hashCode * 59 + this.ConfigurationParameters.GetHashCode();

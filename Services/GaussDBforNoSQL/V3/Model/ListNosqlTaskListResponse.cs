@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// 记录总数。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TotalCount { get; set; }
+        public string TotalCount { get; set; }
 
         /// <summary>
         /// 任务详情。
