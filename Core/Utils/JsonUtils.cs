@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Core
 {
     public static class JsonUtils
     {
-        public static T DeSerialize<T>(HttpResponseMessage message) where T : SdkResponse
+        public static T DeSerialize<T>(HttpResponseMessage message) where T : SdkResponse, new()
         {
             if (typeof(T).IsSubclassOf(typeof(SdkStreamResponse)))
             {
@@ -46,12 +46,12 @@ namespace HuaweiCloud.SDK.Core
             return response;
         }
 
-        private static T SetResponseBody<T>(string body) where T : SdkResponse
+        private static T SetResponseBody<T>(string body) where T : SdkResponse, new()
         {
-            return string.IsNullOrEmpty(body) ? Activator.CreateInstance<T>() : JsonConvert.DeserializeObject<T>(body, GetJsonSettings());
+            return string.IsNullOrEmpty(body) ? new T() : JsonConvert.DeserializeObject<T>(body, GetJsonSettings());
         }
 
-        public static T DeSerialize<T>(SdkResponse response) where T : SdkResponse
+        public static T DeSerialize<T>(SdkResponse response) where T : SdkResponse, new()
         {
             var tResponse = SetResponseBody<T>(response.HttpBody);
             tResponse.HttpStatusCode = response.HttpStatusCode;
@@ -60,12 +60,14 @@ namespace HuaweiCloud.SDK.Core
             return tResponse;
         }
 
-        public static T DeSerializeNull<T>(HttpResponseMessage message) where T : SdkResponse
+        public static T DeSerializeNull<T>(HttpResponseMessage message) where T : SdkResponse, new()
         {
-            var response = Activator.CreateInstance<T>();
-            response.HttpStatusCode = (int)message.StatusCode;
-            response.HttpHeaders = message.Headers.ToString();
-            response.HttpBody = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
+            var response = new T
+            {
+                HttpStatusCode = (int)message.StatusCode,
+                HttpHeaders = message.Headers.ToString(),
+                HttpBody = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result)
+            };
             return response;
         }
 
