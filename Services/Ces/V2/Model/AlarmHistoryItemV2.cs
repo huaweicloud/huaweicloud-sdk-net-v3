@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class AlarmHistoryItemV2 
     {
         /// <summary>
-        /// 告警记录的状态，取值为ok，alarm，invalid； ok为正常，alarm为告警，invalid为已失效。
+        /// 告警记录的状态，取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。
         /// </summary>
-        /// <value>告警记录的状态，取值为ok，alarm，invalid； ok为正常，alarm为告警，invalid为已失效。</value>
+        /// <value>告警记录的状态，取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -37,12 +37,18 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             /// </summary>
             public static readonly StatusEnum INVALID = new StatusEnum("invalid");
 
+            /// <summary>
+            /// Enum OK_MANUAL for value: ok_manual
+            /// </summary>
+            public static readonly StatusEnum OK_MANUAL = new StatusEnum("ok_manual");
+
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
                 { "ok", OK },
                 { "alarm", ALARM },
                 { "invalid", INVALID },
+                { "ok_manual", OK_MANUAL },
             };
 
             private string _value;
@@ -283,7 +289,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 告警记录的状态，取值为ok，alarm，invalid； ok为正常，alarm为告警，invalid为已失效。
+        /// 告警记录的状态，取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -316,7 +322,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public DateTime? EndTime { get; set; }
 
         /// <summary>
-        /// 第一次告警时间戳，UTC时间
+        /// 第一次告警时间，UTC时间
         /// </summary>
         [JsonProperty("first_alarm_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? FirstAlarmTime { get; set; }

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 单位
+    /// 数据的单位。
     /// </summary>
     public class Unit 
     {

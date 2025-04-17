@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceGroupTagRelation> Tags { get; set; }
 
+        /// <summary>
+        /// 实例名称匹配参数
+        /// </summary>
+        [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Instance> Instances { get; set; }
+
 
 
         /// <summary>
@@ -194,6 +200,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  associationEpIds: ").Append(AssociationEpIds).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  instances: ").Append(Instances).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -219,6 +226,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.Type != input.Type) return false;
             if (this.AssociationEpIds != input.AssociationEpIds || (this.AssociationEpIds != null && input.AssociationEpIds != null && !this.AssociationEpIds.SequenceEqual(input.AssociationEpIds))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
 
             return true;
         }
@@ -238,6 +246,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.AssociationEpIds != null) hashCode = hashCode * 59 + this.AssociationEpIds.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
                 return hashCode;
             }
         }

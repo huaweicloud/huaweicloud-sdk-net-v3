@@ -622,7 +622,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// 查询参数
         /// </summary>
         [JsonProperty("query_param", NullValueHandling = NullValueHandling.Ignore)]
-        public string QueryParam { get; set; }
+        public Object QueryParam { get; set; }
 
         /// <summary>
         /// 监控层级。

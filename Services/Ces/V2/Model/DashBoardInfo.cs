@@ -58,6 +58,30 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }
 
+        /// <summary>
+        /// 看板下的视图总数
+        /// </summary>
+        [JsonProperty("widgets_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? WidgetsNum { get; set; }
+
+        /// <summary>
+        /// 命名空间
+        /// </summary>
+        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
+        public string Namespace { get; set; }
+
+        /// <summary>
+        /// 子产品标识
+        /// </summary>
+        [JsonProperty("sub_product", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubProduct { get; set; }
+
+        /// <summary>
+        /// 监控大盘模板id
+        /// </summary>
+        [JsonProperty("dashboard_template_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DashboardTemplateId { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +98,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  isFavorite: ").Append(IsFavorite).Append("\n");
             sb.Append("  creatorName: ").Append(CreatorName).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  widgetsNum: ").Append(WidgetsNum).Append("\n");
+            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  subProduct: ").Append(SubProduct).Append("\n");
+            sb.Append("  dashboardTemplateId: ").Append(DashboardTemplateId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +127,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.IsFavorite != input.IsFavorite || (this.IsFavorite != null && !this.IsFavorite.Equals(input.IsFavorite))) return false;
             if (this.CreatorName != input.CreatorName || (this.CreatorName != null && !this.CreatorName.Equals(input.CreatorName))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.WidgetsNum != input.WidgetsNum || (this.WidgetsNum != null && !this.WidgetsNum.Equals(input.WidgetsNum))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.SubProduct != input.SubProduct || (this.SubProduct != null && !this.SubProduct.Equals(input.SubProduct))) return false;
+            if (this.DashboardTemplateId != input.DashboardTemplateId || (this.DashboardTemplateId != null && !this.DashboardTemplateId.Equals(input.DashboardTemplateId))) return false;
 
             return true;
         }
@@ -118,6 +150,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.IsFavorite != null) hashCode = hashCode * 59 + this.IsFavorite.GetHashCode();
                 if (this.CreatorName != null) hashCode = hashCode * 59 + this.CreatorName.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.WidgetsNum != null) hashCode = hashCode * 59 + this.WidgetsNum.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.SubProduct != null) hashCode = hashCode * 59 + this.SubProduct.GetHashCode();
+                if (this.DashboardTemplateId != null) hashCode = hashCode * 59 + this.DashboardTemplateId.GetHashCode();
                 return hashCode;
             }
         }

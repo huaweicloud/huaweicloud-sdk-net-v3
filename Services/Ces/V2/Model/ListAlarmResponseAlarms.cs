@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     /// </summary>
     public class ListAlarmResponseAlarms 
     {
+        /// <summary>
+        /// 产品层级跨纬规则需要指明为产品层级规则，resource_level取值为product即为产品层级跨纬规则，不填或者取值为dimension则为旧的规则类型
+        /// </summary>
+        /// <value>产品层级跨纬规则需要指明为产品层级规则，resource_level取值为product即为产品层级跨纬规则，不填或者取值为dimension则为旧的规则类型</value>
+        [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
+        public class ResourceLevelEnum
+        {
+            /// <summary>
+            /// Enum PRODUCT for value: product
+            /// </summary>
+            public static readonly ResourceLevelEnum PRODUCT = new ResourceLevelEnum("product");
+
+            /// <summary>
+            /// Enum DIMENSION for value: dimension
+            /// </summary>
+            public static readonly ResourceLevelEnum DIMENSION = new ResourceLevelEnum("dimension");
+
+            private static readonly Dictionary<string, ResourceLevelEnum> StaticFields =
+            new Dictionary<string, ResourceLevelEnum>()
+            {
+                { "product", PRODUCT },
+                { "dimension", DIMENSION },
+            };
+
+            private string _value;
+
+            public ResourceLevelEnum()
+            {
+
+            }
+
+            public ResourceLevelEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ResourceLevelEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ResourceLevelEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ResourceLevelEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ResourceLevelEnum a, ResourceLevelEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ResourceLevelEnum a, ResourceLevelEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 告警规则id，以al开头，包含22个数字或字母
@@ -94,28 +209,28 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string NotificationEndTime { get; set; }
 
         /// <summary>
-        /// 企业项目ID，不填时会使用默认的企业项目ID
+        /// 企业项目ID
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 告警规则关联告警模板ID
+        /// 告警规则关联告警模板ID，如果传了，告警规则关联的策略会和告警模板策略联动变化
         /// </summary>
         [JsonProperty("alarm_template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmTemplateId { get; set; }
 
         /// <summary>
-        /// 产品层级跨纬规则创建时需要指明的规则产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;
+        /// 产品层级跨纬规则需要指明的规则产品名称，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;
         /// </summary>
         [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductName { get; set; }
 
         /// <summary>
-        /// 
+        /// 产品层级跨纬规则需要指明为产品层级规则，resource_level取值为product即为产品层级跨纬规则，不填或者取值为dimension则为旧的规则类型
         /// </summary>
         [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourceLevel ResourceLevel { get; set; }
+        public ResourceLevelEnum ResourceLevel { get; set; }
 
 
         /// <summary>

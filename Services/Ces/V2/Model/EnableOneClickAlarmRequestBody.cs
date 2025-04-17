@@ -15,6 +15,127 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     /// </summary>
     public class EnableOneClickAlarmRequestBody 
     {
+        /// <summary>
+        /// NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+        /// </summary>
+        /// <value>NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)</value>
+        [JsonConverter(typeof(EnumClassConverter<NotificationMannerEnum>))]
+        public class NotificationMannerEnum
+        {
+            /// <summary>
+            /// Enum NOTIFICATION_GROUP for value: NOTIFICATION_GROUP
+            /// </summary>
+            public static readonly NotificationMannerEnum NOTIFICATION_GROUP = new NotificationMannerEnum("NOTIFICATION_GROUP");
+
+            /// <summary>
+            /// Enum TOPIC_SUBSCRIPTION for value: TOPIC_SUBSCRIPTION
+            /// </summary>
+            public static readonly NotificationMannerEnum TOPIC_SUBSCRIPTION = new NotificationMannerEnum("TOPIC_SUBSCRIPTION");
+
+            /// <summary>
+            /// Enum NOTIFICATION_POLICY for value: NOTIFICATION_POLICY
+            /// </summary>
+            public static readonly NotificationMannerEnum NOTIFICATION_POLICY = new NotificationMannerEnum("NOTIFICATION_POLICY");
+
+            private static readonly Dictionary<string, NotificationMannerEnum> StaticFields =
+            new Dictionary<string, NotificationMannerEnum>()
+            {
+                { "NOTIFICATION_GROUP", NOTIFICATION_GROUP },
+                { "TOPIC_SUBSCRIPTION", TOPIC_SUBSCRIPTION },
+                { "NOTIFICATION_POLICY", NOTIFICATION_POLICY },
+            };
+
+            private string _value;
+
+            public NotificationMannerEnum()
+            {
+
+            }
+
+            public NotificationMannerEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static NotificationMannerEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as NotificationMannerEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(NotificationMannerEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(NotificationMannerEnum a, NotificationMannerEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(NotificationMannerEnum a, NotificationMannerEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 一键告警ID
@@ -58,6 +179,29 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("notification_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationEndTime { get; set; }
 
+        /// <summary>
+        /// NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+        /// </summary>
+        [JsonProperty("notification_manner", NullValueHandling = NullValueHandling.Ignore)]
+        public NotificationMannerEnum NotificationManner { get; set; }
+        /// <summary>
+        /// 关联的通知策略ID列表
+        /// </summary>
+        [JsonProperty("notification_policy_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> NotificationPolicyIds { get; set; }
+
+        /// <summary>
+        /// 是否以默认一键告警规则重置创建
+        /// </summary>
+        [JsonProperty("is_reset", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsReset { get; set; }
+
+        /// <summary>
+        /// 打开一键告警需要同时修改告警策略及通知(当前仅支持通知策略修改)时传递的参数
+        /// </summary>
+        [JsonProperty("one_click_update_alarms", NullValueHandling = NullValueHandling.Ignore)]
+        public List<EnableOneClickAlarmRequestBodyOneClickUpdateAlarms> OneClickUpdateAlarms { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +218,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  okNotifications: ").Append(OkNotifications).Append("\n");
             sb.Append("  notificationBeginTime: ").Append(NotificationBeginTime).Append("\n");
             sb.Append("  notificationEndTime: ").Append(NotificationEndTime).Append("\n");
+            sb.Append("  notificationManner: ").Append(NotificationManner).Append("\n");
+            sb.Append("  notificationPolicyIds: ").Append(NotificationPolicyIds).Append("\n");
+            sb.Append("  isReset: ").Append(IsReset).Append("\n");
+            sb.Append("  oneClickUpdateAlarms: ").Append(OneClickUpdateAlarms).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +247,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.OkNotifications != input.OkNotifications || (this.OkNotifications != null && input.OkNotifications != null && !this.OkNotifications.SequenceEqual(input.OkNotifications))) return false;
             if (this.NotificationBeginTime != input.NotificationBeginTime || (this.NotificationBeginTime != null && !this.NotificationBeginTime.Equals(input.NotificationBeginTime))) return false;
             if (this.NotificationEndTime != input.NotificationEndTime || (this.NotificationEndTime != null && !this.NotificationEndTime.Equals(input.NotificationEndTime))) return false;
+            if (this.NotificationManner != input.NotificationManner) return false;
+            if (this.NotificationPolicyIds != input.NotificationPolicyIds || (this.NotificationPolicyIds != null && input.NotificationPolicyIds != null && !this.NotificationPolicyIds.SequenceEqual(input.NotificationPolicyIds))) return false;
+            if (this.IsReset != input.IsReset || (this.IsReset != null && !this.IsReset.Equals(input.IsReset))) return false;
+            if (this.OneClickUpdateAlarms != input.OneClickUpdateAlarms || (this.OneClickUpdateAlarms != null && input.OneClickUpdateAlarms != null && !this.OneClickUpdateAlarms.SequenceEqual(input.OneClickUpdateAlarms))) return false;
 
             return true;
         }
@@ -118,6 +270,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.OkNotifications != null) hashCode = hashCode * 59 + this.OkNotifications.GetHashCode();
                 if (this.NotificationBeginTime != null) hashCode = hashCode * 59 + this.NotificationBeginTime.GetHashCode();
                 if (this.NotificationEndTime != null) hashCode = hashCode * 59 + this.NotificationEndTime.GetHashCode();
+                hashCode = hashCode * 59 + this.NotificationManner.GetHashCode();
+                if (this.NotificationPolicyIds != null) hashCode = hashCode * 59 + this.NotificationPolicyIds.GetHashCode();
+                if (this.IsReset != null) hashCode = hashCode * 59 + this.IsReset.GetHashCode();
+                if (this.OneClickUpdateAlarms != null) hashCode = hashCode * 59 + this.OneClickUpdateAlarms.GetHashCode();
                 return hashCode;
             }
         }

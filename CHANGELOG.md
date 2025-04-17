@@ -1,3 +1,430 @@
+# 3.1.142 2025-04-17
+
+### HuaweiCloud SDK AntiDDoS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ListQuota`, `ShowLogConfig`, `UpdateLogConfig`, `EnableDefensePolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `ListNewConfigs`, `ShowNewTaskStatus`, `ShowAlertConfig`, `UpdateAlertConfig`
+  - **ShowDDos**
+    - changes of response param
+      - `+ app_type_id: enum value [0,1]`
+  - **UpdateDDos**
+    - changes of request param
+      - `+ app_type_id: enum value [0,1]`
+  - **ShowDDosStatus**
+    - changes of response param
+      - `+ status: enum value [normal,configging,notConfig,packetcleaning,packetdropping]`
+  - **ShowDefaultConfig**
+    - changes of response param
+      - `+ app_type_id: enum value [0,1]`
+  - **CreateDefaultConfig**
+    - changes of request param
+      - `+ app_type_id: enum value [0,1]`
+  - **ListDailyLog**
+    - changes of request param
+      - `+ sort_dir: enum value [desc,asc]`
+    - changes of response param
+      - `+ logs.status: enum value [1,2]`
+
+### HuaweiCloud SDK AOM
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddOrUpdateMetricOrEventAlarmRule**
+    - changes of request param
+      - `* metric_alarm_spec.trigger_conditions.query_param: string -> object`
+  - **ListMetricOrEventAlarmRule**
+    - changes of response param
+      - `* alarm_rules.metric_alarm_spec.trigger_conditions.query_param: string -> object`
+
+### HuaweiCloud SDK CCE
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowNode**
+    - changes of response param
+      - `+ spec.partition`
+  - **UpdateNode**
+    - changes of response param
+      - `+ spec.partition`
+  - **DeleteNode**
+    - changes of response param
+      - `+ spec.partition`
+  - **CreateNode**
+    - changes of request param
+      - `+ spec.partition`
+    - changes of response param
+      - `+ spec.partition`
+  - **ListNodes**
+    - changes of response param
+      - `+ items.spec.partition`
+  - **ShowNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.partition`
+  - **UpdateNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.partition`
+  - **DeleteNodePool**
+    - changes of response param
+      - `+ spec.nodeTemplate.partition`
+  - **CreateNodePool**
+    - changes of request param
+      - `+ spec.nodeTemplate.partition`
+    - changes of response param
+      - `+ spec.nodeTemplate.partition`
+  - **ListNodePools**
+    - changes of response param
+      - `+ items.spec.nodeTemplate.partition`
+
+### HuaweiCloud SDK CES
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateDashboard**
+    - changes of request param
+      - `+ filter`
+      - `+ period`
+      - `+ display_time`
+      - `+ refresh_time`
+      - `+ from`
+      - `+ to`
+      - `+ screen_color`
+      - `+ enable_screen_auto_play`
+      - `+ time_interval`
+      - `+ enable_legend`
+      - `+ full_screen_widget_num`
+  - **ListResourceGroups**
+    - changes of request param
+      - `+ type: enum value [COMB,NAME]`
+  - **CreateResourceGroup**
+    - changes of request param
+      - `+ providers`
+      - `+ enterprise_project_id_and_tags`
+      - `+ resources`
+      - `+ product_resources`
+      - `+ instances`
+      - `+ product_names`
+      - `+ resource_level`
+      - `+ comb_relation`
+      - `+ tags.operator`
+  - **ShowResourceGroup**
+    - changes of response param
+      - `+ instances`
+      - `+ tags.operator`
+  - **UpdateResourceGroup**
+    - changes of request param
+      - `+ enterprise_project_id_and_tags`
+      - `+ extend_relation_ids`
+      - `+ instances`
+      - `+ product_names`
+      - `+ comb_relation`
+      - `+ tags.operator`
+  - **ListDashboardInfos**
+    - changes of request param
+      - `+ dashboard_type`
+    - changes of response param
+      - `+ dashboards.widgets_num`
+      - `+ dashboards.namespace`
+      - `+ dashboards.sub_product`
+      - `+ dashboards.dashboard_template_id`
+  - **ListAlarmRulePolicies**
+    - changes of response param
+      - `+ policies.hierarchical_value`
+  - **UpdateAlarmRulePolicies**
+    - changes of request param
+      - `+ policies.extra_info`
+      - `+ policies.hierarchical_value`
+      - `- policies.namespace`
+      - `- policies.dimension_name`
+    - changes of response param
+      - `+ policies.extra_info`
+      - `+ policies.hierarchical_value`
+      - `- policies.namespace`
+      - `- policies.dimension_name`
+  - **ListAlarmTemplates**
+    - changes of request param
+      - `+ product_name`
+  - **CreateAlarmTemplate**
+    - changes of request param
+      - `+ is_overwrite`
+      - `+ policies.hierarchical_value`
+  - **ShowAlarmTemplate**
+    - changes of response param
+      - `+ policies.hierarchical_value`
+      - `+ policies.selected_unit`
+      - `+ policies.period: enum value [0]`
+  - **UpdateAlarmTemplate**
+    - changes of request param
+      - `+ policies.hierarchical_value`
+  - **ListResourceGroupsServicesResources**
+    - changes of request param
+      - `+ tag`
+      - `+ extend_relation_id`
+      - `+ product_name`
+      - `+ resource_name`
+      - `+ event_status`
+    - changes of response param
+      - `+ resources.tags`
+      - `+ resources.enterprise_project_id`
+      - `* resources.dimensions: list<Dimension2> -> list<ResourceDimension>`
+  - **BatchCreateResources**
+    - changes of request param
+      - `+ product_resources`
+      - `* resources.dimensions: list<Dimension2> -> list<ResourceDimension>`
+  - **BatchDeleteResources**
+    - changes of request param
+      - `+ product_resources`
+      - `* resources.dimensions: list<Dimension2> -> list<ResourceDimension>`
+  - **ShowWidget**
+    - changes of response param
+      - `+ group_id`
+      - `+ view: enum value [bar_chart,table,circular_bar,area_chart]`
+      - `+ properties.description`
+      - `+ properties.last_week_compare_enable`
+      - `+ properties.yesterday_compare_enable`
+      - `+ properties.legend_location`
+      - `+ properties.legend_values`
+      - `+ properties.thresholds`
+      - `+ properties.is_all_compare_enable`
+      - `+ metrics.rollup_enable`
+      - `+ metrics.rollup_filter`
+      - `+ metrics.rollup_dimension`
+      - `+ metrics.last_week_compare_enable`
+      - `+ metrics.yesterday_compare_enable`
+      - `+ metrics.metric_dimension`
+      - `+ metrics.top_num`
+      - `+ metrics.unit`
+      - `+ metrics.order`
+      - `+ metrics.topn_metric_name`
+  - **BatchUpdateNotificationMasks**
+    - changes of request param
+      - `+ metric_names`
+      - `+ product_metrics`
+      - `+ resource_level`
+      - `+ product_name`
+      - `* resources.dimensions: list<Dimension2> -> list<ResourceDimension>`
+  - **UpdateNotificationMask**
+    - changes of request param
+      - `+ metric_names`
+      - `+ product_metrics`
+      - `+ resource_level`
+      - `+ product_name`
+      - `* resources.dimensions: list<Dimension2> -> list<ResourceDimension>`
+  - **ListNotificationMasks**
+    - changes of request param
+      - `+ sort_key`
+      - `+ sort_dir`
+      - `+ metric_name`
+      - `+ resource_level`
+      - `* dimensions: list<Dimension2> -> list<ResourceDimension>`
+    - changes of response param
+      - `+ notification_masks.resource_type`
+      - `+ notification_masks.metric_names`
+      - `+ notification_masks.product_metrics`
+      - `+ notification_masks.resource_level`
+      - `+ notification_masks.product_name`
+      - `+ notification_masks.create_time`
+      - `+ notification_masks.update_time`
+      - `+ notification_masks.policies.hierarchical_value`
+  - **ListNotificationMaskResources**
+    - changes of response param
+      - `* resources.dimensions: list<Dimension2> -> list<ResourceDimension>`
+  - **ListAlarmHistories**
+    - changes of request param
+      - `+ create_time_from`
+      - `+ create_time_to`
+      - `* alarm_id: string -> list<string>`
+      - `* status: string -> list<string>`
+    - changes of response param
+      - `+ alarm_histories.status: enum value [ok_manual]`
+      - `+ alarm_histories.alarm_actions.type: enum value [notification,autoscaling,groupwatch,ecsRecovery,contact,contactGroup,iecAction]`
+  - **ListAlarmRules**
+    - changes of request param
+      - `+ product_name`
+      - `+ resource_level`
+    - changes of response param
+      - `+ alarms.policies.hierarchical_value`
+      - `+ alarms.alarm_notifications.type: enum value [notification,autoscaling,groupwatch,ecsRecovery,contact,contactGroup,iecAction]`
+  - **CreateAlarmRules**
+    - changes of request param
+      - `+ policies.hierarchical_value`
+      - `+ alarm_notifications.type: enum value [notification,autoscaling,groupwatch,ecsRecovery,contact,contactGroup,iecAction]`
+  - **CreateDashboardWidgets**
+    - changes of request param
+      - `+ group_id`
+      - `+ view: enum value [bar_chart,table,circular_bar,area_chart]`
+      - `+ properties.description`
+      - `+ properties.last_week_compare_enable`
+      - `+ properties.yesterday_compare_enable`
+      - `+ properties.legend_location`
+      - `+ properties.legend_values`
+      - `+ properties.thresholds`
+      - `+ properties.is_all_compare_enable`
+      - `+ metrics.rollup_enable`
+      - `+ metrics.rollup_filter`
+      - `+ metrics.rollup_dimension`
+      - `+ metrics.last_week_compare_enable`
+      - `+ metrics.yesterday_compare_enable`
+      - `+ metrics.metric_dimension`
+      - `+ metrics.top_num`
+      - `+ metrics.unit`
+      - `+ metrics.order`
+      - `+ metrics.topn_metric_name`
+      - `* body: list<object> -> list<BaseWidgetInfo>`
+  - **ListDashboardWidgets**
+    - changes of request param
+      - `+ group_id`
+    - changes of response param
+      - `+ group_id`
+      - `+ widgets.group_id`
+      - `+ widgets.view: enum value [bar_chart,table,circular_bar,area_chart]`
+      - `+ widgets.properties.description`
+      - `+ widgets.properties.last_week_compare_enable`
+      - `+ widgets.properties.yesterday_compare_enable`
+      - `+ widgets.properties.legend_location`
+      - `+ widgets.properties.legend_values`
+      - `+ widgets.properties.thresholds`
+      - `+ widgets.properties.is_all_compare_enable`
+      - `+ widgets.metrics.rollup_enable`
+      - `+ widgets.metrics.rollup_filter`
+      - `+ widgets.metrics.rollup_dimension`
+      - `+ widgets.metrics.last_week_compare_enable`
+      - `+ widgets.metrics.yesterday_compare_enable`
+      - `+ widgets.metrics.metric_dimension`
+      - `+ widgets.metrics.top_num`
+      - `+ widgets.metrics.unit`
+      - `+ widgets.metrics.order`
+      - `+ widgets.metrics.topn_metric_name`
+  - **BatchUpdateWidgets**
+    - changes of request param
+      - `+ group_id`
+      - `+ view: enum value [bar_chart,table,circular_bar,area_chart]`
+      - `+ properties.description`
+      - `+ properties.last_week_compare_enable`
+      - `+ properties.yesterday_compare_enable`
+      - `+ properties.legend_location`
+      - `+ properties.legend_values`
+      - `+ properties.thresholds`
+      - `+ properties.is_all_compare_enable`
+      - `+ metrics.rollup_enable`
+      - `+ metrics.rollup_filter`
+      - `+ metrics.rollup_dimension`
+      - `+ metrics.last_week_compare_enable`
+      - `+ metrics.yesterday_compare_enable`
+      - `+ metrics.metric_dimension`
+      - `+ metrics.top_num`
+      - `+ metrics.unit`
+      - `+ metrics.order`
+      - `+ metrics.topn_metric_name`
+  - **CreateOneClickAlarm**
+    - changes of request param
+      - `+ notification_manner`
+      - `+ notification_policy_ids`
+      - `+ is_reset`
+      - `+ one_click_update_alarms`
+      - `+ alarm_notifications.type: enum value [notification,autoscaling,groupwatch,ecsRecovery,contact,contactGroup,iecAction]`
+  - **ListOneClickAlarmRules**
+    - changes of response param
+      - `+ alarms.notification_manner`
+      - `+ alarms.notification_policy_ids`
+      - `+ alarms.alarm_notifications.type: enum value [notification,autoscaling,groupwatch,ecsRecovery,contact,contactGroup,iecAction]`
+  - **UpdateOneClickAlarmNotifications**
+    - changes of request param
+      - `- alarm_notifications`
+      - `- notification_begin_time`
+      - `- ok_notifications`
+      - `- notification_end_time`
+      - `- notification_enabled`
+      - `+ notification_manner`
+      - `+ notification_policy_ids`
+      - `+ alarm_notifications.type: enum value [notification,autoscaling,groupwatch,ecsRecovery,contact,contactGroup,iecAction]`
+  - **UpdateAlarmNotifications**
+    - changes of request param
+      - `- alarm_notifications`
+      - `- notification_begin_time`
+      - `- ok_notifications`
+      - `- notification_end_time`
+      - `- notification_enabled`
+      - `+ alarm_notifications.type: enum value [notification,autoscaling,groupwatch,ecsRecovery,contact,contactGroup,iecAction]`
+    - changes of response param
+      - `+ alarm_notifications.type: enum value [notification,autoscaling,groupwatch,ecsRecovery,contact,contactGroup,iecAction]`
+
+### HuaweiCloud SDK Config
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListRegions**
+    - changes of request param
+      - `+ limit`
+      - `+ marker`
+    - changes of response param
+      - `+ page_info`
+  - **ListBuiltInPolicyDefinitions**
+    - changes of request param
+      - `+ limit`
+      - `+ marker`
+
+### HuaweiCloud SDK GaussDBforNoSQL
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateInstance**
+    - changes of request param
+      - `- ipv6_enabled`
+      - `- lb_access_control_settings`
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the APIs `ShowRefreshResult`, `RefreshAsset`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateTranscodeTemplate**
+    - changes of request param
+      - `+ additional_manifests`
+      - `+ quality_info_list.video.stream_name`
+  - **CreateTranscodeTemplate**
+    - changes of request param
+      - `+ additional_manifests`
+      - `+ quality_info_list.video.stream_name`
+  - **ListTranscodeTemplate**
+    - changes of response param
+      - `+ template_group_list.additional_manifests`
+      - `+ template_group_list.quality_info_list.video.stream_name`
+
 # 3.1.141 2025-04-10
 
 ### HuaweiCloud SDK GaussDBforNoSQL

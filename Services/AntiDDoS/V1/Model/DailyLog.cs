@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
     /// </summary>
     public class DailyLog 
     {
+        /// <summary>
+        /// 防护状态，可选范围： - 1：表示清洗 - 2：表示黑洞
+        /// </summary>
+        /// <value>防护状态，可选范围： - 1：表示清洗 - 2：表示黑洞</value>
+        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
+        public class StatusEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly StatusEnum NUMBER_1 = new StatusEnum(1);
+
+            /// <summary>
+            /// Enum NUMBER_2 for value: 2
+            /// </summary>
+            public static readonly StatusEnum NUMBER_2 = new StatusEnum(2);
+
+            private static readonly Dictionary<int?, StatusEnum> StaticFields =
+            new Dictionary<int?, StatusEnum>()
+            {
+                { 1, NUMBER_1 },
+                { 2, NUMBER_2 },
+            };
+
+            private int? _value;
+
+            public StatusEnum()
+            {
+
+            }
+
+            public StatusEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static StatusEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(StatusEnum a, StatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StatusEnum a, StatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 开始时间
@@ -32,8 +147,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// 防护状态，可选范围： - 1：表示清洗 - 2：表示黑洞
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Status { get; set; }
-
+        public StatusEnum Status { get; set; }
         /// <summary>
         /// 触发时流量
         /// </summary>
@@ -87,7 +201,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
             if (input == null) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
-            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Status != input.Status) return false;
             if (this.TriggerBps != input.TriggerBps || (this.TriggerBps != null && !this.TriggerBps.Equals(input.TriggerBps))) return false;
             if (this.TriggerPps != input.TriggerPps || (this.TriggerPps != null && !this.TriggerPps.Equals(input.TriggerPps))) return false;
             if (this.TriggerHttpPps != input.TriggerHttpPps || (this.TriggerHttpPps != null && !this.TriggerHttpPps.Equals(input.TriggerHttpPps))) return false;
@@ -105,7 +219,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
                 var hashCode = 41;
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.TriggerBps != null) hashCode = hashCode * 59 + this.TriggerBps.GetHashCode();
                 if (this.TriggerPps != null) hashCode = hashCode * 59 + this.TriggerPps.GetHashCode();
                 if (this.TriggerHttpPps != null) hashCode = hashCode * 59 + this.TriggerHttpPps.GetHashCode();

@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<Resource> Resources { get; set; }
 
+        /// <summary>
+        /// 手动创建，选择资源层级为云产品时的资源详情
+        /// </summary>
+        [JsonProperty("product_resources", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ProductResource> ProductResources { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ResourcesReq {\n");
             sb.Append("  resources: ").Append(Resources).Append("\n");
+            sb.Append("  productResources: ").Append(ProductResources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             if (input == null) return false;
             if (this.Resources != input.Resources || (this.Resources != null && input.Resources != null && !this.Resources.SequenceEqual(input.Resources))) return false;
+            if (this.ProductResources != input.ProductResources || (this.ProductResources != null && input.ProductResources != null && !this.ProductResources.SequenceEqual(input.ProductResources))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             {
                 var hashCode = 41;
                 if (this.Resources != null) hashCode = hashCode * 59 + this.Resources.GetHashCode();
+                if (this.ProductResources != null) hashCode = hashCode * 59 + this.ProductResources.GetHashCode();
                 return hashCode;
             }
         }

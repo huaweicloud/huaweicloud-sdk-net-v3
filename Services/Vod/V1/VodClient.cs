@@ -872,6 +872,30 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// CDN刷新
+        ///
+        /// 媒资状态为完成态、删除态、发布态，可通过指定媒资ID或URL向CDN进行刷新。将CDN节点缓存的资源强制过期，用户下次访问时CDN将回源获取最新的资源返回给用户，同时将新的资源缓存到CDN节点。单租户每天最多刷新1000个。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RefreshAssetResponse RefreshAsset(RefreshAssetRequest refreshAssetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/refresh", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", refreshAssetRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RefreshAssetResponse>(response);
+        }
+
+        public SyncInvoker<RefreshAssetResponse> RefreshAssetInvoker(RefreshAssetRequest refreshAssetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/refresh", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", refreshAssetRequest);
+            return new SyncInvoker<RefreshAssetResponse>(this, "POST", request, JsonUtils.DeSerialize<RefreshAssetResponse>);
+        }
+        
+        /// <summary>
         /// 密钥查询
         ///
         /// 终端播放HLS加密视频时，向租户管理系统请求密钥，租户管理系统先查询其本地有没有已缓存的密钥，没有时则调用此接口向VOD查询。该接口的具体使用场景请参见[通过HLS加密防止视频泄露](https://support.huaweicloud.com/bestpractice-vod/vod_10_0004.html)。
@@ -952,7 +976,7 @@ namespace HuaweiCloud.SDK.Vod.V1
         /// 
         /// 视频分段上传方式和OBS的接口文档保持一致，包括HTTP请求方法、请求头、请求体等各种入参，此接口的作用是为用户生成带有鉴权信息的URL（鉴权信息即query_str），用来替换OBS接口中对应的URL，临时给用户开通向点播服务的桶上传文件的权限。
         /// 
-        /// 调用获取授权接口时需要传入bucket、object_key、http_verb，其中bucket和object_key是由[创建媒资：上传方式](https://support.huaweicloud.com/api-vod/vod_04_0196.html)接口中返回的响应体中的target字段获得的bucket和object，http_verb需要根据指定的操作选择。
+        /// 调用获取授权接口时需要传入bucket、object_key、http_verb，其中bucket和object_key是由[创建媒资：上传方式](https://support.huaweicloud.com/api-vod/vod_04_0196.html)接口中返回的响应体中的target字段获得的bucket和object，http_verb需要根据指定的操作选择。 此接口为v1.1版本，暂不支持前端跨域访问，可以后端访问。如需前端跨域访问，请使用v1.0版本接口，详见[获取分段上传授权](vod_04_0009.xml)。 v1.1版本的接口返回结果不需要拼接url，拿到结果中的sign_str，直接发送请求即可。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1019,6 +1043,30 @@ namespace HuaweiCloud.SDK.Vod.V1
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/preheating", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPreheatingAssetRequest);
             return new SyncInvoker<ShowPreheatingAssetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPreheatingAssetResponse>);
+        }
+        
+        /// <summary>
+        /// 查询CDN刷新
+        ///
+        /// 查询刷新结果。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRefreshResultResponse ShowRefreshResult(ShowRefreshResultRequest showRefreshResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/refresh", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRefreshResultRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRefreshResultResponse>(response);
+        }
+
+        public SyncInvoker<ShowRefreshResultResponse> ShowRefreshResultInvoker(ShowRefreshResultRequest showRefreshResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/refresh", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRefreshResultRequest);
+            return new SyncInvoker<ShowRefreshResultResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRefreshResultResponse>);
         }
         
         /// <summary>
@@ -1395,7 +1443,7 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
-        /// 创建媒资：URL拉取注入
+        /// 创建媒资：URL拉取注入（公测中）
         ///
         /// 基于音视频源文件URL，将音视频文件离线拉取上传到点播服务。
         /// 

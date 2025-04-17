@@ -63,30 +63,6 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         }
         
         /// <summary>
-        /// 查询告警配置信息
-        ///
-        /// 查询用户配置信息，用户可以通过此接口查询是否接收某类告警，同时可以配置是手机短信还是电子邮件接收告警信息。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowAlertConfigResponse ShowAlertConfig(ShowAlertConfigRequest showAlertConfigRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/query", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlertConfigRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowAlertConfigResponse>(response);
-        }
-
-        public SyncInvoker<ShowAlertConfigResponse> ShowAlertConfigInvoker(ShowAlertConfigRequest showAlertConfigRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/query", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlertConfigRequest);
-            return new SyncInvoker<ShowAlertConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAlertConfigResponse>);
-        }
-        
-        /// <summary>
         /// 查询Ani-DDoS默认防护策略
         ///
         /// 查询用户配置的默认防护策略。
@@ -111,27 +87,29 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         }
         
         /// <summary>
-        /// 更新告警配置信息
+        /// 开通DDoS服务
         ///
-        /// 更新用户配置信息，用户可以通过此接口更新是否接收某类告警，同时可以配置是手机短信还是电子邮件接收告警信息。
+        /// 开通DDoS服务
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public UpdateAlertConfigResponse UpdateAlertConfig(UpdateAlertConfigRequest updateAlertConfigRequest)
+        public EnableDefensePolicyResponse EnableDefensePolicy(EnableDefensePolicyRequest enableDefensePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/update", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlertConfigRequest);
+            urlParam.Add("floating_ip_id", enableDefensePolicyRequest.FloatingIpId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDefensePolicyRequest);
             var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<UpdateAlertConfigResponse>(response);
+            return JsonUtils.DeSerialize<EnableDefensePolicyResponse>(response);
         }
 
-        public SyncInvoker<UpdateAlertConfigResponse> UpdateAlertConfigInvoker(UpdateAlertConfigRequest updateAlertConfigRequest)
+        public SyncInvoker<EnableDefensePolicyResponse> EnableDefensePolicyInvoker(EnableDefensePolicyRequest enableDefensePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/warnalert/alertconfig/update", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlertConfigRequest);
-            return new SyncInvoker<UpdateAlertConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateAlertConfigResponse>);
+            urlParam.Add("floating_ip_id", enableDefensePolicyRequest.FloatingIpId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDefensePolicyRequest);
+            return new SyncInvoker<EnableDefensePolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<EnableDefensePolicyResponse>);
         }
         
         /// <summary>
@@ -211,27 +189,27 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         }
         
         /// <summary>
-        /// 查询Anti-DDoS配置可选范围
+        /// 查询配额
         ///
-        /// 查询系统支持的Anti-DDoS防护策略配置的可选范围，用户根据范围列表选择适合自已业务的防护策略进行Anti-DDoS流量清洗。
+        /// 查询配额
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public ListNewConfigsResponse ListNewConfigs(ListNewConfigsRequest listNewConfigsRequest)
+        public ListQuotaResponse ListQuota(ListQuotaRequest listQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/antiddos/query-config-list", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNewConfigsRequest);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotaRequest);
             var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListNewConfigsResponse>(response);
+            return JsonUtils.DeSerialize<ListQuotaResponse>(response);
         }
 
-        public SyncInvoker<ListNewConfigsResponse> ListNewConfigsInvoker(ListNewConfigsRequest listNewConfigsRequest)
+        public SyncInvoker<ListQuotaResponse> ListQuotaInvoker(ListQuotaRequest listQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/antiddos/query-config-list", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNewConfigsRequest);
-            return new SyncInvoker<ListNewConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNewConfigsResponse>);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuotaRequest);
+            return new SyncInvoker<ListQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ListQuotaResponse>);
         }
         
         /// <summary>
@@ -311,27 +289,27 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         }
         
         /// <summary>
-        /// 查询Anti-DDoS任务
+        /// 查询全量日志设置
         ///
-        /// 用户查询指定的Anti-DDoS防护配置任务，得到任务当前执行的状态。
+        /// 查询全量日志设置
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public ShowNewTaskStatusResponse ShowNewTaskStatus(ShowNewTaskStatusRequest showNewTaskStatusRequest)
+        public ShowLogConfigResponse ShowLogConfig(ShowLogConfigRequest showLogConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/query-task-status", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNewTaskStatusRequest);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/lts-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogConfigRequest);
             var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowNewTaskStatusResponse>(response);
+            return JsonUtils.DeSerialize<ShowLogConfigResponse>(response);
         }
 
-        public SyncInvoker<ShowNewTaskStatusResponse> ShowNewTaskStatusInvoker(ShowNewTaskStatusRequest showNewTaskStatusRequest)
+        public SyncInvoker<ShowLogConfigResponse> ShowLogConfigInvoker(ShowLogConfigRequest showLogConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/query-task-status", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNewTaskStatusRequest);
-            return new SyncInvoker<ShowNewTaskStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNewTaskStatusResponse>);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/lts-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogConfigRequest);
+            return new SyncInvoker<ShowLogConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLogConfigResponse>);
         }
         
         /// <summary>
@@ -358,6 +336,30 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDDosRequest);
             return new SyncInvoker<UpdateDDosResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDDosResponse>);
+        }
+        
+        /// <summary>
+        /// 更新用户全量日志设置
+        ///
+        /// 更新用户全量日志设置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateLogConfigResponse UpdateLogConfig(UpdateLogConfigRequest updateLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/lts-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLogConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateLogConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateLogConfigResponse> UpdateLogConfigInvoker(UpdateLogConfigRequest updateLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/lts-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLogConfigRequest);
+            return new SyncInvoker<UpdateLogConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateLogConfigResponse>);
         }
         
     }

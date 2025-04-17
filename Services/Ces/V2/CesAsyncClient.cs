@@ -364,7 +364,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
-        /// 创建告警规则
+        /// 创建告警规则（推荐）
         ///
         /// 创建告警规则
         /// 
@@ -486,7 +486,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
-        /// 创建资源分组
+        /// 创建资源分组（推荐）
         ///
         /// 创建资源分组
         /// 
@@ -588,7 +588,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         /// <summary>
         /// 查询主机监控维度指标信息
         ///
-        /// 根据ECS/BMS资源ID查询磁盘、挂载点、进程、显卡、RAID控制器维度指标信息。
+        /// 根据ECS/BMS资源ID查询磁盘、挂载点、进程、显卡、RAID控制器维度指标信息；维度NPU已经为原始值，不需要调用该接口进行额外查询获取指标信息
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -688,7 +688,7 @@ namespace HuaweiCloud.SDK.Ces.V2
         }
         
         /// <summary>
-        /// 查询告警规则列表
+        /// 查询告警规则列表（推荐）
         ///
         /// 查询告警规则列表
         /// 

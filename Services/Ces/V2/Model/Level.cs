@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 告警级别, 1为紧急，2为重要，3为次要，4为提示
+    /// 告警级别, 1为紧急，2为重要，3为次要，4为提示。默认值为2。
     /// </summary>
     public class Level 
     {

@@ -15,6 +15,127 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     /// </summary>
     public class ListAlarmsRespAlarms 
     {
+        /// <summary>
+        /// NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+        /// </summary>
+        /// <value>NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)</value>
+        [JsonConverter(typeof(EnumClassConverter<NotificationMannerEnum>))]
+        public class NotificationMannerEnum
+        {
+            /// <summary>
+            /// Enum NOTIFICATION_GROUP for value: NOTIFICATION_GROUP
+            /// </summary>
+            public static readonly NotificationMannerEnum NOTIFICATION_GROUP = new NotificationMannerEnum("NOTIFICATION_GROUP");
+
+            /// <summary>
+            /// Enum TOPIC_SUBSCRIPTION for value: TOPIC_SUBSCRIPTION
+            /// </summary>
+            public static readonly NotificationMannerEnum TOPIC_SUBSCRIPTION = new NotificationMannerEnum("TOPIC_SUBSCRIPTION");
+
+            /// <summary>
+            /// Enum NOTIFICATION_POLICY for value: NOTIFICATION_POLICY
+            /// </summary>
+            public static readonly NotificationMannerEnum NOTIFICATION_POLICY = new NotificationMannerEnum("NOTIFICATION_POLICY");
+
+            private static readonly Dictionary<string, NotificationMannerEnum> StaticFields =
+            new Dictionary<string, NotificationMannerEnum>()
+            {
+                { "NOTIFICATION_GROUP", NOTIFICATION_GROUP },
+                { "TOPIC_SUBSCRIPTION", TOPIC_SUBSCRIPTION },
+                { "NOTIFICATION_POLICY", NOTIFICATION_POLICY },
+            };
+
+            private string _value;
+
+            public NotificationMannerEnum()
+            {
+
+            }
+
+            public NotificationMannerEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static NotificationMannerEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as NotificationMannerEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(NotificationMannerEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(NotificationMannerEnum a, NotificationMannerEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(NotificationMannerEnum a, NotificationMannerEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 告警规则id，以al开头，包含22个数字或字母
@@ -35,7 +156,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+        /// 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
@@ -93,6 +214,17 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("notification_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationEndTime { get; set; }
 
+        /// <summary>
+        /// NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+        /// </summary>
+        [JsonProperty("notification_manner", NullValueHandling = NullValueHandling.Ignore)]
+        public NotificationMannerEnum NotificationManner { get; set; }
+        /// <summary>
+        /// 关联的通知策略ID列表
+        /// </summary>
+        [JsonProperty("notification_policy_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> NotificationPolicyIds { get; set; }
+
 
 
         /// <summary>
@@ -115,6 +247,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  okNotifications: ").Append(OkNotifications).Append("\n");
             sb.Append("  notificationBeginTime: ").Append(NotificationBeginTime).Append("\n");
             sb.Append("  notificationEndTime: ").Append(NotificationEndTime).Append("\n");
+            sb.Append("  notificationManner: ").Append(NotificationManner).Append("\n");
+            sb.Append("  notificationPolicyIds: ").Append(NotificationPolicyIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -146,6 +280,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.OkNotifications != input.OkNotifications || (this.OkNotifications != null && input.OkNotifications != null && !this.OkNotifications.SequenceEqual(input.OkNotifications))) return false;
             if (this.NotificationBeginTime != input.NotificationBeginTime || (this.NotificationBeginTime != null && !this.NotificationBeginTime.Equals(input.NotificationBeginTime))) return false;
             if (this.NotificationEndTime != input.NotificationEndTime || (this.NotificationEndTime != null && !this.NotificationEndTime.Equals(input.NotificationEndTime))) return false;
+            if (this.NotificationManner != input.NotificationManner) return false;
+            if (this.NotificationPolicyIds != input.NotificationPolicyIds || (this.NotificationPolicyIds != null && input.NotificationPolicyIds != null && !this.NotificationPolicyIds.SequenceEqual(input.NotificationPolicyIds))) return false;
 
             return true;
         }
@@ -171,6 +307,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.OkNotifications != null) hashCode = hashCode * 59 + this.OkNotifications.GetHashCode();
                 if (this.NotificationBeginTime != null) hashCode = hashCode * 59 + this.NotificationBeginTime.GetHashCode();
                 if (this.NotificationEndTime != null) hashCode = hashCode * 59 + this.NotificationEndTime.GetHashCode();
+                hashCode = hashCode * 59 + this.NotificationManner.GetHashCode();
+                if (this.NotificationPolicyIds != null) hashCode = hashCode * 59 + this.NotificationPolicyIds.GetHashCode();
                 return hashCode;
             }
         }

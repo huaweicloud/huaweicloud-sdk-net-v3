@@ -138,16 +138,22 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string TemplateName { get; set; }
 
         /// <summary>
+        /// 自定义告警模板类型 0：指标 2： 事件
+        /// </summary>
+        [JsonProperty("template_type", NullValueHandling = NullValueHandling.Ignore)]
+        public TemplateTypeEnum TemplateType { get; set; }
+        /// <summary>
         /// 告警模板的描述，长度范围[0,256]，该字段默认值为空字符串
         /// </summary>
         [JsonProperty("template_description", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateDescription { get; set; }
 
         /// <summary>
-        /// 自定义告警模板类型 0：指标 2： 事件
+        /// 是否对模板名称已经存在的告警模板进行覆盖。true:覆盖同名告警模板；false：不覆盖，新建告警模板。
         /// </summary>
-        [JsonProperty("template_type", NullValueHandling = NullValueHandling.Ignore)]
-        public TemplateTypeEnum TemplateType { get; set; }
+        [JsonProperty("is_overwrite", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOverwrite { get; set; }
+
         /// <summary>
         /// 告警模板策略列表
         /// </summary>
@@ -164,8 +170,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateAlarmTemplateRequestBody {\n");
             sb.Append("  templateName: ").Append(TemplateName).Append("\n");
-            sb.Append("  templateDescription: ").Append(TemplateDescription).Append("\n");
             sb.Append("  templateType: ").Append(TemplateType).Append("\n");
+            sb.Append("  templateDescription: ").Append(TemplateDescription).Append("\n");
+            sb.Append("  isOverwrite: ").Append(IsOverwrite).Append("\n");
             sb.Append("  policies: ").Append(Policies).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -186,8 +193,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             if (input == null) return false;
             if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
-            if (this.TemplateDescription != input.TemplateDescription || (this.TemplateDescription != null && !this.TemplateDescription.Equals(input.TemplateDescription))) return false;
             if (this.TemplateType != input.TemplateType) return false;
+            if (this.TemplateDescription != input.TemplateDescription || (this.TemplateDescription != null && !this.TemplateDescription.Equals(input.TemplateDescription))) return false;
+            if (this.IsOverwrite != input.IsOverwrite || (this.IsOverwrite != null && !this.IsOverwrite.Equals(input.IsOverwrite))) return false;
             if (this.Policies != input.Policies || (this.Policies != null && input.Policies != null && !this.Policies.SequenceEqual(input.Policies))) return false;
 
             return true;
@@ -202,8 +210,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             {
                 var hashCode = 41;
                 if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.TemplateDescription != null) hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
                 hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
+                if (this.TemplateDescription != null) hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
+                if (this.IsOverwrite != null) hashCode = hashCode * 59 + this.IsOverwrite.GetHashCode();
                 if (this.Policies != null) hashCode = hashCode * 59 + this.Policies.GetHashCode();
                 return hashCode;
             }

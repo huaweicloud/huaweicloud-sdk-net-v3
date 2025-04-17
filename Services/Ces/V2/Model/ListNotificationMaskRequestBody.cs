@@ -16,6 +16,121 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListNotificationMaskRequestBody 
     {
         /// <summary>
+        /// dimension: 子维度,product: 云产品
+        /// </summary>
+        /// <value>dimension: 子维度,product: 云产品</value>
+        [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
+        public class ResourceLevelEnum
+        {
+            /// <summary>
+            /// Enum DIMENSION for value: dimension
+            /// </summary>
+            public static readonly ResourceLevelEnum DIMENSION = new ResourceLevelEnum("dimension");
+
+            /// <summary>
+            /// Enum PRODUCT for value: product
+            /// </summary>
+            public static readonly ResourceLevelEnum PRODUCT = new ResourceLevelEnum("product");
+
+            private static readonly Dictionary<string, ResourceLevelEnum> StaticFields =
+            new Dictionary<string, ResourceLevelEnum>()
+            {
+                { "dimension", DIMENSION },
+                { "product", PRODUCT },
+            };
+
+            private string _value;
+
+            public ResourceLevelEnum()
+            {
+
+            }
+
+            public ResourceLevelEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ResourceLevelEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ResourceLevelEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ResourceLevelEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ResourceLevelEnum a, ResourceLevelEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ResourceLevelEnum a, ResourceLevelEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 屏蔽状态,可选。MASK_EFFECTIVE：已生效，MASK_INEFFECTIVE：未生效。
         /// </summary>
         /// <value>屏蔽状态,可选。MASK_EFFECTIVE：已生效，MASK_INEFFECTIVE：未生效。</value>
@@ -143,6 +258,17 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<string> RelationIds { get; set; }
 
         /// <summary>
+        /// 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务的指标名称可查看：“[服务指标名称](ces_03_0059.xml)”。
+        /// </summary>
+        [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string MetricName { get; set; }
+
+        /// <summary>
+        /// dimension: 子维度,product: 云产品
+        /// </summary>
+        [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
+        public ResourceLevelEnum ResourceLevel { get; set; }
+        /// <summary>
         /// 屏蔽规则ID,可选
         /// </summary>
         [JsonProperty("mask_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -166,7 +292,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+        /// 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
@@ -175,7 +301,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 资源的维度信息
         /// </summary>
         [JsonProperty("dimensions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Dimension2> Dimensions { get; set; }
+        public List<ResourceDimension> Dimensions { get; set; }
 
 
 
@@ -188,6 +314,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("class ListNotificationMaskRequestBody {\n");
             sb.Append("  relationType: ").Append(RelationType).Append("\n");
             sb.Append("  relationIds: ").Append(RelationIds).Append("\n");
+            sb.Append("  metricName: ").Append(MetricName).Append("\n");
+            sb.Append("  resourceLevel: ").Append(ResourceLevel).Append("\n");
             sb.Append("  maskId: ").Append(MaskId).Append("\n");
             sb.Append("  maskName: ").Append(MaskName).Append("\n");
             sb.Append("  maskStatus: ").Append(MaskStatus).Append("\n");
@@ -214,6 +342,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (input == null) return false;
             if (this.RelationType != input.RelationType) return false;
             if (this.RelationIds != input.RelationIds || (this.RelationIds != null && input.RelationIds != null && !this.RelationIds.SequenceEqual(input.RelationIds))) return false;
+            if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
+            if (this.ResourceLevel != input.ResourceLevel) return false;
             if (this.MaskId != input.MaskId || (this.MaskId != null && !this.MaskId.Equals(input.MaskId))) return false;
             if (this.MaskName != input.MaskName || (this.MaskName != null && !this.MaskName.Equals(input.MaskName))) return false;
             if (this.MaskStatus != input.MaskStatus) return false;
@@ -234,6 +364,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.RelationType.GetHashCode();
                 if (this.RelationIds != null) hashCode = hashCode * 59 + this.RelationIds.GetHashCode();
+                if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
+                hashCode = hashCode * 59 + this.ResourceLevel.GetHashCode();
                 if (this.MaskId != null) hashCode = hashCode * 59 + this.MaskId.GetHashCode();
                 if (this.MaskName != null) hashCode = hashCode * 59 + this.MaskName.GetHashCode();
                 hashCode = hashCode * 59 + this.MaskStatus.GetHashCode();

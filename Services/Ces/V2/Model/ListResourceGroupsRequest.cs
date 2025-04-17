@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListResourceGroupsRequest 
     {
         /// <summary>
-        /// 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型
+        /// 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型,COMB（智能添加-组合匹配）,NAME（资源名称模糊匹配）
         /// </summary>
-        /// <value>资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型</value>
+        /// <value>资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型,COMB（智能添加-组合匹配）,NAME（资源名称模糊匹配）</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -37,12 +37,24 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             /// </summary>
             public static readonly TypeEnum MANUAL = new TypeEnum("Manual");
 
+            /// <summary>
+            /// Enum COMB for value: COMB
+            /// </summary>
+            public static readonly TypeEnum COMB = new TypeEnum("COMB");
+
+            /// <summary>
+            /// Enum NAME for value: NAME
+            /// </summary>
+            public static readonly TypeEnum NAME = new TypeEnum("NAME");
+
             private static readonly Dictionary<string, TypeEnum> StaticFields =
             new Dictionary<string, TypeEnum>()
             {
                 { "EPS", EPS },
                 { "TAG", TAG },
                 { "Manual", MANUAL },
+                { "COMB", COMB },
+                { "NAME", NAME },
             };
 
             private string _value;
@@ -173,7 +185,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型
+        /// 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型,COMB（智能添加-组合匹配）,NAME（资源名称模糊匹配）
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class WidgetInfoWithId 
     {
         /// <summary>
-        /// 监控视图图表类型, bar柱状图，line折线图
+        /// 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
         /// </summary>
-        /// <value>监控视图图表类型, bar柱状图，line折线图</value>
+        /// <value>监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图</value>
         [JsonConverter(typeof(EnumClassConverter<ViewEnum>))]
         public class ViewEnum
         {
@@ -32,11 +32,35 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             /// </summary>
             public static readonly ViewEnum LINE = new ViewEnum("line");
 
+            /// <summary>
+            /// Enum BAR_CHART for value: bar_chart
+            /// </summary>
+            public static readonly ViewEnum BAR_CHART = new ViewEnum("bar_chart");
+
+            /// <summary>
+            /// Enum TABLE for value: table
+            /// </summary>
+            public static readonly ViewEnum TABLE = new ViewEnum("table");
+
+            /// <summary>
+            /// Enum CIRCULAR_BAR for value: circular_bar
+            /// </summary>
+            public static readonly ViewEnum CIRCULAR_BAR = new ViewEnum("circular_bar");
+
+            /// <summary>
+            /// Enum AREA_CHART for value: area_chart
+            /// </summary>
+            public static readonly ViewEnum AREA_CHART = new ViewEnum("area_chart");
+
             private static readonly Dictionary<string, ViewEnum> StaticFields =
             new Dictionary<string, ViewEnum>()
             {
                 { "bar", BAR },
                 { "line", LINE },
+                { "bar_chart", BAR_CHART },
+                { "table", TABLE },
+                { "circular_bar", CIRCULAR_BAR },
+                { "area_chart", AREA_CHART },
             };
 
             private string _value;
@@ -253,6 +277,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string WidgetId { get; set; }
 
         /// <summary>
+        /// 视图分区id
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
+        /// <summary>
         /// 指标列表
         /// </summary>
         [JsonProperty("metrics", NullValueHandling = NullValueHandling.Ignore)]
@@ -277,7 +307,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public bool? ThresholdEnabled { get; set; }
 
         /// <summary>
-        /// 监控视图图表类型, bar柱状图，line折线图
+        /// 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
         /// </summary>
         [JsonProperty("view", NullValueHandling = NullValueHandling.Ignore)]
         public ViewEnum View { get; set; }
@@ -290,7 +320,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("properties", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateWidgetInfoProperties Properties { get; set; }
+        public BaseWidgetInfoProperties Properties { get; set; }
 
         /// <summary>
         /// 
@@ -320,6 +350,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             var sb = new StringBuilder();
             sb.Append("class WidgetInfoWithId {\n");
             sb.Append("  widgetId: ").Append(WidgetId).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  metrics: ").Append(Metrics).Append("\n");
             sb.Append("  title: ").Append(Title).Append("\n");
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
@@ -349,6 +380,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             if (input == null) return false;
             if (this.WidgetId != input.WidgetId || (this.WidgetId != null && !this.WidgetId.Equals(input.WidgetId))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
             if (this.Metrics != input.Metrics || (this.Metrics != null && input.Metrics != null && !this.Metrics.SequenceEqual(input.Metrics))) return false;
             if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
             if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
@@ -372,6 +404,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             {
                 var hashCode = 41;
                 if (this.WidgetId != null) hashCode = hashCode * 59 + this.WidgetId.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.Metrics != null) hashCode = hashCode * 59 + this.Metrics.GetHashCode();
                 if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();

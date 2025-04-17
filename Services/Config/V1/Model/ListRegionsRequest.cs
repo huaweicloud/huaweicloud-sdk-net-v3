@@ -137,6 +137,20 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
+        /// <summary>
+        /// 最大的返回数量
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
 
 
         /// <summary>
@@ -147,6 +161,8 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ListRegionsRequest {\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,6 +182,8 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         {
             if (input == null) return false;
             if (this.XLanguage != input.XLanguage) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
             return true;
         }
@@ -179,6 +197,8 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

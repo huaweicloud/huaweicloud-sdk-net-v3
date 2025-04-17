@@ -131,22 +131,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string Port { get; set; }
 
         /// <summary>
-        /// 是否启用IPv6。默认 - true: 启用IPv6。 - false: 不启用IPv6，默认为不启用。
-        /// </summary>
-        [JsonProperty("ipv6_enabled", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Ipv6Enabled { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("availability_zone_detail", NullValueHandling = NullValueHandling.Ignore)]
         public AvailabilityZoneDetail AvailabilityZoneDetail { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("lb_access_control_settings", NullValueHandling = NullValueHandling.Ignore)]
-        public LbAccessControlSettings LbAccessControlSettings { get; set; }
 
 
 
@@ -176,9 +164,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  chargeInfo: ").Append(ChargeInfo).Append("\n");
             sb.Append("  restoreInfo: ").Append(RestoreInfo).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
-            sb.Append("  ipv6Enabled: ").Append(Ipv6Enabled).Append("\n");
             sb.Append("  availabilityZoneDetail: ").Append(AvailabilityZoneDetail).Append("\n");
-            sb.Append("  lbAccessControlSettings: ").Append(LbAccessControlSettings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -216,9 +202,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.ChargeInfo != input.ChargeInfo || (this.ChargeInfo != null && !this.ChargeInfo.Equals(input.ChargeInfo))) return false;
             if (this.RestoreInfo != input.RestoreInfo || (this.RestoreInfo != null && !this.RestoreInfo.Equals(input.RestoreInfo))) return false;
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
-            if (this.Ipv6Enabled != input.Ipv6Enabled || (this.Ipv6Enabled != null && !this.Ipv6Enabled.Equals(input.Ipv6Enabled))) return false;
             if (this.AvailabilityZoneDetail != input.AvailabilityZoneDetail || (this.AvailabilityZoneDetail != null && !this.AvailabilityZoneDetail.Equals(input.AvailabilityZoneDetail))) return false;
-            if (this.LbAccessControlSettings != input.LbAccessControlSettings || (this.LbAccessControlSettings != null && !this.LbAccessControlSettings.Equals(input.LbAccessControlSettings))) return false;
 
             return true;
         }
@@ -250,9 +234,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.ChargeInfo != null) hashCode = hashCode * 59 + this.ChargeInfo.GetHashCode();
                 if (this.RestoreInfo != null) hashCode = hashCode * 59 + this.RestoreInfo.GetHashCode();
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.Ipv6Enabled != null) hashCode = hashCode * 59 + this.Ipv6Enabled.GetHashCode();
                 if (this.AvailabilityZoneDetail != null) hashCode = hashCode * 59 + this.AvailabilityZoneDetail.GetHashCode();
-                if (this.LbAccessControlSettings != null) hashCode = hashCode * 59 + this.LbAccessControlSettings.GetHashCode();
                 return hashCode;
             }
         }

@@ -146,7 +146,19 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 资源的维度信息
         /// </summary>
         [JsonProperty("dimensions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Dimension2> Dimensions { get; set; }
+        public List<ResourceDimension> Dimensions { get; set; }
+
+        /// <summary>
+        /// 资源的tag信息,格式为key/value的json字符串,样例为\&quot;{\\\&quot;sss\\\&quot;:\\\&quot;aaa\\\&quot;}\&quot;
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public string Tags { get; set; }
+
+        /// <summary>
+        /// 企业项目ID
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
 
 
 
@@ -159,6 +171,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("class GetResourceGroupResources {\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  dimensions: ").Append(Dimensions).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -179,6 +193,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (input == null) return false;
             if (this.Status != input.Status) return false;
             if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
             return true;
         }
@@ -193,6 +209,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Dimensions != null) hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

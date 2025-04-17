@@ -162,6 +162,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
 
         /// <summary>
+        /// 流名，流名仅支持数字、字母、下划线、中划线。 如果流名不填，则点播会按照video_stream_l{index}形式，生成一个流名。 
+        /// </summary>
+        [JsonProperty("stream_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string StreamName { get; set; }
+
+        /// <summary>
         /// 画质&lt;br/&gt; 4K默认分辨率3840*2160，码率8000kbit/s&lt;br/&gt; 2K默认分辨率2560*1440，码率7000kbit/s&lt;br/&gt; FULL_HD默认分辨率1920*1080，码率3000kbit/s&lt;br/&gt; HD默认分辨率1280*720，码率1000kbit/s&lt;br/&gt; SD默认分辨率854*480，码率600kbit/s&lt;br/&gt; FLUENT默认分辨率480*270，码率300kbit/s&lt;br/&gt; 
         /// </summary>
         [JsonProperty("quality", NullValueHandling = NullValueHandling.Ignore)]
@@ -199,6 +205,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class VideoInfo {\n");
+            sb.Append("  streamName: ").Append(StreamName).Append("\n");
             sb.Append("  quality: ").Append(Quality).Append("\n");
             sb.Append("  width: ").Append(Width).Append("\n");
             sb.Append("  height: ").Append(Height).Append("\n");
@@ -222,6 +229,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public bool Equals(VideoInfo input)
         {
             if (input == null) return false;
+            if (this.StreamName != input.StreamName || (this.StreamName != null && !this.StreamName.Equals(input.StreamName))) return false;
             if (this.Quality != input.Quality) return false;
             if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
             if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
@@ -239,6 +247,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.StreamName != null) hashCode = hashCode * 59 + this.StreamName.GetHashCode();
                 hashCode = hashCode * 59 + this.Quality.GetHashCode();
                 if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
                 if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();

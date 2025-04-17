@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     /// </summary>
     public class ListDashboardInfosRequest 
     {
+        /// <summary>
+        /// 监控看板类型, monitor_dashboard表示监控大盘,other表示自定义看板
+        /// </summary>
+        /// <value>监控看板类型, monitor_dashboard表示监控大盘,other表示自定义看板</value>
+        [JsonConverter(typeof(EnumClassConverter<DashboardTypeEnum>))]
+        public class DashboardTypeEnum
+        {
+            /// <summary>
+            /// Enum MONITOR_DASHBOARD for value: monitor_dashboard
+            /// </summary>
+            public static readonly DashboardTypeEnum MONITOR_DASHBOARD = new DashboardTypeEnum("monitor_dashboard");
+
+            /// <summary>
+            /// Enum OTHER for value: other
+            /// </summary>
+            public static readonly DashboardTypeEnum OTHER = new DashboardTypeEnum("other");
+
+            private static readonly Dictionary<string, DashboardTypeEnum> StaticFields =
+            new Dictionary<string, DashboardTypeEnum>()
+            {
+                { "monitor_dashboard", MONITOR_DASHBOARD },
+                { "other", OTHER },
+            };
+
+            private string _value;
+
+            public DashboardTypeEnum()
+            {
+
+            }
+
+            public DashboardTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static DashboardTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as DashboardTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(DashboardTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(DashboardTypeEnum a, DashboardTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(DashboardTypeEnum a, DashboardTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 企业项目Id
@@ -44,6 +159,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("dashboard_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardId { get; set; }
 
+        /// <summary>
+        /// 监控看板类型, monitor_dashboard表示监控大盘,other表示自定义看板
+        /// </summary>
+        [SDKProperty("dashboard_type", IsQuery = true)]
+        [JsonProperty("dashboard_type", NullValueHandling = NullValueHandling.Ignore)]
+        public DashboardTypeEnum DashboardType { get; set; }
 
 
         /// <summary>
@@ -57,6 +178,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  isFavorite: ").Append(IsFavorite).Append("\n");
             sb.Append("  dashboardName: ").Append(DashboardName).Append("\n");
             sb.Append("  dashboardId: ").Append(DashboardId).Append("\n");
+            sb.Append("  dashboardType: ").Append(DashboardType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +201,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.IsFavorite != input.IsFavorite || (this.IsFavorite != null && !this.IsFavorite.Equals(input.IsFavorite))) return false;
             if (this.DashboardName != input.DashboardName || (this.DashboardName != null && !this.DashboardName.Equals(input.DashboardName))) return false;
             if (this.DashboardId != input.DashboardId || (this.DashboardId != null && !this.DashboardId.Equals(input.DashboardId))) return false;
+            if (this.DashboardType != input.DashboardType) return false;
 
             return true;
         }
@@ -95,6 +218,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.IsFavorite != null) hashCode = hashCode * 59 + this.IsFavorite.GetHashCode();
                 if (this.DashboardName != null) hashCode = hashCode * 59 + this.DashboardName.GetHashCode();
                 if (this.DashboardId != null) hashCode = hashCode * 59 + this.DashboardId.GetHashCode();
+                hashCode = hashCode * 59 + this.DashboardType.GetHashCode();
                 return hashCode;
             }
         }

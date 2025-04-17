@@ -16,6 +16,127 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListAlarmHistoriesRequest 
     {
         /// <summary>
+        /// Defines status
+        /// </summary>
+        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
+        public class StatusEnum
+        {
+            /// <summary>
+            /// Enum OK for value: ok
+            /// </summary>
+            public static readonly StatusEnum OK = new StatusEnum("ok");
+
+            /// <summary>
+            /// Enum ALARM for value: alarm
+            /// </summary>
+            public static readonly StatusEnum ALARM = new StatusEnum("alarm");
+
+            /// <summary>
+            /// Enum INVALID for value: invalid
+            /// </summary>
+            public static readonly StatusEnum INVALID = new StatusEnum("invalid");
+
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
+            new Dictionary<string, StatusEnum>()
+            {
+                { "ok", OK },
+                { "alarm", ALARM },
+                { "invalid", INVALID },
+            };
+
+            private string _value;
+
+            public StatusEnum()
+            {
+
+            }
+
+            public StatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static StatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(StatusEnum a, StatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StatusEnum a, StatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
         /// 告警类型，event：查询事件类型告警，metric：查询指标类型告警
         /// </summary>
         /// <value>告警类型，event：查询事件类型告警，metric：查询指标类型告警</value>
@@ -263,7 +384,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         [SDKProperty("alarm_id", IsQuery = true)]
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string AlarmId { get; set; }
+        public List<string> AlarmId { get; set; }
 
         /// <summary>
         /// 告警记录ID,以ah开头，后跟22位由字母或数字组成的字符串
@@ -280,18 +401,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 告警类型，event：查询事件类型告警，metric：查询指标类型告警
-        /// </summary>
-        [SDKProperty("alarm_type", IsQuery = true)]
-        [JsonProperty("alarm_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AlarmTypeEnum AlarmType { get; set; }
-        /// <summary>
         /// 告警规则状态, ok为正常，alarm为告警，invalid为已失效
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
-
+        public List<StatusEnum> Status { get; set; }
         /// <summary>
         /// 告警级别, 1为紧急，2为重要，3为次要，4为提示
         /// </summary>
@@ -300,7 +414,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public int? Level { get; set; }
 
         /// <summary>
-        /// 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+        /// 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
@@ -314,18 +428,38 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 查询告警记录的起始时间，例如：2022-02-10T10:05:46+08:00
+        /// 查询告警记录的起始更新时间，例如：2022-02-10T10:05:46+08:00
         /// </summary>
         [SDKProperty("from", IsQuery = true)]
         [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public string From { get; set; }
 
         /// <summary>
-        /// 查询告警记录的截止时间，例如：2022-02-10T10:05:47+08:00
+        /// 查询告警记录的截止更新时间，例如：2022-02-10T10:05:47+08:00
         /// </summary>
         [SDKProperty("to", IsQuery = true)]
         [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
         public string To { get; set; }
+
+        /// <summary>
+        /// 告警类型，event：查询事件类型告警，metric：查询指标类型告警
+        /// </summary>
+        [SDKProperty("alarm_type", IsQuery = true)]
+        [JsonProperty("alarm_type", NullValueHandling = NullValueHandling.Ignore)]
+        public AlarmTypeEnum AlarmType { get; set; }
+        /// <summary>
+        /// 查询告警记录的起始创建时间，例如：2022-02-10T10:05:46+08:00
+        /// </summary>
+        [SDKProperty("create_time_from", IsQuery = true)]
+        [JsonProperty("create_time_from", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreateTimeFrom { get; set; }
+
+        /// <summary>
+        /// 查询告警记录的截止创建时间，例如：2022-02-10T10:05:47+08:00
+        /// </summary>
+        [SDKProperty("create_time_to", IsQuery = true)]
+        [JsonProperty("create_time_to", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreateTimeTo { get; set; }
 
         /// <summary>
         /// 分页偏移量
@@ -359,13 +493,15 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  alarmId: ").Append(AlarmId).Append("\n");
             sb.Append("  recordId: ").Append(RecordId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  alarmType: ").Append(AlarmType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  level: ").Append(Level).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  from: ").Append(From).Append("\n");
             sb.Append("  to: ").Append(To).Append("\n");
+            sb.Append("  alarmType: ").Append(AlarmType).Append("\n");
+            sb.Append("  createTimeFrom: ").Append(CreateTimeFrom).Append("\n");
+            sb.Append("  createTimeTo: ").Append(CreateTimeTo).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  orderBy: ").Append(OrderBy).Append("\n");
@@ -387,16 +523,18 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public bool Equals(ListAlarmHistoriesRequest input)
         {
             if (input == null) return false;
-            if (this.AlarmId != input.AlarmId || (this.AlarmId != null && !this.AlarmId.Equals(input.AlarmId))) return false;
+            if (this.AlarmId != input.AlarmId || (this.AlarmId != null && input.AlarmId != null && !this.AlarmId.SequenceEqual(input.AlarmId))) return false;
             if (this.RecordId != input.RecordId || (this.RecordId != null && !this.RecordId.Equals(input.RecordId))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
-            if (this.AlarmType != input.AlarmType) return false;
-            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Status != input.Status || (this.Status != null && input.Status != null && !this.Status.SequenceEqual(input.Status))) return false;
             if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
             if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
             if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
             if (this.From != input.From || (this.From != null && !this.From.Equals(input.From))) return false;
             if (this.To != input.To || (this.To != null && !this.To.Equals(input.To))) return false;
+            if (this.AlarmType != input.AlarmType) return false;
+            if (this.CreateTimeFrom != input.CreateTimeFrom || (this.CreateTimeFrom != null && !this.CreateTimeFrom.Equals(input.CreateTimeFrom))) return false;
+            if (this.CreateTimeTo != input.CreateTimeTo || (this.CreateTimeTo != null && !this.CreateTimeTo.Equals(input.CreateTimeTo))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.OrderBy != input.OrderBy) return false;
@@ -415,13 +553,15 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.AlarmId != null) hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
                 if (this.RecordId != null) hashCode = hashCode * 59 + this.RecordId.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
-                hashCode = hashCode * 59 + this.AlarmType.GetHashCode();
-                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();
                 if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
                 if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.From != null) hashCode = hashCode * 59 + this.From.GetHashCode();
                 if (this.To != null) hashCode = hashCode * 59 + this.To.GetHashCode();
+                hashCode = hashCode * 59 + this.AlarmType.GetHashCode();
+                if (this.CreateTimeFrom != null) hashCode = hashCode * 59 + this.CreateTimeFrom.GetHashCode();
+                if (this.CreateTimeTo != null) hashCode = hashCode * 59 + this.CreateTimeTo.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 hashCode = hashCode * 59 + this.OrderBy.GetHashCode();

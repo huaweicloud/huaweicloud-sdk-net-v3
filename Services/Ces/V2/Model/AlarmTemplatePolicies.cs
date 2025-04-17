@@ -23,6 +23,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public class PeriodEnum
         {
             /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_0 = new PeriodEnum(0);
+
+            /// <summary>
             /// Enum NUMBER_1 for value: 1
             /// </summary>
             public static readonly PeriodEnum NUMBER_1 = new PeriodEnum(1);
@@ -55,6 +60,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             private static readonly Dictionary<int?, PeriodEnum> StaticFields =
             new Dictionary<int?, PeriodEnum>()
             {
+                { 0, NUMBER_0 },
                 { 1, NUMBER_1 },
                 { 300, NUMBER_300 },
                 { 1200, NUMBER_1200 },
@@ -319,19 +325,19 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+        /// 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 资源维度，必须以字母开头，多维度用\&quot;,\&quot;分割，只能包含0-9/a-z/A-Z/_/-，每个维度的最大长度为32
+        /// 资源维度，必须以字母开头，多维度用\&quot;,\&quot;分割，只能包含0-9/a-z/A-Z/_/-，每个维度的最大长度为32, 事件告警模板DimensionName为空
         /// </summary>
         [JsonProperty("dimension_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DimensionName { get; set; }
 
         /// <summary>
-        /// 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务的指标名称可查看：“[服务指标名称](ces_03_0059.xml)”。
         /// </summary>
         [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }
@@ -348,16 +354,22 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Filter { get; set; }
 
         /// <summary>
-        /// 告警阈值的比较条件，支持的值为(&gt;|&lt;|&gt;&#x3D;|&lt;&#x3D;|&#x3D;|!&#x3D;|cycle_decrease|cycle_increase|cycle_wave)，cycle_decrease为环比下降，cycle_increase为环比上升，cycle_wave为环比波动
+        /// 阈值符号, 支持的值为(&gt;|&lt;|&gt;&#x3D;|&lt;&#x3D;|&#x3D;|!&#x3D;|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动； 指标告警可以使用的阈值符号有&gt;、&gt;&#x3D;、&lt;、&lt;&#x3D;、&#x3D;、!&#x3D;、cycle_decrease、cycle_increase、cycle_wave； 事件告警可以使用的阈值符号为&gt;、&gt;&#x3D;、&lt;、&lt;&#x3D;、&#x3D;、!&#x3D;； 
         /// </summary>
         [JsonProperty("comparison_operator", NullValueHandling = NullValueHandling.Ignore)]
         public string ComparisonOperator { get; set; }
 
         /// <summary>
-        /// 告警阈值
+        /// 告警阈值。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Value { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("hierarchical_value", NullValueHandling = NullValueHandling.Ignore)]
+        public HierarchicalValue HierarchicalValue { get; set; }
 
         /// <summary>
         /// 数据的单位字符串，长度不超过32
@@ -366,7 +378,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Unit { get; set; }
 
         /// <summary>
-        /// 次数，事件告警时参数值为1~180（包括1和180）；指标告警和站点告警时，次数采用枚举值，枚举值分别为：1、2、3、4、5、10、15、30、60、90、120、180
+        /// 告警连续触发次数，事件告警时参数值为1~180（包括1和180）；指标告警和站点告警时，次数采用枚举值，枚举值分别为：1、2、3、4、5、10、15、30、60、90、120、180
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }
@@ -382,6 +394,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         [JsonProperty("suppress_duration", NullValueHandling = NullValueHandling.Ignore)]
         public SuppressDurationEnum SuppressDuration { get; set; }
+        /// <summary>
+        /// 用户在页面中选择的指标单位， 用于后续指标数据回显和计算
+        /// </summary>
+        [JsonProperty("selected_unit", NullValueHandling = NullValueHandling.Ignore)]
+        public string SelectedUnit { get; set; }
+
 
 
         /// <summary>
@@ -398,10 +416,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  filter: ").Append(Filter).Append("\n");
             sb.Append("  comparisonOperator: ").Append(ComparisonOperator).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  hierarchicalValue: ").Append(HierarchicalValue).Append("\n");
             sb.Append("  unit: ").Append(Unit).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  alarmLevel: ").Append(AlarmLevel).Append("\n");
             sb.Append("  suppressDuration: ").Append(SuppressDuration).Append("\n");
+            sb.Append("  selectedUnit: ").Append(SelectedUnit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -427,10 +447,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.Filter != input.Filter || (this.Filter != null && !this.Filter.Equals(input.Filter))) return false;
             if (this.ComparisonOperator != input.ComparisonOperator || (this.ComparisonOperator != null && !this.ComparisonOperator.Equals(input.ComparisonOperator))) return false;
             if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.HierarchicalValue != input.HierarchicalValue || (this.HierarchicalValue != null && !this.HierarchicalValue.Equals(input.HierarchicalValue))) return false;
             if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
             if (this.AlarmLevel != input.AlarmLevel || (this.AlarmLevel != null && !this.AlarmLevel.Equals(input.AlarmLevel))) return false;
             if (this.SuppressDuration != input.SuppressDuration) return false;
+            if (this.SelectedUnit != input.SelectedUnit || (this.SelectedUnit != null && !this.SelectedUnit.Equals(input.SelectedUnit))) return false;
 
             return true;
         }
@@ -450,10 +472,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.Filter != null) hashCode = hashCode * 59 + this.Filter.GetHashCode();
                 if (this.ComparisonOperator != null) hashCode = hashCode * 59 + this.ComparisonOperator.GetHashCode();
                 if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.HierarchicalValue != null) hashCode = hashCode * 59 + this.HierarchicalValue.GetHashCode();
                 if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.AlarmLevel != null) hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
                 hashCode = hashCode * 59 + this.SuppressDuration.GetHashCode();
+                if (this.SelectedUnit != null) hashCode = hashCode * 59 + this.SelectedUnit.GetHashCode();
                 return hashCode;
             }
         }

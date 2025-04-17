@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         public bool? IsAutoEncrypt { get; set; }
 
         /// <summary>
+        /// 自定义索引后缀列表，支持最大设置10个索引后缀。 如果填写索引后缀，则必须指定流名stream_name。 
+        /// </summary>
+        [JsonProperty("additional_manifests", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AdditionalManifest> AdditionalManifests { get; set; }
+
+        /// <summary>
         /// 画质配置信息列表&lt;br/&gt; 
         /// </summary>
         [JsonProperty("quality_info_list", NullValueHandling = NullValueHandling.Ignore)]
@@ -77,6 +83,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  isDefault: ").Append(IsDefault).Append("\n");
             sb.Append("  isAutoEncrypt: ").Append(IsAutoEncrypt).Append("\n");
+            sb.Append("  additionalManifests: ").Append(AdditionalManifests).Append("\n");
             sb.Append("  qualityInfoList: ").Append(QualityInfoList).Append("\n");
             sb.Append("  watermarkTemplateIds: ").Append(WatermarkTemplateIds).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -103,6 +110,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.IsDefault != input.IsDefault || (this.IsDefault != null && !this.IsDefault.Equals(input.IsDefault))) return false;
             if (this.IsAutoEncrypt != input.IsAutoEncrypt || (this.IsAutoEncrypt != null && !this.IsAutoEncrypt.Equals(input.IsAutoEncrypt))) return false;
+            if (this.AdditionalManifests != input.AdditionalManifests || (this.AdditionalManifests != null && input.AdditionalManifests != null && !this.AdditionalManifests.SequenceEqual(input.AdditionalManifests))) return false;
             if (this.QualityInfoList != input.QualityInfoList || (this.QualityInfoList != null && input.QualityInfoList != null && !this.QualityInfoList.SequenceEqual(input.QualityInfoList))) return false;
             if (this.WatermarkTemplateIds != input.WatermarkTemplateIds || (this.WatermarkTemplateIds != null && input.WatermarkTemplateIds != null && !this.WatermarkTemplateIds.SequenceEqual(input.WatermarkTemplateIds))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
@@ -123,6 +131,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.IsDefault != null) hashCode = hashCode * 59 + this.IsDefault.GetHashCode();
                 if (this.IsAutoEncrypt != null) hashCode = hashCode * 59 + this.IsAutoEncrypt.GetHashCode();
+                if (this.AdditionalManifests != null) hashCode = hashCode * 59 + this.AdditionalManifests.GetHashCode();
                 if (this.QualityInfoList != null) hashCode = hashCode * 59 + this.QualityInfoList.GetHashCode();
                 if (this.WatermarkTemplateIds != null) hashCode = hashCode * 59 + this.WatermarkTemplateIds.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();

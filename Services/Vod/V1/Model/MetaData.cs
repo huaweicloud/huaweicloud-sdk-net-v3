@@ -515,7 +515,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("codec", NullValueHandling = NullValueHandling.Ignore)]
         public CodecEnum Codec { get; set; }
         /// <summary>
-        /// 视频时长。  若视频的原时长为非整数，则该字段值为原时长的向下取整。 若视频的原时长小于1，则该字段值为1。
+        /// 视频时长，单位：秒。  若视频的原时长为非整数，则该字段值为原时长的向下取整。 若视频的原时长小于1，则该字段值为1。
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
         public long? Duration { get; set; }

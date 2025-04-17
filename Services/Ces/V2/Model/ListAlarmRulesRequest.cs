@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     /// </summary>
     public class ListAlarmRulesRequest 
     {
+        /// <summary>
+        /// 产品层级跨纬规则查询时支持规则所属类型查询，resource_level取值为product即为产品层级跨纬规则，不填或者取值为dimension则为旧的规则类型
+        /// </summary>
+        /// <value>产品层级跨纬规则查询时支持规则所属类型查询，resource_level取值为product即为产品层级跨纬规则，不填或者取值为dimension则为旧的规则类型</value>
+        [JsonConverter(typeof(EnumClassConverter<ResourceLevelEnum>))]
+        public class ResourceLevelEnum
+        {
+            /// <summary>
+            /// Enum PRODUCT for value: product
+            /// </summary>
+            public static readonly ResourceLevelEnum PRODUCT = new ResourceLevelEnum("product");
+
+            /// <summary>
+            /// Enum DIMENSION for value: dimension
+            /// </summary>
+            public static readonly ResourceLevelEnum DIMENSION = new ResourceLevelEnum("dimension");
+
+            private static readonly Dictionary<string, ResourceLevelEnum> StaticFields =
+            new Dictionary<string, ResourceLevelEnum>()
+            {
+                { "product", PRODUCT },
+                { "dimension", DIMENSION },
+            };
+
+            private string _value;
+
+            public ResourceLevelEnum()
+            {
+
+            }
+
+            public ResourceLevelEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ResourceLevelEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ResourceLevelEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ResourceLevelEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ResourceLevelEnum a, ResourceLevelEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ResourceLevelEnum a, ResourceLevelEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 告警规则ID
@@ -31,7 +146,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+        /// 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,6 +166,19 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 产品层级跨纬规则查询时支持产品名称查询，一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;
+        /// </summary>
+        [SDKProperty("product_name", IsQuery = true)]
+        [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProductName { get; set; }
+
+        /// <summary>
+        /// 产品层级跨纬规则查询时支持规则所属类型查询，resource_level取值为product即为产品层级跨纬规则，不填或者取值为dimension则为旧的规则类型
+        /// </summary>
+        [SDKProperty("resource_level", IsQuery = true)]
+        [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
+        public ResourceLevelEnum ResourceLevel { get; set; }
         /// <summary>
         /// 分页偏移量
         /// </summary>
@@ -79,6 +207,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  productName: ").Append(ProductName).Append("\n");
+            sb.Append("  resourceLevel: ").Append(ResourceLevel).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
@@ -104,6 +234,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
             if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ProductName != input.ProductName || (this.ProductName != null && !this.ProductName.Equals(input.ProductName))) return false;
+            if (this.ResourceLevel != input.ResourceLevel) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
@@ -123,6 +255,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
                 if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ProductName != null) hashCode = hashCode * 59 + this.ProductName.GetHashCode();
+                hashCode = hashCode * 59 + this.ResourceLevel.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;

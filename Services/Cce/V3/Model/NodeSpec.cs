@@ -142,6 +142,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("serverEnterpriseProjectID", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerEnterpriseProjectID { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 表示节点所属分区。分区可以选择中心云[或者[边缘小站](https://support.huaweicloud.com/usermanual-cloudpond/ies_02_0401.html)。](tag:hws)[或者[边缘小站](https://support.huaweicloud.com/intl/zh-cn/usermanual-cloudpond/ies_02_0401.html)。](tag:hws_hk) **约束限制**： 仅开启了对分布式云支持的Turbo集群支持指定该字段。 **取值范围**： - center: 中心云 - 边缘小站的可用区ID  **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
+        public string Partition { get; set; }
+
 
 
         /// <summary>
@@ -172,6 +178,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("  hostnameConfig: ").Append(HostnameConfig).Append("\n");
             sb.Append("  serverEnterpriseProjectID: ").Append(ServerEnterpriseProjectID).Append("\n");
+            sb.Append("  partition: ").Append(Partition).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -211,6 +218,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
             if (this.HostnameConfig != input.HostnameConfig || (this.HostnameConfig != null && !this.HostnameConfig.Equals(input.HostnameConfig))) return false;
             if (this.ServerEnterpriseProjectID != input.ServerEnterpriseProjectID || (this.ServerEnterpriseProjectID != null && !this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))) return false;
+            if (this.Partition != input.Partition || (this.Partition != null && !this.Partition.Equals(input.Partition))) return false;
 
             return true;
         }
@@ -244,6 +252,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 if (this.HostnameConfig != null) hashCode = hashCode * 59 + this.HostnameConfig.GetHashCode();
                 if (this.ServerEnterpriseProjectID != null) hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
+                if (this.Partition != null) hashCode = hashCode * 59 + this.Partition.GetHashCode();
                 return hashCode;
             }
         }
