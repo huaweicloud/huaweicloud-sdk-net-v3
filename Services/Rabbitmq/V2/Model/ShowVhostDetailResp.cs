@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// Vhost名称。
+        /// **参数解释**： Vhost名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 是否开启消息轨迹[（AMQP版本不涉及此字段）](tag:hws,hws_hk)。
+        /// **参数解释**： 是否开启消息轨迹[（AMQP版本不涉及此字段）](tag:hws,hws_hk)。 **取值范围**： - true：开启。 - false：不开启
         /// </summary>
         [JsonProperty("tracing", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Tracing { get; set; }

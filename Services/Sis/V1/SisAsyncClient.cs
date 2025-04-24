@@ -79,7 +79,7 @@ namespace HuaweiCloud.SDK.Sis.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVocabularyRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteVocabularyResponse>(response);
+            return JsonUtils.DeSerialize<DeleteVocabularyResponse>(response);
         }
 
         public AsyncInvoker<DeleteVocabularyResponse> DeleteVocabularyAsyncInvoker(DeleteVocabularyRequest deleteVocabularyRequest)
@@ -88,7 +88,7 @@ namespace HuaweiCloud.SDK.Sis.V1
             urlParam.Add("vocabulary_id", deleteVocabularyRequest.VocabularyId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVocabularyRequest);
-            return new AsyncInvoker<DeleteVocabularyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVocabularyResponse>);
+            return new AsyncInvoker<DeleteVocabularyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteVocabularyResponse>);
         }
         
         /// <summary>

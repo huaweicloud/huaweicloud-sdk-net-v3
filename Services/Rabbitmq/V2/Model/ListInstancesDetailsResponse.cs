@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 实例列表。
+        /// **参数解释**： 实例列表。
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowInstanceResp> Instances { get; set; }
 
         /// <summary>
-        /// 实例个数。
+        /// **参数解释**： 实例个数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("instance_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? InstanceNum { get; set; }

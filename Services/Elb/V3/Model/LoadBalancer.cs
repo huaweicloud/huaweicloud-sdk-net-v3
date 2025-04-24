@@ -131,6 +131,121 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         }
 
         /// <summary>
+        /// 参数解释：lb 模式，默认为lb，ep模式LB支持跨租户访问。  不支持该字段，请勿使用。
+        /// </summary>
+        /// <value>参数解释：lb 模式，默认为lb，ep模式LB支持跨租户访问。  不支持该字段，请勿使用。</value>
+        [JsonConverter(typeof(EnumClassConverter<ServiceLbModeEnum>))]
+        public class ServiceLbModeEnum
+        {
+            /// <summary>
+            /// Enum LB for value: lb
+            /// </summary>
+            public static readonly ServiceLbModeEnum LB = new ServiceLbModeEnum("lb");
+
+            /// <summary>
+            /// Enum EP for value: ep
+            /// </summary>
+            public static readonly ServiceLbModeEnum EP = new ServiceLbModeEnum("ep");
+
+            private static readonly Dictionary<string, ServiceLbModeEnum> StaticFields =
+            new Dictionary<string, ServiceLbModeEnum>()
+            {
+                { "lb", LB },
+                { "ep", EP },
+            };
+
+            private string _value;
+
+            public ServiceLbModeEnum()
+            {
+
+            }
+
+            public ServiceLbModeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ServiceLbModeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ServiceLbModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ServiceLbModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ServiceLbModeEnum a, ServiceLbModeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ServiceLbModeEnum a, ServiceLbModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 参数解释：修改保护状态。  取值范围： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。  默认取值：nonProtection
         /// </summary>
         /// <value>参数解释：修改保护状态。  取值范围： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。  默认取值：nonProtection</value>
@@ -421,6 +536,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string L7ScaleFlavorId { get; set; }
 
         /// <summary>
+        /// 网关型LB的Flavor ID。  [使用说明：当gw_flavor_id不传时，会使用默认gateway flavor （默认gateway flavor根据不同局点有所不同，具体以实际值为准）。 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  不支持该字段，请勿使用。
+        /// </summary>
+        [JsonProperty("gw_flavor_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GwFlavorId { get; set; }
+
+        /// <summary>
+        /// 参数解释：负载均衡器类别。  取值范围： - gateway 表示网关类型负载均衡器。 - null 表示其他非网关类型负载均衡器。  默认取值：null。  不支持该字段，请勿使用。
+        /// </summary>
+        [JsonProperty("loadbalancer_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string LoadbalancerType { get; set; }
+
+        /// <summary>
         /// 参数解释：负载均衡器绑定的公网IP。只支持绑定一个公网IP。  注：该字段与eips一致。
         /// </summary>
         [JsonProperty("publicips", NullValueHandling = NullValueHandling.Ignore)]
@@ -456,12 +583,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string FrozenScene { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("ipv6_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
-        public BandwidthRef Ipv6Bandwidth { get; set; }
-
-        /// <summary>
         /// 参数解释：是否开启删除保护。  约束限制： - 仅当前局点启用删除保护特性后才会返回该字段。 - 退场时需要先关闭所有资源的删除保护开关。  取值范围： - false：不开启。 - true：开启。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
         /// </summary>
         [JsonProperty("deletion_protection_enable", NullValueHandling = NullValueHandling.Ignore)]
@@ -480,10 +601,33 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string PublicBorderGroup { get; set; }
 
         /// <summary>
-        /// 参数解释：负载均衡器实例的计费模式。  取值范围： - flavor：按规格计费 - lcu：按使用量计费 - 空值：若是共享型表示免费实例。若是独享型则与flavor模式一致，都是按规格计费。
+        /// 参数解释：负载均衡器实例的计费模式。  取值范围： - flavor：按规格计费 - lcu：按使用量计费 - 空值：若是共享型表示免费实例。若是独享型则与flavor模式一致，都是按规格计费。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,g42,hk_g42)
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ChargeMode { get; set; }
+
+        /// <summary>
+        /// 参数解释：lb 模式，默认为lb，ep模式LB支持跨租户访问。  不支持该字段，请勿使用。
+        /// </summary>
+        [JsonProperty("service_lb_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public ServiceLbModeEnum ServiceLbMode { get; set; }
+        /// <summary>
+        /// 参数解释：标识实例归属哪个内部服务。  不支持该字段，请勿使用。
+        /// </summary>
+        [JsonProperty("instance_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceType { get; set; }
+
+        /// <summary>
+        /// 参数解释：标识实例绑定内部服务的实例id。  不支持该字段，请勿使用。
+        /// </summary>
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
+
+        /// <summary>
+        /// 参数解释：pp扩展。  不支持该字段，请勿使用。
+        /// </summary>
+        [JsonProperty("proxy_protocol_extensions", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ProxyProtocolExtension> ProxyProtocolExtensions { get; set; }
 
         /// <summary>
         /// 参数解释：WAF故障时的流量处理策略。  约束限制：只有绑定了waf的LB实例，该字段才会生效。  取值范围：discard:丢弃，forward: 转发到后端。  默认取值：forward  [不支持该字段，请勿使用。](tag:hws_eu,hws_test,hcs,hcs_sm,hcso,hk_vdf,srg,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,ocb,ctc,cmcc,tm,ct,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
@@ -552,17 +696,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  l4ScaleFlavorId: ").Append(L4ScaleFlavorId).Append("\n");
             sb.Append("  l7FlavorId: ").Append(L7FlavorId).Append("\n");
             sb.Append("  l7ScaleFlavorId: ").Append(L7ScaleFlavorId).Append("\n");
+            sb.Append("  gwFlavorId: ").Append(GwFlavorId).Append("\n");
+            sb.Append("  loadbalancerType: ").Append(LoadbalancerType).Append("\n");
             sb.Append("  publicips: ").Append(Publicips).Append("\n");
             sb.Append("  globalEips: ").Append(GlobalEips).Append("\n");
             sb.Append("  elbVirsubnetIds: ").Append(ElbVirsubnetIds).Append("\n");
             sb.Append("  elbVirsubnetType: ").Append(ElbVirsubnetType).Append("\n");
             sb.Append("  ipTargetEnable: ").Append(IpTargetEnable).Append("\n");
             sb.Append("  frozenScene: ").Append(FrozenScene).Append("\n");
-            sb.Append("  ipv6Bandwidth: ").Append(Ipv6Bandwidth).Append("\n");
             sb.Append("  deletionProtectionEnable: ").Append(DeletionProtectionEnable).Append("\n");
             sb.Append("  autoscaling: ").Append(Autoscaling).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
+            sb.Append("  serviceLbMode: ").Append(ServiceLbMode).Append("\n");
+            sb.Append("  instanceType: ").Append(InstanceType).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  proxyProtocolExtensions: ").Append(ProxyProtocolExtensions).Append("\n");
             sb.Append("  wafFailureAction: ").Append(WafFailureAction).Append("\n");
             sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
@@ -615,17 +764,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.L4ScaleFlavorId != input.L4ScaleFlavorId || (this.L4ScaleFlavorId != null && !this.L4ScaleFlavorId.Equals(input.L4ScaleFlavorId))) return false;
             if (this.L7FlavorId != input.L7FlavorId || (this.L7FlavorId != null && !this.L7FlavorId.Equals(input.L7FlavorId))) return false;
             if (this.L7ScaleFlavorId != input.L7ScaleFlavorId || (this.L7ScaleFlavorId != null && !this.L7ScaleFlavorId.Equals(input.L7ScaleFlavorId))) return false;
+            if (this.GwFlavorId != input.GwFlavorId || (this.GwFlavorId != null && !this.GwFlavorId.Equals(input.GwFlavorId))) return false;
+            if (this.LoadbalancerType != input.LoadbalancerType || (this.LoadbalancerType != null && !this.LoadbalancerType.Equals(input.LoadbalancerType))) return false;
             if (this.Publicips != input.Publicips || (this.Publicips != null && input.Publicips != null && !this.Publicips.SequenceEqual(input.Publicips))) return false;
             if (this.GlobalEips != input.GlobalEips || (this.GlobalEips != null && input.GlobalEips != null && !this.GlobalEips.SequenceEqual(input.GlobalEips))) return false;
             if (this.ElbVirsubnetIds != input.ElbVirsubnetIds || (this.ElbVirsubnetIds != null && input.ElbVirsubnetIds != null && !this.ElbVirsubnetIds.SequenceEqual(input.ElbVirsubnetIds))) return false;
             if (this.ElbVirsubnetType != input.ElbVirsubnetType) return false;
             if (this.IpTargetEnable != input.IpTargetEnable || (this.IpTargetEnable != null && !this.IpTargetEnable.Equals(input.IpTargetEnable))) return false;
             if (this.FrozenScene != input.FrozenScene || (this.FrozenScene != null && !this.FrozenScene.Equals(input.FrozenScene))) return false;
-            if (this.Ipv6Bandwidth != input.Ipv6Bandwidth || (this.Ipv6Bandwidth != null && !this.Ipv6Bandwidth.Equals(input.Ipv6Bandwidth))) return false;
             if (this.DeletionProtectionEnable != input.DeletionProtectionEnable || (this.DeletionProtectionEnable != null && !this.DeletionProtectionEnable.Equals(input.DeletionProtectionEnable))) return false;
             if (this.Autoscaling != input.Autoscaling || (this.Autoscaling != null && !this.Autoscaling.Equals(input.Autoscaling))) return false;
             if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
             if (this.ChargeMode != input.ChargeMode || (this.ChargeMode != null && !this.ChargeMode.Equals(input.ChargeMode))) return false;
+            if (this.ServiceLbMode != input.ServiceLbMode) return false;
+            if (this.InstanceType != input.InstanceType || (this.InstanceType != null && !this.InstanceType.Equals(input.InstanceType))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.ProxyProtocolExtensions != input.ProxyProtocolExtensions || (this.ProxyProtocolExtensions != null && input.ProxyProtocolExtensions != null && !this.ProxyProtocolExtensions.SequenceEqual(input.ProxyProtocolExtensions))) return false;
             if (this.WafFailureAction != input.WafFailureAction || (this.WafFailureAction != null && !this.WafFailureAction.Equals(input.WafFailureAction))) return false;
             if (this.ProtectionStatus != input.ProtectionStatus) return false;
             if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && !this.ProtectionReason.Equals(input.ProtectionReason))) return false;
@@ -672,17 +826,22 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.L4ScaleFlavorId != null) hashCode = hashCode * 59 + this.L4ScaleFlavorId.GetHashCode();
                 if (this.L7FlavorId != null) hashCode = hashCode * 59 + this.L7FlavorId.GetHashCode();
                 if (this.L7ScaleFlavorId != null) hashCode = hashCode * 59 + this.L7ScaleFlavorId.GetHashCode();
+                if (this.GwFlavorId != null) hashCode = hashCode * 59 + this.GwFlavorId.GetHashCode();
+                if (this.LoadbalancerType != null) hashCode = hashCode * 59 + this.LoadbalancerType.GetHashCode();
                 if (this.Publicips != null) hashCode = hashCode * 59 + this.Publicips.GetHashCode();
                 if (this.GlobalEips != null) hashCode = hashCode * 59 + this.GlobalEips.GetHashCode();
                 if (this.ElbVirsubnetIds != null) hashCode = hashCode * 59 + this.ElbVirsubnetIds.GetHashCode();
                 hashCode = hashCode * 59 + this.ElbVirsubnetType.GetHashCode();
                 if (this.IpTargetEnable != null) hashCode = hashCode * 59 + this.IpTargetEnable.GetHashCode();
                 if (this.FrozenScene != null) hashCode = hashCode * 59 + this.FrozenScene.GetHashCode();
-                if (this.Ipv6Bandwidth != null) hashCode = hashCode * 59 + this.Ipv6Bandwidth.GetHashCode();
                 if (this.DeletionProtectionEnable != null) hashCode = hashCode * 59 + this.DeletionProtectionEnable.GetHashCode();
                 if (this.Autoscaling != null) hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
                 if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 if (this.ChargeMode != null) hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                hashCode = hashCode * 59 + this.ServiceLbMode.GetHashCode();
+                if (this.InstanceType != null) hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.ProxyProtocolExtensions != null) hashCode = hashCode * 59 + this.ProxyProtocolExtensions.GetHashCode();
                 if (this.WafFailureAction != null) hashCode = hashCode * 59 + this.WafFailureAction.GetHashCode();
                 hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();

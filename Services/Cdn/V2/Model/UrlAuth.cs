@@ -41,10 +41,16 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string SignMethod { get; set; }
 
         /// <summary>
-        /// 鉴权范围，目前仅支持配置所有文件参与鉴权，all：所有文件。
+        /// 鉴权范围 - all：所有文件 - include_file_extension：指定后缀文件参与鉴权 - exclude_file_extension：指定后缀文件不参与鉴权
         /// </summary>
         [JsonProperty("match_type", NullValueHandling = NullValueHandling.Ignore)]
         public string MatchType { get; set; }
+
+        /// <summary>
+        /// 鉴权文件匹配规则，当match_type为all时，置空。当match_type为include_file_extension或exclude_file_extension时，输入文件后缀，后缀以“.”为首字符，多个后缀以“,”分隔，如.jpg,.zip,.exe。
+        /// </summary>
+        [JsonProperty("match_rule", NullValueHandling = NullValueHandling.Ignore)]
+        public string MatchRule { get; set; }
 
         /// <summary>
         /// 
@@ -96,6 +102,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  expireTime: ").Append(ExpireTime).Append("\n");
             sb.Append("  signMethod: ").Append(SignMethod).Append("\n");
             sb.Append("  matchType: ").Append(MatchType).Append("\n");
+            sb.Append("  matchRule: ").Append(MatchRule).Append("\n");
             sb.Append("  inheritConfig: ").Append(InheritConfig).Append("\n");
             sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  backupKey: ").Append(BackupKey).Append("\n");
@@ -125,6 +132,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
             if (this.SignMethod != input.SignMethod || (this.SignMethod != null && !this.SignMethod.Equals(input.SignMethod))) return false;
             if (this.MatchType != input.MatchType || (this.MatchType != null && !this.MatchType.Equals(input.MatchType))) return false;
+            if (this.MatchRule != input.MatchRule || (this.MatchRule != null && !this.MatchRule.Equals(input.MatchRule))) return false;
             if (this.InheritConfig != input.InheritConfig || (this.InheritConfig != null && !this.InheritConfig.Equals(input.InheritConfig))) return false;
             if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
             if (this.BackupKey != input.BackupKey || (this.BackupKey != null && !this.BackupKey.Equals(input.BackupKey))) return false;
@@ -148,6 +156,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
                 if (this.SignMethod != null) hashCode = hashCode * 59 + this.SignMethod.GetHashCode();
                 if (this.MatchType != null) hashCode = hashCode * 59 + this.MatchType.GetHashCode();
+                if (this.MatchRule != null) hashCode = hashCode * 59 + this.MatchRule.GetHashCode();
                 if (this.InheritConfig != null) hashCode = hashCode * 59 + this.InheritConfig.GetHashCode();
                 if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.BackupKey != null) hashCode = hashCode * 59 + this.BackupKey.GetHashCode();

@@ -118,6 +118,32 @@ namespace HuaweiCloud.SDK.Ims.V2
         }
         
         /// <summary>
+        /// 批量删除镜像标签
+        ///
+        /// 该接口用于为指定镜像批量删除标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteTagsResponse> BatchDeleteTagsAsync(BatchDeleteTagsRequest batchDeleteTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", batchDeleteTagsRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudimages/{image_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteTagsRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteTagsResponse> BatchDeleteTagsAsyncInvoker(BatchDeleteTagsRequest batchDeleteTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", batchDeleteTagsRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudimages/{image_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteTagsRequest);
+            return new AsyncInvoker<BatchDeleteTagsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<BatchDeleteTagsResponse>);
+        }
+        
+        /// <summary>
         /// 批量更新镜像成员状态
         ///
         /// 该接口为扩展接口，主要用于用户接受或者拒绝多个共享镜像时批量更新镜像成员的状态。
@@ -409,6 +435,32 @@ namespace HuaweiCloud.SDK.Ims.V2
         }
         
         /// <summary>
+        /// 获取镜像成员列表
+        ///
+        /// 该接口用于共享镜像过程中，获取接受该镜像的成员列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListImageMembersResponse> ListImageMembersAsync(ListImageMembersRequest listImageMembersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", listImageMembersRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudimages/{image_id}/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImageMembersRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListImageMembersResponse>(response);
+        }
+
+        public AsyncInvoker<ListImageMembersResponse> ListImageMembersAsyncInvoker(ListImageMembersRequest listImageMembersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", listImageMembersRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudimages/{image_id}/members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImageMembersRequest);
+            return new AsyncInvoker<ListImageMembersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListImageMembersResponse>);
+        }
+        
+        /// <summary>
         /// 查询镜像标签
         ///
         /// 该接口用于为查询指定镜像上的所有标签
@@ -568,6 +620,34 @@ namespace HuaweiCloud.SDK.Ims.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/{image_id}/upload", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", registerImageRequest);
             return new AsyncInvoker<RegisterImageResponse>(this, "PUT", request, JsonUtils.DeSerialize<RegisterImageResponse>);
+        }
+        
+        /// <summary>
+        /// 获取镜像成员详情
+        ///
+        /// 该接口主要用于镜像共享中查询某个镜像成员的详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowImageMemberResponse> ShowImageMemberAsync(ShowImageMemberRequest showImageMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", showImageMemberRequest.ImageId.ToString());
+            urlParam.Add("member_id", showImageMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudimages/{image_id}/members/{member_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageMemberRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowImageMemberResponse>(response);
+        }
+
+        public AsyncInvoker<ShowImageMemberResponse> ShowImageMemberAsyncInvoker(ShowImageMemberRequest showImageMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", showImageMemberRequest.ImageId.ToString());
+            urlParam.Add("member_id", showImageMemberRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudimages/{image_id}/members/{member_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageMemberRequest);
+            return new AsyncInvoker<ShowImageMemberResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowImageMemberResponse>);
         }
         
         /// <summary>

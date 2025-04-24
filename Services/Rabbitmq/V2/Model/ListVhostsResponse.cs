@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 当前显示数量
+        /// **参数解释**： 当前显示的Vhost数量 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
 
         /// <summary>
-        /// 查询结果总数
+        /// **参数解释**： 查询到的Vhost总数 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 查询的Vhost信息列表
+        /// **参数解释**： 查询的Vhost信息列表
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowVhostDetailResp> Items { get; set; }

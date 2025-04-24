@@ -17,6 +17,27 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
+        /// 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
+        /// <summary>
+        /// 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse&#x3D;true时，若要查询上一页，marker取值为当前页返回值的previous_marker
+        /// </summary>
+        [SDKProperty("page_reverse", IsQuery = true)]
+        [JsonProperty("page_reverse", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? PageReverse { get; set; }
+
+        /// <summary>
         /// 参数解释：任务ID。
         /// </summary>
         [SDKProperty("job_id", IsQuery = true)]
@@ -67,6 +88,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListJobsRequest {\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
+            sb.Append("  pageReverse: ").Append(PageReverse).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  jobType: ").Append(JobType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
@@ -91,6 +115,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool Equals(ListJobsRequest input)
         {
             if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
             if (this.JobType != input.JobType || (this.JobType != null && !this.JobType.Equals(input.JobType))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
@@ -109,6 +136,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.JobType != null) hashCode = hashCode * 59 + this.JobType.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();

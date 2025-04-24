@@ -28,12 +28,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("availability_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<AvailabilityZone>> AvailabilityZones { get; set; }
 
-        /// <summary>
-        /// 参数解释：可用区的产品编码，仅边缘场景有效。
-        /// </summary>
-        [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
-        public string SpecCode { get; set; }
-
 
 
         /// <summary>
@@ -45,7 +39,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("class ListAvailabilityZonesResponse {\n");
             sb.Append("  requestId: ").Append(RequestId).Append("\n");
             sb.Append("  availabilityZones: ").Append(AvailabilityZones).Append("\n");
-            sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,7 +59,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (input == null) return false;
             if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
             if (this.AvailabilityZones != input.AvailabilityZones || (this.AvailabilityZones != null && input.AvailabilityZones != null && !this.AvailabilityZones.SequenceEqual(input.AvailabilityZones))) return false;
-            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
 
             return true;
         }
@@ -81,7 +73,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 var hashCode = 41;
                 if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 if (this.AvailabilityZones != null) hashCode = hashCode * 59 + this.AvailabilityZones.GetHashCode();
-                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 return hashCode;
             }
         }

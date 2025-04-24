@@ -15,7 +15,7 @@
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
         <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
         <PackageId>HuaweiCloud.SDK.Config</PackageId>
-        <Version>3.1.142</Version>
+        <Version>3.1.143</Version>
         <Authors>HuaweiCloud</Authors>
         <Copyright>Copyright 2023 Huawei Technologies Co., Ltd.</Copyright>
         <Company>Huawei Technologies Co., Ltd.</Company>

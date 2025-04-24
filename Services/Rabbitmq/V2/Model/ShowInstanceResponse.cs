@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     public class ShowInstanceResponse : SdkResponse
     {
         /// <summary>
-        /// 代理个数。
+        /// **参数解释**： 代理个数。 **取值范围**： - 1 - 3 - 5 - 7
         /// </summary>
-        /// <value>代理个数。</value>
+        /// <value>**参数解释**： 代理个数。 **取值范围**： - 1 - 3 - 5 - 7</value>
         [JsonConverter(typeof(EnumClassConverter<BrokerNumEnum>))]
         public class BrokerNumEnum
         {
@@ -143,9 +143,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         }
 
         /// <summary>
-        /// 实例类型：集群，cluster。
+        /// **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
         /// </summary>
-        /// <value>实例类型：集群，cluster。</value>
+        /// <value>**参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -259,305 +259,305 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
 
 
         /// <summary>
-        /// 认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+        /// **参数解释**： 认证用户名。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("access_user", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessUser { get; set; }
 
         /// <summary>
-        /// 代理个数。
+        /// **参数解释**： 代理个数。 **取值范围**： - 1 - 3 - 5 - 7
         /// </summary>
         [JsonProperty("broker_num", NullValueHandling = NullValueHandling.Ignore)]
         public BrokerNumEnum BrokerNum { get; set; }
         /// <summary>
-        /// 实例名称。
+        /// **参数解释**： 实例名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 消息引擎。
+        /// **参数解释**： 消息引擎。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public string Engine { get; set; }
 
         /// <summary>
-        /// 消息引擎版本。
+        /// **参数解释**： 消息引擎版本。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public string EngineVersion { get; set; }
 
         /// <summary>
-        /// 实例规格。   - RabbitMQ实例单机返回vm规格。   - RabbitMQ实例集群返回vm规格和节点数。
+        /// **参数解释**： 实例规格。 **取值范围**： - 单机实例：返回vm规格。 - 集群实例：返回vm规格和节点数。
         /// </summary>
         [JsonProperty("specification", NullValueHandling = NullValueHandling.Ignore)]
         public string Specification { get; set; }
 
         /// <summary>
-        /// 消息存储空间，单位：GB。
+        /// **参数解释**： 消息存储空间，单位：GB。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? StorageSpace { get; set; }
 
         /// <summary>
-        /// 已使用的消息存储空间，单位：GB。
+        /// **参数解释**： 已使用的消息存储空间，单位：GB。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("used_storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? UsedStorageSpace { get; set; }
 
         /// <summary>
-        /// 实例是否开启域名访问功能。 - true：开启 - false：未开启
+        /// **参数解释**： 实例是否开启域名访问功能。 **取值范围**： - true：开启 - false：未开启
         /// </summary>
         [JsonProperty("dns_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DnsEnable { get; set; }
 
         /// <summary>
-        /// 实例内网连接IP地址。
+        /// **参数解释**： 实例内网连接IP地址。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("connect_address", NullValueHandling = NullValueHandling.Ignore)]
         public string ConnectAddress { get; set; }
 
         /// <summary>
-        /// 实例内网连接域名。
+        /// **参数解释**： 实例内网连接域名。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("connect_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ConnectDomainName { get; set; }
 
         /// <summary>
-        /// 实例公网连接IP地址。
+        /// **参数解释**： 实例公网连接IP地址。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("public_connect_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicConnectAddress { get; set; }
 
         /// <summary>
-        /// 实例公网连接域名。
+        /// **参数解释**： 实例公网连接域名。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("public_connect_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicConnectDomainName { get; set; }
 
         /// <summary>
-        /// 实例连接端口。
+        /// **参数解释**： 实例连接端口。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public int? Port { get; set; }
 
         /// <summary>
-        /// 实例的状态。
+        /// **参数解释**： 实例状态。 **取值范围**： [详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)](tag:hws,hws_eu,hws_hk,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)](tag:hcs)。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 实例描述。
+        /// **参数解释**： 实例描述。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// **参数解释**： 实例ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 资源规格标识。   [- dms.instance.rabbitmq.single.c3.2u4g：RabbitMQ单机，vm规格2u4g   - dms.instance.rabbitmq.single.c3.4u8g：RabbitMQ单机，vm规格4u8g   - dms.instance.rabbitmq.single.c3.8u16g：RabbitMQ单机，vm规格8u16g   - dms.instance.rabbitmq.single.c3.16u32g：RabbitMQ单机，vm规格16u32g   - dms.instance.rabbitmq.cluster.c3.4u8g.3：RabbitMQ集群，vm规格4u8g，3个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.5：RabbitMQ集群，vm规格4u8g，5个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.7：RabbitMQ集群，vm规格4u8g，7个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.3：RabbitMQ集群，vm规格8u16g，3个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.5：RabbitMQ集群，vm规格8u16g，5个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.7：RabbitMQ集群，vm规格8u16g，7个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.3：RabbitMQ集群，vm规格16u32g，3个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.5：RabbitMQ集群，vm规格16u32g，5个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.7：RabbitMQ集群，vm规格16u32g，7个节点](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,sbc)
+        /// **参数解释**： 资源规格标识。 **取值范围**： [- dms.instance.rabbitmq.single.c3.2u4g：RabbitMQ单机，vm规格2u4g - dms.instance.rabbitmq.single.c3.4u8g：RabbitMQ单机，vm规格4u8g - dms.instance.rabbitmq.single.c3.8u16g：RabbitMQ单机，vm规格8u16g - dms.instance.rabbitmq.single.c3.16u32g：RabbitMQ单机，vm规格16u32g - dms.instance.rabbitmq.cluster.c3.4u8g.3：RabbitMQ集群，vm规格4u8g，3个节点 - dms.instance.rabbitmq.cluster.c3.4u8g.5：RabbitMQ集群，vm规格4u8g，5个节点 - dms.instance.rabbitmq.cluster.c3.4u8g.7：RabbitMQ集群，vm规格4u8g，7个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.3：RabbitMQ集群，vm规格8u16g，3个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.5：RabbitMQ集群，vm规格8u16g，5个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.7：RabbitMQ集群，vm规格8u16g，7个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.3：RabbitMQ集群，vm规格16u32g，3个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.5：RabbitMQ集群，vm规格16u32g，5个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.7：RabbitMQ集群，vm规格16u32g，7个节点](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,sbc)
         /// </summary>
         [JsonProperty("resource_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceSpecCode { get; set; }
 
         /// <summary>
-        /// 付费模式，1表示按需计费，0表示包年/包月计费。
+        /// **参数解释**： 付费模式。 **取值范围**： - 1：按需计费。 - 0：包年/包月计费。
         /// </summary>
         [JsonProperty("charging_mode", NullValueHandling = NullValueHandling.Ignore)]
         public int? ChargingMode { get; set; }
 
         /// <summary>
-        /// VPC ID。
+        /// **参数解释**： VPC ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// VPC的名称。
+        /// **参数解释**： VPC的名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("vpc_name", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcName { get; set; }
 
         /// <summary>
-        /// 完成创建时间。格式为时间戳，指从格林威治时间 1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。
+        /// **参数解释**： 完成创建时间。格式为时间戳，指从格林威治时间 1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 用户ID。
+        /// **参数解释**： 用户ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
         public string UserId { get; set; }
 
         /// <summary>
-        /// 用户名。
+        /// **参数解释**： 用户名。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string UserName { get; set; }
 
         /// <summary>
-        /// 订单ID，只有在包周期计费时才会有order_id值，其他计费方式order_id值为空。
+        /// **参数解释**： 订单ID，只有在包周期计费时才会有order_id值，其他计费方式order_id值为空。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// 维护时间窗开始时间，格式为HH:mm:ss。
+        /// **参数解释**： 维护时间窗开始时间，格式为HH:mm:ss。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("maintain_begin", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintainBegin { get; set; }
 
         /// <summary>
-        /// 维护时间窗结束时间，格式为HH:mm:ss。
+        /// **参数解释**： 维护时间窗结束时间，格式为HH:mm:ss。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("maintain_end", NullValueHandling = NullValueHandling.Ignore)]
         public string MaintainEnd { get; set; }
 
         /// <summary>
-        /// RabbitMQ实例是否开启公网访问功能。   - true：开启   - false：未开启
+        /// **参数解释**： RabbitMQ实例是否开启公网访问功能。 **取值范围**： - true：开启 - false：未开启
         /// </summary>
         [JsonProperty("enable_publicip", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnablePublicip { get; set; }
 
         /// <summary>
-        /// RabbitMQ实例绑定的弹性IP地址。  如果未开启公网访问功能，该字段值为null。
+        /// **参数解释**： RabbitMQ实例绑定的弹性IP地址。  如果未开启公网访问功能，该字段值为null。 **取值范围**： - true：开启 - false：未开启
         /// </summary>
         [JsonProperty("publicip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicipAddress { get; set; }
 
         /// <summary>
-        /// RabbitMQ实例绑定的弹性IP地址的ID。  如果未开启公网访问功能，该字段值为null。
+        /// **参数解释**： RabbitMQ实例绑定的弹性IP地址的ID。  如果未开启公网访问功能，该字段值为null。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("publicip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicipId { get; set; }
 
         /// <summary>
-        /// RabbitMQ实例的管理地址。
+        /// **参数解释**： RabbitMQ实例的管理地址。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("management_connect_address", NullValueHandling = NullValueHandling.Ignore)]
         public string ManagementConnectAddress { get; set; }
 
         /// <summary>
-        /// RabbitMQ实例的管理域名。
+        /// **参数解释**： RabbitMQ实例的管理域名。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("management_connect_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ManagementConnectDomainName { get; set; }
 
         /// <summary>
-        /// RabbitMQ实例的公网管理地址。
+        /// **参数解释**： RabbitMQ实例的公网管理地址。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("public_management_connect_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicManagementConnectAddress { get; set; }
 
         /// <summary>
-        /// RabbitMQ实例的公网管理域名。
+        /// **参数解释**： RabbitMQ实例的公网管理域名。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("public_management_connect_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicManagementConnectDomainName { get; set; }
 
         /// <summary>
-        /// 是否开启安全认证。   - true：开启   - false：未开启
+        /// **参数解释**： 是否开启安全认证。 **取值范围**： - true：开启 - false：未开启
         /// </summary>
         [JsonProperty("ssl_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SslEnable { get; set; }
 
         /// <summary>
-        /// 企业项目ID。
+        /// **参数解释**： 企业项目ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 实例扩容时用于区分老实例与新实例。 - true：新创建的实例，允许磁盘动态扩容不需要重启。 - false：老实例
+        /// **参数解释**： 实例扩容时用于区分老实例与新实例。 **取值范围**： - true：新创建的实例，允许磁盘动态扩容不需要重启。 - false：特别老的实例不支持磁盘扩容。
         /// </summary>
         [JsonProperty("is_logical_volume", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsLogicalVolume { get; set; }
 
         /// <summary>
-        /// 实例扩容磁盘次数，如果超过20次则无法扩容磁盘。
+        /// **参数解释**： 实例扩容磁盘次数，如果超过20次则无法扩容磁盘。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("extend_times", NullValueHandling = NullValueHandling.Ignore)]
         public int? ExtendTimes { get; set; }
 
         /// <summary>
-        /// 实例类型：集群，cluster。
+        /// **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// 产品标识。
+        /// **参数解释**： 产品标识。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 安全组ID。
+        /// **参数解释**： 安全组ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
 
         /// <summary>
-        /// 租户安全组名称。
+        /// **参数解释**： 租户安全组名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("security_group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupName { get; set; }
 
         /// <summary>
-        /// 子网ID。
+        /// **参数解释**： 子网ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 实例节点所在的可用区，返回“可用区ID”。
+        /// **参数解释**： 实例节点所在的可用区ID。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 实例节点所在的可用区，返回“可用区名称”。
+        /// **参数解释**： 实例节点所在的可用区名称。
         /// </summary>
         [JsonProperty("available_zone_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailableZoneNames { get; set; }
 
         /// <summary>
-        /// 总共消息存储空间，单位：GB。
+        /// **参数解释**： 总共消息存储空间，单位：GB。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("total_storage_space", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalStorageSpace { get; set; }
 
         /// <summary>
-        /// 存储资源ID。
+        /// **参数解释**： 存储资源ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("storage_resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string StorageResourceId { get; set; }
 
         /// <summary>
-        /// IO规格。
+        /// **参数解释**： IO规格。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("storage_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string StorageSpecCode { get; set; }
 
         /// <summary>
-        /// 是否开启ipv6。
+        /// **参数解释**： 是否开启IPv6。 **取值范围**： - true：开启。 - false：不开启。
         /// </summary>
         [JsonProperty("ipv6_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Ipv6Enable { get; set; }
 
         /// <summary>
-        /// IPv6的连接地址。
+        /// **参数解释**： IPv6的连接地址。
         /// </summary>
         [JsonProperty("ipv6_connect_addresses", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ipv6ConnectAddresses { get; set; }
 
         /// <summary>
-        /// 标签列表。
+        /// **参数解释**： 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagEntity> Tags { get; set; }

@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("category", NullValueHandling = NullValueHandling.Ignore)]
         public int? Category { get; set; }
 
+        /// <summary>
+        /// 参数解释：可用区的产品编码，仅边缘场景有效。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+        /// </summary>
+        [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string SpecCode { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("  category: ").Append(Category).Append("\n");
+            sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.Protocol != input.Protocol || (this.Protocol != null && input.Protocol != null && !this.Protocol.SequenceEqual(input.Protocol))) return false;
             if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
             if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 return hashCode;
             }
         }

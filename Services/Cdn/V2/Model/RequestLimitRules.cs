@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("limit_rate_value", NullValueHandling = NullValueHandling.Ignore)]
         public int? LimitRateValue { get; set; }
 
+        /// <summary>
+        /// 指明限速的时段，按照每天24小时设置限速时段，格式为：HHMM-HHMM（HH为时，MM为分，时区为UTC+8），多个时段限速时用“,”分隔，最多可配置10个时段，例如：0100-0200,2200-2300。不传或传空时默认值为0000-2400，代表限速对所有时段生效。
+        /// </summary>
+        [JsonProperty("limit_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string LimitTime { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  limitRateAfter: ").Append(LimitRateAfter).Append("\n");
             sb.Append("  limitRateValue: ").Append(LimitRateValue).Append("\n");
+            sb.Append("  limitTime: ").Append(LimitTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.LimitRateAfter != input.LimitRateAfter || (this.LimitRateAfter != null && !this.LimitRateAfter.Equals(input.LimitRateAfter))) return false;
             if (this.LimitRateValue != input.LimitRateValue || (this.LimitRateValue != null && !this.LimitRateValue.Equals(input.LimitRateValue))) return false;
+            if (this.LimitTime != input.LimitTime || (this.LimitTime != null && !this.LimitTime.Equals(input.LimitTime))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.LimitRateAfter != null) hashCode = hashCode * 59 + this.LimitRateAfter.GetHashCode();
                 if (this.LimitRateValue != null) hashCode = hashCode * 59 + this.LimitRateValue.GetHashCode();
+                if (this.LimitTime != null) hashCode = hashCode * 59 + this.LimitTime.GetHashCode();
                 return hashCode;
             }
         }

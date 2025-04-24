@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? PageReverse { get; set; }
 
         /// <summary>
-        /// 后端服务器名称。  支持多值查询，查询条件格式：*name&#x3D;xxx&amp;name&#x3D;xxx*。
+        /// 后端服务器名称。注意：该名称并非ECS名称。  支持多值查询，查询条件格式：*name&#x3D;xxx&amp;name&#x3D;xxx*。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]

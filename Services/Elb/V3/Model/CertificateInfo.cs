@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string EncPrivateKey { get; set; }
 
         /// <summary>
-        /// SCM证书ID
+        /// SCM证书ID。
         /// </summary>
         [JsonProperty("scm_certificate_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScmCertificateId { get; set; }

@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public bool? Internal { get; set; }
 
         /// <summary>
+        /// 参数列表
+        /// </summary>
+        [JsonProperty("arguments", NullValueHandling = NullValueHandling.Ignore)]
+        public Object Arguments { get; set; }
+
+        /// <summary>
         /// Exchange名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -70,6 +76,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  durable: ").Append(Durable).Append("\n");
             sb.Append("  Default: ").Append(Default).Append("\n");
             sb.Append("  Internal: ").Append(Internal).Append("\n");
+            sb.Append("  arguments: ").Append(Arguments).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  autoDelete: ").Append(AutoDelete).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
@@ -95,6 +102,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (this.Durable != input.Durable || (this.Durable != null && !this.Durable.Equals(input.Durable))) return false;
             if (this.Default != input.Default || (this.Default != null && !this.Default.Equals(input.Default))) return false;
             if (this.Internal != input.Internal || (this.Internal != null && !this.Internal.Equals(input.Internal))) return false;
+            if (this.Arguments != input.Arguments || (this.Arguments != null && !this.Arguments.Equals(input.Arguments))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.AutoDelete != input.AutoDelete || (this.AutoDelete != null && !this.AutoDelete.Equals(input.AutoDelete))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
@@ -114,6 +122,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 if (this.Durable != null) hashCode = hashCode * 59 + this.Durable.GetHashCode();
                 if (this.Default != null) hashCode = hashCode * 59 + this.Default.GetHashCode();
                 if (this.Internal != null) hashCode = hashCode * 59 + this.Internal.GetHashCode();
+                if (this.Arguments != null) hashCode = hashCode * 59 + this.Arguments.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.AutoDelete != null) hashCode = hashCode * 59 + this.AutoDelete.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();

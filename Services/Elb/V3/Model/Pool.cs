@@ -257,7 +257,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProtectionReason { get; set; }
 
         /// <summary>
-        /// 参数解释：后端是否开启端口透传。开启后，后端服务器端口与前端监听器端口保持一致。关闭后，请求会转发给后端服务器protocol_port字段指定端口。取值：false不开启，true开启。  约束限制： - 仅QUIC,TCP,UDP的pool支持。
+        /// 参数解释：后端是否开启端口透传。开启后，后端服务器端口与前端监听器端口保持一致。关闭后，请求会转发给后端服务器protocol_port字段指定端口。取值：false不开启，true开启。  约束限制： - 仅QUIC,TCP,UDP的pool支持。  [不支持该字段，请勿使用。](tag:hws_eu,hws_eu_wb,hws_test,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,g42,hk_g42)
         /// </summary>
         [JsonProperty("any_port_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AnyPortEnable { get; set; }
@@ -269,7 +269,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public ConnectionDrain ConnectionDrain { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组所在的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+        /// 参数解释：后端服务器组所在的企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -281,7 +281,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public PoolHealth PoolHealth { get; set; }
 
         /// <summary>
-        /// 参数解释：网络公共边界组，如：center
+        /// 参数解释：网络公共边界组，如：center。  [不支持该字段，请勿使用。](tag:hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,g42,hk_g42)
         /// </summary>
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }

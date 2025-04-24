@@ -789,6 +789,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 删除SQL限流规则
+        ///
+        /// 删除SQL限流规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteSqlFilterRuleResponse DeleteSqlFilterRule(DeleteSqlFilterRuleRequest deleteSqlFilterRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteSqlFilterRuleRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSqlFilterRuleRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteSqlFilterRuleResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSqlFilterRuleResponse> DeleteSqlFilterRuleInvoker(DeleteSqlFilterRuleRequest deleteSqlFilterRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteSqlFilterRuleRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSqlFilterRuleRequest);
+            return new SyncInvoker<DeleteSqlFilterRuleResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteSqlFilterRuleResponse>);
+        }
+        
+        /// <summary>
         /// 删除指定任务记录
         ///
         /// 删除指定任务记录。
@@ -812,6 +838,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTaskRecordRequest);
             return new SyncInvoker<DeleteTaskRecordResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTaskRecordResponse>);
+        }
+        
+        /// <summary>
+        /// 终止节点用户会话线程
+        ///
+        /// 终止TaurusDB节点中指定的用户会话线程，执行时将排除传入的内部会话线程。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteTaurusDbNodeProcessesResponse DeleteTaurusDbNodeProcesses(DeleteTaurusDbNodeProcessesRequest deleteTaurusDbNodeProcessesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteTaurusDbNodeProcessesRequest.InstanceId.ToString());
+            urlParam.Add("node_id", deleteTaurusDbNodeProcessesRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteTaurusDbNodeProcessesRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteTaurusDbNodeProcessesResponse>(response);
+        }
+
+        public SyncInvoker<DeleteTaurusDbNodeProcessesResponse> DeleteTaurusDbNodeProcessesInvoker(DeleteTaurusDbNodeProcessesRequest deleteTaurusDbNodeProcessesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteTaurusDbNodeProcessesRequest.InstanceId.ToString());
+            urlParam.Add("node_id", deleteTaurusDbNodeProcessesRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteTaurusDbNodeProcessesRequest);
+            return new SyncInvoker<DeleteTaurusDbNodeProcessesResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteTaurusDbNodeProcessesResponse>);
         }
         
         /// <summary>
@@ -1522,6 +1576,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询节点用户会话线程
+        ///
+        /// 分页查询TaurusDB节点中的用户会话线程，对应于show processlist命令，返回结果不含内部会话线程。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListTaurusDbNodeProcessesResponse ListTaurusDbNodeProcesses(ListTaurusDbNodeProcessesRequest listTaurusDbNodeProcessesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listTaurusDbNodeProcessesRequest.InstanceId.ToString());
+            urlParam.Add("node_id", listTaurusDbNodeProcessesRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTaurusDbNodeProcessesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListTaurusDbNodeProcessesResponse>(response);
+        }
+
+        public SyncInvoker<ListTaurusDbNodeProcessesResponse> ListTaurusDbNodeProcessesInvoker(ListTaurusDbNodeProcessesRequest listTaurusDbNodeProcessesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listTaurusDbNodeProcessesRequest.InstanceId.ToString());
+            urlParam.Add("node_id", listTaurusDbNodeProcessesRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTaurusDbNodeProcessesRequest);
+            return new SyncInvoker<ListTaurusDbNodeProcessesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTaurusDbNodeProcessesResponse>);
+        }
+        
+        /// <summary>
         /// 打开或关闭备份加密
         ///
         /// 打开或关闭备份加密。
@@ -1887,6 +1969,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setRecyclePolicyRequest);
             return new SyncInvoker<SetRecyclePolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetRecyclePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 设置SQL限流规则
+        ///
+        /// 设置SQL限流规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetSqlFilterRuleResponse SetSqlFilterRule(SetSqlFilterRuleRequest setSqlFilterRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setSqlFilterRuleRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setSqlFilterRuleRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<SetSqlFilterRuleResponse>(response);
+        }
+
+        public SyncInvoker<SetSqlFilterRuleResponse> SetSqlFilterRuleInvoker(SetSqlFilterRuleRequest setSqlFilterRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setSqlFilterRuleRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setSqlFilterRuleRequest);
+            return new SyncInvoker<SetSqlFilterRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetSqlFilterRuleResponse>);
         }
         
         /// <summary>
@@ -2714,6 +2822,58 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询SQL限流开关状态
+        ///
+        /// 查询SQL限流开关状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSqlFilterControlResponse ShowSqlFilterControl(ShowSqlFilterControlRequest showSqlFilterControlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showSqlFilterControlRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterControlRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSqlFilterControlResponse>(response);
+        }
+
+        public SyncInvoker<ShowSqlFilterControlResponse> ShowSqlFilterControlInvoker(ShowSqlFilterControlRequest showSqlFilterControlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showSqlFilterControlRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterControlRequest);
+            return new SyncInvoker<ShowSqlFilterControlResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSqlFilterControlResponse>);
+        }
+        
+        /// <summary>
+        /// 查询SQL限流规则
+        ///
+        /// 查询SQL限流规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSqlFilterRuleResponse ShowSqlFilterRule(ShowSqlFilterRuleRequest showSqlFilterRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showSqlFilterRuleRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterRuleRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSqlFilterRuleResponse>(response);
+        }
+
+        public SyncInvoker<ShowSqlFilterRuleResponse> ShowSqlFilterRuleInvoker(ShowSqlFilterRuleRequest showSqlFilterRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showSqlFilterRuleRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterRuleRequest);
+            return new SyncInvoker<ShowSqlFilterRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSqlFilterRuleResponse>);
+        }
+        
+        /// <summary>
         /// 减少数据库代理节点的数量
         ///
         /// 缩容数据库代理节点的数量。
@@ -3534,6 +3694,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog/modify", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSlowlogSensitiveSwitchRequest);
             return new SyncInvoker<UpdateSlowlogSensitiveSwitchResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateSlowlogSensitiveSwitchResponse>);
+        }
+        
+        /// <summary>
+        /// 开启或者关闭SQL限流
+        ///
+        /// 开启或者关闭SQL限流。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateSqlFilterControlResponse UpdateSqlFilterControl(UpdateSqlFilterControlRequest updateSqlFilterControlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateSqlFilterControlRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSqlFilterControlRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateSqlFilterControlResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSqlFilterControlResponse> UpdateSqlFilterControlInvoker(UpdateSqlFilterControlRequest updateSqlFilterControlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateSqlFilterControlRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSqlFilterControlRequest);
+            return new SyncInvoker<UpdateSqlFilterControlResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateSqlFilterControlResponse>);
         }
         
         /// <summary>
@@ -5234,136 +5420,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeSrKernelVersionRequest);
             return new SyncInvoker<UpgradeSrKernelVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeSrKernelVersionResponse>);
-        }
-        
-        /// <summary>
-        /// 删除SQL限流规则
-        ///
-        /// 删除SQL限流规则。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteSqlFilterRuleResponse DeleteSqlFilterRule(DeleteSqlFilterRuleRequest deleteSqlFilterRuleRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteSqlFilterRuleRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSqlFilterRuleRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerialize<DeleteSqlFilterRuleResponse>(response);
-        }
-
-        public SyncInvoker<DeleteSqlFilterRuleResponse> DeleteSqlFilterRuleInvoker(DeleteSqlFilterRuleRequest deleteSqlFilterRuleRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteSqlFilterRuleRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSqlFilterRuleRequest);
-            return new SyncInvoker<DeleteSqlFilterRuleResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteSqlFilterRuleResponse>);
-        }
-        
-        /// <summary>
-        /// 设置SQL限流规则
-        ///
-        /// 设置SQL限流规则。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public SetSqlFilterRuleResponse SetSqlFilterRule(SetSqlFilterRuleRequest setSqlFilterRuleRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", setSqlFilterRuleRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setSqlFilterRuleRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerialize<SetSqlFilterRuleResponse>(response);
-        }
-
-        public SyncInvoker<SetSqlFilterRuleResponse> SetSqlFilterRuleInvoker(SetSqlFilterRuleRequest setSqlFilterRuleRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", setSqlFilterRuleRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setSqlFilterRuleRequest);
-            return new SyncInvoker<SetSqlFilterRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetSqlFilterRuleResponse>);
-        }
-        
-        /// <summary>
-        /// 查询SQL限流开关状态
-        ///
-        /// 查询SQL限流开关状态。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowSqlFilterControlResponse ShowSqlFilterControl(ShowSqlFilterControlRequest showSqlFilterControlRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSqlFilterControlRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterControlRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowSqlFilterControlResponse>(response);
-        }
-
-        public SyncInvoker<ShowSqlFilterControlResponse> ShowSqlFilterControlInvoker(ShowSqlFilterControlRequest showSqlFilterControlRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSqlFilterControlRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterControlRequest);
-            return new SyncInvoker<ShowSqlFilterControlResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSqlFilterControlResponse>);
-        }
-        
-        /// <summary>
-        /// 查询SQL限流规则
-        ///
-        /// 查询SQL限流规则。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowSqlFilterRuleResponse ShowSqlFilterRule(ShowSqlFilterRuleRequest showSqlFilterRuleRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSqlFilterRuleRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterRuleRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowSqlFilterRuleResponse>(response);
-        }
-
-        public SyncInvoker<ShowSqlFilterRuleResponse> ShowSqlFilterRuleInvoker(ShowSqlFilterRuleRequest showSqlFilterRuleRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSqlFilterRuleRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterRuleRequest);
-            return new SyncInvoker<ShowSqlFilterRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSqlFilterRuleResponse>);
-        }
-        
-        /// <summary>
-        /// 开启或者关闭SQL限流
-        ///
-        /// 开启或者关闭SQL限流。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public UpdateSqlFilterControlResponse UpdateSqlFilterControl(UpdateSqlFilterControlRequest updateSqlFilterControlRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateSqlFilterControlRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSqlFilterControlRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<UpdateSqlFilterControlResponse>(response);
-        }
-
-        public SyncInvoker<UpdateSqlFilterControlResponse> UpdateSqlFilterControlInvoker(UpdateSqlFilterControlRequest updateSqlFilterControlRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateSqlFilterControlRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSqlFilterControlRequest);
-            return new SyncInvoker<UpdateSqlFilterControlResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateSqlFilterControlResponse>);
         }
         
     }

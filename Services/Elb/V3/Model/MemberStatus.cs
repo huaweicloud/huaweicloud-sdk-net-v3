@@ -34,6 +34,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("reason", NullValueHandling = NullValueHandling.Ignore)]
         public MemberHealthCheckFailedReason Reason { get; set; }
 
+        /// <summary>
+        /// 创建时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。
+        /// </summary>
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedAt { get; set; }
+
+        /// <summary>
+        /// 更新时间。格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。
+        /// </summary>
+        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdatedAt { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +58,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  listenerId: ").Append(ListenerId).Append("\n");
             sb.Append("  operatingStatus: ").Append(OperatingStatus).Append("\n");
             sb.Append("  reason: ").Append(Reason).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +81,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.ListenerId != input.ListenerId || (this.ListenerId != null && !this.ListenerId.Equals(input.ListenerId))) return false;
             if (this.OperatingStatus != input.OperatingStatus || (this.OperatingStatus != null && !this.OperatingStatus.Equals(input.OperatingStatus))) return false;
             if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
             return true;
         }
@@ -82,6 +98,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.ListenerId != null) hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
                 if (this.OperatingStatus != null) hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
                 if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }
