@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 待设置Record Set状态，当前仅支持DISABLE或ENABLE。
+        /// 待设置记录集状态，支持DISABLE或ENABLE。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 待设置Record Set ID列表。 最多支持50个。
+        /// 待设置记录集ID列表。 最多支持50个。
         /// </summary>
         [JsonProperty("recordset_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RecordsetIds { get; set; }

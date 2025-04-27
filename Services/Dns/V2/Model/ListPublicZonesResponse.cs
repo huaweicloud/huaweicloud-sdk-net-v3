@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public PageLink Links { get; set; }
 
         /// <summary>
-        /// 查询公网Zone的列表响应。
+        /// 查询公网域名的列表响应。
         /// </summary>
         [JsonProperty("zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<PublicZoneResp> Zones { get; set; }

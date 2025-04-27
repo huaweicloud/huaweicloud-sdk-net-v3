@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public Metadata Metadata { get; set; }
 
         /// <summary>
-        /// zone列表信息。
+        /// 域名列表信息。
         /// </summary>
         [JsonProperty("zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<PrivateZoneResp> Zones { get; set; }

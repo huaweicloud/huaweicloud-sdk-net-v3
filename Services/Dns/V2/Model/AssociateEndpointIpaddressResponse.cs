@@ -11,16 +11,16 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// 
+    /// Response Object
     /// </summary>
-    public class UpdatePublicZoneStatusRequestBody 
+    public class AssociateEndpointIpaddressResponse : SdkResponse
     {
 
         /// <summary>
-        /// Zone状态。  取值范围：  ENABLE：启用解析 DISABLE：暂停解析
+        /// 
         /// </summary>
-        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
+        [JsonProperty("endpoint", NullValueHandling = NullValueHandling.Ignore)]
+        public EndpointResp Endpoint { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UpdatePublicZoneStatusRequestBody {\n");
-            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("class AssociateEndpointIpaddressResponse {\n");
+            sb.Append("  endpoint: ").Append(Endpoint).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +41,16 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdatePublicZoneStatusRequestBody);
+            return this.Equals(input as AssociateEndpointIpaddressResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(UpdatePublicZoneStatusRequestBody input)
+        public bool Equals(AssociateEndpointIpaddressResponse input)
         {
             if (input == null) return false;
-            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Endpoint != input.Endpoint || (this.Endpoint != null && !this.Endpoint.Equals(input.Endpoint))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Endpoint != null) hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
                 return hashCode;
             }
         }

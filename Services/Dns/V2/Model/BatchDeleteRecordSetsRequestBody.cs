@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// Zone的类型，取值为public或private。
+        /// 域名的类型，取值为public或private。
         /// </summary>
         [JsonProperty("zone_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneType { get; set; }
 
         /// <summary>
-        /// 待删除的Record Set ID列表。 最多支持100个。
+        /// 待删除的记录集ID列表。 最多支持100个。
         /// </summary>
         [JsonProperty("recordset_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RecordsetIds { get; set; }

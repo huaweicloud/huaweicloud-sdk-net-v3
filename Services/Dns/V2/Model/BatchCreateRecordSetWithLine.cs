@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Line { get; set; }
 
         /// <summary>
-        /// Record Set的有效缓存时间，以秒为单位。 取值范围：300-2147483647。 默认值为300s。
+        /// 记录集的有效缓存时间，以秒为单位。 取值范围：300-2147483647。 默认值为300s。
         /// </summary>
         [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ttl { get; set; }

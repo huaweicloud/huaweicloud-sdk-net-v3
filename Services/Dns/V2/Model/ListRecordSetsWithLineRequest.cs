@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 待查询的Record Set的域名类型。  取值范围：public  搜索模式默认为模糊搜索。  默认值为public。
+        /// 待查询的记录集的域名类型。  取值范围： public: 公网域名 private: 内网域名  默认值为public。
         /// </summary>
         [SDKProperty("zone_type", IsQuery = true)]
         [JsonProperty("zone_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// zone的ID。
+        /// 域名的ID。
         /// </summary>
         [SDKProperty("zone_id", IsQuery = true)]
         [JsonProperty("zone_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,56 +59,56 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string LineId { get; set; }
 
         /// <summary>
-        /// 资源标签。  取值格式：key1,value1|key2,value2  多个标签之间用\&quot;|\&quot;分开，每个标签的键值用英文逗号\&quot;,\&quot;相隔。
+        /// 资源标签。  取值格式：key1,value1|key2,value2  多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。
         /// </summary>
         [SDKProperty("tags", IsQuery = true)]
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }
 
         /// <summary>
-        /// 待查询的Record Set的状态。  取值范围：ACTIVE、ERROR、DISABLE、FREEZE、PENDING_CREATE、PENDING_UPDATE、PENDING_DELETE
+        /// 待查询的记录集的状态。 取值范围：ACTIVE、ERROR、DISABLE、FREEZE、PENDING_CREATE、PENDING_UPDATE、PENDING_DELETE
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 待查询的Record Set的记录集类型。  取值范围：A、CNAME、MX、AAAA、TXT、SRV、NS、CAA
+        /// 待查询的记录集的类型。  取值范围：A、CNAME、MX、AAAA、TXT、SRV、NS、CAA
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 待查询的Record Set的域名中包含此name。  搜索模式默认为模糊搜索。  默认值为空。
+        /// 待查询的记录集的域名中包含此name。  搜索模式默认为模糊搜索。  默认值为空。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 待查询的Record Set的id包含此id。
+        /// 待查询的记录集ID。
         /// </summary>
         [SDKProperty("id", IsQuery = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 待查询的Record Set的值中包含此records。  搜索模式默认为模糊搜索。  默认值为空。
+        /// 待查询的记录集的值中包含此records。  搜索模式默认为模糊搜索。  默认值为空。
         /// </summary>
         [SDKProperty("records", IsQuery = true)]
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public string Records { get; set; }
 
         /// <summary>
-        /// 查询结果中Record Set列表的排序字段。  取值范围：  name：记录集名称 type：记录集类型 默认值为空，表示不排序。
+        /// 查询结果中记录集列表的排序字段。  取值范围： name：记录集名称 type：记录集类型  默认值为空，表示不排序。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
         public string SortKey { get; set; }
 
         /// <summary>
-        /// 查询结果中Record Set列表的排序方式。  取值范围：  desc：降序排序 asc：升序排序 默认值为空，表示不排序。
+        /// 查询结果中记录集列表的排序方式。  取值范围： desc：降序排序 asc：升序排序  默认值为空，表示不排序。
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
@@ -122,7 +122,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string HealthCheckId { get; set; }
 
         /// <summary>
-        /// 查询条件搜索模式。  取值范围：  like：模糊搜索 equal：精确搜索
+        /// 查询条件搜索模式。  取值范围： like：模糊搜索 equal：精确搜索
         /// </summary>
         [SDKProperty("search_mode", IsQuery = true)]
         [JsonProperty("search_mode", NullValueHandling = NullValueHandling.Ignore)]

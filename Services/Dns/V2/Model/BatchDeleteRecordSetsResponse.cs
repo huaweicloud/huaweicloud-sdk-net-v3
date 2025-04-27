@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 删除record set的列表响应。
+        /// 删除记录集的列表响应。
         /// </summary>
         [JsonProperty("recordsets", NullValueHandling = NullValueHandling.Ignore)]
         public List<RecordsetData> Recordsets { get; set; }

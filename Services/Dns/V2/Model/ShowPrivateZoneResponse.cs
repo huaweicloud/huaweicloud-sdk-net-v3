@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// zone的ID，uuid形式的一个资源标识。
+        /// 域名的ID，UUID形式的一个资源标识。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// zone名称。
+        /// 域名。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 对zone的描述信息。
+        /// 对域名的描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
+        /// 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
         /// </summary>
         [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
         public string Email { get; set; }
 
         /// <summary>
-        /// zone类型，内网（private）。
+        /// 域名类型，内网（private）。
         /// </summary>
         [JsonProperty("zone_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneType { get; set; }
 
         /// <summary>
-        /// 该zone下SOA记录中的ttl值。
+        /// 该域名下SOA记录中的ttl值。
         /// </summary>
         [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ttl { get; set; }
 
         /// <summary>
-        /// 该zone下SOA记录中用于标识zone文件变更的序列值，用于主从节点同步。
+        /// 该域名下SOA记录中用于标识域名文件变更的序列值，用于主从节点同步。
         /// </summary>
         [JsonProperty("serial", NullValueHandling = NullValueHandling.Ignore)]
         public int? Serial { get; set; }
@@ -65,31 +65,31 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 该zone下的recordset个数。
+        /// 该域名下的记录集个数。
         /// </summary>
         [JsonProperty("record_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? RecordNum { get; set; }
 
         /// <summary>
-        /// 托管该zone的pool，由系统分配。
+        /// 托管该域名的pool，由系统分配。
         /// </summary>
         [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PoolId { get; set; }
 
         /// <summary>
-        /// zone所属的项目ID。
+        /// 域名所属的项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// 创建时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// 更新时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
@@ -107,13 +107,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public List<string> Masters { get; set; }
 
         /// <summary>
-        /// 与该zone关联的Router(VPC)列表。
+        /// 与该域名关联的Router(VPC)列表。
         /// </summary>
         [JsonProperty("routers", NullValueHandling = NullValueHandling.Ignore)]
         public List<Router> Routers { get; set; }
 
         /// <summary>
-        /// 内网Zone的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前Zone未开启递归解析代理 RECURSIVE：当前Zone已开启递归解析代理
+        /// 内网域名的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前域名未开启递归解析代理 RECURSIVE：当前域名已开启递归解析代理
         /// </summary>
         [JsonProperty("proxy_pattern", NullValueHandling = NullValueHandling.Ignore)]
         public string ProxyPattern { get; set; }

@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// 创建公网zone请求
+    /// 创建公网域名请求。
     /// </summary>
     public class CreatePublicZoneReq 
     {
 
         /// <summary>
-        /// Zone名称
+        /// 域名。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 描述
+        /// 描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -35,19 +35,19 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string ZoneType { get; set; }
 
         /// <summary>
-        /// 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
+        /// 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
         /// </summary>
         [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
         public string Email { get; set; }
 
         /// <summary>
-        /// 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位.
+        /// 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
         /// </summary>
         [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ttl { get; set; }
 
         /// <summary>
-        /// 域名关联的企业项目ID，长度不超过36个字符.
+        /// 域名关联的企业项目ID，长度不超过36个字符。默认值为0。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Record Set的类型。
+        /// 记录集的类型。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 解析记录的状态。 取值范围： ENABLE：启用 DISABLE：暂停 默认值为ENABLE。
+        /// 解析记录的状态。  取值范围： ENABLE：启用 DISABLE：暂停  默认值为ENABLE。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -53,13 +53,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public List<string> Records { get; set; }
 
         /// <summary>
-        /// 解析线路ID
+        /// 解析线路ID。
         /// </summary>
         [JsonProperty("line", NullValueHandling = NullValueHandling.Ignore)]
         public string Line { get; set; }
 
         /// <summary>
-        ///  资源标签
+        /// 资源标签。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }

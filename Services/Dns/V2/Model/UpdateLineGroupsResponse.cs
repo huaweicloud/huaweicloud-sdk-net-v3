@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 线路分组的id。
+        /// 线路分组的ID。
         /// </summary>
         [JsonProperty("line_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LineId { get; set; }

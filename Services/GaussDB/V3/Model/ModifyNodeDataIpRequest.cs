@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**：              内网IP地址。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认值**：  不涉及。
+        /// **参数解释**：              内网IP地址。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认值**：  不涉及。 
         /// </summary>
         [JsonProperty("internal_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string InternalIp { get; set; }

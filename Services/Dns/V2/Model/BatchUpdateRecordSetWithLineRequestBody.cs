@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// RecordSet 列表。
+        /// 记录集列表。
         /// </summary>
         [JsonProperty("recordsets", NullValueHandling = NullValueHandling.Ignore)]
         public List<BatchUpdateRecordSet> Recordsets { get; set; }

@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 待设置Zone状态，当前仅支持DISABLE或ENABLE。
+        /// 待设置域名状态，支持DISABLE或ENABLE。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 待设置Zone ID列表。 最多支持50个。
+        /// 待设置域名ID列表。 最多支持50个。
         /// </summary>
         [JsonProperty("zone_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ZoneIds { get; set; }

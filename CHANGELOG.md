@@ -1,3 +1,72 @@
+# 3.1.144 2025-04-27
+
+### HuaweiCloud SDK DNS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `UpdatePrivateZoneStatus`
+    - `ListPtrs`
+    - `CreatePtr`
+    - `ShowPtr`
+    - `UpdatePtr`
+    - `DeletePtr`
+    - `EnableDnssecConfig`
+    - `DisableDnssecConfig`
+    - `ShowDnssecConfig`
+    - `ListPublicZoneLines`
+    - `SetPrivateZoneProxyPattern`
+    - `ListEndpoints`
+    - `CreateEndpoint`
+    - `ShowEndpoint`
+    - `UpdateEndpoint`
+    - `DeleteEndpoint`
+    - `ListEndpointIpaddresses`
+    - `AssociateEndpointIpaddress`
+    - `DisassociateEndpointIpaddress`
+    - `ListEndpointVpcs`
+    - `ListResolverRules`
+    - `CreateResolverRule`
+    - `AssociateResolverRuleRouter`
+    - `DisassociateResolverRuleRouter`
+    - `ShowResolverRule`
+    - `UpdateResolverRule`
+    - `DeleteResolverRule`
+    - `BatchDeletePtrRecords`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdatePublicZoneStatus**
+    - changes of request param
+      - `* body: object<UpdatePublicZoneStatusRequestBody> -> object<UpdateZoneStatusRequestBody>`
+  - **BatchSetZonesStatus**
+    - changes of response param
+      - `* zones.ttl: string -> int32`
+      - `* zones.serial: string -> int32`
+      - `* zones.masters: string -> list<string>`
+      - `* zones.record_num: string -> int32`
+  - **BatchDeleteZones**
+    - changes of response param
+      - `* zones.ttl: string -> int32`
+      - `* zones.serial: string -> int32`
+      - `* zones.masters: string -> list<string>`
+      - `* zones.record_num: string -> int32`
+  - **ListRecordSetsWithLine**
+    - changes of response param
+      - `+ recordsets.line_name`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ShowRestoreAvailableTables`, `ShowAutoExpandPolicy`, `ModifyAutoExpandPolicy`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.143 2025-04-24
 
 ### HuaweiCloud SDK CDN

@@ -1605,6 +1605,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 修改存储空间自动扩容策略。
+        ///
+        /// 修改存储空间自动扩容策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyAutoExpandPolicyResponse> ModifyAutoExpandPolicyAsync(ModifyAutoExpandPolicyRequest modifyAutoExpandPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyAutoExpandPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyAutoExpandPolicyRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyAutoExpandPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyAutoExpandPolicyResponse> ModifyAutoExpandPolicyAsyncInvoker(ModifyAutoExpandPolicyRequest modifyAutoExpandPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyAutoExpandPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyAutoExpandPolicyRequest);
+            return new AsyncInvoker<ModifyAutoExpandPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyAutoExpandPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 打开或关闭备份加密
         ///
         /// 打开或关闭备份加密。
@@ -2022,6 +2048,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/audit-log/switch-status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditLogRequest);
             return new AsyncInvoker<ShowAuditLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAuditLogResponse>);
+        }
+        
+        /// <summary>
+        /// 查询存储空间自动扩容策略。
+        ///
+        /// 查询存储空间自动扩容策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutoExpandPolicyResponse> ShowAutoExpandPolicyAsync(ShowAutoExpandPolicyRequest showAutoExpandPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAutoExpandPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoExpandPolicyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutoExpandPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutoExpandPolicyResponse> ShowAutoExpandPolicyAsyncInvoker(ShowAutoExpandPolicyRequest showAutoExpandPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAutoExpandPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoExpandPolicyRequest);
+            return new AsyncInvoker<ShowAutoExpandPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoExpandPolicyResponse>);
         }
         
         /// <summary>
@@ -2742,6 +2794,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/recycle-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecyclePolicyRequest);
             return new AsyncInvoker<ShowRecyclePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecyclePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询表级时间点恢复可选表
+        ///
+        /// 查询表级时间点恢复可选表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRestoreAvailableTablesResponse> ShowRestoreAvailableTablesAsync(ShowRestoreAvailableTablesRequest showRestoreAvailableTablesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRestoreAvailableTablesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/backups/restore/tables", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestoreAvailableTablesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRestoreAvailableTablesResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRestoreAvailableTablesResponse> ShowRestoreAvailableTablesAsyncInvoker(ShowRestoreAvailableTablesRequest showRestoreAvailableTablesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showRestoreAvailableTablesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/backups/restore/tables", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestoreAvailableTablesRequest);
+            return new AsyncInvoker<ShowRestoreAvailableTablesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRestoreAvailableTablesResponse>);
         }
         
         /// <summary>

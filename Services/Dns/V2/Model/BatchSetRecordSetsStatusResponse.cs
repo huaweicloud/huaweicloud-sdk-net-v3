@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public Link Links { get; set; }
 
         /// <summary>
-        /// 设置record set的列表响应。
+        /// 设置记录集的列表响应。
         /// </summary>
         [JsonProperty("recordsets", NullValueHandling = NullValueHandling.Ignore)]
         public List<RecordsetData> Recordsets { get; set; }

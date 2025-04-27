@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Record Set的类型。  取值范围：A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。
+        /// 记录集的类型。  取值范围：A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

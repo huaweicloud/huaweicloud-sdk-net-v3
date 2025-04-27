@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string ZoneType { get; set; }
 
         /// <summary>
-        /// 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
+        /// 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
         /// </summary>
         [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
         public string Email { get; set; }
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public Router Router { get; set; }
 
         /// <summary>
-        /// 内网Zone的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前Zone未开启递归解析代理 RECURSIVE：当前Zone已开启递归解析代理
+        /// 内网域名的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前域名未开启递归解析代理 RECURSIVE：当前域名已开启递归解析代理
         /// </summary>
         [JsonProperty("proxy_pattern", NullValueHandling = NullValueHandling.Ignore)]
         public string ProxyPattern { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 域名关联的企业项目ID，长度不超过36个字符。  默认值为0。
+        /// 域名关联的企业项目ID，长度不超过36个字符。默认值为0。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

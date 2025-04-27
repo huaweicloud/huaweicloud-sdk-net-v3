@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 后缀需以Zone Name结束且为FQDN（即以“.”号结束的完整主机名）。
+        /// 域名，后缀需以zone name结束且为FQDN（即以“.”号结束的完整主机名）。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Record Set的类型。 取值范围：A,AAAA,MX,CNAME,TXT,NS,SRV,CAA。
+        /// 记录集的类型。 取值范围：A,AAAA,MX,CNAME,TXT,NS,SRV,CAA。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

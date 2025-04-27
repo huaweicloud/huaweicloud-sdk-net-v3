@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// RecordSet资源ID。
+        /// 记录集资源ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// RecordSet资源描述。
+        /// 记录集资源描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Record Set的有效缓存时间，以秒为单位。 取值范围：300-2147483647。 默认值为300s。
+        /// 记录集的有效缓存时间，以秒为单位。 取值范围：300-2147483647。 默认值为300s。
         /// </summary>
         [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ttl { get; set; }

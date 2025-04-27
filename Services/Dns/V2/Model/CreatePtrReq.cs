@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// PTR记录对应的域名。
+        /// 反向解析记录对应的域名。
         /// </summary>
         [JsonProperty("ptrdname", NullValueHandling = NullValueHandling.Ignore)]
         public string Ptrdname { get; set; }
 
         /// <summary>
-        /// 对PTR记录的描述。
+        /// 对反向解析记录的描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// PTR记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。取值范围：1～2147483647
+        /// 反向解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。取值范围：1～2147483647
         /// </summary>
         [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ttl { get; set; }
 
         /// <summary>
-        /// 反向解析关联的企业项目ID，长度不超过36个字符。
+        /// 反向解析关联的企业项目ID，长度不超过36个字符。默认值为0。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

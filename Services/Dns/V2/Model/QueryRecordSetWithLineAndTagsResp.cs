@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// Record Set的ID。
+        /// 记录集的ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Record Set的名称。
+        /// 记录集的名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Record Set的描述信息。
+        /// 记录集的描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 托管该记录的zone_id。
+        /// 托管该记录的域名ID。
         /// </summary>
         [JsonProperty("zone_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneId { get; set; }
 
         /// <summary>
-        /// 托管该记录的zone_name。
+        /// 托管该记录的域名。
         /// </summary>
         [JsonProperty("zone_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneName { get; set; }
@@ -65,13 +65,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public List<string> Records { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// 创建时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// 更新时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
@@ -83,13 +83,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 标识是否由系统默认生成，系统默认生成的Record Set不能删除。
+        /// 标识是否由系统默认生成，系统默认生成的记录集不能删除。
         /// </summary>
         [JsonProperty("default", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Default { get; set; }
 
         /// <summary>
-        /// 该Record Set所属的项目ID。
+        /// 该记录集所属的项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
@@ -111,6 +111,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         [JsonProperty("line", NullValueHandling = NullValueHandling.Ignore)]
         public string Line { get; set; }
+
+        /// <summary>
+        /// 解析线路名称。
+        /// </summary>
+        [JsonProperty("line_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string LineName { get; set; }
 
         /// <summary>
         /// 解析记录的权重。
@@ -155,6 +161,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             sb.Append("  links: ").Append(Links).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  line: ").Append(Line).Append("\n");
+            sb.Append("  lineName: ").Append(LineName).Append("\n");
             sb.Append("  weight: ").Append(Weight).Append("\n");
             sb.Append("  healthCheckId: ").Append(HealthCheckId).Append("\n");
             sb.Append("  aliasTarget: ").Append(AliasTarget).Append("\n");
@@ -192,6 +199,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
             if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.Line != input.Line || (this.Line != null && !this.Line.Equals(input.Line))) return false;
+            if (this.LineName != input.LineName || (this.LineName != null && !this.LineName.Equals(input.LineName))) return false;
             if (this.Weight != input.Weight || (this.Weight != null && !this.Weight.Equals(input.Weight))) return false;
             if (this.HealthCheckId != input.HealthCheckId || (this.HealthCheckId != null && !this.HealthCheckId.Equals(input.HealthCheckId))) return false;
             if (this.AliasTarget != input.AliasTarget || (this.AliasTarget != null && !this.AliasTarget.Equals(input.AliasTarget))) return false;
@@ -223,6 +231,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
                 if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.Line != null) hashCode = hashCode * 59 + this.Line.GetHashCode();
+                if (this.LineName != null) hashCode = hashCode * 59 + this.LineName.GetHashCode();
                 if (this.Weight != null) hashCode = hashCode * 59 + this.Weight.GetHashCode();
                 if (this.HealthCheckId != null) hashCode = hashCode * 59 + this.HealthCheckId.GetHashCode();
                 if (this.AliasTarget != null) hashCode = hashCode * 59 + this.AliasTarget.GetHashCode();

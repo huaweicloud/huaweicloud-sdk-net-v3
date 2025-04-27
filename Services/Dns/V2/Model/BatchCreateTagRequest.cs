@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 资源id。
+        /// 资源ID。
         /// </summary>
         [SDKProperty("resource_id", IsPath = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]

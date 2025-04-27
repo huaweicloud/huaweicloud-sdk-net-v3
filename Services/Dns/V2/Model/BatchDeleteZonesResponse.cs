@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 删除zone的列表响应。
+        /// 删除域名的列表响应。
         /// </summary>
         [JsonProperty("zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<ZoneData> Zones { get; set; }
