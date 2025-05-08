@@ -160,12 +160,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("dr_task_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DrTaskName { get; set; }
 
-        /// <summary>
-        /// 灾备实例为轻量化部署.
-        /// </summary>
-        [JsonProperty("lite_dr_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public string LiteDrMode { get; set; }
-
 
 
         /// <summary>
@@ -180,7 +174,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  drUserName: ").Append(DrUserName).Append("\n");
             sb.Append("  drUserPassword: ").Append(DrUserPassword).Append("\n");
             sb.Append("  drTaskName: ").Append(DrTaskName).Append("\n");
-            sb.Append("  liteDrMode: ").Append(LiteDrMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -204,7 +197,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.DrUserName != input.DrUserName || (this.DrUserName != null && !this.DrUserName.Equals(input.DrUserName))) return false;
             if (this.DrUserPassword != input.DrUserPassword || (this.DrUserPassword != null && !this.DrUserPassword.Equals(input.DrUserPassword))) return false;
             if (this.DrTaskName != input.DrTaskName || (this.DrTaskName != null && !this.DrTaskName.Equals(input.DrTaskName))) return false;
-            if (this.LiteDrMode != input.LiteDrMode || (this.LiteDrMode != null && !this.LiteDrMode.Equals(input.LiteDrMode))) return false;
 
             return true;
         }
@@ -222,7 +214,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.DrUserName != null) hashCode = hashCode * 59 + this.DrUserName.GetHashCode();
                 if (this.DrUserPassword != null) hashCode = hashCode * 59 + this.DrUserPassword.GetHashCode();
                 if (this.DrTaskName != null) hashCode = hashCode * 59 + this.DrTaskName.GetHashCode();
-                if (this.LiteDrMode != null) hashCode = hashCode * 59 + this.LiteDrMode.GetHashCode();
                 return hashCode;
             }
         }

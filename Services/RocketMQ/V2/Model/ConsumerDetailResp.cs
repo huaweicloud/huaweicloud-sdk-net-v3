@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 消费堆积总数。
+        /// **参数解释**： 消费堆积总数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("lag", NullValueHandling = NullValueHandling.Ignore)]
         public long? Lag { get; set; }
 
         /// <summary>
-        /// 消息总数。
+        /// **参数解释**： 消息总数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("max_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? MaxOffset { get; set; }
 
         /// <summary>
-        /// 已消费消息数。
+        /// **参数解释**： 已消费消息数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("consumer_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? ConsumerOffset { get; set; }
 
         /// <summary>
-        /// Topic关联代理（当查询Topic消费“详情”才显示此参数）。
+        /// **参数解释**： Topic关联代理（当查询Topic消费“详情”才显示此参数）。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<Brokers> Brokers { get; set; }

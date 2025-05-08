@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("gid", NullValueHandling = NullValueHandling.Ignore)]
         public string Gid { get; set; }
 
+        /// <summary>
+        /// 是否是公共镜像
+        /// </summary>
+        [JsonProperty("is_public", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsPublic { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  workingDir: ").Append(WorkingDir).Append("\n");
             sb.Append("  uid: ").Append(Uid).Append("\n");
             sb.Append("  gid: ").Append(Gid).Append("\n");
+            sb.Append("  isPublic: ").Append(IsPublic).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.WorkingDir != input.WorkingDir || (this.WorkingDir != null && !this.WorkingDir.Equals(input.WorkingDir))) return false;
             if (this.Uid != input.Uid || (this.Uid != null && !this.Uid.Equals(input.Uid))) return false;
             if (this.Gid != input.Gid || (this.Gid != null && !this.Gid.Equals(input.Gid))) return false;
+            if (this.IsPublic != input.IsPublic || (this.IsPublic != null && !this.IsPublic.Equals(input.IsPublic))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.WorkingDir != null) hashCode = hashCode * 59 + this.WorkingDir.GetHashCode();
                 if (this.Uid != null) hashCode = hashCode * 59 + this.Uid.GetHashCode();
                 if (this.Gid != null) hashCode = hashCode * 59 + this.Gid.GetHashCode();
+                if (this.IsPublic != null) hashCode = hashCode * 59 + this.IsPublic.GetHashCode();
                 return hashCode;
             }
         }

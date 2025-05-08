@@ -484,6 +484,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("lts_custom_tag", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> LtsCustomTag { get; set; }
 
+        /// <summary>
+        /// 用于环境变量加密的kms主秘钥ID。
+        /// </summary>
+        [JsonProperty("user_data_encrypt_kms_key_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserDataEncryptKmsKeyId { get; set; }
+
 
 
         /// <summary>
@@ -529,6 +535,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  enableClassIsolation: ").Append(EnableClassIsolation).Append("\n");
             sb.Append("  enableLtsLog: ").Append(EnableLtsLog).Append("\n");
             sb.Append("  ltsCustomTag: ").Append(LtsCustomTag).Append("\n");
+            sb.Append("  userDataEncryptKmsKeyId: ").Append(UserDataEncryptKmsKeyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -583,6 +590,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.EnableClassIsolation != input.EnableClassIsolation || (this.EnableClassIsolation != null && !this.EnableClassIsolation.Equals(input.EnableClassIsolation))) return false;
             if (this.EnableLtsLog != input.EnableLtsLog || (this.EnableLtsLog != null && !this.EnableLtsLog.Equals(input.EnableLtsLog))) return false;
             if (this.LtsCustomTag != input.LtsCustomTag || (this.LtsCustomTag != null && input.LtsCustomTag != null && !this.LtsCustomTag.SequenceEqual(input.LtsCustomTag))) return false;
+            if (this.UserDataEncryptKmsKeyId != input.UserDataEncryptKmsKeyId || (this.UserDataEncryptKmsKeyId != null && !this.UserDataEncryptKmsKeyId.Equals(input.UserDataEncryptKmsKeyId))) return false;
 
             return true;
         }
@@ -631,6 +639,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.EnableClassIsolation != null) hashCode = hashCode * 59 + this.EnableClassIsolation.GetHashCode();
                 if (this.EnableLtsLog != null) hashCode = hashCode * 59 + this.EnableLtsLog.GetHashCode();
                 if (this.LtsCustomTag != null) hashCode = hashCode * 59 + this.LtsCustomTag.GetHashCode();
+                if (this.UserDataEncryptKmsKeyId != null) hashCode = hashCode * 59 + this.UserDataEncryptKmsKeyId.GetHashCode();
                 return hashCode;
             }
         }

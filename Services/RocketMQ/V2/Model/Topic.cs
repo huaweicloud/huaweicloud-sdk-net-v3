@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class Topic 
     {
         /// <summary>
-        /// 权限。
+        /// **参数解释**： 权限。 **取值范围**： - sub：拥有订阅权限。 - pub：拥有发布权限。 - all：拥有发布、订阅权限。
         /// </summary>
-        /// <value>权限。</value>
+        /// <value>**参数解释**： 权限。 **取值范围**： - sub：拥有订阅权限。 - pub：拥有发布权限。 - all：拥有发布、订阅权限。</value>
         [JsonConverter(typeof(EnumClassConverter<PermissionEnum>))]
         public class PermissionEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// 消息类型（RocketMQ实例5.x版本才包含此参数）。
+        /// **参数解释**： 消息类型（RocketMQ实例5.x版本才包含此参数）。 **取值范围**： - NORMAL：普通消息。 - FIFO：顺序消息。 - DELAY：定时消息。 - TRANSACTION：事务消息。
         /// </summary>
-        /// <value>消息类型（RocketMQ实例5.x版本才包含此参数）。</value>
+        /// <value>**参数解释**： 消息类型（RocketMQ实例5.x版本才包含此参数）。 **取值范围**： - NORMAL：普通消息。 - FIFO：顺序消息。 - DELAY：定时消息。 - TRANSACTION：事务消息。</value>
         [JsonConverter(typeof(EnumClassConverter<MessageTypeEnum>))]
         public class MessageTypeEnum
         {
@@ -265,25 +265,25 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// Topic名称。
+        /// **参数解释**： Topic名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 总读队列个数。
+        /// **参数解释**： 总读队列个数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("total_read_queue_num", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? TotalReadQueueNum { get; set; }
 
         /// <summary>
-        /// 总写队列个数。
+        /// **参数解释**： 总写队列个数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("total_write_queue_num", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? TotalWriteQueueNum { get; set; }
 
         /// <summary>
-        /// 权限。
+        /// **参数解释**： 权限。 **取值范围**： - sub：拥有订阅权限。 - pub：拥有发布权限。 - all：拥有发布、订阅权限。
         /// </summary>
         [JsonProperty("permission", NullValueHandling = NullValueHandling.Ignore)]
         public PermissionEnum Permission { get; set; }
@@ -294,7 +294,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<TopicBrokers> Brokers { get; set; }
 
         /// <summary>
-        /// 消息类型（RocketMQ实例5.x版本才包含此参数）。
+        /// **参数解释**： 消息类型（RocketMQ实例5.x版本才包含此参数）。 **取值范围**： - NORMAL：普通消息。 - FIFO：顺序消息。 - DELAY：定时消息。 - TRANSACTION：事务消息。
         /// </summary>
         [JsonProperty("message_type", NullValueHandling = NullValueHandling.Ignore)]
         public MessageTypeEnum MessageType { get; set; }

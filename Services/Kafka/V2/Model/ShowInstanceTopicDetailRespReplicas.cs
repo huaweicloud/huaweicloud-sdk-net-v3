@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 副本所在的节点ID。
+        /// **参数解释**： 副本所在的节点ID。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("broker", NullValueHandling = NullValueHandling.Ignore)]
         public int? Broker { get; set; }
 
         /// <summary>
-        /// 该副本是否为leader。
+        /// **参数解释**： 该副本是否为leader。 **取值范围**： - true：该副本是leader。 - false：该副本不是leader。
         /// </summary>
         [JsonProperty("leader", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Leader { get; set; }
 
         /// <summary>
-        /// 该副本是否在ISR副本中。
+        /// **参数解释**： 该副本是否在ISR副本中。 **取值范围**： - true：在ISR副本中。 - false：不在ISR副本中。
         /// </summary>
         [JsonProperty("in_sync", NullValueHandling = NullValueHandling.Ignore)]
         public bool? InSync { get; set; }
 
         /// <summary>
-        /// 该副本当前日志大小。单位：Byte。
+        /// **参数解释**： 该副本当前日志大小。单位：Byte。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
 
         /// <summary>
-        /// 该副本当前落后hw的消息数。
+        /// **参数解释**： 该副本当前落后hw的消息数。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("lag", NullValueHandling = NullValueHandling.Ignore)]
         public long? Lag { get; set; }

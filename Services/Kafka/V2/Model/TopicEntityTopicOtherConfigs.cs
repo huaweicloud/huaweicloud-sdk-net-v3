@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 配置名称
+        /// **参数解释**： 配置名称。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 配置有效值
+        /// **参数解释**： 配置有效值。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("valid_values", NullValueHandling = NullValueHandling.Ignore)]
         public string ValidValues { get; set; }
 
         /// <summary>
-        /// 配置默认值
+        /// **参数解释**： 配置默认值。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("default_value", NullValueHandling = NullValueHandling.Ignore)]
         public string DefaultValue { get; set; }
 
         /// <summary>
-        /// 配置类型：dynamic/static
+        /// **参数解释**： 配置类型。 **取值范围**： - dynamic：动态。 - static：静态。
         /// </summary>
         [JsonProperty("config_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ConfigType { get; set; }
 
         /// <summary>
-        /// 配置值
+        /// **参数解释**： 配置值。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
         /// <summary>
-        /// 配置值类型
+        /// **参数解释**： 配置值类型。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("value_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ValueType { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 任务ID（当执行重平衡任务时仅返回job_id）。
+        /// 任务ID（当执行分区平衡任务时仅返回job_id）。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }

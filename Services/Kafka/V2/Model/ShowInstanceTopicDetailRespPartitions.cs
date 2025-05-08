@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 分区ID。
+        /// **参数解释**： 分区ID。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }
 
         /// <summary>
-        /// leader副本所在节点的id。
+        /// **参数解释**： leader副本所在节点的id。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("leader", NullValueHandling = NullValueHandling.Ignore)]
         public int? Leader { get; set; }
 
         /// <summary>
-        /// 分区leader副本的LEO（Log End Offset）。
+        /// **参数解释**： 分区leader副本的LEO（Log End Offset）。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("leo", NullValueHandling = NullValueHandling.Ignore)]
         public int? Leo { get; set; }
 
         /// <summary>
-        /// 分区高水位（HW，High Watermark）。
+        /// **参数解释**： 分区高水位（HW，High Watermark）。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("hw", NullValueHandling = NullValueHandling.Ignore)]
         public int? Hw { get; set; }
 
         /// <summary>
-        /// 分区leader副本的LSO（Log Start Offset）。
+        /// **参数解释**： 分区leader副本的LSO（Log Start Offset）。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("lso", NullValueHandling = NullValueHandling.Ignore)]
         public int? Lso { get; set; }
 
         /// <summary>
-        /// 分区上次写入消息的时间。  格式为Unix时间戳。  单位：毫秒。
+        /// **参数解释**： 分区上次写入消息的时间。  格式为Unix时间戳。  单位：毫秒。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("last_update_timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public long? LastUpdateTimestamp { get; set; }
 
         /// <summary>
-        /// 副本列表。
+        /// **参数解释**： 副本列表。
         /// </summary>
         [JsonProperty("replicas", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowInstanceTopicDetailRespReplicas> Replicas { get; set; }

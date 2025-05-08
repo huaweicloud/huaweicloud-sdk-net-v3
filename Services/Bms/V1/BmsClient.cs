@@ -419,6 +419,30 @@ namespace HuaweiCloud.SDK.Bms.V1
         }
         
         /// <summary>
+        /// 查询裸金属服务器列表
+        ///
+        /// 用户根据设置的请求条件筛选裸金属服务器，并获取裸金属服务器的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListBareMetalServersDetailResponse ListBareMetalServersDetail(ListBareMetalServersDetailRequest listBareMetalServersDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.1/{project_id}/baremetalservers/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBareMetalServersDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListBareMetalServersDetailResponse>(response);
+        }
+
+        public SyncInvoker<ListBareMetalServersDetailResponse> ListBareMetalServersDetailInvoker(ListBareMetalServersDetailRequest listBareMetalServersDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.1/{project_id}/baremetalservers/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBareMetalServersDetailRequest);
+            return new SyncInvoker<ListBareMetalServersDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBareMetalServersDetailResponse>);
+        }
+        
+        /// <summary>
         /// 查询规格详情和规格扩展信息列表
         ///
         /// 查询裸金属服务器的规格详情和规格的扩展信息。您可以调用此接口查询“baremetal:extBootType”参数取值，以确认某个规格是否支持快速发放

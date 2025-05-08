@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 消息引擎的类型。
+        /// 引擎。
         /// </summary>
         [SDKProperty("engine", IsPath = true)]
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 消费者组。
+        /// 消费组ID。
         /// </summary>
         [SDKProperty("group", IsPath = true)]
         [JsonProperty("group", NullValueHandling = NullValueHandling.Ignore)]
@@ -42,7 +42,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateGroupReq Body { get; set; }
+        public GroupCreateReq Body { get; set; }
 
 
 

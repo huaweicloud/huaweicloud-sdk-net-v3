@@ -17,48 +17,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// Redis实例地址。（仅源端类型为Redis时会显示）
-        /// </summary>
-        [JsonProperty("redis_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string RedisAddress { get; set; }
-
-        /// <summary>
-        /// Redis实例类型。（仅源端类型为Redis时会显示）
-        /// </summary>
-        [JsonProperty("redis_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string RedisType { get; set; }
-
-        /// <summary>
-        /// DCS实例ID。（仅源端类型为Redis时会显示）
-        /// </summary>
-        [JsonProperty("dcs_instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DcsInstanceId { get; set; }
-
-        /// <summary>
-        /// 同步类型，“RDB_ONLY”为全量同步，“CUSTOM_OFFSET”为全量同步+增量同步。（仅源端类型为Redis时会显示）
-        /// </summary>
-        [JsonProperty("sync_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public string SyncMode { get; set; }
-
-        /// <summary>
-        /// 全量同步重试间隔时间，单位：毫秒。（仅源端类型为Redis时会显示）
-        /// </summary>
-        [JsonProperty("full_sync_wait_ms", NullValueHandling = NullValueHandling.Ignore)]
-        public int? FullSyncWaitMs { get; set; }
-
-        /// <summary>
-        /// 全量同步最大重试次数。（仅源端类型为Redis时会显示）
-        /// </summary>
-        [JsonProperty("full_sync_max_retry", NullValueHandling = NullValueHandling.Ignore)]
-        public int? FullSyncMaxRetry { get; set; }
-
-        /// <summary>
-        /// 限速，单位为KB/s。-1表示不限速（仅源端类型为Redis时会显示）
-        /// </summary>
-        [JsonProperty("ratelimit", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Ratelimit { get; set; }
-
-        /// <summary>
         /// 当前Kafka实例别名。（仅源端类型为Kafka时会显示）
         /// </summary>
         [JsonProperty("current_cluster_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -163,13 +121,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SmartConnectTaskRespSourceConfig {\n");
-            sb.Append("  redisAddress: ").Append(RedisAddress).Append("\n");
-            sb.Append("  redisType: ").Append(RedisType).Append("\n");
-            sb.Append("  dcsInstanceId: ").Append(DcsInstanceId).Append("\n");
-            sb.Append("  syncMode: ").Append(SyncMode).Append("\n");
-            sb.Append("  fullSyncWaitMs: ").Append(FullSyncWaitMs).Append("\n");
-            sb.Append("  fullSyncMaxRetry: ").Append(FullSyncMaxRetry).Append("\n");
-            sb.Append("  ratelimit: ").Append(Ratelimit).Append("\n");
             sb.Append("  currentClusterName: ").Append(CurrentClusterName).Append("\n");
             sb.Append("  clusterName: ").Append(ClusterName).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
@@ -204,13 +155,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool Equals(SmartConnectTaskRespSourceConfig input)
         {
             if (input == null) return false;
-            if (this.RedisAddress != input.RedisAddress || (this.RedisAddress != null && !this.RedisAddress.Equals(input.RedisAddress))) return false;
-            if (this.RedisType != input.RedisType || (this.RedisType != null && !this.RedisType.Equals(input.RedisType))) return false;
-            if (this.DcsInstanceId != input.DcsInstanceId || (this.DcsInstanceId != null && !this.DcsInstanceId.Equals(input.DcsInstanceId))) return false;
-            if (this.SyncMode != input.SyncMode || (this.SyncMode != null && !this.SyncMode.Equals(input.SyncMode))) return false;
-            if (this.FullSyncWaitMs != input.FullSyncWaitMs || (this.FullSyncWaitMs != null && !this.FullSyncWaitMs.Equals(input.FullSyncWaitMs))) return false;
-            if (this.FullSyncMaxRetry != input.FullSyncMaxRetry || (this.FullSyncMaxRetry != null && !this.FullSyncMaxRetry.Equals(input.FullSyncMaxRetry))) return false;
-            if (this.Ratelimit != input.Ratelimit || (this.Ratelimit != null && !this.Ratelimit.Equals(input.Ratelimit))) return false;
             if (this.CurrentClusterName != input.CurrentClusterName || (this.CurrentClusterName != null && !this.CurrentClusterName.Equals(input.CurrentClusterName))) return false;
             if (this.ClusterName != input.ClusterName || (this.ClusterName != null && !this.ClusterName.Equals(input.ClusterName))) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
@@ -239,13 +183,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.RedisAddress != null) hashCode = hashCode * 59 + this.RedisAddress.GetHashCode();
-                if (this.RedisType != null) hashCode = hashCode * 59 + this.RedisType.GetHashCode();
-                if (this.DcsInstanceId != null) hashCode = hashCode * 59 + this.DcsInstanceId.GetHashCode();
-                if (this.SyncMode != null) hashCode = hashCode * 59 + this.SyncMode.GetHashCode();
-                if (this.FullSyncWaitMs != null) hashCode = hashCode * 59 + this.FullSyncWaitMs.GetHashCode();
-                if (this.FullSyncMaxRetry != null) hashCode = hashCode * 59 + this.FullSyncMaxRetry.GetHashCode();
-                if (this.Ratelimit != null) hashCode = hashCode * 59 + this.Ratelimit.GetHashCode();
                 if (this.CurrentClusterName != null) hashCode = hashCode * 59 + this.CurrentClusterName.GetHashCode();
                 if (this.ClusterName != null) hashCode = hashCode * 59 + this.ClusterName.GetHashCode();
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();

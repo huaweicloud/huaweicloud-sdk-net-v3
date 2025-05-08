@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class CreateUserResponse : SdkResponse
     {
         /// <summary>
-        /// 默认的主题权限。
+        /// **参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - pub：拥有发布权限。 - sub：拥有订阅权限。 - PUB|sub：拥有发布订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
         /// </summary>
-        /// <value>默认的主题权限。</value>
+        /// <value>**参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - pub：拥有发布权限。 - sub：拥有订阅权限。 - PUB|sub：拥有发布订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<DefaultTopicPermEnum>))]
         public class DefaultTopicPermEnum
         {
@@ -143,9 +143,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         }
 
         /// <summary>
-        /// 默认的消费组权限。
+        /// **参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
         /// </summary>
-        /// <value>默认的消费组权限。</value>
+        /// <value>**参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<DefaultGroupPermEnum>))]
         public class DefaultGroupPermEnum
         {
@@ -259,47 +259,47 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// 用户名，只能英文字母开头，且由英文字母、数字、中划线、下划线组成，长度为7~64个字符。
+        /// **参数解释**： 用户名。 **约束限制**： 只能英文字母开头，且由英文字母、数字、中划线、下划线组成，长度为7~64个字符。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("access_key", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessKey { get; set; }
 
         /// <summary>
-        /// 密钥。 8-32个字符。 至少包含以下字符中的3种：   - 大写字母   - 小写字母   - 数字   - 特殊字符&#x60;~!@#$%^&amp;*()-_&#x3D;+\\\\|[{}];:\\&#39;\\\&quot;,&lt;.&gt;/?密钥。 不能与名称或倒序的名称相同。
+        /// **参数解释**： 密钥。 **约束限制**： 8-32个字符。 至少包含以下字符中的3种： - 大写字母 - 小写字母 - 数字 - 特殊字符&#x60;~!@#$%^&amp;*()-_&#x3D;+\\\\|[{}];:\\&#39;\\\&quot;,&lt;.&gt;/?密钥。 不能与名称或倒序的名称相同。  **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("secret_key", NullValueHandling = NullValueHandling.Ignore)]
         public string SecretKey { get; set; }
 
         /// <summary>
-        /// IP白名单。
+        /// **参数解释**： IP白名单。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("white_remote_address", NullValueHandling = NullValueHandling.Ignore)]
         public string WhiteRemoteAddress { get; set; }
 
         /// <summary>
-        /// 是否为管理员。
+        /// **参数解释**： 是否为管理员。 **约束限制**： 不涉及。 **取值范围**： - true：是管理员。 - false：不是管理员。  **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("admin", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Admin { get; set; }
 
         /// <summary>
-        /// 默认的主题权限。
+        /// **参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - pub：拥有发布权限。 - sub：拥有订阅权限。 - PUB|sub：拥有发布订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("default_topic_perm", NullValueHandling = NullValueHandling.Ignore)]
         public DefaultTopicPermEnum DefaultTopicPerm { get; set; }
         /// <summary>
-        /// 默认的消费组权限。
+        /// **参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("default_group_perm", NullValueHandling = NullValueHandling.Ignore)]
         public DefaultGroupPermEnum DefaultGroupPerm { get; set; }
         /// <summary>
-        /// 特殊的主题权限。
+        /// **参数解释**： 特殊的主题权限。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("topic_perms", NullValueHandling = NullValueHandling.Ignore)]
         public List<UserTopicPerms> TopicPerms { get; set; }
 
         /// <summary>
-        /// 特殊的消费组权限。
+        /// **参数解释**： 特殊的消费组权限。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("group_perms", NullValueHandling = NullValueHandling.Ignore)]
         public List<UserGroupPerms> GroupPerms { get; set; }

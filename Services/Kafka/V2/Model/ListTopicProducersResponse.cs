@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 总条数
+        /// **参数解释**： 总条数。 **取值范围**： 0~10000。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 生产者列表
+        /// **参数解释**： 生产者列表。
         /// </summary>
         [JsonProperty("producers", NullValueHandling = NullValueHandling.Ignore)]
         public List<KafkaTopicProducerResponseProducers> Producers { get; set; }

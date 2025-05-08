@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// topic名称。
+        /// **参数解释**： topic名称。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 分区列表。
+        /// **参数解释**： 分区列表。
         /// </summary>
         [JsonProperty("partitions", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowInstanceTopicDetailRespPartitions> Partitions { get; set; }
 
         /// <summary>
-        /// 订阅该topic的消费组名称列表。
+        /// **参数解释**： 订阅该topic的消费组名称列表。
         /// </summary>
         [JsonProperty("group_subscribed", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> GroupSubscribed { get; set; }

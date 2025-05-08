@@ -17,30 +17,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// Redis实例地址。（仅目标端类型为Redis时会显示）
-        /// </summary>
-        [JsonProperty("redis_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string RedisAddress { get; set; }
-
-        /// <summary>
-        /// Redis实例类型。（仅目标端类型为Redis时会显示）
-        /// </summary>
-        [JsonProperty("redis_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string RedisType { get; set; }
-
-        /// <summary>
-        /// DCS实例ID。（仅目标端类型为Redis时会显示）
-        /// </summary>
-        [JsonProperty("dcs_instance_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DcsInstanceId { get; set; }
-
-        /// <summary>
-        /// 目标数据库，默认为-1。（仅目标端类型为Redis时会显示）
-        /// </summary>
-        [JsonProperty("target_db", NullValueHandling = NullValueHandling.Ignore)]
-        public int? TargetDb { get; set; }
-
-        /// <summary>
         /// 转储启动偏移量，latest为获取最新的数据，earliest为获取最早的数据。（仅目标端类型为OBS时会显示）
         /// </summary>
         [JsonProperty("consumer_strategy", NullValueHandling = NullValueHandling.Ignore)]
@@ -145,10 +121,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SmartConnectTaskRespSinkConfig {\n");
-            sb.Append("  redisAddress: ").Append(RedisAddress).Append("\n");
-            sb.Append("  redisType: ").Append(RedisType).Append("\n");
-            sb.Append("  dcsInstanceId: ").Append(DcsInstanceId).Append("\n");
-            sb.Append("  targetDb: ").Append(TargetDb).Append("\n");
             sb.Append("  consumerStrategy: ").Append(ConsumerStrategy).Append("\n");
             sb.Append("  destinationFileType: ").Append(DestinationFileType).Append("\n");
             sb.Append("  deliverTimeInterval: ").Append(DeliverTimeInterval).Append("\n");
@@ -183,10 +155,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool Equals(SmartConnectTaskRespSinkConfig input)
         {
             if (input == null) return false;
-            if (this.RedisAddress != input.RedisAddress || (this.RedisAddress != null && !this.RedisAddress.Equals(input.RedisAddress))) return false;
-            if (this.RedisType != input.RedisType || (this.RedisType != null && !this.RedisType.Equals(input.RedisType))) return false;
-            if (this.DcsInstanceId != input.DcsInstanceId || (this.DcsInstanceId != null && !this.DcsInstanceId.Equals(input.DcsInstanceId))) return false;
-            if (this.TargetDb != input.TargetDb || (this.TargetDb != null && !this.TargetDb.Equals(input.TargetDb))) return false;
             if (this.ConsumerStrategy != input.ConsumerStrategy || (this.ConsumerStrategy != null && !this.ConsumerStrategy.Equals(input.ConsumerStrategy))) return false;
             if (this.DestinationFileType != input.DestinationFileType || (this.DestinationFileType != null && !this.DestinationFileType.Equals(input.DestinationFileType))) return false;
             if (this.DeliverTimeInterval != input.DeliverTimeInterval || (this.DeliverTimeInterval != null && !this.DeliverTimeInterval.Equals(input.DeliverTimeInterval))) return false;
@@ -215,10 +183,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.RedisAddress != null) hashCode = hashCode * 59 + this.RedisAddress.GetHashCode();
-                if (this.RedisType != null) hashCode = hashCode * 59 + this.RedisType.GetHashCode();
-                if (this.DcsInstanceId != null) hashCode = hashCode * 59 + this.DcsInstanceId.GetHashCode();
-                if (this.TargetDb != null) hashCode = hashCode * 59 + this.TargetDb.GetHashCode();
                 if (this.ConsumerStrategy != null) hashCode = hashCode * 59 + this.ConsumerStrategy.GetHashCode();
                 if (this.DestinationFileType != null) hashCode = hashCode * 59 + this.DestinationFileType.GetHashCode();
                 if (this.DeliverTimeInterval != null) hashCode = hashCode * 59 + this.DeliverTimeInterval.GetHashCode();

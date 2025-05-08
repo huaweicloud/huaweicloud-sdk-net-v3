@@ -17,55 +17,55 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 是否可以消费。
+        /// **参数解释**： 是否可以消费。 **取值范围**： - true：可以消费。 - false：不可以消费。
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// 是否广播。
+        /// **参数解释**： 是否广播。 **取值范围**： - true：可以广播。 - false：不可以广播。
         /// </summary>
         [JsonProperty("broadcast", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Broadcast { get; set; }
 
         /// <summary>
-        /// 关联的代理列表。
+        /// **参数解释**： 关联的代理列表。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Brokers { get; set; }
 
         /// <summary>
-        /// 消费组名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
+        /// **参数解释**： 消费组名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 消费组描述，长度0~200个字符。
+        /// **参数解释**： 消费组描述。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("group_desc", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupDesc { get; set; }
 
         /// <summary>
-        /// 最大重试次数，取值范围为1~16。
+        /// **参数解释**： 最大重试次数。 **取值范围**： 1~16。
         /// </summary>
         [JsonProperty("retry_max_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetryMaxTime { get; set; }
 
         /// <summary>
-        /// 创建时间戳。
+        /// **参数解释**： 创建时间戳。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("createdAt", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreatedAt { get; set; }
 
         /// <summary>
-        /// 权限集。
+        /// **参数解释**： 权限集。
         /// </summary>
         [JsonProperty("permissions", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Permissions { get; set; }
 
         /// <summary>
-        /// 是否按顺序消费。
+        /// **参数解释**： 是否按顺序消费。 **取值范围**： - true：按顺序消费。 - false：不按顺序消费。
         /// </summary>
         [JsonProperty("consume_orderly", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ConsumeOrderly { get; set; }

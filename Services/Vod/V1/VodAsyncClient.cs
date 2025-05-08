@@ -236,6 +236,31 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 
+        ///
+        /// ## 典型场景 ##
+        ///   剪辑任务下发。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateEditTaskResponse> CreateEditTaskAsync(CreateEditTaskRequest createEditTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/edit", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEditTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateEditTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CreateEditTaskResponse> CreateEditTaskAsyncInvoker(CreateEditTaskRequest createEditTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/edit", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEditTaskRequest);
+            return new AsyncInvoker<CreateEditTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateEditTaskResponse>);
+        }
+        
+        /// <summary>
         /// 音频提取
         ///
         /// 本接口为异步接口，创建音频提取任务下发成功后会返回asset_id和提取的audio_asset_id，但此时音频提取任务并没有立即完成，可通过消息订阅界面配置的音频提取完成事件来获取音频提取任务完成与否。
@@ -260,6 +285,85 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 创建视频处理任务
+        ///
+        /// ## 典型场景 ##
+        ///   视频处理。
+        /// 
+        /// ## 接口功能 ##
+        ///   工作流方式视频处理
+        /// 
+        /// ## 接口约束 ##
+        ///   无。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateObjectProcessTaskResponse> CreateObjectProcessTaskAsync(CreateObjectProcessTaskRequest createObjectProcessTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/process", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createObjectProcessTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateObjectProcessTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CreateObjectProcessTaskResponse> CreateObjectProcessTaskAsyncInvoker(CreateObjectProcessTaskRequest createObjectProcessTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/process", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createObjectProcessTaskRequest);
+            return new AsyncInvoker<CreateObjectProcessTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateObjectProcessTaskResponse>);
+        }
+        
+        /// <summary>
+        /// obs桶内容复制
+        ///
+        /// ## 典型场景 ##
+        ///   触发从用户obs桶复制内容到用户obs桶，当前仅为斗鱼提供&lt;br/&gt;
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateObjectReplicationResponse> CreateObjectReplicationAsync(CreateObjectReplicationRequest createObjectReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/object-replication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createObjectReplicationRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateObjectReplicationResponse>(response);
+        }
+
+        public AsyncInvoker<CreateObjectReplicationResponse> CreateObjectReplicationAsyncInvoker(CreateObjectReplicationRequest createObjectReplicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/object-replication", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createObjectReplicationRequest);
+            return new AsyncInvoker<CreateObjectReplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateObjectReplicationResponse>);
+        }
+        
+        /// <summary>
+        /// obs桶内容解冻
+        ///
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateObjectRetrievalResponse> CreateObjectRetrievalAsync(CreateObjectRetrievalRequest createObjectRetrievalRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/object-retrieval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createObjectRetrievalRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateObjectRetrievalResponse>(response);
+        }
+
+        public AsyncInvoker<CreateObjectRetrievalResponse> CreateObjectRetrievalAsyncInvoker(CreateObjectRetrievalRequest createObjectRetrievalRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/object-retrieval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createObjectRetrievalRequest);
+            return new AsyncInvoker<CreateObjectRetrievalResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateObjectRetrievalResponse>);
+        }
+        
+        /// <summary>
         /// CDN预热
         ///
         /// 媒资发布后，可通过指定媒资ID或URL向CDN预热。用户初次请求时，将由CDN节点提供请求媒资，加快用户下载缓存时间，提高用户体验。单租户每天最多预热1000个。
@@ -281,6 +385,31 @@ namespace HuaweiCloud.SDK.Vod.V1
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset/preheating", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPreheatingAssetRequest);
             return new AsyncInvoker<CreatePreheatingAssetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePreheatingAssetResponse>);
+        }
+        
+        /// <summary>
+        /// 直播内容即时剪辑
+        ///
+        /// ## 典型场景 ##
+        ///   触发从直播时移桶截取一段流，当前仅为斗鱼提供&lt;br/&gt;
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateRealTimeClipResponse> CreateRealTimeClipAsync(CreateRealTimeClipRequest createRealTimeClipRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/realtime-clip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRealTimeClipRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateRealTimeClipResponse>(response);
+        }
+
+        public AsyncInvoker<CreateRealTimeClipResponse> CreateRealTimeClipAsyncInvoker(CreateRealTimeClipRequest createRealTimeClipRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/realtime-clip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRealTimeClipRequest);
+            return new AsyncInvoker<CreateRealTimeClipResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRealTimeClipResponse>);
         }
         
         /// <summary>
@@ -382,6 +511,31 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// URL拉取上传
+        ///
+        /// ## 典型场景 ##
+        ///   UGC场景URL拉取上传，当前仅为斗鱼提供&lt;br/&gt;
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateUploadByUrlResponse> CreateUploadByUrlAsync(CreateUploadByUrlRequest createUploadByUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/upload-by-url", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUploadByUrlRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateUploadByUrlResponse>(response);
+        }
+
+        public AsyncInvoker<CreateUploadByUrlResponse> CreateUploadByUrlAsyncInvoker(CreateUploadByUrlRequest createUploadByUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/upload-by-url", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUploadByUrlRequest);
+            return new AsyncInvoker<CreateUploadByUrlResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUploadByUrlResponse>);
+        }
+        
+        /// <summary>
         /// 创建水印模板
         ///
         /// 创建水印模板。
@@ -451,6 +605,31 @@ namespace HuaweiCloud.SDK.Vod.V1
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/asset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssetsRequest);
             return new AsyncInvoker<DeleteAssetsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAssetsResponse>);
+        }
+        
+        /// <summary>
+        /// 删除斗鱼媒资
+        ///
+        /// ## 典型场景 ##
+        ///   斗鱼删除桶文件及媒资表数据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDyAssetResponse> DeleteDyAssetAsync(DeleteDyAssetRequest deleteDyAssetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/object", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDyAssetRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteDyAssetResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDyAssetResponse> DeleteDyAssetAsyncInvoker(DeleteDyAssetRequest deleteDyAssetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/object", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDyAssetRequest);
+            return new AsyncInvoker<DeleteDyAssetResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDyAssetResponse>);
         }
         
         /// <summary>
@@ -1023,6 +1202,30 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 查询媒体元数据
+        ///
+        /// 查询媒体元数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowObjectMetaDataResponse> ShowObjectMetaDataAsync(ShowObjectMetaDataRequest showObjectMetaDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/meta-data", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showObjectMetaDataRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowObjectMetaDataResponse>(response);
+        }
+
+        public AsyncInvoker<ShowObjectMetaDataResponse> ShowObjectMetaDataAsyncInvoker(ShowObjectMetaDataRequest showObjectMetaDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/meta-data", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showObjectMetaDataRequest);
+            return new AsyncInvoker<ShowObjectMetaDataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowObjectMetaDataResponse>);
+        }
+        
+        /// <summary>
         /// 查询CDN预热
         ///
         /// 查询预热结果。
@@ -1092,6 +1295,31 @@ namespace HuaweiCloud.SDK.Vod.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/storage-mode-type", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStorageModeTypeRequest);
             return new AsyncInvoker<ShowStorageModeTypeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStorageModeTypeResponse>);
+        }
+        
+        /// <summary>
+        /// 查询任务详情
+        ///
+        /// ## 典型场景 ##
+        ///   任务详情查询
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTaskDetailResponse> ShowTaskDetailAsync(ShowTaskDetailRequest showTaskDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/task/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTaskDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTaskDetailResponse> ShowTaskDetailAsyncInvoker(ShowTaskDetailRequest showTaskDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asset/customization/task/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskDetailRequest);
+            return new AsyncInvoker<ShowTaskDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTaskDetailResponse>);
         }
         
         /// <summary>

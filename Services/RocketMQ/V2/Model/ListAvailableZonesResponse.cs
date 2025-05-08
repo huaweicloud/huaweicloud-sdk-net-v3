@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// 区域ID。
+        /// **参数解释**： 区域ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RegionId { get; set; }
 
         /// <summary>
-        /// 可用区数组。
+        /// **参数解释**： 可用区数组。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListAvailableZonesRespAvailableZones> AvailableZones { get; set; }

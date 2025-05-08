@@ -17,6 +17,24 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
+        /// 总数。
+        /// </summary>
+        [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? Total { get; set; }
+
+        /// <summary>
+        /// 下个分页的offset。
+        /// </summary>
+        [JsonProperty("next_offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? NextOffset { get; set; }
+
+        /// <summary>
+        /// 上个分页的offset。
+        /// </summary>
+        [JsonProperty("previous_offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PreviousOffset { get; set; }
+
+        /// <summary>
         /// 消息轨迹列表。
         /// </summary>
         [JsonProperty("trace", NullValueHandling = NullValueHandling.Ignore)]
@@ -31,6 +49,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListMessageTraceResponse {\n");
+            sb.Append("  total: ").Append(Total).Append("\n");
+            sb.Append("  nextOffset: ").Append(NextOffset).Append("\n");
+            sb.Append("  previousOffset: ").Append(PreviousOffset).Append("\n");
             sb.Append("  trace: ").Append(Trace).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,6 +71,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool Equals(ListMessageTraceResponse input)
         {
             if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.NextOffset != input.NextOffset || (this.NextOffset != null && !this.NextOffset.Equals(input.NextOffset))) return false;
+            if (this.PreviousOffset != input.PreviousOffset || (this.PreviousOffset != null && !this.PreviousOffset.Equals(input.PreviousOffset))) return false;
             if (this.Trace != input.Trace || (this.Trace != null && input.Trace != null && !this.Trace.SequenceEqual(input.Trace))) return false;
 
             return true;
@@ -63,6 +87,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.NextOffset != null) hashCode = hashCode * 59 + this.NextOffset.GetHashCode();
+                if (this.PreviousOffset != null) hashCode = hashCode * 59 + this.PreviousOffset.GetHashCode();
                 if (this.Trace != null) hashCode = hashCode * 59 + this.Trace.GetHashCode();
                 return hashCode;
             }

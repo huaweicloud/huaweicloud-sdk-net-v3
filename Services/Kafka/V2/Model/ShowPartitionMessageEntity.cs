@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 消息的key。
+        /// **参数解释**： 消息的key。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 消息内容。
+        /// **参数解释**： 消息内容。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
         /// <summary>
-        /// Topic名称。
+        /// **参数解释**： Topic名称。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 分区编号。
+        /// **参数解释**： 分区编号。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }
 
         /// <summary>
-        /// 消息位置。
+        /// **参数解释**： 消息位置。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("message_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? MessageOffset { get; set; }
 
         /// <summary>
-        /// 消息大小，单位字节。
+        /// **参数解释**： 消息大小，单位字节。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
 
         /// <summary>
-        /// 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+        /// **参数解释**： 生产消息的时间。 格式为Unix时间戳。单位为毫秒。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public long? Timestamp { get; set; }

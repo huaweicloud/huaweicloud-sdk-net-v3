@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     {
 
         /// <summary>
-        /// Topic总数。
+        /// **参数解释**： Topic总数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
         /// <summary>
-        /// 最大可创建Topic数量。
+        /// **参数解释**： 最大可创建Topic数量。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("max", NullValueHandling = NullValueHandling.Ignore)]
         public int? Max { get; set; }
 
         /// <summary>
-        /// 剩余可创建Topic数量。
+        /// **参数解释**： 剩余可创建Topic数量。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("remaining", NullValueHandling = NullValueHandling.Ignore)]
         public int? Remaining { get; set; }
 
         /// <summary>
-        /// 下个分页的offset。
+        /// **参数解释**： 下个分页的offset。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("next_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? NextOffset { get; set; }
 
         /// <summary>
-        /// 上个分页的offset。
+        /// **参数解释**： 上个分页的offset。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("previous_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? PreviousOffset { get; set; }
 
         /// <summary>
-        /// Topic列表。
+        /// **参数解释**： 剩余可创建Topic数量。
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
         public List<Topic> Topics { get; set; }

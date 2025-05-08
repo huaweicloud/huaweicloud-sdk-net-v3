@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 生产者地址
+        /// **参数解释**： 生产者地址。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("producer_address", NullValueHandling = NullValueHandling.Ignore)]
         public string ProducerAddress { get; set; }
 
         /// <summary>
-        /// broker地址
+        /// **参数解释**： broker地址。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("broker_address", NullValueHandling = NullValueHandling.Ignore)]
         public string BrokerAddress { get; set; }
 
         /// <summary>
-        /// 加入时间
+        /// **参数解释**： 加入时间，以Unix时间戳显示。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("join_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? JoinTime { get; set; }

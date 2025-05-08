@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("depend_version_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DependVersionList { get; set; }
 
+        /// <summary>
+        /// 用于用户代码加密的kms主秘钥ID。
+        /// </summary>
+        [JsonProperty("code_encrypt_kms_key_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CodeEncryptKmsKeyId { get; set; }
+
 
 
         /// <summary>
@@ -192,6 +198,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  codeFilename: ").Append(CodeFilename).Append("\n");
             sb.Append("  funcCode: ").Append(FuncCode).Append("\n");
             sb.Append("  dependVersionList: ").Append(DependVersionList).Append("\n");
+            sb.Append("  codeEncryptKmsKeyId: ").Append(CodeEncryptKmsKeyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -215,6 +222,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.CodeFilename != input.CodeFilename || (this.CodeFilename != null && !this.CodeFilename.Equals(input.CodeFilename))) return false;
             if (this.FuncCode != input.FuncCode || (this.FuncCode != null && !this.FuncCode.Equals(input.FuncCode))) return false;
             if (this.DependVersionList != input.DependVersionList || (this.DependVersionList != null && input.DependVersionList != null && !this.DependVersionList.SequenceEqual(input.DependVersionList))) return false;
+            if (this.CodeEncryptKmsKeyId != input.CodeEncryptKmsKeyId || (this.CodeEncryptKmsKeyId != null && !this.CodeEncryptKmsKeyId.Equals(input.CodeEncryptKmsKeyId))) return false;
 
             return true;
         }
@@ -232,6 +240,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.CodeFilename != null) hashCode = hashCode * 59 + this.CodeFilename.GetHashCode();
                 if (this.FuncCode != null) hashCode = hashCode * 59 + this.FuncCode.GetHashCode();
                 if (this.DependVersionList != null) hashCode = hashCode * 59 + this.DependVersionList.GetHashCode();
+                if (this.CodeEncryptKmsKeyId != null) hashCode = hashCode * 59 + this.CodeEncryptKmsKeyId.GetHashCode();
                 return hashCode;
             }
         }

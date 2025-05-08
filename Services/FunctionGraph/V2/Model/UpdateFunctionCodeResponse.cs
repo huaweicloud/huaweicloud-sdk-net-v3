@@ -490,6 +490,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("dependencies", NullValueHandling = NullValueHandling.Ignore)]
         public List<Dependency> Dependencies { get; set; }
 
+        /// <summary>
+        /// 用于用户代码加密的kms主秘钥ID。
+        /// </summary>
+        [JsonProperty("code_encrypt_kms_key_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CodeEncryptKmsKeyId { get; set; }
+
 
 
         /// <summary>
@@ -514,6 +520,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  dependVersionList: ").Append(DependVersionList).Append("\n");
             sb.Append("  strategyConfig: ").Append(StrategyConfig).Append("\n");
             sb.Append("  dependencies: ").Append(Dependencies).Append("\n");
+            sb.Append("  codeEncryptKmsKeyId: ").Append(CodeEncryptKmsKeyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -547,6 +554,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.DependVersionList != input.DependVersionList || (this.DependVersionList != null && input.DependVersionList != null && !this.DependVersionList.SequenceEqual(input.DependVersionList))) return false;
             if (this.StrategyConfig != input.StrategyConfig || (this.StrategyConfig != null && !this.StrategyConfig.Equals(input.StrategyConfig))) return false;
             if (this.Dependencies != input.Dependencies || (this.Dependencies != null && input.Dependencies != null && !this.Dependencies.SequenceEqual(input.Dependencies))) return false;
+            if (this.CodeEncryptKmsKeyId != input.CodeEncryptKmsKeyId || (this.CodeEncryptKmsKeyId != null && !this.CodeEncryptKmsKeyId.Equals(input.CodeEncryptKmsKeyId))) return false;
 
             return true;
         }
@@ -574,6 +582,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.DependVersionList != null) hashCode = hashCode * 59 + this.DependVersionList.GetHashCode();
                 if (this.StrategyConfig != null) hashCode = hashCode * 59 + this.StrategyConfig.GetHashCode();
                 if (this.Dependencies != null) hashCode = hashCode * 59 + this.Dependencies.GetHashCode();
+                if (this.CodeEncryptKmsKeyId != null) hashCode = hashCode * 59 + this.CodeEncryptKmsKeyId.GetHashCode();
                 return hashCode;
             }
         }

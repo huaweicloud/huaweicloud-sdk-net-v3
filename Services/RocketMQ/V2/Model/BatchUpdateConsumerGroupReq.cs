@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// 消费组列表。
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CreateOrUpdateConsumerGroup> Groups { get; set; }
+        public List<BatchUpdateConsumerGroup> Groups { get; set; }
 
 
 

@@ -17,73 +17,73 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 是否为默认策略。
+        /// **参数解释**： 是否为默认策略。 **取值范围**： - true：默认策略。 - fasle：不是默认策略。
         /// </summary>
         [JsonProperty("policiesOnly", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PoliciesOnly { get; set; }
 
         /// <summary>
-        /// topic名称。
+        /// **参数解释**： topic名称。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 副本数，配置数据的可靠性。
+        /// **参数解释**： 副本数，配置数据的可靠性。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("replication", NullValueHandling = NullValueHandling.Ignore)]
         public int? Replication { get; set; }
 
         /// <summary>
-        /// topic分区数，设置消费的并发数。
+        /// **参数解释**： topic分区数，设置消费的并发数。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }
 
         /// <summary>
-        /// 消息老化时间。
+        /// **参数解释**： 消息老化时间。 **取值范围**： 0-720
         /// </summary>
         [JsonProperty("retention_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetentionTime { get; set; }
 
         /// <summary>
-        /// 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks&#x3D;-1，否则不生效，默认关闭。
+        /// **参数解释**： 是否开启同步复制，默认关闭。 **取值范围**： - true：开启，客户端生产消息时相应的也要设置acks&#x3D;-1，否则不生效。 - false：关闭。
         /// </summary>
         [JsonProperty("sync_replication", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SyncReplication { get; set; }
 
         /// <summary>
-        /// 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
+        /// **参数解释**： 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。 **取值范围**： - true：同步落盘。 - false：不同步落盘。
         /// </summary>
         [JsonProperty("sync_message_flush", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SyncMessageFlush { get; set; }
 
         /// <summary>
-        /// 扩展配置。
+        /// **参数解释**： 扩展配置。
         /// </summary>
         [JsonProperty("external_configs", NullValueHandling = NullValueHandling.Ignore)]
         public Object ExternalConfigs { get; set; }
 
         /// <summary>
-        /// topic类型(0:普通Topic 1:系统(内部)Topic)。
+        /// **参数解释**： topic类型。 **取值范围**： - 0：普通Topic。 - 1：系统(内部)Topic。
         /// </summary>
         [JsonProperty("topic_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? TopicType { get; set; }
 
         /// <summary>
-        /// topic其他配置
+        /// **参数解释**： topic其他配置。
         /// </summary>
         [JsonProperty("topic_other_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<TopicEntityTopicOtherConfigs> TopicOtherConfigs { get; set; }
 
         /// <summary>
-        /// topic描述
+        /// **参数解释**： topic描述。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("topic_desc", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicDesc { get; set; }
 
         /// <summary>
-        /// topic创建时间
+        /// **参数解释**： topic创建时间。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreatedAt { get; set; }

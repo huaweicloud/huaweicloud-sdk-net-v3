@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 重平衡分配方案。
+        /// 分区平衡分配方案。
         /// </summary>
         [JsonProperty("reassignments", NullValueHandling = NullValueHandling.Ignore)]
         public List<PartitionReassignEntity> Reassignments { get; set; }
 
         /// <summary>
-        /// 重平衡门限值。
+        /// 分区平衡门限值。
         /// </summary>
         [JsonProperty("throttle", NullValueHandling = NullValueHandling.Ignore)]
         public int? Throttle { get; set; }
 
         /// <summary>
-        /// 是否作为定时任务执行。若非定时执行，则is_schedule 和execute_at字段可为空；若为定时执行，is_schedule为true，execute_at字段非空。
+        /// 是否作为定时任务执行。若非定时执行，is_schedule和execute_at字段可为空。若为定时执行，is_schedule为true，execute_at字段非空。
         /// </summary>
         [JsonProperty("is_schedule", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSchedule { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public long? ExecuteAt { get; set; }
 
         /// <summary>
-        /// 设为true表示执行时间预估任务，false为执行重平衡任务。
+        /// 设为true表示执行时间预估任务，false为执行分区平衡任务。
         /// </summary>
         [JsonProperty("time_estimate", NullValueHandling = NullValueHandling.Ignore)]
         public bool? TimeEstimate { get; set; }

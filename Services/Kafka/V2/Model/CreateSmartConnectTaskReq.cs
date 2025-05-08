@@ -23,11 +23,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public class SourceTypeEnum
         {
             /// <summary>
-            /// Enum REDIS_REPLICATOR_SOURCE for value: REDIS_REPLICATOR_SOURCE
-            /// </summary>
-            public static readonly SourceTypeEnum REDIS_REPLICATOR_SOURCE = new SourceTypeEnum("REDIS_REPLICATOR_SOURCE");
-
-            /// <summary>
             /// Enum KAFKA_REPLICATOR_SOURCE for value: KAFKA_REPLICATOR_SOURCE
             /// </summary>
             public static readonly SourceTypeEnum KAFKA_REPLICATOR_SOURCE = new SourceTypeEnum("KAFKA_REPLICATOR_SOURCE");
@@ -40,7 +35,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             private static readonly Dictionary<string, SourceTypeEnum> StaticFields =
             new Dictionary<string, SourceTypeEnum>()
             {
-                { "REDIS_REPLICATOR_SOURCE", REDIS_REPLICATOR_SOURCE },
                 { "KAFKA_REPLICATOR_SOURCE", KAFKA_REPLICATOR_SOURCE },
                 { "NONE", NONE },
             };
@@ -144,11 +138,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public class SinkTypeEnum
         {
             /// <summary>
-            /// Enum REDIS_REPLICATOR_SINK for value: REDIS_REPLICATOR_SINK
-            /// </summary>
-            public static readonly SinkTypeEnum REDIS_REPLICATOR_SINK = new SinkTypeEnum("REDIS_REPLICATOR_SINK");
-
-            /// <summary>
             /// Enum OBS_SINK for value: OBS_SINK
             /// </summary>
             public static readonly SinkTypeEnum OBS_SINK = new SinkTypeEnum("OBS_SINK");
@@ -161,7 +150,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             private static readonly Dictionary<string, SinkTypeEnum> StaticFields =
             new Dictionary<string, SinkTypeEnum>()
             {
-                { "REDIS_REPLICATOR_SINK", REDIS_REPLICATOR_SINK },
                 { "OBS_SINK", OBS_SINK },
                 { "NONE", NONE },
             };

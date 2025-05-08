@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Topic { get; set; }
 
         /// <summary>
-        /// 分区重平衡到的broker列表，自动生成分配方案时需指定该参数。
+        /// 分区平衡到的broker列表，自动生成分配方案时需指定该参数。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> Brokers { get; set; }

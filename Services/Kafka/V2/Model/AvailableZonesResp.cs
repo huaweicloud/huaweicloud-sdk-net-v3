@@ -17,55 +17,55 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 是否售罄。
+        /// **参数解释**： 是否售罄。 **取值范围**： - true：售罄 - false：没有售罄
         /// </summary>
         [JsonProperty("soldOut", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SoldOut { get; set; }
 
         /// <summary>
-        /// 可用区ID。
+        /// **参数解释**： 可用区ID。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 可用区编码。
+        /// **参数解释**： 可用区编码。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("code", NullValueHandling = NullValueHandling.Ignore)]
         public string Code { get; set; }
 
         /// <summary>
-        /// 可用区名称。
+        /// **参数解释**： 可用区名称。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 可用区端口号。
+        /// **参数解释**： 可用区端口号。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public string Port { get; set; }
 
         /// <summary>
-        /// 可用区上是否还有可用资源。
+        /// **参数解释**： 可用区上是否还有可用资源。 **取值范围**： - true：有可用资源 - false：无可用资源
         /// </summary>
         [JsonProperty("resource_availability", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceAvailability { get; set; }
 
         /// <summary>
-        /// 是否为默认可用区。
+        /// **参数解释**： 是否为默认可用区。 **取值范围**： - true：默认可用区 - false：不是默认可用区
         /// </summary>
         [JsonProperty("default_az", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DefaultAz { get; set; }
 
         /// <summary>
-        /// 剩余时间。
+        /// **参数解释**： 剩余时间，以Unix时间戳显示。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("remain_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? RemainTime { get; set; }
 
         /// <summary>
-        /// 是否支持IPv6。
+        /// **参数解释**： 是否支持IPv6。 **取值范围**： - true：支持 - false：不支持
         /// </summary>
         [JsonProperty("ipv6_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Ipv6Enable { get; set; }

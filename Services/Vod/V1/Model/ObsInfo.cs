@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         [JsonProperty("object", NullValueHandling = NullValueHandling.Ignore)]
         public string Object { get; set; }
 
+        /// <summary>
+        /// 桶所在区域
+        /// </summary>
+        [JsonProperty("region", NullValueHandling = NullValueHandling.Ignore)]
+        public string Region { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             sb.Append("class ObsInfo {\n");
             sb.Append("  bucket: ").Append(Bucket).Append("\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  region: ").Append(Region).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
             if (input == null) return false;
             if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
             if (this.Object != input.Object || (this.Object != null && !this.Object.Equals(input.Object))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
                 var hashCode = 41;
                 if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
                 if (this.Object != null) hashCode = hashCode * 59 + this.Object.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
                 return hashCode;
             }
         }

@@ -874,6 +874,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("lts_custom_tag", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> LtsCustomTag { get; set; }
 
+        /// <summary>
+        /// 用于环境变量加密的kms主秘钥ID。
+        /// </summary>
+        [JsonProperty("user_data_encrypt_kms_key_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserDataEncryptKmsKeyId { get; set; }
+
+        /// <summary>
+        /// 用于用户代码加密的kms主秘钥ID。
+        /// </summary>
+        [JsonProperty("code_encrypt_kms_key_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CodeEncryptKmsKeyId { get; set; }
+
 
 
         /// <summary>
@@ -943,6 +955,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  isReturnStream: ").Append(IsReturnStream).Append("\n");
             sb.Append("  enableLtsLog: ").Append(EnableLtsLog).Append("\n");
             sb.Append("  ltsCustomTag: ").Append(LtsCustomTag).Append("\n");
+            sb.Append("  userDataEncryptKmsKeyId: ").Append(UserDataEncryptKmsKeyId).Append("\n");
+            sb.Append("  codeEncryptKmsKeyId: ").Append(CodeEncryptKmsKeyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1021,6 +1035,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.IsReturnStream != input.IsReturnStream || (this.IsReturnStream != null && !this.IsReturnStream.Equals(input.IsReturnStream))) return false;
             if (this.EnableLtsLog != input.EnableLtsLog || (this.EnableLtsLog != null && !this.EnableLtsLog.Equals(input.EnableLtsLog))) return false;
             if (this.LtsCustomTag != input.LtsCustomTag || (this.LtsCustomTag != null && input.LtsCustomTag != null && !this.LtsCustomTag.SequenceEqual(input.LtsCustomTag))) return false;
+            if (this.UserDataEncryptKmsKeyId != input.UserDataEncryptKmsKeyId || (this.UserDataEncryptKmsKeyId != null && !this.UserDataEncryptKmsKeyId.Equals(input.UserDataEncryptKmsKeyId))) return false;
+            if (this.CodeEncryptKmsKeyId != input.CodeEncryptKmsKeyId || (this.CodeEncryptKmsKeyId != null && !this.CodeEncryptKmsKeyId.Equals(input.CodeEncryptKmsKeyId))) return false;
 
             return true;
         }
@@ -1093,6 +1109,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.IsReturnStream != null) hashCode = hashCode * 59 + this.IsReturnStream.GetHashCode();
                 if (this.EnableLtsLog != null) hashCode = hashCode * 59 + this.EnableLtsLog.GetHashCode();
                 if (this.LtsCustomTag != null) hashCode = hashCode * 59 + this.LtsCustomTag.GetHashCode();
+                if (this.UserDataEncryptKmsKeyId != null) hashCode = hashCode * 59 + this.UserDataEncryptKmsKeyId.GetHashCode();
+                if (this.CodeEncryptKmsKeyId != null) hashCode = hashCode * 59 + this.CodeEncryptKmsKeyId.GetHashCode();
                 return hashCode;
             }
         }

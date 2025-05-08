@@ -410,6 +410,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? UsedStorageSpace { get; set; }
 
         /// <summary>
+        /// 实例是否开启域名访问功能。 - true：开启 - false：未开启
+        /// </summary>
+        [JsonProperty("dns_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DnsEnable { get; set; }
+
+        /// <summary>
         /// 实例连接IP地址。
         /// </summary>
         [JsonProperty("connect_address", NullValueHandling = NullValueHandling.Ignore)]
@@ -536,7 +542,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? BrokerSslEnable { get; set; }
 
         /// <summary>
-        /// 开启SASL后使用的安全协议。 - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。  
+        /// Kafka使用的安全协议。 若实例详情中不存在port_protocols返回参数，则kafka_security_protocol同时代表内网访问、公网访问以及跨VPC访问的安全协议。 若实例详情中存在port_protocols返回参数，则kafka_security_protocol仅代表跨VPC访问的安全协议。内网访问公网访问的安全协议请参考port_protocols参数。  - PLAINTEXT: 既未采用SSL证书进行加密传输，也不支持账号密码认证。性能更好，安全性较低，建议在生产环境下公网访问不使用此方式。 - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。
         /// </summary>
         [JsonProperty("kafka_security_protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string KafkaSecurityProtocol { get; set; }
@@ -642,6 +648,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string PublicConnectAddress { get; set; }
 
         /// <summary>
+        /// 实例公网连接域名。当实例开启了公网访问，实例才包含该参数。
+        /// </summary>
+        [JsonProperty("public_connect_domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicConnectDomainName { get; set; }
+
+        /// <summary>
         /// 存储资源ID。
         /// </summary>
         [JsonProperty("storage_resource_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -681,18 +693,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [JsonProperty("public_bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public int? PublicBandwidth { get; set; }
-
-        /// <summary>
-        /// 是否已开启kafka manager
-        /// </summary>
-        [JsonProperty("kafka_manager_enable", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? KafkaManagerEnable { get; set; }
-
-        /// <summary>
-        /// 登录Kafka Manager的用户名。
-        /// </summary>
-        [JsonProperty("kafka_manager_user", NullValueHandling = NullValueHandling.Ignore)]
-        public string KafkaManagerUser { get; set; }
 
         /// <summary>
         /// 是否开启消息收集功能。
@@ -809,10 +809,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string DiskEncryptedKey { get; set; }
 
         /// <summary>
-        /// Kafka实例私有连接地址。
+        /// Kafka实例内网连接地址。
         /// </summary>
         [JsonProperty("kafka_private_connect_address", NullValueHandling = NullValueHandling.Ignore)]
         public string KafkaPrivateConnectAddress { get; set; }
+
+        /// <summary>
+        /// Kafka实例内网连接域名。
+        /// </summary>
+        [JsonProperty("kafka_private_connect_domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string KafkaPrivateConnectDomainName { get; set; }
 
         /// <summary>
         /// 云监控版本。
@@ -831,6 +837,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [JsonProperty("node_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? NodeNum { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("port_protocols", NullValueHandling = NullValueHandling.Ignore)]
+        public PortProtocolsEntity PortProtocols { get; set; }
 
         /// <summary>
         /// 是否开启访问控制。
@@ -879,6 +891,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  storageSpace: ").Append(StorageSpace).Append("\n");
             sb.Append("  partitionNum: ").Append(PartitionNum).Append("\n");
             sb.Append("  usedStorageSpace: ").Append(UsedStorageSpace).Append("\n");
+            sb.Append("  dnsEnable: ").Append(DnsEnable).Append("\n");
             sb.Append("  connectAddress: ").Append(ConnectAddress).Append("\n");
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
@@ -918,6 +931,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  availableZoneNames: ").Append(AvailableZoneNames).Append("\n");
             sb.Append("  totalStorageSpace: ").Append(TotalStorageSpace).Append("\n");
             sb.Append("  publicConnectAddress: ").Append(PublicConnectAddress).Append("\n");
+            sb.Append("  publicConnectDomainName: ").Append(PublicConnectDomainName).Append("\n");
             sb.Append("  storageResourceId: ").Append(StorageResourceId).Append("\n");
             sb.Append("  storageSpecCode: ").Append(StorageSpecCode).Append("\n");
             sb.Append("  serviceType: ").Append(ServiceType).Append("\n");
@@ -925,8 +939,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  retentionPolicy: ").Append(RetentionPolicy).Append("\n");
             sb.Append("  kafkaPublicStatus: ").Append(KafkaPublicStatus).Append("\n");
             sb.Append("  publicBandwidth: ").Append(PublicBandwidth).Append("\n");
-            sb.Append("  kafkaManagerEnable: ").Append(KafkaManagerEnable).Append("\n");
-            sb.Append("  kafkaManagerUser: ").Append(KafkaManagerUser).Append("\n");
             sb.Append("  enableLogCollection: ").Append(EnableLogCollection).Append("\n");
             sb.Append("  newAuthCert: ").Append(NewAuthCert).Append("\n");
             sb.Append("  crossVpcInfo: ").Append(CrossVpcInfo).Append("\n");
@@ -947,9 +959,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  diskEncrypted: ").Append(DiskEncrypted).Append("\n");
             sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
             sb.Append("  kafkaPrivateConnectAddress: ").Append(KafkaPrivateConnectAddress).Append("\n");
+            sb.Append("  kafkaPrivateConnectDomainName: ").Append(KafkaPrivateConnectDomainName).Append("\n");
             sb.Append("  cesVersion: ").Append(CesVersion).Append("\n");
             sb.Append("  publicAccessEnabled: ").Append(PublicAccessEnabled).Append("\n");
             sb.Append("  nodeNum: ").Append(NodeNum).Append("\n");
+            sb.Append("  portProtocols: ").Append(PortProtocols).Append("\n");
             sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
             sb.Append("  newSpecBillingEnable: ").Append(NewSpecBillingEnable).Append("\n");
             sb.Append("  brokerNum: ").Append(BrokerNum).Append("\n");
@@ -981,6 +995,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             if (this.StorageSpace != input.StorageSpace || (this.StorageSpace != null && !this.StorageSpace.Equals(input.StorageSpace))) return false;
             if (this.PartitionNum != input.PartitionNum || (this.PartitionNum != null && !this.PartitionNum.Equals(input.PartitionNum))) return false;
             if (this.UsedStorageSpace != input.UsedStorageSpace || (this.UsedStorageSpace != null && !this.UsedStorageSpace.Equals(input.UsedStorageSpace))) return false;
+            if (this.DnsEnable != input.DnsEnable || (this.DnsEnable != null && !this.DnsEnable.Equals(input.DnsEnable))) return false;
             if (this.ConnectAddress != input.ConnectAddress || (this.ConnectAddress != null && !this.ConnectAddress.Equals(input.ConnectAddress))) return false;
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
@@ -1020,6 +1035,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             if (this.AvailableZoneNames != input.AvailableZoneNames || (this.AvailableZoneNames != null && input.AvailableZoneNames != null && !this.AvailableZoneNames.SequenceEqual(input.AvailableZoneNames))) return false;
             if (this.TotalStorageSpace != input.TotalStorageSpace || (this.TotalStorageSpace != null && !this.TotalStorageSpace.Equals(input.TotalStorageSpace))) return false;
             if (this.PublicConnectAddress != input.PublicConnectAddress || (this.PublicConnectAddress != null && !this.PublicConnectAddress.Equals(input.PublicConnectAddress))) return false;
+            if (this.PublicConnectDomainName != input.PublicConnectDomainName || (this.PublicConnectDomainName != null && !this.PublicConnectDomainName.Equals(input.PublicConnectDomainName))) return false;
             if (this.StorageResourceId != input.StorageResourceId || (this.StorageResourceId != null && !this.StorageResourceId.Equals(input.StorageResourceId))) return false;
             if (this.StorageSpecCode != input.StorageSpecCode || (this.StorageSpecCode != null && !this.StorageSpecCode.Equals(input.StorageSpecCode))) return false;
             if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
@@ -1027,8 +1043,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             if (this.RetentionPolicy != input.RetentionPolicy) return false;
             if (this.KafkaPublicStatus != input.KafkaPublicStatus || (this.KafkaPublicStatus != null && !this.KafkaPublicStatus.Equals(input.KafkaPublicStatus))) return false;
             if (this.PublicBandwidth != input.PublicBandwidth || (this.PublicBandwidth != null && !this.PublicBandwidth.Equals(input.PublicBandwidth))) return false;
-            if (this.KafkaManagerEnable != input.KafkaManagerEnable || (this.KafkaManagerEnable != null && !this.KafkaManagerEnable.Equals(input.KafkaManagerEnable))) return false;
-            if (this.KafkaManagerUser != input.KafkaManagerUser || (this.KafkaManagerUser != null && !this.KafkaManagerUser.Equals(input.KafkaManagerUser))) return false;
             if (this.EnableLogCollection != input.EnableLogCollection || (this.EnableLogCollection != null && !this.EnableLogCollection.Equals(input.EnableLogCollection))) return false;
             if (this.NewAuthCert != input.NewAuthCert || (this.NewAuthCert != null && !this.NewAuthCert.Equals(input.NewAuthCert))) return false;
             if (this.CrossVpcInfo != input.CrossVpcInfo || (this.CrossVpcInfo != null && !this.CrossVpcInfo.Equals(input.CrossVpcInfo))) return false;
@@ -1049,9 +1063,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             if (this.DiskEncrypted != input.DiskEncrypted || (this.DiskEncrypted != null && !this.DiskEncrypted.Equals(input.DiskEncrypted))) return false;
             if (this.DiskEncryptedKey != input.DiskEncryptedKey || (this.DiskEncryptedKey != null && !this.DiskEncryptedKey.Equals(input.DiskEncryptedKey))) return false;
             if (this.KafkaPrivateConnectAddress != input.KafkaPrivateConnectAddress || (this.KafkaPrivateConnectAddress != null && !this.KafkaPrivateConnectAddress.Equals(input.KafkaPrivateConnectAddress))) return false;
+            if (this.KafkaPrivateConnectDomainName != input.KafkaPrivateConnectDomainName || (this.KafkaPrivateConnectDomainName != null && !this.KafkaPrivateConnectDomainName.Equals(input.KafkaPrivateConnectDomainName))) return false;
             if (this.CesVersion != input.CesVersion || (this.CesVersion != null && !this.CesVersion.Equals(input.CesVersion))) return false;
             if (this.PublicAccessEnabled != input.PublicAccessEnabled || (this.PublicAccessEnabled != null && !this.PublicAccessEnabled.Equals(input.PublicAccessEnabled))) return false;
             if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
+            if (this.PortProtocols != input.PortProtocols || (this.PortProtocols != null && !this.PortProtocols.Equals(input.PortProtocols))) return false;
             if (this.EnableAcl != input.EnableAcl || (this.EnableAcl != null && !this.EnableAcl.Equals(input.EnableAcl))) return false;
             if (this.NewSpecBillingEnable != input.NewSpecBillingEnable || (this.NewSpecBillingEnable != null && !this.NewSpecBillingEnable.Equals(input.NewSpecBillingEnable))) return false;
             if (this.BrokerNum != input.BrokerNum || (this.BrokerNum != null && !this.BrokerNum.Equals(input.BrokerNum))) return false;
@@ -1077,6 +1093,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 if (this.StorageSpace != null) hashCode = hashCode * 59 + this.StorageSpace.GetHashCode();
                 if (this.PartitionNum != null) hashCode = hashCode * 59 + this.PartitionNum.GetHashCode();
                 if (this.UsedStorageSpace != null) hashCode = hashCode * 59 + this.UsedStorageSpace.GetHashCode();
+                if (this.DnsEnable != null) hashCode = hashCode * 59 + this.DnsEnable.GetHashCode();
                 if (this.ConnectAddress != null) hashCode = hashCode * 59 + this.ConnectAddress.GetHashCode();
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
@@ -1116,6 +1133,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 if (this.AvailableZoneNames != null) hashCode = hashCode * 59 + this.AvailableZoneNames.GetHashCode();
                 if (this.TotalStorageSpace != null) hashCode = hashCode * 59 + this.TotalStorageSpace.GetHashCode();
                 if (this.PublicConnectAddress != null) hashCode = hashCode * 59 + this.PublicConnectAddress.GetHashCode();
+                if (this.PublicConnectDomainName != null) hashCode = hashCode * 59 + this.PublicConnectDomainName.GetHashCode();
                 if (this.StorageResourceId != null) hashCode = hashCode * 59 + this.StorageResourceId.GetHashCode();
                 if (this.StorageSpecCode != null) hashCode = hashCode * 59 + this.StorageSpecCode.GetHashCode();
                 if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
@@ -1123,8 +1141,6 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 hashCode = hashCode * 59 + this.RetentionPolicy.GetHashCode();
                 if (this.KafkaPublicStatus != null) hashCode = hashCode * 59 + this.KafkaPublicStatus.GetHashCode();
                 if (this.PublicBandwidth != null) hashCode = hashCode * 59 + this.PublicBandwidth.GetHashCode();
-                if (this.KafkaManagerEnable != null) hashCode = hashCode * 59 + this.KafkaManagerEnable.GetHashCode();
-                if (this.KafkaManagerUser != null) hashCode = hashCode * 59 + this.KafkaManagerUser.GetHashCode();
                 if (this.EnableLogCollection != null) hashCode = hashCode * 59 + this.EnableLogCollection.GetHashCode();
                 if (this.NewAuthCert != null) hashCode = hashCode * 59 + this.NewAuthCert.GetHashCode();
                 if (this.CrossVpcInfo != null) hashCode = hashCode * 59 + this.CrossVpcInfo.GetHashCode();
@@ -1145,9 +1161,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 if (this.DiskEncrypted != null) hashCode = hashCode * 59 + this.DiskEncrypted.GetHashCode();
                 if (this.DiskEncryptedKey != null) hashCode = hashCode * 59 + this.DiskEncryptedKey.GetHashCode();
                 if (this.KafkaPrivateConnectAddress != null) hashCode = hashCode * 59 + this.KafkaPrivateConnectAddress.GetHashCode();
+                if (this.KafkaPrivateConnectDomainName != null) hashCode = hashCode * 59 + this.KafkaPrivateConnectDomainName.GetHashCode();
                 if (this.CesVersion != null) hashCode = hashCode * 59 + this.CesVersion.GetHashCode();
                 if (this.PublicAccessEnabled != null) hashCode = hashCode * 59 + this.PublicAccessEnabled.GetHashCode();
                 if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                if (this.PortProtocols != null) hashCode = hashCode * 59 + this.PortProtocols.GetHashCode();
                 if (this.EnableAcl != null) hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
                 if (this.NewSpecBillingEnable != null) hashCode = hashCode * 59 + this.NewSpecBillingEnable.GetHashCode();
                 if (this.BrokerNum != null) hashCode = hashCode * 59 + this.BrokerNum.GetHashCode();
