@@ -30,7 +30,7 @@ namespace HuaweiCloud.SDK.Core
 {
     public class XmlUtils
     {
-        public static T DeSerialize<T>(HttpResponseMessage message) where T : SdkResponse
+        public static T DeSerialize<T>(HttpResponseMessage message) where T : SdkResponse, new()
         {
             var body = Encoding.UTF8.GetString(message.Content.ReadAsByteArrayAsync().Result);
             var response = SetResponseBody<T>(body);
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Core
             return response;
         }
 
-        public static T DeSerialize<T>(SdkResponse response) where T : SdkResponse
+        public static T DeSerialize<T>(SdkResponse response) where T : SdkResponse, new()
         {
             T tResponse;
             var xmlSerializer = new XmlSerializer(typeof(T));
@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Core
 
             if (tResponse == null)
             {
-                tResponse = Activator.CreateInstance<T>();
+                tResponse = new T();
             }
 
             tResponse.HttpStatusCode = response.HttpStatusCode;
@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.Core
             return tResponse;
         }
 
-        private static T SetResponseBody<T>(string body) where T : SdkResponse
+        private static T SetResponseBody<T>(string body) where T : SdkResponse, new()
         {
             T response;
             var xmlSerializer = new XmlSerializer(typeof(T));
@@ -73,7 +73,7 @@ namespace HuaweiCloud.SDK.Core
 
             if (response == null)
             {
-                response = Activator.CreateInstance<T>();
+                response = new T();
             }
 
             return response;

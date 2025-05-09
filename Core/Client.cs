@@ -256,7 +256,7 @@ namespace HuaweiCloud.SDK.Core
             request.Headers.Add(XRequestAgent, "huaweicloud-usdk-net/3.0");
         }
 
-        public class ClientBuilder<T> where T : Client
+        public class ClientBuilder<T> where T : Client, new()
         {
 
             private const string HttpScheme = "http";
@@ -346,7 +346,7 @@ namespace HuaweiCloud.SDK.Core
 
             public T Build()
             {
-                Client client = Activator.CreateInstance<T>();
+                Client client = new T(); 
 
                 if (_credentials == null)
                 {
