@@ -65,6 +65,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
             "https://dms.af-north-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
             "https://dms.ap-southeast-5.myhuaweicloud.com");
+        public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
+            "https://dms.ru-moscow-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("KAFKA");
 
@@ -99,6 +101,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
                 { "cn-east-4", CN_EAST_4 },
                 { "af-north-1", AF_NORTH_1 },
                 { "ap-southeast-5", AP_SOUTHEAST_5 },
+                { "ru-moscow-1", RU_MOSCOW_1 },
         };
 
         public static Region ValueOf(string regionId)

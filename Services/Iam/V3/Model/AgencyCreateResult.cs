@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string DomainId { get; set; }
 
         /// <summary>
+        /// 委托的期限。取值为\&quot;FOREVER\&quot;或“null”表示委托的期限为永久，取值为24表示委托的期限为一天，或为24小时。
+        /// </summary>
+        [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
+        public string Duration { get; set; }
+
+        /// <summary>
         /// 委托过期时间。“null”表示不过期。
         /// </summary>
         [JsonProperty("expire_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -70,6 +76,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
+            sb.Append("  duration: ").Append(Duration).Append("\n");
             sb.Append("  expireTime: ").Append(ExpireTime).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
@@ -95,6 +102,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
             if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
@@ -114,6 +122,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();

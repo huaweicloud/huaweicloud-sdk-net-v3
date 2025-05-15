@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string Education { get; set; }
 
         /// <summary>
-        /// 婚姻状况。 
+        /// 婚姻状况。   
         /// </summary>
         [JsonProperty("marital_status", NullValueHandling = NullValueHandling.Ignore)]
         public string MaritalStatus { get; set; }

@@ -23,6 +23,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
+        /// <summary>
+        /// 规格id
+        /// </summary>
+        [SDKProperty("flavor_id", IsQuery = true)]
+        [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string FlavorId { get; set; }
+
 
 
         /// <summary>
@@ -33,6 +40,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListFlavorsRequest {\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
+            sb.Append("  flavorId: ").Append(FlavorId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -52,6 +60,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             if (input == null) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
 
             return true;
         }
@@ -65,6 +74,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             {
                 var hashCode = 41;
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
                 return hashCode;
             }
         }

@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     /// <summary>
     /// 查询参数集
     /// </summary>
-    public class MetricQueryMeritcParam 
+    public class MetricQueryMetricParam 
     {
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class MetricQueryMeritcParam {\n");
+            sb.Append("class MetricQueryMetricParam {\n");
             sb.Append("  dimensions: ").Append(Dimensions).Append("\n");
             sb.Append("  metricName: ").Append(MetricName).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
@@ -55,13 +55,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as MetricQueryMeritcParam);
+            return this.Equals(input as MetricQueryMetricParam);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(MetricQueryMeritcParam input)
+        public bool Equals(MetricQueryMetricParam input)
         {
             if (input == null) return false;
             if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;

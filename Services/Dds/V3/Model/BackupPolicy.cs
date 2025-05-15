@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public string Period { get; set; }
 
+        /// <summary>
+        /// 增量备份开关。不传这个参数则不对增备状态进行改动。开启增量备份后，系统会自动进行增量备份。增量备份开关的取值和约束如下： - false，代表关闭增量备份，关闭会将之前做的增量备份清理。 - true，代表开启增量备份，开启增量备份会触发一次全量备份。
+        /// </summary>
+        [JsonProperty("enable_incremental_backup", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableIncrementalBackup { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  keepDays: ").Append(KeepDays).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  period: ").Append(Period).Append("\n");
+            sb.Append("  enableIncrementalBackup: ").Append(EnableIncrementalBackup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             if (this.KeepDays != input.KeepDays || (this.KeepDays != null && !this.KeepDays.Equals(input.KeepDays))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.EnableIncrementalBackup != input.EnableIncrementalBackup || (this.EnableIncrementalBackup != null && !this.EnableIncrementalBackup.Equals(input.EnableIncrementalBackup))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                 if (this.KeepDays != null) hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.EnableIncrementalBackup != null) hashCode = hashCode * 59 + this.EnableIncrementalBackup.GetHashCode();
                 return hashCode;
             }
         }

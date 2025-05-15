@@ -2223,32 +2223,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
-        /// 查询Top IO列表
-        ///
-        /// 查询实例数据库进程下的Top IO流量数据，返回与会话信息相关联后的结果
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListTopIoTrafficsResponse ListTopIoTraffics(ListTopIoTrafficsRequest listTopIoTrafficsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTopIoTrafficsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/top-io-traffics", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopIoTrafficsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListTopIoTrafficsResponse>(response);
-        }
-
-        public SyncInvoker<ListTopIoTrafficsResponse> ListTopIoTrafficsInvoker(ListTopIoTrafficsRequest listTopIoTrafficsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTopIoTrafficsRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/top-io-traffics", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopIoTrafficsRequest);
-            return new SyncInvoker<ListTopIoTrafficsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTopIoTrafficsResponse>);
-        }
-        
-        /// <summary>
         /// 修改企业项目配额
         ///
         /// 修改企业项目配额。

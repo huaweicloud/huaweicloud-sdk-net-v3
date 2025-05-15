@@ -65,6 +65,30 @@ namespace HuaweiCloud.SDK.Ocr.V1
         }
         
         /// <summary>
+        /// 智能证件分类
+        ///
+        /// 支持9类证件的分类和告警检测，以JSON格式返回结果。支持的证件类型有秘鲁身份证、柬文身份证、香港身份证、澳门身份证、缅文身份证、缅文驾驶证、泰文身份证、护照和中华人民共和国居民身份证。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RecognizeAutoIdDocClassificationResponse RecognizeAutoIdDocClassification(RecognizeAutoIdDocClassificationRequest recognizeAutoIdDocClassificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/auto-id-doc-classification", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeAutoIdDocClassificationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RecognizeAutoIdDocClassificationResponse>(response);
+        }
+
+        public SyncInvoker<RecognizeAutoIdDocClassificationResponse> RecognizeAutoIdDocClassificationInvoker(RecognizeAutoIdDocClassificationRequest recognizeAutoIdDocClassificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ocr/auto-id-doc-classification", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", recognizeAutoIdDocClassificationRequest);
+            return new SyncInvoker<RecognizeAutoIdDocClassificationResponse>(this, "POST", request, JsonUtils.DeSerialize<RecognizeAutoIdDocClassificationResponse>);
+        }
+        
+        /// <summary>
         /// 银行回单识别
         ///
         /// 支持对银行回单版式进行文字识别及键值对提取，实现高效的自动化结构化返回。

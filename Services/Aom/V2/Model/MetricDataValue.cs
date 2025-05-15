@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// 
         /// </summary>
         [JsonProperty("metric", NullValueHandling = NullValueHandling.Ignore)]
-        public MetricQueryMeritcParam Metric { get; set; }
+        public MetricQueryMetricParam Metric { get; set; }
 
 
 

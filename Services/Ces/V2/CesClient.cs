@@ -1248,5 +1248,31 @@ namespace HuaweiCloud.SDK.Ces.V2
             return new SyncInvoker<UpdateResourceGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateResourceGroupResponse>);
         }
         
+        /// <summary>
+        /// 资源分组异步关联自定义告警模板
+        ///
+        /// 提交资源分组批量关联自定义告警模板异步任务，由异步任务覆盖性创建告警规则。每个用户创建处于待执行状态的异步任务数量上限为100个，单个资源分组仅可有1个未完成的任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateResourceGroupAssociationAlarmTemplateResponse UpdateResourceGroupAssociationAlarmTemplate(UpdateResourceGroupAssociationAlarmTemplateRequest updateResourceGroupAssociationAlarmTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", updateResourceGroupAssociationAlarmTemplateRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/resource-groups/{group_id}/alarm-templates/async-association", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResourceGroupAssociationAlarmTemplateRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateResourceGroupAssociationAlarmTemplateResponse>(response);
+        }
+
+        public SyncInvoker<UpdateResourceGroupAssociationAlarmTemplateResponse> UpdateResourceGroupAssociationAlarmTemplateInvoker(UpdateResourceGroupAssociationAlarmTemplateRequest updateResourceGroupAssociationAlarmTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", updateResourceGroupAssociationAlarmTemplateRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/resource-groups/{group_id}/alarm-templates/async-association", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResourceGroupAssociationAlarmTemplateRequest);
+            return new SyncInvoker<UpdateResourceGroupAssociationAlarmTemplateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateResourceGroupAssociationAlarmTemplateResponse>);
+        }
+        
     }
 }
