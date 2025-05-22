@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("audio_descriptions", NullValueHandling = NullValueHandling.Ignore)]
         public List<EncoderSettingsExpandAudioDescriptions> AudioDescriptions { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("video_descriptions", NullValueHandling = NullValueHandling.Ignore)]
+        public VideoDescriptions VideoDescriptions { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             var sb = new StringBuilder();
             sb.Append("class EncoderSettingsExpand {\n");
             sb.Append("  audioDescriptions: ").Append(AudioDescriptions).Append("\n");
+            sb.Append("  videoDescriptions: ").Append(VideoDescriptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             if (input == null) return false;
             if (this.AudioDescriptions != input.AudioDescriptions || (this.AudioDescriptions != null && input.AudioDescriptions != null && !this.AudioDescriptions.SequenceEqual(input.AudioDescriptions))) return false;
+            if (this.VideoDescriptions != input.VideoDescriptions || (this.VideoDescriptions != null && !this.VideoDescriptions.Equals(input.VideoDescriptions))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             {
                 var hashCode = 41;
                 if (this.AudioDescriptions != null) hashCode = hashCode * 59 + this.AudioDescriptions.GetHashCode();
+                if (this.VideoDescriptions != null) hashCode = hashCode * 59 + this.VideoDescriptions.GetHashCode();
                 return hashCode;
             }
         }

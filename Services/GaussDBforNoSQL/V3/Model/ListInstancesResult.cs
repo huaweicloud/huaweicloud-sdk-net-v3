@@ -172,6 +172,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("dual_active_info", NullValueHandling = NullValueHandling.Ignore)]
+        public DualActiveInfo DualActiveInfo { get; set; }
+
 
 
         /// <summary>
@@ -207,6 +213,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             sb.Append("  lbIpAddress: ").Append(LbIpAddress).Append("\n");
             sb.Append("  lbPort: ").Append(LbPort).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
+            sb.Append("  dualActiveInfo: ").Append(DualActiveInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -251,6 +258,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (this.LbIpAddress != input.LbIpAddress || (this.LbIpAddress != null && !this.LbIpAddress.Equals(input.LbIpAddress))) return false;
             if (this.LbPort != input.LbPort || (this.LbPort != null && !this.LbPort.Equals(input.LbPort))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.DualActiveInfo != input.DualActiveInfo || (this.DualActiveInfo != null && !this.DualActiveInfo.Equals(input.DualActiveInfo))) return false;
 
             return true;
         }
@@ -289,6 +297,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
                 if (this.LbIpAddress != null) hashCode = hashCode * 59 + this.LbIpAddress.GetHashCode();
                 if (this.LbPort != null) hashCode = hashCode * 59 + this.LbPort.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.DualActiveInfo != null) hashCode = hashCode * 59 + this.DualActiveInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -311,6 +311,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         public int? ReleaseId { get; set; }
 
         /// <summary>
+        /// 部署应用id
+        /// </summary>
+        [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AppId { get; set; }
+
+        /// <summary>
         /// 当前应用是否被禁用
         /// </summary>
         [JsonProperty("is_disable", NullValueHandling = NullValueHandling.Ignore)]
@@ -385,6 +391,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             sb.Append("  roleId: ").Append(RoleId).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  releaseId: ").Append(ReleaseId).Append("\n");
+            sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  isDisable: ").Append(IsDisable).Append("\n");
             sb.Append("  duration: ").Append(Duration).Append("\n");
             sb.Append("  executionState: ").Append(ExecutionState).Append("\n");
@@ -439,6 +446,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
             if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.ReleaseId != input.ReleaseId || (this.ReleaseId != null && !this.ReleaseId.Equals(input.ReleaseId))) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
             if (this.IsDisable != input.IsDisable || (this.IsDisable != null && !this.IsDisable.Equals(input.IsDisable))) return false;
             if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
             if (this.ExecutionState != input.ExecutionState || (this.ExecutionState != null && !this.ExecutionState.Equals(input.ExecutionState))) return false;
@@ -487,6 +495,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
                 if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.ReleaseId != null) hashCode = hashCode * 59 + this.ReleaseId.GetHashCode();
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 if (this.IsDisable != null) hashCode = hashCode * 59 + this.IsDisable.GetHashCode();
                 if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 if (this.ExecutionState != null) hashCode = hashCode * 59 + this.ExecutionState.GetHashCode();

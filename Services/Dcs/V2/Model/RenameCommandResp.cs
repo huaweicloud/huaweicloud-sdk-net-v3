@@ -46,6 +46,30 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("keys", NullValueHandling = NullValueHandling.Ignore)]
         public string Keys { get; set; }
 
+        /// <summary>
+        /// 命令hscan
+        /// </summary>
+        [JsonProperty("hscan", NullValueHandling = NullValueHandling.Ignore)]
+        public string Hscan { get; set; }
+
+        /// <summary>
+        /// 命令scan
+        /// </summary>
+        [JsonProperty("scan", NullValueHandling = NullValueHandling.Ignore)]
+        public string Scan { get; set; }
+
+        /// <summary>
+        /// 命令sscan
+        /// </summary>
+        [JsonProperty("sscan", NullValueHandling = NullValueHandling.Ignore)]
+        public string Sscan { get; set; }
+
+        /// <summary>
+        /// 命令zscan
+        /// </summary>
+        [JsonProperty("zscan", NullValueHandling = NullValueHandling.Ignore)]
+        public string Zscan { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +84,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  flushdb: ").Append(Flushdb).Append("\n");
             sb.Append("  hgetall: ").Append(Hgetall).Append("\n");
             sb.Append("  keys: ").Append(Keys).Append("\n");
+            sb.Append("  hscan: ").Append(Hscan).Append("\n");
+            sb.Append("  scan: ").Append(Scan).Append("\n");
+            sb.Append("  sscan: ").Append(Sscan).Append("\n");
+            sb.Append("  zscan: ").Append(Zscan).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +111,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             if (this.Flushdb != input.Flushdb || (this.Flushdb != null && !this.Flushdb.Equals(input.Flushdb))) return false;
             if (this.Hgetall != input.Hgetall || (this.Hgetall != null && !this.Hgetall.Equals(input.Hgetall))) return false;
             if (this.Keys != input.Keys || (this.Keys != null && !this.Keys.Equals(input.Keys))) return false;
+            if (this.Hscan != input.Hscan || (this.Hscan != null && !this.Hscan.Equals(input.Hscan))) return false;
+            if (this.Scan != input.Scan || (this.Scan != null && !this.Scan.Equals(input.Scan))) return false;
+            if (this.Sscan != input.Sscan || (this.Sscan != null && !this.Sscan.Equals(input.Sscan))) return false;
+            if (this.Zscan != input.Zscan || (this.Zscan != null && !this.Zscan.Equals(input.Zscan))) return false;
 
             return true;
         }
@@ -100,6 +132,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 if (this.Flushdb != null) hashCode = hashCode * 59 + this.Flushdb.GetHashCode();
                 if (this.Hgetall != null) hashCode = hashCode * 59 + this.Hgetall.GetHashCode();
                 if (this.Keys != null) hashCode = hashCode * 59 + this.Keys.GetHashCode();
+                if (this.Hscan != null) hashCode = hashCode * 59 + this.Hscan.GetHashCode();
+                if (this.Scan != null) hashCode = hashCode * 59 + this.Scan.GetHashCode();
+                if (this.Sscan != null) hashCode = hashCode * 59 + this.Sscan.GetHashCode();
+                if (this.Zscan != null) hashCode = hashCode * 59 + this.Zscan.GetHashCode();
                 return hashCode;
             }
         }

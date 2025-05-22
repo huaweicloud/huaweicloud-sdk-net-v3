@@ -220,6 +220,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("quic_cid_hash_strategy", NullValueHandling = NullValueHandling.Ignore)]
         public QuicCidHashStrategy QuicCidHashStrategy { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("az_affinity", NullValueHandling = NullValueHandling.Ignore)]
+        public UpdateAzAffinity AzAffinity { get; set; }
+
 
 
         /// <summary>
@@ -244,6 +250,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  connectionDrain: ").Append(ConnectionDrain).Append("\n");
             sb.Append("  poolHealth: ").Append(PoolHealth).Append("\n");
             sb.Append("  quicCidHashStrategy: ").Append(QuicCidHashStrategy).Append("\n");
+            sb.Append("  azAffinity: ").Append(AzAffinity).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -277,6 +284,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.ConnectionDrain != input.ConnectionDrain || (this.ConnectionDrain != null && !this.ConnectionDrain.Equals(input.ConnectionDrain))) return false;
             if (this.PoolHealth != input.PoolHealth || (this.PoolHealth != null && !this.PoolHealth.Equals(input.PoolHealth))) return false;
             if (this.QuicCidHashStrategy != input.QuicCidHashStrategy || (this.QuicCidHashStrategy != null && !this.QuicCidHashStrategy.Equals(input.QuicCidHashStrategy))) return false;
+            if (this.AzAffinity != input.AzAffinity || (this.AzAffinity != null && !this.AzAffinity.Equals(input.AzAffinity))) return false;
 
             return true;
         }
@@ -304,6 +312,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.ConnectionDrain != null) hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
                 if (this.PoolHealth != null) hashCode = hashCode * 59 + this.PoolHealth.GetHashCode();
                 if (this.QuicCidHashStrategy != null) hashCode = hashCode * 59 + this.QuicCidHashStrategy.GetHashCode();
+                if (this.AzAffinity != null) hashCode = hashCode * 59 + this.AzAffinity.GetHashCode();
                 return hashCode;
             }
         }

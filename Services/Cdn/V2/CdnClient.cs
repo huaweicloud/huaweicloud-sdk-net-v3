@@ -364,6 +364,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 修改租户配置
+        ///
+        /// 修改租户配置，当前仅支持开启OBS和SCM委托授权。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyAccountInfoResponse ModifyAccountInfo(ModifyAccountInfoRequest modifyAccountInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/account-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyAccountInfoRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<ModifyAccountInfoResponse>(response);
+        }
+
+        public SyncInvoker<ModifyAccountInfoResponse> ModifyAccountInfoInvoker(ModifyAccountInfoRequest modifyAccountInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/account-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyAccountInfoRequest);
+            return new SyncInvoker<ModifyAccountInfoResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ModifyAccountInfoResponse>);
+        }
+        
+        /// <summary>
         /// 设置用户计费模式
         ///
         /// - 设置用户计费模式。

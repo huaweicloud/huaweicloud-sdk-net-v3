@@ -205,6 +205,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("quic_cid_offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? QuicCidOffset { get; set; }
 
+        /// <summary>
+        /// 查询后端服务器组可用区亲和性策略是否开启。示例如下： \&quot;az_affinity\&quot;: {             \&quot;enable\&quot;: \&quot;true\&quot;         }  支持多值查询，查询条件格式：  *az_affinity&#x3D;enable&#x3D;true&amp;az_affinity&#x3D;enable&#x3D;false*。
+        /// </summary>
+        [SDKProperty("az_affinity", IsQuery = true)]
+        [JsonProperty("az_affinity", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AzAffinity { get; set; }
+
 
 
         /// <summary>
@@ -241,6 +248,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("  quicCidLen: ").Append(QuicCidLen).Append("\n");
             sb.Append("  quicCidOffset: ").Append(QuicCidOffset).Append("\n");
+            sb.Append("  azAffinity: ").Append(AzAffinity).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -286,6 +294,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
             if (this.QuicCidLen != input.QuicCidLen || (this.QuicCidLen != null && !this.QuicCidLen.Equals(input.QuicCidLen))) return false;
             if (this.QuicCidOffset != input.QuicCidOffset || (this.QuicCidOffset != null && !this.QuicCidOffset.Equals(input.QuicCidOffset))) return false;
+            if (this.AzAffinity != input.AzAffinity || (this.AzAffinity != null && input.AzAffinity != null && !this.AzAffinity.SequenceEqual(input.AzAffinity))) return false;
 
             return true;
         }
@@ -325,6 +334,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 if (this.QuicCidLen != null) hashCode = hashCode * 59 + this.QuicCidLen.GetHashCode();
                 if (this.QuicCidOffset != null) hashCode = hashCode * 59 + this.QuicCidOffset.GetHashCode();
+                if (this.AzAffinity != null) hashCode = hashCode * 59 + this.AzAffinity.GetHashCode();
                 return hashCode;
             }
         }

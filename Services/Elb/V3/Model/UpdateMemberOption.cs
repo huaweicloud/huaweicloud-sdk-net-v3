@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
+        /// 参数解释：后端服务器的可用区。  约束限制： 仅支持iptarget类型的后端服务器更新该字段。且后端服务器组开启可用区亲和时，iptarget类型的后端服务器必须配置该字段，且无法更新为\&quot;\&quot;。 取值范围：本region中ECS可选择的可用区。
+        /// </summary>
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public string AvailabilityZone { get; set; }
+
+        /// <summary>
         /// 后端服务器名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -50,6 +56,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateMemberOption {\n");
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  weight: ").Append(Weight).Append("\n");
             sb.Append("  protocolPort: ").Append(ProtocolPort).Append("\n");
@@ -72,6 +79,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             if (input == null) return false;
             if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Weight != input.Weight || (this.Weight != null && !this.Weight.Equals(input.Weight))) return false;
             if (this.ProtocolPort != input.ProtocolPort || (this.ProtocolPort != null && !this.ProtocolPort.Equals(input.ProtocolPort))) return false;
@@ -88,6 +96,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             {
                 var hashCode = 41;
                 if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Weight != null) hashCode = hashCode * 59 + this.Weight.GetHashCode();
                 if (this.ProtocolPort != null) hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();

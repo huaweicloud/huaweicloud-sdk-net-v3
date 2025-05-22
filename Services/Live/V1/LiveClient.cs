@@ -1856,5 +1856,29 @@ namespace HuaweiCloud.SDK.Live.V1
             return new SyncInvoker<ModifyOttChannelInfoStatsResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyOttChannelInfoStatsResponse>);
         }
         
+        /// <summary>
+        /// 查询频道统计信息
+        ///
+        /// 查询频道的统计信息（入流scte35信号）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowChannelStatisticResponse ShowChannelStatistic(ShowChannelStatisticRequest showChannelStatisticRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", showChannelStatisticRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowChannelStatisticResponse>(response);
+        }
+
+        public SyncInvoker<ShowChannelStatisticResponse> ShowChannelStatisticInvoker(ShowChannelStatisticRequest showChannelStatisticRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/channels/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", showChannelStatisticRequest);
+            return new SyncInvoker<ShowChannelStatisticResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowChannelStatisticResponse>);
+        }
+        
     }
 }

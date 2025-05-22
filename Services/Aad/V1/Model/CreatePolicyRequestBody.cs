@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 防护包id
+        /// 实例id
         /// </summary>
         [JsonProperty("package_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PackageId { get; set; }

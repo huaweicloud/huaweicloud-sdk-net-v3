@@ -112,6 +112,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
+        /// <summary>
+        /// 后端服务器所在的可用区。
+        /// </summary>
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public string AvailabilityZone { get; set; }
+
 
 
         /// <summary>
@@ -137,6 +143,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  portId: ").Append(PortId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -171,6 +178,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.PortId != input.PortId || (this.PortId != null && !this.PortId.Equals(input.PortId))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
 
             return true;
         }
@@ -199,6 +207,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 return hashCode;
             }
         }

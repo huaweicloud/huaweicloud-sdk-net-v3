@@ -80,6 +80,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
+        /// 参数解释：查询结果是否包含回收站负载均衡器的监听器  取值范围： - true ：包含回收站elb的监听器。 - false：不包含回收站elb的监听器。
+        /// </summary>
+        [SDKProperty("include_recycle_bin", IsQuery = true)]
+        [JsonProperty("include_recycle_bin", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IncludeRecycleBin { get; set; }
+
+        /// <summary>
         /// ​监听器的最大连接数。  取值：-1表示不限制连接数。  支持多值查询，查询条件格式：*connection_limit&#x3D;xxx&amp;connection_limit&#x3D;xxx*。  不支持该字段，请勿使用。
         /// </summary>
         [SDKProperty("connection_limit", IsQuery = true)]
@@ -244,6 +251,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  defaultTlsContainerRef: ").Append(DefaultTlsContainerRef).Append("\n");
             sb.Append("  clientCaTlsContainerRef: ").Append(ClientCaTlsContainerRef).Append("\n");
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
+            sb.Append("  includeRecycleBin: ").Append(IncludeRecycleBin).Append("\n");
             sb.Append("  connectionLimit: ").Append(ConnectionLimit).Append("\n");
             sb.Append("  defaultPoolId: ").Append(DefaultPoolId).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
@@ -292,6 +300,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.DefaultTlsContainerRef != input.DefaultTlsContainerRef || (this.DefaultTlsContainerRef != null && input.DefaultTlsContainerRef != null && !this.DefaultTlsContainerRef.SequenceEqual(input.DefaultTlsContainerRef))) return false;
             if (this.ClientCaTlsContainerRef != input.ClientCaTlsContainerRef || (this.ClientCaTlsContainerRef != null && input.ClientCaTlsContainerRef != null && !this.ClientCaTlsContainerRef.SequenceEqual(input.ClientCaTlsContainerRef))) return false;
             if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.IncludeRecycleBin != input.IncludeRecycleBin || (this.IncludeRecycleBin != null && !this.IncludeRecycleBin.Equals(input.IncludeRecycleBin))) return false;
             if (this.ConnectionLimit != input.ConnectionLimit || (this.ConnectionLimit != null && input.ConnectionLimit != null && !this.ConnectionLimit.SequenceEqual(input.ConnectionLimit))) return false;
             if (this.DefaultPoolId != input.DefaultPoolId || (this.DefaultPoolId != null && input.DefaultPoolId != null && !this.DefaultPoolId.SequenceEqual(input.DefaultPoolId))) return false;
             if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
@@ -334,6 +343,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.DefaultTlsContainerRef != null) hashCode = hashCode * 59 + this.DefaultTlsContainerRef.GetHashCode();
                 if (this.ClientCaTlsContainerRef != null) hashCode = hashCode * 59 + this.ClientCaTlsContainerRef.GetHashCode();
                 if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.IncludeRecycleBin != null) hashCode = hashCode * 59 + this.IncludeRecycleBin.GetHashCode();
                 if (this.ConnectionLimit != null) hashCode = hashCode * 59 + this.ConnectionLimit.GetHashCode();
                 if (this.DefaultPoolId != null) hashCode = hashCode * 59 + this.DefaultPoolId.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();

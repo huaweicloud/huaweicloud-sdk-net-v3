@@ -108,7 +108,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Type { get; set; }
 
         /// <summary>
-        /// 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  仅支持HTTP/HTTPS/GRPC设置该字段，其他协议设置不会生效。  支持多值查询，查询条件格式：****expected_codes&#x3D;xxx&amp;expected_codes&#x3D;xxx****。
+        /// 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  该字段仅在HTTP/HTTPS/GRPC协议下有效，其他协议可以设置但不会生效。  支持多值查询，查询条件格式：****expected_codes&#x3D;xxx&amp;expected_codes&#x3D;xxx****。
         /// </summary>
         [SDKProperty("expected_codes", IsQuery = true)]
         [JsonProperty("expected_codes", NullValueHandling = NullValueHandling.Ignore)]

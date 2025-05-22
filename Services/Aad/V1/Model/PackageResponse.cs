@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
     public class PackageResponse 
     {
         /// <summary>
-        /// 防护包类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版
+        /// 实例类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版
         /// </summary>
-        /// <value>防护包类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版</value>
+        /// <value>实例类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版</value>
         [JsonConverter(typeof(EnumClassConverter<InstanceTypeEnum>))]
         public class InstanceTypeEnum
         {
@@ -156,13 +156,13 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
 
 
         /// <summary>
-        /// 防护包id
+        /// 实例id
         /// </summary>
         [JsonProperty("package_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PackageId { get; set; }
 
         /// <summary>
-        /// 防护包名
+        /// 实例名
         /// </summary>
         [JsonProperty("package_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PackageName { get; set; }
@@ -180,7 +180,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         public int? ProtectionType { get; set; }
 
         /// <summary>
-        /// 防护包类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版
+        /// 实例类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版
         /// </summary>
         [JsonProperty("instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public InstanceTypeEnum InstanceType { get; set; }
@@ -275,7 +275,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         public int? PolicyNum { get; set; }
 
         /// <summary>
-        /// 是否旧防护包（旧防护包不支持升级规格）,默认不传为否
+        /// 是否旧实例（旧实例不支持升级规格）,默认不传为否
         /// </summary>
         [JsonProperty("is_old", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsOld { get; set; }

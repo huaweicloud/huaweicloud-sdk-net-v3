@@ -909,6 +909,34 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 下载热key
+        ///
+        /// 下载热key。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadHotKeyResponse> DownloadHotKeyAsync(DownloadHotKeyRequest downloadHotKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadHotKeyRequest.InstanceId.ToString());
+            urlParam.Add("task_id", downloadHotKeyRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/hotkey/{task_id}/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadHotKeyRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<DownloadHotKeyResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadHotKeyResponse> DownloadHotKeyAsyncInvoker(DownloadHotKeyRequest downloadHotKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadHotKeyRequest.InstanceId.ToString());
+            urlParam.Add("task_id", downloadHotKeyRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/hotkey/{task_id}/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadHotKeyRequest);
+            return new AsyncInvoker<DownloadHotKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadHotKeyResponse>);
+        }
+        
+        /// <summary>
         /// 下载实例SSL证书
         ///
         /// 下载实例SSL证书。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
@@ -1879,6 +1907,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 变更可用区
+        ///
+        /// 迁移缓存实例可用区，完成单可用区实例跨可用区改造。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<MigrateAzResponse> MigrateAzAsync(MigrateAzRequest migrateAzRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", migrateAzRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/available-zones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", migrateAzRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<MigrateAzResponse>(response);
+        }
+
+        public AsyncInvoker<MigrateAzResponse> MigrateAzAsyncInvoker(MigrateAzRequest migrateAzRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", migrateAzRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/available-zones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", migrateAzRequest);
+            return new AsyncInvoker<MigrateAzResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<MigrateAzResponse>);
+        }
+        
+        /// <summary>
         /// 重置ACL账号密码
         ///
         /// 重置ACL账号密码。
@@ -2009,6 +2063,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/restores", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restoreInstanceRequest);
             return new AsyncInvoker<RestoreInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// IP交换回滚
+        ///
+        /// IP交换回滚。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RollbackExchangeInstanceIpResponse> RollbackExchangeInstanceIpAsync(RollbackExchangeInstanceIpRequest rollbackExchangeInstanceIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id", rollbackExchangeInstanceIpRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-task/{task_id}/rollback-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rollbackExchangeInstanceIpRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<RollbackExchangeInstanceIpResponse>(response);
+        }
+
+        public AsyncInvoker<RollbackExchangeInstanceIpResponse> RollbackExchangeInstanceIpAsyncInvoker(RollbackExchangeInstanceIpRequest rollbackExchangeInstanceIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("task_id", rollbackExchangeInstanceIpRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/migration-task/{task_id}/rollback-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rollbackExchangeInstanceIpRequest);
+            return new AsyncInvoker<RollbackExchangeInstanceIpResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RollbackExchangeInstanceIpResponse>);
         }
         
         /// <summary>
@@ -2459,6 +2539,32 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ssl", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceSslDetailRequest);
             return new AsyncInvoker<ShowInstanceSslDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceSslDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查询集群实例拓扑关系图
+        ///
+        /// 查询集群实例拓扑关系图。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowInstanceTopologyResponse> ShowInstanceTopologyAsync(ShowInstanceTopologyRequest showInstanceTopologyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceTopologyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTopologyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceTopologyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowInstanceTopologyResponse> ShowInstanceTopologyAsyncInvoker(ShowInstanceTopologyRequest showInstanceTopologyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceTopologyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTopologyRequest);
+            return new AsyncInvoker<ShowInstanceTopologyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceTopologyResponse>);
         }
         
         /// <summary>
@@ -3127,6 +3233,33 @@ namespace HuaweiCloud.SDK.Dcs.V2
         }
         
         /// <summary>
+        /// 设置IP白名单分组异步接口
+        ///
+        /// 为指定实例设置IP白名单分组，包含创建、停用、编辑、删除白名单四个功能。返回异步任务jobId，设置白名单分组信息会覆盖掉已有的白名单信息，因此在新增IP白名单分组时，需保留已有的白名单信息后再编辑新的白名单分组信息。
+        /// [仅Redis 4.0及以上版本的实例支持设置IP白名单分组，Redis 3.0实例不支持该功能。](tag:dt)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateIpWhitelistAsyncResponse> UpdateIpWhitelistAsyncAsync(UpdateIpWhitelistAsyncRequest updateIpWhitelistAsyncRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateIpWhitelistAsyncRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instance/{instance_id}/whitelist-async", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpWhitelistAsyncRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateIpWhitelistAsyncResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateIpWhitelistAsyncResponse> UpdateIpWhitelistAsyncAsyncInvoker(UpdateIpWhitelistAsyncRequest updateIpWhitelistAsyncRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateIpWhitelistAsyncRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instance/{instance_id}/whitelist-async", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpWhitelistAsyncRequest);
+            return new AsyncInvoker<UpdateIpWhitelistAsyncResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateIpWhitelistAsyncResponse>);
+        }
+        
+        /// <summary>
         /// 设置迁移任务自动重连
         ///
         /// 设置迁移任务自动重连
@@ -3362,6 +3495,114 @@ namespace HuaweiCloud.SDK.Dcs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instance/{instance_id}/whitelist", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpWhitelistRequest);
             return new AsyncInvoker<UpdateIpWhitelistResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateIpWhitelistResponse>);
+        }
+        
+        /// <summary>
+        /// 创建离线全量key分析任务
+        ///
+        /// 创建离线全量key分析任务。离线全量key分析用于分析实例指定节点备份文件中的TOP100大key，每种数据类型前缀数量TOP50的key和每种数据类型key的内存占用和数量的分布情况。仅Redis 4.0、5.0、6.0版本及Redis企业版实例支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateOfflineKeyAnalysisResponse> CreateOfflineKeyAnalysisAsync(CreateOfflineKeyAnalysisRequest createOfflineKeyAnalysisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createOfflineKeyAnalysisRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/offline/key-analysis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOfflineKeyAnalysisRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateOfflineKeyAnalysisResponse>(response);
+        }
+
+        public AsyncInvoker<CreateOfflineKeyAnalysisResponse> CreateOfflineKeyAnalysisAsyncInvoker(CreateOfflineKeyAnalysisRequest createOfflineKeyAnalysisRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createOfflineKeyAnalysisRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/offline/key-analysis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOfflineKeyAnalysisRequest);
+            return new AsyncInvoker<CreateOfflineKeyAnalysisResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateOfflineKeyAnalysisResponse>);
+        }
+        
+        /// <summary>
+        /// 删除离线全量key分析记录
+        ///
+        /// 删除离线全量key分析记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteOfflineKeyAnalysisTaskResponse> DeleteOfflineKeyAnalysisTaskAsync(DeleteOfflineKeyAnalysisTaskRequest deleteOfflineKeyAnalysisTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteOfflineKeyAnalysisTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", deleteOfflineKeyAnalysisTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/offline/key-analysis/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOfflineKeyAnalysisTaskRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteOfflineKeyAnalysisTaskResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteOfflineKeyAnalysisTaskResponse> DeleteOfflineKeyAnalysisTaskAsyncInvoker(DeleteOfflineKeyAnalysisTaskRequest deleteOfflineKeyAnalysisTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteOfflineKeyAnalysisTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", deleteOfflineKeyAnalysisTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/offline/key-analysis/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOfflineKeyAnalysisTaskRequest);
+            return new AsyncInvoker<DeleteOfflineKeyAnalysisTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteOfflineKeyAnalysisTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询离线全量key分析任务列表
+        ///
+        /// 查询离线全量key分析任务列表，支持Redis4.0、5.0、6.0版本及Redis企业版。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListOfflineKeyAnalysisTaskResponse> ListOfflineKeyAnalysisTaskAsync(ListOfflineKeyAnalysisTaskRequest listOfflineKeyAnalysisTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listOfflineKeyAnalysisTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/offline/key-analysis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOfflineKeyAnalysisTaskRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListOfflineKeyAnalysisTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ListOfflineKeyAnalysisTaskResponse> ListOfflineKeyAnalysisTaskAsyncInvoker(ListOfflineKeyAnalysisTaskRequest listOfflineKeyAnalysisTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listOfflineKeyAnalysisTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/offline/key-analysis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOfflineKeyAnalysisTaskRequest);
+            return new AsyncInvoker<ListOfflineKeyAnalysisTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListOfflineKeyAnalysisTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询离线全量key分析详情
+        ///
+        /// 查询离线全量key分析详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowOfflineKeyAnalysisTaskResponse> ShowOfflineKeyAnalysisTaskAsync(ShowOfflineKeyAnalysisTaskRequest showOfflineKeyAnalysisTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showOfflineKeyAnalysisTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", showOfflineKeyAnalysisTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/offline/key-analysis/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOfflineKeyAnalysisTaskRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowOfflineKeyAnalysisTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ShowOfflineKeyAnalysisTaskResponse> ShowOfflineKeyAnalysisTaskAsyncInvoker(ShowOfflineKeyAnalysisTaskRequest showOfflineKeyAnalysisTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showOfflineKeyAnalysisTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", showOfflineKeyAnalysisTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/offline/key-analysis/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOfflineKeyAnalysisTaskRequest);
+            return new AsyncInvoker<ShowOfflineKeyAnalysisTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowOfflineKeyAnalysisTaskResponse>);
         }
         
     }

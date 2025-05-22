@@ -128,6 +128,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> InstanceId { get; set; }
 
+        /// <summary>
+        /// 后端服务器的可用区。  支持多值查询，查询条件格式：*availability_zone&#x3D;xxx&amp;availability_zone&#x3D;xxx*。
+        /// </summary>
+        [SDKProperty("availability_zone", IsQuery = true)]
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> AvailabilityZone { get; set; }
+
 
 
         /// <summary>
@@ -153,6 +160,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  ipVersion: ").Append(IpVersion).Append("\n");
             sb.Append("  memberType: ").Append(MemberType).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +195,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.IpVersion != input.IpVersion || (this.IpVersion != null && input.IpVersion != null && !this.IpVersion.SequenceEqual(input.IpVersion))) return false;
             if (this.MemberType != input.MemberType || (this.MemberType != null && input.MemberType != null && !this.MemberType.SequenceEqual(input.MemberType))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && input.InstanceId != null && !this.InstanceId.SequenceEqual(input.InstanceId))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && input.AvailabilityZone != null && !this.AvailabilityZone.SequenceEqual(input.AvailabilityZone))) return false;
 
             return true;
         }
@@ -215,6 +224,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 if (this.MemberType != null) hashCode = hashCode * 59 + this.MemberType.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 return hashCode;
             }
         }

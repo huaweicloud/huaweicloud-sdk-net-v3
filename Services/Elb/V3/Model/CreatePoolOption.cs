@@ -138,6 +138,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("az_affinity", NullValueHandling = NullValueHandling.Ignore)]
+        public AzAffinity AzAffinity { get; set; }
+
+        /// <summary>
         /// 参数解释：后端服务器组的描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -266,6 +272,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class CreatePoolOption {\n");
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
+            sb.Append("  azAffinity: ").Append(AzAffinity).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  lbAlgorithm: ").Append(LbAlgorithm).Append("\n");
             sb.Append("  listenerId: ").Append(ListenerId).Append("\n");
@@ -305,6 +312,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             if (input == null) return false;
             if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.AzAffinity != input.AzAffinity || (this.AzAffinity != null && !this.AzAffinity.Equals(input.AzAffinity))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.LbAlgorithm != input.LbAlgorithm || (this.LbAlgorithm != null && !this.LbAlgorithm.Equals(input.LbAlgorithm))) return false;
             if (this.ListenerId != input.ListenerId || (this.ListenerId != null && !this.ListenerId.Equals(input.ListenerId))) return false;
@@ -338,6 +346,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             {
                 var hashCode = 41;
                 if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.AzAffinity != null) hashCode = hashCode * 59 + this.AzAffinity.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.LbAlgorithm != null) hashCode = hashCode * 59 + this.LbAlgorithm.GetHashCode();
                 if (this.ListenerId != null) hashCode = hashCode * 59 + this.ListenerId.GetHashCode();

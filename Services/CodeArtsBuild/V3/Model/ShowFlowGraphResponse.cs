@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// 
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public FlowGraphResult Result { get; set; }
+        public FlowGraph2Result Result { get; set; }
 
 
 

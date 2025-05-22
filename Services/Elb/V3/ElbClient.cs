@@ -520,6 +520,32 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 创建后端服务器检测任务
+        ///
+        /// 创建后端服务器检测任务。包括后端服务器的配置、ACL规则和安全组规则检查。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateMemberHealthCheckJobResponse CreateMemberHealthCheckJob(CreateMemberHealthCheckJobRequest createMemberHealthCheckJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("member_id", createMemberHealthCheckJobRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members/{member_id}/health-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMemberHealthCheckJobRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateMemberHealthCheckJobResponse>(response);
+        }
+
+        public SyncInvoker<CreateMemberHealthCheckJobResponse> CreateMemberHealthCheckJobInvoker(CreateMemberHealthCheckJobRequest createMemberHealthCheckJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("member_id", createMemberHealthCheckJobRequest.MemberId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members/{member_id}/health-check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMemberHealthCheckJobRequest);
+            return new SyncInvoker<CreateMemberHealthCheckJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMemberHealthCheckJobResponse>);
+        }
+        
+        /// <summary>
         /// 创建后端服务器组
         ///
         /// 创建后端服务器组。
@@ -938,6 +964,32 @@ namespace HuaweiCloud.SDK.Elb.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/delete-cascade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePoolCascadeRequest);
             return new SyncInvoker<DeletePoolCascadeResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePoolCascadeResponse>);
+        }
+        
+        /// <summary>
+        /// 销毁回收站负载均衡器
+        ///
+        /// 销毁回收站负载均衡器。销毁后无法再还原。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteRecycleLoadBalancerResponse DeleteRecycleLoadBalancer(DeleteRecycleLoadBalancerRequest deleteRecycleLoadBalancerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", deleteRecycleLoadBalancerRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/loadbalancers/{loadbalancer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecycleLoadBalancerRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteRecycleLoadBalancerResponse>(response);
+        }
+
+        public SyncInvoker<DeleteRecycleLoadBalancerResponse> DeleteRecycleLoadBalancerInvoker(DeleteRecycleLoadBalancerRequest deleteRecycleLoadBalancerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", deleteRecycleLoadBalancerRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/loadbalancers/{loadbalancer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecycleLoadBalancerRequest);
+            return new SyncInvoker<DeleteRecycleLoadBalancerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRecycleLoadBalancerResponse>);
         }
         
         /// <summary>
@@ -1391,6 +1443,30 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 查询回收站负载均衡器列表
+        ///
+        /// 查询回收站负载均衡器列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRecycleBinLoadBalancersResponse ListRecycleBinLoadBalancers(ListRecycleBinLoadBalancersRequest listRecycleBinLoadBalancersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/loadbalancers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleBinLoadBalancersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListRecycleBinLoadBalancersResponse>(response);
+        }
+
+        public SyncInvoker<ListRecycleBinLoadBalancersResponse> ListRecycleBinLoadBalancersInvoker(ListRecycleBinLoadBalancersRequest listRecycleBinLoadBalancersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/loadbalancers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleBinLoadBalancersRequest);
+            return new SyncInvoker<ListRecycleBinLoadBalancersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecycleBinLoadBalancersResponse>);
+        }
+        
+        /// <summary>
         /// 查询自定义安全策略列表
         ///
         /// 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
@@ -1438,6 +1514,32 @@ namespace HuaweiCloud.SDK.Elb.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/system-security-policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSystemSecurityPoliciesRequest);
             return new SyncInvoker<ListSystemSecurityPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSystemSecurityPoliciesResponse>);
+        }
+        
+        /// <summary>
+        /// 还原负载均衡器
+        ///
+        /// 从回收站中还原负载均衡器
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RestoreLoadbalancerResponse RestoreLoadbalancer(RestoreLoadbalancerRequest restoreLoadbalancerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", restoreLoadbalancerRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/loadbalancers/{loadbalancer_id}/recover", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreLoadbalancerRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<RestoreLoadbalancerResponse>(response);
+        }
+
+        public SyncInvoker<RestoreLoadbalancerResponse> RestoreLoadbalancerInvoker(RestoreLoadbalancerRequest restoreLoadbalancerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", restoreLoadbalancerRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/loadbalancers/{loadbalancer_id}/recover", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreLoadbalancerRequest);
+            return new SyncInvoker<RestoreLoadbalancerResponse>(this, "PUT", request, JsonUtils.DeSerialize<RestoreLoadbalancerResponse>);
         }
         
         /// <summary>
@@ -1784,6 +1886,32 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 查询后端服务器检测任务的结果
+        ///
+        /// 查询后端服务器检测任务的结果。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowMemberHealthCheckJobResponse ShowMemberHealthCheckJob(ShowMemberHealthCheckJobRequest showMemberHealthCheckJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showMemberHealthCheckJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members/check/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberHealthCheckJobRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowMemberHealthCheckJobResponse>(response);
+        }
+
+        public SyncInvoker<ShowMemberHealthCheckJobResponse> ShowMemberHealthCheckJobInvoker(ShowMemberHealthCheckJobRequest showMemberHealthCheckJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showMemberHealthCheckJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members/check/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberHealthCheckJobRequest);
+            return new SyncInvoker<ShowMemberHealthCheckJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMemberHealthCheckJobResponse>);
+        }
+        
+        /// <summary>
         /// 查询后端服务器组详情
         ///
         /// 后端服务器组详情。
@@ -1831,6 +1959,30 @@ namespace HuaweiCloud.SDK.Elb.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
             return new SyncInvoker<ShowQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotaResponse>);
+        }
+        
+        /// <summary>
+        /// 查询回收站的配置
+        ///
+        /// 查询回收站的配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRecycleBinResponse ShowRecycleBin(ShowRecycleBinRequest showRecycleBinRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecycleBinRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRecycleBinResponse>(response);
+        }
+
+        public SyncInvoker<ShowRecycleBinResponse> ShowRecycleBinInvoker(ShowRecycleBinRequest showRecycleBinRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecycleBinRequest);
+            return new SyncInvoker<ShowRecycleBinResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecycleBinResponse>);
         }
         
         /// <summary>
@@ -2095,6 +2247,54 @@ namespace HuaweiCloud.SDK.Elb.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePoolRequest);
             return new SyncInvoker<UpdatePoolResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePoolResponse>);
+        }
+        
+        /// <summary>
+        /// 开关回收站
+        ///
+        /// 开启或关闭回收站功能。开启后删除的LB可以进入回收站，否则将不进入回收站而是直接被删除无法恢复。关闭回收站前需要先将回收站中的实例还原或销毁。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateRecycleBinEnableResponse UpdateRecycleBinEnable(UpdateRecycleBinEnableRequest updateRecycleBinEnableRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecycleBinEnableRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateRecycleBinEnableResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRecycleBinEnableResponse> UpdateRecycleBinEnableInvoker(UpdateRecycleBinEnableRequest updateRecycleBinEnableRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecycleBinEnableRequest);
+            return new SyncInvoker<UpdateRecycleBinEnableResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecycleBinEnableResponse>);
+        }
+        
+        /// <summary>
+        /// 更新回收站的配置
+        ///
+        /// 更新回收站的配置。若回收站未开启，则更新会报错。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateRecycleBinPolicyResponse UpdateRecycleBinPolicy(UpdateRecycleBinPolicyRequest updateRecycleBinPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecycleBinPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateRecycleBinPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRecycleBinPolicyResponse> UpdateRecycleBinPolicyInvoker(UpdateRecycleBinPolicyRequest updateRecycleBinPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecycleBinPolicyRequest);
+            return new SyncInvoker<UpdateRecycleBinPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecycleBinPolicyResponse>);
         }
         
         /// <summary>

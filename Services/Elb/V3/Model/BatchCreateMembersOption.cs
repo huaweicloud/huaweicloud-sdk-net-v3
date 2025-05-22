@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// 参数解释：后端服务器的可用区。 约束限制：  仅支持iptarget类型的后端服务器设置该字段。且后端服务器组开启可用区亲和时，iptarget类型的后端服务器必须配置该字段为有效非空值。 取值范围：本region中ECS可选择的可用区。
+        /// </summary>
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public string AvailabilityZone { get; set; }
+
+        /// <summary>
         /// 后端服务器的对应的IP地址，这个IP必须在subnet_cidr_id字段的子网网段中。例如：192.168.3.11。  subnet_cidr_id为空代表添加跨VPC后端，此时address必须为**私网IPv4**地址。
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
@@ -56,6 +62,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class BatchCreateMembersOption {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  address: ").Append(Address).Append("\n");
             sb.Append("  protocolPort: ").Append(ProtocolPort).Append("\n");
             sb.Append("  subnetCidrId: ").Append(SubnetCidrId).Append("\n");
@@ -79,6 +86,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
             if (this.ProtocolPort != input.ProtocolPort || (this.ProtocolPort != null && !this.ProtocolPort.Equals(input.ProtocolPort))) return false;
             if (this.SubnetCidrId != input.SubnetCidrId || (this.SubnetCidrId != null && !this.SubnetCidrId.Equals(input.SubnetCidrId))) return false;
@@ -96,6 +104,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             {
                 var hashCode = 41;
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
                 if (this.ProtocolPort != null) hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
                 if (this.SubnetCidrId != null) hashCode = hashCode * 59 + this.SubnetCidrId.GetHashCode();

@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string Id { get; set; }
 
         /// <summary>
+        /// 后端服务器所在的可用区。
+        /// </summary>
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public string AvailabilityZone { get; set; }
+
+        /// <summary>
         /// 后端服务器名称。注意：该名称并非ECS名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -152,6 +158,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class MemberInfo {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
@@ -191,6 +198,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
@@ -224,6 +232,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             {
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();

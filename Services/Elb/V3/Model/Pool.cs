@@ -138,6 +138,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("az_affinity", NullValueHandling = NullValueHandling.Ignore)]
+        public AzAffinity AzAffinity { get; set; }
+
+        /// <summary>
         /// 参数解释：后端服务器组的描述信息。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -269,7 +275,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public ConnectionDrain ConnectionDrain { get; set; }
 
         /// <summary>
-        /// 参数解释：后端服务器组所在的企业项目ID。
+        /// 参数解释：IP地址组所在的企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -302,6 +308,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class Pool {\n");
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
+            sb.Append("  azAffinity: ").Append(AzAffinity).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  healthmonitorId: ").Append(HealthmonitorId).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
@@ -347,6 +354,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             if (input == null) return false;
             if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.AzAffinity != input.AzAffinity || (this.AzAffinity != null && !this.AzAffinity.Equals(input.AzAffinity))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.HealthmonitorId != input.HealthmonitorId || (this.HealthmonitorId != null && !this.HealthmonitorId.Equals(input.HealthmonitorId))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
@@ -386,6 +394,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             {
                 var hashCode = 41;
                 if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.AzAffinity != null) hashCode = hashCode * 59 + this.AzAffinity.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.HealthmonitorId != null) hashCode = hashCode * 59 + this.HealthmonitorId.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();

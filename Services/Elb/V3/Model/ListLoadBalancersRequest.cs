@@ -66,6 +66,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
+        /// 参数解释：查询结果是否包含回收站负载均衡器  取值范围： - true ：包含回收站elb。 - false：不包含回收站elb。
+        /// </summary>
+        [SDKProperty("include_recycle_bin", IsQuery = true)]
+        [JsonProperty("include_recycle_bin", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IncludeRecycleBin { get; set; }
+
+        /// <summary>
         /// 负载均衡器的配置状态。  取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。  支持多值查询，查询条件格式：*provisioning_status&#x3D;xxx&amp;provisioning_status&#x3D;xxx*。
         /// </summary>
         [SDKProperty("provisioning_status", IsQuery = true)]
@@ -284,6 +291,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  adminStateUp: ").Append(AdminStateUp).Append("\n");
+            sb.Append("  includeRecycleBin: ").Append(IncludeRecycleBin).Append("\n");
             sb.Append("  provisioningStatus: ").Append(ProvisioningStatus).Append("\n");
             sb.Append("  operatingStatus: ").Append(OperatingStatus).Append("\n");
             sb.Append("  guaranteed: ").Append(Guaranteed).Append("\n");
@@ -338,6 +346,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && input.Description != null && !this.Description.SequenceEqual(input.Description))) return false;
             if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.IncludeRecycleBin != input.IncludeRecycleBin || (this.IncludeRecycleBin != null && !this.IncludeRecycleBin.Equals(input.IncludeRecycleBin))) return false;
             if (this.ProvisioningStatus != input.ProvisioningStatus || (this.ProvisioningStatus != null && input.ProvisioningStatus != null && !this.ProvisioningStatus.SequenceEqual(input.ProvisioningStatus))) return false;
             if (this.OperatingStatus != input.OperatingStatus || (this.OperatingStatus != null && input.OperatingStatus != null && !this.OperatingStatus.SequenceEqual(input.OperatingStatus))) return false;
             if (this.Guaranteed != input.Guaranteed || (this.Guaranteed != null && !this.Guaranteed.Equals(input.Guaranteed))) return false;
@@ -386,6 +395,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.IncludeRecycleBin != null) hashCode = hashCode * 59 + this.IncludeRecycleBin.GetHashCode();
                 if (this.ProvisioningStatus != null) hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
                 if (this.OperatingStatus != null) hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
                 if (this.Guaranteed != null) hashCode = hashCode * 59 + this.Guaranteed.GetHashCode();

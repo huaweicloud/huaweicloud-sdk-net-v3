@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         public string Engine { get; set; }
 
         /// <summary>
-        /// 缓存版本。  当缓存引擎为Redis时，取值为3.0、4.0或5.0。  当缓存引擎为Memcached时，该字段为可选，取值为空。 
+        /// 缓存版本。 当缓存引擎为Redis时，取值为4.0及以上。 
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public string EngineVersion { get; set; }

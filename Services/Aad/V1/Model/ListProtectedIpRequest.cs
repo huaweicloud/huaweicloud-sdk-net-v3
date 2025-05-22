@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 防护包id
+        /// 实例id
         /// </summary>
         [SDKProperty("package_id", IsQuery = true)]
         [JsonProperty("package_id", NullValueHandling = NullValueHandling.Ignore)]

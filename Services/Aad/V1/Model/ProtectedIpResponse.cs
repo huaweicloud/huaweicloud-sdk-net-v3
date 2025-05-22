@@ -360,13 +360,13 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         public string Region { get; set; }
 
         /// <summary>
-        /// 防护包id
+        /// 实例id
         /// </summary>
         [JsonProperty("package_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PackageId { get; set; }
 
         /// <summary>
-        /// 防护包名
+        /// 实例名
         /// </summary>
         [JsonProperty("package_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PackageName { get; set; }

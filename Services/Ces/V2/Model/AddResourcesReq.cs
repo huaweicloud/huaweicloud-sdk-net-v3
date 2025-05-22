@@ -13,17 +13,17 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ResourcesReq 
+    public class AddResourcesReq 
     {
 
         /// <summary>
-        /// 资源信息
+        /// 手动创建，选择资源层级为子维度时的资源信息。每次修改资源时只需要传递新增的资源
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<Resource> Resources { get; set; }
 
         /// <summary>
-        /// 手动创建，选择资源层级为云产品时的资源详情
+        /// 手动创建，选择资源层级为云产品时的资源详情。每次修改资源时需要将已有资源和新增的资源一起传递
         /// </summary>
         [JsonProperty("product_resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<ProductResource> ProductResources { get; set; }
@@ -36,7 +36,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ResourcesReq {\n");
+            sb.Append("class AddResourcesReq {\n");
             sb.Append("  resources: ").Append(Resources).Append("\n");
             sb.Append("  productResources: ").Append(ProductResources).Append("\n");
             sb.Append("}\n");
@@ -48,13 +48,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ResourcesReq);
+            return this.Equals(input as AddResourcesReq);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ResourcesReq input)
+        public bool Equals(AddResourcesReq input)
         {
             if (input == null) return false;
             if (this.Resources != input.Resources || (this.Resources != null && input.Resources != null && !this.Resources.SequenceEqual(input.Resources))) return false;

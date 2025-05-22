@@ -1149,6 +1149,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 节点开启缩容保护。
+        ///
+        /// 该API用于节点开启缩容保护，开启缩容保护的节点无法通过修改节点池个数的方式被缩容。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<LockNodepoolNodeScaleDownResponse> LockNodepoolNodeScaleDownAsync(LockNodepoolNodeScaleDownRequest lockNodepoolNodeScaleDownRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", lockNodepoolNodeScaleDownRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/locknodescaledown", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", lockNodepoolNodeScaleDownRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<LockNodepoolNodeScaleDownResponse>(response);
+        }
+
+        public AsyncInvoker<LockNodepoolNodeScaleDownResponse> LockNodepoolNodeScaleDownAsyncInvoker(LockNodepoolNodeScaleDownRequest lockNodepoolNodeScaleDownRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", lockNodepoolNodeScaleDownRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/locknodescaledown", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", lockNodepoolNodeScaleDownRequest);
+            return new AsyncInvoker<LockNodepoolNodeScaleDownResponse>(this, "POST", request, JsonUtils.DeSerializeNull<LockNodepoolNodeScaleDownResponse>);
+        }
+        
+        /// <summary>
         /// 节点迁移
         ///
         /// 该API用于在指定集群下迁移节点到另一集群。
@@ -2055,6 +2081,32 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v2/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}/sync", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncNodeRequest);
             return new AsyncInvoker<SyncNodeResponse>(this, "GET", request, JsonUtils.DeSerializeNull<SyncNodeResponse>);
+        }
+        
+        /// <summary>
+        /// 节点关闭缩容保护。
+        ///
+        /// 该API用于节点关闭缩容保护，关闭缩容保护的节点可以通过修改节点池个数的方式被缩容，只允许按需节点关闭缩容保护。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UnlockNodepoolNodeScaleDownResponse> UnlockNodepoolNodeScaleDownAsync(UnlockNodepoolNodeScaleDownRequest unlockNodepoolNodeScaleDownRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", unlockNodepoolNodeScaleDownRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/unlocknodescaledown", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unlockNodepoolNodeScaleDownRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<UnlockNodepoolNodeScaleDownResponse>(response);
+        }
+
+        public AsyncInvoker<UnlockNodepoolNodeScaleDownResponse> UnlockNodepoolNodeScaleDownAsyncInvoker(UnlockNodepoolNodeScaleDownRequest unlockNodepoolNodeScaleDownRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cluster_id", unlockNodepoolNodeScaleDownRequest.ClusterId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/unlocknodescaledown", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unlockNodepoolNodeScaleDownRequest);
+            return new AsyncInvoker<UnlockNodepoolNodeScaleDownResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UnlockNodepoolNodeScaleDownResponse>);
         }
         
         /// <summary>

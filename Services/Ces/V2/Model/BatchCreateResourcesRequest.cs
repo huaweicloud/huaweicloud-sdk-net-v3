@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourcesReq Body { get; set; }
+        public AddResourcesReq Body { get; set; }
 
 
 

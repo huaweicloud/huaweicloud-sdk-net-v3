@@ -1,3 +1,89 @@
+# 3.1.147 2025-05-22
+
+### HuaweiCloud SDK CES
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `UpdateResourceGroupAssociationAlarmTemplate`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowBackupPolicy**
+    - changes of response param
+      - `+ backup_policy.enable_incremental_backup`
+  - **SetBackupPolicy**
+    - changes of request param
+      - `+ backup_policy.enable_incremental_backup`
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFlavors**
+    - changes of request param
+      - `+ flavor_id`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the API `ListTopIoTraffics`
+
+### HuaweiCloud SDK IAM
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAgencies**
+    - changes of response param
+      - `+ agencies.duration`
+  - **CreateAgency**
+    - changes of response param
+      - `+ agency.duration`
+  - **ShowAgency**
+    - changes of response param
+      - `+ agency.duration`
+  - **UpdateAgency**
+    - changes of response param
+      - `+ agency.duration`
+
+### HuaweiCloud SDK OCR
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `RecognizeAutoIdDocClassification`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
 # 3.1.146 2025-05-15
 
 ### HuaweiCloud SDK CES

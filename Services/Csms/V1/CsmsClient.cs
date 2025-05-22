@@ -65,6 +65,30 @@ namespace HuaweiCloud.SDK.Csms.V1
         }
         
         /// <summary>
+        /// 检测传入凭据的凭据强度
+        ///
+        /// 检测传入的凭据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckSecretsResponse CheckSecrets(CheckSecretsRequest checkSecretsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/checker/check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkSecretsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CheckSecretsResponse>(response);
+        }
+
+        public SyncInvoker<CheckSecretsResponse> CheckSecretsInvoker(CheckSecretsRequest checkSecretsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/checker/check", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkSecretsRequest);
+            return new SyncInvoker<CheckSecretsResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckSecretsResponse>);
+        }
+        
+        /// <summary>
         /// 创建服务委托
         ///
         /// 创建服务委托。用于创建凭据管理服务相关委托和函数工作流相关委托。
@@ -880,6 +904,30 @@ namespace HuaweiCloud.SDK.Csms.V1
         }
         
         /// <summary>
+        /// 获取租户的凭据检测配置
+        ///
+        /// 获取租户的凭据检测配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSecretsConfigResponse ShowSecretsConfig(ShowSecretsConfigRequest showSecretsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/checker/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretsConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSecretsConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowSecretsConfigResponse> ShowSecretsConfigInvoker(ShowSecretsConfigRequest showSecretsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/checker/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretsConfigRequest);
+            return new SyncInvoker<ShowSecretsConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretsConfigResponse>);
+        }
+        
+        /// <summary>
         /// 获取用户详情
         ///
         /// 根据用户id查询用户详情。
@@ -1007,6 +1055,30 @@ namespace HuaweiCloud.SDK.Csms.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretStageRequest);
             return new SyncInvoker<UpdateSecretStageResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecretStageResponse>);
+        }
+        
+        /// <summary>
+        /// 更改获取租户的凭据检测配置
+        ///
+        /// 更改获取租户的凭据检测配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateSecretsConfigResponse UpdateSecretsConfig(UpdateSecretsConfigRequest updateSecretsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/checker/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecretsConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateSecretsConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSecretsConfigResponse> UpdateSecretsConfigInvoker(UpdateSecretsConfigRequest updateSecretsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/checker/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecretsConfigRequest);
+            return new SyncInvoker<UpdateSecretsConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateSecretsConfigResponse>);
         }
         
         /// <summary>

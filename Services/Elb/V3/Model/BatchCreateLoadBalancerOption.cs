@@ -246,9 +246,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         }
 
         /// <summary>
-        /// &#39;创建实例采用的计费模式。flavor: 按实例规格收费，默认值。lcu: 按使用量收费。&#39; 批量创建共享型实例时，该字段不允许指定。
+        /// 创建实例采用的计费模式。flavor: 按实例规格收费，默认值。lcu: 按使用量收费。 批量创建共享型实例时，该字段不允许指定。
         /// </summary>
-        /// <value>&#39;创建实例采用的计费模式。flavor: 按实例规格收费，默认值。lcu: 按使用量收费。&#39; 批量创建共享型实例时，该字段不允许指定。</value>
+        /// <value>创建实例采用的计费模式。flavor: 按实例规格收费，默认值。lcu: 按使用量收费。 批量创建共享型实例时，该字段不允许指定。</value>
         [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
         public class ChargeModeEnum
         {
@@ -546,7 +546,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProtectionReason { get; set; }
 
         /// <summary>
-        /// &#39;创建实例采用的计费模式。flavor: 按实例规格收费，默认值。lcu: 按使用量收费。&#39; 批量创建共享型实例时，该字段不允许指定。
+        /// 创建实例采用的计费模式。flavor: 按实例规格收费，默认值。lcu: 按使用量收费。 批量创建共享型实例时，该字段不允许指定。
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }

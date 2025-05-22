@@ -138,6 +138,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? IncludePublicip { get; set; }
 
         /// <summary>
+        /// 需要一起按需转包的弹性公网IP的ID。 若include_publicip为false，不能指定该字段。 若include_publicip为true，该字段为未指定时，表示所有绑定的v4 eip都需要一起转包周期。 若include_publicip为true，该字段列表非空，表示只将指定的v4 eip转包。 若include_publicip为true，该字段列表为空，表示不指定任一eip转包，与include_publicip为false等效。
+        /// </summary>
+        [JsonProperty("publicip_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> PublicipIds { get; set; }
+
+        /// <summary>
         /// 订购周期类型，当前支持包月和包年： month：月（默认）； year：年；
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -170,6 +176,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             var sb = new StringBuilder();
             sb.Append("class PrepaidChangeChargeModeOption {\n");
             sb.Append("  includePublicip: ").Append(IncludePublicip).Append("\n");
+            sb.Append("  publicipIds: ").Append(PublicipIds).Append("\n");
             sb.Append("  periodType: ").Append(PeriodType).Append("\n");
             sb.Append("  periodNum: ").Append(PeriodNum).Append("\n");
             sb.Append("  autoRenew: ").Append(AutoRenew).Append("\n");
@@ -193,6 +200,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             if (input == null) return false;
             if (this.IncludePublicip != input.IncludePublicip || (this.IncludePublicip != null && !this.IncludePublicip.Equals(input.IncludePublicip))) return false;
+            if (this.PublicipIds != input.PublicipIds || (this.PublicipIds != null && input.PublicipIds != null && !this.PublicipIds.SequenceEqual(input.PublicipIds))) return false;
             if (this.PeriodType != input.PeriodType) return false;
             if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
             if (this.AutoRenew != input.AutoRenew || (this.AutoRenew != null && !this.AutoRenew.Equals(input.AutoRenew))) return false;
@@ -210,6 +218,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             {
                 var hashCode = 41;
                 if (this.IncludePublicip != null) hashCode = hashCode * 59 + this.IncludePublicip.GetHashCode();
+                if (this.PublicipIds != null) hashCode = hashCode * 59 + this.PublicipIds.GetHashCode();
                 hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
                 if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
                 if (this.AutoRenew != null) hashCode = hashCode * 59 + this.AutoRenew.GetHashCode();

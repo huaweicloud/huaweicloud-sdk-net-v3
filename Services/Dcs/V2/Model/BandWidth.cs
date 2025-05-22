@@ -8,25 +8,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
+namespace HuaweiCloud.SDK.Dcs.V2.Model
 {
     /// <summary>
-    /// 
+    /// 带宽信息
     /// </summary>
-    public class FlowGraphResultEdges 
+    public class BandWidth 
     {
 
         /// <summary>
-        /// 依赖子任务ID
+        /// 上行带宽，单位kbit/s
         /// </summary>
-        [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
-        public string From { get; set; }
+        [JsonProperty("input", NullValueHandling = NullValueHandling.Ignore)]
+        public string Input { get; set; }
 
         /// <summary>
-        /// 被依赖的子任务ID
+        /// 下行带宽，单位kbit/s
         /// </summary>
-        [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
-        public string To { get; set; }
+        [JsonProperty("output", NullValueHandling = NullValueHandling.Ignore)]
+        public string Output { get; set; }
 
 
 
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class FlowGraphResultEdges {\n");
-            sb.Append("  from: ").Append(From).Append("\n");
-            sb.Append("  to: ").Append(To).Append("\n");
+            sb.Append("class BandWidth {\n");
+            sb.Append("  input: ").Append(Input).Append("\n");
+            sb.Append("  output: ").Append(Output).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,17 +48,17 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FlowGraphResultEdges);
+            return this.Equals(input as BandWidth);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(FlowGraphResultEdges input)
+        public bool Equals(BandWidth input)
         {
             if (input == null) return false;
-            if (this.From != input.From || (this.From != null && !this.From.Equals(input.From))) return false;
-            if (this.To != input.To || (this.To != null && !this.To.Equals(input.To))) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
 
             return true;
         }
@@ -71,8 +71,8 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.From != null) hashCode = hashCode * 59 + this.From.GetHashCode();
-                if (this.To != null) hashCode = hashCode * 59 + this.To.GetHashCode();
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
                 return hashCode;
             }
         }

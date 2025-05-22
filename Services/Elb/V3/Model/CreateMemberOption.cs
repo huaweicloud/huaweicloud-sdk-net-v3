@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("weight", NullValueHandling = NullValueHandling.Ignore)]
         public int? Weight { get; set; }
 
+        /// <summary>
+        /// 参数解释：后端服务器的可用区。 约束限制： - 仅支持iptarget类型的后端服务器设置该字段。且后端服务器组开启可用区亲和时，iptarget类型的后端服务器必须配置该字段为有效非空值。  取值范围：本region中ECS可选择的可用区。
+        /// </summary>
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public string AvailabilityZone { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  protocolPort: ").Append(ProtocolPort).Append("\n");
             sb.Append("  subnetCidrId: ").Append(SubnetCidrId).Append("\n");
             sb.Append("  weight: ").Append(Weight).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.ProtocolPort != input.ProtocolPort || (this.ProtocolPort != null && !this.ProtocolPort.Equals(input.ProtocolPort))) return false;
             if (this.SubnetCidrId != input.SubnetCidrId || (this.SubnetCidrId != null && !this.SubnetCidrId.Equals(input.SubnetCidrId))) return false;
             if (this.Weight != input.Weight || (this.Weight != null && !this.Weight.Equals(input.Weight))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.ProtocolPort != null) hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
                 if (this.SubnetCidrId != null) hashCode = hashCode * 59 + this.SubnetCidrId.GetHashCode();
                 if (this.Weight != null) hashCode = hashCode * 59 + this.Weight.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 return hashCode;
             }
         }

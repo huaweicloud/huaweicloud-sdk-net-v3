@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("cors_config", NullValueHandling = NullValueHandling.Ignore)]
         public CorsConfig CorsConfig { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("traffic_mirror_config", NullValueHandling = NullValueHandling.Ignore)]
+        public TrafficMirrorConfig TrafficMirrorConfig { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  removeHeadersConfig: ").Append(RemoveHeadersConfig).Append("\n");
             sb.Append("  trafficLimitConfig: ").Append(TrafficLimitConfig).Append("\n");
             sb.Append("  corsConfig: ").Append(CorsConfig).Append("\n");
+            sb.Append("  trafficMirrorConfig: ").Append(TrafficMirrorConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.RemoveHeadersConfig != input.RemoveHeadersConfig || (this.RemoveHeadersConfig != null && !this.RemoveHeadersConfig.Equals(input.RemoveHeadersConfig))) return false;
             if (this.TrafficLimitConfig != input.TrafficLimitConfig || (this.TrafficLimitConfig != null && !this.TrafficLimitConfig.Equals(input.TrafficLimitConfig))) return false;
             if (this.CorsConfig != input.CorsConfig || (this.CorsConfig != null && !this.CorsConfig.Equals(input.CorsConfig))) return false;
+            if (this.TrafficMirrorConfig != input.TrafficMirrorConfig || (this.TrafficMirrorConfig != null && !this.TrafficMirrorConfig.Equals(input.TrafficMirrorConfig))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.RemoveHeadersConfig != null) hashCode = hashCode * 59 + this.RemoveHeadersConfig.GetHashCode();
                 if (this.TrafficLimitConfig != null) hashCode = hashCode * 59 + this.TrafficLimitConfig.GetHashCode();
                 if (this.CorsConfig != null) hashCode = hashCode * 59 + this.CorsConfig.GetHashCode();
+                if (this.TrafficMirrorConfig != null) hashCode = hashCode * 59 + this.TrafficMirrorConfig.GetHashCode();
                 return hashCode;
             }
         }

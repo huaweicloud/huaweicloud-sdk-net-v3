@@ -471,6 +471,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 搭建双活
+        ///
+        /// 为了实现跨区域实例数据同步，GeminiDB提供了异地双活功能，即创建异地双活实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateGeminiDbDualActiveResponse> CreateGeminiDbDualActiveAsync(CreateGeminiDbDualActiveRequest createGeminiDbDualActiveRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createGeminiDbDualActiveRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dual-active-relationship", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGeminiDbDualActiveRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateGeminiDbDualActiveResponse>(response);
+        }
+
+        public AsyncInvoker<CreateGeminiDbDualActiveResponse> CreateGeminiDbDualActiveAsyncInvoker(CreateGeminiDbDualActiveRequest createGeminiDbDualActiveRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createGeminiDbDualActiveRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dual-active-relationship", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGeminiDbDualActiveRequest);
+            return new AsyncInvoker<CreateGeminiDbDualActiveResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGeminiDbDualActiveResponse>);
+        }
+        
+        /// <summary>
         /// 创建实例
         ///
         /// 创建数据库实例。
@@ -670,6 +696,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/enlarge-failed-nodes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnlargeFailNodeRequest);
             return new AsyncInvoker<DeleteEnlargeFailNodeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteEnlargeFailNodeResponse>);
+        }
+        
+        /// <summary>
+        /// 解除双活
+        ///
+        /// 解除跨区域双活。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteGeminiDbDualActiveResponse> DeleteGeminiDbDualActiveAsync(DeleteGeminiDbDualActiveRequest deleteGeminiDbDualActiveRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteGeminiDbDualActiveRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dual-active-relationship", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGeminiDbDualActiveRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteGeminiDbDualActiveResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteGeminiDbDualActiveResponse> DeleteGeminiDbDualActiveAsyncInvoker(DeleteGeminiDbDualActiveRequest deleteGeminiDbDualActiveRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteGeminiDbDualActiveRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dual-active-relationship", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGeminiDbDualActiveRequest);
+            return new AsyncInvoker<DeleteGeminiDbDualActiveResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteGeminiDbDualActiveResponse>);
         }
         
         /// <summary>

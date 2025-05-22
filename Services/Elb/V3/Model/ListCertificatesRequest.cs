@@ -100,6 +100,27 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("fingerprint", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Fingerprint { get; set; }
 
+        /// <summary>
+        /// 证书来源。  支持多值查询，查询条件格式：source&#x3D;xxx&amp;source&#x3D;xxx。
+        /// </summary>
+        [SDKProperty("source", IsQuery = true)]
+        [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Source { get; set; }
+
+        /// <summary>
+        /// 修改保护状态。  支持多值查询，查询条件格式：protection_status&#x3D;xxx&amp;protection_status&#x3D;xxx。
+        /// </summary>
+        [SDKProperty("protection_status", IsQuery = true)]
+        [JsonProperty("protection_status", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ProtectionStatus { get; set; }
+
+        /// <summary>
+        /// 设置修改保护的原因。  支持多值查询，查询条件格式：protection_reason&#x3D;xxx&amp;protection_reason&#x3D;xxx。
+        /// </summary>
+        [SDKProperty("protection_reason", IsQuery = true)]
+        [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ProtectionReason { get; set; }
+
 
 
         /// <summary>
@@ -121,6 +142,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  scmCertificateId: ").Append(ScmCertificateId).Append("\n");
             sb.Append("  commonName: ").Append(CommonName).Append("\n");
             sb.Append("  fingerprint: ").Append(Fingerprint).Append("\n");
+            sb.Append("  source: ").Append(Source).Append("\n");
+            sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
+            sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,6 +175,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.ScmCertificateId != input.ScmCertificateId || (this.ScmCertificateId != null && input.ScmCertificateId != null && !this.ScmCertificateId.SequenceEqual(input.ScmCertificateId))) return false;
             if (this.CommonName != input.CommonName || (this.CommonName != null && input.CommonName != null && !this.CommonName.SequenceEqual(input.CommonName))) return false;
             if (this.Fingerprint != input.Fingerprint || (this.Fingerprint != null && input.Fingerprint != null && !this.Fingerprint.SequenceEqual(input.Fingerprint))) return false;
+            if (this.Source != input.Source || (this.Source != null && input.Source != null && !this.Source.SequenceEqual(input.Source))) return false;
+            if (this.ProtectionStatus != input.ProtectionStatus || (this.ProtectionStatus != null && input.ProtectionStatus != null && !this.ProtectionStatus.SequenceEqual(input.ProtectionStatus))) return false;
+            if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && input.ProtectionReason != null && !this.ProtectionReason.SequenceEqual(input.ProtectionReason))) return false;
 
             return true;
         }
@@ -175,6 +202,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.ScmCertificateId != null) hashCode = hashCode * 59 + this.ScmCertificateId.GetHashCode();
                 if (this.CommonName != null) hashCode = hashCode * 59 + this.CommonName.GetHashCode();
                 if (this.Fingerprint != null) hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
+                if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (this.ProtectionStatus != null) hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
                 return hashCode;
             }
         }

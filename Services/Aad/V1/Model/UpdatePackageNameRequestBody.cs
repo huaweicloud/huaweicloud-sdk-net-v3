@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Aad.V1.Model
 {
     /// <summary>
-    /// 更新防护包名的请求体
+    /// 更新实例名的请求体
     /// </summary>
     public class UpdatePackageNameRequestBody 
     {

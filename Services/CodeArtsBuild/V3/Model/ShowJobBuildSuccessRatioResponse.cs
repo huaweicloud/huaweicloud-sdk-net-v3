@@ -11,22 +11,22 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
 {
     /// <summary>
-    /// 结果
+    /// Response Object
     /// </summary>
-    public class FlowGraphResult 
+    public class ShowJobBuildSuccessRatioResponse : SdkResponse
     {
 
         /// <summary>
-        /// edges
+        /// 
         /// </summary>
-        [JsonProperty("edges", NullValueHandling = NullValueHandling.Ignore)]
-        public List<FlowGraphResultEdges> Edges { get; set; }
+        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
+        public ShowJobBuildSuccessRatioResult Result { get; set; }
 
         /// <summary>
-        /// record信息
+        /// 返回状态信息
         /// </summary>
-        [JsonProperty("vertices", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Vertices> Vertices { get; set; }
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public string Status { get; set; }
 
 
 
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class FlowGraphResult {\n");
-            sb.Append("  edges: ").Append(Edges).Append("\n");
-            sb.Append("  vertices: ").Append(Vertices).Append("\n");
+            sb.Append("class ShowJobBuildSuccessRatioResponse {\n");
+            sb.Append("  result: ").Append(Result).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,17 +48,17 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FlowGraphResult);
+            return this.Equals(input as ShowJobBuildSuccessRatioResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(FlowGraphResult input)
+        public bool Equals(ShowJobBuildSuccessRatioResponse input)
         {
             if (input == null) return false;
-            if (this.Edges != input.Edges || (this.Edges != null && input.Edges != null && !this.Edges.SequenceEqual(input.Edges))) return false;
-            if (this.Vertices != input.Vertices || (this.Vertices != null && input.Vertices != null && !this.Vertices.SequenceEqual(input.Vertices))) return false;
+            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
             return true;
         }
@@ -71,8 +71,8 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Edges != null) hashCode = hashCode * 59 + this.Edges.GetHashCode();
-                if (this.Vertices != null) hashCode = hashCode * 59 + this.Vertices.GetHashCode();
+                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }
