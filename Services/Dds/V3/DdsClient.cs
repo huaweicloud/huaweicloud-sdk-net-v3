@@ -753,6 +753,32 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 删除mongos节点
+        ///
+        /// 当集群实例需要缩减mongos节点时，需要调用此API。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteMongosNodeResponse DeleteMongosNode(DeleteMongosNodeRequest deleteMongosNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteMongosNodeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/mongos-node", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMongosNodeRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteMongosNodeResponse>(response);
+        }
+
+        public SyncInvoker<DeleteMongosNodeResponse> DeleteMongosNodeInvoker(DeleteMongosNodeRequest deleteMongosNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteMongosNodeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/mongos-node", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMongosNodeRequest);
+            return new SyncInvoker<DeleteMongosNodeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteMongosNodeResponse>);
+        }
+        
+        /// <summary>
         /// 删除只读节点
         ///
         /// 当副本集添加了只读节点后，需要删除对应的只读节点需要调用此API。

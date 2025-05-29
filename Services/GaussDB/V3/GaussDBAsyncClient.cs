@@ -3062,6 +3062,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// Proxy绑定解绑弹性公网IP
+        ///
+        /// Proxy绑定解绑弹性公网IP。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SwitchGaussMySqlProxyEipResponse> SwitchGaussMySqlProxyEipAsync(SwitchGaussMySqlProxyEipRequest switchGaussMySqlProxyEipRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchGaussMySqlProxyEipRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", switchGaussMySqlProxyEipRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/bind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlProxyEipRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<SwitchGaussMySqlProxyEipResponse>(response);
+        }
+
+        public AsyncInvoker<SwitchGaussMySqlProxyEipResponse> SwitchGaussMySqlProxyEipAsyncInvoker(SwitchGaussMySqlProxyEipRequest switchGaussMySqlProxyEipRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchGaussMySqlProxyEipRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", switchGaussMySqlProxyEipRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/bind", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlProxyEipRequest);
+            return new AsyncInvoker<SwitchGaussMySqlProxyEipResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchGaussMySqlProxyEipResponse>);
+        }
+        
+        /// <summary>
         /// 开关数据库代理SSL
         ///
         /// 为数据库代理设置SSL数据加密。

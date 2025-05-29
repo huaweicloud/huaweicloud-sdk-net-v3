@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagsBody> Tags { get; set; }
 
+        /// <summary>
+        /// 日志是否存储
+        /// </summary>
+        [JsonProperty("whether_log_storage", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WhetherLogStorage { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("class UpdateLogStreamParams {\n");
             sb.Append("  ttlInDays: ").Append(TtlInDays).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  whetherLogStorage: ").Append(WhetherLogStorage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (input == null) return false;
             if (this.TtlInDays != input.TtlInDays || (this.TtlInDays != null && !this.TtlInDays.Equals(input.TtlInDays))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.WhetherLogStorage != input.WhetherLogStorage || (this.WhetherLogStorage != null && !this.WhetherLogStorage.Equals(input.WhetherLogStorage))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 var hashCode = 41;
                 if (this.TtlInDays != null) hashCode = hashCode * 59 + this.TtlInDays.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.WhetherLogStorage != null) hashCode = hashCode * 59 + this.WhetherLogStorage.GetHashCode();
                 return hashCode;
             }
         }

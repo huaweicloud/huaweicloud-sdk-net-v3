@@ -1622,6 +1622,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 编辑对象组内成员的描述信息
+        ///
+        /// 编辑对象组内成员的描述信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateObjectConfigDescResponse> UpdateObjectConfigDescAsync(UpdateObjectConfigDescRequest updateObjectConfigDescRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/config/object/description", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateObjectConfigDescRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateObjectConfigDescResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateObjectConfigDescResponse> UpdateObjectConfigDescAsyncInvoker(UpdateObjectConfigDescRequest updateObjectConfigDescRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/config/object/description", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateObjectConfigDescRequest);
+            return new AsyncInvoker<UpdateObjectConfigDescResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateObjectConfigDescResponse>);
+        }
+        
+        /// <summary>
         /// 修改服务组
         ///
         /// 更新服务组

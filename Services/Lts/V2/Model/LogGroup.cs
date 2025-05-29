@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Tag { get; set; }
 
+        /// <summary>
+        /// 日志组别名
+        /// </summary>
+        [JsonProperty("log_group_name_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupNameAlias { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
             sb.Append("  ttlInDays: ").Append(TtlInDays).Append("\n");
             sb.Append("  tag: ").Append(Tag).Append("\n");
+            sb.Append("  logGroupNameAlias: ").Append(LogGroupNameAlias).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
             if (this.TtlInDays != input.TtlInDays || (this.TtlInDays != null && !this.TtlInDays.Equals(input.TtlInDays))) return false;
             if (this.Tag != input.Tag || (this.Tag != null && input.Tag != null && !this.Tag.SequenceEqual(input.Tag))) return false;
+            if (this.LogGroupNameAlias != input.LogGroupNameAlias || (this.LogGroupNameAlias != null && !this.LogGroupNameAlias.Equals(input.LogGroupNameAlias))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
                 if (this.TtlInDays != null) hashCode = hashCode * 59 + this.TtlInDays.GetHashCode();
                 if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
+                if (this.LogGroupNameAlias != null) hashCode = hashCode * 59 + this.LogGroupNameAlias.GetHashCode();
                 return hashCode;
             }
         }

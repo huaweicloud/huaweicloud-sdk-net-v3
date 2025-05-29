@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         [JsonProperty("prom_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PromInstanceId { get; set; }
 
+        /// <summary>
+        /// 告警规则别名。最多可输入256个字符，只能包含中文、字母、数字、特殊字符（_-【】），开头、结尾不允许输入中划线、下划线。
+        /// </summary>
+        [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string Alias { get; set; }
+
 
 
         /// <summary>
@@ -195,6 +201,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("  eventAlarmSpec: ").Append(EventAlarmSpec).Append("\n");
             sb.Append("  metricAlarmSpec: ").Append(MetricAlarmSpec).Append("\n");
             sb.Append("  promInstanceId: ").Append(PromInstanceId).Append("\n");
+            sb.Append("  alias: ").Append(Alias).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -221,6 +228,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             if (this.EventAlarmSpec != input.EventAlarmSpec || (this.EventAlarmSpec != null && !this.EventAlarmSpec.Equals(input.EventAlarmSpec))) return false;
             if (this.MetricAlarmSpec != input.MetricAlarmSpec || (this.MetricAlarmSpec != null && !this.MetricAlarmSpec.Equals(input.MetricAlarmSpec))) return false;
             if (this.PromInstanceId != input.PromInstanceId || (this.PromInstanceId != null && !this.PromInstanceId.Equals(input.PromInstanceId))) return false;
+            if (this.Alias != input.Alias || (this.Alias != null && !this.Alias.Equals(input.Alias))) return false;
 
             return true;
         }
@@ -241,6 +249,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                 if (this.EventAlarmSpec != null) hashCode = hashCode * 59 + this.EventAlarmSpec.GetHashCode();
                 if (this.MetricAlarmSpec != null) hashCode = hashCode * 59 + this.MetricAlarmSpec.GetHashCode();
                 if (this.PromInstanceId != null) hashCode = hashCode * 59 + this.PromInstanceId.GetHashCode();
+                if (this.Alias != null) hashCode = hashCode * 59 + this.Alias.GetHashCode();
                 return hashCode;
             }
         }

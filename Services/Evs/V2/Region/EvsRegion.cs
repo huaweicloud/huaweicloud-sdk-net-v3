@@ -70,7 +70,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public static readonly Region AF_NORTH_1 = new Region("af-north-1",
             "https://evs.af-north-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
-            "https://evs.ap-southeast-5.myhuaweicloud.asia");
+            "https://evs.ap-southeast-5.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("EVS");
 

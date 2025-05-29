@@ -274,6 +274,12 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         [JsonProperty("cluster_type", NullValueHandling = NullValueHandling.Ignore)]
         public ClusterTypeEnum ClusterType { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public RootVolumeMetadata Metadata { get; set; }
+
 
 
         /// <summary>
@@ -287,6 +293,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  clusterType: ").Append(ClusterType).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -309,6 +316,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
             if (this.ClusterType != input.ClusterType) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
 
             return true;
         }
@@ -325,6 +333,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 hashCode = hashCode * 59 + this.ClusterType.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

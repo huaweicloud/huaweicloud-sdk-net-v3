@@ -22,6 +22,18 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("user_data", NullValueHandling = NullValueHandling.Ignore)]
         public string UserData { get; set; }
 
+        /// <summary>
+        /// metadata中的表示加密功能的字段，0代表不加密，1代表加密。  该字段不存在时，云硬盘默认为不加密。
+        /// </summary>
+        [JsonProperty("__system__encrypted", NullValueHandling = NullValueHandling.Ignore)]
+        public string SystemEncrypted { get; set; }
+
+        /// <summary>
+        /// metadata中的加密cmkid字段，与__system__encrypted配合表示需要加密，cmkid长度固定为36个字节。  &gt; 说明：  - 请参考[查询密钥列表](https://support.huaweicloud.com/api-dew/ListKeys.html)，通过HTTPS请求获取密钥ID。
+        /// </summary>
+        [JsonProperty("__system__cmkid", NullValueHandling = NullValueHandling.Ignore)]
+        public string SystemCmkid { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +44,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             var sb = new StringBuilder();
             sb.Append("class MetadataInstall {\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
+            sb.Append("  systemEncrypted: ").Append(SystemEncrypted).Append("\n");
+            sb.Append("  systemCmkid: ").Append(SystemCmkid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +65,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             if (input == null) return false;
             if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.SystemEncrypted != input.SystemEncrypted || (this.SystemEncrypted != null && !this.SystemEncrypted.Equals(input.SystemEncrypted))) return false;
+            if (this.SystemCmkid != input.SystemCmkid || (this.SystemCmkid != null && !this.SystemCmkid.Equals(input.SystemCmkid))) return false;
 
             return true;
         }
@@ -64,6 +80,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             {
                 var hashCode = 41;
                 if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.SystemEncrypted != null) hashCode = hashCode * 59 + this.SystemEncrypted.GetHashCode();
+                if (this.SystemCmkid != null) hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
                 return hashCode;
             }
         }

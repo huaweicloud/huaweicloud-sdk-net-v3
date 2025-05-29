@@ -505,8 +505,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// <summary>
         /// 裸机是否在回收站中
         /// </summary>
-        [JsonProperty("in_recycle_in", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? InRecycleIn { get; set; }
+        [JsonProperty("in_recycle_bin", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? InRecycleBin { get; set; }
 
 
 
@@ -529,7 +529,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             sb.Append("  vmState: ").Append(VmState).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  fault: ").Append(Fault).Append("\n");
-            sb.Append("  inRecycleIn: ").Append(InRecycleIn).Append("\n");
+            sb.Append("  inRecycleBin: ").Append(InRecycleBin).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -560,7 +560,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             if (this.VmState != input.VmState) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.Fault != input.Fault || (this.Fault != null && !this.Fault.Equals(input.Fault))) return false;
-            if (this.InRecycleIn != input.InRecycleIn || (this.InRecycleIn != null && !this.InRecycleIn.Equals(input.InRecycleIn))) return false;
+            if (this.InRecycleBin != input.InRecycleBin || (this.InRecycleBin != null && !this.InRecycleBin.Equals(input.InRecycleBin))) return false;
 
             return true;
         }
@@ -585,7 +585,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 hashCode = hashCode * 59 + this.VmState.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.Fault != null) hashCode = hashCode * 59 + this.Fault.GetHashCode();
-                if (this.InRecycleIn != null) hashCode = hashCode * 59 + this.InRecycleIn.GetHashCode();
+                if (this.InRecycleBin != null) hashCode = hashCode * 59 + this.InRecycleBin.GetHashCode();
                 return hashCode;
             }
         }

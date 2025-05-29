@@ -1,3 +1,162 @@
+# 3.1.148 2025-05-29
+
+### HuaweiCloud SDK AOM
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AddOrUpdateMetricOrEventAlarmRule**
+    - 请求参数变更
+      - `+ alias`
+
+### HuaweiCloud SDK BMS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ReinstallBaremetalServerOs**
+    - 请求参数变更
+      - `+ os-reinstall.metadata.__system__encrypted`
+      - `+ os-reinstall.metadata.__system__cmkid`
+  - **ChangeBaremetalServerOs**
+    - 请求参数变更
+      - `+ os-change.metadata.__system__encrypted`
+      - `+ os-change.metadata.__system__cmkid`
+  - **ListBareMetalServersDetail**
+    - 响应参数变更
+      - `+ servers.in_recycle_bin`
+      - `- servers.in_recycle_in`
+  - **CreateBareMetalServers**
+    - 请求参数变更
+      - `+ server.root_volume.metadata`
+      - `+ server.data_volumes.metadata`
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowClusterConfig**
+    - 响应参数变更
+      - `+ log_configs.type`
+  - **UpdateClusterLogConfig**
+    - 请求参数变更
+      - `+ log_configs.type`
+    - 响应参数变更
+      - `+ log_configs.type`
+
+### HuaweiCloud SDK CFW
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`UpdateObjectConfigDesc`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ListRecyclingJob`
+    - `ListOfficialTemplate`
+    - `ShowJobSystemParameters`
+    - `ShowBuildRecord`
+    - `ShowJobInfo`
+    - `ShowBuildParamsList`
+    - `ShowBuildRecordBuildScript`
+    - `ShowJobConfigDiff`
+    - `ShowJobRolePermission`
+    - `ListProjectJobs`
+    - `ShowJobBuildTime`
+    - `ShowProjectPermission`
+    - `ListBuildInfoRecordByJobId`
+    - `ShowJobConfig`
+    - `ShowImageTemplateList`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`DeleteMongosNode`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchAddServerNics**
+    - 请求参数变更
+      - `+ nics.port_id`
+  - **CreateServers**
+    - 请求参数变更
+      - `+ server.serial_console_options`
+      - `+ server.nics.port_id`
+  - **CreatePostPaidServers**
+    - 请求参数变更
+      - `+ server.serial_console_options`
+      - `+ server.nics.port_id`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`SwitchGaussMySqlProxyEip`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK LTS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListLogGroups**
+    - 响应参数变更
+      - `+ log_groups.log_group_name_alias`
+  - **UpdateLogStream**
+    - 请求参数变更
+      - `+ whether_log_storage`
+  - **ListTransfers**
+    - 请求参数变更
+      - `- offset`
+      - `- limit`
+
 # 3.1.147 2025-05-22
 
 ### HuaweiCloud SDK CES
