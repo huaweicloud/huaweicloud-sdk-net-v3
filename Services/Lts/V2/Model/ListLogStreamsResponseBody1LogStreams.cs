@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("hot_storage_days", NullValueHandling = NullValueHandling.Ignore)]
         public int? HotStorageDays { get; set; }
 
+        /// <summary>
+        /// 日志组ID
+        /// </summary>
+        [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupId { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  authWebTracking: ").Append(AuthWebTracking).Append("\n");
             sb.Append("  ttlInDays: ").Append(TtlInDays).Append("\n");
             sb.Append("  hotStorageDays: ").Append(HotStorageDays).Append("\n");
+            sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +138,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.AuthWebTracking != input.AuthWebTracking || (this.AuthWebTracking != null && !this.AuthWebTracking.Equals(input.AuthWebTracking))) return false;
             if (this.TtlInDays != input.TtlInDays || (this.TtlInDays != null && !this.TtlInDays.Equals(input.TtlInDays))) return false;
             if (this.HotStorageDays != input.HotStorageDays || (this.HotStorageDays != null && !this.HotStorageDays.Equals(input.HotStorageDays))) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
 
             return true;
         }
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.AuthWebTracking != null) hashCode = hashCode * 59 + this.AuthWebTracking.GetHashCode();
                 if (this.TtlInDays != null) hashCode = hashCode * 59 + this.TtlInDays.GetHashCode();
                 if (this.HotStorageDays != null) hashCode = hashCode * 59 + this.HotStorageDays.GetHashCode();
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
                 return hashCode;
             }
         }

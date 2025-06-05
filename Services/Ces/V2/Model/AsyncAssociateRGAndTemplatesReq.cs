@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<string> TemplateIds { get; set; }
 
         /// <summary>
-        /// 是否开启告警通知
+        /// 是否开启告警通知。true:开启，false:关闭。
         /// </summary>
         [JsonProperty("notification_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotificationEnabled { get; set; }

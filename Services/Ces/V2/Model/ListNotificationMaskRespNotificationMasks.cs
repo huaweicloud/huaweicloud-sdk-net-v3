@@ -235,6 +235,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EndTime { get; set; }
 
         /// <summary>
+        /// 时区，形如：\&quot;GMT-08:00\&quot;、\&quot;GMT+08:00\&quot;、\&quot;GMT+0:00\&quot;
+        /// </summary>
+        [JsonProperty("effective_timezone", NullValueHandling = NullValueHandling.Ignore)]
+        public string EffectiveTimezone { get; set; }
+
+        /// <summary>
         /// 告警策略列表。
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
@@ -267,6 +273,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endDate: ").Append(EndDate).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  effectiveTimezone: ").Append(EffectiveTimezone).Append("\n");
             sb.Append("  policies: ").Append(Policies).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -304,6 +311,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndDate != input.EndDate || (this.EndDate != null && !this.EndDate.Equals(input.EndDate))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.EffectiveTimezone != input.EffectiveTimezone || (this.EffectiveTimezone != null && !this.EffectiveTimezone.Equals(input.EffectiveTimezone))) return false;
             if (this.Policies != input.Policies || (this.Policies != null && input.Policies != null && !this.Policies.SequenceEqual(input.Policies))) return false;
 
             return true;
@@ -335,6 +343,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndDate != null) hashCode = hashCode * 59 + this.EndDate.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.EffectiveTimezone != null) hashCode = hashCode * 59 + this.EffectiveTimezone.GetHashCode();
                 if (this.Policies != null) hashCode = hashCode * 59 + this.Policies.GetHashCode();
                 return hashCode;
             }

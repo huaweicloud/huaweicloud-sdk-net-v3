@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 是否开启告警通知
+    /// 是否开启告警通知。true:开启，false:关闭。
     /// </summary>
     public class NotificationEnabled 
     {

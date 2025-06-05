@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<string> AlarmIds { get; set; }
 
         /// <summary>
-        /// 告警开关
+        /// 是否开启告警规则。true:开启，false:关闭。
         /// </summary>
         [JsonProperty("alarm_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AlarmEnabled { get; set; }

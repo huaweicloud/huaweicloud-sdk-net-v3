@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("extra_info", NullValueHandling = NullValueHandling.Ignore)]
-        public MetricExtraInfo ExtraInfo { get; set; }
+        public ExtraInfo ExtraInfo { get; set; }
 
         /// <summary>
         /// 指标周期，单位是秒； 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算；如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)”，300代表指标按5分钟聚合周期为一个数据点参与告警计算。

@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 开关
+        /// 是否启用一键告警。true:开启，false：关闭。
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }

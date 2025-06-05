@@ -11,6 +11,7 @@ namespace HuaweiCloud.SDK.Tms.V1
             "https://tms.myhuaweicloud.com",
             "https://tms.myhuaweicloud.cn");
         public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
+            "https://tms-intl.myhuaweicloud.com",
             "https://tms.ap-southeast-1.myhuaweicloud.com",
             "https://tms.ap-southeast-1.myhuaweicloud.cn");
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",

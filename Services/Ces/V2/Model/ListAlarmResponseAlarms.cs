@@ -173,13 +173,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public AlarmType Type { get; set; }
         /// <summary>
-        /// 告警开关
+        /// 是否开启告警规则。true:开启，false:关闭。
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// 是否开启告警通知
+        /// 是否开启告警通知。true:开启，false:关闭。
         /// </summary>
         [JsonProperty("notification_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotificationEnabled { get; set; }

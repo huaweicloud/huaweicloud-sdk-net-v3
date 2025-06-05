@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public double? Value { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("hierarchical_value", NullValueHandling = NullValueHandling.Ignore)]
+        public HierarchicalValue HierarchicalValue { get; set; }
+
+        /// <summary>
         /// 数据的单位。
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
@@ -75,10 +81,16 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public int? Level { get; set; }
 
         /// <summary>
-        /// 开关
+        /// 是否启用告警策略。true:开启，false:关闭。
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
+
+        /// <summary>
+        /// 用户在页面中选择的指标单位， 用于后续指标数据回显和计算
+        /// </summary>
+        [JsonProperty("selected_unit", NullValueHandling = NullValueHandling.Ignore)]
+        public string SelectedUnit { get; set; }
 
 
 
@@ -95,11 +107,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  filter: ").Append(Filter).Append("\n");
             sb.Append("  comparisonOperator: ").Append(ComparisonOperator).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  hierarchicalValue: ").Append(HierarchicalValue).Append("\n");
             sb.Append("  unit: ").Append(Unit).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  suppressDuration: ").Append(SuppressDuration).Append("\n");
             sb.Append("  level: ").Append(Level).Append("\n");
             sb.Append("  enabled: ").Append(Enabled).Append("\n");
+            sb.Append("  selectedUnit: ").Append(SelectedUnit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,11 +138,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.Filter != input.Filter || (this.Filter != null && !this.Filter.Equals(input.Filter))) return false;
             if (this.ComparisonOperator != input.ComparisonOperator || (this.ComparisonOperator != null && !this.ComparisonOperator.Equals(input.ComparisonOperator))) return false;
             if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.HierarchicalValue != input.HierarchicalValue || (this.HierarchicalValue != null && !this.HierarchicalValue.Equals(input.HierarchicalValue))) return false;
             if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
             if (this.SuppressDuration != input.SuppressDuration) return false;
             if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
             if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.SelectedUnit != input.SelectedUnit || (this.SelectedUnit != null && !this.SelectedUnit.Equals(input.SelectedUnit))) return false;
 
             return true;
         }
@@ -147,11 +163,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.Filter != null) hashCode = hashCode * 59 + this.Filter.GetHashCode();
                 if (this.ComparisonOperator != null) hashCode = hashCode * 59 + this.ComparisonOperator.GetHashCode();
                 if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.HierarchicalValue != null) hashCode = hashCode * 59 + this.HierarchicalValue.GetHashCode();
                 if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 hashCode = hashCode * 59 + this.SuppressDuration.GetHashCode();
                 if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();
                 if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.SelectedUnit != null) hashCode = hashCode * 59 + this.SelectedUnit.GetHashCode();
                 return hashCode;
             }
         }

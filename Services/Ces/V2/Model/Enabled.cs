@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 开关
+    /// 是否启用一键告警。true:开启，false：关闭。
     /// </summary>
     public class Enabled 
     {

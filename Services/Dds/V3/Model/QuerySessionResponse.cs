@@ -76,6 +76,18 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
+        /// <summary>
+        /// 正在操作的数据库名称。
+        /// </summary>
+        [JsonProperty("db", NullValueHandling = NullValueHandling.Ignore)]
+        public string Db { get; set; }
+
+        /// <summary>
+        /// 用户名称。仅支持4.2及以上版本,如果无法显示该字段，请升级内核版本。
+        /// </summary>
+        [JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
+        public string User { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +107,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  _Client: ").Append(Client).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  db: ").Append(Db).Append("\n");
+            sb.Append("  user: ").Append(User).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +137,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             if (this.Client != input.Client || (this.Client != null && !this.Client.Equals(input.Client))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.Db != input.Db || (this.Db != null && !this.Db.Equals(input.Db))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
 
             return true;
         }
@@ -145,6 +161,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                 if (this.Client != null) hashCode = hashCode * 59 + this.Client.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.Db != null) hashCode = hashCode * 59 + this.Db.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
                 return hashCode;
             }
         }
