@@ -259,6 +259,20 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public List<SortDirEnum> SortDir { get; set; }
+        /// <summary>
+        /// 分页标记。当一页无法返回所有结果，上一次的请求将返回next_marker以指引还有更多页数，用户可以将next_marker中的值放到此处以查询下一页的信息。此marker只能用于与上一请求指定的相同参数的请求。不指定时默认从第一页开始查询。
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
+        /// <summary>
+        /// 每页返回的最多结果数量
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
 
 
         /// <summary>
@@ -271,6 +285,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             sb.Append("  clientRequestId: ").Append(ClientRequestId).Append("\n");
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
             sb.Append("  sortDir: ").Append(SortDir).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -292,6 +308,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
             if (this.ClientRequestId != input.ClientRequestId || (this.ClientRequestId != null && !this.ClientRequestId.Equals(input.ClientRequestId))) return false;
             if (this.SortKey != input.SortKey || (this.SortKey != null && input.SortKey != null && !this.SortKey.SequenceEqual(input.SortKey))) return false;
             if (this.SortDir != input.SortDir || (this.SortDir != null && input.SortDir != null && !this.SortDir.SequenceEqual(input.SortDir))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
             return true;
         }
@@ -307,6 +325,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
                 if (this.ClientRequestId != null) hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
                 hashCode = hashCode * 59 + this.SortKey.GetHashCode();
                 hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

@@ -23,19 +23,19 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? DetectBlurResult { get; set; }
 
         /// <summary>
-        /// 证件图像反光告警结果。 - true：表示证件图片较模糊。 - false：表示证件清晰。 
+        /// 证件图像反光告警结果。 - true：表示证件图片存在反光。 - false：表示证件图片不存在反光。 
         /// </summary>
         [JsonProperty("detect_glare_result", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DetectGlareResult { get; set; }
 
         /// <summary>
-        /// 证件图像框内遮挡告警结果。 - true：表示证件图片较模糊。 - false：表示证件清晰。 
+        /// 证件图像框内遮挡告警结果。 - true：表示证件图片存在框内遮挡。 - false：表示证件图片不存在框内遮挡。 
         /// </summary>
         [JsonProperty("detect_blocking_within_border_result", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DetectBlockingWithinBorderResult { get; set; }
 
         /// <summary>
-        /// 证件图像过暗告警结果。 - true：表示证件图片较模糊。 - false：表示证件清晰。 
+        /// 证件图像过暗告警结果。 - true：表示证件图片过暗。 - false：表示证件图片光线正常。 
         /// </summary>
         [JsonProperty("detect_insufficient_lighting_result", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DetectInsufficientLightingResult { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： topic名称。 **取值范围**： 不涉及
+        /// **参数解释**： Topic名称。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<ShowInstanceTopicDetailRespPartitions> Partitions { get; set; }
 
         /// <summary>
-        /// **参数解释**： 订阅该topic的消费组名称列表。
+        /// **参数解释**： 订阅该Topic的消费组名称列表。
         /// </summary>
         [JsonProperty("group_subscribed", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> GroupSubscribed { get; set; }

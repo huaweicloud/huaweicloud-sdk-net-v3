@@ -124,6 +124,12 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         [JsonProperty("server_tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<SystemTags> ServerTags { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metadata_options", NullValueHandling = NullValueHandling.Ignore)]
+        public UpdateBaremetalServerMetadataOptionsRequestBody MetadataOptions { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +157,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             sb.Append("  extendparam: ").Append(Extendparam).Append("\n");
             sb.Append("  schedulerHints: ").Append(SchedulerHints).Append("\n");
             sb.Append("  serverTags: ").Append(ServerTags).Append("\n");
+            sb.Append("  metadataOptions: ").Append(MetadataOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +194,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             if (this.Extendparam != input.Extendparam || (this.Extendparam != null && !this.Extendparam.Equals(input.Extendparam))) return false;
             if (this.SchedulerHints != input.SchedulerHints || (this.SchedulerHints != null && !this.SchedulerHints.Equals(input.SchedulerHints))) return false;
             if (this.ServerTags != input.ServerTags || (this.ServerTags != null && input.ServerTags != null && !this.ServerTags.SequenceEqual(input.ServerTags))) return false;
+            if (this.MetadataOptions != input.MetadataOptions || (this.MetadataOptions != null && !this.MetadataOptions.Equals(input.MetadataOptions))) return false;
 
             return true;
         }
@@ -217,6 +225,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
                 if (this.Extendparam != null) hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
                 if (this.SchedulerHints != null) hashCode = hashCode * 59 + this.SchedulerHints.GetHashCode();
                 if (this.ServerTags != null) hashCode = hashCode * 59 + this.ServerTags.GetHashCode();
+                if (this.MetadataOptions != null) hashCode = hashCode * 59 + this.MetadataOptions.GetHashCode();
                 return hashCode;
             }
         }

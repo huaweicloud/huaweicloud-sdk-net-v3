@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// topic信息。
+        /// Topic信息。
         /// </summary>
         [JsonProperty("queues", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCeshierarchyRespQueues1> Queues { get; set; }

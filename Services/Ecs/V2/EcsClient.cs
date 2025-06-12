@@ -597,6 +597,31 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 删除回收站中虚拟机
+        ///
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteRecycleBinServerResponse DeleteRecycleBinServer(DeleteRecycleBinServerRequest deleteRecycleBinServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", deleteRecycleBinServerRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/cloudservers/{server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecycleBinServerRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteRecycleBinServerResponse>(response);
+        }
+
+        public SyncInvoker<DeleteRecycleBinServerResponse> DeleteRecycleBinServerInvoker(DeleteRecycleBinServerRequest deleteRecycleBinServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", deleteRecycleBinServerRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/cloudservers/{server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecycleBinServerRequest);
+            return new SyncInvoker<DeleteRecycleBinServerResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteRecycleBinServerResponse>);
+        }
+        
+        /// <summary>
         /// 删除云服务器组
         ///
         /// 删除云服务器组。
@@ -856,6 +881,29 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/flavors", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlavorsRequest);
             return new SyncInvoker<ListFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFlavorsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询回收站中虚拟机列表
+        ///
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRecycleBinServersResponse ListRecycleBinServers(ListRecycleBinServersRequest listRecycleBinServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/cloudservers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleBinServersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListRecycleBinServersResponse>(response);
+        }
+
+        public SyncInvoker<ListRecycleBinServersResponse> ListRecycleBinServersInvoker(ListRecycleBinServersRequest listRecycleBinServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/cloudservers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecycleBinServersRequest);
+            return new SyncInvoker<ListRecycleBinServersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecycleBinServersResponse>);
         }
         
         /// <summary>
@@ -1708,6 +1756,81 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 恢复回收站中虚拟机
+        ///
+        /// 回收站中的虚拟机从回收站中恢复
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RevertRecycleBinServerResponse RevertRecycleBinServer(RevertRecycleBinServerRequest revertRecycleBinServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", revertRecycleBinServerRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/cloudservers/{server_id}/actions/revert", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revertRecycleBinServerRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RevertRecycleBinServerResponse>(response);
+        }
+
+        public SyncInvoker<RevertRecycleBinServerResponse> RevertRecycleBinServerInvoker(RevertRecycleBinServerRequest revertRecycleBinServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", revertRecycleBinServerRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/cloudservers/{server_id}/actions/revert", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revertRecycleBinServerRequest);
+            return new SyncInvoker<RevertRecycleBinServerResponse>(this, "POST", request, JsonUtils.DeSerialize<RevertRecycleBinServerResponse>);
+        }
+        
+        /// <summary>
+        /// 查询回收站配置
+        ///
+        /// 查询回收站配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRecycleBinResponse ShowRecycleBin(ShowRecycleBinRequest showRecycleBinRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecycleBinRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRecycleBinResponse>(response);
+        }
+
+        public SyncInvoker<ShowRecycleBinResponse> ShowRecycleBinInvoker(ShowRecycleBinRequest showRecycleBinRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecycleBinRequest);
+            return new SyncInvoker<ShowRecycleBinResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecycleBinResponse>);
+        }
+        
+        /// <summary>
+        /// 查询回收站中指定云服务器
+        ///
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRecycleBinServerResponse ShowRecycleBinServer(ShowRecycleBinServerRequest showRecycleBinServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showRecycleBinServerRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/cloudservers/{server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecycleBinServerRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRecycleBinServerResponse>(response);
+        }
+
+        public SyncInvoker<ShowRecycleBinServerResponse> ShowRecycleBinServerInvoker(ShowRecycleBinServerRequest showRecycleBinServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showRecycleBinServerRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/cloudservers/{server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecycleBinServerRequest);
+            return new SyncInvoker<ShowRecycleBinServerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecycleBinServerResponse>);
+        }
+        
+        /// <summary>
         /// 查询是否支持一键重置密码
         ///
         /// 查询弹性云服务器是否支持一键重置密码。
@@ -1842,6 +1965,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询云服务器元数据配置
+        ///
+        /// 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowServerMetadataOptionsResponse ShowServerMetadataOptions(ShowServerMetadataOptionsRequest showServerMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showServerMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerMetadataOptionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowServerMetadataOptionsResponse>(response);
+        }
+
+        public SyncInvoker<ShowServerMetadataOptionsResponse> ShowServerMetadataOptionsInvoker(ShowServerMetadataOptionsRequest showServerMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showServerMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerMetadataOptionsRequest);
+            return new SyncInvoker<ShowServerMetadataOptionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowServerMetadataOptionsResponse>);
+        }
+        
+        /// <summary>
         /// 云服务器获取密码(企业项目)
         ///
         /// 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
@@ -1919,6 +2068,54 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerTagsRequest);
             return new SyncInvoker<ShowServerTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowServerTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 更新回收站配置
+        ///
+        /// 更新回收站属性信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateRecycleBinResponse UpdateRecycleBin(UpdateRecycleBinRequest updateRecycleBinRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRecycleBinRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateRecycleBinResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRecycleBinResponse> UpdateRecycleBinInvoker(UpdateRecycleBinRequest updateRecycleBinRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRecycleBinRequest);
+            return new SyncInvoker<UpdateRecycleBinResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateRecycleBinResponse>);
+        }
+        
+        /// <summary>
+        /// 更新回收站策略
+        ///
+        /// 更新回收站策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateRecycleBinPolicyResponse UpdateRecycleBinPolicy(UpdateRecycleBinPolicyRequest updateRecycleBinPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRecycleBinPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateRecycleBinPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRecycleBinPolicyResponse> UpdateRecycleBinPolicyInvoker(UpdateRecycleBinPolicyRequest updateRecycleBinPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRecycleBinPolicyRequest);
+            return new SyncInvoker<UpdateRecycleBinPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateRecycleBinPolicyResponse>);
         }
         
         /// <summary>
@@ -2061,6 +2258,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerMetadataRequest);
             return new SyncInvoker<UpdateServerMetadataResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateServerMetadataResponse>);
+        }
+        
+        /// <summary>
+        /// 更新云服务器元数据配置
+        ///
+        /// 更新云服务器元数据配置，通过本接口，您可以选择启用或关闭IMDS服务，也可以选择IMDS服务的版本。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateServerMetadataOptionsResponse UpdateServerMetadataOptions(UpdateServerMetadataOptionsRequest updateServerMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateServerMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerMetadataOptionsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateServerMetadataOptionsResponse>(response);
+        }
+
+        public SyncInvoker<UpdateServerMetadataOptionsResponse> UpdateServerMetadataOptionsInvoker(UpdateServerMetadataOptionsRequest updateServerMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateServerMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerMetadataOptionsRequest);
+            return new SyncInvoker<UpdateServerMetadataOptionsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServerMetadataOptionsResponse>);
         }
         
         /// <summary>

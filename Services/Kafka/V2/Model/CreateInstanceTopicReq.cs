@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// topic名称，长度为3-200，以字母开头且只支持大小写字母、中横线、下划线、点以及数字。
+        /// Topic名称，长度为3-200，以字母开头且只支持大小写字母、中横线、下划线、点以及数字。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? SyncMessageFlush { get; set; }
 
         /// <summary>
-        /// topic分区数，设置消费的并发数。 取值范围：1-200。
+        /// Topic分区数，设置消费的并发数。 取值范围：1-200。
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }
@@ -53,13 +53,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? RetentionTime { get; set; }
 
         /// <summary>
-        /// topic配置
+        /// Topic配置
         /// </summary>
         [JsonProperty("topic_other_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<CreateInstanceTopicReqTopicOtherConfigs> TopicOtherConfigs { get; set; }
 
         /// <summary>
-        /// topic描述
+        /// Topic描述
         /// </summary>
         [JsonProperty("topic_desc", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicDesc { get; set; }

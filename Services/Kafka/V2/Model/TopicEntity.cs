@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： 是否为默认策略。 **取值范围**： - true：默认策略。 - fasle：不是默认策略。
+        /// **参数解释**： 是否为默认策略。 **取值范围**： - true：默认策略。 - false：不是默认策略。
         /// </summary>
         [JsonProperty("policiesOnly", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PoliciesOnly { get; set; }
 
         /// <summary>
-        /// **参数解释**： topic名称。 **取值范围**： 不涉及
+        /// **参数解释**： Topic名称。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? Replication { get; set; }
 
         /// <summary>
-        /// **参数解释**： topic分区数，设置消费的并发数。 **取值范围**： 不涉及
+        /// **参数解释**： Topic分区数，设置消费的并发数。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }
@@ -65,25 +65,25 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public Object ExternalConfigs { get; set; }
 
         /// <summary>
-        /// **参数解释**： topic类型。 **取值范围**： - 0：普通Topic。 - 1：系统(内部)Topic。
+        /// **参数解释**： Topic类型。 **取值范围**： - 0：普通Topic。 - 1：系统(内部)Topic。
         /// </summary>
         [JsonProperty("topic_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? TopicType { get; set; }
 
         /// <summary>
-        /// **参数解释**： topic其他配置。
+        /// **参数解释**： Topic其他配置。
         /// </summary>
         [JsonProperty("topic_other_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<TopicEntityTopicOtherConfigs> TopicOtherConfigs { get; set; }
 
         /// <summary>
-        /// **参数解释**： topic描述。 **取值范围**： 不涉及
+        /// **参数解释**： Topic描述。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("topic_desc", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicDesc { get; set; }
 
         /// <summary>
-        /// **参数解释**： topic创建时间。 **取值范围**： 不涉及
+        /// **参数解释**： Topic创建时间。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreatedAt { get; set; }

@@ -107,7 +107,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string CompressionType { get; set; }
 
         /// <summary>
-        /// topic映射。（仅源端类型为Kafka时会显示）
+        /// Topic映射。（仅源端类型为Kafka时会显示）
         /// </summary>
         [JsonProperty("topics_mapping", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicsMapping { get; set; }

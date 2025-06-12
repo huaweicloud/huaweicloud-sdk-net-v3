@@ -358,9 +358,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 创建topic流控配置
+        /// 创建Topic流控配置
         ///
-        /// 该接口用于向Kafka实例提交创建topic级别的流控任务，若成功则返回流控任务的job_id。
+        /// 该接口用于向Kafka实例提交创建Topic级别的流控任务，若成功则返回流控任务的job_id。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -464,7 +464,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         ///
         /// 创建实例。
         /// 
-        /// [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc)
+        /// [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc,cmcc)
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -622,9 +622,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 删除topic流控配置
+        /// 删除Topic流控配置
         ///
-        /// 该接口用于向Kafka实例提交删除topic级别的流控任务，若成功则返回流控任务的job_id。
+        /// 该接口用于向Kafka实例提交删除Topic级别的流控任务，若成功则返回流控任务的job_id。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1110,9 +1110,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 修改topic流控配置
+        /// 修改Topic流控配置
         ///
-        /// 该接口用于向Kafka实例提交修改topic级别的流控任务，若成功则返回流控任务的job_id。
+        /// 该接口用于向Kafka实例提交修改Topic级别的流控任务，若成功则返回流控任务的job_id。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1892,9 +1892,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询topic流控配置
+        /// 查询Topic流控配置
         ///
-        /// 该接口用于查询topic级别的流控任务。
+        /// 该接口用于查询Topic级别的流控任务。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2220,9 +2220,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 开启或关闭实例自动创建topic功能
+        /// 开启或关闭实例自动创建Topic功能
         ///
-        /// 开启或关闭实例自动创建topic功能。
+        /// 开启或关闭实例自动创建Topic功能。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2576,9 +2576,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 删除Smart Connector任务
+        /// 删除Smart Connect任务
         ///
-        /// 删除Smart Connector任务。
+        /// 删除Smart Connect任务。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2627,6 +2627,34 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConnectorTasksRequest);
             return new AsyncInvoker<ListConnectorTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConnectorTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 修改Smart Connect任务配置。
+        ///
+        /// 修改Smart Connect任务配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyConnectorTaskResponse> ModifyConnectorTaskAsync(ModifyConnectorTaskRequest modifyConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", modifyConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyConnectorTaskRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyConnectorTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyConnectorTaskResponse> ModifyConnectorTaskAsyncInvoker(ModifyConnectorTaskRequest modifyConnectorTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyConnectorTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", modifyConnectorTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyConnectorTaskRequest);
+            return new AsyncInvoker<ModifyConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyConnectorTaskResponse>);
         }
         
         /// <summary>
@@ -2742,9 +2770,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         }
         
         /// <summary>
-        /// 查询Smart Connector任务详情
+        /// 查询Smart Connect任务详情
         ///
-        /// 查询Smart Connector任务详情。
+        /// 查询Smart Connect任务详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2767,6 +2795,32 @@ namespace HuaweiCloud.SDK.Kafka.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConnectorTaskRequest);
             return new AsyncInvoker<ShowConnectorTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowConnectorTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 校验Connector连通性
+        ///
+        /// 校验Connector连通性。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ValidateConnectorConnectivityResponse> ValidateConnectorConnectivityAsync(ValidateConnectorConnectivityRequest validateConnectorConnectivityRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", validateConnectorConnectivityRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/validate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConnectorConnectivityRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<ValidateConnectorConnectivityResponse>(response);
+        }
+
+        public AsyncInvoker<ValidateConnectorConnectivityResponse> ValidateConnectorConnectivityAsyncInvoker(ValidateConnectorConnectivityRequest validateConnectorConnectivityRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", validateConnectorConnectivityRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/validate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConnectorConnectivityRequest);
+            return new AsyncInvoker<ValidateConnectorConnectivityResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ValidateConnectorConnectivityResponse>);
         }
         
     }

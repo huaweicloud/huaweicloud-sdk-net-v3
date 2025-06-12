@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// topic流控配置
+        /// Topic流控配置
         /// </summary>
-        [JsonProperty("partitions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<KafkaTopicQuota> Partitions { get; set; }
+        [JsonProperty("quotas", NullValueHandling = NullValueHandling.Ignore)]
+        public List<KafkaTopicQuota> Quotas { get; set; }
+
+        /// <summary>
+        /// Topic流控数量
+        /// </summary>
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Count { get; set; }
 
 
 
@@ -31,7 +37,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowKafkaTopicQuotaResponse {\n");
-            sb.Append("  partitions: ").Append(Partitions).Append("\n");
+            sb.Append("  quotas: ").Append(Quotas).Append("\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +57,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool Equals(ShowKafkaTopicQuotaResponse input)
         {
             if (input == null) return false;
-            if (this.Partitions != input.Partitions || (this.Partitions != null && input.Partitions != null && !this.Partitions.SequenceEqual(input.Partitions))) return false;
+            if (this.Quotas != input.Quotas || (this.Quotas != null && input.Quotas != null && !this.Quotas.SequenceEqual(input.Quotas))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
 
             return true;
         }
@@ -63,7 +71,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Partitions != null) hashCode = hashCode * 59 + this.Partitions.GetHashCode();
+                if (this.Quotas != null) hashCode = hashCode * 59 + this.Quotas.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

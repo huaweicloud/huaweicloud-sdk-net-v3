@@ -112,6 +112,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("extendParam", NullValueHandling = NullValueHandling.Ignore)]
         public NodePoolUpdateExtendParam ExtendParam { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("publicIP", NullValueHandling = NullValueHandling.Ignore)]
+        public NodeEIPSpec PublicIP { get; set; }
+
 
 
         /// <summary>
@@ -137,6 +143,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  serverEnterpriseProjectID: ").Append(ServerEnterpriseProjectID).Append("\n");
             sb.Append("  nodeNicSpecUpdate: ").Append(NodeNicSpecUpdate).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
+            sb.Append("  publicIP: ").Append(PublicIP).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -171,6 +178,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.ServerEnterpriseProjectID != input.ServerEnterpriseProjectID || (this.ServerEnterpriseProjectID != null && !this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))) return false;
             if (this.NodeNicSpecUpdate != input.NodeNicSpecUpdate || (this.NodeNicSpecUpdate != null && !this.NodeNicSpecUpdate.Equals(input.NodeNicSpecUpdate))) return false;
             if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
+            if (this.PublicIP != input.PublicIP || (this.PublicIP != null && !this.PublicIP.Equals(input.PublicIP))) return false;
 
             return true;
         }
@@ -199,6 +207,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.ServerEnterpriseProjectID != null) hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
                 if (this.NodeNicSpecUpdate != null) hashCode = hashCode * 59 + this.NodeNicSpecUpdate.GetHashCode();
                 if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                if (this.PublicIP != null) hashCode = hashCode * 59 + this.PublicIP.GetHashCode();
                 return hashCode;
             }
         }

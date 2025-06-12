@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// topic流控配置
+    /// Topic流控配置
     /// </summary>
     public class KafkaTopicQuota 
     {
 
         /// <summary>
-        /// topic名称
+        /// Topic名称
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }

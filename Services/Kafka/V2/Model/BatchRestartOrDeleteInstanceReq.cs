@@ -256,6 +256,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         [JsonProperty("all_failure", NullValueHandling = NullValueHandling.Ignore)]
         public AllFailureEnum AllFailure { get; set; }
+        /// <summary>
+        /// 是否强删除，强删除实例不进入收回站。
+        /// </summary>
+        [JsonProperty("force_delete", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ForceDelete { get; set; }
+
 
 
         /// <summary>
@@ -268,6 +274,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             sb.Append("  instances: ").Append(Instances).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  allFailure: ").Append(AllFailure).Append("\n");
+            sb.Append("  forceDelete: ").Append(ForceDelete).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -289,6 +296,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
             if (this.Action != input.Action) return false;
             if (this.AllFailure != input.AllFailure) return false;
+            if (this.ForceDelete != input.ForceDelete || (this.ForceDelete != null && !this.ForceDelete.Equals(input.ForceDelete))) return false;
 
             return true;
         }
@@ -304,6 +312,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
                 if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
                 hashCode = hashCode * 59 + this.Action.GetHashCode();
                 hashCode = hashCode * 59 + this.AllFailure.GetHashCode();
+                if (this.ForceDelete != null) hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
                 return hashCode;
             }
         }

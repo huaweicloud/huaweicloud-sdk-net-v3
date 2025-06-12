@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// topic磁盘容量使用列表。
+        /// Topic磁盘容量使用列表。
         /// </summary>
         [JsonProperty("topic_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<DiskusageTopicEntity> TopicList { get; set; }

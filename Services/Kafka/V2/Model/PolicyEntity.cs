@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
 
         /// <summary>
-        /// 是否为创建topic时所选择的用户。
+        /// 是否为创建Topic时所选择的用户。
         /// </summary>
         [JsonProperty("owner", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Owner { get; set; }

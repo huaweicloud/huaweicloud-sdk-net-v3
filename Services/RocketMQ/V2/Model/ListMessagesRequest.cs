@@ -146,6 +146,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public string Topic { get; set; }
 
         /// <summary>
+        /// 队列。
+        /// </summary>
+        [SDKProperty("queue", IsQuery = true)]
+        [JsonProperty("queue", NullValueHandling = NullValueHandling.Ignore)]
+        public string Queue { get; set; }
+
+        /// <summary>
         /// 查询数量。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
@@ -199,6 +206,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  engine: ").Append(Engine).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
+            sb.Append("  queue: ").Append(Queue).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  key: ").Append(Key).Append("\n");
@@ -226,6 +234,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.Engine != input.Engine) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.Queue != input.Queue || (this.Queue != null && !this.Queue.Equals(input.Queue))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
@@ -247,6 +256,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 hashCode = hashCode * 59 + this.Engine.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.Queue != null) hashCode = hashCode * 59 + this.Queue.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();

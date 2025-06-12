@@ -1,3 +1,389 @@
+# 3.1.150 2025-06-12
+
+### HuaweiCloud SDK AOS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `DeletePrivateProvider`
+    - `ShowPrivateProviderMetadata`
+    - `UpdatePrivateProviderMetadata`
+    - `DeletePrivateProviderVersion`
+    - `ShowPrivateProviderVersionMetadata`
+    - `ListPrivateProviders`
+    - `ListPrivateProviderVersions`
+    - `CreateTemplate`
+    - `CreateTemplateVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListStackEvents**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+    - 响应参数变更
+      - `+ page_info`
+  - **ListStackOutputs**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+    - 响应参数变更
+      - `+ page_info`
+  - **ListPrivateHooks**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+    - 响应参数变更
+      - `+ page_info`
+  - **ListPrivateModules**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+    - 响应参数变更
+      - `+ page_info`
+  - **ListPrivateModuleVersions**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+    - 响应参数变更
+      - `+ page_info`
+  - **ListStackSets**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+    - 响应参数变更
+      - `+ page_info`
+  - **ListStackSetOperations**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+    - 响应参数变更
+      - `+ page_info`
+  - **ListStackInstances**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+    - 响应参数变更
+      - `+ page_info`
+  - **ListStackResources**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+    - 响应参数变更
+      - `+ page_info`
+  - **ListExecutionPlans**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+    - 响应参数变更
+      - `+ page_info`
+  - **ListStacks**
+    - 请求参数变更
+      - `+ marker`
+      - `+ limit`
+    - 响应参数变更
+      - `+ page_info`
+
+### HuaweiCloud SDK BMS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ShowBaremetalServerMetadataOptions`、`UpdateBaremetalServerMetadataOptions`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateBareMetalServers**
+    - 请求参数变更
+      - `+ server.metadata_options`
+
+### HuaweiCloud SDK CCE
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowNode**
+    - 响应参数变更
+      - `+ spec.publicIP.iptype`
+      - `+ spec.publicIP.bandwidth`
+  - **UpdateNode**
+    - 响应参数变更
+      - `+ spec.publicIP.iptype`
+      - `+ spec.publicIP.bandwidth`
+  - **DeleteNode**
+    - 响应参数变更
+      - `+ spec.publicIP.iptype`
+      - `+ spec.publicIP.bandwidth`
+  - **CreateNode**
+    - 请求参数变更
+      - `+ spec.publicIP.iptype`
+      - `+ spec.publicIP.bandwidth`
+    - 响应参数变更
+      - `+ spec.publicIP.iptype`
+      - `+ spec.publicIP.bandwidth`
+  - **ListNodes**
+    - 响应参数变更
+      - `+ items.spec.publicIP.iptype`
+      - `+ items.spec.publicIP.bandwidth`
+  - **ShowNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.publicIP.iptype`
+      - `+ spec.nodeTemplate.publicIP.bandwidth`
+  - **UpdateNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.publicIP`
+    - 响应参数变更
+      - `+ spec.nodeTemplate.publicIP.iptype`
+      - `+ spec.nodeTemplate.publicIP.bandwidth`
+  - **DeleteNodePool**
+    - 响应参数变更
+      - `+ spec.nodeTemplate.publicIP.iptype`
+      - `+ spec.nodeTemplate.publicIP.bandwidth`
+  - **CreateNodePool**
+    - 请求参数变更
+      - `+ spec.nodeTemplate.publicIP.iptype`
+      - `+ spec.nodeTemplate.publicIP.bandwidth`
+    - 响应参数变更
+      - `+ spec.nodeTemplate.publicIP.iptype`
+      - `+ spec.nodeTemplate.publicIP.bandwidth`
+  - **ListNodePools**
+    - 响应参数变更
+      - `+ items.spec.nodeTemplate.publicIP.iptype`
+      - `+ items.spec.nodeTemplate.publicIP.bandwidth`
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `ShowDisable`
+    - `ShowCopyName`
+    - `ShowJobStepStatus`
+    - `ShowDefaultProjectPermission`
+    - `ListUpdateJobHistory`
+    - `ShowBuildRecordFlowGraph`
+    - `ListJunitCoverageSummary`
+    - `ListJob`
+    - `ShowJobBuildRecordDetail`
+    - `ListRepository`
+    - `ListCustomTemplate`
+    - `ShowSummaryBuildJobInfo`
+    - `ListRepoBranch`
+    - `ListKeystoreSearch`
+    - `CheckJobCountIsTopLimit`
+    - `DownloadJunitCoverageZip`
+    - `ListBuildParameter`
+    - `ShowUserOverPackageQuota`
+    - `ShowJobTotal`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK DCS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateInstance**
+    - 请求参数变更
+      - `+ spec_param`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ShowServerMetadataOptions`
+    - `UpdateServerMetadataOptions`
+    - `ShowRecycleBin`
+    - `UpdateRecycleBin`
+    - `ShowRecycleBinServer`
+    - `DeleteRecycleBinServer`
+    - `ListRecycleBinServers`
+    - `UpdateRecycleBinPolicy`
+    - `RevertRecycleBinServer`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateServer**
+    - 请求参数变更
+      - `+ server.security_options`
+  - **ShowServer**
+    - 响应参数变更
+      - `+ server.security_options`
+  - **ListServersDetails**
+    - 响应参数变更
+      - `+ servers.security_options`
+  - **CreateServers**
+    - 请求参数变更
+      - `+ server.security_options`
+      - `+ server.metadata_options`
+  - **CreatePostPaidServers**
+    - 请求参数变更
+      - `+ server.security_options`
+      - `+ server.metadata_options`
+
+### HuaweiCloud SDK EVS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`BatchResizeVolumes`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK FunctionGraph
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ImportFunction**
+    - 响应参数变更
+      - `+ func_vpc.is_safety`
+  - **ListFunctions**
+    - 请求参数变更
+      - `+ func_name`
+  - **CreateFunction**
+    - 请求参数变更
+      - `+ func_vpc.is_safety`
+    - 响应参数变更
+      - `+ func_vpc.is_safety`
+  - **ShowFunctionConfig**
+    - 响应参数变更
+      - `+ func_vpc.is_safety`
+  - **UpdateFunctionConfig**
+    - 请求参数变更
+      - `+ func_vpc.is_safety`
+    - 响应参数变更
+      - `+ func_vpc.is_safety`
+  - **UpdateFunctionMaxInstanceConfig**
+    - 响应参数变更
+      - `+ func_vpc.is_safety`
+  - **CreateFunctionVersion**
+    - 响应参数变更
+      - `+ func_vpc.is_safety`
+
+### HuaweiCloud SDK IoTDA
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateProvisioningTemplate**
+    - 请求参数变更
+      - `+ template_body.resources.device.device_id`
+    - 响应参数变更
+      - `+ template_body.resources.device.device_id`
+  - **ShowProvisioningTemplate**
+    - 响应参数变更
+      - `+ template_body.resources.device.device_id`
+  - **UpdateProvisioningTemplate**
+    - 请求参数变更
+      - `+ template_body.resources.device.device_id`
+    - 响应参数变更
+      - `+ template_body.resources.device.device_id`
+
+### HuaweiCloud SDK Kafka
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ValidateConnectorConnectivity`、`ModifyConnectorTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchRestartOrDeleteInstances**
+    - 请求参数变更
+      - `+ force_delete`
+  - **ShowKafkaTopicQuota**
+    - 响应参数变更
+      - `+ quotas`
+      - `+ count`
+      - `- partitions`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeTransportationLicense**
+    - 请求参数变更
+      - `+ return_image_location`
+      - `+ return_adjusted_image`
+    - 响应参数变更
+      - `+ result.image_location`
+      - `+ result.adjusted_image`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateExchange**
+    - 请求参数变更
+      - `+ arguments`
+
+### HuaweiCloud SDK RocketMQ
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ListDiagnosisReports`
+    - `CreateDiagnosisTask`
+    - `BatchDeleteDiagnosisReport`
+    - `ShowDiagnosisReport`
+    - `ShowDiagnosisStack`
+    - `ModifyInstanceSslConfig`
+    - `ListBackgroundTasks`
+    - `DeleteBackgroundTask`
+    - `SendMessage`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`RestartInstance`
+  - **UpdateTopic**
+    - 请求参数变更
+      - `+ queues`
+      - `+ topic_desc`
+  - **CreateInstanceByEngine**
+    - 请求参数变更
+      - `+ proxy_enable`
+      - `+ arch_type`
+      - `+ tls_mode`
+  - **ListMessages**
+    - 请求参数变更
+      - `+ queue`
+
 # 3.1.149 2025-06-05
 
 ### HuaweiCloud SDK CES

@@ -187,6 +187,236 @@ namespace HuaweiCloud.SDK.Aos.V1
         }
         
         /// <summary>
+        /// 删除私有provider
+        ///
+        /// 删除私有provider（DeletePrivateProvider）
+        /// 
+        /// 删除某个私有provider及私有provider下的所有provider版本。
+        /// 
+        ///   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+        /// 
+        /// ** 请谨慎操作，删除私有provider将会删除该私有provider下的所有provider版本。 **
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeletePrivateProviderResponse> DeletePrivateProviderAsync(DeletePrivateProviderRequest deletePrivateProviderRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", deletePrivateProviderRequest.ProviderName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateProviderRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeletePrivateProviderResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePrivateProviderResponse> DeletePrivateProviderAsyncInvoker(DeletePrivateProviderRequest deletePrivateProviderRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", deletePrivateProviderRequest.ProviderName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateProviderRequest);
+            return new AsyncInvoker<DeletePrivateProviderResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateProviderResponse>);
+        }
+        
+        /// <summary>
+        /// 删除私有provider版本
+        ///
+        /// 删除私有provider版本（DeletePrivateProviderVersion）
+        /// 
+        /// 删除某个私有provider版本
+        /// 
+        ///   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+        /// 
+        /// **请谨慎操作**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeletePrivateProviderVersionResponse> DeletePrivateProviderVersionAsync(DeletePrivateProviderVersionRequest deletePrivateProviderVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", deletePrivateProviderVersionRequest.ProviderName.ToString());
+            urlParam.Add("provider_version", deletePrivateProviderVersionRequest.ProviderVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions/{provider_version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateProviderVersionRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeletePrivateProviderVersionResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePrivateProviderVersionResponse> DeletePrivateProviderVersionAsyncInvoker(DeletePrivateProviderVersionRequest deletePrivateProviderVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", deletePrivateProviderVersionRequest.ProviderName.ToString());
+            urlParam.Add("provider_version", deletePrivateProviderVersionRequest.ProviderVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions/{provider_version}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateProviderVersionRequest);
+            return new AsyncInvoker<DeletePrivateProviderVersionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateProviderVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 列举私有provider版本
+        ///
+        /// 列举私有provider版本（ListPrivateProviderVersions）
+        /// 
+        /// 列举所选择的私有provider中所有的provider版本信息。
+        /// 
+        ///   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
+        ///   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+        ///   * 如果provider下不存在provider版本，则返回空list。
+        ///   * 如果provider不存在则返回404。
+        ///   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPrivateProviderVersionsResponse> ListPrivateProviderVersionsAsync(ListPrivateProviderVersionsRequest listPrivateProviderVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", listPrivateProviderVersionsRequest.ProviderName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPrivateProviderVersionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPrivateProviderVersionsResponse>(response);
+        }
+
+        public AsyncInvoker<ListPrivateProviderVersionsResponse> ListPrivateProviderVersionsAsyncInvoker(ListPrivateProviderVersionsRequest listPrivateProviderVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", listPrivateProviderVersionsRequest.ProviderName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPrivateProviderVersionsRequest);
+            return new AsyncInvoker<ListPrivateProviderVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPrivateProviderVersionsResponse>);
+        }
+        
+        /// <summary>
+        /// 列举私有provider
+        ///
+        /// 列举私有provider（ListPrivateProviders）
+        /// 
+        /// 列举当前局点下用户所有的私有provider。
+        /// 
+        ///   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
+        ///   * 如果当前用户下没有任何私有provider，则返回空list。
+        ///   * 如果需要某个provider的所有版本信息，可以调用ListPrivateProviderVersions。
+        ///   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPrivateProvidersResponse> ListPrivateProvidersAsync(ListPrivateProvidersRequest listPrivateProvidersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPrivateProvidersRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPrivateProvidersResponse>(response);
+        }
+
+        public AsyncInvoker<ListPrivateProvidersResponse> ListPrivateProvidersAsyncInvoker(ListPrivateProvidersRequest listPrivateProvidersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPrivateProvidersRequest);
+            return new AsyncInvoker<ListPrivateProvidersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPrivateProvidersResponse>);
+        }
+        
+        /// <summary>
+        /// 获取私有provider元数据
+        ///
+        /// 获取私有provider元数据（ShowPrivateProviderMetadata）
+        /// 
+        /// 获取某个私有provider的元数据信息
+        /// 
+        ///   * 具体返回的信息见ShowPrivateProviderMetadataResponseBody，如果想查看私有provider下全部provider版本，请调用ListPrivateProviderVersions。
+        ///   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPrivateProviderMetadataResponse> ShowPrivateProviderMetadataAsync(ShowPrivateProviderMetadataRequest showPrivateProviderMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", showPrivateProviderMetadataRequest.ProviderName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateProviderMetadataRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowPrivateProviderMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPrivateProviderMetadataResponse> ShowPrivateProviderMetadataAsyncInvoker(ShowPrivateProviderMetadataRequest showPrivateProviderMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", showPrivateProviderMetadataRequest.ProviderName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateProviderMetadataRequest);
+            return new AsyncInvoker<ShowPrivateProviderMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateProviderMetadataResponse>);
+        }
+        
+        /// <summary>
+        /// 获取私有provider版本元数据
+        ///
+        /// 获取私有provider版本元数据（ShowPrivateProviderVersionMetadata）
+        /// 
+        /// 获取某个私有provider版本的元数据信息
+        ///   
+        ///   * 具体返回信息见ShowPrivateProviderVersionMetadataResponseBody
+        ///   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPrivateProviderVersionMetadataResponse> ShowPrivateProviderVersionMetadataAsync(ShowPrivateProviderVersionMetadataRequest showPrivateProviderVersionMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", showPrivateProviderVersionMetadataRequest.ProviderName.ToString());
+            urlParam.Add("provider_version", showPrivateProviderVersionMetadataRequest.ProviderVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions/{provider_version}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateProviderVersionMetadataRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowPrivateProviderVersionMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPrivateProviderVersionMetadataResponse> ShowPrivateProviderVersionMetadataAsyncInvoker(ShowPrivateProviderVersionMetadataRequest showPrivateProviderVersionMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", showPrivateProviderVersionMetadataRequest.ProviderName.ToString());
+            urlParam.Add("provider_version", showPrivateProviderVersionMetadataRequest.ProviderVersion.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions/{provider_version}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateProviderVersionMetadataRequest);
+            return new AsyncInvoker<ShowPrivateProviderVersionMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateProviderVersionMetadataResponse>);
+        }
+        
+        /// <summary>
+        /// 更新私有provider元数据
+        ///
+        /// 更新私有provider元数据（UpdatePrivateProviderMetadata）
+        /// 
+        /// 更新当前私有provider的元数据信息
+        /// 
+        ///   * 目前只支持更新私有provider的描述
+        ///   * 如果需要创建新的版本，请调用CreatePrivateProviderVersion
+        ///   * 更新为增量更新，即如果某个参数不提供，则保持原始值
+        ///   * 如果请求中没有需要被更新的参数，则返回400。注意：即使更新原始值和目标值一致也被认为是有效更新
+        ///   * 更新后私有provider的更新时间（update_time）也会被更新
+        ///   * 如果provider_name和provider_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdatePrivateProviderMetadataResponse> UpdatePrivateProviderMetadataAsync(UpdatePrivateProviderMetadataRequest updatePrivateProviderMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", updatePrivateProviderMetadataRequest.ProviderName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateProviderMetadataRequest);
+            var response = await DoHttpRequestAsync("PATCH", request);
+            return JsonUtils.DeSerializeNull<UpdatePrivateProviderMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePrivateProviderMetadataResponse> UpdatePrivateProviderMetadataAsyncInvoker(UpdatePrivateProviderMetadataRequest updatePrivateProviderMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("provider_name", updatePrivateProviderMetadataRequest.ProviderName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateProviderMetadataRequest);
+            return new AsyncInvoker<UpdatePrivateProviderMetadataResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdatePrivateProviderMetadataResponse>);
+        }
+        
+        /// <summary>
         /// 执行执行计划
         ///
         /// 执行执行计划（ApplyExecutionPlan）
@@ -512,10 +742,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 列举当前局点下用户指定资源栈下所有的执行计划
         /// 
         ///   * 默认按照生成时间降序排序，最新生成的在最前
-        ///   * 注意：目前暂时返回全量执行计划信息，即不支持分页
         ///   * 如果指定的资源栈下没有任何执行计划，则返回空list
         ///   * 如果指定的资源栈不存在，则返回404
-        /// 
+        ///   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
         /// ListExecutionPlans返回的只有摘要信息（具体摘要信息见ListExecutionPlansResponseBody），如果用户需要详细的执行计划元数据请调用GetExecutionPlanMetadata
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
@@ -713,9 +942,9 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 列举当前局点下用户所有的私有hook。
         /// 
         ///   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir的数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间降序排序。
-        ///   * 注意：目前暂时返回全量hook的信息，即不支持分页。
         ///   * 若当前用户没有任何私有hook，则返回空list。
         ///   * 具体返回的信息见ListPrivateHooksResponseBody。
+        ///   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1025,6 +1254,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
         ///   * 如果module_name和module_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
         ///   * 如果模块不存在则返回404。
+        ///   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
         /// 
         /// ListPrivateModuleVersions返回的只有摘要信息（具体摘要信息见ListPrivateModuleVersionsResponseBody），如果用户需要详细的模块版本元数据请调用ShowPrivateModuleVersionMetadata
         /// 
@@ -1059,6 +1289,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
         ///   * 如果当前用户下没有任何私有模块，则返回空list。
         ///   * 如果需要某个模块的所有版本信息，可以调用ListModuleVersions。
+        ///   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
         /// 
         /// ListPrivateModules返回的只有摘要信息（具体摘要信息见ListPrivateModulesResponseBody），如果用户需要详细的模块元数据请调用ShowPrivateModuleMetadata
         /// 
@@ -1530,6 +1761,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// * 可以使用filter作为过滤器，过滤出指定事件类型（event_type）、资源类型（resource_type）、资源名称（resource_name）的资源栈事件
         /// * 可以使用field选择数据应返回的属性，属性事件类型（event_type）不可配置，一定会返回，可选择的属性有逝去时间（elapsed_seconds）、事件消息（event_message）、 资源ID键（resource_id_key）、资源ID值（resource_id_value）、资源键（resource_key）、资源类型（resource_type）、资源名称（resource_name）和时间戳（timestamp）
         /// * 事件返回将以时间降序排列
+        /// * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1567,6 +1799,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///   * 正在回滚（ROLLBACK_IN_PROGRESS）
         /// 
         /// output为HCL官方定义的语法，其返回信息类似于常见编程语言中的返回值，详细定义请参考HCL官方的说明
+        /// 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1603,6 +1836,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         ///   * 正在删除（DELETION_IN_PROGRESS）
         ///   * 正在回滚（ROLLBACK_IN_PROGRESS）
         /// 
+        /// 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
+        /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public async Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest listStackResourcesRequest)
@@ -1632,8 +1867,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 此API用于列举当前局点下用户所有的资源栈
         /// 
         ///   * 默认按照生成时间降序排序，最新生成的在最前
-        ///   * 注意：目前暂时返回全量资源栈信息，即不支持分页
         ///   * 如果没有任何资源栈，则返回空list
+        ///   * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
         /// 
         /// ListStacks返回的只有摘要信息（具体摘要信息见ListStacksResponseBody），如果用户需要详细的资源栈元数据请调用GetStackMetadata
         /// 
@@ -1906,6 +2141,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// * 可以使用filter作为过滤器，过滤出指定局点（region）或指定成员账号（stack_domain_id）下的资源栈实例
         /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
         /// * 如果指定资源栈集下没有任何资源栈实例，则返回空list
+        /// * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1938,6 +2174,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// 可以使用filter作为过滤器，过滤出指定操作状态（status）或操作类型（action）下的资源栈集操作。
         /// 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
         /// 如果指定资源栈集下没有任何资源栈集操作，则返回空list。
+        /// 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1971,6 +2208,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         /// * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir数量须一致，否则返回400。如果未给予sort_key和sort_dir，则默认按照创建时间降序排序。
         /// * 注意：目前暂时返回全量资源栈集信息，即不支持分页
         /// * 如果没有任何资源栈集，则返回空list
+        /// * 支持分页返回。如果响应中存在next_marker，则表示实际总输出比当前响应中包含的输出多。在对请求的后续调用中，在请求参数中使用此值，以获取输出的下一部分。您应该重复此操作，直到next_marker响应元素返回为null
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2214,6 +2452,70 @@ namespace HuaweiCloud.SDK.Aos.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/template-analyses/variables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", parseTemplateVariablesRequest);
             return new AsyncInvoker<ParseTemplateVariablesResponse>(this, "POST", request, JsonUtils.DeSerialize<ParseTemplateVariablesResponse>);
+        }
+        
+        /// <summary>
+        /// 创建模板
+        ///
+        /// 创建模板（CreateTemplate）
+        /// 
+        /// 此API用于创建一个带有版本的模板
+        /// 
+        ///   * 请求中必须包括template_uri或是template_body。前者为模板内容obs链接，后者为模板内容
+        ///   * 模板管理名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的模板，删除，再重新创建一个同名模板
+        ///   * 模板创建时，会自动生成模板版本号为V1的模板版本
+        ///   * 模板必须存在一个或多个模板版本，即不存在没有模板版本的模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTemplateResponse> CreateTemplateAsync(CreateTemplateRequest createTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTemplateResponse> CreateTemplateAsyncInvoker(CreateTemplateRequest createTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateRequest);
+            return new AsyncInvoker<CreateTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 创建模板版本
+        ///
+        /// 创建模板版本（CreateTemplateVersion）
+        /// 
+        /// 此API用于创建新的模板版本
+        /// 
+        ///   * 请求中必须包括template_uri或template_body。前者为模板内容obs链接，后者为模板内容
+        ///   * 新创建的模板版本版本ID会自动在当前最大模板版本ID的基础上加1
+        ///   * 创建模板版本需要的具体信息详见：CreateTemplateVersionRequestBody
+        ///   * template_id是模板的唯一Id。此Id由资源编排服务在生成模板的时候生成，为UUID。由于模板名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的模板，删除，再重新创建一个同名模板。对于团队并行开发，用户可能希望确保，当前我操作的模板就是我认为的那个，而不是其他队友删除后创建的同名模板。因此，使用ID就可以做到强匹配。资源编排服务保证每次创建的模板所对应的ID都不相同，更新不会影响ID。如果给予的template_id和当前模板管理的ID不一致，则返回400
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTemplateVersionResponse> CreateTemplateVersionAsync(CreateTemplateVersionRequest createTemplateVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", createTemplateVersionRequest.TemplateName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateVersionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateTemplateVersionResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTemplateVersionResponse> CreateTemplateVersionAsyncInvoker(CreateTemplateVersionRequest createTemplateVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_name", createTemplateVersionRequest.TemplateName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateVersionRequest);
+            return new AsyncInvoker<CreateTemplateVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTemplateVersionResponse>);
         }
         
         /// <summary>

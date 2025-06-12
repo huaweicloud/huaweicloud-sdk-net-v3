@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string Hostname { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("security_options", NullValueHandling = NullValueHandling.Ignore)]
+        public SecurityOptions SecurityOptions { get; set; }
+
+        /// <summary>
         /// 修改云服务器云主机过程中待注入实例自定义数据。支持注入文本、文本文件。  示例：  base64编码前：   Linux服务器：     #!/bin/bash     echo user_test &gt; /home/user.txt   Windows服务器：     rem cmd     echo 111 &gt; c:\\aaa.txt  base64编码后：   Linux服务器：IyEvYmluL2Jhc2gKZWNobyB1c2VyX3Rlc3QgPiAvaG9tZS91c2VyLnR4dA&#x3D;&#x3D;   Windows服务器：cmVtIGNtZA0KZWNobyAxMTEgJmd0OyBjOlxhYWEudHh0
         /// </summary>
         [JsonProperty("user_data", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,6 +58,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  hostname: ").Append(Hostname).Append("\n");
+            sb.Append("  securityOptions: ").Append(SecurityOptions).Append("\n");
             sb.Append("  userData: ").Append(UserData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,6 +81,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Hostname != input.Hostname || (this.Hostname != null && !this.Hostname.Equals(input.Hostname))) return false;
+            if (this.SecurityOptions != input.SecurityOptions || (this.SecurityOptions != null && !this.SecurityOptions.Equals(input.SecurityOptions))) return false;
             if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
 
             return true;
@@ -90,6 +98,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Hostname != null) hashCode = hashCode * 59 + this.Hostname.GetHashCode();
+                if (this.SecurityOptions != null) hashCode = hashCode * 59 + this.SecurityOptions.GetHashCode();
                 if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
                 return hashCode;
             }

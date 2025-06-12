@@ -70,6 +70,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SecurityGroups { get; set; }
 
+        /// <summary>
+        /// 是否开启安全访问。开启时，需要您自行配置VPCEP网络但可以提供更安全的VPC连接访问并打通内网域名。注意：开启后无法关闭。
+        /// </summary>
+        [JsonProperty("is_safety", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsSafety { get; set; }
+
 
 
         /// <summary>
@@ -88,6 +94,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  cidr: ").Append(Cidr).Append("\n");
             sb.Append("  gateway: ").Append(Gateway).Append("\n");
             sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
+            sb.Append("  isSafety: ").Append(IsSafety).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
             if (this.Gateway != input.Gateway || (this.Gateway != null && !this.Gateway.Equals(input.Gateway))) return false;
             if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.IsSafety != input.IsSafety || (this.IsSafety != null && !this.IsSafety.Equals(input.IsSafety))) return false;
 
             return true;
         }
@@ -136,6 +144,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
                 if (this.Gateway != null) hashCode = hashCode * 59 + this.Gateway.GetHashCode();
                 if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.IsSafety != null) hashCode = hashCode * 59 + this.IsSafety.GetHashCode();
                 return hashCode;
             }
         }

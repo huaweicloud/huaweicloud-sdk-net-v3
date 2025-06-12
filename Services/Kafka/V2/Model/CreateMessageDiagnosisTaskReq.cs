@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string GroupName { get; set; }
 
         /// <summary>
-        /// topic名称
+        /// Topic名称
         /// </summary>
         [JsonProperty("topic_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicName { get; set; }

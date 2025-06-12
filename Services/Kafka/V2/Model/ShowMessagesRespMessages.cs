@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// **参数解释**： topic名称。 **取值范围**： 不涉及。
+        /// **参数解释**： Topic名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }

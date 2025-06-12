@@ -185,7 +185,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 该次诊断任务诊断的topic名称
+        /// 该次诊断任务诊断的Topic名称
         /// </summary>
         [JsonProperty("topic_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicName { get; set; }

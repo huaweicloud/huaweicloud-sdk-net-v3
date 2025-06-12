@@ -589,7 +589,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? ExtendTimes { get; set; }
 
         /// <summary>
-        /// 是否打开kafka自动创建topic功能。   - true：开启   - false：关闭
+        /// 是否打开kafka自动创建Topic功能。   - true：开启   - false：关闭
         /// </summary>
         [JsonProperty("enable_auto_topic", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableAutoTopic { get; set; }

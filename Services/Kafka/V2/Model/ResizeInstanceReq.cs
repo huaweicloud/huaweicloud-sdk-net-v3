@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? NewBrokerNum { get; set; }
 
         /// <summary>
-        /// 新规格变更后的产品ID。 涉及垂直扩容场景，需指定该项。 [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ocb,hws_ocb,dt,ctc,sbc,fcs,hcs,g42,hk_g42,tm,hk_tm,hws_eu)[产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:cmcc)
+        /// 新规格变更后的产品ID。 涉及垂直扩容场景，需指定该项。 产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。
         /// </summary>
         [JsonProperty("new_product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NewProductId { get; set; }

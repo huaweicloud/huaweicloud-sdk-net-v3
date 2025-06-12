@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 消息引擎类型:kafka。
+        /// 消息引擎类型：kafka。
         /// </summary>
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public string Engine { get; set; }

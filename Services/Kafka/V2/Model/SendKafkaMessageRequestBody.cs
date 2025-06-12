@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// Kafka的topic
+        /// Kafka的Topic
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Body { get; set; }
 
         /// <summary>
-        /// topic的分区信息等
+        /// Topic的分区信息等
         /// </summary>
         [JsonProperty("property_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<SendKafkaMessageRequestBodyPropertyList> PropertyList { get; set; }

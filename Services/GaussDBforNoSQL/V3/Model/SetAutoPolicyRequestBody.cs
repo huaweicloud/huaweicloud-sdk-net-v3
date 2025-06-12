@@ -29,10 +29,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public string SwitchOption { get; set; }
 
         /// <summary>
-        /// 磁盘自动扩容策略
+        /// 
         /// </summary>
         [JsonProperty("policy", NullValueHandling = NullValueHandling.Ignore)]
-        public List<DiskAutoExpansionPolicy> Policy { get; set; }
+        public DiskAutoExpansionPolicy Policy { get; set; }
 
 
 
@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             if (input == null) return false;
             if (this.InstanceIds != input.InstanceIds || (this.InstanceIds != null && input.InstanceIds != null && !this.InstanceIds.SequenceEqual(input.InstanceIds))) return false;
             if (this.SwitchOption != input.SwitchOption || (this.SwitchOption != null && !this.SwitchOption.Equals(input.SwitchOption))) return false;
-            if (this.Policy != input.Policy || (this.Policy != null && input.Policy != null && !this.Policy.SequenceEqual(input.Policy))) return false;
+            if (this.Policy != input.Policy || (this.Policy != null && !this.Policy.Equals(input.Policy))) return false;
 
             return true;
         }

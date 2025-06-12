@@ -42,6 +42,34 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
+        /// 批量删除实例诊断记录
+        ///
+        /// 批量删除实例诊断记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteDiagnosisReportResponse> BatchDeleteDiagnosisReportAsync(BatchDeleteDiagnosisReportRequest batchDeleteDiagnosisReportRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", batchDeleteDiagnosisReportRequest.Engine.ToString());
+            urlParam.Add("instance_id", batchDeleteDiagnosisReportRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/diagnosis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteDiagnosisReportRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<BatchDeleteDiagnosisReportResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteDiagnosisReportResponse> BatchDeleteDiagnosisReportAsyncInvoker(BatchDeleteDiagnosisReportRequest batchDeleteDiagnosisReportRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", batchDeleteDiagnosisReportRequest.Engine.ToString());
+            urlParam.Add("instance_id", batchDeleteDiagnosisReportRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/diagnosis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteDiagnosisReportRequest);
+            return new AsyncInvoker<BatchDeleteDiagnosisReportResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteDiagnosisReportResponse>);
+        }
+        
+        /// <summary>
         /// 批量删除实例
         ///
         /// 批量删除实例。**实例删除后，实例中原有的数据将被删除，且没有备份，请谨慎操作。**
@@ -115,6 +143,34 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConsumerGroupOrBatchDeleteConsumerGroupRequest);
             return new AsyncInvoker<CreateConsumerGroupOrBatchDeleteConsumerGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConsumerGroupOrBatchDeleteConsumerGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 创建实例诊断任务
+        ///
+        /// 创建实例诊断任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateDiagnosisTaskResponse> CreateDiagnosisTaskAsync(CreateDiagnosisTaskRequest createDiagnosisTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", createDiagnosisTaskRequest.Engine.ToString());
+            urlParam.Add("instance_id", createDiagnosisTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/diagnosis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDiagnosisTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateDiagnosisTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDiagnosisTaskResponse> CreateDiagnosisTaskAsyncInvoker(CreateDiagnosisTaskRequest createDiagnosisTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", createDiagnosisTaskRequest.Engine.ToString());
+            urlParam.Add("instance_id", createDiagnosisTaskRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/diagnosis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDiagnosisTaskRequest);
+            return new AsyncInvoker<CreateDiagnosisTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDiagnosisTaskResponse>);
         }
         
         /// <summary>
@@ -220,6 +276,34 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
+        /// 删除后台任务管理中的指定记录
+        ///
+        /// 删除后台任务管理中的指定记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteBackgroundTaskResponse> DeleteBackgroundTaskAsync(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteBackgroundTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", deleteBackgroundTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackgroundTaskRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteBackgroundTaskResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteBackgroundTaskResponse> DeleteBackgroundTaskAsyncInvoker(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteBackgroundTaskRequest.InstanceId.ToString());
+            urlParam.Add("task_id", deleteBackgroundTaskRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackgroundTaskRequest);
+            return new AsyncInvoker<DeleteBackgroundTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBackgroundTaskResponse>);
+        }
+        
+        /// <summary>
         /// 删除指定消费组
         ///
         /// 删除指定消费组。
@@ -234,7 +318,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteConsumerGroupResponse>(response);
+            return JsonUtils.DeSerialize<DeleteConsumerGroupResponse>(response);
         }
 
         public AsyncInvoker<DeleteConsumerGroupResponse> DeleteConsumerGroupAsyncInvoker(DeleteConsumerGroupRequest deleteConsumerGroupRequest)
@@ -244,7 +328,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             urlParam.Add("group", deleteConsumerGroupRequest.Group.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupRequest);
-            return new AsyncInvoker<DeleteConsumerGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteConsumerGroupResponse>);
+            return new AsyncInvoker<DeleteConsumerGroupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteConsumerGroupResponse>);
         }
         
         /// <summary>
@@ -411,6 +495,32 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
+        /// 查询实例的后台任务列表
+        ///
+        /// 查询实例的后台任务列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListBackgroundTasksResponse> ListBackgroundTasksAsync(ListBackgroundTasksRequest listBackgroundTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listBackgroundTasksRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackgroundTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListBackgroundTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListBackgroundTasksResponse> ListBackgroundTasksAsyncInvoker(ListBackgroundTasksRequest listBackgroundTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listBackgroundTasksRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackgroundTasksRequest);
+            return new AsyncInvoker<ListBackgroundTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBackgroundTasksResponse>);
+        }
+        
+        /// <summary>
         /// 查询代理列表
         ///
         /// 查询代理列表。
@@ -464,6 +574,34 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group_id}/accesspolicy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumeGroupAccessPolicyRequest);
             return new AsyncInvoker<ListConsumeGroupAccessPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConsumeGroupAccessPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例诊断报告列表
+        ///
+        /// 查询实例诊断报告列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDiagnosisReportsResponse> ListDiagnosisReportsAsync(ListDiagnosisReportsRequest listDiagnosisReportsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listDiagnosisReportsRequest.Engine.ToString());
+            urlParam.Add("instance_id", listDiagnosisReportsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/diagnosis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDiagnosisReportsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDiagnosisReportsResponse>(response);
+        }
+
+        public AsyncInvoker<ListDiagnosisReportsResponse> ListDiagnosisReportsAsyncInvoker(ListDiagnosisReportsRequest listDiagnosisReportsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", listDiagnosisReportsRequest.Engine.ToString());
+            urlParam.Add("instance_id", listDiagnosisReportsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/diagnosis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDiagnosisReportsRequest);
+            return new AsyncInvoker<ListDiagnosisReportsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDiagnosisReportsResponse>);
         }
         
         /// <summary>
@@ -680,6 +818,34 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
+        /// 修改实例ssl相关配置
+        ///
+        /// 修改实例ssl相关配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyInstanceSslConfigResponse> ModifyInstanceSslConfigAsync(ModifyInstanceSslConfigRequest modifyInstanceSslConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", modifyInstanceSslConfigRequest.Engine.ToString());
+            urlParam.Add("instance_id", modifyInstanceSslConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/plain-ssl-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyInstanceSslConfigRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ModifyInstanceSslConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyInstanceSslConfigResponse> ModifyInstanceSslConfigAsyncInvoker(ModifyInstanceSslConfigRequest modifyInstanceSslConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", modifyInstanceSslConfigRequest.Engine.ToString());
+            urlParam.Add("instance_id", modifyInstanceSslConfigRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/plain-ssl-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyInstanceSslConfigRequest);
+            return new AsyncInvoker<ModifyInstanceSslConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<ModifyInstanceSslConfigResponse>);
+        }
+        
+        /// <summary>
         /// 重置消费进度
         ///
         /// 重置消费进度。
@@ -740,34 +906,6 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
-        /// 重启指定实例
-        ///
-        /// 重启指定实例。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<RestartInstanceResponse> RestartInstanceAsync(RestartInstanceRequest restartInstanceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", restartInstanceRequest.Engine.ToString());
-            urlParam.Add("instance_id", restartInstanceRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/restart", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartInstanceRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<RestartInstanceResponse>(response);
-        }
-
-        public AsyncInvoker<RestartInstanceResponse> RestartInstanceAsyncInvoker(RestartInstanceRequest restartInstanceRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", restartInstanceRequest.Engine.ToString());
-            urlParam.Add("instance_id", restartInstanceRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/restart", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartInstanceRequest);
-            return new AsyncInvoker<RestartInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestartInstanceResponse>);
-        }
-        
-        /// <summary>
         /// 重发死信消息
         ///
         /// 重发死信消息。
@@ -793,6 +931,34 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages/deadletter-resend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendDlqMessageRequest);
             return new AsyncInvoker<SendDlqMessageResponse>(this, "POST", request, JsonUtils.DeSerialize<SendDlqMessageResponse>);
+        }
+        
+        /// <summary>
+        /// 发送消息
+        ///
+        /// 发送消息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SendMessageResponse> SendMessageAsync(SendMessageRequest sendMessageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", sendMessageRequest.Engine.ToString());
+            urlParam.Add("instance_id", sendMessageRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendMessageRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<SendMessageResponse>(response);
+        }
+
+        public AsyncInvoker<SendMessageResponse> SendMessageAsyncInvoker(SendMessageRequest sendMessageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", sendMessageRequest.Engine.ToString());
+            urlParam.Add("instance_id", sendMessageRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/messages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendMessageRequest);
+            return new AsyncInvoker<SendMessageResponse>(this, "POST", request, JsonUtils.DeSerialize<SendMessageResponse>);
         }
         
         /// <summary>
@@ -849,6 +1015,62 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConsumerListOrDetailsRequest);
             return new AsyncInvoker<ShowConsumerListOrDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowConsumerListOrDetailsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例诊断报告
+        ///
+        /// 查询实例诊断报告。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDiagnosisReportResponse> ShowDiagnosisReportAsync(ShowDiagnosisReportRequest showDiagnosisReportRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showDiagnosisReportRequest.Engine.ToString());
+            urlParam.Add("report_id", showDiagnosisReportRequest.ReportId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/diagnosis/{report_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisReportRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDiagnosisReportResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDiagnosisReportResponse> ShowDiagnosisReportAsyncInvoker(ShowDiagnosisReportRequest showDiagnosisReportRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showDiagnosisReportRequest.Engine.ToString());
+            urlParam.Add("report_id", showDiagnosisReportRequest.ReportId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/diagnosis/{report_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisReportRequest);
+            return new AsyncInvoker<ShowDiagnosisReportResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDiagnosisReportResponse>);
+        }
+        
+        /// <summary>
+        /// 查询stack信息
+        ///
+        /// 查询stack信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDiagnosisStackResponse> ShowDiagnosisStackAsync(ShowDiagnosisStackRequest showDiagnosisStackRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showDiagnosisStackRequest.Engine.ToString());
+            urlParam.Add("stack_id", showDiagnosisStackRequest.StackId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/diagnosis/stack/{stack_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisStackRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDiagnosisStackResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDiagnosisStackResponse> ShowDiagnosisStackAsyncInvoker(ShowDiagnosisStackRequest showDiagnosisStackRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showDiagnosisStackRequest.Engine.ToString());
+            urlParam.Add("stack_id", showDiagnosisStackRequest.StackId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/diagnosis/stack/{stack_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisStackRequest);
+            return new AsyncInvoker<ShowDiagnosisStackResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDiagnosisStackResponse>);
         }
         
         /// <summary>
@@ -1076,7 +1298,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConsumerGroupRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerializeNull<UpdateConsumerGroupResponse>(response);
+            return JsonUtils.DeSerialize<UpdateConsumerGroupResponse>(response);
         }
 
         public AsyncInvoker<UpdateConsumerGroupResponse> UpdateConsumerGroupAsyncInvoker(UpdateConsumerGroupRequest updateConsumerGroupRequest)
@@ -1086,7 +1308,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             urlParam.Add("group", updateConsumerGroupRequest.Group.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateConsumerGroupRequest);
-            return new AsyncInvoker<UpdateConsumerGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateConsumerGroupResponse>);
+            return new AsyncInvoker<UpdateConsumerGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateConsumerGroupResponse>);
         }
         
         /// <summary>
@@ -1238,7 +1460,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTopicRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteTopicResponse>(response);
+            return JsonUtils.DeSerialize<DeleteTopicResponse>(response);
         }
 
         public AsyncInvoker<DeleteTopicResponse> DeleteTopicAsyncInvoker(DeleteTopicRequest deleteTopicRequest)
@@ -1248,7 +1470,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             urlParam.Add("topic", deleteTopicRequest.Topic.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTopicRequest);
-            return new AsyncInvoker<DeleteTopicResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTopicResponse>);
+            return new AsyncInvoker<DeleteTopicResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteTopicResponse>);
         }
         
         /// <summary>
@@ -1376,7 +1598,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerializeNull<UpdateTopicResponse>(response);
+            return JsonUtils.DeSerialize<UpdateTopicResponse>(response);
         }
 
         public AsyncInvoker<UpdateTopicResponse> UpdateTopicAsyncInvoker(UpdateTopicRequest updateTopicRequest)
@@ -1386,7 +1608,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
             urlParam.Add("topic", updateTopicRequest.Topic.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/{topic}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicRequest);
-            return new AsyncInvoker<UpdateTopicResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateTopicResponse>);
+            return new AsyncInvoker<UpdateTopicResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTopicResponse>);
         }
         
     }

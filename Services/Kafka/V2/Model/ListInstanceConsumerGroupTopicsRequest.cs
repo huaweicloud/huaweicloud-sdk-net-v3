@@ -45,14 +45,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 当次查询返回的最大topic个数，默认值为10，取值范围为1~50。
+        /// 当次查询返回的最大Topic个数，默认值为10，取值范围为1~50。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 排序规则： - topic：按topic名称排序。 - partition：按分区数排序。 - messages：按消息数量排序，默认方式。
+        /// 排序规则： - topic：按Topic名称排序。 - partition：按分区数排序。 - messages：按消息数量排序，默认方式。
         /// </summary>
         [SDKProperty("sort_key", IsQuery = true)]
         [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string SortDir { get; set; }
 
         /// <summary>
-        /// topic名称。
+        /// Topic名称。
         /// </summary>
         [SDKProperty("topic", IsQuery = true)]
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]

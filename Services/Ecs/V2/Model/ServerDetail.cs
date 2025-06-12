@@ -295,6 +295,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("security_options", NullValueHandling = NullValueHandling.Ignore)]
+        public SecurityOptions SecurityOptions { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("hypervisor", NullValueHandling = NullValueHandling.Ignore)]
         public Hypervisor Hypervisor { get; set; }
 
@@ -353,6 +359,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sysTags: ").Append(SysTags).Append("\n");
             sb.Append("  cpuOptions: ").Append(CpuOptions).Append("\n");
+            sb.Append("  securityOptions: ").Append(SecurityOptions).Append("\n");
             sb.Append("  hypervisor: ").Append(Hypervisor).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -418,6 +425,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.SysTags != input.SysTags || (this.SysTags != null && input.SysTags != null && !this.SysTags.SequenceEqual(input.SysTags))) return false;
             if (this.CpuOptions != input.CpuOptions || (this.CpuOptions != null && !this.CpuOptions.Equals(input.CpuOptions))) return false;
+            if (this.SecurityOptions != input.SecurityOptions || (this.SecurityOptions != null && !this.SecurityOptions.Equals(input.SecurityOptions))) return false;
             if (this.Hypervisor != input.Hypervisor || (this.Hypervisor != null && !this.Hypervisor.Equals(input.Hypervisor))) return false;
 
             return true;
@@ -477,6 +485,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.SysTags != null) hashCode = hashCode * 59 + this.SysTags.GetHashCode();
                 if (this.CpuOptions != null) hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
+                if (this.SecurityOptions != null) hashCode = hashCode * 59 + this.SecurityOptions.GetHashCode();
                 if (this.Hypervisor != null) hashCode = hashCode * 59 + this.Hypervisor.GetHashCode();
                 return hashCode;
             }

@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 修改的topic。
+    /// 修改的Topic。
     /// </summary>
     public class UpdateInstanceTopicReqTopics 
     {
 
         /// <summary>
-        /// topic名称，不支持修改。
+        /// Topic名称，不支持修改。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -53,13 +53,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<int?> NewPartitionBrokers { get; set; }
 
         /// <summary>
-        /// topic配置
+        /// Topic配置
         /// </summary>
         [JsonProperty("topic_other_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<CreateInstanceTopicReqTopicOtherConfigs> TopicOtherConfigs { get; set; }
 
         /// <summary>
-        /// topic描述
+        /// Topic描述
         /// </summary>
         [JsonProperty("topic_desc", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicDesc { get; set; }

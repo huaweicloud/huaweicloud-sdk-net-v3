@@ -25,6 +25,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("device_id", NullValueHandling = NullValueHandling.Ignore)]
+        public ParameterRef DeviceId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]
         public ParameterRef NodeId { get; set; }
 
@@ -50,6 +56,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             var sb = new StringBuilder();
             sb.Append("class DeviceResource {\n");
             sb.Append("  deviceName: ").Append(DeviceName).Append("\n");
+            sb.Append("  deviceId: ").Append(DeviceId).Append("\n");
             sb.Append("  nodeId: ").Append(NodeId).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
@@ -72,6 +79,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             if (input == null) return false;
             if (this.DeviceName != input.DeviceName || (this.DeviceName != null && !this.DeviceName.Equals(input.DeviceName))) return false;
+            if (this.DeviceId != input.DeviceId || (this.DeviceId != null && !this.DeviceId.Equals(input.DeviceId))) return false;
             if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
@@ -88,6 +96,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             {
                 var hashCode = 41;
                 if (this.DeviceName != null) hashCode = hashCode * 59 + this.DeviceName.GetHashCode();
+                if (this.DeviceId != null) hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
                 if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();

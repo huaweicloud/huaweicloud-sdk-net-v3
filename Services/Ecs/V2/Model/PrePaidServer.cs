@@ -163,8 +163,20 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("security_options", NullValueHandling = NullValueHandling.Ignore)]
+        public SecurityOptions SecurityOptions { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonProperty("serial_console_options", NullValueHandling = NullValueHandling.Ignore)]
         public SerialConsoleOptions SerialConsoleOptions { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metadata_options", NullValueHandling = NullValueHandling.Ignore)]
+        public UpdateServerMetadataOptionsRequestBody MetadataOptions { get; set; }
 
 
 
@@ -199,7 +211,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  serverTags: ").Append(ServerTags).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  cpuOptions: ").Append(CpuOptions).Append("\n");
+            sb.Append("  securityOptions: ").Append(SecurityOptions).Append("\n");
             sb.Append("  serialConsoleOptions: ").Append(SerialConsoleOptions).Append("\n");
+            sb.Append("  metadataOptions: ").Append(MetadataOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -242,7 +256,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             if (this.ServerTags != input.ServerTags || (this.ServerTags != null && input.ServerTags != null && !this.ServerTags.SequenceEqual(input.ServerTags))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.CpuOptions != input.CpuOptions || (this.CpuOptions != null && !this.CpuOptions.Equals(input.CpuOptions))) return false;
+            if (this.SecurityOptions != input.SecurityOptions || (this.SecurityOptions != null && !this.SecurityOptions.Equals(input.SecurityOptions))) return false;
             if (this.SerialConsoleOptions != input.SerialConsoleOptions || (this.SerialConsoleOptions != null && !this.SerialConsoleOptions.Equals(input.SerialConsoleOptions))) return false;
+            if (this.MetadataOptions != input.MetadataOptions || (this.MetadataOptions != null && !this.MetadataOptions.Equals(input.MetadataOptions))) return false;
 
             return true;
         }
@@ -279,7 +295,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 if (this.ServerTags != null) hashCode = hashCode * 59 + this.ServerTags.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.CpuOptions != null) hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
+                if (this.SecurityOptions != null) hashCode = hashCode * 59 + this.SecurityOptions.GetHashCode();
                 if (this.SerialConsoleOptions != null) hashCode = hashCode * 59 + this.SerialConsoleOptions.GetHashCode();
+                if (this.MetadataOptions != null) hashCode = hashCode * 59 + this.MetadataOptions.GetHashCode();
                 return hashCode;
             }
         }

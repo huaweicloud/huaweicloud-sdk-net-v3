@@ -28,6 +28,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
+        /// <summary>
+        /// 返回道路运输证在原图中的坐标位置的开关，默认false，取值范围包括：  - true: 开启返回坐标位置的功能。 - false: 关闭返回坐标位置的功能。 
+        /// </summary>
+        [JsonProperty("return_image_location", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnImageLocation { get; set; }
+
+        /// <summary>
+        /// 返回道路运输证（base64）的开关，默认false，取值范围包括：  - true: 开启道路运输证（base64）的功能。 - false: 关闭道路运输证（base64）的功能。 
+        /// </summary>
+        [JsonProperty("return_adjusted_image", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnAdjustedImage { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +51,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("class TransportationLicenseRequestBody {\n");
             sb.Append("  image: ").Append(Image).Append("\n");
             sb.Append("  url: ").Append(Url).Append("\n");
+            sb.Append("  returnImageLocation: ").Append(ReturnImageLocation).Append("\n");
+            sb.Append("  returnAdjustedImage: ").Append(ReturnAdjustedImage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +73,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (input == null) return false;
             if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
             if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.ReturnImageLocation != input.ReturnImageLocation || (this.ReturnImageLocation != null && !this.ReturnImageLocation.Equals(input.ReturnImageLocation))) return false;
+            if (this.ReturnAdjustedImage != input.ReturnAdjustedImage || (this.ReturnAdjustedImage != null && !this.ReturnAdjustedImage.Equals(input.ReturnAdjustedImage))) return false;
 
             return true;
         }
@@ -73,6 +89,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 var hashCode = 41;
                 if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
                 if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.ReturnImageLocation != null) hashCode = hashCode * 59 + this.ReturnImageLocation.GetHashCode();
+                if (this.ReturnAdjustedImage != null) hashCode = hashCode * 59 + this.ReturnAdjustedImage.GetHashCode();
                 return hashCode;
             }
         }

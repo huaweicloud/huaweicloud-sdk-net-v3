@@ -611,6 +611,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public bool? Ipv6Enable { get; set; }
 
         /// <summary>
+        /// 是否开启Proxy功能。   - true：支持   - false：不支持
+        /// </summary>
+        [JsonProperty("proxy_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ProxyEnable { get; set; }
+
+        /// <summary>
         /// 是否开启公网访问功能。默认不开启公网。 - true：开启 - false：不开启
         /// </summary>
         [JsonProperty("enable_publicip", NullValueHandling = NullValueHandling.Ignore)]
@@ -627,6 +633,18 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         [JsonProperty("broker_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? BrokerNum { get; set; }
+
+        /// <summary>
+        /// 架构类型。
+        /// </summary>
+        [JsonProperty("arch_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ArchType { get; set; }
+
+        /// <summary>
+        /// 实例使用的安全协议。
+        /// </summary>
+        [JsonProperty("tls_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string TlsMode { get; set; }
 
         /// <summary>
         /// 
@@ -658,9 +676,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
             sb.Append("  ipv6Enable: ").Append(Ipv6Enable).Append("\n");
+            sb.Append("  proxyEnable: ").Append(ProxyEnable).Append("\n");
             sb.Append("  enablePublicip: ").Append(EnablePublicip).Append("\n");
             sb.Append("  publicipId: ").Append(PublicipId).Append("\n");
             sb.Append("  brokerNum: ").Append(BrokerNum).Append("\n");
+            sb.Append("  archType: ").Append(ArchType).Append("\n");
+            sb.Append("  tlsMode: ").Append(TlsMode).Append("\n");
             sb.Append("  bssParam: ").Append(BssParam).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -695,9 +716,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.EnableAcl != input.EnableAcl || (this.EnableAcl != null && !this.EnableAcl.Equals(input.EnableAcl))) return false;
             if (this.Ipv6Enable != input.Ipv6Enable || (this.Ipv6Enable != null && !this.Ipv6Enable.Equals(input.Ipv6Enable))) return false;
+            if (this.ProxyEnable != input.ProxyEnable || (this.ProxyEnable != null && !this.ProxyEnable.Equals(input.ProxyEnable))) return false;
             if (this.EnablePublicip != input.EnablePublicip || (this.EnablePublicip != null && !this.EnablePublicip.Equals(input.EnablePublicip))) return false;
             if (this.PublicipId != input.PublicipId || (this.PublicipId != null && !this.PublicipId.Equals(input.PublicipId))) return false;
             if (this.BrokerNum != input.BrokerNum || (this.BrokerNum != null && !this.BrokerNum.Equals(input.BrokerNum))) return false;
+            if (this.ArchType != input.ArchType || (this.ArchType != null && !this.ArchType.Equals(input.ArchType))) return false;
+            if (this.TlsMode != input.TlsMode || (this.TlsMode != null && !this.TlsMode.Equals(input.TlsMode))) return false;
             if (this.BssParam != input.BssParam || (this.BssParam != null && !this.BssParam.Equals(input.BssParam))) return false;
 
             return true;
@@ -726,9 +750,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.EnableAcl != null) hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
                 if (this.Ipv6Enable != null) hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
+                if (this.ProxyEnable != null) hashCode = hashCode * 59 + this.ProxyEnable.GetHashCode();
                 if (this.EnablePublicip != null) hashCode = hashCode * 59 + this.EnablePublicip.GetHashCode();
                 if (this.PublicipId != null) hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
                 if (this.BrokerNum != null) hashCode = hashCode * 59 + this.BrokerNum.GetHashCode();
+                if (this.ArchType != null) hashCode = hashCode * 59 + this.ArchType.GetHashCode();
+                if (this.TlsMode != null) hashCode = hashCode * 59 + this.TlsMode.GetHashCode();
                 if (this.BssParam != null) hashCode = hashCode * 59 + this.BssParam.GetHashCode();
                 return hashCode;
             }

@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public int? TopicMaxPartitions { get; set; }
 
         /// <summary>
-        /// **参数解释**： topic列表。
+        /// **参数解释**： Topic列表。
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
         public List<TopicEntity> Topics { get; set; }

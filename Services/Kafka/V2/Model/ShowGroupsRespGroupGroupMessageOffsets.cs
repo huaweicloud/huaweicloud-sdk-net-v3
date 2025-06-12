@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public long? Lag { get; set; }
 
         /// <summary>
-        /// topic名称。
+        /// Topic名称。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }

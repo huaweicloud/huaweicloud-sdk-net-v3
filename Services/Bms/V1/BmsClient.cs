@@ -545,6 +545,32 @@ namespace HuaweiCloud.SDK.Bms.V1
         }
         
         /// <summary>
+        /// 查询裸金属服务器元数据配置
+        ///
+        /// 查询云服务器元数据配置，通过本接口，您可以查询指裸金属服务器的元数据配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBaremetalServerMetadataOptionsResponse ShowBaremetalServerMetadataOptions(ShowBaremetalServerMetadataOptionsRequest showBaremetalServerMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showBaremetalServerMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerMetadataOptionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowBaremetalServerMetadataOptionsResponse>(response);
+        }
+
+        public SyncInvoker<ShowBaremetalServerMetadataOptionsResponse> ShowBaremetalServerMetadataOptionsInvoker(ShowBaremetalServerMetadataOptionsRequest showBaremetalServerMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showBaremetalServerMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerMetadataOptionsRequest);
+            return new SyncInvoker<ShowBaremetalServerMetadataOptionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBaremetalServerMetadataOptionsResponse>);
+        }
+        
+        /// <summary>
         /// 查询裸金属服务器标签
         ///
         /// - 查询指定云服务器的标签信息。
@@ -748,6 +774,32 @@ namespace HuaweiCloud.SDK.Bms.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerMetadataRequest);
             return new SyncInvoker<UpdateBaremetalServerMetadataResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateBaremetalServerMetadataResponse>);
+        }
+        
+        /// <summary>
+        /// 更新裸金属服务器元数据配置
+        ///
+        /// 更新裸金属服务器元数据配置，通过本接口，您可以选择启用或关闭IMDS服务，也可以选择IMDS服务的版本。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateBaremetalServerMetadataOptionsResponse UpdateBaremetalServerMetadataOptions(UpdateBaremetalServerMetadataOptionsRequest updateBaremetalServerMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateBaremetalServerMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerMetadataOptionsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateBaremetalServerMetadataOptionsResponse>(response);
+        }
+
+        public SyncInvoker<UpdateBaremetalServerMetadataOptionsResponse> UpdateBaremetalServerMetadataOptionsInvoker(UpdateBaremetalServerMetadataOptionsRequest updateBaremetalServerMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateBaremetalServerMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerMetadataOptionsRequest);
+            return new SyncInvoker<UpdateBaremetalServerMetadataOptionsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateBaremetalServerMetadataOptionsResponse>);
         }
         
         /// <summary>

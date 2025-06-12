@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// Smart Connector任务详情。
+        /// Smart Connect任务详情。
         /// </summary>
         [JsonProperty("tasks", NullValueHandling = NullValueHandling.Ignore)]
         public List<SmartConnectTaskEntity> Tasks { get; set; }
 
         /// <summary>
-        /// Smart Connector任务数。
+        /// Smart Connect任务数。
         /// </summary>
         [JsonProperty("total_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalNumber { get; set; }
 
         /// <summary>
-        /// Smart Connector最大任务数。
+        /// Smart Connect最大任务数。
         /// </summary>
         [JsonProperty("max_tasks", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxTasks { get; set; }
 
         /// <summary>
-        /// Smart Connector任务配额。
+        /// Smart Connect任务配额。
         /// </summary>
         [JsonProperty("quota_tasks", NullValueHandling = NullValueHandling.Ignore)]
         public int? QuotaTasks { get; set; }

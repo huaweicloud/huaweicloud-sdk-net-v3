@@ -37,6 +37,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("package_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PackageName { get; set; }
 
+        /// <summary>
+        /// 函数名称。支持模糊查询
+        /// </summary>
+        [SDKProperty("func_name", IsQuery = true)]
+        [JsonProperty("func_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string FuncName { get; set; }
+
 
 
         /// <summary>
@@ -49,6 +56,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  maxitems: ").Append(Maxitems).Append("\n");
             sb.Append("  packageName: ").Append(PackageName).Append("\n");
+            sb.Append("  funcName: ").Append(FuncName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +78,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
             if (this.Maxitems != input.Maxitems || (this.Maxitems != null && !this.Maxitems.Equals(input.Maxitems))) return false;
             if (this.PackageName != input.PackageName || (this.PackageName != null && !this.PackageName.Equals(input.PackageName))) return false;
+            if (this.FuncName != input.FuncName || (this.FuncName != null && !this.FuncName.Equals(input.FuncName))) return false;
 
             return true;
         }
@@ -85,6 +94,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.Maxitems != null) hashCode = hashCode * 59 + this.Maxitems.GetHashCode();
                 if (this.PackageName != null) hashCode = hashCode * 59 + this.PackageName.GetHashCode();
+                if (this.FuncName != null) hashCode = hashCode * 59 + this.FuncName.GetHashCode();
                 return hashCode;
             }
         }

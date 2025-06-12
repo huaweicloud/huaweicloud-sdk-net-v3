@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     public class UpdateTopicReq 
     {
         /// <summary>
-        /// 权限。
+        /// **参数解释**： 权限。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>权限。</value>
+        /// <value>**参数解释**： 权限。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<PermissionEnum>))]
         public class PermissionEnum
         {
@@ -138,22 +138,34 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
 
         /// <summary>
-        /// 总读队列个数。
+        /// **参数解释**： 总读队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("read_queue_num", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? ReadQueueNum { get; set; }
 
         /// <summary>
-        /// 总写队列个数。
+        /// **参数解释**： 总写队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("write_queue_num", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? WriteQueueNum { get; set; }
 
         /// <summary>
-        /// 权限。
+        /// **参数解释**： 权限。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("permission", NullValueHandling = NullValueHandling.Ignore)]
         public PermissionEnum Permission { get; set; }
+        /// <summary>
+        /// **参数解释**： 队列。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("queues", NullValueHandling = NullValueHandling.Ignore)]
+        public List<UpdateTopicQueueEntity> Queues { get; set; }
+
+        /// <summary>
+        /// **参数解释**： Topic描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("topic_desc", NullValueHandling = NullValueHandling.Ignore)]
+        public string TopicDesc { get; set; }
+
 
 
         /// <summary>
@@ -166,6 +178,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             sb.Append("  readQueueNum: ").Append(ReadQueueNum).Append("\n");
             sb.Append("  writeQueueNum: ").Append(WriteQueueNum).Append("\n");
             sb.Append("  permission: ").Append(Permission).Append("\n");
+            sb.Append("  queues: ").Append(Queues).Append("\n");
+            sb.Append("  topicDesc: ").Append(TopicDesc).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +201,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
             if (this.ReadQueueNum != input.ReadQueueNum || (this.ReadQueueNum != null && !this.ReadQueueNum.Equals(input.ReadQueueNum))) return false;
             if (this.WriteQueueNum != input.WriteQueueNum || (this.WriteQueueNum != null && !this.WriteQueueNum.Equals(input.WriteQueueNum))) return false;
             if (this.Permission != input.Permission) return false;
+            if (this.Queues != input.Queues || (this.Queues != null && input.Queues != null && !this.Queues.SequenceEqual(input.Queues))) return false;
+            if (this.TopicDesc != input.TopicDesc || (this.TopicDesc != null && !this.TopicDesc.Equals(input.TopicDesc))) return false;
 
             return true;
         }
@@ -202,6 +218,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
                 if (this.ReadQueueNum != null) hashCode = hashCode * 59 + this.ReadQueueNum.GetHashCode();
                 if (this.WriteQueueNum != null) hashCode = hashCode * 59 + this.WriteQueueNum.GetHashCode();
                 hashCode = hashCode * 59 + this.Permission.GetHashCode();
+                if (this.Queues != null) hashCode = hashCode * 59 + this.Queues.GetHashCode();
+                if (this.TopicDesc != null) hashCode = hashCode * 59 + this.TopicDesc.GetHashCode();
                 return hashCode;
             }
         }

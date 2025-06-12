@@ -184,6 +184,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("spec_param", NullValueHandling = NullValueHandling.Ignore)]
+        public SpecParam SpecParam { get; set; }
+
 
 
         /// <summary>
@@ -221,6 +227,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  port: ").Append(Port).Append("\n");
             sb.Append("  renameCommands: ").Append(RenameCommands).Append("\n");
             sb.Append("  templateId: ").Append(TemplateId).Append("\n");
+            sb.Append("  specParam: ").Append(SpecParam).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -267,6 +274,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
             if (this.RenameCommands != input.RenameCommands || (this.RenameCommands != null && !this.RenameCommands.Equals(input.RenameCommands))) return false;
             if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.SpecParam != input.SpecParam || (this.SpecParam != null && !this.SpecParam.Equals(input.SpecParam))) return false;
 
             return true;
         }
@@ -307,6 +315,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
                 if (this.RenameCommands != null) hashCode = hashCode * 59 + this.RenameCommands.GetHashCode();
                 if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.SpecParam != null) hashCode = hashCode * 59 + this.SpecParam.GetHashCode();
                 return hashCode;
             }
         }

@@ -71,6 +71,34 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 批量扩容云硬盘
+        ///
+        /// 对按需或者包周期云硬盘进行批量扩容。
+        /// [在批量扩容存在包周期云硬盘的场景下：](tag:hws)
+        /// - [如果您需要查看订单可用的优惠券，请参考\&quot;[查询订单可用优惠券](https://support.huaweicloud.com/api-oce/zh-cn_topic_0092953630.html)\&quot;。](tag:hws)
+        /// - [如果您需要支付订单，请参考\&quot;[支付包周期产品订单](https://support.huaweicloud.com/api-oce/api_order_00030.html)\&quot;。](tag:hws)
+        /// - [如果您需要退订该包周期资源，请参考“[退订包周期资源](https://support.huaweicloud.com/api-oce/zh-cn_topic_0082522030.html)”。](tag:hws)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchResizeVolumesResponse> BatchResizeVolumesAsync(BatchResizeVolumesRequest batchResizeVolumesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/volumes/batch-extend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchResizeVolumesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchResizeVolumesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchResizeVolumesResponse> BatchResizeVolumesAsyncInvoker(BatchResizeVolumesRequest batchResizeVolumesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/volumes/batch-extend", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchResizeVolumesRequest);
+            return new AsyncInvoker<BatchResizeVolumesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchResizeVolumesResponse>);
+        }
+        
+        /// <summary>
         /// 接受云硬盘过户
         ///
         /// 通过云硬盘过户记录ID以及身份认证密钥来接受云硬盘过户。

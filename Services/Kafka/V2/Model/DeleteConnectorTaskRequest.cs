@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// Smart Connector任务ID。
+        /// Smart Connect任务ID。
         /// </summary>
         [SDKProperty("task_id", IsPath = true)]
         [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]

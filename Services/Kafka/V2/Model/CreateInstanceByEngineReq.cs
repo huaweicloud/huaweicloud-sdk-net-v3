@@ -488,7 +488,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
         public EngineEnum Engine { get; set; }
         /// <summary>
-        /// 消息引擎的版本。取值填写为：   [- 1.1.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,sbc)   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,sbc)   - 2.7   [- 3.x](tag:hws,hws_hk,dt,sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu)
+        /// 消息引擎的版本。取值填写为：   [- 1.1.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,sbc,cmcc)   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,sbc,cmcc)   - 2.7   [- 3.x](tag:hws,hws_hk,dt,sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu)
         /// </summary>
         [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
         public string EngineVersion { get; set; }
@@ -542,7 +542,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 产品ID。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ocb,hws_ocb,dt,ctc,sbc,fcs,hcs,g42,hk_g42,tm,hk_tm,hws_eu)[产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:cmcc)
+        /// 产品ID。  产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
@@ -630,7 +630,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public bool? ConnectorEnable { get; set; }
 
         /// <summary>
-        /// 是否打开kafka自动创建topic功能。 - true：开启 - false：关闭  当您选择开启，表示生产或消费一个未创建的Topic时，会自动创建一个包含3个分区和3个副本的Topic。  默认是false关闭。
+        /// 是否打开kafka自动创建Topic功能。 - true：开启 - false：关闭  当您选择开启，表示生产或消费一个未创建的Topic时，会自动创建一个包含3个分区和3个副本的Topic。  默认是false关闭。
         /// </summary>
         [JsonProperty("enable_auto_topic", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableAutoTopic { get; set; }
@@ -653,7 +653,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public List<TagEntity> Tags { get; set; }
 
         /// <summary>
-        /// CPU架构。当前只支持X86架构[以及arm架构](tag:hcs,fcs)。  取值范围：   - X86   [- arm](tag:hcs,fcs)
+        /// CPU架构。当前只支持X86架构[以及arm架构](tag:hcs,fcs,ctc)。  取值范围：   - X86   [- arm](tag:hcs,fcs,ctc)
         /// </summary>
         [JsonProperty("arch_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ArchType { get; set; }

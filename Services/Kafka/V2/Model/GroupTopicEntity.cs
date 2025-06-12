@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 消费组TOPIC详情
+    /// 消费组Topic详情
     /// </summary>
     public class GroupTopicEntity 
     {
 
         /// <summary>
-        /// TOPIC名称
+        /// Topic名称
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }

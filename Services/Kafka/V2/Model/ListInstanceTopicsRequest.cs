@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Offset { get; set; }
 
         /// <summary>
-        /// **参数解释**： 当次查询返回的最大实例个数。 **约束限制**： 不涉及。 **取值范围**： 1~50。 **默认取值**： 10。
+        /// **参数解释**： 当次查询返回的最大实例个数。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

@@ -277,7 +277,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public List<string> Brokers { get; set; }
 
         /// <summary>
-        /// 队列数，范围1~50。
+        /// 总队列数，范围1~50。
         /// </summary>
         [JsonProperty("queue_num", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? QueueNum { get; set; }

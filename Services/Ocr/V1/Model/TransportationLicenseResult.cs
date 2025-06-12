@@ -107,6 +107,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string AssessedTechnicalLevel { get; set; }
 
         /// <summary>
+        /// 道路运输证在原图中的坐标位置，输出左上、右上、右下、左下四个点坐标。仅在return_image_location设置为true时返回该字段。 
+        /// </summary>
+        [JsonProperty("image_location", NullValueHandling = NullValueHandling.Ignore)]
+        public List<List<int?>> ImageLocation { get; set; }
+
+        /// <summary>
+        /// 道路运输证图片的base64编码结果。仅在return_adjusted_image设置为true时返回该字段。 
+        /// </summary>
+        [JsonProperty("adjusted_image", NullValueHandling = NullValueHandling.Ignore)]
+        public string AdjustedImage { get; set; }
+
+        /// <summary>
         /// 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
         /// </summary>
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
@@ -136,6 +148,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  expiryDate: ").Append(ExpiryDate).Append("\n");
             sb.Append("  reviewExpiryDate: ").Append(ReviewExpiryDate).Append("\n");
             sb.Append("  assessedTechnicalLevel: ").Append(AssessedTechnicalLevel).Append("\n");
+            sb.Append("  imageLocation: ").Append(ImageLocation).Append("\n");
+            sb.Append("  adjustedImage: ").Append(AdjustedImage).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -170,6 +184,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.ExpiryDate != input.ExpiryDate || (this.ExpiryDate != null && !this.ExpiryDate.Equals(input.ExpiryDate))) return false;
             if (this.ReviewExpiryDate != input.ReviewExpiryDate || (this.ReviewExpiryDate != null && !this.ReviewExpiryDate.Equals(input.ReviewExpiryDate))) return false;
             if (this.AssessedTechnicalLevel != input.AssessedTechnicalLevel || (this.AssessedTechnicalLevel != null && !this.AssessedTechnicalLevel.Equals(input.AssessedTechnicalLevel))) return false;
+            if (this.ImageLocation != input.ImageLocation || (this.ImageLocation != null && input.ImageLocation != null && !this.ImageLocation.SequenceEqual(input.ImageLocation))) return false;
+            if (this.AdjustedImage != input.AdjustedImage || (this.AdjustedImage != null && !this.AdjustedImage.Equals(input.AdjustedImage))) return false;
             if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
             return true;
@@ -198,6 +214,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.ExpiryDate != null) hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
                 if (this.ReviewExpiryDate != null) hashCode = hashCode * 59 + this.ReviewExpiryDate.GetHashCode();
                 if (this.AssessedTechnicalLevel != null) hashCode = hashCode * 59 + this.AssessedTechnicalLevel.GetHashCode();
+                if (this.ImageLocation != null) hashCode = hashCode * 59 + this.ImageLocation.GetHashCode();
+                if (this.AdjustedImage != null) hashCode = hashCode * 59 + this.AdjustedImage.GetHashCode();
                 if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
