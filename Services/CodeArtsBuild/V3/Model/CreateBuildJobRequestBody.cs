@@ -53,6 +53,18 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public List<CreateBuildJobParameter> Parameters { get; set; }
 
         /// <summary>
+        /// 任务分组id
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateBuildTimeout Timeout { get; set; }
+
+        /// <summary>
         /// 构建执行SCM
         /// </summary>
         [JsonProperty("scms", NullValueHandling = NullValueHandling.Ignore)]
@@ -76,6 +88,18 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         [JsonProperty("build_config_type", NullValueHandling = NullValueHandling.Ignore)]
         public string BuildConfigType { get; set; }
 
+        /// <summary>
+        /// 提交代码触发构建开关
+        /// </summary>
+        [JsonProperty("build_if_code_updated", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? BuildIfCodeUpdated { get; set; }
+
+        /// <summary>
+        /// 定时任务触发器集合
+        /// </summary>
+        [JsonProperty("triggers", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Trigger> Triggers { get; set; }
+
 
 
         /// <summary>
@@ -91,10 +115,14 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             sb.Append("  autoUpdateSubModule: ").Append(AutoUpdateSubModule).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  parameters: ").Append(Parameters).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
+            sb.Append("  timeout: ").Append(Timeout).Append("\n");
             sb.Append("  scms: ").Append(Scms).Append("\n");
             sb.Append("  steps: ").Append(Steps).Append("\n");
             sb.Append("  hostType: ").Append(HostType).Append("\n");
             sb.Append("  buildConfigType: ").Append(BuildConfigType).Append("\n");
+            sb.Append("  buildIfCodeUpdated: ").Append(BuildIfCodeUpdated).Append("\n");
+            sb.Append("  triggers: ").Append(Triggers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -119,10 +147,14 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             if (this.AutoUpdateSubModule != input.AutoUpdateSubModule || (this.AutoUpdateSubModule != null && !this.AutoUpdateSubModule.Equals(input.AutoUpdateSubModule))) return false;
             if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
             if (this.Parameters != input.Parameters || (this.Parameters != null && input.Parameters != null && !this.Parameters.SequenceEqual(input.Parameters))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
             if (this.Scms != input.Scms || (this.Scms != null && input.Scms != null && !this.Scms.SequenceEqual(input.Scms))) return false;
             if (this.Steps != input.Steps || (this.Steps != null && input.Steps != null && !this.Steps.SequenceEqual(input.Steps))) return false;
             if (this.HostType != input.HostType || (this.HostType != null && !this.HostType.Equals(input.HostType))) return false;
             if (this.BuildConfigType != input.BuildConfigType || (this.BuildConfigType != null && !this.BuildConfigType.Equals(input.BuildConfigType))) return false;
+            if (this.BuildIfCodeUpdated != input.BuildIfCodeUpdated || (this.BuildIfCodeUpdated != null && !this.BuildIfCodeUpdated.Equals(input.BuildIfCodeUpdated))) return false;
+            if (this.Triggers != input.Triggers || (this.Triggers != null && input.Triggers != null && !this.Triggers.SequenceEqual(input.Triggers))) return false;
 
             return true;
         }
@@ -141,10 +173,14 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
                 if (this.AutoUpdateSubModule != null) hashCode = hashCode * 59 + this.AutoUpdateSubModule.GetHashCode();
                 if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.Parameters != null) hashCode = hashCode * 59 + this.Parameters.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
                 if (this.Scms != null) hashCode = hashCode * 59 + this.Scms.GetHashCode();
                 if (this.Steps != null) hashCode = hashCode * 59 + this.Steps.GetHashCode();
                 if (this.HostType != null) hashCode = hashCode * 59 + this.HostType.GetHashCode();
                 if (this.BuildConfigType != null) hashCode = hashCode * 59 + this.BuildConfigType.GetHashCode();
+                if (this.BuildIfCodeUpdated != null) hashCode = hashCode * 59 + this.BuildIfCodeUpdated.GetHashCode();
+                if (this.Triggers != null) hashCode = hashCode * 59 + this.Triggers.GetHashCode();
                 return hashCode;
             }
         }

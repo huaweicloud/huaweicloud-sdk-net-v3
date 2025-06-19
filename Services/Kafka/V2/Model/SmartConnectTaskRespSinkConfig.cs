@@ -17,97 +17,97 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 转储启动偏移量，latest为获取最新的数据，earliest为获取最早的数据。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 转储启动偏移量。（仅目标端类型为OBS时会显示） **取值范围**： - latest：获取最新的数据。 - earliest：获取最早的数据。
         /// </summary>
         [JsonProperty("consumer_strategy", NullValueHandling = NullValueHandling.Ignore)]
         public string ConsumerStrategy { get; set; }
 
         /// <summary>
-        /// 转储文件格式。当前只支持TEXT。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 转储文件格式。当前只支持TEXT。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("destination_file_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DestinationFileType { get; set; }
 
         /// <summary>
-        /// 记数据转储周期（秒）。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 数据转储周期（秒）。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("deliver_time_interval", NullValueHandling = NullValueHandling.Ignore)]
         public int? DeliverTimeInterval { get; set; }
 
         /// <summary>
-        /// 转储地址。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 转储地址。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("obs_bucket_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsBucketName { get; set; }
 
         /// <summary>
-        /// 转储目录。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 转储目录。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("obs_path", NullValueHandling = NullValueHandling.Ignore)]
         public string ObsPath { get; set; }
 
         /// <summary>
-        /// 时间目录格式。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 时间目录格式。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("partition_format", NullValueHandling = NullValueHandling.Ignore)]
         public string PartitionFormat { get; set; }
 
         /// <summary>
-        /// 记录分行符。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 记录分行符。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("record_delimiter", NullValueHandling = NullValueHandling.Ignore)]
         public string RecordDelimiter { get; set; }
 
         /// <summary>
-        /// 存储Key。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 存储Key。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("store_keys", NullValueHandling = NullValueHandling.Ignore)]
         public bool? StoreKeys { get; set; }
 
         /// <summary>
-        /// 每个传输文件多大后就开始上传，单位为byte；默认值5242880。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 每个传输文件多大后就开始上传，单位为byte；默认值5242880。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("obs_part_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? ObsPartSize { get; set; }
 
         /// <summary>
-        /// flush_size。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 刷写数量。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("flush_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? FlushSize { get; set; }
 
         /// <summary>
-        /// 时区。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 时区。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("timezone", NullValueHandling = NullValueHandling.Ignore)]
         public string Timezone { get; set; }
 
         /// <summary>
-        /// schema_generator类，默认为\&quot;io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator\&quot;。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： schema_generator类，默认为\&quot;io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator\&quot;。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("schema_generator_class", NullValueHandling = NullValueHandling.Ignore)]
         public string SchemaGeneratorClass { get; set; }
 
         /// <summary>
-        /// partitioner类，默认\&quot;io.confluent.connect.storage.partitioner.TimeBasedPartitioner\&quot;。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： partitioner类，默认\&quot;io.confluent.connect.storage.partitioner.TimeBasedPartitioner\&quot;。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("partitioner_class", NullValueHandling = NullValueHandling.Ignore)]
         public string PartitionerClass { get; set; }
 
         /// <summary>
-        /// value_converter，默认为\&quot;org.apache.kafka.connect.converters.ByteArrayConverter\&quot;。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 值转换器，默认为\&quot;org.apache.kafka.connect.converters.ByteArrayConverter\&quot;。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("value_converter", NullValueHandling = NullValueHandling.Ignore)]
         public string ValueConverter { get; set; }
 
         /// <summary>
-        /// key_converter，默认为\&quot;org.apache.kafka.connect.converters.ByteArrayConverter\&quot;。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 键转换器，默认为\&quot;org.apache.kafka.connect.converters.ByteArrayConverter\&quot;。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("key_converter", NullValueHandling = NullValueHandling.Ignore)]
         public string KeyConverter { get; set; }
 
         /// <summary>
-        /// kv_delimiter，默认为\&quot;:\&quot;。（仅目标端类型为OBS时会显示）
+        /// **参数解释**： 键值分隔符，默认为\&quot;:\&quot;。（仅目标端类型为OBS时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("kv_delimiter", NullValueHandling = NullValueHandling.Ignore)]
         public string KvDelimiter { get; set; }

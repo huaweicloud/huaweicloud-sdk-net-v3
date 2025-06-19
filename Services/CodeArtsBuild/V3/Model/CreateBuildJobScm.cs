@@ -53,6 +53,12 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public bool? IsAutoBuild { get; set; }
 
         /// <summary>
+        /// 是否启用gitlfs
+        /// </summary>
+        [JsonProperty("enable_git_lfs", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableGitLfs { get; set; }
+
+        /// <summary>
         /// 构建类别
         /// </summary>
         [JsonProperty("build_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -76,6 +82,18 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
         public string Source { get; set; }
 
+        /// <summary>
+        /// 仓库分组
+        /// </summary>
+        [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupName { get; set; }
+
+        /// <summary>
+        /// 仓库名称
+        /// </summary>
+        [JsonProperty("repo_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string RepoName { get; set; }
+
 
 
         /// <summary>
@@ -91,10 +109,13 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             sb.Append("  webUrl: ").Append(WebUrl).Append("\n");
             sb.Append("  scmType: ").Append(ScmType).Append("\n");
             sb.Append("  isAutoBuild: ").Append(IsAutoBuild).Append("\n");
+            sb.Append("  enableGitLfs: ").Append(EnableGitLfs).Append("\n");
             sb.Append("  buildType: ").Append(BuildType).Append("\n");
             sb.Append("  depth: ").Append(Depth).Append("\n");
             sb.Append("  endPointId: ").Append(EndPointId).Append("\n");
             sb.Append("  source: ").Append(Source).Append("\n");
+            sb.Append("  groupName: ").Append(GroupName).Append("\n");
+            sb.Append("  repoName: ").Append(RepoName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -119,10 +140,13 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             if (this.WebUrl != input.WebUrl || (this.WebUrl != null && !this.WebUrl.Equals(input.WebUrl))) return false;
             if (this.ScmType != input.ScmType || (this.ScmType != null && !this.ScmType.Equals(input.ScmType))) return false;
             if (this.IsAutoBuild != input.IsAutoBuild || (this.IsAutoBuild != null && !this.IsAutoBuild.Equals(input.IsAutoBuild))) return false;
+            if (this.EnableGitLfs != input.EnableGitLfs || (this.EnableGitLfs != null && !this.EnableGitLfs.Equals(input.EnableGitLfs))) return false;
             if (this.BuildType != input.BuildType || (this.BuildType != null && !this.BuildType.Equals(input.BuildType))) return false;
             if (this.Depth != input.Depth || (this.Depth != null && !this.Depth.Equals(input.Depth))) return false;
             if (this.EndPointId != input.EndPointId || (this.EndPointId != null && !this.EndPointId.Equals(input.EndPointId))) return false;
             if (this.Source != input.Source || (this.Source != null && !this.Source.Equals(input.Source))) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
+            if (this.RepoName != input.RepoName || (this.RepoName != null && !this.RepoName.Equals(input.RepoName))) return false;
 
             return true;
         }
@@ -141,10 +165,13 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
                 if (this.WebUrl != null) hashCode = hashCode * 59 + this.WebUrl.GetHashCode();
                 if (this.ScmType != null) hashCode = hashCode * 59 + this.ScmType.GetHashCode();
                 if (this.IsAutoBuild != null) hashCode = hashCode * 59 + this.IsAutoBuild.GetHashCode();
+                if (this.EnableGitLfs != null) hashCode = hashCode * 59 + this.EnableGitLfs.GetHashCode();
                 if (this.BuildType != null) hashCode = hashCode * 59 + this.BuildType.GetHashCode();
                 if (this.Depth != null) hashCode = hashCode * 59 + this.Depth.GetHashCode();
                 if (this.EndPointId != null) hashCode = hashCode * 59 + this.EndPointId.GetHashCode();
                 if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.RepoName != null) hashCode = hashCode * 59 + this.RepoName.GetHashCode();
                 return hashCode;
             }
         }

@@ -1155,6 +1155,34 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
+        /// 查询实例节点
+        ///
+        /// 查询实例节点信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceNodesResponse ShowInstanceNodes(ShowInstanceNodesRequest showInstanceNodesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showInstanceNodesRequest.Engine.ToString());
+            urlParam.Add("instance_id", showInstanceNodesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceNodesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceNodesResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceNodesResponse> ShowInstanceNodesInvoker(ShowInstanceNodesRequest showInstanceNodesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("engine", showInstanceNodesRequest.Engine.ToString());
+            urlParam.Add("instance_id", showInstanceNodesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceNodesRequest);
+            return new SyncInvoker<ShowInstanceNodesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceNodesResponse>);
+        }
+        
+        /// <summary>
         /// 查看租户配额
         ///
         /// 查询租户最大可以创建的实例个数和已创建的实例个数，以及每个实例最大可以创建标签的个数。

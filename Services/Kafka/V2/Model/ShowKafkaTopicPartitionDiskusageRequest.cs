@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string MinSize { get; set; }
 
         /// <summary>
-        /// 占用磁盘大小，查询top N。
+        /// **参数解释**： 占用磁盘大小，查询top N。 **约束限制**： 不涉及。 **取值范围**： 1~1000。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("top", IsQuery = true)]
         [JsonProperty("top", NullValueHandling = NullValueHandling.Ignore)]

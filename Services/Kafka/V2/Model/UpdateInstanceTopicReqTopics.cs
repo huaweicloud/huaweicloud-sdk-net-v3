@@ -56,7 +56,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// Topic配置
         /// </summary>
         [JsonProperty("topic_other_configs", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CreateInstanceTopicReqTopicOtherConfigs> TopicOtherConfigs { get; set; }
+        public List<UpdateInstanceTopicReqTopicOtherConfigs> TopicOtherConfigs { get; set; }
 
         /// <summary>
         /// Topic描述

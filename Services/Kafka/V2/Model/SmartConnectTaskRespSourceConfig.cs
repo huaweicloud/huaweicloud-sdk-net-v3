@@ -17,97 +17,97 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 当前Kafka实例别名。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 当前Kafka实例别名。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("current_cluster_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CurrentClusterName { get; set; }
 
         /// <summary>
-        /// 对端Kafka实例别名。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 对端Kafka实例别名。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("cluster_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterName { get; set; }
 
         /// <summary>
-        /// 对端Kafka用户名。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 对端Kafka用户名。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string UserName { get; set; }
 
         /// <summary>
-        /// 对端Kafka认证机制。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 对端Kafka认证机制。（仅源端类型为Kafka时会显示） **取值范围**： - PLAIN - SCRAM-SHA-512
         /// </summary>
         [JsonProperty("sasl_mechanism", NullValueHandling = NullValueHandling.Ignore)]
         public string SaslMechanism { get; set; }
 
         /// <summary>
-        /// 对端Kafka实例ID。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 对端Kafka实例ID。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 对端Kafka实例地址。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 对端Kafka实例地址。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("bootstrap_servers", NullValueHandling = NullValueHandling.Ignore)]
         public string BootstrapServers { get; set; }
 
         /// <summary>
-        /// 对端Kafka认证方式。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 对端Kafka认证方式。（仅源端类型为Kafka时会显示） **取值范围**： - PLAINTEXT：不开启SSL，明文传输。 - SASL_SSL：采用SASL方式进行认证，数据通过SSL证书进行加密传输，安全性更高。 - SASL_PLAINTEXT：采用SASL方式进行认证，数据通过明文传输，性能更好。
         /// </summary>
         [JsonProperty("security_protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityProtocol { get; set; }
 
         /// <summary>
-        /// 同步方向。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 同步方向。（仅源端类型为Kafka时会显示） **取值范围**： - pull：拉取。 - push：推送。 - two-way：双向。
         /// </summary>
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
         public string Direction { get; set; }
 
         /// <summary>
-        /// 是否同步消费进度。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 是否同步消费进度。（仅源端类型为Kafka时会显示） **取值范围**： - true：同步消费进度 - false：不同步消费进度
         /// </summary>
         [JsonProperty("sync_consumer_offsets_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SyncConsumerOffsetsEnabled { get; set; }
 
         /// <summary>
-        /// 副本数。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 副本数。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("replication_factor", NullValueHandling = NullValueHandling.Ignore)]
         public int? ReplicationFactor { get; set; }
 
         /// <summary>
-        /// 任务数。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 任务数。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("task_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? TaskNum { get; set; }
 
         /// <summary>
-        /// 是否重命名Topic。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 是否重命名Topic。（仅源端类型为Kafka时会显示） **取值范围**： - true：重命名Topic。 - false：不进行重命名Topic。
         /// </summary>
         [JsonProperty("rename_topic_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RenameTopicEnabled { get; set; }
 
         /// <summary>
-        /// 是否添加来源header。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 是否添加来源header。（仅源端类型为Kafka时会显示） **取值范围**： - true：添加来源header。 - false：不添加来源header。
         /// </summary>
         [JsonProperty("provenance_header_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ProvenanceHeaderEnabled { get; set; }
 
         /// <summary>
-        /// 启动偏移量，latest为获取最新的数据，earliest为获取最早的数据。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 启动偏移量。（仅源端类型为Kafka时会显示） **取值范围**： - latest：获取最新的数据。 - earliest：获取最早的数据。
         /// </summary>
         [JsonProperty("consumer_strategy", NullValueHandling = NullValueHandling.Ignore)]
         public string ConsumerStrategy { get; set; }
 
         /// <summary>
-        /// 压缩算法。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： 压缩算法。（仅源端类型为Kafka时会显示） **取值范围**： - none - gzip - snappy - lz4 - zstd
         /// </summary>
         [JsonProperty("compression_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CompressionType { get; set; }
 
         /// <summary>
-        /// Topic映射。（仅源端类型为Kafka时会显示）
+        /// **参数解释**： Topic映射。（仅源端类型为Kafka时会显示） **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("topics_mapping", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicsMapping { get; set; }

@@ -607,6 +607,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 删除已经导入的IP黑名单
+        ///
+        /// 删除流量过滤功能下已经导入的IP黑名单，指定生效范围进行删除。 标准版的墙只会存在生效范围为EIP的IP黑名单，专业版的墙会存在生效范围为EIP和NAT的IP黑名单。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteIpBlacklistResponse DeleteIpBlacklist(DeleteIpBlacklistRequest deleteIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpBlacklistRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteIpBlacklistResponse>(response);
+        }
+
+        public SyncInvoker<DeleteIpBlacklistResponse> DeleteIpBlacklistInvoker(DeleteIpBlacklistRequest deleteIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpBlacklistRequest);
+            return new SyncInvoker<DeleteIpBlacklistResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteIpBlacklistResponse>);
+        }
+        
+        /// <summary>
         /// 删除服务成员
         ///
         /// 删除服务组成员
@@ -682,6 +706,81 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cfw-cfw/{fw_instance_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
             return new SyncInvoker<DeleteTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTagResponse>);
+        }
+        
+        /// <summary>
+        /// 开启或者关闭流量过滤的IP黑名单功能
+        ///
+        /// 开启或者关闭流量过滤功能，当前流量过滤是通过导入IP黑名单实现的。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public EnableIpBlacklistResponse EnableIpBlacklist(EnableIpBlacklistRequest enableIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableIpBlacklistRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<EnableIpBlacklistResponse>(response);
+        }
+
+        public SyncInvoker<EnableIpBlacklistResponse> EnableIpBlacklistInvoker(EnableIpBlacklistRequest enableIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableIpBlacklistRequest);
+            return new SyncInvoker<EnableIpBlacklistResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableIpBlacklistResponse>);
+        }
+        
+        /// <summary>
+        /// 导出用于流量过滤的IP黑名单
+        ///
+        /// 指定IP黑名单的名字进行导出，当前只有两种文件名，在EIP生效的文件名为ip-blacklist-eip.txt，在 NAT生效的文件名为ip-blacklist-nat.txt。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExportIpBlacklistResponse ExportIpBlacklist(ExportIpBlacklistRequest exportIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportIpBlacklistRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<ExportIpBlacklistResponse>(response);
+        }
+
+        public SyncInvoker<ExportIpBlacklistResponse> ExportIpBlacklistInvoker(ExportIpBlacklistRequest exportIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportIpBlacklistRequest);
+            return new SyncInvoker<ExportIpBlacklistResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ExportIpBlacklistResponse>);
+        }
+        
+        /// <summary>
+        /// 导入IP黑名单用于流量过滤
+        ///
+        /// 此接口用来导入IP黑名单，IP列表保存在request的body中，IP列表支持的格式如下：
+        /// 单个IP地址，例如：100.1.1.10
+        /// 连续的IP地址段，例如：80.1.1.3-80.1.1.30
+        /// 掩码格式的网段，例如：6.6.6.0/24
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ImportIpBlacklistResponse ImportIpBlacklist(ImportIpBlacklistRequest importIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist/import", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", importIpBlacklistRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<ImportIpBlacklistResponse>(response);
+        }
+
+        public SyncInvoker<ImportIpBlacklistResponse> ImportIpBlacklistInvoker(ImportIpBlacklistRequest importIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist/import", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", importIpBlacklistRequest);
+            return new SyncInvoker<ImportIpBlacklistResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ImportIpBlacklistResponse>);
         }
         
         /// <summary>
@@ -1101,6 +1200,54 @@ namespace HuaweiCloud.SDK.Cfw.V1
         }
         
         /// <summary>
+        /// 获取导入的IP黑名单列表信息
+        ///
+        /// 获取防火墙实例中已经导入的IP黑名单信息，标准版防火墙只会显示一条EIP的记录，专业版防火墙可能显示EIP、NAT或EIP和NAT的记录，根据导入的情况确定。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListIpBlacklistResponse ListIpBlacklist(ListIpBlacklistRequest listIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpBlacklistRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListIpBlacklistResponse>(response);
+        }
+
+        public SyncInvoker<ListIpBlacklistResponse> ListIpBlacklistInvoker(ListIpBlacklistRequest listIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpBlacklistRequest);
+            return new SyncInvoker<ListIpBlacklistResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIpBlacklistResponse>);
+        }
+        
+        /// <summary>
+        /// 获取流量过滤功能的开关信息
+        ///
+        /// 流量过滤功能可以打开或者关闭，通过此接口可以获取当前的开关信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListIpBlacklistSwitchResponse ListIpBlacklistSwitch(ListIpBlacklistSwitchRequest listIpBlacklistSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpBlacklistSwitchRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListIpBlacklistSwitchResponse>(response);
+        }
+
+        public SyncInvoker<ListIpBlacklistSwitchResponse> ListIpBlacklistSwitchInvoker(ListIpBlacklistSwitchRequest listIpBlacklistSwitchRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIpBlacklistSwitchRequest);
+            return new SyncInvoker<ListIpBlacklistSwitchResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIpBlacklistSwitchResponse>);
+        }
+        
+        /// <summary>
         /// 获取CFW任务执行状态
         ///
         /// 获取CFW任务执行状态
@@ -1296,6 +1443,30 @@ namespace HuaweiCloud.SDK.Cfw.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/service-sets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServiceSetsRequest);
             return new SyncInvoker<ListServiceSetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListServiceSetsResponse>);
+        }
+        
+        /// <summary>
+        /// 用于流量过滤的IP黑名单导入失败后进行重新导入
+        ///
+        /// 用于流量过滤的IP黑名单导入失败后，调用此接口进行重试。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RetryIpBlacklistResponse RetryIpBlacklist(RetryIpBlacklistRequest retryIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryIpBlacklistRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<RetryIpBlacklistResponse>(response);
+        }
+
+        public SyncInvoker<RetryIpBlacklistResponse> RetryIpBlacklistInvoker(RetryIpBlacklistRequest retryIpBlacklistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ptf/ip-blacklist/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryIpBlacklistRequest);
+            return new SyncInvoker<RetryIpBlacklistResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RetryIpBlacklistResponse>);
         }
         
         /// <summary>

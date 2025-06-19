@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public SmartConnectTaskRespSourceConfig Task { get; set; }
 
         /// <summary>
-        /// SmartConnect任务类型。
+        /// **参数解释**： Smart Connect任务类型。 **取值范围**： - OBS_SINK：转储。 - KAFKA_REPLICATOR_SOURCE：Kafka数据复制。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

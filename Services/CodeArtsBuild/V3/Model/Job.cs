@@ -118,6 +118,60 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         [JsonProperty("is_view", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsView { get; set; }
 
+        /// <summary>
+        /// 最后一次构建用户
+        /// </summary>
+        [JsonProperty("last_build_user", NullValueHandling = NullValueHandling.Ignore)]
+        public string LastBuildUser { get; set; }
+
+        /// <summary>
+        /// 触发类型
+        /// </summary>
+        [JsonProperty("trigger_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string TriggerType { get; set; }
+
+        /// <summary>
+        /// 构建时间
+        /// </summary>
+        [JsonProperty("build_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? BuildTime { get; set; }
+
+        /// <summary>
+        /// 代码仓web地址
+        /// </summary>
+        [JsonProperty("scm_web_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScmWebUrl { get; set; }
+
+        /// <summary>
+        /// 代码仓类型
+        /// </summary>
+        [JsonProperty("scm_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScmType { get; set; }
+
+        /// <summary>
+        /// 代码仓ID
+        /// </summary>
+        [JsonProperty("repo_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RepoId { get; set; }
+
+        /// <summary>
+        /// 构建项目ID
+        /// </summary>
+        [JsonProperty("build_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string BuildProjectId { get; set; }
+
+        /// <summary>
+        /// 最后一次构建时间
+        /// </summary>
+        [JsonProperty("last_job_running_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string LastJobRunningStatus { get; set; }
+
+        /// <summary>
+        /// 最后一次构建用户ID
+        /// </summary>
+        [JsonProperty("last_build_user_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LastBuildUserId { get; set; }
+
 
 
         /// <summary>
@@ -144,6 +198,15 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             sb.Append("  isCopy: ").Append(IsCopy).Append("\n");
             sb.Append("  isForbidden: ").Append(IsForbidden).Append("\n");
             sb.Append("  isView: ").Append(IsView).Append("\n");
+            sb.Append("  lastBuildUser: ").Append(LastBuildUser).Append("\n");
+            sb.Append("  triggerType: ").Append(TriggerType).Append("\n");
+            sb.Append("  buildTime: ").Append(BuildTime).Append("\n");
+            sb.Append("  scmWebUrl: ").Append(ScmWebUrl).Append("\n");
+            sb.Append("  scmType: ").Append(ScmType).Append("\n");
+            sb.Append("  repoId: ").Append(RepoId).Append("\n");
+            sb.Append("  buildProjectId: ").Append(BuildProjectId).Append("\n");
+            sb.Append("  lastJobRunningStatus: ").Append(LastJobRunningStatus).Append("\n");
+            sb.Append("  lastBuildUserId: ").Append(LastBuildUserId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -179,6 +242,15 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             if (this.IsCopy != input.IsCopy || (this.IsCopy != null && !this.IsCopy.Equals(input.IsCopy))) return false;
             if (this.IsForbidden != input.IsForbidden || (this.IsForbidden != null && !this.IsForbidden.Equals(input.IsForbidden))) return false;
             if (this.IsView != input.IsView || (this.IsView != null && !this.IsView.Equals(input.IsView))) return false;
+            if (this.LastBuildUser != input.LastBuildUser || (this.LastBuildUser != null && !this.LastBuildUser.Equals(input.LastBuildUser))) return false;
+            if (this.TriggerType != input.TriggerType || (this.TriggerType != null && !this.TriggerType.Equals(input.TriggerType))) return false;
+            if (this.BuildTime != input.BuildTime || (this.BuildTime != null && !this.BuildTime.Equals(input.BuildTime))) return false;
+            if (this.ScmWebUrl != input.ScmWebUrl || (this.ScmWebUrl != null && !this.ScmWebUrl.Equals(input.ScmWebUrl))) return false;
+            if (this.ScmType != input.ScmType || (this.ScmType != null && !this.ScmType.Equals(input.ScmType))) return false;
+            if (this.RepoId != input.RepoId || (this.RepoId != null && !this.RepoId.Equals(input.RepoId))) return false;
+            if (this.BuildProjectId != input.BuildProjectId || (this.BuildProjectId != null && !this.BuildProjectId.Equals(input.BuildProjectId))) return false;
+            if (this.LastJobRunningStatus != input.LastJobRunningStatus || (this.LastJobRunningStatus != null && !this.LastJobRunningStatus.Equals(input.LastJobRunningStatus))) return false;
+            if (this.LastBuildUserId != input.LastBuildUserId || (this.LastBuildUserId != null && !this.LastBuildUserId.Equals(input.LastBuildUserId))) return false;
 
             return true;
         }
@@ -208,6 +280,15 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
                 if (this.IsCopy != null) hashCode = hashCode * 59 + this.IsCopy.GetHashCode();
                 if (this.IsForbidden != null) hashCode = hashCode * 59 + this.IsForbidden.GetHashCode();
                 if (this.IsView != null) hashCode = hashCode * 59 + this.IsView.GetHashCode();
+                if (this.LastBuildUser != null) hashCode = hashCode * 59 + this.LastBuildUser.GetHashCode();
+                if (this.TriggerType != null) hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
+                if (this.BuildTime != null) hashCode = hashCode * 59 + this.BuildTime.GetHashCode();
+                if (this.ScmWebUrl != null) hashCode = hashCode * 59 + this.ScmWebUrl.GetHashCode();
+                if (this.ScmType != null) hashCode = hashCode * 59 + this.ScmType.GetHashCode();
+                if (this.RepoId != null) hashCode = hashCode * 59 + this.RepoId.GetHashCode();
+                if (this.BuildProjectId != null) hashCode = hashCode * 59 + this.BuildProjectId.GetHashCode();
+                if (this.LastJobRunningStatus != null) hashCode = hashCode * 59 + this.LastJobRunningStatus.GetHashCode();
+                if (this.LastBuildUserId != null) hashCode = hashCode * 59 + this.LastBuildUserId.GetHashCode();
                 return hashCode;
             }
         }

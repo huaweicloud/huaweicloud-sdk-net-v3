@@ -59,6 +59,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         public string Passphrase { get; set; }
 
         /// <summary>
+        /// srt加密算法
+        /// </summary>
+        [JsonProperty("pbkeylen", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Pbkeylen { get; set; }
+
+        /// <summary>
         /// 备入流地址列表
         /// </summary>
         [JsonProperty("backup_urls", NullValueHandling = NullValueHandling.Ignore)]
@@ -92,6 +98,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  enableSnapshot: ").Append(EnableSnapshot).Append("\n");
             sb.Append("  bitrateFor3u8: ").Append(BitrateFor3u8).Append("\n");
             sb.Append("  passphrase: ").Append(Passphrase).Append("\n");
+            sb.Append("  pbkeylen: ").Append(Pbkeylen).Append("\n");
             sb.Append("  backupUrls: ").Append(BackupUrls).Append("\n");
             sb.Append("  streamId: ").Append(StreamId).Append("\n");
             sb.Append("  latency: ").Append(Latency).Append("\n");
@@ -120,6 +127,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.EnableSnapshot != input.EnableSnapshot || (this.EnableSnapshot != null && !this.EnableSnapshot.Equals(input.EnableSnapshot))) return false;
             if (this.BitrateFor3u8 != input.BitrateFor3u8 || (this.BitrateFor3u8 != null && !this.BitrateFor3u8.Equals(input.BitrateFor3u8))) return false;
             if (this.Passphrase != input.Passphrase || (this.Passphrase != null && !this.Passphrase.Equals(input.Passphrase))) return false;
+            if (this.Pbkeylen != input.Pbkeylen || (this.Pbkeylen != null && !this.Pbkeylen.Equals(input.Pbkeylen))) return false;
             if (this.BackupUrls != input.BackupUrls || (this.BackupUrls != null && input.BackupUrls != null && !this.BackupUrls.SequenceEqual(input.BackupUrls))) return false;
             if (this.StreamId != input.StreamId || (this.StreamId != null && !this.StreamId.Equals(input.StreamId))) return false;
             if (this.Latency != input.Latency || (this.Latency != null && !this.Latency.Equals(input.Latency))) return false;
@@ -142,6 +150,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.EnableSnapshot != null) hashCode = hashCode * 59 + this.EnableSnapshot.GetHashCode();
                 if (this.BitrateFor3u8 != null) hashCode = hashCode * 59 + this.BitrateFor3u8.GetHashCode();
                 if (this.Passphrase != null) hashCode = hashCode * 59 + this.Passphrase.GetHashCode();
+                if (this.Pbkeylen != null) hashCode = hashCode * 59 + this.Pbkeylen.GetHashCode();
                 if (this.BackupUrls != null) hashCode = hashCode * 59 + this.BackupUrls.GetHashCode();
                 if (this.StreamId != null) hashCode = hashCode * 59 + this.StreamId.GetHashCode();
                 if (this.Latency != null) hashCode = hashCode * 59 + this.Latency.GetHashCode();

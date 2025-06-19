@@ -51,6 +51,8 @@ namespace HuaweiCloud.SDK.Rds.V3
             "https://rds.tr-west-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
             "https://rds.ap-southeast-4.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
+            "https://rds.ap-southeast-5.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://rds.ae-ad-1.myhuaweicloud.com");
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",
@@ -92,6 +94,7 @@ namespace HuaweiCloud.SDK.Rds.V3
                 { "cn-north-2", CN_NORTH_2 },
                 { "tr-west-1", TR_WEST_1 },
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
+                { "ap-southeast-5", AP_SOUTHEAST_5 },
                 { "ae-ad-1", AE_AD_1 },
                 { "eu-west-101", EU_WEST_101 },
                 { "eu-west-0", EU_WEST_0 },

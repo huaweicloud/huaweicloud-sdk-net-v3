@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 只支持Microsoft SQL Server，局部备份的用户自建数据库名列表，当有此参数时以局部备份为准。
+        /// 只支持Microsoft SQL Server和RDS for PostgreSQL，局部备份的用户自建数据库名列表，当有此参数时以局部备份为准。
         /// </summary>
         [JsonProperty("databases", NullValueHandling = NullValueHandling.Ignore)]
         public List<BackupDatabase> Databases { get; set; }
 
         /// <summary>
-        /// 是否分库备份，只适用于SQLServer，默认为false
+        /// 是否分库备份，只适用于SQLServer、RDS for PostgreSQL，默认为false
         /// </summary>
         [JsonProperty("backup_database_individually", NullValueHandling = NullValueHandling.Ignore)]
         public bool? BackupDatabaseIndividually { get; set; }

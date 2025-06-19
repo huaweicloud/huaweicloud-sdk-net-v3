@@ -8,23 +8,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
+namespace HuaweiCloud.SDK.Cloudtest.V1.Model
 {
     /// <summary>
-    /// 结果
+    /// Request Object
     /// </summary>
-    public class DeleteBuildJobResponseBodyResult 
+    public class ListAvailableConfigRequest 
     {
 
         /// <summary>
-        /// 构建任务ID
+        /// 用户Token。  通过调用IAM服务获取用户Token接口获取（响应消息头中X-Subject-Token的值）。
         /// </summary>
-        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string JobId { get; set; }
+        [SDKProperty("X-Auth-Token", IsHeader = true)]
+        [JsonProperty("X-Auth-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string XAuthToken { get; set; }
 
         /// <summary>
-        /// 构建任务所在项目的ID
+        /// 项目ID，固定长度32位字符（字母和数字）。
         /// </summary>
+        [SDKProperty("project_id", IsPath = true)]
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
@@ -36,8 +38,8 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DeleteBuildJobResponseBodyResult {\n");
-            sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("class ListAvailableConfigRequest {\n");
+            sb.Append("  xAuthToken: ").Append(XAuthToken).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -48,16 +50,16 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteBuildJobResponseBodyResult);
+            return this.Equals(input as ListAvailableConfigRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(DeleteBuildJobResponseBodyResult input)
+        public bool Equals(ListAvailableConfigRequest input)
         {
             if (input == null) return false;
-            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.XAuthToken != input.XAuthToken || (this.XAuthToken != null && !this.XAuthToken.Equals(input.XAuthToken))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
 
             return true;
@@ -71,7 +73,7 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.XAuthToken != null) hashCode = hashCode * 59 + this.XAuthToken.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 return hashCode;
             }

@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// 
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public DeleteBuildJobResponseBodyResult Result { get; set; }
+        public DeleteTheJobResponseBodyResult Result { get; set; }
 
         /// <summary>
         /// 状态信息

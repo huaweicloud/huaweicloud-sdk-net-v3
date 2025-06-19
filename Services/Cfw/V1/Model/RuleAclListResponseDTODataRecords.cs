@@ -277,6 +277,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// 排序id
+        /// </summary>
+        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? OrderId { get; set; }
+
+        /// <summary>
         /// 规则方向0：外到内1：内到外
         /// </summary>
         [JsonProperty("direction", NullValueHandling = NullValueHandling.Ignore)]
@@ -383,6 +389,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  applications: ").Append(Applications).Append("\n");
             sb.Append("  addressType: ").Append(AddressType).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  direction: ").Append(Direction).Append("\n");
             sb.Append("  actionType: ").Append(ActionType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
@@ -421,6 +428,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.Applications != input.Applications || (this.Applications != null && input.Applications != null && !this.Applications.SequenceEqual(input.Applications))) return false;
             if (this.AddressType != input.AddressType || (this.AddressType != null && !this.AddressType.Equals(input.AddressType))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.Direction != input.Direction) return false;
             if (this.ActionType != input.ActionType || (this.ActionType != null && !this.ActionType.Equals(input.ActionType))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
@@ -453,6 +461,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.Applications != null) hashCode = hashCode * 59 + this.Applications.GetHashCode();
                 if (this.AddressType != null) hashCode = hashCode * 59 + this.AddressType.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 hashCode = hashCode * 59 + this.Direction.GetHashCode();
                 if (this.ActionType != null) hashCode = hashCode * 59 + this.ActionType.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
