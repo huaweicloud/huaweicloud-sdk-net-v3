@@ -53,6 +53,8 @@ namespace HuaweiCloud.SDK.Aos.V1
             "https://rfs.af-north-1.myhuaweicloud.com");
         public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
             "https://rfs.cn-north-12.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
+            "https://rfs.ap-southeast-5.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("AOS");
 
@@ -81,6 +83,7 @@ namespace HuaweiCloud.SDK.Aos.V1
                 { "cn-east-5", CN_EAST_5 },
                 { "af-north-1", AF_NORTH_1 },
                 { "cn-north-12", CN_NORTH_12 },
+                { "ap-southeast-5", AP_SOUTHEAST_5 },
         };
 
         public static Region ValueOf(string regionId)

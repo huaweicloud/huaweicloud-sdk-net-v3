@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class Notification 
     {
         /// <summary>
-        /// 通知类型。notification为SMN通知，contact为云账号联系人，contactGroup为通知组，autoscaling为AS通知。 
+        /// 通知类型。notification为SMN通知，contact为云账号联系人，contactGroup为通知组，autoscaling为AS通知。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。 
         /// </summary>
-        /// <value>通知类型。notification为SMN通知，contact为云账号联系人，contactGroup为通知组，autoscaling为AS通知。 </value>
+        /// <value>通知类型。notification为SMN通知，contact为云账号联系人，contactGroup为通知组，autoscaling为AS通知。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。 </value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 通知类型。notification为SMN通知，contact为云账号联系人，contactGroup为通知组，autoscaling为AS通知。 
+        /// 通知类型。notification为SMN通知，contact为云账号联系人，contactGroup为通知组，autoscaling为AS通知。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

@@ -777,6 +777,32 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 查询主题的发送详情
+        ///
+        /// 查询Topic的发送数据详情，最多支持查询31天内所有计量数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTopicMessageStatisticsResponse> ListTopicMessageStatisticsAsync(ListTopicMessageStatisticsRequest listTopicMessageStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", listTopicMessageStatisticsRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicMessageStatisticsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListTopicMessageStatisticsResponse>(response);
+        }
+
+        public AsyncInvoker<ListTopicMessageStatisticsResponse> ListTopicMessageStatisticsAsyncInvoker(ListTopicMessageStatisticsRequest listTopicMessageStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("topic_urn", listTopicMessageStatisticsRequest.TopicUrn.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicMessageStatisticsRequest);
+            return new AsyncInvoker<ListTopicMessageStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTopicMessageStatisticsResponse>);
+        }
+        
+        /// <summary>
         /// 查询主题列表
         ///
         /// 分页查询Topic列表，Topic列表按照Topic创建时间进行降序排列。分页查询可以指定offset以及limit。如果不存在Topic，则返回空列表。

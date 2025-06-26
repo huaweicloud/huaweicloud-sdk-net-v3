@@ -59,6 +59,16 @@ namespace HuaweiCloud.SDK.Dds.V3
             "https://dds.ru-moscow-1.myhuaweicloud.com");
         public static readonly Region AE_AD_1 = new Region("ae-ad-1",
             "https://dds.ae-ad-1.myhuaweicloud.com");
+        public static readonly Region CN_EAST_5 = new Region("cn-east-5",
+            "https://dds.cn-east-5.myhuaweicloud.com");
+        public static readonly Region CN_EAST_4 = new Region("cn-east-4",
+            "https://dds.cn-east-4.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
+            "https://dds.cn-north-12.myhuaweicloud.com");
+        public static readonly Region AF_NORTH_1 = new Region("af-north-1",
+            "https://dds.af-north-1.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
+            "https://dds.ap-southeast-5.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("DDS");
 
@@ -90,6 +100,11 @@ namespace HuaweiCloud.SDK.Dds.V3
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
                 { "ru-moscow-1", RU_MOSCOW_1 },
                 { "ae-ad-1", AE_AD_1 },
+                { "cn-east-5", CN_EAST_5 },
+                { "cn-east-4", CN_EAST_4 },
+                { "cn-north-12", CN_NORTH_12 },
+                { "af-north-1", AF_NORTH_1 },
+                { "ap-southeast-5", AP_SOUTHEAST_5 },
         };
 
         public static Region ValueOf(string regionId)

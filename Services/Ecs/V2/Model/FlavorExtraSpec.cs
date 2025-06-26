@@ -256,6 +256,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("info:asic_accelerators", NullValueHandling = NullValueHandling.Ignore)]
         public string InfoasicAccelerators { get; set; }
 
+        /// <summary>
+        /// 规格特性
+        /// </summary>
+        [JsonProperty("info:features", NullValueHandling = NullValueHandling.Ignore)]
+        public string Infofeatures { get; set; }
+
 
 
         /// <summary>
@@ -305,6 +311,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  securityenclaveSupported: ").Append(SecurityenclaveSupported).Append("\n");
             sb.Append("  infogpus: ").Append(Infogpus).Append("\n");
             sb.Append("  infoasicAccelerators: ").Append(InfoasicAccelerators).Append("\n");
+            sb.Append("  infofeatures: ").Append(Infofeatures).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -363,6 +370,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             if (this.SecurityenclaveSupported != input.SecurityenclaveSupported || (this.SecurityenclaveSupported != null && !this.SecurityenclaveSupported.Equals(input.SecurityenclaveSupported))) return false;
             if (this.Infogpus != input.Infogpus || (this.Infogpus != null && !this.Infogpus.Equals(input.Infogpus))) return false;
             if (this.InfoasicAccelerators != input.InfoasicAccelerators || (this.InfoasicAccelerators != null && !this.InfoasicAccelerators.Equals(input.InfoasicAccelerators))) return false;
+            if (this.Infofeatures != input.Infofeatures || (this.Infofeatures != null && !this.Infofeatures.Equals(input.Infofeatures))) return false;
 
             return true;
         }
@@ -415,6 +423,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 if (this.SecurityenclaveSupported != null) hashCode = hashCode * 59 + this.SecurityenclaveSupported.GetHashCode();
                 if (this.Infogpus != null) hashCode = hashCode * 59 + this.Infogpus.GetHashCode();
                 if (this.InfoasicAccelerators != null) hashCode = hashCode * 59 + this.InfoasicAccelerators.GetHashCode();
+                if (this.Infofeatures != null) hashCode = hashCode * 59 + this.Infofeatures.GetHashCode();
                 return hashCode;
             }
         }

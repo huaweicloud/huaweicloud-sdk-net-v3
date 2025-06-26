@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     public class HumanModel2DAssetMeta 
     {
         /// <summary>
-        /// **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型
+        /// **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型 * V3_3：V3.3版本模型
         /// </summary>
-        /// <value>**参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型</value>
+        /// <value>**参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型 * V3_3：V3.3版本模型</value>
         [JsonConverter(typeof(EnumClassConverter<ModelVersionEnum>))]
         public class ModelVersionEnum
         {
@@ -37,12 +37,18 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly ModelVersionEnum V3_2 = new ModelVersionEnum("V3_2");
 
+            /// <summary>
+            /// Enum V3_3 for value: V3_3
+            /// </summary>
+            public static readonly ModelVersionEnum V3_3 = new ModelVersionEnum("V3_3");
+
             private static readonly Dictionary<string, ModelVersionEnum> StaticFields =
             new Dictionary<string, ModelVersionEnum>()
             {
                 { "V2", V2 },
                 { "V3", V3 },
                 { "V3_2", V3_2 },
+                { "V3_3", V3_3 },
             };
 
             private string _value;
@@ -156,7 +162,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public bool? SupportLive { get; set; }
 
         /// <summary>
-        /// **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型
+        /// **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型 * V3_3：V3.3版本模型
         /// </summary>
         [JsonProperty("model_version", NullValueHandling = NullValueHandling.Ignore)]
         public ModelVersionEnum ModelVersion { get; set; }

@@ -598,6 +598,18 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("is_flexus", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsFlexus { get; set; }
 
+        /// <summary>
+        /// 是否增强韵律
+        /// </summary>
+        [JsonProperty("is_enhance_rhythm", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsEnhanceRhythm { get; set; }
+
+        /// <summary>
+        /// 音色年龄段：青年、中年、老年
+        /// </summary>
+        [JsonProperty("age", NullValueHandling = NullValueHandling.Ignore)]
+        public string Age { get; set; }
+
 
 
         /// <summary>
@@ -621,6 +633,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  isSupportVcProcess: ").Append(IsSupportVcProcess).Append("\n");
             sb.Append("  isSupportThaiAutoSplit: ").Append(IsSupportThaiAutoSplit).Append("\n");
             sb.Append("  isFlexus: ").Append(IsFlexus).Append("\n");
+            sb.Append("  isEnhanceRhythm: ").Append(IsEnhanceRhythm).Append("\n");
+            sb.Append("  age: ").Append(Age).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -653,6 +667,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.IsSupportVcProcess != input.IsSupportVcProcess || (this.IsSupportVcProcess != null && !this.IsSupportVcProcess.Equals(input.IsSupportVcProcess))) return false;
             if (this.IsSupportThaiAutoSplit != input.IsSupportThaiAutoSplit || (this.IsSupportThaiAutoSplit != null && !this.IsSupportThaiAutoSplit.Equals(input.IsSupportThaiAutoSplit))) return false;
             if (this.IsFlexus != input.IsFlexus || (this.IsFlexus != null && !this.IsFlexus.Equals(input.IsFlexus))) return false;
+            if (this.IsEnhanceRhythm != input.IsEnhanceRhythm || (this.IsEnhanceRhythm != null && !this.IsEnhanceRhythm.Equals(input.IsEnhanceRhythm))) return false;
+            if (this.Age != input.Age || (this.Age != null && !this.Age.Equals(input.Age))) return false;
 
             return true;
         }
@@ -679,6 +695,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.IsSupportVcProcess != null) hashCode = hashCode * 59 + this.IsSupportVcProcess.GetHashCode();
                 if (this.IsSupportThaiAutoSplit != null) hashCode = hashCode * 59 + this.IsSupportThaiAutoSplit.GetHashCode();
                 if (this.IsFlexus != null) hashCode = hashCode * 59 + this.IsFlexus.GetHashCode();
+                if (this.IsEnhanceRhythm != null) hashCode = hashCode * 59 + this.IsEnhanceRhythm.GetHashCode();
+                if (this.Age != null) hashCode = hashCode * 59 + this.Age.GetHashCode();
                 return hashCode;
             }
         }

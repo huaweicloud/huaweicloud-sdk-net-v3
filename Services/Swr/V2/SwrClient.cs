@@ -1448,5 +1448,2839 @@ namespace HuaweiCloud.SDK.Swr.V2
             return new SyncInvoker<ShowApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiVersionResponse>);
         }
         
+        /// <summary>
+        /// 增加域名
+        ///
+        /// 增加域名
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddDomainNameResponse AddDomainName(AddDomainNameRequest addDomainNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", addDomainNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addDomainNameRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AddDomainNameResponse>(response);
+        }
+
+        public SyncInvoker<AddDomainNameResponse> AddDomainNameInvoker(AddDomainNameRequest addDomainNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", addDomainNameRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addDomainNameRequest);
+            return new SyncInvoker<AddDomainNameResponse>(this, "POST", request, JsonUtils.DeSerialize<AddDomainNameResponse>);
+        }
+        
+        /// <summary>
+        /// 创建不可变Tag策略
+        ///
+        /// 创建不可变Tag策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateImmutableRuleResponse CreateImmutableRule(CreateImmutableRuleRequest createImmutableRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createImmutableRuleRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", createImmutableRuleRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createImmutableRuleRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateImmutableRuleResponse>(response);
+        }
+
+        public SyncInvoker<CreateImmutableRuleResponse> CreateImmutableRuleInvoker(CreateImmutableRuleRequest createImmutableRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createImmutableRuleRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", createImmutableRuleRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createImmutableRuleRequest);
+            return new SyncInvoker<CreateImmutableRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateImmutableRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 创建实例
+        ///
+        /// 创建企业仓库实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceResponse CreateInstance(CreateInstanceRequest createInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstanceResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceResponse> CreateInstanceInvoker(CreateInstanceRequest createInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRequest);
+            return new SyncInvoker<CreateInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 开启或关闭公网访问
+        ///
+        /// 开启或关闭公网访问
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceEndpointPolicyResponse CreateInstanceEndpointPolicy(CreateInstanceEndpointPolicyRequest createInstanceEndpointPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceEndpointPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceEndpointPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateInstanceEndpointPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceEndpointPolicyResponse> CreateInstanceEndpointPolicyInvoker(CreateInstanceEndpointPolicyRequest createInstanceEndpointPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceEndpointPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceEndpointPolicyRequest);
+            return new SyncInvoker<CreateInstanceEndpointPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateInstanceEndpointPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 新增内网访问
+        ///
+        /// 新增内网访问
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceInternalEndpointResponse CreateInstanceInternalEndpoint(CreateInstanceInternalEndpointRequest createInstanceInternalEndpointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceInternalEndpointRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceInternalEndpointRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstanceInternalEndpointResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceInternalEndpointResponse> CreateInstanceInternalEndpointInvoker(CreateInstanceInternalEndpointRequest createInstanceInternalEndpointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceInternalEndpointRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceInternalEndpointRequest);
+            return new SyncInvoker<CreateInstanceInternalEndpointResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceInternalEndpointResponse>);
+        }
+        
+        /// <summary>
+        /// 创建长期访问凭证
+        ///
+        /// 创建长期访问凭证
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceLtCredentialResponse CreateInstanceLtCredential(CreateInstanceLtCredentialRequest createInstanceLtCredentialRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceLtCredentialRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credential", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceLtCredentialRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstanceLtCredentialResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceLtCredentialResponse> CreateInstanceLtCredentialInvoker(CreateInstanceLtCredentialRequest createInstanceLtCredentialRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceLtCredentialRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credential", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceLtCredentialRequest);
+            return new SyncInvoker<CreateInstanceLtCredentialResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceLtCredentialResponse>);
+        }
+        
+        /// <summary>
+        /// 创建命名空间
+        ///
+        /// 创建命名空间
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceNamespaceResponse CreateInstanceNamespace(CreateInstanceNamespaceRequest createInstanceNamespaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceNamespaceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceNamespaceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstanceNamespaceResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceNamespaceResponse> CreateInstanceNamespaceInvoker(CreateInstanceNamespaceRequest createInstanceNamespaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceNamespaceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceNamespaceRequest);
+            return new SyncInvoker<CreateInstanceNamespaceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceNamespaceResponse>);
+        }
+        
+        /// <summary>
+        /// 创建镜像同步的目标仓库
+        ///
+        /// 创建镜像同步的目标仓库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceRegistryResponse CreateInstanceRegistry(CreateInstanceRegistryRequest createInstanceRegistryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceRegistryRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRegistryRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstanceRegistryResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceRegistryResponse> CreateInstanceRegistryInvoker(CreateInstanceRegistryRequest createInstanceRegistryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceRegistryRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRegistryRequest);
+            return new SyncInvoker<CreateInstanceRegistryResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceRegistryResponse>);
+        }
+        
+        /// <summary>
+        /// 创建镜像同步策略
+        ///
+        /// 创建镜像同步策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceReplicationPolicyResponse CreateInstanceReplicationPolicy(CreateInstanceReplicationPolicyRequest createInstanceReplicationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceReplicationPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceReplicationPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstanceReplicationPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceReplicationPolicyResponse> CreateInstanceReplicationPolicyInvoker(CreateInstanceReplicationPolicyRequest createInstanceReplicationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceReplicationPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceReplicationPolicyRequest);
+            return new SyncInvoker<CreateInstanceReplicationPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceReplicationPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 批量添加资源标签
+        ///
+        /// 批量添加资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceResourceTagsResponse CreateInstanceResourceTags(CreateInstanceResourceTagsRequest createInstanceResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", createInstanceResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", createInstanceResourceTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceResourceTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateInstanceResourceTagsResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceResourceTagsResponse> CreateInstanceResourceTagsInvoker(CreateInstanceResourceTagsRequest createInstanceResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", createInstanceResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", createInstanceResourceTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceResourceTagsRequest);
+            return new SyncInvoker<CreateInstanceResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateInstanceResourceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 创建老化策略
+        ///
+        /// 创建老化策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceRetentionPolicyResponse CreateInstanceRetentionPolicy(CreateInstanceRetentionPolicyRequest createInstanceRetentionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceRetentionPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", createInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRetentionPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstanceRetentionPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceRetentionPolicyResponse> CreateInstanceRetentionPolicyInvoker(CreateInstanceRetentionPolicyRequest createInstanceRetentionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceRetentionPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", createInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRetentionPolicyRequest);
+            return new SyncInvoker<CreateInstanceRetentionPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceRetentionPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 创建签名策略
+        ///
+        /// 创建签名策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceSignPolicyResponse CreateInstanceSignPolicy(CreateInstanceSignPolicyRequest createInstanceSignPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceSignPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", createInstanceSignPolicyRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceSignPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstanceSignPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceSignPolicyResponse> CreateInstanceSignPolicyInvoker(CreateInstanceSignPolicyRequest createInstanceSignPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceSignPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", createInstanceSignPolicyRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceSignPolicyRequest);
+            return new SyncInvoker<CreateInstanceSignPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceSignPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 获取临时访问凭证
+        ///
+        /// 获取临时访问凭证
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceTempCredentialResponse CreateInstanceTempCredential(CreateInstanceTempCredentialRequest createInstanceTempCredentialRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceTempCredentialRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/temp-credential", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceTempCredentialRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstanceTempCredentialResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceTempCredentialResponse> CreateInstanceTempCredentialInvoker(CreateInstanceTempCredentialRequest createInstanceTempCredentialRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceTempCredentialRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/temp-credential", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceTempCredentialRequest);
+            return new SyncInvoker<CreateInstanceTempCredentialResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceTempCredentialResponse>);
+        }
+        
+        /// <summary>
+        /// 创建触发器策略
+        ///
+        /// 创建触发器策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInstanceWebhookResponse CreateInstanceWebhook(CreateInstanceWebhookRequest createInstanceWebhookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceWebhookRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", createInstanceWebhookRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceWebhookRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstanceWebhookResponse>(response);
+        }
+
+        public SyncInvoker<CreateInstanceWebhookResponse> CreateInstanceWebhookInvoker(CreateInstanceWebhookRequest createInstanceWebhookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createInstanceWebhookRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", createInstanceWebhookRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceWebhookRequest);
+            return new SyncInvoker<CreateInstanceWebhookResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceWebhookResponse>);
+        }
+        
+        /// <summary>
+        /// 批量添加子资源标签
+        ///
+        /// 批量添加子资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateSubResourceTagsResponse CreateSubResourceTags(CreateSubResourceTagsRequest createSubResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", createSubResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", createSubResourceTagsRequest.ResourceId.ToString());
+            urlParam.Add("sub_resource_type", createSubResourceTagsRequest.SubResourceType.ToString());
+            urlParam.Add("sub_resource_id", createSubResourceTagsRequest.SubResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubResourceTagsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateSubResourceTagsResponse>(response);
+        }
+
+        public SyncInvoker<CreateSubResourceTagsResponse> CreateSubResourceTagsInvoker(CreateSubResourceTagsRequest createSubResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", createSubResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", createSubResourceTagsRequest.ResourceId.ToString());
+            urlParam.Add("sub_resource_type", createSubResourceTagsRequest.SubResourceType.ToString());
+            urlParam.Add("sub_resource_id", createSubResourceTagsRequest.SubResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubResourceTagsRequest);
+            return new SyncInvoker<CreateSubResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateSubResourceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 删除域名
+        ///
+        /// 删除域名，SWR企业仓库的默认域名无法删除。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest deleteDomainNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteDomainNameRequest.InstanceId.ToString());
+            urlParam.Add("domainname_id", deleteDomainNameRequest.DomainnameId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname/{domainname_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainNameRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDomainNameResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDomainNameResponse> DeleteDomainNameInvoker(DeleteDomainNameRequest deleteDomainNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteDomainNameRequest.InstanceId.ToString());
+            urlParam.Add("domainname_id", deleteDomainNameRequest.DomainnameId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname/{domainname_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainNameRequest);
+            return new SyncInvoker<DeleteDomainNameResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDomainNameResponse>);
+        }
+        
+        /// <summary>
+        /// 删除不可变Tag策略
+        ///
+        /// 删除不可变Tag策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteImmutableRuleResponse DeleteImmutableRule(DeleteImmutableRuleRequest deleteImmutableRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteImmutableRuleRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteImmutableRuleRequest.NamespaceName.ToString());
+            urlParam.Add("immutable_rule_id", deleteImmutableRuleRequest.ImmutableRuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules/{immutable_rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImmutableRuleRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteImmutableRuleResponse>(response);
+        }
+
+        public SyncInvoker<DeleteImmutableRuleResponse> DeleteImmutableRuleInvoker(DeleteImmutableRuleRequest deleteImmutableRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteImmutableRuleRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteImmutableRuleRequest.NamespaceName.ToString());
+            urlParam.Add("immutable_rule_id", deleteImmutableRuleRequest.ImmutableRuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules/{immutable_rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImmutableRuleRequest);
+            return new SyncInvoker<DeleteImmutableRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteImmutableRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 删除实例
+        ///
+        /// 删除实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest deleteInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceResponse> DeleteInstanceInvoker(DeleteInstanceRequest deleteInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
+            return new SyncInvoker<DeleteInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 删除制品
+        ///
+        /// 删除制品
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceArtifactResponse DeleteInstanceArtifact(DeleteInstanceArtifactRequest deleteInstanceArtifactRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceArtifactRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceArtifactRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", deleteInstanceArtifactRequest.RepositoryName.ToString());
+            urlParam.Add("reference", deleteInstanceArtifactRequest.Reference.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceArtifactRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceArtifactResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceArtifactResponse> DeleteInstanceArtifactInvoker(DeleteInstanceArtifactRequest deleteInstanceArtifactRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceArtifactRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceArtifactRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", deleteInstanceArtifactRequest.RepositoryName.ToString());
+            urlParam.Add("reference", deleteInstanceArtifactRequest.Reference.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceArtifactRequest);
+            return new SyncInvoker<DeleteInstanceArtifactResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceArtifactResponse>);
+        }
+        
+        /// <summary>
+        /// 删除内网访问
+        ///
+        /// 删除内网访问
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceInternalEndpointResponse DeleteInstanceInternalEndpoint(DeleteInstanceInternalEndpointRequest deleteInstanceInternalEndpointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceInternalEndpointRequest.InstanceId.ToString());
+            urlParam.Add("internal_endpoints_id", deleteInstanceInternalEndpointRequest.InternalEndpointsId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints/{internal_endpoints_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceInternalEndpointRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceInternalEndpointResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceInternalEndpointResponse> DeleteInstanceInternalEndpointInvoker(DeleteInstanceInternalEndpointRequest deleteInstanceInternalEndpointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceInternalEndpointRequest.InstanceId.ToString());
+            urlParam.Add("internal_endpoints_id", deleteInstanceInternalEndpointRequest.InternalEndpointsId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints/{internal_endpoints_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceInternalEndpointRequest);
+            return new SyncInvoker<DeleteInstanceInternalEndpointResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceInternalEndpointResponse>);
+        }
+        
+        /// <summary>
+        /// 删除任务
+        ///
+        /// 删除任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceJobResponse DeleteInstanceJob(DeleteInstanceJobRequest deleteInstanceJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", deleteInstanceJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceJobRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceJobResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceJobResponse> DeleteInstanceJobInvoker(DeleteInstanceJobRequest deleteInstanceJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", deleteInstanceJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceJobRequest);
+            return new SyncInvoker<DeleteInstanceJobResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceJobResponse>);
+        }
+        
+        /// <summary>
+        /// 删除长期访问凭证
+        ///
+        /// 删除长期访问凭证
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceLtCredentialResponse DeleteInstanceLtCredential(DeleteInstanceLtCredentialRequest deleteInstanceLtCredentialRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceLtCredentialRequest.InstanceId.ToString());
+            urlParam.Add("credential_id", deleteInstanceLtCredentialRequest.CredentialId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials/{credential_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceLtCredentialRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceLtCredentialResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceLtCredentialResponse> DeleteInstanceLtCredentialInvoker(DeleteInstanceLtCredentialRequest deleteInstanceLtCredentialRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceLtCredentialRequest.InstanceId.ToString());
+            urlParam.Add("credential_id", deleteInstanceLtCredentialRequest.CredentialId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials/{credential_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceLtCredentialRequest);
+            return new SyncInvoker<DeleteInstanceLtCredentialResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceLtCredentialResponse>);
+        }
+        
+        /// <summary>
+        /// 删除命名空间
+        ///
+        /// 删除命名空间
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceNamespaceResponse DeleteInstanceNamespace(DeleteInstanceNamespaceRequest deleteInstanceNamespaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceNamespaceRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceNamespaceRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceNamespaceRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceNamespaceResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceNamespaceResponse> DeleteInstanceNamespaceInvoker(DeleteInstanceNamespaceRequest deleteInstanceNamespaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceNamespaceRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceNamespaceRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceNamespaceRequest);
+            return new SyncInvoker<DeleteInstanceNamespaceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceNamespaceResponse>);
+        }
+        
+        /// <summary>
+        /// 删除镜像同步的目标仓库
+        ///
+        /// 删除同步仓库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceRegistryResponse DeleteInstanceRegistry(DeleteInstanceRegistryRequest deleteInstanceRegistryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRegistryRequest.InstanceId.ToString());
+            urlParam.Add("registry_id", deleteInstanceRegistryRequest.RegistryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRegistryRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceRegistryResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceRegistryResponse> DeleteInstanceRegistryInvoker(DeleteInstanceRegistryRequest deleteInstanceRegistryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRegistryRequest.InstanceId.ToString());
+            urlParam.Add("registry_id", deleteInstanceRegistryRequest.RegistryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRegistryRequest);
+            return new SyncInvoker<DeleteInstanceRegistryResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceRegistryResponse>);
+        }
+        
+        /// <summary>
+        /// 删除镜像同步策略
+        ///
+        /// 删除镜像同步策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceReplicationPolicyResponse DeleteInstanceReplicationPolicy(DeleteInstanceReplicationPolicyRequest deleteInstanceReplicationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceReplicationPolicyRequest.InstanceId.ToString());
+            urlParam.Add("policy_id", deleteInstanceReplicationPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceReplicationPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceReplicationPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceReplicationPolicyResponse> DeleteInstanceReplicationPolicyInvoker(DeleteInstanceReplicationPolicyRequest deleteInstanceReplicationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceReplicationPolicyRequest.InstanceId.ToString());
+            urlParam.Add("policy_id", deleteInstanceReplicationPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceReplicationPolicyRequest);
+            return new SyncInvoker<DeleteInstanceReplicationPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceReplicationPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除制品仓库
+        ///
+        /// 删除仓库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceRepositoryResponse DeleteInstanceRepository(DeleteInstanceRepositoryRequest deleteInstanceRepositoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRepositoryRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceRepositoryRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", deleteInstanceRepositoryRequest.RepositoryName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRepositoryRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceRepositoryResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceRepositoryResponse> DeleteInstanceRepositoryInvoker(DeleteInstanceRepositoryRequest deleteInstanceRepositoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRepositoryRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceRepositoryRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", deleteInstanceRepositoryRequest.RepositoryName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRepositoryRequest);
+            return new SyncInvoker<DeleteInstanceRepositoryResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceRepositoryResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除资源标签
+        ///
+        /// 批量删除资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceResourceTagsResponse DeleteInstanceResourceTags(DeleteInstanceResourceTagsRequest deleteInstanceResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", deleteInstanceResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", deleteInstanceResourceTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceResourceTagsRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceResourceTagsResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceResourceTagsResponse> DeleteInstanceResourceTagsInvoker(DeleteInstanceResourceTagsRequest deleteInstanceResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", deleteInstanceResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", deleteInstanceResourceTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceResourceTagsRequest);
+            return new SyncInvoker<DeleteInstanceResourceTagsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceResourceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 删除老化策略
+        ///
+        /// 删除老化策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceRetentionPolicyResponse DeleteInstanceRetentionPolicy(DeleteInstanceRetentionPolicyRequest deleteInstanceRetentionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRetentionPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", deleteInstanceRetentionPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRetentionPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceRetentionPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceRetentionPolicyResponse> DeleteInstanceRetentionPolicyInvoker(DeleteInstanceRetentionPolicyRequest deleteInstanceRetentionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceRetentionPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", deleteInstanceRetentionPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRetentionPolicyRequest);
+            return new SyncInvoker<DeleteInstanceRetentionPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceRetentionPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除签名策略
+        ///
+        /// 删除签名策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceSignPolicyResponse DeleteInstanceSignPolicy(DeleteInstanceSignPolicyRequest deleteInstanceSignPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceSignPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceSignPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", deleteInstanceSignPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceSignPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceSignPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceSignPolicyResponse> DeleteInstanceSignPolicyInvoker(DeleteInstanceSignPolicyRequest deleteInstanceSignPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceSignPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceSignPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", deleteInstanceSignPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceSignPolicyRequest);
+            return new SyncInvoker<DeleteInstanceSignPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceSignPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除触发器策略
+        ///
+        /// 删除触发器策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceWebhookResponse DeleteInstanceWebhook(DeleteInstanceWebhookRequest deleteInstanceWebhookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceWebhookRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceWebhookRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", deleteInstanceWebhookRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceWebhookRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceWebhookResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceWebhookResponse> DeleteInstanceWebhookInvoker(DeleteInstanceWebhookRequest deleteInstanceWebhookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteInstanceWebhookRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", deleteInstanceWebhookRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", deleteInstanceWebhookRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceWebhookRequest);
+            return new SyncInvoker<DeleteInstanceWebhookResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceWebhookResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除子资源标签
+        ///
+        /// 批量删除子资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteSubResourceTagsResponse DeleteSubResourceTags(DeleteSubResourceTagsRequest deleteSubResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", deleteSubResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", deleteSubResourceTagsRequest.ResourceId.ToString());
+            urlParam.Add("sub_resource_type", deleteSubResourceTagsRequest.SubResourceType.ToString());
+            urlParam.Add("sub_resource_id", deleteSubResourceTagsRequest.SubResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubResourceTagsRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteSubResourceTagsResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSubResourceTagsResponse> DeleteSubResourceTagsInvoker(DeleteSubResourceTagsRequest deleteSubResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", deleteSubResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", deleteSubResourceTagsRequest.ResourceId.ToString());
+            urlParam.Add("sub_resource_type", deleteSubResourceTagsRequest.SubResourceType.ToString());
+            urlParam.Add("sub_resource_id", deleteSubResourceTagsRequest.SubResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubResourceTagsRequest);
+            return new SyncInvoker<DeleteSubResourceTagsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSubResourceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 手动执行镜像同步策略
+        ///
+        /// 手动执行同步策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExecuteInstanceReplicationPolicyResponse ExecuteInstanceReplicationPolicy(ExecuteInstanceReplicationPolicyRequest executeInstanceReplicationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeInstanceReplicationPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceReplicationPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteInstanceReplicationPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ExecuteInstanceReplicationPolicyResponse> ExecuteInstanceReplicationPolicyInvoker(ExecuteInstanceReplicationPolicyRequest executeInstanceReplicationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeInstanceReplicationPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceReplicationPolicyRequest);
+            return new SyncInvoker<ExecuteInstanceReplicationPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteInstanceReplicationPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 执行老化策略
+        ///
+        /// 执行老化策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExecuteInstanceRetentionPolicyResponse ExecuteInstanceRetentionPolicy(ExecuteInstanceRetentionPolicyRequest executeInstanceRetentionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeInstanceRetentionPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", executeInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", executeInstanceRetentionPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceRetentionPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteInstanceRetentionPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ExecuteInstanceRetentionPolicyResponse> ExecuteInstanceRetentionPolicyInvoker(ExecuteInstanceRetentionPolicyRequest executeInstanceRetentionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeInstanceRetentionPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", executeInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", executeInstanceRetentionPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceRetentionPolicyRequest);
+            return new SyncInvoker<ExecuteInstanceRetentionPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteInstanceRetentionPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 手动执行签名策略
+        ///
+        /// 手动执行签名策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExecuteInstanceSignPolicyResponse ExecuteInstanceSignPolicy(ExecuteInstanceSignPolicyRequest executeInstanceSignPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeInstanceSignPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", executeInstanceSignPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", executeInstanceSignPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceSignPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteInstanceSignPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ExecuteInstanceSignPolicyResponse> ExecuteInstanceSignPolicyInvoker(ExecuteInstanceSignPolicyRequest executeInstanceSignPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", executeInstanceSignPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", executeInstanceSignPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", executeInstanceSignPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceSignPolicyRequest);
+            return new SyncInvoker<ExecuteInstanceSignPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteInstanceSignPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 获取上传下载的相关审计日志列表
+        ///
+        /// 获取上传下载的相关审计日志列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAuditLogsResponse ListAuditLogs(ListAuditLogsRequest listAuditLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditLogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/audit-logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAuditLogsResponse>(response);
+        }
+
+        public SyncInvoker<ListAuditLogsResponse> ListAuditLogsInvoker(ListAuditLogsRequest listAuditLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditLogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/audit-logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogsRequest);
+            return new SyncInvoker<ListAuditLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuditLogsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询所有域名列表
+        ///
+        /// 查询当前实例的所有域名
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest listDomainNamesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listDomainNamesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainNamesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDomainNamesResponse>(response);
+        }
+
+        public SyncInvoker<ListDomainNamesResponse> ListDomainNamesInvoker(ListDomainNamesRequest listDomainNamesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listDomainNamesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainNamesRequest);
+            return new SyncInvoker<ListDomainNamesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainNamesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询特性开关信息
+        ///
+        /// 查询特性开关信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListFeatureGatesResponse ListFeatureGates(ListFeatureGatesRequest listFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listFeatureGatesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/feature-gates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFeatureGatesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListFeatureGatesResponse>(response);
+        }
+
+        public SyncInvoker<ListFeatureGatesResponse> ListFeatureGatesInvoker(ListFeatureGatesRequest listFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listFeatureGatesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/feature-gates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFeatureGatesRequest);
+            return new SyncInvoker<ListFeatureGatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFeatureGatesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询全局特性开关信息
+        ///
+        /// 查询全局特性开关信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListGlobalFeatureGatesResponse ListGlobalFeatureGates(ListGlobalFeatureGatesRequest listGlobalFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/feature-gates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGlobalFeatureGatesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListGlobalFeatureGatesResponse>(response);
+        }
+
+        public SyncInvoker<ListGlobalFeatureGatesResponse> ListGlobalFeatureGatesInvoker(ListGlobalFeatureGatesRequest listGlobalFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/feature-gates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGlobalFeatureGatesRequest);
+            return new SyncInvoker<ListGlobalFeatureGatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGlobalFeatureGatesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取不可变Tag策略列表
+        ///
+        /// 获取不可变Tag策略列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListImmutableRulesResponse ListImmutableRules(ListImmutableRulesRequest listImmutableRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listImmutableRulesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/immutabletagrules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImmutableRulesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListImmutableRulesResponse>(response);
+        }
+
+        public SyncInvoker<ListImmutableRulesResponse> ListImmutableRulesInvoker(ListImmutableRulesRequest listImmutableRulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listImmutableRulesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/immutabletagrules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImmutableRulesRequest);
+            return new SyncInvoker<ListImmutableRulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListImmutableRulesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例列表
+        ///
+        /// 查询实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceResponse ListInstance(ListInstanceRequest listInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceResponse> ListInstanceInvoker(ListInstanceRequest listInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRequest);
+            return new SyncInvoker<ListInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 获取制品附件列表
+        ///
+        /// 获取制品附件列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceAccessoriesResponse ListInstanceAccessories(ListInstanceAccessoriesRequest listInstanceAccessoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceAccessoriesRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceAccessoriesRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", listInstanceAccessoriesRequest.RepositoryName.ToString());
+            urlParam.Add("reference", listInstanceAccessoriesRequest.Reference.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/accessories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceAccessoriesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceAccessoriesResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceAccessoriesResponse> ListInstanceAccessoriesInvoker(ListInstanceAccessoriesRequest listInstanceAccessoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceAccessoriesRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceAccessoriesRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", listInstanceAccessoriesRequest.RepositoryName.ToString());
+            urlParam.Add("reference", listInstanceAccessoriesRequest.Reference.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/accessories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceAccessoriesRequest);
+            return new SyncInvoker<ListInstanceAccessoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceAccessoriesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取仓库实例的所有制品版本列表
+        ///
+        /// 获取仓库实例的所有制品版本列表（此接口只在企业仓库实例版本大于25.6.0以上的版本才支持）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceAllArtifactsResponse ListInstanceAllArtifacts(ListInstanceAllArtifactsRequest listInstanceAllArtifactsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceAllArtifactsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/artifacts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceAllArtifactsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceAllArtifactsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceAllArtifactsResponse> ListInstanceAllArtifactsInvoker(ListInstanceAllArtifactsRequest listInstanceAllArtifactsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceAllArtifactsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/artifacts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceAllArtifactsRequest);
+            return new SyncInvoker<ListInstanceAllArtifactsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceAllArtifactsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取制品版本列表
+        ///
+        /// 获取制品版本列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceArtifactsResponse ListInstanceArtifacts(ListInstanceArtifactsRequest listInstanceArtifactsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceArtifactsRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceArtifactsRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", listInstanceArtifactsRequest.RepositoryName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceArtifactsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceArtifactsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceArtifactsResponse> ListInstanceArtifactsInvoker(ListInstanceArtifactsRequest listInstanceArtifactsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceArtifactsRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceArtifactsRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", listInstanceArtifactsRequest.RepositoryName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceArtifactsRequest);
+            return new SyncInvoker<ListInstanceArtifactsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceArtifactsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取内网访问列表
+        ///
+        /// 获取内网访问列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceInternalEndpointsResponse ListInstanceInternalEndpoints(ListInstanceInternalEndpointsRequest listInstanceInternalEndpointsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceInternalEndpointsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceInternalEndpointsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceInternalEndpointsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceInternalEndpointsResponse> ListInstanceInternalEndpointsInvoker(ListInstanceInternalEndpointsRequest listInstanceInternalEndpointsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceInternalEndpointsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceInternalEndpointsRequest);
+            return new SyncInvoker<ListInstanceInternalEndpointsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceInternalEndpointsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取任务列表
+        ///
+        /// 获取任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceJobsResponse ListInstanceJobs(ListInstanceJobsRequest listInstanceJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceJobsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceJobsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceJobsResponse> ListInstanceJobsInvoker(ListInstanceJobsRequest listInstanceJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceJobsRequest);
+            return new SyncInvoker<ListInstanceJobsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceJobsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询长期访问凭证列表
+        ///
+        /// 查询长期访问凭证列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceLtCredentialsResponse ListInstanceLtCredentials(ListInstanceLtCredentialsRequest listInstanceLtCredentialsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceLtCredentialsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceLtCredentialsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceLtCredentialsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceLtCredentialsResponse> ListInstanceLtCredentialsInvoker(ListInstanceLtCredentialsRequest listInstanceLtCredentialsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceLtCredentialsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceLtCredentialsRequest);
+            return new SyncInvoker<ListInstanceLtCredentialsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceLtCredentialsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取命名空间列表
+        ///
+        /// 获取命名空间列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceNamespacesResponse ListInstanceNamespaces(ListInstanceNamespacesRequest listInstanceNamespacesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceNamespacesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceNamespacesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceNamespacesResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceNamespacesResponse> ListInstanceNamespacesInvoker(ListInstanceNamespacesRequest listInstanceNamespacesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceNamespacesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceNamespacesRequest);
+            return new SyncInvoker<ListInstanceNamespacesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceNamespacesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询项目下所有实例标签
+        ///
+        /// 查询项目下所有实例标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceProjectTagsResponse ListInstanceProjectTags(ListInstanceProjectTagsRequest listInstanceProjectTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceProjectTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceProjectTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceProjectTagsResponse> ListInstanceProjectTagsInvoker(ListInstanceProjectTagsRequest listInstanceProjectTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceProjectTagsRequest);
+            return new SyncInvoker<ListInstanceProjectTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceProjectTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取镜像同步的目标仓库列表
+        ///
+        /// 获取镜像同步的目标仓库列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceRegistriesResponse ListInstanceRegistries(ListInstanceRegistriesRequest listInstanceRegistriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRegistriesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRegistriesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceRegistriesResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceRegistriesResponse> ListInstanceRegistriesInvoker(ListInstanceRegistriesRequest listInstanceRegistriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRegistriesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRegistriesRequest);
+            return new SyncInvoker<ListInstanceRegistriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRegistriesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取镜像同步策略列表
+        ///
+        /// 获取镜像同步策略列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceReplicationPoliciesResponse ListInstanceReplicationPolicies(ListInstanceReplicationPoliciesRequest listInstanceReplicationPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceReplicationPoliciesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPoliciesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceReplicationPoliciesResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceReplicationPoliciesResponse> ListInstanceReplicationPoliciesInvoker(ListInstanceReplicationPoliciesRequest listInstanceReplicationPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceReplicationPoliciesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPoliciesRequest);
+            return new SyncInvoker<ListInstanceReplicationPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceReplicationPoliciesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取镜像同步策略执行任务的镜像版本列表
+        ///
+        /// 获取镜像同步策略执行任务的镜像版本列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceReplicationPolicyExecSubTasksResponse ListInstanceReplicationPolicyExecSubTasks(ListInstanceReplicationPolicyExecSubTasksRequest listInstanceReplicationPolicyExecSubTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceReplicationPolicyExecSubTasksRequest.InstanceId.ToString());
+            urlParam.Add("execution_id", listInstanceReplicationPolicyExecSubTasksRequest.ExecutionId.ToString());
+            urlParam.Add("task_id", listInstanceReplicationPolicyExecSubTasksRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecSubTasksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceReplicationPolicyExecSubTasksResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceReplicationPolicyExecSubTasksResponse> ListInstanceReplicationPolicyExecSubTasksInvoker(ListInstanceReplicationPolicyExecSubTasksRequest listInstanceReplicationPolicyExecSubTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceReplicationPolicyExecSubTasksRequest.InstanceId.ToString());
+            urlParam.Add("execution_id", listInstanceReplicationPolicyExecSubTasksRequest.ExecutionId.ToString());
+            urlParam.Add("task_id", listInstanceReplicationPolicyExecSubTasksRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecSubTasksRequest);
+            return new SyncInvoker<ListInstanceReplicationPolicyExecSubTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceReplicationPolicyExecSubTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取镜像同步策略执行任务的镜像列表
+        ///
+        /// 获取镜像同步策略执行任务的镜像列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceReplicationPolicyExecTasksResponse ListInstanceReplicationPolicyExecTasks(ListInstanceReplicationPolicyExecTasksRequest listInstanceReplicationPolicyExecTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceReplicationPolicyExecTasksRequest.InstanceId.ToString());
+            urlParam.Add("execution_id", listInstanceReplicationPolicyExecTasksRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecTasksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceReplicationPolicyExecTasksResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceReplicationPolicyExecTasksResponse> ListInstanceReplicationPolicyExecTasksInvoker(ListInstanceReplicationPolicyExecTasksRequest listInstanceReplicationPolicyExecTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceReplicationPolicyExecTasksRequest.InstanceId.ToString());
+            urlParam.Add("execution_id", listInstanceReplicationPolicyExecTasksRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecTasksRequest);
+            return new SyncInvoker<ListInstanceReplicationPolicyExecTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceReplicationPolicyExecTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取镜像同步策略执行记录列表
+        ///
+        /// 获取镜像同步策略执行记录列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceReplicationPolicyExecutionsResponse ListInstanceReplicationPolicyExecutions(ListInstanceReplicationPolicyExecutionsRequest listInstanceReplicationPolicyExecutionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceReplicationPolicyExecutionsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecutionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceReplicationPolicyExecutionsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceReplicationPolicyExecutionsResponse> ListInstanceReplicationPolicyExecutionsInvoker(ListInstanceReplicationPolicyExecutionsRequest listInstanceReplicationPolicyExecutionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceReplicationPolicyExecutionsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecutionsRequest);
+            return new SyncInvoker<ListInstanceReplicationPolicyExecutionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceReplicationPolicyExecutionsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取制品仓库列表
+        ///
+        /// 获取制品仓库列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceRepositoriesResponse ListInstanceRepositories(ListInstanceRepositoriesRequest listInstanceRepositoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRepositoriesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRepositoriesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceRepositoriesResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceRepositoriesResponse> ListInstanceRepositoriesInvoker(ListInstanceRepositoriesRequest listInstanceRepositoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRepositoriesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRepositoriesRequest);
+            return new SyncInvoker<ListInstanceRepositoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRepositoriesResponse>);
+        }
+        
+        /// <summary>
+        /// 按照标签检索资源列表
+        ///
+        /// 按照标签检索资源列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceResourceInstancesResponse ListInstanceResourceInstances(ListInstanceResourceInstancesRequest listInstanceResourceInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listInstanceResourceInstancesRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceResourceInstancesRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListInstanceResourceInstancesResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceResourceInstancesResponse> ListInstanceResourceInstancesInvoker(ListInstanceResourceInstancesRequest listInstanceResourceInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listInstanceResourceInstancesRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceResourceInstancesRequest);
+            return new SyncInvoker<ListInstanceResourceInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListInstanceResourceInstancesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询资源标签
+        ///
+        /// 查询资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceResourceTagsResponse ListInstanceResourceTags(ListInstanceResourceTagsRequest listInstanceResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listInstanceResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", listInstanceResourceTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceResourceTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceResourceTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceResourceTagsResponse> ListInstanceResourceTagsInvoker(ListInstanceResourceTagsRequest listInstanceResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listInstanceResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", listInstanceResourceTagsRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceResourceTagsRequest);
+            return new SyncInvoker<ListInstanceResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceResourceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取老化策略列表
+        ///
+        /// 获取老化策略列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceRetentionPoliciesResponse ListInstanceRetentionPolicies(ListInstanceRetentionPoliciesRequest listInstanceRetentionPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRetentionPoliciesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/retention/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPoliciesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceRetentionPoliciesResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceRetentionPoliciesResponse> ListInstanceRetentionPoliciesInvoker(ListInstanceRetentionPoliciesRequest listInstanceRetentionPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRetentionPoliciesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/retention/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPoliciesRequest);
+            return new SyncInvoker<ListInstanceRetentionPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRetentionPoliciesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取老化策略执行任务的镜像版本列表
+        ///
+        /// 获取老化策略执行任务的镜像版本列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceRetentionPolicyExecSubTasksResponse ListInstanceRetentionPolicyExecSubTasks(ListInstanceRetentionPolicyExecSubTasksRequest listInstanceRetentionPolicyExecSubTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRetentionPolicyExecSubTasksRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecSubTasksRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceRetentionPolicyExecSubTasksRequest.PolicyId.ToString());
+            urlParam.Add("execution_id", listInstanceRetentionPolicyExecSubTasksRequest.ExecutionId.ToString());
+            urlParam.Add("task_id", listInstanceRetentionPolicyExecSubTasksRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecSubTasksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceRetentionPolicyExecSubTasksResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceRetentionPolicyExecSubTasksResponse> ListInstanceRetentionPolicyExecSubTasksInvoker(ListInstanceRetentionPolicyExecSubTasksRequest listInstanceRetentionPolicyExecSubTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRetentionPolicyExecSubTasksRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecSubTasksRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceRetentionPolicyExecSubTasksRequest.PolicyId.ToString());
+            urlParam.Add("execution_id", listInstanceRetentionPolicyExecSubTasksRequest.ExecutionId.ToString());
+            urlParam.Add("task_id", listInstanceRetentionPolicyExecSubTasksRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecSubTasksRequest);
+            return new SyncInvoker<ListInstanceRetentionPolicyExecSubTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRetentionPolicyExecSubTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取老化策略执行任务的镜像列表
+        ///
+        /// 获取老化策略执行任务的镜像列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceRetentionPolicyExecTasksResponse ListInstanceRetentionPolicyExecTasks(ListInstanceRetentionPolicyExecTasksRequest listInstanceRetentionPolicyExecTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRetentionPolicyExecTasksRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecTasksRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceRetentionPolicyExecTasksRequest.PolicyId.ToString());
+            urlParam.Add("execution_id", listInstanceRetentionPolicyExecTasksRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions/{execution_id}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecTasksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceRetentionPolicyExecTasksResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceRetentionPolicyExecTasksResponse> ListInstanceRetentionPolicyExecTasksInvoker(ListInstanceRetentionPolicyExecTasksRequest listInstanceRetentionPolicyExecTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRetentionPolicyExecTasksRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecTasksRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceRetentionPolicyExecTasksRequest.PolicyId.ToString());
+            urlParam.Add("execution_id", listInstanceRetentionPolicyExecTasksRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions/{execution_id}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecTasksRequest);
+            return new SyncInvoker<ListInstanceRetentionPolicyExecTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRetentionPolicyExecTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取老化策略执行记录列表
+        ///
+        /// 获取老化策略执行记录列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceRetentionPolicyExecutionsResponse ListInstanceRetentionPolicyExecutions(ListInstanceRetentionPolicyExecutionsRequest listInstanceRetentionPolicyExecutionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRetentionPolicyExecutionsRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecutionsRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceRetentionPolicyExecutionsRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecutionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceRetentionPolicyExecutionsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceRetentionPolicyExecutionsResponse> ListInstanceRetentionPolicyExecutionsInvoker(ListInstanceRetentionPolicyExecutionsRequest listInstanceRetentionPolicyExecutionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceRetentionPolicyExecutionsRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecutionsRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceRetentionPolicyExecutionsRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecutionsRequest);
+            return new SyncInvoker<ListInstanceRetentionPolicyExecutionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRetentionPolicyExecutionsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取签名策略列表
+        ///
+        /// 获取签名策略列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceSignPoliciesResponse ListInstanceSignPolicies(ListInstanceSignPoliciesRequest listInstanceSignPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceSignPoliciesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/signature/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPoliciesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceSignPoliciesResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceSignPoliciesResponse> ListInstanceSignPoliciesInvoker(ListInstanceSignPoliciesRequest listInstanceSignPoliciesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceSignPoliciesRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/signature/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPoliciesRequest);
+            return new SyncInvoker<ListInstanceSignPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceSignPoliciesResponse>);
+        }
+        
+        /// <summary>
+        /// 获取签名执行记录任务的镜像列表
+        ///
+        /// 获取签名执行记录任务的镜像列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceSignPolicyExecTasksResponse ListInstanceSignPolicyExecTasks(ListInstanceSignPolicyExecTasksRequest listInstanceSignPolicyExecTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceSignPolicyExecTasksRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceSignPolicyExecTasksRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceSignPolicyExecTasksRequest.PolicyId.ToString());
+            urlParam.Add("execution_id", listInstanceSignPolicyExecTasksRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions/{execution_id}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPolicyExecTasksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceSignPolicyExecTasksResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceSignPolicyExecTasksResponse> ListInstanceSignPolicyExecTasksInvoker(ListInstanceSignPolicyExecTasksRequest listInstanceSignPolicyExecTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceSignPolicyExecTasksRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceSignPolicyExecTasksRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceSignPolicyExecTasksRequest.PolicyId.ToString());
+            urlParam.Add("execution_id", listInstanceSignPolicyExecTasksRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions/{execution_id}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPolicyExecTasksRequest);
+            return new SyncInvoker<ListInstanceSignPolicyExecTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceSignPolicyExecTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取签名执行记录列表
+        ///
+        /// 获取签名执行记录列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceSignPolicyExecutionsResponse ListInstanceSignPolicyExecutions(ListInstanceSignPolicyExecutionsRequest listInstanceSignPolicyExecutionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceSignPolicyExecutionsRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceSignPolicyExecutionsRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceSignPolicyExecutionsRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPolicyExecutionsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceSignPolicyExecutionsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceSignPolicyExecutionsResponse> ListInstanceSignPolicyExecutionsInvoker(ListInstanceSignPolicyExecutionsRequest listInstanceSignPolicyExecutionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceSignPolicyExecutionsRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceSignPolicyExecutionsRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceSignPolicyExecutionsRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPolicyExecutionsRequest);
+            return new SyncInvoker<ListInstanceSignPolicyExecutionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceSignPolicyExecutionsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取签名策略执行任务的镜像版本列表
+        ///
+        /// 获取签名策略执行任务的镜像版本列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceSignatureExecutionSubtasksResponse ListInstanceSignatureExecutionSubtasks(ListInstanceSignatureExecutionSubtasksRequest listInstanceSignatureExecutionSubtasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceSignatureExecutionSubtasksRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceSignatureExecutionSubtasksRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceSignatureExecutionSubtasksRequest.PolicyId.ToString());
+            urlParam.Add("execution_id", listInstanceSignatureExecutionSubtasksRequest.ExecutionId.ToString());
+            urlParam.Add("task_id", listInstanceSignatureExecutionSubtasksRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignatureExecutionSubtasksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceSignatureExecutionSubtasksResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceSignatureExecutionSubtasksResponse> ListInstanceSignatureExecutionSubtasksInvoker(ListInstanceSignatureExecutionSubtasksRequest listInstanceSignatureExecutionSubtasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceSignatureExecutionSubtasksRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceSignatureExecutionSubtasksRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceSignatureExecutionSubtasksRequest.PolicyId.ToString());
+            urlParam.Add("execution_id", listInstanceSignatureExecutionSubtasksRequest.ExecutionId.ToString());
+            urlParam.Add("task_id", listInstanceSignatureExecutionSubtasksRequest.TaskId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignatureExecutionSubtasksRequest);
+            return new SyncInvoker<ListInstanceSignatureExecutionSubtasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceSignatureExecutionSubtasksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取实例统计数据
+        ///
+        /// 获取实例统计数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceStatisticsResponse ListInstanceStatistics(ListInstanceStatisticsRequest listInstanceStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceStatisticsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceStatisticsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceStatisticsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceStatisticsResponse> ListInstanceStatisticsInvoker(ListInstanceStatisticsRequest listInstanceStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceStatisticsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceStatisticsRequest);
+            return new SyncInvoker<ListInstanceStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceStatisticsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取制品仓库的Tag列表
+        ///
+        /// 获取制品仓库的Tag列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceTagsResponse ListInstanceTags(ListInstanceTagsRequest listInstanceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceTagsRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceTagsRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", listInstanceTagsRequest.RepositoryName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceTagsResponse> ListInstanceTagsInvoker(ListInstanceTagsRequest listInstanceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceTagsRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceTagsRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", listInstanceTagsRequest.RepositoryName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
+            return new SyncInvoker<ListInstanceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取触发器执行任务列表
+        ///
+        /// 获取触发器执行任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceWebhookJobsResponse ListInstanceWebhookJobs(ListInstanceWebhookJobsRequest listInstanceWebhookJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceWebhookJobsRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceWebhookJobsRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceWebhookJobsRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}/jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceWebhookJobsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceWebhookJobsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceWebhookJobsResponse> ListInstanceWebhookJobsInvoker(ListInstanceWebhookJobsRequest listInstanceWebhookJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceWebhookJobsRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listInstanceWebhookJobsRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", listInstanceWebhookJobsRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}/jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceWebhookJobsRequest);
+            return new SyncInvoker<ListInstanceWebhookJobsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceWebhookJobsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取触发器策略列表
+        ///
+        /// 获取触发器策略列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceWebhooksResponse ListInstanceWebhooks(ListInstanceWebhooksRequest listInstanceWebhooksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceWebhooksRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/webhook/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceWebhooksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceWebhooksResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceWebhooksResponse> ListInstanceWebhooksInvoker(ListInstanceWebhooksRequest listInstanceWebhooksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceWebhooksRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/webhook/policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceWebhooksRequest);
+            return new SyncInvoker<ListInstanceWebhooksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceWebhooksResponse>);
+        }
+        
+        /// <summary>
+        /// 获取命名空间下所有制品仓库列表
+        ///
+        /// 获取命名空间下所有制品仓库列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListNamespaceRepositoriesResponse ListNamespaceRepositories(ListNamespaceRepositoriesRequest listNamespaceRepositoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listNamespaceRepositoriesRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listNamespaceRepositoriesRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNamespaceRepositoriesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListNamespaceRepositoriesResponse>(response);
+        }
+
+        public SyncInvoker<ListNamespaceRepositoriesResponse> ListNamespaceRepositoriesInvoker(ListNamespaceRepositoriesRequest listNamespaceRepositoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listNamespaceRepositoriesRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", listNamespaceRepositoriesRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNamespaceRepositoriesRequest);
+            return new SyncInvoker<ListNamespaceRepositoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNamespaceRepositoriesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例下所有命名空间标签
+        ///
+        /// 查询实例下所有命名空间标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListNamespaceTagsResponse ListNamespaceTags(ListNamespaceTagsRequest listNamespaceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listNamespaceTagsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces-tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNamespaceTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListNamespaceTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListNamespaceTagsResponse> ListNamespaceTagsInvoker(ListNamespaceTagsRequest listNamespaceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listNamespaceTagsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces-tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNamespaceTagsRequest);
+            return new SyncInvoker<ListNamespaceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNamespaceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 按照标签检索子资源列表
+        ///
+        /// 按照标签检索子资源列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSubResourceInstancesResponse ListSubResourceInstances(ListSubResourceInstancesRequest listSubResourceInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listSubResourceInstancesRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", listSubResourceInstancesRequest.ResourceId.ToString());
+            urlParam.Add("sub_resource_type", listSubResourceInstancesRequest.SubResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubResourceInstancesRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListSubResourceInstancesResponse>(response);
+        }
+
+        public SyncInvoker<ListSubResourceInstancesResponse> ListSubResourceInstancesInvoker(ListSubResourceInstancesRequest listSubResourceInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listSubResourceInstancesRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", listSubResourceInstancesRequest.ResourceId.ToString());
+            urlParam.Add("sub_resource_type", listSubResourceInstancesRequest.SubResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubResourceInstancesRequest);
+            return new SyncInvoker<ListSubResourceInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSubResourceInstancesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询子资源标签
+        ///
+        /// 查询子资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSubResourceTagsResponse ListSubResourceTags(ListSubResourceTagsRequest listSubResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listSubResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", listSubResourceTagsRequest.ResourceId.ToString());
+            urlParam.Add("sub_resource_type", listSubResourceTagsRequest.SubResourceType.ToString());
+            urlParam.Add("sub_resource_id", listSubResourceTagsRequest.SubResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubResourceTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSubResourceTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListSubResourceTagsResponse> ListSubResourceTagsInvoker(ListSubResourceTagsRequest listSubResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listSubResourceTagsRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", listSubResourceTagsRequest.ResourceId.ToString());
+            urlParam.Add("sub_resource_type", listSubResourceTagsRequest.SubResourceType.ToString());
+            urlParam.Add("sub_resource_id", listSubResourceTagsRequest.SubResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubResourceTagsRequest);
+            return new SyncInvoker<ListSubResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSubResourceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取实例详情
+        ///
+        /// 获取实例详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceResponse ShowInstance(ShowInstanceRequest showInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceResponse> ShowInstanceInvoker(ShowInstanceRequest showInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
+            return new SyncInvoker<ShowInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 获取制品详情
+        ///
+        /// 获取制品详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceArtifactResponse ShowInstanceArtifact(ShowInstanceArtifactRequest showInstanceArtifactRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceArtifactRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceArtifactRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", showInstanceArtifactRequest.RepositoryName.ToString());
+            urlParam.Add("reference", showInstanceArtifactRequest.Reference.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceArtifactRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceArtifactResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceArtifactResponse> ShowInstanceArtifactInvoker(ShowInstanceArtifactRequest showInstanceArtifactRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceArtifactRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceArtifactRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", showInstanceArtifactRequest.RepositoryName.ToString());
+            urlParam.Add("reference", showInstanceArtifactRequest.Reference.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceArtifactRequest);
+            return new SyncInvoker<ShowInstanceArtifactResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceArtifactResponse>);
+        }
+        
+        /// <summary>
+        /// 获取制品附加信息
+        ///
+        /// 获取制品附加信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceArtifactAdditionResponse ShowInstanceArtifactAddition(ShowInstanceArtifactAdditionRequest showInstanceArtifactAdditionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceArtifactAdditionRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceArtifactAdditionRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", showInstanceArtifactAdditionRequest.RepositoryName.ToString());
+            urlParam.Add("reference", showInstanceArtifactAdditionRequest.Reference.ToString());
+            urlParam.Add("addition", showInstanceArtifactAdditionRequest.Addition.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/additions/{addition}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceArtifactAdditionRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceArtifactAdditionResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceArtifactAdditionResponse> ShowInstanceArtifactAdditionInvoker(ShowInstanceArtifactAdditionRequest showInstanceArtifactAdditionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceArtifactAdditionRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceArtifactAdditionRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", showInstanceArtifactAdditionRequest.RepositoryName.ToString());
+            urlParam.Add("reference", showInstanceArtifactAdditionRequest.Reference.ToString());
+            urlParam.Add("addition", showInstanceArtifactAdditionRequest.Addition.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/additions/{addition}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceArtifactAdditionRequest);
+            return new SyncInvoker<ShowInstanceArtifactAdditionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceArtifactAdditionResponse>);
+        }
+        
+        /// <summary>
+        /// 查看实例配置
+        ///
+        /// 查看实例配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceConfigurationResponse ShowInstanceConfiguration(ShowInstanceConfigurationRequest showInstanceConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceConfigurationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigurationRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceConfigurationResponse> ShowInstanceConfigurationInvoker(ShowInstanceConfigurationRequest showInstanceConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceConfigurationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigurationRequest);
+            return new SyncInvoker<ShowInstanceConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 获取公网访问信息
+        ///
+        /// 获取公网访问信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceEndpointPolicyResponse ShowInstanceEndpointPolicy(ShowInstanceEndpointPolicyRequest showInstanceEndpointPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceEndpointPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceEndpointPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceEndpointPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceEndpointPolicyResponse> ShowInstanceEndpointPolicyInvoker(ShowInstanceEndpointPolicyRequest showInstanceEndpointPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceEndpointPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceEndpointPolicyRequest);
+            return new SyncInvoker<ShowInstanceEndpointPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceEndpointPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询内网访问详情
+        ///
+        /// 查询内网访问详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceInternalEndpointResponse ShowInstanceInternalEndpoint(ShowInstanceInternalEndpointRequest showInstanceInternalEndpointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceInternalEndpointRequest.InstanceId.ToString());
+            urlParam.Add("internal_endpoints_id", showInstanceInternalEndpointRequest.InternalEndpointsId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints/{internal_endpoints_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceInternalEndpointRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceInternalEndpointResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceInternalEndpointResponse> ShowInstanceInternalEndpointInvoker(ShowInstanceInternalEndpointRequest showInstanceInternalEndpointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceInternalEndpointRequest.InstanceId.ToString());
+            urlParam.Add("internal_endpoints_id", showInstanceInternalEndpointRequest.InternalEndpointsId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints/{internal_endpoints_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceInternalEndpointRequest);
+            return new SyncInvoker<ShowInstanceInternalEndpointResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceInternalEndpointResponse>);
+        }
+        
+        /// <summary>
+        /// 获取任务详情
+        ///
+        /// 获取任务详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceJobResponse ShowInstanceJob(ShowInstanceJobRequest showInstanceJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showInstanceJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceJobRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceJobResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceJobResponse> ShowInstanceJobInvoker(ShowInstanceJobRequest showInstanceJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showInstanceJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceJobRequest);
+            return new SyncInvoker<ShowInstanceJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceJobResponse>);
+        }
+        
+        /// <summary>
+        /// 获取命名空间详情
+        ///
+        /// 获取命名空间详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceNamespaceResponse ShowInstanceNamespace(ShowInstanceNamespaceRequest showInstanceNamespaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceNamespaceRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceNamespaceRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceNamespaceRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceNamespaceResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceNamespaceResponse> ShowInstanceNamespaceInvoker(ShowInstanceNamespaceRequest showInstanceNamespaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceNamespaceRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceNamespaceRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceNamespaceRequest);
+            return new SyncInvoker<ShowInstanceNamespaceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceNamespaceResponse>);
+        }
+        
+        /// <summary>
+        /// 获取镜像同步的目标仓库详情
+        ///
+        /// 获取镜像同步的目标仓库详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceRegistryResponse ShowInstanceRegistry(ShowInstanceRegistryRequest showInstanceRegistryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceRegistryRequest.InstanceId.ToString());
+            urlParam.Add("registry_id", showInstanceRegistryRequest.RegistryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRegistryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceRegistryResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceRegistryResponse> ShowInstanceRegistryInvoker(ShowInstanceRegistryRequest showInstanceRegistryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceRegistryRequest.InstanceId.ToString());
+            urlParam.Add("registry_id", showInstanceRegistryRequest.RegistryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRegistryRequest);
+            return new SyncInvoker<ShowInstanceRegistryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceRegistryResponse>);
+        }
+        
+        /// <summary>
+        /// 获取镜像同步策略详情
+        ///
+        /// 获取镜像同步策略详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceReplicationPolicyResponse ShowInstanceReplicationPolicy(ShowInstanceReplicationPolicyRequest showInstanceReplicationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceReplicationPolicyRequest.InstanceId.ToString());
+            urlParam.Add("policy_id", showInstanceReplicationPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceReplicationPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceReplicationPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceReplicationPolicyResponse> ShowInstanceReplicationPolicyInvoker(ShowInstanceReplicationPolicyRequest showInstanceReplicationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceReplicationPolicyRequest.InstanceId.ToString());
+            urlParam.Add("policy_id", showInstanceReplicationPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceReplicationPolicyRequest);
+            return new SyncInvoker<ShowInstanceReplicationPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceReplicationPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 获取制品仓库详情
+        ///
+        /// 获取制品仓库详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceRepositoryResponse ShowInstanceRepository(ShowInstanceRepositoryRequest showInstanceRepositoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceRepositoryRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceRepositoryRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", showInstanceRepositoryRequest.RepositoryName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRepositoryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceRepositoryResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceRepositoryResponse> ShowInstanceRepositoryInvoker(ShowInstanceRepositoryRequest showInstanceRepositoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceRepositoryRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceRepositoryRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", showInstanceRepositoryRequest.RepositoryName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRepositoryRequest);
+            return new SyncInvoker<ShowInstanceRepositoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceRepositoryResponse>);
+        }
+        
+        /// <summary>
+        /// 按照标签检索资源数量
+        ///
+        /// 按照标签检索资源数量
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceResourceInstancesCountResponse ShowInstanceResourceInstancesCount(ShowInstanceResourceInstancesCountRequest showInstanceResourceInstancesCountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", showInstanceResourceInstancesCountRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceResourceInstancesCountRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowInstanceResourceInstancesCountResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceResourceInstancesCountResponse> ShowInstanceResourceInstancesCountInvoker(ShowInstanceResourceInstancesCountRequest showInstanceResourceInstancesCountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", showInstanceResourceInstancesCountRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceResourceInstancesCountRequest);
+            return new SyncInvoker<ShowInstanceResourceInstancesCountResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowInstanceResourceInstancesCountResponse>);
+        }
+        
+        /// <summary>
+        /// 获取老化策略详情
+        ///
+        /// 获取老化策略详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceRetentionPolicyResponse ShowInstanceRetentionPolicy(ShowInstanceRetentionPolicyRequest showInstanceRetentionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceRetentionPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", showInstanceRetentionPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRetentionPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceRetentionPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceRetentionPolicyResponse> ShowInstanceRetentionPolicyInvoker(ShowInstanceRetentionPolicyRequest showInstanceRetentionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceRetentionPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", showInstanceRetentionPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRetentionPolicyRequest);
+            return new SyncInvoker<ShowInstanceRetentionPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceRetentionPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 获取签名策略详情
+        ///
+        /// 获取签名策略详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceSignPolicyResponse ShowInstanceSignPolicy(ShowInstanceSignPolicyRequest showInstanceSignPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceSignPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceSignPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", showInstanceSignPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceSignPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceSignPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceSignPolicyResponse> ShowInstanceSignPolicyInvoker(ShowInstanceSignPolicyRequest showInstanceSignPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceSignPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceSignPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", showInstanceSignPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceSignPolicyRequest);
+            return new SyncInvoker<ShowInstanceSignPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceSignPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 获取触发器策略详情
+        ///
+        /// 获取触发器策略详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceWebhookResponse ShowInstanceWebhook(ShowInstanceWebhookRequest showInstanceWebhookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceWebhookRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceWebhookRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", showInstanceWebhookRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceWebhookRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceWebhookResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceWebhookResponse> ShowInstanceWebhookInvoker(ShowInstanceWebhookRequest showInstanceWebhookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceWebhookRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", showInstanceWebhookRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", showInstanceWebhookRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceWebhookRequest);
+            return new SyncInvoker<ShowInstanceWebhookResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceWebhookResponse>);
+        }
+        
+        /// <summary>
+        /// 按照标签检索子资源数量
+        ///
+        /// 按照标签检索子资源数量
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSubResourceInstancesCountResponse ShowSubResourceInstancesCount(ShowSubResourceInstancesCountRequest showSubResourceInstancesCountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", showSubResourceInstancesCountRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", showSubResourceInstancesCountRequest.ResourceId.ToString());
+            urlParam.Add("sub_resource_type", showSubResourceInstancesCountRequest.SubResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubResourceInstancesCountRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowSubResourceInstancesCountResponse>(response);
+        }
+
+        public SyncInvoker<ShowSubResourceInstancesCountResponse> ShowSubResourceInstancesCountInvoker(ShowSubResourceInstancesCountRequest showSubResourceInstancesCountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", showSubResourceInstancesCountRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", showSubResourceInstancesCountRequest.ResourceId.ToString());
+            urlParam.Add("sub_resource_type", showSubResourceInstancesCountRequest.SubResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubResourceInstancesCountRequest);
+            return new SyncInvoker<ShowSubResourceInstancesCountResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowSubResourceInstancesCountResponse>);
+        }
+        
+        /// <summary>
+        /// 停止镜像同步任务
+        ///
+        /// 停止镜像同步任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StopInstanceReplicationPolicyExecutionResponse StopInstanceReplicationPolicyExecution(StopInstanceReplicationPolicyExecutionRequest stopInstanceReplicationPolicyExecutionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", stopInstanceReplicationPolicyExecutionRequest.InstanceId.ToString());
+            urlParam.Add("execution_id", stopInstanceReplicationPolicyExecutionRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopInstanceReplicationPolicyExecutionRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<StopInstanceReplicationPolicyExecutionResponse>(response);
+        }
+
+        public SyncInvoker<StopInstanceReplicationPolicyExecutionResponse> StopInstanceReplicationPolicyExecutionInvoker(StopInstanceReplicationPolicyExecutionRequest stopInstanceReplicationPolicyExecutionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", stopInstanceReplicationPolicyExecutionRequest.InstanceId.ToString());
+            urlParam.Add("execution_id", stopInstanceReplicationPolicyExecutionRequest.ExecutionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopInstanceReplicationPolicyExecutionRequest);
+            return new SyncInvoker<StopInstanceReplicationPolicyExecutionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<StopInstanceReplicationPolicyExecutionResponse>);
+        }
+        
+        /// <summary>
+        /// 更新域名
+        ///
+        /// 更新域名
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest updateDomainNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDomainNameRequest.InstanceId.ToString());
+            urlParam.Add("domainname_id", updateDomainNameRequest.DomainnameId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname/{domainname_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainNameRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateDomainNameResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDomainNameResponse> UpdateDomainNameInvoker(UpdateDomainNameRequest updateDomainNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateDomainNameRequest.InstanceId.ToString());
+            urlParam.Add("domainname_id", updateDomainNameRequest.DomainnameId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname/{domainname_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainNameRequest);
+            return new SyncInvoker<UpdateDomainNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainNameResponse>);
+        }
+        
+        /// <summary>
+        /// 修改不可变Tag策略
+        ///
+        /// 修改不可变Tag策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateImmutableRuleResponse UpdateImmutableRule(UpdateImmutableRuleRequest updateImmutableRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateImmutableRuleRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateImmutableRuleRequest.NamespaceName.ToString());
+            urlParam.Add("immutable_rule_id", updateImmutableRuleRequest.ImmutableRuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules/{immutable_rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateImmutableRuleRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateImmutableRuleResponse>(response);
+        }
+
+        public SyncInvoker<UpdateImmutableRuleResponse> UpdateImmutableRuleInvoker(UpdateImmutableRuleRequest updateImmutableRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateImmutableRuleRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateImmutableRuleRequest.NamespaceName.ToString());
+            urlParam.Add("immutable_rule_id", updateImmutableRuleRequest.ImmutableRuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules/{immutable_rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateImmutableRuleRequest);
+            return new SyncInvoker<UpdateImmutableRuleResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateImmutableRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 修改实例配置
+        ///
+        /// 修改实例配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceConfigurationResponse UpdateInstanceConfiguration(UpdateInstanceConfigurationRequest updateInstanceConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceConfigurationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceConfigurationResponse> UpdateInstanceConfigurationInvoker(UpdateInstanceConfigurationRequest updateInstanceConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceConfigurationRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationRequest);
+            return new SyncInvoker<UpdateInstanceConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 更新公网访问白名单
+        ///
+        /// 更新公网访问白名单，更新为全量更新方式
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceEndpointPolicyResponse UpdateInstanceEndpointPolicy(UpdateInstanceEndpointPolicyRequest updateInstanceEndpointPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceEndpointPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceEndpointPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceEndpointPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceEndpointPolicyResponse> UpdateInstanceEndpointPolicyInvoker(UpdateInstanceEndpointPolicyRequest updateInstanceEndpointPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceEndpointPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceEndpointPolicyRequest);
+            return new SyncInvoker<UpdateInstanceEndpointPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceEndpointPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 启用/停用长期访问凭证
+        ///
+        /// 启用/停用长期访问凭证
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceLtCredentialResponse UpdateInstanceLtCredential(UpdateInstanceLtCredentialRequest updateInstanceLtCredentialRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceLtCredentialRequest.InstanceId.ToString());
+            urlParam.Add("credential_id", updateInstanceLtCredentialRequest.CredentialId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials/{credential_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceLtCredentialRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceLtCredentialResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceLtCredentialResponse> UpdateInstanceLtCredentialInvoker(UpdateInstanceLtCredentialRequest updateInstanceLtCredentialRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceLtCredentialRequest.InstanceId.ToString());
+            urlParam.Add("credential_id", updateInstanceLtCredentialRequest.CredentialId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials/{credential_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceLtCredentialRequest);
+            return new SyncInvoker<UpdateInstanceLtCredentialResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceLtCredentialResponse>);
+        }
+        
+        /// <summary>
+        /// 修改命名空间
+        ///
+        /// 修改命名空间
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceNamespaceResponse UpdateInstanceNamespace(UpdateInstanceNamespaceRequest updateInstanceNamespaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceNamespaceRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateInstanceNamespaceRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceNamespaceRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateInstanceNamespaceResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceNamespaceResponse> UpdateInstanceNamespaceInvoker(UpdateInstanceNamespaceRequest updateInstanceNamespaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceNamespaceRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateInstanceNamespaceRequest.NamespaceName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceNamespaceRequest);
+            return new SyncInvoker<UpdateInstanceNamespaceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceNamespaceResponse>);
+        }
+        
+        /// <summary>
+        /// 修改镜像同步的目标仓库
+        ///
+        /// 修改镜像同步的目标仓库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceRegistryResponse UpdateInstanceRegistry(UpdateInstanceRegistryRequest updateInstanceRegistryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceRegistryRequest.InstanceId.ToString());
+            urlParam.Add("registry_id", updateInstanceRegistryRequest.RegistryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRegistryRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceRegistryResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceRegistryResponse> UpdateInstanceRegistryInvoker(UpdateInstanceRegistryRequest updateInstanceRegistryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceRegistryRequest.InstanceId.ToString());
+            urlParam.Add("registry_id", updateInstanceRegistryRequest.RegistryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRegistryRequest);
+            return new SyncInvoker<UpdateInstanceRegistryResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceRegistryResponse>);
+        }
+        
+        /// <summary>
+        /// 修改镜像同步策略
+        ///
+        /// 修改镜像同步策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceReplicationPolicyResponse UpdateInstanceReplicationPolicy(UpdateInstanceReplicationPolicyRequest updateInstanceReplicationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceReplicationPolicyRequest.InstanceId.ToString());
+            urlParam.Add("policy_id", updateInstanceReplicationPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceReplicationPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceReplicationPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceReplicationPolicyResponse> UpdateInstanceReplicationPolicyInvoker(UpdateInstanceReplicationPolicyRequest updateInstanceReplicationPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceReplicationPolicyRequest.InstanceId.ToString());
+            urlParam.Add("policy_id", updateInstanceReplicationPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceReplicationPolicyRequest);
+            return new SyncInvoker<UpdateInstanceReplicationPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceReplicationPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 修改制品仓库
+        ///
+        /// 修改制品仓库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceRepositoryResponse UpdateInstanceRepository(UpdateInstanceRepositoryRequest updateInstanceRepositoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceRepositoryRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateInstanceRepositoryRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", updateInstanceRepositoryRequest.RepositoryName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRepositoryRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceRepositoryResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceRepositoryResponse> UpdateInstanceRepositoryInvoker(UpdateInstanceRepositoryRequest updateInstanceRepositoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceRepositoryRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateInstanceRepositoryRequest.NamespaceName.ToString());
+            urlParam.Add("repository_name", updateInstanceRepositoryRequest.RepositoryName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRepositoryRequest);
+            return new SyncInvoker<UpdateInstanceRepositoryResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceRepositoryResponse>);
+        }
+        
+        /// <summary>
+        /// 修改老化策略
+        ///
+        /// 修改老化策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceRetentionPolicyResponse UpdateInstanceRetentionPolicy(UpdateInstanceRetentionPolicyRequest updateInstanceRetentionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceRetentionPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", updateInstanceRetentionPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRetentionPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateInstanceRetentionPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceRetentionPolicyResponse> UpdateInstanceRetentionPolicyInvoker(UpdateInstanceRetentionPolicyRequest updateInstanceRetentionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceRetentionPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", updateInstanceRetentionPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRetentionPolicyRequest);
+            return new SyncInvoker<UpdateInstanceRetentionPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceRetentionPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 修改签名策略
+        ///
+        /// 修改签名策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceSignPolicyResponse UpdateInstanceSignPolicy(UpdateInstanceSignPolicyRequest updateInstanceSignPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceSignPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateInstanceSignPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", updateInstanceSignPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceSignPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceSignPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceSignPolicyResponse> UpdateInstanceSignPolicyInvoker(UpdateInstanceSignPolicyRequest updateInstanceSignPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceSignPolicyRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateInstanceSignPolicyRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", updateInstanceSignPolicyRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceSignPolicyRequest);
+            return new SyncInvoker<UpdateInstanceSignPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceSignPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 修改触发器策略
+        ///
+        /// 修改触发器策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceWebhookResponse UpdateInstanceWebhook(UpdateInstanceWebhookRequest updateInstanceWebhookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceWebhookRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateInstanceWebhookRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", updateInstanceWebhookRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceWebhookRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceWebhookResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceWebhookResponse> UpdateInstanceWebhookInvoker(UpdateInstanceWebhookRequest updateInstanceWebhookRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateInstanceWebhookRequest.InstanceId.ToString());
+            urlParam.Add("namespace_name", updateInstanceWebhookRequest.NamespaceName.ToString());
+            urlParam.Add("policy_id", updateInstanceWebhookRequest.PolicyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceWebhookRequest);
+            return new SyncInvoker<UpdateInstanceWebhookResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceWebhookResponse>);
+        }
+        
     }
 }

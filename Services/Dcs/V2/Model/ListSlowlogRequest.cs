@@ -293,6 +293,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
+        /// <summary>
+        /// 查询节点，分为proxy和server。
+        /// </summary>
+        [SDKProperty("role", IsQuery = true)]
+        [JsonProperty("role", NullValueHandling = NullValueHandling.Ignore)]
+        public string Role { get; set; }
+
 
 
         /// <summary>
@@ -309,6 +316,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             sb.Append("  sortDir: ").Append(SortDir).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  role: ").Append(Role).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -334,6 +342,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
             if (this.SortDir != input.SortDir) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Role != input.Role || (this.Role != null && !this.Role.Equals(input.Role))) return false;
 
             return true;
         }
@@ -353,6 +362,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
                 hashCode = hashCode * 59 + this.SortDir.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Role != null) hashCode = hashCode * 59 + this.Role.GetHashCode();
                 return hashCode;
             }
         }

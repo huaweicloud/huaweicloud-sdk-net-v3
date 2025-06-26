@@ -1807,31 +1807,6 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
-        /// 查询回收站中指定云服务器
-        ///
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowRecycleBinServerResponse> ShowRecycleBinServerAsync(ShowRecycleBinServerRequest showRecycleBinServerRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", showRecycleBinServerRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/cloudservers/{server_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecycleBinServerRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowRecycleBinServerResponse>(response);
-        }
-
-        public AsyncInvoker<ShowRecycleBinServerResponse> ShowRecycleBinServerAsyncInvoker(ShowRecycleBinServerRequest showRecycleBinServerRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", showRecycleBinServerRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/cloudservers/{server_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecycleBinServerRequest);
-            return new AsyncInvoker<ShowRecycleBinServerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecycleBinServerResponse>);
-        }
-        
-        /// <summary>
         /// 查询是否支持一键重置密码
         ///
         /// 查询弹性云服务器是否支持一键重置密码。

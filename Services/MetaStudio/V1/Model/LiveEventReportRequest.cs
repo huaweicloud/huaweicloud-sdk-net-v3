@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string AuthKey { get; set; }
 
         /// <summary>
-        /// 鉴权key过期时间。从1970年1月1日（UTC/GMT的午夜）开始所经过的豪秒数。
+        /// 鉴权key过期时间。从1970年1月1日（UTC/GMT的午夜）开始所经过的毫秒数。
         /// </summary>
         [SDKProperty("expires_time", IsQuery = true)]
         [JsonProperty("expires_time", NullValueHandling = NullValueHandling.Ignore)]
