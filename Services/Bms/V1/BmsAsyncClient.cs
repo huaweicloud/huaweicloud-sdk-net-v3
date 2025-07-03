@@ -546,32 +546,6 @@ namespace HuaweiCloud.SDK.Bms.V1
         }
         
         /// <summary>
-        /// 查询裸金属服务器元数据配置
-        ///
-        /// 查询云服务器元数据配置，通过本接口，您可以查询指裸金属服务器的元数据配置。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowBaremetalServerMetadataOptionsResponse> ShowBaremetalServerMetadataOptionsAsync(ShowBaremetalServerMetadataOptionsRequest showBaremetalServerMetadataOptionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", showBaremetalServerMetadataOptionsRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata-options", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerMetadataOptionsRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowBaremetalServerMetadataOptionsResponse>(response);
-        }
-
-        public AsyncInvoker<ShowBaremetalServerMetadataOptionsResponse> ShowBaremetalServerMetadataOptionsAsyncInvoker(ShowBaremetalServerMetadataOptionsRequest showBaremetalServerMetadataOptionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", showBaremetalServerMetadataOptionsRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata-options", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerMetadataOptionsRequest);
-            return new AsyncInvoker<ShowBaremetalServerMetadataOptionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBaremetalServerMetadataOptionsResponse>);
-        }
-        
-        /// <summary>
         /// 查询裸金属服务器标签
         ///
         /// - 查询指定云服务器的标签信息。
@@ -621,6 +595,32 @@ namespace HuaweiCloud.SDK.Bms.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/os-volume_attachments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBaremetalServerVolumeInfoRequest);
             return new AsyncInvoker<ShowBaremetalServerVolumeInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBaremetalServerVolumeInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询裸金属服务器元数据配置
+        ///
+        /// 查询云服务器元数据配置，通过本接口，您可以查询指裸金属服务器的元数据配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowMetadataOptionsResponse> ShowMetadataOptionsAsync(ShowMetadataOptionsRequest showMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMetadataOptionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowMetadataOptionsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowMetadataOptionsResponse> ShowMetadataOptionsAsyncInvoker(ShowMetadataOptionsRequest showMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMetadataOptionsRequest);
+            return new AsyncInvoker<ShowMetadataOptionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMetadataOptionsResponse>);
         }
         
         /// <summary>
@@ -784,23 +784,23 @@ namespace HuaweiCloud.SDK.Bms.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public async Task<UpdateBaremetalServerMetadataOptionsResponse> UpdateBaremetalServerMetadataOptionsAsync(UpdateBaremetalServerMetadataOptionsRequest updateBaremetalServerMetadataOptionsRequest)
+        public async Task<UpdateMetadataOptionsResponse> UpdateMetadataOptionsAsync(UpdateMetadataOptionsRequest updateMetadataOptionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", updateBaremetalServerMetadataOptionsRequest.ServerId.ToString());
+            urlParam.Add("server_id", updateMetadataOptionsRequest.ServerId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata-options", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerMetadataOptionsRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMetadataOptionsRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerializeNull<UpdateBaremetalServerMetadataOptionsResponse>(response);
+            return JsonUtils.DeSerializeNull<UpdateMetadataOptionsResponse>(response);
         }
 
-        public AsyncInvoker<UpdateBaremetalServerMetadataOptionsResponse> UpdateBaremetalServerMetadataOptionsAsyncInvoker(UpdateBaremetalServerMetadataOptionsRequest updateBaremetalServerMetadataOptionsRequest)
+        public AsyncInvoker<UpdateMetadataOptionsResponse> UpdateMetadataOptionsAsyncInvoker(UpdateMetadataOptionsRequest updateMetadataOptionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", updateBaremetalServerMetadataOptionsRequest.ServerId.ToString());
+            urlParam.Add("server_id", updateMetadataOptionsRequest.ServerId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/baremetalservers/{server_id}/metadata-options", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBaremetalServerMetadataOptionsRequest);
-            return new AsyncInvoker<UpdateBaremetalServerMetadataOptionsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateBaremetalServerMetadataOptionsResponse>);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMetadataOptionsRequest);
+            return new AsyncInvoker<UpdateMetadataOptionsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateMetadataOptionsResponse>);
         }
         
         /// <summary>

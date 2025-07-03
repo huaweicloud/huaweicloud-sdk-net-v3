@@ -178,12 +178,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("elb_virsubnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ElbVirsubnetIds { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("prepaid_options", NullValueHandling = NullValueHandling.Ignore)]
-        public UpgradePrepaidOption PrepaidOptions { get; set; }
-
 
 
         /// <summary>
@@ -200,7 +194,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  ipv6VipVirsubnetId: ").Append(Ipv6VipVirsubnetId).Append("\n");
             sb.Append("  ipv6VipAddress: ").Append(Ipv6VipAddress).Append("\n");
             sb.Append("  elbVirsubnetIds: ").Append(ElbVirsubnetIds).Append("\n");
-            sb.Append("  prepaidOptions: ").Append(PrepaidOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -226,7 +219,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.Ipv6VipVirsubnetId != input.Ipv6VipVirsubnetId || (this.Ipv6VipVirsubnetId != null && !this.Ipv6VipVirsubnetId.Equals(input.Ipv6VipVirsubnetId))) return false;
             if (this.Ipv6VipAddress != input.Ipv6VipAddress || (this.Ipv6VipAddress != null && !this.Ipv6VipAddress.Equals(input.Ipv6VipAddress))) return false;
             if (this.ElbVirsubnetIds != input.ElbVirsubnetIds || (this.ElbVirsubnetIds != null && input.ElbVirsubnetIds != null && !this.ElbVirsubnetIds.SequenceEqual(input.ElbVirsubnetIds))) return false;
-            if (this.PrepaidOptions != input.PrepaidOptions || (this.PrepaidOptions != null && !this.PrepaidOptions.Equals(input.PrepaidOptions))) return false;
 
             return true;
         }
@@ -246,7 +238,6 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.Ipv6VipVirsubnetId != null) hashCode = hashCode * 59 + this.Ipv6VipVirsubnetId.GetHashCode();
                 if (this.Ipv6VipAddress != null) hashCode = hashCode * 59 + this.Ipv6VipAddress.GetHashCode();
                 if (this.ElbVirsubnetIds != null) hashCode = hashCode * 59 + this.ElbVirsubnetIds.GetHashCode();
-                if (this.PrepaidOptions != null) hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
                 return hashCode;
             }
         }

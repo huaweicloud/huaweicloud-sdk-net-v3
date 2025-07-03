@@ -319,6 +319,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 大版本升级预检查
+        ///
+        /// 提供mysql5.7升级mysql8.0预检查接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckInstanceForUpgradeResponse CheckInstanceForUpgrade(CheckInstanceForUpgradeRequest checkInstanceForUpgradeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", checkInstanceForUpgradeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/upgrade-version/precheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkInstanceForUpgradeRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<CheckInstanceForUpgradeResponse>(response);
+        }
+
+        public SyncInvoker<CheckInstanceForUpgradeResponse> CheckInstanceForUpgradeInvoker(CheckInstanceForUpgradeRequest checkInstanceForUpgradeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", checkInstanceForUpgradeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/upgrade-version/precheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkInstanceForUpgradeRequest);
+            return new SyncInvoker<CheckInstanceForUpgradeResponse>(this, "PUT", request, JsonUtils.DeSerialize<CheckInstanceForUpgradeResponse>);
+        }
+        
+        /// <summary>
         /// 复制参数模板
         ///
         /// 复制参数模板
@@ -3132,6 +3158,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 获取mysql5.7升级mysql8.0预检查结果
+        ///
+        /// 获取mysql5.7升级mysql8.0预检查结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowPrecheckResultResponse ShowPrecheckResult(ShowPrecheckResultRequest showPrecheckResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showPrecheckResultRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/upgrade-version/precheck-result", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrecheckResultRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowPrecheckResultResponse>(response);
+        }
+
+        public SyncInvoker<ShowPrecheckResultResponse> ShowPrecheckResultInvoker(ShowPrecheckResultRequest showPrecheckResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showPrecheckResultRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/upgrade-version/precheck-result", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrecheckResultRequest);
+            return new SyncInvoker<ShowPrecheckResultResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrecheckResultResponse>);
+        }
+        
+        /// <summary>
         /// 查询配额
         ///
         /// 查询当前项目下资源配额情况。
@@ -4059,6 +4111,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeDbVersionNewRequest);
             return new SyncInvoker<UpgradeDbVersionNewResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeDbVersionNewResponse>);
+        }
+        
+        /// <summary>
+        /// MySQL大版本升级
+        ///
+        /// 提供mysql5.7升级mysql8.0的下发接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpgradeLargeVersionResponse UpgradeLargeVersion(UpgradeLargeVersionRequest upgradeLargeVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeLargeVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeLargeVersionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpgradeLargeVersionResponse>(response);
+        }
+
+        public SyncInvoker<UpgradeLargeVersionResponse> UpgradeLargeVersionInvoker(UpgradeLargeVersionRequest upgradeLargeVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", upgradeLargeVersionRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/major-upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeLargeVersionRequest);
+            return new SyncInvoker<UpgradeLargeVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeLargeVersionResponse>);
         }
         
         /// <summary>

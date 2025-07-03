@@ -88,6 +88,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 创建流
+        ///
+        /// 创建流
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateFlowsResponse> CreateFlowsAsync(CreateFlowsRequest createFlowsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createFlowsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateFlowsResponse>(response);
+        }
+
+        public AsyncInvoker<CreateFlowsResponse> CreateFlowsAsyncInvoker(CreateFlowsRequest createFlowsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createFlowsRequest);
+            return new AsyncInvoker<CreateFlowsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFlowsResponse>);
+        }
+        
+        /// <summary>
         /// 创建录制回调配置
         ///
         /// 创建录制回调配置接口
@@ -352,6 +376,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 删除流
+        ///
+        /// 删除流
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteFlowResponse> DeleteFlowAsync(DeleteFlowRequest deleteFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFlowRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteFlowResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteFlowResponse> DeleteFlowAsyncInvoker(DeleteFlowRequest deleteFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFlowRequest);
+            return new AsyncInvoker<DeleteFlowResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteFlowResponse>);
+        }
+        
+        /// <summary>
         /// 删除直播推流通知配置
         ///
         /// 删除直播推流通知配置
@@ -569,6 +617,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/domain/delay", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDelayConfigRequest);
             return new AsyncInvoker<ListDelayConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDelayConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 获取流列表
+        ///
+        /// 获取流列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListFlowsResponse> ListFlowsAsync(ListFlowsRequest listFlowsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlowsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListFlowsResponse>(response);
+        }
+
+        public AsyncInvoker<ListFlowsResponse> ListFlowsAsyncInvoker(ListFlowsRequest listFlowsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFlowsRequest);
+            return new AsyncInvoker<ListFlowsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFlowsResponse>);
         }
         
         /// <summary>
@@ -863,6 +935,78 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 修改流来源
+        ///
+        /// 修改流来源
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyFlowSourcesResponse> ModifyFlowSourcesAsync(ModifyFlowSourcesRequest modifyFlowSourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/sources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", modifyFlowSourcesRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyFlowSourcesResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyFlowSourcesResponse> ModifyFlowSourcesAsyncInvoker(ModifyFlowSourcesRequest modifyFlowSourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/sources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", modifyFlowSourcesRequest);
+            return new AsyncInvoker<ModifyFlowSourcesResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyFlowSourcesResponse>);
+        }
+        
+        /// <summary>
+        /// 启动流任务
+        ///
+        /// 启动流任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyFlowStartResponse> ModifyFlowStartAsync(ModifyFlowStartRequest modifyFlowStartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyFlowStartRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyFlowStartResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyFlowStartResponse> ModifyFlowStartAsyncInvoker(ModifyFlowStartRequest modifyFlowStartRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyFlowStartRequest);
+            return new AsyncInvoker<ModifyFlowStartResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyFlowStartResponse>);
+        }
+        
+        /// <summary>
+        /// 停止流任务
+        ///
+        /// 停止流任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyFlowStopResponse> ModifyFlowStopAsync(ModifyFlowStopRequest modifyFlowStopRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyFlowStopRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyFlowStopResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyFlowStopResponse> ModifyFlowStopAsyncInvoker(ModifyFlowStopRequest modifyFlowStopRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyFlowStopRequest);
+            return new AsyncInvoker<ModifyFlowStopResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyFlowStopResponse>);
+        }
+        
+        /// <summary>
         /// 提交录制控制命令
         ///
         /// 对单条流的实时录制控制接口。
@@ -956,6 +1100,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/guard/key-chain", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainKeyChainRequest);
             return new AsyncInvoker<ShowDomainKeyChainResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainKeyChainResponse>);
+        }
+        
+        /// <summary>
+        /// 获取流详情
+        ///
+        /// 获取流详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowFlowDetailResponse> ShowFlowDetailAsync(ShowFlowDetailRequest showFlowDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlowDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowFlowDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ShowFlowDetailResponse> ShowFlowDetailAsyncInvoker(ShowFlowDetailRequest showFlowDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlowDetailRequest);
+            return new AsyncInvoker<ShowFlowDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFlowDetailResponse>);
         }
         
         /// <summary>

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// 回收站的回收配置。
     /// </summary>
     public class RecycleBinPolicy 
     {

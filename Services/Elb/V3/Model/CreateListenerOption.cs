@@ -305,7 +305,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public bool? GzipEnable { get; set; }
 
         /// <summary>
-        /// 参数解释：端口监听范围（闭区间)，最多指定10个端口组，每个组范围不可有重叠部分。  约束限制： - 仅当protocol_port为0或未传入protoco_port时可以传入该字段。 - 仅TCP, UDP，TLS监听支持该字段
+        /// 参数解释：端口监听范围（闭区间)，最多指定10个端口组，每个组范围不可有重叠部分。  约束限制： - 仅当protocol_port为0或未传入protocol_port时可以传入该字段。 - 仅TCP, UDP，TLS监听支持该字段
         /// </summary>
         [JsonProperty("port_ranges", NullValueHandling = NullValueHandling.Ignore)]
         public List<PortRange> PortRanges { get; set; }

@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("enable_pipeline", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnablePipeline { get; set; }
 
+        /// <summary>
+        /// 是否支持list v3接口
+        /// </summary>
+        [JsonProperty("enable_list_v3", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableListV3 { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  enableCciService: ").Append(EnableCciService).Append("\n");
             sb.Append("  enableImageLabel: ").Append(EnableImageLabel).Append("\n");
             sb.Append("  enablePipeline: ").Append(EnablePipeline).Append("\n");
+            sb.Append("  enableListV3: ").Append(EnableListV3).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.EnableCciService != input.EnableCciService || (this.EnableCciService != null && !this.EnableCciService.Equals(input.EnableCciService))) return false;
             if (this.EnableImageLabel != input.EnableImageLabel || (this.EnableImageLabel != null && !this.EnableImageLabel.Equals(input.EnableImageLabel))) return false;
             if (this.EnablePipeline != input.EnablePipeline || (this.EnablePipeline != null && !this.EnablePipeline.Equals(input.EnablePipeline))) return false;
+            if (this.EnableListV3 != input.EnableListV3 || (this.EnableListV3 != null && !this.EnableListV3.Equals(input.EnableListV3))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.EnableCciService != null) hashCode = hashCode * 59 + this.EnableCciService.GetHashCode();
                 if (this.EnableImageLabel != null) hashCode = hashCode * 59 + this.EnableImageLabel.GetHashCode();
                 if (this.EnablePipeline != null) hashCode = hashCode * 59 + this.EnablePipeline.GetHashCode();
+                if (this.EnableListV3 != null) hashCode = hashCode * 59 + this.EnableListV3.GetHashCode();
                 return hashCode;
             }
         }

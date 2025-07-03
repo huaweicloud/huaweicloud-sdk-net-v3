@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// 参数解释：流量镜像的配置
     /// </summary>
     public class TrafficMirrorConfig 
     {

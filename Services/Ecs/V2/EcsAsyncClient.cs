@@ -16,6 +16,31 @@ namespace HuaweiCloud.SDK.Ecs.V2
 
         
         /// <summary>
+        /// 接受并授权执行计划事件操作
+        ///
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AcceptScheduledEventResponse> AcceptScheduledEventAsync(AcceptScheduledEventRequest acceptScheduledEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", acceptScheduledEventRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance-scheduled-events/{id}/actions/accept", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", acceptScheduledEventRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<AcceptScheduledEventResponse>(response);
+        }
+
+        public AsyncInvoker<AcceptScheduledEventResponse> AcceptScheduledEventAsyncInvoker(AcceptScheduledEventRequest acceptScheduledEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", acceptScheduledEventRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance-scheduled-events/{id}/actions/accept", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", acceptScheduledEventRequest);
+            return new AsyncInvoker<AcceptScheduledEventResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AcceptScheduledEventResponse>);
+        }
+        
+        /// <summary>
         /// 添加云服务器组成员
         ///
         /// 将云服务器加入云服务器组。添加成功后，如果该云服务器组是反亲和性策略的，则该云服务器与云服务器组中的其他成员尽量分散地创建在不同主机上。如果该云服务器时故障域类型的，则该云服务器会拥有故障域属性。
@@ -598,6 +623,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 删除模板
+        ///
+        /// 删除启动模板。删除一个启动模板。并同时删除模板下所有的版本。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteLaunchTemplatesResponse> DeleteLaunchTemplatesAsync(DeleteLaunchTemplatesRequest deleteLaunchTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("launch_template_id", deleteLaunchTemplatesRequest.LaunchTemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/launch-templates/{launch_template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLaunchTemplatesRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteLaunchTemplatesResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteLaunchTemplatesResponse> DeleteLaunchTemplatesAsyncInvoker(DeleteLaunchTemplatesRequest deleteLaunchTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("launch_template_id", deleteLaunchTemplatesRequest.LaunchTemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/launch-templates/{launch_template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLaunchTemplatesRequest);
+            return new AsyncInvoker<DeleteLaunchTemplatesResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLaunchTemplatesResponse>);
+        }
+        
+        /// <summary>
         /// 删除回收站中虚拟机
         ///
         /// 
@@ -885,6 +936,30 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询模板版本列表
+        ///
+        /// 根据用户请求条件从数据库筛选、查询启动模板的版本相关信息，支持按照image_id和flavor_id进行过滤。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListLaunchTemplateVersionsResponse> ListLaunchTemplateVersionsAsync(ListLaunchTemplateVersionsRequest listLaunchTemplateVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/launch-template-versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLaunchTemplateVersionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListLaunchTemplateVersionsResponse>(response);
+        }
+
+        public AsyncInvoker<ListLaunchTemplateVersionsResponse> ListLaunchTemplateVersionsAsyncInvoker(ListLaunchTemplateVersionsRequest listLaunchTemplateVersionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/launch-template-versions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLaunchTemplateVersionsRequest);
+            return new AsyncInvoker<ListLaunchTemplateVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLaunchTemplateVersionsResponse>);
+        }
+        
+        /// <summary>
         /// 查询回收站中虚拟机列表
         ///
         /// 
@@ -1160,6 +1235,30 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServersDetailsRequest);
             return new AsyncInvoker<ListServersDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListServersDetailsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询模板列表
+        ///
+        /// 根据用户请求条件从数据库筛选、查询启动模板相关信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest listTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/launch-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListTemplatesResponse>(response);
+        }
+
+        public AsyncInvoker<ListTemplatesResponse> ListTemplatesAsyncInvoker(ListTemplatesRequest listTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/launch-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
+            return new AsyncInvoker<ListTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplatesResponse>);
         }
         
         /// <summary>
@@ -1450,6 +1549,30 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers/{server_id}/os-security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaListServerSecurityGroupsRequest);
             return new AsyncInvoker<NovaListServerSecurityGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<NovaListServerSecurityGroupsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询云服务器列表
+        ///
+        /// 查询云服务器信息列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<NovaListServersResponse> NovaListServersAsync(NovaListServersRequest novaListServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaListServersRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<NovaListServersResponse>(response);
+        }
+
+        public AsyncInvoker<NovaListServersResponse> NovaListServersAsyncInvoker(NovaListServersRequest novaListServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/servers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaListServersRequest);
+            return new AsyncInvoker<NovaListServersResponse>(this, "GET", request, JsonUtils.DeSerialize<NovaListServersResponse>);
         }
         
         /// <summary>
@@ -1783,6 +1906,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询云服务器元数据配置
+        ///
+        /// 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowMetadataOptionsResponse> ShowMetadataOptionsAsync(ShowMetadataOptionsRequest showMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMetadataOptionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowMetadataOptionsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowMetadataOptionsResponse> ShowMetadataOptionsAsyncInvoker(ShowMetadataOptionsRequest showMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMetadataOptionsRequest);
+            return new AsyncInvoker<ShowMetadataOptionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMetadataOptionsResponse>);
+        }
+        
+        /// <summary>
         /// 查询回收站配置
         ///
         /// 查询回收站配置
@@ -1941,32 +2090,6 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
-        /// 查询云服务器元数据配置
-        ///
-        /// 查询云服务器元数据配置，通过本接口，您可以查询指定云服务器的元数据配置。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowServerMetadataOptionsResponse> ShowServerMetadataOptionsAsync(ShowServerMetadataOptionsRequest showServerMetadataOptionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", showServerMetadataOptionsRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerMetadataOptionsRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowServerMetadataOptionsResponse>(response);
-        }
-
-        public AsyncInvoker<ShowServerMetadataOptionsResponse> ShowServerMetadataOptionsAsyncInvoker(ShowServerMetadataOptionsRequest showServerMetadataOptionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", showServerMetadataOptionsRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerMetadataOptionsRequest);
-            return new AsyncInvoker<ShowServerMetadataOptionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowServerMetadataOptionsResponse>);
-        }
-        
-        /// <summary>
         /// 云服务器获取密码(企业项目)
         ///
         /// 当通过支持Cloudbase-init功能的镜像创建Windows云服务器时，获取云服务器初始安装时系统生成的管理员帐户（Administrator帐户或Cloudbase-init设置的帐户）随机密码。
@@ -2047,6 +2170,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 更新云服务器元数据配置
+        ///
+        /// 更新云服务器元数据配置，通过本接口，您可以选择启用或关闭IMDS服务，也可以选择IMDS服务的版本。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateMetadataOptionsResponse> UpdateMetadataOptionsAsync(UpdateMetadataOptionsRequest updateMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMetadataOptionsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateMetadataOptionsResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateMetadataOptionsResponse> UpdateMetadataOptionsAsyncInvoker(UpdateMetadataOptionsRequest updateMetadataOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", updateMetadataOptionsRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMetadataOptionsRequest);
+            return new AsyncInvoker<UpdateMetadataOptionsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateMetadataOptionsResponse>);
+        }
+        
+        /// <summary>
         /// 更新回收站配置
         ///
         /// 更新回收站属性信息
@@ -2092,6 +2241,31 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRecycleBinPolicyRequest);
             return new AsyncInvoker<UpdateRecycleBinPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateRecycleBinPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 更新计划事件
+        ///
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateScheduledEventResponse> UpdateScheduledEventAsync(UpdateScheduledEventRequest updateScheduledEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateScheduledEventRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance-scheduled-events/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScheduledEventRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateScheduledEventResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateScheduledEventResponse> UpdateScheduledEventAsyncInvoker(UpdateScheduledEventRequest updateScheduledEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateScheduledEventRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance-scheduled-events/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScheduledEventRequest);
+            return new AsyncInvoker<UpdateScheduledEventResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateScheduledEventResponse>);
         }
         
         /// <summary>
@@ -2234,32 +2408,6 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerMetadataRequest);
             return new AsyncInvoker<UpdateServerMetadataResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateServerMetadataResponse>);
-        }
-        
-        /// <summary>
-        /// 更新云服务器元数据配置
-        ///
-        /// 更新云服务器元数据配置，通过本接口，您可以选择启用或关闭IMDS服务，也可以选择IMDS服务的版本。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdateServerMetadataOptionsResponse> UpdateServerMetadataOptionsAsync(UpdateServerMetadataOptionsRequest updateServerMetadataOptionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", updateServerMetadataOptionsRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerMetadataOptionsRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerializeNull<UpdateServerMetadataOptionsResponse>(response);
-        }
-
-        public AsyncInvoker<UpdateServerMetadataOptionsResponse> UpdateServerMetadataOptionsAsyncInvoker(UpdateServerMetadataOptionsRequest updateServerMetadataOptionsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("server_id", updateServerMetadataOptionsRequest.ServerId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/metadata-options", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerMetadataOptionsRequest);
-            return new AsyncInvoker<UpdateServerMetadataOptionsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServerMetadataOptionsResponse>);
         }
         
         /// <summary>

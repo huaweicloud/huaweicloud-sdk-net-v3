@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string Repository { get; set; }
 
         /// <summary>
-        /// 返回条数。注意：offset和limit参数需要配套使用。
+        /// 返回条数,默认返回100条，最多返回1000条数据。注意：offset和limit参数需要配套使用。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

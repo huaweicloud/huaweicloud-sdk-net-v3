@@ -681,6 +681,30 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 查询镜像仓库列表详情
+        ///
+        /// 查询镜像仓库列表详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRepoDetailsResponse ListRepoDetails(ListRepoDetailsRequest listRepoDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/manage/repos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepoDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListRepoDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ListRepoDetailsResponse> ListRepoDetailsInvoker(ListRepoDetailsRequest listRepoDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/manage/repos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepoDetailsRequest);
+            return new SyncInvoker<ListRepoDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRepoDetailsResponse>);
+        }
+        
+        /// <summary>
         /// 获取共享帐号列表
         ///
         /// 获取共享帐号列表
@@ -744,6 +768,34 @@ namespace HuaweiCloud.SDK.Swr.V2
                 listReposDetailsResponse.Body = JsonUtils.DeSerializeList<ShowReposResp>(response);
                 return listReposDetailsResponse;
             });
+        }
+        
+        /// <summary>
+        /// 查询镜像tag列表详情
+        ///
+        /// 查询镜像tag列表详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRepositoryTagResponse ListRepositoryTag(ListRepositoryTagRequest listRepositoryTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace", listRepositoryTagRequest.Namespace.ToString());
+            urlParam.Add("repository", listRepositoryTagRequest.Repository.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryTagRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListRepositoryTagResponse>(response);
+        }
+
+        public SyncInvoker<ListRepositoryTagResponse> ListRepositoryTagInvoker(ListRepositoryTagRequest listRepositoryTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace", listRepositoryTagRequest.Namespace.ToString());
+            urlParam.Add("repository", listRepositoryTagRequest.Repository.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryTagRequest);
+            return new SyncInvoker<ListRepositoryTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRepositoryTagResponse>);
         }
         
         /// <summary>
@@ -842,6 +894,30 @@ namespace HuaweiCloud.SDK.Swr.V2
                 listRetentionsResponse.Body = JsonUtils.DeSerializeList<Retention>(response);
                 return listRetentionsResponse;
             });
+        }
+        
+        /// <summary>
+        /// 查询共享镜像列表详情
+        ///
+        /// 查询共享镜像列表详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSharedRepoDetailsResponse ListSharedRepoDetails(ListSharedRepoDetailsRequest listSharedRepoDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/manage/shared-repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSharedRepoDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSharedRepoDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ListSharedRepoDetailsResponse> ListSharedRepoDetailsInvoker(ListSharedRepoDetailsRequest listSharedRepoDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/manage/shared-repositories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSharedRepoDetailsRequest);
+            return new SyncInvoker<ListSharedRepoDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSharedRepoDetailsResponse>);
         }
         
         /// <summary>
@@ -1049,6 +1125,36 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNamespaceAuthRequest);
             return new SyncInvoker<ShowNamespaceAuthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNamespaceAuthResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定tag的镜像详情
+        ///
+        /// 查询镜像仓库中指定tag的镜像
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRepoTagResponse ShowRepoTag(ShowRepoTagRequest showRepoTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace", showRepoTagRequest.Namespace.ToString());
+            urlParam.Add("repository", showRepoTagRequest.Repository.ToString());
+            urlParam.Add("tag", showRepoTagRequest.Tag.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoTagRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRepoTagResponse>(response);
+        }
+
+        public SyncInvoker<ShowRepoTagResponse> ShowRepoTagInvoker(ShowRepoTagRequest showRepoTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("namespace", showRepoTagRequest.Namespace.ToString());
+            urlParam.Add("repository", showRepoTagRequest.Repository.ToString());
+            urlParam.Add("tag", showRepoTagRequest.Tag.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoTagRequest);
+            return new SyncInvoker<ShowRepoTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepoTagResponse>);
         }
         
         /// <summary>

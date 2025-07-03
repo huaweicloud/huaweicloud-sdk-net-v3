@@ -1778,6 +1778,32 @@ namespace HuaweiCloud.SDK.Elb.V3
         }
         
         /// <summary>
+        /// 查询负载均衡器占用的port列表
+        ///
+        /// 查询负载均衡器内部转发占用的port列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowLoadBalancerPortsResponse> ShowLoadBalancerPortsAsync(ShowLoadBalancerPortsRequest showLoadBalancerPortsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", showLoadBalancerPortsRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/local-ports", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerPortsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowLoadBalancerPortsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLoadBalancerPortsResponse> ShowLoadBalancerPortsAsyncInvoker(ShowLoadBalancerPortsRequest showLoadBalancerPortsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("loadbalancer_id", showLoadBalancerPortsRequest.LoadbalancerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/local-ports", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerPortsRequest);
+            return new AsyncInvoker<ShowLoadBalancerPortsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLoadBalancerPortsResponse>);
+        }
+        
+        /// <summary>
         /// 查询负载均衡器状态树
         ///
         /// 查询负载均衡器状态树，包括负载均衡器及其关联的子资源的状态信息。

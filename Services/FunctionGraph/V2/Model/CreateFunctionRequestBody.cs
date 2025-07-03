@@ -724,6 +724,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("code_encrypt_kms_key_id", NullValueHandling = NullValueHandling.Ignore)]
         public string CodeEncryptKmsKeyId { get; set; }
 
+        /// <summary>
+        /// vpc中配置的内网域名。在函数配置调用DNS服务的接口解析内网域名时，则函数必须具备读取DNS资源权限的委托。
+        /// </summary>
+        [JsonProperty("domain_names", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainNames { get; set; }
+
+        /// <summary>
+        /// 函数标签。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public string Tags { get; set; }
+
 
 
         /// <summary>
@@ -768,6 +780,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  ltsCustomTag: ").Append(LtsCustomTag).Append("\n");
             sb.Append("  userDataEncryptKmsKeyId: ").Append(UserDataEncryptKmsKeyId).Append("\n");
             sb.Append("  codeEncryptKmsKeyId: ").Append(CodeEncryptKmsKeyId).Append("\n");
+            sb.Append("  domainNames: ").Append(DomainNames).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -821,6 +835,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.LtsCustomTag != input.LtsCustomTag || (this.LtsCustomTag != null && input.LtsCustomTag != null && !this.LtsCustomTag.SequenceEqual(input.LtsCustomTag))) return false;
             if (this.UserDataEncryptKmsKeyId != input.UserDataEncryptKmsKeyId || (this.UserDataEncryptKmsKeyId != null && !this.UserDataEncryptKmsKeyId.Equals(input.UserDataEncryptKmsKeyId))) return false;
             if (this.CodeEncryptKmsKeyId != input.CodeEncryptKmsKeyId || (this.CodeEncryptKmsKeyId != null && !this.CodeEncryptKmsKeyId.Equals(input.CodeEncryptKmsKeyId))) return false;
+            if (this.DomainNames != input.DomainNames || (this.DomainNames != null && !this.DomainNames.Equals(input.DomainNames))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
 
             return true;
         }
@@ -868,6 +884,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.LtsCustomTag != null) hashCode = hashCode * 59 + this.LtsCustomTag.GetHashCode();
                 if (this.UserDataEncryptKmsKeyId != null) hashCode = hashCode * 59 + this.UserDataEncryptKmsKeyId.GetHashCode();
                 if (this.CodeEncryptKmsKeyId != null) hashCode = hashCode * 59 + this.CodeEncryptKmsKeyId.GetHashCode();
+                if (this.DomainNames != null) hashCode = hashCode * 59 + this.DomainNames.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

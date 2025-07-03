@@ -148,6 +148,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("Resource", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Resource { get; set; }
 
+        /// <summary>
+        /// statement生效的条件
+        /// </summary>
+        [JsonProperty("Condition", NullValueHandling = NullValueHandling.Ignore)]
+        public Object Condition { get; set; }
+
 
 
         /// <summary>
@@ -160,6 +166,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  effect: ").Append(Effect).Append("\n");
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  resource: ").Append(Resource).Append("\n");
+            sb.Append("  condition: ").Append(Condition).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -181,6 +188,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             if (this.Effect != input.Effect) return false;
             if (this.Action != input.Action || (this.Action != null && input.Action != null && !this.Action.SequenceEqual(input.Action))) return false;
             if (this.Resource != input.Resource || (this.Resource != null && input.Resource != null && !this.Resource.SequenceEqual(input.Resource))) return false;
+            if (this.Condition != input.Condition || (this.Condition != null && !this.Condition.Equals(input.Condition))) return false;
 
             return true;
         }
@@ -196,6 +204,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 hashCode = hashCode * 59 + this.Effect.GetHashCode();
                 if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
                 if (this.Resource != null) hashCode = hashCode * 59 + this.Resource.GetHashCode();
+                if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
                 return hashCode;
             }
         }

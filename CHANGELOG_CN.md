@@ -1,3 +1,134 @@
+# 3.1.153 2025-07-03
+
+### HuaweiCloud SDK Cloudtest
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`SetTaskResult`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `UpdateScheduledEvent`
+    - `AcceptScheduledEvent`
+    - `ListLaunchTemplateVersions`
+    - `DeleteLaunchTemplates`
+    - `ListTemplates`
+    - `NovaListServers`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ELB
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateLoadbalancer**
+    - 请求参数变更
+      - `+ loadbalancer.prepaid_options`
+
+### HuaweiCloud SDK ELB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ShowLoadBalancerPorts`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListCertificates**
+    - 请求参数变更
+      - `+ enterprise_project_id`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateFunction**
+    - 请求参数变更
+      - `+ domain_names`
+      - `+ tags`
+
+### HuaweiCloud SDK Live
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListFlows`
+    - `CreateFlows`
+    - `DeleteFlow`
+    - `ShowFlowDetail`
+    - `ModifyFlowStart`
+    - `ModifyFlowStop`
+    - `ModifyFlowSources`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`CheckInstanceForUpgrade`、`ShowPrecheckResult`、`UpgradeLargeVersion`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK VPCEP
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListEndpointInfoDetails**
+    - 响应参数变更
+      - `+ policy_statement.Condition`
+  - **UpdateEndpointWhite**
+    - 响应参数变更
+      - `+ policy_statement.Condition`
+  - **UpdateEndpointPolicy**
+    - 请求参数变更
+      - `+ policy_statement.Condition`
+    - 响应参数变更
+      - `+ policy_statement.Condition`
+  - **DeleteEndpointPolicy**
+    - 响应参数变更
+      - `+ policy_statement.Condition`
+  - **CreateEndpoint**
+    - 请求参数变更
+      - `+ policy_statement.Condition`
+    - 响应参数变更
+      - `+ policy_statement.Condition`
+  - **ListEndpoints**
+    - 响应参数变更
+      - `+ endpoints.policy_statement.Condition`
+
 # 3.1.152 2025-06-26
 
 ### HuaweiCloud SDK CodeArtsBuild

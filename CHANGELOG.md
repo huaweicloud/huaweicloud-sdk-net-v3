@@ -1,3 +1,134 @@
+# 3.1.153 2025-07-03
+
+### HuaweiCloud SDK Cloudtest
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `SetTaskResult`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ECS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `UpdateScheduledEvent`
+    - `AcceptScheduledEvent`
+    - `ListLaunchTemplateVersions`
+    - `DeleteLaunchTemplates`
+    - `ListTemplates`
+    - `NovaListServers`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ELB
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateLoadbalancer**
+    - changes of request param
+      - `+ loadbalancer.prepaid_options`
+
+### HuaweiCloud SDK ELB
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ShowLoadBalancerPorts`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListCertificates**
+    - changes of request param
+      - `+ enterprise_project_id`
+
+### HuaweiCloud SDK FunctionGraph
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateFunction**
+    - changes of request param
+      - `+ domain_names`
+      - `+ tags`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListFlows`
+    - `CreateFlows`
+    - `DeleteFlow`
+    - `ShowFlowDetail`
+    - `ModifyFlowStart`
+    - `ModifyFlowStop`
+    - `ModifyFlowSources`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `CheckInstanceForUpgrade`, `ShowPrecheckResult`, `UpgradeLargeVersion`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK VPCEP
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListEndpointInfoDetails**
+    - changes of response param
+      - `+ policy_statement.Condition`
+  - **UpdateEndpointWhite**
+    - changes of response param
+      - `+ policy_statement.Condition`
+  - **UpdateEndpointPolicy**
+    - changes of request param
+      - `+ policy_statement.Condition`
+    - changes of response param
+      - `+ policy_statement.Condition`
+  - **DeleteEndpointPolicy**
+    - changes of response param
+      - `+ policy_statement.Condition`
+  - **CreateEndpoint**
+    - changes of request param
+      - `+ policy_statement.Condition`
+    - changes of response param
+      - `+ policy_statement.Condition`
+  - **ListEndpoints**
+    - changes of response param
+      - `+ endpoints.policy_statement.Condition`
+
 # 3.1.152 2025-06-26
 
 ### HuaweiCloud SDK CodeArtsBuild

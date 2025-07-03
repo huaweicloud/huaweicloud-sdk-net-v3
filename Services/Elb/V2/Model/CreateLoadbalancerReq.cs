@@ -298,6 +298,12 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string ProtectionReason { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("prepaid_options", NullValueHandling = NullValueHandling.Ignore)]
+        public PrepaidCreateOption PrepaidOptions { get; set; }
+
 
 
         /// <summary>
@@ -317,6 +323,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
+            sb.Append("  prepaidOptions: ").Append(PrepaidOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -345,6 +352,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.ProtectionStatus != input.ProtectionStatus) return false;
             if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && !this.ProtectionReason.Equals(input.ProtectionReason))) return false;
+            if (this.PrepaidOptions != input.PrepaidOptions || (this.PrepaidOptions != null && !this.PrepaidOptions.Equals(input.PrepaidOptions))) return false;
 
             return true;
         }
@@ -367,6 +375,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                if (this.PrepaidOptions != null) hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
                 return hashCode;
             }
         }

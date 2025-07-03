@@ -2033,6 +2033,34 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
         }
         
         /// <summary>
+        /// 设置测试套结果
+        ///
+        /// 设置测试套结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetTaskResultResponse> SetTaskResultAsync(SetTaskResultRequest setTaskResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_uuid", setTaskResultRequest.ProjectUuid.ToString());
+            urlParam.Add("task_uri", setTaskResultRequest.TaskUri.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/tasks/{task_uri}/results", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTaskResultRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<SetTaskResultResponse>(response);
+        }
+
+        public AsyncInvoker<SetTaskResultResponse> SetTaskResultAsyncInvoker(SetTaskResultRequest setTaskResultRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_uuid", setTaskResultRequest.ProjectUuid.ToString());
+            urlParam.Add("task_uri", setTaskResultRequest.TaskUri.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_uuid}/tasks/{task_uri}/results", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTaskResultRequest);
+            return new AsyncInvoker<SetTaskResultResponse>(this, "POST", request, JsonUtils.DeSerialize<SetTaskResultResponse>);
+        }
+        
+        /// <summary>
         /// 查询任务配置
         ///
         /// 查询任务配置

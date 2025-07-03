@@ -121,6 +121,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         [JsonProperty("protection_reason", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ProtectionReason { get; set; }
 
+        /// <summary>
+        /// 参数解释：所属的企业项目ID。 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:certificates:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  支持多值查询，查询条件格式： *enterprise_project_id&#x3D;xxx&amp;enterprise_project_id&#x3D;xxx*。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> EnterpriseProjectId { get; set; }
+
 
 
         /// <summary>
@@ -145,6 +152,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("  source: ").Append(Source).Append("\n");
             sb.Append("  protectionStatus: ").Append(ProtectionStatus).Append("\n");
             sb.Append("  protectionReason: ").Append(ProtectionReason).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -178,6 +186,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (this.Source != input.Source || (this.Source != null && input.Source != null && !this.Source.SequenceEqual(input.Source))) return false;
             if (this.ProtectionStatus != input.ProtectionStatus || (this.ProtectionStatus != null && input.ProtectionStatus != null && !this.ProtectionStatus.SequenceEqual(input.ProtectionStatus))) return false;
             if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && input.ProtectionReason != null && !this.ProtectionReason.SequenceEqual(input.ProtectionReason))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
 
             return true;
         }
@@ -205,6 +214,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
                 if (this.ProtectionStatus != null) hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

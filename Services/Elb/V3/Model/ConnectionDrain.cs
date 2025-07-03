@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 参数解释：延迟注销功能开关。  取值范围：true 开启，false 关闭。  默认取值：true。
+        /// 参数解释：延迟注销功能开关。  取值范围：true 开启，false 关闭。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }

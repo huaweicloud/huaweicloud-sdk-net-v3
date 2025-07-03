@@ -87,7 +87,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 后端服务器的健康状态。  取值： - ONLINE，后端服务器正常运行。 - NO_MONITOR，后端服务器无健康检查。 - OFFLINE，已下线。  支持多值查询，查询条件格式：*operating_status&#x3D;xxx&amp;operating_status&#x3D;*。
+        /// 后端服务器的健康状态。  取值： - INITIAL：初始化中，表示负载均衡实例配置了健康检查，但查不到数据。 - ONLINE，后端服务器正常运行。 - NO_MONITOR，后端服务器无健康检查。 - OFFLINE，已下线。  支持多值查询，查询条件格式：*operating_status&#x3D;xxx&amp;operating_status&#x3D;*。
         /// </summary>
         [SDKProperty("operating_status", IsQuery = true)]
         [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
