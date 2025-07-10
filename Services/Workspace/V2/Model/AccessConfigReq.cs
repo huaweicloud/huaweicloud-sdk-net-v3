@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 接入配置
+    /// 接入配置。
     /// </summary>
     public class AccessConfigReq 
     {

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 会话打印机自定义策略。
+        /// 会话打印机自定义策略。长度不能超过1000个字符。
         /// </summary>
         [JsonProperty("session_printer_customization_policy", NullValueHandling = NullValueHandling.Ignore)]
         public string SessionPrinterCustomizationPolicy { get; set; }

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 包周期桌面池由不收费镜像切换至收费镜像的询价请求体
+    /// 包周期桌面池由不收费镜像切换至收费镜像的询价请求体。
     /// </summary>
     public class EstimateChangeImageRequestBody 
     {
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> DesktopIds { get; set; }
 
         /// <summary>
-        /// 促销计划ID
+        /// 促销计划ID。
         /// </summary>
         [JsonProperty("promotion_plan_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PromotionPlanId { get; set; }

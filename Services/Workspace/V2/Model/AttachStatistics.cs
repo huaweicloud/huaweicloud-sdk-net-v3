@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 分配情况统计
+    /// 分配情况统计。
     /// </summary>
     public class AttachStatistics 
     {

@@ -24,13 +24,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 产品flavor_id。
-        /// </summary>
-        [SDKProperty("flavor_id", IsQuery = true)]
-        [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string FlavorId { get; set; }
-
-        /// <summary>
         /// 可用分区。
         /// </summary>
         [SDKProperty("availability_zone", IsQuery = true)]
@@ -59,32 +52,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Architecture { get; set; }
 
         /// <summary>
-        /// wdh套餐id。
-        /// </summary>
-        [SDKProperty("deh_product_id", IsQuery = true)]
-        [JsonProperty("deh_product_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DehProductId { get; set; }
-
-        /// <summary>
-        /// 是否为wdh产品。
-        /// </summary>
-        [SDKProperty("is_deh", IsQuery = true)]
-        [JsonProperty("is_deh", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsDeh { get; set; }
-
-        /// <summary>
         /// 套餐系列。
         /// </summary>
         [SDKProperty("package_type", IsQuery = true)]
         [JsonProperty("package_type", NullValueHandling = NullValueHandling.Ignore)]
         public string PackageType { get; set; }
-
-        /// <summary>
-        /// 查询套餐的范围(all：查询所有套餐，包括培训版；若为null则不包含培训版套餐）
-        /// </summary>
-        [SDKProperty("products_range", IsQuery = true)]
-        [JsonProperty("products_range", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProductsRange { get; set; }
 
         /// <summary>
         /// 每页数量，范围0-100，默认100。
@@ -110,15 +82,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListProductsRequest {\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
-            sb.Append("  flavorId: ").Append(FlavorId).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  osType: ").Append(OsType).Append("\n");
             sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
             sb.Append("  architecture: ").Append(Architecture).Append("\n");
-            sb.Append("  dehProductId: ").Append(DehProductId).Append("\n");
-            sb.Append("  isDeh: ").Append(IsDeh).Append("\n");
             sb.Append("  packageType: ").Append(PackageType).Append("\n");
-            sb.Append("  productsRange: ").Append(ProductsRange).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("}\n");
@@ -140,15 +108,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
-            if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.OsType != input.OsType || (this.OsType != null && !this.OsType.Equals(input.OsType))) return false;
             if (this.ChargeMode != input.ChargeMode || (this.ChargeMode != null && !this.ChargeMode.Equals(input.ChargeMode))) return false;
             if (this.Architecture != input.Architecture || (this.Architecture != null && !this.Architecture.Equals(input.Architecture))) return false;
-            if (this.DehProductId != input.DehProductId || (this.DehProductId != null && !this.DehProductId.Equals(input.DehProductId))) return false;
-            if (this.IsDeh != input.IsDeh || (this.IsDeh != null && !this.IsDeh.Equals(input.IsDeh))) return false;
             if (this.PackageType != input.PackageType || (this.PackageType != null && !this.PackageType.Equals(input.PackageType))) return false;
-            if (this.ProductsRange != input.ProductsRange || (this.ProductsRange != null && !this.ProductsRange.Equals(input.ProductsRange))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
 
@@ -164,15 +128,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.OsType != null) hashCode = hashCode * 59 + this.OsType.GetHashCode();
                 if (this.ChargeMode != null) hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
                 if (this.Architecture != null) hashCode = hashCode * 59 + this.Architecture.GetHashCode();
-                if (this.DehProductId != null) hashCode = hashCode * 59 + this.DehProductId.GetHashCode();
-                if (this.IsDeh != null) hashCode = hashCode * 59 + this.IsDeh.GetHashCode();
                 if (this.PackageType != null) hashCode = hashCode * 59 + this.PackageType.GetHashCode();
-                if (this.ProductsRange != null) hashCode = hashCode * 59 + this.ProductsRange.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 return hashCode;

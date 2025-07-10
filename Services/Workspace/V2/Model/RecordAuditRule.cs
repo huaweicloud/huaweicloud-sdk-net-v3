@@ -82,6 +82,24 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("regit_paths", NullValueHandling = NullValueHandling.Ignore)]
         public string RegitPaths { get; set; }
 
+        /// <summary>
+        /// 应用过滤类型，black（黑名单）或者white（白名单）二选一
+        /// </summary>
+        [JsonProperty("app_filter_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string AppFilterType { get; set; }
+
+        /// <summary>
+        /// APP开启/关闭白名单，仅监控配置的白名单应用列表
+        /// </summary>
+        [JsonProperty("app_white_list", NullValueHandling = NullValueHandling.Ignore)]
+        public string AppWhiteList { get; set; }
+
+        /// <summary>
+        /// APP开启/关闭黑名单，忽略黑名单里面的应用列表
+        /// </summary>
+        [JsonProperty("app_black_list", NullValueHandling = NullValueHandling.Ignore)]
+        public string AppBlackList { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +120,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  eventEnable: ").Append(EventEnable).Append("\n");
             sb.Append("  fileSuffix: ").Append(FileSuffix).Append("\n");
             sb.Append("  regitPaths: ").Append(RegitPaths).Append("\n");
+            sb.Append("  appFilterType: ").Append(AppFilterType).Append("\n");
+            sb.Append("  appWhiteList: ").Append(AppWhiteList).Append("\n");
+            sb.Append("  appBlackList: ").Append(AppBlackList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +152,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.EventEnable != input.EventEnable || (this.EventEnable != null && !this.EventEnable.Equals(input.EventEnable))) return false;
             if (this.FileSuffix != input.FileSuffix || (this.FileSuffix != null && !this.FileSuffix.Equals(input.FileSuffix))) return false;
             if (this.RegitPaths != input.RegitPaths || (this.RegitPaths != null && !this.RegitPaths.Equals(input.RegitPaths))) return false;
+            if (this.AppFilterType != input.AppFilterType || (this.AppFilterType != null && !this.AppFilterType.Equals(input.AppFilterType))) return false;
+            if (this.AppWhiteList != input.AppWhiteList || (this.AppWhiteList != null && !this.AppWhiteList.Equals(input.AppWhiteList))) return false;
+            if (this.AppBlackList != input.AppBlackList || (this.AppBlackList != null && !this.AppBlackList.Equals(input.AppBlackList))) return false;
 
             return true;
         }
@@ -154,6 +178,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.EventEnable != null) hashCode = hashCode * 59 + this.EventEnable.GetHashCode();
                 if (this.FileSuffix != null) hashCode = hashCode * 59 + this.FileSuffix.GetHashCode();
                 if (this.RegitPaths != null) hashCode = hashCode * 59 + this.RegitPaths.GetHashCode();
+                if (this.AppFilterType != null) hashCode = hashCode * 59 + this.AppFilterType.GetHashCode();
+                if (this.AppWhiteList != null) hashCode = hashCode * 59 + this.AppWhiteList.GetHashCode();
+                if (this.AppBlackList != null) hashCode = hashCode * 59 + this.AppBlackList.GetHashCode();
                 return hashCode;
             }
         }

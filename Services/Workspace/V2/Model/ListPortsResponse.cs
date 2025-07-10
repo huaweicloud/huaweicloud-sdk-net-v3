@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 端口列表
+        /// 端口列表。
         /// </summary>
         [JsonProperty("ports", NullValueHandling = NullValueHandling.Ignore)]
         public List<NeutronPort> Ports { get; set; }

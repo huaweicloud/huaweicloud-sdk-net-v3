@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 休眠断开选项
+    /// 休眠断开选项。
     /// </summary>
     public class VdiDisconnectHibernateOptions 
     {

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 创建OU的id
+        /// 创建OU的id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }

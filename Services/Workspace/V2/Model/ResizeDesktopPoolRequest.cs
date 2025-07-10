@@ -17,13 +17,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// CBC接口回调时，请求头里带上的业务ID
-        /// </summary>
-        [SDKProperty("Service-Transaction-Id", IsHeader = true)]
-        [JsonProperty("Service-Transaction-Id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ServiceTransactionId { get; set; }
-
-        /// <summary>
         /// 桌面池ID。
         /// </summary>
         [SDKProperty("pool_id", IsPath = true)]
@@ -46,7 +39,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ResizeDesktopPoolRequest {\n");
-            sb.Append("  serviceTransactionId: ").Append(ServiceTransactionId).Append("\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -67,7 +59,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(ResizeDesktopPoolRequest input)
         {
             if (input == null) return false;
-            if (this.ServiceTransactionId != input.ServiceTransactionId || (this.ServiceTransactionId != null && !this.ServiceTransactionId.Equals(input.ServiceTransactionId))) return false;
             if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
@@ -82,7 +73,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.ServiceTransactionId != null) hashCode = hashCode * 59 + this.ServiceTransactionId.GetHashCode();
                 if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

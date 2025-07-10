@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 需删除的策略ID列表
+        /// 需删除的策略ID列表。
         /// </summary>
         [JsonProperty("result_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<DeleteTerminalsBindingDesktopsResult> ResultList { get; set; }

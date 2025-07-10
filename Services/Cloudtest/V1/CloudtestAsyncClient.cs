@@ -2375,6 +2375,30 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
         }
         
         /// <summary>
+        /// 查询指定表的内容
+        ///
+        /// 查询指定表的内容
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowEtlDataResponse> ShowEtlDataAsync(ShowEtlDataRequest showEtlDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/testhub/etl/query-data", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEtlDataRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowEtlDataResponse>(response);
+        }
+
+        public AsyncInvoker<ShowEtlDataResponse> ShowEtlDataAsyncInvoker(ShowEtlDataRequest showEtlDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/testhub/etl/query-data", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEtlDataRequest);
+            return new AsyncInvoker<ShowEtlDataResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowEtlDataResponse>);
+        }
+        
+        /// <summary>
         /// 根据目录查询因子
         ///
         /// 根据目录查询因子

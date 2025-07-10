@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 账户，账户的格式必须为:&lt;i&gt;账户(组)&lt;/i&gt;的形式。
+        /// 账户，账户的格式必须为:账户(组)的形式。
         /// </summary>
         [JsonProperty("account", NullValueHandling = NullValueHandling.Ignore)]
         public string Account { get; set; }

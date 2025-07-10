@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 配置文件流式处理启用
+        /// 配置文件流式处理启用。
         /// </summary>
         [JsonProperty("profile_streaming_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ProfileStreamingEnable { get; set; }
@@ -29,19 +29,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string RoamedFilesLocalPath { get; set; }
 
         /// <summary>
-        /// 排除文件夹路径
+        /// 排除文件夹路径。
         /// </summary>
         [JsonProperty("exclude_folders_path", NullValueHandling = NullValueHandling.Ignore)]
         public string ExcludeFoldersPath { get; set; }
 
         /// <summary>
-        /// 排除文件夹路径
+        /// 排除文件夹路径。
         /// </summary>
         [JsonProperty("roaming_registry_method", NullValueHandling = NullValueHandling.Ignore)]
         public string RoamingRegistryMethod { get; set; }
 
         /// <summary>
-        /// 漫游注册路径
+        /// 漫游注册路径。
         /// </summary>
         [JsonProperty("roaming_registry_path", NullValueHandling = NullValueHandling.Ignore)]
         public string RoamingRegistryPath { get; set; }

@@ -17,55 +17,55 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 任务ID
+        /// 任务ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 任务类型
+        /// 任务类型。
         /// </summary>
         [JsonProperty("job_type", NullValueHandling = NullValueHandling.Ignore)]
         public string JobType { get; set; }
 
         /// <summary>
-        /// 任务开始时间
+        /// 任务开始时间。
         /// </summary>
         [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string BeginTime { get; set; }
 
         /// <summary>
-        /// 任务结束时间
+        /// 任务结束时间。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 任务状态
+        /// 任务状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 任务错误码
+        /// 任务错误码。
         /// </summary>
         [JsonProperty("job_error_code", NullValueHandling = NullValueHandling.Ignore)]
         public string JobErrorCode { get; set; }
 
         /// <summary>
-        /// 任务失败原因
+        /// 任务失败原因。
         /// </summary>
         [JsonProperty("fail_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string FailReason { get; set; }
 
         /// <summary>
-        /// 子任务总数
+        /// 子任务总数。
         /// </summary>
         [JsonProperty("sub_jobs_total", NullValueHandling = NullValueHandling.Ignore)]
         public int? SubJobsTotal { get; set; }
 
         /// <summary>
-        /// 子任务列表
+        /// 子任务列表。
         /// </summary>
         [JsonProperty("sub_jobs", NullValueHandling = NullValueHandling.Ignore)]
         public List<JobDetailInfo> SubJobs { get; set; }

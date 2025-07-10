@@ -173,18 +173,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? NextLoginChangePassword { get; set; }
 
         /// <summary>
-        /// 用户组的专有ID列表。
-        /// </summary>
-        [JsonProperty("group_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> GroupIds { get; set; }
-
-        /// <summary>
-        /// 别名。
-        /// </summary>
-        [JsonProperty("alias_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string AliasName { get; set; }
-
-        /// <summary>
         /// 密码是否永不过期，true表示密码永不过期，false表示密码会过期。
         /// </summary>
         [JsonProperty("password_never_expired", NullValueHandling = NullValueHandling.Ignore)]
@@ -195,6 +183,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("disabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Disabled { get; set; }
+
+        /// <summary>
+        /// 用户信息映射，包含用户的服务等级、操作模式和类型。
+        /// </summary>
+        [JsonProperty("user_info_map", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserInfoMap { get; set; }
 
 
 
@@ -212,10 +206,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  accountExpires: ").Append(AccountExpires).Append("\n");
             sb.Append("  enableChangePassword: ").Append(EnableChangePassword).Append("\n");
             sb.Append("  nextLoginChangePassword: ").Append(NextLoginChangePassword).Append("\n");
-            sb.Append("  groupIds: ").Append(GroupIds).Append("\n");
-            sb.Append("  aliasName: ").Append(AliasName).Append("\n");
             sb.Append("  passwordNeverExpired: ").Append(PasswordNeverExpired).Append("\n");
             sb.Append("  disabled: ").Append(Disabled).Append("\n");
+            sb.Append("  userInfoMap: ").Append(UserInfoMap).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -241,10 +234,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.AccountExpires != input.AccountExpires || (this.AccountExpires != null && !this.AccountExpires.Equals(input.AccountExpires))) return false;
             if (this.EnableChangePassword != input.EnableChangePassword || (this.EnableChangePassword != null && !this.EnableChangePassword.Equals(input.EnableChangePassword))) return false;
             if (this.NextLoginChangePassword != input.NextLoginChangePassword || (this.NextLoginChangePassword != null && !this.NextLoginChangePassword.Equals(input.NextLoginChangePassword))) return false;
-            if (this.GroupIds != input.GroupIds || (this.GroupIds != null && input.GroupIds != null && !this.GroupIds.SequenceEqual(input.GroupIds))) return false;
-            if (this.AliasName != input.AliasName || (this.AliasName != null && !this.AliasName.Equals(input.AliasName))) return false;
             if (this.PasswordNeverExpired != input.PasswordNeverExpired || (this.PasswordNeverExpired != null && !this.PasswordNeverExpired.Equals(input.PasswordNeverExpired))) return false;
             if (this.Disabled != input.Disabled || (this.Disabled != null && !this.Disabled.Equals(input.Disabled))) return false;
+            if (this.UserInfoMap != input.UserInfoMap || (this.UserInfoMap != null && !this.UserInfoMap.Equals(input.UserInfoMap))) return false;
 
             return true;
         }
@@ -264,10 +256,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.AccountExpires != null) hashCode = hashCode * 59 + this.AccountExpires.GetHashCode();
                 if (this.EnableChangePassword != null) hashCode = hashCode * 59 + this.EnableChangePassword.GetHashCode();
                 if (this.NextLoginChangePassword != null) hashCode = hashCode * 59 + this.NextLoginChangePassword.GetHashCode();
-                if (this.GroupIds != null) hashCode = hashCode * 59 + this.GroupIds.GetHashCode();
-                if (this.AliasName != null) hashCode = hashCode * 59 + this.AliasName.GetHashCode();
                 if (this.PasswordNeverExpired != null) hashCode = hashCode * 59 + this.PasswordNeverExpired.GetHashCode();
                 if (this.Disabled != null) hashCode = hashCode * 59 + this.Disabled.GetHashCode();
+                if (this.UserInfoMap != null) hashCode = hashCode * 59 + this.UserInfoMap.GetHashCode();
                 return hashCode;
             }
         }

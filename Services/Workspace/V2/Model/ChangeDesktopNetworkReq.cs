@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 切换桌面网络请求体
+    /// 切换桌面网络请求体。
     /// </summary>
     public class ChangeDesktopNetworkReq 
     {
 
         /// <summary>
-        /// 待切换VPC的ID
+        /// 待切换VPC的ID。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 待切换子网的ID
+        /// 待切换子网的ID。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 指定私有IP地址
+        /// 指定私有IP地址。
         /// </summary>
         [JsonProperty("private_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateIp { get; set; }
 
         /// <summary>
-        /// 安全组ID列表
+        /// 安全组ID列表。
         /// </summary>
         [JsonProperty("security_group_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SecurityGroupIds { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class CreateDesktopPoolAuthorizedObjectsRequestBody 
     {
         /// <summary>
-        /// 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组
+        /// 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组。
         /// </summary>
-        /// <value>执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组</value>
+        /// <value>执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组。</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<AuthorizedObjects> Objects { get; set; }
 
         /// <summary>
-        /// 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组
+        /// 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

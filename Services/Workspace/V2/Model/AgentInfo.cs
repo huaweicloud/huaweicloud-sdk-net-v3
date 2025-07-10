@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 插件名称
+        /// 插件名称。
         /// </summary>
         [JsonProperty("agent_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AgentName { get; set; }
 
         /// <summary>
-        /// 插件版本
+        /// 插件版本。
         /// </summary>
         [JsonProperty("agent_version", NullValueHandling = NullValueHandling.Ignore)]
         public string AgentVersion { get; set; }
 
         /// <summary>
-        /// 是否安装插件（是否）
+        /// 是否安装插件（是否）。
         /// </summary>
         [JsonProperty("is_installed", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsInstalled { get; set; }

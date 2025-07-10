@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("domain_type", NullValueHandling = NullValueHandling.Ignore)]
         public DomainTypeEnum DomainType { get; set; }
         /// <summary>
-        /// 域管理员帐号。
+        /// 域管理员账号。
         /// </summary>
         [JsonProperty("domain_admin_account", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainAdminAccount { get; set; }

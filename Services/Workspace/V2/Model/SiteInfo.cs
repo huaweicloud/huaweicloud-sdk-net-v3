@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 站点信息
+    /// 站点信息。
     /// </summary>
     public class SiteInfo 
     {
@@ -132,13 +132,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 站点id
+        /// 站点id。
         /// </summary>
         [JsonProperty("site_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SiteId { get; set; }
 
         /// <summary>
-        /// 站点名字
+        /// 站点名字。
         /// </summary>
         [JsonProperty("site_name", NullValueHandling = NullValueHandling.Ignore)]
         public string SiteName { get; set; }
@@ -149,28 +149,22 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("site_type", NullValueHandling = NullValueHandling.Ignore)]
         public SiteTypeEnum SiteType { get; set; }
         /// <summary>
-        /// 项目ID
+        /// 项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 站点状态
+        /// 站点状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// 创建时间。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTime { get; set; }
-
-        /// <summary>
-        /// 网关节点信息
-        /// </summary>
-        [JsonProperty("agent_info", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Vag> AgentInfo { get; set; }
 
 
 
@@ -187,7 +181,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  agentInfo: ").Append(AgentInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -212,7 +205,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
-            if (this.AgentInfo != input.AgentInfo || (this.AgentInfo != null && input.AgentInfo != null && !this.AgentInfo.SequenceEqual(input.AgentInfo))) return false;
 
             return true;
         }
@@ -231,7 +223,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.AgentInfo != null) hashCode = hashCode * 59 + this.AgentInfo.GetHashCode();
                 return hashCode;
             }
         }

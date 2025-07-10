@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 脚本ID
+        /// 脚本ID。
         /// </summary>
         [JsonProperty("script_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScriptId { get; set; }

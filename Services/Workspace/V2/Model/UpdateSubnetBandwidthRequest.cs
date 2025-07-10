@@ -24,13 +24,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string BandwidthId { get; set; }
 
         /// <summary>
-        /// CBC接口回调时，请求头里带上的业务ID
-        /// </summary>
-        [SDKProperty("Service-Transaction-Id", IsHeader = true)]
-        [JsonProperty("Service-Transaction-Id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ServiceTransactionId { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
@@ -47,7 +40,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateSubnetBandwidthRequest {\n");
             sb.Append("  bandwidthId: ").Append(BandwidthId).Append("\n");
-            sb.Append("  serviceTransactionId: ").Append(ServiceTransactionId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -68,7 +60,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.BandwidthId != input.BandwidthId || (this.BandwidthId != null && !this.BandwidthId.Equals(input.BandwidthId))) return false;
-            if (this.ServiceTransactionId != input.ServiceTransactionId || (this.ServiceTransactionId != null && !this.ServiceTransactionId.Equals(input.ServiceTransactionId))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
@@ -83,7 +74,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.BandwidthId != null) hashCode = hashCode * 59 + this.BandwidthId.GetHashCode();
-                if (this.ServiceTransactionId != null) hashCode = hashCode * 59 + this.ServiceTransactionId.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }

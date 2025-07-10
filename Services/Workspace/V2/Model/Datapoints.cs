@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 桌面监控Cpu与Mem时间点信息
+    /// 桌面监控Cpu与Mem时间点信息。
     /// </summary>
     public class Datapoints 
     {
 
         /// <summary>
-        /// 平均数值
+        /// 平均数值。
         /// </summary>
         [JsonProperty("average", NullValueHandling = NullValueHandling.Ignore)]
         public double? Average { get; set; }
 
         /// <summary>
-        /// 时间戳
+        /// 时间戳。
         /// </summary>
         [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public long? Timestamp { get; set; }

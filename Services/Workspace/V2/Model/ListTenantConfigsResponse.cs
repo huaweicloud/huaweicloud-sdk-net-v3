@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 租户个性配置列表
+        /// 租户个性配置列表。
         /// </summary>
         [JsonProperty("function_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<FunctionConfig> FunctionConfigs { get; set; }

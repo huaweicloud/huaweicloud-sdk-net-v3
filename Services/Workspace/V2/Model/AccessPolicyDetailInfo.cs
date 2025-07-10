@@ -241,7 +241,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 策略名
+        /// 策略名。
         /// </summary>
         [JsonProperty("policy_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PolicyName { get; set; }
@@ -261,6 +261,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpInfo> IpList { get; set; }
+
+        /// <summary>
+        /// IP白名单是否生效。只能单独更新，此值的优先级最高，传此值只修改该策略是否生效。
+        /// </summary>
+        [JsonProperty("is_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsEnable { get; set; }
+
+        /// <summary>
+        /// IP白名单是否禁止所有Ip接入。is_enable为false时，无法修改此值。此值也只能单独更新。
+        /// </summary>
+        [JsonProperty("is_block_all", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsBlockAll { get; set; }
 
         /// <summary>
         /// 策略总数。
@@ -293,6 +305,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  blacklistType: ").Append(BlacklistType).Append("\n");
             sb.Append("  accessControlType: ").Append(AccessControlType).Append("\n");
             sb.Append("  ipList: ").Append(IpList).Append("\n");
+            sb.Append("  isEnable: ").Append(IsEnable).Append("\n");
+            sb.Append("  isBlockAll: ").Append(IsBlockAll).Append("\n");
             sb.Append("  ipTotalCount: ").Append(IpTotalCount).Append("\n");
             sb.Append("  policyId: ").Append(PolicyId).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
@@ -318,6 +332,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.BlacklistType != input.BlacklistType) return false;
             if (this.AccessControlType != input.AccessControlType) return false;
             if (this.IpList != input.IpList || (this.IpList != null && input.IpList != null && !this.IpList.SequenceEqual(input.IpList))) return false;
+            if (this.IsEnable != input.IsEnable || (this.IsEnable != null && !this.IsEnable.Equals(input.IsEnable))) return false;
+            if (this.IsBlockAll != input.IsBlockAll || (this.IsBlockAll != null && !this.IsBlockAll.Equals(input.IsBlockAll))) return false;
             if (this.IpTotalCount != input.IpTotalCount || (this.IpTotalCount != null && !this.IpTotalCount.Equals(input.IpTotalCount))) return false;
             if (this.PolicyId != input.PolicyId || (this.PolicyId != null && !this.PolicyId.Equals(input.PolicyId))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
@@ -337,6 +353,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 hashCode = hashCode * 59 + this.BlacklistType.GetHashCode();
                 hashCode = hashCode * 59 + this.AccessControlType.GetHashCode();
                 if (this.IpList != null) hashCode = hashCode * 59 + this.IpList.GetHashCode();
+                if (this.IsEnable != null) hashCode = hashCode * 59 + this.IsEnable.GetHashCode();
+                if (this.IsBlockAll != null) hashCode = hashCode * 59 + this.IsBlockAll.GetHashCode();
                 if (this.IpTotalCount != null) hashCode = hashCode * 59 + this.IpTotalCount.GetHashCode();
                 if (this.PolicyId != null) hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();

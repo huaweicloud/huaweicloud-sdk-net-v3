@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 国际命名
+    /// 国际命名。
     /// </summary>
     public class I18nLanguage 
     {
 
         /// <summary>
-        /// 语言
+        /// 语言。
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public string Language { get; set; }
 
         /// <summary>
-        /// 值
+        /// 值。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

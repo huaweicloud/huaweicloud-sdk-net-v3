@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 包周期资源对象
+    /// 包周期资源对象。
     /// </summary>
     public class Resource 
     {
@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? PeriodType { get; set; }
 
         /// <summary>
-        /// 订购周期数
+        /// 订购周期数。
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
 
         /// <summary>
-        /// 是否续订
+        /// 是否自动续订。
         /// </summary>
         [JsonProperty("is_auto_renew", NullValueHandling = NullValueHandling.Ignore)]
         public int? IsAutoRenew { get; set; }
@@ -45,12 +45,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("create_desktops", NullValueHandling = NullValueHandling.Ignore)]
         public CreateDesktopReq CreateDesktops { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("deh_hosts", NullValueHandling = NullValueHandling.Ignore)]
-        public Hosts DehHosts { get; set; }
 
         /// <summary>
         /// 
@@ -106,12 +100,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("subscribe_user_sharer", NullValueHandling = NullValueHandling.Ignore)]
         public SubscribeUserSharerReq SubscribeUserSharer { get; set; }
 
-        /// <summary>
-        /// 支付后跳转的地址
-        /// </summary>
-        [JsonProperty("cloud_service_console_url", NullValueHandling = NullValueHandling.Ignore)]
-        public string CloudServiceConsoleUrl { get; set; }
-
 
 
         /// <summary>
@@ -126,7 +114,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  isAutoRenew: ").Append(IsAutoRenew).Append("\n");
             sb.Append("  addVolumes: ").Append(AddVolumes).Append("\n");
             sb.Append("  createDesktops: ").Append(CreateDesktops).Append("\n");
-            sb.Append("  dehHosts: ").Append(DehHosts).Append("\n");
             sb.Append("  rebuildDesktops: ").Append(RebuildDesktops).Append("\n");
             sb.Append("  attachDesktops: ").Append(AttachDesktops).Append("\n");
             sb.Append("  createExclusiveHosts: ").Append(CreateExclusiveHosts).Append("\n");
@@ -136,7 +123,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  applyDesktopsInternet: ").Append(ApplyDesktopsInternet).Append("\n");
             sb.Append("  applySubnetBandwidth: ").Append(ApplySubnetBandwidth).Append("\n");
             sb.Append("  subscribeUserSharer: ").Append(SubscribeUserSharer).Append("\n");
-            sb.Append("  cloudServiceConsoleUrl: ").Append(CloudServiceConsoleUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -160,7 +146,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.IsAutoRenew != input.IsAutoRenew || (this.IsAutoRenew != null && !this.IsAutoRenew.Equals(input.IsAutoRenew))) return false;
             if (this.AddVolumes != input.AddVolumes || (this.AddVolumes != null && !this.AddVolumes.Equals(input.AddVolumes))) return false;
             if (this.CreateDesktops != input.CreateDesktops || (this.CreateDesktops != null && !this.CreateDesktops.Equals(input.CreateDesktops))) return false;
-            if (this.DehHosts != input.DehHosts || (this.DehHosts != null && !this.DehHosts.Equals(input.DehHosts))) return false;
             if (this.RebuildDesktops != input.RebuildDesktops || (this.RebuildDesktops != null && !this.RebuildDesktops.Equals(input.RebuildDesktops))) return false;
             if (this.AttachDesktops != input.AttachDesktops || (this.AttachDesktops != null && !this.AttachDesktops.Equals(input.AttachDesktops))) return false;
             if (this.CreateExclusiveHosts != input.CreateExclusiveHosts || (this.CreateExclusiveHosts != null && !this.CreateExclusiveHosts.Equals(input.CreateExclusiveHosts))) return false;
@@ -170,7 +155,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ApplyDesktopsInternet != input.ApplyDesktopsInternet || (this.ApplyDesktopsInternet != null && !this.ApplyDesktopsInternet.Equals(input.ApplyDesktopsInternet))) return false;
             if (this.ApplySubnetBandwidth != input.ApplySubnetBandwidth || (this.ApplySubnetBandwidth != null && !this.ApplySubnetBandwidth.Equals(input.ApplySubnetBandwidth))) return false;
             if (this.SubscribeUserSharer != input.SubscribeUserSharer || (this.SubscribeUserSharer != null && !this.SubscribeUserSharer.Equals(input.SubscribeUserSharer))) return false;
-            if (this.CloudServiceConsoleUrl != input.CloudServiceConsoleUrl || (this.CloudServiceConsoleUrl != null && !this.CloudServiceConsoleUrl.Equals(input.CloudServiceConsoleUrl))) return false;
 
             return true;
         }
@@ -188,7 +172,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.IsAutoRenew != null) hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
                 if (this.AddVolumes != null) hashCode = hashCode * 59 + this.AddVolumes.GetHashCode();
                 if (this.CreateDesktops != null) hashCode = hashCode * 59 + this.CreateDesktops.GetHashCode();
-                if (this.DehHosts != null) hashCode = hashCode * 59 + this.DehHosts.GetHashCode();
                 if (this.RebuildDesktops != null) hashCode = hashCode * 59 + this.RebuildDesktops.GetHashCode();
                 if (this.AttachDesktops != null) hashCode = hashCode * 59 + this.AttachDesktops.GetHashCode();
                 if (this.CreateExclusiveHosts != null) hashCode = hashCode * 59 + this.CreateExclusiveHosts.GetHashCode();
@@ -198,7 +181,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ApplyDesktopsInternet != null) hashCode = hashCode * 59 + this.ApplyDesktopsInternet.GetHashCode();
                 if (this.ApplySubnetBandwidth != null) hashCode = hashCode * 59 + this.ApplySubnetBandwidth.GetHashCode();
                 if (this.SubscribeUserSharer != null) hashCode = hashCode * 59 + this.SubscribeUserSharer.GetHashCode();
-                if (this.CloudServiceConsoleUrl != null) hashCode = hashCode * 59 + this.CloudServiceConsoleUrl.GetHashCode();
                 return hashCode;
             }
         }

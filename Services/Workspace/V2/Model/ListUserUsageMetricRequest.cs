@@ -17,28 +17,28 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 查询起始时间(0时区)
+        /// 查询起始时间(0时区)。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 查询截至时间(0时区)
+        /// 查询截至时间(0时区)。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 用户名(模糊匹配)
+        /// 用户名(模糊匹配)。
         /// </summary>
         [SDKProperty("username", IsQuery = true)]
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }
 
         /// <summary>
-        /// 使用时长最小值
+        /// 使用时长最小值。
         /// </summary>
         [SDKProperty("usage_min_hours", IsQuery = true)]
         [JsonProperty("usage_min_hours", NullValueHandling = NullValueHandling.Ignore)]
@@ -66,14 +66,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string SortType { get; set; }
 
         /// <summary>
-        /// 查询的偏移量,默认值0
+        /// 查询的偏移量,默认值0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// limit范围[1-100],默认值0
+        /// limit范围[1-100],默认值0。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

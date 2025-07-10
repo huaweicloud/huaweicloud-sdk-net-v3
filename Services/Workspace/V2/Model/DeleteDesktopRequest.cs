@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? EmailNotification { get; set; }
 
         /// <summary>
-        /// 是否强制删除
+        /// 是否强制删除。
         /// </summary>
         [SDKProperty("is_force_delete", IsQuery = true)]
         [JsonProperty("is_force_delete", NullValueHandling = NullValueHandling.Ignore)]

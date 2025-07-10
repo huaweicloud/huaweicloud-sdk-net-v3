@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 上网信息
+        /// 上网信息。
         /// </summary>
         [JsonProperty("internet_infos", NullValueHandling = NullValueHandling.Ignore)]
         public List<InternetInfo> InternetInfos { get; set; }

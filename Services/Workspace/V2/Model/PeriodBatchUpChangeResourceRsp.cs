@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 桌面池升配变更询价响应体
+    /// 桌面池升配变更询价响应体。
     /// </summary>
     public class PeriodBatchUpChangeResourceRsp 
     {
 
         /// <summary>
-        /// 币种，比如CNY
+        /// 币种，比如CNY。
         /// </summary>
         [JsonProperty("currency", NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
         /// <summary>
-        /// 扩展参数
+        /// 扩展参数。
         /// </summary>
         [JsonProperty("extend_params", NullValueHandling = NullValueHandling.Ignore)]
         public string ExtendParams { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public OfficialWebsiteRatingResult OfficialWebsiteRatingResult { get; set; }
 
         /// <summary>
-        /// 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果
+        /// 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果。
         /// </summary>
         [JsonProperty("optional_discount_rating_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<OptionalDiscountRatingResult> OptionalDiscountRatingResults { get; set; }

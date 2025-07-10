@@ -179,10 +179,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public GetTaskDetailListRspJobsInstance Instance { get; set; }
 
         /// <summary>
-        /// 根据不同的任务，显示不同的内容。
+        /// 
         /// </summary>
         [JsonProperty("entities", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Entities { get; set; }
+        public GetJobInfoResponseBodyJobEntities Entities { get; set; }
 
         /// <summary>
         /// 任务执行失败时的错误信息。

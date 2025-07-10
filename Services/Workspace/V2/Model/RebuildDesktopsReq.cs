@@ -53,13 +53,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// 订单ID，包周期桌面重建系统盘，涉及收费镜像时需传
+        /// 订单ID，包周期桌面重建系统盘，涉及收费镜像时需传。
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// 企业项目ID，默认\&quot;0\&quot;
+        /// 企业项目ID，默认\&quot;0。\&quot;
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

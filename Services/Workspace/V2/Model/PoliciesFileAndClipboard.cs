@@ -150,25 +150,25 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public PoliciesFileAndClipboardFileRedirection FileRedirection { get; set; }
 
         /// <summary>
-        /// 剪切板长度表示
+        /// 剪切板长度表示。
         /// </summary>
         [JsonProperty("clip_length_limit_flag_c2s", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ClipLengthLimitFlagC2s { get; set; }
 
         /// <summary>
-        /// 剪切板客户端长度
+        /// 剪切板客户端长度。
         /// </summary>
         [JsonProperty("clip_length_limit_c2s", NullValueHandling = NullValueHandling.Ignore)]
         public int? ClipLengthLimitC2s { get; set; }
 
         /// <summary>
-        /// 剪切板长度表示
+        /// 剪切板长度表示。
         /// </summary>
         [JsonProperty("clip_length_limit_flag_s2c", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ClipLengthLimitFlagS2c { get; set; }
 
         /// <summary>
-        /// 剪切板客户端长度
+        /// 剪切板客户端长度。
         /// </summary>
         [JsonProperty("clip_length_limit_s2c", NullValueHandling = NullValueHandling.Ignore)]
         public int? ClipLengthLimitS2c { get; set; }

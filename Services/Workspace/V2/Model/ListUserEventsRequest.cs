@@ -17,42 +17,49 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 查询起始时间(0时区)
+        /// 查询起始时间，格式为：UTC时间，例如\&quot;1970-01-01T00:00:00Z\&quot;。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 查询结束时间(0时区)
+        /// 查询结束时间，格式为：UTC时间，例如\&quot;1970-01-01T00:00:00Z\&quot;。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 用户名（精确搜索）
+        /// 用户名（精确搜索）。
         /// </summary>
         [SDKProperty("username", IsQuery = true)]
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }
 
         /// <summary>
-        /// 事件类型
+        /// 事件类型，英文逗号隔开。
         /// </summary>
         [SDKProperty("event_type", IsQuery = true)]
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
         public string EventType { get; set; }
 
         /// <summary>
-        /// 事件之间的关联id
+        /// 操作资源ID。
         /// </summary>
-        [SDKProperty("event_trace_id", IsQuery = true)]
-        [JsonProperty("event_trace_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string EventTraceId { get; set; }
+        [SDKProperty("resource_id", IsQuery = true)]
+        [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceId { get; set; }
 
         /// <summary>
-        /// 用于分页查询，查询的起始记录序号，从0开始
+        /// 操作资源名称。
+        /// </summary>
+        [SDKProperty("resource_name", IsQuery = true)]
+        [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceName { get; set; }
+
+        /// <summary>
+        /// 用于分页查询，查询的起始记录序号，从0开始。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -78,7 +85,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  username: ").Append(Username).Append("\n");
             sb.Append("  eventType: ").Append(EventType).Append("\n");
-            sb.Append("  eventTraceId: ").Append(EventTraceId).Append("\n");
+            sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
+            sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
@@ -103,7 +111,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.Username != input.Username || (this.Username != null && !this.Username.Equals(input.Username))) return false;
             if (this.EventType != input.EventType || (this.EventType != null && !this.EventType.Equals(input.EventType))) return false;
-            if (this.EventTraceId != input.EventTraceId || (this.EventTraceId != null && !this.EventTraceId.Equals(input.EventTraceId))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
@@ -122,7 +131,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.Username != null) hashCode = hashCode * 59 + this.Username.GetHashCode();
                 if (this.EventType != null) hashCode = hashCode * 59 + this.EventType.GetHashCode();
-                if (this.EventTraceId != null) hashCode = hashCode * 59 + this.EventTraceId.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;

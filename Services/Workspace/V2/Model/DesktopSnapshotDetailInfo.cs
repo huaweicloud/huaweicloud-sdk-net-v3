@@ -192,7 +192,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 快照的创建时间，UTC时间，格式为：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+        /// 快照的创建时间，UTC时间，格式为：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z。&#39;
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTime { get; set; }
@@ -203,7 +203,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("create_type", NullValueHandling = NullValueHandling.Ignore)]
         public CreateTypeEnum CreateType { get; set; }
         /// <summary>
-        /// 快照的最近恢复时间，UTC时间，格式为：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+        /// 快照的最近恢复时间，UTC时间，格式为：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z。&#39;
         /// </summary>
         [JsonProperty("last_restore_time", NullValueHandling = NullValueHandling.Ignore)]
         public string LastRestoreTime { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 是否为升配
+        /// 是否为升配。
         /// </summary>
         [JsonProperty("is_upgrade", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsUpgrade { get; set; }

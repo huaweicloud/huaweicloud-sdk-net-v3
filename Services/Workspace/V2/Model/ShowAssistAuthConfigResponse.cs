@@ -22,18 +22,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("otp_config_info", NullValueHandling = NullValueHandling.Ignore)]
         public OtpConfigInfo OtpConfigInfo { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("radius_config_info", NullValueHandling = NullValueHandling.Ignore)]
-        public RadiusConfigInfo RadiusConfigInfo { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("radius_gateway_config_info", NullValueHandling = NullValueHandling.Ignore)]
-        public RadiusGatewayConfigInfo RadiusGatewayConfigInfo { get; set; }
-
 
 
         /// <summary>
@@ -44,8 +32,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ShowAssistAuthConfigResponse {\n");
             sb.Append("  otpConfigInfo: ").Append(OtpConfigInfo).Append("\n");
-            sb.Append("  radiusConfigInfo: ").Append(RadiusConfigInfo).Append("\n");
-            sb.Append("  radiusGatewayConfigInfo: ").Append(RadiusGatewayConfigInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -65,8 +51,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.OtpConfigInfo != input.OtpConfigInfo || (this.OtpConfigInfo != null && !this.OtpConfigInfo.Equals(input.OtpConfigInfo))) return false;
-            if (this.RadiusConfigInfo != input.RadiusConfigInfo || (this.RadiusConfigInfo != null && !this.RadiusConfigInfo.Equals(input.RadiusConfigInfo))) return false;
-            if (this.RadiusGatewayConfigInfo != input.RadiusGatewayConfigInfo || (this.RadiusGatewayConfigInfo != null && !this.RadiusGatewayConfigInfo.Equals(input.RadiusGatewayConfigInfo))) return false;
 
             return true;
         }
@@ -80,8 +64,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.OtpConfigInfo != null) hashCode = hashCode * 59 + this.OtpConfigInfo.GetHashCode();
-                if (this.RadiusConfigInfo != null) hashCode = hashCode * 59 + this.RadiusConfigInfo.GetHashCode();
-                if (this.RadiusGatewayConfigInfo != null) hashCode = hashCode * 59 + this.RadiusGatewayConfigInfo.GetHashCode();
                 return hashCode;
             }
         }

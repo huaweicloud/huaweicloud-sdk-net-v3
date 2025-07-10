@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 单个站点的配额
+    /// 单个站点的配额。
     /// </summary>
     public class SiteQuotaNoLimit 
     {
 
         /// <summary>
-        /// 配额资源列表
+        /// 配额资源列表。
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceNoLimit> Resources { get; set; }
 
         /// <summary>
-        /// 站点ID
+        /// 站点ID。
         /// </summary>
         [JsonProperty("site_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SiteId { get; set; }

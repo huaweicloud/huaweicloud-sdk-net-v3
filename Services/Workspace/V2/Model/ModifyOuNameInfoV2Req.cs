@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// OU名称
+        /// OU名称。
         /// </summary>
         [JsonProperty("ou_name", NullValueHandling = NullValueHandling.Ignore)]
         public string OuName { get; set; }
 
         /// <summary>
-        /// 描述
+        /// 描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

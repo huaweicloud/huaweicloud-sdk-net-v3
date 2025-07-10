@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 告警指标信息
+    /// 告警指标信息。
     /// </summary>
     public class AlarmMetric 
     {
 
         /// <summary>
-        /// 查询服务的命名空间
+        /// 查询服务的命名空间。
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 资源的监控指标名称
+        /// 资源的监控指标名称。
         /// </summary>
         [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }

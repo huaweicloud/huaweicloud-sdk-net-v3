@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 告警记录
+        /// 告警记录。
         /// </summary>
         [JsonProperty("record_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RecordId { get; set; }
 
         /// <summary>
-        /// 告警规则ID
+        /// 告警规则ID。
         /// </summary>
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmId { get; set; }
 
         /// <summary>
-        /// 告警规则的名称
+        /// 告警规则的名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 告警规则类型 | ALL_INSTANCE为全部资源指标告警， RESOURCE_GROUP为资源分组指标告警， MULTI_INSTANCE为指定资源指标告警， EVENT.SYS为系统事件告警， EVENT.CUSTOM自定义事件告警， DNSHealthCheck为健康检查告警；
+        /// 告警规则类型 | ALL_INSTANCE为全部资源指标告警， RESOURCE_GROUP为资源分组指标告警， MULTI_INSTANCE为指定资源指标告警， EVENT.SYS为系统事件告警， EVENT.CUSTOM自定义事件告警， DNSHealthCheck为健康检查告警。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Level { get; set; }
 
         /// <summary>
-        /// 产生时间,UTC时间
+        /// 产生时间,UTC时间。
         /// </summary>
         [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string BeginTime { get; set; }

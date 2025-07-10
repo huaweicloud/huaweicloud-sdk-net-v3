@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 是否自动付款。true:自动支付; false：不自动支付;默认false
+        /// 是否自动付款。true:自动支付; false：不自动支付;默认false。
         /// </summary>
         [JsonProperty("is_auto_pay", NullValueHandling = NullValueHandling.Ignore)]
         public string IsAutoPay { get; set; }

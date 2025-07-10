@@ -29,34 +29,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<ScriptTaskInfoTaskScripts> TaskScripts { get; set; }
 
         /// <summary>
-        /// 执行命令时输入的命令。
-        /// </summary>
-        [JsonProperty("command_content", NullValueHandling = NullValueHandling.Ignore)]
-        public string CommandContent { get; set; }
-
-        /// <summary>
-        /// 命令行类型(POWERSHELL/BAT/SHELL)。
-        /// </summary>
-        [JsonProperty("command_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string CommandType { get; set; }
-
-        /// <summary>
         /// 资源类型，如DESKTOP。
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
-
-        /// <summary>
-        /// 资源组ID，如桌面池ID。
-        /// </summary>
-        [JsonProperty("resource_group_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceGroupId { get; set; }
-
-        /// <summary>
-        /// 资源组类型，如DESKTOP_POOL。
-        /// </summary>
-        [JsonProperty("resource_group_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceGroupType { get; set; }
 
         /// <summary>
         /// 执行脚本的资源ID列表。
@@ -69,18 +45,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("gray_resource_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> GrayResourceIds { get; set; }
-
-        /// <summary>
-        /// 执行脚本前置步骤。
-        /// </summary>
-        [JsonProperty("pre_start", NullValueHandling = NullValueHandling.Ignore)]
-        public string PreStart { get; set; }
-
-        /// <summary>
-        /// 执行脚本后置步骤。
-        /// </summary>
-        [JsonProperty("post_finish", NullValueHandling = NullValueHandling.Ignore)]
-        public string PostFinish { get; set; }
 
         /// <summary>
         /// task中成功的执行记录数量。
@@ -129,15 +93,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class ScriptTaskInfo {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  taskScripts: ").Append(TaskScripts).Append("\n");
-            sb.Append("  commandContent: ").Append(CommandContent).Append("\n");
-            sb.Append("  commandType: ").Append(CommandType).Append("\n");
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
-            sb.Append("  resourceGroupId: ").Append(ResourceGroupId).Append("\n");
-            sb.Append("  resourceGroupType: ").Append(ResourceGroupType).Append("\n");
             sb.Append("  resourceIds: ").Append(ResourceIds).Append("\n");
             sb.Append("  grayResourceIds: ").Append(GrayResourceIds).Append("\n");
-            sb.Append("  preStart: ").Append(PreStart).Append("\n");
-            sb.Append("  postFinish: ").Append(PostFinish).Append("\n");
             sb.Append("  successNum: ").Append(SuccessNum).Append("\n");
             sb.Append("  failedNum: ").Append(FailedNum).Append("\n");
             sb.Append("  skipNum: ").Append(SkipNum).Append("\n");
@@ -164,15 +122,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.TaskScripts != input.TaskScripts || (this.TaskScripts != null && input.TaskScripts != null && !this.TaskScripts.SequenceEqual(input.TaskScripts))) return false;
-            if (this.CommandContent != input.CommandContent || (this.CommandContent != null && !this.CommandContent.Equals(input.CommandContent))) return false;
-            if (this.CommandType != input.CommandType || (this.CommandType != null && !this.CommandType.Equals(input.CommandType))) return false;
             if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
-            if (this.ResourceGroupId != input.ResourceGroupId || (this.ResourceGroupId != null && !this.ResourceGroupId.Equals(input.ResourceGroupId))) return false;
-            if (this.ResourceGroupType != input.ResourceGroupType || (this.ResourceGroupType != null && !this.ResourceGroupType.Equals(input.ResourceGroupType))) return false;
             if (this.ResourceIds != input.ResourceIds || (this.ResourceIds != null && input.ResourceIds != null && !this.ResourceIds.SequenceEqual(input.ResourceIds))) return false;
             if (this.GrayResourceIds != input.GrayResourceIds || (this.GrayResourceIds != null && input.GrayResourceIds != null && !this.GrayResourceIds.SequenceEqual(input.GrayResourceIds))) return false;
-            if (this.PreStart != input.PreStart || (this.PreStart != null && !this.PreStart.Equals(input.PreStart))) return false;
-            if (this.PostFinish != input.PostFinish || (this.PostFinish != null && !this.PostFinish.Equals(input.PostFinish))) return false;
             if (this.SuccessNum != input.SuccessNum || (this.SuccessNum != null && !this.SuccessNum.Equals(input.SuccessNum))) return false;
             if (this.FailedNum != input.FailedNum || (this.FailedNum != null && !this.FailedNum.Equals(input.FailedNum))) return false;
             if (this.SkipNum != input.SkipNum || (this.SkipNum != null && !this.SkipNum.Equals(input.SkipNum))) return false;
@@ -193,15 +145,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.TaskScripts != null) hashCode = hashCode * 59 + this.TaskScripts.GetHashCode();
-                if (this.CommandContent != null) hashCode = hashCode * 59 + this.CommandContent.GetHashCode();
-                if (this.CommandType != null) hashCode = hashCode * 59 + this.CommandType.GetHashCode();
                 if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.ResourceGroupId != null) hashCode = hashCode * 59 + this.ResourceGroupId.GetHashCode();
-                if (this.ResourceGroupType != null) hashCode = hashCode * 59 + this.ResourceGroupType.GetHashCode();
                 if (this.ResourceIds != null) hashCode = hashCode * 59 + this.ResourceIds.GetHashCode();
                 if (this.GrayResourceIds != null) hashCode = hashCode * 59 + this.GrayResourceIds.GetHashCode();
-                if (this.PreStart != null) hashCode = hashCode * 59 + this.PreStart.GetHashCode();
-                if (this.PostFinish != null) hashCode = hashCode * 59 + this.PostFinish.GetHashCode();
                 if (this.SuccessNum != null) hashCode = hashCode * 59 + this.SuccessNum.GetHashCode();
                 if (this.FailedNum != null) hashCode = hashCode * 59 + this.FailedNum.GetHashCode();
                 if (this.SkipNum != null) hashCode = hashCode * 59 + this.SkipNum.GetHashCode();

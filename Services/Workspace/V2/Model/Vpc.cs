@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// vpc信息
+    /// vpc信息。
     /// </summary>
     public class Vpc 
     {
 
         /// <summary>
-        /// 桌面所在vpcId
+        /// 桌面所在vpcId。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 桌面所在vpc名称
+        /// 桌面所在vpc名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 桌面所在vpc网段
+        /// 桌面所在vpc网段。
         /// </summary>
         [JsonProperty("cidr", NullValueHandling = NullValueHandling.Ignore)]
         public string Cidr { get; set; }

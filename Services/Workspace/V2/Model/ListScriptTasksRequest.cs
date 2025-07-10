@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 查询的偏移量。
+        /// 查询的偏移量，默认值0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 单次查询的大小[1-100]。
+        /// 单次查询的大小[1-100]，默认值10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> ResourceGroupId { get; set; }
 
         /// <summary>
-        /// 脚本ID
+        /// 脚本ID。
         /// </summary>
         [SDKProperty("script_id", IsQuery = true)]
         [JsonProperty("script_id", NullValueHandling = NullValueHandling.Ignore)]

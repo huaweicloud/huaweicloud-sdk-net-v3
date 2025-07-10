@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 按照时区name过滤
+        /// 按照时区name过滤。
         /// </summary>
         [SDKProperty("time_zone_name", IsQuery = true)]
         [JsonProperty("time_zone_name", NullValueHandling = NullValueHandling.Ignore)]

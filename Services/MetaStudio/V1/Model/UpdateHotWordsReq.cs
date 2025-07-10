@@ -27,6 +27,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("sis_hot_words", NullValueHandling = NullValueHandling.Ignore)]
         public UpdateSisHotWords SisHotWords { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("mobvoi_hot_words", NullValueHandling = NullValueHandling.Ignore)]
+        public UpdateMobvoiHotWords MobvoiHotWords { get; set; }
+
 
 
         /// <summary>
@@ -38,6 +44,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("class UpdateHotWordsReq {\n");
             sb.Append("  hotWordsType: ").Append(HotWordsType).Append("\n");
             sb.Append("  sisHotWords: ").Append(SisHotWords).Append("\n");
+            sb.Append("  mobvoiHotWords: ").Append(MobvoiHotWords).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,6 +65,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (input == null) return false;
             if (this.HotWordsType != input.HotWordsType) return false;
             if (this.SisHotWords != input.SisHotWords || (this.SisHotWords != null && !this.SisHotWords.Equals(input.SisHotWords))) return false;
+            if (this.MobvoiHotWords != input.MobvoiHotWords || (this.MobvoiHotWords != null && !this.MobvoiHotWords.Equals(input.MobvoiHotWords))) return false;
 
             return true;
         }
@@ -72,6 +80,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.HotWordsType.GetHashCode();
                 if (this.SisHotWords != null) hashCode = hashCode * 59 + this.SisHotWords.GetHashCode();
+                if (this.MobvoiHotWords != null) hashCode = hashCode * 59 + this.MobvoiHotWords.GetHashCode();
                 return hashCode;
             }
         }

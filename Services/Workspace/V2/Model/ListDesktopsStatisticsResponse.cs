@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public DesktopLoginStatisticsRsp LoginStateStatistics { get; set; }
 
         /// <summary>
-        /// 每个桌面池的情况统计，当desktop_type指定为POOL时返回
+        /// 每个桌面池的情况统计，当desktop_type指定为POOL时返回。
         /// </summary>
         [JsonProperty("desktop_pool_statistics", NullValueHandling = NullValueHandling.Ignore)]
         public List<DesktopPoolStatistics> DesktopPoolStatistics { get; set; }

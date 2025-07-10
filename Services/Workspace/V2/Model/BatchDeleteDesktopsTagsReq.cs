@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 批量桌面删除标签
+    /// 批量桌面删除标签。
     /// </summary>
     public class BatchDeleteDesktopsTagsReq 
     {

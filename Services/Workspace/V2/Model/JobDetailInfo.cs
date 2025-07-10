@@ -83,12 +83,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 任务成功结果。
-        /// </summary>
-        [JsonProperty("success_result", NullValueHandling = NullValueHandling.Ignore)]
-        public string SuccessResult { get; set; }
-
-        /// <summary>
         /// 任务进度。
         /// </summary>
         [JsonProperty("process", NullValueHandling = NullValueHandling.Ignore)]
@@ -132,7 +126,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  host: ").Append(Host).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
-            sb.Append("  successResult: ").Append(SuccessResult).Append("\n");
             sb.Append("  process: ").Append(Process).Append("\n");
             sb.Append("  attachUser: ").Append(AttachUser).Append("\n");
             sb.Append("  entity: ").Append(Entity).Append("\n");
@@ -166,7 +159,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Host != input.Host || (this.Host != null && !this.Host.Equals(input.Host))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
-            if (this.SuccessResult != input.SuccessResult || (this.SuccessResult != null && !this.SuccessResult.Equals(input.SuccessResult))) return false;
             if (this.Process != input.Process || (this.Process != null && !this.Process.Equals(input.Process))) return false;
             if (this.AttachUser != input.AttachUser || (this.AttachUser != null && !this.AttachUser.Equals(input.AttachUser))) return false;
             if (this.Entity != input.Entity || (this.Entity != null && !this.Entity.Equals(input.Entity))) return false;
@@ -194,7 +186,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Host != null) hashCode = hashCode * 59 + this.Host.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.SuccessResult != null) hashCode = hashCode * 59 + this.SuccessResult.GetHashCode();
                 if (this.Process != null) hashCode = hashCode * 59 + this.Process.GetHashCode();
                 if (this.AttachUser != null) hashCode = hashCode * 59 + this.AttachUser.GetHashCode();
                 if (this.Entity != null) hashCode = hashCode * 59 + this.Entity.GetHashCode();

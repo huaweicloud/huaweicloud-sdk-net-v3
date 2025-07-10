@@ -38,14 +38,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ChargeMode { get; set; }
 
         /// <summary>
-        /// 是否是GPU套餐。1表示GPU套餐，0表示非GPU套餐，默认null查询所有类型
+        /// 是否是GPU套餐。1表示GPU套餐，0表示非GPU套餐，默认null查询所有类型。
         /// </summary>
         [SDKProperty("is_gpu", IsQuery = true)]
         [JsonProperty("is_gpu", NullValueHandling = NullValueHandling.Ignore)]
         public int? IsGpu { get; set; }
 
         /// <summary>
-        /// 套餐系列。user_sharer表示用户协同套餐，desktop_sharer表示桌面协同套餐
+        /// 套餐系列。user_sharer表示用户协同套餐，desktop_sharer表示桌面协同套餐。
         /// </summary>
         [SDKProperty("package_type", IsQuery = true)]
         [JsonProperty("package_type", NullValueHandling = NullValueHandling.Ignore)]

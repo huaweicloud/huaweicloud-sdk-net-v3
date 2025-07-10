@@ -17,85 +17,85 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 还原本地目录启用
+        /// 还原本地目录启用。
         /// </summary>
         [JsonProperty("restore_local_directories_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RestoreLocalDirectoriesEnable { get; set; }
 
         /// <summary>
-        /// 应用数据漫游启用
+        /// 应用数据漫游启用。
         /// </summary>
         [JsonProperty("appData_roaming_enale", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AppDataRoamingEnale { get; set; }
 
         /// <summary>
-        /// 桌面重定向
+        /// 桌面重定向。
         /// </summary>
         [JsonProperty("redirec_desktop", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecDesktop { get; set; }
 
         /// <summary>
-        /// 开始菜单
+        /// 开始菜单。
         /// </summary>
         [JsonProperty("redirec_start_menu", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecStartMenu { get; set; }
 
         /// <summary>
-        /// 文档
+        /// 文档。
         /// </summary>
         [JsonProperty("redirec_documents", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecDocuments { get; set; }
 
         /// <summary>
-        /// 照片
+        /// 照片。
         /// </summary>
         [JsonProperty("redirec_pictures", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecPictures { get; set; }
 
         /// <summary>
-        /// 音乐
+        /// 音乐。
         /// </summary>
         [JsonProperty("redirec_music", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecMusic { get; set; }
 
         /// <summary>
-        /// 录音
+        /// 录音。
         /// </summary>
         [JsonProperty("redirec_videos", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecVideos { get; set; }
 
         /// <summary>
-        /// 最爱
+        /// 最爱。
         /// </summary>
         [JsonProperty("redirec_favorites", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecFavorites { get; set; }
 
         /// <summary>
-        /// 录音
+        /// 录音。
         /// </summary>
         [JsonProperty("redirec_contacts", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecContacts { get; set; }
 
         /// <summary>
-        /// 下载
+        /// 下载。
         /// </summary>
         [JsonProperty("redirec_downloads", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecDownloads { get; set; }
 
         /// <summary>
-        /// 链接
+        /// 链接。
         /// </summary>
         [JsonProperty("redirec_links", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecLinks { get; set; }
 
         /// <summary>
-        /// 查找
+        /// 查找。
         /// </summary>
         [JsonProperty("redirec_searches", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecSearches { get; set; }
 
         /// <summary>
-        /// 游戏存储
+        /// 游戏存储。
         /// </summary>
         [JsonProperty("redirec_saved_games", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RedirecSavedGames { get; set; }

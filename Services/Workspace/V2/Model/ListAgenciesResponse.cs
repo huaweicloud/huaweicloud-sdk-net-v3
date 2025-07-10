@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 委托信息
+        /// 委托信息。
         /// </summary>
         [JsonProperty("existing_agencies", NullValueHandling = NullValueHandling.Ignore)]
         public List<AgenciesInfo> ExistingAgencies { get; set; }

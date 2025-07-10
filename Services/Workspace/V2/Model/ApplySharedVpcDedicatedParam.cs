@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 共享Vpc专线入参
+    /// 共享Vpc专线入参。
     /// </summary>
     public class ApplySharedVpcDedicatedParam 
     {
 
         /// <summary>
-        /// 租户指定的共享Vpc专线地址
+        /// 租户指定的共享Vpc专线地址。
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }
 
         /// <summary>
-        /// 租户指定共享Vpc专线地址端口
+        /// 租户指定共享Vpc专线地址端口。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public int? Port { get; set; }
 
         /// <summary>
-        /// 开通服务资源使用的可用分区，默认随机使用2个可用区
+        /// 开通服务资源使用的可用分区，默认随机使用2个可用区。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailabilityZone { get; set; }

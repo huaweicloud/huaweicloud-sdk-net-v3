@@ -17,100 +17,112 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 项目id
+        /// 项目id。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 用户名
+        /// 用户名。
         /// </summary>
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }
 
         /// <summary>
-        /// 企业id
+        /// 企业id。
         /// </summary>
         [JsonProperty("workspace_id", NullValueHandling = NullValueHandling.Ignore)]
         public string WorkspaceId { get; set; }
 
         /// <summary>
-        /// 事件之间的关联id
+        /// 事件之间的关联id。
         /// </summary>
         [JsonProperty("event_trace_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EventTraceId { get; set; }
 
         /// <summary>
-        /// 事件类型
+        /// 事件类型。
         /// </summary>
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
         public string EventType { get; set; }
 
         /// <summary>
-        /// 事件时间，UTC时间
+        /// 事件时间，格式为：UTC时间，例如\&quot;1970-01-01T00:00:00Z\&quot;。
         /// </summary>
         [JsonProperty("event_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EventTime { get; set; }
 
         /// <summary>
-        /// 操作对象类型
+        /// 操作对象类型。
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 操作对象id
+        /// 操作对象id。
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 操作对象名称
+        /// 操作对象名称。
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 客户端类型
+        /// 客户端类型。
         /// </summary>
         [JsonProperty("client_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientType { get; set; }
 
         /// <summary>
-        /// 客户端ip
+        /// 客户端ip。
         /// </summary>
         [JsonProperty("client_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientIp { get; set; }
 
         /// <summary>
-        /// 客户端mac地址
+        /// 客户端mac地址。
         /// </summary>
         [JsonProperty("client_mac", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientMac { get; set; }
 
         /// <summary>
-        /// 操作用户源ip
+        /// 客户端版本。
+        /// </summary>
+        [JsonProperty("client_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClientVersion { get; set; }
+
+        /// <summary>
+        /// 操作用户源ip。
         /// </summary>
         [JsonProperty("source_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string SourceIp { get; set; }
 
         /// <summary>
-        /// 是否成功
+        /// 是否成功。
         /// </summary>
         [JsonProperty("is_success", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSuccess { get; set; }
 
         /// <summary>
-        /// 错误码
+        /// 错误码。
         /// </summary>
         [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorCode { get; set; }
 
         /// <summary>
-        /// 错误描述
+        /// 错误描述。
         /// </summary>
         [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorMsg { get; set; }
+
+        /// <summary>
+        /// 触发事件的类型，USER-用户触发，SYSTEM-系统触发。
+        /// </summary>
+        [JsonProperty("action_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string ActionType { get; set; }
 
 
 
@@ -133,10 +145,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  clientType: ").Append(ClientType).Append("\n");
             sb.Append("  clientIp: ").Append(ClientIp).Append("\n");
             sb.Append("  clientMac: ").Append(ClientMac).Append("\n");
+            sb.Append("  clientVersion: ").Append(ClientVersion).Append("\n");
             sb.Append("  sourceIp: ").Append(SourceIp).Append("\n");
             sb.Append("  isSuccess: ").Append(IsSuccess).Append("\n");
             sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
             sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
+            sb.Append("  actionType: ").Append(ActionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -167,10 +181,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ClientType != input.ClientType || (this.ClientType != null && !this.ClientType.Equals(input.ClientType))) return false;
             if (this.ClientIp != input.ClientIp || (this.ClientIp != null && !this.ClientIp.Equals(input.ClientIp))) return false;
             if (this.ClientMac != input.ClientMac || (this.ClientMac != null && !this.ClientMac.Equals(input.ClientMac))) return false;
+            if (this.ClientVersion != input.ClientVersion || (this.ClientVersion != null && !this.ClientVersion.Equals(input.ClientVersion))) return false;
             if (this.SourceIp != input.SourceIp || (this.SourceIp != null && !this.SourceIp.Equals(input.SourceIp))) return false;
             if (this.IsSuccess != input.IsSuccess || (this.IsSuccess != null && !this.IsSuccess.Equals(input.IsSuccess))) return false;
             if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
             if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
+            if (this.ActionType != input.ActionType || (this.ActionType != null && !this.ActionType.Equals(input.ActionType))) return false;
 
             return true;
         }
@@ -195,10 +211,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ClientType != null) hashCode = hashCode * 59 + this.ClientType.GetHashCode();
                 if (this.ClientIp != null) hashCode = hashCode * 59 + this.ClientIp.GetHashCode();
                 if (this.ClientMac != null) hashCode = hashCode * 59 + this.ClientMac.GetHashCode();
+                if (this.ClientVersion != null) hashCode = hashCode * 59 + this.ClientVersion.GetHashCode();
                 if (this.SourceIp != null) hashCode = hashCode * 59 + this.SourceIp.GetHashCode();
                 if (this.IsSuccess != null) hashCode = hashCode * 59 + this.IsSuccess.GetHashCode();
                 if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
                 if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                if (this.ActionType != null) hashCode = hashCode * 59 + this.ActionType.GetHashCode();
                 return hashCode;
             }
         }

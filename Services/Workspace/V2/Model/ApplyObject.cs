@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class ApplyObject 
     {
         /// <summary>
-        /// 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面，仅供触发式任务使用。 - DESKTOP_TAG：桌面标签
+        /// 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面。 - DESKTOP_TAG：桌面标签。
         /// </summary>
-        /// <value>对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面，仅供触发式任务使用。 - DESKTOP_TAG：桌面标签</value>
+        /// <value>对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面。 - DESKTOP_TAG：桌面标签。</value>
         [JsonConverter(typeof(EnumClassConverter<ObjectTypeEnum>))]
         public class ObjectTypeEnum
         {
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面，仅供触发式任务使用。 - DESKTOP_TAG：桌面标签
+        /// 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面。 - DESKTOP_TAG：桌面标签。
         /// </summary>
         [JsonProperty("object_type", NullValueHandling = NullValueHandling.Ignore)]
         public ObjectTypeEnum ObjectType { get; set; }

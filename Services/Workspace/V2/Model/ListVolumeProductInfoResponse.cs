@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 磁盘产品信息列表
+        /// 磁盘产品信息列表。
         /// </summary>
         [JsonProperty("volumes", NullValueHandling = NullValueHandling.Ignore)]
         public List<VolumeProductInfo> Volumes { get; set; }

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Eip地址。
+        /// EIP地址。
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string AttachedDesktopName { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// 订单ID，包周期桌面重建系统盘，涉及收费镜像时需传
+        /// 订单ID，包周期桌面重建系统盘，涉及收费镜像时需传。
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }

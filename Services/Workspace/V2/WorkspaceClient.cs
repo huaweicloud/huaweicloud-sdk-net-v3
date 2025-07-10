@@ -263,7 +263,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询告警统计
         ///
-        /// 返回各级别告警数
+        /// 返回各级别告警数。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -287,7 +287,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询告警列表
         ///
-        /// 从ces查询告警列表
+        /// 从ces查询告警列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -503,7 +503,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 删除应用
         ///
-        /// 删除应用
+        /// 删除应用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -849,9 +849,9 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
-        /// 批量删除管控规则列表
+        /// 批量删除管控规则
         ///
-        /// 批量删除管控规则列表。
+        /// 批量删除管控规则。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -923,7 +923,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询应用规则
         ///
-        /// 查询应用规则
+        /// 查询应用规则。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -969,6 +969,54 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
+        /// 设置管控规则
+        ///
+        /// 设置管控规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetRuleRestrictionResponse SetRuleRestriction(SetRuleRestrictionRequest setRuleRestrictionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/app-center/app-rules/actions/set-rule-restriction", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRuleRestrictionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<SetRuleRestrictionResponse>(response);
+        }
+
+        public SyncInvoker<SetRuleRestrictionResponse> SetRuleRestrictionInvoker(SetRuleRestrictionRequest setRuleRestrictionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/app-center/app-rules/actions/set-rule-restriction", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRuleRestrictionRequest);
+            return new SyncInvoker<SetRuleRestrictionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SetRuleRestrictionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询管控规则
+        ///
+        /// 查询管控规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRuleRestrictionResponse ShowRuleRestriction(ShowRuleRestrictionRequest showRuleRestrictionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/app-center/app-rules/actions/get-rule-restriction", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRuleRestrictionRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRuleRestrictionResponse>(response);
+        }
+
+        public SyncInvoker<ShowRuleRestrictionResponse> ShowRuleRestrictionInvoker(ShowRuleRestrictionRequest showRuleRestrictionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/app-center/app-rules/actions/get-rule-restriction", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRuleRestrictionRequest);
+            return new SyncInvoker<ShowRuleRestrictionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRuleRestrictionResponse>);
+        }
+        
+        /// <summary>
         /// 修改应用规则
         ///
         /// 修改应用规则。
@@ -997,7 +1045,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询辅助认证配置
         ///
-        /// 查询辅助认证的配置信息
+        /// 查询辅助认证的配置信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1045,7 +1093,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 更新辅助认证策略配置
         ///
-        /// 更新辅助认证策略配置
+        /// 更新辅助认证策略配置。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1117,7 +1165,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询可用分区列表概要
         ///
-        /// 该接口用于查询云桌面支持的可用分区列表
+        /// 该接口用于查询云桌面支持的可用分区列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1184,56 +1232,6 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/connections/desktops/export", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportUserLoginInfoNewRequest);
             return new SyncInvoker<ExportUserLoginInfoNewResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ExportUserLoginInfoNewResponse>);
-        }
-        
-        /// <summary>
-        /// 查询桌面登录状态
-        ///
-        /// 该接口用于查询桌面登录状态
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        [Obsolete("This method is deprecated and will be removed in the future versions")]
-        public ListDesktopsStatusResponse ListDesktopsStatus(ListDesktopsStatusRequest listDesktopsStatusRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktops/status", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDesktopsStatusRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListDesktopsStatusResponse>(response);
-        }
-
-        [Obsolete("This method is deprecated and will be removed in the future versions")]
-        public SyncInvoker<ListDesktopsStatusResponse> ListDesktopsStatusInvoker(ListDesktopsStatusRequest listDesktopsStatusRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktops/status", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDesktopsStatusRequest);
-            return new SyncInvoker<ListDesktopsStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDesktopsStatusResponse>);
-        }
-        
-        /// <summary>
-        /// 查询登录人数
-        ///
-        /// 该接口用于查询登录人数
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListHistoryOnlineInfoResponse ListHistoryOnlineInfo(ListHistoryOnlineInfoRequest listHistoryOnlineInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktops/online-users", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistoryOnlineInfoRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListHistoryOnlineInfoResponse>(response);
-        }
-
-        public SyncInvoker<ListHistoryOnlineInfoResponse> ListHistoryOnlineInfoInvoker(ListHistoryOnlineInfoRequest listHistoryOnlineInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktops/online-users", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHistoryOnlineInfoRequest);
-            return new SyncInvoker<ListHistoryOnlineInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHistoryOnlineInfoResponse>);
         }
         
         /// <summary>
@@ -1311,7 +1309,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 分配用户
         ///
-        /// 将桌面分配给用户
+        /// 将桌面分配给用户。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1383,7 +1381,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 批量切换桌面网络
         ///
-        /// 批量切换桌面vpc、子网、ip、安全组
+        /// 批量切换桌面vpc、子网、ip、安全组。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1431,7 +1429,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 批量解绑用户
         ///
-        /// 批量将桌面和用户解绑
+        /// 批量将桌面和用户解绑。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1453,9 +1451,9 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
-        /// 安装ces-agent
+        /// 安装agent
         ///
-        /// 批量为桌面安装agent
+        /// 批量为桌面安装agent。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1527,7 +1525,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 操作桌面
         ///
-        /// 批量操作桌面，用于批量开机、关机和重启。
+        /// 批量操作桌面，用于批量开机、关机、休眠和重启。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1577,7 +1575,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 切换桌面网络
         ///
-        /// 切换桌面vpc、子网、ip、安全组
+        /// 切换桌面vpc、子网、ip、安全组。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1603,7 +1601,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 桌面转镜像
         ///
-        /// 桌面转镜像
+        /// 桌面转镜像。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1727,7 +1725,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 解绑用户
         ///
-        /// 将桌面和用户解绑
+        /// 将桌面和用户解绑。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1796,32 +1794,6 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktops/{desktop_id}/actions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDesktopActionsRequest);
             return new SyncInvoker<ListDesktopActionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDesktopActionsResponse>);
-        }
-        
-        /// <summary>
-        /// 查询桌面解绑信息
-        ///
-        /// 查询桌面解绑信息。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListDesktopDetachInfoResponse ListDesktopDetachInfo(ListDesktopDetachInfoRequest listDesktopDetachInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("desktop_id", listDesktopDetachInfoRequest.DesktopId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktops/{desktop_id}/detach-info", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDesktopDetachInfoRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListDesktopDetachInfoResponse>(response);
-        }
-
-        public SyncInvoker<ListDesktopDetachInfoResponse> ListDesktopDetachInfoInvoker(ListDesktopDetachInfoRequest listDesktopDetachInfoRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("desktop_id", listDesktopDetachInfoRequest.DesktopId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/desktops/{desktop_id}/detach-info", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDesktopDetachInfoRequest);
-            return new SyncInvoker<ListDesktopDetachInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDesktopDetachInfoResponse>);
         }
         
         /// <summary>
@@ -1949,7 +1921,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 发送消息通知
         ///
-        /// 用于管理员向桌面发送消息通知
+        /// 用于管理员向桌面发送消息通知。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1973,7 +1945,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 批量设置桌面维护模式
         ///
-        /// 批量设置桌面管理员维护模式
+        /// 批量设置桌面管理员维护模式。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2049,7 +2021,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询桌面网络
         ///
-        /// 查询桌面vpc、子网、privateIp、EIP、安全组
+        /// 查询桌面vpc、子网、privateIp、EIP、安全组。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2075,7 +2047,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 批量查询桌面网络
         ///
-        /// 查询桌面vpc、子网、privateIp、EIP、安全组
+        /// 查询桌面vpc、子网、privateIp、EIP、安全组。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2684,7 +2656,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 桌面池变更规格
         ///
-        /// 桌面池变更规格
+        /// 桌面池变更规格。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2710,7 +2682,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 发送消息通知
         ///
-        /// 用于管理员向桌面发送消息通知
+        /// 用于管理员向桌面发送消息通知。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2812,7 +2784,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 批量添加多个桌面标签
         ///
-        /// 同时对多个桌面批量添加标签，如果创建的标签已经存在（key相同）则覆，最大支持100个桌面，每个桌面最大20个标签
+        /// 同时对多个桌面批量添加标签，如果创建的标签已经存在（key相同）则覆，最大支持100个桌面，每个桌面最大20个标签。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2836,7 +2808,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 批量添加删除标签
         ///
-        /// 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功
+        /// 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2862,7 +2834,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 批量删除多个桌面标签
         ///
-        /// 同时对多个桌面批量添加标签，删除时，如果删除的标签不存在默认处理成功，最大支持100个桌面，每个桌面最大20个标签
+        /// 同时对多个桌面批量添加标签，删除时，如果删除的标签不存在默认处理成功，最大支持100个桌面，每个桌面最大20个标签。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2940,7 +2912,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 使用标签过滤桌面
         ///
-        /// 使用标签过滤桌面
+        /// 使用标签过滤桌面。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2964,7 +2936,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询项目标签
         ///
-        /// 查询租户的所有标签集合
+        /// 查询租户的所有标签集合。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2988,7 +2960,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询桌面标签
         ///
-        /// 查询指定桌面的标签信息
+        /// 查询指定桌面的标签信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3238,7 +3210,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 包周期桌面增配变更批量询价
         ///
-        /// 包周期桌面增配变更批量询价
+        /// 包周期桌面增配变更批量询价。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3286,7 +3258,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 包周期桌面池添加单个磁盘批量询价
         ///
-        /// 包周期桌面池添加单个磁盘批量询价
+        /// 包周期桌面池添加单个磁盘批量询价。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3310,7 +3282,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 包周期桌面池切换镜像批量询价
         ///
-        /// 包周期桌面池切换镜像(由不收费镜像变更至收费镜像)批量询价
+        /// 包周期桌面池切换镜像(由不收费镜像变更至收费镜像)批量询价。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3334,7 +3306,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 包周期桌面池扩容磁盘批量询价
         ///
-        /// 包周期桌面池扩容磁盘批量询价
+        /// 包周期桌面池扩容磁盘批量询价。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3358,7 +3330,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 包周期桌面池变更规格批量询价
         ///
-        /// 包周期桌面池变更规格批量询价
+        /// 包周期桌面池变更规格批量询价。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3674,9 +3646,9 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
-        /// 查询已绑定桌面和未绑定的Eip
+        /// 查询已绑定桌面和未绑定的EIP
         ///
-        /// 查询已绑定桌面和未绑定的Eip。
+        /// 查询已绑定桌面和未绑定的EIP。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3722,7 +3694,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
-        /// 查询Nat网关列表
+        /// 查询NAT网关列表
         ///
         /// 查询NAT网关列表。
         /// 
@@ -3846,7 +3818,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 修改云办公带宽
         ///
-        /// 修改云办公带宽
+        /// 修改云办公带宽。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3872,7 +3844,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 修改云办公带宽的控制配置
         ///
-        /// 修改云办公带宽的控制配置
+        /// 修改云办公带宽的控制配置。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3898,7 +3870,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 创建变更订单
         ///
-        /// 变更规格、扩容磁盘[、按需转包周期生成订单](tag:inner)
+        /// 变更规格、扩容磁盘。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3924,7 +3896,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 包周期桌面批量变更下单
         ///
-        /// 包周期桌面批量变更下单
+        /// 包周期桌面批量变更下单。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3972,7 +3944,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 包周期桌面池批量变更下单
         ///
-        /// 包周期桌面池批量变更下单
+        /// 包周期桌面池批量变更下单。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3996,7 +3968,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 包周期下单
         ///
-        /// 包周期资源（桌面、磁盘[、云办公主机](tag:ZQ)）下订单。
+        /// 包周期资源（桌面、磁盘）下订单。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4096,7 +4068,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询OU下用户信息
         ///
-        /// 查询OU下用户信息
+        /// 查询OU下用户信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4118,9 +4090,9 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
-        /// 查询OU信息
+        /// 查询AD里的OU列表
         ///
-        /// 查询OU信息
+        /// 查询AD里的OU列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4142,9 +4114,9 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
-        /// 查询OU信息
+        /// 查询OU列表
         ///
-        /// 查询OU信息
+        /// 查询OU列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4168,7 +4140,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 更新OU信息
         ///
-        /// 更新OU信息
+        /// 更新OU信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4220,7 +4192,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 新增策略组
         ///
-        /// 新增策略组
+        /// 新增策略组。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4244,7 +4216,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 删除策略组
         ///
-        /// 删除指定策略组，包含策略组对应的策略信息以及应用对象信息
+        /// 删除指定策略组，包含策略组对应的策略信息以及应用对象信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4270,7 +4242,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询初始策略项
         ///
-        /// 查询初始策略项
+        /// 查询初始策略项。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4320,7 +4292,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询策略组
         ///
-        /// 根据策略组ID查询策略组详细信息，包含策略信息以及应用对象信息
+        /// 根据策略组ID查询策略组详细信息，包含策略信息以及应用对象信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4446,7 +4418,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 修改策略组
         ///
-        /// 修改指定策略组的信息
+        /// 修改指定策略组的信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4599,7 +4571,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询租户单个站点配额详情
         ///
-        /// 查询租户单个站点配额详情
+        /// 查询租户单个站点配额详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4824,7 +4796,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 获取时区配置
         ///
-        /// 获取时区配置
+        /// 获取时区配置。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -4998,7 +4970,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询录屏详情
         ///
-        /// 查询录屏详情
+        /// 查询录屏详情。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5296,7 +5268,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 桌面购买附属资源
         ///
-        /// 存量桌面购买附属资源
+        /// 存量桌面购买附属资源。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5320,7 +5292,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 桌面删除附属资源
         ///
-        /// 桌面删除附属资源
+        /// 桌面删除附属资源。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5344,7 +5316,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询协同桌面默认用户配置
         ///
-        /// 查询协同桌面默认用户配置（当前功能公测中,需要使用请联系管理员申请使用）
+        /// 查询协同桌面默认用户配置（当前功能公测中,需要使用请联系管理员申请使用）。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5368,7 +5340,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 设置协同桌面默认用户配置
         ///
-        /// 设置协同桌面默认用户配置（当前功能公测中，需要使用请联系管理员申请使用）
+        /// 设置协同桌面默认用户配置（当前功能公测中，需要使用请联系管理员申请使用）。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5392,7 +5364,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 新增站点
         ///
-        /// 用于查询站点信息的接口
+        /// 用于查询站点信息的接口。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5416,7 +5388,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 删除站点
         ///
-        /// 用于删除站点的接口
+        /// 用于删除站点的接口。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5442,7 +5414,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询站点信息
         ///
-        /// 用于查询站点信息的接口
+        /// 用于查询站点信息的接口。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5490,7 +5462,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 修改站点接入方式
         ///
-        /// 用于修改站点接入方式
+        /// 用于修改站点接入方式。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5516,7 +5488,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 修改站点业务子网
         ///
-        /// 用于修改站点业务子网
+        /// 用于修改站点业务子网。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5542,7 +5514,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 批量创建快照
         ///
-        /// 批量创建快照
+        /// 批量创建快照。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5566,7 +5538,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 批量删除快照
         ///
-        /// 批量删除快照
+        /// 批量删除快照。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5590,7 +5562,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 批量恢复快照
         ///
-        /// 批量恢快照
+        /// 批量恢快照。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5614,7 +5586,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询快照列表
         ///
-        /// 查询快照列表
+        /// 查询快照列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5692,8 +5664,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询云应用接入统计数据
         ///
-        /// 查询云应用接入统计数据;
-        /// 最多查询30天内的数据;
+        /// 查询云应用接入统计数据，一次最多查询30天，支持最近30天的数据查询。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5746,7 +5717,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 桌面统计
         ///
-        /// 统计租户下的普通桌面、桌面池状态，默认仅统计总数
+        /// 统计租户下的普通桌面、桌面池状态，默认仅统计总数。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5819,7 +5790,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询通知规则
         ///
-        /// 查询对应指标的通知规则;
+        /// 查询对应指标的通知规则;。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5843,7 +5814,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询指标
         ///
-        /// 查询指标
+        /// 查询指标。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -5874,7 +5845,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询指标趋势
         ///
-        /// 查询指标趋势
+        /// 查询指标趋势。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -6002,7 +5973,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询指标环比值
         ///
-        /// 查询指标环比值
+        /// 查询指标环比值。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -6026,7 +5997,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询接入云桌面或云应用各阶段时长数据
         ///
-        /// 查询接入云桌面或云应用各阶段时长数据
+        /// 查询接入云桌面或云应用各阶段时长数据。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -6050,7 +6021,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 更新通知规则
         ///
-        /// 更新对应指标的通知规则;对应指标满足相应的规则条件时发送通知
+        /// 更新对应指标的通知规则;对应指标满足相应的规则条件时发送通知。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -6102,7 +6073,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询租户个性配置列表
         ///
-        /// 查询租户个性配置列表
+        /// 查询租户个性配置列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -6598,7 +6569,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询用户事件
         ///
-        /// 查询用户事件
+        /// 查询用户事件，一次最多查询30天，支持最近30天的数据查询。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -6617,6 +6588,54 @@ namespace HuaweiCloud.SDK.Workspace.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/user-events", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserEventsRequest);
             return new SyncInvoker<ListUserEventsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUserEventsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用户事件LTS配置
+        ///
+        /// 查询用户事件LTS配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListUserEventsLtsConfigurationsResponse ListUserEventsLtsConfigurations(ListUserEventsLtsConfigurationsRequest listUserEventsLtsConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/user-events/lts-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserEventsLtsConfigurationsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListUserEventsLtsConfigurationsResponse>(response);
+        }
+
+        public SyncInvoker<ListUserEventsLtsConfigurationsResponse> ListUserEventsLtsConfigurationsInvoker(ListUserEventsLtsConfigurationsRequest listUserEventsLtsConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/user-events/lts-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserEventsLtsConfigurationsRequest);
+            return new SyncInvoker<ListUserEventsLtsConfigurationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUserEventsLtsConfigurationsResponse>);
+        }
+        
+        /// <summary>
+        /// 配置用户事件LTS
+        ///
+        /// 配置用户事件LTS。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetUserEventsLtsConfigurationsResponse SetUserEventsLtsConfigurations(SetUserEventsLtsConfigurationsRequest setUserEventsLtsConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/user-events/lts-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setUserEventsLtsConfigurationsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<SetUserEventsLtsConfigurationsResponse>(response);
+        }
+
+        public SyncInvoker<SetUserEventsLtsConfigurationsResponse> SetUserEventsLtsConfigurationsInvoker(SetUserEventsLtsConfigurationsRequest setUserEventsLtsConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/user-events/lts-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setUserEventsLtsConfigurationsRequest);
+            return new SyncInvoker<SetUserEventsLtsConfigurationsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SetUserEventsLtsConfigurationsResponse>);
         }
         
         /// <summary>
@@ -6646,9 +6665,9 @@ namespace HuaweiCloud.SDK.Workspace.V2
         }
         
         /// <summary>
-        /// 增加桌面磁盘
+        /// 批量增加桌面磁盘
         ///
-        /// 增加桌面磁盘。
+        /// 批量增加桌面磁盘。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -6698,7 +6717,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 扩容磁盘
         ///
-        /// 扩容磁盘
+        /// 扩容磁盘。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -6750,7 +6769,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
         /// <summary>
         /// 查询磁盘产品信息
         ///
-        /// 查询磁盘产品信息
+        /// 查询磁盘产品信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

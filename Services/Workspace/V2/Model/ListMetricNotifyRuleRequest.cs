@@ -17,28 +17,28 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 指标名称(精确匹配)
+        /// 指标名称(精确匹配)。
         /// </summary>
         [SDKProperty("metric_name", IsQuery = true)]
         [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }
 
         /// <summary>
-        /// 通知规则ID
+        /// 通知规则ID。
         /// </summary>
         [SDKProperty("rule_id", IsQuery = true)]
         [JsonProperty("rule_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleId { get; set; }
 
         /// <summary>
-        /// 查询的偏移量,默认值0
+        /// 查询的偏移量,默认值0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 单次查询的大小[1-100],默认值10
+        /// 单次查询的大小[1-100],默认值10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 批量修改标签请求
+    /// 批量修改标签请求。
     /// </summary>
     public class TagsReq 
     {
 
         /// <summary>
-        /// 操作字符串create或delete
+        /// 操作字符串create或delete。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
 
         /// <summary>
-        /// 标签对象
+        /// 标签对象。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 标签对象（已废弃）
+        /// 标签对象（已废弃）。
         /// </summary>
         [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> SysTags { get; set; }

@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 该条告警记录对应的资源ID
+        /// 该条告警记录对应的资源ID。
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 该条告警记录对应的资源名称
+        /// 该条告警记录对应的资源名称。
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 该条告警记录对应的事件监控ID，资源所产生的事件
+        /// 该条告警记录对应的事件监控ID，资源所产生的事件。
         /// </summary>
         [JsonProperty("event_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EventId { get; set; }

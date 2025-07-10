@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 任务执行记录详情id
+        /// 任务执行记录详情id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 任务执行记录id
+        /// 任务执行记录id。
         /// </summary>
         [JsonProperty("record_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RecordId { get; set; }
 
         /// <summary>
-        /// 桌面id
+        /// 桌面id。
         /// </summary>
         [JsonProperty("desktop_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopId { get; set; }
@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 时区
+        /// 时区。
         /// </summary>
         [JsonProperty("time_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZone { get; set; }

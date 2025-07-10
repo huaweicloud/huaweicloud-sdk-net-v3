@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string PolicyGroupId { get; set; }
 
         /// <summary>
-        /// 策略组名称。
+        /// 策略组名称，必须由半角数字、字母、下划线组成，长度不能超过255个字符。
         /// </summary>
         [JsonProperty("policy_group_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PolicyGroupName { get; set; }
@@ -35,16 +35,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Priority { get; set; }
 
         /// <summary>
-        /// 策略组描述。
+        /// 策略组描述，长度不能超过255个字符。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
-
-        /// <summary>
-        /// 策略来源。
-        /// </summary>
-        [JsonProperty("scope_flag", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ScopeFlag { get; set; }
 
         /// <summary>
         /// 更新时间。
@@ -77,7 +71,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  policyGroupName: ").Append(PolicyGroupName).Append("\n");
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  scopeFlag: ").Append(ScopeFlag).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  targets: ").Append(Targets).Append("\n");
             sb.Append("  policies: ").Append(Policies).Append("\n");
@@ -103,7 +96,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.PolicyGroupName != input.PolicyGroupName || (this.PolicyGroupName != null && !this.PolicyGroupName.Equals(input.PolicyGroupName))) return false;
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
-            if (this.ScopeFlag != input.ScopeFlag || (this.ScopeFlag != null && !this.ScopeFlag.Equals(input.ScopeFlag))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.Targets != input.Targets || (this.Targets != null && input.Targets != null && !this.Targets.SequenceEqual(input.Targets))) return false;
             if (this.Policies != input.Policies || (this.Policies != null && !this.Policies.Equals(input.Policies))) return false;
@@ -123,7 +115,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.PolicyGroupName != null) hashCode = hashCode * 59 + this.PolicyGroupName.GetHashCode();
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ScopeFlag != null) hashCode = hashCode * 59 + this.ScopeFlag.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.Targets != null) hashCode = hashCode * 59 + this.Targets.GetHashCode();
                 if (this.Policies != null) hashCode = hashCode * 59 + this.Policies.GetHashCode();

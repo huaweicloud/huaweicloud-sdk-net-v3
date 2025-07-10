@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 任务ID
+        /// 任务ID。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }

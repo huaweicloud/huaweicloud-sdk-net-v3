@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 
+    /// 开通云办公带宽请求体。
     /// </summary>
     public class ApplySubnetBandwidthReq 
     {
@@ -41,16 +41,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? BandwidthSize { get; set; }
 
         /// <summary>
-        /// 企业项目ID，默认\&quot;0\&quot;
+        /// 企业项目ID，默认\&quot;0。\&quot;
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
-
-        /// <summary>
-        /// 包周期订购ID，CBC订购回调时使用。
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
 
 
 
@@ -66,7 +60,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
             sb.Append("  bandwidthSize: ").Append(BandwidthSize).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,7 +83,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ChargeMode != input.ChargeMode || (this.ChargeMode != null && !this.ChargeMode.Equals(input.ChargeMode))) return false;
             if (this.BandwidthSize != input.BandwidthSize || (this.BandwidthSize != null && !this.BandwidthSize.Equals(input.BandwidthSize))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
 
             return true;
         }
@@ -108,7 +100,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ChargeMode != null) hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
                 if (this.BandwidthSize != null) hashCode = hashCode * 59 + this.BandwidthSize.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 return hashCode;
             }
         }

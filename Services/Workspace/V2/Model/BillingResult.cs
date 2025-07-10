@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 批价基础结果
+    /// 批价基础结果。
     /// </summary>
     public class BillingResult 
     {

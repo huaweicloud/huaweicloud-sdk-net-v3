@@ -196,6 +196,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("is_flexus", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsFlexus { get; set; }
 
+        /// <summary>
+        /// 形象关联的声音资产ID。
+        /// </summary>
+        [JsonProperty("voice_asset_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VoiceAssetId { get; set; }
+
 
 
         /// <summary>
@@ -214,6 +220,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  isWithActionLibrary: ").Append(IsWithActionLibrary).Append("\n");
             sb.Append("  actionTagMap: ").Append(ActionTagMap).Append("\n");
             sb.Append("  isFlexus: ").Append(IsFlexus).Append("\n");
+            sb.Append("  voiceAssetId: ").Append(VoiceAssetId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -241,6 +248,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.IsWithActionLibrary != input.IsWithActionLibrary || (this.IsWithActionLibrary != null && !this.IsWithActionLibrary.Equals(input.IsWithActionLibrary))) return false;
             if (this.ActionTagMap != input.ActionTagMap || (this.ActionTagMap != null && input.ActionTagMap != null && !this.ActionTagMap.SequenceEqual(input.ActionTagMap))) return false;
             if (this.IsFlexus != input.IsFlexus || (this.IsFlexus != null && !this.IsFlexus.Equals(input.IsFlexus))) return false;
+            if (this.VoiceAssetId != input.VoiceAssetId || (this.VoiceAssetId != null && !this.VoiceAssetId.Equals(input.VoiceAssetId))) return false;
 
             return true;
         }
@@ -262,6 +270,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.IsWithActionLibrary != null) hashCode = hashCode * 59 + this.IsWithActionLibrary.GetHashCode();
                 if (this.ActionTagMap != null) hashCode = hashCode * 59 + this.ActionTagMap.GetHashCode();
                 if (this.IsFlexus != null) hashCode = hashCode * 59 + this.IsFlexus.GetHashCode();
+                if (this.VoiceAssetId != null) hashCode = hashCode * 59 + this.VoiceAssetId.GetHashCode();
                 return hashCode;
             }
         }

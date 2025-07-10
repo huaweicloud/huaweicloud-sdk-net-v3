@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 配置项的键
+        /// 配置项的键。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 配置项对应的值
+        /// 配置项对应的值。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

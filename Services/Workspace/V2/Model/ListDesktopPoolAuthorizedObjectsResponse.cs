@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 授权对象
+        /// 授权对象。
         /// </summary>
         [JsonProperty("objects", NullValueHandling = NullValueHandling.Ignore)]
         public List<AuthorizedObjects> Objects { get; set; }
 
         /// <summary>
-        /// 满足条件的用户、用户组总数
+        /// 满足条件的用户、用户组总数。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }

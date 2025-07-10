@@ -178,6 +178,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("metadata_options", NullValueHandling = NullValueHandling.Ignore)]
         public UpdateServerMetadataOptionsRequestBody MetadataOptions { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("enclave_options", NullValueHandling = NullValueHandling.Ignore)]
+        public EnclaveOptions EnclaveOptions { get; set; }
+
 
 
         /// <summary>
@@ -214,6 +220,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  securityOptions: ").Append(SecurityOptions).Append("\n");
             sb.Append("  serialConsoleOptions: ").Append(SerialConsoleOptions).Append("\n");
             sb.Append("  metadataOptions: ").Append(MetadataOptions).Append("\n");
+            sb.Append("  enclaveOptions: ").Append(EnclaveOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -259,6 +266,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             if (this.SecurityOptions != input.SecurityOptions || (this.SecurityOptions != null && !this.SecurityOptions.Equals(input.SecurityOptions))) return false;
             if (this.SerialConsoleOptions != input.SerialConsoleOptions || (this.SerialConsoleOptions != null && !this.SerialConsoleOptions.Equals(input.SerialConsoleOptions))) return false;
             if (this.MetadataOptions != input.MetadataOptions || (this.MetadataOptions != null && !this.MetadataOptions.Equals(input.MetadataOptions))) return false;
+            if (this.EnclaveOptions != input.EnclaveOptions || (this.EnclaveOptions != null && !this.EnclaveOptions.Equals(input.EnclaveOptions))) return false;
 
             return true;
         }
@@ -298,6 +306,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 if (this.SecurityOptions != null) hashCode = hashCode * 59 + this.SecurityOptions.GetHashCode();
                 if (this.SerialConsoleOptions != null) hashCode = hashCode * 59 + this.SerialConsoleOptions.GetHashCode();
                 if (this.MetadataOptions != null) hashCode = hashCode * 59 + this.MetadataOptions.GetHashCode();
+                if (this.EnclaveOptions != null) hashCode = hashCode * 59 + this.EnclaveOptions.GetHashCode();
                 return hashCode;
             }
         }

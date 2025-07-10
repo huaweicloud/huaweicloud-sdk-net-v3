@@ -159,6 +159,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("active_type", NullValueHandling = NullValueHandling.Ignore)]
         public ActiveTypeEnum ActiveType { get; set; }
         /// <summary>
+        /// 企业项目ID。
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// 用于分页查询，返回桌面数量限制。如果不指定或为0，默认2000，最大2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
@@ -185,6 +192,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  activeType: ").Append(ActiveType).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("}\n");
@@ -209,6 +217,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.ActiveType != input.ActiveType) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
 
@@ -227,6 +236,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 hashCode = hashCode * 59 + this.ActiveType.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 return hashCode;

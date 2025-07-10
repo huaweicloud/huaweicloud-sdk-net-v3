@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 配置名称
+        /// 配置名称。
         /// </summary>
         [JsonProperty("config_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ConfigName { get; set; }
 
         /// <summary>
-        /// 配置值，使用Json字符串,&#39;{\&quot;share_space_name\&quot;:“协同空间”, \&quot;use_share_password\&quot;:是否使用协同密码：true/false, \&quot;allow_anonymous\&quot;:是否匿名加入协同:true/false, \&quot;audio_and_video\&quot;:是否使用音频,\&quot;AUDIO\&quot;/\&quot;NONE\&quot;/\&quot;AUDIO_AND_VIDEO\&quot;,\&quot;keyboard_mouse_ctl\&quot;:云桌面是否可用键鼠true/false,\&quot;anonymous_input_ctrl\&quot;:是否开启匿名用户键鼠输入权限true/false, \&quot;is_user_confirm_enabled\&quot;:是否需要用户应答true/false,\&quot;wait_confirm_time\&quot;:等待时间30-180s}&#39;
+        /// 配置值，使用Json字符串,&#39;{\&quot;share_space_name\&quot;:“协同空间”, \&quot;use_share_password\&quot;:是否使用协同密码：true/false, \&quot;allow_anonymous\&quot;:是否匿名加入协同:true/false, \&quot;audio_and_video\&quot;:是否使用音频,\&quot;AUDIO\&quot;/\&quot;NONE\&quot;/\&quot;AUDIO_AND_VIDEO\&quot;,\&quot;keyboard_mouse_ctl\&quot;:云桌面是否可用键鼠true/false,\&quot;anonymous_input_ctrl\&quot;:是否开启匿名用户键鼠输入权限true/false, \&quot;is_user_confirm_enabled\&quot;:是否需要用户应答true/false,\&quot;wait_confirm_time\&quot;:等待时间30-180s}。&#39;
         /// </summary>
         [JsonProperty("config_value", NullValueHandling = NullValueHandling.Ignore)]
         public string ConfigValue { get; set; }

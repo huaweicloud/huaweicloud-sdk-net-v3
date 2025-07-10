@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 协同空间ID
+        /// 协同空间ID。
         /// </summary>
         [JsonProperty("share_space_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ShareSpaceId { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 桌面的desktopId
+        /// 桌面的desktopId。
         /// </summary>
         [JsonProperty("desktop_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopId { get; set; }

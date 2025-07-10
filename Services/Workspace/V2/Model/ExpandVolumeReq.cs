@@ -11,16 +11,10 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 扩容磁盘请求
+    /// 扩容磁盘请求。
     /// </summary>
     public class ExpandVolumeReq 
     {
-
-        /// <summary>
-        /// 订单ID，包周期桌面扩容时使用。
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
 
         /// <summary>
         /// 扩容后的磁盘大小，单位为GB。
@@ -37,7 +31,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ExpandVolumeReq {\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  newSize: ").Append(NewSize).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -57,7 +50,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(ExpandVolumeReq input)
         {
             if (input == null) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.NewSize != input.NewSize || (this.NewSize != null && !this.NewSize.Equals(input.NewSize))) return false;
 
             return true;
@@ -71,7 +63,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.NewSize != null) hashCode = hashCode * 59 + this.NewSize.GetHashCode();
                 return hashCode;
             }

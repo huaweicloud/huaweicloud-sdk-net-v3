@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 发送桌面池消息通知请求体
+    /// 发送桌面池消息通知请求体。
     /// </summary>
     public class SendDesktopPoolNotificationsReq 
     {
 
         /// <summary>
-        /// 消息通知内容
+        /// 消息通知内容。
         /// </summary>
         [JsonProperty("notifications", NullValueHandling = NullValueHandling.Ignore)]
         public string Notifications { get; set; }

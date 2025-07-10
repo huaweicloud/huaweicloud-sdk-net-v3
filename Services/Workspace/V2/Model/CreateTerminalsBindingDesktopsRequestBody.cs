@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 需要新增的MAC绑定VM策略信息列表
+        /// 需要新增的MAC绑定VM策略信息列表。
         /// </summary>
         [JsonProperty("bind_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<CreateTerminalsBindingDesktopsInfo> BindList { get; set; }

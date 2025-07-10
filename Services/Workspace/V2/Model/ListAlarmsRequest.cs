@@ -17,21 +17,21 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 告警级别 | 1 - 紧急 2 - 重要 3 - 次要 4 - 提示
+        /// 告警级别 | 1 - 紧急 2 - 重要 3 - 次要 4 - 提示。
         /// </summary>
         [SDKProperty("level", IsQuery = true)]
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public int? Level { get; set; }
 
         /// <summary>
-        /// 分页偏移量
+        /// 分页偏移量。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 分页大小
+        /// 分页大小，默认100。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

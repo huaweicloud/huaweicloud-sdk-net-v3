@@ -29,13 +29,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string BandwidthSize { get; set; }
 
         /// <summary>
-        /// 支付后跳转url
-        /// </summary>
-        [JsonProperty("cloud_service_console_url", NullValueHandling = NullValueHandling.Ignore)]
-        public string CloudServiceConsoleUrl { get; set; }
-
-        /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -57,7 +51,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class CreateSubnetBandwidthChangeOrderRequestBody {\n");
             sb.Append("  bandwidthName: ").Append(BandwidthName).Append("\n");
             sb.Append("  bandwidthSize: ").Append(BandwidthSize).Append("\n");
-            sb.Append("  cloudServiceConsoleUrl: ").Append(CloudServiceConsoleUrl).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("}\n");
@@ -80,7 +73,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.BandwidthName != input.BandwidthName || (this.BandwidthName != null && !this.BandwidthName.Equals(input.BandwidthName))) return false;
             if (this.BandwidthSize != input.BandwidthSize || (this.BandwidthSize != null && !this.BandwidthSize.Equals(input.BandwidthSize))) return false;
-            if (this.CloudServiceConsoleUrl != input.CloudServiceConsoleUrl || (this.CloudServiceConsoleUrl != null && !this.CloudServiceConsoleUrl.Equals(input.CloudServiceConsoleUrl))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
 
@@ -97,7 +89,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.BandwidthName != null) hashCode = hashCode * 59 + this.BandwidthName.GetHashCode();
                 if (this.BandwidthSize != null) hashCode = hashCode * 59 + this.BandwidthSize.GetHashCode();
-                if (this.CloudServiceConsoleUrl != null) hashCode = hashCode * 59 + this.CloudServiceConsoleUrl.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 return hashCode;

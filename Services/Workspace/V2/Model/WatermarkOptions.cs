@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("show_style", NullValueHandling = NullValueHandling.Ignore)]
         public ShowStyleEnum ShowStyle { get; set; }
         /// <summary>
-        /// 颜色。格式：RRGGBB。默认：2a2a2a
+        /// 颜色。格式：RRGGBB。默认：2a2a2a。
         /// </summary>
         [JsonProperty("color", NullValueHandling = NullValueHandling.Ignore)]
         public string Color { get; set; }

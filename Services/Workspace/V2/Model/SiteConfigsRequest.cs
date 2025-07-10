@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 开通服务资源使用的可用分区
+        /// 开通服务资源使用的可用分区。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }

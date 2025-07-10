@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     public class ListHotWordsRequest 
     {
         /// <summary>
-        /// 智能交互语言  * zh_CN：简体中文（已下线，请使用CN）  * en_US：英语（已下线，请使用EN）  * CN: 中文  * EN: 英文
+        /// 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
         /// </summary>
-        /// <value>智能交互语言  * zh_CN：简体中文（已下线，请使用CN）  * en_US：英语（已下线，请使用EN）  * CN: 中文  * EN: 英文</value>
+        /// <value>智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）</value>
         [JsonConverter(typeof(EnumClassConverter<LanguageEnum>))]
         public class LanguageEnum
         {
@@ -42,6 +42,26 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly LanguageEnum EN = new LanguageEnum("EN");
 
+            /// <summary>
+            /// Enum ESP for value: ESP
+            /// </summary>
+            public static readonly LanguageEnum ESP = new LanguageEnum("ESP");
+
+            /// <summary>
+            /// Enum POR for value: por
+            /// </summary>
+            public static readonly LanguageEnum POR = new LanguageEnum("por");
+
+            /// <summary>
+            /// Enum ARABIC for value: Arabic
+            /// </summary>
+            public static readonly LanguageEnum ARABIC = new LanguageEnum("Arabic");
+
+            /// <summary>
+            /// Enum THAI for value: Thai
+            /// </summary>
+            public static readonly LanguageEnum THAI = new LanguageEnum("Thai");
+
             private static readonly Dictionary<string, LanguageEnum> StaticFields =
             new Dictionary<string, LanguageEnum>()
             {
@@ -49,6 +69,10 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 { "en_US", EN_US },
                 { "CN", CN },
                 { "EN", EN },
+                { "ESP", ESP },
+                { "por", POR },
+                { "Arabic", ARABIC },
+                { "Thai", THAI },
             };
 
             private string _value;
@@ -142,6 +166,121 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             }
         }
 
+        /// <summary>
+        /// * SIS:SIS热词 * MOBVOI:奇妙问ASR热词
+        /// </summary>
+        /// <value>* SIS:SIS热词 * MOBVOI:奇妙问ASR热词</value>
+        [JsonConverter(typeof(EnumClassConverter<HotWordsTypeEnum>))]
+        public class HotWordsTypeEnum
+        {
+            /// <summary>
+            /// Enum SIS for value: SIS
+            /// </summary>
+            public static readonly HotWordsTypeEnum SIS = new HotWordsTypeEnum("SIS");
+
+            /// <summary>
+            /// Enum MOBVOI for value: MOBVOI
+            /// </summary>
+            public static readonly HotWordsTypeEnum MOBVOI = new HotWordsTypeEnum("MOBVOI");
+
+            private static readonly Dictionary<string, HotWordsTypeEnum> StaticFields =
+            new Dictionary<string, HotWordsTypeEnum>()
+            {
+                { "SIS", SIS },
+                { "MOBVOI", MOBVOI },
+            };
+
+            private string _value;
+
+            public HotWordsTypeEnum()
+            {
+
+            }
+
+            public HotWordsTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static HotWordsTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as HotWordsTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(HotWordsTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(HotWordsTypeEnum a, HotWordsTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(HotWordsTypeEnum a, HotWordsTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 使用AK/SK方式认证时必选，携带的鉴权信息。
@@ -200,11 +339,17 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public int? Region { get; set; }
 
         /// <summary>
-        /// 智能交互语言  * zh_CN：简体中文（已下线，请使用CN）  * en_US：英语（已下线，请使用EN）  * CN: 中文  * EN: 英文
+        /// 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
         /// </summary>
         [SDKProperty("language", IsQuery = true)]
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
         public LanguageEnum Language { get; set; }
+        /// <summary>
+        /// * SIS:SIS热词 * MOBVOI:奇妙问ASR热词
+        /// </summary>
+        [SDKProperty("hot_words_type", IsQuery = true)]
+        [JsonProperty("hot_words_type", NullValueHandling = NullValueHandling.Ignore)]
+        public HotWordsTypeEnum HotWordsType { get; set; }
 
 
         /// <summary>
@@ -223,6 +368,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  robotId: ").Append(RobotId).Append("\n");
             sb.Append("  region: ").Append(Region).Append("\n");
             sb.Append("  language: ").Append(Language).Append("\n");
+            sb.Append("  hotWordsType: ").Append(HotWordsType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -250,6 +396,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.RobotId != input.RobotId || (this.RobotId != null && !this.RobotId.Equals(input.RobotId))) return false;
             if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
             if (this.Language != input.Language) return false;
+            if (this.HotWordsType != input.HotWordsType) return false;
 
             return true;
         }
@@ -271,6 +418,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.RobotId != null) hashCode = hashCode * 59 + this.RobotId.GetHashCode();
                 if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
                 hashCode = hashCode * 59 + this.Language.GetHashCode();
+                hashCode = hashCode * 59 + this.HotWordsType.GetHashCode();
                 return hashCode;
             }
         }

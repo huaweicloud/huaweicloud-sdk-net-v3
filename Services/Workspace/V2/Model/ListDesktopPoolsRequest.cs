@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 按照维护状态过滤
+        /// 按照维护状态过滤。
         /// </summary>
         [SDKProperty("in_maintenance_mode", IsQuery = true)]
         [JsonProperty("in_maintenance_mode", NullValueHandling = NullValueHandling.Ignore)]

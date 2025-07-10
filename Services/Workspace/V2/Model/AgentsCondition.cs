@@ -11,49 +11,49 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 桌面agent安装情况
+    /// 桌面agent安装情况。
     /// </summary>
     public class AgentsCondition 
     {
 
         /// <summary>
-        /// 桌面的desktopId
+        /// 桌面的desktopId。
         /// </summary>
         [JsonProperty("desktop_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopId { get; set; }
 
         /// <summary>
-        /// 桌面名称
+        /// 桌面名称。
         /// </summary>
         [JsonProperty("desktop_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopName { get; set; }
 
         /// <summary>
-        /// 桌面池id
+        /// 桌面池id。
         /// </summary>
         [JsonProperty("desktop_pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopPoolId { get; set; }
 
         /// <summary>
-        /// 桌面运行状态
+        /// 桌面运行状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 桌面的任务状态
+        /// 桌面的任务状态。
         /// </summary>
         [JsonProperty("task_status", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskStatus { get; set; }
 
         /// <summary>
-        /// ip地址
+        /// ip地址。
         /// </summary>
         [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string IpAddress { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Process { get; set; }
 
         /// <summary>
-        /// 单个桌面内的agent安装情况
+        /// 单个桌面内的agent安装情况。
         /// </summary>
         [JsonProperty("agent_info", NullValueHandling = NullValueHandling.Ignore)]
         public List<AgentInfo> AgentInfo { get; set; }

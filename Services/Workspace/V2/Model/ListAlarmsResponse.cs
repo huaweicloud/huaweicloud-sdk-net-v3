@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// alarmHistories列表
+        /// alarmHistories列表。
         /// </summary>
         [JsonProperty("alarm_histories", NullValueHandling = NullValueHandling.Ignore)]
         public List<AlarmHistoryItem> AlarmHistories { get; set; }
 
         /// <summary>
-        /// 告警记录列表总数
+        /// 告警记录列表总数。
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

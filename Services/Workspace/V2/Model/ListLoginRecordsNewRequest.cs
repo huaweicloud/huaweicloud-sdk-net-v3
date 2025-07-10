@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string TerminalType { get; set; }
 
         /// <summary>
-        /// 用于分页查询，查询的起始记录序号，从0开始
+        /// 用于分页查询，查询的起始记录序号，从0开始。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -66,14 +66,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 查询端到端时延的最小值
+        /// 查询端到端时延的最小值。
         /// </summary>
         [SDKProperty("min_network_rtt", IsQuery = true)]
         [JsonProperty("min_network_rtt", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinNetworkRtt { get; set; }
 
         /// <summary>
-        /// 查询端到端时延的最大值
+        /// 查询端到端时延的最大值。
         /// </summary>
         [SDKProperty("max_network_rtt", IsQuery = true)]
         [JsonProperty("max_network_rtt", NullValueHandling = NullValueHandling.Ignore)]

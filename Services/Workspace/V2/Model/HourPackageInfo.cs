@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? PackageDuration { get; set; }
 
         /// <summary>
-        /// 小时包已用用时长。
+        /// 小时包已用时长。
         /// </summary>
         [JsonProperty("use_duration", NullValueHandling = NullValueHandling.Ignore)]
         public int? UseDuration { get; set; }

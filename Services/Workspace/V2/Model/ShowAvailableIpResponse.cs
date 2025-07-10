@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 可用ip数
+        /// 可用ip数。
         /// </summary>
         [JsonProperty("available_ip", NullValueHandling = NullValueHandling.Ignore)]
         public int? AvailableIp { get; set; }

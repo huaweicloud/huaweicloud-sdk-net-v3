@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 录屏类型。 - FULL：全程录屏。 - INTERVAL：间隔录屏。 - USER_OPERATION：用户操作录屏。 - SESSION：监听会话生命周期录屏。
+        /// 录屏类型。 - FULL：全程录屏。 - INTERVAL：间隔录屏。 - OPERATION：用户操作录屏。 - SESSION：监听会话生命周期录屏。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
@@ -73,14 +73,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 用于排序，表示按照哪个字段排序。取值为录屏属性start_time、szie字段，默认为start_time。
+        /// 用于排序，表示按照哪个字段排序。取值为录屏属性start_time字段。
         /// </summary>
         [SDKProperty("sort_field", IsQuery = true)]
         [JsonProperty("sort_field", NullValueHandling = NullValueHandling.Ignore)]
         public string SortField { get; set; }
 
         /// <summary>
-        /// 用于排序，表示升序还是降序，取值为asc和desc。与sort_field一起组合使用，默认为降序desc。
+        /// 用于排序，表示升序还是降序，取值为asc和desc。与sort_field一起组合使用。
         /// </summary>
         [SDKProperty("sort_type", IsQuery = true)]
         [JsonProperty("sort_type", NullValueHandling = NullValueHandling.Ignore)]

@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 接口配置
+    /// 接口配置。
     /// </summary>
     public class InterfacesConfig 
     {
 
         /// <summary>
-        /// 应用平台
+        /// 应用平台。
         /// </summary>
         [JsonProperty("apply_platform", NullValueHandling = NullValueHandling.Ignore)]
         public string ApplyPlatform { get; set; }
 
         /// <summary>
-        /// ID
+        /// ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 名称
+        /// 名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 类型
+        /// 类型。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 结果
+        /// 结果。
         /// </summary>
         [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Results { get; set; }
 
         /// <summary>
-        /// 分页信息
+        /// 分页信息。
         /// </summary>
         [JsonProperty("pagination", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Object> Pagination { get; set; }
@@ -59,13 +59,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public InterfacesRequest Request { get; set; }
 
         /// <summary>
-        /// 响应
+        /// 响应。
         /// </summary>
         [JsonProperty("response", NullValueHandling = NullValueHandling.Ignore)]
         public string Response { get; set; }
 
         /// <summary>
-        /// 检查结果
+        /// 检查结果。
         /// </summary>
         [JsonProperty("result_check", NullValueHandling = NullValueHandling.Ignore)]
         public string ResultCheck { get; set; }

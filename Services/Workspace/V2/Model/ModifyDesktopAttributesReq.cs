@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 查询云桌面列表响应
+    /// 修改云桌面属性响应。
     /// </summary>
     public class ModifyDesktopAttributesReq 
     {

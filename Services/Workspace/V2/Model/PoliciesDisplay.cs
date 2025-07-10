@@ -148,121 +148,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             }
         }
 
-        /// <summary>
-        /// 同屏显示模式。取值为： One-to-One：表示仅支持单路。 One-to-Many：表示支持多路。
-        /// </summary>
-        /// <value>同屏显示模式。取值为： One-to-One：表示仅支持单路。 One-to-Many：表示支持多路。</value>
-        [JsonConverter(typeof(EnumClassConverter<DuplicateDisplayModeEnum>))]
-        public class DuplicateDisplayModeEnum
-        {
-            /// <summary>
-            /// Enum ONE_TO_ONE for value: One-to-One
-            /// </summary>
-            public static readonly DuplicateDisplayModeEnum ONE_TO_ONE = new DuplicateDisplayModeEnum("One-to-One");
-
-            /// <summary>
-            /// Enum ONE_TO_MANY for value: One-to-Many
-            /// </summary>
-            public static readonly DuplicateDisplayModeEnum ONE_TO_MANY = new DuplicateDisplayModeEnum("One-to-Many");
-
-            private static readonly Dictionary<string, DuplicateDisplayModeEnum> StaticFields =
-            new Dictionary<string, DuplicateDisplayModeEnum>()
-            {
-                { "One-to-One", ONE_TO_ONE },
-                { "One-to-Many", ONE_TO_MANY },
-            };
-
-            private string _value;
-
-            public DuplicateDisplayModeEnum()
-            {
-
-            }
-
-            public DuplicateDisplayModeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static DuplicateDisplayModeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as DuplicateDisplayModeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(DuplicateDisplayModeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(DuplicateDisplayModeEnum a, DuplicateDisplayModeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(DuplicateDisplayModeEnum a, DuplicateDisplayModeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 显示级别。取值为： LEVEL1：表示等级1。 LEVEL2：表示等级2。 LEVEL3：表示等级3。 LEVEL4：表示等级4（默认/推荐）。 LEVEL5：表示等级5。
@@ -336,7 +221,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? ChangeResolutionVm { get; set; }
 
         /// <summary>
-        /// 应用感知配置。
+        /// 应用感知配置。长度不能超过1024个字符。
         /// </summary>
         [JsonProperty("application_recognition", NullValueHandling = NullValueHandling.Ignore)]
         public string ApplicationRecognition { get; set; }
@@ -357,7 +242,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 同屏显示模式。取值为： One-to-One：表示仅支持单路。 One-to-Many：表示支持多路。
         /// </summary>
         [JsonProperty("duplicate_display_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public DuplicateDisplayModeEnum DuplicateDisplayMode { get; set; }
+        public string DuplicateDisplayMode { get; set; }
+
 
 
         /// <summary>
@@ -416,7 +302,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ApplicationRecognition != input.ApplicationRecognition || (this.ApplicationRecognition != null && !this.ApplicationRecognition.Equals(input.ApplicationRecognition))) return false;
             if (this.DuplicateDisplayEnable != input.DuplicateDisplayEnable || (this.DuplicateDisplayEnable != null && !this.DuplicateDisplayEnable.Equals(input.DuplicateDisplayEnable))) return false;
             if (this.DefaultMappingOrder != input.DefaultMappingOrder || (this.DefaultMappingOrder != null && !this.DefaultMappingOrder.Equals(input.DefaultMappingOrder))) return false;
-            if (this.DuplicateDisplayMode != input.DuplicateDisplayMode) return false;
+            if (this.DuplicateDisplayMode != input.DuplicateDisplayMode || (this.DuplicateDisplayMode != null && !this.DuplicateDisplayMode.Equals(input.DuplicateDisplayMode))) return false;
 
             return true;
         }
@@ -444,7 +330,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ApplicationRecognition != null) hashCode = hashCode * 59 + this.ApplicationRecognition.GetHashCode();
                 if (this.DuplicateDisplayEnable != null) hashCode = hashCode * 59 + this.DuplicateDisplayEnable.GetHashCode();
                 if (this.DefaultMappingOrder != null) hashCode = hashCode * 59 + this.DefaultMappingOrder.GetHashCode();
-                hashCode = hashCode * 59 + this.DuplicateDisplayMode.GetHashCode();
+                if (this.DuplicateDisplayMode != null) hashCode = hashCode * 59 + this.DuplicateDisplayMode.GetHashCode();
                 return hashCode;
             }
         }

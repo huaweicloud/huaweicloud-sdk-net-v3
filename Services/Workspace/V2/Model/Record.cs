@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 租户id，不对外展示
+        /// 租户id，不对外展示。
         /// </summary>
         [JsonProperty("tenantId", NullValueHandling = NullValueHandling.Ignore)]
         public string TenantId { get; set; }
 
         /// <summary>
-        /// 桌面sid
+        /// 桌面sid。
         /// </summary>
         [JsonProperty("sid", NullValueHandling = NullValueHandling.Ignore)]
         public string Sid { get; set; }
 
         /// <summary>
-        /// 事务id
+        /// 事务id。
         /// </summary>
         [JsonProperty("transaction_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TransactionId { get; set; }
@@ -119,16 +119,28 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ConnectionFailureReason { get; set; }
 
         /// <summary>
-        /// 网络时延ms
+        /// 网络时延ms。
         /// </summary>
         [JsonProperty("network_rtt", NullValueHandling = NullValueHandling.Ignore)]
         public int? NetworkRtt { get; set; }
 
         /// <summary>
-        /// 端到端时延 ms
+        /// 端到端时延 ms。
         /// </summary>
         [JsonProperty("e2e_rtt", NullValueHandling = NullValueHandling.Ignore)]
         public int? E2eRtt { get; set; }
+
+        /// <summary>
+        /// 客户端源ip
+        /// </summary>
+        [JsonProperty("source_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceIp { get; set; }
+
+        /// <summary>
+        /// 客户端出网IP
+        /// </summary>
+        [JsonProperty("public_ip", NullValueHandling = NullValueHandling.Ignore)]
+        public string PublicIp { get; set; }
 
 
 
@@ -158,6 +170,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  connectionFailureReason: ").Append(ConnectionFailureReason).Append("\n");
             sb.Append("  networkRtt: ").Append(NetworkRtt).Append("\n");
             sb.Append("  e2eRtt: ").Append(E2eRtt).Append("\n");
+            sb.Append("  sourceIp: ").Append(SourceIp).Append("\n");
+            sb.Append("  publicIp: ").Append(PublicIp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -195,6 +209,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ConnectionFailureReason != input.ConnectionFailureReason || (this.ConnectionFailureReason != null && !this.ConnectionFailureReason.Equals(input.ConnectionFailureReason))) return false;
             if (this.NetworkRtt != input.NetworkRtt || (this.NetworkRtt != null && !this.NetworkRtt.Equals(input.NetworkRtt))) return false;
             if (this.E2eRtt != input.E2eRtt || (this.E2eRtt != null && !this.E2eRtt.Equals(input.E2eRtt))) return false;
+            if (this.SourceIp != input.SourceIp || (this.SourceIp != null && !this.SourceIp.Equals(input.SourceIp))) return false;
+            if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
 
             return true;
         }
@@ -226,6 +242,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ConnectionFailureReason != null) hashCode = hashCode * 59 + this.ConnectionFailureReason.GetHashCode();
                 if (this.NetworkRtt != null) hashCode = hashCode * 59 + this.NetworkRtt.GetHashCode();
                 if (this.E2eRtt != null) hashCode = hashCode * 59 + this.E2eRtt.GetHashCode();
+                if (this.SourceIp != null) hashCode = hashCode * 59 + this.SourceIp.GetHashCode();
+                if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
                 return hashCode;
             }
         }

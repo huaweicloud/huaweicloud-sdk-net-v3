@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 事务id
+        /// 事务id。
         /// </summary>
         [SDKProperty("transaction_id", IsQuery = true)]
         [JsonProperty("transaction_id", NullValueHandling = NullValueHandling.Ignore)]

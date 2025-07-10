@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// ldap认证配置
+    /// ldap认证配置。
     /// </summary>
     public class LdapConfig 
     {
         /// <summary>
-        /// 安全类型
+        /// 安全类型。
         /// </summary>
-        /// <value>安全类型</value>
+        /// <value>安全类型。</value>
         [JsonConverter(typeof(EnumClassConverter<SecurityTypeEnum>))]
         public class SecurityTypeEnum
         {
@@ -138,67 +138,67 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// host
+        /// host。
         /// </summary>
         [JsonProperty("host", NullValueHandling = NullValueHandling.Ignore)]
         public string Host { get; set; }
 
         /// <summary>
-        /// 端口,取值范围1-65535,默认389
+        /// 端口,取值范围1-65535,默认389。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public int? Port { get; set; }
 
         /// <summary>
-        /// base_dn
+        /// base_dn。
         /// </summary>
         [JsonProperty("base_dn", NullValueHandling = NullValueHandling.Ignore)]
         public string BaseDn { get; set; }
 
         /// <summary>
-        /// 管理员dn
+        /// 管理员dn。
         /// </summary>
         [JsonProperty("administrator_dn", NullValueHandling = NullValueHandling.Ignore)]
         public string AdministratorDn { get; set; }
 
         /// <summary>
-        /// 管理员密码
+        /// 管理员密码。
         /// </summary>
         [JsonProperty("administrator_password", NullValueHandling = NullValueHandling.Ignore)]
         public string AdministratorPassword { get; set; }
 
         /// <summary>
-        /// 用户dn
+        /// 用户dn。
         /// </summary>
         [JsonProperty("user_dn", NullValueHandling = NullValueHandling.Ignore)]
         public string UserDn { get; set; }
 
         /// <summary>
-        /// 是否启用ssl
+        /// 是否启用ssl。
         /// </summary>
         [JsonProperty("use_ssl", NullValueHandling = NullValueHandling.Ignore)]
         public bool? UseSsl { get; set; }
 
         /// <summary>
-        /// 证书
+        /// 证书。
         /// </summary>
         [JsonProperty("cert_content", NullValueHandling = NullValueHandling.Ignore)]
         public string CertContent { get; set; }
 
         /// <summary>
-        /// 用户名属性
+        /// 用户名属性。
         /// </summary>
         [JsonProperty("username_attribute", NullValueHandling = NullValueHandling.Ignore)]
         public string UsernameAttribute { get; set; }
 
         /// <summary>
-        /// 用户ObjectClass
+        /// 用户ObjectClass。
         /// </summary>
         [JsonProperty("object_class", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectClass { get; set; }
 
         /// <summary>
-        /// 安全类型
+        /// 安全类型。
         /// </summary>
         [JsonProperty("security_type", NullValueHandling = NullValueHandling.Ignore)]
         public SecurityTypeEnum SecurityType { get; set; }

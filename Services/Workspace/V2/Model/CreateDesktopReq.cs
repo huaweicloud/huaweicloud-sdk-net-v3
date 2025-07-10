@@ -130,242 +130,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             }
         }
 
-        /// <summary>
-        /// 桌面来源。  - DEFAULT：默认桌面来源 - ONEMOBILE：协同办公云桌面OneMobile
-        /// </summary>
-        /// <value>桌面来源。  - DEFAULT：默认桌面来源 - ONEMOBILE：协同办公云桌面OneMobile</value>
-        [JsonConverter(typeof(EnumClassConverter<DesktopIsvEnum>))]
-        public class DesktopIsvEnum
-        {
-            /// <summary>
-            /// Enum DEFAULT for value: DEFAULT
-            /// </summary>
-            public static readonly DesktopIsvEnum DEFAULT = new DesktopIsvEnum("DEFAULT");
-
-            /// <summary>
-            /// Enum ONEMOBILE for value: ONEMOBILE
-            /// </summary>
-            public static readonly DesktopIsvEnum ONEMOBILE = new DesktopIsvEnum("ONEMOBILE");
-
-            private static readonly Dictionary<string, DesktopIsvEnum> StaticFields =
-            new Dictionary<string, DesktopIsvEnum>()
-            {
-                { "DEFAULT", DEFAULT },
-                { "ONEMOBILE", ONEMOBILE },
-            };
-
-            private string _value;
-
-            public DesktopIsvEnum()
-            {
-
-            }
-
-            public DesktopIsvEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static DesktopIsvEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as DesktopIsvEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(DesktopIsvEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(DesktopIsvEnum a, DesktopIsvEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(DesktopIsvEnum a, DesktopIsvEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// 接入模式。在非对接AD场景首次创建桌面时使用。 - INTERNET：互联网接入。 - DEDICATED：专线接入。 - BOTH：代表两种接入方式都支持。
-        /// </summary>
-        /// <value>接入模式。在非对接AD场景首次创建桌面时使用。 - INTERNET：互联网接入。 - DEDICATED：专线接入。 - BOTH：代表两种接入方式都支持。</value>
-        [JsonConverter(typeof(EnumClassConverter<AccessModeEnum>))]
-        public class AccessModeEnum
-        {
-            /// <summary>
-            /// Enum INTERNET for value: INTERNET
-            /// </summary>
-            public static readonly AccessModeEnum INTERNET = new AccessModeEnum("INTERNET");
-
-            /// <summary>
-            /// Enum DEDICATED for value: DEDICATED
-            /// </summary>
-            public static readonly AccessModeEnum DEDICATED = new AccessModeEnum("DEDICATED");
-
-            /// <summary>
-            /// Enum BOTH for value: BOTH
-            /// </summary>
-            public static readonly AccessModeEnum BOTH = new AccessModeEnum("BOTH");
-
-            private static readonly Dictionary<string, AccessModeEnum> StaticFields =
-            new Dictionary<string, AccessModeEnum>()
-            {
-                { "INTERNET", INTERNET },
-                { "DEDICATED", DEDICATED },
-                { "BOTH", BOTH },
-            };
-
-            private string _value;
-
-            public AccessModeEnum()
-            {
-
-            }
-
-            public AccessModeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static AccessModeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as AccessModeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(AccessModeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(AccessModeEnum a, AccessModeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(AccessModeEnum a, AccessModeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 云桌面类型。 - DEDICATED：专属桌面，单用户。 - SHARED: 多用户共享桌面。
@@ -383,18 +147,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
-
-        /// <summary>
-        /// 套餐flavorID。
-        /// </summary>
-        [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string FlavorId { get; set; }
-
-        /// <summary>
-        /// 桌面协同资源SKU码
-        /// </summary>
-        [JsonProperty("share_resource_sku", NullValueHandling = NullValueHandling.Ignore)]
-        public string ShareResourceSku { get; set; }
 
         /// <summary>
         /// 镜像类型。默认值为private。  - private：私有镜像。 - gold：公共镜像。
@@ -463,40 +215,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? EmailNotification { get; set; }
 
         /// <summary>
-        /// 企业ID，在非对接AD场景首次创建桌面时使用。
-        /// </summary>
-        [JsonProperty("enterprise_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string EnterpriseId { get; set; }
-
-        /// <summary>
-        /// 企业项目ID，默认\&quot;0\&quot;
+        /// 企业项目ID，默认\&quot;0。\&quot;
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
-
-        /// <summary>
-        /// 包周期订购ID，CBC订购回调时使用。
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
-
-        /// <summary>
-        /// OU名称，在对接AD时使用，需提前在AD中创建OU。
-        /// </summary>
-        [JsonProperty("ou_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string OuName { get; set; }
-
-        /// <summary>
-        /// 在非对接AD场景首次创建桌面时使用。
-        /// </summary>
-        [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string VpcId { get; set; }
-
-        /// <summary>
-        /// 在非对接AD场景首次创建桌面时使用。
-        /// </summary>
-        [JsonProperty("subnet_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> SubnetIds { get; set; }
 
         /// <summary>
         /// 标签列表。
@@ -507,48 +229,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("scheduler_hints", NullValueHandling = NullValueHandling.Ignore)]
-        public WdhParam SchedulerHints { get; set; }
-
-        /// <summary>
-        /// 桌面来源。  - DEFAULT：默认桌面来源 - ONEMOBILE：协同办公云桌面OneMobile
-        /// </summary>
-        [JsonProperty("desktop_isv", NullValueHandling = NullValueHandling.Ignore)]
-        public DesktopIsvEnum DesktopIsv { get; set; }
-        /// <summary>
-        /// 接入模式。在非对接AD场景首次创建桌面时使用。 - INTERNET：互联网接入。 - DEDICATED：专线接入。 - BOTH：代表两种接入方式都支持。
-        /// </summary>
-        [JsonProperty("access_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public AccessModeEnum AccessMode { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
         [JsonProperty("apply_shared_vpc_dedicated_param", NullValueHandling = NullValueHandling.Ignore)]
         public ApplySharedVpcDedicatedParam ApplySharedVpcDedicatedParam { get; set; }
-
-        /// <summary>
-        /// 专线接入网段列表，多个网段信息用分号隔开，列表长度不超过5。在非对接AD场景首次创建桌面时使用。
-        /// </summary>
-        [JsonProperty("dedicated_subnets", NullValueHandling = NullValueHandling.Ignore)]
-        public string DedicatedSubnets { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("eip", NullValueHandling = NullValueHandling.Ignore)]
         public Eip Eip { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("adn", NullValueHandling = NullValueHandling.Ignore)]
-        public Adn Adn { get; set; }
-
-        /// <summary>
-        /// 专享主机ID，创建专享桌面时如果在指定专享主机中创建则必选
-        /// </summary>
-        [JsonProperty("exclusive_host_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExclusiveHostId { get; set; }
 
         /// <summary>
         /// 策略id，用于指定生成桌面名称策略，如果指定了桌面名称则优先使用指定的桌面名称。
@@ -568,18 +256,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("hour_package_offering_id", NullValueHandling = NullValueHandling.Ignore)]
         public string HourPackageOfferingId { get; set; }
 
-        /// <summary>
-        /// 根资源ID列表，创建小时包桌面时使用，最小为0，最大为100。
-        /// </summary>
-        [JsonProperty("root_resource_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> RootResourceIds { get; set; }
-
-        /// <summary>
-        /// instInfoId列表，创建小时包桌面时使用，最小为0，最大为100。
-        /// </summary>
-        [JsonProperty("inst_info_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> InstInfoIds { get; set; }
-
 
 
         /// <summary>
@@ -592,8 +268,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopType: ").Append(DesktopType).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
-            sb.Append("  flavorId: ").Append(FlavorId).Append("\n");
-            sb.Append("  shareResourceSku: ").Append(ShareResourceSku).Append("\n");
             sb.Append("  imageType: ").Append(ImageType).Append("\n");
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
             sb.Append("  rootVolume: ").Append(RootVolume).Append("\n");
@@ -605,26 +279,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopIps: ").Append(DesktopIps).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  emailNotification: ").Append(EmailNotification).Append("\n");
-            sb.Append("  enterpriseId: ").Append(EnterpriseId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
-            sb.Append("  ouName: ").Append(OuName).Append("\n");
-            sb.Append("  vpcId: ").Append(VpcId).Append("\n");
-            sb.Append("  subnetIds: ").Append(SubnetIds).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
-            sb.Append("  schedulerHints: ").Append(SchedulerHints).Append("\n");
-            sb.Append("  desktopIsv: ").Append(DesktopIsv).Append("\n");
-            sb.Append("  accessMode: ").Append(AccessMode).Append("\n");
             sb.Append("  applySharedVpcDedicatedParam: ").Append(ApplySharedVpcDedicatedParam).Append("\n");
-            sb.Append("  dedicatedSubnets: ").Append(DedicatedSubnets).Append("\n");
             sb.Append("  eip: ").Append(Eip).Append("\n");
-            sb.Append("  adn: ").Append(Adn).Append("\n");
-            sb.Append("  exclusiveHostId: ").Append(ExclusiveHostId).Append("\n");
             sb.Append("  desktopNamePolicyId: ").Append(DesktopNamePolicyId).Append("\n");
             sb.Append("  hourPackageProductId: ").Append(HourPackageProductId).Append("\n");
             sb.Append("  hourPackageOfferingId: ").Append(HourPackageOfferingId).Append("\n");
-            sb.Append("  rootResourceIds: ").Append(RootResourceIds).Append("\n");
-            sb.Append("  instInfoIds: ").Append(InstInfoIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -646,8 +307,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopType != input.DesktopType) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
-            if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
-            if (this.ShareResourceSku != input.ShareResourceSku || (this.ShareResourceSku != null && !this.ShareResourceSku.Equals(input.ShareResourceSku))) return false;
             if (this.ImageType != input.ImageType || (this.ImageType != null && !this.ImageType.Equals(input.ImageType))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
             if (this.RootVolume != input.RootVolume || (this.RootVolume != null && !this.RootVolume.Equals(input.RootVolume))) return false;
@@ -659,26 +318,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopIps != input.DesktopIps || (this.DesktopIps != null && input.DesktopIps != null && !this.DesktopIps.SequenceEqual(input.DesktopIps))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.EmailNotification != input.EmailNotification || (this.EmailNotification != null && !this.EmailNotification.Equals(input.EmailNotification))) return false;
-            if (this.EnterpriseId != input.EnterpriseId || (this.EnterpriseId != null && !this.EnterpriseId.Equals(input.EnterpriseId))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
-            if (this.OuName != input.OuName || (this.OuName != null && !this.OuName.Equals(input.OuName))) return false;
-            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
-            if (this.SubnetIds != input.SubnetIds || (this.SubnetIds != null && input.SubnetIds != null && !this.SubnetIds.SequenceEqual(input.SubnetIds))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
-            if (this.SchedulerHints != input.SchedulerHints || (this.SchedulerHints != null && !this.SchedulerHints.Equals(input.SchedulerHints))) return false;
-            if (this.DesktopIsv != input.DesktopIsv) return false;
-            if (this.AccessMode != input.AccessMode) return false;
             if (this.ApplySharedVpcDedicatedParam != input.ApplySharedVpcDedicatedParam || (this.ApplySharedVpcDedicatedParam != null && !this.ApplySharedVpcDedicatedParam.Equals(input.ApplySharedVpcDedicatedParam))) return false;
-            if (this.DedicatedSubnets != input.DedicatedSubnets || (this.DedicatedSubnets != null && !this.DedicatedSubnets.Equals(input.DedicatedSubnets))) return false;
             if (this.Eip != input.Eip || (this.Eip != null && !this.Eip.Equals(input.Eip))) return false;
-            if (this.Adn != input.Adn || (this.Adn != null && !this.Adn.Equals(input.Adn))) return false;
-            if (this.ExclusiveHostId != input.ExclusiveHostId || (this.ExclusiveHostId != null && !this.ExclusiveHostId.Equals(input.ExclusiveHostId))) return false;
             if (this.DesktopNamePolicyId != input.DesktopNamePolicyId || (this.DesktopNamePolicyId != null && !this.DesktopNamePolicyId.Equals(input.DesktopNamePolicyId))) return false;
             if (this.HourPackageProductId != input.HourPackageProductId || (this.HourPackageProductId != null && !this.HourPackageProductId.Equals(input.HourPackageProductId))) return false;
             if (this.HourPackageOfferingId != input.HourPackageOfferingId || (this.HourPackageOfferingId != null && !this.HourPackageOfferingId.Equals(input.HourPackageOfferingId))) return false;
-            if (this.RootResourceIds != input.RootResourceIds || (this.RootResourceIds != null && input.RootResourceIds != null && !this.RootResourceIds.SequenceEqual(input.RootResourceIds))) return false;
-            if (this.InstInfoIds != input.InstInfoIds || (this.InstInfoIds != null && input.InstInfoIds != null && !this.InstInfoIds.SequenceEqual(input.InstInfoIds))) return false;
 
             return true;
         }
@@ -694,8 +340,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 hashCode = hashCode * 59 + this.DesktopType.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
-                if (this.ShareResourceSku != null) hashCode = hashCode * 59 + this.ShareResourceSku.GetHashCode();
                 if (this.ImageType != null) hashCode = hashCode * 59 + this.ImageType.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
                 if (this.RootVolume != null) hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
@@ -707,26 +351,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DesktopIps != null) hashCode = hashCode * 59 + this.DesktopIps.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.EmailNotification != null) hashCode = hashCode * 59 + this.EmailNotification.GetHashCode();
-                if (this.EnterpriseId != null) hashCode = hashCode * 59 + this.EnterpriseId.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.OuName != null) hashCode = hashCode * 59 + this.OuName.GetHashCode();
-                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.SubnetIds != null) hashCode = hashCode * 59 + this.SubnetIds.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.SchedulerHints != null) hashCode = hashCode * 59 + this.SchedulerHints.GetHashCode();
-                hashCode = hashCode * 59 + this.DesktopIsv.GetHashCode();
-                hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
                 if (this.ApplySharedVpcDedicatedParam != null) hashCode = hashCode * 59 + this.ApplySharedVpcDedicatedParam.GetHashCode();
-                if (this.DedicatedSubnets != null) hashCode = hashCode * 59 + this.DedicatedSubnets.GetHashCode();
                 if (this.Eip != null) hashCode = hashCode * 59 + this.Eip.GetHashCode();
-                if (this.Adn != null) hashCode = hashCode * 59 + this.Adn.GetHashCode();
-                if (this.ExclusiveHostId != null) hashCode = hashCode * 59 + this.ExclusiveHostId.GetHashCode();
                 if (this.DesktopNamePolicyId != null) hashCode = hashCode * 59 + this.DesktopNamePolicyId.GetHashCode();
                 if (this.HourPackageProductId != null) hashCode = hashCode * 59 + this.HourPackageProductId.GetHashCode();
                 if (this.HourPackageOfferingId != null) hashCode = hashCode * 59 + this.HourPackageOfferingId.GetHashCode();
-                if (this.RootResourceIds != null) hashCode = hashCode * 59 + this.RootResourceIds.GetHashCode();
-                if (this.InstInfoIds != null) hashCode = hashCode * 59 + this.InstInfoIds.GetHashCode();
                 return hashCode;
             }
         }

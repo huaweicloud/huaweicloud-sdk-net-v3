@@ -47,18 +47,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 策略来源。
-        /// </summary>
-        [JsonProperty("scope_flag", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ScopeFlag { get; set; }
-
-        /// <summary>
-        /// 租户ID。
-        /// </summary>
-        [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TenantId { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
@@ -84,8 +72,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  scopeFlag: ").Append(ScopeFlag).Append("\n");
-            sb.Append("  tenantId: ").Append(TenantId).Append("\n");
             sb.Append("  policies: ").Append(Policies).Append("\n");
             sb.Append("  targets: ").Append(Targets).Append("\n");
             sb.Append("}\n");
@@ -111,8 +97,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
-            if (this.ScopeFlag != input.ScopeFlag || (this.ScopeFlag != null && !this.ScopeFlag.Equals(input.ScopeFlag))) return false;
-            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
             if (this.Policies != input.Policies || (this.Policies != null && !this.Policies.Equals(input.Policies))) return false;
             if (this.Targets != input.Targets || (this.Targets != null && input.Targets != null && !this.Targets.SequenceEqual(input.Targets))) return false;
 
@@ -132,8 +116,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ScopeFlag != null) hashCode = hashCode * 59 + this.ScopeFlag.GetHashCode();
-                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 if (this.Policies != null) hashCode = hashCode * 59 + this.Policies.GetHashCode();
                 if (this.Targets != null) hashCode = hashCode * 59 + this.Targets.GetHashCode();
                 return hashCode;

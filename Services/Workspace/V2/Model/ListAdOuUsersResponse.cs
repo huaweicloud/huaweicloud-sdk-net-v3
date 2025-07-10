@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// OU对象
+        /// OU对象。
         /// </summary>
         [JsonProperty("user_infos", NullValueHandling = NullValueHandling.Ignore)]
         public List<AdOuUserInfo> UserInfos { get; set; }
 
         /// <summary>
-        /// 用户数
+        /// 用户数。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }
 
         /// <summary>
-        /// 可以创建的用户数量
+        /// 可以创建的用户数量。
         /// </summary>
         [JsonProperty("enable_create_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? EnableCreateCount { get; set; }

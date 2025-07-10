@@ -11,109 +11,109 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 产品计算结果
+    /// 产品计算结果。
     /// </summary>
     public class ProductResult 
     {
 
         /// <summary>
-        /// 对应请求体中的ID
+        /// 对应请求体中的ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 产品ID
+        /// 产品ID。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 总额，即最终优惠后的金额(预留实例只包含预付部分)
+        /// 总额，即最终优惠后的金额(预留实例只包含预付部分)。
         /// </summary>
         [JsonProperty("amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Amount { get; set; }
 
         /// <summary>
-        /// 优惠额(预留实例只包含预付部分)
+        /// 优惠额(预留实例只包含预付部分)。
         /// </summary>
         [JsonProperty("discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? DiscountAmount { get; set; }
 
         /// <summary>
-        /// 原总额，即优惠前总额(预留实例只包含预付部分)
+        /// 原总额，即优惠前总额(预留实例只包含预付部分)。
         /// </summary>
         [JsonProperty("original_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? OriginalAmount { get; set; }
 
         /// <summary>
-        /// 官网价（非所有接口有该字段）(预留实例只包含预付部分)
+        /// 官网价（非所有接口有该字段）(预留实例只包含预付部分)。
         /// </summary>
         [JsonProperty("official_website_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? OfficialWebsiteAmount { get; set; }
 
         /// <summary>
-        /// 官网价优惠额（非所有接口有该字段）(预留实例只包含预付部分)
+        /// 官网价优惠额（非所有接口有该字段）(预留实例只包含预付部分)。
         /// </summary>
         [JsonProperty("official_website_discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? OfficialWebsiteDiscountAmount { get; set; }
 
         /// <summary>
-        /// 可选折扣优惠额(预留实例只包含预付部分)，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额（非所有接口有该字段）
+        /// 可选折扣优惠额(预留实例只包含预付部分)，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额（非所有接口有该字段）。
         /// </summary>
         [JsonProperty("optional_discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? OptionalDiscountAmount { get; set; }
 
         /// <summary>
-        /// 总分期金额(批量询价的商品分期周期类型一致，才会有总分期金额，分期周期类型不一致，该信息没有)
+        /// 总分期金额(批量询价的商品分期周期类型一致，才会有总分期金额，分期周期类型不一致，该信息没有)。
         /// </summary>
         [JsonProperty("per_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerAmount { get; set; }
 
         /// <summary>
-        /// 总分期金额的优惠额(perDiscountAmount &#x3D; perOriginalAmount - perAmount)
+        /// 总分期金额的优惠额(perDiscountAmount &#x3D; perOriginalAmount - perAmount)。
         /// </summary>
         [JsonProperty("per_discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerDiscountAmount { get; set; }
 
         /// <summary>
-        /// 总分期金额原价
+        /// 总分期金额原价。
         /// </summary>
         [JsonProperty("per_original_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerOriginalAmount { get; set; }
 
         /// <summary>
-        /// 分期金额的官网价
+        /// 分期金额的官网价。
         /// </summary>
         [JsonProperty("per_official_website_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerOfficialWebsiteAmount { get; set; }
 
         /// <summary>
-        /// 分期金额的官网价官网价优惠额，即：perOfficialWebsiteDiscountAmount &#x3D;perOriginalAmount-perOfficialWebsiteAmount
+        /// 分期金额的官网价官网价优惠额，即：perOfficialWebsiteDiscountAmount &#x3D;perOriginalAmount-perOfficialWebsiteAmount。
         /// </summary>
         [JsonProperty("per_official_website_discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerOfficialWebsiteDiscountAmount { get; set; }
 
         /// <summary>
-        /// 分期金额的可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额 perOptionalDiscountAmount&#x3D; perOfficialWebsiteAmount- perAmount
+        /// 分期金额的可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额 perOptionalDiscountAmount&#x3D; perOfficialWebsiteAmount- perAmount。
         /// </summary>
         [JsonProperty("per_optional_discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerOptionalDiscountAmount { get; set; }
 
         /// <summary>
-        /// 分期周期类型 2:月 4:小时
+        /// 分期周期类型 2:月 4:小时。
         /// </summary>
         [JsonProperty("per_period_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? PerPeriodType { get; set; }
 
         /// <summary>
-        /// 度量单位
+        /// 度量单位。
         /// </summary>
         [JsonProperty("measure_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? MeasureId { get; set; }
 
         /// <summary>
-        /// 扩展参数
+        /// 扩展参数。
         /// </summary>
         [JsonProperty("extend_params", NullValueHandling = NullValueHandling.Ignore)]
         public string ExtendParams { get; set; }

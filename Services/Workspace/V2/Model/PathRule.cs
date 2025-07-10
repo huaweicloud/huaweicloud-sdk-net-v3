@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 完整路径： 1. 名称允许可见字符或空格，不可为全空格。 2. 长度0~512个字符。 3. 为空或者*号表示任意匹配。
+        /// 完整路径： 1. 名称允许可见字符或空格，不可为全空格。 2. 长度0~512个字符。
         /// </summary>
         [JsonProperty("path", NullValueHandling = NullValueHandling.Ignore)]
         public string Path { get; set; }

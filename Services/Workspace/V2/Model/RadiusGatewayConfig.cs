@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 短信辅助认证配置
+    /// 短信辅助认证配置。
     /// </summary>
     public class RadiusGatewayConfig 
     {
 
         /// <summary>
-        /// 是否启用
+        /// 是否启用。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }
 
         /// <summary>
-        /// 用户名
+        /// 用户名。
         /// </summary>
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
         /// <summary>
-        /// 密码
+        /// 密码。
         /// </summary>
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
         public string Password { get; set; }
 
         /// <summary>
-        /// 获取token地址
+        /// 获取token地址。
         /// </summary>
         [JsonProperty("token_url", NullValueHandling = NullValueHandling.Ignore)]
         public string TokenUrl { get; set; }
 
         /// <summary>
-        /// 获取验证码地址
+        /// 获取验证码地址。
         /// </summary>
         [JsonProperty("verification_cipher_url", NullValueHandling = NullValueHandling.Ignore)]
         public string VerificationCipherUrl { get; set; }
 
         /// <summary>
-        /// 证书内容（PEM）
+        /// 证书内容（PEM）。
         /// </summary>
         [JsonProperty("cert_content", NullValueHandling = NullValueHandling.Ignore)]
         public string CertContent { get; set; }

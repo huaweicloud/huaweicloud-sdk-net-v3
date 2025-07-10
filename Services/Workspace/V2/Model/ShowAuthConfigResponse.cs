@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string AuthType { get; set; }
 
         /// <summary>
-        /// 当前状态
+        /// 当前状态。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public RadiusGatewayConfigInfo RadiusGatewayConfig { get; set; }
 
         /// <summary>
-        /// 第三方认证接口配置信息
+        /// 第三方认证接口配置信息。
         /// </summary>
         [JsonProperty("third_party_auth_config", NullValueHandling = NullValueHandling.Ignore)]
         public List<ThirdPartyAuthConfig> ThirdPartyAuthConfig { get; set; }

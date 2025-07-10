@@ -304,6 +304,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("hypervisor", NullValueHandling = NullValueHandling.Ignore)]
         public Hypervisor Hypervisor { get; set; }
 
+        /// <summary>
+        /// 网卡信息
+        /// </summary>
+        [JsonProperty("network_interfaces", NullValueHandling = NullValueHandling.Ignore)]
+        public List<NetworkInterfaces> NetworkInterfaces { get; set; }
+
 
 
         /// <summary>
@@ -361,6 +367,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  cpuOptions: ").Append(CpuOptions).Append("\n");
             sb.Append("  securityOptions: ").Append(SecurityOptions).Append("\n");
             sb.Append("  hypervisor: ").Append(Hypervisor).Append("\n");
+            sb.Append("  networkInterfaces: ").Append(NetworkInterfaces).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -427,6 +434,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             if (this.CpuOptions != input.CpuOptions || (this.CpuOptions != null && !this.CpuOptions.Equals(input.CpuOptions))) return false;
             if (this.SecurityOptions != input.SecurityOptions || (this.SecurityOptions != null && !this.SecurityOptions.Equals(input.SecurityOptions))) return false;
             if (this.Hypervisor != input.Hypervisor || (this.Hypervisor != null && !this.Hypervisor.Equals(input.Hypervisor))) return false;
+            if (this.NetworkInterfaces != input.NetworkInterfaces || (this.NetworkInterfaces != null && input.NetworkInterfaces != null && !this.NetworkInterfaces.SequenceEqual(input.NetworkInterfaces))) return false;
 
             return true;
         }
@@ -487,6 +495,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 if (this.CpuOptions != null) hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
                 if (this.SecurityOptions != null) hashCode = hashCode * 59 + this.SecurityOptions.GetHashCode();
                 if (this.Hypervisor != null) hashCode = hashCode * 59 + this.Hypervisor.GetHashCode();
+                if (this.NetworkInterfaces != null) hashCode = hashCode * 59 + this.NetworkInterfaces.GetHashCode();
                 return hashCode;
             }
         }

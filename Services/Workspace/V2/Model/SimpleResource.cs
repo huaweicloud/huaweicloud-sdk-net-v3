@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 配额数
+        /// 配额数。
         /// </summary>
         [JsonProperty("quota", NullValueHandling = NullValueHandling.Ignore)]
         public int? Quota { get; set; }
 
         /// <summary>
-        /// 配额已用值
+        /// 配额已用值。
         /// </summary>
         [JsonProperty("used", NullValueHandling = NullValueHandling.Ignore)]
         public int? Used { get; set; }

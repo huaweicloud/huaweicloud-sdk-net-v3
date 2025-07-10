@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 接入信息
+    /// 接入信息。
     /// </summary>
     public class AccessConfig 
     {
@@ -23,31 +23,31 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string AccessMode { get; set; }
 
         /// <summary>
-        /// 互联网接入地址，只有access_mode为“INTERNET”或“BOTH”时才会返回该参数
+        /// 互联网接入地址，只有access_mode为“INTERNET”或“BOTH”时才会返回该参数。
         /// </summary>
         [JsonProperty("internet_access_address", NullValueHandling = NullValueHandling.Ignore)]
         public string InternetAccessAddress { get; set; }
 
         /// <summary>
-        /// 互联网接入端口
+        /// 互联网接入端口。
         /// </summary>
         [JsonProperty("internet_access_port", NullValueHandling = NullValueHandling.Ignore)]
         public string InternetAccessPort { get; set; }
 
         /// <summary>
-        /// 专线接入地址，只有access_mode为“DEDICATED”或“BOTH”时才会返回该参数
+        /// 专线接入地址，只有access_mode为“DEDICATED”或“BOTH”时才会返回该参数。
         /// </summary>
         [JsonProperty("dedicated_access_address", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedAccessAddress { get; set; }
 
         /// <summary>
-        /// 专线接入备用地址，只有当开启专线备用线路时才会返回该参数
+        /// 专线接入备用地址，只有当开启专线备用线路时才会返回该参数。
         /// </summary>
         [JsonProperty("dedicated_access_standby_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DedicatedAccessStandbyAddress { get; set; }
 
         /// <summary>
-        /// 专线备用线路失败错误码
+        /// 专线备用线路失败错误码。
         /// </summary>
         [JsonProperty("standby_address_result_code", NullValueHandling = NullValueHandling.Ignore)]
         public string StandbyAddressResultCode { get; set; }

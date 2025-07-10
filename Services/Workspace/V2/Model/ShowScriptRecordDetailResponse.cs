@@ -83,18 +83,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? ExecuteOrder { get; set; }
 
         /// <summary>
-        /// 命令行内容。
-        /// </summary>
-        [JsonProperty("command_content", NullValueHandling = NullValueHandling.Ignore)]
-        public string CommandContent { get; set; }
-
-        /// <summary>
-        /// 命令行类型(POWERSHELL/BAT/SHELL)。
-        /// </summary>
-        [JsonProperty("command_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string CommandType { get; set; }
-
-        /// <summary>
         /// 错误码。
         /// </summary>
         [JsonProperty("result_code", NullValueHandling = NullValueHandling.Ignore)]
@@ -132,8 +120,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  executeOrder: ").Append(ExecuteOrder).Append("\n");
-            sb.Append("  commandContent: ").Append(CommandContent).Append("\n");
-            sb.Append("  commandType: ").Append(CommandType).Append("\n");
             sb.Append("  resultCode: ").Append(ResultCode).Append("\n");
             sb.Append("  reason: ").Append(Reason).Append("\n");
             sb.Append("  output: ").Append(Output).Append("\n");
@@ -166,8 +152,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.ExecuteOrder != input.ExecuteOrder || (this.ExecuteOrder != null && !this.ExecuteOrder.Equals(input.ExecuteOrder))) return false;
-            if (this.CommandContent != input.CommandContent || (this.CommandContent != null && !this.CommandContent.Equals(input.CommandContent))) return false;
-            if (this.CommandType != input.CommandType || (this.CommandType != null && !this.CommandType.Equals(input.CommandType))) return false;
             if (this.ResultCode != input.ResultCode || (this.ResultCode != null && !this.ResultCode.Equals(input.ResultCode))) return false;
             if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
             if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
@@ -194,8 +178,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.ExecuteOrder != null) hashCode = hashCode * 59 + this.ExecuteOrder.GetHashCode();
-                if (this.CommandContent != null) hashCode = hashCode * 59 + this.CommandContent.GetHashCode();
-                if (this.CommandType != null) hashCode = hashCode * 59 + this.CommandType.GetHashCode();
                 if (this.ResultCode != null) hashCode = hashCode * 59 + this.ResultCode.GetHashCode();
                 if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
                 if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();

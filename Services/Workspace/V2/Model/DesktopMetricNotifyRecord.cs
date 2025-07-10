@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 满足通知规则阈值的桌面数
+        /// 满足通知规则阈值的桌面数。
         /// </summary>
         [JsonProperty("match_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? MatchCount { get; set; }
 
         /// <summary>
-        /// 指标名称
+        /// 指标名称。
         /// </summary>
         [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }
 
         /// <summary>
-        /// 统计持续周期(天)
+        /// 统计持续周期(天)。
         /// </summary>
         [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
         public int? Threshold { get; set; }

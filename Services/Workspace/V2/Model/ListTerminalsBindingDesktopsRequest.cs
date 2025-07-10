@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 是否只查询结果总条数
+        /// 是否只查询结果总条数。
         /// </summary>
         [SDKProperty("count_only", IsQuery = true)]
         [JsonProperty("count_only", NullValueHandling = NullValueHandling.Ignore)]

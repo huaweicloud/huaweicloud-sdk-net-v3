@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 指标
+    /// 指标。
     /// </summary>
     public class Metric 
     {
 
         /// <summary>
-        /// 指标名称
+        /// 指标名称。
         /// </summary>
         [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }
 
         /// <summary>
-        /// 指标值
+        /// 指标值。
         /// </summary>
         [JsonProperty("metric_value", NullValueHandling = NullValueHandling.Ignore)]
         public double? MetricValue { get; set; }

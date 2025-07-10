@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 增加磁盘任务id
+        /// 增加磁盘任务id。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// 云运营平台CBC获取到JobId后，会使用getJobEndpoint当做URL，调用云服务，查询获取Job结果
+        /// 云运营平台CBC获取到JobId后，会使用getJobEndpoint当做URL，调用云服务，查询获取Job结果。
         /// </summary>
         [JsonProperty("getJobEndpoint", NullValueHandling = NullValueHandling.Ignore)]
         public string GetJobEndpoint { get; set; }
 
         /// <summary>
-        /// 在线开通最大时间
+        /// 在线开通最大时间。
         /// </summary>
         [JsonProperty("maxProvisionTime", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxProvisionTime { get; set; }
 
         /// <summary>
-        /// 开通最小时间（云服务最快开通时长，或一般开通时长）
+        /// 开通最小时间（云服务最快开通时长，或一般开通时长）。
         /// </summary>
         [JsonProperty("minProvisionTime", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinProvisionTime { get; set; }
 
         /// <summary>
-        /// Job周期性查询时间，默认1分钟查询一次
+        /// Job周期性查询时间，默认1分钟查询一次。
         /// </summary>
         [JsonProperty("periodicQueryTime", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodicQueryTime { get; set; }

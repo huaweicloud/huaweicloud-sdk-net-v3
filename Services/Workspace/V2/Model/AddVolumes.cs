@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 磁盘订单请求
+    /// 磁盘订单请求。
     /// </summary>
     public class AddVolumes 
     {
 
         /// <summary>
-        /// 桌面ID
+        /// 桌面ID。
         /// </summary>
         [JsonProperty("desktop_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopId { get; set; }
 
         /// <summary>
-        /// 订单的磁盘信息列表
+        /// 订单的磁盘信息列表。
         /// </summary>
         [JsonProperty("volumes", NullValueHandling = NullValueHandling.Ignore)]
         public List<Volume> Volumes { get; set; }

@@ -17,35 +17,35 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// OU的域名地址
+        /// OU的域名地址。
         /// </summary>
         [SDKProperty("ou_dn", IsQuery = true)]
         [JsonProperty("ou_dn", NullValueHandling = NullValueHandling.Ignore)]
         public string OuDn { get; set; }
 
         /// <summary>
-        /// 用户名，支持模糊查询
+        /// 用户名，支持模糊查询。
         /// </summary>
         [SDKProperty("user_name", IsQuery = true)]
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string UserName { get; set; }
 
         /// <summary>
-        /// 用户是否已存在
+        /// 用户是否已存在。
         /// </summary>
         [SDKProperty("has_existed", IsQuery = true)]
         [JsonProperty("has_existed", NullValueHandling = NullValueHandling.Ignore)]
         public bool? HasExisted { get; set; }
 
         /// <summary>
-        /// 用于分页查询，返回桌面数量限制。如果不指定，则返回所有符合条件的桌面
+        /// 用于分页查询，返回桌面数量限制。如果不指定，则返回所有符合条件的桌面。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 用于分页查询，查询的起始记录序号，从0开始
+        /// 用于分页查询，查询的起始记录序号，从0开始。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]

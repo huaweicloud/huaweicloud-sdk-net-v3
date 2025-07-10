@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string PersonalizedDataMgmtPath { get; set; }
 
         /// <summary>
-        /// 用户数据漫游
+        /// 用户数据漫游。
         /// </summary>
         [JsonProperty("user_data_roaming_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? UserDataRoamingEnable { get; set; }
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public PoliciesPersonalizedDataMgmtUserDataRoamingOptions UserDataRoamingOptions { get; set; }
 
         /// <summary>
-        /// 启用用户文件夹重定向
+        /// 启用用户文件夹重定向。
         /// </summary>
         [JsonProperty("user_folder_redirection_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? UserFolderRedirectionEnable { get; set; }
@@ -47,13 +47,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public PoliciesPersonalizedDataMgmtUserFolderRedirectionOptions UserFolderRedirectionOptions { get; set; }
 
         /// <summary>
-        /// 启用用户文件夹重定向
+        /// 启用用户文件夹重定向。
         /// </summary>
         [JsonProperty("logoff_delete_user_configuration", NullValueHandling = NullValueHandling.Ignore)]
         public bool? LogoffDeleteUserConfiguration { get; set; }
 
         /// <summary>
-        /// 启用用户文件夹重定向
+        /// 启用用户文件夹重定向。
         /// </summary>
         [JsonProperty("network_drive_mapping_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NetworkDriveMappingEnable { get; set; }

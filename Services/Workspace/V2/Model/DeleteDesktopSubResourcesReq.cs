@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 删除桌面协同资源请求体
+    /// 删除桌面协同资源请求体。
     /// </summary>
     public class DeleteDesktopSubResourcesReq 
     {
 
         /// <summary>
-        /// 桌面ID列表
+        /// 桌面ID列表。
         /// </summary>
         [JsonProperty("desktop_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DesktopIds { get; set; }
 
         /// <summary>
-        /// 待删除附属资源类型。DESKTOP_SHARER：桌面协同资源
+        /// 待删除附属资源类型。DESKTOP_SHARER：桌面协同资源。
         /// </summary>
         [JsonProperty("sub_resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SubResourceType { get; set; }
 
         /// <summary>
-        /// 订单ID
+        /// 订单ID。
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }

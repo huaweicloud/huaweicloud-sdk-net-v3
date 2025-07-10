@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 桌面携带标签数据结构
+    /// 桌面携带标签数据结构。
     /// </summary>
     public class DesktopTagsInfo 
     {
 
         /// <summary>
-        /// 桌面ID
+        /// 桌面ID。
         /// </summary>
         [JsonProperty("desktop_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopId { get; set; }
 
         /// <summary>
-        /// 携带标签列表
+        /// 携带标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }

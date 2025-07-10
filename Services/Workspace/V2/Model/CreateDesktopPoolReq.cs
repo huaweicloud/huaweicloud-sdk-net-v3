@@ -167,6 +167,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ProductId { get; set; }
 
         /// <summary>
+        /// 产品规格ID。可用区是边缘可用区时，必填此参数。
+        /// </summary>
+        [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string FlavorId { get; set; }
+
+        /// <summary>
         /// 镜像类型。默认值为private。  - private：私有镜像。 - gold：公共镜像。
         /// </summary>
         [JsonProperty("image_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -215,12 +221,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<AuthorizedObjects> AuthorizedObjects { get; set; }
 
         /// <summary>
-        /// 包周期订购ID，CBC订购回调时使用。
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
-
-        /// <summary>
         /// OU名称，在对接AD时使用，需提前在AD中创建OU。
         /// </summary>
         [JsonProperty("ou_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -233,7 +233,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 企业项目ID，默认\&quot;0\&quot;
+        /// 企业项目ID，默认\&quot;0。\&quot;
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -277,6 +277,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
+            sb.Append("  flavorId: ").Append(FlavorId).Append("\n");
             sb.Append("  imageType: ").Append(ImageType).Append("\n");
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
             sb.Append("  rootVolume: ").Append(RootVolume).Append("\n");
@@ -285,7 +286,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  subnetIds: ").Append(SubnetIds).Append("\n");
             sb.Append("  securityGroups: ").Append(SecurityGroups).Append("\n");
             sb.Append("  authorizedObjects: ").Append(AuthorizedObjects).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  ouName: ").Append(OuName).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -317,6 +317,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
+            if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
             if (this.ImageType != input.ImageType || (this.ImageType != null && !this.ImageType.Equals(input.ImageType))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
             if (this.RootVolume != input.RootVolume || (this.RootVolume != null && !this.RootVolume.Equals(input.RootVolume))) return false;
@@ -325,7 +326,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.SubnetIds != input.SubnetIds || (this.SubnetIds != null && input.SubnetIds != null && !this.SubnetIds.SequenceEqual(input.SubnetIds))) return false;
             if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
             if (this.AuthorizedObjects != input.AuthorizedObjects || (this.AuthorizedObjects != null && input.AuthorizedObjects != null && !this.AuthorizedObjects.SequenceEqual(input.AuthorizedObjects))) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.OuName != input.OuName || (this.OuName != null && !this.OuName.Equals(input.OuName))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
@@ -351,6 +351,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
                 if (this.ImageType != null) hashCode = hashCode * 59 + this.ImageType.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
                 if (this.RootVolume != null) hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
@@ -359,7 +360,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.SubnetIds != null) hashCode = hashCode * 59 + this.SubnetIds.GetHashCode();
                 if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
                 if (this.AuthorizedObjects != null) hashCode = hashCode * 59 + this.AuthorizedObjects.GetHashCode();
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.OuName != null) hashCode = hashCode * 59 + this.OuName.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();

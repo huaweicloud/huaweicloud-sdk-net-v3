@@ -138,12 +138,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> DesktopIds { get; set; }
 
         /// <summary>
-        /// 需要开通上网功能的桌面instInfoId列表。供包周期回调使用
-        /// </summary>
-        [JsonProperty("inst_info_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> InstInfoIds { get; set; }
-
-        /// <summary>
         /// 支持的类型请参考EIP服务支持的类型。可通过调用如下链接的接口查询，https://support.huaweicloud.com/api-eip/ShowPublicIpType.html。
         /// </summary>
         [JsonProperty("eip_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -161,13 +155,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? BandwidthSize { get; set; }
 
         /// <summary>
-        /// 包周期订购ID，CBC订购回调时使用。
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
-
-        /// <summary>
-        /// 企业项目ID，默认\&quot;0\&quot;
+        /// 企业项目ID，默认\&quot;0。\&quot;
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -188,11 +176,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ApplyDesktopsInternetReq {\n");
             sb.Append("  desktopIds: ").Append(DesktopIds).Append("\n");
-            sb.Append("  instInfoIds: ").Append(InstInfoIds).Append("\n");
             sb.Append("  eipType: ").Append(EipType).Append("\n");
             sb.Append("  eipChargeMode: ").Append(EipChargeMode).Append("\n");
             sb.Append("  bandwidthSize: ").Append(BandwidthSize).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("}\n");
@@ -214,11 +200,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.DesktopIds != input.DesktopIds || (this.DesktopIds != null && input.DesktopIds != null && !this.DesktopIds.SequenceEqual(input.DesktopIds))) return false;
-            if (this.InstInfoIds != input.InstInfoIds || (this.InstInfoIds != null && input.InstInfoIds != null && !this.InstInfoIds.SequenceEqual(input.InstInfoIds))) return false;
             if (this.EipType != input.EipType || (this.EipType != null && !this.EipType.Equals(input.EipType))) return false;
             if (this.EipChargeMode != input.EipChargeMode) return false;
             if (this.BandwidthSize != input.BandwidthSize || (this.BandwidthSize != null && !this.BandwidthSize.Equals(input.BandwidthSize))) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
 
@@ -234,11 +218,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.DesktopIds != null) hashCode = hashCode * 59 + this.DesktopIds.GetHashCode();
-                if (this.InstInfoIds != null) hashCode = hashCode * 59 + this.InstInfoIds.GetHashCode();
                 if (this.EipType != null) hashCode = hashCode * 59 + this.EipType.GetHashCode();
                 hashCode = hashCode * 59 + this.EipChargeMode.GetHashCode();
                 if (this.BandwidthSize != null) hashCode = hashCode * 59 + this.BandwidthSize.GetHashCode();
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;

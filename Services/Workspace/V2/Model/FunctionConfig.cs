@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class FunctionConfig 
     {
         /// <summary>
-        /// 功能配置开关的状态，标识开启还是关闭 ON/OFF。 - ON： 开启该功能 - OFF： 关闭该功能
+        /// 功能配置开关的状态，表示开启还是关闭 ON/OFF。 - ON： 开启该功能 - OFF： 关闭该功能。
         /// </summary>
-        /// <value>功能配置开关的状态，标识开启还是关闭 ON/OFF。 - ON： 开启该功能 - OFF： 关闭该功能</value>
+        /// <value>功能配置开关的状态，表示开启还是关闭 ON/OFF。 - ON： 开启该功能 - OFF： 关闭该功能。</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -132,24 +132,24 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 功能配置id
+        /// 功能配置id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 功能配置名称
+        /// 功能配置名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 功能配置开关的状态，标识开启还是关闭 ON/OFF。 - ON： 开启该功能 - OFF： 关闭该功能
+        /// 功能配置开关的状态，表示开启还是关闭 ON/OFF。 - ON： 开启该功能 - OFF： 关闭该功能。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 配置项列表，键值对格式
+        /// 配置项列表，键值对格式。
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public List<MapObject> Values { get; set; }

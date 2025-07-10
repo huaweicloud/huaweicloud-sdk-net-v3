@@ -29,19 +29,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ImageType { get; set; }
 
         /// <summary>
-        /// 镜像平台分类，取值为Windows。
-        /// </summary>
-        [JsonProperty("os_platform", NullValueHandling = NullValueHandling.Ignore)]
-        public string OsPlatform { get; set; }
-
-        /// <summary>
         /// 操作系统类型，目前取值Linux， Windows，Other。
         /// </summary>
         [JsonProperty("os_type", NullValueHandling = NullValueHandling.Ignore)]
         public string OsType { get; set; }
 
         /// <summary>
-        /// 操作系统架构，目前取值arm，x86
+        /// 操作系统架构，目前取值arm，x86。
         /// </summary>
         [JsonProperty("architecture", NullValueHandling = NullValueHandling.Ignore)]
         public string Architecture { get; set; }
@@ -99,7 +93,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class ImageInfo {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  imageType: ").Append(ImageType).Append("\n");
-            sb.Append("  osPlatform: ").Append(OsPlatform).Append("\n");
             sb.Append("  osType: ").Append(OsType).Append("\n");
             sb.Append("  architecture: ").Append(Architecture).Append("\n");
             sb.Append("  osVersion: ").Append(OsVersion).Append("\n");
@@ -129,7 +122,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.ImageType != input.ImageType || (this.ImageType != null && !this.ImageType.Equals(input.ImageType))) return false;
-            if (this.OsPlatform != input.OsPlatform || (this.OsPlatform != null && !this.OsPlatform.Equals(input.OsPlatform))) return false;
             if (this.OsType != input.OsType || (this.OsType != null && !this.OsType.Equals(input.OsType))) return false;
             if (this.Architecture != input.Architecture || (this.Architecture != null && !this.Architecture.Equals(input.Architecture))) return false;
             if (this.OsVersion != input.OsVersion || (this.OsVersion != null && !this.OsVersion.Equals(input.OsVersion))) return false;
@@ -153,7 +145,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.ImageType != null) hashCode = hashCode * 59 + this.ImageType.GetHashCode();
-                if (this.OsPlatform != null) hashCode = hashCode * 59 + this.OsPlatform.GetHashCode();
                 if (this.OsType != null) hashCode = hashCode * 59 + this.OsType.GetHashCode();
                 if (this.Architecture != null) hashCode = hashCode * 59 + this.Architecture.GetHashCode();
                 if (this.OsVersion != null) hashCode = hashCode * 59 + this.OsVersion.GetHashCode();

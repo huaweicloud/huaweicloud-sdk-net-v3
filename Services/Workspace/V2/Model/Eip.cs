@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// Eip信息。
+    /// EIP信息。
     /// </summary>
     public class Eip 
     {
@@ -132,13 +132,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 桌面绑定的Eip的id，有值时优先绑定Eip。
+        /// 桌面绑定的EIP的id，有值时优先绑定EIP。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP）
+        /// EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP）。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -149,7 +149,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }
         /// <summary>
-        /// 带宽大小
+        /// 带宽大小。
         /// </summary>
         [JsonProperty("bandwidth_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? BandwidthSize { get; set; }

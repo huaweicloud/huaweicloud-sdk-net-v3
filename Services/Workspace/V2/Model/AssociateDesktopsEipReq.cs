@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 桌面绑定的Eip的id。
+        /// 桌面绑定的EIP的id。
         /// </summary>
         [JsonProperty("eip_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EipId { get; set; }

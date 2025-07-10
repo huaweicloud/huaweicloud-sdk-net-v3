@@ -49,20 +49,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("access_control", NullValueHandling = NullValueHandling.Ignore)]
-        public AccessControl AccessControl { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [JsonProperty("session", NullValueHandling = NullValueHandling.Ignore)]
         public Session Session { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("bandwidth", NullValueHandling = NullValueHandling.Ignore)]
-        public Bandwidth Bandwidth { get; set; }
 
         /// <summary>
         /// 
@@ -91,7 +79,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("personalizedDataMgmt", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("personalized_data_mgmt", NullValueHandling = NullValueHandling.Ignore)]
         public PoliciesPersonalizedDataMgmt PersonalizedDataMgmt { get; set; }
 
         /// <summary>
@@ -120,9 +108,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  _Client: ").Append(Client).Append("\n");
             sb.Append("  display: ").Append(Display).Append("\n");
             sb.Append("  fileAndClipboard: ").Append(FileAndClipboard).Append("\n");
-            sb.Append("  accessControl: ").Append(AccessControl).Append("\n");
             sb.Append("  session: ").Append(Session).Append("\n");
-            sb.Append("  bandwidth: ").Append(Bandwidth).Append("\n");
             sb.Append("  virtualChannel: ").Append(VirtualChannel).Append("\n");
             sb.Append("  watermark: ").Append(Watermark).Append("\n");
             sb.Append("  keyboardMouse: ").Append(KeyboardMouse).Append("\n");
@@ -153,9 +139,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Client != input.Client || (this.Client != null && !this.Client.Equals(input.Client))) return false;
             if (this.Display != input.Display || (this.Display != null && !this.Display.Equals(input.Display))) return false;
             if (this.FileAndClipboard != input.FileAndClipboard || (this.FileAndClipboard != null && !this.FileAndClipboard.Equals(input.FileAndClipboard))) return false;
-            if (this.AccessControl != input.AccessControl || (this.AccessControl != null && !this.AccessControl.Equals(input.AccessControl))) return false;
             if (this.Session != input.Session || (this.Session != null && !this.Session.Equals(input.Session))) return false;
-            if (this.Bandwidth != input.Bandwidth || (this.Bandwidth != null && !this.Bandwidth.Equals(input.Bandwidth))) return false;
             if (this.VirtualChannel != input.VirtualChannel || (this.VirtualChannel != null && !this.VirtualChannel.Equals(input.VirtualChannel))) return false;
             if (this.Watermark != input.Watermark || (this.Watermark != null && !this.Watermark.Equals(input.Watermark))) return false;
             if (this.KeyboardMouse != input.KeyboardMouse || (this.KeyboardMouse != null && !this.KeyboardMouse.Equals(input.KeyboardMouse))) return false;
@@ -180,9 +164,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Client != null) hashCode = hashCode * 59 + this.Client.GetHashCode();
                 if (this.Display != null) hashCode = hashCode * 59 + this.Display.GetHashCode();
                 if (this.FileAndClipboard != null) hashCode = hashCode * 59 + this.FileAndClipboard.GetHashCode();
-                if (this.AccessControl != null) hashCode = hashCode * 59 + this.AccessControl.GetHashCode();
                 if (this.Session != null) hashCode = hashCode * 59 + this.Session.GetHashCode();
-                if (this.Bandwidth != null) hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
                 if (this.VirtualChannel != null) hashCode = hashCode * 59 + this.VirtualChannel.GetHashCode();
                 if (this.Watermark != null) hashCode = hashCode * 59 + this.Watermark.GetHashCode();
                 if (this.KeyboardMouse != null) hashCode = hashCode * 59 + this.KeyboardMouse.GetHashCode();

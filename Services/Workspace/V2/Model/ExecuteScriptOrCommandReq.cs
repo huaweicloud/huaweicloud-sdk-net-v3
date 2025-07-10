@@ -53,46 +53,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> ScriptIds { get; set; }
 
         /// <summary>
-        /// 执行的命令行，与scripts二选一。
-        /// </summary>
-        [JsonProperty("command", NullValueHandling = NullValueHandling.Ignore)]
-        public string Command { get; set; }
-
-        /// <summary>
-        /// 命令行的类型（POWERSHELL，BAT，SHELL）。
-        /// </summary>
-        [JsonProperty("command_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string CommandType { get; set; }
-
-        /// <summary>
         /// 执行脚本的超时时间，单位分钟。
         /// </summary>
         [JsonProperty("execution_timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? ExecutionTimeout { get; set; }
-
-        /// <summary>
-        /// 执行脚本前置步骤。
-        /// </summary>
-        [JsonProperty("pre_start", NullValueHandling = NullValueHandling.Ignore)]
-        public string PreStart { get; set; }
-
-        /// <summary>
-        /// 执行脚本后置步骤(STOP,REBOOT)。
-        /// </summary>
-        [JsonProperty("post_finish", NullValueHandling = NullValueHandling.Ignore)]
-        public string PostFinish { get; set; }
-
-        /// <summary>
-        /// 资源组类型，如桌面池(DESKTOP_POOL)。
-        /// </summary>
-        [JsonProperty("resource_group_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceGroupType { get; set; }
-
-        /// <summary>
-        /// 资源组ID。
-        /// </summary>
-        [JsonProperty("resource_group_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceGroupId { get; set; }
 
 
 
@@ -109,13 +73,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  grayFailThreshold: ").Append(GrayFailThreshold).Append("\n");
             sb.Append("  resourceIds: ").Append(ResourceIds).Append("\n");
             sb.Append("  scriptIds: ").Append(ScriptIds).Append("\n");
-            sb.Append("  command: ").Append(Command).Append("\n");
-            sb.Append("  commandType: ").Append(CommandType).Append("\n");
             sb.Append("  executionTimeout: ").Append(ExecutionTimeout).Append("\n");
-            sb.Append("  preStart: ").Append(PreStart).Append("\n");
-            sb.Append("  postFinish: ").Append(PostFinish).Append("\n");
-            sb.Append("  resourceGroupType: ").Append(ResourceGroupType).Append("\n");
-            sb.Append("  resourceGroupId: ").Append(ResourceGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -140,13 +98,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.GrayFailThreshold != input.GrayFailThreshold || (this.GrayFailThreshold != null && !this.GrayFailThreshold.Equals(input.GrayFailThreshold))) return false;
             if (this.ResourceIds != input.ResourceIds || (this.ResourceIds != null && input.ResourceIds != null && !this.ResourceIds.SequenceEqual(input.ResourceIds))) return false;
             if (this.ScriptIds != input.ScriptIds || (this.ScriptIds != null && input.ScriptIds != null && !this.ScriptIds.SequenceEqual(input.ScriptIds))) return false;
-            if (this.Command != input.Command || (this.Command != null && !this.Command.Equals(input.Command))) return false;
-            if (this.CommandType != input.CommandType || (this.CommandType != null && !this.CommandType.Equals(input.CommandType))) return false;
             if (this.ExecutionTimeout != input.ExecutionTimeout || (this.ExecutionTimeout != null && !this.ExecutionTimeout.Equals(input.ExecutionTimeout))) return false;
-            if (this.PreStart != input.PreStart || (this.PreStart != null && !this.PreStart.Equals(input.PreStart))) return false;
-            if (this.PostFinish != input.PostFinish || (this.PostFinish != null && !this.PostFinish.Equals(input.PostFinish))) return false;
-            if (this.ResourceGroupType != input.ResourceGroupType || (this.ResourceGroupType != null && !this.ResourceGroupType.Equals(input.ResourceGroupType))) return false;
-            if (this.ResourceGroupId != input.ResourceGroupId || (this.ResourceGroupId != null && !this.ResourceGroupId.Equals(input.ResourceGroupId))) return false;
 
             return true;
         }
@@ -165,13 +117,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.GrayFailThreshold != null) hashCode = hashCode * 59 + this.GrayFailThreshold.GetHashCode();
                 if (this.ResourceIds != null) hashCode = hashCode * 59 + this.ResourceIds.GetHashCode();
                 if (this.ScriptIds != null) hashCode = hashCode * 59 + this.ScriptIds.GetHashCode();
-                if (this.Command != null) hashCode = hashCode * 59 + this.Command.GetHashCode();
-                if (this.CommandType != null) hashCode = hashCode * 59 + this.CommandType.GetHashCode();
                 if (this.ExecutionTimeout != null) hashCode = hashCode * 59 + this.ExecutionTimeout.GetHashCode();
-                if (this.PreStart != null) hashCode = hashCode * 59 + this.PreStart.GetHashCode();
-                if (this.PostFinish != null) hashCode = hashCode * 59 + this.PostFinish.GetHashCode();
-                if (this.ResourceGroupType != null) hashCode = hashCode * 59 + this.ResourceGroupType.GetHashCode();
-                if (this.ResourceGroupId != null) hashCode = hashCode * 59 + this.ResourceGroupId.GetHashCode();
                 return hashCode;
             }
         }

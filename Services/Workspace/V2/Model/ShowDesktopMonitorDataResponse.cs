@@ -17,85 +17,85 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 在线信息
+        /// 在线信息。
         /// </summary>
         [JsonProperty("user_online_info", NullValueHandling = NullValueHandling.Ignore)]
         public List<MonitorUserOnlineInfo> UserOnlineInfo { get; set; }
 
         /// <summary>
-        /// 计算机登录状态，在线信息没值的情况下，查看计算机登录状态 0 未登录， 1 登录中, 2登录状态同当前
+        /// 计算机登录状态，在线信息没值的情况下，查看计算机登录状态 0 未登录， 1 登录中, 2登录状态同当前。
         /// </summary>
         [JsonProperty("online_status", NullValueHandling = NullValueHandling.Ignore)]
         public int? OnlineStatus { get; set; }
 
         /// <summary>
-        /// cpu使用率信息
+        /// cpu使用率信息。
         /// </summary>
         [JsonProperty("cpu_info", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> CpuInfo { get; set; }
 
         /// <summary>
-        /// 内存使用率信息
+        /// 内存使用率信息。
         /// </summary>
         [JsonProperty("memory_info", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> MemoryInfo { get; set; }
 
         /// <summary>
-        /// 磁盘使用率
+        /// 磁盘使用率。
         /// </summary>
         [JsonProperty("disk_util_inband", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> DiskUtilInband { get; set; }
 
         /// <summary>
-        /// 磁盘读带宽
+        /// 磁盘读带宽。
         /// </summary>
         [JsonProperty("disk_read_bytes_rate", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> DiskReadBytesRate { get; set; }
 
         /// <summary>
-        /// 磁盘写带宽
+        /// 磁盘写带宽。
         /// </summary>
         [JsonProperty("disk_write_bytes_rate", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> DiskWriteBytesRate { get; set; }
 
         /// <summary>
-        /// 磁盘读IOPS
+        /// 磁盘读IOPS。
         /// </summary>
         [JsonProperty("disk_read_requests_rate", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> DiskReadRequestsRate { get; set; }
 
         /// <summary>
-        /// 磁盘写IOPS
+        /// 磁盘写IOPS。
         /// </summary>
         [JsonProperty("disk_write_requests_rate", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> DiskWriteRequestsRate { get; set; }
 
         /// <summary>
-        /// 带内网络流入速率
+        /// 带内网络流入速率。
         /// </summary>
         [JsonProperty("network_incoming_bytes_rate_inband", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> NetworkIncomingBytesRateInband { get; set; }
 
         /// <summary>
-        /// 带内网络流出速率
+        /// 带内网络流出速率。
         /// </summary>
         [JsonProperty("network_outgoing_bytes_rate_inband", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> NetworkOutgoingBytesRateInband { get; set; }
 
         /// <summary>
-        /// 带外网络流入速率
+        /// 带外网络流入速率。
         /// </summary>
         [JsonProperty("network_incoming_bytes_aggregate_rate", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> NetworkIncomingBytesAggregateRate { get; set; }
 
         /// <summary>
-        /// 带外网络流出速率
+        /// 带外网络流出速率。
         /// </summary>
         [JsonProperty("network_outgoing_bytes_aggregate_rate", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> NetworkOutgoingBytesAggregateRate { get; set; }
 
         /// <summary>
-        /// 网络连接数
+        /// 网络连接数。
         /// </summary>
         [JsonProperty("network_vm_connections", NullValueHandling = NullValueHandling.Ignore)]
         public List<Datapoints> NetworkVmConnections { get; set; }

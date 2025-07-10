@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 标签
+        /// 标签。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }

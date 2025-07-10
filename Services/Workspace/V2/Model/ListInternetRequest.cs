@@ -17,21 +17,21 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// NAT网关名称
+        /// NAT网关名称。
         /// </summary>
         [SDKProperty("nat_name", IsQuery = true)]
         [JsonProperty("nat_name", NullValueHandling = NullValueHandling.Ignore)]
         public string NatName { get; set; }
 
         /// <summary>
-        /// EIP地址
+        /// EIP地址。
         /// </summary>
         [SDKProperty("eip", IsQuery = true)]
         [JsonProperty("eip", NullValueHandling = NullValueHandling.Ignore)]

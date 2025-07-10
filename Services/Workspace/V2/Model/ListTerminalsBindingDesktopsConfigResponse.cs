@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class ListTerminalsBindingDesktopsConfigResponse : SdkResponse
     {
         /// <summary>
-        /// 绑定开关，只取值ON或OFF
+        /// 绑定开关，只取值ON或OFF。
         /// </summary>
-        /// <value>绑定开关，只取值ON或OFF</value>
+        /// <value>绑定开关，只取值ON或OFF。</value>
         [JsonConverter(typeof(EnumClassConverter<TcBindSwitchEnum>))]
         public class TcBindSwitchEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         }
 
         /// <summary>
-        /// 自动绑定开关，只取值ON或OFF
+        /// 自动绑定开关，只取值ON或OFF。
         /// </summary>
-        /// <value>自动绑定开关，只取值ON或OFF</value>
+        /// <value>自动绑定开关，只取值ON或OFF。</value>
         [JsonConverter(typeof(EnumClassConverter<TcAutoBindSwitchEnum>))]
         public class TcAutoBindSwitchEnum
         {
@@ -247,17 +247,17 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 绑定开关，只取值ON或OFF
+        /// 绑定开关，只取值ON或OFF。
         /// </summary>
         [JsonProperty("tc_bind_switch", NullValueHandling = NullValueHandling.Ignore)]
         public TcBindSwitchEnum TcBindSwitch { get; set; }
         /// <summary>
-        /// 自动绑定开关，只取值ON或OFF
+        /// 自动绑定开关，只取值ON或OFF。
         /// </summary>
         [JsonProperty("tc_auto_bind_switch", NullValueHandling = NullValueHandling.Ignore)]
         public TcAutoBindSwitchEnum TcAutoBindSwitch { get; set; }
         /// <summary>
-        /// 最大绑定数量，默认值为1
+        /// 最大绑定数量，默认值为1。
         /// </summary>
         [JsonProperty("tc_auto_bind_max", NullValueHandling = NullValueHandling.Ignore)]
         public int? TcAutoBindMax { get; set; }

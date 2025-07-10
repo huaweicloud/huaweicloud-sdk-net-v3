@@ -38,13 +38,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopIp { get; set; }
 
         /// <summary>
-        /// 桌面的sid列表，一次只能查询20个sid。
-        /// </summary>
-        [SDKProperty("sids", IsQuery = true)]
-        [JsonProperty("sids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Sids { get; set; }
-
-        /// <summary>
         /// 用于分页查询，查询的起始记录序号，从0开始。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
@@ -59,13 +52,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 用于筛选指定站点下的桌面列表
-        /// </summary>
-        [SDKProperty("site_id", IsQuery = true)]
-        [JsonProperty("site_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string SiteId { get; set; }
-
-        /// <summary>
         /// 桌面池ID,多个桌面池ID用逗号隔开。
         /// </summary>
         [SDKProperty("pool_id", IsQuery = true)]
@@ -73,7 +59,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string PoolId { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -87,7 +73,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopType { get; set; }
 
         /// <summary>
-        /// 是否为协同桌面
+        /// 是否为协同桌面。
         /// </summary>
         [SDKProperty("is_share_desktop", IsQuery = true)]
         [JsonProperty("is_share_desktop", NullValueHandling = NullValueHandling.Ignore)]
@@ -133,10 +119,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  computerName: ").Append(ComputerName).Append("\n");
             sb.Append("  desktopIp: ").Append(DesktopIp).Append("\n");
-            sb.Append("  sids: ").Append(Sids).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
-            sb.Append("  siteId: ").Append(SiteId).Append("\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  desktopType: ").Append(DesktopType).Append("\n");
@@ -166,10 +150,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.UserName != input.UserName || (this.UserName != null && input.UserName != null && !this.UserName.SequenceEqual(input.UserName))) return false;
             if (this.ComputerName != input.ComputerName || (this.ComputerName != null && !this.ComputerName.Equals(input.ComputerName))) return false;
             if (this.DesktopIp != input.DesktopIp || (this.DesktopIp != null && !this.DesktopIp.Equals(input.DesktopIp))) return false;
-            if (this.Sids != input.Sids || (this.Sids != null && input.Sids != null && !this.Sids.SequenceEqual(input.Sids))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
-            if (this.SiteId != input.SiteId || (this.SiteId != null && !this.SiteId.Equals(input.SiteId))) return false;
             if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.DesktopType != input.DesktopType || (this.DesktopType != null && !this.DesktopType.Equals(input.DesktopType))) return false;
@@ -193,10 +175,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.ComputerName != null) hashCode = hashCode * 59 + this.ComputerName.GetHashCode();
                 if (this.DesktopIp != null) hashCode = hashCode * 59 + this.DesktopIp.GetHashCode();
-                if (this.Sids != null) hashCode = hashCode * 59 + this.Sids.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.SiteId != null) hashCode = hashCode * 59 + this.SiteId.GetHashCode();
                 if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.DesktopType != null) hashCode = hashCode * 59 + this.DesktopType.GetHashCode();

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 用户名称
+        /// 用户名称。
         /// </summary>
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }

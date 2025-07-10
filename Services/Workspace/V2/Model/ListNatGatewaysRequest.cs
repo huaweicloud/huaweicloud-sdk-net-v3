@@ -15,6 +15,139 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     /// </summary>
     public class ListNatGatewaysRequest 
     {
+        /// <summary>
+        /// Defines status
+        /// </summary>
+        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
+        public class StatusEnum
+        {
+            /// <summary>
+            /// Enum ACTIVE for value: ACTIVE
+            /// </summary>
+            public static readonly StatusEnum ACTIVE = new StatusEnum("ACTIVE");
+
+            /// <summary>
+            /// Enum INACTIVE for value: INACTIVE
+            /// </summary>
+            public static readonly StatusEnum INACTIVE = new StatusEnum("INACTIVE");
+
+            /// <summary>
+            /// Enum PENDING_CREATE for value: PENDING_CREATE
+            /// </summary>
+            public static readonly StatusEnum PENDING_CREATE = new StatusEnum("PENDING_CREATE");
+
+            /// <summary>
+            /// Enum PENDING_UPDATE for value: PENDING_UPDATE
+            /// </summary>
+            public static readonly StatusEnum PENDING_UPDATE = new StatusEnum("PENDING_UPDATE");
+
+            /// <summary>
+            /// Enum PENDING_DELETE for value: PENDING_DELETE
+            /// </summary>
+            public static readonly StatusEnum PENDING_DELETE = new StatusEnum("PENDING_DELETE");
+
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
+            new Dictionary<string, StatusEnum>()
+            {
+                { "ACTIVE", ACTIVE },
+                { "INACTIVE", INACTIVE },
+                { "PENDING_CREATE", PENDING_CREATE },
+                { "PENDING_UPDATE", PENDING_UPDATE },
+                { "PENDING_DELETE", PENDING_DELETE },
+            };
+
+            private string _value;
+
+            public StatusEnum()
+            {
+
+            }
+
+            public StatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static StatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(StatusEnum a, StatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StatusEnum a, StatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
 
         /// <summary>
         /// 公网NAT网关实例的ID。
@@ -45,7 +178,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 公网NAT网关实例的名字，长度限制为64。公网NAT网关实例的名字仅支持数字、字母、_（下划线）、-（中划线）、中文
+        /// 公网NAT网关实例的名字，长度限制为64。公网NAT网关实例的名字仅支持数字、字母、_（下划线）、-（中划线）、中文。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -56,10 +189,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Status { get; set; }
-
+        public List<StatusEnum> Status { get; set; }
         /// <summary>
-        /// 公网NAT网关实例的规格。取值为： \&quot;1\&quot;：小型，SNAT最大连接数10000；\&quot;2\&quot;：中型，SNAT最大连接数50000；\&quot;3\&quot;：大型，SNAT最大连接数200000；\&quot;4\&quot;：超大型，SNAT最大连接数1000000
+        /// 公网NAT网关实例的规格。取值为： \&quot;1\&quot;：小型，SNAT最大连接数10000；\&quot;2\&quot;：中型，SNAT最大连接数50000；\&quot;3\&quot;：大型，SNAT最大连接数200000；\&quot;4\&quot;：超大型，SNAT最大连接数1000000。
         /// </summary>
         [SDKProperty("spec", IsQuery = true)]
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
@@ -73,7 +205,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string RouterId { get; set; }
 
         /// <summary>
-        /// 功能说明：每页返回的个数。取值范围：0~2000。默认值：2000。
+        /// 功能说明：每页返回的个数。取值范围：1~2000。默认值：2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -141,7 +273,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Spec != null) hashCode = hashCode * 59 + this.Spec.GetHashCode();
                 if (this.RouterId != null) hashCode = hashCode * 59 + this.RouterId.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();

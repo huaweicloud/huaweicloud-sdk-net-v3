@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 告警触发条件
+    /// 告警触发条件。
     /// </summary>
     public class AlarmCondition 
     {
@@ -23,37 +23,37 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Period { get; set; }
 
         /// <summary>
-        /// 聚合方式, 支持的值为(average|min|max|sum)
+        /// 聚合方式, 支持的值为(average|min|max|sum)。
         /// </summary>
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public string Filter { get; set; }
 
         /// <summary>
-        /// 阈值符号,支持的值为(&gt;|&lt;|&gt;&#x3D;|&lt;&#x3D;|&#x3D;|!&#x3D;|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动
+        /// 阈值符号,支持的值为(&gt;|&lt;|&gt;&#x3D;|&lt;&#x3D;|&#x3D;|!&#x3D;|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动。
         /// </summary>
         [JsonProperty("comparison_operator", NullValueHandling = NullValueHandling.Ignore)]
         public string ComparisonOperator { get; set; }
 
         /// <summary>
-        /// 告警阈值
+        /// 告警阈值。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public double? Value { get; set; }
 
         /// <summary>
-        /// 数据的单位，最大长度为32位
+        /// 数据的单位，最大长度为32位。
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }
 
         /// <summary>
-        /// 次数
+        /// 次数。
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }
 
         /// <summary>
-        /// 告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题，0代表不抑制，满足条件即告警；300代表满足告警触发条件后每5分钟告警一次；
+        /// 告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题，0代表不抑制，满足条件即告警；300代表满足告警触发条件后每5分钟告警一次。
         /// </summary>
         [JsonProperty("suppress_duration", NullValueHandling = NullValueHandling.Ignore)]
         public int? SuppressDuration { get; set; }

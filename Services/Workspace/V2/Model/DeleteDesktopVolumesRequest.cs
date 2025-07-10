@@ -17,13 +17,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// CBC接口回调时，请求头里带上的业务ID
-        /// </summary>
-        [SDKProperty("Service-Transaction-Id", IsHeader = true)]
-        [JsonProperty("Service-Transaction-Id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ServiceTransactionId { get; set; }
-
-        /// <summary>
         /// 桌面ID。
         /// </summary>
         [SDKProperty("desktop_id", IsPath = true)]
@@ -46,7 +39,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DeleteDesktopVolumesRequest {\n");
-            sb.Append("  serviceTransactionId: ").Append(ServiceTransactionId).Append("\n");
             sb.Append("  desktopId: ").Append(DesktopId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -67,7 +59,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(DeleteDesktopVolumesRequest input)
         {
             if (input == null) return false;
-            if (this.ServiceTransactionId != input.ServiceTransactionId || (this.ServiceTransactionId != null && !this.ServiceTransactionId.Equals(input.ServiceTransactionId))) return false;
             if (this.DesktopId != input.DesktopId || (this.DesktopId != null && !this.DesktopId.Equals(input.DesktopId))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
@@ -82,7 +73,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.ServiceTransactionId != null) hashCode = hashCode * 59 + this.ServiceTransactionId.GetHashCode();
                 if (this.DesktopId != null) hashCode = hashCode * 59 + this.DesktopId.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// MAC绑定VM信息列表
+        /// MAC绑定VM信息列表。
         /// </summary>
         [JsonProperty("bind_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<TerminalsBindingDesktopsInfo> BindList { get; set; }
 
         /// <summary>
-        /// 返回结果总条数
+        /// 返回结果总条数。
         /// </summary>
         [JsonProperty("total_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalNum { get; set; }

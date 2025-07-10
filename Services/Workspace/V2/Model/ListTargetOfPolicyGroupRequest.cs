@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string TargetName { get; set; }
 
         /// <summary>
-        /// 每页数量。范围0-1000
+        /// 每页数量。范围0-1000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

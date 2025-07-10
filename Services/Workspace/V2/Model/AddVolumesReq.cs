@@ -17,13 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 订单ID，包周期桌面添加磁盘时使用。
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
-
-        /// <summary>
-        /// 企业项目ID，默认\&quot;0\&quot;
+        /// 企业项目ID，默认\&quot;0。\&quot;
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -43,7 +37,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AddVolumesReq {\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  volumes: ").Append(Volumes).Append("\n");
             sb.Append("}\n");
@@ -64,7 +57,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(AddVolumesReq input)
         {
             if (input == null) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Volumes != input.Volumes || (this.Volumes != null && input.Volumes != null && !this.Volumes.SequenceEqual(input.Volumes))) return false;
 
@@ -79,7 +71,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Volumes != null) hashCode = hashCode * 59 + this.Volumes.GetHashCode();
                 return hashCode;

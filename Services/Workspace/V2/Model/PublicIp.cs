@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 弹性IP唯一标识
+        /// 弹性IP唯一标识。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 弹性IP地址
+        /// 弹性IP地址。
         /// </summary>
         [JsonProperty("public_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIpAddress { get; set; }

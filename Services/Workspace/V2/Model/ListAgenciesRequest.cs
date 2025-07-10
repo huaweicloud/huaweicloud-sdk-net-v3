@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class ListAgenciesRequest 
     {
         /// <summary>
-        /// 委托场景。 - WORKSPACE：云桌面。 - CLOUD_GAME：云游戏。 - SCREEN_RECORD：录屏审计。
+        /// 委托场景。 - WORKSPACE：云桌面。 - CLOUD_GAME：云游戏。 - CLOUD_STORAGE 云存储。 - SCREEN_RECORD：录屏审计。
         /// </summary>
-        /// <value>委托场景。 - WORKSPACE：云桌面。 - CLOUD_GAME：云游戏。 - SCREEN_RECORD：录屏审计。</value>
+        /// <value>委托场景。 - WORKSPACE：云桌面。 - CLOUD_GAME：云游戏。 - CLOUD_STORAGE 云存储。 - SCREEN_RECORD：录屏审计。</value>
         [JsonConverter(typeof(EnumClassConverter<SceneEnum>))]
         public class SceneEnum
         {
@@ -33,6 +33,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             public static readonly SceneEnum CLOUD_GAME = new SceneEnum("CLOUD_GAME");
 
             /// <summary>
+            /// Enum CLOUD_STORAGE for value: CLOUD_STORAGE
+            /// </summary>
+            public static readonly SceneEnum CLOUD_STORAGE = new SceneEnum("CLOUD_STORAGE");
+
+            /// <summary>
             /// Enum SCREEN_RECORD for value: SCREEN_RECORD
             /// </summary>
             public static readonly SceneEnum SCREEN_RECORD = new SceneEnum("SCREEN_RECORD");
@@ -42,6 +47,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 { "WORKSPACE", WORKSPACE },
                 { "CLOUD_GAME", CLOUD_GAME },
+                { "CLOUD_STORAGE", CLOUD_STORAGE },
                 { "SCREEN_RECORD", SCREEN_RECORD },
             };
 
@@ -138,7 +144,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 委托场景。 - WORKSPACE：云桌面。 - CLOUD_GAME：云游戏。 - SCREEN_RECORD：录屏审计。
+        /// 委托场景。 - WORKSPACE：云桌面。 - CLOUD_GAME：云游戏。 - CLOUD_STORAGE 云存储。 - SCREEN_RECORD：录屏审计。
         /// </summary>
         [SDKProperty("scene", IsQuery = true)]
         [JsonProperty("scene", NullValueHandling = NullValueHandling.Ignore)]

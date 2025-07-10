@@ -53,18 +53,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string OsHostName { get; set; }
 
         /// <summary>
-        /// 桌面对应的网卡信息，如果不指定则使用默认网卡。
-        /// </summary>
-        [JsonProperty("nics", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Nic> Nics { get; set; }
-
-        /// <summary>
-        /// 此参数仅在开通云桌面服务的domain_type为LOCAL_AD时有效。只允许输入汉字，半角字母，数字，空格，以及-_/$!@&amp;*?.范围内的特殊字符，字符范围是1～255，OU名称不能包含分隔符(/),多级OU使用/隔开，最多支持五级，/前后不能有空格，例如3级的OU格式:ab/cd/ef。
-        /// </summary>
-        [JsonProperty("ou_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string OuName { get; set; }
-
-        /// <summary>
         /// 桌面名称前缀，不指定\&quot;computer_name\&quot;时生效。
         /// </summary>
         [JsonProperty("desktop_name_prefix", NullValueHandling = NullValueHandling.Ignore)]
@@ -85,8 +73,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  userGroup: ").Append(UserGroup).Append("\n");
             sb.Append("  computerName: ").Append(ComputerName).Append("\n");
             sb.Append("  osHostName: ").Append(OsHostName).Append("\n");
-            sb.Append("  nics: ").Append(Nics).Append("\n");
-            sb.Append("  ouName: ").Append(OuName).Append("\n");
             sb.Append("  desktopNamePrefix: ").Append(DesktopNamePrefix).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -112,8 +98,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.UserGroup != input.UserGroup || (this.UserGroup != null && !this.UserGroup.Equals(input.UserGroup))) return false;
             if (this.ComputerName != input.ComputerName || (this.ComputerName != null && !this.ComputerName.Equals(input.ComputerName))) return false;
             if (this.OsHostName != input.OsHostName || (this.OsHostName != null && !this.OsHostName.Equals(input.OsHostName))) return false;
-            if (this.Nics != input.Nics || (this.Nics != null && input.Nics != null && !this.Nics.SequenceEqual(input.Nics))) return false;
-            if (this.OuName != input.OuName || (this.OuName != null && !this.OuName.Equals(input.OuName))) return false;
             if (this.DesktopNamePrefix != input.DesktopNamePrefix || (this.DesktopNamePrefix != null && !this.DesktopNamePrefix.Equals(input.DesktopNamePrefix))) return false;
 
             return true;
@@ -133,8 +117,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.UserGroup != null) hashCode = hashCode * 59 + this.UserGroup.GetHashCode();
                 if (this.ComputerName != null) hashCode = hashCode * 59 + this.ComputerName.GetHashCode();
                 if (this.OsHostName != null) hashCode = hashCode * 59 + this.OsHostName.GetHashCode();
-                if (this.Nics != null) hashCode = hashCode * 59 + this.Nics.GetHashCode();
-                if (this.OuName != null) hashCode = hashCode * 59 + this.OuName.GetHashCode();
                 if (this.DesktopNamePrefix != null) hashCode = hashCode * 59 + this.DesktopNamePrefix.GetHashCode();
                 return hashCode;
             }

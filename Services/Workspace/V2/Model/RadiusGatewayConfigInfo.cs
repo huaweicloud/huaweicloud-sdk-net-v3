@@ -11,55 +11,55 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 短信辅助认证配置
+    /// 短信辅助认证配置。
     /// </summary>
     public class RadiusGatewayConfigInfo 
     {
 
         /// <summary>
-        /// 是否启用
+        /// 是否启用。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }
 
         /// <summary>
-        /// 用户名
+        /// 用户名。
         /// </summary>
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
         /// <summary>
-        /// 证书域名
+        /// 证书域名。
         /// </summary>
         [JsonProperty("cert_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CertDomainName { get; set; }
 
         /// <summary>
-        /// 获取token地址
+        /// 获取token地址。
         /// </summary>
         [JsonProperty("token_url", NullValueHandling = NullValueHandling.Ignore)]
         public string TokenUrl { get; set; }
 
         /// <summary>
-        /// 获取验证码地址
+        /// 获取验证码地址。
         /// </summary>
         [JsonProperty("verification_cipher_url", NullValueHandling = NullValueHandling.Ignore)]
         public string VerificationCipherUrl { get; set; }
 
         /// <summary>
-        /// 认证类型
+        /// 认证类型。
         /// </summary>
         [JsonProperty("auth_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AuthType { get; set; }
 
         /// <summary>
-        /// 辅助认证类型
+        /// 辅助认证类型。
         /// </summary>
         [JsonProperty("assist_auth_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AssistAuthType { get; set; }
 
         /// <summary>
-        /// 过期时间
+        /// 过期时间。
         /// </summary>
         [JsonProperty("expiration", NullValueHandling = NullValueHandling.Ignore)]
         public string Expiration { get; set; }

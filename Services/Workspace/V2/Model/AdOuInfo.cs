@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 名称
+        /// 名称。
         /// </summary>
         [JsonProperty("ou_name", NullValueHandling = NullValueHandling.Ignore)]
         public string OuName { get; set; }
 
         /// <summary>
-        /// 域名地址
+        /// 域名地址。
         /// </summary>
         [JsonProperty("ou_dn", NullValueHandling = NullValueHandling.Ignore)]
         public string OuDn { get; set; }

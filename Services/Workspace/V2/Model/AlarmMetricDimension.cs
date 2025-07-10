@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 指标维度，目前最大可添加4个维度
+    /// 指标维度，目前最大可添加4个维度。
     /// </summary>
     public class AlarmMetricDimension 
     {
 
         /// <summary>
-        /// 资源维度
+        /// 资源维度。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 资源维度值
+        /// 资源维度值。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

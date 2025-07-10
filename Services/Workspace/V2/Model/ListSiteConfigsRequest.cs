@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 可用区
+        /// 可用区。
         /// </summary>
         [SDKProperty("availability_zone_id", IsQuery = true)]
         [JsonProperty("availability_zone_id", NullValueHandling = NullValueHandling.Ignore)]

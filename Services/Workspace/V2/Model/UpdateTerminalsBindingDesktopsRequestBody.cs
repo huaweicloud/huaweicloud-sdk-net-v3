@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 策略id
+        /// 策略id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 终端MAC地址
+        /// 终端MAC地址。
         /// </summary>
         [JsonProperty("mac", NullValueHandling = NullValueHandling.Ignore)]
         public string Mac { get; set; }
 
         /// <summary>
-        /// 虚拟机名称
+        /// 虚拟机名称。
         /// </summary>
         [JsonProperty("desktop_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopName { get; set; }
 
         /// <summary>
-        /// 描述
+        /// 描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

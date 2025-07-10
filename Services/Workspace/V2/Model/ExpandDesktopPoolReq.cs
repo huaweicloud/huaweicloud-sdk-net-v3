@@ -22,12 +22,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
 
-        /// <summary>
-        /// 包周期订购ID，CBC订购回调时使用。
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
-
 
 
         /// <summary>
@@ -38,7 +32,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ExpandDesktopPoolReq {\n");
             sb.Append("  size: ").Append(Size).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,7 +51,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
 
             return true;
         }
@@ -72,7 +64,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 return hashCode;
             }
         }

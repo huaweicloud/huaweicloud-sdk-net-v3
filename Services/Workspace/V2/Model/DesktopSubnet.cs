@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 子网信息
+    /// 子网信息。
     /// </summary>
     public class DesktopSubnet 
     {
 
         /// <summary>
-        /// 桌面所在子网Id
+        /// 桌面所在子网Id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 桌面所在子网名称
+        /// 桌面所在子网名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 桌面所在子网网段
+        /// 桌面所在子网网段。
         /// </summary>
         [JsonProperty("cidr", NullValueHandling = NullValueHandling.Ignore)]
         public string Cidr { get; set; }

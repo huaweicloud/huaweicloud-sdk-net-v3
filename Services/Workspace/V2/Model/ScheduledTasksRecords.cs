@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 任务执行记录id
+        /// 任务执行记录id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
@@ -39,6 +39,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("scheduled_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ScheduledType { get; set; }
+
+        /// <summary>
+        /// 触发场景类型。
+        /// </summary>
+        [JsonProperty("life_cycle_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string LifeCycleType { get; set; }
 
         /// <summary>
         /// 本次执行状态。
@@ -65,7 +71,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? SkipNum { get; set; }
 
         /// <summary>
-        /// 时区
+        /// 时区。
         /// </summary>
         [JsonProperty("time_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZone { get; set; }
@@ -95,6 +101,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  taskType: ").Append(TaskType).Append("\n");
             sb.Append("  scheduledType: ").Append(ScheduledType).Append("\n");
+            sb.Append("  lifeCycleType: ").Append(LifeCycleType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  successNum: ").Append(SuccessNum).Append("\n");
             sb.Append("  failedNum: ").Append(FailedNum).Append("\n");
@@ -124,6 +131,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
             if (this.ScheduledType != input.ScheduledType || (this.ScheduledType != null && !this.ScheduledType.Equals(input.ScheduledType))) return false;
+            if (this.LifeCycleType != input.LifeCycleType || (this.LifeCycleType != null && !this.LifeCycleType.Equals(input.LifeCycleType))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.SuccessNum != input.SuccessNum || (this.SuccessNum != null && !this.SuccessNum.Equals(input.SuccessNum))) return false;
             if (this.FailedNum != input.FailedNum || (this.FailedNum != null && !this.FailedNum.Equals(input.FailedNum))) return false;
@@ -147,6 +155,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
                 if (this.ScheduledType != null) hashCode = hashCode * 59 + this.ScheduledType.GetHashCode();
+                if (this.LifeCycleType != null) hashCode = hashCode * 59 + this.LifeCycleType.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.SuccessNum != null) hashCode = hashCode * 59 + this.SuccessNum.GetHashCode();
                 if (this.FailedNum != null) hashCode = hashCode * 59 + this.FailedNum.GetHashCode();

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 企业ID
+        /// 企业ID。
         /// </summary>
         [JsonProperty("enterprise_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseId { get; set; }

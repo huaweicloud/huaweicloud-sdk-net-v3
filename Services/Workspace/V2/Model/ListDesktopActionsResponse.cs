@@ -17,25 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 错误码，失败时返回。
-        /// </summary>
-        [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorCode { get; set; }
-
-        /// <summary>
-        /// 错误描述。
-        /// </summary>
-        [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrorMsg { get; set; }
-
-        /// <summary>
-        /// 桌面开关列表
+        /// 桌面开关列表。
         /// </summary>
         [JsonProperty("desktop_actions", NullValueHandling = NullValueHandling.Ignore)]
         public List<DesktopAction> DesktopActions { get; set; }
 
         /// <summary>
-        /// 总数
+        /// 总数。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }
@@ -49,8 +37,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListDesktopActionsResponse {\n");
-            sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
-            sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
             sb.Append("  desktopActions: ").Append(DesktopActions).Append("\n");
             sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
             sb.Append("}\n");
@@ -71,8 +57,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(ListDesktopActionsResponse input)
         {
             if (input == null) return false;
-            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
-            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
             if (this.DesktopActions != input.DesktopActions || (this.DesktopActions != null && input.DesktopActions != null && !this.DesktopActions.SequenceEqual(input.DesktopActions))) return false;
             if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
 
@@ -87,8 +71,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 if (this.DesktopActions != null) hashCode = hashCode * 59 + this.DesktopActions.GetHashCode();
                 if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;

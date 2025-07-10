@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 该条告警记录的资源监控数据上报时间和监控数值
+    /// 该条告警记录的资源监控数据上报时间和监控数值。
     /// </summary>
     public class DataPointInfo 
     {
 
         /// <summary>
-        /// 计算出该条告警记录的资源监控数据上报的UTC时间
+        /// 计算出该条告警记录的资源监控数据上报的UTC时间。
         /// </summary>
         [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
         public string Time { get; set; }
 
         /// <summary>
-        /// 计算出该条告警记录的资源监控数据在该时间点的监控数值
+        /// 计算出该条告警记录的资源监控数据在该时间点的监控数值。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public double? Value { get; set; }

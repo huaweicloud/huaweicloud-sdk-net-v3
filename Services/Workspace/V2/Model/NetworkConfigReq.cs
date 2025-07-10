@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 网络配置
+    /// 网络配置。
     /// </summary>
     public class NetworkConfigReq 
     {
 
         /// <summary>
-        /// VPC ID
+        /// VPC ID。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 指定业务子网的网络id
+        /// 指定业务子网的网络id。
         /// </summary>
         [JsonProperty("subnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SubnetIds { get; set; }

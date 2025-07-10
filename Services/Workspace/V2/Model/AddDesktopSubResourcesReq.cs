@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 桌面购买协同资源请求体
+    /// 桌面购买协同资源请求体。
     /// </summary>
     public class AddDesktopSubResourcesReq 
     {
 
         /// <summary>
-        /// 桌面协同资源SKU码
+        /// 桌面协同资源SKU码。
         /// </summary>
         [JsonProperty("sub_resource_sku", NullValueHandling = NullValueHandling.Ignore)]
         public string SubResourceSku { get; set; }
 
         /// <summary>
-        /// 订单ID
+        /// 订单ID。
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// 桌面ID列表
+        /// 桌面ID列表。
         /// </summary>
         [JsonProperty("desktop_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DesktopIds { get; set; }

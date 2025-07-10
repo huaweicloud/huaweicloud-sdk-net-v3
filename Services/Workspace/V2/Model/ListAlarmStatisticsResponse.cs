@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 紧急告警记录列表总数
+        /// 紧急告警记录列表总数。
         /// </summary>
         [JsonProperty("critical_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? CriticalCount { get; set; }
 
         /// <summary>
-        /// 重要告警记录列表总数
+        /// 重要告警记录列表总数。
         /// </summary>
         [JsonProperty("major_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? MajorCount { get; set; }
 
         /// <summary>
-        /// 次要告警记录列表总数
+        /// 次要告警记录列表总数。
         /// </summary>
         [JsonProperty("minor_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinorCount { get; set; }
 
         /// <summary>
-        /// 提示告警记录列表总数
+        /// 提示告警记录列表总数。
         /// </summary>
         [JsonProperty("info_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? InfoCount { get; set; }
 
         /// <summary>
-        /// 告警记录列表总数
+        /// 告警记录列表总数。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

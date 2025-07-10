@@ -294,13 +294,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopIp { get; set; }
 
         /// <summary>
-        /// 桌面的sid列表。
-        /// </summary>
-        [SDKProperty("sids", IsQuery = true)]
-        [JsonProperty("sids", NullValueHandling = NullValueHandling.Ignore)]
-        public string Sids { get; set; }
-
-        /// <summary>
         /// 用于分页查询，查询的起始记录序号，从0开始。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
@@ -329,25 +322,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopType { get; set; }
 
         /// <summary>
-        /// 桌面的登录状态。  - UNREGISTER：表示桌面未注册时的状态（桌面启动后，会自动注册）。关机后也会出现未注册的状态。 - REGISTERED：表示桌面注册以后，等待用户连接的状态。 - CONNECTED：表示用户已经成功登录，正在使用桌面。 - DISCONNECTED：表示桌面与客户端断开会话后显示的状态，可能为关闭客户端窗口，或客户端与桌面网络断开引起。
-        /// </summary>
-        [SDKProperty("login_status", IsQuery = true)]
-        [JsonProperty("login_status", NullValueHandling = NullValueHandling.Ignore)]
-        public string LoginStatus { get; set; }
-
-        /// <summary>
         /// 桌面的标签。样例：  - key1&#x3D;value1。 - key1&#x3D;value1，key2&#x3D;value2。
         /// </summary>
         [SDKProperty("tag", IsQuery = true)]
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
         public string Tag { get; set; }
-
-        /// <summary>
-        /// 是不是模糊用户查询。
-        /// </summary>
-        [SDKProperty("fuzzy_query", IsQuery = true)]
-        [JsonProperty("fuzzy_query", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? FuzzyQuery { get; set; }
 
         /// <summary>
         /// 桌面池ID,多个桌面池ID用逗号隔开。
@@ -364,14 +343,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? UserAttached { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 镜像ID
+        /// 镜像ID。
         /// </summary>
         [SDKProperty("image_id", IsQuery = true)]
         [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -385,14 +364,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ChargeMode { get; set; }
 
         /// <summary>
-        /// 按照维护模式过滤
+        /// 按照维护模式过滤。
         /// </summary>
         [SDKProperty("in_maintenance_mode", IsQuery = true)]
         [JsonProperty("in_maintenance_mode", NullValueHandling = NullValueHandling.Ignore)]
         public bool? InMaintenanceMode { get; set; }
 
         /// <summary>
-        /// 是否为协同桌面
+        /// 是否为协同桌面。
         /// </summary>
         [SDKProperty("is_share_desktop", IsQuery = true)]
         [JsonProperty("is_share_desktop", NullValueHandling = NullValueHandling.Ignore)]
@@ -413,7 +392,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? IsSupportInternet { get; set; }
 
         /// <summary>
-        /// 查询可用区
+        /// 查询可用区。
         /// </summary>
         [SDKProperty("availability_zone", IsQuery = true)]
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
@@ -435,14 +414,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  sortType: ").Append(SortType).Append("\n");
             sb.Append("  computerName: ").Append(ComputerName).Append("\n");
             sb.Append("  desktopIp: ").Append(DesktopIp).Append("\n");
-            sb.Append("  sids: ").Append(Sids).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  desktopId: ").Append(DesktopId).Append("\n");
             sb.Append("  desktopType: ").Append(DesktopType).Append("\n");
-            sb.Append("  loginStatus: ").Append(LoginStatus).Append("\n");
             sb.Append("  tag: ").Append(Tag).Append("\n");
-            sb.Append("  fuzzyQuery: ").Append(FuzzyQuery).Append("\n");
             sb.Append("  poolId: ").Append(PoolId).Append("\n");
             sb.Append("  userAttached: ").Append(UserAttached).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -478,14 +454,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.SortType != input.SortType) return false;
             if (this.ComputerName != input.ComputerName || (this.ComputerName != null && !this.ComputerName.Equals(input.ComputerName))) return false;
             if (this.DesktopIp != input.DesktopIp || (this.DesktopIp != null && !this.DesktopIp.Equals(input.DesktopIp))) return false;
-            if (this.Sids != input.Sids || (this.Sids != null && !this.Sids.Equals(input.Sids))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.DesktopId != input.DesktopId || (this.DesktopId != null && input.DesktopId != null && !this.DesktopId.SequenceEqual(input.DesktopId))) return false;
             if (this.DesktopType != input.DesktopType || (this.DesktopType != null && !this.DesktopType.Equals(input.DesktopType))) return false;
-            if (this.LoginStatus != input.LoginStatus || (this.LoginStatus != null && !this.LoginStatus.Equals(input.LoginStatus))) return false;
             if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
-            if (this.FuzzyQuery != input.FuzzyQuery || (this.FuzzyQuery != null && !this.FuzzyQuery.Equals(input.FuzzyQuery))) return false;
             if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
             if (this.UserAttached != input.UserAttached || (this.UserAttached != null && !this.UserAttached.Equals(input.UserAttached))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
@@ -515,14 +488,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 hashCode = hashCode * 59 + this.SortType.GetHashCode();
                 if (this.ComputerName != null) hashCode = hashCode * 59 + this.ComputerName.GetHashCode();
                 if (this.DesktopIp != null) hashCode = hashCode * 59 + this.DesktopIp.GetHashCode();
-                if (this.Sids != null) hashCode = hashCode * 59 + this.Sids.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.DesktopId != null) hashCode = hashCode * 59 + this.DesktopId.GetHashCode();
                 if (this.DesktopType != null) hashCode = hashCode * 59 + this.DesktopType.GetHashCode();
-                if (this.LoginStatus != null) hashCode = hashCode * 59 + this.LoginStatus.GetHashCode();
                 if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
-                if (this.FuzzyQuery != null) hashCode = hashCode * 59 + this.FuzzyQuery.GetHashCode();
                 if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
                 if (this.UserAttached != null) hashCode = hashCode * 59 + this.UserAttached.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();

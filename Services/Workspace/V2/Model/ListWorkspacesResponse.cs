@@ -186,22 +186,16 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 主认证方式。 - KERBEROS：KERBEROS。 - KERBEROS_THIRD_SSO：第三方登录认证。
+        /// 开通服务是否是全局服务
         /// </summary>
-        [JsonProperty("auth_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string AuthType { get; set; }
+        [JsonProperty("is_global", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsGlobal { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("ad_domains", NullValueHandling = NullValueHandling.Ignore)]
         public AdInfo AdDomains { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("third_gateway_info", NullValueHandling = NullValueHandling.Ignore)]
-        public ThirdGatewayInfo ThirdGatewayInfo { get; set; }
 
         /// <summary>
         /// VPC ID。
@@ -240,22 +234,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DedicatedAccessAddress { get; set; }
 
         /// <summary>
-        /// 专线接入ipv6地址，只有access_mode为“DEDICATED”或“BOTH”时才会返回该参数。
-        /// </summary>
-        [JsonProperty("dedicated_access_address_ipv6", NullValueHandling = NullValueHandling.Ignore)]
-        public string DedicatedAccessAddressIpv6 { get; set; }
-
-        /// <summary>
         /// 互联网接入地址，只有access_mode为“INTERNET”或“BOTH”时才会返回该参数。
         /// </summary>
         [JsonProperty("internet_access_address", NullValueHandling = NullValueHandling.Ignore)]
         public string InternetAccessAddress { get; set; }
-
-        /// <summary>
-        /// 互联网接入ipv6地址，只有access_mode为“INTERNET”或“BOTH”时才会返回该参数。
-        /// </summary>
-        [JsonProperty("internet_access_address_ipv6", NullValueHandling = NullValueHandling.Ignore)]
-        public string InternetAccessAddressIpv6 { get; set; }
 
         /// <summary>
         /// 互联网接入端口。
@@ -353,18 +335,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 资源池类型。 - \&quot;public\&quot;： 私有资源池 - \&quot;private\&quot;： 公有资源池
-        /// </summary>
-        [JsonProperty("project_resource_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProjectResourceType { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("assist_auth_config_info", NullValueHandling = NullValueHandling.Ignore)]
-        public AssistAuthConfigInfo AssistAuthConfigInfo { get; set; }
-
-        /// <summary>
         /// 桌面退订是否发送邮件通知。
         /// </summary>
         [JsonProperty("is_send_email", NullValueHandling = NullValueHandling.Ignore)]
@@ -383,34 +353,16 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? AuthorizedHdaUpgrade { get; set; }
 
         /// <summary>
-        /// 站点配置
+        /// 站点配置。
         /// </summary>
         [JsonProperty("site_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<SiteConfigsResponse> SiteConfigs { get; set; }
 
         /// <summary>
-        /// 是否支持多VPC。
-        /// </summary>
-        [JsonProperty("is_multi_vpc", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsMultiVpc { get; set; }
-
-        /// <summary>
-        /// 是否支持配置nat映射。
-        /// </summary>
-        [JsonProperty("is_config_nat_mapping", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsConfigNatMapping { get; set; }
-
-        /// <summary>
-        /// 自定义的专线VNC地址
+        /// 自定义的专线VNC地址。
         /// </summary>
         [JsonProperty("dc_vnc_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string DcVncIp { get; set; }
-
-        /// <summary>
-        /// 专线VNC VPC终端节点ID
-        /// </summary>
-        [JsonProperty("dc_vnc_vpcep_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DcVncVpcepId { get; set; }
 
         /// <summary>
         /// 是否授权桌面自动安装agent插件。
@@ -440,18 +392,15 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListWorkspacesResponse {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
-            sb.Append("  authType: ").Append(AuthType).Append("\n");
+            sb.Append("  isGlobal: ").Append(IsGlobal).Append("\n");
             sb.Append("  adDomains: ").Append(AdDomains).Append("\n");
-            sb.Append("  thirdGatewayInfo: ").Append(ThirdGatewayInfo).Append("\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  vpcName: ").Append(VpcName).Append("\n");
             sb.Append("  accessMode: ").Append(AccessMode).Append("\n");
             sb.Append("  adnConflictNetwork: ").Append(AdnConflictNetwork).Append("\n");
             sb.Append("  dedicatedSubnets: ").Append(DedicatedSubnets).Append("\n");
             sb.Append("  dedicatedAccessAddress: ").Append(DedicatedAccessAddress).Append("\n");
-            sb.Append("  dedicatedAccessAddressIpv6: ").Append(DedicatedAccessAddressIpv6).Append("\n");
             sb.Append("  internetAccessAddress: ").Append(InternetAccessAddress).Append("\n");
-            sb.Append("  internetAccessAddressIpv6: ").Append(InternetAccessAddressIpv6).Append("\n");
             sb.Append("  internetAccessPort: ").Append(InternetAccessPort).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  accessStatus: ").Append(AccessStatus).Append("\n");
@@ -468,16 +417,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  failReason: ").Append(FailReason).Append("\n");
             sb.Append("  enterpriseId: ").Append(EnterpriseId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
-            sb.Append("  projectResourceType: ").Append(ProjectResourceType).Append("\n");
-            sb.Append("  assistAuthConfigInfo: ").Append(AssistAuthConfigInfo).Append("\n");
             sb.Append("  isSendEmail: ").Append(IsSendEmail).Append("\n");
             sb.Append("  authorizedCollectLog: ").Append(AuthorizedCollectLog).Append("\n");
             sb.Append("  authorizedHdaUpgrade: ").Append(AuthorizedHdaUpgrade).Append("\n");
             sb.Append("  siteConfigs: ").Append(SiteConfigs).Append("\n");
-            sb.Append("  isMultiVpc: ").Append(IsMultiVpc).Append("\n");
-            sb.Append("  isConfigNatMapping: ").Append(IsConfigNatMapping).Append("\n");
             sb.Append("  dcVncIp: ").Append(DcVncIp).Append("\n");
-            sb.Append("  dcVncVpcepId: ").Append(DcVncVpcepId).Append("\n");
             sb.Append("  isAuthorizedInstallAgent: ").Append(IsAuthorizedInstallAgent).Append("\n");
             sb.Append("  isSupportIpv6: ").Append(IsSupportIpv6).Append("\n");
             sb.Append("  enableUserCreateSnapshot: ").Append(EnableUserCreateSnapshot).Append("\n");
@@ -500,18 +444,15 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
-            if (this.AuthType != input.AuthType || (this.AuthType != null && !this.AuthType.Equals(input.AuthType))) return false;
+            if (this.IsGlobal != input.IsGlobal || (this.IsGlobal != null && !this.IsGlobal.Equals(input.IsGlobal))) return false;
             if (this.AdDomains != input.AdDomains || (this.AdDomains != null && !this.AdDomains.Equals(input.AdDomains))) return false;
-            if (this.ThirdGatewayInfo != input.ThirdGatewayInfo || (this.ThirdGatewayInfo != null && !this.ThirdGatewayInfo.Equals(input.ThirdGatewayInfo))) return false;
             if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
             if (this.VpcName != input.VpcName || (this.VpcName != null && !this.VpcName.Equals(input.VpcName))) return false;
             if (this.AccessMode != input.AccessMode || (this.AccessMode != null && !this.AccessMode.Equals(input.AccessMode))) return false;
             if (this.AdnConflictNetwork != input.AdnConflictNetwork || (this.AdnConflictNetwork != null && !this.AdnConflictNetwork.Equals(input.AdnConflictNetwork))) return false;
             if (this.DedicatedSubnets != input.DedicatedSubnets || (this.DedicatedSubnets != null && !this.DedicatedSubnets.Equals(input.DedicatedSubnets))) return false;
             if (this.DedicatedAccessAddress != input.DedicatedAccessAddress || (this.DedicatedAccessAddress != null && !this.DedicatedAccessAddress.Equals(input.DedicatedAccessAddress))) return false;
-            if (this.DedicatedAccessAddressIpv6 != input.DedicatedAccessAddressIpv6 || (this.DedicatedAccessAddressIpv6 != null && !this.DedicatedAccessAddressIpv6.Equals(input.DedicatedAccessAddressIpv6))) return false;
             if (this.InternetAccessAddress != input.InternetAccessAddress || (this.InternetAccessAddress != null && !this.InternetAccessAddress.Equals(input.InternetAccessAddress))) return false;
-            if (this.InternetAccessAddressIpv6 != input.InternetAccessAddressIpv6 || (this.InternetAccessAddressIpv6 != null && !this.InternetAccessAddressIpv6.Equals(input.InternetAccessAddressIpv6))) return false;
             if (this.InternetAccessPort != input.InternetAccessPort || (this.InternetAccessPort != null && !this.InternetAccessPort.Equals(input.InternetAccessPort))) return false;
             if (this.Status != input.Status) return false;
             if (this.AccessStatus != input.AccessStatus || (this.AccessStatus != null && !this.AccessStatus.Equals(input.AccessStatus))) return false;
@@ -528,16 +469,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
             if (this.EnterpriseId != input.EnterpriseId || (this.EnterpriseId != null && !this.EnterpriseId.Equals(input.EnterpriseId))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
-            if (this.ProjectResourceType != input.ProjectResourceType || (this.ProjectResourceType != null && !this.ProjectResourceType.Equals(input.ProjectResourceType))) return false;
-            if (this.AssistAuthConfigInfo != input.AssistAuthConfigInfo || (this.AssistAuthConfigInfo != null && !this.AssistAuthConfigInfo.Equals(input.AssistAuthConfigInfo))) return false;
             if (this.IsSendEmail != input.IsSendEmail || (this.IsSendEmail != null && !this.IsSendEmail.Equals(input.IsSendEmail))) return false;
             if (this.AuthorizedCollectLog != input.AuthorizedCollectLog || (this.AuthorizedCollectLog != null && !this.AuthorizedCollectLog.Equals(input.AuthorizedCollectLog))) return false;
             if (this.AuthorizedHdaUpgrade != input.AuthorizedHdaUpgrade || (this.AuthorizedHdaUpgrade != null && !this.AuthorizedHdaUpgrade.Equals(input.AuthorizedHdaUpgrade))) return false;
             if (this.SiteConfigs != input.SiteConfigs || (this.SiteConfigs != null && input.SiteConfigs != null && !this.SiteConfigs.SequenceEqual(input.SiteConfigs))) return false;
-            if (this.IsMultiVpc != input.IsMultiVpc || (this.IsMultiVpc != null && !this.IsMultiVpc.Equals(input.IsMultiVpc))) return false;
-            if (this.IsConfigNatMapping != input.IsConfigNatMapping || (this.IsConfigNatMapping != null && !this.IsConfigNatMapping.Equals(input.IsConfigNatMapping))) return false;
             if (this.DcVncIp != input.DcVncIp || (this.DcVncIp != null && !this.DcVncIp.Equals(input.DcVncIp))) return false;
-            if (this.DcVncVpcepId != input.DcVncVpcepId || (this.DcVncVpcepId != null && !this.DcVncVpcepId.Equals(input.DcVncVpcepId))) return false;
             if (this.IsAuthorizedInstallAgent != input.IsAuthorizedInstallAgent || (this.IsAuthorizedInstallAgent != null && !this.IsAuthorizedInstallAgent.Equals(input.IsAuthorizedInstallAgent))) return false;
             if (this.IsSupportIpv6 != input.IsSupportIpv6 || (this.IsSupportIpv6 != null && !this.IsSupportIpv6.Equals(input.IsSupportIpv6))) return false;
             if (this.EnableUserCreateSnapshot != input.EnableUserCreateSnapshot || (this.EnableUserCreateSnapshot != null && !this.EnableUserCreateSnapshot.Equals(input.EnableUserCreateSnapshot))) return false;
@@ -554,18 +490,15 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.AuthType != null) hashCode = hashCode * 59 + this.AuthType.GetHashCode();
+                if (this.IsGlobal != null) hashCode = hashCode * 59 + this.IsGlobal.GetHashCode();
                 if (this.AdDomains != null) hashCode = hashCode * 59 + this.AdDomains.GetHashCode();
-                if (this.ThirdGatewayInfo != null) hashCode = hashCode * 59 + this.ThirdGatewayInfo.GetHashCode();
                 if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 if (this.VpcName != null) hashCode = hashCode * 59 + this.VpcName.GetHashCode();
                 if (this.AccessMode != null) hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
                 if (this.AdnConflictNetwork != null) hashCode = hashCode * 59 + this.AdnConflictNetwork.GetHashCode();
                 if (this.DedicatedSubnets != null) hashCode = hashCode * 59 + this.DedicatedSubnets.GetHashCode();
                 if (this.DedicatedAccessAddress != null) hashCode = hashCode * 59 + this.DedicatedAccessAddress.GetHashCode();
-                if (this.DedicatedAccessAddressIpv6 != null) hashCode = hashCode * 59 + this.DedicatedAccessAddressIpv6.GetHashCode();
                 if (this.InternetAccessAddress != null) hashCode = hashCode * 59 + this.InternetAccessAddress.GetHashCode();
-                if (this.InternetAccessAddressIpv6 != null) hashCode = hashCode * 59 + this.InternetAccessAddressIpv6.GetHashCode();
                 if (this.InternetAccessPort != null) hashCode = hashCode * 59 + this.InternetAccessPort.GetHashCode();
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.AccessStatus != null) hashCode = hashCode * 59 + this.AccessStatus.GetHashCode();
@@ -582,16 +515,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();
                 if (this.EnterpriseId != null) hashCode = hashCode * 59 + this.EnterpriseId.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.ProjectResourceType != null) hashCode = hashCode * 59 + this.ProjectResourceType.GetHashCode();
-                if (this.AssistAuthConfigInfo != null) hashCode = hashCode * 59 + this.AssistAuthConfigInfo.GetHashCode();
                 if (this.IsSendEmail != null) hashCode = hashCode * 59 + this.IsSendEmail.GetHashCode();
                 if (this.AuthorizedCollectLog != null) hashCode = hashCode * 59 + this.AuthorizedCollectLog.GetHashCode();
                 if (this.AuthorizedHdaUpgrade != null) hashCode = hashCode * 59 + this.AuthorizedHdaUpgrade.GetHashCode();
                 if (this.SiteConfigs != null) hashCode = hashCode * 59 + this.SiteConfigs.GetHashCode();
-                if (this.IsMultiVpc != null) hashCode = hashCode * 59 + this.IsMultiVpc.GetHashCode();
-                if (this.IsConfigNatMapping != null) hashCode = hashCode * 59 + this.IsConfigNatMapping.GetHashCode();
                 if (this.DcVncIp != null) hashCode = hashCode * 59 + this.DcVncIp.GetHashCode();
-                if (this.DcVncVpcepId != null) hashCode = hashCode * 59 + this.DcVncVpcepId.GetHashCode();
                 if (this.IsAuthorizedInstallAgent != null) hashCode = hashCode * 59 + this.IsAuthorizedInstallAgent.GetHashCode();
                 if (this.IsSupportIpv6 != null) hashCode = hashCode * 59 + this.IsSupportIpv6.GetHashCode();
                 if (this.EnableUserCreateSnapshot != null) hashCode = hashCode * 59 + this.EnableUserCreateSnapshot.GetHashCode();

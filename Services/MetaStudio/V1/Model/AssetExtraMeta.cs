@@ -11,16 +11,10 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 {
     /// <summary>
-    /// **参数解释**： 资产额外元数据。  **约束限制**： 根据asset_type选择对应结构填写，填写其他不匹配的结构会被忽略。 * HUMAN_MODEL: 填写human_model_meta * HUMAN_MODEL_2D: 填写human_model_2d_meta * SCENE：填写scene_meta * ANIMATION：填写animation_meta * MATERIAL：填写material_meta * VOICE_MODEL：填写voice_model_meta * VIDEO：填写video_meta * IMAGE：填写image_meta * PPT：填写ppt_meta * AUDIO: 填写audio_meta
+    /// **参数解释**： 资产额外元数据。  **约束限制**： 根据asset_type选择对应结构填写，填写其他不匹配的结构会被忽略。 * HUMAN_MODEL_2D: 填写human_model_2d_meta * MATERIAL：填写material_meta * VOICE_MODEL：填写voice_model_meta * VIDEO：填写video_meta * IMAGE：填写image_meta * PPT：填写ppt_meta * AUDIO: 填写audio_meta
     /// </summary>
     public class AssetExtraMeta 
     {
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("human_model_meta", NullValueHandling = NullValueHandling.Ignore)]
-        public HumanModelAssetMeta HumanModelMeta { get; set; }
 
         /// <summary>
         /// 
@@ -33,18 +27,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// </summary>
         [JsonProperty("ppt_meta", NullValueHandling = NullValueHandling.Ignore)]
         public PPTAssetMeta PptMeta { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("animation_meta", NullValueHandling = NullValueHandling.Ignore)]
-        public AnimationAssetMeta AnimationMeta { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("scene_meta", NullValueHandling = NullValueHandling.Ignore)]
-        public SceneAssetMeta SceneMeta { get; set; }
 
         /// <summary>
         /// 
@@ -85,11 +67,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AssetExtraMeta {\n");
-            sb.Append("  humanModelMeta: ").Append(HumanModelMeta).Append("\n");
             sb.Append("  voiceModelMeta: ").Append(VoiceModelMeta).Append("\n");
             sb.Append("  pptMeta: ").Append(PptMeta).Append("\n");
-            sb.Append("  animationMeta: ").Append(AnimationMeta).Append("\n");
-            sb.Append("  sceneMeta: ").Append(SceneMeta).Append("\n");
             sb.Append("  materialMeta: ").Append(MaterialMeta).Append("\n");
             sb.Append("  humanModel2dMeta: ").Append(HumanModel2dMeta).Append("\n");
             sb.Append("  imageMeta: ").Append(ImageMeta).Append("\n");
@@ -113,11 +92,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public bool Equals(AssetExtraMeta input)
         {
             if (input == null) return false;
-            if (this.HumanModelMeta != input.HumanModelMeta || (this.HumanModelMeta != null && !this.HumanModelMeta.Equals(input.HumanModelMeta))) return false;
             if (this.VoiceModelMeta != input.VoiceModelMeta || (this.VoiceModelMeta != null && !this.VoiceModelMeta.Equals(input.VoiceModelMeta))) return false;
             if (this.PptMeta != input.PptMeta || (this.PptMeta != null && !this.PptMeta.Equals(input.PptMeta))) return false;
-            if (this.AnimationMeta != input.AnimationMeta || (this.AnimationMeta != null && !this.AnimationMeta.Equals(input.AnimationMeta))) return false;
-            if (this.SceneMeta != input.SceneMeta || (this.SceneMeta != null && !this.SceneMeta.Equals(input.SceneMeta))) return false;
             if (this.MaterialMeta != input.MaterialMeta || (this.MaterialMeta != null && !this.MaterialMeta.Equals(input.MaterialMeta))) return false;
             if (this.HumanModel2dMeta != input.HumanModel2dMeta || (this.HumanModel2dMeta != null && !this.HumanModel2dMeta.Equals(input.HumanModel2dMeta))) return false;
             if (this.ImageMeta != input.ImageMeta || (this.ImageMeta != null && !this.ImageMeta.Equals(input.ImageMeta))) return false;
@@ -135,11 +111,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.HumanModelMeta != null) hashCode = hashCode * 59 + this.HumanModelMeta.GetHashCode();
                 if (this.VoiceModelMeta != null) hashCode = hashCode * 59 + this.VoiceModelMeta.GetHashCode();
                 if (this.PptMeta != null) hashCode = hashCode * 59 + this.PptMeta.GetHashCode();
-                if (this.AnimationMeta != null) hashCode = hashCode * 59 + this.AnimationMeta.GetHashCode();
-                if (this.SceneMeta != null) hashCode = hashCode * 59 + this.SceneMeta.GetHashCode();
                 if (this.MaterialMeta != null) hashCode = hashCode * 59 + this.MaterialMeta.GetHashCode();
                 if (this.HumanModel2dMeta != null) hashCode = hashCode * 59 + this.HumanModel2dMeta.GetHashCode();
                 if (this.ImageMeta != null) hashCode = hashCode * 59 + this.ImageMeta.GetHashCode();

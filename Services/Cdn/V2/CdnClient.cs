@@ -64,6 +64,32 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 批量更新规则状态及优先级
+        ///
+        /// 批量更新规则状态及优先级。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchUpdateRuleStatusResponse BatchUpdateRuleStatus(BatchUpdateRuleStatusRequest batchUpdateRuleStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", batchUpdateRuleStatusRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules/batch-update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRuleStatusRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchUpdateRuleStatusResponse>(response);
+        }
+
+        public SyncInvoker<BatchUpdateRuleStatusResponse> BatchUpdateRuleStatusInvoker(BatchUpdateRuleStatusRequest batchUpdateRuleStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", batchUpdateRuleStatusRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules/batch-update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRuleStatusRequest);
+            return new SyncInvoker<BatchUpdateRuleStatusResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchUpdateRuleStatusResponse>);
+        }
+        
+        /// <summary>
         /// 创建加速域名
         ///
         /// 创建加速域名。
@@ -136,6 +162,60 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 创建规则引擎规则
+        ///
+        /// 规则引擎功能通过图形化的方式实现各种规则配置，实现更加灵活、细粒度的规则配置。通过限制触发条件，控制当前配置生效的资源范围，满足多种场景的配置需求。
+        /// - 请提交工单开通规则引擎功能后再使用当前接口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateRuleNewResponse CreateRuleNew(CreateRuleNewRequest createRuleNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", createRuleNewRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRuleNewRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateRuleNewResponse>(response);
+        }
+
+        public SyncInvoker<CreateRuleNewResponse> CreateRuleNewInvoker(CreateRuleNewRequest createRuleNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", createRuleNewRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRuleNewRequest);
+            return new SyncInvoker<CreateRuleNewResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateRuleNewResponse>);
+        }
+        
+        /// <summary>
+        /// 创建共享缓存组
+        ///
+        /// 配置共享缓存组，将一个域名设置为主域名，组内其他域名共享该域名的缓存，提高缓存命中率。
+        /// - 只有缓存规则中“URL参数”的配置为“忽略参数”或者“不忽略参数”的域名才能加入共享缓存组。
+        /// - 每个账号最多配置500个共享缓存组。
+        /// - 单租户调用频率：5次/s。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateShareCacheGroupsResponse CreateShareCacheGroups(CreateShareCacheGroupsRequest createShareCacheGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/share-cache-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createShareCacheGroupsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateShareCacheGroupsResponse>(response);
+        }
+
+        public SyncInvoker<CreateShareCacheGroupsResponse> CreateShareCacheGroupsInvoker(CreateShareCacheGroupsRequest createShareCacheGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/share-cache-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createShareCacheGroupsRequest);
+            return new SyncInvoker<CreateShareCacheGroupsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateShareCacheGroupsResponse>);
+        }
+        
+        /// <summary>
         /// 创建资源标签配置接口
         ///
         /// 用于创建资源标签。
@@ -183,6 +263,62 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainRequest);
             return new SyncInvoker<DeleteDomainResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDomainResponse>);
+        }
+        
+        /// <summary>
+        /// 删除规则引擎规则
+        ///
+        /// 删除规则引擎规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteRuleNewResponse DeleteRuleNew(DeleteRuleNewRequest deleteRuleNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", deleteRuleNewRequest.DomainName.ToString());
+            urlParam.Add("rule_id", deleteRuleNewRequest.RuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRuleNewRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteRuleNewResponse>(response);
+        }
+
+        public SyncInvoker<DeleteRuleNewResponse> DeleteRuleNewInvoker(DeleteRuleNewRequest deleteRuleNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", deleteRuleNewRequest.DomainName.ToString());
+            urlParam.Add("rule_id", deleteRuleNewRequest.RuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRuleNewRequest);
+            return new SyncInvoker<DeleteRuleNewResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRuleNewResponse>);
+        }
+        
+        /// <summary>
+        /// 删除共享缓存组
+        ///
+        /// 删除新共享缓存组。
+        /// - 共享缓存组内不包含关联域名时才可以删除。
+        /// - 单租户调用频率：5次/s。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteShareCacheGroupsResponse DeleteShareCacheGroups(DeleteShareCacheGroupsRequest deleteShareCacheGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteShareCacheGroupsRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/share-cache-groups/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteShareCacheGroupsRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteShareCacheGroupsResponse>(response);
+        }
+
+        public SyncInvoker<DeleteShareCacheGroupsResponse> DeleteShareCacheGroupsInvoker(DeleteShareCacheGroupsRequest deleteShareCacheGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteShareCacheGroupsRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/share-cache-groups/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteShareCacheGroupsRequest);
+            return new SyncInvoker<DeleteShareCacheGroupsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteShareCacheGroupsResponse>);
         }
         
         /// <summary>
@@ -361,6 +497,57 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainsRequest);
             return new SyncInvoker<ListDomainsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询规则引擎列表
+        ///
+        /// 查询规则引擎列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListRuleDetailsResponse ListRuleDetails(ListRuleDetailsRequest listRuleDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", listRuleDetailsRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRuleDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListRuleDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ListRuleDetailsResponse> ListRuleDetailsInvoker(ListRuleDetailsRequest listRuleDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", listRuleDetailsRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRuleDetailsRequest);
+            return new SyncInvoker<ListRuleDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRuleDetailsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询共享缓存组列表
+        ///
+        /// 查询共享缓存组列表。
+        /// - 单租户调用频率：5次/s。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListShareCacheGroupsResponse ListShareCacheGroups(ListShareCacheGroupsRequest listShareCacheGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/share-cache-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listShareCacheGroupsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListShareCacheGroupsResponse>(response);
+        }
+
+        public SyncInvoker<ListShareCacheGroupsResponse> ListShareCacheGroupsInvoker(ListShareCacheGroupsRequest listShareCacheGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/share-cache-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listShareCacheGroupsRequest);
+            return new SyncInvoker<ListShareCacheGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListShareCacheGroupsResponse>);
         }
         
         /// <summary>
@@ -958,6 +1145,32 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 全量更新规则引擎规则
+        ///
+        /// 全量更新规则引擎规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateFullRuleResponse UpdateFullRule(UpdateFullRuleRequest updateFullRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", updateFullRuleRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules/full-update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFullRuleRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<UpdateFullRuleResponse>(response);
+        }
+
+        public SyncInvoker<UpdateFullRuleResponse> UpdateFullRuleInvoker(UpdateFullRuleRequest updateFullRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", updateFullRuleRequest.DomainName.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules/full-update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFullRuleRequest);
+            return new SyncInvoker<UpdateFullRuleResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateFullRuleResponse>);
+        }
+        
+        /// <summary>
         /// 修改私有桶开启关闭状态
         ///
         /// 修改私有桶开启关闭状态。
@@ -981,6 +1194,61 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}/private-bucket-access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateBucketAccessRequest);
             return new SyncInvoker<UpdatePrivateBucketAccessResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePrivateBucketAccessResponse>);
+        }
+        
+        /// <summary>
+        /// 更新规则引擎规则
+        ///
+        /// 更新规则引擎规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateRuleNewResponse UpdateRuleNew(UpdateRuleNewRequest updateRuleNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", updateRuleNewRequest.DomainName.ToString());
+            urlParam.Add("rule_id", updateRuleNewRequest.RuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRuleNewRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateRuleNewResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRuleNewResponse> UpdateRuleNewInvoker(UpdateRuleNewRequest updateRuleNewRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("domain_name", updateRuleNewRequest.DomainName.ToString());
+            urlParam.Add("rule_id", updateRuleNewRequest.RuleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/{domain_name}/rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRuleNewRequest);
+            return new SyncInvoker<UpdateRuleNewResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateRuleNewResponse>);
+        }
+        
+        /// <summary>
+        /// 更新共享缓存组
+        ///
+        /// 更新共享缓存组。
+        /// - 单租户调用频率：5次/s。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateShareCacheGroupsResponse UpdateShareCacheGroups(UpdateShareCacheGroupsRequest updateShareCacheGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateShareCacheGroupsRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/share-cache-groups/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateShareCacheGroupsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateShareCacheGroupsResponse>(response);
+        }
+
+        public SyncInvoker<UpdateShareCacheGroupsResponse> UpdateShareCacheGroupsInvoker(UpdateShareCacheGroupsRequest updateShareCacheGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateShareCacheGroupsRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/share-cache-groups/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateShareCacheGroupsRequest);
+            return new SyncInvoker<UpdateShareCacheGroupsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateShareCacheGroupsResponse>);
         }
         
         /// <summary>

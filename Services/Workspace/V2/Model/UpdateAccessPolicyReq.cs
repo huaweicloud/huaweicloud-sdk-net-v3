@@ -142,6 +142,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("ip_white_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpInfo> IpWhiteList { get; set; }
 
+        /// <summary>
+        /// IP白名单是否生效。
+        /// </summary>
+        [JsonProperty("is_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsEnable { get; set; }
+
+        /// <summary>
+        /// IP白名单是否禁止所有Ip接入。
+        /// </summary>
+        [JsonProperty("is_block_all", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsBlockAll { get; set; }
+
 
 
         /// <summary>
@@ -153,6 +165,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class UpdateAccessPolicyReq {\n");
             sb.Append("  operationType: ").Append(OperationType).Append("\n");
             sb.Append("  ipWhiteList: ").Append(IpWhiteList).Append("\n");
+            sb.Append("  isEnable: ").Append(IsEnable).Append("\n");
+            sb.Append("  isBlockAll: ").Append(IsBlockAll).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -173,6 +187,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.OperationType != input.OperationType) return false;
             if (this.IpWhiteList != input.IpWhiteList || (this.IpWhiteList != null && input.IpWhiteList != null && !this.IpWhiteList.SequenceEqual(input.IpWhiteList))) return false;
+            if (this.IsEnable != input.IsEnable || (this.IsEnable != null && !this.IsEnable.Equals(input.IsEnable))) return false;
+            if (this.IsBlockAll != input.IsBlockAll || (this.IsBlockAll != null && !this.IsBlockAll.Equals(input.IsBlockAll))) return false;
 
             return true;
         }
@@ -187,6 +203,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.OperationType.GetHashCode();
                 if (this.IpWhiteList != null) hashCode = hashCode * 59 + this.IpWhiteList.GetHashCode();
+                if (this.IsEnable != null) hashCode = hashCode * 59 + this.IsEnable.GetHashCode();
+                if (this.IsBlockAll != null) hashCode = hashCode * 59 + this.IsBlockAll.GetHashCode();
                 return hashCode;
             }
         }

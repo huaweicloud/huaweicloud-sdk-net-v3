@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string TtsText { get; set; }
 
         /// <summary>
-        /// 音色ID，获取方式详见[获取音色ID](metastudio_02_0054.xml)。
+        /// 音色ID，获取方式详见[获取音色ID](metastudio_02_0054.xml)。  不同Region的计费标准详见[预置音色计费标准](metastudio_02_0060.xml)。
         /// </summary>
         [JsonProperty("voice_asset_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VoiceAssetId { get; set; }
@@ -256,6 +256,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("is_concurrent_resource", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsConcurrentResource { get; set; }
 
+        /// <summary>
+        /// 优先级（0-10），0为最高优先级，默认5
+        /// </summary>
+        [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Priority { get; set; }
+
 
 
         /// <summary>
@@ -286,6 +292,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  actionOutputExternalUrl: ").Append(ActionOutputExternalUrl).Append("\n");
             sb.Append("  isVocabularyConfigEnable: ").Append(IsVocabularyConfigEnable).Append("\n");
             sb.Append("  isConcurrentResource: ").Append(IsConcurrentResource).Append("\n");
+            sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -325,6 +332,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.ActionOutputExternalUrl != input.ActionOutputExternalUrl || (this.ActionOutputExternalUrl != null && !this.ActionOutputExternalUrl.Equals(input.ActionOutputExternalUrl))) return false;
             if (this.IsVocabularyConfigEnable != input.IsVocabularyConfigEnable || (this.IsVocabularyConfigEnable != null && !this.IsVocabularyConfigEnable.Equals(input.IsVocabularyConfigEnable))) return false;
             if (this.IsConcurrentResource != input.IsConcurrentResource || (this.IsConcurrentResource != null && !this.IsConcurrentResource.Equals(input.IsConcurrentResource))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
 
             return true;
         }
@@ -358,6 +366,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.ActionOutputExternalUrl != null) hashCode = hashCode * 59 + this.ActionOutputExternalUrl.GetHashCode();
                 if (this.IsVocabularyConfigEnable != null) hashCode = hashCode * 59 + this.IsVocabularyConfigEnable.GetHashCode();
                 if (this.IsConcurrentResource != null) hashCode = hashCode * 59 + this.IsConcurrentResource.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 return hashCode;
             }
         }

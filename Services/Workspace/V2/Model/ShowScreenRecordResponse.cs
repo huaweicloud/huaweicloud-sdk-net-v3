@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// 录屏类型。 - FULL：全程录屏。 - INTERVAL：间隔录屏。 - USER_OPERATION：用户操作录屏。 - SESSION：监听会话生命周期录屏。
+        /// 录屏类型。 - FULL：全程录屏。 - INTERVAL：间隔录屏。 - OPERATION：用户操作录屏。 - SESSION：监听会话生命周期录屏。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -65,16 +65,46 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Status { get; set; }
 
         /// <summary>
+        /// 策略ID。
+        /// </summary>
+        [JsonProperty("policy_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string PolicyId { get; set; }
+
+        /// <summary>
+        /// OBS桶名称。
+        /// </summary>
+        [JsonProperty("obs_bucket", NullValueHandling = NullValueHandling.Ignore)]
+        public string ObsBucket { get; set; }
+
+        /// <summary>
+        /// 文件目录。
+        /// </summary>
+        [JsonProperty("file_directory", NullValueHandling = NullValueHandling.Ignore)]
+        public string FileDirectory { get; set; }
+
+        /// <summary>
         /// 录屏文件名称。
         /// </summary>
         [JsonProperty("video_filename", NullValueHandling = NullValueHandling.Ignore)]
         public string VideoFilename { get; set; }
 
         /// <summary>
+        /// 录屏文件sha256。
+        /// </summary>
+        [JsonProperty("video_file_sha256", NullValueHandling = NullValueHandling.Ignore)]
+        public string VideoFileSha256 { get; set; }
+
+        /// <summary>
         /// 事件文件名称。
         /// </summary>
         [JsonProperty("event_filename", NullValueHandling = NullValueHandling.Ignore)]
         public string EventFilename { get; set; }
+
+        /// <summary>
+        /// 事件文件sha256。
+        /// </summary>
+        [JsonProperty("event_file_sha256", NullValueHandling = NullValueHandling.Ignore)]
+        public string EventFileSha256 { get; set; }
 
         /// <summary>
         /// 开始时间（2024-10-15T10:04:41.263Z）。
@@ -117,8 +147,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  policyId: ").Append(PolicyId).Append("\n");
+            sb.Append("  obsBucket: ").Append(ObsBucket).Append("\n");
+            sb.Append("  fileDirectory: ").Append(FileDirectory).Append("\n");
             sb.Append("  videoFilename: ").Append(VideoFilename).Append("\n");
+            sb.Append("  videoFileSha256: ").Append(VideoFileSha256).Append("\n");
             sb.Append("  eventFilename: ").Append(EventFilename).Append("\n");
+            sb.Append("  eventFileSha256: ").Append(EventFileSha256).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
@@ -149,8 +184,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.PolicyId != input.PolicyId || (this.PolicyId != null && !this.PolicyId.Equals(input.PolicyId))) return false;
+            if (this.ObsBucket != input.ObsBucket || (this.ObsBucket != null && !this.ObsBucket.Equals(input.ObsBucket))) return false;
+            if (this.FileDirectory != input.FileDirectory || (this.FileDirectory != null && !this.FileDirectory.Equals(input.FileDirectory))) return false;
             if (this.VideoFilename != input.VideoFilename || (this.VideoFilename != null && !this.VideoFilename.Equals(input.VideoFilename))) return false;
+            if (this.VideoFileSha256 != input.VideoFileSha256 || (this.VideoFileSha256 != null && !this.VideoFileSha256.Equals(input.VideoFileSha256))) return false;
             if (this.EventFilename != input.EventFilename || (this.EventFilename != null && !this.EventFilename.Equals(input.EventFilename))) return false;
+            if (this.EventFileSha256 != input.EventFileSha256 || (this.EventFileSha256 != null && !this.EventFileSha256.Equals(input.EventFileSha256))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
@@ -175,8 +215,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.PolicyId != null) hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
+                if (this.ObsBucket != null) hashCode = hashCode * 59 + this.ObsBucket.GetHashCode();
+                if (this.FileDirectory != null) hashCode = hashCode * 59 + this.FileDirectory.GetHashCode();
                 if (this.VideoFilename != null) hashCode = hashCode * 59 + this.VideoFilename.GetHashCode();
+                if (this.VideoFileSha256 != null) hashCode = hashCode * 59 + this.VideoFileSha256.GetHashCode();
                 if (this.EventFilename != null) hashCode = hashCode * 59 + this.EventFilename.GetHashCode();
+                if (this.EventFileSha256 != null) hashCode = hashCode * 59 + this.EventFileSha256.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();

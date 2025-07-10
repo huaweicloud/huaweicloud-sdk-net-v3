@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 域管理员帐号。域类型为LOCAL_AD时需要配置。 必须为AD服务器上已经存在的域管理员帐号。
+        /// 域管理员账号。域类型为LOCAL_AD时需要配置。 必须为AD服务器上已经存在的域管理员账号。
         /// </summary>
         [JsonProperty("domain_admin_account", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainAdminAccount { get; set; }

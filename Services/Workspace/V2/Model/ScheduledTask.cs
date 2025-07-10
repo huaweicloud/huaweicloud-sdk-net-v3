@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Priority { get; set; }
 
         /// <summary>
-        /// 时区
+        /// 时区。
         /// </summary>
         [JsonProperty("time_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZone { get; set; }

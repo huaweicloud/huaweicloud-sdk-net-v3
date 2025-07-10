@@ -17,49 +17,49 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// ID标识,同一次询价中不能重复
+        /// ID标识,同一次询价中不能重复。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 变更后的产品ID
+        /// 变更后的产品ID。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 总额，即最终优惠后的金额(降配场景下包含退还的现金、现金券、储值卡的总额)
+        /// 总额，即最终优惠后的金额(降配场景下包含退还的现金、现金券、储值卡的总额)。
         /// </summary>
         [JsonProperty("amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Amount { get; set; }
 
         /// <summary>
-        /// 券的退订金额（降配存在）
+        /// 券的退订金额（降配存在）。
         /// </summary>
         [JsonProperty("coupon_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<CouponUnsubscribeResult> CouponResults { get; set; }
 
         /// <summary>
-        /// 优惠额
+        /// 优惠额。
         /// </summary>
         [JsonProperty("discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? DiscountAmount { get; set; }
 
         /// <summary>
-        /// 原总额，即优惠前总额
+        /// 原总额，即优惠前总额。
         /// </summary>
         [JsonProperty("original_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? OriginalAmount { get; set; }
 
         /// <summary>
-        /// 度量单位标识
+        /// 度量单位标识。
         /// </summary>
         [JsonProperty("measure_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? MeasureId { get; set; }
 
         /// <summary>
-        /// 扩展参数
+        /// 扩展参数。
         /// </summary>
         [JsonProperty("extend_params", NullValueHandling = NullValueHandling.Ignore)]
         public string ExtendParams { get; set; }

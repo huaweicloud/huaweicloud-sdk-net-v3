@@ -137,121 +137,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         }
 
         /// <summary>
-        /// 桌面来源。  - DEFAULT：默认桌面来源。 - ONEMOBILE：协同办公云桌面OneMobile。
-        /// </summary>
-        /// <value>桌面来源。  - DEFAULT：默认桌面来源。 - ONEMOBILE：协同办公云桌面OneMobile。</value>
-        [JsonConverter(typeof(EnumClassConverter<DesktopIsvEnum>))]
-        public class DesktopIsvEnum
-        {
-            /// <summary>
-            /// Enum DEFAULT for value: DEFAULT
-            /// </summary>
-            public static readonly DesktopIsvEnum DEFAULT = new DesktopIsvEnum("DEFAULT");
-
-            /// <summary>
-            /// Enum ONEMOBILE for value: ONEMOBILE
-            /// </summary>
-            public static readonly DesktopIsvEnum ONEMOBILE = new DesktopIsvEnum("ONEMOBILE");
-
-            private static readonly Dictionary<string, DesktopIsvEnum> StaticFields =
-            new Dictionary<string, DesktopIsvEnum>()
-            {
-                { "DEFAULT", DEFAULT },
-                { "ONEMOBILE", ONEMOBILE },
-            };
-
-            private string _value;
-
-            public DesktopIsvEnum()
-            {
-
-            }
-
-            public DesktopIsvEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static DesktopIsvEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as DesktopIsvEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(DesktopIsvEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(DesktopIsvEnum a, DesktopIsvEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(DesktopIsvEnum a, DesktopIsvEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 分配状态。 - ATTACHED：已分配。 - UNATTACH：未分配 表示未关联。 - DEATTACHED：已解分配。 - ATTACHING：分配中。 - DEATTACHING：解分配中。 - ATTACHFAIL：分配失败。 - DEATTACHFAIL：解分配失败。 - WAITING：等待被分配中,描述从批量分配（解分配）下发到转入分配（解分配）的中间状态 同时方便单个关联流程的状态独立性。 - ATTACH_FAIL_CAN_ATTACH_AGAIN：分配失败,还可以再关联。 - DEATTACH_FAIL_CAN_DEATTACH_AGAIN：解分配失败,还可以再解分配。
         /// </summary>
         /// <value>分配状态。 - ATTACHED：已分配。 - UNATTACH：未分配 表示未关联。 - DEATTACHED：已解分配。 - ATTACHING：分配中。 - DEATTACHING：解分配中。 - ATTACHFAIL：分配失败。 - DEATTACHFAIL：解分配失败。 - WAITING：等待被分配中,描述从批量分配（解分配）下发到转入分配（解分配）的中间状态 同时方便单个关联流程的状态独立性。 - ATTACH_FAIL_CAN_ATTACH_AGAIN：分配失败,还可以再关联。 - DEATTACH_FAIL_CAN_DEATTACH_AGAIN：解分配失败,还可以再解分配。</value>
@@ -458,13 +343,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Ipv6 { get; set; }
 
         /// <summary>
-        /// 用户列表
+        /// 用户列表。
         /// </summary>
         [JsonProperty("user_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> UserList { get; set; }
 
         /// <summary>
-        /// 用户组列表
+        /// 用户组列表。
         /// </summary>
         [JsonProperty("user_group_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> UserGroupList { get; set; }
@@ -476,7 +361,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopType { get; set; }
 
         /// <summary>
-        /// resource_type字段，分别表示：专属桌面（DEDICATED_DESKTOP）、池桌面（POOLED_DESKTOP）、渲染桌面（RENDER_DESKTOP）、专享主机（EXCLUSIVE_HOST）、多用户桌面(SHARED_DESKTOP)
+        /// resource_type字段，分别表示：专属桌面（DEDICATED_DESKTOP）、池桌面（POOLED_DESKTOP）、渲染桌面（RENDER_DESKTOP）、专享主机（EXCLUSIVE_HOST）、多用户桌面(SHARED_DESKTOP)。
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
@@ -506,7 +391,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string TaskStatus { get; set; }
 
         /// <summary>
-        /// 是否处于维护模式,true表示维护模式，false表示不处于维护模式
+        /// 是否处于维护模式,true表示维护模式，false表示不处于维护模式。
         /// </summary>
         [JsonProperty("in_maintenance_mode", NullValueHandling = NullValueHandling.Ignore)]
         public bool? InMaintenanceMode { get; set; }
@@ -521,7 +406,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 桌面安全组。
         /// </summary>
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SecurityGroup> SecurityGroups { get; set; }
+        public List<SecurityGroupInfo> SecurityGroups { get; set; }
 
         /// <summary>
         /// 桌面的登录状态。  - UNREGISTER：表示桌面未注册时的状态（桌面启动后，会自动注册）。关机后也会出现未注册的状态。 - REGISTERED：表示桌面注册以后，等待用户连接的状态。 - CONNECTED：表示用户已经成功登录，正在使用桌面。 - DISCONNECTED：表示桌面与客户端断开会话后显示的状态，可能为关闭客户端窗口，或客户端与桌面网络断开引起。
@@ -548,7 +433,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 桌面协同资源SKU码
+        /// 桌面协同资源SKU码。
         /// </summary>
         [JsonProperty("share_resource_sku", NullValueHandling = NullValueHandling.Ignore)]
         public string ShareResourceSku { get; set; }
@@ -578,13 +463,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// 站点类型
+        /// 站点类型。
         /// </summary>
         [JsonProperty("site_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SiteType { get; set; }
 
         /// <summary>
-        /// 站点名字
+        /// 站点名字。
         /// </summary>
         [JsonProperty("site_name", NullValueHandling = NullValueHandling.Ignore)]
         public string SiteName { get; set; }
@@ -608,16 +493,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string OsVersion { get; set; }
 
         /// <summary>
-        /// SID
+        /// SID。
         /// </summary>
         [JsonProperty("sid", NullValueHandling = NullValueHandling.Ignore)]
         public string Sid { get; set; }
-
-        /// <summary>
-        /// 计算机是否加入域。  - 0：不加入域。 - 1：加入域。
-        /// </summary>
-        [JsonProperty("join_domain", NullValueHandling = NullValueHandling.Ignore)]
-        public string JoinDomain { get; set; }
 
         /// <summary>
         /// 包周期产品的订单ID。
@@ -632,19 +511,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 云办公主机id。
-        /// </summary>
-        [JsonProperty("deh_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DehId { get; set; }
-
-        /// <summary>
-        /// 平台类型，0:fc fusioncompute平台 1:physical 物理机 2:openstack 3:workspace_manager 1.0平台 5:graphics_workstation 图形工作站 6:sce 容器桌面 10:other 其它平台。
-        /// </summary>
-        [JsonProperty("platform_kind", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PlatformKind { get; set; }
-
-        /// <summary>
-        /// 是否开通互联网，true：已开通，false：未开通
+        /// 是否开通互联网，true：已开通，false：未开通。
         /// </summary>
         [JsonProperty("is_support_internet", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSupportInternet { get; set; }
@@ -661,27 +528,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> InternetModeList { get; set; }
 
         /// <summary>
-        /// 是否需要开通云办公带宽。
-        /// </summary>
-        [JsonProperty("need_apply_adn", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? NeedApplyAdn { get; set; }
-
-        /// <summary>
         /// 桌面是否正在绑定EIP。
         /// </summary>
         [JsonProperty("is_attaching_eip", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAttachingEip { get; set; }
-
-        /// <summary>
-        /// 桌面来源。  - DEFAULT：默认桌面来源。 - ONEMOBILE：协同办公云桌面OneMobile。
-        /// </summary>
-        [JsonProperty("desktop_isv", NullValueHandling = NullValueHandling.Ignore)]
-        public DesktopIsvEnum DesktopIsv { get; set; }
-        /// <summary>
-        /// 桌面创建类型，null或者MANUALLY表示基础创建出来，AUTOSCALE：表示自动扩容出来的。
-        /// </summary>
-        [JsonProperty("creation_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreationType { get; set; }
 
         /// <summary>
         /// 分配状态。 - ATTACHED：已分配。 - UNATTACH：未分配 表示未关联。 - DEATTACHED：已解分配。 - ATTACHING：分配中。 - DEATTACHING：解分配中。 - ATTACHFAIL：分配失败。 - DEATTACHFAIL：解分配失败。 - WAITING：等待被分配中,描述从批量分配（解分配）下发到转入分配（解分配）的中间状态 同时方便单个关联流程的状态独立性。 - ATTACH_FAIL_CAN_ATTACH_AGAIN：分配失败,还可以再关联。 - DEATTACH_FAIL_CAN_DEATTACH_AGAIN：解分配失败,还可以再解分配。
@@ -689,7 +539,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("attach_state", NullValueHandling = NullValueHandling.Ignore)]
         public AttachStateEnum AttachState { get; set; }
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -701,7 +551,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 桌面计费资源ID
+        /// 桌面计费资源ID。
         /// </summary>
         [JsonProperty("bill_resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BillResourceId { get; set; }
@@ -766,18 +616,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  ouName: ").Append(OuName).Append("\n");
             sb.Append("  osVersion: ").Append(OsVersion).Append("\n");
             sb.Append("  sid: ").Append(Sid).Append("\n");
-            sb.Append("  joinDomain: ").Append(JoinDomain).Append("\n");
             sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
-            sb.Append("  dehId: ").Append(DehId).Append("\n");
-            sb.Append("  platformKind: ").Append(PlatformKind).Append("\n");
             sb.Append("  isSupportInternet: ").Append(IsSupportInternet).Append("\n");
             sb.Append("  internetMode: ").Append(InternetMode).Append("\n");
             sb.Append("  internetModeList: ").Append(InternetModeList).Append("\n");
-            sb.Append("  needApplyAdn: ").Append(NeedApplyAdn).Append("\n");
             sb.Append("  isAttachingEip: ").Append(IsAttachingEip).Append("\n");
-            sb.Append("  desktopIsv: ").Append(DesktopIsv).Append("\n");
-            sb.Append("  creationType: ").Append(CreationType).Append("\n");
             sb.Append("  attachState: ").Append(AttachState).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
@@ -836,18 +680,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.OuName != input.OuName || (this.OuName != null && !this.OuName.Equals(input.OuName))) return false;
             if (this.OsVersion != input.OsVersion || (this.OsVersion != null && !this.OsVersion.Equals(input.OsVersion))) return false;
             if (this.Sid != input.Sid || (this.Sid != null && !this.Sid.Equals(input.Sid))) return false;
-            if (this.JoinDomain != input.JoinDomain || (this.JoinDomain != null && !this.JoinDomain.Equals(input.JoinDomain))) return false;
             if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
-            if (this.DehId != input.DehId || (this.DehId != null && !this.DehId.Equals(input.DehId))) return false;
-            if (this.PlatformKind != input.PlatformKind || (this.PlatformKind != null && !this.PlatformKind.Equals(input.PlatformKind))) return false;
             if (this.IsSupportInternet != input.IsSupportInternet || (this.IsSupportInternet != null && !this.IsSupportInternet.Equals(input.IsSupportInternet))) return false;
             if (this.InternetMode != input.InternetMode) return false;
             if (this.InternetModeList != input.InternetModeList || (this.InternetModeList != null && input.InternetModeList != null && !this.InternetModeList.SequenceEqual(input.InternetModeList))) return false;
-            if (this.NeedApplyAdn != input.NeedApplyAdn || (this.NeedApplyAdn != null && !this.NeedApplyAdn.Equals(input.NeedApplyAdn))) return false;
             if (this.IsAttachingEip != input.IsAttachingEip || (this.IsAttachingEip != null && !this.IsAttachingEip.Equals(input.IsAttachingEip))) return false;
-            if (this.DesktopIsv != input.DesktopIsv) return false;
-            if (this.CreationType != input.CreationType || (this.CreationType != null && !this.CreationType.Equals(input.CreationType))) return false;
             if (this.AttachState != input.AttachState) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
@@ -900,18 +738,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.OuName != null) hashCode = hashCode * 59 + this.OuName.GetHashCode();
                 if (this.OsVersion != null) hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
                 if (this.Sid != null) hashCode = hashCode * 59 + this.Sid.GetHashCode();
-                if (this.JoinDomain != null) hashCode = hashCode * 59 + this.JoinDomain.GetHashCode();
                 if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.DehId != null) hashCode = hashCode * 59 + this.DehId.GetHashCode();
-                if (this.PlatformKind != null) hashCode = hashCode * 59 + this.PlatformKind.GetHashCode();
                 if (this.IsSupportInternet != null) hashCode = hashCode * 59 + this.IsSupportInternet.GetHashCode();
                 hashCode = hashCode * 59 + this.InternetMode.GetHashCode();
                 if (this.InternetModeList != null) hashCode = hashCode * 59 + this.InternetModeList.GetHashCode();
-                if (this.NeedApplyAdn != null) hashCode = hashCode * 59 + this.NeedApplyAdn.GetHashCode();
                 if (this.IsAttachingEip != null) hashCode = hashCode * 59 + this.IsAttachingEip.GetHashCode();
-                hashCode = hashCode * 59 + this.DesktopIsv.GetHashCode();
-                if (this.CreationType != null) hashCode = hashCode * 59 + this.CreationType.GetHashCode();
                 hashCode = hashCode * 59 + this.AttachState.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();

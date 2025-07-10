@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class ListMetricsTrendRequest 
     {
         /// <summary>
-        /// 数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据
+        /// 数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据。
         /// </summary>
-        /// <value>数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据</value>
+        /// <value>数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据。</value>
         [JsonConverter(typeof(EnumClassConverter<PeriodEnum>))]
         public class PeriodEnum
         {
@@ -144,35 +144,35 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 开始时间
+        /// 开始时间。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间
+        /// 结束时间。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}&#x3D;key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0&#x3D;key,value&amp;dim.1&#x3D;key,value
+        /// 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}&#x3D;key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0&#x3D;instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0&#x3D;key,value&amp;dim.1&#x3D;key,value。
         /// </summary>
         [SDKProperty("dim", IsQuery = true)]
         [JsonProperty("dim", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim { get; set; }
 
         /// <summary>
-        /// 指标名称列表
+        /// 指标名称列表。
         /// </summary>
         [SDKProperty("metric_names", IsQuery = true)]
         [JsonProperty("metric_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> MetricNames { get; set; }
 
         /// <summary>
-        /// 数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据
+        /// 数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据。
         /// </summary>
         [SDKProperty("period", IsQuery = true)]
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]

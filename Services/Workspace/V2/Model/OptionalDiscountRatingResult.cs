@@ -11,139 +11,139 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 结果
+    /// 结果。
     /// </summary>
     public class OptionalDiscountRatingResult 
     {
 
         /// <summary>
-        /// 折扣优惠Id
+        /// 折扣优惠Id。
         /// </summary>
         [JsonProperty("discount_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DiscountId { get; set; }
 
         /// <summary>
-        /// 订单总额，即最终优惠后的订单金额(预留实例只包含预付部分)
+        /// 订单总额，即最终优惠后的订单金额(预留实例只包含预付部分)。
         /// </summary>
         [JsonProperty("amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Amount { get; set; }
 
         /// <summary>
-        /// 官网价(预留实例只包含预付部分)
+        /// 官网价(预留实例只包含预付部分)。
         /// </summary>
         [JsonProperty("official_website_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? OfficialWebsiteAmount { get; set; }
 
         /// <summary>
-        /// 订单原总额，即优惠前订单总额(预留实例只包含预付部分)
+        /// 订单原总额，即优惠前订单总额(预留实例只包含预付部分)。
         /// </summary>
         [JsonProperty("original_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? OriginalAmount { get; set; }
 
         /// <summary>
-        /// 官网价优惠额(预留实例只包含预付部分)
+        /// 官网价优惠额(预留实例只包含预付部分)。
         /// </summary>
         [JsonProperty("official_website_discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? OfficialWebsiteDiscountAmount { get; set; }
 
         /// <summary>
-        /// 可选折扣优惠额(预留实例只包含预付部分)
+        /// 可选折扣优惠额(预留实例只包含预付部分)。
         /// </summary>
         [JsonProperty("optional_discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? OptionalDiscountAmount { get; set; }
 
         /// <summary>
-        /// 总优惠额(预留实例只包含预付部分)
+        /// 总优惠额(预留实例只包含预付部分)。
         /// </summary>
         [JsonProperty("discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? DiscountAmount { get; set; }
 
         /// <summary>
-        /// 总分期金额(批量询价的商品分期周期类型一致，才会有总分期金额，分期周期类型不一致，该信息没有)
+        /// 总分期金额(批量询价的商品分期周期类型一致，才会有总分期金额，分期周期类型不一致，该信息没有)。
         /// </summary>
         [JsonProperty("per_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerAmount { get; set; }
 
         /// <summary>
-        /// 总分期金额的优惠额(perDiscountAmount &#x3D; perOriginalAmount - perAmount)
+        /// 总分期金额的优惠额(perDiscountAmount &#x3D; perOriginalAmount - perAmount)。
         /// </summary>
         [JsonProperty("per_discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerDiscountAmount { get; set; }
 
         /// <summary>
-        /// 总分期金额原价
+        /// 总分期金额原价。
         /// </summary>
         [JsonProperty("per_original_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerOriginalAmount { get; set; }
 
         /// <summary>
-        /// 总分期金额的官网价(批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)
+        /// 总分期金额的官网价(批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)。
         /// </summary>
         [JsonProperty("per_official_website_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerOfficialWebsiteAmount { get; set; }
 
         /// <summary>
-        /// 总分期金额的官网价官网价优惠额，即： perOfficialWebsiteDiscountAmount &#x3D;perOriginalAmount-perOfficialWebsiteAmount (批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)
+        /// 总分期金额的官网价官网价优惠额，即： perOfficialWebsiteDiscountAmount &#x3D;perOriginalAmount-perOfficialWebsiteAmount (批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)。
         /// </summary>
         [JsonProperty("per_official_website_discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerOfficialWebsiteDiscountAmount { get; set; }
 
         /// <summary>
-        /// 总分期金额的可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额 perOptionalDiscountAmount&#x3D; perOfficialWebsiteAmount- perAmount (批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)
+        /// 总分期金额的可选折扣优惠额，如商务折扣、伙伴折扣、促销折扣和折扣券选用时的优惠额 perOptionalDiscountAmount&#x3D; perOfficialWebsiteAmount- perAmount (批量询价的商品分期周期类型一致，才会有总分期金额的官网价，分期周期类型不一致，该信息没有)。
         /// </summary>
         [JsonProperty("per_optional_discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PerOptionalDiscountAmount { get; set; }
 
         /// <summary>
-        /// 分期周期类型 2:月 4:小时
+        /// 分期周期类型 2:月 4:小时。
         /// </summary>
         [JsonProperty("per_period_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? PerPeriodType { get; set; }
 
         /// <summary>
-        /// 度量单位
+        /// 度量单位。
         /// </summary>
         [JsonProperty("measure_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? MeasureId { get; set; }
 
         /// <summary>
-        /// 折扣优惠类型
+        /// 折扣优惠类型。
         /// </summary>
         [JsonProperty("discount_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? DiscountType { get; set; }
 
         /// <summary>
-        /// 折扣名称
+        /// 折扣名称。
         /// </summary>
         [JsonProperty("discount_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DiscountName { get; set; }
 
         /// <summary>
-        /// 是否为最优折扣0：不是最优折扣；为缺省值。1：是最优折扣；最优折扣：在商务折扣、伙伴折扣和促销折扣中选择（优惠金额相等则按此顺序排优先级），折扣券不参与最优折扣的计算
+        /// 是否为最优折扣0：不是最优折扣；为缺省值。1：是最优折扣；最优折扣：在商务折扣、伙伴折扣和促销折扣中选择（优惠金额相等则按此顺序排优先级），折扣券不参与最优折扣的计算。
         /// </summary>
         [JsonProperty("best_offer", NullValueHandling = NullValueHandling.Ignore)]
         public int? BestOffer { get; set; }
 
         /// <summary>
-        /// sameRatioFlag
+        /// sameRatioFlag。
         /// </summary>
         [JsonProperty("same_ratio_flag", NullValueHandling = NullValueHandling.Ignore)]
         public int? SameRatioFlag { get; set; }
 
         /// <summary>
-        /// sameRatioFlag为1时有值，表示该折扣的折扣率
+        /// sameRatioFlag为1时有值，表示该折扣的折扣率。
         /// </summary>
         [JsonProperty("discount_ratio", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? DiscountRatio { get; set; }
 
         /// <summary>
-        /// 折扣优惠基本信息；调用者在确定好折扣优惠后、下单时，使用此字段值，填入到订购/变更接口中的promotionInfo字段
+        /// 折扣优惠基本信息；调用者在确定好折扣优惠后、下单时，使用此字段值，填入到订购/变更接口中的promotionInfo字段。
         /// </summary>
         [JsonProperty("promotion_info", NullValueHandling = NullValueHandling.Ignore)]
         public string PromotionInfo { get; set; }
 
         /// <summary>
-        /// 产品询价结果
+        /// 产品询价结果。
         /// </summary>
         [JsonProperty("product_rating_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<ProductResult> ProductRatingResults { get; set; }

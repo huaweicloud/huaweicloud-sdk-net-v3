@@ -45,14 +45,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Architecture { get; set; }
 
         /// <summary>
-        /// 套餐系列
+        /// 套餐系列。
         /// </summary>
         [SDKProperty("package_type", IsQuery = true)]
         [JsonProperty("package_type", NullValueHandling = NullValueHandling.Ignore)]
         public string PackageType { get; set; }
 
         /// <summary>
-        /// 镜像Id
+        /// 镜像Id。
         /// </summary>
         [SDKProperty("image_id", IsQuery = true)]
         [JsonProperty("image_id", NullValueHandling = NullValueHandling.Ignore)]

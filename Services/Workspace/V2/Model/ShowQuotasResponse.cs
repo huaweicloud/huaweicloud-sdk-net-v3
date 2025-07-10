@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public QuotaNoLimit Quotas { get; set; }
 
         /// <summary>
-        /// 站点配额信息，暂不包括中心站点
+        /// 站点配额信息，暂不包括中心站点。
         /// </summary>
         [JsonProperty("site_quotas", NullValueHandling = NullValueHandling.Ignore)]
         public List<SiteQuotaNoLimit> SiteQuotas { get; set; }

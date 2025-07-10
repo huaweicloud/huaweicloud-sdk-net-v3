@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 桌面ID
+        /// 桌面ID。
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 桌面池ID(仅桌面池中的桌面存在该字段)
+        /// 桌面池ID(仅桌面池中的桌面存在该字段)。
         /// </summary>
         [JsonProperty("resource_pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourcePoolId { get; set; }
 
         /// <summary>
-        /// 桌面名称
+        /// 桌面名称。
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }

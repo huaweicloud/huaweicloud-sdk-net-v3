@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 站点ID
+        /// 站点ID。
         /// </summary>
         [SDKProperty("site_id", IsQuery = true)]
         [JsonProperty("site_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SiteId { get; set; }
 
         /// <summary>
-        /// 可用分区code
+        /// 可用分区code。
         /// </summary>
         [SDKProperty("az_code", IsQuery = true)]
         [JsonProperty("az_code", NullValueHandling = NullValueHandling.Ignore)]

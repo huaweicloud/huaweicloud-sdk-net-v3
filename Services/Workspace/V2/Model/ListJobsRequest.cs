@@ -17,35 +17,35 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 查询的偏移量。
+        /// 查询的偏移量，默认值0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 单次查询的大小[1-100]。
+        /// 单次查询的大小[1-100]，默认值10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 实例ID
+        /// 实例ID。
         /// </summary>
         [SDKProperty("instance_id", IsQuery = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 应用ID
+        /// 应用ID。
         /// </summary>
         [SDKProperty("app_id", IsQuery = true)]
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
         /// <summary>
-        /// 安装实例的用户
+        /// 安装实例的用户。
         /// </summary>
         [SDKProperty("target", IsQuery = true)]
         [JsonProperty("target", NullValueHandling = NullValueHandling.Ignore)]

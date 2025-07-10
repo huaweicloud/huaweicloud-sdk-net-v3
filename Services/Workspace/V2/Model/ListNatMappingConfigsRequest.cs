@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 站点ID
+        /// 站点ID。
         /// </summary>
         [SDKProperty("site_id", IsQuery = true)]
         [JsonProperty("site_id", NullValueHandling = NullValueHandling.Ignore)]

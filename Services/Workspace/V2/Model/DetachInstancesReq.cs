@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 解绑用户请求
+    /// 解绑用户请求。
     /// </summary>
     public class DetachInstancesReq 
     {
 
         /// <summary>
-        /// 桌面id,不能为空
+        /// 桌面id列表，不能为空。
         /// </summary>
         [JsonProperty("desktop_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DesktopIds { get; set; }

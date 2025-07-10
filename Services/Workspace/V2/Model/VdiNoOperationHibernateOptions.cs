@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 不操作休眠选项
+    /// 不操作休眠选项。
     /// </summary>
     public class VdiNoOperationHibernateOptions 
     {

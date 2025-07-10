@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> DesktopIds { get; set; }
 
         /// <summary>
-        /// 促销计划ID
+        /// 促销计划ID。
         /// </summary>
         [JsonProperty("promotion_plan_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PromotionPlanId { get; set; }
@@ -46,12 +46,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("extend_param", NullValueHandling = NullValueHandling.Ignore)]
-        public ResizeDesktopExtendParam ExtendParam { get; set; }
-
 
 
         /// <summary>
@@ -66,7 +60,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  promotionPlanId: ").Append(PromotionPlanId).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
-            sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,7 +83,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.PromotionPlanId != input.PromotionPlanId || (this.PromotionPlanId != null && !this.PromotionPlanId.Equals(input.PromotionPlanId))) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
             if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
-            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
 
             return true;
         }
@@ -108,7 +100,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.PromotionPlanId != null) hashCode = hashCode * 59 + this.PromotionPlanId.GetHashCode();
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
                 if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 return hashCode;
             }
         }

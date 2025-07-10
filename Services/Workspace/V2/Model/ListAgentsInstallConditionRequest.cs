@@ -17,49 +17,49 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [SDKProperty("enterprise_project_id", IsQuery = true)]
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 桌面ID
+        /// 桌面ID。
         /// </summary>
         [SDKProperty("desktop_id", IsQuery = true)]
         [JsonProperty("desktop_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopId { get; set; }
 
         /// <summary>
-        /// 桌面名称
+        /// 桌面名称。
         /// </summary>
         [SDKProperty("desktop_name", IsQuery = true)]
         [JsonProperty("desktop_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopName { get; set; }
 
         /// <summary>
-        /// 桌面状态
+        /// 桌面状态。
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// ip地址
+        /// ip地址。
         /// </summary>
         [SDKProperty("ip_address", IsQuery = true)]
         [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string IpAddress { get; set; }
 
         /// <summary>
-        /// 插件是否已安装
+        /// 插件是否已安装。
         /// </summary>
         [SDKProperty("is_installed", IsQuery = true)]
         [JsonProperty("is_installed", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsInstalled { get; set; }
 
         /// <summary>
-        /// 桌面池id
+        /// 桌面池id。
         /// </summary>
         [SDKProperty("desktop_pool_id", IsQuery = true)]
         [JsonProperty("desktop_pool_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 桌面网络查询结果
+    /// 桌面网络查询结果。
     /// </summary>
     public class DesktopNetworkResult 
     {
 
         /// <summary>
-        /// 桌面名称
+        /// 桌面名称。
         /// </summary>
         [JsonProperty("computer_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ComputerName { get; set; }
 
         /// <summary>
-        /// 桌面ID
+        /// 桌面ID。
         /// </summary>
         [JsonProperty("computer_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ComputerId { get; set; }
 
         /// <summary>
-        /// 桌面IP
+        /// 桌面IP。
         /// </summary>
         [JsonProperty("computer_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string ComputerIp { get; set; }
 
         /// <summary>
-        /// 桌面网络信息
+        /// 桌面网络信息。
         /// </summary>
         [JsonProperty("network_infos", NullValueHandling = NullValueHandling.Ignore)]
         public List<NetworkInfo> NetworkInfos { get; set; }

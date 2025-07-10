@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 带时间的指标
+    /// 带时间的指标。
     /// </summary>
     public class MetricsWithTime 
     {
 
         /// <summary>
-        /// 时间
+        /// 时间。
         /// </summary>
         [JsonProperty("time", NullValueHandling = NullValueHandling.Ignore)]
         public string Time { get; set; }
 
         /// <summary>
-        /// 指标值
+        /// 指标值。
         /// </summary>
         [JsonProperty("metrics", NullValueHandling = NullValueHandling.Ignore)]
         public List<Metric> Metrics { get; set; }

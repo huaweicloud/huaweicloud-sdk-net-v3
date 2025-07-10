@@ -11,37 +11,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 网络信息
+    /// 网络信息。
     /// </summary>
     public class NetworkConfig 
     {
 
         /// <summary>
-        /// VPC ID
+        /// VPC ID。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// VPC名称
+        /// VPC名称。
         /// </summary>
         [JsonProperty("vpc_name", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcName { get; set; }
 
         /// <summary>
-        /// 业务子网，可以指定返回的网络ID订购桌面
+        /// 业务子网，可以指定返回的网络ID订购桌面。
         /// </summary>
         [JsonProperty("subnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SubnetIds { get; set; }
 
         /// <summary>
-        /// 后端管理组件占用的子网网段
+        /// 后端管理组件占用的子网网段。
         /// </summary>
         [JsonProperty("management_subnet_cidr", NullValueHandling = NullValueHandling.Ignore)]
         public string ManagementSubnetCidr { get; set; }
 
         /// <summary>
-        /// subnet_ids所返回的业务子网中,被管理节点所占用的子网id
+        /// subnet_ids所返回的业务子网中,被管理节点所占用的子网id。
         /// </summary>
         [JsonProperty("management_node_subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ManagementNodeSubnetId { get; set; }

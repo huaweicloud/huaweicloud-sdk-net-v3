@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 币种，比如CNY
+        /// 币种，比如CNY。
         /// </summary>
         [JsonProperty("currency", NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
         /// <summary>
-        /// 询价结果
+        /// 询价结果。
         /// </summary>
         [JsonProperty("cloud_service_rating_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<CloudServiceRatingResult> CloudServiceRatingResults { get; set; }

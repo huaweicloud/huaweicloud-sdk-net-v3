@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 协同空间ID
+        /// 协同空间ID。
         /// </summary>
         [JsonProperty("share_space_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ShareSpaceId { get; set; }
 
         /// <summary>
-        /// 协同空间邀请码(大写英文+数字,共8位)
+        /// 协同空间邀请码(大写英文+数字,共8位)。
         /// </summary>
         [JsonProperty("invitation_code", NullValueHandling = NullValueHandling.Ignore)]
         public string InvitationCode { get; set; }
 
         /// <summary>
-        /// 协同空间名称
+        /// 协同空间名称。
         /// </summary>
         [JsonProperty("share_space_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ShareSpaceName { get; set; }
 
         /// <summary>
-        /// 协同空间密码
+        /// 协同空间密码。
         /// </summary>
         [JsonProperty("share_space_passwd", NullValueHandling = NullValueHandling.Ignore)]
         public string ShareSpacePasswd { get; set; }
 
         /// <summary>
-        /// 专线分享链接
+        /// 专线分享链接。
         /// </summary>
         [JsonProperty("private_share_link", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateShareLink { get; set; }
 
         /// <summary>
-        /// 互联网分享链接
+        /// 互联网分享链接。
         /// </summary>
         [JsonProperty("internet_share_link", NullValueHandling = NullValueHandling.Ignore)]
         public string InternetShareLink { get; set; }
 
         /// <summary>
-        /// 创建时间 UTC时间，格式为：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
+        /// 创建时间 UTC时间，格式为：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z。&#39;
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTime { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 失败原因
+        /// 失败原因。
         /// </summary>
         [JsonProperty("failed_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string FailedReason { get; set; }

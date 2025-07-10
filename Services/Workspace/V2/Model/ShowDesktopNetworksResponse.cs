@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 桌面网络信息列表
+        /// 桌面网络信息列表。
         /// </summary>
         [JsonProperty("networks", NullValueHandling = NullValueHandling.Ignore)]
         public List<DesktopNetworkResult> Networks { get; set; }

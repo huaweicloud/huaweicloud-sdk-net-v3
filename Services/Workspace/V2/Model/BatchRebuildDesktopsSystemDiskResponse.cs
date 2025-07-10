@@ -40,30 +40,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
-        /// <summary>
-        /// 云运营平台CBC获取到JobId后，会使用getJobEndpoint当做URL，调用云服务，查询获取Job结果。
-        /// </summary>
-        [JsonProperty("get_job_endpoint", NullValueHandling = NullValueHandling.Ignore)]
-        public string GetJobEndpoint { get; set; }
-
-        /// <summary>
-        /// 在线开通最大时间。
-        /// </summary>
-        [JsonProperty("max_provision_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MaxProvisionTime { get; set; }
-
-        /// <summary>
-        /// 开通最小时间（云服务最快开通时长，或一般开通时长）。
-        /// </summary>
-        [JsonProperty("min_provision_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MinProvisionTime { get; set; }
-
-        /// <summary>
-        /// Job周期性查询时间。
-        /// </summary>
-        [JsonProperty("periodic_query_time", NullValueHandling = NullValueHandling.Ignore)]
-        public int? PeriodicQueryTime { get; set; }
-
 
 
         /// <summary>
@@ -77,10 +53,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
             sb.Append("  encodedAuthorizationMessage: ").Append(EncodedAuthorizationMessage).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
-            sb.Append("  getJobEndpoint: ").Append(GetJobEndpoint).Append("\n");
-            sb.Append("  maxProvisionTime: ").Append(MaxProvisionTime).Append("\n");
-            sb.Append("  minProvisionTime: ").Append(MinProvisionTime).Append("\n");
-            sb.Append("  periodicQueryTime: ").Append(PeriodicQueryTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,10 +75,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
             if (this.EncodedAuthorizationMessage != input.EncodedAuthorizationMessage || (this.EncodedAuthorizationMessage != null && !this.EncodedAuthorizationMessage.Equals(input.EncodedAuthorizationMessage))) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
-            if (this.GetJobEndpoint != input.GetJobEndpoint || (this.GetJobEndpoint != null && !this.GetJobEndpoint.Equals(input.GetJobEndpoint))) return false;
-            if (this.MaxProvisionTime != input.MaxProvisionTime || (this.MaxProvisionTime != null && !this.MaxProvisionTime.Equals(input.MaxProvisionTime))) return false;
-            if (this.MinProvisionTime != input.MinProvisionTime || (this.MinProvisionTime != null && !this.MinProvisionTime.Equals(input.MinProvisionTime))) return false;
-            if (this.PeriodicQueryTime != input.PeriodicQueryTime || (this.PeriodicQueryTime != null && !this.PeriodicQueryTime.Equals(input.PeriodicQueryTime))) return false;
 
             return true;
         }
@@ -123,10 +91,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 if (this.EncodedAuthorizationMessage != null) hashCode = hashCode * 59 + this.EncodedAuthorizationMessage.GetHashCode();
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.GetJobEndpoint != null) hashCode = hashCode * 59 + this.GetJobEndpoint.GetHashCode();
-                if (this.MaxProvisionTime != null) hashCode = hashCode * 59 + this.MaxProvisionTime.GetHashCode();
-                if (this.MinProvisionTime != null) hashCode = hashCode * 59 + this.MinProvisionTime.GetHashCode();
-                if (this.PeriodicQueryTime != null) hashCode = hashCode * 59 + this.PeriodicQueryTime.GetHashCode();
                 return hashCode;
             }
         }

@@ -17,55 +17,55 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// VPC名称
+        /// VPC名称。
         /// </summary>
         [JsonProperty("vpc_name", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcName { get; set; }
 
         /// <summary>
-        /// 子网id
+        /// 子网id。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 子网名称
+        /// 子网名称。
         /// </summary>
         [JsonProperty("subnet_name", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetName { get; set; }
 
         /// <summary>
-        /// NAT id
+        /// NAT id。
         /// </summary>
         [JsonProperty("nat_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NatId { get; set; }
 
         /// <summary>
-        /// NAT名称
+        /// NAT名称。
         /// </summary>
         [JsonProperty("nat_name", NullValueHandling = NullValueHandling.Ignore)]
         public string NatName { get; set; }
 
         /// <summary>
-        /// 弹性公网IP
+        /// 弹性公网IP。
         /// </summary>
         [JsonProperty("eip", NullValueHandling = NullValueHandling.Ignore)]
         public string Eip { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// 创建时间。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 状态
+        /// 状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

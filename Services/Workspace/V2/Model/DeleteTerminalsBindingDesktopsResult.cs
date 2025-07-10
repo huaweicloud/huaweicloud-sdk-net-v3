@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 需删除的策略ID
+        /// 需删除的策略ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 删除操作的结果码
+        /// 删除操作的结果码。
         /// </summary>
         [JsonProperty("delete_result_code", NullValueHandling = NullValueHandling.Ignore)]
         public string DeleteResultCode { get; set; }
 
         /// <summary>
-        /// 删除操作的结果信息
+        /// 删除操作的结果信息。
         /// </summary>
         [JsonProperty("delete_result_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string DeleteResultMsg { get; set; }

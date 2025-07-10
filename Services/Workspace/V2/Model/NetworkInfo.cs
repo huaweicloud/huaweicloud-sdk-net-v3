@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 桌面网络信息：vpc、子网、私有ip、弹性ip、安全组
+    /// 桌面网络信息：vpc、子网、私有ip、弹性ip、安全组。
     /// </summary>
     public class NetworkInfo 
     {
@@ -41,10 +41,10 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public PublicIp PublicIpInfo { get; set; }
 
         /// <summary>
-        /// 桌面绑定的安全组列表
+        /// 桌面绑定的安全组列表。
         /// </summary>
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SecurityGroup> SecurityGroups { get; set; }
+        public List<SecurityGroupInfo> SecurityGroups { get; set; }
 
 
 

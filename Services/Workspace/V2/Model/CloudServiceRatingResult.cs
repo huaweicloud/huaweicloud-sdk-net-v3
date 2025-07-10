@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 询价结果
+    /// 询价结果。
     /// </summary>
     public class CloudServiceRatingResult 
     {
 
         /// <summary>
-        /// 下单请求体中的orderRequestId
+        /// 下单请求体中的orderRequestId。
         /// </summary>
         [JsonProperty("order_request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderRequestId { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public OfficialWebsiteRatingResult OfficialWebsiteRatingResult { get; set; }
 
         /// <summary>
-        /// 优惠询价结果
+        /// 优惠询价结果。
         /// </summary>
         [JsonProperty("optional_discount_rating_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<OptionalDiscountRatingResult> OptionalDiscountRatingResults { get; set; }

@@ -30,6 +30,20 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FlavorId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
 
 
         /// <summary>
@@ -41,6 +55,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("class ListFlavorsRequest {\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  flavorId: ").Append(FlavorId).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -61,6 +77,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             if (input == null) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
             return true;
         }
@@ -75,6 +93,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 var hashCode = 41;
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

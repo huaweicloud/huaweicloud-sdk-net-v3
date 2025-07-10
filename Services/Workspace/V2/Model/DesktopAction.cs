@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 桌面开关机实体
+    /// 桌面开关机实体。
     /// </summary>
     public class DesktopAction 
     {
 
         /// <summary>
-        /// 行为动作
+        /// 行为动作。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
 
         /// <summary>
-        /// 行为完成状态信息
+        /// 行为完成状态信息。
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
         public string Message { get; set; }
 
         /// <summary>
-        /// 开始时间
+        /// 开始时间。
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间
+        /// 结束时间。
         /// </summary>
         [JsonProperty("finish_time", NullValueHandling = NullValueHandling.Ignore)]
         public string FinishTime { get; set; }
 
         /// <summary>
-        /// 结果
+        /// 结果。
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public string Result { get; set; }
 
         /// <summary>
-        /// 异常信息
+        /// 异常信息。
         /// </summary>
         [JsonProperty("traceback", NullValueHandling = NullValueHandling.Ignore)]
         public string Traceback { get; set; }

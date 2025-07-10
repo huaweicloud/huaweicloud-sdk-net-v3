@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 业务子网id
+        /// 业务子网id。
         /// </summary>
         [JsonProperty("subnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SubnetIds { get; set; }

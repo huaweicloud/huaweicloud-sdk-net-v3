@@ -233,7 +233,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string TaskName { get; set; }
 
         /// <summary>
-        /// 是否强制执行
+        /// 是否强制执行。
         /// </summary>
         [JsonProperty("force_execute", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ForceExecute { get; set; }
@@ -245,7 +245,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 是否启用
+        /// 是否启用。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }

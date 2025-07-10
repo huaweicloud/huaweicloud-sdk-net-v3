@@ -17,6 +17,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
+        /// domainId。
+        /// </summary>
+        [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainId { get; set; }
+
+        /// <summary>
+        /// 项目id。
+        /// </summary>
+        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProjectId { get; set; }
+
+        /// <summary>
         /// 桌面ID。
         /// </summary>
         [JsonProperty("desktop_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -77,7 +89,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string OuName { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -89,19 +101,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 是否处于管理员维护模式
+        /// 是否处于管理员维护模式。
         /// </summary>
         [JsonProperty("in_maintenance_mode", NullValueHandling = NullValueHandling.Ignore)]
         public bool? InMaintenanceMode { get; set; }
 
         /// <summary>
-        /// 桌面协同资源SKU码
+        /// 桌面协同资源SKU码。
         /// </summary>
         [JsonProperty("share_resource_sku", NullValueHandling = NullValueHandling.Ignore)]
         public string ShareResourceSku { get; set; }
 
         /// <summary>
-        /// 桌面类型
+        /// 桌面类型。
         /// </summary>
         [JsonProperty("desktop_type", NullValueHandling = NullValueHandling.Ignore)]
         public string DesktopType { get; set; }
@@ -139,6 +151,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SimpleDesktopInfo {\n");
+            sb.Append("  domainId: ").Append(DomainId).Append("\n");
+            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  desktopId: ").Append(DesktopId).Append("\n");
             sb.Append("  computerName: ").Append(ComputerName).Append("\n");
             sb.Append("  osHostName: ").Append(OsHostName).Append("\n");
@@ -176,6 +190,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(SimpleDesktopInfo input)
         {
             if (input == null) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.DesktopId != input.DesktopId || (this.DesktopId != null && !this.DesktopId.Equals(input.DesktopId))) return false;
             if (this.ComputerName != input.ComputerName || (this.ComputerName != null && !this.ComputerName.Equals(input.ComputerName))) return false;
             if (this.OsHostName != input.OsHostName || (this.OsHostName != null && !this.OsHostName.Equals(input.OsHostName))) return false;
@@ -207,6 +223,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.DesktopId != null) hashCode = hashCode * 59 + this.DesktopId.GetHashCode();
                 if (this.ComputerName != null) hashCode = hashCode * 59 + this.ComputerName.GetHashCode();
                 if (this.OsHostName != null) hashCode = hashCode * 59 + this.OsHostName.GetHashCode();

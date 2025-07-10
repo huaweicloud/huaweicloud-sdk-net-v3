@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 自定义配置启用
+        /// 自定义配置启用。
         /// </summary>
         [JsonProperty("custom_configuration1_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CustomConfiguration1Enable { get; set; }

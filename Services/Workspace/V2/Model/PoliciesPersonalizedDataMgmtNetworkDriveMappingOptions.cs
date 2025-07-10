@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 网络驱动器映射路径
+        /// 网络驱动器映射路径。
         /// </summary>
         [JsonProperty("network_drive_mapping_path", NullValueHandling = NullValueHandling.Ignore)]
         public string NetworkDriveMappingPath { get; set; }
 
         /// <summary>
-        /// 排除文件夹路径
+        /// 排除文件夹路径。
         /// </summary>
         [JsonProperty("drive_letter", NullValueHandling = NullValueHandling.Ignore)]
         public string DriveLetter { get; set; }

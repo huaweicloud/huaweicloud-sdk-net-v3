@@ -24,21 +24,21 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 查询截至时间(0时区)
+        /// 查询截至时间(0时区)。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 资源名称(模糊匹配)
+        /// 资源名称(模糊匹配)。
         /// </summary>
         [SDKProperty("resource_name", IsQuery = true)]
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 最小空闲天数
+        /// 最小空闲天数。
         /// </summary>
         [SDKProperty("min_idle_days", IsQuery = true)]
         [JsonProperty("min_idle_days", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,14 +52,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? MaxIdleDays { get; set; }
 
         /// <summary>
-        /// 使用时长(hour)最小值
+        /// 使用时长(hour)最小值。
         /// </summary>
         [SDKProperty("usage_min_hours", IsQuery = true)]
         [JsonProperty("usage_min_hours", NullValueHandling = NullValueHandling.Ignore)]
         public int? UsageMinHours { get; set; }
 
         /// <summary>
-        /// 使用时长(hour)最大值(必须大于等于usage_min_hours)
+        /// 使用时长(hour)最大值(必须大于等于usage_min_hours)。
         /// </summary>
         [SDKProperty("usage_max_hours", IsQuery = true)]
         [JsonProperty("usage_max_hours", NullValueHandling = NullValueHandling.Ignore)]
@@ -80,14 +80,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string SortType { get; set; }
 
         /// <summary>
-        /// 查询的偏移量,默认值0
+        /// 查询的偏移量,默认值0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// limit范围[1-100],默认值0
+        /// limit范围[1-100],默认值0。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

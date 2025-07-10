@@ -1557,6 +1557,32 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         }
         
         /// <summary>
+        /// 流水线查看构建任务信息
+        ///
+        /// 流水线查看构建任务信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowJobPipelineInfoResponse ShowJobPipelineInfo(ShowJobPipelineInfoRequest showJobPipelineInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobPipelineInfoRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/job/{job_id}/pipeline-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobPipelineInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowJobPipelineInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowJobPipelineInfoResponse> ShowJobPipelineInfoInvoker(ShowJobPipelineInfoRequest showJobPipelineInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showJobPipelineInfoRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/job/{job_id}/pipeline-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobPipelineInfoRequest);
+            return new SyncInvoker<ShowJobPipelineInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobPipelineInfoResponse>);
+        }
+        
+        /// <summary>
         /// 获取构建任务的角色权限矩阵信息
         ///
         /// 获取构建任务的角色权限矩阵信息
@@ -1681,6 +1707,32 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         }
         
         /// <summary>
+        /// 停止构建任务v1
+        ///
+        /// 停止构建任务v1
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StopTheJobResponse StopTheJob(StopTheJobRequest stopTheJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", stopTheJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/job/{job_id}/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopTheJobRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<StopTheJobResponse>(response);
+        }
+
+        public SyncInvoker<StopTheJobResponse> StopTheJobInvoker(StopTheJobRequest stopTheJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", stopTheJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/job/{job_id}/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopTheJobRequest);
+            return new SyncInvoker<StopTheJobResponse>(this, "POST", request, JsonUtils.DeSerialize<StopTheJobResponse>);
+        }
+        
+        /// <summary>
         /// 更新构建任务
         ///
         /// 更新构建任务
@@ -1702,6 +1754,30 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
             var urlPath = HttpUtils.AddUrlPath("/v1/job/update", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNewJobRequest);
             return new SyncInvoker<UpdateNewJobResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateNewJobResponse>);
+        }
+        
+        /// <summary>
+        /// 添加文件权限
+        ///
+        /// 添加文件权限
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddKeystorePermissionResponse AddKeystorePermission(AddKeystorePermissionRequest addKeystorePermissionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/keystore/permission/add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addKeystorePermissionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AddKeystorePermissionResponse>(response);
+        }
+
+        public SyncInvoker<AddKeystorePermissionResponse> AddKeystorePermissionInvoker(AddKeystorePermissionRequest addKeystorePermissionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/keystore/permission/add", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addKeystorePermissionRequest);
+            return new SyncInvoker<AddKeystorePermissionResponse>(this, "POST", request, JsonUtils.DeSerialize<AddKeystorePermissionResponse>);
         }
         
         /// <summary>
@@ -1878,6 +1954,30 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
             var urlPath = HttpUtils.AddUrlPath("/v2/keystore/update/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKeystoreRequest);
             return new SyncInvoker<UpdateKeystoreResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateKeystoreResponse>);
+        }
+        
+        /// <summary>
+        /// 配置文件权限
+        ///
+        /// 配置文件权限
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateKeystorePermissionResponse UpdateKeystorePermission(UpdateKeystorePermissionRequest updateKeystorePermissionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/keystore/permission/edit", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKeystorePermissionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateKeystorePermissionResponse>(response);
+        }
+
+        public SyncInvoker<UpdateKeystorePermissionResponse> UpdateKeystorePermissionInvoker(UpdateKeystorePermissionRequest updateKeystorePermissionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/keystore/permission/edit", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKeystorePermissionRequest);
+            return new SyncInvoker<UpdateKeystorePermissionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateKeystorePermissionResponse>);
         }
         
         /// <summary>

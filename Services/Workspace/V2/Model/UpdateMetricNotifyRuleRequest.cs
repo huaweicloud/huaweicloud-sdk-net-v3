@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 通知规则ID
+        /// 通知规则ID。
         /// </summary>
         [SDKProperty("rule_id", IsPath = true)]
         [JsonProperty("rule_id", NullValueHandling = NullValueHandling.Ignore)]

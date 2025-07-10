@@ -17,61 +17,61 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 公网NAT网关的规格，1：小型，2：中型，3：大型，4：超大型
+        /// 公网NAT网关的规格，1：小型，2：中型，3：大型，4：超大型。
         /// </summary>
         [JsonProperty("nat_spec", NullValueHandling = NullValueHandling.Ignore)]
         public string NatSpec { get; set; }
 
         /// <summary>
-        /// traffic（按流量计费），bandwidth（按带宽计费）
+        /// traffic（按流量计费），bandwidth（按带宽计费）。
         /// </summary>
         [JsonProperty("eip_charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string EipChargeMode { get; set; }
 
         /// <summary>
-        /// 带宽大小
+        /// 带宽大小。
         /// </summary>
         [JsonProperty("bandwidth_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? BandwidthSize { get; set; }
 
         /// <summary>
-        /// EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP），默认值：5_bgp
+        /// EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP），默认值：5_bgp。
         /// </summary>
         [JsonProperty("eip_type", NullValueHandling = NullValueHandling.Ignore)]
         public string EipType { get; set; }
 
         /// <summary>
-        /// vpc的id
+        /// vpc的id。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 子网的id
+        /// 子网的id。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 企业项目ID，默认\&quot;0\&quot;
+        /// 企业项目ID，默认\&quot;0。\&quot;
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// nat的id，有传则使用该NAT，否则新建
+        /// nat的id，有传则使用该NAT，否则新建。
         /// </summary>
         [JsonProperty("nat_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NatId { get; set; }
 
         /// <summary>
-        /// nat名称，默认值：nat-workspace
+        /// nat名称，默认值：nat-workspace。
         /// </summary>
         [JsonProperty("nat_name", NullValueHandling = NullValueHandling.Ignore)]
         public string NatName { get; set; }
 
         /// <summary>
-        /// eip名称，默认值：eip-workspace
+        /// eip名称，默认值：eip-workspace。
         /// </summary>
         [JsonProperty("eip_name", NullValueHandling = NullValueHandling.Ignore)]
         public string EipName { get; set; }

@@ -65,12 +65,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? DesktopUsed { get; set; }
 
         /// <summary>
-        /// 桌面池按需桌面个数（不包含删除中的桌面）。
-        /// </summary>
-        [JsonProperty("on_demand_desktop_num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? OnDemandDesktopNum { get; set; }
-
-        /// <summary>
         /// 可用区。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
@@ -140,7 +134,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 桌面安全组。
         /// </summary>
         [JsonProperty("security_groups", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SecurityGroup> SecurityGroups { get; set; }
+        public List<SecurityGroupInfo> SecurityGroups { get; set; }
 
         /// <summary>
         /// 动态池桌面断连多少分钟内，保留用户与桌面的绑定关系，超时后自动解绑。
@@ -167,13 +161,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 企业项目ID
+        /// 企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 桌面池是否处于管理员维护模式
+        /// 桌面池是否处于管理员维护模式。
         /// </summary>
         [JsonProperty("in_maintenance_mode", NullValueHandling = NullValueHandling.Ignore)]
         public bool? InMaintenanceMode { get; set; }
@@ -201,7 +195,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  chargingMode: ").Append(ChargingMode).Append("\n");
             sb.Append("  desktopCount: ").Append(DesktopCount).Append("\n");
             sb.Append("  desktopUsed: ").Append(DesktopUsed).Append("\n");
-            sb.Append("  onDemandDesktopNum: ").Append(OnDemandDesktopNum).Append("\n");
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  product: ").Append(Product).Append("\n");
@@ -247,7 +240,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ChargingMode != input.ChargingMode || (this.ChargingMode != null && !this.ChargingMode.Equals(input.ChargingMode))) return false;
             if (this.DesktopCount != input.DesktopCount || (this.DesktopCount != null && !this.DesktopCount.Equals(input.DesktopCount))) return false;
             if (this.DesktopUsed != input.DesktopUsed || (this.DesktopUsed != null && !this.DesktopUsed.Equals(input.DesktopUsed))) return false;
-            if (this.OnDemandDesktopNum != input.OnDemandDesktopNum || (this.OnDemandDesktopNum != null && !this.OnDemandDesktopNum.Equals(input.OnDemandDesktopNum))) return false;
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
             if (this.Product != input.Product || (this.Product != null && !this.Product.Equals(input.Product))) return false;
@@ -287,7 +279,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ChargingMode != null) hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
                 if (this.DesktopCount != null) hashCode = hashCode * 59 + this.DesktopCount.GetHashCode();
                 if (this.DesktopUsed != null) hashCode = hashCode * 59 + this.DesktopUsed.GetHashCode();
-                if (this.OnDemandDesktopNum != null) hashCode = hashCode * 59 + this.OnDemandDesktopNum.GetHashCode();
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.Product != null) hashCode = hashCode * 59 + this.Product.GetHashCode();

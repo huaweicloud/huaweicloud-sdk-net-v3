@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 桌面监控用户在线状态信息
+    /// 桌面监控用户在线状态信息。
     /// </summary>
     public class MonitorUserOnlineInfo 
     {
@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string EncodedAuthorizationMessage { get; set; }
 
         /// <summary>
-        /// 建立连接时间
+        /// 建立连接时间。
         /// </summary>
         [JsonProperty("connection_setup_time", NullValueHandling = NullValueHandling.Ignore)]
         public string ConnectionSetupTime { get; set; }
 
         /// <summary>
-        /// 结束连接时间
+        /// 结束连接时间。
         /// </summary>
         [JsonProperty("connection_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string ConnectionEndTime { get; set; }

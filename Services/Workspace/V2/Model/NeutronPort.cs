@@ -11,31 +11,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 端口详情
+    /// 端口详情。
     /// </summary>
     public class NeutronPort 
     {
 
         /// <summary>
-        /// 端口唯一标识
+        /// 端口唯一标识。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 私有ip状态
+        /// 私有ip状态。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 端口所属网络的ID
+        /// 端口所属网络的ID。
         /// </summary>
         [JsonProperty("network_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NetworkId { get; set; }
 
         /// <summary>
-        /// 端口IP
+        /// 端口所属设备的Id。
+        /// </summary>
+        [JsonProperty("device_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DeviceId { get; set; }
+
+        /// <summary>
+        /// 端口IP。
         /// </summary>
         [JsonProperty("fixed_ips", NullValueHandling = NullValueHandling.Ignore)]
         public List<FixedIp> FixedIps { get; set; }
@@ -52,6 +58,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  networkId: ").Append(NetworkId).Append("\n");
+            sb.Append("  deviceId: ").Append(DeviceId).Append("\n");
             sb.Append("  fixedIps: ").Append(FixedIps).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,6 +81,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.NetworkId != input.NetworkId || (this.NetworkId != null && !this.NetworkId.Equals(input.NetworkId))) return false;
+            if (this.DeviceId != input.DeviceId || (this.DeviceId != null && !this.DeviceId.Equals(input.DeviceId))) return false;
             if (this.FixedIps != input.FixedIps || (this.FixedIps != null && input.FixedIps != null && !this.FixedIps.SequenceEqual(input.FixedIps))) return false;
 
             return true;
@@ -90,6 +98,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.NetworkId != null) hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
+                if (this.DeviceId != null) hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
                 if (this.FixedIps != null) hashCode = hashCode * 59 + this.FixedIps.GetHashCode();
                 return hashCode;
             }

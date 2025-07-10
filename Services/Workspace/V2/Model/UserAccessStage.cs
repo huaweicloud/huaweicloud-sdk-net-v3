@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class UserAccessStage 
     {
         /// <summary>
-        /// 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接
+        /// 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接。
         /// </summary>
-        /// <value>接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接</value>
+        /// <value>接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接。</value>
         [JsonConverter(typeof(EnumClassConverter<StageEnum>))]
         public class StageEnum
         {
@@ -138,42 +138,42 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接
+        /// 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接。
         /// </summary>
         [JsonProperty("stage", NullValueHandling = NullValueHandling.Ignore)]
         public StageEnum Stage { get; set; }
         /// <summary>
-        /// 花费时长，单位：ms
+        /// 花费时长，单位：ms。
         /// </summary>
         [JsonProperty("duration", NullValueHandling = NullValueHandling.Ignore)]
         public int? Duration { get; set; }
 
         /// <summary>
-        /// 接入阶段是否成功
+        /// 接入阶段是否成功。
         /// </summary>
         [JsonProperty("is_success", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSuccess { get; set; }
 
         /// <summary>
-        /// 开始时间戳
+        /// 开始时间戳。
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间戳
+        /// 结束时间戳。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// 错误码
+        /// 错误码。
         /// </summary>
         [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorCode { get; set; }
 
         /// <summary>
-        /// 错误描述
+        /// 错误描述。
         /// </summary>
         [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorMsg { get; set; }

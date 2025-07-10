@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 录屏记录。
         /// </summary>
         [JsonProperty("screen_records", NullValueHandling = NullValueHandling.Ignore)]
-        public List<QueryScreenRecordDetailRsp> ScreenRecords { get; set; }
+        public List<ScreenRecordDetail> ScreenRecords { get; set; }
 
         /// <summary>
         /// 总数。

@@ -132,19 +132,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 订购周期类型：2：月；3：年;必填
+        /// 订购周期类型：2：月；3：年;必填。
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodType { get; set; }
 
         /// <summary>
-        /// 订购周期数
+        /// 订购周期数。
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
 
         /// <summary>
-        /// 是否自动续订
+        /// 是否自动续订。
         /// </summary>
         [JsonProperty("is_auto_renew", NullValueHandling = NullValueHandling.Ignore)]
         public int? IsAutoRenew { get; set; }
@@ -154,12 +154,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("used_up_policy", NullValueHandling = NullValueHandling.Ignore)]
         public UsedUpPolicyEnum UsedUpPolicy { get; set; }
-        /// <summary>
-        /// 支付后跳转url
-        /// </summary>
-        [JsonProperty("cloud_service_console_url", NullValueHandling = NullValueHandling.Ignore)]
-        public string CloudServiceConsoleUrl { get; set; }
-
         /// <summary>
         /// 
         /// </summary>
@@ -179,7 +173,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  periodNum: ").Append(PeriodNum).Append("\n");
             sb.Append("  isAutoRenew: ").Append(IsAutoRenew).Append("\n");
             sb.Append("  usedUpPolicy: ").Append(UsedUpPolicy).Append("\n");
-            sb.Append("  cloudServiceConsoleUrl: ").Append(CloudServiceConsoleUrl).Append("\n");
             sb.Append("  createDesktops: ").Append(CreateDesktops).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -203,7 +196,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
             if (this.IsAutoRenew != input.IsAutoRenew || (this.IsAutoRenew != null && !this.IsAutoRenew.Equals(input.IsAutoRenew))) return false;
             if (this.UsedUpPolicy != input.UsedUpPolicy) return false;
-            if (this.CloudServiceConsoleUrl != input.CloudServiceConsoleUrl || (this.CloudServiceConsoleUrl != null && !this.CloudServiceConsoleUrl.Equals(input.CloudServiceConsoleUrl))) return false;
             if (this.CreateDesktops != input.CreateDesktops || (this.CreateDesktops != null && !this.CreateDesktops.Equals(input.CreateDesktops))) return false;
 
             return true;
@@ -221,7 +213,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
                 if (this.IsAutoRenew != null) hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
                 hashCode = hashCode * 59 + this.UsedUpPolicy.GetHashCode();
-                if (this.CloudServiceConsoleUrl != null) hashCode = hashCode * 59 + this.CloudServiceConsoleUrl.GetHashCode();
                 if (this.CreateDesktops != null) hashCode = hashCode * 59 + this.CreateDesktops.GetHashCode();
                 return hashCode;
             }

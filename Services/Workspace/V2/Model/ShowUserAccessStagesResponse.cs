@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     public class ShowUserAccessStagesResponse : SdkResponse
     {
         /// <summary>
-        /// 接入阶段 | APP - 应用 DESKTOP - 桌面
+        /// 接入阶段 | APP - 应用 DESKTOP - 桌面。
         /// </summary>
-        /// <value>接入阶段 | APP - 应用 DESKTOP - 桌面</value>
+        /// <value>接入阶段 | APP - 应用 DESKTOP - 桌面。</value>
         [JsonConverter(typeof(EnumClassConverter<BizTypeEnum>))]
         public class BizTypeEnum
         {
@@ -132,18 +132,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 用户名
+        /// 用户名。
         /// </summary>
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }
 
         /// <summary>
-        /// 接入阶段 | APP - 应用 DESKTOP - 桌面
+        /// 接入阶段 | APP - 应用 DESKTOP - 桌面。
         /// </summary>
         [JsonProperty("biz_type", NullValueHandling = NullValueHandling.Ignore)]
         public BizTypeEnum BizType { get; set; }
         /// <summary>
-        /// 接入各阶段详情
+        /// 接入各阶段详情。
         /// </summary>
         [JsonProperty("stages", NullValueHandling = NullValueHandling.Ignore)]
         public List<UserAccessStage> Stages { get; set; }

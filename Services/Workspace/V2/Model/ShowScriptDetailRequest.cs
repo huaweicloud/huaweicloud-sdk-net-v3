@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ScriptId { get; set; }
 
         /// <summary>
-        /// 执行脚本的任务ID
+        /// 执行脚本的任务ID。
         /// </summary>
         [SDKProperty("script_task_id", IsQuery = true)]
         [JsonProperty("script_task_id", NullValueHandling = NullValueHandling.Ignore)]

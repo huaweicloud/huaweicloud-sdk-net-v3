@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 查询指标响应体
+        /// 查询指标响应体。
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public List<Metric> Body { get; set; }

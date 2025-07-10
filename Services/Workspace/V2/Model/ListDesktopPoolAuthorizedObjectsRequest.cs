@@ -24,14 +24,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string PoolId { get; set; }
 
         /// <summary>
-        /// 用于分页查询，查询的起始记录序号，从0开始
+        /// 用于分页查询，查询的起始记录序号，从0开始。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 用于分页查询，返回桌面数量限制。取值范围0-100，默认值是10
+        /// 用于分页查询，返回桌面数量限制。取值范围0-100，默认值是10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

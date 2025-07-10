@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 辅助认证策略请求
+    /// 辅助认证策略请求。
     /// </summary>
     public class AssistAuthMethodConfigRequest 
     {
@@ -27,18 +27,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("otp_config_info", NullValueHandling = NullValueHandling.Ignore)]
         public OtpConfigInfo OtpConfigInfo { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("radius_auth_config", NullValueHandling = NullValueHandling.Ignore)]
-        public RadiusAuthConfig RadiusAuthConfig { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("radius_gateway_config", NullValueHandling = NullValueHandling.Ignore)]
-        public RadiusGatewayConfig RadiusGatewayConfig { get; set; }
-
 
 
         /// <summary>
@@ -50,8 +38,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class AssistAuthMethodConfigRequest {\n");
             sb.Append("  authType: ").Append(AuthType).Append("\n");
             sb.Append("  otpConfigInfo: ").Append(OtpConfigInfo).Append("\n");
-            sb.Append("  radiusAuthConfig: ").Append(RadiusAuthConfig).Append("\n");
-            sb.Append("  radiusGatewayConfig: ").Append(RadiusGatewayConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -72,8 +58,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.AuthType != input.AuthType) return false;
             if (this.OtpConfigInfo != input.OtpConfigInfo || (this.OtpConfigInfo != null && !this.OtpConfigInfo.Equals(input.OtpConfigInfo))) return false;
-            if (this.RadiusAuthConfig != input.RadiusAuthConfig || (this.RadiusAuthConfig != null && !this.RadiusAuthConfig.Equals(input.RadiusAuthConfig))) return false;
-            if (this.RadiusGatewayConfig != input.RadiusGatewayConfig || (this.RadiusGatewayConfig != null && !this.RadiusGatewayConfig.Equals(input.RadiusGatewayConfig))) return false;
 
             return true;
         }
@@ -88,8 +72,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.AuthType.GetHashCode();
                 if (this.OtpConfigInfo != null) hashCode = hashCode * 59 + this.OtpConfigInfo.GetHashCode();
-                if (this.RadiusAuthConfig != null) hashCode = hashCode * 59 + this.RadiusAuthConfig.GetHashCode();
-                if (this.RadiusGatewayConfig != null) hashCode = hashCode * 59 + this.RadiusGatewayConfig.GetHashCode();
                 return hashCode;
             }
         }

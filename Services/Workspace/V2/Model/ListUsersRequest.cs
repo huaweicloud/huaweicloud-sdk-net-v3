@@ -24,13 +24,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
-        /// 用户邮箱。
-        /// </summary>
-        [SDKProperty("user_email", IsQuery = true)]
-        [JsonProperty("user_email", NullValueHandling = NullValueHandling.Ignore)]
-        public string UserEmail { get; set; }
-
-        /// <summary>
         /// 用于分页查询，返回用户数量限制。如果不指定，则返回所有符合条件的用户。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
@@ -66,25 +59,32 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 用户是否已订阅协同，true/false
+        /// 用户是否已订阅协同，true/false。
         /// </summary>
         [SDKProperty("share_space_subscription", IsQuery = true)]
         [JsonProperty("share_space_subscription", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ShareSpaceSubscription { get; set; }
 
         /// <summary>
-        /// 用户是否已绑定协同桌面,true/false
+        /// 用户是否已绑定协同桌面,true/false。
         /// </summary>
         [SDKProperty("share_space_desktops", IsQuery = true)]
         [JsonProperty("share_space_desktops", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ShareSpaceDesktops { get; set; }
 
         /// <summary>
-        /// 是否查询用户绑定的桌面数,true/false,默认true
+        /// 是否查询用户绑定的桌面数,true/false,默认true。
         /// </summary>
         [SDKProperty("is_query_total_desktops", IsQuery = true)]
         [JsonProperty("is_query_total_desktops", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsQueryTotalDesktops { get; set; }
+
+        /// <summary>
+        /// 企业项目ID
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
 
 
 
@@ -96,7 +96,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListUsersRequest {\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
-            sb.Append("  userEmail: ").Append(UserEmail).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -105,6 +104,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  shareSpaceSubscription: ").Append(ShareSpaceSubscription).Append("\n");
             sb.Append("  shareSpaceDesktops: ").Append(ShareSpaceDesktops).Append("\n");
             sb.Append("  isQueryTotalDesktops: ").Append(IsQueryTotalDesktops).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,7 +124,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
-            if (this.UserEmail != input.UserEmail || (this.UserEmail != null && !this.UserEmail.Equals(input.UserEmail))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
@@ -133,6 +132,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ShareSpaceSubscription != input.ShareSpaceSubscription || (this.ShareSpaceSubscription != null && !this.ShareSpaceSubscription.Equals(input.ShareSpaceSubscription))) return false;
             if (this.ShareSpaceDesktops != input.ShareSpaceDesktops || (this.ShareSpaceDesktops != null && !this.ShareSpaceDesktops.Equals(input.ShareSpaceDesktops))) return false;
             if (this.IsQueryTotalDesktops != input.IsQueryTotalDesktops || (this.IsQueryTotalDesktops != null && !this.IsQueryTotalDesktops.Equals(input.IsQueryTotalDesktops))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
             return true;
         }
@@ -146,7 +146,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.UserEmail != null) hashCode = hashCode * 59 + this.UserEmail.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
@@ -155,6 +154,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ShareSpaceSubscription != null) hashCode = hashCode * 59 + this.ShareSpaceSubscription.GetHashCode();
                 if (this.ShareSpaceDesktops != null) hashCode = hashCode * 59 + this.ShareSpaceDesktops.GetHashCode();
                 if (this.IsQueryTotalDesktops != null) hashCode = hashCode * 59 + this.IsQueryTotalDesktops.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

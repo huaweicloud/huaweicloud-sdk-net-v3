@@ -17,12 +17,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 包周期订购ID，CBC订购回调时使用。
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
-
-        /// <summary>
         /// 增加的磁盘列表。
         /// </summary>
         [JsonProperty("volumes", NullValueHandling = NullValueHandling.Ignore)]
@@ -37,7 +31,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AddDesktopPoolVolumesReq {\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  volumes: ").Append(Volumes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -57,7 +50,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(AddDesktopPoolVolumesReq input)
         {
             if (input == null) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.Volumes != input.Volumes || (this.Volumes != null && input.Volumes != null && !this.Volumes.SequenceEqual(input.Volumes))) return false;
 
             return true;
@@ -71,7 +63,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.Volumes != null) hashCode = hashCode * 59 + this.Volumes.GetHashCode();
                 return hashCode;
             }

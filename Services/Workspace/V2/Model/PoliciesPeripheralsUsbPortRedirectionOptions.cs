@@ -15,121 +15,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     /// </summary>
     public class PoliciesPeripheralsUsbPortRedirectionOptions 
     {
-        /// <summary>
-        /// USB 重定向模式。取值为： 经典模式：Classical mode。 通用模式：Common mode。
-        /// </summary>
-        /// <value>USB 重定向模式。取值为： 经典模式：Classical mode。 通用模式：Common mode。</value>
-        [JsonConverter(typeof(EnumClassConverter<UsbRedirectionModeEnum>))]
-        public class UsbRedirectionModeEnum
-        {
-            /// <summary>
-            /// Enum CLASSICAL_MODE for value: Classical mode
-            /// </summary>
-            public static readonly UsbRedirectionModeEnum CLASSICAL_MODE = new UsbRedirectionModeEnum("Classical mode");
-
-            /// <summary>
-            /// Enum COMMON_MODE for value: Common mode
-            /// </summary>
-            public static readonly UsbRedirectionModeEnum COMMON_MODE = new UsbRedirectionModeEnum("Common mode");
-
-            private static readonly Dictionary<string, UsbRedirectionModeEnum> StaticFields =
-            new Dictionary<string, UsbRedirectionModeEnum>()
-            {
-                { "Classical mode", CLASSICAL_MODE },
-                { "Common mode", COMMON_MODE },
-            };
-
-            private string _value;
-
-            public UsbRedirectionModeEnum()
-            {
-
-            }
-
-            public UsbRedirectionModeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static UsbRedirectionModeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as UsbRedirectionModeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(UsbRedirectionModeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(UsbRedirectionModeEnum a, UsbRedirectionModeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(UsbRedirectionModeEnum a, UsbRedirectionModeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 是否开启图像设备（如: 扫描仪）。取值为： false：表示关闭。 true：表示开启。
@@ -180,7 +65,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? OtherUsbDevicesEnable { get; set; }
 
         /// <summary>
-        /// USB端口重定向自定义策略。
+        /// USB端口重定向自定义策略，长度不能超过18000个字符。
         /// </summary>
         [JsonProperty("usb_redirection_customization_policy", NullValueHandling = NullValueHandling.Ignore)]
         public string UsbRedirectionCustomizationPolicy { get; set; }
@@ -189,7 +74,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// USB 重定向模式。取值为： 经典模式：Classical mode。 通用模式：Common mode。
         /// </summary>
         [JsonProperty("usb_redirection_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public UsbRedirectionModeEnum UsbRedirectionMode { get; set; }
+        public string UsbRedirectionMode { get; set; }
+
 
 
         /// <summary>
@@ -236,7 +122,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.UsbSmartCardEnable != input.UsbSmartCardEnable || (this.UsbSmartCardEnable != null && !this.UsbSmartCardEnable.Equals(input.UsbSmartCardEnable))) return false;
             if (this.OtherUsbDevicesEnable != input.OtherUsbDevicesEnable || (this.OtherUsbDevicesEnable != null && !this.OtherUsbDevicesEnable.Equals(input.OtherUsbDevicesEnable))) return false;
             if (this.UsbRedirectionCustomizationPolicy != input.UsbRedirectionCustomizationPolicy || (this.UsbRedirectionCustomizationPolicy != null && !this.UsbRedirectionCustomizationPolicy.Equals(input.UsbRedirectionCustomizationPolicy))) return false;
-            if (this.UsbRedirectionMode != input.UsbRedirectionMode) return false;
+            if (this.UsbRedirectionMode != input.UsbRedirectionMode || (this.UsbRedirectionMode != null && !this.UsbRedirectionMode.Equals(input.UsbRedirectionMode))) return false;
 
             return true;
         }
@@ -258,7 +144,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.UsbSmartCardEnable != null) hashCode = hashCode * 59 + this.UsbSmartCardEnable.GetHashCode();
                 if (this.OtherUsbDevicesEnable != null) hashCode = hashCode * 59 + this.OtherUsbDevicesEnable.GetHashCode();
                 if (this.UsbRedirectionCustomizationPolicy != null) hashCode = hashCode * 59 + this.UsbRedirectionCustomizationPolicy.GetHashCode();
-                hashCode = hashCode * 59 + this.UsbRedirectionMode.GetHashCode();
+                if (this.UsbRedirectionMode != null) hashCode = hashCode * 59 + this.UsbRedirectionMode.GetHashCode();
                 return hashCode;
             }
         }

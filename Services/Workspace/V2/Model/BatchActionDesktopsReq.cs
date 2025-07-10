@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> DesktopIds { get; set; }
 
         /// <summary>
-        /// 操作类型。 -os-start 启动。 -reboot 重启。 -os-stop 关机。 -os-hibernate 休眠。
+        /// 操作类型。 - os-start 启动。 - reboot 重启。 - os-stop 关机。 - os-hibernate 休眠。
         /// </summary>
         [JsonProperty("op_type", NullValueHandling = NullValueHandling.Ignore)]
         public string OpType { get; set; }
@@ -148,18 +148,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
-        /// <summary>
-        /// 专属主机id，op_type值为os-start时本参数才生效，仅支持单个桌面操作，实现将关机的桌面先迁移到指定专属主机再开机，迁移过程耗时较长，需要等待一段时间。
-        /// </summary>
-        [JsonProperty("host_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string HostId { get; set; }
-
-        /// <summary>
-        /// 项目ID。
-        /// </summary>
-        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProjectId { get; set; }
-
 
 
         /// <summary>
@@ -172,8 +160,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  desktopIds: ").Append(DesktopIds).Append("\n");
             sb.Append("  opType: ").Append(OpType).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
-            sb.Append("  hostId: ").Append(HostId).Append("\n");
-            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -195,8 +181,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.DesktopIds != input.DesktopIds || (this.DesktopIds != null && input.DesktopIds != null && !this.DesktopIds.SequenceEqual(input.DesktopIds))) return false;
             if (this.OpType != input.OpType || (this.OpType != null && !this.OpType.Equals(input.OpType))) return false;
             if (this.Type != input.Type) return false;
-            if (this.HostId != input.HostId || (this.HostId != null && !this.HostId.Equals(input.HostId))) return false;
-            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
 
             return true;
         }
@@ -212,8 +196,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.DesktopIds != null) hashCode = hashCode * 59 + this.DesktopIds.GetHashCode();
                 if (this.OpType != null) hashCode = hashCode * 59 + this.OpType.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.HostId != null) hashCode = hashCode * 59 + this.HostId.GetHashCode();
-                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 return hashCode;
             }
         }

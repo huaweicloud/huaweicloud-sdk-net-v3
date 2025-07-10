@@ -11,67 +11,67 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 
+    /// 批量变更询价响应体。
     /// </summary>
     public class BatchInquiryChangeRsp 
     {
 
         /// <summary>
-        /// 返回码，恒为0
+        /// 返回码，恒为0。
         /// </summary>
         [JsonProperty("ret_code", NullValueHandling = NullValueHandling.Ignore)]
         public string RetCode { get; set; }
 
         /// <summary>
-        /// 返回信息
+        /// 返回信息。
         /// </summary>
         [JsonProperty("error_txt", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorTxt { get; set; }
 
         /// <summary>
-        /// 总额，即最终优惠后的金额(降配场景下包含退还的现金、现金券、储值卡的总额)
+        /// 总额，即最终优惠后的金额(降配场景下包含退还的现金、现金券、储值卡的总额)。
         /// </summary>
         [JsonProperty("amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Amount { get; set; }
 
         /// <summary>
-        /// 券的退订金额（降配存在）
+        /// 券的退订金额（降配存在）。
         /// </summary>
         [JsonProperty("coupon_results", NullValueHandling = NullValueHandling.Ignore)]
         public List<CouponUnsubscribeResult> CouponResults { get; set; }
 
         /// <summary>
-        /// 优惠额
+        /// 优惠额。
         /// </summary>
         [JsonProperty("discount_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? DiscountAmount { get; set; }
 
         /// <summary>
-        /// 原总额，即优惠前总额
+        /// 原总额，即优惠前总额。
         /// </summary>
         [JsonProperty("original_amount", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? OriginalAmount { get; set; }
 
         /// <summary>
-        /// 度量单位标识
+        /// 度量单位标识。
         /// </summary>
         [JsonProperty("measure_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? MeasureId { get; set; }
 
         /// <summary>
-        /// 货币单位代码（遵循ISO 4217标准）
+        /// 货币单位代码（遵循ISO 4217标准）。
         /// </summary>
         [JsonProperty("currency", NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
         /// <summary>
-        /// 批价结果
+        /// 批价结果。
         /// </summary>
         [JsonProperty("product_rating_result", NullValueHandling = NullValueHandling.Ignore)]
         public List<BatchResInquiryResult> ProductRatingResult { get; set; }
 
         /// <summary>
-        /// 扩展参数
+        /// 扩展参数。
         /// </summary>
         [JsonProperty("extend_params", NullValueHandling = NullValueHandling.Ignore)]
         public string ExtendParams { get; set; }

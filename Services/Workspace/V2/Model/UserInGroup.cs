@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? TotalDesktops { get; set; }
 
         /// <summary>
+        /// 企业项ID。
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
         /// 用户描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
@@ -66,6 +72,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  userEmail: ").Append(UserEmail).Append("\n");
             sb.Append("  userPhone: ").Append(UserPhone).Append("\n");
             sb.Append("  totalDesktops: ").Append(TotalDesktops).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -90,6 +97,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.UserEmail != input.UserEmail || (this.UserEmail != null && !this.UserEmail.Equals(input.UserEmail))) return false;
             if (this.UserPhone != input.UserPhone || (this.UserPhone != null && !this.UserPhone.Equals(input.UserPhone))) return false;
             if (this.TotalDesktops != input.TotalDesktops || (this.TotalDesktops != null && !this.TotalDesktops.Equals(input.TotalDesktops))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
             return true;
@@ -108,6 +116,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.UserEmail != null) hashCode = hashCode * 59 + this.UserEmail.GetHashCode();
                 if (this.UserPhone != null) hashCode = hashCode * 59 + this.UserPhone.GetHashCode();
                 if (this.TotalDesktops != null) hashCode = hashCode * 59 + this.TotalDesktops.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }

@@ -564,7 +564,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 资产类型。多个类型使用英文逗号分隔。 * HUMAN_MODEL：数字人模型 * VOICE_MODEL：音色模型（仅系统管理员可上传） * SCENE：场景模型 * ANIMATION：动作动画 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * HUMAN_MODEL_2D: 2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐 * AUDIO: 音频
+        /// 资产类型。多个类型使用英文逗号分隔。 * VOICE_MODEL：音色模型（仅系统管理员可上传） * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MATERIAL：风格化素材 * HUMAN_MODEL_2D: 2D数字人网络模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板 * MUSIC: 音乐 * AUDIO: 音频
         /// </summary>
         [SDKProperty("asset_type", IsQuery = true)]
         [JsonProperty("asset_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -612,13 +612,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public List<string> AccurateQueryField { get; set; }
 
         /// <summary>
-        /// 可用引擎。 * UE：UE引擎 * MetaEngine：MetaEngine引擎 &gt; 该字段当前只对MetaEngine白名单用户生效
-        /// </summary>
-        [SDKProperty("render_engine", IsQuery = true)]
-        [JsonProperty("render_engine", NullValueHandling = NullValueHandling.Ignore)]
-        public string RenderEngine { get; set; }
-
-        /// <summary>
         /// 资产id
         /// </summary>
         [SDKProperty("asset_id", IsQuery = true)]
@@ -640,7 +633,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string Language { get; set; }
 
         /// <summary>
-        /// 系统属性。  key和value间用\&quot;:\&quot;分隔，多个key之间用\&quot;,\&quot;分隔。  如system_property&#x3D;BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下：  公共资产属性： * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * CREATED_BY_PLATFORM：是否平台生成，可取值Yes  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。可取值Yes * MATERIAL_VIDEO：素材视频，用作前景。可取值Yes * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes  3D数字人资产属性： * STYLE_ID：风格Id * RENDER_ENGINE：引擎类型，可取值UE或MetaEngine * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）  租户组资产验签属性： * SIG：加签秘钥。取值方式SIG&#x3D;HexEncode(HMAC-SHA256(group_id:EXP_TIME:NONCE,key)) * EXP_TIME：过期时间，当前时间增加增加10分钟。取值示例1627768613 * NONCE：随机字符串。取值示例：EycLQsHwxhzK9OW8UEKWNfH2I3CGR2nINuU1EBpv162d42d92s
+        /// 系统属性。  key和value间用\&quot;:\&quot;分隔，多个key之间用\&quot;,\&quot;分隔。  如system_property&#x3D;BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下：  公共资产属性： * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * CREATED_BY_PLATFORM：是否平台生成，可取值Yes  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。可取值Yes * MATERIAL_VIDEO：素材视频，用作前景。可取值Yes  数字人资产属性： * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）  租户组资产验签属性： * SIG：加签秘钥。取值方式SIG&#x3D;HexEncode(HMAC-SHA256(group_id:EXP_TIME:NONCE,key)) * EXP_TIME：过期时间，当前时间增加增加10分钟。取值示例1627768613 * NONCE：随机字符串。取值示例：EycLQsHwxhzK9OW8UEKWNfH2I3CGR2nINuU1EBpv162d42d92s
         /// </summary>
         [SDKProperty("system_property", IsQuery = true)]
         [JsonProperty("system_property", NullValueHandling = NullValueHandling.Ignore)]
@@ -754,7 +747,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  assetState: ").Append(AssetState).Append("\n");
             sb.Append("  styleId: ").Append(StyleId).Append("\n");
             sb.Append("  accurateQueryField: ").Append(AccurateQueryField).Append("\n");
-            sb.Append("  renderEngine: ").Append(RenderEngine).Append("\n");
             sb.Append("  assetId: ").Append(AssetId).Append("\n");
             sb.Append("  sex: ").Append(Sex).Append("\n");
             sb.Append("  language: ").Append(Language).Append("\n");
@@ -806,7 +798,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.AssetState != input.AssetState || (this.AssetState != null && !this.AssetState.Equals(input.AssetState))) return false;
             if (this.StyleId != input.StyleId || (this.StyleId != null && !this.StyleId.Equals(input.StyleId))) return false;
             if (this.AccurateQueryField != input.AccurateQueryField || (this.AccurateQueryField != null && input.AccurateQueryField != null && !this.AccurateQueryField.SequenceEqual(input.AccurateQueryField))) return false;
-            if (this.RenderEngine != input.RenderEngine || (this.RenderEngine != null && !this.RenderEngine.Equals(input.RenderEngine))) return false;
             if (this.AssetId != input.AssetId || (this.AssetId != null && input.AssetId != null && !this.AssetId.SequenceEqual(input.AssetId))) return false;
             if (this.Sex != input.Sex || (this.Sex != null && !this.Sex.Equals(input.Sex))) return false;
             if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
@@ -852,7 +843,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.AssetState != null) hashCode = hashCode * 59 + this.AssetState.GetHashCode();
                 if (this.StyleId != null) hashCode = hashCode * 59 + this.StyleId.GetHashCode();
                 if (this.AccurateQueryField != null) hashCode = hashCode * 59 + this.AccurateQueryField.GetHashCode();
-                if (this.RenderEngine != null) hashCode = hashCode * 59 + this.RenderEngine.GetHashCode();
                 if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
                 if (this.Sex != null) hashCode = hashCode * 59 + this.Sex.GetHashCode();
                 if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();

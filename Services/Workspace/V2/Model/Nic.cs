@@ -22,12 +22,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
-        /// <summary>
-        /// IP地址，不填或空字符串将自动分配。
-        /// </summary>
-        [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string IpAddress { get; set; }
-
 
 
         /// <summary>
@@ -38,7 +32,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class Nic {\n");
             sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
-            sb.Append("  ipAddress: ").Append(IpAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,7 +51,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
-            if (this.IpAddress != input.IpAddress || (this.IpAddress != null && !this.IpAddress.Equals(input.IpAddress))) return false;
 
             return true;
         }
@@ -72,7 +64,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
                 return hashCode;
             }
         }

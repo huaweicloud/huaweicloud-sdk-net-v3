@@ -47,25 +47,25 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? OtherNum { get; set; }
 
         /// <summary>
-        /// 已分配数目
+        /// 已分配数目。
         /// </summary>
         [JsonProperty("attached_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? AttachedNum { get; set; }
 
         /// <summary>
-        /// 未分配数目
+        /// 未分配数目。
         /// </summary>
         [JsonProperty("unattached_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? UnattachedNum { get; set; }
 
         /// <summary>
-        /// 不可分配数目(分配失败、解分配失败、解分配成功)
+        /// 不可分配数目(分配失败、解分配失败、解分配成功)。
         /// </summary>
         [JsonProperty("cannot_attach_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? CannotAttachNum { get; set; }
 
         /// <summary>
-        /// 处理中(分配中、解分配中)
+        /// 处理中(分配中、解分配中)。
         /// </summary>
         [JsonProperty("in_process_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? InProcessNum { get; set; }

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 设置通知规则
+    /// 设置通知规则。
     /// </summary>
     public class UpdateMetricNotifyRuleReq 
     {
@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string MetricName { get; set; }
 
         /// <summary>
-        /// 规则配置-阈值(天)
+        /// 规则配置-阈值(天)。
         /// </summary>
         [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
         public int? Threshold { get; set; }
@@ -41,13 +41,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Interval { get; set; }
 
         /// <summary>
-        /// 启禁用规则 true:启用 false:禁用
+        /// 启禁用规则 true:启用 false:禁用。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }
 
         /// <summary>
-        /// 通知对象;smn的主题urn
+        /// 通知对象;smn的主题urn。
         /// </summary>
         [JsonProperty("notify_object", NullValueHandling = NullValueHandling.Ignore)]
         public string NotifyObject { get; set; }

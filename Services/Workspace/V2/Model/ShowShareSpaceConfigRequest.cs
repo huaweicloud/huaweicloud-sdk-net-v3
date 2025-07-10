@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 查询协同桌面默认用户配置, share-space-user-conf
+        /// 查询协同桌面默认用户配置, share-space-user-conf。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]

@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 委托权限信息
+    /// 委托权限信息。
     /// </summary>
     public class AgenciesPermissionInfo 
     {
 
         /// <summary>
-        /// 委托权限项
+        /// 委托权限项。
         /// </summary>
         [JsonProperty("system_permission_display_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SystemPermissionDisplayNames { get; set; }
 
         /// <summary>
-        /// 需要委托的权限项
+        /// 需要委托的权限项。
         /// </summary>
         [JsonProperty("wanted_system_permission_display_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> WantedSystemPermissionDisplayNames { get; set; }

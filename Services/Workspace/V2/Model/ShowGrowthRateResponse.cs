@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 环比值
+        /// 环比值。
         /// </summary>
         [JsonProperty("growth_rate", NullValueHandling = NullValueHandling.Ignore)]
         public double? GrowthRate { get; set; }

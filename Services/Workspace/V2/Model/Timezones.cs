@@ -11,37 +11,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 返回时区配置信息
+    /// 返回时区配置信息。
     /// </summary>
     public class Timezones 
     {
 
         /// <summary>
-        /// 时区描述
+        /// 时区描述。
         /// </summary>
         [JsonProperty("time_zone_desc", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZoneDesc { get; set; }
 
         /// <summary>
-        /// 时区偏移量
+        /// 时区偏移量。
         /// </summary>
         [JsonProperty("time_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZone { get; set; }
 
         /// <summary>
-        /// 时区地名
+        /// 时区地名。
         /// </summary>
         [JsonProperty("time_zone_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZoneName { get; set; }
 
         /// <summary>
-        /// 时区英文描述
+        /// 时区英文描述。
         /// </summary>
         [JsonProperty("time_zone_desc_us", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZoneDescUs { get; set; }
 
         /// <summary>
-        /// 时区中文描述
+        /// 时区中文描述。
         /// </summary>
         [JsonProperty("time_zone_desc_cn", NullValueHandling = NullValueHandling.Ignore)]
         public string TimeZoneDescCn { get; set; }

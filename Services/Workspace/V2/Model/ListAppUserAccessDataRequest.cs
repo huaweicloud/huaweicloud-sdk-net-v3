@@ -17,21 +17,21 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 查询起始时间，格式为：UTC格式，例如\&quot;2022-05-11T11:45:42Z\&quot;
+        /// 查询起始时间，格式为：UTC格式，例如\&quot;2022-05-11T11:45:42Z。\&quot;
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 查询截至时间，格式为：UTC格式，例如\&quot;2022-05-11T11:45:42Z\&quot;
+        /// 查询截至时间，格式为：UTC格式，例如\&quot;2022-05-11T11:45:42Z。\&quot;
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 用户名(模糊匹配)
+        /// 用户名(模糊匹配)。
         /// </summary>
         [SDKProperty("username", IsQuery = true)]
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,14 +52,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string SortType { get; set; }
 
         /// <summary>
-        /// 查询的偏移量,默认值0
+        /// 查询的偏移量,默认值0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// limit范围[1-100],默认值10
+        /// limit范围[1-100],默认值10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

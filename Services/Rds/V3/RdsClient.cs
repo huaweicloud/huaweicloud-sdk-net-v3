@@ -932,6 +932,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询转储任务列表
+        ///
+        /// 查询转储任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListBackupTransfersResponse ListBackupTransfers(ListBackupTransfersRequest listBackupTransfersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transfer-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupTransfersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListBackupTransfersResponse>(response);
+        }
+
+        public SyncInvoker<ListBackupTransfersResponse> ListBackupTransfersInvoker(ListBackupTransfersRequest listBackupTransfersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transfer-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupTransfersRequest);
+            return new SyncInvoker<ListBackupTransfersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBackupTransfersResponse>);
+        }
+        
+        /// <summary>
         /// 获取备份列表
         ///
         /// 获取备份列表。
@@ -2744,6 +2768,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 设置自动转储策略
+        ///
+        /// 设置自动转储策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetTransferPolicyResponse SetTransferPolicy(SetTransferPolicyRequest setTransferPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setTransferPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/transfer/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTransferPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<SetTransferPolicyResponse>(response);
+        }
+
+        public SyncInvoker<SetTransferPolicyResponse> SetTransferPolicyInvoker(SetTransferPolicyRequest setTransferPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setTransferPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/transfer/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTransferPolicyRequest);
+            return new SyncInvoker<SetTransferPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetTransferPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 生成审计日志下载链接
         ///
         /// 生成审计日志下载链接。
@@ -3336,6 +3386,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询自动转储策略
+        ///
+        /// 查询自动转储策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTransferPolicyResponse ShowTransferPolicy(ShowTransferPolicyRequest showTransferPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showTransferPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/transfer/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransferPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTransferPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowTransferPolicyResponse> ShowTransferPolicyInvoker(ShowTransferPolicyRequest showTransferPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showTransferPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/transfer/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransferPolicyRequest);
+            return new SyncInvoker<ShowTransferPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTransferPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 
         ///
         /// 查询大版本检查状态或升级状态。
@@ -3669,6 +3745,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSslRequest);
             return new SyncInvoker<SwitchSslResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SwitchSslResponse>);
+        }
+        
+        /// <summary>
+        /// 手动转储备份
+        ///
+        /// 手动转储备份
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public TransferBackupResponse TransferBackup(TransferBackupRequest transferBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", transferBackupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", transferBackupRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<TransferBackupResponse>(response);
+        }
+
+        public SyncInvoker<TransferBackupResponse> TransferBackupInvoker(TransferBackupRequest transferBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", transferBackupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", transferBackupRequest);
+            return new SyncInvoker<TransferBackupResponse>(this, "POST", request, JsonUtils.DeSerialize<TransferBackupResponse>);
         }
         
         /// <summary>

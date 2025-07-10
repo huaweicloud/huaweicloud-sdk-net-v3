@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// OTP辅助认证方式配置
+    /// OTP辅助认证方式配置。
     /// </summary>
     public class OtpConfigInfo 
     {
 
         /// <summary>
-        /// 是否启用
+        /// 是否启用。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }
@@ -28,19 +28,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("receive_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ReceiveModeEnum ReceiveMode { get; set; }
         /// <summary>
-        /// 辅助认证服务器地址
+        /// 辅助认证服务器地址。
         /// </summary>
         [JsonProperty("auth_url", NullValueHandling = NullValueHandling.Ignore)]
         public string AuthUrl { get; set; }
 
         /// <summary>
-        /// 认证服务接入账号
+        /// 认证服务接入账号。
         /// </summary>
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
         /// <summary>
-        /// 认证服务接入密码
+        /// 认证服务接入密码。
         /// </summary>
         [JsonProperty("app_secret", NullValueHandling = NullValueHandling.Ignore)]
         public string AppSecret { get; set; }
@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("auth_server_access_mode", NullValueHandling = NullValueHandling.Ignore)]
         public AuthServerAccessMode AuthServerAccessMode { get; set; }
         /// <summary>
-        /// pem格式证书内容
+        /// pem格式证书内容。
         /// </summary>
         [JsonProperty("cert_content", NullValueHandling = NullValueHandling.Ignore)]
         public string CertContent { get; set; }

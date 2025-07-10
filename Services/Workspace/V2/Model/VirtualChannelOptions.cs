@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 自定义虚拟通道注册名。目前仅支持ASCII码字符。
+        /// 自定义虚拟通道注册名。目前仅支持ASCII码字符，长度不能超过65535个字符。
         /// </summary>
         [JsonProperty("custom_virtual_channel_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CustomVirtualChannelName { get; set; }
 
         /// <summary>
-        /// 虚拟通道下载配置信息，需Base64加密。加密前目前仅支持ASCII码字符。
+        /// 虚拟通道下载配置信息，需Base64加密。加密前目前仅支持ASCII码字符，长度不能超过65535个字符。
         /// </summary>
         [JsonProperty("virtual_channel_plugin_details", NullValueHandling = NullValueHandling.Ignore)]
         public string VirtualChannelPluginDetails { get; set; }
 
         /// <summary>
-        /// 第三方插件名称。
+        /// 第三方插件名称，长度不能超过65535个字符。
         /// </summary>
         [JsonProperty("third_party_plugin_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ThirdPartyPluginName { get; set; }

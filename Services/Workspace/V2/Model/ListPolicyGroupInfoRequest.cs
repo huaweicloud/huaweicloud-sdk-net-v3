@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 用于分页查询。范围0-100
+        /// 用于分页查询。范围0-100。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 用于分页查询，查询的起始记录序号，从0开始。
+        /// 用于分页查询，查询的起始记录序号，范围0-10000。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,18 +59,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string UpdateTime { get; set; }
 
         /// <summary>
-        /// 策略组描述
+        /// 策略组描述。
         /// </summary>
         [SDKProperty("description", IsQuery = true)]
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
-
-        /// <summary>
-        /// 策略来源，取值范围0或者1
-        /// </summary>
-        [SDKProperty("scope_flag", IsQuery = true)]
-        [JsonProperty("scope_flag", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ScopeFlag { get; set; }
 
 
 
@@ -88,7 +81,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  priority: ").Append(Priority).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
-            sb.Append("  scopeFlag: ").Append(ScopeFlag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -114,7 +106,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
-            if (this.ScopeFlag != input.ScopeFlag || (this.ScopeFlag != null && !this.ScopeFlag.Equals(input.ScopeFlag))) return false;
 
             return true;
         }
@@ -134,7 +125,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ScopeFlag != null) hashCode = hashCode * 59 + this.ScopeFlag.GetHashCode();
                 return hashCode;
             }
         }

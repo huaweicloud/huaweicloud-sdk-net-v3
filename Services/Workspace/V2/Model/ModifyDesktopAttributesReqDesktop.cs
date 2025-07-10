@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 桌面属性
+    /// 桌面属性。
     /// </summary>
     public class ModifyDesktopAttributesReqDesktop 
     {
 
         /// <summary>
-        /// 桌面名
+        /// 桌面名。
         /// </summary>
         [JsonProperty("computer_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ComputerName { get; set; }
 
         /// <summary>
-        /// 是否开启快照的操作类型,\&quot;0\&quot;:关闭 \&quot;1\&quot;:开启
+        /// 是否开启快照的操作类型,\&quot;0\&quot;:关闭 \&quot;1\&quot;:开启。
         /// </summary>
         [JsonProperty("self_backup_management", NullValueHandling = NullValueHandling.Ignore)]
         public string SelfBackupManagement { get; set; }

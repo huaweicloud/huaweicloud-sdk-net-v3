@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 第三方认证配置信息
+    /// 第三方认证配置信息。
     /// </summary>
     public class ThirdPartyAuthConfig 
     {
@@ -138,31 +138,25 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 更新认证配置类型，认证类型为第三方单点登录时使用
+        /// 更新认证配置类型，认证类型为第三方单点登录时使用。
         /// </summary>
         [JsonProperty("update_type", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateType { get; set; }
 
         /// <summary>
-        /// 是否启用
+        /// 是否启用。
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }
 
         /// <summary>
-        /// 是否支持密码认证
-        /// </summary>
-        [JsonProperty("is_cooperate_password", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsCooperatePassword { get; set; }
-
-        /// <summary>
-        /// 更新认证配置对象，认证类型为第三方单点登录时使用
+        /// 更新认证配置对象，认证类型为第三方单点登录时使用。
         /// </summary>
         [JsonProperty("update_object", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateObject { get; set; }
 
         /// <summary>
-        /// 认证类型
+        /// 认证类型。
         /// </summary>
         [JsonProperty("auth_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AuthType { get; set; }
@@ -185,25 +179,25 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("third_password_update_type", NullValueHandling = NullValueHandling.Ignore)]
         public ThirdPasswordUpdateTypeEnum ThirdPasswordUpdateType { get; set; }
         /// <summary>
-        /// 自定义接口配置
+        /// 自定义接口配置。
         /// </summary>
         [JsonProperty("custom_definition", NullValueHandling = NullValueHandling.Ignore)]
         public string CustomDefinition { get; set; }
 
         /// <summary>
-        /// oauth2配置
+        /// oauth2配置。
         /// </summary>
         [JsonProperty("oauth_configs", NullValueHandling = NullValueHandling.Ignore)]
         public string OauthConfigs { get; set; }
 
         /// <summary>
-        /// 单点登录配置信息列表
+        /// 单点登录配置信息列表。
         /// </summary>
         [JsonProperty("ldap_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<LdapConfig> LdapConfigs { get; set; }
 
         /// <summary>
-        /// 更新认证配置对象，认证类型为第三方密码时使用
+        /// 更新认证配置对象，认证类型为第三方密码时使用。
         /// </summary>
         [JsonProperty("third_password_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ThirdPasswordName { get; set; }
@@ -219,7 +213,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class ThirdPartyAuthConfig {\n");
             sb.Append("  updateType: ").Append(UpdateType).Append("\n");
             sb.Append("  enable: ").Append(Enable).Append("\n");
-            sb.Append("  isCooperatePassword: ").Append(IsCooperatePassword).Append("\n");
             sb.Append("  updateObject: ").Append(UpdateObject).Append("\n");
             sb.Append("  authType: ").Append(AuthType).Append("\n");
             sb.Append("  clientInterfaceConfig: ").Append(ClientInterfaceConfig).Append("\n");
@@ -249,7 +242,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.UpdateType != input.UpdateType || (this.UpdateType != null && !this.UpdateType.Equals(input.UpdateType))) return false;
             if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
-            if (this.IsCooperatePassword != input.IsCooperatePassword || (this.IsCooperatePassword != null && !this.IsCooperatePassword.Equals(input.IsCooperatePassword))) return false;
             if (this.UpdateObject != input.UpdateObject || (this.UpdateObject != null && !this.UpdateObject.Equals(input.UpdateObject))) return false;
             if (this.AuthType != input.AuthType || (this.AuthType != null && !this.AuthType.Equals(input.AuthType))) return false;
             if (this.ClientInterfaceConfig != input.ClientInterfaceConfig || (this.ClientInterfaceConfig != null && !this.ClientInterfaceConfig.Equals(input.ClientInterfaceConfig))) return false;
@@ -273,7 +265,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.UpdateType != null) hashCode = hashCode * 59 + this.UpdateType.GetHashCode();
                 if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.IsCooperatePassword != null) hashCode = hashCode * 59 + this.IsCooperatePassword.GetHashCode();
                 if (this.UpdateObject != null) hashCode = hashCode * 59 + this.UpdateObject.GetHashCode();
                 if (this.AuthType != null) hashCode = hashCode * 59 + this.AuthType.GetHashCode();
                 if (this.ClientInterfaceConfig != null) hashCode = hashCode * 59 + this.ClientInterfaceConfig.GetHashCode();

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 认证配置请求
+    /// 认证配置请求。
     /// </summary>
     public class AuthMethodConfigRequest 
     {

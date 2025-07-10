@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 池桌面详情
+        /// 池桌面详情。
         /// </summary>
         [JsonProperty("pool_desktops", NullValueHandling = NullValueHandling.Ignore)]
         public List<PoolDesktopsDetailInfo> PoolDesktops { get; set; }

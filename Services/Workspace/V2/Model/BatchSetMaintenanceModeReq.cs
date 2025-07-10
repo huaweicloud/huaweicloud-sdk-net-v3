@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 批量设置桌面管理员维护模式
+    /// 批量设置桌面管理员维护模式。
     /// </summary>
     public class BatchSetMaintenanceModeReq 
     {
 
         /// <summary>
-        /// 需要设置维护模式的desktopId列表
+        /// 需要设置维护模式的desktopId列表。
         /// </summary>
         [JsonProperty("desktop_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DesktopIds { get; set; }

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 批量解绑用户请求
+    /// 批量解绑用户请求。
     /// </summary>
     public class BatchDetachInstancesReq 
     {

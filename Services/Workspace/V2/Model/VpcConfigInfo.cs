@@ -23,19 +23,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> UsedSubnetIds { get; set; }
 
         /// <summary>
-        /// VPC ID
+        /// VPC ID。
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 子网ID列表
+        /// 子网ID列表。
         /// </summary>
         [JsonProperty("subnet_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> SubnetIds { get; set; }
 
         /// <summary>
-        /// 是否为默认接入VPC
+        /// 是否为默认接入VPC。
         /// </summary>
         [JsonProperty("default_access_vpc", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DefaultAccessVpc { get; set; }

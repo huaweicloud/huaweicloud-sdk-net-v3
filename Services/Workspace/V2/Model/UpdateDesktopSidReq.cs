@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 更新桌面sid请求
+    /// 更新桌面sid请求。
     /// </summary>
     public class UpdateDesktopSidReq 
     {
 
         /// <summary>
-        /// 虚拟机列表
+        /// 虚拟机列表。
         /// </summary>
         [JsonProperty("desktop_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DesktopIds { get; set; }

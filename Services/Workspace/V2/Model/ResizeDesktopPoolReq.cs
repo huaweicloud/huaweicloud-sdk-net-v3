@@ -23,22 +23,16 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 订单ID，包周期变更规格时使用。
+        /// 产品规格ID。可用区是边缘可用区时，必填此参数。
         /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
+        [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string FlavorId { get; set; }
 
         /// <summary>
         /// 是否支持开机状态下执行变更规格操作。固定传值STOP_DESKTOP，如果桌面处于开机状态，会先关机再变更规格。
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public string Mode { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("extend_param", NullValueHandling = NullValueHandling.Ignore)]
-        public ResizeDesktopExtendParam ExtendParam { get; set; }
 
 
 
@@ -50,9 +44,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ResizeDesktopPoolReq {\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
+            sb.Append("  flavorId: ").Append(FlavorId).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
-            sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -72,9 +65,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
             if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
-            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
 
             return true;
         }
@@ -88,9 +80,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
                 if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 return hashCode;
             }
         }

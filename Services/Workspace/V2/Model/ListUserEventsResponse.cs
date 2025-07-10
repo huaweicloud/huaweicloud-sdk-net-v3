@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 事件总数
+        /// 事件总数。
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }
 
         /// <summary>
-        /// 用户事件列表
+        /// 用户事件列表。
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public List<UserEventRsp> Items { get; set; }

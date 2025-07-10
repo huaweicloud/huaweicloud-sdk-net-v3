@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 修改接入方式请求
+    /// 修改接入方式请求。
     /// </summary>
     public class UpdateAccessModeReq 
     {

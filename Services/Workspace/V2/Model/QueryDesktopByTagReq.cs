@@ -17,55 +17,55 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 默认为0
+        /// 默认为0。
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public string Offset { get; set; }
 
         /// <summary>
-        /// 默认为1000
+        /// 默认为1000。
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public string Limit { get; set; }
 
         /// <summary>
-        /// 如果是filter就是分页查询，如果是count只需按照条件将总条数返回即可
+        /// 如果是filter就是分页查询，如果是count只需按照条件将总条数返回即可。
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
 
         /// <summary>
-        /// 包含任意一个标签,该字段为true时查询所有不带标签的资源
+        /// 包含任意一个标签,该字段为true时查询所有不带标签的资源。
         /// </summary>
         [JsonProperty("without_any_tag", NullValueHandling = NullValueHandling.Ignore)]
         public bool? WithoutAnyTag { get; set; }
 
         /// <summary>
-        /// match对象
+        /// match对象。
         /// </summary>
         [JsonProperty("matches", NullValueHandling = NullValueHandling.Ignore)]
         public List<Match> Matches { get; set; }
 
         /// <summary>
-        /// 包含的标签对象，只要有一个不包含，就不符合，一个key对应多个value
+        /// 包含的标签对象，只要有一个不包含，就不符合，一个key对应多个value。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tags> Tags { get; set; }
 
         /// <summary>
-        /// 包含任意标签，若全都不包含，不符合，一个key对应多个value
+        /// 包含任意标签，若全都不包含，不符合，一个key对应多个value。
         /// </summary>
         [JsonProperty("tags_any", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tags> TagsAny { get; set; }
 
         /// <summary>
-        /// 不包含标签，只要有一个不包含，就符合了，一个key对应多个value
+        /// 不包含标签，只要有一个不包含，就符合了，一个key对应多个value。
         /// </summary>
         [JsonProperty("not_tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tags> NotTags { get; set; }
 
         /// <summary>
-        /// 不包含任意标签，只要包含其中一个，就不符合，一个key对应多个value
+        /// 不包含任意标签，只要包含其中一个，就不符合，一个key对应多个value。
         /// </summary>
         [JsonProperty("not_tags_any", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tags> NotTagsAny { get; set; }

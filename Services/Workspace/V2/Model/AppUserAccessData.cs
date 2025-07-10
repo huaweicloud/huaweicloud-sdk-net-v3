@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 用户名称
+        /// 用户名称。
         /// </summary>
         [JsonProperty("username", NullValueHandling = NullValueHandling.Ignore)]
         public string Username { get; set; }
 
         /// <summary>
-        /// 接入失败数
+        /// 接入失败数。
         /// </summary>
         [JsonProperty("access_failed_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? AccessFailedCount { get; set; }
 
         /// <summary>
-        /// 最近一次接入失败时间，UTC时间，格式为：2022-05-11T11:45:42Z
+        /// 最近一次接入失败时间，UTC时间，格式为：2022-05-11T11:45:42Z。
         /// </summary>
         [JsonProperty("last_access_failed_time", NullValueHandling = NullValueHandling.Ignore)]
         public string LastAccessFailedTime { get; set; }
 
         /// <summary>
-        /// 错误码
+        /// 错误码。
         /// </summary>
         [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorCode { get; set; }
 
         /// <summary>
-        /// 错误信息
+        /// 错误信息。
         /// </summary>
         [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorMsg { get; set; }

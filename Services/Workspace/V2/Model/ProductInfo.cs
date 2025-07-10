@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// CPU
+        /// CPU。
         /// </summary>
         [JsonProperty("cpu", NullValueHandling = NullValueHandling.Ignore)]
         public string Cpu { get; set; }
@@ -65,12 +65,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Architecture { get; set; }
 
         /// <summary>
-        /// CPU描述。
-        /// </summary>
-        [JsonProperty("cpu_desc", NullValueHandling = NullValueHandling.Ignore)]
-        public string CpuDesc { get; set; }
-
-        /// <summary>
         /// 是否是GPU类型的规格。
         /// </summary>
         [JsonProperty("is_gpu", NullValueHandling = NullValueHandling.Ignore)]
@@ -95,13 +89,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string SystemDiskSize { get; set; }
 
         /// <summary>
-        /// GPU描述。
-        /// </summary>
-        [JsonProperty("gpu_desc", NullValueHandling = NullValueHandling.Ignore)]
-        public string GpuDesc { get; set; }
-
-        /// <summary>
-        /// 套餐计费是否包含了数据盘,off-不包含
+        /// 套餐计费是否包含了数据盘,off-不包含。
         /// </summary>
         [JsonProperty("contain_data_disk", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ContainDataDisk { get; set; }
@@ -130,12 +118,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
-        /// <summary>
-        /// 专属主机的子产品。
-        /// </summary>
-        [JsonProperty("sub_product_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> SubProductList { get; set; }
-
 
 
         /// <summary>
@@ -153,18 +135,15 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  descriptions: ").Append(Descriptions).Append("\n");
             sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
             sb.Append("  architecture: ").Append(Architecture).Append("\n");
-            sb.Append("  cpuDesc: ").Append(CpuDesc).Append("\n");
             sb.Append("  isGpu: ").Append(IsGpu).Append("\n");
             sb.Append("  packageType: ").Append(PackageType).Append("\n");
             sb.Append("  systemDiskType: ").Append(SystemDiskType).Append("\n");
             sb.Append("  systemDiskSize: ").Append(SystemDiskSize).Append("\n");
-            sb.Append("  gpuDesc: ").Append(GpuDesc).Append("\n");
             sb.Append("  containDataDisk: ").Append(ContainDataDisk).Append("\n");
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
             sb.Append("  cloudServiceType: ").Append(CloudServiceType).Append("\n");
             sb.Append("  volumeProductType: ").Append(VolumeProductType).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  subProductList: ").Append(SubProductList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -191,18 +170,15 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Descriptions != input.Descriptions || (this.Descriptions != null && !this.Descriptions.Equals(input.Descriptions))) return false;
             if (this.ChargeMode != input.ChargeMode || (this.ChargeMode != null && !this.ChargeMode.Equals(input.ChargeMode))) return false;
             if (this.Architecture != input.Architecture || (this.Architecture != null && !this.Architecture.Equals(input.Architecture))) return false;
-            if (this.CpuDesc != input.CpuDesc || (this.CpuDesc != null && !this.CpuDesc.Equals(input.CpuDesc))) return false;
             if (this.IsGpu != input.IsGpu || (this.IsGpu != null && !this.IsGpu.Equals(input.IsGpu))) return false;
             if (this.PackageType != input.PackageType || (this.PackageType != null && !this.PackageType.Equals(input.PackageType))) return false;
             if (this.SystemDiskType != input.SystemDiskType || (this.SystemDiskType != null && !this.SystemDiskType.Equals(input.SystemDiskType))) return false;
             if (this.SystemDiskSize != input.SystemDiskSize || (this.SystemDiskSize != null && !this.SystemDiskSize.Equals(input.SystemDiskSize))) return false;
-            if (this.GpuDesc != input.GpuDesc || (this.GpuDesc != null && !this.GpuDesc.Equals(input.GpuDesc))) return false;
             if (this.ContainDataDisk != input.ContainDataDisk || (this.ContainDataDisk != null && !this.ContainDataDisk.Equals(input.ContainDataDisk))) return false;
             if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
             if (this.CloudServiceType != input.CloudServiceType || (this.CloudServiceType != null && !this.CloudServiceType.Equals(input.CloudServiceType))) return false;
             if (this.VolumeProductType != input.VolumeProductType || (this.VolumeProductType != null && !this.VolumeProductType.Equals(input.VolumeProductType))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
-            if (this.SubProductList != input.SubProductList || (this.SubProductList != null && input.SubProductList != null && !this.SubProductList.SequenceEqual(input.SubProductList))) return false;
 
             return true;
         }
@@ -223,18 +199,15 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Descriptions != null) hashCode = hashCode * 59 + this.Descriptions.GetHashCode();
                 if (this.ChargeMode != null) hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
                 if (this.Architecture != null) hashCode = hashCode * 59 + this.Architecture.GetHashCode();
-                if (this.CpuDesc != null) hashCode = hashCode * 59 + this.CpuDesc.GetHashCode();
                 if (this.IsGpu != null) hashCode = hashCode * 59 + this.IsGpu.GetHashCode();
                 if (this.PackageType != null) hashCode = hashCode * 59 + this.PackageType.GetHashCode();
                 if (this.SystemDiskType != null) hashCode = hashCode * 59 + this.SystemDiskType.GetHashCode();
                 if (this.SystemDiskSize != null) hashCode = hashCode * 59 + this.SystemDiskSize.GetHashCode();
-                if (this.GpuDesc != null) hashCode = hashCode * 59 + this.GpuDesc.GetHashCode();
                 if (this.ContainDataDisk != null) hashCode = hashCode * 59 + this.ContainDataDisk.GetHashCode();
                 if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
                 if (this.CloudServiceType != null) hashCode = hashCode * 59 + this.CloudServiceType.GetHashCode();
                 if (this.VolumeProductType != null) hashCode = hashCode * 59 + this.VolumeProductType.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.SubProductList != null) hashCode = hashCode * 59 + this.SubProductList.GetHashCode();
                 return hashCode;
             }
         }

@@ -149,40 +149,16 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 专属主机的子产品。
-        /// </summary>
-        [JsonProperty("sub_product_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> SubProductList { get; set; }
-
-        /// <summary>
         /// 套餐类型。 - ultimate：尊享版 - enterprise：企业版 - general: 通用办公版 - workstation: 云工作站 - dedicated: 专属办公版 - solver: 解算版 - agile: 敏捷办公版
         /// </summary>
         [JsonProperty("package_type", NullValueHandling = NullValueHandling.Ignore)]
         public string PackageType { get; set; }
 
         /// <summary>
-        /// 套餐下的系列类型。 - 云工作站下分为云工作站D5、云工作站D7 - 专属办公版下分为鲲鹏专属、通用专属、G6a、G6r、G7a
-        /// </summary>
-        [JsonProperty("series_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string SeriesType { get; set; }
-
-        /// <summary>
         /// 产品名称&lt;语言，各语言对应的产品名&gt;。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Name { get; set; }
-
-        /// <summary>
-        /// 专享主机套餐默认的桌面数。
-        /// </summary>
-        [JsonProperty("default_desktop_num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? DefaultDesktopNum { get; set; }
-
-        /// <summary>
-        /// 专享主机支持创建的最大桌面数。
-        /// </summary>
-        [JsonProperty("max_apply_desktop_num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MaxApplyDesktopNum { get; set; }
 
         /// <summary>
         /// 协同方数。该套餐支持的最大协同人数。
@@ -221,12 +197,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  volumeProductType: ").Append(VolumeProductType).Append("\n");
             sb.Append("  domainIds: ").Append(DomainIds).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  subProductList: ").Append(SubProductList).Append("\n");
             sb.Append("  packageType: ").Append(PackageType).Append("\n");
-            sb.Append("  seriesType: ").Append(SeriesType).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
-            sb.Append("  defaultDesktopNum: ").Append(DefaultDesktopNum).Append("\n");
-            sb.Append("  maxApplyDesktopNum: ").Append(MaxApplyDesktopNum).Append("\n");
             sb.Append("  shareSpaceSize: ").Append(ShareSpaceSize).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -268,12 +240,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.VolumeProductType != input.VolumeProductType || (this.VolumeProductType != null && !this.VolumeProductType.Equals(input.VolumeProductType))) return false;
             if (this.DomainIds != input.DomainIds || (this.DomainIds != null && input.DomainIds != null && !this.DomainIds.SequenceEqual(input.DomainIds))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
-            if (this.SubProductList != input.SubProductList || (this.SubProductList != null && input.SubProductList != null && !this.SubProductList.SequenceEqual(input.SubProductList))) return false;
             if (this.PackageType != input.PackageType || (this.PackageType != null && !this.PackageType.Equals(input.PackageType))) return false;
-            if (this.SeriesType != input.SeriesType || (this.SeriesType != null && !this.SeriesType.Equals(input.SeriesType))) return false;
             if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
-            if (this.DefaultDesktopNum != input.DefaultDesktopNum || (this.DefaultDesktopNum != null && !this.DefaultDesktopNum.Equals(input.DefaultDesktopNum))) return false;
-            if (this.MaxApplyDesktopNum != input.MaxApplyDesktopNum || (this.MaxApplyDesktopNum != null && !this.MaxApplyDesktopNum.Equals(input.MaxApplyDesktopNum))) return false;
             if (this.ShareSpaceSize != input.ShareSpaceSize || (this.ShareSpaceSize != null && !this.ShareSpaceSize.Equals(input.ShareSpaceSize))) return false;
 
             return true;
@@ -309,12 +277,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.VolumeProductType != null) hashCode = hashCode * 59 + this.VolumeProductType.GetHashCode();
                 if (this.DomainIds != null) hashCode = hashCode * 59 + this.DomainIds.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.SubProductList != null) hashCode = hashCode * 59 + this.SubProductList.GetHashCode();
                 if (this.PackageType != null) hashCode = hashCode * 59 + this.PackageType.GetHashCode();
-                if (this.SeriesType != null) hashCode = hashCode * 59 + this.SeriesType.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.DefaultDesktopNum != null) hashCode = hashCode * 59 + this.DefaultDesktopNum.GetHashCode();
-                if (this.MaxApplyDesktopNum != null) hashCode = hashCode * 59 + this.MaxApplyDesktopNum.GetHashCode();
                 if (this.ShareSpaceSize != null) hashCode = hashCode * 59 + this.ShareSpaceSize.GetHashCode();
                 return hashCode;
             }

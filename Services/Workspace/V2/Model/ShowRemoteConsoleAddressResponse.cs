@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 登录类型
+        /// 登录类型。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 远程登录控制台地址
+        /// 远程登录控制台地址。
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
         /// <summary>
-        /// 登录协议
+        /// 登录协议。
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocol { get; set; }

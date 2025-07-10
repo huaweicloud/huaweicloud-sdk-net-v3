@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 软件路径。
+        /// 软件路径。长度不能超过1000个字符。
         /// </summary>
         [JsonProperty("seamless_apply_path", NullValueHandling = NullValueHandling.Ignore)]
         public string SeamlessApplyPath { get; set; }

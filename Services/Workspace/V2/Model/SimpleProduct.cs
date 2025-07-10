@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// CPU
+        /// CPU。
         /// </summary>
         [JsonProperty("cpu", NullValueHandling = NullValueHandling.Ignore)]
         public string Cpu { get; set; }

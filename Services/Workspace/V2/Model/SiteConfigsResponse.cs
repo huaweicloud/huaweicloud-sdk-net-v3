@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 站点配置
+    /// 站点配置。
     /// </summary>
     public class SiteConfigsResponse 
     {
@@ -295,7 +295,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
 
         /// <summary>
-        /// 站点id
+        /// 站点id。
         /// </summary>
         [JsonProperty("site_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SiteId { get; set; }
@@ -306,7 +306,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("site_type", NullValueHandling = NullValueHandling.Ignore)]
         public SiteTypeEnum SiteType { get; set; }
         /// <summary>
-        /// 站点名称
+        /// 站点名称。
         /// </summary>
         [JsonProperty("site_name", NullValueHandling = NullValueHandling.Ignore)]
         public string SiteName { get; set; }
@@ -341,31 +341,31 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public SecurityGroup DesktopSecurityGroup { get; set; }
 
         /// <summary>
-        /// 开通服务资源使用的可用分区
+        /// 开通服务资源使用的可用分区。
         /// </summary>
         [JsonProperty("availability_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailabilityZones { get; set; }
 
         /// <summary>
-        /// 开通服务或取消服务的任务ID
+        /// 开通服务或取消服务的任务ID。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// 初始化服务或清理资源的进度，格式为100%
+        /// 初始化服务或清理资源的进度，格式为100%。
         /// </summary>
         [JsonProperty("progress", NullValueHandling = NullValueHandling.Ignore)]
         public string Progress { get; set; }
 
         /// <summary>
-        /// 失败错误码
+        /// 失败错误码。
         /// </summary>
         [JsonProperty("fail_code", NullValueHandling = NullValueHandling.Ignore)]
         public int? FailCode { get; set; }
 
         /// <summary>
-        /// 失败原因
+        /// 失败原因。
         /// </summary>
         [JsonProperty("fail_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string FailReason { get; set; }

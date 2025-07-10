@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 修改云办公服务属性的任务ID
+        /// 修改云办公服务属性的任务ID。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// 企业ID
+        /// 企业ID。
         /// </summary>
         [JsonProperty("enterprise_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseId { get; set; }
 
         /// <summary>
-        /// 专线vnc访问的ip
+        /// 专线vnc访问的ip。
         /// </summary>
         [JsonProperty("dc_vnc_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string DcVncIp { get; set; }

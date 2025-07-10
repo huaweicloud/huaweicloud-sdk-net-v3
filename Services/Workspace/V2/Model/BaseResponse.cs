@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// API响应基类
+    /// API响应基类。
     /// </summary>
     public class BaseResponse 
     {

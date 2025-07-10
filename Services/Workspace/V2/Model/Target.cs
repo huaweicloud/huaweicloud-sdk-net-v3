@@ -168,7 +168,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string TargetId { get; set; }
 
         /// <summary>
-        /// 对象名称。
+        /// 对象名称，长度不能超过55个字符。
         /// </summary>
         [JsonProperty("target_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetName { get; set; }

@@ -24,14 +24,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopId { get; set; }
 
         /// <summary>
-        /// 每页限制数
+        /// 每页限制数。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 起始位置
+        /// 起始位置。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

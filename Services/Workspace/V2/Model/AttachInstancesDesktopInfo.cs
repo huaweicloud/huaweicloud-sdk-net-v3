@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
-        /// 合法用户邮箱，桌面分配成功后系统会通过发送邮件的方式通知用户
+        /// 合法用户邮箱，桌面分配成功后系统会通过发送邮件的方式通知用户。
         /// </summary>
         [JsonProperty("user_email", NullValueHandling = NullValueHandling.Ignore)]
         public string UserEmail { get; set; }

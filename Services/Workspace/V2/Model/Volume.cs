@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 磁盘
+    /// 磁盘。
     /// </summary>
     public class Volume 
     {
@@ -28,12 +28,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
 
-        /// <summary>
-        /// 云服务器系统盘对应的存储池的ID
-        /// </summary>
-        [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ClusterId { get; set; }
-
 
 
         /// <summary>
@@ -45,7 +39,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("class Volume {\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
-            sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,7 +59,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (input == null) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
-            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
 
             return true;
         }
@@ -81,7 +73,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 var hashCode = 41;
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 return hashCode;
             }
         }

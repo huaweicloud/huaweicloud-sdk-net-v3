@@ -197,7 +197,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DistinguishedName { get; set; }
 
         /// <summary>
-        /// 帐号类型(0：用户；1：用户组)。
+        /// 账号类型(0：用户；1：用户组)。
         /// </summary>
         [JsonProperty("account_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? AccountType { get; set; }
@@ -215,7 +215,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public long? AccountExpires { get; set; }
 
         /// <summary>
-        /// 是否是预创建的用户，true表示是预创建用户，false表示不是预创建用户
+        /// 是否是预创建的用户，true表示是预创建用户，false表示不是预创建用户。
         /// </summary>
         [JsonProperty("is_pre_user", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsPreUser { get; set; }
@@ -263,13 +263,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> GroupNames { get; set; }
 
         /// <summary>
-        /// 用户是否订阅协同，true表示已订阅，false表示未订阅
+        /// 用户是否订阅协同，true表示已订阅，false表示未订阅。
         /// </summary>
         [JsonProperty("share_space_subscription", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ShareSpaceSubscription { get; set; }
 
         /// <summary>
-        /// 用户已绑定协同桌面数
+        /// 用户已绑定协同桌面数。
         /// </summary>
         [JsonProperty("share_space_desktops", NullValueHandling = NullValueHandling.Ignore)]
         public int? ShareSpaceDesktops { get; set; }

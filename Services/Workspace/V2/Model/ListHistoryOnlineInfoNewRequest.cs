@@ -37,13 +37,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("query_type", NullValueHandling = NullValueHandling.Ignore)]
         public string QueryType { get; set; }
 
-        /// <summary>
-        /// 客户端所在操作系统时间的小时数。
-        /// </summary>
-        [SDKProperty("client_hour", IsQuery = true)]
-        [JsonProperty("client_hour", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ClientHour { get; set; }
-
 
 
         /// <summary>
@@ -56,7 +49,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  queryType: ").Append(QueryType).Append("\n");
-            sb.Append("  clientHour: ").Append(ClientHour).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -78,7 +70,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.QueryType != input.QueryType || (this.QueryType != null && !this.QueryType.Equals(input.QueryType))) return false;
-            if (this.ClientHour != input.ClientHour || (this.ClientHour != null && !this.ClientHour.Equals(input.ClientHour))) return false;
 
             return true;
         }
@@ -94,7 +85,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.QueryType != null) hashCode = hashCode * 59 + this.QueryType.GetHashCode();
-                if (this.ClientHour != null) hashCode = hashCode * 59 + this.ClientHour.GetHashCode();
                 return hashCode;
             }
         }

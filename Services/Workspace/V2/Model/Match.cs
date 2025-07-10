@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 搜索时要匹配的字段
+        /// 搜索时要匹配的字段。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 搜索时匹配的值，当key&#x3D;resource_name时为模糊匹配
+        /// 搜索时匹配的值，当key&#x3D;resource_name时为模糊匹配。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

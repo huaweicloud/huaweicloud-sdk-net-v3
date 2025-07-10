@@ -191,7 +191,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? PasswordNeverExpired { get; set; }
 
         /// <summary>
-        /// 帐号是否过期，true表示已过期，false表示未过期。
+        /// 账号是否过期，true表示已过期，false表示未过期。
         /// </summary>
         [JsonProperty("account_expired", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AccountExpired { get; set; }
@@ -227,13 +227,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool? Disabled { get; set; }
 
         /// <summary>
-        /// 用户是否订阅协同，true表示已订阅，false表示未订阅
+        /// 用户是否订阅协同，true表示已订阅，false表示未订阅。
         /// </summary>
         [JsonProperty("share_space_subscription", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ShareSpaceSubscription { get; set; }
 
         /// <summary>
-        /// 用户已绑定协同桌面数
+        /// 用户已绑定协同桌面数。
         /// </summary>
         [JsonProperty("share_space_desktops", NullValueHandling = NullValueHandling.Ignore)]
         public int? ShareSpaceDesktops { get; set; }
@@ -243,6 +243,18 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// </summary>
         [JsonProperty("group_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> GroupNames { get; set; }
+
+        /// <summary>
+        /// 企业项目ID
+        /// </summary>
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 用户信息映射，包含用户的服务等级、操作模式和类型。
+        /// </summary>
+        [JsonProperty("user_info_map", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserInfoMap { get; set; }
 
 
 
@@ -272,6 +284,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  shareSpaceSubscription: ").Append(ShareSpaceSubscription).Append("\n");
             sb.Append("  shareSpaceDesktops: ").Append(ShareSpaceDesktops).Append("\n");
             sb.Append("  groupNames: ").Append(GroupNames).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  userInfoMap: ").Append(UserInfoMap).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -309,6 +323,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.ShareSpaceSubscription != input.ShareSpaceSubscription || (this.ShareSpaceSubscription != null && !this.ShareSpaceSubscription.Equals(input.ShareSpaceSubscription))) return false;
             if (this.ShareSpaceDesktops != input.ShareSpaceDesktops || (this.ShareSpaceDesktops != null && !this.ShareSpaceDesktops.Equals(input.ShareSpaceDesktops))) return false;
             if (this.GroupNames != input.GroupNames || (this.GroupNames != null && input.GroupNames != null && !this.GroupNames.SequenceEqual(input.GroupNames))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.UserInfoMap != input.UserInfoMap || (this.UserInfoMap != null && !this.UserInfoMap.Equals(input.UserInfoMap))) return false;
 
             return true;
         }
@@ -340,6 +356,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.ShareSpaceSubscription != null) hashCode = hashCode * 59 + this.ShareSpaceSubscription.GetHashCode();
                 if (this.ShareSpaceDesktops != null) hashCode = hashCode * 59 + this.ShareSpaceDesktops.GetHashCode();
                 if (this.GroupNames != null) hashCode = hashCode * 59 + this.GroupNames.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.UserInfoMap != null) hashCode = hashCode * 59 + this.UserInfoMap.GetHashCode();
                 return hashCode;
             }
         }

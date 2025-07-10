@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 券的退订金额（降配存在）
+    /// 券的退订金额（降配存在）。
     /// </summary>
     public class CouponUnsubscribeResult 
     {
 
         /// <summary>
-        /// 券ID
+        /// 券ID。
         /// </summary>
         [JsonProperty("coupon_id", NullValueHandling = NullValueHandling.Ignore)]
         public string CouponId { get; set; }
 
         /// <summary>
-        /// 券类型 302：现金券 303：储值卡
+        /// 券类型 302：现金券 303：储值卡。
         /// </summary>
         [JsonProperty("coupon_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CouponType { get; set; }
 
         /// <summary>
-        /// 券退的金额
+        /// 券退的金额。
         /// </summary>
         [JsonProperty("amount", NullValueHandling = NullValueHandling.Ignore)]
         public double? Amount { get; set; }
 
         /// <summary>
-        /// 度量单位&#39;
+        /// 度量单位。&#39;
         /// </summary>
         [JsonProperty("measure_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? MeasureId { get; set; }

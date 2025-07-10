@@ -23,12 +23,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? InUseNum { get; set; }
 
         /// <summary>
-        /// 关机数目(关机中、已关机)。
-        /// </summary>
-        [JsonProperty("stop_num", NullValueHandling = NullValueHandling.Ignore)]
-        public int? StopNum { get; set; }
-
-        /// <summary>
         /// 未注册数目。
         /// </summary>
         [JsonProperty("unregistered_num", NullValueHandling = NullValueHandling.Ignore)]
@@ -62,7 +56,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class DesktopLoginStatisticsRsp {\n");
             sb.Append("  inUseNum: ").Append(InUseNum).Append("\n");
-            sb.Append("  stopNum: ").Append(StopNum).Append("\n");
             sb.Append("  unregisteredNum: ").Append(UnregisteredNum).Append("\n");
             sb.Append("  unableToConnectNum: ").Append(UnableToConnectNum).Append("\n");
             sb.Append("  readyNum: ").Append(ReadyNum).Append("\n");
@@ -86,7 +79,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.InUseNum != input.InUseNum || (this.InUseNum != null && !this.InUseNum.Equals(input.InUseNum))) return false;
-            if (this.StopNum != input.StopNum || (this.StopNum != null && !this.StopNum.Equals(input.StopNum))) return false;
             if (this.UnregisteredNum != input.UnregisteredNum || (this.UnregisteredNum != null && !this.UnregisteredNum.Equals(input.UnregisteredNum))) return false;
             if (this.UnableToConnectNum != input.UnableToConnectNum || (this.UnableToConnectNum != null && !this.UnableToConnectNum.Equals(input.UnableToConnectNum))) return false;
             if (this.ReadyNum != input.ReadyNum || (this.ReadyNum != null && !this.ReadyNum.Equals(input.ReadyNum))) return false;
@@ -104,7 +96,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.InUseNum != null) hashCode = hashCode * 59 + this.InUseNum.GetHashCode();
-                if (this.StopNum != null) hashCode = hashCode * 59 + this.StopNum.GetHashCode();
                 if (this.UnregisteredNum != null) hashCode = hashCode * 59 + this.UnregisteredNum.GetHashCode();
                 if (this.UnableToConnectNum != null) hashCode = hashCode * 59 + this.UnableToConnectNum.GetHashCode();
                 if (this.ReadyNum != null) hashCode = hashCode * 59 + this.ReadyNum.GetHashCode();

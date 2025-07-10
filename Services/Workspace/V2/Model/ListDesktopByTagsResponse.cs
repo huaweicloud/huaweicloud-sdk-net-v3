@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 指定查询信息列表的偏移量，默认为0
+        /// 指定查询信息列表的偏移量，默认为0。
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 资源对象
+        /// 资源对象。
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<TagResource> Resources { get; set; }
 
         /// <summary>
-        /// 数量
+        /// 数量。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }

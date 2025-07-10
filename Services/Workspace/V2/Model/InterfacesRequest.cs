@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 接口请求
+    /// 接口请求。
     /// </summary>
     public class InterfacesRequest 
     {
 
         /// <summary>
-        /// 方法
+        /// 方法。
         /// </summary>
         [JsonProperty("method", NullValueHandling = NullValueHandling.Ignore)]
         public string Method { get; set; }
 
         /// <summary>
-        /// 请求参数
+        /// 请求参数。
         /// </summary>
         [JsonProperty("params", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Params { get; set; }
 
         /// <summary>
-        /// 请求头信息
+        /// 请求头信息。
         /// </summary>
         [JsonProperty("headers", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Headers { get; set; }
 
         /// <summary>
-        /// 请求体
+        /// 请求体。
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public string Body { get; set; }
 
         /// <summary>
-        /// URL
+        /// URL。
         /// </summary>
         [JsonProperty("url", NullValueHandling = NullValueHandling.Ignore)]
         public string Url { get; set; }
 
         /// <summary>
-        /// 配置
+        /// 配置。
         /// </summary>
         [JsonProperty("configs", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, Object> Configs { get; set; }

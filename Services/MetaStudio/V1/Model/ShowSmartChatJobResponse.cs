@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     public class ShowSmartChatJobResponse : SdkResponse
     {
         /// <summary>
-        /// 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * CANCELED: 取消 * HEARTBEAT: 心跳 * IDLE: 空闲 * DELETING: 删除中
+        /// 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * DELETING: 删除中
         /// </summary>
-        /// <value>数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * CANCELED: 取消 * HEARTBEAT: 心跳 * IDLE: 空闲 * DELETING: 删除中</value>
+        /// <value>数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * DELETING: 删除中</value>
         [JsonConverter(typeof(EnumClassConverter<StateEnum>))]
         public class StateEnum
         {
@@ -426,6 +426,121 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             }
         }
 
+        /// <summary>
+        /// 对话结束原因 * NORMAL：正常结束 * MUTE_TIMEOUT：静音超时
+        /// </summary>
+        /// <value>对话结束原因 * NORMAL：正常结束 * MUTE_TIMEOUT：静音超时</value>
+        [JsonConverter(typeof(EnumClassConverter<JobFinishReasonEnum>))]
+        public class JobFinishReasonEnum
+        {
+            /// <summary>
+            /// Enum NORMAL for value: NORMAL
+            /// </summary>
+            public static readonly JobFinishReasonEnum NORMAL = new JobFinishReasonEnum("NORMAL");
+
+            /// <summary>
+            /// Enum MUTE_TIMEOUT for value: MUTE_TIMEOUT
+            /// </summary>
+            public static readonly JobFinishReasonEnum MUTE_TIMEOUT = new JobFinishReasonEnum("MUTE_TIMEOUT");
+
+            private static readonly Dictionary<string, JobFinishReasonEnum> StaticFields =
+            new Dictionary<string, JobFinishReasonEnum>()
+            {
+                { "NORMAL", NORMAL },
+                { "MUTE_TIMEOUT", MUTE_TIMEOUT },
+            };
+
+            private string _value;
+
+            public JobFinishReasonEnum()
+            {
+
+            }
+
+            public JobFinishReasonEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static JobFinishReasonEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as JobFinishReasonEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(JobFinishReasonEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(JobFinishReasonEnum a, JobFinishReasonEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(JobFinishReasonEnum a, JobFinishReasonEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 数字人智能交互对话任务ID。
@@ -434,7 +549,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string JobId { get; set; }
 
         /// <summary>
-        /// 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * CANCELED: 取消 * HEARTBEAT: 心跳 * IDLE: 空闲 * DELETING: 删除中
+        /// 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * DELETING: 删除中
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
         public StateEnum State { get; set; }
@@ -477,12 +592,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("rtc_room_info", NullValueHandling = NullValueHandling.Ignore)]
-        public RTCRoomInfoList RtcRoomInfo { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [JsonProperty("chat_subtitle_config", NullValueHandling = NullValueHandling.Ignore)]
         public SmartChatSubtitleConfig ChatSubtitleConfig { get; set; }
 
@@ -499,33 +608,10 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public List<SmartChatVoiceConfig> VoiceConfigList { get; set; }
 
         /// <summary>
-        /// 数字人智能交互对话的状态。 0: 等待建链 1: 等待关闭链路 2: 建链成功 3: 进入休眠 4: 等待休眠
-        /// </summary>
-        [JsonProperty("chat_state", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ChatState { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public LanguageEnum Language { get; set; }
-        /// <summary>
         /// 智能交互对话端配置。 * COMPUTER: 电脑端 * MOBILE: 手机端 * HUB: 大屏
         /// </summary>
         [JsonProperty("chat_video_type", NullValueHandling = NullValueHandling.Ignore)]
         public ChatVideoTypeEnum ChatVideoType { get; set; }
-        /// <summary>
-        /// 智能交互接入地址。
-        /// </summary>
-        [JsonProperty("chat_access_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string ChatAccessAddress { get; set; }
-
-        /// <summary>
-        /// 智能交互Rest接口接入地址。
-        /// </summary>
-        [JsonProperty("chat_access_rest_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string ChatAccessRestAddress { get; set; }
-
         /// <summary>
         /// 是否透明背景
         /// </summary>
@@ -542,6 +628,46 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// </summary>
         [JsonProperty("client_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientId { get; set; }
+
+        /// <summary>
+        /// 是否是资源池模式
+        /// </summary>
+        [JsonProperty("is_pool_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsPoolMode { get; set; }
+
+        /// <summary>
+        /// 对话结束原因 * NORMAL：正常结束 * MUTE_TIMEOUT：静音超时
+        /// </summary>
+        [JsonProperty("job_finish_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public JobFinishReasonEnum JobFinishReason { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("rtc_room_info", NullValueHandling = NullValueHandling.Ignore)]
+        public RTCRoomInfoList RtcRoomInfo { get; set; }
+
+        /// <summary>
+        /// 数字人智能交互对话的状态。 0: 等待建链 1: 等待关闭链路 2: 建链成功 3: 进入休眠 4: 等待休眠
+        /// </summary>
+        [JsonProperty("chat_state", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ChatState { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
+        public LanguageEnum Language { get; set; }
+        /// <summary>
+        /// 智能交互接入地址。
+        /// </summary>
+        [JsonProperty("chat_access_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string ChatAccessAddress { get; set; }
+
+        /// <summary>
+        /// 智能交互Rest接口接入地址。
+        /// </summary>
+        [JsonProperty("chat_access_rest_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string ChatAccessRestAddress { get; set; }
 
         /// <summary>
         /// 
@@ -567,18 +693,20 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  errorInfo: ").Append(ErrorInfo).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  lastupdateTime: ").Append(LastupdateTime).Append("\n");
-            sb.Append("  rtcRoomInfo: ").Append(RtcRoomInfo).Append("\n");
             sb.Append("  chatSubtitleConfig: ").Append(ChatSubtitleConfig).Append("\n");
             sb.Append("  videoConfig: ").Append(VideoConfig).Append("\n");
             sb.Append("  voiceConfigList: ").Append(VoiceConfigList).Append("\n");
-            sb.Append("  chatState: ").Append(ChatState).Append("\n");
-            sb.Append("  language: ").Append(Language).Append("\n");
             sb.Append("  chatVideoType: ").Append(ChatVideoType).Append("\n");
-            sb.Append("  chatAccessAddress: ").Append(ChatAccessAddress).Append("\n");
-            sb.Append("  chatAccessRestAddress: ").Append(ChatAccessRestAddress).Append("\n");
             sb.Append("  isTransparent: ").Append(IsTransparent).Append("\n");
             sb.Append("  defaultLanguage: ").Append(DefaultLanguage).Append("\n");
             sb.Append("  clientId: ").Append(ClientId).Append("\n");
+            sb.Append("  isPoolMode: ").Append(IsPoolMode).Append("\n");
+            sb.Append("  jobFinishReason: ").Append(JobFinishReason).Append("\n");
+            sb.Append("  rtcRoomInfo: ").Append(RtcRoomInfo).Append("\n");
+            sb.Append("  chatState: ").Append(ChatState).Append("\n");
+            sb.Append("  language: ").Append(Language).Append("\n");
+            sb.Append("  chatAccessAddress: ").Append(ChatAccessAddress).Append("\n");
+            sb.Append("  chatAccessRestAddress: ").Append(ChatAccessRestAddress).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -606,18 +734,20 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.ErrorInfo != input.ErrorInfo || (this.ErrorInfo != null && !this.ErrorInfo.Equals(input.ErrorInfo))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.LastupdateTime != input.LastupdateTime || (this.LastupdateTime != null && !this.LastupdateTime.Equals(input.LastupdateTime))) return false;
-            if (this.RtcRoomInfo != input.RtcRoomInfo || (this.RtcRoomInfo != null && !this.RtcRoomInfo.Equals(input.RtcRoomInfo))) return false;
             if (this.ChatSubtitleConfig != input.ChatSubtitleConfig || (this.ChatSubtitleConfig != null && !this.ChatSubtitleConfig.Equals(input.ChatSubtitleConfig))) return false;
             if (this.VideoConfig != input.VideoConfig || (this.VideoConfig != null && !this.VideoConfig.Equals(input.VideoConfig))) return false;
             if (this.VoiceConfigList != input.VoiceConfigList || (this.VoiceConfigList != null && input.VoiceConfigList != null && !this.VoiceConfigList.SequenceEqual(input.VoiceConfigList))) return false;
-            if (this.ChatState != input.ChatState || (this.ChatState != null && !this.ChatState.Equals(input.ChatState))) return false;
-            if (this.Language != input.Language) return false;
             if (this.ChatVideoType != input.ChatVideoType) return false;
-            if (this.ChatAccessAddress != input.ChatAccessAddress || (this.ChatAccessAddress != null && !this.ChatAccessAddress.Equals(input.ChatAccessAddress))) return false;
-            if (this.ChatAccessRestAddress != input.ChatAccessRestAddress || (this.ChatAccessRestAddress != null && !this.ChatAccessRestAddress.Equals(input.ChatAccessRestAddress))) return false;
             if (this.IsTransparent != input.IsTransparent || (this.IsTransparent != null && !this.IsTransparent.Equals(input.IsTransparent))) return false;
             if (this.DefaultLanguage != input.DefaultLanguage) return false;
             if (this.ClientId != input.ClientId || (this.ClientId != null && !this.ClientId.Equals(input.ClientId))) return false;
+            if (this.IsPoolMode != input.IsPoolMode || (this.IsPoolMode != null && !this.IsPoolMode.Equals(input.IsPoolMode))) return false;
+            if (this.JobFinishReason != input.JobFinishReason) return false;
+            if (this.RtcRoomInfo != input.RtcRoomInfo || (this.RtcRoomInfo != null && !this.RtcRoomInfo.Equals(input.RtcRoomInfo))) return false;
+            if (this.ChatState != input.ChatState || (this.ChatState != null && !this.ChatState.Equals(input.ChatState))) return false;
+            if (this.Language != input.Language) return false;
+            if (this.ChatAccessAddress != input.ChatAccessAddress || (this.ChatAccessAddress != null && !this.ChatAccessAddress.Equals(input.ChatAccessAddress))) return false;
+            if (this.ChatAccessRestAddress != input.ChatAccessRestAddress || (this.ChatAccessRestAddress != null && !this.ChatAccessRestAddress.Equals(input.ChatAccessRestAddress))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
             return true;
@@ -639,18 +769,20 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.ErrorInfo != null) hashCode = hashCode * 59 + this.ErrorInfo.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.LastupdateTime != null) hashCode = hashCode * 59 + this.LastupdateTime.GetHashCode();
-                if (this.RtcRoomInfo != null) hashCode = hashCode * 59 + this.RtcRoomInfo.GetHashCode();
                 if (this.ChatSubtitleConfig != null) hashCode = hashCode * 59 + this.ChatSubtitleConfig.GetHashCode();
                 if (this.VideoConfig != null) hashCode = hashCode * 59 + this.VideoConfig.GetHashCode();
                 if (this.VoiceConfigList != null) hashCode = hashCode * 59 + this.VoiceConfigList.GetHashCode();
-                if (this.ChatState != null) hashCode = hashCode * 59 + this.ChatState.GetHashCode();
-                hashCode = hashCode * 59 + this.Language.GetHashCode();
                 hashCode = hashCode * 59 + this.ChatVideoType.GetHashCode();
-                if (this.ChatAccessAddress != null) hashCode = hashCode * 59 + this.ChatAccessAddress.GetHashCode();
-                if (this.ChatAccessRestAddress != null) hashCode = hashCode * 59 + this.ChatAccessRestAddress.GetHashCode();
                 if (this.IsTransparent != null) hashCode = hashCode * 59 + this.IsTransparent.GetHashCode();
                 hashCode = hashCode * 59 + this.DefaultLanguage.GetHashCode();
                 if (this.ClientId != null) hashCode = hashCode * 59 + this.ClientId.GetHashCode();
+                if (this.IsPoolMode != null) hashCode = hashCode * 59 + this.IsPoolMode.GetHashCode();
+                hashCode = hashCode * 59 + this.JobFinishReason.GetHashCode();
+                if (this.RtcRoomInfo != null) hashCode = hashCode * 59 + this.RtcRoomInfo.GetHashCode();
+                if (this.ChatState != null) hashCode = hashCode * 59 + this.ChatState.GetHashCode();
+                hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.ChatAccessAddress != null) hashCode = hashCode * 59 + this.ChatAccessAddress.GetHashCode();
+                if (this.ChatAccessRestAddress != null) hashCode = hashCode * 59 + this.ChatAccessRestAddress.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }

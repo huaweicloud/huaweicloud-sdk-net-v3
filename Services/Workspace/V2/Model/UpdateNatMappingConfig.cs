@@ -161,7 +161,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string VagIp { get; set; }
 
         /// <summary>
-        /// 0标识不开启，1表示开启。
+        /// 是否支持标签、企业项目管理。0表示不开启，1表示开启。
         /// </summary>
         [JsonProperty("access_filter_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? AccessFilterType { get; set; }
@@ -173,7 +173,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 标签对象
+        /// 标签对象。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }

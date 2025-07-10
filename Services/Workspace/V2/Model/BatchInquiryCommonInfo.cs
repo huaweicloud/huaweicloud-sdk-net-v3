@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 批量询价/下单公共参数
+    /// 批量询价/下单公共参数。
     /// </summary>
     public class BatchInquiryCommonInfo 
     {
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> DesktopIds { get; set; }
 
         /// <summary>
-        /// 促销计划ID
+        /// 促销计划ID。
         /// </summary>
         [JsonProperty("promotion_plan_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PromotionPlanId { get; set; }

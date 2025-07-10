@@ -35,13 +35,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// 云服务器系统盘对应的存储池的ID。
-        /// </summary>
-        [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ClusterId { get; set; }
-
-        /// <summary>
-        /// 规格
+        /// 规格。
         /// </summary>
         [JsonProperty("resource_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceSpecCode { get; set; }
@@ -58,7 +52,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
-            sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  resourceSpecCode: ").Append(ResourceSpecCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -81,7 +74,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
-            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
             if (this.ResourceSpecCode != input.ResourceSpecCode || (this.ResourceSpecCode != null && !this.ResourceSpecCode.Equals(input.ResourceSpecCode))) return false;
 
             return true;
@@ -98,7 +90,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 if (this.ResourceSpecCode != null) hashCode = hashCode * 59 + this.ResourceSpecCode.GetHashCode();
                 return hashCode;
             }

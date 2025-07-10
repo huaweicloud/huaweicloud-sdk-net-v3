@@ -137,19 +137,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("autoscale_type", NullValueHandling = NullValueHandling.Ignore)]
         public AutoscaleTypeEnum AutoscaleType { get; set; }
         /// <summary>
-        /// 自动创建桌面上限
+        /// 自动创建桌面上限。
         /// </summary>
         [JsonProperty("max_auto_created", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxAutoCreated { get; set; }
 
         /// <summary>
-        /// 空闲桌面低于多少时开始自动创建桌面
+        /// 空闲桌面低于多少时开始自动创建桌面。
         /// </summary>
         [JsonProperty("min_idle", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinIdle { get; set; }
 
         /// <summary>
-        /// 一次自动创建桌面的数量
+        /// 一次自动创建桌面的数量。
         /// </summary>
         [JsonProperty("once_auto_created", NullValueHandling = NullValueHandling.Ignore)]
         public int? OnceAutoCreated { get; set; }

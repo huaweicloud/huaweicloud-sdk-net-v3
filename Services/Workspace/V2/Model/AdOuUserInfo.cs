@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 名称
+        /// 名称。
         /// </summary>
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string UserName { get; set; }
 
         /// <summary>
-        /// 过期时间 -1代表永不过期
+        /// 过期时间 -1代表永不过期。
         /// </summary>
         [JsonProperty("expired_time", NullValueHandling = NullValueHandling.Ignore)]
         public string ExpiredTime { get; set; }
 
         /// <summary>
-        /// 是否存在于用户列表
+        /// 是否存在于用户列表。
         /// </summary>
         [JsonProperty("has_existed", NullValueHandling = NullValueHandling.Ignore)]
         public bool? HasExisted { get; set; }

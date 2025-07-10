@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 查询桌面池授权的用户、用户组响应的用户/用户组信息
+    /// 查询桌面池授权的用户、用户组响应的用户/用户组信息。
     /// </summary>
     public class AuthorizedObjects 
     {
@@ -137,13 +137,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         [JsonProperty("object_type", NullValueHandling = NullValueHandling.Ignore)]
         public ObjectTypeEnum ObjectType { get; set; }
         /// <summary>
-        /// 用户/用户组id
+        /// 用户/用户组id。
         /// </summary>
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }
 
         /// <summary>
-        /// 用户/用户组名称
+        /// 用户/用户组名称。
         /// </summary>
         [JsonProperty("object_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectName { get; set; }

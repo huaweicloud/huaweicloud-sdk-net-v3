@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public AutoscalePolicy AutoscalePolicy { get; set; }
 
         /// <summary>
-        /// 是否处于管理员维护模式
+        /// 是否处于管理员维护模式。
         /// </summary>
         [JsonProperty("in_maintenance_mode", NullValueHandling = NullValueHandling.Ignore)]
         public bool? InMaintenanceMode { get; set; }
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopNamePolicyId { get; set; }
 
         /// <summary>
-        /// 桌面池的可用区。
+        /// 桌面池的可用区。桌面池的可用区是边缘可用区时，不支持修改。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 绑定策略ID列表
+        /// 绑定策略ID列表。
         /// </summary>
         [JsonProperty("id_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> IdList { get; set; }

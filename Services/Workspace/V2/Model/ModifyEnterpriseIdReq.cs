@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 修改企业ID请求
+    /// 修改企业ID请求。
     /// </summary>
     public class ModifyEnterpriseIdReq 
     {
 
         /// <summary>
-        /// 企业ID
+        /// 企业ID。
         /// </summary>
         [JsonProperty("enterprise_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseId { get; set; }

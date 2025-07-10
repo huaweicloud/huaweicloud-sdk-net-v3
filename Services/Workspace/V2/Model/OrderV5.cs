@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 订单id
+        /// 订单id。
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// 订单状态:0:初始化; 1:待审核; 2:待退款; 3:处理中; 4:已取消; 5:已完成; 6:待支付; 7:补偿中; 8:待审批; 9:待确认; 10:待发货; 11:待收货; 12:待上门取货; 13:换新中; 14:待商家收货
+        /// 订单状态:0:初始化; 1:待审核; 2:待退款; 3:处理中; 4:已取消; 5:已完成; 6:待支付; 7:补偿中; 8:待审批; 9:待确认; 10:待发货; 11:待收货; 12:待上门取货; 13:换新中; 14:待商家收货。
         /// </summary>
         [JsonProperty("order_status", NullValueHandling = NullValueHandling.Ignore)]
         public int? OrderStatus { get; set; }
 
         /// <summary>
-        /// 结果，SUCCESS:成功； FAIL：失败
+        /// 结果，SUCCESS:成功； FAIL：失败。
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public string Result { get; set; }
 
         /// <summary>
-        /// result&#x3D;FAIL时，必填，标识该订单失败原因
+        /// result&#x3D;FAIL时，必填，表示该订单失败原因。
         /// </summary>
         [JsonProperty("result_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ResultCode { get; set; }
 
         /// <summary>
-        /// 失败信息，和result_code结对出现
+        /// 失败信息，和result_code结对出现。
         /// </summary>
         [JsonProperty("result_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string ResultMsg { get; set; }

@@ -729,6 +729,168 @@ namespace HuaweiCloud.SDK.ProjectMan.V4
         }
         
         /// <summary>
+        /// 查询字段模板列表
+        ///
+        /// 工作项类型中查询字段模板列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListIssueFieldsResponse ListIssueFields(ListIssueFieldsRequest listIssueFieldsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", listIssueFieldsRequest.ProjectId.ToString());
+            urlParam.Add("category_id", listIssueFieldsRequest.CategoryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/categories/{category_id}/field/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIssueFieldsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListIssueFieldsResponse>(response);
+        }
+
+        public SyncInvoker<ListIssueFieldsResponse> ListIssueFieldsInvoker(ListIssueFieldsRequest listIssueFieldsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", listIssueFieldsRequest.ProjectId.ToString());
+            urlParam.Add("category_id", listIssueFieldsRequest.CategoryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/categories/{category_id}/field/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIssueFieldsRequest);
+            return new SyncInvoker<ListIssueFieldsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIssueFieldsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询工作项状态
+        ///
+        /// 根据工作项查询工作项下的状态信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListIssueStatuesResponse ListIssueStatues(ListIssueStatuesRequest listIssueStatuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", listIssueStatuesRequest.ProjectId.ToString());
+            urlParam.Add("category_id", listIssueStatuesRequest.CategoryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/category/{category_id}/statuses", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIssueStatuesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListIssueStatuesResponse>(response);
+        }
+
+        public SyncInvoker<ListIssueStatuesResponse> ListIssueStatuesInvoker(ListIssueStatuesRequest listIssueStatuesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", listIssueStatuesRequest.ProjectId.ToString());
+            urlParam.Add("category_id", listIssueStatuesRequest.CategoryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/category/{category_id}/statuses", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIssueStatuesRequest);
+            return new SyncInvoker<ListIssueStatuesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIssueStatuesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询工作流字段配置信息
+        ///
+        /// 查询工作流字段配置信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowIssueConfigFieldsResponse ShowIssueConfigFields(ShowIssueConfigFieldsRequest showIssueConfigFieldsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", showIssueConfigFieldsRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/workflow-template/issue/fields", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIssueConfigFieldsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowIssueConfigFieldsResponse>(response);
+        }
+
+        public SyncInvoker<ShowIssueConfigFieldsResponse> ShowIssueConfigFieldsInvoker(ShowIssueConfigFieldsRequest showIssueConfigFieldsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", showIssueConfigFieldsRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/workflow-template/issue/fields", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIssueConfigFieldsRequest);
+            return new SyncInvoker<ShowIssueConfigFieldsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIssueConfigFieldsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询工作项详情
+        ///
+        /// 查询工作项详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowIssueDetailResponse ShowIssueDetail(ShowIssueDetailRequest showIssueDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", showIssueDetailRequest.ProjectId.ToString());
+            urlParam.Add("issue_id", showIssueDetailRequest.IssueId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/{issue_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIssueDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowIssueDetailResponse>(response);
+        }
+
+        public SyncInvoker<ShowIssueDetailResponse> ShowIssueDetailInvoker(ShowIssueDetailRequest showIssueDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", showIssueDetailRequest.ProjectId.ToString());
+            urlParam.Add("issue_id", showIssueDetailRequest.IssueId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/issues/{issue_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIssueDetailRequest);
+            return new SyncInvoker<ShowIssueDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIssueDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 获取工作流的详情及每条流转线的详情
+        ///
+        /// 获取工作流的详情及每条流转线的详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowWorkflowTemplateResponse ShowWorkflowTemplate(ShowWorkflowTemplateRequest showWorkflowTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", showWorkflowTemplateRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/workflow-template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkflowTemplateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowWorkflowTemplateResponse>(response);
+        }
+
+        public SyncInvoker<ShowWorkflowTemplateResponse> ShowWorkflowTemplateInvoker(ShowWorkflowTemplateRequest showWorkflowTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", showWorkflowTemplateRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/workflow-template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkflowTemplateRequest);
+            return new SyncInvoker<ShowWorkflowTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWorkflowTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 修改工作项的状态
+        ///
+        /// 工作项流程流转
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public TransferWorkItemFlowResponse TransferWorkItemFlow(TransferWorkItemFlowRequest transferWorkItemFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", transferWorkItemFlowRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/work-item/flow/transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", transferWorkItemFlowRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<TransferWorkItemFlowResponse>(response);
+        }
+
+        public SyncInvoker<TransferWorkItemFlowResponse> TransferWorkItemFlowInvoker(TransferWorkItemFlowRequest transferWorkItemFlowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", transferWorkItemFlowRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/ipdprojectservice/projects/{project_id}/work-item/flow/transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", transferWorkItemFlowRequest);
+            return new SyncInvoker<TransferWorkItemFlowResponse>(this, "POST", request, JsonUtils.DeSerialize<TransferWorkItemFlowResponse>);
+        }
+        
+        /// <summary>
         /// 添加指定工作项工时
         ///
         /// 添加指定工作项工时

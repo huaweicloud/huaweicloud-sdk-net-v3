@@ -23,12 +23,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string DesktopId { get; set; }
 
         /// <summary>
-        /// 订单ID，包周期桌面扩容时使用。
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
-
-        /// <summary>
         /// 磁盘ID。
         /// </summary>
         [JsonProperty("volume_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -50,7 +44,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ExpandVolumesReq {\n");
             sb.Append("  desktopId: ").Append(DesktopId).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  volumeId: ").Append(VolumeId).Append("\n");
             sb.Append("  newSize: ").Append(NewSize).Append("\n");
             sb.Append("}\n");
@@ -72,7 +65,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.DesktopId != input.DesktopId || (this.DesktopId != null && !this.DesktopId.Equals(input.DesktopId))) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.VolumeId != input.VolumeId || (this.VolumeId != null && !this.VolumeId.Equals(input.VolumeId))) return false;
             if (this.NewSize != input.NewSize || (this.NewSize != null && !this.NewSize.Equals(input.NewSize))) return false;
 
@@ -88,7 +80,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.DesktopId != null) hashCode = hashCode * 59 + this.DesktopId.GetHashCode();
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.VolumeId != null) hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
                 if (this.NewSize != null) hashCode = hashCode * 59 + this.NewSize.GetHashCode();
                 return hashCode;

@@ -41,12 +41,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public int? Quantity { get; set; }
 
         /// <summary>
-        /// 订单ID。
-        /// </summary>
-        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; set; }
-
-        /// <summary>
         /// 产品套餐ID。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,7 +53,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<Volume> ImageVolumes { get; set; }
 
         /// <summary>
-        /// 企业项目ID，默认\&quot;0\&quot;
+        /// 企业项目ID，默认\&quot;0。\&quot;
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -101,7 +95,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  applyDesktopQuantity: ").Append(ApplyDesktopQuantity).Append("\n");
             sb.Append("  quantity: ").Append(Quantity).Append("\n");
-            sb.Append("  orderId: ").Append(OrderId).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
             sb.Append("  imageVolumes: ").Append(ImageVolumes).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
@@ -131,7 +124,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.ApplyDesktopQuantity != input.ApplyDesktopQuantity || (this.ApplyDesktopQuantity != null && !this.ApplyDesktopQuantity.Equals(input.ApplyDesktopQuantity))) return false;
             if (this.Quantity != input.Quantity || (this.Quantity != null && !this.Quantity.Equals(input.Quantity))) return false;
-            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
             if (this.ImageVolumes != input.ImageVolumes || (this.ImageVolumes != null && input.ImageVolumes != null && !this.ImageVolumes.SequenceEqual(input.ImageVolumes))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
@@ -155,7 +147,6 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.ApplyDesktopQuantity != null) hashCode = hashCode * 59 + this.ApplyDesktopQuantity.GetHashCode();
                 if (this.Quantity != null) hashCode = hashCode * 59 + this.Quantity.GetHashCode();
-                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
                 if (this.ImageVolumes != null) hashCode = hashCode * 59 + this.ImageVolumes.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();

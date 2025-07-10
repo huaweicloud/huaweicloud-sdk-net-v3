@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
     {
 
         /// <summary>
-        /// 批量生成订单结果
+        /// 批量生成订单结果。
         /// </summary>
         [JsonProperty("orders", NullValueHandling = NullValueHandling.Ignore)]
         public List<OrderV5> Orders { get; set; }

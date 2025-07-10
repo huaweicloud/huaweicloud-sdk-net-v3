@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Workspace.V2.Model
 {
     /// <summary>
-    /// 磁盘产品信息
+    /// 磁盘产品信息。
     /// </summary>
     public class VolumeProductInfo 
     {
 
         /// <summary>
-        /// 产品ID
+        /// 产品ID。
         /// </summary>
         [JsonProperty("resource_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceSpecCode { get; set; }
@@ -29,19 +29,19 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string VolumeType { get; set; }
 
         /// <summary>
-        /// 产品类型：workspace
+        /// 产品类型：workspace。
         /// </summary>
         [JsonProperty("volume_product_type", NullValueHandling = NullValueHandling.Ignore)]
         public string VolumeProductType { get; set; }
 
         /// <summary>
-        /// 资源类型
+        /// 资源类型。
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 云服务类型
+        /// 云服务类型。
         /// </summary>
         [JsonProperty("cloud_service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CloudServiceType { get; set; }
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public List<string> DomainIds { get; set; }
 
         /// <summary>
-        /// 磁盘名称
+        /// 磁盘名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public List<I18nLanguage> Name { get; set; }

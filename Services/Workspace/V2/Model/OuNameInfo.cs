@@ -23,31 +23,31 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 域id
+        /// 域id。
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 域名称
+        /// 域名称。
         /// </summary>
         [JsonProperty("domain", NullValueHandling = NullValueHandling.Ignore)]
         public string Domain { get; set; }
 
         /// <summary>
-        /// OU名称
+        /// OU名称。
         /// </summary>
         [JsonProperty("ou_name", NullValueHandling = NullValueHandling.Ignore)]
         public string OuName { get; set; }
 
         /// <summary>
-        /// ouDn
+        /// ouDn。
         /// </summary>
         [JsonProperty("ou_dn", NullValueHandling = NullValueHandling.Ignore)]
         public string OuDn { get; set; }
 
         /// <summary>
-        /// 描述
+        /// 描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
