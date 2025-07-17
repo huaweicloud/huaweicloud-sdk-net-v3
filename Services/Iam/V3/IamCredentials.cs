@@ -43,7 +43,7 @@ namespace HuaweiCloud.SDK.Iam.V3
             return PathParamDict;
         }
 
-        public Task<HttpRequest> SignAuthRequest(HttpRequest request)
+        public Task<HttpRequest> SignAuthRequest(HttpRequest request, SdkHttpClient client = null)
         {
             var httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {

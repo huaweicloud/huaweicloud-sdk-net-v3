@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
+        /// <summary>
+        /// 标签列表
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             sb.Append("  aggregationAuthorizationUrn: ").Append(AggregationAuthorizationUrn).Append("\n");
             sb.Append("  authorizedAccountId: ").Append(AuthorizedAccountId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             if (this.AggregationAuthorizationUrn != input.AggregationAuthorizationUrn || (this.AggregationAuthorizationUrn != null && !this.AggregationAuthorizationUrn.Equals(input.AggregationAuthorizationUrn))) return false;
             if (this.AuthorizedAccountId != input.AuthorizedAccountId || (this.AuthorizedAccountId != null && !this.AuthorizedAccountId.Equals(input.AuthorizedAccountId))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
                 if (this.AggregationAuthorizationUrn != null) hashCode = hashCode * 59 + this.AggregationAuthorizationUrn.GetHashCode();
                 if (this.AuthorizedAccountId != null) hashCode = hashCode * 59 + this.AuthorizedAccountId.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

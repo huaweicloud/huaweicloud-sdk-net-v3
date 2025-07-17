@@ -27,10 +27,22 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             /// </summary>
             public static readonly ResourceTypeEnum CONFIG_POLICYASSIGNMENTS = new ResourceTypeEnum("config:policyAssignments");
 
+            /// <summary>
+            /// Enum CONFIG_AGGREGATORS for value: config:aggregators
+            /// </summary>
+            public static readonly ResourceTypeEnum CONFIG_AGGREGATORS = new ResourceTypeEnum("config:aggregators");
+
+            /// <summary>
+            /// Enum CONFIG_AGGREGATIONAUTHORIZATIONS for value: config:aggregationAuthorizations
+            /// </summary>
+            public static readonly ResourceTypeEnum CONFIG_AGGREGATIONAUTHORIZATIONS = new ResourceTypeEnum("config:aggregationAuthorizations");
+
             private static readonly Dictionary<string, ResourceTypeEnum> StaticFields =
             new Dictionary<string, ResourceTypeEnum>()
             {
                 { "config:policyAssignments", CONFIG_POLICYASSIGNMENTS },
+                { "config:aggregators", CONFIG_AGGREGATORS },
+                { "config:aggregationAuthorizations", CONFIG_AGGREGATIONAUTHORIZATIONS },
             };
 
             private string _value;

@@ -130,7 +130,7 @@ namespace HuaweiCloud.SDK.Core
             var request = GetHttpRequest(url, method, sdkRequest);
             if (string.IsNullOrEmpty(request.Headers.Get("Authorization")))
             {
-                request = _credentials.SignAuthRequest(request).Result;
+                request = _credentials.SignAuthRequest(request, _sdkHttpClient).Result;
             }
 
             var message = _sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
@@ -151,7 +151,7 @@ namespace HuaweiCloud.SDK.Core
             var request = GetHttpRequest(url, method, sdkRequest);
             if (string.IsNullOrEmpty(request.Headers.Get("Authorization")))
             {
-                request = await _credentials.SignAuthRequest(request);
+                request = await _credentials.SignAuthRequest(request, _sdkHttpClient);
             }
 
             var message = _sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);

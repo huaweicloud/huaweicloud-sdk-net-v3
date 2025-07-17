@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         [JsonProperty("account_aggregation_sources", NullValueHandling = NullValueHandling.Ignore)]
         public AccountAggregationSource AccountAggregationSources { get; set; }
 
+        /// <summary>
+        /// 标签列表
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             sb.Append("  aggregatorName: ").Append(AggregatorName).Append("\n");
             sb.Append("  aggregatorType: ").Append(AggregatorType).Append("\n");
             sb.Append("  accountAggregationSources: ").Append(AccountAggregationSources).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             if (this.AggregatorName != input.AggregatorName || (this.AggregatorName != null && !this.AggregatorName.Equals(input.AggregatorName))) return false;
             if (this.AggregatorType != input.AggregatorType || (this.AggregatorType != null && !this.AggregatorType.Equals(input.AggregatorType))) return false;
             if (this.AccountAggregationSources != input.AccountAggregationSources || (this.AccountAggregationSources != null && !this.AccountAggregationSources.Equals(input.AccountAggregationSources))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
                 if (this.AggregatorName != null) hashCode = hashCode * 59 + this.AggregatorName.GetHashCode();
                 if (this.AggregatorType != null) hashCode = hashCode * 59 + this.AggregatorType.GetHashCode();
                 if (this.AccountAggregationSources != null) hashCode = hashCode * 59 + this.AccountAggregationSources.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

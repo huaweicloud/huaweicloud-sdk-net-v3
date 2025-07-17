@@ -15,7 +15,7 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
             return PathParamDict;
         }
 
-        public override Task<HttpRequest> SignAuthRequest(HttpRequest request)
+        public override Task<HttpRequest> SignAuthRequest(HttpRequest request, SdkHttpClient client = null)
         {
             var httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {

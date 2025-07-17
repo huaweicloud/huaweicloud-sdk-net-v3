@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             return pathParamDictionary;
         }
 
-        public override Task<HttpRequest> SignAuthRequest(HttpRequest request)
+        public override Task<HttpRequest> SignAuthRequest(HttpRequest request, SdkHttpClient client = null)
         {
             var httpRequestTask = Task<HttpRequest>.Factory.StartNew(() =>
             {

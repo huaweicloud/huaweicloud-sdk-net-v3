@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Core.Auth
     {
         Dictionary<string, string> GetPathParamDictionary();
 
-        Task<HttpRequest> SignAuthRequest(HttpRequest request);
+        Task<HttpRequest> SignAuthRequest(HttpRequest request, SdkHttpClient client = null);
 
         ICredential ProcessAuthParams(SdkHttpClient client, string regionId);
 

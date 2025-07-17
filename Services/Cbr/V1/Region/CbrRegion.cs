@@ -69,6 +69,10 @@ namespace HuaweiCloud.SDK.Cbr.V1
             "https://cbr.eu-west-0.myhuaweicloud.com");
         public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
             "https://cbr.my-kualalumpur-1.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
+            "https://cbr.cn-north-12.myhuaweicloud.com");
+        public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
+            "https://cbr.cn-southwest-3.myhuaweicloud.com");
         public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
             "https://cbr.ru-moscow-1.myhuaweicloud.com");
         
@@ -107,6 +111,8 @@ namespace HuaweiCloud.SDK.Cbr.V1
                 { "ae-ad-1", AE_AD_1 },
                 { "eu-west-0", EU_WEST_0 },
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
+                { "cn-north-12", CN_NORTH_12 },
+                { "cn-southwest-3", CN_SOUTHWEST_3 },
                 { "ru-moscow-1", RU_MOSCOW_1 },
         };
 

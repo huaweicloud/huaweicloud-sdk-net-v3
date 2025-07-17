@@ -241,6 +241,158 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 创建热词表
+        ///
+        /// 该接口用于创建热词表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAsrVocabularyResponse CreateAsrVocabulary(CreateAsrVocabularyRequest createAsrVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAsrVocabularyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateAsrVocabularyResponse>(response);
+        }
+
+        public SyncInvoker<CreateAsrVocabularyResponse> CreateAsrVocabularyInvoker(CreateAsrVocabularyRequest createAsrVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAsrVocabularyRequest);
+            return new SyncInvoker<CreateAsrVocabularyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAsrVocabularyResponse>);
+        }
+        
+        /// <summary>
+        /// 删除热词表
+        ///
+        /// 该接口用于删除热词表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteAsrVocabularyResponse DeleteAsrVocabulary(DeleteAsrVocabularyRequest deleteAsrVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("asr_vocabulary_id", deleteAsrVocabularyRequest.AsrVocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAsrVocabularyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAsrVocabularyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAsrVocabularyResponse> DeleteAsrVocabularyInvoker(DeleteAsrVocabularyRequest deleteAsrVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("asr_vocabulary_id", deleteAsrVocabularyRequest.AsrVocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAsrVocabularyRequest);
+            return new SyncInvoker<DeleteAsrVocabularyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAsrVocabularyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询热词表列表
+        ///
+        /// 该接口用于查询热词表列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAsrVocabularyResponse ListAsrVocabulary(ListAsrVocabularyRequest listAsrVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsrVocabularyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAsrVocabularyResponse>(response);
+        }
+
+        public SyncInvoker<ListAsrVocabularyResponse> ListAsrVocabularyInvoker(ListAsrVocabularyRequest listAsrVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsrVocabularyRequest);
+            return new SyncInvoker<ListAsrVocabularyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAsrVocabularyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询热词表详情
+        ///
+        /// 该接口用于查询热词表详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAsrVocabularyResponse ShowAsrVocabulary(ShowAsrVocabularyRequest showAsrVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("asr_vocabulary_id", showAsrVocabularyRequest.AsrVocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsrVocabularyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAsrVocabularyResponse>(response);
+        }
+
+        public SyncInvoker<ShowAsrVocabularyResponse> ShowAsrVocabularyInvoker(ShowAsrVocabularyRequest showAsrVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("asr_vocabulary_id", showAsrVocabularyRequest.AsrVocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsrVocabularyRequest);
+            return new SyncInvoker<ShowAsrVocabularyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAsrVocabularyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询热词表关联详情
+        ///
+        /// 该接口用于查询热词表关联详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAsrVocabularyAssociationResponse ShowAsrVocabularyAssociation(ShowAsrVocabularyAssociationRequest showAsrVocabularyAssociationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("asr_vocabulary_id", showAsrVocabularyAssociationRequest.AsrVocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/association/{asr_vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsrVocabularyAssociationRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAsrVocabularyAssociationResponse>(response);
+        }
+
+        public SyncInvoker<ShowAsrVocabularyAssociationResponse> ShowAsrVocabularyAssociationInvoker(ShowAsrVocabularyAssociationRequest showAsrVocabularyAssociationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("asr_vocabulary_id", showAsrVocabularyAssociationRequest.AsrVocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/association/{asr_vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsrVocabularyAssociationRequest);
+            return new SyncInvoker<ShowAsrVocabularyAssociationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAsrVocabularyAssociationResponse>);
+        }
+        
+        /// <summary>
+        /// 修改热词表
+        ///
+        /// 该接口用于修改热词表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAsrVocabularyResponse UpdateAsrVocabulary(UpdateAsrVocabularyRequest updateAsrVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("asr_vocabulary_id", updateAsrVocabularyRequest.AsrVocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAsrVocabularyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAsrVocabularyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAsrVocabularyResponse> UpdateAsrVocabularyInvoker(UpdateAsrVocabularyRequest updateAsrVocabularyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("asr_vocabulary_id", updateAsrVocabularyRequest.AsrVocabularyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAsrVocabularyRequest);
+            return new SyncInvoker<UpdateAsrVocabularyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAsrVocabularyResponse>);
+        }
+        
+        /// <summary>
         /// 创建对话链接
         ///
         /// 该接口用于创建对话链接。

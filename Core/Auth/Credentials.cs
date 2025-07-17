@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         public abstract Dictionary<string, string> GetPathParamDictionary();
 
-        public abstract Task<HttpRequest> SignAuthRequest(HttpRequest request);
+        public abstract Task<HttpRequest> SignAuthRequest(HttpRequest request, SdkHttpClient client = null);
 
         public abstract ICredential ProcessAuthParams(SdkHttpClient client, string regionId);
 
