@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public List<string> Ipv6Addresses { get; set; }
 
         /// <summary>
+        /// 子网id
+        /// </summary>
+        [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubnetId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("association", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,6 +65,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             sb.Append("  primary: ").Append(Primary).Append("\n");
             sb.Append("  ipAddresses: ").Append(IpAddresses).Append("\n");
             sb.Append("  ipv6Addresses: ").Append(Ipv6Addresses).Append("\n");
+            sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("  association: ").Append(Association).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -82,6 +89,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             if (this.Primary != input.Primary || (this.Primary != null && !this.Primary.Equals(input.Primary))) return false;
             if (this.IpAddresses != input.IpAddresses || (this.IpAddresses != null && input.IpAddresses != null && !this.IpAddresses.SequenceEqual(input.IpAddresses))) return false;
             if (this.Ipv6Addresses != input.Ipv6Addresses || (this.Ipv6Addresses != null && input.Ipv6Addresses != null && !this.Ipv6Addresses.SequenceEqual(input.Ipv6Addresses))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
             if (this.Association != input.Association || (this.Association != null && !this.Association.Equals(input.Association))) return false;
 
             return true;
@@ -99,6 +107,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
                 if (this.Primary != null) hashCode = hashCode * 59 + this.Primary.GetHashCode();
                 if (this.IpAddresses != null) hashCode = hashCode * 59 + this.IpAddresses.GetHashCode();
                 if (this.Ipv6Addresses != null) hashCode = hashCode * 59 + this.Ipv6Addresses.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 if (this.Association != null) hashCode = hashCode * 59 + this.Association.GetHashCode();
                 return hashCode;
             }

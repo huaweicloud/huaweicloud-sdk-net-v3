@@ -34,6 +34,30 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
 
+        /// <summary>
+        /// 总表数。
+        /// </summary>
+        [JsonProperty("compare_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CompareNum { get; set; }
+
+        /// <summary>
+        /// 已完成表数。
+        /// </summary>
+        [JsonProperty("compare_end_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CompareEndNum { get; set; }
+
+        /// <summary>
+        /// 不一致表数。
+        /// </summary>
+        [JsonProperty("data_inconsistent_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? DataInconsistentNum { get; set; }
+
+        /// <summary>
+        /// 无法对比表数。
+        /// </summary>
+        [JsonProperty("uncomparable_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? UncomparableNum { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +70,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  sourceDb: ").Append(SourceDb).Append("\n");
             sb.Append("  targetDb: ").Append(TargetDb).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  compareNum: ").Append(CompareNum).Append("\n");
+            sb.Append("  compareEndNum: ").Append(CompareEndNum).Append("\n");
+            sb.Append("  dataInconsistentNum: ").Append(DataInconsistentNum).Append("\n");
+            sb.Append("  uncomparableNum: ").Append(UncomparableNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +95,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             if (this.SourceDb != input.SourceDb || (this.SourceDb != null && !this.SourceDb.Equals(input.SourceDb))) return false;
             if (this.TargetDb != input.TargetDb || (this.TargetDb != null && !this.TargetDb.Equals(input.TargetDb))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.CompareNum != input.CompareNum || (this.CompareNum != null && !this.CompareNum.Equals(input.CompareNum))) return false;
+            if (this.CompareEndNum != input.CompareEndNum || (this.CompareEndNum != null && !this.CompareEndNum.Equals(input.CompareEndNum))) return false;
+            if (this.DataInconsistentNum != input.DataInconsistentNum || (this.DataInconsistentNum != null && !this.DataInconsistentNum.Equals(input.DataInconsistentNum))) return false;
+            if (this.UncomparableNum != input.UncomparableNum || (this.UncomparableNum != null && !this.UncomparableNum.Equals(input.UncomparableNum))) return false;
 
             return true;
         }
@@ -82,6 +114,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                 if (this.SourceDb != null) hashCode = hashCode * 59 + this.SourceDb.GetHashCode();
                 if (this.TargetDb != null) hashCode = hashCode * 59 + this.TargetDb.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CompareNum != null) hashCode = hashCode * 59 + this.CompareNum.GetHashCode();
+                if (this.CompareEndNum != null) hashCode = hashCode * 59 + this.CompareEndNum.GetHashCode();
+                if (this.DataInconsistentNum != null) hashCode = hashCode * 59 + this.DataInconsistentNum.GetHashCode();
+                if (this.UncomparableNum != null) hashCode = hashCode * 59 + this.UncomparableNum.GetHashCode();
                 return hashCode;
             }
         }

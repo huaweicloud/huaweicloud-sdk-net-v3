@@ -691,6 +691,30 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 下载创建模板
+        ///
+        /// 下载根据已有任务导出的创建模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadCreateTemplateResponse DownloadCreateTemplate(DownloadCreateTemplateRequest downloadCreateTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/templates/download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadCreateTemplateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<DownloadCreateTemplateResponse>(response);
+        }
+
+        public SyncInvoker<DownloadCreateTemplateResponse> DownloadCreateTemplateInvoker(DownloadCreateTemplateRequest downloadCreateTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/templates/download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadCreateTemplateRequest);
+            return new SyncInvoker<DownloadCreateTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadCreateTemplateResponse>);
+        }
+        
+        /// <summary>
         /// 对象选择（文件导入 - 模板下载）
         ///
         /// 对象选择（文件导入 - 模板下载）。
@@ -740,6 +764,30 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeJobActionRequest);
             return new SyncInvoker<ExecuteJobActionResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteJobActionResponse>);
+        }
+        
+        /// <summary>
+        /// 导出创建模板
+        ///
+        /// 根据已有任务导出创建模板。（异步操作，需要调查询导出进度接口查询结果。）
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExportCreationTemplateResponse ExportCreationTemplate(ExportCreationTemplateRequest exportCreationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/export/template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportCreationTemplateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ExportCreationTemplateResponse>(response);
+        }
+
+        public SyncInvoker<ExportCreationTemplateResponse> ExportCreationTemplateInvoker(ExportCreationTemplateRequest exportCreationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/export/template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportCreationTemplateRequest);
+            return new SyncInvoker<ExportCreationTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<ExportCreationTemplateResponse>);
         }
         
         /// <summary>
@@ -1179,6 +1227,30 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询创建模板列表
+        ///
+        /// 查询批量创建模板列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListTemplatesResponse ListTemplates(ListTemplatesRequest listTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListTemplatesResponse>(response);
+        }
+
+        public SyncInvoker<ListTemplatesResponse> ListTemplatesInvoker(ListTemplatesRequest listTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplatesRequest);
+            return new SyncInvoker<ListTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplatesResponse>);
+        }
+        
+        /// <summary>
         /// 查询驱动文件列表
         ///
         /// 查询驱动文件列表。
@@ -1586,6 +1658,32 @@ namespace HuaweiCloud.SDK.Drs.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/enterprise-projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnterpriseProjectRequest);
             return new SyncInvoker<ShowEnterpriseProjectResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEnterpriseProjectResponse>);
+        }
+        
+        /// <summary>
+        /// 查询导出创建模板进度
+        ///
+        /// 查询导出批量创建模板进度。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowExportProgressResponse ShowExportProgress(ShowExportProgressRequest showExportProgressRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("async_job_id", showExportProgressRequest.AsyncJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{async_job_id}/export/progress", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showExportProgressRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowExportProgressResponse>(response);
+        }
+
+        public SyncInvoker<ShowExportProgressResponse> ShowExportProgressInvoker(ShowExportProgressRequest showExportProgressRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("async_job_id", showExportProgressRequest.AsyncJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{async_job_id}/export/progress", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showExportProgressRequest);
+            return new SyncInvoker<ShowExportProgressResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowExportProgressResponse>);
         }
         
         /// <summary>

@@ -171,6 +171,32 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
+        /// 获取实例告警配置
+        ///
+        /// 获取实例告警配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAlarmTopicConfigInfoResponse> ListAlarmTopicConfigInfoAsync(ListAlarmTopicConfigInfoRequest listAlarmTopicConfigInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAlarmTopicConfigInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/alarm/topic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAlarmTopicConfigInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAlarmTopicConfigInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ListAlarmTopicConfigInfoResponse> ListAlarmTopicConfigInfoAsyncInvoker(ListAlarmTopicConfigInfoRequest listAlarmTopicConfigInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAlarmTopicConfigInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/alarm/topic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAlarmTopicConfigInfoRequest);
+            return new AsyncInvoker<ListAlarmTopicConfigInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAlarmTopicConfigInfoResponse>);
+        }
+        
+        /// <summary>
         /// 查询审计告警信息
         ///
         /// 查询审计告警信息
@@ -546,6 +572,32 @@ namespace HuaweiCloud.SDK.Dbss.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/instance/reboot", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rebootAuditInstanceRequest);
             return new AsyncInvoker<RebootAuditInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RebootAuditInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 设置实例告警配置
+        ///
+        /// 设置实例告警配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetAlarmTopicConfigInfoResponse> SetAlarmTopicConfigInfoAsync(SetAlarmTopicConfigInfoRequest setAlarmTopicConfigInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setAlarmTopicConfigInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/alarm/topic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAlarmTopicConfigInfoRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<SetAlarmTopicConfigInfoResponse>(response);
+        }
+
+        public AsyncInvoker<SetAlarmTopicConfigInfoResponse> SetAlarmTopicConfigInfoAsyncInvoker(SetAlarmTopicConfigInfoRequest setAlarmTopicConfigInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setAlarmTopicConfigInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/alarm/topic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAlarmTopicConfigInfoRequest);
+            return new AsyncInvoker<SetAlarmTopicConfigInfoResponse>(this, "POST", request, JsonUtils.DeSerialize<SetAlarmTopicConfigInfoResponse>);
         }
         
         /// <summary>

@@ -61,6 +61,16 @@ namespace HuaweiCloud.SDK.Kms.V2
             "https://kms.me-east-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
             "https://kms.ap-southeast-5.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_4 = new Region("cn-south-4",
+            "https://kms.cn-south-4.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
+            "https://kms.cn-north-12.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_11 = new Region("cn-north-11",
+            "https://kms.cn-north-11.myhuaweicloud.com");
+        public static readonly Region AF_NORTH_1 = new Region("af-north-1",
+            "https://kms.af-north-1.myhuaweicloud.com");
+        public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
+            "https://kms.cn-southwest-3.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("KMS");
 
@@ -93,6 +103,11 @@ namespace HuaweiCloud.SDK.Kms.V2
                 { "cn-east-4", CN_EAST_4 },
                 { "me-east-1", ME_EAST_1 },
                 { "ap-southeast-5", AP_SOUTHEAST_5 },
+                { "cn-south-4", CN_SOUTH_4 },
+                { "cn-north-12", CN_NORTH_12 },
+                { "cn-north-11", CN_NORTH_11 },
+                { "af-north-1", AF_NORTH_1 },
+                { "cn-southwest-3", CN_SOUTHWEST_3 },
         };
 
         public static Region ValueOf(string regionId)

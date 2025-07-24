@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [JsonProperty("file", NullValueHandling = NullValueHandling.Ignore)]
         public FormDataFilePart File { get; set; }
 
+        /// <summary>
+        /// 任务类型，迁移，同步，灾备等。 - migration - sync - cloudDataGuard
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
 
         
         public ImportBatchCreateJobsRequestBody WithFile(Stream stream, string filename)
@@ -43,6 +49,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             var formData = new Dictionary<string, object>();
 
             formData.Add("file", File);
+            if (Type != null) {
+                formData.Add("type", new FormDataPart<string>(Type));
+            }
 
             return formData;
         }
@@ -55,6 +64,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             var sb = new StringBuilder();
             sb.Append("class ImportBatchCreateJobsRequestBody {\n");
             sb.Append("  file: ").Append(File).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,6 +84,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             if (input == null) return false;
             if (this.File != input.File || (this.File != null && !this.File.Equals(input.File))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
             return true;
         }
@@ -87,6 +98,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             {
                 var hashCode = 41;
                 if (this.File != null) hashCode = hashCode * 59 + this.File.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

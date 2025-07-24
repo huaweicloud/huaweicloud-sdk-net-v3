@@ -31,14 +31,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public string FlavorId { get; set; }
 
         /// <summary>
-        /// 
+        /// 查询返回云服务器规格列表当前页面的数量。默认为1000
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 
+        /// 从marker指定的flavor_id的下一条数据开始查询
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]

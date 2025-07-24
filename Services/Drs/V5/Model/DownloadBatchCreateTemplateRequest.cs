@@ -137,6 +137,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
+        /// <summary>
+        /// 数据库引擎。 - postgresql
+        /// </summary>
+        [SDKProperty("engine_type", IsQuery = true)]
+        [JsonProperty("engine_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string EngineType { get; set; }
+
 
 
         /// <summary>
@@ -147,6 +154,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             var sb = new StringBuilder();
             sb.Append("class DownloadBatchCreateTemplateRequest {\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  engineType: ").Append(EngineType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,6 +174,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             if (input == null) return false;
             if (this.XLanguage != input.XLanguage) return false;
+            if (this.EngineType != input.EngineType || (this.EngineType != null && !this.EngineType.Equals(input.EngineType))) return false;
 
             return true;
         }
@@ -179,6 +188,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.EngineType != null) hashCode = hashCode * 59 + this.EngineType.GetHashCode();
                 return hashCode;
             }
         }

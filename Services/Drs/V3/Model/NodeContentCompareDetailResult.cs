@@ -82,6 +82,30 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("compare_line_config_filter", NullValueHandling = NullValueHandling.Ignore)]
         public string CompareLineConfigFilter { get; set; }
 
+        /// <summary>
+        /// 全量比对状态。 -1：对比中 -2：已完成 -3：待对比 -4：已取消
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Status { get; set; }
+
+        /// <summary>
+        /// 已对比分片数。
+        /// </summary>
+        [JsonProperty("complete_shard_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CompleteShardCount { get; set; }
+
+        /// <summary>
+        /// 总分片数。
+        /// </summary>
+        [JsonProperty("total_shard_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalShardCount { get; set; }
+
+        /// <summary>
+        /// 比对进度。
+        /// </summary>
+        [JsonProperty("progress", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Progress { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +126,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  contentCompareResult: ").Append(ContentCompareResult).Append("\n");
             sb.Append("  message: ").Append(Message).Append("\n");
             sb.Append("  compareLineConfigFilter: ").Append(CompareLineConfigFilter).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
+            sb.Append("  completeShardCount: ").Append(CompleteShardCount).Append("\n");
+            sb.Append("  totalShardCount: ").Append(TotalShardCount).Append("\n");
+            sb.Append("  progress: ").Append(Progress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +159,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             if (this.ContentCompareResult != input.ContentCompareResult || (this.ContentCompareResult != null && !this.ContentCompareResult.Equals(input.ContentCompareResult))) return false;
             if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
             if (this.CompareLineConfigFilter != input.CompareLineConfigFilter || (this.CompareLineConfigFilter != null && !this.CompareLineConfigFilter.Equals(input.CompareLineConfigFilter))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.CompleteShardCount != input.CompleteShardCount || (this.CompleteShardCount != null && !this.CompleteShardCount.Equals(input.CompleteShardCount))) return false;
+            if (this.TotalShardCount != input.TotalShardCount || (this.TotalShardCount != null && !this.TotalShardCount.Equals(input.TotalShardCount))) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
 
             return true;
         }
@@ -154,6 +186,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                 if (this.ContentCompareResult != null) hashCode = hashCode * 59 + this.ContentCompareResult.GetHashCode();
                 if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.CompareLineConfigFilter != null) hashCode = hashCode * 59 + this.CompareLineConfigFilter.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CompleteShardCount != null) hashCode = hashCode * 59 + this.CompleteShardCount.GetHashCode();
+                if (this.TotalShardCount != null) hashCode = hashCode * 59 + this.TotalShardCount.GetHashCode();
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
                 return hashCode;
             }
         }

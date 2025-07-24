@@ -108,19 +108,19 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
             public static readonly ActionNameEnum SET_READONLY = new ActionNameEnum("set_readonly");
 
             /// <summary>
-            /// Enum DIAGNOSIS_ for value: diagnosis：一键诊断。
+            /// Enum DIAGNOSIS for value: diagnosis
             /// </summary>
-            public static readonly ActionNameEnum DIAGNOSIS_ = new ActionNameEnum("diagnosis：一键诊断。");
+            public static readonly ActionNameEnum DIAGNOSIS = new ActionNameEnum("diagnosis");
 
             /// <summary>
-            /// Enum START_REPAIR_ for value: start_repair：开始数据修复。
+            /// Enum START_REPAIR for value: start_repair
             /// </summary>
-            public static readonly ActionNameEnum START_REPAIR_ = new ActionNameEnum("start_repair：开始数据修复。");
+            public static readonly ActionNameEnum START_REPAIR = new ActionNameEnum("start_repair");
 
             /// <summary>
-            /// Enum STOP_REPAIR_ for value: stop_repair：停止数据修复。
+            /// Enum STOP_REPAIR for value: stop_repair
             /// </summary>
-            public static readonly ActionNameEnum STOP_REPAIR_ = new ActionNameEnum("stop_repair：停止数据修复。");
+            public static readonly ActionNameEnum STOP_REPAIR = new ActionNameEnum("stop_repair");
 
             private static readonly Dictionary<string, ActionNameEnum> StaticFields =
             new Dictionary<string, ActionNameEnum>()
@@ -142,9 +142,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
                 { "set_writable", SET_WRITABLE },
                 { "cloud_connection", CLOUD_CONNECTION },
                 { "set_readonly", SET_READONLY },
-                { "diagnosis：一键诊断。", DIAGNOSIS_ },
-                { "start_repair：开始数据修复。", START_REPAIR_ },
-                { "stop_repair：停止数据修复。", STOP_REPAIR_ },
+                { "diagnosis", DIAGNOSIS },
+                { "start_repair", START_REPAIR },
+                { "stop_repair", STOP_REPAIR },
             };
 
             private string _value;

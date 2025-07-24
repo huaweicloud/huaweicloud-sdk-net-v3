@@ -2213,6 +2213,34 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 删除指定消息id的消息
+        ///
+        /// 应用服务器可调用此接口删除平台下发给设备的指定消息id的消息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDeviceMessageResponse> DeleteDeviceMessageAsync(DeleteDeviceMessageRequest deleteDeviceMessageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", deleteDeviceMessageRequest.DeviceId.ToString());
+            urlParam.Add("message_id", deleteDeviceMessageRequest.MessageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/messages/{message_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceMessageRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDeviceMessageResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDeviceMessageResponse> DeleteDeviceMessageAsyncInvoker(DeleteDeviceMessageRequest deleteDeviceMessageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", deleteDeviceMessageRequest.DeviceId.ToString());
+            urlParam.Add("message_id", deleteDeviceMessageRequest.MessageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/messages/{message_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceMessageRequest);
+            return new AsyncInvoker<DeleteDeviceMessageResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDeviceMessageResponse>);
+        }
+        
+        /// <summary>
         /// 查询设备消息
         ///
         /// 应用服务器可调用此接口查询平台下发给设备的消息，平台为每个设备默认最多保存20条消息，超过20条后， 后续的消息会替换下发最早的消息。
