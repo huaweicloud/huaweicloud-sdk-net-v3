@@ -458,9 +458,9 @@ namespace HuaweiCloud.SDK.Core
             return request;
         }
 
-        public static T DeSerializeStream<T>(HttpResponseMessage message)
+        public static T DeSerializeStream<T>(HttpResponseMessage message) where T : new()
         {
-            var t = Activator.CreateInstance<T>();
+            var t = new T();
             t.GetType().GetProperty("HttpStatusCode")?.SetValue(t, (int)message.StatusCode, null);
             t.GetType().GetProperty("HttpHeaders")?.SetValue(t, message.Headers.ToString(), null);
             var flag = BindingFlags.Public | BindingFlags.Instance;
@@ -475,12 +475,13 @@ namespace HuaweiCloud.SDK.Core
 
         public static T DeSerializeStream<R, T>(R progressRequest, HttpResponseMessage message)
             where R : IProgressRequest
-            where T : SdkStreamResponse
+            where T : SdkStreamResponse, new()
         {
-            var streamResponse = Activator.CreateInstance<T>();
-
-            streamResponse.HttpStatusCode = (int)message.StatusCode;
-            streamResponse.HttpHeaders = message.Headers.ToString();
+            var streamResponse = new T
+            {
+                HttpStatusCode = (int)message.StatusCode,
+                HttpHeaders = message.Headers.ToString()
+            };
 
             var stream = message.Content.ReadAsStreamAsync().Result;
 
