@@ -194,6 +194,18 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("custom_text", NullValueHandling = NullValueHandling.Ignore)]
         public string CustomText { get; set; }
 
+        /// <summary>
+        /// 是否使用按需资源
+        /// </summary>
+        [JsonProperty("is_ondemand_resource", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOndemandResource { get; set; }
+
+        /// <summary>
+        /// 支持的业务类型。： * VIDEO_2D：分身数字人视频制作 * LIVE_2D：分身数字人直播 * CHAT_2D：分身数字人智能交互
+        /// </summary>
+        [JsonProperty("supported_service", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SupportedServiceEnum> SupportedService { get; set; }
+
 
 
         /// <summary>
@@ -214,6 +226,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  batchName: ").Append(BatchName).Append("\n");
             sb.Append("  outputLanguage: ").Append(OutputLanguage).Append("\n");
             sb.Append("  customText: ").Append(CustomText).Append("\n");
+            sb.Append("  isOndemandResource: ").Append(IsOndemandResource).Append("\n");
+            sb.Append("  supportedService: ").Append(SupportedService).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -243,6 +257,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.BatchName != input.BatchName || (this.BatchName != null && !this.BatchName.Equals(input.BatchName))) return false;
             if (this.OutputLanguage != input.OutputLanguage || (this.OutputLanguage != null && !this.OutputLanguage.Equals(input.OutputLanguage))) return false;
             if (this.CustomText != input.CustomText || (this.CustomText != null && !this.CustomText.Equals(input.CustomText))) return false;
+            if (this.IsOndemandResource != input.IsOndemandResource || (this.IsOndemandResource != null && !this.IsOndemandResource.Equals(input.IsOndemandResource))) return false;
+            if (this.SupportedService != input.SupportedService || (this.SupportedService != null && input.SupportedService != null && !this.SupportedService.SequenceEqual(input.SupportedService))) return false;
 
             return true;
         }
@@ -266,6 +282,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.BatchName != null) hashCode = hashCode * 59 + this.BatchName.GetHashCode();
                 if (this.OutputLanguage != null) hashCode = hashCode * 59 + this.OutputLanguage.GetHashCode();
                 if (this.CustomText != null) hashCode = hashCode * 59 + this.CustomText.GetHashCode();
+                if (this.IsOndemandResource != null) hashCode = hashCode * 59 + this.IsOndemandResource.GetHashCode();
+                if (this.SupportedService != null) hashCode = hashCode * 59 + this.SupportedService.GetHashCode();
                 return hashCode;
             }
         }

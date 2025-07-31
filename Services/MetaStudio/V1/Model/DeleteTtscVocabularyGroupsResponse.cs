@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Ces.V2.Model
+namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 {
     /// <summary>
-    /// 是否启用一键告警。true:开启，false：关闭。
+    /// Response Object
     /// </summary>
-    public class Enabled 
+    public class DeleteTtscVocabularyGroupsResponse : SdkResponse
     {
 
 

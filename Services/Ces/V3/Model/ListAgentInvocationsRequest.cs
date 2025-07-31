@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退，RETRY 重试
+        /// 任务类型, INSTALL安装, UPDATE升级, ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALLER设置远程安装主机，REMOTE_INSTALL执行远程安装
         /// </summary>
-        /// <value>任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退，RETRY 重试</value>
+        /// <value>任务类型, INSTALL安装, UPDATE升级, ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALLER设置远程安装主机，REMOTE_INSTALL执行远程安装</value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTypeEnum>))]
         public class InvocationTypeEnum
         {
@@ -157,6 +157,16 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             /// </summary>
             public static readonly InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
 
+            /// <summary>
+            /// Enum SET_REMOTE_INSTALLER for value: SET_REMOTE_INSTALLER
+            /// </summary>
+            public static readonly InvocationTypeEnum SET_REMOTE_INSTALLER = new InvocationTypeEnum("SET_REMOTE_INSTALLER");
+
+            /// <summary>
+            /// Enum REMOTE_INSTALL for value: REMOTE_INSTALL
+            /// </summary>
+            public static readonly InvocationTypeEnum REMOTE_INSTALL = new InvocationTypeEnum("REMOTE_INSTALL");
+
             private static readonly Dictionary<string, InvocationTypeEnum> StaticFields =
             new Dictionary<string, InvocationTypeEnum>()
             {
@@ -164,6 +174,8 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
                 { "UPDATE", UPDATE },
                 { "ROLLBACK", ROLLBACK },
                 { "RETRY", RETRY },
+                { "SET_REMOTE_INSTALLER", SET_REMOTE_INSTALLER },
+                { "REMOTE_INSTALL", REMOTE_INSTALL },
             };
 
             private string _value;
@@ -258,9 +270,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务对象，目前仅支持telescope
+        /// 任务对象, 支持 telescope监控
         /// </summary>
-        /// <value>任务对象，目前仅支持telescope</value>
+        /// <value>任务对象, 支持 telescope监控</value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTargetEnum>))]
         public class InvocationTargetEnum
         {
@@ -388,13 +400,13 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         public string InvocationId { get; set; }
 
         /// <summary>
-        /// 任务类型，INSTALL 安装，UPDATE 升级，ROLLBACK 回退，RETRY 重试
+        /// 任务类型, INSTALL安装, UPDATE升级, ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALLER设置远程安装主机，REMOTE_INSTALL执行远程安装
         /// </summary>
         [SDKProperty("invocation_type", IsQuery = true)]
         [JsonProperty("invocation_type", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTypeEnum InvocationType { get; set; }
         /// <summary>
-        /// 任务对象，目前仅支持telescope
+        /// 任务对象, 支持 telescope监控
         /// </summary>
         [SDKProperty("invocation_target", IsQuery = true)]
         [JsonProperty("invocation_target", NullValueHandling = NullValueHandling.Ignore)]
@@ -404,7 +416,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Offset { get; set; }
+        public long? Offset { get; set; }
 
         /// <summary>
         /// 分页大小

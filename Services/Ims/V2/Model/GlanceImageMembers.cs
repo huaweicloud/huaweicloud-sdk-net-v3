@@ -52,6 +52,18 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("schema", NullValueHandling = NullValueHandling.Ignore)]
         public string Schema { get; set; }
 
+        /// <summary>
+        /// 共享成员类型。
+        /// </summary>
+        [JsonProperty("member_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string MemberType { get; set; }
+
+        /// <summary>
+        /// 共享组织的URN仅当member_type类型为organization时，才会返回urn字段。
+        /// </summary>
+        [JsonProperty("urn", NullValueHandling = NullValueHandling.Ignore)]
+        public string Urn { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +79,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("  imageId: ").Append(ImageId).Append("\n");
             sb.Append("  memberId: ").Append(MemberId).Append("\n");
             sb.Append("  schema: ").Append(Schema).Append("\n");
+            sb.Append("  memberType: ").Append(MemberType).Append("\n");
+            sb.Append("  urn: ").Append(Urn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +105,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
             if (this.MemberId != input.MemberId || (this.MemberId != null && !this.MemberId.Equals(input.MemberId))) return false;
             if (this.Schema != input.Schema || (this.Schema != null && !this.Schema.Equals(input.Schema))) return false;
+            if (this.MemberType != input.MemberType || (this.MemberType != null && !this.MemberType.Equals(input.MemberType))) return false;
+            if (this.Urn != input.Urn || (this.Urn != null && !this.Urn.Equals(input.Urn))) return false;
 
             return true;
         }
@@ -109,6 +125,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
                 if (this.MemberId != null) hashCode = hashCode * 59 + this.MemberId.GetHashCode();
                 if (this.Schema != null) hashCode = hashCode * 59 + this.Schema.GetHashCode();
+                if (this.MemberType != null) hashCode = hashCode * 59 + this.MemberType.GetHashCode();
+                if (this.Urn != null) hashCode = hashCode * 59 + this.Urn.GetHashCode();
                 return hashCode;
             }
         }

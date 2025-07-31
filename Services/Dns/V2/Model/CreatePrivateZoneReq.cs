@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 待创建的域名。
+        /// **参数解释：** 域名。 **约束限制：** 不涉及。 **取值范围：** 由多个以点分隔的字符串组成，可包含字母、数字、汉字、中划线，中划线不能在开头或末尾，单个字符串不超过63个字符，域名总长度不超过254个字符。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 域名的描述信息。
+        /// **参数解释：** 域名的描述信息。 **约束限制：** 不涉及。 **取值范围：** 长度不超过255个字符。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 域名类型。取值：private。
+        /// **参数解释：** 域名类型。 **约束限制：** 不涉及。 **取值范围：** private：内网域名。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("zone_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneType { get; set; }
 
         /// <summary>
-        /// 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
+        /// **参数解释：** 管理该域名的管理员邮箱，用于生成该域名的SOA记录。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
         public string Email { get; set; }
 
         /// <summary>
-        /// 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
+        /// **参数解释：** 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。 **约束限制：** 不涉及。 **取值范围：** 1~2147483647。 **默认取值：** 300
         /// </summary>
         [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ttl { get; set; }
@@ -53,19 +53,19 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public Router Router { get; set; }
 
         /// <summary>
-        /// 内网域名的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前域名未开启递归解析代理 RECURSIVE：当前域名已开启递归解析代理
+        /// **参数解释：** 内网域名的子域名递归解析代理模式。 **约束限制：** 不涉及。 **取值范围：** - AUTHORITY：当前域名未开启递归解析代理 - RECURSIVE：当前域名已开启递归解析代理  **默认取值：** AUTHORITY。
         /// </summary>
         [JsonProperty("proxy_pattern", NullValueHandling = NullValueHandling.Ignore)]
         public string ProxyPattern { get; set; }
 
         /// <summary>
-        /// 资源标签。
+        /// **参数解释：** 资源标签。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<Tag> Tags { get; set; }
 
         /// <summary>
-        /// 域名关联的企业项目ID，长度不超过36个字符。默认值为0。
+        /// **参数解释：** 域名所属的企业项目ID。可以使用该字段过滤企业项目下的域名。 **约束限制：** 不涉及。 **取值范围：** 最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 **默认取值：** 0
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

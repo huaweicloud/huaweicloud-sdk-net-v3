@@ -121,6 +121,13 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
         public string SortDir { get; set; }
 
+        /// <summary>
+        /// 是否是按需任务
+        /// </summary>
+        [SDKProperty("is_ondemand_resource", IsQuery = true)]
+        [JsonProperty("is_ondemand_resource", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOndemandResource { get; set; }
+
 
 
         /// <summary>
@@ -145,6 +152,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  batchName: ").Append(BatchName).Append("\n");
             sb.Append("  sortKey: ").Append(SortKey).Append("\n");
             sb.Append("  sortDir: ").Append(SortDir).Append("\n");
+            sb.Append("  isOndemandResource: ").Append(IsOndemandResource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -178,6 +186,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.BatchName != input.BatchName || (this.BatchName != null && !this.BatchName.Equals(input.BatchName))) return false;
             if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
             if (this.SortDir != input.SortDir || (this.SortDir != null && !this.SortDir.Equals(input.SortDir))) return false;
+            if (this.IsOndemandResource != input.IsOndemandResource || (this.IsOndemandResource != null && !this.IsOndemandResource.Equals(input.IsOndemandResource))) return false;
 
             return true;
         }
@@ -205,6 +214,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.BatchName != null) hashCode = hashCode * 59 + this.BatchName.GetHashCode();
                 if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
                 if (this.SortDir != null) hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                if (this.IsOndemandResource != null) hashCode = hashCode * 59 + this.IsOndemandResource.GetHashCode();
                 return hashCode;
             }
         }

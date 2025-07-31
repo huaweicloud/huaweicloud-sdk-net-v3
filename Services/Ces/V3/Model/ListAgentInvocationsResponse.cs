@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         /// 任务列表总量
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Count { get; set; }
+        public long? Count { get; set; }
 
 
 

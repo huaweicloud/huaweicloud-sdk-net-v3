@@ -268,6 +268,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("supported_service", NullValueHandling = NullValueHandling.Ignore)]
         public List<SupportedServiceEnum> SupportedService { get; set; }
 
+        /// <summary>
+        /// 资产自动处理任务。
+        /// </summary>
+        [JsonProperty("auto_operation_config", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AutoOperationConfig> AutoOperationConfig { get; set; }
+
 
 
         /// <summary>
@@ -288,6 +294,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  isNeedGenerateCover: ").Append(IsNeedGenerateCover).Append("\n");
             sb.Append("  assetOrder: ").Append(AssetOrder).Append("\n");
             sb.Append("  supportedService: ").Append(SupportedService).Append("\n");
+            sb.Append("  autoOperationConfig: ").Append(AutoOperationConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -317,6 +324,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.IsNeedGenerateCover != input.IsNeedGenerateCover || (this.IsNeedGenerateCover != null && !this.IsNeedGenerateCover.Equals(input.IsNeedGenerateCover))) return false;
             if (this.AssetOrder != input.AssetOrder || (this.AssetOrder != null && !this.AssetOrder.Equals(input.AssetOrder))) return false;
             if (this.SupportedService != input.SupportedService || (this.SupportedService != null && input.SupportedService != null && !this.SupportedService.SequenceEqual(input.SupportedService))) return false;
+            if (this.AutoOperationConfig != input.AutoOperationConfig || (this.AutoOperationConfig != null && input.AutoOperationConfig != null && !this.AutoOperationConfig.SequenceEqual(input.AutoOperationConfig))) return false;
 
             return true;
         }
@@ -340,6 +348,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.IsNeedGenerateCover != null) hashCode = hashCode * 59 + this.IsNeedGenerateCover.GetHashCode();
                 if (this.AssetOrder != null) hashCode = hashCode * 59 + this.AssetOrder.GetHashCode();
                 if (this.SupportedService != null) hashCode = hashCode * 59 + this.SupportedService.GetHashCode();
+                if (this.AutoOperationConfig != null) hashCode = hashCode * 59 + this.AutoOperationConfig.GetHashCode();
                 return hashCode;
             }
         }

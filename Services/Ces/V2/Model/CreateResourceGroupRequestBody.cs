@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,NAME（实例名称）,COMB（组合匹配）,Manual（手动添加）
+        /// 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,NAME（实例名称）,不传为手动添加
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -162,13 +162,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<string> AssociationEpIds { get; set; }
 
         /// <summary>
-        /// 云服务名称,格式为\&quot;dcs,ecs\&quot;,支持的云服务providers请参考https://support.huaweicloud.com/api-rms/rms_06_0100.html
+        /// 云服务名称,格式为\&quot;dcs,ecs\&quot;,支持的云服务providers请参考《配置审计API参考》中的\&quot;支持的服务和资源类型\&quot;章节
         /// </summary>
         [JsonProperty("providers", NullValueHandling = NullValueHandling.Ignore)]
         public string Providers { get; set; }
 
         /// <summary>
-        /// 组合匹配参数
+        /// 匹配企业项目或匹配标签参数
         /// </summary>
         [JsonProperty("enterprise_project_id_and_tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<EnterpriseProjectIdAndTags> EnterpriseProjectIdAndTags { get; set; }

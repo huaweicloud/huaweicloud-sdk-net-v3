@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// 指向当前资源或者其他资源的链接。当查询需要分页时，需要包含一个next链接指向下一页。
+    /// **参数解释：** 指向当前页或者其他页的链接。当查询需要分页时，需要包含一个next链接指向下一页。 **取值范围：** 不涉及。
     /// </summary>
     public class PageLink 
     {
 
         /// <summary>
-        /// 当前资源的链接。
+        /// **参数解释：** 当前页面的链接。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("self", NullValueHandling = NullValueHandling.Ignore)]
         public string Self { get; set; }
 
         /// <summary>
-        /// 下一页资源的链接。
+        /// **参数解释：** 下一页的链接。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("next", NullValueHandling = NullValueHandling.Ignore)]
         public string Next { get; set; }

@@ -256,6 +256,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 禁推闪断
+        ///
+        /// 直播推流闪断接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateStreamForbiddenOnceResponse> CreateStreamForbiddenOnceAsync(CreateStreamForbiddenOnceRequest createStreamForbiddenOnceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stream/block-once", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createStreamForbiddenOnceRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateStreamForbiddenOnceResponse>(response);
+        }
+
+        public AsyncInvoker<CreateStreamForbiddenOnceResponse> CreateStreamForbiddenOnceAsyncInvoker(CreateStreamForbiddenOnceRequest createStreamForbiddenOnceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stream/block-once", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createStreamForbiddenOnceRequest);
+            return new AsyncInvoker<CreateStreamForbiddenOnceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateStreamForbiddenOnceResponse>);
+        }
+        
+        /// <summary>
         /// 创建直播转码模板
         ///
         /// 创建直播转码模板

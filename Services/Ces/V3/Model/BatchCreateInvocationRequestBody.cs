@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
     public class BatchCreateInvocationRequestBody 
     {
         /// <summary>
-        /// 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试
+        /// 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALL_HOST设置远程安装主机，REMOTE_INSTALL执行远程安装
         /// </summary>
-        /// <value>任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试</value>
+        /// <value>任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALL_HOST设置远程安装主机，REMOTE_INSTALL执行远程安装</value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTypeEnum>))]
         public class InvocationTypeEnum
         {
@@ -42,6 +42,16 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             /// </summary>
             public static readonly InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
 
+            /// <summary>
+            /// Enum SET_REMOTE_INSTALL_HOST for value: SET_REMOTE_INSTALL_HOST
+            /// </summary>
+            public static readonly InvocationTypeEnum SET_REMOTE_INSTALL_HOST = new InvocationTypeEnum("SET_REMOTE_INSTALL_HOST");
+
+            /// <summary>
+            /// Enum REMOTE_INSTALL for value: REMOTE_INSTALL
+            /// </summary>
+            public static readonly InvocationTypeEnum REMOTE_INSTALL = new InvocationTypeEnum("REMOTE_INSTALL");
+
             private static readonly Dictionary<string, InvocationTypeEnum> StaticFields =
             new Dictionary<string, InvocationTypeEnum>()
             {
@@ -49,6 +59,8 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
                 { "UPDATE", UPDATE },
                 { "ROLLBACK", ROLLBACK },
                 { "RETRY", RETRY },
+                { "SET_REMOTE_INSTALL_HOST", SET_REMOTE_INSTALL_HOST },
+                { "REMOTE_INSTALL", REMOTE_INSTALL },
             };
 
             private string _value;
@@ -495,7 +507,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         public List<string> InstanceIds { get; set; }
 
         /// <summary>
-        /// 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试
+        /// 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALL_HOST设置远程安装主机，REMOTE_INSTALL执行远程安装
         /// </summary>
         [JsonProperty("invocation_type", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTypeEnum InvocationType { get; set; }
@@ -526,6 +538,12 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
+        /// <summary>
+        /// 创建远程安装任务时需要下发的被安装主机相关信息
+        /// </summary>
+        [JsonProperty("remote_install_meta", NullValueHandling = NullValueHandling.Ignore)]
+        public List<RemoteInstallHostInfo> RemoteInstallMeta { get; set; }
+
 
 
         /// <summary>
@@ -542,6 +560,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             sb.Append("  versionType: ").Append(VersionType).Append("\n");
             sb.Append("  origin: ").Append(Origin).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
+            sb.Append("  remoteInstallMeta: ").Append(RemoteInstallMeta).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -567,6 +586,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             if (this.VersionType != input.VersionType) return false;
             if (this.Origin != input.Origin) return false;
             if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.RemoteInstallMeta != input.RemoteInstallMeta || (this.RemoteInstallMeta != null && input.RemoteInstallMeta != null && !this.RemoteInstallMeta.SequenceEqual(input.RemoteInstallMeta))) return false;
 
             return true;
         }
@@ -586,6 +606,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
                 hashCode = hashCode * 59 + this.VersionType.GetHashCode();
                 hashCode = hashCode * 59 + this.Origin.GetHashCode();
                 if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.RemoteInstallMeta != null) hashCode = hashCode * 59 + this.RemoteInstallMeta.GetHashCode();
                 return hashCode;
             }
         }

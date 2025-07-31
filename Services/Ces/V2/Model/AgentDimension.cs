@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class AgentDimension 
     {
         /// <summary>
-        /// 维度名称，枚举类型，类型有：   mount_point：挂载点，   disk：磁盘，   proc：进程，   gpu：显卡，   raid: RAID控制器
+        /// **参数解释**： 维度名称。 **取值范围**： 枚举类型，mount_point:挂载点，disk:磁盘，proc:进程，gpu:显卡，raid:RAID控制器。 
         /// </summary>
-        /// <value>维度名称，枚举类型，类型有：   mount_point：挂载点，   disk：磁盘，   proc：进程，   gpu：显卡，   raid: RAID控制器</value>
+        /// <value>**参数解释**： 维度名称。 **取值范围**： 枚举类型，mount_point:挂载点，disk:磁盘，proc:进程，gpu:显卡，raid:RAID控制器。 </value>
         [JsonConverter(typeof(EnumClassConverter<NameEnum>))]
         public class NameEnum
         {
@@ -150,18 +150,18 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 维度名称，枚举类型，类型有：   mount_point：挂载点，   disk：磁盘，   proc：进程，   gpu：显卡，   raid: RAID控制器
+        /// **参数解释**： 维度名称。 **取值范围**： 枚举类型，mount_point:挂载点，disk:磁盘，proc:进程，gpu:显卡，raid:RAID控制器。 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public NameEnum Name { get; set; }
         /// <summary>
-        /// 维度值，32位字符串，如：2e84018fc8b4484b94e89aae212fe615
+        /// **参数解释**： 维度值。 **取值范围**： 字符串长度为32。 
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
         /// <summary>
-        /// 实际维度信息，字符串，如：vda。
+        /// **参数解释**： 实际维度信息。 **取值范围** 字符串长度在 1 到 1024 之间。 
         /// </summary>
         [JsonProperty("origin_value", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginValue { get; set; }

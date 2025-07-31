@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 优先级。如果priority的值为“1”，表示会第一个采用该域名服务器进行解析。
+        /// **参数解释：** 优先级。如果priority的值为“1”，表示会第一个采用该域名服务器进行解析。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }
 
         /// <summary>
-        /// DNS服务器地址。
+        /// **参数解释：** DNS服务器地址。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }

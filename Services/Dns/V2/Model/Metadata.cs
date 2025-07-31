@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// 返回满足过滤条件的资源总数。
+    /// **参数解释：** 返回满足过滤条件的资源总数。 **取值范围：** 不涉及。
     /// </summary>
     public class Metadata 
     {
 
         /// <summary>
-        /// 满足查询条件的资源总数，不受分页（即limit、offset参数）影响。
+        /// **参数解释：** 满足查询条件的资源总数，不受分页（即limit、offset参数）影响。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }

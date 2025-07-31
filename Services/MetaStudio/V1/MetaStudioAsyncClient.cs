@@ -4479,6 +4479,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 设置TTS租户级词表分组配置
+        ///
+        /// 该接口用于设置TTS租户级词表分组配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTtscVocabularyGroupsResponse> CreateTtscVocabularyGroupsAsync(CreateTtscVocabularyGroupsRequest createTtscVocabularyGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTtscVocabularyGroupsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateTtscVocabularyGroupsResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTtscVocabularyGroupsResponse> CreateTtscVocabularyGroupsAsyncInvoker(CreateTtscVocabularyGroupsRequest createTtscVocabularyGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTtscVocabularyGroupsRequest);
+            return new AsyncInvoker<CreateTtscVocabularyGroupsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTtscVocabularyGroupsResponse>);
+        }
+        
+        /// <summary>
         /// 删除TTS租户级自定义读法配置
         ///
         /// 该接口用于删除TTS租户级自定义读法配置。
@@ -4500,6 +4524,32 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTtscVocabularyConfigsRequest);
             return new AsyncInvoker<DeleteTtscVocabularyConfigsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTtscVocabularyConfigsResponse>);
+        }
+        
+        /// <summary>
+        /// 删除TTS租户级词表分组
+        ///
+        /// 该接口用于删除TTS租户级词表分组配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTtscVocabularyGroupsResponse> DeleteTtscVocabularyGroupsAsync(DeleteTtscVocabularyGroupsRequest deleteTtscVocabularyGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", deleteTtscVocabularyGroupsRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups/{group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTtscVocabularyGroupsRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteTtscVocabularyGroupsResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTtscVocabularyGroupsResponse> DeleteTtscVocabularyGroupsAsyncInvoker(DeleteTtscVocabularyGroupsRequest deleteTtscVocabularyGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", deleteTtscVocabularyGroupsRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups/{group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTtscVocabularyGroupsRequest);
+            return new AsyncInvoker<DeleteTtscVocabularyGroupsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTtscVocabularyGroupsResponse>);
         }
         
         /// <summary>
@@ -4527,6 +4577,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 获取TTS租户级词表分组列表
+        ///
+        /// 该接口用于获取TTS租户级词表分组列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTtscVocabularyGroupsResponse> ListTtscVocabularyGroupsAsync(ListTtscVocabularyGroupsRequest listTtscVocabularyGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTtscVocabularyGroupsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListTtscVocabularyGroupsResponse>(response);
+        }
+
+        public AsyncInvoker<ListTtscVocabularyGroupsResponse> ListTtscVocabularyGroupsAsyncInvoker(ListTtscVocabularyGroupsRequest listTtscVocabularyGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTtscVocabularyGroupsRequest);
+            return new AsyncInvoker<ListTtscVocabularyGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTtscVocabularyGroupsResponse>);
+        }
+        
+        /// <summary>
         /// 修改TTS租户级自定义读法配置
         ///
         /// 该接口用于修改TTS租户级自定义读法配置。
@@ -4550,6 +4624,32 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-configs/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveTtscVocabularyConfigsRequest);
             return new AsyncInvoker<SaveTtscVocabularyConfigsResponse>(this, "PUT", request, JsonUtils.DeSerialize<SaveTtscVocabularyConfigsResponse>);
+        }
+        
+        /// <summary>
+        /// 设置TTS租户级词表分组的资产列表
+        ///
+        /// 该接口用于设置TTS租户级词表分组的资产列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetTtscGroupAssetsResponse> SetTtscGroupAssetsAsync(SetTtscGroupAssetsRequest setTtscGroupAssetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", setTtscGroupAssetsRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/group-assets/{group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTtscGroupAssetsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<SetTtscGroupAssetsResponse>(response);
+        }
+
+        public AsyncInvoker<SetTtscGroupAssetsResponse> SetTtscGroupAssetsAsyncInvoker(SetTtscGroupAssetsRequest setTtscGroupAssetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", setTtscGroupAssetsRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/group-assets/{group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTtscGroupAssetsRequest);
+            return new AsyncInvoker<SetTtscGroupAssetsResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetTtscGroupAssetsResponse>);
         }
         
         /// <summary>
@@ -4626,6 +4726,32 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/phonetic-symbol", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsPhoneticSymbolRequest);
             return new AsyncInvoker<ShowTtsPhoneticSymbolResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTtsPhoneticSymbolResponse>);
+        }
+        
+        /// <summary>
+        /// TTS租户级词表分组重命名
+        ///
+        /// 该接口用于对TTS租户级词表分组重命名。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTtscVocabularyGroupsResponse> UpdateTtscVocabularyGroupsAsync(UpdateTtscVocabularyGroupsRequest updateTtscVocabularyGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", updateTtscVocabularyGroupsRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups/{group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTtscVocabularyGroupsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateTtscVocabularyGroupsResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTtscVocabularyGroupsResponse> UpdateTtscVocabularyGroupsAsyncInvoker(UpdateTtscVocabularyGroupsRequest updateTtscVocabularyGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", updateTtscVocabularyGroupsRequest.GroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups/{group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTtscVocabularyGroupsRequest);
+            return new AsyncInvoker<UpdateTtscVocabularyGroupsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTtscVocabularyGroupsResponse>);
         }
         
         /// <summary>

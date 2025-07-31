@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// 单元格内文字段列表。输出顺序从左到右，从上到下。仅当入参\&quot;return_text_location\&quot;为true时存在。 
         /// </summary>
         [JsonProperty("words_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<WordsListIem> WordsList { get; set; }
+        public List<WordsListItem> WordsList { get; set; }
 
         /// <summary>
         /// 文字块占用的行信息，编号从0开始，列表形式，数据类型为Integer。仅在表格区域内有效，即type字段为\&quot;table\&quot;时该字段有效。 

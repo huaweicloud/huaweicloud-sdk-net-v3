@@ -174,6 +174,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string NotificationEndTime { get; set; }
 
         /// <summary>
+        /// 时区，形如：\&quot;GMT-08:00\&quot;、\&quot;GMT+08:00\&quot;、\&quot;GMT+0:00\&quot;
+        /// </summary>
+        [JsonProperty("effective_timezone", NullValueHandling = NullValueHandling.Ignore)]
+        public string EffectiveTimezone { get; set; }
+
+        /// <summary>
         /// 企业项目ID
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -205,6 +211,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  okNotifications: ").Append(OkNotifications).Append("\n");
             sb.Append("  notificationBeginTime: ").Append(NotificationBeginTime).Append("\n");
             sb.Append("  notificationEndTime: ").Append(NotificationEndTime).Append("\n");
+            sb.Append("  effectiveTimezone: ").Append(EffectiveTimezone).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  notificationManner: ").Append(NotificationManner).Append("\n");
             sb.Append("  notificationPolicyIds: ").Append(NotificationPolicyIds).Append("\n");
@@ -232,6 +239,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.OkNotifications != input.OkNotifications || (this.OkNotifications != null && input.OkNotifications != null && !this.OkNotifications.SequenceEqual(input.OkNotifications))) return false;
             if (this.NotificationBeginTime != input.NotificationBeginTime || (this.NotificationBeginTime != null && !this.NotificationBeginTime.Equals(input.NotificationBeginTime))) return false;
             if (this.NotificationEndTime != input.NotificationEndTime || (this.NotificationEndTime != null && !this.NotificationEndTime.Equals(input.NotificationEndTime))) return false;
+            if (this.EffectiveTimezone != input.EffectiveTimezone || (this.EffectiveTimezone != null && !this.EffectiveTimezone.Equals(input.EffectiveTimezone))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.NotificationManner != input.NotificationManner) return false;
             if (this.NotificationPolicyIds != input.NotificationPolicyIds || (this.NotificationPolicyIds != null && input.NotificationPolicyIds != null && !this.NotificationPolicyIds.SequenceEqual(input.NotificationPolicyIds))) return false;
@@ -253,6 +261,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.OkNotifications != null) hashCode = hashCode * 59 + this.OkNotifications.GetHashCode();
                 if (this.NotificationBeginTime != null) hashCode = hashCode * 59 + this.NotificationBeginTime.GetHashCode();
                 if (this.NotificationEndTime != null) hashCode = hashCode * 59 + this.NotificationEndTime.GetHashCode();
+                if (this.EffectiveTimezone != null) hashCode = hashCode * 59 + this.EffectiveTimezone.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 hashCode = hashCode * 59 + this.NotificationManner.GetHashCode();
                 if (this.NotificationPolicyIds != null) hashCode = hashCode * 59 + this.NotificationPolicyIds.GetHashCode();

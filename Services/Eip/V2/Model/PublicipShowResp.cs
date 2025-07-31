@@ -493,6 +493,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         public string PublicIpAddress { get; set; }
 
         /// <summary>
+        /// - 功能说明：\&quot;公网EIP标签\&quot;
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
         /// 功能说明：弹性公网IP的状态  取值范围：冻结FREEZED，绑定失败BIND_ERROR，绑定中BINDING，释放中PENDING_DELETE， 创建中PENDING_CREATE，创建中NOTIFYING，释放中NOTIFY_DELETE，更新中PENDING_UPDATE， 未绑定DOWN ，绑定ACTIVE，绑定ELB，绑定VPN，失败ERROR。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -558,6 +564,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
             sb.Append("  privateIpAddress: ").Append(PrivateIpAddress).Append("\n");
             sb.Append("  profile: ").Append(Profile).Append("\n");
             sb.Append("  publicIpAddress: ").Append(PublicIpAddress).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  tenantId: ").Append(TenantId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
@@ -595,6 +602,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
             if (this.PrivateIpAddress != input.PrivateIpAddress || (this.PrivateIpAddress != null && !this.PrivateIpAddress.Equals(input.PrivateIpAddress))) return false;
             if (this.Profile != input.Profile || (this.Profile != null && !this.Profile.Equals(input.Profile))) return false;
             if (this.PublicIpAddress != input.PublicIpAddress || (this.PublicIpAddress != null && !this.PublicIpAddress.Equals(input.PublicIpAddress))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.Status != input.Status) return false;
             if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
@@ -626,6 +634,7 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
                 if (this.PrivateIpAddress != null) hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
                 if (this.Profile != null) hashCode = hashCode * 59 + this.Profile.GetHashCode();
                 if (this.PublicIpAddress != null) hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();

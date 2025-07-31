@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// 别名记录。
+    /// **参数解释：** 别名记录。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
     /// </summary>
     public class AliasTarget 
     {
 
         /// <summary>
-        /// 资源服务类型，支持别名记录的服务。  取值范围： cloudsite：企业门户 waf：Web应用防火墙
+        /// **参数解释：** 资源服务类型，支持别名记录的服务。 **约束限制：** 不涉及。 **取值范围：** - cloudsite：企业门户 - waf：Web应用防火墙  **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 对应服务下的域名，由各服务提供。
+        /// **参数解释：** 对应服务下的域名，由各服务提供。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("resource_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceDomainName { get; set; }

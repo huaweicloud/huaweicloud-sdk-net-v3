@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     /// <summary>
     /// 单元格内文字段列表。 
     /// </summary>
-    public class WordsListIem 
+    public class WordsListItem 
     {
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// 单元格内文字段列表。输出顺序从左到右，从上到下。仅当入参\&quot;return_text_location\&quot;和\&quot;return_char_location\&quot;同时为true时存在。 
         /// </summary>
         [JsonProperty("char_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CharListIem> CharList { get; set; }
+        public List<CharListItem> CharList { get; set; }
 
 
 
@@ -48,7 +48,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WordsListIem {\n");
+            sb.Append("class WordsListItem {\n");
             sb.Append("  words: ").Append(Words).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
             sb.Append("  location: ").Append(Location).Append("\n");
@@ -62,13 +62,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WordsListIem);
+            return this.Equals(input as WordsListItem);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(WordsListIem input)
+        public bool Equals(WordsListItem input)
         {
             if (input == null) return false;
             if (this.Words != input.Words || (this.Words != null && !this.Words.Equals(input.Words))) return false;

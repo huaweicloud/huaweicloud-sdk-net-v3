@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     /// <summary>
     /// 
     /// </summary>
-    public class CharListIem 
+    public class CharListItem 
     {
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CharListIem {\n");
+            sb.Append("class CharListItem {\n");
             sb.Append("  Char: ").Append(Char).Append("\n");
             sb.Append("  charConfidence: ").Append(CharConfidence).Append("\n");
             sb.Append("  charLocation: ").Append(CharLocation).Append("\n");
@@ -55,13 +55,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CharListIem);
+            return this.Equals(input as CharListItem);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CharListIem input)
+        public bool Equals(CharListItem input)
         {
             if (input == null) return false;
             if (this.Char != input.Char || (this.Char != null && !this.Char.Equals(input.Char))) return false;

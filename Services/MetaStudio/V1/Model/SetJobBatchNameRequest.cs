@@ -17,6 +17,13 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     {
 
         /// <summary>
+        /// 第三方用户ID。不允许输入中文。
+        /// </summary>
+        [SDKProperty("X-App-UserId", IsHeader = true)]
+        [JsonProperty("X-App-UserId", NullValueHandling = NullValueHandling.Ignore)]
+        public string XAppUserId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("body", IsBody = true)]
@@ -32,6 +39,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SetJobBatchNameRequest {\n");
+            sb.Append("  xAppUserId: ").Append(XAppUserId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -51,6 +59,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public bool Equals(SetJobBatchNameRequest input)
         {
             if (input == null) return false;
+            if (this.XAppUserId != input.XAppUserId || (this.XAppUserId != null && !this.XAppUserId.Equals(input.XAppUserId))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
@@ -64,6 +73,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.XAppUserId != null) hashCode = hashCode * 59 + this.XAppUserId.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }

@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 告警记录额外字段，仅针对事件监控告警场景所产生的告警记录信息。
+    /// **参数解释**： 告警记录额外字段，仅针对事件监控告警场景所产生的告警记录信息。 
     /// </summary>
     public class AdditionalInfo 
     {
 
         /// <summary>
-        /// 该条告警记录对应的资源ID；如：22d98f6c-16d2-4c2d-b424-50e79d82838f。
+        /// **参数解释**： 该条告警记录对应的资源ID；如：22d98f6c-16d2-4c2d-b424-50e79d82838f。 **取值范围**： 字符串长度最大为128。 
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 该条告警记录对应的资源名称；如：ECS-Test01。
+        /// **参数解释**： 该条告警记录对应的资源名称；如：ECS-Test01。 **取值范围**： 字符串长度最大为128。 
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// 该条告警记录对应的事件监控ID，资源所产生的事件；如：ev16031292300990kKN8p17J。
+        /// **参数解释**： 该条告警记录对应的事件监控ID，资源所产生的事件；如：ev16031292300990kKN8p17J。 **取值范围**： 字符串长度为24。 
         /// </summary>
         [JsonProperty("event_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EventId { get; set; }

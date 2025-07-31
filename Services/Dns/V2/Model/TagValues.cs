@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 键。最大长度36个unicode字符。 key不能为空。(搜索时不对此参数做校验)
+        /// 键。最大长度128个unicode字符。 key不能为空。(搜索时不对此参数做校验)
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 值列表。每个值最大长度43个unicode字符。&amp;ast;为系统保留字符。如果里面的value是以&amp;ast;开头时，表示按照&amp;ast;后面的值全模糊匹配。如果values缺失，则表示匹配任意值。value之间为或的关系。
+        /// 值列表。每个值最大长度255个unicode字符。&amp;ast;为系统保留字符。如果里面的value是以&amp;ast;开头时，表示按照&amp;ast;后面的值全模糊匹配。如果values缺失，则表示匹配任意值。value之间为或的关系。
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Values { get; set; }

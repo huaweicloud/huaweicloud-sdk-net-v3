@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 
+    /// 资源名称
     /// </summary>
     public class ResourceNameItem 
     {
@@ -166,6 +166,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         [JsonProperty("operator", NullValueHandling = NullValueHandling.Ignore)]
         public OperatorEnum Operator { get; set; }
+        /// <summary>
+        /// 资源名称忽略大小写
+        /// </summary>
+        [JsonProperty("resource_name_is_ignore_case", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ResourceNameIsIgnoreCase { get; set; }
+
 
 
         /// <summary>
@@ -177,6 +183,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("class ResourceNameItem {\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("  Operator: ").Append(Operator).Append("\n");
+            sb.Append("  resourceNameIsIgnoreCase: ").Append(ResourceNameIsIgnoreCase).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -197,6 +204,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (input == null) return false;
             if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
             if (this.Operator != input.Operator) return false;
+            if (this.ResourceNameIsIgnoreCase != input.ResourceNameIsIgnoreCase || (this.ResourceNameIsIgnoreCase != null && !this.ResourceNameIsIgnoreCase.Equals(input.ResourceNameIsIgnoreCase))) return false;
 
             return true;
         }
@@ -211,6 +219,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 var hashCode = 41;
                 if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 hashCode = hashCode * 59 + this.Operator.GetHashCode();
+                if (this.ResourceNameIsIgnoreCase != null) hashCode = hashCode * 59 + this.ResourceNameIsIgnoreCase.GetHashCode();
                 return hashCode;
             }
         }

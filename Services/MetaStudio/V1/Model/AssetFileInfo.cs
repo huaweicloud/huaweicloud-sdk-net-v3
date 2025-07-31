@@ -221,6 +221,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
         public StateEnum State { get; set; }
         /// <summary>
+        /// 冻结原因编号。
+        /// </summary>
+        [JsonProperty("block_reason_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string BlockReasonCode { get; set; }
+
+        /// <summary>
         /// 审核失败原因
         /// </summary>
         [JsonProperty("reason", NullValueHandling = NullValueHandling.Ignore)]
@@ -249,6 +255,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  assetFileCategory: ").Append(AssetFileCategory).Append("\n");
             sb.Append("  downloadUrl: ").Append(DownloadUrl).Append("\n");
             sb.Append("  state: ").Append(State).Append("\n");
+            sb.Append("  blockReasonCode: ").Append(BlockReasonCode).Append("\n");
             sb.Append("  reason: ").Append(Reason).Append("\n");
             sb.Append("  fileExtraMeta: ").Append(FileExtraMeta).Append("\n");
             sb.Append("}\n");
@@ -277,6 +284,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.AssetFileCategory != input.AssetFileCategory || (this.AssetFileCategory != null && !this.AssetFileCategory.Equals(input.AssetFileCategory))) return false;
             if (this.DownloadUrl != input.DownloadUrl || (this.DownloadUrl != null && !this.DownloadUrl.Equals(input.DownloadUrl))) return false;
             if (this.State != input.State) return false;
+            if (this.BlockReasonCode != input.BlockReasonCode || (this.BlockReasonCode != null && !this.BlockReasonCode.Equals(input.BlockReasonCode))) return false;
             if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
             if (this.FileExtraMeta != input.FileExtraMeta || (this.FileExtraMeta != null && !this.FileExtraMeta.Equals(input.FileExtraMeta))) return false;
 
@@ -299,6 +307,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.AssetFileCategory != null) hashCode = hashCode * 59 + this.AssetFileCategory.GetHashCode();
                 if (this.DownloadUrl != null) hashCode = hashCode * 59 + this.DownloadUrl.GetHashCode();
                 hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.BlockReasonCode != null) hashCode = hashCode * 59 + this.BlockReasonCode.GetHashCode();
                 if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
                 if (this.FileExtraMeta != null) hashCode = hashCode * 59 + this.FileExtraMeta.GetHashCode();
                 return hashCode;

@@ -224,6 +224,33 @@ namespace HuaweiCloud.SDK.Ims.V2
         }
         
         /// <summary>
+        /// Region内复制镜像（新）
+        ///
+        /// 该接口为扩展接口，主要用于用户将一个已有镜像复制为另一个镜像。复制镜像时，可以更改镜像的加密等属性，以满足不同的场景。
+        /// 该接口为异步接口，返回job_id说明任务下发成功，查询异步任务状态，如果是success说明任务执行成功，如果是failed说明任务执行失败。如何查询异步任务，请参见异步任务查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CopyImageInRegionInSafeModeResponse> CopyImageInRegionInSafeModeAsync(CopyImageInRegionInSafeModeRequest copyImageInRegionInSafeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", copyImageInRegionInSafeModeRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/cloudimages/{image_id}/copy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyImageInRegionInSafeModeRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CopyImageInRegionInSafeModeResponse>(response);
+        }
+
+        public AsyncInvoker<CopyImageInRegionInSafeModeResponse> CopyImageInRegionInSafeModeAsyncInvoker(CopyImageInRegionInSafeModeRequest copyImageInRegionInSafeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", copyImageInRegionInSafeModeRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/cloudimages/{image_id}/copy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyImageInRegionInSafeModeRequest);
+            return new AsyncInvoker<CopyImageInRegionInSafeModeResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyImageInRegionInSafeModeResponse>);
+        }
+        
+        /// <summary>
         /// 使用外部镜像文件制作数据镜像
         ///
         /// 使用上传至OBS桶中的外部数据卷镜像文件制作数据镜像。作为异步接口，调用成功，只是说明后台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态。具体请参考异步任务查询。
@@ -245,6 +272,30 @@ namespace HuaweiCloud.SDK.Ims.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/cloudimages/dataimages/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDataImageRequest);
             return new AsyncInvoker<CreateDataImageResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDataImageResponse>);
+        }
+        
+        /// <summary>
+        /// 使用外部镜像文件制作数据镜像（新）
+        ///
+        /// 使用上传至OBS桶中的外部数据卷镜像文件制作数据镜像。作为异步接口，调用成功，只是说明后台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态。具体请参考异步任务查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateDataImageInSafeModeResponse> CreateDataImageInSafeModeAsync(CreateDataImageInSafeModeRequest createDataImageInSafeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/cloudimages/dataimages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDataImageInSafeModeRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateDataImageInSafeModeResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDataImageInSafeModeResponse> CreateDataImageInSafeModeAsyncInvoker(CreateDataImageInSafeModeRequest createDataImageInSafeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/cloudimages/dataimages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDataImageInSafeModeRequest);
+            return new AsyncInvoker<CreateDataImageInSafeModeResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDataImageInSafeModeResponse>);
         }
         
         /// <summary>
@@ -280,6 +331,41 @@ namespace HuaweiCloud.SDK.Ims.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageRequest);
             return new AsyncInvoker<CreateImageResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateImageResponse>);
+        }
+        
+        /// <summary>
+        /// 制作镜像（新）
+        ///
+        /// 本接口用于制作私有镜像，支持：
+        /// - 使用云服务器制作私有镜像。
+        /// - 使用上传至OBS桶中的外部镜像文件制作私有镜像。
+        /// - 使用数据卷制作系统盘镜像。
+        /// 
+        /// 作为异步接口，调用成功，只是说明云平台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态，具体请参考异步任务查询。
+        /// 
+        /// 不同场景必选参数说明：
+        /// 
+        /// - 使用云服务器制作镜像时的请求的必选参数：name,instance_id。
+        /// - 使用上传至OBS桶中的外部镜像文件时的请求必选参数：name,image_url,min_disk。
+        /// - 使用数据卷制作系统盘镜像时的请求必选参数：name,volume_id,os_version
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateImageInSafeModeResponse> CreateImageInSafeModeAsync(CreateImageInSafeModeRequest createImageInSafeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/cloudimages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageInSafeModeRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateImageInSafeModeResponse>(response);
+        }
+
+        public AsyncInvoker<CreateImageInSafeModeResponse> CreateImageInSafeModeAsyncInvoker(CreateImageInSafeModeRequest createImageInSafeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/cloudimages/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createImageInSafeModeRequest);
+            return new AsyncInvoker<CreateImageInSafeModeResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateImageInSafeModeResponse>);
         }
         
         /// <summary>
@@ -385,6 +471,32 @@ namespace HuaweiCloud.SDK.Ims.V2
         }
         
         /// <summary>
+        /// 导出镜像（新）
+        ///
+        /// 该接口为扩展接口，用于用户将自己的私有镜像导出到指定的OBS桶中。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ExportImageInSafeModeResponse> ExportImageInSafeModeAsync(ExportImageInSafeModeRequest exportImageInSafeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", exportImageInSafeModeRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/cloudimages/{image_id}/file", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportImageInSafeModeRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ExportImageInSafeModeResponse>(response);
+        }
+
+        public AsyncInvoker<ExportImageInSafeModeResponse> ExportImageInSafeModeAsyncInvoker(ExportImageInSafeModeRequest exportImageInSafeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("image_id", exportImageInSafeModeRequest.ImageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/cloudimages/{image_id}/file", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportImageInSafeModeRequest);
+            return new AsyncInvoker<ExportImageInSafeModeResponse>(this, "POST", request, JsonUtils.DeSerialize<ExportImageInSafeModeResponse>);
+        }
+        
+        /// <summary>
         /// 镜像文件快速导入
         ///
         /// 使用上传至OBS桶中的超大外部镜像文件制作私有镜像，目前仅支持RAW或ZVHD2格式镜像文件。且要求镜像文件大小不能超过1TB。
@@ -408,6 +520,32 @@ namespace HuaweiCloud.SDK.Ims.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/cloudimages/quickimport/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importImageQuickRequest);
             return new AsyncInvoker<ImportImageQuickResponse>(this, "POST", request, JsonUtils.DeSerialize<ImportImageQuickResponse>);
+        }
+        
+        /// <summary>
+        /// 镜像文件快速导入（新）
+        ///
+        /// 使用上传至OBS桶中的超大外部镜像文件制作私有镜像，目前仅支持RAW或ZVHD2格式镜像文件。且要求镜像文件大小不能超过1TB。
+        /// 由于快速导入功能要求提前转换镜像文件格式为RAW或ZVHD2格式，因此镜像文件小于128GB时推荐您优先使用常规的创建私有镜像的方式。
+        /// 作为异步接口，调用成功，只是说明后台收到了制作请求，镜像是否制作成功需要通过异步任务查询接口查询该任务的执行状态，具体请参考异步任务查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ImportImageQuickInSafeModeResponse> ImportImageQuickInSafeModeAsync(ImportImageQuickInSafeModeRequest importImageQuickInSafeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/cloudimages/quickimport/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importImageQuickInSafeModeRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ImportImageQuickInSafeModeResponse>(response);
+        }
+
+        public AsyncInvoker<ImportImageQuickInSafeModeResponse> ImportImageQuickInSafeModeAsyncInvoker(ImportImageQuickInSafeModeRequest importImageQuickInSafeModeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/cloudimages/quickimport/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", importImageQuickInSafeModeRequest);
+            return new AsyncInvoker<ImportImageQuickInSafeModeResponse>(this, "POST", request, JsonUtils.DeSerialize<ImportImageQuickInSafeModeResponse>);
         }
         
         /// <summary>

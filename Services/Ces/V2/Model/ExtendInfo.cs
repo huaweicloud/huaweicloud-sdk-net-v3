@@ -143,151 +143,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 表示指标聚合周期，1表示原始值，60表示一分钟，300表示5分钟，1200表示20分钟，3600表示1小时，14400表示4小时，86400表示1天
-        /// </summary>
-        /// <value>表示指标聚合周期，1表示原始值，60表示一分钟，300表示5分钟，1200表示20分钟，3600表示1小时，14400表示4小时，86400表示1天</value>
-        [JsonConverter(typeof(EnumClassConverter<PeriodEnum>))]
-        public class PeriodEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly PeriodEnum NUMBER_1 = new PeriodEnum(1);
-
-            /// <summary>
-            /// Enum NUMBER_60 for value: 60
-            /// </summary>
-            public static readonly PeriodEnum NUMBER_60 = new PeriodEnum(60);
-
-            /// <summary>
-            /// Enum NUMBER_300 for value: 300
-            /// </summary>
-            public static readonly PeriodEnum NUMBER_300 = new PeriodEnum(300);
-
-            /// <summary>
-            /// Enum NUMBER_1200 for value: 1200
-            /// </summary>
-            public static readonly PeriodEnum NUMBER_1200 = new PeriodEnum(1200);
-
-            /// <summary>
-            /// Enum NUMBER_3600 for value: 3600
-            /// </summary>
-            public static readonly PeriodEnum NUMBER_3600 = new PeriodEnum(3600);
-
-            /// <summary>
-            /// Enum NUMBER_14400 for value: 14400
-            /// </summary>
-            public static readonly PeriodEnum NUMBER_14400 = new PeriodEnum(14400);
-
-            /// <summary>
-            /// Enum NUMBER_86400 for value: 86400
-            /// </summary>
-            public static readonly PeriodEnum NUMBER_86400 = new PeriodEnum(86400);
-
-            private static readonly Dictionary<int?, PeriodEnum> StaticFields =
-            new Dictionary<int?, PeriodEnum>()
-            {
-                { 1, NUMBER_1 },
-                { 60, NUMBER_60 },
-                { 300, NUMBER_300 },
-                { 1200, NUMBER_1200 },
-                { 3600, NUMBER_3600 },
-                { 14400, NUMBER_14400 },
-                { 86400, NUMBER_86400 },
-            };
-
-            private int? _value;
-
-            public PeriodEnum()
-            {
-
-            }
-
-            public PeriodEnum(int? value)
-            {
-                _value = value;
-            }
-
-            public static PeriodEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as PeriodEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(PeriodEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(PeriodEnum a, PeriodEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(PeriodEnum a, PeriodEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 展示时间，0表示使用自定义时间展示， 5分钟，15分钟，30分钟，1小时，2小时，3小时，12小时，24小时，7天，30天
         /// </summary>
         /// <value>展示时间，0表示使用自定义时间展示， 5分钟，15分钟，30分钟，1小时，2小时，3小时，12小时，24小时，7天，30天</value>
@@ -717,10 +572,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public FilterEnum Filter { get; set; }
         /// <summary>
-        /// 表示指标聚合周期，1表示原始值，60表示一分钟，300表示5分钟，1200表示20分钟，3600表示1小时，14400表示4小时，86400表示1天
+        /// &#39;表示指标聚合周期，{1:表示原始值，60:表示一分钟，300:表示5分钟，1200:表示20分钟，3600:表示1小时，14400:表示4小时，86400:表示1天}&#39; 
         /// </summary>
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
-        public PeriodEnum Period { get; set; }
+        public string Period { get; set; }
+
         /// <summary>
         /// 展示时间，0表示使用自定义时间展示， 5分钟，15分钟，30分钟，1小时，2小时，3小时，12小时，24小时，7天，30天
         /// </summary>
@@ -811,7 +667,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             if (input == null) return false;
             if (this.Filter != input.Filter) return false;
-            if (this.Period != input.Period) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
             if (this.DisplayTime != input.DisplayTime) return false;
             if (this.RefreshTime != input.RefreshTime) return false;
             if (this.From != input.From || (this.From != null && !this.From.Equals(input.From))) return false;
@@ -834,7 +690,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.Filter.GetHashCode();
-                hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
                 hashCode = hashCode * 59 + this.DisplayTime.GetHashCode();
                 hashCode = hashCode * 59 + this.RefreshTime.GetHashCode();
                 if (this.From != null) hashCode = hashCode * 59 + this.From.GetHashCode();

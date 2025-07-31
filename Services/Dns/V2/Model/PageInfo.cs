@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// 分页信息。
+    /// **参数解释：** 分页信息。 **取值范围：** 不涉及。
     /// </summary>
     public class PageInfo 
     {
 
         /// <summary>
-        /// 下一页的页面标识。
+        /// **参数解释：** 下一页的页面标识。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("next_marker", NullValueHandling = NullValueHandling.Ignore)]
         public string NextMarker { get; set; }
 
         /// <summary>
-        /// 上一页的页面标识。
+        /// **参数解释：** 上一页的页面标识。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("previous_marker", NullValueHandling = NullValueHandling.Ignore)]
         public string PreviousMarker { get; set; }
 
         /// <summary>
-        /// 页面数量。
+        /// **参数解释：** 页面数量。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("current_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? CurrentCount { get; set; }

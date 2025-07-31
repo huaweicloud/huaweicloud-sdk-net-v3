@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 维度信息
+        /// **参数解释**： 维度信息。 
         /// </summary>
         [JsonProperty("dimensions", NullValueHandling = NullValueHandling.Ignore)]
         public List<AgentDimension> Dimensions { get; set; }
 
         /// <summary>
-        /// 维度信息总数
+        /// **参数解释**： 维度信息总数。 **取值范围**： 整数，最小值为0，最大值为2147483647。 
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

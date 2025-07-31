@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 告警类型，event：查询事件类型告警，metric：查询指标类型告警
+        /// **参数解释**： 告警类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。event:查询事件类型告警，metric:查询指标类型告警。 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>告警类型，event：查询事件类型告警，metric：查询指标类型告警</value>
+        /// <value>**参数解释**： 告警类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。event:查询事件类型告警，metric:查询指标类型告警。 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<AlarmTypeEnum>))]
         public class AlarmTypeEnum
         {
@@ -252,9 +252,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 按关键字排序, 默认为update_time, {first_alarm_time: 告警产生时间, update_time: 更新时间, alarm_level: 告警级别, record_id：表记录主键} 
+        /// **参数解释**： 按关键字排序。 **约束限制**： 不涉及。 **取值范围**： 枚举值。first_alarm_time:告警产生时间, update_time:更新时间, alarm_level:告警级别，record_id表记录主键。 **默认取值**： update_time 
         /// </summary>
-        /// <value>按关键字排序, 默认为update_time, {first_alarm_time: 告警产生时间, update_time: 更新时间, alarm_level: 告警级别, record_id：表记录主键} </value>
+        /// <value>**参数解释**： 按关键字排序。 **约束限制**： 不涉及。 **取值范围**： 枚举值。first_alarm_time:告警产生时间, update_time:更新时间, alarm_level:告警级别，record_id表记录主键。 **默认取值**： update_time </value>
         [JsonConverter(typeof(EnumClassConverter<OrderByEnum>))]
         public class OrderByEnum
         {
@@ -380,103 +380,103 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 告警ID,以al开头，后跟22位由字母或数字组成的字符串
+        /// **参数解释**： 告警ID列表。告警ID：以al开头，后跟22位由字母或数字组成的字符串。 **约束限制**： 列表最大长度为50。 
         /// </summary>
         [SDKProperty("alarm_id", IsQuery = true)]
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AlarmId { get; set; }
 
         /// <summary>
-        /// 告警记录ID,以ah开头，后跟22位由字母或数字组成的字符串
+        /// **参数解释**： 告警记录ID。 **约束限制**： 不涉及。 **取值范围**： 以ah开头，后跟22位由字母或数字组成的字符串，字符串长度为24。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("record_id", IsQuery = true)]
         [JsonProperty("record_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RecordId { get; set; }
 
         /// <summary>
-        /// 告警规则名称
+        /// **参数解释**： 告警规则名称。 **约束限制**： 不涉及。 **取值范围**： 最大128字符长度。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 告警规则状态, ok为正常，alarm为告警，invalid为已失效
+        /// **参数解释**： 告警规则状态列表。告警规则状态：枚举值，ok为正常，alarm为告警，invalid为已失效。 **约束限制**： 列表长度最大为3。 
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<StatusEnum> Status { get; set; }
         /// <summary>
-        /// 告警级别, 1为紧急，2为重要，3为次要，4为提示
+        /// **参数解释**： 告警级别。 **约束限制**： 不涉及。 **取值范围**： 枚举值，1为紧急，2为重要，3为次要，4为提示。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("level", IsQuery = true)]
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public int? Level { get; set; }
 
         /// <summary>
-        /// 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
+        /// **参数解释**： 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 告警资源ID，多维度情况按字母升序排列并使用逗号分隔
+        /// **参数解释**： 告警资源ID。 **约束限制**： 不涉及。 **取值范围**： 多维度情况按字母升序排列并使用逗号分隔。最大字符长度为2048。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("resource_id", IsQuery = true)]
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 查询告警记录的起始更新时间，例如：2022-02-10T10:05:46+08:00
+        /// **参数解释**： 查询告警记录的起始更新时间，例如：2022-02-10T10:05:46+08:00。 **约束限制**： 不涉及。 **取值范围**： 最大字符长度为64。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("from", IsQuery = true)]
         [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public string From { get; set; }
 
         /// <summary>
-        /// 查询告警记录的截止更新时间，例如：2022-02-10T10:05:47+08:00
+        /// **参数解释**： 查询告警记录的截止更新时间，例如：2022-02-10T10:05:47+08:00。 **约束限制**： 不涉及。 **取值范围**： 最大字符长度为64。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("to", IsQuery = true)]
         [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
         public string To { get; set; }
 
         /// <summary>
-        /// 告警类型，event：查询事件类型告警，metric：查询指标类型告警
+        /// **参数解释**： 告警类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。event:查询事件类型告警，metric:查询指标类型告警。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("alarm_type", IsQuery = true)]
         [JsonProperty("alarm_type", NullValueHandling = NullValueHandling.Ignore)]
         public AlarmTypeEnum AlarmType { get; set; }
         /// <summary>
-        /// 查询告警记录的起始创建时间，例如：2022-02-10T10:05:46+08:00
+        /// **参数解释**： 查询告警记录的起始创建时间，例如：2022-02-10T10:05:46+08:00。 **约束限制**： 不涉及。 **取值范围**： 最大字符长度为64。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("create_time_from", IsQuery = true)]
         [JsonProperty("create_time_from", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTimeFrom { get; set; }
 
         /// <summary>
-        /// 查询告警记录的截止创建时间，例如：2022-02-10T10:05:47+08:00
+        /// **参数解释**： 查询告警记录的截止创建时间，例如：2022-02-10T10:05:47+08:00。 **约束限制**： 不涉及。 **取值范围**： 最大字符长度为64。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("create_time_to", IsQuery = true)]
         [JsonProperty("create_time_to", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTimeTo { get; set; }
 
         /// <summary>
-        /// 分页偏移量
+        /// **参数解释**： 分页偏移量。 **约束限制**： 不涉及。 **取值范围**： 整数，最小值为0，最大值为1000000000。 **默认取值**： 0 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 分页大小
+        /// **参数解释**： 分页偏移量。 **约束限制**： 不涉及。 **取值范围**： 整数，最小值为1，最大值为100。 **默认取值**： 100 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 按关键字排序, 默认为update_time, {first_alarm_time: 告警产生时间, update_time: 更新时间, alarm_level: 告警级别, record_id：表记录主键} 
+        /// **参数解释**： 按关键字排序。 **约束限制**： 不涉及。 **取值范围**： 枚举值。first_alarm_time:告警产生时间, update_time:更新时间, alarm_level:告警级别，record_id表记录主键。 **默认取值**： update_time 
         /// </summary>
         [SDKProperty("order_by", IsQuery = true)]
         [JsonProperty("order_by", NullValueHandling = NullValueHandling.Ignore)]

@@ -325,7 +325,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 服务的命名空间，查询各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
+        /// 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
@@ -348,7 +348,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodEnum Period { get; set; }
         /// <summary>
-        /// 数据聚合方式
+        /// 聚合方式。average： 平均值，variance：方差，min：最小值，max：最大值，sum：求和，tp99：99百分位数，tp95：95百分位数，tp90：90百分位数
         /// </summary>
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public string Filter { get; set; }
@@ -360,7 +360,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string ComparisonOperator { get; set; }
 
         /// <summary>
-        /// 告警阈值(Number.MAX_VALUE)。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。
+        /// 告警阈值。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Value { get; set; }

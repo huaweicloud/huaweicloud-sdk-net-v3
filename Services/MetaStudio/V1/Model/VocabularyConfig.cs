@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string Type { get; set; }
 
         /// <summary>
+        /// 分组id
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
+        /// <summary>
         /// 创建时间。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("}\n");
@@ -89,6 +96,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
             if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
@@ -107,6 +115,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;

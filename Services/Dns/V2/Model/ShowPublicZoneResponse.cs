@@ -17,85 +17,85 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 域名ID。
+        /// **参数解释：** 域名ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 域名。
+        /// **参数解释：** 域名。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 对域名的描述信息。
+        /// **参数解释：** 域名的描述信息。 **取值范围：** 长度不超过255个字符。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
+        /// **参数解释：** 管理该域名的管理员邮箱，用于生成该域名的SOA记录。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore)]
         public string Email { get; set; }
 
         /// <summary>
-        /// 域名类型，公网（public）。
+        /// **参数解释：** 域名类型。 **取值范围：** public：公网域名
         /// </summary>
         [JsonProperty("zone_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneType { get; set; }
 
         /// <summary>
-        /// 该域名下SOA记录中的ttl值。
+        /// **参数解释：** 该域名下SOA记录中的有效缓存时间，以秒为单位。 **取值范围：** 1~2147483647。
         /// </summary>
         [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ttl { get; set; }
 
         /// <summary>
-        /// 该域名下SOA记录中用于标识域名文件变更的序列值，用于主从节点同步。
+        /// **参数解释：** 该域名下SOA记录中用于标识域名文件变更的序列值，用于主从节点同步。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("serial", NullValueHandling = NullValueHandling.Ignore)]
         public int? Serial { get; set; }
 
         /// <summary>
-        /// 资源状态。
+        /// **参数解释：** 公网域名状态。 **取值范围：** - ACTIVE：正常 - PENDING_CREATE：创建中 - PENDING_UPDATE：更新中 - PENDING_DELETE：删除中 - PENDING_FREEZE：冻结中 - FREEZE：冻结 - ILLEGAL：违规冻结 - POLICE：公安冻结 - PENDING_DISABLE：暂停中 - DISABLE：暂停 - ERROR：失败
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 该域名下的记录集个数。
+        /// **参数解释：** 该域名下的记录集个数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("record_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? RecordNum { get; set; }
 
         /// <summary>
-        /// 托管该域名的pool，由系统分配。
+        /// **参数解释：** 托管该域名的pool，由系统分配。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("pool_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PoolId { get; set; }
 
         /// <summary>
-        /// 创建时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。
+        /// **参数解释：** 域名的创建时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 更新时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。
+        /// **参数解释：** 域名的最近一次修改时间。 格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
-        /// 域名关联的企业项目ID，长度不超过36个字符。
+        /// **参数解释：** 域名所属的企业项目ID。可以使用该字段过滤企业项目下的域名。 **取值范围：** 最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 主从模式中，从DNS服务器获取DNS信息。
+        /// **参数解释：** 主从模式中，从DNS服务器获取DNS信息。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("masters", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Masters { get; set; }
@@ -107,7 +107,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public PageLink Links { get; set; }
 
         /// <summary>
-        /// 域名所属的项目ID。
+        /// **参数解释：** 域名所属的项目ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }

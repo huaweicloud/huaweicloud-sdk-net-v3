@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Dns.V2.Model
 {
     /// <summary>
-    /// 版本对象。
+    /// **参数解释：** 版本对象。 **取值范围：** 不涉及。
     /// </summary>
     public class ValuesItem 
     {
 
         /// <summary>
-        /// 所有版本列表。
+        /// **参数解释：** 所有版本列表。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListApiVersionsItem> Values { get; set; }

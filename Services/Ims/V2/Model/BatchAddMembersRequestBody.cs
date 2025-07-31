@@ -28,6 +28,18 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         [JsonProperty("projects", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Projects { get; set; }
 
+        /// <summary>
+        /// 账号ID列表
+        /// </summary>
+        [JsonProperty("domains", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Domains { get; set; }
+
+        /// <summary>
+        /// 组织URN列表
+        /// </summary>
+        [JsonProperty("organizations", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Organizations { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +51,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             sb.Append("class BatchAddMembersRequestBody {\n");
             sb.Append("  images: ").Append(Images).Append("\n");
             sb.Append("  projects: ").Append(Projects).Append("\n");
+            sb.Append("  domains: ").Append(Domains).Append("\n");
+            sb.Append("  organizations: ").Append(Organizations).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +73,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
             if (input == null) return false;
             if (this.Images != input.Images || (this.Images != null && input.Images != null && !this.Images.SequenceEqual(input.Images))) return false;
             if (this.Projects != input.Projects || (this.Projects != null && input.Projects != null && !this.Projects.SequenceEqual(input.Projects))) return false;
+            if (this.Domains != input.Domains || (this.Domains != null && input.Domains != null && !this.Domains.SequenceEqual(input.Domains))) return false;
+            if (this.Organizations != input.Organizations || (this.Organizations != null && input.Organizations != null && !this.Organizations.SequenceEqual(input.Organizations))) return false;
 
             return true;
         }
@@ -73,6 +89,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
                 var hashCode = 41;
                 if (this.Images != null) hashCode = hashCode * 59 + this.Images.GetHashCode();
                 if (this.Projects != null) hashCode = hashCode * 59 + this.Projects.GetHashCode();
+                if (this.Domains != null) hashCode = hashCode * 59 + this.Domains.GetHashCode();
+                if (this.Organizations != null) hashCode = hashCode * 59 + this.Organizations.GetHashCode();
                 return hashCode;
             }
         }

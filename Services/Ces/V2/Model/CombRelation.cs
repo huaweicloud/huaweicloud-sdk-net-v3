@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 
+    /// 组合匹配参数
     /// </summary>
     public class CombRelation 
     {

@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public Period Period { get; set; }
         /// <summary>
-        /// 聚合方式, 支持的值为(average|min|max|sum)
+        /// 聚合方式。average： 平均值，variance：方差，min：最小值，max：最大值，sum：求和，tp99：99百分位数，tp95：95百分位数，tp90：90百分位数
         /// </summary>
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public string Filter { get; set; }
@@ -46,7 +46,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string ComparisonOperator { get; set; }
 
         /// <summary>
-        /// 告警阈值。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。取值范围[0, Number.MAX_VALUE]，Number.MAX_VALUE值为1.7976931348623157e+108。具体阈值取值请参见附录中各服务监控指标中取值范围，如支持监控的服务列表中ECS的CPU使用率cpu_util取值范围可配置80。 [具体阈值取值请参见附录中各服务监控指标中取值范围，如[支持监控的服务列表](ces_03_0059.xml)中ECS的CPU使用率cpu_util取值范围可配置80。](tag: dt,g42,dt_test,hk_g42,hk_sbc,hws,hws_hk,ocb,sbc,tm) 
+        /// 告警阈值。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。 具体阈值取值请参见附录中各服务监控指标中取值范围，如支持监控的服务列表中ECS的CPU使用率cpu_util取值范围可配置80。 [具体阈值取值请参见附录中各服务监控指标中取值范围，如[支持监控的服务列表](ces_03_0059.xml)中ECS的CPU使用率cpu_util取值范围可配置80。] 
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public double? Value { get; set; }
@@ -81,7 +81,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public int? Level { get; set; }
 
         /// <summary>
-        /// 是否启用告警策略。true:开启，false:关闭。
+        /// 是否启用一键告警。true:开启，false：关闭。
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }

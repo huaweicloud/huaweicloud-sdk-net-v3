@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 查询公网域名的名称服务器响应。
+        /// **参数解释：** 查询公网域名的名称服务器响应。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("nameservers", NullValueHandling = NullValueHandling.Ignore)]
         public List<Nameserver> Nameservers { get; set; }

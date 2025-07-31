@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 是否启用告警策略。true:开启，false:关闭。
+    /// 是否启用告警策略。true:开启，false：关闭。
     /// </summary>
     public class PolicyEnabled 
     {

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 
+    /// 企业项目Id或标签信息
     /// </summary>
     public class EnterpriseProjectIdAndTags 
     {

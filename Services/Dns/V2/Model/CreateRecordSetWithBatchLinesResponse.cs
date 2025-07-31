@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public PageLink Links { get; set; }
 
         /// <summary>
-        /// 记录集的列表信息。
+        /// **参数解释：** 记录集列表信息。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("recordsets", NullValueHandling = NullValueHandling.Ignore)]
         public List<QueryRecordSetWithLineResp> Recordsets { get; set; }

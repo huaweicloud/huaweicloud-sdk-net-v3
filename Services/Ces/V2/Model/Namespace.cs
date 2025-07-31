@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 服务的命名空间，查询各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
+    /// 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
     /// </summary>
     public class Namespace 
     {

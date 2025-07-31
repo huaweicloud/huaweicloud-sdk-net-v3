@@ -1430,6 +1430,37 @@ namespace HuaweiCloud.SDK.Drs.V5
         }
         
         /// <summary>
+        /// 查询对比任务进度
+        ///
+        /// 查询运行中对比任务的对比进度。
+        /// 说明：
+        /// - 目前仅MySQL-&gt;MySQL、MySQL-&gt;GaussDB主备、GaussDB分布式-&gt;GaussDB分布式、GaussDB主备-&gt;MySQL、GaussDBv1-&gt;GaussDB主备、GaussDB主备-&gt;GaussDBv1的同步任务与独立校验任务支持查看对比进度。
+        /// - 运行中的行对比与内容对比支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowCompareProgressResponse> ShowCompareProgressAsync(ShowCompareProgressRequest showCompareProgressRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showCompareProgressRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", showCompareProgressRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/compare-progress/{compare_job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCompareProgressRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowCompareProgressResponse>(response);
+        }
+
+        public AsyncInvoker<ShowCompareProgressResponse> ShowCompareProgressAsyncInvoker(ShowCompareProgressRequest showCompareProgressRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showCompareProgressRequest.JobId.ToString());
+            urlParam.Add("compare_job_id", showCompareProgressRequest.CompareJobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/jobs/{job_id}/compare-progress/{compare_job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCompareProgressRequest);
+            return new AsyncInvoker<ShowCompareProgressResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCompareProgressResponse>);
+        }
+        
+        /// <summary>
         /// 获取数据过滤校验结果
         ///
         /// 获取数据过滤校验结果

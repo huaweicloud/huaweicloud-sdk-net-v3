@@ -73,6 +73,20 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string IsVocabularyConfigEnable { get; set; }
 
         /// <summary>
+        /// 分组id
+        /// </summary>
+        [SDKProperty("group_id", IsQuery = true)]
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
+        /// <summary>
+        /// 资产id
+        /// </summary>
+        [SDKProperty("asset_id", IsQuery = true)]
+        [JsonProperty("asset_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AssetId { get; set; }
+
+        /// <summary>
         /// 每页显示的条目数量。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
@@ -124,6 +138,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  ttsServiceName: ").Append(TtsServiceName).Append("\n");
             sb.Append("  isVocabularyConfigEnable: ").Append(IsVocabularyConfigEnable).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
+            sb.Append("  assetId: ").Append(AssetId).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
@@ -155,6 +171,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.TtsServiceName != input.TtsServiceName || (this.TtsServiceName != null && !this.TtsServiceName.Equals(input.TtsServiceName))) return false;
             if (this.IsVocabularyConfigEnable != input.IsVocabularyConfigEnable || (this.IsVocabularyConfigEnable != null && !this.IsVocabularyConfigEnable.Equals(input.IsVocabularyConfigEnable))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
@@ -180,6 +198,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.TtsServiceName != null) hashCode = hashCode * 59 + this.TtsServiceName.GetHashCode();
                 if (this.IsVocabularyConfigEnable != null) hashCode = hashCode * 59 + this.IsVocabularyConfigEnable.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();

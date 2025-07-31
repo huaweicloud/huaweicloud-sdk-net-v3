@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 版本ID（版本号），如v2。
+        /// **参数解释：** 版本号。 **取值范围：** v2。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 版本状态，为如下3种： CURRENT：表示该版本为主推版本。 SUPPORTED：表示为老版本，但是现在还继续支持。 DEPRECATED：表示为废弃版本，存在后续删除的可能。
+        /// **参数解释：** 版本状态。 **取值范围：** - CURRENT：表示该版本为主推版本。 - SUPPORTED：表示为老版本，但是现在还继续支持。 - DEPRECATED：表示为废弃版本，存在后续删除的可能。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// API的URL地址。
+        /// **参数解释：** API的URL地址。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("links", NullValueHandling = NullValueHandling.Ignore)]
         public List<LinksItem> Links { get; set; }
 
         /// <summary>
-        /// 版本发布时间。
+        /// **参数解释：** 版本发布时间。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("updated", NullValueHandling = NullValueHandling.Ignore)]
         public string Updated { get; set; }
 
         /// <summary>
-        /// 支持的最大微版本号。若该版本API不支持微版本，则为空。
+        /// **参数解释：** 支持的最大微版本号。 **取值范围：** 若该版本API不支持微版本，则为空。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 支持的最小微版本号。若该版本API不支持微版本，则为空。
+        /// **参数解释：** 支持的最小微版本号。 **取值范围：** 若该版本API不支持微版本，则为空。
         /// </summary>
         [JsonProperty("min_version", NullValueHandling = NullValueHandling.Ignore)]
         public string MinVersion { get; set; }

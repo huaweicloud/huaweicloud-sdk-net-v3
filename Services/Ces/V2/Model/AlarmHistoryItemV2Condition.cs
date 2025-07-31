@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 告警触发条件
+    /// **参数解释**： 告警触发条件。 
     /// </summary>
-    public class AlarmCondition 
+    public class AlarmHistoryItemV2Condition 
     {
         /// <summary>
-        /// 指标周期，单位是秒； 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算；如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)”，300代表指标按5分钟聚合周期为一个数据点参与告警计算。
+        /// **参数解释**： 指标周期，单位是秒。如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)”。 **取值范围**： 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算； 300代表指标按5分钟聚合周期为一个数据点参与告警计算； 1200代表指标按20分钟聚合周期为一个数据点参与告警计算； 3600代表指标按60分钟聚合周期为一个数据点参与告警计算； 14400代表指标按4小时聚合周期为一个数据点参与告警计算； 86400代表指标按1天聚合周期为一个数据点参与告警计算。 
         /// </summary>
-        /// <value>指标周期，单位是秒； 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算；如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)”，300代表指标按5分钟聚合周期为一个数据点参与告警计算。</value>
+        /// <value>**参数解释**： 指标周期，单位是秒。如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)”。 **取值范围**： 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算； 300代表指标按5分钟聚合周期为一个数据点参与告警计算； 1200代表指标按20分钟聚合周期为一个数据点参与告警计算； 3600代表指标按60分钟聚合周期为一个数据点参与告警计算； 14400代表指标按4小时聚合周期为一个数据点参与告警计算； 86400代表指标按1天聚合周期为一个数据点参与告警计算。 </value>
         [JsonConverter(typeof(EnumClassConverter<PeriodEnum>))]
         public class PeriodEnum
         {
@@ -161,9 +161,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题，0代表不抑制，满足条件即告警；300代表满足告警触发条件后每5分钟告警一次；
+        /// **参数解释**： 告警抑制时间（告警周期），单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题。 **取值范围**： 0代表不抑制，满足条件即告警； 300代表满足告警触发条件后每5分钟告警一次； 600代表满足告警触发条件后每10分钟告警一次； 900代表满足告警触发条件后每15分钟告警一次； 1800代表满足告警触发条件后每30分钟告警一次； 3600代表满足告警触发条件后每60分钟告警一次； 10800代表满足告警触发条件后每3小时告警一次； 21600代表满足告警触发条件后每6小时告警一次； 43200代表满足告警触发条件后每12小时告警一次； 8600代表满足告警触发条件后每一天告警一次； 
         /// </summary>
-        /// <value>告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题，0代表不抑制，满足条件即告警；300代表满足告警触发条件后每5分钟告警一次；</value>
+        /// <value>**参数解释**： 告警抑制时间（告警周期），单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题。 **取值范围**： 0代表不抑制，满足条件即告警； 300代表满足告警触发条件后每5分钟告警一次； 600代表满足告警触发条件后每10分钟告警一次； 900代表满足告警触发条件后每15分钟告警一次； 1800代表满足告警触发条件后每30分钟告警一次； 3600代表满足告警触发条件后每60分钟告警一次； 10800代表满足告警触发条件后每3小时告警一次； 21600代表满足告警触发条件后每6小时告警一次； 43200代表满足告警触发条件后每12小时告警一次； 8600代表满足告警触发条件后每一天告警一次； </value>
         [JsonConverter(typeof(EnumClassConverter<SuppressDurationEnum>))]
         public class SuppressDurationEnum
         {
@@ -325,42 +325,42 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 指标周期，单位是秒； 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算；如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)”，300代表指标按5分钟聚合周期为一个数据点参与告警计算。
+        /// **参数解释**： 指标周期，单位是秒。如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)”。 **取值范围**： 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算； 300代表指标按5分钟聚合周期为一个数据点参与告警计算； 1200代表指标按20分钟聚合周期为一个数据点参与告警计算； 3600代表指标按60分钟聚合周期为一个数据点参与告警计算； 14400代表指标按4小时聚合周期为一个数据点参与告警计算； 86400代表指标按1天聚合周期为一个数据点参与告警计算。 
         /// </summary>
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodEnum Period { get; set; }
         /// <summary>
-        /// 聚合方式, 支持的值为(average|min|max|sum)
+        /// **参数解释**： 聚合方式。 **取值范围**： 枚举值。average：平均值，min：最小值，max：最大值，sum：求和，tp99：99百分位数，tp95：95百分位数，tp90：90百分位数。字符长度在 1 到 15之间。 
         /// </summary>
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public string Filter { get; set; }
 
         /// <summary>
-        /// 阈值符号,支持的值为(&gt;|&lt;|&gt;&#x3D;|&lt;&#x3D;|&#x3D;|!&#x3D;|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动
+        /// **参数解释**： 阈值符号。 **取值范围**： 枚举值。支持的值为(&gt;|&lt;|&gt;&#x3D;|&lt;&#x3D;|&#x3D;|!&#x3D;|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动。字符长度在 1 到 10之间。 
         /// </summary>
         [JsonProperty("comparison_operator", NullValueHandling = NullValueHandling.Ignore)]
         public string ComparisonOperator { get; set; }
 
         /// <summary>
-        /// 告警阈值，取值范围[0, Number.MAX_VALUE]，Number.MAX_VALUE值为1.7976931348623157e+108。具体阈值取值请参见附录中各服务监控指标中取值范围，如支持监控的服务列表中ECS的CPU使用率cpu_util取值范围可配置80。
+        /// **参数解释**： 告警阈值。 **取值范围**： 具体阈值取值请参见附录中各服务监控指标中取值范围，如[支持监控的服务列表](ces_03_0059.xml)中ECS的CPU使用率cpu_util取值范围可配置80。最小值为0，最大值为1.7976931348623157e+108。 
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public double? Value { get; set; }
 
         /// <summary>
-        /// 数据的单位，最大长度为32位。
+        /// **参数解释**： 数据的单位。 **取值范围**： 字符串长度最大为 32。 
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }
 
         /// <summary>
-        /// 次数
+        /// **参数解释**： 告警连续触发次数。 **取值范围**： 字符串长度在 1 到 180 之间。 
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }
 
         /// <summary>
-        /// 告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题，0代表不抑制，满足条件即告警；300代表满足告警触发条件后每5分钟告警一次；
+        /// **参数解释**： 告警抑制时间（告警周期），单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题。 **取值范围**： 0代表不抑制，满足条件即告警； 300代表满足告警触发条件后每5分钟告警一次； 600代表满足告警触发条件后每10分钟告警一次； 900代表满足告警触发条件后每15分钟告警一次； 1800代表满足告警触发条件后每30分钟告警一次； 3600代表满足告警触发条件后每60分钟告警一次； 10800代表满足告警触发条件后每3小时告警一次； 21600代表满足告警触发条件后每6小时告警一次； 43200代表满足告警触发条件后每12小时告警一次； 8600代表满足告警触发条件后每一天告警一次； 
         /// </summary>
         [JsonProperty("suppress_duration", NullValueHandling = NullValueHandling.Ignore)]
         public SuppressDurationEnum SuppressDuration { get; set; }
@@ -372,7 +372,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AlarmCondition {\n");
+            sb.Append("class AlarmHistoryItemV2Condition {\n");
             sb.Append("  period: ").Append(Period).Append("\n");
             sb.Append("  filter: ").Append(Filter).Append("\n");
             sb.Append("  comparisonOperator: ").Append(ComparisonOperator).Append("\n");
@@ -389,13 +389,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AlarmCondition);
+            return this.Equals(input as AlarmHistoryItemV2Condition);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(AlarmCondition input)
+        public bool Equals(AlarmHistoryItemV2Condition input)
         {
             if (input == null) return false;
             if (this.Period != input.Period) return false;

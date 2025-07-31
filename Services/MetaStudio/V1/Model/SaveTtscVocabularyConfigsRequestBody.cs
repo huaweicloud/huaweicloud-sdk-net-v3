@@ -166,6 +166,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
+        /// <summary>
+        /// 分组id
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
 
 
         /// <summary>
@@ -178,6 +184,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  key: ").Append(Key).Append("\n");
             sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -199,6 +206,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.Type != input.Type) return false;
             if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
             if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
 
             return true;
         }
@@ -214,6 +222,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 return hashCode;
             }
         }

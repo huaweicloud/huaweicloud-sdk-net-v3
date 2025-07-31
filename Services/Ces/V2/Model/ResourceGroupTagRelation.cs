@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 
+    /// 标签的匹配规则
     /// </summary>
     public class ResourceGroupTagRelation 
     {

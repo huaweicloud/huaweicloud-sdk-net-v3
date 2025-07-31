@@ -527,6 +527,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("fail_type", NullValueHandling = NullValueHandling.Ignore)]
         public FailTypeEnum FailType { get; set; }
         /// <summary>
+        /// 冻结原因编号。
+        /// </summary>
+        [JsonProperty("block_reason_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string BlockReasonCode { get; set; }
+
+        /// <summary>
         /// 冻结/解冻/失败 原因。
         /// </summary>
         [JsonProperty("reason", NullValueHandling = NullValueHandling.Ignore)]
@@ -568,6 +574,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("supported_service", NullValueHandling = NullValueHandling.Ignore)]
         public List<SupportedServiceEnum> SupportedService { get; set; }
 
+        /// <summary>
+        /// 资产自动处理任务。
+        /// </summary>
+        [JsonProperty("auto_operation_config", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AutoOperationConfig> AutoOperationConfig { get; set; }
+
 
 
         /// <summary>
@@ -587,6 +599,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  assetType: ").Append(AssetType).Append("\n");
             sb.Append("  assetState: ").Append(AssetState).Append("\n");
             sb.Append("  failType: ").Append(FailType).Append("\n");
+            sb.Append("  blockReasonCode: ").Append(BlockReasonCode).Append("\n");
             sb.Append("  reason: ").Append(Reason).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  assetExtraMeta: ").Append(AssetExtraMeta).Append("\n");
@@ -594,6 +607,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  files: ").Append(Files).Append("\n");
             sb.Append("  assetOrder: ").Append(AssetOrder).Append("\n");
             sb.Append("  supportedService: ").Append(SupportedService).Append("\n");
+            sb.Append("  autoOperationConfig: ").Append(AutoOperationConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -622,6 +636,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.AssetType != input.AssetType) return false;
             if (this.AssetState != input.AssetState) return false;
             if (this.FailType != input.FailType) return false;
+            if (this.BlockReasonCode != input.BlockReasonCode || (this.BlockReasonCode != null && !this.BlockReasonCode.Equals(input.BlockReasonCode))) return false;
             if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.AssetExtraMeta != input.AssetExtraMeta || (this.AssetExtraMeta != null && !this.AssetExtraMeta.Equals(input.AssetExtraMeta))) return false;
@@ -629,6 +644,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.Files != input.Files || (this.Files != null && input.Files != null && !this.Files.SequenceEqual(input.Files))) return false;
             if (this.AssetOrder != input.AssetOrder || (this.AssetOrder != null && !this.AssetOrder.Equals(input.AssetOrder))) return false;
             if (this.SupportedService != input.SupportedService || (this.SupportedService != null && input.SupportedService != null && !this.SupportedService.SequenceEqual(input.SupportedService))) return false;
+            if (this.AutoOperationConfig != input.AutoOperationConfig || (this.AutoOperationConfig != null && input.AutoOperationConfig != null && !this.AutoOperationConfig.SequenceEqual(input.AutoOperationConfig))) return false;
 
             return true;
         }
@@ -651,6 +667,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 hashCode = hashCode * 59 + this.AssetType.GetHashCode();
                 hashCode = hashCode * 59 + this.AssetState.GetHashCode();
                 hashCode = hashCode * 59 + this.FailType.GetHashCode();
+                if (this.BlockReasonCode != null) hashCode = hashCode * 59 + this.BlockReasonCode.GetHashCode();
                 if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.AssetExtraMeta != null) hashCode = hashCode * 59 + this.AssetExtraMeta.GetHashCode();
@@ -658,6 +675,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.Files != null) hashCode = hashCode * 59 + this.Files.GetHashCode();
                 if (this.AssetOrder != null) hashCode = hashCode * 59 + this.AssetOrder.GetHashCode();
                 if (this.SupportedService != null) hashCode = hashCode * 59 + this.SupportedService.GetHashCode();
+                if (this.AutoOperationConfig != null) hashCode = hashCode * 59 + this.AutoOperationConfig.GetHashCode();
                 return hashCode;
             }
         }

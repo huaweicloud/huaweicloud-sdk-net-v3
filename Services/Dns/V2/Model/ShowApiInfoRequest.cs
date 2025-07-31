@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 待查询版本号。以v开头，如v2。
+        /// **参数解释：** 待查询版本号。 **约束限制：** 不涉及。 **取值范围：** v2。 **默认取值：** 不涉及。
         /// </summary>
         [SDKProperty("version", IsPath = true)]
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]

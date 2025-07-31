@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class AlarmHistoryItemV2 
     {
         /// <summary>
-        /// 告警记录的状态，取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。
+        /// **参数解释**： 告警记录的状态。 **取值范围**： 取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。 
         /// </summary>
-        /// <value>告警记录的状态，取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。</value>
+        /// <value>**参数解释**： 告警记录的状态。 **取值范围**： 取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。 </value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -143,9 +143,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 告警记录的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
+        /// **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。 
         /// </summary>
-        /// <value>告警记录的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。</value>
+        /// <value>**参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。 </value>
         [JsonConverter(typeof(EnumClassConverter<LevelEnum>))]
         public class LevelEnum
         {
@@ -269,72 +269,211 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             }
         }
 
+        /// <summary>
+        /// **参数解释**： 告警规则类型。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警。 
+        /// </summary>
+        /// <value>**参数解释**： 告警规则类型。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警。 </value>
+        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
+        public class TypeEnum
+        {
+            /// <summary>
+            /// Enum EVENT_SYS for value: EVENT.SYS
+            /// </summary>
+            public static readonly TypeEnum EVENT_SYS = new TypeEnum("EVENT.SYS");
+
+            /// <summary>
+            /// Enum EVENT_CUSTOM for value: EVENT.CUSTOM
+            /// </summary>
+            public static readonly TypeEnum EVENT_CUSTOM = new TypeEnum("EVENT.CUSTOM");
+
+            /// <summary>
+            /// Enum DNSHEALTHCHECK for value: DNSHealthCheck
+            /// </summary>
+            public static readonly TypeEnum DNSHEALTHCHECK = new TypeEnum("DNSHealthCheck");
+
+            /// <summary>
+            /// Enum RESOURCE_GROUP for value: RESOURCE_GROUP
+            /// </summary>
+            public static readonly TypeEnum RESOURCE_GROUP = new TypeEnum("RESOURCE_GROUP");
+
+            /// <summary>
+            /// Enum MULTI_INSTANCE for value: MULTI_INSTANCE
+            /// </summary>
+            public static readonly TypeEnum MULTI_INSTANCE = new TypeEnum("MULTI_INSTANCE");
+
+            /// <summary>
+            /// Enum ALL_INSTANCE for value: ALL_INSTANCE
+            /// </summary>
+            public static readonly TypeEnum ALL_INSTANCE = new TypeEnum("ALL_INSTANCE");
+
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
+            new Dictionary<string, TypeEnum>()
+            {
+                { "EVENT.SYS", EVENT_SYS },
+                { "EVENT.CUSTOM", EVENT_CUSTOM },
+                { "DNSHealthCheck", DNSHEALTHCHECK },
+                { "RESOURCE_GROUP", RESOURCE_GROUP },
+                { "MULTI_INSTANCE", MULTI_INSTANCE },
+                { "ALL_INSTANCE", ALL_INSTANCE },
+            };
+
+            private string _value;
+
+            public TypeEnum()
+            {
+
+            }
+
+            public TypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static TypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(TypeEnum a, TypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TypeEnum a, TypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 告警记录ID
+        /// **参数解释**： 告警记录ID。 **取值范围**： 字符串长度为24。 
         /// </summary>
         [JsonProperty("record_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RecordId { get; set; }
 
         /// <summary>
-        /// 告警规则的ID，如：al1603131199286dzxpqK3Ez。
+        /// **参数解释**： 告警规则的ID，如：al1603131199286dzxpqK3Ez。 **取值范围**： 字符串长度为24 
         /// </summary>
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmId { get; set; }
 
         /// <summary>
-        /// 告警规则的名称，如：alarm-test01。
+        /// **参数解释**： 告警规则的名称，如：alarm-test01。 **取值范围**： 字符串长度在 1 到 128 之间。 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 告警记录的状态，取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。
+        /// **参数解释**： 告警记录的状态。 **取值范围**： 取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 告警记录的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
+        /// **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。 
         /// </summary>
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public LevelEnum Level { get; set; }
         /// <summary>
-        /// 
+        /// **参数解释**： 告警规则类型。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警。 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public AlarmType Type { get; set; }
+        public TypeEnum Type { get; set; }
         /// <summary>
-        /// 是否发送通知，值为true或者false。
+        /// **参数解释**： 是否发送通知 **取值范围**： true：发送通知 false：不发送通知 
         /// </summary>
         [JsonProperty("action_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ActionEnabled { get; set; }
 
         /// <summary>
-        /// 产生时间,UTC时间
+        /// **参数解释**： 产生时间,UTC时间 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? BeginTime { get; set; }
 
         /// <summary>
-        /// 结束时间，UTC时间
+        /// **参数解释**： 结束时间，UTC时间 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? EndTime { get; set; }
 
         /// <summary>
-        /// 第一次告警时间，UTC时间
+        /// **参数解释**： 第一次告警时间，UTC时间 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("first_alarm_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? FirstAlarmTime { get; set; }
 
         /// <summary>
-        /// 最后一次告警时间，UTC时间
+        /// **参数解释**： 最后一次告警时间，UTC时间。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("last_alarm_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? LastAlarmTime { get; set; }
 
         /// <summary>
-        /// 告警恢复时间，UTC时间
+        /// **参数解释**： 告警恢复时间，UTC时间。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("alarm_recovery_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? AlarmRecoveryTime { get; set; }
@@ -343,13 +482,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("metric", NullValueHandling = NullValueHandling.Ignore)]
-        public Metric Metric { get; set; }
+        public AlarmHistoryItemV2Metric Metric { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("condition", NullValueHandling = NullValueHandling.Ignore)]
-        public AlarmCondition Condition { get; set; }
+        public AlarmHistoryItemV2Condition Condition { get; set; }
 
         /// <summary>
         /// 
@@ -358,16 +497,16 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public AdditionalInfo AdditionalInfo { get; set; }
 
         /// <summary>
-        /// 告警触发的动作。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notification_list\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notification_list：告警状态发生变化时，被通知对象的列表。
+        /// **参数解释**： 告警触发的动作列表。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notification_list\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notification_list：告警状态发生变化时，被通知对象的列表。 
         /// </summary>
         [JsonProperty("alarm_actions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Notification> AlarmActions { get; set; }
+        public List<AlarmHistoryItemV2AlarmActions> AlarmActions { get; set; }
 
         /// <summary>
-        /// 告警恢复触发的动作。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notification_list\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } type取值：  notification：通知。  notification_list：告警状态发生变化时，被通知对象的列表。
+        /// **参数解释**： 告警恢复触发的动作。  结构如下：  {  \&quot;type\&quot;: \&quot;notification\&quot;, \&quot;notification_list\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;]  } type取值：  notification：通知。  notification_list：告警状态发生变化时，被通知对象的列表。 
         /// </summary>
         [JsonProperty("ok_actions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Notification> OkActions { get; set; }
+        public List<AlarmHistoryItemV2AlarmActions> OkActions { get; set; }
 
         /// <summary>
         /// 计算出该条告警记录的资源监控数据上报时间和监控数值。

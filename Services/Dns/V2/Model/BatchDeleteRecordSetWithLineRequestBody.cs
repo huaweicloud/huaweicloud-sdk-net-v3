@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 记录集ID列表。最多支持100个。
+        /// **参数解释：** 记录集ID列表。 **约束限制：** 最多支持100个。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("recordset_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RecordsetIds { get; set; }

@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         }
 
         /// <summary>
-        /// 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * GROUP_CUSTOMIZATION：租户组资产 * ALL：所有资产  默认查询租户资产。
+        /// 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * ALL：所有资产  默认查询租户资产。
         /// </summary>
-        /// <value>资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * GROUP_CUSTOMIZATION：租户组资产 * ALL：所有资产  默认查询租户资产。</value>
+        /// <value>资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * ALL：所有资产  默认查询租户资产。</value>
         [JsonConverter(typeof(EnumClassConverter<AssetSourceEnum>))]
         public class AssetSourceEnum
         {
@@ -148,11 +148,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             public static readonly AssetSourceEnum CUSTOMIZATION = new AssetSourceEnum("CUSTOMIZATION");
 
             /// <summary>
-            /// Enum GROUP_CUSTOMIZATION for value: GROUP_CUSTOMIZATION
-            /// </summary>
-            public static readonly AssetSourceEnum GROUP_CUSTOMIZATION = new AssetSourceEnum("GROUP_CUSTOMIZATION");
-
-            /// <summary>
             /// Enum ALL for value: ALL
             /// </summary>
             public static readonly AssetSourceEnum ALL = new AssetSourceEnum("ALL");
@@ -162,7 +157,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             {
                 { "SYSTEM", SYSTEM },
                 { "CUSTOMIZATION", CUSTOMIZATION },
-                { "GROUP_CUSTOMIZATION", GROUP_CUSTOMIZATION },
                 { "ALL", ALL },
             };
 
@@ -585,7 +579,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string SortDir { get; set; }
 
         /// <summary>
-        /// 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * GROUP_CUSTOMIZATION：租户组资产 * ALL：所有资产  默认查询租户资产。
+        /// 资产来源。 * SYSTEM：系统资产 * CUSTOMIZATION：租户资产 * ALL：所有资产  默认查询租户资产。
         /// </summary>
         [SDKProperty("asset_source", IsQuery = true)]
         [JsonProperty("asset_source", NullValueHandling = NullValueHandling.Ignore)]
@@ -633,7 +627,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string Language { get; set; }
 
         /// <summary>
-        /// 系统属性。  key和value间用\&quot;:\&quot;分隔，多个key之间用\&quot;,\&quot;分隔。  如system_property&#x3D;BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下：  公共资产属性： * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * CREATED_BY_PLATFORM：是否平台生成，可取值Yes  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。可取值Yes * MATERIAL_VIDEO：素材视频，用作前景。可取值Yes  数字人资产属性： * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）  租户组资产验签属性： * SIG：加签秘钥。取值方式SIG&#x3D;HexEncode(HMAC-SHA256(group_id:EXP_TIME:NONCE,key)) * EXP_TIME：过期时间，当前时间增加增加10分钟。取值示例1627768613 * NONCE：随机字符串。取值示例：EycLQsHwxhzK9OW8UEKWNfH2I3CGR2nINuU1EBpv162d42d92s
+        /// 系统属性。  key和value间用\&quot;:\&quot;分隔，多个key之间用\&quot;,\&quot;分隔。  如system_property&#x3D;BACKGROUND_IMG:Yes,RENDER_ENGINE:MetaEngine。  不同Key对应Value取值如下：  公共资产属性： * BACKGROUND_IMG：视频制作的2D背景图片，可取值Yes * CREATED_BY_PLATFORM：是否平台生成，可取值Yes  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。可取值Yes * MATERIAL_VIDEO：素材视频，用作前景。可取值Yes  数字人资产属性： * BACKGROUND_SCENE：视频制作的2D背景场景，可取值Horizontal（横屏）或者Vertical（竖屏）
         /// </summary>
         [SDKProperty("system_property", IsQuery = true)]
         [JsonProperty("system_property", NullValueHandling = NullValueHandling.Ignore)]
@@ -714,13 +708,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("app_user_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppUserId { get; set; }
 
-        /// <summary>
-        /// 租户组id。只支持asset_souce是ALL 或者GROUP_CUSTOMIZATION 来源。
-        /// </summary>
-        [SDKProperty("project_group_id", IsQuery = true)]
-        [JsonProperty("project_group_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProjectGroupId { get; set; }
-
 
 
         /// <summary>
@@ -762,7 +749,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  excludeDeviceName: ").Append(ExcludeDeviceName).Append("\n");
             sb.Append("  supportedService: ").Append(SupportedService).Append("\n");
             sb.Append("  appUserId: ").Append(AppUserId).Append("\n");
-            sb.Append("  projectGroupId: ").Append(ProjectGroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -813,7 +799,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.ExcludeDeviceName != input.ExcludeDeviceName || (this.ExcludeDeviceName != null && !this.ExcludeDeviceName.Equals(input.ExcludeDeviceName))) return false;
             if (this.SupportedService != input.SupportedService) return false;
             if (this.AppUserId != input.AppUserId || (this.AppUserId != null && !this.AppUserId.Equals(input.AppUserId))) return false;
-            if (this.ProjectGroupId != input.ProjectGroupId || (this.ProjectGroupId != null && !this.ProjectGroupId.Equals(input.ProjectGroupId))) return false;
 
             return true;
         }
@@ -858,7 +843,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.ExcludeDeviceName != null) hashCode = hashCode * 59 + this.ExcludeDeviceName.GetHashCode();
                 hashCode = hashCode * 59 + this.SupportedService.GetHashCode();
                 if (this.AppUserId != null) hashCode = hashCode * 59 + this.AppUserId.GetHashCode();
-                if (this.ProjectGroupId != null) hashCode = hashCode * 59 + this.ProjectGroupId.GetHashCode();
                 return hashCode;
             }
         }

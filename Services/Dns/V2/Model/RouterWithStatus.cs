@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 资源状态。
+        /// **参数解释：** 关联VPC的状态。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 关联VPC的ID。
+        /// **参数解释：** 关联VPC的ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("router_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RouterId { get; set; }
 
         /// <summary>
-        /// 关联VPC所在的region。
+        /// **参数解释：** 关联VPC所在的region。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("router_region", NullValueHandling = NullValueHandling.Ignore)]
         public string RouterRegion { get; set; }

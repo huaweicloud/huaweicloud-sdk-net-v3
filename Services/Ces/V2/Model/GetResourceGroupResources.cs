@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class GetResourceGroupResources 
     {
         /// <summary>
-        /// 资源健康状态，取值为health（已设置告警规则且无告警触发的资源）、unhealthy（已设置告警规则且有告警触发的资源）、no_alarm_rule（未关联告警规则）
+        /// 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
         /// </summary>
-        /// <value>资源健康状态，取值为health（已设置告警规则且无告警触发的资源）、unhealthy（已设置告警规则且有告警触发的资源）、no_alarm_rule（未关联告警规则）</value>
+        /// <value>指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -136,9 +136,130 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             }
         }
 
+        /// <summary>
+        /// 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+        /// </summary>
+        /// <value>事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）</value>
+        [JsonConverter(typeof(EnumClassConverter<EventStatusEnum>))]
+        public class EventStatusEnum
+        {
+            /// <summary>
+            /// Enum HEALTH for value: health
+            /// </summary>
+            public static readonly EventStatusEnum HEALTH = new EventStatusEnum("health");
+
+            /// <summary>
+            /// Enum UNHEALTHY for value: unhealthy
+            /// </summary>
+            public static readonly EventStatusEnum UNHEALTHY = new EventStatusEnum("unhealthy");
+
+            /// <summary>
+            /// Enum NO_ALARM_RULE for value: no_alarm_rule
+            /// </summary>
+            public static readonly EventStatusEnum NO_ALARM_RULE = new EventStatusEnum("no_alarm_rule");
+
+            private static readonly Dictionary<string, EventStatusEnum> StaticFields =
+            new Dictionary<string, EventStatusEnum>()
+            {
+                { "health", HEALTH },
+                { "unhealthy", UNHEALTHY },
+                { "no_alarm_rule", NO_ALARM_RULE },
+            };
+
+            private string _value;
+
+            public EventStatusEnum()
+            {
+
+            }
+
+            public EventStatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static EventStatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as EventStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(EventStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(EventStatusEnum a, EventStatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(EventStatusEnum a, EventStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 资源健康状态，取值为health（已设置告警规则且无告警触发的资源）、unhealthy（已设置告警规则且有告警触发的资源）、no_alarm_rule（未关联告警规则）
+        /// 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -160,6 +281,17 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+        /// </summary>
+        [JsonProperty("event_status", NullValueHandling = NullValueHandling.Ignore)]
+        public EventStatusEnum EventStatus { get; set; }
+        /// <summary>
+        /// 资源名称
+        /// </summary>
+        [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceName { get; set; }
+
 
 
         /// <summary>
@@ -173,6 +305,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  dimensions: ").Append(Dimensions).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  eventStatus: ").Append(EventStatus).Append("\n");
+            sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -195,6 +329,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.EventStatus != input.EventStatus) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
 
             return true;
         }
@@ -211,6 +347,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.Dimensions != null) hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.EventStatus.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
                 return hashCode;
             }
         }

@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public int? AlarmNum { get; set; }
 
         /// <summary>
-        /// 告警等级 - high：高  - medium：中  - low：低
+        /// 告警等级,默认为空。 - high：高  - medium：中  - low：低
         /// </summary>
         [JsonProperty("alarm_risk", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AlarmRisk { get; set; }
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string AlarmSwitch { get; set; }
 
         /// <summary>
-        /// 通知消息主题URN,调用SMN服务接口获取
+        /// 通知消息主题URN,调用SMN服务接口获取。当alarm_switch为ON时必填
         /// </summary>
         [JsonProperty("alarm_topic_urn", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmTopicUrn { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 解析记录状态。  取值范围：  ENABLE：启用解析 DISABLE：暂停解析。
+        /// **参数解释：** 解析记录状态。 **取值范围：** - ENABLE：启用解析 - DISABLE：暂停解析
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

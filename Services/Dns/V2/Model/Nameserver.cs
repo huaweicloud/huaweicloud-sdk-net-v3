@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 主机名。
+        /// **参数解释：** 主机名。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("hostname", NullValueHandling = NullValueHandling.Ignore)]
         public string Hostname { get; set; }
 
         /// <summary>
-        /// 优先级。
+        /// **参数解释：** 优先级。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }

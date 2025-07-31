@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public List<TagValues> NotTagsAny { get; set; }
 
         /// <summary>
-        /// 每页返回的资源个数。  取值范围：1~1000  参数取值说明：  如果action为filter时，默认为1000。 如果action为count时，无此参数。
+        /// 分页查询时配置每页返回的资源个数。  取值范围：1~1000  参数取值说明：  如果action为filter时，默认为1000。 如果action为count时，无此参数。
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }

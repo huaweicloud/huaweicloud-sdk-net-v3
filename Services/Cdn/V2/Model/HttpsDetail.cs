@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public string PrivateKey { get; set; }
 
         /// <summary>
-        /// 0：自有证书  1：云托管证书。
+        /// 证书类型，0：自有证书，1：云托管证书，2：SCM证书。
         /// </summary>
         [JsonProperty("certificate_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? CertificateType { get; set; }

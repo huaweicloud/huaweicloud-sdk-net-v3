@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Key { get; set; }
 
         /// <summary>
-        /// 值。每个值最大长度43个unicode字符。
+        /// 值。每个值最大长度255个unicode字符。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms 
     {
         /// <summary>
-        /// NOTIFICATION_POLICY(通知策略)
+        /// 通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
         /// </summary>
-        /// <value>NOTIFICATION_POLICY(通知策略)</value>
+        /// <value>通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。</value>
         [JsonConverter(typeof(EnumClassConverter<NotificationMannerEnum>))]
         public class NotificationMannerEnum
         {
@@ -27,10 +27,22 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             /// </summary>
             public static readonly NotificationMannerEnum NOTIFICATION_POLICY = new NotificationMannerEnum("NOTIFICATION_POLICY");
 
+            /// <summary>
+            /// Enum NOTIFICATION_GROUP for value: NOTIFICATION_GROUP
+            /// </summary>
+            public static readonly NotificationMannerEnum NOTIFICATION_GROUP = new NotificationMannerEnum("NOTIFICATION_GROUP");
+
+            /// <summary>
+            /// Enum TOPIC_SUBSCRIPTION for value: TOPIC_SUBSCRIPTION
+            /// </summary>
+            public static readonly NotificationMannerEnum TOPIC_SUBSCRIPTION = new NotificationMannerEnum("TOPIC_SUBSCRIPTION");
+
             private static readonly Dictionary<string, NotificationMannerEnum> StaticFields =
             new Dictionary<string, NotificationMannerEnum>()
             {
                 { "NOTIFICATION_POLICY", NOTIFICATION_POLICY },
+                { "NOTIFICATION_GROUP", NOTIFICATION_GROUP },
+                { "TOPIC_SUBSCRIPTION", TOPIC_SUBSCRIPTION },
             };
 
             private string _value;
@@ -144,7 +156,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 服务的命名空间，查询各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
+        /// 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
         /// </summary>
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
@@ -159,7 +171,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 资源列表，关联资源需要使用查询告警规则资源接口获取
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResourcesInListResp> Resources { get; set; }
+        public List<List<Dimension>> Resources { get; set; }
 
         /// <summary>
         /// 
@@ -203,7 +215,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string NotificationEndTime { get; set; }
 
         /// <summary>
-        /// NOTIFICATION_POLICY(通知策略)
+        /// 通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
         /// </summary>
         [JsonProperty("notification_manner", NullValueHandling = NullValueHandling.Ignore)]
         public NotificationMannerEnum NotificationManner { get; set; }

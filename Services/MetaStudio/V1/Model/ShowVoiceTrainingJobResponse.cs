@@ -150,6 +150,18 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("is_remake", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsRemake { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("assess_result", NullValueHandling = NullValueHandling.Ignore)]
+        public AssessResult AssessResult { get; set; }
+
+        /// <summary>
+        /// 是否是按需任务
+        /// </summary>
+        [JsonProperty("is_ondemand_resource", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOndemandResource { get; set; }
+
 
 
         /// <summary>
@@ -182,6 +194,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  allocatedResource: ").Append(AllocatedResource).Append("\n");
             sb.Append("  outputLanguage: ").Append(OutputLanguage).Append("\n");
             sb.Append("  isRemake: ").Append(IsRemake).Append("\n");
+            sb.Append("  assessResult: ").Append(AssessResult).Append("\n");
+            sb.Append("  isOndemandResource: ").Append(IsOndemandResource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -223,6 +237,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.AllocatedResource != input.AllocatedResource || (this.AllocatedResource != null && !this.AllocatedResource.Equals(input.AllocatedResource))) return false;
             if (this.OutputLanguage != input.OutputLanguage || (this.OutputLanguage != null && !this.OutputLanguage.Equals(input.OutputLanguage))) return false;
             if (this.IsRemake != input.IsRemake || (this.IsRemake != null && !this.IsRemake.Equals(input.IsRemake))) return false;
+            if (this.AssessResult != input.AssessResult || (this.AssessResult != null && !this.AssessResult.Equals(input.AssessResult))) return false;
+            if (this.IsOndemandResource != input.IsOndemandResource || (this.IsOndemandResource != null && !this.IsOndemandResource.Equals(input.IsOndemandResource))) return false;
 
             return true;
         }
@@ -258,6 +274,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.AllocatedResource != null) hashCode = hashCode * 59 + this.AllocatedResource.GetHashCode();
                 if (this.OutputLanguage != null) hashCode = hashCode * 59 + this.OutputLanguage.GetHashCode();
                 if (this.IsRemake != null) hashCode = hashCode * 59 + this.IsRemake.GetHashCode();
+                if (this.AssessResult != null) hashCode = hashCode * 59 + this.AssessResult.GetHashCode();
+                if (this.IsOndemandResource != null) hashCode = hashCode * 59 + this.IsOndemandResource.GetHashCode();
                 return hashCode;
             }
         }

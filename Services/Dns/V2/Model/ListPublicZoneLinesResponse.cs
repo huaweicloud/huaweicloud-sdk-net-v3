@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public PageLink Links { get; set; }
 
         /// <summary>
-        /// 查询公网域名的线路列表响应。
+        /// **参数解释：** 查询公网域名的线路列表响应。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("lines", NullValueHandling = NullValueHandling.Ignore)]
         public List<PublicZoneLines> Lines { get; set; }

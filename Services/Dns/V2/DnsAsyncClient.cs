@@ -70,7 +70,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 在内网域名上关联VPC
         ///
-        /// 在内网域名上关联VPC。
+        /// 当您的内网域名创建完成后，可以通过调用此接口为内网域名关联新的VPC。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -150,6 +150,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
         /// 响应结果中只包含本次实际删除的资源。
+        /// 支持公网域名和内网域名。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -328,34 +329,6 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 设置弹性公网IP的反向解析记录
-        ///
-        /// 设置弹性公网IP的反向解析记录。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateEipRecordSetResponse> CreateEipRecordSetAsync(CreateEipRecordSetRequest createEipRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", createEipRecordSetRequest.Region.ToString());
-            urlParam.Add("floatingip_id", createEipRecordSetRequest.FloatingipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEipRecordSetRequest);
-            var response = await DoHttpRequestAsync("PATCH", request);
-            return JsonUtils.DeSerialize<CreateEipRecordSetResponse>(response);
-        }
-
-        public AsyncInvoker<CreateEipRecordSetResponse> CreateEipRecordSetAsyncInvoker(CreateEipRecordSetRequest createEipRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", createEipRecordSetRequest.Region.ToString());
-            urlParam.Add("floatingip_id", createEipRecordSetRequest.FloatingipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEipRecordSetRequest);
-            return new AsyncInvoker<CreateEipRecordSetResponse>(this, "PATCH", request, JsonUtils.DeSerialize<CreateEipRecordSetResponse>);
-        }
-        
-        /// <summary>
         /// 创建终端节点
         ///
         /// 创建终端节点。
@@ -406,7 +379,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 创建内网域名
         ///
-        /// 创建内网域名。
+        /// 内网域名是指在VPC中生效的域名，内网域名创建后，用户可以将其与私网IP地址相关联，为云服务提供VPC内的内网域名解析服务。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -428,33 +401,10 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 创建弹性公网IP的反向解析记录
-        ///
-        /// 创建弹性公网IP的反向解析记录。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreatePtrResponse> CreatePtrAsync(CreatePtrRequest createPtrRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPtrRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<CreatePtrResponse>(response);
-        }
-
-        public AsyncInvoker<CreatePtrResponse> CreatePtrAsyncInvoker(CreatePtrRequest createPtrRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPtrRequest);
-            return new AsyncInvoker<CreatePtrResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePtrResponse>);
-        }
-        
-        /// <summary>
         /// 创建公网域名
         ///
-        /// 创建公网域名。
+        /// 您在使用华为云云解析服务为自己注册的域名配置DNS解析之前，需要先将域名添加至云解析服务控制台。
+        /// 一般情况下，通过华为云[域名注册服务](https://support.huaweicloud.com/domain/index.html)注册的域名无需添加，系统将在域名注册完成后自动添加。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -473,32 +423,6 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/zones", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPublicZoneRequest);
             return new AsyncInvoker<CreatePublicZoneResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePublicZoneResponse>);
-        }
-        
-        /// <summary>
-        /// 创建记录集
-        ///
-        /// 创建记录集。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateRecordSetResponse> CreateRecordSetAsync(CreateRecordSetRequest createRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", createRecordSetRequest.ZoneId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<CreateRecordSetResponse>(response);
-        }
-
-        public AsyncInvoker<CreateRecordSetResponse> CreateRecordSetAsyncInvoker(CreateRecordSetRequest createRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", createRecordSetRequest.ZoneId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetRequest);
-            return new AsyncInvoker<CreateRecordSetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordSetResponse>);
         }
         
         /// <summary>
@@ -525,32 +449,6 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch/lines", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithBatchLinesRequest);
             return new AsyncInvoker<CreateRecordSetWithBatchLinesResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordSetWithBatchLinesResponse>);
-        }
-        
-        /// <summary>
-        /// 创建记录集
-        ///
-        /// 创建记录集。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateRecordSetWithLineResponse> CreateRecordSetWithLineAsync(CreateRecordSetWithLineRequest createRecordSetWithLineRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", createRecordSetWithLineRequest.ZoneId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithLineRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<CreateRecordSetWithLineResponse>(response);
-        }
-
-        public AsyncInvoker<CreateRecordSetWithLineResponse> CreateRecordSetWithLineAsyncInvoker(CreateRecordSetWithLineRequest createRecordSetWithLineRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", createRecordSetWithLineRequest.ZoneId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithLineRequest);
-            return new AsyncInvoker<CreateRecordSetWithLineResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordSetWithLineResponse>);
         }
         
         /// <summary>
@@ -686,7 +584,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 删除内网域名
         ///
-        /// 删除内网域名。
+        /// 当您的内网域名不再使用时，您可以通过调用此接口将其删除。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -710,35 +608,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 将弹性公网IP的反向解析记录恢复为默认值
-        ///
-        /// 将弹性公网IP的反向解析记录恢复为默认值。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<DeletePtrResponse> DeletePtrAsync(DeletePtrRequest deletePtrRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", deletePtrRequest.PtrId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePtrRequest);
-            var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeletePtrResponse>(response);
-        }
-
-        public AsyncInvoker<DeletePtrResponse> DeletePtrAsyncInvoker(DeletePtrRequest deletePtrRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", deletePtrRequest.PtrId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePtrRequest);
-            return new AsyncInvoker<DeletePtrResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePtrResponse>);
-        }
-        
-        /// <summary>
         /// 删除公网域名
         ///
-        /// 删除公网域名。
+        /// 当您的公网域名不再使用时，您可以通过调用此接口将其删除。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -759,62 +631,6 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicZoneRequest);
             return new AsyncInvoker<DeletePublicZoneResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePublicZoneResponse>);
-        }
-        
-        /// <summary>
-        /// 删除记录集
-        ///
-        /// 删除记录集。删除有添加智能解析的记录集时，需要用记录集管理（新版本）模块中删除接口进行删除。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<DeleteRecordSetResponse> DeleteRecordSetAsync(DeleteRecordSetRequest deleteRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deleteRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", deleteRecordSetRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetRequest);
-            var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerialize<DeleteRecordSetResponse>(response);
-        }
-
-        public AsyncInvoker<DeleteRecordSetResponse> DeleteRecordSetAsyncInvoker(DeleteRecordSetRequest deleteRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deleteRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", deleteRecordSetRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetRequest);
-            return new AsyncInvoker<DeleteRecordSetResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteRecordSetResponse>);
-        }
-        
-        /// <summary>
-        /// 删除记录集
-        ///
-        /// 删除记录集。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<DeleteRecordSetsResponse> DeleteRecordSetsAsync(DeleteRecordSetsRequest deleteRecordSetsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deleteRecordSetsRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", deleteRecordSetsRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetsRequest);
-            var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerialize<DeleteRecordSetsResponse>(response);
-        }
-
-        public AsyncInvoker<DeleteRecordSetsResponse> DeleteRecordSetsAsyncInvoker(DeleteRecordSetsRequest deleteRecordSetsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deleteRecordSetsRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", deleteRecordSetsRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetsRequest);
-            return new AsyncInvoker<DeleteRecordSetsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteRecordSetsResponse>);
         }
         
         /// <summary>
@@ -930,7 +746,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 在内网域名上解关联VPC
         ///
-        /// 在内网域名上解关联VPC。
+        /// 当您的内网域名创建完成后，可以通过调用此接口为内网域名解除已关联的VPC。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -954,9 +770,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询所有的云解析服务API版本号
+        /// 查询API版本信息列表
         ///
-        /// 查询所有的云解析服务API版本号列表。
+        /// 查询云解析服务支持的所有API版本信息列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1126,7 +942,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 查询内网域名列表
         ///
-        /// 查询内网域名列表。
+        /// 当您的内网域名创建成功后，您可以通过调用此接口查询单个内网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1148,83 +964,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询弹性公网IP的反向解析记录列表
-        ///
-        /// 查询弹性公网IP的反向解析记录列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListPtrRecordsResponse> ListPtrRecordsAsync(ListPtrRecordsRequest listPtrRecordsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPtrRecordsRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ListPtrRecordsResponse>(response);
-        }
-
-        public AsyncInvoker<ListPtrRecordsResponse> ListPtrRecordsAsyncInvoker(ListPtrRecordsRequest listPtrRecordsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPtrRecordsRequest);
-            return new AsyncInvoker<ListPtrRecordsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPtrRecordsResponse>);
-        }
-        
-        /// <summary>
-        /// 查询弹性公网IP的反向解析记录列表
-        ///
-        /// 查询弹性公网IP的反向解析记录列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListPtrsResponse> ListPtrsAsync(ListPtrsRequest listPtrsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPtrsRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ListPtrsResponse>(response);
-        }
-
-        public AsyncInvoker<ListPtrsResponse> ListPtrsAsyncInvoker(ListPtrsRequest listPtrsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPtrsRequest);
-            return new AsyncInvoker<ListPtrsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPtrsResponse>);
-        }
-        
-        /// <summary>
-        /// 查询公网域名的线路列表
-        ///
-        /// 查询公网域名的线路列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListPublicZoneLinesResponse> ListPublicZoneLinesAsync(ListPublicZoneLinesRequest listPublicZoneLinesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", listPublicZoneLinesRequest.ZoneId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/lines", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicZoneLinesRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ListPublicZoneLinesResponse>(response);
-        }
-
-        public AsyncInvoker<ListPublicZoneLinesResponse> ListPublicZoneLinesAsyncInvoker(ListPublicZoneLinesRequest listPublicZoneLinesRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", listPublicZoneLinesRequest.ZoneId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/lines", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicZoneLinesRequest);
-            return new AsyncInvoker<ListPublicZoneLinesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPublicZoneLinesResponse>);
-        }
-        
-        /// <summary>
         /// 查询公网域名列表
         ///
-        /// 查询公网域名列表。
+        /// 当您的公网域名创建成功后，您可以通过调用此接口查询所有公网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1243,80 +985,6 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/zones", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicZonesRequest);
             return new AsyncInvoker<ListPublicZonesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPublicZonesResponse>);
-        }
-        
-        /// <summary>
-        /// 查询租户记录集列表
-        ///
-        /// 查询租户记录集列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListRecordSetsResponse> ListRecordSetsAsync(ListRecordSetsRequest listRecordSetsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ListRecordSetsResponse>(response);
-        }
-
-        public AsyncInvoker<ListRecordSetsResponse> ListRecordSetsAsyncInvoker(ListRecordSetsRequest listRecordSetsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsRequest);
-            return new AsyncInvoker<ListRecordSetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecordSetsResponse>);
-        }
-        
-        /// <summary>
-        /// 查询域名下的记录集列表
-        ///
-        /// 查询域名下的记录集列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListRecordSetsByZoneResponse> ListRecordSetsByZoneAsync(ListRecordSetsByZoneRequest listRecordSetsByZoneRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", listRecordSetsByZoneRequest.ZoneId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsByZoneRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ListRecordSetsByZoneResponse>(response);
-        }
-
-        public AsyncInvoker<ListRecordSetsByZoneResponse> ListRecordSetsByZoneAsyncInvoker(ListRecordSetsByZoneRequest listRecordSetsByZoneRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", listRecordSetsByZoneRequest.ZoneId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsByZoneRequest);
-            return new AsyncInvoker<ListRecordSetsByZoneResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecordSetsByZoneResponse>);
-        }
-        
-        /// <summary>
-        /// 查询租户记录集列表
-        ///
-        /// 查询租户记录集列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListRecordSetsWithLineResponse> ListRecordSetsWithLineAsync(ListRecordSetsWithLineRequest listRecordSetsWithLineRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsWithLineRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ListRecordSetsWithLineResponse>(response);
-        }
-
-        public AsyncInvoker<ListRecordSetsWithLineResponse> ListRecordSetsWithLineAsyncInvoker(ListRecordSetsWithLineRequest listRecordSetsWithLineRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsWithLineRequest);
-            return new AsyncInvoker<ListRecordSetsWithLineResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecordSetsWithLineResponse>);
         }
         
         /// <summary>
@@ -1396,37 +1064,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 将弹性公网IP的反向解析记录恢复为默认值
-        ///
-        /// 将弹性公网IP的反向解析记录恢复为默认值。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<RestorePtrRecordResponse> RestorePtrRecordAsync(RestorePtrRecordRequest restorePtrRecordRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", restorePtrRecordRequest.Region.ToString());
-            urlParam.Add("floatingip_id", restorePtrRecordRequest.FloatingipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restorePtrRecordRequest);
-            var response = await DoHttpRequestAsync("PATCH", request);
-            return JsonUtils.DeSerializeNull<RestorePtrRecordResponse>(response);
-        }
-
-        public AsyncInvoker<RestorePtrRecordResponse> RestorePtrRecordAsyncInvoker(RestorePtrRecordRequest restorePtrRecordRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", restorePtrRecordRequest.Region.ToString());
-            urlParam.Add("floatingip_id", restorePtrRecordRequest.FloatingipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restorePtrRecordRequest);
-            return new AsyncInvoker<RestorePtrRecordResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<RestorePtrRecordResponse>);
-        }
-        
-        /// <summary>
         /// 设置内网域名的子域名递归解析代理
         ///
-        /// 设置内网域名的子域名递归解析代理。
+        /// 当您的内网域名创建成功后，您可以通过调用此接口设置开启或者关闭内网域名的子域名递归解析代理。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1450,35 +1090,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 设置记录集状态
+        /// 查询指定版本号的API版本信息
         ///
-        /// 设置记录集状态。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<SetRecordSetsStatusResponse> SetRecordSetsStatusAsync(SetRecordSetsStatusRequest setRecordSetsStatusRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("recordset_id", setRecordSetsStatusRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/statuses/set", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecordSetsStatusRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<SetRecordSetsStatusResponse>(response);
-        }
-
-        public AsyncInvoker<SetRecordSetsStatusResponse> SetRecordSetsStatusAsyncInvoker(SetRecordSetsStatusRequest setRecordSetsStatusRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("recordset_id", setRecordSetsStatusRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/statuses/set", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecordSetsStatusRequest);
-            return new AsyncInvoker<SetRecordSetsStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetRecordSetsStatusResponse>);
-        }
-        
-        /// <summary>
-        /// 查询指定的云解析服务API版本号
-        ///
-        /// 查询指定的云解析服务API版本号。
+        /// 查询指定版本号的云解析服务API版本信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1580,7 +1194,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 查询内网域名
         ///
-        /// 查询内网域名。
+        /// 当您的内网域名创建成功后，您可以通过调用此接口查询单个内网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1606,7 +1220,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 查询内网域名的名称服务器
         ///
-        /// 查询内网域名的名称服务器。
+        /// 当您的内网域名创建成功后，您可以通过调用此接口查询内网域名的名称服务器信息，包括优先级、DNS服务器地址等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1630,63 +1244,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 查询弹性公网IP的反向解析记录
-        ///
-        /// 查询弹性公网IP的反向解析记录。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowPtrResponse> ShowPtrAsync(ShowPtrRequest showPtrRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", showPtrRequest.PtrId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowPtrResponse>(response);
-        }
-
-        public AsyncInvoker<ShowPtrResponse> ShowPtrAsyncInvoker(ShowPtrRequest showPtrRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", showPtrRequest.PtrId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRequest);
-            return new AsyncInvoker<ShowPtrResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPtrResponse>);
-        }
-        
-        /// <summary>
-        /// 查询弹性公网IP的反向解析记录
-        ///
-        /// 查询弹性公网IP的反向解析记录。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowPtrRecordSetResponse> ShowPtrRecordSetAsync(ShowPtrRecordSetRequest showPtrRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", showPtrRecordSetRequest.Region.ToString());
-            urlParam.Add("floatingip_id", showPtrRecordSetRequest.FloatingipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRecordSetRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowPtrRecordSetResponse>(response);
-        }
-
-        public AsyncInvoker<ShowPtrRecordSetResponse> ShowPtrRecordSetAsyncInvoker(ShowPtrRecordSetRequest showPtrRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", showPtrRecordSetRequest.Region.ToString());
-            urlParam.Add("floatingip_id", showPtrRecordSetRequest.FloatingipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRecordSetRequest);
-            return new AsyncInvoker<ShowPtrRecordSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPtrRecordSetResponse>);
-        }
-        
-        /// <summary>
         /// 查询公网域名
         ///
-        /// 查询公网域名。
+        /// 当您的公网域名创建成功后，您可以通过调用此接口查询单个公网域名信息，包括域名、ID、状态、记录集个数、企业项目、标签、TTL、创建时间、修改时间、描述等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1712,7 +1272,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 查询公网域名的名称服务器
         ///
-        /// 查询公网域名的名称服务器。
+        /// 当您的公网域名创建成功后，您可以通过调用此接口查询公网域名的名称服务器信息，包括主机名、优先级等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1733,88 +1293,6 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/nameservers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicZoneNameServerRequest);
             return new AsyncInvoker<ShowPublicZoneNameServerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPublicZoneNameServerResponse>);
-        }
-        
-        /// <summary>
-        /// 查询记录集
-        ///
-        /// 查询记录集。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowRecordSetResponse> ShowRecordSetAsync(ShowRecordSetRequest showRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", showRecordSetRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowRecordSetResponse>(response);
-        }
-
-        public AsyncInvoker<ShowRecordSetResponse> ShowRecordSetAsyncInvoker(ShowRecordSetRequest showRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", showRecordSetRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetRequest);
-            return new AsyncInvoker<ShowRecordSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordSetResponse>);
-        }
-        
-        /// <summary>
-        /// 查询域名下的记录集列表
-        ///
-        /// 查询域名下的记录集列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowRecordSetByZoneResponse> ShowRecordSetByZoneAsync(ShowRecordSetByZoneRequest showRecordSetByZoneRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetByZoneRequest.ZoneId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetByZoneRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowRecordSetByZoneResponse>(response);
-        }
-
-        public AsyncInvoker<ShowRecordSetByZoneResponse> ShowRecordSetByZoneAsyncInvoker(ShowRecordSetByZoneRequest showRecordSetByZoneRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetByZoneRequest.ZoneId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetByZoneRequest);
-            return new AsyncInvoker<ShowRecordSetByZoneResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordSetByZoneResponse>);
-        }
-        
-        /// <summary>
-        /// 查询记录集
-        ///
-        /// 查询记录集。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowRecordSetWithLineResponse> ShowRecordSetWithLineAsync(ShowRecordSetWithLineRequest showRecordSetWithLineRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetWithLineRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", showRecordSetWithLineRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetWithLineRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowRecordSetWithLineResponse>(response);
-        }
-
-        public AsyncInvoker<ShowRecordSetWithLineResponse> ShowRecordSetWithLineAsyncInvoker(ShowRecordSetWithLineRequest showRecordSetWithLineRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetWithLineRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", showRecordSetWithLineRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetWithLineRequest);
-            return new AsyncInvoker<ShowRecordSetWithLineResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordSetWithLineResponse>);
         }
         
         /// <summary>
@@ -1872,9 +1350,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 更新自定义线路
+        /// 修改自定义线路
         ///
-        /// 更新自定义线路。
+        /// 修改自定义线路。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1924,9 +1402,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 更新线路分组
+        /// 修改线路分组
         ///
-        /// 更新线路分组。该接口部分区域未上线，如需使用请提交工单申请开通。
+        /// 修改线路分组。该接口部分区域未上线，如需使用请提交工单申请开通。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1952,7 +1430,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 修改内网域名
         ///
-        /// 修改内网域名。
+        /// 当您的内网域名创建成功后，您可以通过调用此接口修改内网域名的基本信息，包括TTL、描述等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1978,7 +1456,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 设置内网域名状态
         ///
-        /// 设置内网域名状态，支持暂停、启用域名。
+        /// 当您的内网域名创建成功后，您可以通过调用此接口设置内网域名的状态，包括暂停、启用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2002,63 +1480,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 修改弹性公网IP的反向解析记录
-        ///
-        /// 修改弹性公网IP的反向解析记录。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdatePtrResponse> UpdatePtrAsync(UpdatePtrRequest updatePtrRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", updatePtrRequest.PtrId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<UpdatePtrResponse>(response);
-        }
-
-        public AsyncInvoker<UpdatePtrResponse> UpdatePtrAsyncInvoker(UpdatePtrRequest updatePtrRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", updatePtrRequest.PtrId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRequest);
-            return new AsyncInvoker<UpdatePtrResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePtrResponse>);
-        }
-        
-        /// <summary>
-        /// 修改弹性公网IP的反向解析记录
-        ///
-        /// 修改弹性公网IP的反向解析记录。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdatePtrRecordResponse> UpdatePtrRecordAsync(UpdatePtrRecordRequest updatePtrRecordRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", updatePtrRecordRequest.Region.ToString());
-            urlParam.Add("floatingip_id", updatePtrRecordRequest.FloatingipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRecordRequest);
-            var response = await DoHttpRequestAsync("PATCH", request);
-            return JsonUtils.DeSerialize<UpdatePtrRecordResponse>(response);
-        }
-
-        public AsyncInvoker<UpdatePtrRecordResponse> UpdatePtrRecordAsyncInvoker(UpdatePtrRecordRequest updatePtrRecordRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", updatePtrRecordRequest.Region.ToString());
-            urlParam.Add("floatingip_id", updatePtrRecordRequest.FloatingipId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRecordRequest);
-            return new AsyncInvoker<UpdatePtrRecordResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdatePtrRecordResponse>);
-        }
-        
-        /// <summary>
         /// 修改公网域名
         ///
-        /// 修改公网域名。
+        /// 当您的公网域名创建成功后，您可以通过调用此接口修改公网域名的基本信息，包括TTL、描述等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2084,7 +1508,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 设置公网域名状态
         ///
-        /// 设置公网域名状态，支持暂停、启用域名。
+        /// 当您的公网域名创建成功后，您可以通过调用此接口设置公网域名的状态，包括暂停、启用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2105,62 +1529,6 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePublicZoneStatusRequest);
             return new AsyncInvoker<UpdatePublicZoneStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePublicZoneStatusResponse>);
-        }
-        
-        /// <summary>
-        /// 修改记录集
-        ///
-        /// 修改记录集。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdateRecordSetResponse> UpdateRecordSetAsync(UpdateRecordSetRequest updateRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updateRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", updateRecordSetRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateRecordSetResponse>(response);
-        }
-
-        public AsyncInvoker<UpdateRecordSetResponse> UpdateRecordSetAsyncInvoker(UpdateRecordSetRequest updateRecordSetRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updateRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", updateRecordSetRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetRequest);
-            return new AsyncInvoker<UpdateRecordSetResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecordSetResponse>);
-        }
-        
-        /// <summary>
-        /// 修改记录集
-        ///
-        /// 修改记录集。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<UpdateRecordSetsResponse> UpdateRecordSetsAsync(UpdateRecordSetsRequest updateRecordSetsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updateRecordSetsRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", updateRecordSetsRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetsRequest);
-            var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateRecordSetsResponse>(response);
-        }
-
-        public AsyncInvoker<UpdateRecordSetsResponse> UpdateRecordSetsAsyncInvoker(UpdateRecordSetsRequest updateRecordSetsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updateRecordSetsRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", updateRecordSetsRequest.RecordsetId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetsRequest);
-            return new AsyncInvoker<UpdateRecordSetsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecordSetsResponse>);
         }
         
         /// <summary>
@@ -2265,6 +1633,640 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/dnssec", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDnssecConfigRequest);
             return new AsyncInvoker<ShowDnssecConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDnssecConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 设置弹性公网IP的反向解析记录
+        ///
+        /// 设置弹性公网IP的反向解析记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateEipRecordSetResponse> CreateEipRecordSetAsync(CreateEipRecordSetRequest createEipRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("region", createEipRecordSetRequest.Region.ToString());
+            urlParam.Add("floatingip_id", createEipRecordSetRequest.FloatingipId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEipRecordSetRequest);
+            var response = await DoHttpRequestAsync("PATCH", request);
+            return JsonUtils.DeSerialize<CreateEipRecordSetResponse>(response);
+        }
+
+        public AsyncInvoker<CreateEipRecordSetResponse> CreateEipRecordSetAsyncInvoker(CreateEipRecordSetRequest createEipRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("region", createEipRecordSetRequest.Region.ToString());
+            urlParam.Add("floatingip_id", createEipRecordSetRequest.FloatingipId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEipRecordSetRequest);
+            return new AsyncInvoker<CreateEipRecordSetResponse>(this, "PATCH", request, JsonUtils.DeSerialize<CreateEipRecordSetResponse>);
+        }
+        
+        /// <summary>
+        /// 创建记录集
+        ///
+        /// 记录集是指一组资源记录的集合，这些资源记录属于同一域名，用于定义域名支持的解析类型以及解析值。您的域名创建完成后，可以通过调用此接口为域名添加不同类型的记录集。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateRecordSetResponse> CreateRecordSetAsync(CreateRecordSetRequest createRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", createRecordSetRequest.ZoneId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateRecordSetResponse>(response);
+        }
+
+        public AsyncInvoker<CreateRecordSetResponse> CreateRecordSetAsyncInvoker(CreateRecordSetRequest createRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", createRecordSetRequest.ZoneId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetRequest);
+            return new AsyncInvoker<CreateRecordSetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordSetResponse>);
+        }
+        
+        /// <summary>
+        /// 删除记录集
+        ///
+        /// 当您的记录集不再使用时，您可以通过调用此接口将其删除。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteRecordSetResponse> DeleteRecordSetAsync(DeleteRecordSetRequest deleteRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", deleteRecordSetRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", deleteRecordSetRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteRecordSetResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteRecordSetResponse> DeleteRecordSetAsyncInvoker(DeleteRecordSetRequest deleteRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", deleteRecordSetRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", deleteRecordSetRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetRequest);
+            return new AsyncInvoker<DeleteRecordSetResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteRecordSetResponse>);
+        }
+        
+        /// <summary>
+        /// 查询弹性公网IP的反向解析记录列表
+        ///
+        /// 查询弹性公网IP的反向解析记录列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPtrRecordsResponse> ListPtrRecordsAsync(ListPtrRecordsRequest listPtrRecordsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPtrRecordsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPtrRecordsResponse>(response);
+        }
+
+        public AsyncInvoker<ListPtrRecordsResponse> ListPtrRecordsAsyncInvoker(ListPtrRecordsRequest listPtrRecordsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPtrRecordsRequest);
+            return new AsyncInvoker<ListPtrRecordsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPtrRecordsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询租户记录集列表
+        ///
+        /// 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListRecordSetsResponse> ListRecordSetsAsync(ListRecordSetsRequest listRecordSetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListRecordSetsResponse>(response);
+        }
+
+        public AsyncInvoker<ListRecordSetsResponse> ListRecordSetsAsyncInvoker(ListRecordSetsRequest listRecordSetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsRequest);
+            return new AsyncInvoker<ListRecordSetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecordSetsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询域名下的记录集列表
+        ///
+        /// 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListRecordSetsByZoneResponse> ListRecordSetsByZoneAsync(ListRecordSetsByZoneRequest listRecordSetsByZoneRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", listRecordSetsByZoneRequest.ZoneId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsByZoneRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListRecordSetsByZoneResponse>(response);
+        }
+
+        public AsyncInvoker<ListRecordSetsByZoneResponse> ListRecordSetsByZoneAsyncInvoker(ListRecordSetsByZoneRequest listRecordSetsByZoneRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", listRecordSetsByZoneRequest.ZoneId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsByZoneRequest);
+            return new AsyncInvoker<ListRecordSetsByZoneResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecordSetsByZoneResponse>);
+        }
+        
+        /// <summary>
+        /// 将弹性公网IP的反向解析记录恢复为默认值
+        ///
+        /// 将弹性公网IP的反向解析记录恢复为默认值。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RestorePtrRecordResponse> RestorePtrRecordAsync(RestorePtrRecordRequest restorePtrRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("region", restorePtrRecordRequest.Region.ToString());
+            urlParam.Add("floatingip_id", restorePtrRecordRequest.FloatingipId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restorePtrRecordRequest);
+            var response = await DoHttpRequestAsync("PATCH", request);
+            return JsonUtils.DeSerializeNull<RestorePtrRecordResponse>(response);
+        }
+
+        public AsyncInvoker<RestorePtrRecordResponse> RestorePtrRecordAsyncInvoker(RestorePtrRecordRequest restorePtrRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("region", restorePtrRecordRequest.Region.ToString());
+            urlParam.Add("floatingip_id", restorePtrRecordRequest.FloatingipId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restorePtrRecordRequest);
+            return new AsyncInvoker<RestorePtrRecordResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<RestorePtrRecordResponse>);
+        }
+        
+        /// <summary>
+        /// 查询弹性公网IP的反向解析记录
+        ///
+        /// 查询弹性公网IP的反向解析记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPtrRecordSetResponse> ShowPtrRecordSetAsync(ShowPtrRecordSetRequest showPtrRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("region", showPtrRecordSetRequest.Region.ToString());
+            urlParam.Add("floatingip_id", showPtrRecordSetRequest.FloatingipId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRecordSetRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowPtrRecordSetResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPtrRecordSetResponse> ShowPtrRecordSetAsyncInvoker(ShowPtrRecordSetRequest showPtrRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("region", showPtrRecordSetRequest.Region.ToString());
+            urlParam.Add("floatingip_id", showPtrRecordSetRequest.FloatingipId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRecordSetRequest);
+            return new AsyncInvoker<ShowPtrRecordSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPtrRecordSetResponse>);
+        }
+        
+        /// <summary>
+        /// 查询记录集
+        ///
+        /// 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRecordSetResponse> ShowRecordSetAsync(ShowRecordSetRequest showRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", showRecordSetRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", showRecordSetRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRecordSetResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRecordSetResponse> ShowRecordSetAsyncInvoker(ShowRecordSetRequest showRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", showRecordSetRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", showRecordSetRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetRequest);
+            return new AsyncInvoker<ShowRecordSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordSetResponse>);
+        }
+        
+        /// <summary>
+        /// 修改弹性公网IP的反向解析记录
+        ///
+        /// 修改弹性公网IP的反向解析记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdatePtrRecordResponse> UpdatePtrRecordAsync(UpdatePtrRecordRequest updatePtrRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("region", updatePtrRecordRequest.Region.ToString());
+            urlParam.Add("floatingip_id", updatePtrRecordRequest.FloatingipId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRecordRequest);
+            var response = await DoHttpRequestAsync("PATCH", request);
+            return JsonUtils.DeSerialize<UpdatePtrRecordResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePtrRecordResponse> UpdatePtrRecordAsyncInvoker(UpdatePtrRecordRequest updatePtrRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("region", updatePtrRecordRequest.Region.ToString());
+            urlParam.Add("floatingip_id", updatePtrRecordRequest.FloatingipId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRecordRequest);
+            return new AsyncInvoker<UpdatePtrRecordResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdatePtrRecordResponse>);
+        }
+        
+        /// <summary>
+        /// 修改记录集
+        ///
+        /// 当您的记录集创建成功后，您可以通过调用此接口修改记录集的信息，包括域名、类型、记录值、TTL、描述等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateRecordSetResponse> UpdateRecordSetAsync(UpdateRecordSetRequest updateRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", updateRecordSetRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", updateRecordSetRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateRecordSetResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateRecordSetResponse> UpdateRecordSetAsyncInvoker(UpdateRecordSetRequest updateRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", updateRecordSetRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", updateRecordSetRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetRequest);
+            return new AsyncInvoker<UpdateRecordSetResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecordSetResponse>);
+        }
+        
+        /// <summary>
+        /// 创建弹性公网IP的反向解析记录
+        ///
+        /// 创建弹性公网IP的反向解析记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePtrResponse> CreatePtrAsync(CreatePtrRequest createPtrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPtrRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreatePtrResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePtrResponse> CreatePtrAsyncInvoker(CreatePtrRequest createPtrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPtrRequest);
+            return new AsyncInvoker<CreatePtrResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePtrResponse>);
+        }
+        
+        /// <summary>
+        /// 创建记录集
+        ///
+        /// 记录集是指一组资源记录的集合，这些资源记录属于同一域名，用于定义域名支持的解析类型以及解析值。您的域名创建完成后，可以通过调用此接口为域名添加不同类型的记录集。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateRecordSetWithLineResponse> CreateRecordSetWithLineAsync(CreateRecordSetWithLineRequest createRecordSetWithLineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", createRecordSetWithLineRequest.ZoneId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithLineRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateRecordSetWithLineResponse>(response);
+        }
+
+        public AsyncInvoker<CreateRecordSetWithLineResponse> CreateRecordSetWithLineAsyncInvoker(CreateRecordSetWithLineRequest createRecordSetWithLineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", createRecordSetWithLineRequest.ZoneId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithLineRequest);
+            return new AsyncInvoker<CreateRecordSetWithLineResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordSetWithLineResponse>);
+        }
+        
+        /// <summary>
+        /// 将弹性公网IP的反向解析记录恢复为默认值
+        ///
+        /// 将弹性公网IP的反向解析记录恢复为默认值。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeletePtrResponse> DeletePtrAsync(DeletePtrRequest deletePtrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ptr_id", deletePtrRequest.PtrId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePtrRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeletePtrResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePtrResponse> DeletePtrAsyncInvoker(DeletePtrRequest deletePtrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ptr_id", deletePtrRequest.PtrId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePtrRequest);
+            return new AsyncInvoker<DeletePtrResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePtrResponse>);
+        }
+        
+        /// <summary>
+        /// 删除记录集
+        ///
+        /// 当您的记录集不再使用时，您可以通过调用此接口将其删除。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteRecordSetsResponse> DeleteRecordSetsAsync(DeleteRecordSetsRequest deleteRecordSetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", deleteRecordSetsRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", deleteRecordSetsRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetsRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteRecordSetsResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteRecordSetsResponse> DeleteRecordSetsAsyncInvoker(DeleteRecordSetsRequest deleteRecordSetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", deleteRecordSetsRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", deleteRecordSetsRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetsRequest);
+            return new AsyncInvoker<DeleteRecordSetsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteRecordSetsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询弹性公网IP的反向解析记录列表
+        ///
+        /// 查询弹性公网IP的反向解析记录列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPtrsResponse> ListPtrsAsync(ListPtrsRequest listPtrsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPtrsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPtrsResponse>(response);
+        }
+
+        public AsyncInvoker<ListPtrsResponse> ListPtrsAsyncInvoker(ListPtrsRequest listPtrsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPtrsRequest);
+            return new AsyncInvoker<ListPtrsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPtrsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公网域名的线路列表
+        ///
+        /// 公网域名支持设置线路解析，当您的公网域名创建完成并添加记录集时，可通过调用此接口查询公网域名的所有解析线路。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPublicZoneLinesResponse> ListPublicZoneLinesAsync(ListPublicZoneLinesRequest listPublicZoneLinesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", listPublicZoneLinesRequest.ZoneId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/lines", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicZoneLinesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPublicZoneLinesResponse>(response);
+        }
+
+        public AsyncInvoker<ListPublicZoneLinesResponse> ListPublicZoneLinesAsyncInvoker(ListPublicZoneLinesRequest listPublicZoneLinesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", listPublicZoneLinesRequest.ZoneId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/lines", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicZoneLinesRequest);
+            return new AsyncInvoker<ListPublicZoneLinesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPublicZoneLinesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询租户记录集列表
+        ///
+        /// 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListRecordSetsWithLineResponse> ListRecordSetsWithLineAsync(ListRecordSetsWithLineRequest listRecordSetsWithLineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsWithLineRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListRecordSetsWithLineResponse>(response);
+        }
+
+        public AsyncInvoker<ListRecordSetsWithLineResponse> ListRecordSetsWithLineAsyncInvoker(ListRecordSetsWithLineRequest listRecordSetsWithLineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsWithLineRequest);
+            return new AsyncInvoker<ListRecordSetsWithLineResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecordSetsWithLineResponse>);
+        }
+        
+        /// <summary>
+        /// 设置记录集状态
+        ///
+        /// 当您的内网域名创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetRecordSetsStatusResponse> SetRecordSetsStatusAsync(SetRecordSetsStatusRequest setRecordSetsStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("recordset_id", setRecordSetsStatusRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/statuses/set", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecordSetsStatusRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<SetRecordSetsStatusResponse>(response);
+        }
+
+        public AsyncInvoker<SetRecordSetsStatusResponse> SetRecordSetsStatusAsyncInvoker(SetRecordSetsStatusRequest setRecordSetsStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("recordset_id", setRecordSetsStatusRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/statuses/set", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecordSetsStatusRequest);
+            return new AsyncInvoker<SetRecordSetsStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetRecordSetsStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 查询弹性公网IP的反向解析记录
+        ///
+        /// 查询弹性公网IP的反向解析记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPtrResponse> ShowPtrAsync(ShowPtrRequest showPtrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ptr_id", showPtrRequest.PtrId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowPtrResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPtrResponse> ShowPtrAsyncInvoker(ShowPtrRequest showPtrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ptr_id", showPtrRequest.PtrId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRequest);
+            return new AsyncInvoker<ShowPtrResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPtrResponse>);
+        }
+        
+        /// <summary>
+        /// 查询域名下的记录集列表
+        ///
+        /// 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRecordSetByZoneResponse> ShowRecordSetByZoneAsync(ShowRecordSetByZoneRequest showRecordSetByZoneRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", showRecordSetByZoneRequest.ZoneId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetByZoneRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRecordSetByZoneResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRecordSetByZoneResponse> ShowRecordSetByZoneAsyncInvoker(ShowRecordSetByZoneRequest showRecordSetByZoneRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", showRecordSetByZoneRequest.ZoneId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetByZoneRequest);
+            return new AsyncInvoker<ShowRecordSetByZoneResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordSetByZoneResponse>);
+        }
+        
+        /// <summary>
+        /// 查询记录集
+        ///
+        /// 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRecordSetWithLineResponse> ShowRecordSetWithLineAsync(ShowRecordSetWithLineRequest showRecordSetWithLineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", showRecordSetWithLineRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", showRecordSetWithLineRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetWithLineRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRecordSetWithLineResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRecordSetWithLineResponse> ShowRecordSetWithLineAsyncInvoker(ShowRecordSetWithLineRequest showRecordSetWithLineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", showRecordSetWithLineRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", showRecordSetWithLineRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetWithLineRequest);
+            return new AsyncInvoker<ShowRecordSetWithLineResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordSetWithLineResponse>);
+        }
+        
+        /// <summary>
+        /// 修改弹性公网IP的反向解析记录
+        ///
+        /// 修改弹性公网IP的反向解析记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdatePtrResponse> UpdatePtrAsync(UpdatePtrRequest updatePtrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ptr_id", updatePtrRequest.PtrId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdatePtrResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePtrResponse> UpdatePtrAsyncInvoker(UpdatePtrRequest updatePtrRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("ptr_id", updatePtrRequest.PtrId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRequest);
+            return new AsyncInvoker<UpdatePtrResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePtrResponse>);
+        }
+        
+        /// <summary>
+        /// 修改记录集
+        ///
+        /// 当您的记录集创建成功后，您可以通过调用此接口修改记录集的信息，包括域名、类型、记录值、TTL、描述等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateRecordSetsResponse> UpdateRecordSetsAsync(UpdateRecordSetsRequest updateRecordSetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", updateRecordSetsRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", updateRecordSetsRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateRecordSetsResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateRecordSetsResponse> UpdateRecordSetsAsyncInvoker(UpdateRecordSetsRequest updateRecordSetsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("zone_id", updateRecordSetsRequest.ZoneId.ToString());
+            urlParam.Add("recordset_id", updateRecordSetsRequest.RecordsetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetsRequest);
+            return new AsyncInvoker<UpdateRecordSetsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecordSetsResponse>);
         }
         
     }

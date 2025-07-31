@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("review_id_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ReviewIdList { get; set; }
 
+        /// <summary>
+        /// 算法侧失败原因
+        /// </summary>
+        [JsonProperty("algorithm_failure_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string AlgorithmFailureReason { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             var sb = new StringBuilder();
             sb.Append("class OpExternalInfo {\n");
             sb.Append("  reviewIdList: ").Append(ReviewIdList).Append("\n");
+            sb.Append("  algorithmFailureReason: ").Append(AlgorithmFailureReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         {
             if (input == null) return false;
             if (this.ReviewIdList != input.ReviewIdList || (this.ReviewIdList != null && input.ReviewIdList != null && !this.ReviewIdList.SequenceEqual(input.ReviewIdList))) return false;
+            if (this.AlgorithmFailureReason != input.AlgorithmFailureReason || (this.AlgorithmFailureReason != null && !this.AlgorithmFailureReason.Equals(input.AlgorithmFailureReason))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             {
                 var hashCode = 41;
                 if (this.ReviewIdList != null) hashCode = hashCode * 59 + this.ReviewIdList.GetHashCode();
+                if (this.AlgorithmFailureReason != null) hashCode = hashCode * 59 + this.AlgorithmFailureReason.GetHashCode();
                 return hashCode;
             }
         }

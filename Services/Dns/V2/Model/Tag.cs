@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
     {
 
         /// <summary>
-        /// 键。最大长度36个unicode字符。 key不能为空。不能包含“&#x3D;”,“*”,“&lt;”,“&gt;”,“\\”,“,”,“|”,“/”，且首尾字符不能为空格。
+        /// **参数解释：** 标签键。 **取值范围：** - 不能为空。 - 对于同一资源键的取值唯一。 - 长度不超过128个字符。 - 取值可以包含任意语种字母、数字、空格，以及_ . : &#x3D; + - @特殊字符，但首尾不能含有空格，不能以_sys_开头。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 值。每个值最大长度43个unicode字符，可以为空字符串。 不能包含“&#x3D;”,“*”,“&lt;”,“&gt;”,“\\”,“,”,“|”,“/”，且首尾字符不能为空格。
+        /// **参数解释：** 标签值。 **取值范围：** - 可以为空。 - 长度不超过255个字符。 - 取值可以包含任意语种字母、数字、空格，以及_ . : / &#x3D; + - @特殊字符。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

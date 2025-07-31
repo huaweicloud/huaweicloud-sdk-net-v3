@@ -130,6 +130,18 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("ljzn_advice_value", NullValueHandling = NullValueHandling.Ignore)]
         public int? LjznAdviceValue { get; set; }
 
+        /// <summary>
+        /// 短任务质量检测最低时长（秒）
+        /// </summary>
+        [JsonProperty("short_assess_min", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ShortAssessMin { get; set; }
+
+        /// <summary>
+        /// 短任务质量检测最高时长（秒）
+        /// </summary>
+        [JsonProperty("short_assess_max", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ShortAssessMax { get; set; }
+
 
 
         /// <summary>
@@ -158,6 +170,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  ljznMin: ").Append(LjznMin).Append("\n");
             sb.Append("  ljznMax: ").Append(LjznMax).Append("\n");
             sb.Append("  ljznAdviceValue: ").Append(LjznAdviceValue).Append("\n");
+            sb.Append("  shortAssessMin: ").Append(ShortAssessMin).Append("\n");
+            sb.Append("  shortAssessMax: ").Append(ShortAssessMax).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -195,6 +209,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.LjznMin != input.LjznMin || (this.LjznMin != null && !this.LjznMin.Equals(input.LjznMin))) return false;
             if (this.LjznMax != input.LjznMax || (this.LjznMax != null && !this.LjznMax.Equals(input.LjznMax))) return false;
             if (this.LjznAdviceValue != input.LjznAdviceValue || (this.LjznAdviceValue != null && !this.LjznAdviceValue.Equals(input.LjznAdviceValue))) return false;
+            if (this.ShortAssessMin != input.ShortAssessMin || (this.ShortAssessMin != null && !this.ShortAssessMin.Equals(input.ShortAssessMin))) return false;
+            if (this.ShortAssessMax != input.ShortAssessMax || (this.ShortAssessMax != null && !this.ShortAssessMax.Equals(input.ShortAssessMax))) return false;
 
             return true;
         }
@@ -226,6 +242,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.LjznMin != null) hashCode = hashCode * 59 + this.LjznMin.GetHashCode();
                 if (this.LjznMax != null) hashCode = hashCode * 59 + this.LjznMax.GetHashCode();
                 if (this.LjznAdviceValue != null) hashCode = hashCode * 59 + this.LjznAdviceValue.GetHashCode();
+                if (this.ShortAssessMin != null) hashCode = hashCode * 59 + this.ShortAssessMin.GetHashCode();
+                if (this.ShortAssessMax != null) hashCode = hashCode * 59 + this.ShortAssessMax.GetHashCode();
                 return hashCode;
             }
         }

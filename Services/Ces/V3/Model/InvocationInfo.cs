@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务类型(INSTALL 安装，UPDATE 升级，ROLLBACK 回滚，RETRY 重试)
+        /// 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚，RETRY重试)
         /// </summary>
-        /// <value>任务类型(INSTALL 安装，UPDATE 升级，ROLLBACK 回滚，RETRY 重试)</value>
+        /// <value>任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚，RETRY重试)</value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTypeEnum>))]
         public class InvocationTypeEnum
         {
@@ -403,9 +403,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务对象，目前仅支持telescope
+        /// 任务对象，目前支持telescope
         /// </summary>
-        /// <value>任务对象，目前仅支持telescope</value>
+        /// <value>任务对象，目前支持telescope</value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTargetEnum>))]
         public class InvocationTargetEnum
         {
@@ -548,7 +548,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         public List<string> ElasticIps { get; set; }
 
         /// <summary>
-        /// 任务类型(INSTALL 安装，UPDATE 升级，ROLLBACK 回滚，RETRY 重试)
+        /// 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚，RETRY重试)
         /// </summary>
         [JsonProperty("invocation_type", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTypeEnum InvocationType { get; set; }
@@ -558,7 +558,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         [JsonProperty("invocation_status", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationStatusEnum InvocationStatus { get; set; }
         /// <summary>
-        /// 任务对象，目前仅支持telescope
+        /// 任务对象，目前支持telescope
         /// </summary>
         [JsonProperty("invocation_target", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTargetEnum InvocationTarget { get; set; }
@@ -586,6 +586,12 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         [JsonProperty("target_version", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetVersion { get; set; }
 
+        /// <summary>
+        /// 任务执行结果信息
+        /// </summary>
+        [JsonProperty("result_msg", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResultMsg { get; set; }
+
 
 
         /// <summary>
@@ -608,6 +614,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  currentVersion: ").Append(CurrentVersion).Append("\n");
             sb.Append("  targetVersion: ").Append(TargetVersion).Append("\n");
+            sb.Append("  resultMsg: ").Append(ResultMsg).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -639,6 +646,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.CurrentVersion != input.CurrentVersion || (this.CurrentVersion != null && !this.CurrentVersion.Equals(input.CurrentVersion))) return false;
             if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
+            if (this.ResultMsg != input.ResultMsg || (this.ResultMsg != null && !this.ResultMsg.Equals(input.ResultMsg))) return false;
 
             return true;
         }
@@ -664,6 +672,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.CurrentVersion != null) hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
                 if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                if (this.ResultMsg != null) hashCode = hashCode * 59 + this.ResultMsg.GetHashCode();
                 return hashCode;
             }
         }

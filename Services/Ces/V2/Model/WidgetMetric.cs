@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public ExtraInfo ExtraInfo { get; set; }
 
         /// <summary>
-        /// 是否开启聚合
+        /// **参数解释** 是否开启聚合 **约束限制** 当RollupEnable开启时，RollupFilter和RollupDimension必填 **取值范围** true，表示开启聚合；false表示不开启聚合 **默认取值** false 
         /// </summary>
         [JsonProperty("rollup_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RollupEnable { get; set; }
