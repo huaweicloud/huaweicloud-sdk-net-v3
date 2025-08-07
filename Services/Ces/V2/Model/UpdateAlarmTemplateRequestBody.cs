@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class UpdateAlarmTemplateRequestBody 
     {
         /// <summary>
-        /// 自定义告警模板类型 0：指标 2： 事件
+        /// **参数解释**： 自定义告警模板类型 **约束限制**： 不涉及。 **取值范围**： 枚举值。0：指标；2： 事件。 **默认取值**： 0 
         /// </summary>
-        /// <value>自定义告警模板类型 0：指标 2： 事件</value>
+        /// <value>**参数解释**： 自定义告警模板类型 **约束限制**： 不涉及。 **取值范围**： 枚举值。0：指标；2： 事件。 **默认取值**： 0 </value>
         [JsonConverter(typeof(EnumClassConverter<TemplateTypeEnum>))]
         public class TemplateTypeEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string TemplateName { get; set; }
 
         /// <summary>
-        /// 自定义告警模板类型 0：指标 2： 事件
+        /// **参数解释**： 自定义告警模板类型 **约束限制**： 不涉及。 **取值范围**： 枚举值。0：指标；2： 事件。 **默认取值**： 0 
         /// </summary>
         [JsonProperty("template_type", NullValueHandling = NullValueHandling.Ignore)]
         public TemplateTypeEnum TemplateType { get; set; }

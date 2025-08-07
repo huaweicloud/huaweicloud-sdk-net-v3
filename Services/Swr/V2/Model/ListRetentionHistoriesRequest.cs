@@ -31,6 +31,20 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string Repository { get; set; }
 
         /// <summary>
+        /// 返回条数。注意：offset和limit参数需要配套使用。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public string Limit { get; set; }
+
+        /// <summary>
+        /// 起始索引。注意：offset和limit参数需要配套使用。
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public string Offset { get; set; }
+
+        /// <summary>
         /// 应填写 limit::{limit}|offset::{offset}, 其中{limit}为返回条数,{offset}为起始索引, 注意：offset和limit参数需要配套使用
         /// </summary>
         [SDKProperty("filter", IsQuery = true)]
@@ -48,6 +62,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("class ListRetentionHistoriesRequest {\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  repository: ").Append(Repository).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  filter: ").Append(Filter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -69,6 +85,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (input == null) return false;
             if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
             if (this.Repository != input.Repository || (this.Repository != null && !this.Repository.Equals(input.Repository))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Filter != input.Filter || (this.Filter != null && !this.Filter.Equals(input.Filter))) return false;
 
             return true;
@@ -84,6 +102,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 var hashCode = 41;
                 if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
                 if (this.Repository != null) hashCode = hashCode * 59 + this.Repository.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Filter != null) hashCode = hashCode * 59 + this.Filter.GetHashCode();
                 return hashCode;
             }

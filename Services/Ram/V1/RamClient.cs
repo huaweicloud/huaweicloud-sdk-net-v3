@@ -289,6 +289,30 @@ namespace HuaweiCloud.SDK.Ram.V1
         }
         
         /// <summary>
+        /// 检索资源使用者并去除其中的重复项
+        ///
+        /// 检索您正在共享资源的不同使用者或被共享资源给您的不同使用者并去除其中的重复项。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SearchDistinctPrincipalsResponse SearchDistinctPrincipals(SearchDistinctPrincipalsRequest searchDistinctPrincipalsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/shared-principals/search-distinct-principal", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchDistinctPrincipalsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SearchDistinctPrincipalsResponse>(response);
+        }
+
+        public SyncInvoker<SearchDistinctPrincipalsResponse> SearchDistinctPrincipalsInvoker(SearchDistinctPrincipalsRequest searchDistinctPrincipalsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/shared-principals/search-distinct-principal", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchDistinctPrincipalsRequest);
+            return new SyncInvoker<SearchDistinctPrincipalsResponse>(this, "POST", request, JsonUtils.DeSerialize<SearchDistinctPrincipalsResponse>);
+        }
+        
+        /// <summary>
         /// 检索资源使用者
         ///
         /// 检索共享资源的使用者。
@@ -310,6 +334,30 @@ namespace HuaweiCloud.SDK.Ram.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/shared-principals/search", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchSharedPrincipalsRequest);
             return new SyncInvoker<SearchSharedPrincipalsResponse>(this, "POST", request, JsonUtils.DeSerialize<SearchSharedPrincipalsResponse>);
+        }
+        
+        /// <summary>
+        /// 检索共享的资源并去除其中的重复项
+        ///
+        /// 检索您添加到资源共享或被共享给您的不同资源并去除其中的重复项。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SearchDistinctSharedResourcesResponse SearchDistinctSharedResources(SearchDistinctSharedResourcesRequest searchDistinctSharedResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/shared-resources/search-distinct-resource", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchDistinctSharedResourcesRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SearchDistinctSharedResourcesResponse>(response);
+        }
+
+        public SyncInvoker<SearchDistinctSharedResourcesResponse> SearchDistinctSharedResourcesInvoker(SearchDistinctSharedResourcesRequest searchDistinctSharedResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/shared-resources/search-distinct-resource", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchDistinctSharedResourcesRequest);
+            return new SyncInvoker<SearchDistinctSharedResourcesResponse>(this, "POST", request, JsonUtils.DeSerialize<SearchDistinctSharedResourcesResponse>);
         }
         
         /// <summary>

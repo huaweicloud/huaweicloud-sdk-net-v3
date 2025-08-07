@@ -101,6 +101,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public string LastLoginTime { get; set; }
 
         /// <summary>
+        /// IAM用户最后使用密码认证时间。
+        /// </summary>
+        [JsonProperty("last_pwd_auth_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string LastPwdAuthTime { get; set; }
+
+        /// <summary>
         /// IAM用户密码强度。结果为Low/Middle/High/None，分别表示密码强度低/中/高/无。
         /// </summary>
         [JsonProperty("pwd_strength", NullValueHandling = NullValueHandling.Ignore)]
@@ -159,6 +165,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  lastLoginTime: ").Append(LastLoginTime).Append("\n");
+            sb.Append("  lastPwdAuthTime: ").Append(LastPwdAuthTime).Append("\n");
             sb.Append("  pwdStrength: ").Append(PwdStrength).Append("\n");
             sb.Append("  isDomainOwner: ").Append(IsDomainOwner).Append("\n");
             sb.Append("  accessMode: ").Append(AccessMode).Append("\n");
@@ -197,6 +204,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.LastLoginTime != input.LastLoginTime || (this.LastLoginTime != null && !this.LastLoginTime.Equals(input.LastLoginTime))) return false;
+            if (this.LastPwdAuthTime != input.LastPwdAuthTime || (this.LastPwdAuthTime != null && !this.LastPwdAuthTime.Equals(input.LastPwdAuthTime))) return false;
             if (this.PwdStrength != input.PwdStrength || (this.PwdStrength != null && !this.PwdStrength.Equals(input.PwdStrength))) return false;
             if (this.IsDomainOwner != input.IsDomainOwner || (this.IsDomainOwner != null && !this.IsDomainOwner.Equals(input.IsDomainOwner))) return false;
             if (this.AccessMode != input.AccessMode || (this.AccessMode != null && !this.AccessMode.Equals(input.AccessMode))) return false;
@@ -229,6 +237,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.LastLoginTime != null) hashCode = hashCode * 59 + this.LastLoginTime.GetHashCode();
+                if (this.LastPwdAuthTime != null) hashCode = hashCode * 59 + this.LastPwdAuthTime.GetHashCode();
                 if (this.PwdStrength != null) hashCode = hashCode * 59 + this.PwdStrength.GetHashCode();
                 if (this.IsDomainOwner != null) hashCode = hashCode * 59 + this.IsDomainOwner.GetHashCode();
                 if (this.AccessMode != null) hashCode = hashCode * 59 + this.AccessMode.GetHashCode();

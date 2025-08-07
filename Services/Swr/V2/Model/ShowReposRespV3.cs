@@ -85,8 +85,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// <summary>
         /// 租户的组织名称
         /// </summary>
-        [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
-        public string Namespace { get; set; }
+        [JsonProperty("namespace_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string NamespaceName { get; set; }
 
         /// <summary>
         /// 查询他人共享镜像：共享是否过期 查询我共享的镜像：默认为false,无意义
@@ -114,7 +114,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
-            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  namespaceName: ").Append(NamespaceName).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -145,7 +145,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
-            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.NamespaceName != input.NamespaceName || (this.NamespaceName != null && !this.NamespaceName.Equals(input.NamespaceName))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
             return true;
@@ -170,7 +170,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.NamespaceName != null) hashCode = hashCode * 59 + this.NamespaceName.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }

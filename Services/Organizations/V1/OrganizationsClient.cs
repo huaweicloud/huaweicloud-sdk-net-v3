@@ -65,6 +65,30 @@ namespace HuaweiCloud.SDK.Organizations.V1
         }
         
         /// <summary>
+        /// 创建帐号
+        ///
+        /// 创建一个帐号，不携带手机号邮箱联系方式，生成的帐号将自动成为调用此接口的帐号所属组织的成员。此操作只能由组织的管理帐号调用。组织云服务将在新帐号中创建所需的服务关联委托和帐号访问委托。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateResourceAccountResponse CreateResourceAccount(CreateResourceAccountRequest createResourceAccountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/organizations/accounts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createResourceAccountRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateResourceAccountResponse>(response);
+        }
+
+        public SyncInvoker<CreateResourceAccountResponse> CreateResourceAccountInvoker(CreateResourceAccountRequest createResourceAccountRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/organizations/accounts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createResourceAccountRequest);
+            return new SyncInvoker<CreateResourceAccountResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateResourceAccountResponse>);
+        }
+        
+        /// <summary>
         /// 邀请账号加入组织
         ///
         /// 向另一个账号发送邀请，受邀账号将以成员账号加入您的组织。此操作只能由组织的管理账号调用。

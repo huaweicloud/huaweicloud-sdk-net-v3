@@ -94,6 +94,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("prefix", NullValueHandling = NullValueHandling.Ignore)]
         public string Prefix { get; set; }
 
+        /// <summary>
+        /// 转储备份类型
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  backupEndTime: ").Append(BackupEndTime).Append("\n");
             sb.Append("  transferType: ").Append(TransferType).Append("\n");
             sb.Append("  prefix: ").Append(Prefix).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,6 +154,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.BackupEndTime != input.BackupEndTime || (this.BackupEndTime != null && !this.BackupEndTime.Equals(input.BackupEndTime))) return false;
             if (this.TransferType != input.TransferType || (this.TransferType != null && !this.TransferType.Equals(input.TransferType))) return false;
             if (this.Prefix != input.Prefix || (this.Prefix != null && !this.Prefix.Equals(input.Prefix))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
             return true;
         }
@@ -172,6 +180,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.BackupEndTime != null) hashCode = hashCode * 59 + this.BackupEndTime.GetHashCode();
                 if (this.TransferType != null) hashCode = hashCode * 59 + this.TransferType.GetHashCode();
                 if (this.Prefix != null) hashCode = hashCode * 59 + this.Prefix.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

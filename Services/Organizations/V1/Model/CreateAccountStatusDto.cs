@@ -58,6 +58,12 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         [JsonProperty("failure_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string FailureReason { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("failure_detail_msg", NullValueHandling = NullValueHandling.Ignore)]
+        public CreateAccountStatusDtoFailureDetailMsg FailureDetailMsg { get; set; }
+
 
 
         /// <summary>
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  state: ").Append(State).Append("\n");
             sb.Append("  failureReason: ").Append(FailureReason).Append("\n");
+            sb.Append("  failureDetailMsg: ").Append(FailureDetailMsg).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
             if (this.FailureReason != input.FailureReason || (this.FailureReason != null && !this.FailureReason.Equals(input.FailureReason))) return false;
+            if (this.FailureDetailMsg != input.FailureDetailMsg || (this.FailureDetailMsg != null && !this.FailureDetailMsg.Equals(input.FailureDetailMsg))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.FailureReason != null) hashCode = hashCode * 59 + this.FailureReason.GetHashCode();
+                if (this.FailureDetailMsg != null) hashCode = hashCode * 59 + this.FailureDetailMsg.GetHashCode();
                 return hashCode;
             }
         }

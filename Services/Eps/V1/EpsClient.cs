@@ -39,6 +39,32 @@ namespace HuaweiCloud.SDK.Eps.V1
         }
         
         /// <summary>
+        /// 删除企业项目
+        ///
+        /// 删除企业项目
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteEnterpriseProjectResponse DeleteEnterpriseProject(DeleteEnterpriseProjectRequest deleteEnterpriseProjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", deleteEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnterpriseProjectRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteEnterpriseProjectResponse>(response);
+        }
+
+        public SyncInvoker<DeleteEnterpriseProjectResponse> DeleteEnterpriseProjectInvoker(DeleteEnterpriseProjectRequest deleteEnterpriseProjectRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("enterprise_project_id", deleteEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnterpriseProjectRequest);
+            return new SyncInvoker<DeleteEnterpriseProjectResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteEnterpriseProjectResponse>);
+        }
+        
+        /// <summary>
         /// 停用企业项目
         ///
         /// 停用企业项目。
@@ -139,6 +165,30 @@ namespace HuaweiCloud.SDK.Eps.V1
         }
         
         /// <summary>
+        /// 查询资源迁移记录
+        ///
+        /// 查询资源迁移记录
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListMigrationRecordResponse ListMigrationRecord(ListMigrationRecordRequest listMigrationRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/migrate-record/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMigrationRecordRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListMigrationRecordResponse>(response);
+        }
+
+        public SyncInvoker<ListMigrationRecordResponse> ListMigrationRecordInvoker(ListMigrationRecordRequest listMigrationRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/migrate-record/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMigrationRecordRequest);
+            return new SyncInvoker<ListMigrationRecordResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMigrationRecordResponse>);
+        }
+        
+        /// <summary>
         /// 查询企业项目支持的服务
         ///
         /// 查询企业项目支持的服务
@@ -160,6 +210,30 @@ namespace HuaweiCloud.SDK.Eps.V1
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/providers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvidersRequest);
             return new SyncInvoker<ListProvidersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProvidersResponse>);
+        }
+        
+        /// <summary>
+        /// 查询资源类型映射
+        ///
+        /// 查询资源类型映射
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListResourceMappingResponse ListResourceMapping(ListResourceMappingRequest listResourceMappingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/resources-mapping", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceMappingRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListResourceMappingResponse>(response);
+        }
+
+        public SyncInvoker<ListResourceMappingResponse> ListResourceMappingInvoker(ListResourceMappingRequest listResourceMappingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/resources-mapping", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceMappingRequest);
+            return new SyncInvoker<ListResourceMappingResponse>(this, "GET", request, JsonUtils.DeSerialize<ListResourceMappingResponse>);
         }
         
         /// <summary>
@@ -215,6 +289,32 @@ namespace HuaweiCloud.SDK.Eps.V1
         }
         
         /// <summary>
+        /// 查询关联资源
+        ///
+        /// 查询关联资源
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAssociatedResourcesResponse ShowAssociatedResources(ShowAssociatedResourcesRequest showAssociatedResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", showAssociatedResourcesRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/associated-resources/{resource_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssociatedResourcesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAssociatedResourcesResponse>(response);
+        }
+
+        public SyncInvoker<ShowAssociatedResourcesResponse> ShowAssociatedResourcesInvoker(ShowAssociatedResourcesRequest showAssociatedResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_id", showAssociatedResourcesRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/associated-resources/{resource_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssociatedResourcesRequest);
+            return new SyncInvoker<ShowAssociatedResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAssociatedResourcesResponse>);
+        }
+        
+        /// <summary>
         /// 查询企业项目详情
         ///
         /// 查询企业项目详情。
@@ -262,6 +362,30 @@ namespace HuaweiCloud.SDK.Eps.V1
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnterpriseProjectQuotaRequest);
             return new SyncInvoker<ShowEnterpriseProjectQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEnterpriseProjectQuotaResponse>);
+        }
+        
+        /// <summary>
+        /// 查询服务配置
+        ///
+        /// 查询服务配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowEpConfigsResponse ShowEpConfigs(ShowEpConfigsRequest showEpConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/enterprise-projects/configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEpConfigsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowEpConfigsResponse>(response);
+        }
+
+        public SyncInvoker<ShowEpConfigsResponse> ShowEpConfigsInvoker(ShowEpConfigsRequest showEpConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/enterprise-projects/configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEpConfigsRequest);
+            return new SyncInvoker<ShowEpConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEpConfigsResponse>);
         }
         
         /// <summary>

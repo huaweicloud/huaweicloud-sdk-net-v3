@@ -8,20 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Aom.V1.Model
+namespace HuaweiCloud.SDK.Eps.V1.Model
 {
     /// <summary>
-    /// Request Object
+    /// Response Object
     /// </summary>
-    public class CreateFastExecuteScriptRequest 
+    public class ListResourceMappingResponse : SdkResponse
     {
 
         /// <summary>
-        /// 
+        /// 资源类型映射
         /// </summary>
-        [SDKProperty("body", IsBody = true)]
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public HISFastScript Body { get; set; }
+        [JsonProperty("resource_mapping", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> ResourceMapping { get; set; }
 
 
 
@@ -31,8 +30,8 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateFastExecuteScriptRequest {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("class ListResourceMappingResponse {\n");
+            sb.Append("  resourceMapping: ").Append(ResourceMapping).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -42,16 +41,16 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateFastExecuteScriptRequest);
+            return this.Equals(input as ListResourceMappingResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateFastExecuteScriptRequest input)
+        public bool Equals(ListResourceMappingResponse input)
         {
             if (input == null) return false;
-            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
+            if (this.ResourceMapping != input.ResourceMapping || (this.ResourceMapping != null && input.ResourceMapping != null && !this.ResourceMapping.SequenceEqual(input.ResourceMapping))) return false;
 
             return true;
         }
@@ -64,7 +63,7 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.ResourceMapping != null) hashCode = hashCode * 59 + this.ResourceMapping.GetHashCode();
                 return hashCode;
             }
         }

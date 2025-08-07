@@ -8,19 +8,20 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Aom.V1.Model
+namespace HuaweiCloud.SDK.Eps.V1.Model
 {
     /// <summary>
-    /// Response Object
+    /// Request Object
     /// </summary>
-    public class CreateFastExecuteScriptResponse : SdkResponse
+    public class DeleteEnterpriseProjectRequest 
     {
 
         /// <summary>
-        /// 工作流执行id。
+        /// 企业项目ID，不能为0。 可以通过查询企业项目列表接口获取。
         /// </summary>
-        [JsonProperty("execution_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExecutionId { get; set; }
+        [SDKProperty("enterprise_project_id", IsPath = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
 
 
 
@@ -30,8 +31,8 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateFastExecuteScriptResponse {\n");
-            sb.Append("  executionId: ").Append(ExecutionId).Append("\n");
+            sb.Append("class DeleteEnterpriseProjectRequest {\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +42,16 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateFastExecuteScriptResponse);
+            return this.Equals(input as DeleteEnterpriseProjectRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(CreateFastExecuteScriptResponse input)
+        public bool Equals(DeleteEnterpriseProjectRequest input)
         {
             if (input == null) return false;
-            if (this.ExecutionId != input.ExecutionId || (this.ExecutionId != null && !this.ExecutionId.Equals(input.ExecutionId))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
             return true;
         }
@@ -63,7 +64,7 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.ExecutionId != null) hashCode = hashCode * 59 + this.ExecutionId.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

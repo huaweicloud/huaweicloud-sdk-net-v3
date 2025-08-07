@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
-        public string Marker { get; set; }
+        public int? Marker { get; set; }
 
         /// <summary>
         /// 是否公开私有，true为公开，false为私有。

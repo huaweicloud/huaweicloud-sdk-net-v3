@@ -15,30 +15,6 @@ namespace HuaweiCloud.SDK.Aom.V1
 
         
         /// <summary>
-        /// 快速创建并执行脚本
-        ///
-        /// 该接口用于创建快速执行脚本的任务，可以指定脚本类型，执行用户，脚本参数，执行机器，脚本内容，在用户指定的机器上执行脚本。（注：接口目前开放的region为：华东-苏州二零一）。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateFastExecuteScriptResponse CreateFastExecuteScript(CreateFastExecuteScriptRequest createFastExecuteScriptRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/fast-execute-script", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFastExecuteScriptRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateFastExecuteScriptResponse>(response);
-        }
-
-        public SyncInvoker<CreateFastExecuteScriptResponse> CreateFastExecuteScriptInvoker(CreateFastExecuteScriptRequest createFastExecuteScriptRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cms/fast-execute-script", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFastExecuteScriptRequest);
-            return new SyncInvoker<CreateFastExecuteScriptResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFastExecuteScriptResponse>);
-        }
-        
-        /// <summary>
         /// 创建任务
         ///
         /// 该接口用于创建工作流（任务），返回工作流详情。任务类型取决于模板名称和&#39;input&#39;参数。（注：接口目前开放的region为：华北-北京四,华东-上海一,华东-上海二,华南-广州）。

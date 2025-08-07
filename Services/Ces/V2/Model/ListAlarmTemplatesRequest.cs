@@ -171,7 +171,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 资源维度，必须以字母开头，多维度用\&quot;,\&quot;分割，只能包含0-9/a-z/A-Z/_/-，每个维度的最大长度为32
+        /// 资源维度，多维度用\&quot;,\&quot;分割，只能包含0-9、a-z、A-Z、_、-、#、/、(、），每个维度的最大长度为32。字符串总长度最小为1，最大为131。
         /// </summary>
         [SDKProperty("dim_name", IsQuery = true)]
         [JsonProperty("dim_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -190,13 +190,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("template_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateName { get; set; }
 
-        /// <summary>
-        /// 支持按照产品名称粒度进行查询告警模板，产品名称一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;
-        /// </summary>
-        [SDKProperty("product_name", IsQuery = true)]
-        [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string ProductName { get; set; }
-
 
 
         /// <summary>
@@ -212,7 +205,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  dimName: ").Append(DimName).Append("\n");
             sb.Append("  templateType: ").Append(TemplateType).Append("\n");
             sb.Append("  templateName: ").Append(TemplateName).Append("\n");
-            sb.Append("  productName: ").Append(ProductName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -237,7 +229,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.DimName != input.DimName || (this.DimName != null && !this.DimName.Equals(input.DimName))) return false;
             if (this.TemplateType != input.TemplateType) return false;
             if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
-            if (this.ProductName != input.ProductName || (this.ProductName != null && !this.ProductName.Equals(input.ProductName))) return false;
 
             return true;
         }
@@ -256,7 +247,6 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.DimName != null) hashCode = hashCode * 59 + this.DimName.GetHashCode();
                 hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
                 if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.ProductName != null) hashCode = hashCode * 59 + this.ProductName.GetHashCode();
                 return hashCode;
             }
         }

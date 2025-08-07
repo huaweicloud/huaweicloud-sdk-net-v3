@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms 
     {
         /// <summary>
-        /// 通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
+        /// 此字段已废弃。通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
         /// </summary>
-        /// <value>通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。</value>
+        /// <value>此字段已废弃。通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。</value>
         [JsonConverter(typeof(EnumClassConverter<NotificationMannerEnum>))]
         public class NotificationMannerEnum
         {
@@ -144,13 +144,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string AlarmId { get; set; }
 
         /// <summary>
-        /// 告警名称, 只能包含0-9/a-z/A-Z/_/-或汉字，长度1-128
+        /// 此字段已废弃。告警名称, 只能包含0-9/a-z/A-Z/_/-或汉字，长度1-128
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 告警描述，长度0-256
+        /// 此字段已废弃。告警描述，长度0-256
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -168,16 +168,17 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<Policy> Policies { get; set; }
 
         /// <summary>
-        /// 资源列表，关联资源需要使用查询告警规则资源接口获取
+        /// 此字段已废弃。资源列表，关联资源需要使用查询告警规则资源接口获取
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
         public List<List<Dimension>> Resources { get; set; }
 
         /// <summary>
-        /// 
+        /// 此字段已废弃。 **参数解释**： 告警规则类型 **约束限制**： 不涉及。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警； **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public AlarmType Type { get; set; }
+        public string Type { get; set; }
+
         /// <summary>
         /// 是否开启告警规则。true:开启，false:关闭。
         /// </summary>
@@ -185,42 +186,42 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// 是否开启告警通知。true:开启，false:关闭。
+        /// 此字段已废弃。是否开启告警通知。true:开启，false:关闭。
         /// </summary>
         [JsonProperty("notification_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotificationEnabled { get; set; }
 
         /// <summary>
-        /// 告警触发的动作
+        /// 此字段已废弃。告警触发的动作
         /// </summary>
         [JsonProperty("alarm_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<Notification> AlarmNotifications { get; set; }
 
         /// <summary>
-        /// 告警恢复触发的动作
+        /// 此字段已废弃。告警恢复触发的动作
         /// </summary>
         [JsonProperty("ok_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<Notification> OkNotifications { get; set; }
 
         /// <summary>
-        /// 告警通知开启时间
+        /// 此字段已废弃。告警通知开启时间
         /// </summary>
         [JsonProperty("notification_begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationBeginTime { get; set; }
 
         /// <summary>
-        /// 告警通知关闭时间
+        /// 此字段已废弃。告警通知关闭时间
         /// </summary>
         [JsonProperty("notification_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationEndTime { get; set; }
 
         /// <summary>
-        /// 通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
+        /// 此字段已废弃。通知方式。NOTIFICATION_POLICY表示通知策略，NOTIFICATION_GROUP表示通知组，TOPIC_SUBSCRIPTION表示主题订阅。
         /// </summary>
         [JsonProperty("notification_manner", NullValueHandling = NullValueHandling.Ignore)]
         public NotificationMannerEnum NotificationManner { get; set; }
         /// <summary>
-        /// 关联的通知策略ID列表
+        /// 此字段已废弃。关联的通知策略ID列表
         /// </summary>
         [JsonProperty("notification_policy_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> NotificationPolicyIds { get; set; }
@@ -273,7 +274,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
             if (this.Policies != input.Policies || (this.Policies != null && input.Policies != null && !this.Policies.SequenceEqual(input.Policies))) return false;
             if (this.Resources != input.Resources || (this.Resources != null && input.Resources != null && !this.Resources.SequenceEqual(input.Resources))) return false;
-            if (this.Type != input.Type) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
             if (this.NotificationEnabled != input.NotificationEnabled || (this.NotificationEnabled != null && !this.NotificationEnabled.Equals(input.NotificationEnabled))) return false;
             if (this.AlarmNotifications != input.AlarmNotifications || (this.AlarmNotifications != null && input.AlarmNotifications != null && !this.AlarmNotifications.SequenceEqual(input.AlarmNotifications))) return false;
@@ -300,7 +301,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
                 if (this.Policies != null) hashCode = hashCode * 59 + this.Policies.GetHashCode();
                 if (this.Resources != null) hashCode = hashCode * 59 + this.Resources.GetHashCode();
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
                 if (this.NotificationEnabled != null) hashCode = hashCode * 59 + this.NotificationEnabled.GetHashCode();
                 if (this.AlarmNotifications != null) hashCode = hashCode * 59 + this.AlarmNotifications.GetHashCode();

@@ -7,6 +7,10 @@ namespace HuaweiCloud.SDK.Cfw.V1
 {
     public class CfwRegion
     {
+        public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
+            "https://cfw.cn-southwest-3.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
+            "https://cfw.cn-north-12.myhuaweicloud.com");
         public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
             "https://cfw.ru-moscow-1.myhuaweicloud.com");
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",
@@ -62,6 +66,8 @@ namespace HuaweiCloud.SDK.Cfw.V1
 
         private static readonly Dictionary<string, Region> StaticFields = new Dictionary<string, Region>
         {
+                { "cn-southwest-3", CN_SOUTHWEST_3 },
+                { "cn-north-12", CN_NORTH_12 },
                 { "ru-moscow-1", RU_MOSCOW_1 },
                 { "eu-west-101", EU_WEST_101 },
                 { "cn-south-4", CN_SOUTH_4 },

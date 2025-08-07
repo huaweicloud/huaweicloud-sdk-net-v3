@@ -4315,7 +4315,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRetentionPolicyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateInstanceRetentionPolicyResponse>(response);
+            return JsonUtils.DeSerializeNull<UpdateInstanceRetentionPolicyResponse>(response);
         }
 
         public AsyncInvoker<UpdateInstanceRetentionPolicyResponse> UpdateInstanceRetentionPolicyAsyncInvoker(UpdateInstanceRetentionPolicyRequest updateInstanceRetentionPolicyRequest)
@@ -4326,7 +4326,7 @@ namespace HuaweiCloud.SDK.Swr.V2
             urlParam.Add("policy_id", updateInstanceRetentionPolicyRequest.PolicyId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRetentionPolicyRequest);
-            return new AsyncInvoker<UpdateInstanceRetentionPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceRetentionPolicyResponse>);
+            return new AsyncInvoker<UpdateInstanceRetentionPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceRetentionPolicyResponse>);
         }
         
         /// <summary>

@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     {
 
         /// <summary>
-        /// 空值
+        /// 
         /// </summary>
         [JsonProperty("restart", NullValueHandling = NullValueHandling.Ignore)]
-        public Object Restart { get; set; }
+        public RestartConfiguration Restart { get; set; }
 
 
 

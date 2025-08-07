@@ -1881,6 +1881,30 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询定时任务列表
+        ///
+        /// 查询定时任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListScheduleTasksResponse> ListScheduleTasksAsync(ListScheduleTasksRequest listScheduleTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/schedule-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScheduleTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListScheduleTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListScheduleTasksResponse> ListScheduleTasksAsyncInvoker(ListScheduleTasksRequest listScheduleTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/schedule-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScheduleTasksRequest);
+            return new AsyncInvoker<ListScheduleTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScheduleTasksResponse>);
+        }
+        
+        /// <summary>
         /// 查询共享备份列表
         ///
         /// 查询共享备份列表
@@ -2161,6 +2185,30 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/storage-type/{database_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStorageTypesRequest);
             return new AsyncInvoker<ListStorageTypesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStorageTypesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询及时任务列表
+        ///
+        /// 查询及时任务列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTasksResponse> ListTasksAsync(ListTasksRequest listTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tasklist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListTasksResponse> ListTasksAsyncInvoker(ListTasksRequest listTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/tasklist", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTasksRequest);
+            return new AsyncInvoker<ListTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTasksResponse>);
         }
         
         /// <summary>
@@ -5957,6 +6005,56 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询云市场服务商列表
+        ///
+        /// 查询云市场服务商列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListBusinessPartnersResponse> ListBusinessPartnersAsync(ListBusinessPartnersRequest listBusinessPartnersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/business-partners", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBusinessPartnersRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListBusinessPartnersResponse>(response);
+        }
+
+        public AsyncInvoker<ListBusinessPartnersResponse> ListBusinessPartnersAsyncInvoker(ListBusinessPartnersRequest listBusinessPartnersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/business-partners", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBusinessPartnersRequest);
+            return new AsyncInvoker<ListBusinessPartnersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBusinessPartnersResponse>);
+        }
+        
+        /// <summary>
+        /// 查询云市场引擎商品列表
+        ///
+        /// 查询云市场引擎商品列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListMarketplaceEngineProductsResponse> ListMarketplaceEngineProductsAsync(ListMarketplaceEngineProductsRequest listMarketplaceEngineProductsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bp_domain_id", listMarketplaceEngineProductsRequest.BpDomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/business-partner/{bp_domain_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMarketplaceEngineProductsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListMarketplaceEngineProductsResponse>(response);
+        }
+
+        public AsyncInvoker<ListMarketplaceEngineProductsResponse> ListMarketplaceEngineProductsAsyncInvoker(ListMarketplaceEngineProductsRequest listMarketplaceEngineProductsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bp_domain_id", listMarketplaceEngineProductsRequest.BpDomainId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/business-partner/{bp_domain_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMarketplaceEngineProductsRequest);
+            return new AsyncInvoker<ListMarketplaceEngineProductsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMarketplaceEngineProductsResponse>);
+        }
+        
+        /// <summary>
         /// 查询MSDTC的hosts信息
         ///
         /// 查询MSDTC的hosts信息
@@ -6136,6 +6234,58 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/db-shrink", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setInstancesNewDbShrinkRequest);
             return new AsyncInvoker<SetInstancesNewDbShrinkResponse>(this, "POST", request, JsonUtils.DeSerialize<SetInstancesNewDbShrinkResponse>);
+        }
+        
+        /// <summary>
+        /// 查询sql统计列表
+        ///
+        /// 查询sql统计列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSqlStatisticsResponse> ListSqlStatisticsAsync(ListSqlStatisticsRequest listSqlStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSqlStatisticsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSqlStatisticsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSqlStatisticsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSqlStatisticsResponse> ListSqlStatisticsAsyncInvoker(ListSqlStatisticsRequest listSqlStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSqlStatisticsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSqlStatisticsRequest);
+            return new AsyncInvoker<ListSqlStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSqlStatisticsResponse>);
+        }
+        
+        /// <summary>
+        /// sql统计视图重置
+        ///
+        /// sql统计视图重置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ResetViewSqlStatisticsResponse> ResetViewSqlStatisticsAsync(ResetViewSqlStatisticsRequest resetViewSqlStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resetViewSqlStatisticsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-statistics/reset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetViewSqlStatisticsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ResetViewSqlStatisticsResponse>(response);
+        }
+
+        public AsyncInvoker<ResetViewSqlStatisticsResponse> ResetViewSqlStatisticsAsyncInvoker(ResetViewSqlStatisticsRequest resetViewSqlStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", resetViewSqlStatisticsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-statistics/reset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetViewSqlStatisticsRequest);
+            return new AsyncInvoker<ResetViewSqlStatisticsResponse>(this, "POST", request, JsonUtils.DeSerialize<ResetViewSqlStatisticsResponse>);
         }
         
     }

@@ -154,6 +154,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         [JsonProperty("Condition", NullValueHandling = NullValueHandling.Ignore)]
         public Object Condition { get; set; }
 
+        /// <summary>
+        /// 策略Id
+        /// </summary>
+        [JsonProperty("Sid", NullValueHandling = NullValueHandling.Ignore)]
+        public string Sid { get; set; }
+
 
 
         /// <summary>
@@ -167,6 +173,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  resource: ").Append(Resource).Append("\n");
             sb.Append("  condition: ").Append(Condition).Append("\n");
+            sb.Append("  sid: ").Append(Sid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -189,6 +196,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
             if (this.Action != input.Action || (this.Action != null && input.Action != null && !this.Action.SequenceEqual(input.Action))) return false;
             if (this.Resource != input.Resource || (this.Resource != null && input.Resource != null && !this.Resource.SequenceEqual(input.Resource))) return false;
             if (this.Condition != input.Condition || (this.Condition != null && !this.Condition.Equals(input.Condition))) return false;
+            if (this.Sid != input.Sid || (this.Sid != null && !this.Sid.Equals(input.Sid))) return false;
 
             return true;
         }
@@ -205,6 +213,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
                 if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
                 if (this.Resource != null) hashCode = hashCode * 59 + this.Resource.GetHashCode();
                 if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
+                if (this.Sid != null) hashCode = hashCode * 59 + this.Sid.GetHashCode();
                 return hashCode;
             }
         }

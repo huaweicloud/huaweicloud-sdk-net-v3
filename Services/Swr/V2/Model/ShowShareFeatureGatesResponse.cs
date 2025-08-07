@@ -65,6 +65,18 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public bool? EnablePipeline { get; set; }
 
         /// <summary>
+        /// 是否支持增强型临时登录指令。设置为true时，前端获取登录指令时可以选择获取增强型登录指令。
+        /// </summary>
+        [JsonProperty("enable_authorization_token", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAuthorizationToken { get; set; }
+
+        /// <summary>
+        /// 是否支持镜像资源。设置为true时，前端界面显示“镜像资源”页签，可查看镜像中心。
+        /// </summary>
+        [JsonProperty("enable_resource", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableResource { get; set; }
+
+        /// <summary>
         /// 是否支持list v3接口
         /// </summary>
         [JsonProperty("enable_list_v3", NullValueHandling = NullValueHandling.Ignore)]
@@ -87,6 +99,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  enableCciService: ").Append(EnableCciService).Append("\n");
             sb.Append("  enableImageLabel: ").Append(EnableImageLabel).Append("\n");
             sb.Append("  enablePipeline: ").Append(EnablePipeline).Append("\n");
+            sb.Append("  enableAuthorizationToken: ").Append(EnableAuthorizationToken).Append("\n");
+            sb.Append("  enableResource: ").Append(EnableResource).Append("\n");
             sb.Append("  enableListV3: ").Append(EnableListV3).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -114,6 +128,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.EnableCciService != input.EnableCciService || (this.EnableCciService != null && !this.EnableCciService.Equals(input.EnableCciService))) return false;
             if (this.EnableImageLabel != input.EnableImageLabel || (this.EnableImageLabel != null && !this.EnableImageLabel.Equals(input.EnableImageLabel))) return false;
             if (this.EnablePipeline != input.EnablePipeline || (this.EnablePipeline != null && !this.EnablePipeline.Equals(input.EnablePipeline))) return false;
+            if (this.EnableAuthorizationToken != input.EnableAuthorizationToken || (this.EnableAuthorizationToken != null && !this.EnableAuthorizationToken.Equals(input.EnableAuthorizationToken))) return false;
+            if (this.EnableResource != input.EnableResource || (this.EnableResource != null && !this.EnableResource.Equals(input.EnableResource))) return false;
             if (this.EnableListV3 != input.EnableListV3 || (this.EnableListV3 != null && !this.EnableListV3.Equals(input.EnableListV3))) return false;
 
             return true;
@@ -135,6 +151,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.EnableCciService != null) hashCode = hashCode * 59 + this.EnableCciService.GetHashCode();
                 if (this.EnableImageLabel != null) hashCode = hashCode * 59 + this.EnableImageLabel.GetHashCode();
                 if (this.EnablePipeline != null) hashCode = hashCode * 59 + this.EnablePipeline.GetHashCode();
+                if (this.EnableAuthorizationToken != null) hashCode = hashCode * 59 + this.EnableAuthorizationToken.GetHashCode();
+                if (this.EnableResource != null) hashCode = hashCode * 59 + this.EnableResource.GetHashCode();
                 if (this.EnableListV3 != null) hashCode = hashCode * 59 + this.EnableListV3.GetHashCode();
                 return hashCode;
             }
