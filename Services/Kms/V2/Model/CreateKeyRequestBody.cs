@@ -437,10 +437,16 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         public string Sequence { get; set; }
 
         /// <summary>
-        /// 密钥库ID，默认使用KMS默认密钥库
+        /// 密钥库ID，默认为0，使用KMS默认密钥库；设置为1，则指定管理面CDMS集群；设置为2，则指定租户面共享CDMS集群；若需指定其他CDMS集群，需先执行创建密钥库操作
         /// </summary>
         [JsonProperty("keystore_id", NullValueHandling = NullValueHandling.Ignore)]
         public string KeystoreId { get; set; }
+
+        /// <summary>
+        /// 虚机ID，密钥创建的虚机，仅四级密评场景生效
+        /// </summary>
+        [JsonProperty("vm_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VmId { get; set; }
 
 
 
@@ -459,6 +465,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sequence: ").Append(Sequence).Append("\n");
             sb.Append("  keystoreId: ").Append(KeystoreId).Append("\n");
+            sb.Append("  vmId: ").Append(VmId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -485,6 +492,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Sequence != input.Sequence || (this.Sequence != null && !this.Sequence.Equals(input.Sequence))) return false;
             if (this.KeystoreId != input.KeystoreId || (this.KeystoreId != null && !this.KeystoreId.Equals(input.KeystoreId))) return false;
+            if (this.VmId != input.VmId || (this.VmId != null && !this.VmId.Equals(input.VmId))) return false;
 
             return true;
         }
@@ -505,6 +513,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Sequence != null) hashCode = hashCode * 59 + this.Sequence.GetHashCode();
                 if (this.KeystoreId != null) hashCode = hashCode * 59 + this.KeystoreId.GetHashCode();
+                if (this.VmId != null) hashCode = hashCode * 59 + this.VmId.GetHashCode();
                 return hashCode;
             }
         }

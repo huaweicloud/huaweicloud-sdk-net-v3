@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
 
 
         /// <summary>
-        /// 账号的唯一身份标识
+        /// 指定账户的唯一身份标识.
         /// </summary>
         [JsonProperty("account_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AccountId { get; set; }

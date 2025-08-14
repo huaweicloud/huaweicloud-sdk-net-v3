@@ -91,13 +91,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("app_type", NullValueHandling = NullValueHandling.Ignore)]
         public AppTypeEnum AppType { get; set; }
         /// <summary>
-        /// 服务器组创建时间
+        /// 服务器组创建时间。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreateTime { get; set; }
 
         /// <summary>
-        /// 服务器组更新时间
+        /// 服务器组更新时间。
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? UpdateTime { get; set; }
@@ -108,7 +108,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("storage_mount_policy", NullValueHandling = NullValueHandling.Ignore)]
         public StorageFolderMountType StorageMountPolicy { get; set; }
         /// <summary>
-        /// 企业项目ID(0表示默认企业项目Id)
+        /// 企业项目ID(0表示默认企业项目Id)。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -132,13 +132,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public bool? ServerGroupStatus { get; set; }
 
         /// <summary>
-        /// 站点类型 - CENTER/IES
+        /// 站点类型 - CENTER/IES。
         /// </summary>
         [JsonProperty("site_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SiteType { get; set; }
 
         /// <summary>
-        /// 站点id
+        /// 站点id。
         /// </summary>
         [JsonProperty("site_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SiteId { get; set; }

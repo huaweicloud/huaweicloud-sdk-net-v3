@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1.Model
 
 
         /// <summary>
-        /// 一个布尔值，表示这是否为用户的主电子邮箱
+        /// 一个布尔值，表示这是否是用户的主电子邮箱
         /// </summary>
         [JsonProperty("primary", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Primary { get; set; }

@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public int? SubJobsTotal { get; set; }
 
         /// <summary>
-        /// 子任务列表
+        /// 子任务列表。
         /// </summary>
         [JsonProperty("sub_jobs", NullValueHandling = NullValueHandling.Ignore)]
         public List<ImageJobDetailInfo> SubJobs { get; set; }

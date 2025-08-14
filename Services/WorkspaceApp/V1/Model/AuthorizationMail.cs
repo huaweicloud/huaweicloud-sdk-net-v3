@@ -52,13 +52,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string AppGroupName { get; set; }
 
         /// <summary>
-        /// 授权类型： - ADD_GROUP_AUTHORIZATION 添加组授权邮件 - DEL_GROUP_AUTHORIZATION 删除组授权邮件 - ADD_GROUP_AUTHORIZATION_SMS 添加组授权短信 - DEL_GROUP_AUTHORIZATION_SMS 删除组授权短信
+        /// 授权类型： - ADD_GROUP_AUTHORIZATION 添加组授权邮件 - DEL_GROUP_AUTHORIZATION 删除组授权邮件 - ADD_GROUP_AUTHORIZATION_SMS 添加组授权短信 - DEL_GROUP_AUTHORIZATION_SMS 删除组授权短信。
         /// </summary>
         [JsonProperty("mail_send_type", NullValueHandling = NullValueHandling.Ignore)]
         public string MailSendType { get; set; }
 
         /// <summary>
-        /// 发送结果。 - SUEECESS -发送成功 - FAIL -发送失败
+        /// 发送结果。 - SUEECESS -发送成功 - FAIL -发送失败。
         /// </summary>
         [JsonProperty("mail_send_result", NullValueHandling = NullValueHandling.Ignore)]
         public string MailSendResult { get; set; }

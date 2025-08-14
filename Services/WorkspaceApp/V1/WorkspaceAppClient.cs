@@ -63,6 +63,30 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         }
         
         /// <summary>
+        /// 添加用户应用仓库桶及桶授权
+        ///
+        /// 添加用户应用仓库桶及桶授权。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BindAppWarehouseBucketResponse BindAppWarehouseBucket(BindAppWarehouseBucketRequest bindAppWarehouseBucketRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/app-warehouse/bucket", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", bindAppWarehouseBucketRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BindAppWarehouseBucketResponse>(response);
+        }
+
+        public SyncInvoker<BindAppWarehouseBucketResponse> BindAppWarehouseBucketInvoker(BindAppWarehouseBucketRequest bindAppWarehouseBucketRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/app-warehouse/bucket", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", bindAppWarehouseBucketRequest);
+            return new SyncInvoker<BindAppWarehouseBucketResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BindAppWarehouseBucketResponse>);
+        }
+        
+        /// <summary>
         /// 添加桶或者桶授权
         ///
         /// 添加桶或者桶授权。
@@ -161,9 +185,33 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         }
         
         /// <summary>
+        /// 查询用户应用仓库桶
+        ///
+        /// 查询用户应用仓库桶
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAppWarehouseBucketResponse ShowAppWarehouseBucket(ShowAppWarehouseBucketRequest showAppWarehouseBucketRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/app-warehouse/bucket", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppWarehouseBucketRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAppWarehouseBucketResponse>(response);
+        }
+
+        public SyncInvoker<ShowAppWarehouseBucketResponse> ShowAppWarehouseBucketInvoker(ShowAppWarehouseBucketRequest showAppWarehouseBucketRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/app-warehouse/bucket", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppWarehouseBucketRequest);
+            return new SyncInvoker<ShowAppWarehouseBucketResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppWarehouseBucketResponse>);
+        }
+        
+        /// <summary>
         /// 修改应用仓库中的指定应用信息
         ///
-        /// 修改应用仓库中的指定应用信息
+        /// 修改应用仓库中的指定应用信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -449,6 +497,32 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/app-groups/{app_group_id}/apps/{app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAppRequest);
             return new SyncInvoker<UpdateAppResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdateAppResponse>);
+        }
+        
+        /// <summary>
+        /// 批量设置应用预启动
+        ///
+        /// 批量设置应用预启动。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdatePreBootPolicyResponse UpdatePreBootPolicy(UpdatePreBootPolicyRequest updatePreBootPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_group_id", updatePreBootPolicyRequest.AppGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/app-groups/{app_group_id}/apps/pre-boot-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePreBootPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<UpdatePreBootPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdatePreBootPolicyResponse> UpdatePreBootPolicyInvoker(UpdatePreBootPolicyRequest updatePreBootPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("app_group_id", updatePreBootPolicyRequest.AppGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/app-groups/{app_group_id}/apps/pre-boot-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePreBootPolicyRequest);
+            return new SyncInvoker<UpdatePreBootPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdatePreBootPolicyResponse>);
         }
         
         /// <summary>
@@ -799,9 +873,9 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         }
         
         /// <summary>
-        /// 查询会话套餐列表
+        /// 查询会话套餐列表（已废弃）
         ///
-        /// 该接口用于查询会话套餐列表
+        /// 该接口用于查询会话套餐列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -919,7 +993,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         }
         
         /// <summary>
-        /// 查询可用分区列表
+        /// 查询可用分区列表（按站点分类）
         ///
         /// 该接口用于查询支持的可用分区列表，按站点分类。
         /// 
@@ -940,6 +1014,258 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/availability-zone/summary", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAzRequest);
             return new SyncInvoker<ListAzResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAzResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除云存储
+        ///
+        /// 批量删除云存储。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteCloudStorageResponse BatchDeleteCloudStorage(BatchDeleteCloudStorageRequest batchDeleteCloudStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/actions/batch-delete-cloud-storages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteCloudStorageRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteCloudStorageResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteCloudStorageResponse> BatchDeleteCloudStorageInvoker(BatchDeleteCloudStorageRequest batchDeleteCloudStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/actions/batch-delete-cloud-storages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteCloudStorageRequest);
+            return new SyncInvoker<BatchDeleteCloudStorageResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteCloudStorageResponse>);
+        }
+        
+        /// <summary>
+        /// 创建项目配置关联
+        ///
+        /// 创建项目配置关联，目前仅支持关联项目配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateCloudStorageResponse CreateCloudStorage(CreateCloudStorageRequest createCloudStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCloudStorageRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateCloudStorageResponse>(response);
+        }
+
+        public SyncInvoker<CreateCloudStorageResponse> CreateCloudStorageInvoker(CreateCloudStorageRequest createCloudStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCloudStorageRequest);
+            return new SyncInvoker<CreateCloudStorageResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateCloudStorageResponse>);
+        }
+        
+        /// <summary>
+        /// 创建个人文件夹
+        ///
+        /// 创建个人文件夹，已存在对应目录时，仅更新策略不会重复创建目录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateUserFolderAssignmentResponse CreateUserFolderAssignment(CreateUserFolderAssignmentRequest createUserFolderAssignmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("storage_id", createUserFolderAssignmentRequest.StorageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/{storage_id}/actions/create-folder", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserFolderAssignmentRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateUserFolderAssignmentResponse>(response);
+        }
+
+        public SyncInvoker<CreateUserFolderAssignmentResponse> CreateUserFolderAssignmentInvoker(CreateUserFolderAssignmentRequest createUserFolderAssignmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("storage_id", createUserFolderAssignmentRequest.StorageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/{storage_id}/actions/create-folder", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserFolderAssignmentRequest);
+            return new SyncInvoker<CreateUserFolderAssignmentResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUserFolderAssignmentResponse>);
+        }
+        
+        /// <summary>
+        /// 删除云存储
+        ///
+        /// 删除共享存储，只会解除NAS与项目配置之间的关联关系。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteCloudStorageResponse DeleteCloudStorage(DeleteCloudStorageRequest deleteCloudStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("storage_id", deleteCloudStorageRequest.StorageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/{storage_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCloudStorageRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteCloudStorageResponse>(response);
+        }
+
+        public SyncInvoker<DeleteCloudStorageResponse> DeleteCloudStorageInvoker(DeleteCloudStorageRequest deleteCloudStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("storage_id", deleteCloudStorageRequest.StorageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/{storage_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCloudStorageRequest);
+            return new SyncInvoker<DeleteCloudStorageResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteCloudStorageResponse>);
+        }
+        
+        /// <summary>
+        /// 删除个人文件夹
+        ///
+        /// 删除个人存储目录，个人目录中的数据也将永久删除且无法恢复。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteCloudStorageAttachmentResponse DeleteCloudStorageAttachment(DeleteCloudStorageAttachmentRequest deleteCloudStorageAttachmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("storage_id", deleteCloudStorageAttachmentRequest.StorageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/{storage_id}/actions/delete-folder", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCloudStorageAttachmentRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<DeleteCloudStorageAttachmentResponse>(response);
+        }
+
+        public SyncInvoker<DeleteCloudStorageAttachmentResponse> DeleteCloudStorageAttachmentInvoker(DeleteCloudStorageAttachmentRequest deleteCloudStorageAttachmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("storage_id", deleteCloudStorageAttachmentRequest.StorageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/{storage_id}/actions/delete-folder", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCloudStorageAttachmentRequest);
+            return new SyncInvoker<DeleteCloudStorageAttachmentResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteCloudStorageAttachmentResponse>);
+        }
+        
+        /// <summary>
+        /// 查询云存储
+        ///
+        /// 查询云存储。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCloudStorageResponse ListCloudStorage(ListCloudStorageRequest listCloudStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCloudStorageRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListCloudStorageResponse>(response);
+        }
+
+        public SyncInvoker<ListCloudStorageResponse> ListCloudStorageInvoker(ListCloudStorageRequest listCloudStorageRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCloudStorageRequest);
+            return new SyncInvoker<ListCloudStorageResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCloudStorageResponse>);
+        }
+        
+        /// <summary>
+        /// 查询个人文件夹列表
+        ///
+        /// 查询个人文件夹列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCloudStorageAssignmentResponse ListCloudStorageAssignment(ListCloudStorageAssignmentRequest listCloudStorageAssignmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/actions/list-folders", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCloudStorageAssignmentRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListCloudStorageAssignmentResponse>(response);
+        }
+
+        public SyncInvoker<ListCloudStorageAssignmentResponse> ListCloudStorageAssignmentInvoker(ListCloudStorageAssignmentRequest listCloudStorageAssignmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/actions/list-folders", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCloudStorageAssignmentRequest);
+            return new SyncInvoker<ListCloudStorageAssignmentResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCloudStorageAssignmentResponse>);
+        }
+        
+        /// <summary>
+        /// 查询项目配置列表
+        ///
+        /// 查询项目配置列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListProjectConfigsResponse ListProjectConfigs(ListProjectConfigsRequest listProjectConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/actions/list-project-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectConfigsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListProjectConfigsResponse>(response);
+        }
+
+        public SyncInvoker<ListProjectConfigsResponse> ListProjectConfigsInvoker(ListProjectConfigsRequest listProjectConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/actions/list-project-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectConfigsRequest);
+            return new SyncInvoker<ListProjectConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectConfigsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询项目配置信息
+        ///
+        /// 查询项目配置信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowProjectConfigResponse ShowProjectConfig(ShowProjectConfigRequest showProjectConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cloud_storage_id", showProjectConfigRequest.CloudStorageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/actions/project-config/{cloud_storage_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowProjectConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowProjectConfigResponse> ShowProjectConfigInvoker(ShowProjectConfigRequest showProjectConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("cloud_storage_id", showProjectConfigRequest.CloudStorageId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/actions/project-config/{cloud_storage_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectConfigRequest);
+            return new SyncInvoker<ShowProjectConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 修改个人文件夹
+        ///
+        /// 创建个人文件夹。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateCloudUserFolderAssignmentResponse UpdateCloudUserFolderAssignment(UpdateCloudUserFolderAssignmentRequest updateCloudUserFolderAssignmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("storage_id", updateCloudUserFolderAssignmentRequest.StorageId.ToString());
+            urlParam.Add("cloud_assignment_id", updateCloudUserFolderAssignmentRequest.CloudAssignmentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/{storage_id}/actions/update-folder/{cloud_assignment_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCloudUserFolderAssignmentRequest);
+            var response = DoHttpRequestSync("PATCH", request);
+            return JsonUtils.DeSerializeNull<UpdateCloudUserFolderAssignmentResponse>(response);
+        }
+
+        public SyncInvoker<UpdateCloudUserFolderAssignmentResponse> UpdateCloudUserFolderAssignmentInvoker(UpdateCloudUserFolderAssignmentRequest updateCloudUserFolderAssignmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("storage_id", updateCloudUserFolderAssignmentRequest.StorageId.ToString());
+            urlParam.Add("cloud_assignment_id", updateCloudUserFolderAssignmentRequest.CloudAssignmentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloud-storages/{storage_id}/actions/update-folder/{cloud_assignment_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCloudUserFolderAssignmentRequest);
+            return new SyncInvoker<UpdateCloudUserFolderAssignmentResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateCloudUserFolderAssignmentResponse>);
         }
         
         /// <summary>
@@ -1101,7 +1427,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         /// <summary>
         /// 查询指定镜像实例
         ///
-        /// 查询指定的镜像实例当前这个接口的查询数据和list查询的一致
+        /// 查询指定的镜像实例当前这个接口的查询数据和list查询的一致。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1229,7 +1555,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         /// <summary>
         /// 查询租户的镜像任务列表
         ///
-        /// 该接口用于查询租户的异步任务执行情况
+        /// 该接口用于查询租户的异步任务执行情况。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1253,7 +1579,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         /// <summary>
         /// 镜像子任务查询
         ///
-        /// 该接口用于查询异步子任务执行情况,sub_job_ids非空时offset和limit不会生效
+        /// 该接口用于查询异步子任务执行情况,sub_job_ids非空时offset和limit不会生效。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1325,7 +1651,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         }
         
         /// <summary>
-        /// 查询任务的执行状态
+        /// 查询任务的执行状态（已废弃）
         ///
         /// 查询Job的执行状态。
         /// 
@@ -1353,7 +1679,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         }
         
         /// <summary>
-        /// 查询任务的执行状态
+        /// 查询任务的执行状态详情
         ///
         /// 查询Job的执行状态。
         /// 
@@ -1453,9 +1779,9 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         }
         
         /// <summary>
-        /// 删除WKS存储
+        /// 批量删除WKS存储
         ///
-        /// 删除WKS存储。
+        /// 批量删除WKS存储。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1804,7 +2130,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         /// <summary>
         /// 新增策略组
         ///
-        /// 新增策略组，通过策略组能灵活的控制客户端访问与接入策略，如：文件、剪切板、会话等。
+        /// 新增策略组，通过策略组能灵活地控制客户端访问与接入策略，如：文件、剪切板、会话等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3509,7 +3835,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         /// <summary>
         /// 查询租户在所有服务器组上的标签
         ///
-        /// 查询租户在所有服务器组上的资源标签集合
+        /// 查询租户在所有服务器组上的资源标签集合。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3533,7 +3859,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1
         /// <summary>
         /// 查询服务器组的标签
         ///
-        /// 查询指定服务器组的标签信息
+        /// 查询指定服务器组的标签信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

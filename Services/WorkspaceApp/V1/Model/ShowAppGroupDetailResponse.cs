@@ -75,7 +75,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public int? AppCount { get; set; }
 
         /// <summary>
-        /// 应用组描述
+        /// 应用组描述。
         /// </summary>
         [JsonProperty("app_server_group_description", NullValueHandling = NullValueHandling.Ignore)]
         public string AppServerGroupDescription { get; set; }

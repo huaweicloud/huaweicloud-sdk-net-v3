@@ -121,6 +121,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("app_icon", NullValueHandling = NullValueHandling.Ignore)]
         public string AppIcon { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("app_extended_info", NullValueHandling = NullValueHandling.Ignore)]
+        public AppExtendedInfo AppExtendedInfo { get; set; }
+
 
 
         /// <summary>
@@ -148,6 +154,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  verifyStatus: ").Append(VerifyStatus).Append("\n");
             sb.Append("  verifyComment: ").Append(VerifyComment).Append("\n");
             sb.Append("  appIcon: ").Append(AppIcon).Append("\n");
+            sb.Append("  appExtendedInfo: ").Append(AppExtendedInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -184,6 +191,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.VerifyStatus != input.VerifyStatus) return false;
             if (this.VerifyComment != input.VerifyComment || (this.VerifyComment != null && !this.VerifyComment.Equals(input.VerifyComment))) return false;
             if (this.AppIcon != input.AppIcon || (this.AppIcon != null && !this.AppIcon.Equals(input.AppIcon))) return false;
+            if (this.AppExtendedInfo != input.AppExtendedInfo || (this.AppExtendedInfo != null && !this.AppExtendedInfo.Equals(input.AppExtendedInfo))) return false;
 
             return true;
         }
@@ -214,6 +222,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 hashCode = hashCode * 59 + this.VerifyStatus.GetHashCode();
                 if (this.VerifyComment != null) hashCode = hashCode * 59 + this.VerifyComment.GetHashCode();
                 if (this.AppIcon != null) hashCode = hashCode * 59 + this.AppIcon.GetHashCode();
+                if (this.AppExtendedInfo != null) hashCode = hashCode * 59 + this.AppExtendedInfo.GetHashCode();
                 return hashCode;
             }
         }

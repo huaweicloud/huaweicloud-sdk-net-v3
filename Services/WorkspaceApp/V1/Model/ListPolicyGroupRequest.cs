@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string PolicyGroupName { get; set; }
 
         /// <summary>
-        /// 根据策略组类型名字过滤结果。
+        /// 根据策略组类型名字过滤结果, 0:VM类, 4:策略模板。
         /// </summary>
         [SDKProperty("policy_group_type", IsQuery = true)]
         [JsonProperty("policy_group_type", NullValueHandling = NullValueHandling.Ignore)]

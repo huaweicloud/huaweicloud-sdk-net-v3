@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
     {
 
         /// <summary>
-        /// IAM身份中心实例信息列表
+        /// IAM身份中心实例信息列表。
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
         public List<InstanceMetadataEntryDto> Instances { get; set; }

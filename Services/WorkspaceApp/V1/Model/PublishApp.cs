@@ -94,6 +94,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("sandbox_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SandboxEnable { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("app_extended_info", NullValueHandling = NullValueHandling.Ignore)]
+        public AppExtendedInfo AppExtendedInfo { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  publisher: ").Append(Publisher).Append("\n");
             sb.Append("  sourceImageIds: ").Append(SourceImageIds).Append("\n");
             sb.Append("  sandboxEnable: ").Append(SandboxEnable).Append("\n");
+            sb.Append("  appExtendedInfo: ").Append(AppExtendedInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,6 +154,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.Publisher != input.Publisher || (this.Publisher != null && !this.Publisher.Equals(input.Publisher))) return false;
             if (this.SourceImageIds != input.SourceImageIds || (this.SourceImageIds != null && input.SourceImageIds != null && !this.SourceImageIds.SequenceEqual(input.SourceImageIds))) return false;
             if (this.SandboxEnable != input.SandboxEnable || (this.SandboxEnable != null && !this.SandboxEnable.Equals(input.SandboxEnable))) return false;
+            if (this.AppExtendedInfo != input.AppExtendedInfo || (this.AppExtendedInfo != null && !this.AppExtendedInfo.Equals(input.AppExtendedInfo))) return false;
 
             return true;
         }
@@ -172,6 +180,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.Publisher != null) hashCode = hashCode * 59 + this.Publisher.GetHashCode();
                 if (this.SourceImageIds != null) hashCode = hashCode * 59 + this.SourceImageIds.GetHashCode();
                 if (this.SandboxEnable != null) hashCode = hashCode * 59 + this.SandboxEnable.GetHashCode();
+                if (this.AppExtendedInfo != null) hashCode = hashCode * 59 + this.AppExtendedInfo.GetHashCode();
                 return hashCode;
             }
         }

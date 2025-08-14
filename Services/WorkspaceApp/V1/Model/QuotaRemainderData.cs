@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 {
     /// <summary>
-    /// 配额剩余数量信息
+    /// 配额剩余数量信息。
     /// </summary>
     public class QuotaRemainderData 
     {

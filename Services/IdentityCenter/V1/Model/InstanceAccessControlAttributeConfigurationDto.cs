@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
     {
 
         /// <summary>
-        /// IAM身份中心实例中ABAC配置的属性
+        /// IAM Identity Center实例中ABAC配置的属性
         /// </summary>
         [JsonProperty("access_control_attributes", NullValueHandling = NullValueHandling.Ignore)]
         public List<AccessControlAttributeDto> AccessControlAttributes { get; set; }

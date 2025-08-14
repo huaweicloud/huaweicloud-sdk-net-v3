@@ -59,6 +59,24 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string TemplateId { get; set; }
 
         /// <summary>
+        /// 是否开启该CA证书下的设备证书OCSP校验，当为true且设备证书信息中包含OCSP url时则平台会校验证书的状态，当证书状态为revoked时平台会拒绝设备连接，true：开启，false：关闭。
+        /// </summary>
+        [JsonProperty("ocsp_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? OcspEnable { get; set; }
+
+        /// <summary>
+        /// ocsp服务器端CA证书id，仅当ocsp服务器开启SSL时配置，平台使用该CA证书认证ocsp服务器。
+        /// </summary>
+        [JsonProperty("ocsp_server_ca_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OcspServerCaId { get; set; }
+
+        /// <summary>
+        /// ocsp服务器是否开启SSL加密，开启后必须配置OCSP服务器CA证书。
+        /// </summary>
+        [JsonProperty("ocsp_ssl_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? OcspSslEnable { get; set; }
+
+        /// <summary>
         /// 创建证书日期。格式：yyyyMMdd&#39;T&#39;HHmmss&#39;Z&#39;，如20151212T121212Z。
         /// </summary>
         [JsonProperty("create_date", NullValueHandling = NullValueHandling.Ignore)]
@@ -92,6 +110,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  verifyCode: ").Append(VerifyCode).Append("\n");
             sb.Append("  provisionEnable: ").Append(ProvisionEnable).Append("\n");
             sb.Append("  templateId: ").Append(TemplateId).Append("\n");
+            sb.Append("  ocspEnable: ").Append(OcspEnable).Append("\n");
+            sb.Append("  ocspServerCaId: ").Append(OcspServerCaId).Append("\n");
+            sb.Append("  ocspSslEnable: ").Append(OcspSslEnable).Append("\n");
             sb.Append("  createDate: ").Append(CreateDate).Append("\n");
             sb.Append("  effectiveDate: ").Append(EffectiveDate).Append("\n");
             sb.Append("  expiryDate: ").Append(ExpiryDate).Append("\n");
@@ -120,6 +141,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             if (this.VerifyCode != input.VerifyCode || (this.VerifyCode != null && !this.VerifyCode.Equals(input.VerifyCode))) return false;
             if (this.ProvisionEnable != input.ProvisionEnable || (this.ProvisionEnable != null && !this.ProvisionEnable.Equals(input.ProvisionEnable))) return false;
             if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.OcspEnable != input.OcspEnable || (this.OcspEnable != null && !this.OcspEnable.Equals(input.OcspEnable))) return false;
+            if (this.OcspServerCaId != input.OcspServerCaId || (this.OcspServerCaId != null && !this.OcspServerCaId.Equals(input.OcspServerCaId))) return false;
+            if (this.OcspSslEnable != input.OcspSslEnable || (this.OcspSslEnable != null && !this.OcspSslEnable.Equals(input.OcspSslEnable))) return false;
             if (this.CreateDate != input.CreateDate || (this.CreateDate != null && !this.CreateDate.Equals(input.CreateDate))) return false;
             if (this.EffectiveDate != input.EffectiveDate || (this.EffectiveDate != null && !this.EffectiveDate.Equals(input.EffectiveDate))) return false;
             if (this.ExpiryDate != input.ExpiryDate || (this.ExpiryDate != null && !this.ExpiryDate.Equals(input.ExpiryDate))) return false;
@@ -142,6 +166,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 if (this.VerifyCode != null) hashCode = hashCode * 59 + this.VerifyCode.GetHashCode();
                 if (this.ProvisionEnable != null) hashCode = hashCode * 59 + this.ProvisionEnable.GetHashCode();
                 if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.OcspEnable != null) hashCode = hashCode * 59 + this.OcspEnable.GetHashCode();
+                if (this.OcspServerCaId != null) hashCode = hashCode * 59 + this.OcspServerCaId.GetHashCode();
+                if (this.OcspSslEnable != null) hashCode = hashCode * 59 + this.OcspSslEnable.GetHashCode();
                 if (this.CreateDate != null) hashCode = hashCode * 59 + this.CreateDate.GetHashCode();
                 if (this.EffectiveDate != null) hashCode = hashCode * 59 + this.EffectiveDate.GetHashCode();
                 if (this.ExpiryDate != null) hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();

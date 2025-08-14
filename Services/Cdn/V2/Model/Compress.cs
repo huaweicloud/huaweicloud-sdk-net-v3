@@ -34,6 +34,18 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("file_type", NullValueHandling = NullValueHandling.Ignore)]
         public string FileType { get; set; }
 
+        /// <summary>
+        /// 压缩区间最小范围
+        /// </summary>
+        [JsonProperty("compress_min_length", NullValueHandling = NullValueHandling.Ignore)]
+        public long? CompressMinLength { get; set; }
+
+        /// <summary>
+        /// 压缩区间最大范围
+        /// </summary>
+        [JsonProperty("compress_max_length", NullValueHandling = NullValueHandling.Ignore)]
+        public long? CompressMaxLength { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +58,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  fileType: ").Append(FileType).Append("\n");
+            sb.Append("  compressMinLength: ").Append(CompressMinLength).Append("\n");
+            sb.Append("  compressMaxLength: ").Append(CompressMaxLength).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +81,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.FileType != input.FileType || (this.FileType != null && !this.FileType.Equals(input.FileType))) return false;
+            if (this.CompressMinLength != input.CompressMinLength || (this.CompressMinLength != null && !this.CompressMinLength.Equals(input.CompressMinLength))) return false;
+            if (this.CompressMaxLength != input.CompressMaxLength || (this.CompressMaxLength != null && !this.CompressMaxLength.Equals(input.CompressMaxLength))) return false;
 
             return true;
         }
@@ -82,6 +98,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.FileType != null) hashCode = hashCode * 59 + this.FileType.GetHashCode();
+                if (this.CompressMinLength != null) hashCode = hashCode * 59 + this.CompressMinLength.GetHashCode();
+                if (this.CompressMaxLength != null) hashCode = hashCode * 59 + this.CompressMaxLength.GetHashCode();
                 return hashCode;
             }
         }

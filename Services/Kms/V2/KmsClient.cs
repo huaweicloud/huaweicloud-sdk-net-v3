@@ -370,6 +370,30 @@ namespace HuaweiCloud.SDK.Kms.V2
         }
         
         /// <summary>
+        /// 创建PIN码
+        ///
+        /// - 功能介绍：创建pin码。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreatePinResponse CreatePin(CreatePinRequest createPinRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-pin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPinRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreatePinResponse>(response);
+        }
+
+        public SyncInvoker<CreatePinResponse> CreatePinInvoker(CreatePinRequest createPinRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/create-pin", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPinRequest);
+            return new SyncInvoker<CreatePinResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePinResponse>);
+        }
+        
+        /// <summary>
         /// 创建随机数
         ///
         /// - 功能介绍：

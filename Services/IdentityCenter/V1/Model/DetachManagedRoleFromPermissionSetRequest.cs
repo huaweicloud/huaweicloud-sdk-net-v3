@@ -17,7 +17,14 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
     {
 
         /// <summary>
-        /// IAM身份中心实例的全局唯一标识符（ID）。
+        /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+        /// </summary>
+        [SDKProperty("X-Security-Token", IsHeader = true)]
+        [JsonProperty("X-Security-Token", NullValueHandling = NullValueHandling.Ignore)]
+        public string XSecurityToken { get; set; }
+
+        /// <summary>
+        /// IAM Identity Center实例的全局唯一标识符（ID）
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -29,13 +36,6 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         [SDKProperty("permission_set_id", IsPath = true)]
         [JsonProperty("permission_set_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PermissionSetId { get; set; }
-
-        /// <summary>
-        /// 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
-        /// </summary>
-        [SDKProperty("X-Security-Token", IsHeader = true)]
-        [JsonProperty("X-Security-Token", NullValueHandling = NullValueHandling.Ignore)]
-        public string XSecurityToken { get; set; }
 
         /// <summary>
         /// 
@@ -53,9 +53,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DetachManagedRoleFromPermissionSetRequest {\n");
+            sb.Append("  xSecurityToken: ").Append(XSecurityToken).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  permissionSetId: ").Append(PermissionSetId).Append("\n");
-            sb.Append("  xSecurityToken: ").Append(XSecurityToken).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -75,9 +75,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         public bool Equals(DetachManagedRoleFromPermissionSetRequest input)
         {
             if (input == null) return false;
+            if (this.XSecurityToken != input.XSecurityToken || (this.XSecurityToken != null && !this.XSecurityToken.Equals(input.XSecurityToken))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.PermissionSetId != input.PermissionSetId || (this.PermissionSetId != null && !this.PermissionSetId.Equals(input.PermissionSetId))) return false;
-            if (this.XSecurityToken != input.XSecurityToken || (this.XSecurityToken != null && !this.XSecurityToken.Equals(input.XSecurityToken))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
@@ -91,9 +91,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.XSecurityToken != null) hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.PermissionSetId != null) hashCode = hashCode * 59 + this.PermissionSetId.GetHashCode();
-                if (this.XSecurityToken != null) hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }

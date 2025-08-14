@@ -178,6 +178,18 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         [JsonProperty("sequence", NullValueHandling = NullValueHandling.Ignore)]
         public string Sequence { get; set; }
 
+        /// <summary>
+        /// 指定PIN码保护。仅四级密评场景支持该参数。
+        /// </summary>
+        [JsonProperty("pin", NullValueHandling = NullValueHandling.Ignore)]
+        public string Pin { get; set; }
+
+        /// <summary>
+        /// pin码的类型，默认为“CipherText”，可选“PlainText”。仅四级密评场景支持该参数。
+        /// </summary>
+        [JsonProperty("pin_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string PinType { get; set; }
+
 
 
         /// <summary>
@@ -192,6 +204,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("  withPlainText: ").Append(WithPlainText).Append("\n");
             sb.Append("  additionalAuthenticatedData: ").Append(AdditionalAuthenticatedData).Append("\n");
             sb.Append("  sequence: ").Append(Sequence).Append("\n");
+            sb.Append("  pin: ").Append(Pin).Append("\n");
+            sb.Append("  pinType: ").Append(PinType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -215,6 +229,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             if (this.WithPlainText != input.WithPlainText || (this.WithPlainText != null && !this.WithPlainText.Equals(input.WithPlainText))) return false;
             if (this.AdditionalAuthenticatedData != input.AdditionalAuthenticatedData || (this.AdditionalAuthenticatedData != null && !this.AdditionalAuthenticatedData.Equals(input.AdditionalAuthenticatedData))) return false;
             if (this.Sequence != input.Sequence || (this.Sequence != null && !this.Sequence.Equals(input.Sequence))) return false;
+            if (this.Pin != input.Pin || (this.Pin != null && !this.Pin.Equals(input.Pin))) return false;
+            if (this.PinType != input.PinType || (this.PinType != null && !this.PinType.Equals(input.PinType))) return false;
 
             return true;
         }
@@ -232,6 +248,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 if (this.WithPlainText != null) hashCode = hashCode * 59 + this.WithPlainText.GetHashCode();
                 if (this.AdditionalAuthenticatedData != null) hashCode = hashCode * 59 + this.AdditionalAuthenticatedData.GetHashCode();
                 if (this.Sequence != null) hashCode = hashCode * 59 + this.Sequence.GetHashCode();
+                if (this.Pin != null) hashCode = hashCode * 59 + this.Pin.GetHashCode();
+                if (this.PinType != null) hashCode = hashCode * 59 + this.PinType.GetHashCode();
                 return hashCode;
             }
         }

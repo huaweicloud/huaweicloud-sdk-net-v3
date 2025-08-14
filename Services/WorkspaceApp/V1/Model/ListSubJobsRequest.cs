@@ -31,14 +31,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string JobType { get; set; }
 
         /// <summary>
-        /// 查询的偏移量。
+        /// 查询的偏移量，默认值0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 查询的数量，值区间[1-100]。
+        /// 查询的数量，值区间[1-100]，默认值10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

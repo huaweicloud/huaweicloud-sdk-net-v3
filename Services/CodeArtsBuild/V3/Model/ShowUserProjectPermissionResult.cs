@@ -41,6 +41,42 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public bool? GroupPermission { get; set; }
 
         /// <summary>
+        /// 用户是否有删除权限。
+        /// </summary>
+        [JsonProperty("delete_permission", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DeletePermission { get; set; }
+
+        /// <summary>
+        /// 用户是否有查看权限。
+        /// </summary>
+        [JsonProperty("view_permission", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ViewPermission { get; set; }
+
+        /// <summary>
+        /// 用户是否有执行权限。
+        /// </summary>
+        [JsonProperty("execute_permission", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ExecutePermission { get; set; }
+
+        /// <summary>
+        /// 用户是否有克隆权限。
+        /// </summary>
+        [JsonProperty("copy_permission", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CopyPermission { get; set; }
+
+        /// <summary>
+        /// 用户是否有禁用权限。
+        /// </summary>
+        [JsonProperty("forbidden_permission", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ForbiddenPermission { get; set; }
+
+        /// <summary>
+        /// 用户是否有管理权限。
+        /// </summary>
+        [JsonProperty("manager_permission", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ManagerPermission { get; set; }
+
+        /// <summary>
         /// 角色ID
         /// </summary>
         [JsonProperty("role_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -51,6 +87,18 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         [JsonProperty("role_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RoleName { get; set; }
+
+        /// <summary>
+        /// 角色编码集合。
+        /// </summary>
+        [JsonProperty("role_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> RoleIds { get; set; }
+
+        /// <summary>
+        /// 角色名称集合。
+        /// </summary>
+        [JsonProperty("role_names", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> RoleNames { get; set; }
 
 
 
@@ -65,8 +113,16 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             sb.Append("  createPermission: ").Append(CreatePermission).Append("\n");
             sb.Append("  modifyPermission: ").Append(ModifyPermission).Append("\n");
             sb.Append("  groupPermission: ").Append(GroupPermission).Append("\n");
+            sb.Append("  deletePermission: ").Append(DeletePermission).Append("\n");
+            sb.Append("  viewPermission: ").Append(ViewPermission).Append("\n");
+            sb.Append("  executePermission: ").Append(ExecutePermission).Append("\n");
+            sb.Append("  copyPermission: ").Append(CopyPermission).Append("\n");
+            sb.Append("  forbiddenPermission: ").Append(ForbiddenPermission).Append("\n");
+            sb.Append("  managerPermission: ").Append(ManagerPermission).Append("\n");
             sb.Append("  roleId: ").Append(RoleId).Append("\n");
             sb.Append("  roleName: ").Append(RoleName).Append("\n");
+            sb.Append("  roleIds: ").Append(RoleIds).Append("\n");
+            sb.Append("  roleNames: ").Append(RoleNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -89,8 +145,16 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             if (this.CreatePermission != input.CreatePermission || (this.CreatePermission != null && !this.CreatePermission.Equals(input.CreatePermission))) return false;
             if (this.ModifyPermission != input.ModifyPermission || (this.ModifyPermission != null && !this.ModifyPermission.Equals(input.ModifyPermission))) return false;
             if (this.GroupPermission != input.GroupPermission || (this.GroupPermission != null && !this.GroupPermission.Equals(input.GroupPermission))) return false;
+            if (this.DeletePermission != input.DeletePermission || (this.DeletePermission != null && !this.DeletePermission.Equals(input.DeletePermission))) return false;
+            if (this.ViewPermission != input.ViewPermission || (this.ViewPermission != null && !this.ViewPermission.Equals(input.ViewPermission))) return false;
+            if (this.ExecutePermission != input.ExecutePermission || (this.ExecutePermission != null && !this.ExecutePermission.Equals(input.ExecutePermission))) return false;
+            if (this.CopyPermission != input.CopyPermission || (this.CopyPermission != null && !this.CopyPermission.Equals(input.CopyPermission))) return false;
+            if (this.ForbiddenPermission != input.ForbiddenPermission || (this.ForbiddenPermission != null && !this.ForbiddenPermission.Equals(input.ForbiddenPermission))) return false;
+            if (this.ManagerPermission != input.ManagerPermission || (this.ManagerPermission != null && !this.ManagerPermission.Equals(input.ManagerPermission))) return false;
             if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
             if (this.RoleName != input.RoleName || (this.RoleName != null && !this.RoleName.Equals(input.RoleName))) return false;
+            if (this.RoleIds != input.RoleIds || (this.RoleIds != null && input.RoleIds != null && !this.RoleIds.SequenceEqual(input.RoleIds))) return false;
+            if (this.RoleNames != input.RoleNames || (this.RoleNames != null && input.RoleNames != null && !this.RoleNames.SequenceEqual(input.RoleNames))) return false;
 
             return true;
         }
@@ -107,8 +171,16 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
                 if (this.CreatePermission != null) hashCode = hashCode * 59 + this.CreatePermission.GetHashCode();
                 if (this.ModifyPermission != null) hashCode = hashCode * 59 + this.ModifyPermission.GetHashCode();
                 if (this.GroupPermission != null) hashCode = hashCode * 59 + this.GroupPermission.GetHashCode();
+                if (this.DeletePermission != null) hashCode = hashCode * 59 + this.DeletePermission.GetHashCode();
+                if (this.ViewPermission != null) hashCode = hashCode * 59 + this.ViewPermission.GetHashCode();
+                if (this.ExecutePermission != null) hashCode = hashCode * 59 + this.ExecutePermission.GetHashCode();
+                if (this.CopyPermission != null) hashCode = hashCode * 59 + this.CopyPermission.GetHashCode();
+                if (this.ForbiddenPermission != null) hashCode = hashCode * 59 + this.ForbiddenPermission.GetHashCode();
+                if (this.ManagerPermission != null) hashCode = hashCode * 59 + this.ManagerPermission.GetHashCode();
                 if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
                 if (this.RoleName != null) hashCode = hashCode * 59 + this.RoleName.GetHashCode();
+                if (this.RoleIds != null) hashCode = hashCode * 59 + this.RoleIds.GetHashCode();
+                if (this.RoleNames != null) hashCode = hashCode * 59 + this.RoleNames.GetHashCode();
                 return hashCode;
             }
         }

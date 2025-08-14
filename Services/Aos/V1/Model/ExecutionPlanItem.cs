@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     public class ExecutionPlanItem 
     {
         /// <summary>
-        /// 资源变更的类型   * &#x60;ADD&#x60; - 新增资源   * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源   * &#x60;DELETE &#x60; - 删除资源   * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源   * &#x60;UPDATE&#x60; - 更新资源    * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作
+        /// 资源变更的类型 * &#x60;ADD&#x60; - 新增资源 * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源 * &#x60;DELETE &#x60; - 删除资源 * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源 * &#x60;UPDATE&#x60; - 更新资源  * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作
         /// </summary>
-        /// <value>资源变更的类型   * &#x60;ADD&#x60; - 新增资源   * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源   * &#x60;DELETE &#x60; - 删除资源   * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源   * &#x60;UPDATE&#x60; - 更新资源    * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作</value>
+        /// <value>资源变更的类型 * &#x60;ADD&#x60; - 新增资源 * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源 * &#x60;DELETE &#x60; - 删除资源 * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源 * &#x60;UPDATE&#x60; - 更新资源  * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -155,9 +155,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         }
 
         /// <summary>
-        /// 资源模式   * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件   * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源
+        /// 资源模式 * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件 * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源
         /// </summary>
-        /// <value>资源模式   * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件   * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源</value>
+        /// <value>资源模式 * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件 * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源</value>
         [JsonConverter(typeof(EnumClassConverter<ModeEnum>))]
         public class ModeEnum
         {
@@ -289,7 +289,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string Index { get; set; }
 
         /// <summary>
-        /// 资源变更的类型   * &#x60;ADD&#x60; - 新增资源   * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源   * &#x60;DELETE &#x60; - 删除资源   * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源   * &#x60;UPDATE&#x60; - 更新资源    * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作
+        /// 资源变更的类型 * &#x60;ADD&#x60; - 新增资源 * &#x60;ADD_THEN_DELETE&#x60; - 由不可更新的资源返回，先创建新资源，再删除旧资源 * &#x60;DELETE &#x60; - 删除资源 * &#x60;DELETE_THEN_ADD&#x60; - 由不可更新的资源返回，先删除旧资源，再创建新资源 * &#x60;UPDATE&#x60; - 更新资源  * &#x60;NO_OPERATION&#x60; - 仅变更资源的依赖关系，但是对资源本身并无修改的操作
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
@@ -306,7 +306,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string ProviderName { get; set; }
 
         /// <summary>
-        /// 资源模式   * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件   * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源
+        /// 资源模式 * &#x60;DATA&#x60; - 指可以在模板解析期间运行和获取服务端数据的资源类型，不会操作基础设施组件 * &#x60;RESOURCE&#x60; - 指通过模板管理的由服务定义的基础设施组件抽象，可以是物理资源也可以是逻辑资源
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
         public ModeEnum Mode { get; set; }
@@ -323,7 +323,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public bool? Imported { get; set; }
 
         /// <summary>
-        /// 资源的物理id，是唯一id，由为该资源提供服务的provider、云服务或其他服务提供方在资源部署的时候生成
+        /// 资源的物理ID，是唯一ID，由为该资源提供服务的provider、云服务或其他服务提供方在资源部署的时候生成
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }

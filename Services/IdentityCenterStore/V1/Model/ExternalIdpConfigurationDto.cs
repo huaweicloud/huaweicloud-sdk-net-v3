@@ -1,0 +1,98 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.IdentityCenterStore.V1.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ExternalIdpConfigurationDto 
+    {
+
+        /// <summary>
+        /// 身份提供商证书对应的全局唯一标识符列表
+        /// </summary>
+        [JsonProperty("idp_certificate_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<IdpCertificateBody> IdpCertificateIds { get; set; }
+
+        /// <summary>
+        /// 身份提供商对应的全局唯一标识符（ID）
+        /// </summary>
+        [JsonProperty("idp_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string IdpId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("idp_saml_config", NullValueHandling = NullValueHandling.Ignore)]
+        public IdpSAMLConfig IdpSamlConfig { get; set; }
+
+        /// <summary>
+        /// 是否启用身份提供商
+        /// </summary>
+        [JsonProperty("is_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsEnabled { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ExternalIdpConfigurationDto {\n");
+            sb.Append("  idpCertificateIds: ").Append(IdpCertificateIds).Append("\n");
+            sb.Append("  idpId: ").Append(IdpId).Append("\n");
+            sb.Append("  idpSamlConfig: ").Append(IdpSamlConfig).Append("\n");
+            sb.Append("  isEnabled: ").Append(IsEnabled).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ExternalIdpConfigurationDto);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ExternalIdpConfigurationDto input)
+        {
+            if (input == null) return false;
+            if (this.IdpCertificateIds != input.IdpCertificateIds || (this.IdpCertificateIds != null && input.IdpCertificateIds != null && !this.IdpCertificateIds.SequenceEqual(input.IdpCertificateIds))) return false;
+            if (this.IdpId != input.IdpId || (this.IdpId != null && !this.IdpId.Equals(input.IdpId))) return false;
+            if (this.IdpSamlConfig != input.IdpSamlConfig || (this.IdpSamlConfig != null && !this.IdpSamlConfig.Equals(input.IdpSamlConfig))) return false;
+            if (this.IsEnabled != input.IsEnabled || (this.IsEnabled != null && !this.IsEnabled.Equals(input.IsEnabled))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.IdpCertificateIds != null) hashCode = hashCode * 59 + this.IdpCertificateIds.GetHashCode();
+                if (this.IdpId != null) hashCode = hashCode * 59 + this.IdpId.GetHashCode();
+                if (this.IdpSamlConfig != null) hashCode = hashCode * 59 + this.IdpSamlConfig.GetHashCode();
+                if (this.IsEnabled != null) hashCode = hashCode * 59 + this.IsEnabled.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

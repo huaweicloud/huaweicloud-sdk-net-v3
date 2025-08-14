@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
 {
     /// <summary>
-    /// 提供关于IAM身份中心实例的信息
+    /// 提供关于IdentityCenter实例的信息
     /// </summary>
     public class InstanceMetadataEntryDto 
     {
 
         /// <summary>
-        /// 关联到IAM身份中心实例的身份源的全局唯一标识符（ID）
+        /// 关联到IAM身份中心实例的身份源的全局唯一标识符（ID）。
         /// </summary>
         [JsonProperty("identity_store_id", NullValueHandling = NullValueHandling.Ignore)]
         public string IdentityStoreId { get; set; }
 
         /// <summary>
-        /// IAM身份中心实例的全局唯一标识符（ID）
+        /// Identity Center实例的全局唯一标识符（ID）
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }

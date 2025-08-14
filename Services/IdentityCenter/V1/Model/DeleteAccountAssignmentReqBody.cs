@@ -258,7 +258,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         [JsonProperty("principal_type", NullValueHandling = NullValueHandling.Ignore)]
         public PrincipalTypeEnum PrincipalType { get; set; }
         /// <summary>
-        /// 目标账号身份标识
+        /// 目标账户身份标识
         /// </summary>
         [JsonProperty("target_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetId { get; set; }

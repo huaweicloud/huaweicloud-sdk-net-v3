@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
     {
 
         /// <summary>
-        /// 资源ID
+        /// 资源ID。
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 产物名称，或者被操作资源名称
+        /// 产物名称，或者被操作资源名称。
         /// </summary>
         [JsonProperty("resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceName { get; set; }

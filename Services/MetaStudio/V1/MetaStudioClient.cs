@@ -393,6 +393,186 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 删除导入导出任务
+        ///
+        /// 删除导入导出任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteTaskResponse DeleteTask(DeleteTaskRequest deleteTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteTaskRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/task/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTaskRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteTaskResponse>(response);
+        }
+
+        public SyncInvoker<DeleteTaskResponse> DeleteTaskInvoker(DeleteTaskRequest deleteTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteTaskRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/task/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTaskRequest);
+            return new SyncInvoker<DeleteTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 下载导入或导出的结果文件
+        ///
+        /// 下载导入或者导出结果文件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadResultFileResponse DownloadResultFile(DownloadResultFileRequest downloadResultFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", downloadResultFileRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/result/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadResultFileRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<DownloadResultFileResponse>(response);
+        }
+
+        public SyncInvoker<DownloadResultFileResponse> DownloadResultFileInvoker(DownloadResultFileRequest downloadResultFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", downloadResultFileRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/result/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadResultFileRequest);
+            return new SyncInvoker<DownloadResultFileResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadResultFileResponse>);
+        }
+        
+        /// <summary>
+        /// 下载信息导入模板
+        ///
+        /// 下载导入模板，返回导入模板文件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadTemplateResponse DownloadTemplate(DownloadTemplateRequest downloadTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource", downloadTemplateRequest.Resource.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/import/{resource}/template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadTemplateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<DownloadTemplateResponse>(response);
+        }
+
+        public SyncInvoker<DownloadTemplateResponse> DownloadTemplateInvoker(DownloadTemplateRequest downloadTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource", downloadTemplateRequest.Resource.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/import/{resource}/template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadTemplateRequest);
+            return new SyncInvoker<DownloadTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 导出文件
+        ///
+        /// 导出文件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExportResourceResponse ExportResource(ExportResourceRequest exportResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource", exportResourceRequest.Resource.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/export/{resource}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportResourceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ExportResourceResponse>(response);
+        }
+
+        public SyncInvoker<ExportResourceResponse> ExportResourceInvoker(ExportResourceRequest exportResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource", exportResourceRequest.Resource.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/export/{resource}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportResourceRequest);
+            return new SyncInvoker<ExportResourceResponse>(this, "POST", request, JsonUtils.DeSerialize<ExportResourceResponse>);
+        }
+        
+        /// <summary>
+        /// 导入文件
+        ///
+        /// 导入文件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ImportResourceResponse ImportResource(ImportResourceRequest importResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource", importResourceRequest.Resource.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/import/{resource}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", importResourceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ImportResourceResponse>(response);
+        }
+
+        public SyncInvoker<ImportResourceResponse> ImportResourceInvoker(ImportResourceRequest importResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource", importResourceRequest.Resource.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/import/{resource}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", importResourceRequest);
+            return new SyncInvoker<ImportResourceResponse>(this, "POST", request, JsonUtils.DeSerialize<ImportResourceResponse>);
+        }
+        
+        /// <summary>
+        /// 分页查询导入导出任务列表
+        ///
+        /// 分页查询导入导出任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SearchTaskResponse SearchTask(SearchTaskRequest searchTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<SearchTaskResponse>(response);
+        }
+
+        public SyncInvoker<SearchTaskResponse> SearchTaskInvoker(SearchTaskRequest searchTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchTaskRequest);
+            return new SyncInvoker<SearchTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<SearchTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询导入导出任务详情
+        ///
+        /// 查询导入导出任务详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTaskResponse ShowTask(ShowTaskRequest showTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showTaskRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/task/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTaskResponse>(response);
+        }
+
+        public SyncInvoker<ShowTaskResponse> ShowTaskInvoker(ShowTaskRequest showTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", showTaskRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/task/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskRequest);
+            return new SyncInvoker<ShowTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTaskResponse>);
+        }
+        
+        /// <summary>
         /// 创建对话链接
         ///
         /// 该接口用于创建对话链接。

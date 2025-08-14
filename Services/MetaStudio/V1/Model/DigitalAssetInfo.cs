@@ -482,6 +482,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string AssetId { get; set; }
 
         /// <summary>
+        /// ai标识ID。
+        /// </summary>
+        [JsonProperty("produce_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProduceId { get; set; }
+
+        /// <summary>
         /// 资产名称。
         /// </summary>
         [JsonProperty("asset_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -591,6 +597,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("class DigitalAssetInfo {\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  assetId: ").Append(AssetId).Append("\n");
+            sb.Append("  produceId: ").Append(ProduceId).Append("\n");
             sb.Append("  assetName: ").Append(AssetName).Append("\n");
             sb.Append("  assetDescription: ").Append(AssetDescription).Append("\n");
             sb.Append("  appUserId: ").Append(AppUserId).Append("\n");
@@ -628,6 +635,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (input == null) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.ProduceId != input.ProduceId || (this.ProduceId != null && !this.ProduceId.Equals(input.ProduceId))) return false;
             if (this.AssetName != input.AssetName || (this.AssetName != null && !this.AssetName.Equals(input.AssetName))) return false;
             if (this.AssetDescription != input.AssetDescription || (this.AssetDescription != null && !this.AssetDescription.Equals(input.AssetDescription))) return false;
             if (this.AppUserId != input.AppUserId || (this.AppUserId != null && !this.AppUserId.Equals(input.AppUserId))) return false;
@@ -659,6 +667,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 var hashCode = 41;
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.ProduceId != null) hashCode = hashCode * 59 + this.ProduceId.GetHashCode();
                 if (this.AssetName != null) hashCode = hashCode * 59 + this.AssetName.GetHashCode();
                 if (this.AssetDescription != null) hashCode = hashCode * 59 + this.AssetDescription.GetHashCode();
                 if (this.AppUserId != null) hashCode = hashCode * 59 + this.AppUserId.GetHashCode();

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 {
     /// <summary>
-    /// tags
+    /// tags。
     /// </summary>
     public class CreateResourceTagReq 
     {

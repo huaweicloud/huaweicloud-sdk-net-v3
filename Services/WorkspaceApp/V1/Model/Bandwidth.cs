@@ -239,7 +239,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public ComBandwidthControlOptions ComBandwidthControlOptions { get; set; }
 
         /// <summary>
-        /// 是否开启文件重定向带宽控制。取值为：false：表示关闭。true：表示开启
+        /// 是否开启文件重定向带宽控制。取值为：false：表示关闭。true：表示开启。
         /// </summary>
         [JsonProperty("file_redirection_bandwidth_control_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? FileRedirectionBandwidthControlEnable { get; set; }

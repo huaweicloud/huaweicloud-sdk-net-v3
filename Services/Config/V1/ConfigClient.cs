@@ -1027,6 +1027,56 @@ namespace HuaweiCloud.SDK.Config.V1
         }
         
         /// <summary>
+        /// 查询规则的合规总结
+        ///
+        /// 根据规则ID查询此规则的合规总结
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CollectPolicyAssignmentsStatesSummaryResponse CollectPolicyAssignmentsStatesSummary(CollectPolicyAssignmentsStatesSummaryRequest collectPolicyAssignmentsStatesSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_assignment_id", collectPolicyAssignmentsStatesSummaryRequest.PolicyAssignmentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/policy-states/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectPolicyAssignmentsStatesSummaryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<CollectPolicyAssignmentsStatesSummaryResponse>(response);
+        }
+
+        public SyncInvoker<CollectPolicyAssignmentsStatesSummaryResponse> CollectPolicyAssignmentsStatesSummaryInvoker(CollectPolicyAssignmentsStatesSummaryRequest collectPolicyAssignmentsStatesSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("policy_assignment_id", collectPolicyAssignmentsStatesSummaryRequest.PolicyAssignmentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/policy-states/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectPolicyAssignmentsStatesSummaryRequest);
+            return new SyncInvoker<CollectPolicyAssignmentsStatesSummaryResponse>(this, "GET", request, JsonUtils.DeSerialize<CollectPolicyAssignmentsStatesSummaryResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用户的合规总结
+        ///
+        /// 查询用户的合规总结
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CollectPolicyStatesSummaryResponse CollectPolicyStatesSummary(CollectPolicyStatesSummaryRequest collectPolicyStatesSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/policy-states/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectPolicyStatesSummaryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<CollectPolicyStatesSummaryResponse>(response);
+        }
+
+        public SyncInvoker<CollectPolicyStatesSummaryResponse> CollectPolicyStatesSummaryInvoker(CollectPolicyStatesSummaryRequest collectPolicyStatesSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/policy-states/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectPolicyStatesSummaryRequest);
+            return new SyncInvoker<CollectPolicyStatesSummaryResponse>(this, "GET", request, JsonUtils.DeSerialize<CollectPolicyStatesSummaryResponse>);
+        }
+        
+        /// <summary>
         /// 列举修正最新记录
         ///
         /// 列举合规规则修正最新记录。
@@ -1050,6 +1100,30 @@ namespace HuaweiCloud.SDK.Config.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/remediation-execution-statuses/summary", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectRemediationExecutionStatusesSummaryRequest);
             return new SyncInvoker<CollectRemediationExecutionStatusesSummaryResponse>(this, "POST", request, JsonUtils.DeSerialize<CollectRemediationExecutionStatusesSummaryResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用户资源的合规总结
+        ///
+        /// 查询用户资源的合规总结
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CollectResourcesPolicyStatesSummaryResponse CollectResourcesPolicyStatesSummary(CollectResourcesPolicyStatesSummaryRequest collectResourcesPolicyStatesSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/resources/policy-states/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectResourcesPolicyStatesSummaryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<CollectResourcesPolicyStatesSummaryResponse>(response);
+        }
+
+        public SyncInvoker<CollectResourcesPolicyStatesSummaryResponse> CollectResourcesPolicyStatesSummaryInvoker(CollectResourcesPolicyStatesSummaryRequest collectResourcesPolicyStatesSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/resources/policy-states/summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectResourcesPolicyStatesSummaryRequest);
+            return new SyncInvoker<CollectResourcesPolicyStatesSummaryResponse>(this, "GET", request, JsonUtils.DeSerialize<CollectResourcesPolicyStatesSummaryResponse>);
         }
         
         /// <summary>
@@ -2134,6 +2208,30 @@ namespace HuaweiCloud.SDK.Config.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/tracked-resources/count", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countTrackedResourcesRequest);
             return new SyncInvoker<CountTrackedResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<CountTrackedResourcesResponse>);
+        }
+        
+        /// <summary>
+        /// 列举所有已对接的云服务
+        ///
+        /// 查询所有已对接Config的云服务、资源。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAllProvidersResponse ListAllProviders(ListAllProvidersRequest listAllProvidersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/all-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllProvidersRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAllProvidersResponse>(response);
+        }
+
+        public SyncInvoker<ListAllProvidersResponse> ListAllProvidersInvoker(ListAllProvidersRequest listAllProvidersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/all-providers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllProvidersRequest);
+            return new SyncInvoker<ListAllProvidersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAllProvidersResponse>);
         }
         
         /// <summary>

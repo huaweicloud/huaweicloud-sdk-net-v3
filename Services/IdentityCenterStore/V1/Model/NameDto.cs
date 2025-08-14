@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1.Model
         public string FamilyName { get; set; }
 
         /// <summary>
-        /// 包含要显示的名称的格式化版本的字符串
+        /// 包含要显示的名称的格式化版本的字符串display.
         /// </summary>
         [JsonProperty("formatted", NullValueHandling = NullValueHandling.Ignore)]
         public string Formatted { get; set; }

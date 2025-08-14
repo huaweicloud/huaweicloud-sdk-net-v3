@@ -82,19 +82,19 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public List<ImageAccountInfo> AuthorizeAccounts { get; set; }
 
         /// <summary>
-        /// 镜像实例创建时间
+        /// 镜像实例创建时间。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreateTime { get; set; }
 
         /// <summary>
-        /// 更新时间
+        /// 更新时间。
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? UpdateTime { get; set; }
 
         /// <summary>
-        /// 企业项目ID,仅企业项目需配置(字段为空或者0表示使用默认default企业项目)
+        /// 企业项目ID,仅企业项目需配置(字段为空或者0表示使用默认default企业项目)。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

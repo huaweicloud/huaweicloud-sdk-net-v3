@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public int? IsAutoRenew { get; set; }
 
         /// <summary>
-        /// 订购周期数取值大于0
+        /// 订购周期数取值大于0。
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }

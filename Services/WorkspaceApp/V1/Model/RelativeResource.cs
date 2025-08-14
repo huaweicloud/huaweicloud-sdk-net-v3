@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 {
     /// <summary>
-    /// 关联资源
+    /// 关联资源。
     /// </summary>
     public class RelativeResource 
     {

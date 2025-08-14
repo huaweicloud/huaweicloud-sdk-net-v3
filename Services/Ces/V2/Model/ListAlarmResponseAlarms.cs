@@ -237,6 +237,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         [JsonProperty("resource_level", NullValueHandling = NullValueHandling.Ignore)]
         public ResourceLevelEnum ResourceLevel { get; set; }
+        /// <summary>
+        /// 租户标签列表
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
 
 
         /// <summary>
@@ -264,6 +270,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  alarmTemplateId: ").Append(AlarmTemplateId).Append("\n");
             sb.Append("  productName: ").Append(ProductName).Append("\n");
             sb.Append("  resourceLevel: ").Append(ResourceLevel).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -300,6 +307,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.AlarmTemplateId != input.AlarmTemplateId || (this.AlarmTemplateId != null && !this.AlarmTemplateId.Equals(input.AlarmTemplateId))) return false;
             if (this.ProductName != input.ProductName || (this.ProductName != null && !this.ProductName.Equals(input.ProductName))) return false;
             if (this.ResourceLevel != input.ResourceLevel) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -330,6 +338,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.AlarmTemplateId != null) hashCode = hashCode * 59 + this.AlarmTemplateId.GetHashCode();
                 if (this.ProductName != null) hashCode = hashCode * 59 + this.ProductName.GetHashCode();
                 hashCode = hashCode * 59 + this.ResourceLevel.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

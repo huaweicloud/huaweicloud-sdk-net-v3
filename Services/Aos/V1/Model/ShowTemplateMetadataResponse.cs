@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         public string TemplateId { get; set; }
 
         /// <summary>
-        /// 用户希望创建的模板名称
+        /// 模板（Template）的名字。此名字在domain_id+region下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
         /// </summary>
         [JsonProperty("template_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateName { get; set; }

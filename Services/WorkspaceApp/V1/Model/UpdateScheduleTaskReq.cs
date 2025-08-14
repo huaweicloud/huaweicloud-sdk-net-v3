@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 {
     /// <summary>
-    /// 更新定时任务
+    /// 更新定时任务。
     /// </summary>
     public class UpdateScheduleTaskReq 
     {

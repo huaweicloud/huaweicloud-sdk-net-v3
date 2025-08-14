@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
     {
 
         /// <summary>
-        /// IAM身份中心实例的全局唯一标识符（ID）。
+        /// IAM Identity Center实例的全局唯一标识符（ID）
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]

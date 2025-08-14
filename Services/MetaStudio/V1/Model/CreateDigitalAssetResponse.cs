@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string AssetId { get; set; }
 
         /// <summary>
+        /// ai标识ID。
+        /// </summary>
+        [JsonProperty("produce_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProduceId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("X-Request-Id", IsHeader = true)]
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             var sb = new StringBuilder();
             sb.Append("class CreateDigitalAssetResponse {\n");
             sb.Append("  assetId: ").Append(AssetId).Append("\n");
+            sb.Append("  produceId: ").Append(ProduceId).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         {
             if (input == null) return false;
             if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.ProduceId != input.ProduceId || (this.ProduceId != null && !this.ProduceId.Equals(input.ProduceId))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
             return true;
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             {
                 var hashCode = 41;
                 if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.ProduceId != null) hashCode = hashCode * 59 + this.ProduceId.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }

@@ -44,7 +44,7 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// 
         /// </summary>
         [JsonProperty("template", NullValueHandling = NullValueHandling.Ignore)]
-        public QueryTemplate Template { get; set; }
+        public QueryTemplateVo Template { get; set; }
 
         /// <summary>
         /// 模板类别

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
     {
 
         /// <summary>
-        /// 分组的总会话使用率(达到改阈值后扩容)。
+        /// 分组的总会话使用率(达到该阈值后扩容)。
         /// </summary>
         [JsonProperty("session_usage_threshold", NullValueHandling = NullValueHandling.Ignore)]
         public int? SessionUsageThreshold { get; set; }

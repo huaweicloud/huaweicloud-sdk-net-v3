@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 {
     /// <summary>
-    /// 路由策略
+    /// 路由策略。
     /// </summary>
     public class RoutePolicy 
     {

@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string UpgradeStatus { get; set; }
 
         /// <summary>
-        /// 更新时间
+        /// 更新时间。
         /// </summary>
         [JsonProperty("upgrade_time", NullValueHandling = NullValueHandling.Ignore)]
         public string UpgradeTime { get; set; }

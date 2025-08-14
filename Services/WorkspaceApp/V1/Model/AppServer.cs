@@ -222,13 +222,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public List<EcsNetWork> HostAddress { get; set; }
 
         /// <summary>
-        /// 企业项目ID,仅企业项目会返回
+        /// 企业项目ID,仅企业项目会返回。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 标签信息
+        /// 标签信息。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TmsTag> Tags { get; set; }

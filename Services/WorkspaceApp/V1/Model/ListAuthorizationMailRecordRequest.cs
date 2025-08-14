@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
     {
 
         /// <summary>
-        /// 单次查询的大小[1-100]。
+        /// 单次查询的大小[1-100]，默认值10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 查询的偏移量。
+        /// 查询的偏移量，默认值0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string Account { get; set; }
 
         /// <summary>
-        /// 授权类型： - ADD_GROUP_AUTHORIZATION 添加组授权 - DEL_GROUP_AUTHORIZATION 删除组授权
+        /// 授权类型： - ADD_GROUP_AUTHORIZATION 添加组授权 - DEL_GROUP_AUTHORIZATION 删除组授权。
         /// </summary>
         [SDKProperty("mail_send_type", IsQuery = true)]
         [JsonProperty("mail_send_type", NullValueHandling = NullValueHandling.Ignore)]

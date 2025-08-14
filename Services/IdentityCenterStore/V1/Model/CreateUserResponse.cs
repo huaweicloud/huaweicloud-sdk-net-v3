@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1.Model
         public string IdentityStoreId { get; set; }
 
         /// <summary>
-        /// 身份源中IAM身份中心用户的全局唯一标识符（ID）
+        /// 身份源中IdentityCenter用户的全局唯一标识符（ID）
         /// </summary>
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
         public string UserId { get; set; }

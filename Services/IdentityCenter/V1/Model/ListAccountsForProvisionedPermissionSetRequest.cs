@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
     public class ListAccountsForProvisionedPermissionSetRequest 
     {
         /// <summary>
-        /// 权限集分配状态.
+        /// 权限集分配状态。
         /// </summary>
-        /// <value>权限集分配状态.</value>
+        /// <value>权限集分配状态。</value>
         [JsonConverter(typeof(EnumClassConverter<ProvisioningStatusEnum>))]
         public class ProvisioningStatusEnum
         {
@@ -139,7 +139,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         public string XSecurityToken { get; set; }
 
         /// <summary>
-        /// IAM身份中心实例的全局唯一标识符（ID）。
+        /// IAM Identity Center实例的全局唯一标识符（ID）
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -153,7 +153,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         public string PermissionSetId { get; set; }
 
         /// <summary>
-        /// 每个请求返回的最大结果数
+        /// 每个请求返回的最大结果数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -167,7 +167,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         public string Marker { get; set; }
 
         /// <summary>
-        /// 权限集分配状态.
+        /// 权限集分配状态。
         /// </summary>
         [SDKProperty("provisioning_status", IsQuery = true)]
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]

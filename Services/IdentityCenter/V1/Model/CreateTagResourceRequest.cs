@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
     public class CreateTagResourceRequest 
     {
         /// <summary>
-        /// 资源类型 identitycenter:permissionset（权限集）
+        /// 资源类型 identitycenter:permissionset权限集
         /// </summary>
-        /// <value>资源类型 identitycenter:permissionset（权限集）</value>
+        /// <value>资源类型 identitycenter:permissionset权限集</value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -133,7 +133,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         public string XSecurityToken { get; set; }
 
         /// <summary>
-        /// 资源类型 identitycenter:permissionset（权限集）
+        /// 资源类型 identitycenter:permissionset权限集
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]

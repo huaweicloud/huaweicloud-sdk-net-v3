@@ -138,13 +138,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public int? ExtraSessionSize { get; set; }
 
         /// <summary>
-        /// 标签信息，最多包含20个key,不允许重复
+        /// 标签信息，最多包含20个key,不允许重复。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TmsTag> Tags { get; set; }
 
         /// <summary>
-        /// 企业项目ID,仅企业项目需配置(字段为空或者0表示使用默认default企业项目)
+        /// 企业项目ID,仅企业项目需配置(字段为空或者0表示使用默认default企业项目)。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

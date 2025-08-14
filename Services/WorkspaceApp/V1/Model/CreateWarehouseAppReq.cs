@@ -68,6 +68,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("app_file_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? AppFileSize { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("app_extended_info", NullValueHandling = NullValueHandling.Ignore)]
+        public AppExtendedInfo AppExtendedInfo { get; set; }
+
 
 
         /// <summary>
@@ -86,6 +92,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  appfileStorePath: ").Append(AppfileStorePath).Append("\n");
             sb.Append("  appIcon: ").Append(AppIcon).Append("\n");
             sb.Append("  appFileSize: ").Append(AppFileSize).Append("\n");
+            sb.Append("  appExtendedInfo: ").Append(AppExtendedInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -113,6 +120,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.AppfileStorePath != input.AppfileStorePath || (this.AppfileStorePath != null && !this.AppfileStorePath.Equals(input.AppfileStorePath))) return false;
             if (this.AppIcon != input.AppIcon || (this.AppIcon != null && !this.AppIcon.Equals(input.AppIcon))) return false;
             if (this.AppFileSize != input.AppFileSize || (this.AppFileSize != null && !this.AppFileSize.Equals(input.AppFileSize))) return false;
+            if (this.AppExtendedInfo != input.AppExtendedInfo || (this.AppExtendedInfo != null && !this.AppExtendedInfo.Equals(input.AppExtendedInfo))) return false;
 
             return true;
         }
@@ -134,6 +142,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.AppfileStorePath != null) hashCode = hashCode * 59 + this.AppfileStorePath.GetHashCode();
                 if (this.AppIcon != null) hashCode = hashCode * 59 + this.AppIcon.GetHashCode();
                 if (this.AppFileSize != null) hashCode = hashCode * 59 + this.AppFileSize.GetHashCode();
+                if (this.AppExtendedInfo != null) hashCode = hashCode * 59 + this.AppExtendedInfo.GetHashCode();
                 return hashCode;
             }
         }

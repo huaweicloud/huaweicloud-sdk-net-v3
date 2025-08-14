@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
     {
 
         /// <summary>
-        /// 批量唯一标识请求列表，一次请求数量区间 [1, 20]
+        /// 批量唯一标识请求列表，一次请求数量区间 [1, 20]。
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Items { get; set; }

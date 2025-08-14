@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 {
     /// <summary>
-    /// tms标签
+    /// tms标签。
     /// </summary>
     public class TmsTag 
     {

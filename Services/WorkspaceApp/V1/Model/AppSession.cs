@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string LastUpdateStatusTime { get; set; }
 
         /// <summary>
-        /// 租户ID
+        /// 租户ID。
         /// </summary>
         [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TenantId { get; set; }

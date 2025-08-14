@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         public string XSecurityToken { get; set; }
 
         /// <summary>
-        /// 每个请求返回的最大结果数
+        /// 每个请求返回的最大结果数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

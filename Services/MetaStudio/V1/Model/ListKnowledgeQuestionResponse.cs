@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     {
 
         /// <summary>
-        /// 与第一条数据的偏移量
+        /// 页面起始页,从0开始
         /// </summary>
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 页面大小
+        /// 每页显示的条目数量
         /// </summary>
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }

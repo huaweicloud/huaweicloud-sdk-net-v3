@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1.Model
     {
 
         /// <summary>
-        /// 经理
+        /// Manager信息
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

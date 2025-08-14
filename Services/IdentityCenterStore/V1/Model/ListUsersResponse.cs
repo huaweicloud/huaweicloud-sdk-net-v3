@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1.Model
         public PageInfoDto PageInfo { get; set; }
 
         /// <summary>
-        /// 身份源中的用户列表
+        /// IdentityStore中的用户列表。
         /// </summary>
         [JsonProperty("users", NullValueHandling = NullValueHandling.Ignore)]
         public List<UserDto> Users { get; set; }

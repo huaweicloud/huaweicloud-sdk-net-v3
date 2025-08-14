@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 {
     /// <summary>
-    /// 创建镜像实例请求
+    /// 创建镜像实例请求。
     /// </summary>
     public class CreateImageServerReq 
     {
@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 镜像实例描述
+        /// 镜像实例描述。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -47,13 +47,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string VpcId { get; set; }
 
         /// <summary>
-        /// 镜像实例网卡对应的子网唯一标识
+        /// 镜像实例网卡对应的子网唯一标识。
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// 镜像实例产品套餐ID
+        /// 镜像实例产品套餐ID。
         /// </summary>
         [JsonProperty("product_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductId { get; set; }
@@ -65,13 +65,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string FlavorId { get; set; }
 
         /// <summary>
-        /// 镜像实例的可用区，空值表示随机选取可用区
+        /// 镜像实例的可用区，空值表示随机选取可用区。
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// 云应用仓库软件唯一标识请求列表
+        /// 云应用仓库软件唯一标识请求列表。
         /// </summary>
         [JsonProperty("attach_apps", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AttachApps { get; set; }
@@ -83,13 +83,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public List<ImageAccountInfo> AuthorizeAccounts { get; set; }
 
         /// <summary>
-        /// 组织名称
+        /// 组织名称。
         /// </summary>
         [JsonProperty("ou_name", NullValueHandling = NullValueHandling.Ignore)]
         public string OuName { get; set; }
 
         /// <summary>
-        /// 是否为vdi单会话模式
+        /// 是否为vdi单会话模式。
         /// </summary>
         [JsonProperty("is_vdi", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsVdi { get; set; }
@@ -106,7 +106,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("extra_session_type", NullValueHandling = NullValueHandling.Ignore)]
         public ExtraSessionTypeEnum ExtraSessionType { get; set; }
         /// <summary>
-        /// 需要付费的会话数，单位/个
+        /// 需要付费的会话数，单位/个。
         /// </summary>
         [JsonProperty("extra_session_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? ExtraSessionSize { get; set; }
@@ -118,7 +118,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public RoutePolicy RoutePolicy { get; set; }
 
         /// <summary>
-        /// 标签信息，最多包含20个key,不允许重复
+        /// 标签信息，最多包含20个key,不允许重复。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<TmsTag> Tags { get; set; }

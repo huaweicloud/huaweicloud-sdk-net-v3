@@ -155,7 +155,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string PackageType { get; set; }
 
         /// <summary>
-        /// 系列类型
+        /// 系列类型。
         /// </summary>
         [JsonProperty("series_type", NullValueHandling = NullValueHandling.Ignore)]
         public string SeriesType { get; set; }

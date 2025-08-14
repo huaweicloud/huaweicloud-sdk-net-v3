@@ -63,6 +63,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("sandbox_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SandboxEnable { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("app_extended_info", NullValueHandling = NullValueHandling.Ignore)]
+        public AppExtendedInfo AppExtendedInfo { get; set; }
+
 
 
         /// <summary>
@@ -80,6 +86,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  commandParam: ").Append(CommandParam).Append("\n");
             sb.Append("  state: ").Append(State).Append("\n");
             sb.Append("  sandboxEnable: ").Append(SandboxEnable).Append("\n");
+            sb.Append("  appExtendedInfo: ").Append(AppExtendedInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +113,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.CommandParam != input.CommandParam || (this.CommandParam != null && !this.CommandParam.Equals(input.CommandParam))) return false;
             if (this.State != input.State) return false;
             if (this.SandboxEnable != input.SandboxEnable || (this.SandboxEnable != null && !this.SandboxEnable.Equals(input.SandboxEnable))) return false;
+            if (this.AppExtendedInfo != input.AppExtendedInfo || (this.AppExtendedInfo != null && !this.AppExtendedInfo.Equals(input.AppExtendedInfo))) return false;
 
             return true;
         }
@@ -126,6 +134,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.CommandParam != null) hashCode = hashCode * 59 + this.CommandParam.GetHashCode();
                 hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.SandboxEnable != null) hashCode = hashCode * 59 + this.SandboxEnable.GetHashCode();
+                if (this.AppExtendedInfo != null) hashCode = hashCode * 59 + this.AppExtendedInfo.GetHashCode();
                 return hashCode;
             }
         }

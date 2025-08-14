@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
     {
 
         /// <summary>
-        /// 账号ID列表
+        /// 账户ID列表
         /// </summary>
         [JsonProperty("account_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AccountIds { get; set; }

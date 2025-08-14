@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 {
     /// <summary>
-    /// 自定义策略
+    /// 自定义策略。
     /// </summary>
     public class PoliciesCustom 
     {

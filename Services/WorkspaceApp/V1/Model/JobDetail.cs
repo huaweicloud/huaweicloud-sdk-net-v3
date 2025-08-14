@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public DateTime? ExpectedEndTime { get; set; }
 
         /// <summary>
-        /// Job执行结果码
+        /// Job执行结果码。
         /// </summary>
         [JsonProperty("execute_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ExecuteCode { get; set; }

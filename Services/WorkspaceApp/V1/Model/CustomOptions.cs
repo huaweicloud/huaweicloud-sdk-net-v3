@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("custom_configuration1_rule", NullValueHandling = NullValueHandling.Ignore)]
         public string CustomConfiguration1Rule { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("rail_transparent_config", NullValueHandling = NullValueHandling.Ignore)]
+        public RailTransparentConfig RailTransparentConfig { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             var sb = new StringBuilder();
             sb.Append("class CustomOptions {\n");
             sb.Append("  customConfiguration1Rule: ").Append(CustomConfiguration1Rule).Append("\n");
+            sb.Append("  railTransparentConfig: ").Append(RailTransparentConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         {
             if (input == null) return false;
             if (this.CustomConfiguration1Rule != input.CustomConfiguration1Rule || (this.CustomConfiguration1Rule != null && !this.CustomConfiguration1Rule.Equals(input.CustomConfiguration1Rule))) return false;
+            if (this.RailTransparentConfig != input.RailTransparentConfig || (this.RailTransparentConfig != null && !this.RailTransparentConfig.Equals(input.RailTransparentConfig))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             {
                 var hashCode = 41;
                 if (this.CustomConfiguration1Rule != null) hashCode = hashCode * 59 + this.CustomConfiguration1Rule.GetHashCode();
+                if (this.RailTransparentConfig != null) hashCode = hashCode * 59 + this.RailTransparentConfig.GetHashCode();
                 return hashCode;
             }
         }

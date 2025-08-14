@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
     {
 
         /// <summary>
-        /// 单次查询的大小[1-100]。
+        /// 单次查询的大小[1-100]，默认值10。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 查询的偏移量。
+        /// 查询的偏移量，默认值0。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
@@ -36,6 +36,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [SDKProperty("app_group_id", IsQuery = true)]
         [JsonProperty("app_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppGroupId { get; set; }
+
+        /// <summary>
+        /// 应用授权的用户(组)ID，精确查询。
+        /// </summary>
+        [SDKProperty("account_id", IsQuery = true)]
+        [JsonProperty("account_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccountId { get; set; }
 
         /// <summary>
         /// 应用授权的用户(组)名称，精确查询。
@@ -63,6 +70,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  appGroupId: ").Append(AppGroupId).Append("\n");
+            sb.Append("  accountId: ").Append(AccountId).Append("\n");
             sb.Append("  account: ").Append(Account).Append("\n");
             sb.Append("  accountType: ").Append(AccountType).Append("\n");
             sb.Append("}\n");
@@ -86,6 +94,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.AppGroupId != input.AppGroupId || (this.AppGroupId != null && !this.AppGroupId.Equals(input.AppGroupId))) return false;
+            if (this.AccountId != input.AccountId || (this.AccountId != null && !this.AccountId.Equals(input.AccountId))) return false;
             if (this.Account != input.Account || (this.Account != null && !this.Account.Equals(input.Account))) return false;
             if (this.AccountType != input.AccountType || (this.AccountType != null && !this.AccountType.Equals(input.AccountType))) return false;
 
@@ -103,6 +112,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.AppGroupId != null) hashCode = hashCode * 59 + this.AppGroupId.GetHashCode();
+                if (this.AccountId != null) hashCode = hashCode * 59 + this.AccountId.GetHashCode();
                 if (this.Account != null) hashCode = hashCode * 59 + this.Account.GetHashCode();
                 if (this.AccountType != null) hashCode = hashCode * 59 + this.AccountType.GetHashCode();
                 return hashCode;

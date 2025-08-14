@@ -67,6 +67,12 @@ namespace HuaweiCloud.SDK.Ims.V2
             "https://ims.ru-moscow-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
             "https://ims.ap-southeast-5.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
+            "https://ims.cn-north-12.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_11 = new Region("cn-north-11",
+            "https://ims.cn-north-11.myhuaweicloud.com");
+        public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
+            "https://ims.cn-southwest-3.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("IMS");
 
@@ -102,6 +108,9 @@ namespace HuaweiCloud.SDK.Ims.V2
                 { "af-north-1", AF_NORTH_1 },
                 { "ru-moscow-1", RU_MOSCOW_1 },
                 { "ap-southeast-5", AP_SOUTHEAST_5 },
+                { "cn-north-12", CN_NORTH_12 },
+                { "cn-north-11", CN_NORTH_11 },
+                { "cn-southwest-3", CN_SOUTHWEST_3 },
         };
 
         public static Region ValueOf(string regionId)

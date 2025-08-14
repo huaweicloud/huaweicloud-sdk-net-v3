@@ -477,6 +477,12 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
 
         /// <summary>
+        /// 裸机的冻结状态
+        /// </summary>
+        [JsonProperty("EcmResStatus", NullValueHandling = NullValueHandling.Ignore)]
+        public string EcmResStatus { get; set; }
+
+        /// <summary>
         /// 裸金属服务器的计费类型。1：按包年包月计费（即prePaid：预付费方式）。
         /// </summary>
         [JsonProperty("chargingMode", NullValueHandling = NullValueHandling.Ignore)]
@@ -565,6 +571,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class MetadataList {\n");
+            sb.Append("  ecmResStatus: ").Append(EcmResStatus).Append("\n");
             sb.Append("  chargingMode: ").Append(ChargingMode).Append("\n");
             sb.Append("  meteringOrderId: ").Append(MeteringOrderId).Append("\n");
             sb.Append("  meteringProductId: ").Append(MeteringProductId).Append("\n");
@@ -597,6 +604,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public bool Equals(MetadataList input)
         {
             if (input == null) return false;
+            if (this.EcmResStatus != input.EcmResStatus || (this.EcmResStatus != null && !this.EcmResStatus.Equals(input.EcmResStatus))) return false;
             if (this.ChargingMode != input.ChargingMode) return false;
             if (this.MeteringOrderId != input.MeteringOrderId || (this.MeteringOrderId != null && !this.MeteringOrderId.Equals(input.MeteringOrderId))) return false;
             if (this.MeteringProductId != input.MeteringProductId || (this.MeteringProductId != null && !this.MeteringProductId.Equals(input.MeteringProductId))) return false;
@@ -623,6 +631,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.EcmResStatus != null) hashCode = hashCode * 59 + this.EcmResStatus.GetHashCode();
                 hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
                 if (this.MeteringOrderId != null) hashCode = hashCode * 59 + this.MeteringOrderId.GetHashCode();
                 if (this.MeteringProductId != null) hashCode = hashCode * 59 + this.MeteringProductId.GetHashCode();

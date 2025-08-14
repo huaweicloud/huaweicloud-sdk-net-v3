@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 {
     /// <summary>
-    /// wdh参数
+    /// wdh参数。
     /// </summary>
     public class WdhParam 
     {
 
         /// <summary>
-        ///  云办公主机id
+        ///  云办公主机id。
         /// </summary>
         [JsonProperty("dedicated_host_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedHostId { get; set; }
 
         /// <summary>
-        ///  类型
+        ///  类型。
         /// </summary>
         [JsonProperty("tenancy", NullValueHandling = NullValueHandling.Ignore)]
         public string Tenancy { get; set; }

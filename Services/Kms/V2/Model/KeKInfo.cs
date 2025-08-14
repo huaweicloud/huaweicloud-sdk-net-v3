@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
 
+        /// <summary>
+        /// region ID。
+        /// </summary>
+        [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RegionId { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("class KeKInfo {\n");
             sb.Append("  keyId: ").Append(KeyId).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
+            sb.Append("  regionId: ").Append(RegionId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             if (input == null) return false;
             if (this.KeyId != input.KeyId || (this.KeyId != null && !this.KeyId.Equals(input.KeyId))) return false;
             if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 var hashCode = 41;
                 if (this.KeyId != null) hashCode = hashCode * 59 + this.KeyId.GetHashCode();
                 if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
                 return hashCode;
             }
         }

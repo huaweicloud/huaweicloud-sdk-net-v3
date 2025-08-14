@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         public string HsmClusterId { get; set; }
 
         /// <summary>
+        /// 集群ID。当类型为DEFAULT时，cluster_id为”0”。当类型为DHSM时，cluster_id为hsm_cluster_id。当类型为CDMS时，默认密码卡集群，集群ID为“1”。自定义密码卡集群，为cdms_cluster_id
+        /// </summary>
+        [JsonProperty("cluster_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClusterId { get; set; }
+
+        /// <summary>
         /// 密钥库创建时间，UTC时间戳。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -66,6 +72,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             sb.Append("  keystoreAlias: ").Append(KeystoreAlias).Append("\n");
             sb.Append("  keystoreType: ").Append(KeystoreType).Append("\n");
             sb.Append("  hsmClusterId: ").Append(HsmClusterId).Append("\n");
+            sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -90,6 +97,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             if (this.KeystoreAlias != input.KeystoreAlias || (this.KeystoreAlias != null && !this.KeystoreAlias.Equals(input.KeystoreAlias))) return false;
             if (this.KeystoreType != input.KeystoreType || (this.KeystoreType != null && !this.KeystoreType.Equals(input.KeystoreType))) return false;
             if (this.HsmClusterId != input.HsmClusterId || (this.HsmClusterId != null && !this.HsmClusterId.Equals(input.HsmClusterId))) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
 
             return true;
@@ -108,6 +116,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 if (this.KeystoreAlias != null) hashCode = hashCode * 59 + this.KeystoreAlias.GetHashCode();
                 if (this.KeystoreType != null) hashCode = hashCode * 59 + this.KeystoreType.GetHashCode();
                 if (this.HsmClusterId != null) hashCode = hashCode * 59 + this.HsmClusterId.GetHashCode();
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }

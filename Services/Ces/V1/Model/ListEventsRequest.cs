@@ -130,6 +130,127 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             }
         }
 
+        /// <summary>
+        /// 事件子类, 枚举类型：SUB_EVENT.OPS 运维事件, SUB_EVENT.PLAN 计划事件，SUB_EVENT.CUSTOM 自定义事件
+        /// </summary>
+        /// <value>事件子类, 枚举类型：SUB_EVENT.OPS 运维事件, SUB_EVENT.PLAN 计划事件，SUB_EVENT.CUSTOM 自定义事件</value>
+        [JsonConverter(typeof(EnumClassConverter<SubEventTypeEnum>))]
+        public class SubEventTypeEnum
+        {
+            /// <summary>
+            /// Enum SUB_EVENT_OPS for value: SUB_EVENT.OPS
+            /// </summary>
+            public static readonly SubEventTypeEnum SUB_EVENT_OPS = new SubEventTypeEnum("SUB_EVENT.OPS");
+
+            /// <summary>
+            /// Enum SUB_EVENT_PLAN for value: SUB_EVENT.PLAN
+            /// </summary>
+            public static readonly SubEventTypeEnum SUB_EVENT_PLAN = new SubEventTypeEnum("SUB_EVENT.PLAN");
+
+            /// <summary>
+            /// Enum SUB_EVENT_CUSTOM for value: SUB_EVENT.CUSTOM
+            /// </summary>
+            public static readonly SubEventTypeEnum SUB_EVENT_CUSTOM = new SubEventTypeEnum("SUB_EVENT.CUSTOM");
+
+            private static readonly Dictionary<string, SubEventTypeEnum> StaticFields =
+            new Dictionary<string, SubEventTypeEnum>()
+            {
+                { "SUB_EVENT.OPS", SUB_EVENT_OPS },
+                { "SUB_EVENT.PLAN", SUB_EVENT_PLAN },
+                { "SUB_EVENT.CUSTOM", SUB_EVENT_CUSTOM },
+            };
+
+            private string _value;
+
+            public SubEventTypeEnum()
+            {
+
+            }
+
+            public SubEventTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SubEventTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SubEventTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SubEventTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SubEventTypeEnum a, SubEventTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SubEventTypeEnum a, SubEventTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
@@ -137,6 +258,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         [SDKProperty("event_type", IsQuery = true)]
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
         public EventTypeEnum EventType { get; set; }
+        /// <summary>
+        /// 事件子类, 枚举类型：SUB_EVENT.OPS 运维事件, SUB_EVENT.PLAN 计划事件，SUB_EVENT.CUSTOM 自定义事件
+        /// </summary>
+        [SDKProperty("sub_event_type", IsQuery = true)]
+        [JsonProperty("sub_event_type", NullValueHandling = NullValueHandling.Ignore)]
+        public SubEventTypeEnum SubEventType { get; set; }
         /// <summary>
         /// 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
         /// </summary>
@@ -182,6 +309,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ListEventsRequest {\n");
             sb.Append("  eventType: ").Append(EventType).Append("\n");
+            sb.Append("  subEventType: ").Append(SubEventType).Append("\n");
             sb.Append("  eventName: ").Append(EventName).Append("\n");
             sb.Append("  from: ").Append(From).Append("\n");
             sb.Append("  to: ").Append(To).Append("\n");
@@ -206,6 +334,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             if (input == null) return false;
             if (this.EventType != input.EventType) return false;
+            if (this.SubEventType != input.SubEventType) return false;
             if (this.EventName != input.EventName || (this.EventName != null && !this.EventName.Equals(input.EventName))) return false;
             if (this.From != input.From || (this.From != null && !this.From.Equals(input.From))) return false;
             if (this.To != input.To || (this.To != null && !this.To.Equals(input.To))) return false;
@@ -224,6 +353,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                hashCode = hashCode * 59 + this.SubEventType.GetHashCode();
                 if (this.EventName != null) hashCode = hashCode * 59 + this.EventName.GetHashCode();
                 if (this.From != null) hashCode = hashCode * 59 + this.From.GetHashCode();
                 if (this.To != null) hashCode = hashCode * 59 + this.To.GetHashCode();

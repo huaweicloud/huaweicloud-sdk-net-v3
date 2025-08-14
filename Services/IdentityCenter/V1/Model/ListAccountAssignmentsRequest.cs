@@ -24,14 +24,14 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         public string XSecurityToken { get; set; }
 
         /// <summary>
-        /// IAM身份中心实例的全局唯一标识符（ID）。
+        /// IAM Identity Center实例的全局唯一标识符（ID）
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 每个请求返回的最大结果数
+        /// 每个请求返回的最大结果数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -45,14 +45,14 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         public string Marker { get; set; }
 
         /// <summary>
-        /// 账号的唯一身份标识
+        /// The identifier of the account from which to list the assignments.
         /// </summary>
         [SDKProperty("account_id", IsQuery = true)]
         [JsonProperty("account_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AccountId { get; set; }
 
         /// <summary>
-        /// 指定权限集的唯一身份标识.
+        /// The identifier of the permission set from which to list assignments.
         /// </summary>
         [SDKProperty("permission_set_id", IsQuery = true)]
         [JsonProperty("permission_set_id", NullValueHandling = NullValueHandling.Ignore)]

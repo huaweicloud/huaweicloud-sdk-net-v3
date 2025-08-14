@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 {
     /// <summary>
-    /// 任务执行失败信息
+    /// 任务执行失败信息。
     /// </summary>
     public class ImageJobExecuteInfo 
     {

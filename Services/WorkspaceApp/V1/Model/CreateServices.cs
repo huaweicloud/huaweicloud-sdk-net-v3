@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string AvailabilityZone { get; set; }
 
         /// <summary>
-        /// 数据盘
+        /// 数据盘。
         /// </summary>
         [JsonProperty("data_volumes", NullValueHandling = NullValueHandling.Ignore)]
         public List<Volume> DataVolumes { get; set; }
