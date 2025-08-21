@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 控制策略ID。
+        /// 外部规则ID。
         /// </summary>
         [JsonProperty("control_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ControlId { get; set; }

@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string Param { get; set; }
 
         /// <summary>
-        /// 
+        /// 开关状态：0表示关闭、1表示开启
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }

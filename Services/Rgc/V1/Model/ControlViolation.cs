@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
     {
 
         /// <summary>
-        /// 控制策略纳管账号ID。
+        /// 纳管账号ID。
         /// </summary>
         [JsonProperty("account_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AccountId { get; set; }
 
         /// <summary>
-        /// 控制策略纳管账号名称。
+        /// 纳管账号名称。
         /// </summary>
         [JsonProperty("account_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AccountName { get; set; }

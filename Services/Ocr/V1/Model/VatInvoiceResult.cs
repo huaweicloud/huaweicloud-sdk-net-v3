@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public string InvoiceTag { get; set; }
 
         /// <summary>
-        /// 小计金额，当传入多页PDF时返回此字段。 
+        /// 小计金额，当传入为全电发票时返回此字段。 
         /// </summary>
         [JsonProperty("sum_amount", NullValueHandling = NullValueHandling.Ignore)]
         public string SumAmount { get; set; }
 
         /// <summary>
-        /// 小计税额，当传入多页PDF时返回此字段。 
+        /// 小计税额，当传入为全电发票时返回此字段。 
         /// </summary>
         [JsonProperty("sum_tax", NullValueHandling = NullValueHandling.Ignore)]
         public string SumTax { get; set; }

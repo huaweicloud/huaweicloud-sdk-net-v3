@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 模板的部署参数。
         /// </summary>
         [JsonProperty("variables", NullValueHandling = NullValueHandling.Ignore)]
         public List<TemplateParamVariable> Variables { get; set; }

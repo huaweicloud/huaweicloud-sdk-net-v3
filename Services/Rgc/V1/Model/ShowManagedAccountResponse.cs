@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
     {
 
         /// <summary>
-        /// Landing Zone版本。
+        /// 纳管账号的Landing Zone版本。
         /// </summary>
         [JsonProperty("landing_zone_version", NullValueHandling = NullValueHandling.Ignore)]
         public string LandingZoneVersion { get; set; }
 
         /// <summary>
-        /// 管理纳管账号ID。
+        /// 管理员账号ID。
         /// </summary>
         [JsonProperty("manage_account_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ManageAccountId { get; set; }
@@ -113,13 +113,13 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         public List<RegionManagedList> Regions { get; set; }
 
         /// <summary>
-        /// 组织里某个注册OU下的纳管账号被创建的时间。
+        /// 纳管账号的创建时间。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// 组织里某个注册OU下的纳管账号最后一次更新的时间。
+        /// 纳管账号的更新时间。
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? UpdatedAt { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
     {
 
         /// <summary>
-        /// 注册OU 标识。
+        /// 父注册OU ID。
         /// </summary>
         [JsonProperty("parent_organizational_unit_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ParentOrganizationalUnitId { get; set; }

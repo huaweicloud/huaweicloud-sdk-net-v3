@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
     {
 
         /// <summary>
-        /// 创建账号、纳管账号、纳管注册OU的操作ID。
+        /// 创建账号、纳管账号、注册OU的操作ID。
         /// </summary>
         [JsonProperty("operation_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OperationId { get; set; }

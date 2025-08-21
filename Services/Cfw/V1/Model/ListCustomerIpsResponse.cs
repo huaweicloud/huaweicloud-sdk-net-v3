@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// 
         /// </summary>
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
-        public HttpListCustomerIpsResponseData Data { get; set; }
+        public CustomerIpsPageInfo Data { get; set; }
 
 
 

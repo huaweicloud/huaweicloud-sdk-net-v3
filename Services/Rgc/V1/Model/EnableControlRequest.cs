@@ -21,7 +21,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public ControlOperateReqBody Body { get; set; }
+        public EnableControlOperateReqBody Body { get; set; }
 
 
 

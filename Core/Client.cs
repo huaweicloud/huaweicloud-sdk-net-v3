@@ -303,14 +303,10 @@ namespace HuaweiCloud.SDK.Core
                 _region = region;
                 return this;
             }
-
-            [Obsolete("As of 3.1.26, because of the support of the multi-endpoint feature, use WithEndPoints instead")]
-            public ClientBuilder<T> WithEndPoint(string endpoint)
+            
+            public ClientBuilder<T> WithEndPoint(params string[] endpoint)
             {
-                return WithEndPoints(new List<string>
-                {
-                    endpoint
-                });
+                return WithEndPoints(endpoint.ToList());
             }
 
             public ClientBuilder<T> WithEndPoints(List<string> endpoints)

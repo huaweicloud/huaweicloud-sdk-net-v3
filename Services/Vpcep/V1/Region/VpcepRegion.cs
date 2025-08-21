@@ -71,6 +71,10 @@ namespace HuaweiCloud.SDK.Vpcep.V1
             "https://vpcep.af-north-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
             "https://vpcep.ap-southeast-5.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
+            "https://vpcep.cn-north-12.myhuaweicloud.com");
+        public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
+            "https://vpcep.cn-southwest-3.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("VPCEP");
 
@@ -108,6 +112,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1
                 { "cn-east-4", CN_EAST_4 },
                 { "af-north-1", AF_NORTH_1 },
                 { "ap-southeast-5", AP_SOUTHEAST_5 },
+                { "cn-north-12", CN_NORTH_12 },
+                { "cn-southwest-3", CN_SOUTHWEST_3 },
         };
 
         public static Region ValueOf(string regionId)

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
     {
 
         /// <summary>
-        /// 管理纳管账号ID。
+        /// 管理员账号ID。
         /// </summary>
         [JsonProperty("manage_account_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ManageAccountId { get; set; }

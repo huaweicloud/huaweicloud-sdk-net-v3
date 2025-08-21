@@ -15,301 +15,25 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     /// </summary>
     public class CustomerIpsVO 
     {
-        /// <summary>
-        /// **参数解释**： 动作 **取值范围**： 0：只记录日志，1：重置/拦截
-        /// </summary>
-        /// <value>**参数解释**： 动作 **取值范围**： 0：只记录日志，1：重置/拦截</value>
-        [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
-        public class ActionEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_0 for value: 0
-            /// </summary>
-            public static readonly ActionEnum NUMBER_0 = new ActionEnum(0);
-
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly ActionEnum NUMBER_1 = new ActionEnum(1);
-
-            private static readonly Dictionary<int?, ActionEnum> StaticFields =
-            new Dictionary<int?, ActionEnum>()
-            {
-                { 0, NUMBER_0 },
-                { 1, NUMBER_1 },
-            };
-
-            private int? _value;
-
-            public ActionEnum()
-            {
-
-            }
-
-            public ActionEnum(int? value)
-            {
-                _value = value;
-            }
-
-            public static ActionEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ActionEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ActionEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ActionEnum a, ActionEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ActionEnum a, ActionEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// **参数解释**： 影响操作系统 **取值范围**： 0 any、1 Windows、2 Linux、3 FreeBSD、4 Solaris、5 other Unix、6 网络设备、7 Mac OS、8 ios、9 android、10 others
-        /// </summary>
-        /// <value>**参数解释**： 影响操作系统 **取值范围**： 0 any、1 Windows、2 Linux、3 FreeBSD、4 Solaris、5 other Unix、6 网络设备、7 Mac OS、8 ios、9 android、10 others</value>
-        [JsonConverter(typeof(EnumClassConverter<AffectedOsEnum>))]
-        public class AffectedOsEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_0 for value: 0
-            /// </summary>
-            public static readonly AffectedOsEnum NUMBER_0 = new AffectedOsEnum(0);
-
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly AffectedOsEnum NUMBER_1 = new AffectedOsEnum(1);
-
-            /// <summary>
-            /// Enum NUMBER_2 for value: 2
-            /// </summary>
-            public static readonly AffectedOsEnum NUMBER_2 = new AffectedOsEnum(2);
-
-            /// <summary>
-            /// Enum NUMBER_3 for value: 3
-            /// </summary>
-            public static readonly AffectedOsEnum NUMBER_3 = new AffectedOsEnum(3);
-
-            /// <summary>
-            /// Enum NUMBER_4 for value: 4
-            /// </summary>
-            public static readonly AffectedOsEnum NUMBER_4 = new AffectedOsEnum(4);
-
-            /// <summary>
-            /// Enum NUMBER_5 for value: 5
-            /// </summary>
-            public static readonly AffectedOsEnum NUMBER_5 = new AffectedOsEnum(5);
-
-            /// <summary>
-            /// Enum NUMBER_6 for value: 6
-            /// </summary>
-            public static readonly AffectedOsEnum NUMBER_6 = new AffectedOsEnum(6);
-
-            /// <summary>
-            /// Enum NUMBER_7 for value: 7
-            /// </summary>
-            public static readonly AffectedOsEnum NUMBER_7 = new AffectedOsEnum(7);
-
-            /// <summary>
-            /// Enum NUMBER_8 for value: 8
-            /// </summary>
-            public static readonly AffectedOsEnum NUMBER_8 = new AffectedOsEnum(8);
-
-            /// <summary>
-            /// Enum NUMBER_9 for value: 9
-            /// </summary>
-            public static readonly AffectedOsEnum NUMBER_9 = new AffectedOsEnum(9);
-
-            /// <summary>
-            /// Enum NUMBER_10 for value: 10
-            /// </summary>
-            public static readonly AffectedOsEnum NUMBER_10 = new AffectedOsEnum(10);
-
-            private static readonly Dictionary<int?, AffectedOsEnum> StaticFields =
-            new Dictionary<int?, AffectedOsEnum>()
-            {
-                { 0, NUMBER_0 },
-                { 1, NUMBER_1 },
-                { 2, NUMBER_2 },
-                { 3, NUMBER_3 },
-                { 4, NUMBER_4 },
-                { 5, NUMBER_5 },
-                { 6, NUMBER_6 },
-                { 7, NUMBER_7 },
-                { 8, NUMBER_8 },
-                { 9, NUMBER_9 },
-                { 10, NUMBER_10 },
-            };
-
-            private int? _value;
-
-            public AffectedOsEnum()
-            {
-
-            }
-
-            public AffectedOsEnum(int? value)
-            {
-                _value = value;
-            }
-
-            public static AffectedOsEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as AffectedOsEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(AffectedOsEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(AffectedOsEnum a, AffectedOsEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(AffectedOsEnum a, AffectedOsEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// **参数解释**： 动作 **取值范围**： 0：只记录日志，1：重置/拦截
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
-        public ActionEnum Action { get; set; }
+        public int? Action { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 防火墙集群id **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
         /// <summary>
         /// **参数解释**： 影响操作系统 **取值范围**： 0 any、1 Windows、2 Linux、3 FreeBSD、4 Solaris、5 other Unix、6 网络设备、7 Mac OS、8 ios、9 android、10 others
         /// </summary>
         [JsonProperty("affected_os", NullValueHandling = NullValueHandling.Ignore)]
-        public AffectedOsEnum AffectedOs { get; set; }
+        public int? AffectedOs { get; set; }
+
         /// <summary>
         /// **参数解释**： 攻击类型 **取值范围**： 1：访问控制、2：漏洞扫描、3：邮件攻击、4：漏洞攻击、5：Web攻击、6：密码攻击、7：劫持攻击、8：协议异常、9：特洛伊木马、10：蠕虫、11：缓冲区溢出、12：黑客工具、13：间谍软件、14：DDos泛洪、15：应用层DDos攻击、16：其他可疑行为、17：可疑DNS活动、18：网络钓鱼、19：垃圾邮件、20：其他攻击
         /// </summary>
@@ -339,12 +63,6 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         [JsonProperty("dst_port", NullValueHandling = NullValueHandling.Ignore)]
         public Port DstPort { get; set; }
-
-        /// <summary>
-        /// **参数解释**： 防火墙集群id **取值范围**： 不涉及
-        /// </summary>
-        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string GroupId { get; set; }
 
         /// <summary>
         /// **参数解释**： cfw侧自定义IPS规则id **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
@@ -398,13 +116,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             var sb = new StringBuilder();
             sb.Append("class CustomerIpsVO {\n");
             sb.Append("  action: ").Append(Action).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  affectedOs: ").Append(AffectedOs).Append("\n");
             sb.Append("  attackType: ").Append(AttackType).Append("\n");
             sb.Append("  configStatus: ").Append(ConfigStatus).Append("\n");
             sb.Append("  contents: ").Append(Contents).Append("\n");
             sb.Append("  direction: ").Append(Direction).Append("\n");
             sb.Append("  dstPort: ").Append(DstPort).Append("\n");
-            sb.Append("  groupId: ").Append(GroupId).Append("\n");
             sb.Append("  ipsCfwId: ").Append(IpsCfwId).Append("\n");
             sb.Append("  ipsId: ").Append(IpsId).Append("\n");
             sb.Append("  ipsName: ").Append(IpsName).Append("\n");
@@ -430,14 +148,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public bool Equals(CustomerIpsVO input)
         {
             if (input == null) return false;
-            if (this.Action != input.Action) return false;
-            if (this.AffectedOs != input.AffectedOs) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.AffectedOs != input.AffectedOs || (this.AffectedOs != null && !this.AffectedOs.Equals(input.AffectedOs))) return false;
             if (this.AttackType != input.AttackType || (this.AttackType != null && !this.AttackType.Equals(input.AttackType))) return false;
             if (this.ConfigStatus != input.ConfigStatus || (this.ConfigStatus != null && !this.ConfigStatus.Equals(input.ConfigStatus))) return false;
             if (this.Contents != input.Contents || (this.Contents != null && input.Contents != null && !this.Contents.SequenceEqual(input.Contents))) return false;
             if (this.Direction != input.Direction || (this.Direction != null && !this.Direction.Equals(input.Direction))) return false;
             if (this.DstPort != input.DstPort || (this.DstPort != null && !this.DstPort.Equals(input.DstPort))) return false;
-            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
             if (this.IpsCfwId != input.IpsCfwId || (this.IpsCfwId != null && !this.IpsCfwId.Equals(input.IpsCfwId))) return false;
             if (this.IpsId != input.IpsId || (this.IpsId != null && !this.IpsId.Equals(input.IpsId))) return false;
             if (this.IpsName != input.IpsName || (this.IpsName != null && !this.IpsName.Equals(input.IpsName))) return false;
@@ -457,14 +175,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.Action.GetHashCode();
-                hashCode = hashCode * 59 + this.AffectedOs.GetHashCode();
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.AffectedOs != null) hashCode = hashCode * 59 + this.AffectedOs.GetHashCode();
                 if (this.AttackType != null) hashCode = hashCode * 59 + this.AttackType.GetHashCode();
                 if (this.ConfigStatus != null) hashCode = hashCode * 59 + this.ConfigStatus.GetHashCode();
                 if (this.Contents != null) hashCode = hashCode * 59 + this.Contents.GetHashCode();
                 if (this.Direction != null) hashCode = hashCode * 59 + this.Direction.GetHashCode();
                 if (this.DstPort != null) hashCode = hashCode * 59 + this.DstPort.GetHashCode();
-                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 if (this.IpsCfwId != null) hashCode = hashCode * 59 + this.IpsCfwId.GetHashCode();
                 if (this.IpsId != null) hashCode = hashCode * 59 + this.IpsId.GetHashCode();
                 if (this.IpsName != null) hashCode = hashCode * 59 + this.IpsName.GetHashCode();

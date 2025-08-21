@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     public class SetLogLtsConfigsRequest 
     {
         /// <summary>
-        /// 引擎。
+        /// 引擎，暂只支持mysql。
         /// </summary>
-        /// <value>引擎。</value>
+        /// <value>引擎，暂只支持mysql。</value>
         [JsonConverter(typeof(EnumClassConverter<EngineEnum>))]
         public class EngineEnum
         {
@@ -27,22 +27,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             /// </summary>
             public static readonly EngineEnum MYSQL = new EngineEnum("mysql");
 
-            /// <summary>
-            /// Enum POSTGRESQL for value: postgresql
-            /// </summary>
-            public static readonly EngineEnum POSTGRESQL = new EngineEnum("postgresql");
-
-            /// <summary>
-            /// Enum SQLSERVER for value: sqlserver
-            /// </summary>
-            public static readonly EngineEnum SQLSERVER = new EngineEnum("sqlserver");
-
             private static readonly Dictionary<string, EngineEnum> StaticFields =
             new Dictionary<string, EngineEnum>()
             {
                 { "mysql", MYSQL },
-                { "postgresql", POSTGRESQL },
-                { "sqlserver", SQLSERVER },
             };
 
             private string _value;
@@ -253,7 +241,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
 
 
         /// <summary>
-        /// 引擎。
+        /// 引擎，暂只支持mysql。
         /// </summary>
         [SDKProperty("engine", IsPath = true)]
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]

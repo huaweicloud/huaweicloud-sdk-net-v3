@@ -40,6 +40,30 @@ namespace HuaweiCloud.SDK.Rgc.V1
         }
         
         /// <summary>
+        /// 查询治理成熟度的账号详情
+        ///
+        /// 查询治理成熟度的账号详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowBestPracticeAccountInfoResponse> ShowBestPracticeAccountInfoAsync(ShowBestPracticeAccountInfoRequest showBestPracticeAccountInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/best-practice/account-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBestPracticeAccountInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowBestPracticeAccountInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowBestPracticeAccountInfoResponse> ShowBestPracticeAccountInfoAsyncInvoker(ShowBestPracticeAccountInfoRequest showBestPracticeAccountInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/best-practice/account-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBestPracticeAccountInfoRequest);
+            return new AsyncInvoker<ShowBestPracticeAccountInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBestPracticeAccountInfoResponse>);
+        }
+        
+        /// <summary>
         /// 查询最近一次成功的治理成熟度检测的详情
         ///
         /// 查询最近一次成功的治理成熟度检测的详情。
@@ -471,9 +495,9 @@ namespace HuaweiCloud.SDK.Rgc.V1
         }
         
         /// <summary>
-        /// 查询注册账号开启的控制策略
+        /// 查询纳管账号开启的控制策略
         ///
-        /// 查询组织里某个注册账号下开启的某个控制策略的详细信息。
+        /// 查询组织里某个纳管账号下开启的某个控制策略的详细信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

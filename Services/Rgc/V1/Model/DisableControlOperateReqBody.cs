@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
     /// <summary>
     /// 操作控制策略的请求体。
     /// </summary>
-    public class ControlOperateReqBody 
+    public class DisableControlOperateReqBody 
     {
 
         /// <summary>
@@ -28,12 +28,6 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         [JsonProperty("target_identifier", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetIdentifier { get; set; }
 
-        /// <summary>
-        /// 策略参数。
-        /// </summary>
-        [JsonProperty("parameters", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EnableControlParameters> Parameters { get; set; }
-
 
 
         /// <summary>
@@ -42,10 +36,9 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ControlOperateReqBody {\n");
+            sb.Append("class DisableControlOperateReqBody {\n");
             sb.Append("  identifier: ").Append(Identifier).Append("\n");
             sb.Append("  targetIdentifier: ").Append(TargetIdentifier).Append("\n");
-            sb.Append("  parameters: ").Append(Parameters).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -55,18 +48,17 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ControlOperateReqBody);
+            return this.Equals(input as DisableControlOperateReqBody);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ControlOperateReqBody input)
+        public bool Equals(DisableControlOperateReqBody input)
         {
             if (input == null) return false;
             if (this.Identifier != input.Identifier || (this.Identifier != null && !this.Identifier.Equals(input.Identifier))) return false;
             if (this.TargetIdentifier != input.TargetIdentifier || (this.TargetIdentifier != null && !this.TargetIdentifier.Equals(input.TargetIdentifier))) return false;
-            if (this.Parameters != input.Parameters || (this.Parameters != null && input.Parameters != null && !this.Parameters.SequenceEqual(input.Parameters))) return false;
 
             return true;
         }
@@ -81,7 +73,6 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
                 var hashCode = 41;
                 if (this.Identifier != null) hashCode = hashCode * 59 + this.Identifier.GetHashCode();
                 if (this.TargetIdentifier != null) hashCode = hashCode * 59 + this.TargetIdentifier.GetHashCode();
-                if (this.Parameters != null) hashCode = hashCode * 59 + this.Parameters.GetHashCode();
                 return hashCode;
             }
         }

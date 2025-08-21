@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**： 端口类型，-1 Any，0 包含，1 排除 **取值范围**： 不涉及
+        /// **参数解释**： 端口类型 **取值范围**： -1 Any，0 包含，1 排除
         /// </summary>
         [JsonProperty("port_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? PortType { get; set; }

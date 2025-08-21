@@ -87,6 +87,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 创建转推输出
+        ///
+        /// 创建转推输出
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateFlowOutputResponse CreateFlowOutput(CreateFlowOutputRequest createFlowOutputRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/outputs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createFlowOutputRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateFlowOutputResponse>(response);
+        }
+
+        public SyncInvoker<CreateFlowOutputResponse> CreateFlowOutputInvoker(CreateFlowOutputRequest createFlowOutputRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/outputs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createFlowOutputRequest);
+            return new SyncInvoker<CreateFlowOutputResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFlowOutputResponse>);
+        }
+        
+        /// <summary>
         /// 创建流
         ///
         /// 创建流
@@ -420,6 +444,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFlowRequest);
             return new SyncInvoker<DeleteFlowResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteFlowResponse>);
+        }
+        
+        /// <summary>
+        /// 删除转推输出
+        ///
+        /// 删除转推输出
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteFlowOutputResponse DeleteFlowOutput(DeleteFlowOutputRequest deleteFlowOutputRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/outputs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFlowOutputRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteFlowOutputResponse>(response);
+        }
+
+        public SyncInvoker<DeleteFlowOutputResponse> DeleteFlowOutputInvoker(DeleteFlowOutputRequest deleteFlowOutputRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/outputs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFlowOutputRequest);
+            return new SyncInvoker<DeleteFlowOutputResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteFlowOutputResponse>);
         }
         
         /// <summary>
@@ -958,6 +1006,30 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 更新转推输出
+        ///
+        /// 更新转推输出
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyFlowOutputResponse ModifyFlowOutput(ModifyFlowOutputRequest modifyFlowOutputRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/outputs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", modifyFlowOutputRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyFlowOutputResponse>(response);
+        }
+
+        public SyncInvoker<ModifyFlowOutputResponse> ModifyFlowOutputInvoker(ModifyFlowOutputRequest modifyFlowOutputRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/outputs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", modifyFlowOutputRequest);
+            return new SyncInvoker<ModifyFlowOutputResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyFlowOutputResponse>);
+        }
+        
+        /// <summary>
         /// 修改流来源
         ///
         /// 修改流来源
@@ -1147,6 +1219,30 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlowDetailRequest);
             return new SyncInvoker<ShowFlowDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFlowDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查询转推输出
+        ///
+        /// 查询转推输出
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowOutputInfoResponse ShowOutputInfo(ShowOutputInfoRequest showOutputInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/outputs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOutputInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowOutputInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowOutputInfoResponse> ShowOutputInfoInvoker(ShowOutputInfoRequest showOutputInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/flows/outputs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOutputInfoRequest);
+            return new SyncInvoker<ShowOutputInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowOutputInfoResponse>);
         }
         
         /// <summary>
@@ -1614,6 +1710,54 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/template/transcodings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateTranscodingsTemplateRequest);
             return new SyncInvoker<UpdateTranscodingsTemplateResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateTranscodingsTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 维度配置信息查询
+        ///
+        /// 新增维度配置信息查询API
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCesDimsInfoResponse ListCesDimsInfo(ListCesDimsInfoRequest listCesDimsInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/dims-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCesDimsInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListCesDimsInfoResponse>(response);
+        }
+
+        public SyncInvoker<ListCesDimsInfoResponse> ListCesDimsInfoInvoker(ListCesDimsInfoRequest listCesDimsInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/dims-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCesDimsInfoRequest);
+            return new SyncInvoker<ListCesDimsInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCesDimsInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 实例查询
+        ///
+        /// 新增实例查询API
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCesInstanceResponse ListCesInstance(ListCesInstanceRequest listCesInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", listCesInstanceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListCesInstanceResponse>(response);
+        }
+
+        public SyncInvoker<ListCesInstanceResponse> ListCesInstanceInvoker(ListCesInstanceRequest listCesInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ott/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", listCesInstanceRequest);
+            return new SyncInvoker<ListCesInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ListCesInstanceResponse>);
         }
         
         /// <summary>

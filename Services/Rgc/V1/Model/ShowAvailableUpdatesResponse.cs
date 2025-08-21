@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
     {
 
         /// <summary>
-        /// Landing Zone基础配置是否可用。
+        /// 用户当前的Landing Zone版本是否为最新版本。
         /// </summary>
         [JsonProperty("baseline_update_available", NullValueHandling = NullValueHandling.Ignore)]
         public bool? BaselineUpdateAvailable { get; set; }

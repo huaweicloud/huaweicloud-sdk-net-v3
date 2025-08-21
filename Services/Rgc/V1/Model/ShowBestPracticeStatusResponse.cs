@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         public string OperationId { get; set; }
 
         /// <summary>
-        /// 状态：进行中，成功，成败
+        /// 状态：进行中，成功，失败
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

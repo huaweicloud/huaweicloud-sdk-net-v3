@@ -341,16 +341,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         public string FwInstanceId { get; set; }
 
         /// <summary>
-        /// **参数解释**： ips规则名称 **取值范围**： 不涉及
-        /// </summary>
-        [JsonProperty("ips_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string IpsName { get; set; }
-
-        /// <summary>
         /// **参数解释**： 防护对象ID，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志ID，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得 **约束限制**： type为0时，object_id为互联网边界防护对象ID，type为1时，object_id为VPC边界防护对象ID，type可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得 **取值范围**： 32位UUID **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("object_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ObjectId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： ips规则名称 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("ips_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string IpsName { get; set; }
 
         /// <summary>
         /// **参数解释**： 协议类型 **取值范围**： 1 FTP、2 TELNET、3 SMTP、4 DNS_TCP、5 DNS_UDP、6 DHCP、7 TFTP、8 FINGER、9 HTTP、10 POP3、11 SUNRPC_TCP、12 SUNRPC_UDP、13 NNTP、14 MSRPC_TCP、15 MSRPC_UDP、16 NETBIOS_NAME_TCP、17 NETBIOS_NAME_UDP、18 NETBIOS_SMB、19 NETBIOS_DATAGRAM、20 IMAP4、21 SNMP、22 LDAP、23 MSSQL、24 ORACLE
@@ -392,8 +392,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             sb.Append("  direction: ").Append(Direction).Append("\n");
             sb.Append("  dstPort: ").Append(DstPort).Append("\n");
             sb.Append("  fwInstanceId: ").Append(FwInstanceId).Append("\n");
-            sb.Append("  ipsName: ").Append(IpsName).Append("\n");
             sb.Append("  objectId: ").Append(ObjectId).Append("\n");
+            sb.Append("  ipsName: ").Append(IpsName).Append("\n");
             sb.Append("  protocol: ").Append(Protocol).Append("\n");
             sb.Append("  severity: ").Append(Severity).Append("\n");
             sb.Append("  software: ").Append(Software).Append("\n");
@@ -423,8 +423,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
             if (this.Direction != input.Direction || (this.Direction != null && !this.Direction.Equals(input.Direction))) return false;
             if (this.DstPort != input.DstPort || (this.DstPort != null && !this.DstPort.Equals(input.DstPort))) return false;
             if (this.FwInstanceId != input.FwInstanceId || (this.FwInstanceId != null && !this.FwInstanceId.Equals(input.FwInstanceId))) return false;
-            if (this.IpsName != input.IpsName || (this.IpsName != null && !this.IpsName.Equals(input.IpsName))) return false;
             if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
+            if (this.IpsName != input.IpsName || (this.IpsName != null && !this.IpsName.Equals(input.IpsName))) return false;
             if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
             if (this.Severity != input.Severity || (this.Severity != null && !this.Severity.Equals(input.Severity))) return false;
             if (this.Software != input.Software || (this.Software != null && !this.Software.Equals(input.Software))) return false;
@@ -448,8 +448,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
                 if (this.Direction != null) hashCode = hashCode * 59 + this.Direction.GetHashCode();
                 if (this.DstPort != null) hashCode = hashCode * 59 + this.DstPort.GetHashCode();
                 if (this.FwInstanceId != null) hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
-                if (this.IpsName != null) hashCode = hashCode * 59 + this.IpsName.GetHashCode();
                 if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
+                if (this.IpsName != null) hashCode = hashCode * 59 + this.IpsName.GetHashCode();
                 if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 if (this.Severity != null) hashCode = hashCode * 59 + this.Severity.GetHashCode();
                 if (this.Software != null) hashCode = hashCode * 59 + this.Software.GetHashCode();

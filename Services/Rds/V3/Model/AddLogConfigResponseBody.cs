@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     {
 
         /// <summary>
-        /// 实例日志配置信息。
+        /// 实例日志配置信息，最多20条。
         /// </summary>
         [JsonProperty("log_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<AddLogConfigs> LogConfigs { get; set; }

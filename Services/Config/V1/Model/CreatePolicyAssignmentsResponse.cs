@@ -161,6 +161,12 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         public PolicyFilterDefinition PolicyFilter { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("policy_filter_v2", NullValueHandling = NullValueHandling.Ignore)]
+        public PolicyFilterDefinitionV2 PolicyFilterV2 { get; set; }
+
+        /// <summary>
         /// 触发周期值，可选值：One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours
         /// </summary>
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
@@ -240,6 +246,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  policyFilter: ").Append(PolicyFilter).Append("\n");
+            sb.Append("  policyFilterV2: ").Append(PolicyFilterV2).Append("\n");
             sb.Append("  period: ").Append(Period).Append("\n");
             sb.Append("  state: ").Append(State).Append("\n");
             sb.Append("  created: ").Append(Created).Append("\n");
@@ -274,6 +281,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.PolicyFilter != input.PolicyFilter || (this.PolicyFilter != null && !this.PolicyFilter.Equals(input.PolicyFilter))) return false;
+            if (this.PolicyFilterV2 != input.PolicyFilterV2 || (this.PolicyFilterV2 != null && !this.PolicyFilterV2.Equals(input.PolicyFilterV2))) return false;
             if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
             if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
             if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
@@ -302,6 +310,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.PolicyFilter != null) hashCode = hashCode * 59 + this.PolicyFilter.GetHashCode();
+                if (this.PolicyFilterV2 != null) hashCode = hashCode * 59 + this.PolicyFilterV2.GetHashCode();
                 if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
                 if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();

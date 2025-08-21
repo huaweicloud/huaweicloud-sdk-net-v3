@@ -15,6 +15,32 @@ namespace HuaweiCloud.SDK.Cdn.V2
 
         
         /// <summary>
+        /// 应用域名模板。
+        ///
+        /// 应用域名模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ApplyDomainTemplateResponse ApplyDomainTemplate(ApplyDomainTemplateRequest applyDomainTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("tml_id", applyDomainTemplateRequest.TmlId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/templates/{tml_id}/apply", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyDomainTemplateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ApplyDomainTemplateResponse>(response);
+        }
+
+        public SyncInvoker<ApplyDomainTemplateResponse> ApplyDomainTemplateInvoker(ApplyDomainTemplateRequest applyDomainTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("tml_id", applyDomainTemplateRequest.TmlId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/templates/{tml_id}/apply", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyDomainTemplateRequest);
+            return new SyncInvoker<ApplyDomainTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<ApplyDomainTemplateResponse>);
+        }
+        
+        /// <summary>
         /// 批量域名复制
         ///
         /// 批量域名复制接口。
@@ -111,6 +137,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainRequest);
             return new SyncInvoker<CreateDomainResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDomainResponse>);
+        }
+        
+        /// <summary>
+        /// 创建域名模板。
+        ///
+        /// 创建域名模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDomainTemplateResponse CreateDomainTemplate(CreateDomainTemplateRequest createDomainTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainTemplateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateDomainTemplateResponse>(response);
+        }
+
+        public SyncInvoker<CreateDomainTemplateResponse> CreateDomainTemplateInvoker(CreateDomainTemplateRequest createDomainTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainTemplateRequest);
+            return new SyncInvoker<CreateDomainTemplateResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateDomainTemplateResponse>);
         }
         
         /// <summary>
@@ -263,6 +313,32 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/{domain_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainRequest);
             return new SyncInvoker<DeleteDomainResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDomainResponse>);
+        }
+        
+        /// <summary>
+        /// 删除域名模板。
+        ///
+        /// 删除域名模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDomainTemplateResponse DeleteDomainTemplate(DeleteDomainTemplateRequest deleteDomainTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("tml_id", deleteDomainTemplateRequest.TmlId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/templates/{tml_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainTemplateRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDomainTemplateResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDomainTemplateResponse> DeleteDomainTemplateInvoker(DeleteDomainTemplateRequest deleteDomainTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("tml_id", deleteDomainTemplateRequest.TmlId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/templates/{tml_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainTemplateRequest);
+            return new SyncInvoker<DeleteDomainTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDomainTemplateResponse>);
         }
         
         /// <summary>
@@ -607,6 +683,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 查询域名模板应用记录。
+        ///
+        /// 查询域名模板应用记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAppliedTemplateRecordResponse ShowAppliedTemplateRecord(ShowAppliedTemplateRecordRequest showAppliedTemplateRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tml-apply-records", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppliedTemplateRecordRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAppliedTemplateRecordResponse>(response);
+        }
+
+        public SyncInvoker<ShowAppliedTemplateRecordResponse> ShowAppliedTemplateRecordInvoker(ShowAppliedTemplateRecordRequest showAppliedTemplateRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/tml-apply-records", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppliedTemplateRecordRequest);
+            return new SyncInvoker<ShowAppliedTemplateRecordResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppliedTemplateRecordResponse>);
+        }
+        
+        /// <summary>
         /// 查询域名带宽峰值类数据
         ///
         /// - 查询域名带宽峰值类数据。
@@ -822,6 +922,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-stats", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainStatsRequest);
             return new SyncInvoker<ShowDomainStatsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainStatsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询域名模板列表
+        ///
+        /// 查询域名模板列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDomainTemplateResponse ShowDomainTemplate(ShowDomainTemplateRequest showDomainTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainTemplateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainTemplateResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainTemplateResponse> ShowDomainTemplateInvoker(ShowDomainTemplateRequest showDomainTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainTemplateRequest);
+            return new SyncInvoker<ShowDomainTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainTemplateResponse>);
         }
         
         /// <summary>
@@ -1142,6 +1266,32 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains/config-https-info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainMultiCertificatesRequest);
             return new SyncInvoker<UpdateDomainMultiCertificatesResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainMultiCertificatesResponse>);
+        }
+        
+        /// <summary>
+        /// 修改域名模板。
+        ///
+        /// 修改域名模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDomainTemplateResponse UpdateDomainTemplate(UpdateDomainTemplateRequest updateDomainTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("tml_id", updateDomainTemplateRequest.TmlId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/templates/{tml_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainTemplateRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateDomainTemplateResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDomainTemplateResponse> UpdateDomainTemplateInvoker(UpdateDomainTemplateRequest updateDomainTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("tml_id", updateDomainTemplateRequest.TmlId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/templates/{tml_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainTemplateRequest);
+            return new SyncInvoker<UpdateDomainTemplateResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDomainTemplateResponse>);
         }
         
         /// <summary>

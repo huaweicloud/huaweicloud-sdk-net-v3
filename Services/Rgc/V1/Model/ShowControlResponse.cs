@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         public string Identifier { get; set; }
 
         /// <summary>
-        /// 服务控制策略（SCP），配置规则。
+        /// 策略类别。
         /// </summary>
         [JsonProperty("implementation", NullValueHandling = NullValueHandling.Ignore)]
         public string Implementation { get; set; }
 
         /// <summary>
-        /// 控制策略必须性。
+        /// 实施建议。
         /// </summary>
         [JsonProperty("guidance", NullValueHandling = NullValueHandling.Ignore)]
         public string Guidance { get; set; }
@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         public List<string> Aliases { get; set; }
 
         /// <summary>
-        /// 纳管账号的创建来源，包括CUSTOM和RGC。
+        /// 控制策略来源。
         /// </summary>
         [JsonProperty("owner", NullValueHandling = NullValueHandling.Ignore)]
         public string Owner { get; set; }

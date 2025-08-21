@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         public List<RegionConfigurationList> Regions { get; set; }
 
         /// <summary>
-        /// 是否允许启用控制策略。
+        /// 状态。
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
         public string State { get; set; }

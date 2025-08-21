@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("page_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PageNum { get; set; }
 
+        /// <summary>
+        /// OFD转图片的模式开关。针对输入文件为OFD时，有两种处理方案： 方案一：直接解析OFD文件，并提取结构化信息 方案二：转成图片后再进行识别，该方案更鲁棒，但是时延会显著增加 取值范围包括： •  false：选择方案一 •  true：选择方案二 未传入该参数时默认为false，即选择方案一。 
+        /// </summary>
+        [JsonProperty("ofd_to_image_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? OfdToImageMode { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  advancedMode: ").Append(AdvancedMode).Append("\n");
             sb.Append("  returnTextLocation: ").Append(ReturnTextLocation).Append("\n");
             sb.Append("  pageNum: ").Append(PageNum).Append("\n");
+            sb.Append("  ofdToImageMode: ").Append(OfdToImageMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.AdvancedMode != input.AdvancedMode || (this.AdvancedMode != null && !this.AdvancedMode.Equals(input.AdvancedMode))) return false;
             if (this.ReturnTextLocation != input.ReturnTextLocation || (this.ReturnTextLocation != null && !this.ReturnTextLocation.Equals(input.ReturnTextLocation))) return false;
             if (this.PageNum != input.PageNum || (this.PageNum != null && !this.PageNum.Equals(input.PageNum))) return false;
+            if (this.OfdToImageMode != input.OfdToImageMode || (this.OfdToImageMode != null && !this.OfdToImageMode.Equals(input.OfdToImageMode))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.AdvancedMode != null) hashCode = hashCode * 59 + this.AdvancedMode.GetHashCode();
                 if (this.ReturnTextLocation != null) hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
                 if (this.PageNum != null) hashCode = hashCode * 59 + this.PageNum.GetHashCode();
+                if (this.OfdToImageMode != null) hashCode = hashCode * 59 + this.OfdToImageMode.GetHashCode();
                 return hashCode;
             }
         }

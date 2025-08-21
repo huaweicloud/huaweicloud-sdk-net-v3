@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// 
+        /// 模板的部署参数变量的校验规则。
         /// </summary>
         [JsonProperty("validations", NullValueHandling = NullValueHandling.Ignore)]
         public List<TemplateParamVariableValidation> Validations { get; set; }

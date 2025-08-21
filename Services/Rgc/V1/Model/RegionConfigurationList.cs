@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
     public class RegionConfigurationList 
     {
         /// <summary>
-        /// 纳管账号类型LOGGING,SECURITY。
+        /// 区域状态。
         /// </summary>
-        /// <value>纳管账号类型LOGGING,SECURITY。</value>
+        /// <value>区域状态。</value>
         [JsonConverter(typeof(EnumClassConverter<RegionConfigurationStatusEnum>))]
         public class RegionConfigurationStatusEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         public string Region { get; set; }
 
         /// <summary>
-        /// 纳管账号类型LOGGING,SECURITY。
+        /// 区域状态。
         /// </summary>
         [JsonProperty("region_configuration_status", NullValueHandling = NullValueHandling.Ignore)]
         public RegionConfigurationStatusEnum RegionConfigurationStatus { get; set; }

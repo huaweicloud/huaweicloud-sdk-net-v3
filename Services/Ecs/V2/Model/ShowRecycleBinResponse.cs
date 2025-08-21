@@ -17,10 +17,22 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
     {
 
         /// <summary>
+        /// 项目ID
+        /// </summary>
+        [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProjectId { get; set; }
+
+        /// <summary>
+        /// 回收站配置开关
+        /// </summary>
+        [JsonProperty("switch", NullValueHandling = NullValueHandling.Ignore)]
+        public string Switch { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("recycle_bin", NullValueHandling = NullValueHandling.Ignore)]
-        public RecycleBin RecycleBin { get; set; }
+        [JsonProperty("policy", NullValueHandling = NullValueHandling.Ignore)]
+        public RecycleBinPolicys Policy { get; set; }
 
 
 
@@ -31,7 +43,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowRecycleBinResponse {\n");
-            sb.Append("  recycleBin: ").Append(RecycleBin).Append("\n");
+            sb.Append("  projectId: ").Append(ProjectId).Append("\n");
+            sb.Append("  Switch: ").Append(Switch).Append("\n");
+            sb.Append("  policy: ").Append(Policy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +64,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public bool Equals(ShowRecycleBinResponse input)
         {
             if (input == null) return false;
-            if (this.RecycleBin != input.RecycleBin || (this.RecycleBin != null && !this.RecycleBin.Equals(input.RecycleBin))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Switch != input.Switch || (this.Switch != null && !this.Switch.Equals(input.Switch))) return false;
+            if (this.Policy != input.Policy || (this.Policy != null && !this.Policy.Equals(input.Policy))) return false;
 
             return true;
         }
@@ -63,7 +79,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.RecycleBin != null) hashCode = hashCode * 59 + this.RecycleBin.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Switch != null) hashCode = hashCode * 59 + this.Switch.GetHashCode();
+                if (this.Policy != null) hashCode = hashCode * 59 + this.Policy.GetHashCode();
                 return hashCode;
             }
         }

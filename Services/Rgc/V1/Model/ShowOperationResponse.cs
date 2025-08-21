@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         public string Status { get; set; }
 
         /// <summary>
-        /// 创建账号、纳管注册OU、纳管账号的详细进度信息。
+        /// 创建账号、注册OU、纳管账号的详细进度信息。
         /// </summary>
         [JsonProperty("percentage_details", NullValueHandling = NullValueHandling.Ignore)]
         public List<OrganizationalPercentageDetail> PercentageDetails { get; set; }
 
         /// <summary>
-        /// 创建账号、纳管注册OU、纳管账号的错误信息描述。
+        /// 创建账号、注册OU、纳管账号的错误信息描述。
         /// </summary>
         [JsonProperty("message", NullValueHandling = NullValueHandling.Ignore)]
         public string Message { get; set; }

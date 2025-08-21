@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
     {
 
         /// <summary>
-        /// 启用的控制策略信息。
+        /// 控制策略ID。
         /// </summary>
         [SDKProperty("control_id", IsQuery = true)]
         [JsonProperty("control_id", NullValueHandling = NullValueHandling.Ignore)]

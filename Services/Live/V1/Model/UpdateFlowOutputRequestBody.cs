@@ -1,0 +1,248 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Live.V1.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class UpdateFlowOutputRequestBody 
+    {
+        /// <summary>
+        /// 输出状态，ENABLED：启用，DISABLED：禁用
+        /// </summary>
+        /// <value>输出状态，ENABLED：启用，DISABLED：禁用</value>
+        [JsonConverter(typeof(EnumClassConverter<OutputStatusEnum>))]
+        public class OutputStatusEnum
+        {
+            /// <summary>
+            /// Enum ENABLED for value: ENABLED
+            /// </summary>
+            public static readonly OutputStatusEnum ENABLED = new OutputStatusEnum("ENABLED");
+
+            /// <summary>
+            /// Enum DISABLED for value: DISABLED
+            /// </summary>
+            public static readonly OutputStatusEnum DISABLED = new OutputStatusEnum("DISABLED");
+
+            private static readonly Dictionary<string, OutputStatusEnum> StaticFields =
+            new Dictionary<string, OutputStatusEnum>()
+            {
+                { "ENABLED", ENABLED },
+                { "DISABLED", DISABLED },
+            };
+
+            private string _value;
+
+            public OutputStatusEnum()
+            {
+
+            }
+
+            public OutputStatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static OutputStatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as OutputStatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(OutputStatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(OutputStatusEnum a, OutputStatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(OutputStatusEnum a, OutputStatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// ip白名单，最大20条ip白名单
+        /// </summary>
+        [JsonProperty("cidr_whitelist", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> CidrWhitelist { get; set; }
+
+        /// <summary>
+        /// 推流地址，支持ip和域名，最大值64
+        /// </summary>
+        [JsonProperty("destination", NullValueHandling = NullValueHandling.Ignore)]
+        public string Destination { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("encryption", NullValueHandling = NullValueHandling.Ignore)]
+        public FlowSourceDecryption Encryption { get; set; }
+
+        /// <summary>
+        /// 输出状态，ENABLED：启用，DISABLED：禁用
+        /// </summary>
+        [JsonProperty("output_status", NullValueHandling = NullValueHandling.Ignore)]
+        public OutputStatusEnum OutputStatus { get; set; }
+        /// <summary>
+        /// 端口
+        /// </summary>
+        [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Port { get; set; }
+
+        /// <summary>
+        /// srt-caller模式支持设置streamid
+        /// </summary>
+        [JsonProperty("stream_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string StreamId { get; set; }
+
+        /// <summary>
+        /// 输出描述
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 最小时延，单位毫秒，默认值2000，最小值10，最大值15000
+        /// </summary>
+        [JsonProperty("min_latency", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MinLatency { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class UpdateFlowOutputRequestBody {\n");
+            sb.Append("  cidrWhitelist: ").Append(CidrWhitelist).Append("\n");
+            sb.Append("  destination: ").Append(Destination).Append("\n");
+            sb.Append("  encryption: ").Append(Encryption).Append("\n");
+            sb.Append("  outputStatus: ").Append(OutputStatus).Append("\n");
+            sb.Append("  port: ").Append(Port).Append("\n");
+            sb.Append("  streamId: ").Append(StreamId).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  minLatency: ").Append(MinLatency).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as UpdateFlowOutputRequestBody);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(UpdateFlowOutputRequestBody input)
+        {
+            if (input == null) return false;
+            if (this.CidrWhitelist != input.CidrWhitelist || (this.CidrWhitelist != null && input.CidrWhitelist != null && !this.CidrWhitelist.SequenceEqual(input.CidrWhitelist))) return false;
+            if (this.Destination != input.Destination || (this.Destination != null && !this.Destination.Equals(input.Destination))) return false;
+            if (this.Encryption != input.Encryption || (this.Encryption != null && !this.Encryption.Equals(input.Encryption))) return false;
+            if (this.OutputStatus != input.OutputStatus) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.StreamId != input.StreamId || (this.StreamId != null && !this.StreamId.Equals(input.StreamId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.MinLatency != input.MinLatency || (this.MinLatency != null && !this.MinLatency.Equals(input.MinLatency))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.CidrWhitelist != null) hashCode = hashCode * 59 + this.CidrWhitelist.GetHashCode();
+                if (this.Destination != null) hashCode = hashCode * 59 + this.Destination.GetHashCode();
+                if (this.Encryption != null) hashCode = hashCode * 59 + this.Encryption.GetHashCode();
+                hashCode = hashCode * 59 + this.OutputStatus.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.StreamId != null) hashCode = hashCode * 59 + this.StreamId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.MinLatency != null) hashCode = hashCode * 59 + this.MinLatency.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

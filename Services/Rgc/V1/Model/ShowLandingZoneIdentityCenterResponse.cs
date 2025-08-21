@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         public string UserPortalUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// Identity Center权限集。
         /// </summary>
         [JsonProperty("permission_sets", NullValueHandling = NullValueHandling.Ignore)]
         public List<PermissionSet> PermissionSets { get; set; }
 
         /// <summary>
-        /// 
+        /// Identity Center用户组。
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<IdentityCenterGroup> Groups { get; set; }
