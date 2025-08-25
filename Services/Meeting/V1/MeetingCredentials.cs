@@ -32,27 +32,27 @@ namespace HuaweiCloud.SDK.Meeting.V1
     {
         private static readonly Dictionary<string, string> PathParamDict = new Dictionary<string, string>();
 
-        private string token = "";
+        private string token = string.Empty;
         private DateTime? lastTokenDate;
         private AuthTypeEnum authTypeEnum = AuthTypeEnum.ACCOUNT;
         private TenantSceneEnum tenantSceneEnum = TenantSceneEnum.SINGLE_TENANT;
-        private string appId = "";
-        private string appKey = "";
-        private string corpId = "";
-        private string userId = "";
-        private string deptCode = "";
-        private string clientType = "";
-        private string userName = "";
-        private string userPassword = "";
+        private string appId = string.Empty;
+        private string appKey = string.Empty;
+        private string corpId = string.Empty;
+        private string userId = string.Empty;
+        private string deptCode = string.Empty;
+        private string clientType = string.Empty;
+        private string userName = string.Empty;
+        private string userPassword = string.Empty;
         
         public MeetingCredentials(string userName, string userPassword)
         {
-            if (userName != "")
+            if (userName != string.Empty)
             {
                 this.userName = userName;
             }
             
-            if (userPassword != "")
+            if (userPassword != string.Empty)
             {
                 this.userPassword = userPassword;
             }
@@ -144,11 +144,11 @@ namespace HuaweiCloud.SDK.Meeting.V1
                 isExpire = false;
             }
 
-            if (this.token == "" || isExpire)
+            if (this.token == string.Empty || isExpire)
             {
-                string url = "";
-                string content = "";
-                string authorization = "";
+                string url = string.Empty;
+                string content = string.Empty;
+                string authorization = string.Empty;
                 if (authTypeEnum == AuthTypeEnum.ACCOUNT)
                 {
                     var body = new { account = userName, clientType = 72 };

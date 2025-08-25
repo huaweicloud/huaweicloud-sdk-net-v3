@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("hosts", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Hosts { get; set; }
 
+        /// <summary>
+        /// 数据库用户备注
+        /// </summary>
+        [JsonProperty("comment", NullValueHandling = NullValueHandling.Ignore)]
+        public string Comment { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  databases: ").Append(Databases).Append("\n");
             sb.Append("  hosts: ").Append(Hosts).Append("\n");
+            sb.Append("  comment: ").Append(Comment).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Databases != input.Databases || (this.Databases != null && input.Databases != null && !this.Databases.SequenceEqual(input.Databases))) return false;
             if (this.Hosts != input.Hosts || (this.Hosts != null && input.Hosts != null && !this.Hosts.SequenceEqual(input.Hosts))) return false;
+            if (this.Comment != input.Comment || (this.Comment != null && !this.Comment.Equals(input.Comment))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Databases != null) hashCode = hashCode * 59 + this.Databases.GetHashCode();
                 if (this.Hosts != null) hashCode = hashCode * 59 + this.Hosts.GetHashCode();
+                if (this.Comment != null) hashCode = hashCode * 59 + this.Comment.GetHashCode();
                 return hashCode;
             }
         }

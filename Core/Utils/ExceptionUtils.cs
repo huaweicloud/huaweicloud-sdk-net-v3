@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.Core
                 HttpBody = Encoding.UTF8.GetString(responseMessage.Content.ReadAsByteArrayAsync().Result)
             };
 
-            var requestId = "";
+            var requestId = string.Empty;
             if (responseMessage.Headers.Contains(XRequestId))
             {
                 requestId = responseMessage.Headers.GetValues(XRequestId).FirstOrDefault();

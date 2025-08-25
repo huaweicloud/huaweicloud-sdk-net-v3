@@ -25,7 +25,7 @@ using System.IO;
 
 namespace HuaweiCloud.SDK.Core
 {
-    internal class TransferStream : Stream
+    public class TransferStream : Stream
     {
         private long _readBytes;
 
@@ -131,14 +131,14 @@ namespace HuaweiCloud.SDK.Core
         internal delegate void EventDelegate();
     }
 
-    internal class BytesUnit
+    public class BytesUnit
     {
         public DateTime DateTime { get; set; }
 
         public long Bytes { set; get; }
     }
 
-    internal abstract class TransferStreamManager
+    public abstract class TransferStreamManager
     {
         protected readonly EventHandler<TransferStatus> Handler;
         protected readonly object Sender;

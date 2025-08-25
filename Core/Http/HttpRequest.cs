@@ -28,12 +28,12 @@ namespace HuaweiCloud.SDK.Core
 {
     public class HttpRequest
     {
-        public string Body = "";
+        public string Body = string.Empty;
         public string ContentType = "application/json";
         public Stream FileStream = Stream.Null;
         public Dictionary<string, object> FormData;
         public WebHeaderCollection Headers = new WebHeaderCollection();
-        public string Host = "";
+        public string Host = string.Empty;
         public string Method = "GET";
         public Dictionary<string, List<string>> QueryParam = new Dictionary<string, List<string>>();
         public Uri Url;
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Core
                 Body = body;
                 if (Method != "POST" && Method != "PATCH" && Method != "PUT")
                 {
-                    Body = "";
+                    Body = string.Empty;
                 }
             }
 
@@ -93,7 +93,7 @@ namespace HuaweiCloud.SDK.Core
                         '='
                     }, 2);
                     var key = WebUtility.UrlDecode(spl[0]);
-                    var value = "";
+                    var value = string.Empty;
                     if (spl.Length > 1)
                     {
                         value = WebUtility.UrlDecode(spl[1]);

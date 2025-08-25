@@ -22,18 +22,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Reflection;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace HuaweiCloud.SDK.Core
 {
     public static class HttpUtils
     {
+        private const string ContentType = "Content-Type";
+        private const string ContentLength = "Content-Length";
+
+        private const string ApplicationXml = "application/xml";
+        private const string MultipartFormdata = "multipart/form-data";
+        private const string ApplicationFormUrlEncoded = "application/x-www-form-urlencoded";
+
+        private const string HttpStatusCode = "HttpStatusCode";
+        private const string HttpHeaders = "HttpHeaders";
+        private const string SetStream = "SetStream";
 
         private static readonly List<string> HttpContentHeadersList = new List<string>
         {
+            ContentType,
+            ContentLength,
             "Allow",
             "Content-Disposition",
             "Content-Encoding",
@@ -41,10 +55,8 @@ namespace HuaweiCloud.SDK.Core
             "Content-Location",
             "Content-MD5",
             "Content-Range",
-            "Content-Type",
-            "Content-Length",
             "Expires",
-            "Last-Modified"
+            "Last-Modified",
         };
 
         public static string AddUrlPath(string path, Dictionary<string, string> pathParams)
@@ -54,78 +66,35 @@ namespace HuaweiCloud.SDK.Core
                     keyValuePair.Value));
         }
 
-        private static string GetQueryParameters(object obj)
+        private static string ConvertToString(object value)
         {
-            var sb = new StringBuilder();
-            var t = obj.GetType();
-            var pi = t.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-
-            foreach (var p in pi)
+            if (value is bool boolean)
             {
-                var attributes = p.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
-                SDKPropertyAttribute sdkPropertyAttribute = null;
+                return Convert.ToString(boolean).ToLowerInvariant();
+            }
+            if (value is Enum enumValue)
+            {
+                var type = enumValue.GetType();
+                var name = Enum.GetName(type, enumValue);
+                if (name == null) return string.Empty;
 
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                var field = type.GetField(name);
+                if (field == null) return string.Empty;
 
-                foreach (var a in attributes)
-                {
-                    if (a is SDKPropertyAttribute propertyAttribute)
-                    {
-                        sdkPropertyAttribute = propertyAttribute;
-                    }
-                }
-
-                if (sdkPropertyAttribute == null || !sdkPropertyAttribute.IsQuery)
-                {
-                    continue;
-                }
-
-                var value = p.GetValue(obj, null);
-                if (value == null || string.IsNullOrEmpty(Convert.ToString(value)))
-                {
-                    continue;
-                }
-
-                if (value is IList list)
-                {
-                    sb.Append(BuildQueryListParameter(sdkPropertyAttribute.PropertyName, list));
-                }
-                else if (value is IDictionary dictionary)
-                {
-                    sb.Append(BuildQueryDictionaryParameter(sdkPropertyAttribute.PropertyName, dictionary));
-                }
-                else if (value is bool boolean)
-                {
-                    sb.Append(BuildQueryBooleanParameter(sdkPropertyAttribute.PropertyName, boolean));
-                }
-                else
-                {
-                    sb.Append(BuildQueryStringParameter(sdkPropertyAttribute.PropertyName, Convert.ToString(value)));
-                }
+                var attribute = field.GetCustomAttribute<EnumMemberAttribute>();
+                return attribute?.Value;
             }
 
-            var strIndex = sb.Length;
-            if (!string.IsNullOrEmpty(sb.ToString()))
-            {
-                sb.Remove(strIndex - 1, 1);
-            }
-
-            return sb.ToString();
+            return Convert.ToString(value);
         }
 
-        private static StringBuilder BuildQueryStringParameter(string key, string value)
+        private static StringBuilder BuildQueryStringParameter(string key, object value)
         {
             var sb = new StringBuilder();
-            return sb.Append(key).Append("=").Append(Convert.ToString(value)).Append("&");
-        }
+            var str = ConvertToString(value);
+            if (string.IsNullOrEmpty(str)) return sb;
 
-        private static StringBuilder BuildQueryBooleanParameter(string key, bool boolean)
-        {
-            var sb = new StringBuilder();
-            return sb.Append(key).Append("=").Append(Convert.ToString(boolean).ToLowerInvariant()).Append("&");
+            return sb.Append(key).Append("=").Append(str).Append("&");
         }
 
         private static StringBuilder BuildQueryListParameter(string key, IList list)
@@ -133,7 +102,7 @@ namespace HuaweiCloud.SDK.Core
             var sb = new StringBuilder();
             foreach (var item in list)
             {
-                sb.Append(key).Append("=").Append(Convert.ToString(item)).Append("&");
+                sb.Append(BuildQueryStringParameter(key, item));
             }
 
             return sb;
@@ -154,201 +123,155 @@ namespace HuaweiCloud.SDK.Core
                 }
                 else
                 {
-                    sb.Append(BuildQueryStringParameter(key + "[" + k + "]", Convert.ToString(dict[k])));
+                    sb.Append(BuildQueryStringParameter(key + "[" + k + "]", dict[k]));
                 }
             }
 
             return sb;
         }
 
-        private static Dictionary<string, string> GetRequestHeader(object obj)
+        private static SDKPropertyAttribute GetSdkPropertyAttribute(PropertyInfo propertyInfo)
         {
-            var t = obj.GetType();
-            var pi = t.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-
-            var element = new Dictionary<string, string>();
-            foreach (var p in pi)
+            var attributes = propertyInfo.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
+            if (attributes.Length == 0)
             {
-                var attributes = p.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
-                SDKPropertyAttribute sdkPropertyAttribute = null;
-
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
-
-                foreach (var a in attributes)
-                {
-                    if (a is SDKPropertyAttribute propertyAttribute)
-                    {
-                        sdkPropertyAttribute = propertyAttribute;
-                    }
-                }
-
-                if (sdkPropertyAttribute == null || !sdkPropertyAttribute.IsHeader)
-                {
-                    continue;
-                }
-
-                var value = p.GetValue(obj, null);
-                if (value == null || string.IsNullOrEmpty(Convert.ToString(value)))
-                {
-                    continue;
-                }
-
-                element.Add(sdkPropertyAttribute.PropertyName, Convert.ToString(value));
+                return null;
             }
 
-            return element;
-        }
-
-        private static string GetCname(object obj)
-        {
-            var t = obj.GetType();
-            var pi = t.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-
-            var element = new Dictionary<string, string>();
-            foreach (var p in pi)
+            foreach (var attribute in attributes)
             {
-                var attributes = p.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
-                SDKPropertyAttribute sdkPropertyAttribute = null;
-
-                if (attributes.Length == 0)
+                if (attribute is SDKPropertyAttribute sdkPropertyAttribute)
                 {
-                    continue;
+                    return sdkPropertyAttribute;
                 }
-
-                foreach (var a in attributes)
-                {
-                    if (a is SDKPropertyAttribute propertyAttribute)
-                    {
-                        sdkPropertyAttribute = propertyAttribute;
-                    }
-                }
-
-                if (sdkPropertyAttribute == null || !sdkPropertyAttribute.IsCname)
-                {
-                    continue;
-                }
-
-                var value = p.GetValue(obj, null);
-                if (value == null || string.IsNullOrEmpty(Convert.ToString(value)))
-                {
-                    continue;
-                }
-
-                return Convert.ToString(value);
             }
-
             return null;
         }
 
-        private static string GetRequestBody(object obj, string contentType)
+        private static void ProcessQueryParams(StringBuilder stringBuilder, string name, object value)
         {
-            var t = obj.GetType();
-            var pi = t.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-
-            var sdkPropertyList = new List<object>();
-
-            foreach (var p in pi)
+            if (value is IList list && list.Count != 0)
             {
-                var attributes = p.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
-                SDKPropertyAttribute sdkPropertyAttribute = null;
-
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
-
-                foreach (var a in attributes)
-                {
-                    if (a is SDKPropertyAttribute propertyAttribute)
-                    {
-                        sdkPropertyAttribute = propertyAttribute;
-                    }
-                }
-
-                if (sdkPropertyAttribute == null || !sdkPropertyAttribute.IsBody)
-                {
-                    continue;
-                }
-
-                var value = p.GetValue(obj, null);
-                if (value == null)
-                {
-                    continue;
-                }
-
-                sdkPropertyList.Add(value);
+                stringBuilder.Append(BuildQueryListParameter(name, list));
+                return;
             }
 
-            if (sdkPropertyList.Count == 1)
+            if (value is IDictionary dictionary && dictionary.Count != 0)
             {
-                foreach (var elem in sdkPropertyList)
-                {
-                    if (elem is string eleString)
-                    {
-                        return eleString;
-                    }
-
-                    return contentType == "application/xml" ? XmlUtils.Serialize(elem) : JsonUtils.Serialize(elem);
-                }
+                stringBuilder.Append(BuildQueryDictionaryParameter(name, dictionary));
+                return;
             }
 
-            return "";
+            stringBuilder.Append(BuildQueryStringParameter(name, value));
         }
 
-        private static Dictionary<string, object> GetFormData(object obj)
+        private static void ProcessRequestBody(SdkRequest request, object value, string contentType)
         {
-            var t = obj.GetType();
-            var pi = t.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-
-            var sdkPropertyList = new List<object>();
-
-            foreach (var p in pi)
+            if (value is string strVal)
             {
-                var attributes = p.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
-                SDKPropertyAttribute sdkPropertyAttribute = null;
-
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
-
-                foreach (var a in attributes)
-                {
-                    if (a is SDKPropertyAttribute propertyAttribute)
-                    {
-                        sdkPropertyAttribute = propertyAttribute;
-                    }
-                }
-
-                if (sdkPropertyAttribute == null || !sdkPropertyAttribute.IsBody)
-                {
-                    continue;
-                }
-
-                var value = p.GetValue(obj, null);
-                if (value == null)
-                {
-                    continue;
-                }
-
-                sdkPropertyList.Add(value);
+                request.Body = strVal;
+                return;
             }
 
-            if (sdkPropertyList.Count == 1)
+            if ((contentType == MultipartFormdata || contentType == ApplicationFormUrlEncoded) && value is IFormDataBody formDataBody)
             {
-                foreach (var elem in sdkPropertyList)
+                request.FormData = formDataBody.BuildFormData();
+                return;
+            }
+
+            request.Body = contentType == ApplicationXml ? XmlUtils.Serialize(value) : JsonUtils.Serialize(value);
+        }
+
+        private static void ProcessStreamRequest(SdkRequest request, SdkStreamRequest streamRequest)
+        {
+            if (streamRequest.FileStream == null) return;
+
+            if (streamRequest.TransferProgress == null)
+            {
+                request.FileStream = streamRequest.FileStream;
+                return;
+            }
+
+            var contentLength = request.Header.TryGetValue(ContentLength, out var contentLengthInHeader) ? long.Parse(contentLengthInHeader) : streamRequest.FileStream.Length;
+            var transferStream = new TransferStream(streamRequest.FileStream);
+            TransferStreamManager mgr;
+            if (streamRequest.ProgressType == ProgressTypeEnum.ByBytes)
+            {
+                mgr = new TransferStreamByBytes(request, streamRequest.TransferProgress,
+                    contentLength, 0, streamRequest.ProgressInterval);
+            }
+            else
+            {
+                mgr = new ThreadSafeTransferStreamBySeconds(request, streamRequest.TransferProgress,
+                    contentLength, 0, streamRequest.ProgressInterval);
+                transferStream.CloseStream += mgr.TransferEnd;
+            }
+
+            transferStream.BytesRead += mgr.BytesTransferred;
+            transferStream.StartRead += mgr.TransferStart;
+            transferStream.BytesReset += mgr.TransferReset;
+
+            streamRequest.FileStream = transferStream;
+            request.FileStream = streamRequest.FileStream;
+        }
+
+        private static void ProcessRequestParams(object obj, SdkRequest request, string contentType)
+        {
+            var querySb = new StringBuilder();
+            var headers = new Dictionary<string, string>();
+
+            var type = obj.GetType();
+            var propertyInfos = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            foreach (var propertyInfo in propertyInfos)
+            {
+                var sdkPropertyAttribute = GetSdkPropertyAttribute(propertyInfo);
+                if (sdkPropertyAttribute == null) continue;
+
+                var value = propertyInfo.GetValue(obj, null);
+                if (value == null) continue;
+
+                if (sdkPropertyAttribute.IsCname)
                 {
-                    if (elem is IFormDataBody)
-                    {
-                        return ((IFormDataBody)elem).BuildFormData();
-                    }
+                    var cname = Convert.ToString(value);
+                    if (!string.IsNullOrEmpty(cname)) request.Cname = cname;
+                }
+                else if (sdkPropertyAttribute.IsQuery)
+                {
+                    ProcessQueryParams(querySb, sdkPropertyAttribute.PropertyName, value);
+                }
+                else if (sdkPropertyAttribute.IsHeader)
+                {
+                    var strVal = Convert.ToString(value);
+                    if (!string.IsNullOrEmpty(strVal)) headers.Add(sdkPropertyAttribute.PropertyName, strVal);
+                }
+                else if (sdkPropertyAttribute.IsBody)
+                {
+                    ProcessRequestBody(request, value, contentType);
                 }
             }
 
-            return null;
+            // query
+            var strIndex = querySb.Length;
+            if (!string.IsNullOrEmpty(querySb.ToString()))
+            {
+                querySb.Remove(strIndex - 1, 1);
+            }
+            var queryStr = querySb.ToString();
+            if (!string.IsNullOrEmpty(queryStr)) request.QueryParams = queryStr;
+            // headers
+            request.Header = headers;
+            // content-type
+            if (!string.IsNullOrEmpty(contentType))
+            {
+                request.ContentType = contentType;
+                request.Header.Add(ContentType, request.ContentType);
+            }
+            // stream
+            if (obj is SdkStreamRequest streamRequest)
+            {
+                ProcessStreamRequest(request, streamRequest);
+            }
         }
 
         public static SdkRequest InitSdkRequest(string path, object data = null)
@@ -358,113 +281,25 @@ namespace HuaweiCloud.SDK.Core
 
         public static SdkRequest InitSdkRequest(string path, string contentType, object data = null)
         {
-            if (path != null && string.IsNullOrEmpty(path))
-            {
-                throw new ArgumentNullException("Url cannot be null.");
-            }
+            if (string.IsNullOrEmpty(path)) throw new ArgumentNullException(nameof(path));
 
             var request = new SdkRequest
             {
                 Path = path
             };
-            if (data == null)
-            {
-                return request;
-            }
+            if (data == null) return request;
 
-            var cname = GetCname(data);
-            if (!string.IsNullOrEmpty(cname))
-            {
-                request.Cname = cname;
-            }
-
-            var prams = GetQueryParameters(data);
-            if (prams != "")
-            {
-                request.QueryParams = prams;
-            }
-
-            var headers = GetRequestHeader(data);
-            if (headers != null)
-            {
-                request.Header = headers;
-            }
-
-            if (contentType == "multipart/form-data" || contentType == "application/x-www-form-urlencoded")
-            {
-                var formData = GetFormData(data);
-                if (formData != null)
-                {
-                    request.FormData = formData;
-                }
-            }
-            else
-            {
-                var bodyData = GetRequestBody(data, contentType);
-                if (bodyData != null)
-                {
-                    request.Body = bodyData;
-                }
-            }
-
-            if (!string.IsNullOrEmpty(contentType))
-            {
-                request.ContentType = contentType;
-                request.Header.Add("Content-Type", request.ContentType);
-            }
-
-            if (data.GetType().IsSubclassOf(typeof(SdkStreamRequest)))
-            {
-                var streamRequest = (SdkStreamRequest)data;
-                if (streamRequest.TransferProgress != null)
-                {
-                    long contentLength = -1;
-                    if (request.Header.ContainsKey("Content-Length"))
-                    {
-                        contentLength = long.Parse(request.Header["Content-Length"]);
-                    }
-                    else
-                    {
-                        contentLength = streamRequest.FileStream.Length;
-                    }
-
-                    var transferStream = new TransferStream(streamRequest.FileStream);
-                    TransferStreamManager mgr;
-                    if (streamRequest.ProgressType == ProgressTypeEnum.ByBytes)
-                    {
-                        mgr = new TransferStreamByBytes(request, streamRequest.TransferProgress,
-                            contentLength, 0, streamRequest.ProgressInterval);
-                    }
-                    else
-                    {
-                        mgr = new ThreadSafeTransferStreamBySeconds(request, streamRequest.TransferProgress,
-                            contentLength, 0, streamRequest.ProgressInterval);
-                        transferStream.CloseStream += mgr.TransferEnd;
-                    }
-
-                    transferStream.BytesRead += mgr.BytesTransferred;
-                    transferStream.StartRead += mgr.TransferStart;
-                    transferStream.BytesReset += mgr.TransferReset;
-
-                    streamRequest.FileStream = transferStream;
-                    request.FileStream = streamRequest.FileStream;
-                }
-                else
-                {
-                    request.FileStream = streamRequest.FileStream;
-                }
-            }
-
+            ProcessRequestParams(data, request, contentType);
             return request;
         }
 
         public static T DeSerializeStream<T>(HttpResponseMessage message)
         {
             var t = Activator.CreateInstance<T>();
-            t.GetType().GetProperty("HttpStatusCode")?.SetValue(t, (int)message.StatusCode, null);
-            t.GetType().GetProperty("HttpHeaders")?.SetValue(t, message.Headers.ToString(), null);
+            t.GetType().GetProperty(HttpStatusCode)?.SetValue(t, (int)message.StatusCode, null);
+            t.GetType().GetProperty(HttpHeaders)?.SetValue(t, message.Headers.ToString(), null);
             var flag = BindingFlags.Public | BindingFlags.Instance;
-            t.GetType().GetMethod("SetStream")
+            t.GetType().GetMethod(SetStream)
                 ?.Invoke(t, flag, Type.DefaultBinder,
                     new object[]
                     {

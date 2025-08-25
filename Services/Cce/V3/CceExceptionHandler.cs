@@ -22,7 +22,7 @@ namespace HuaweiCloud.SDK.Cce.V3
 
             // error_code
             if (errorInfo.TryGetValue("error_code", out var errorCode) && errorCode != null &&
-                !errorCode.ToString().Equals(""))
+                !errorCode.ToString().Equals(string.Empty))
             {
                 sdkError.ErrorCode = errorCode.ToString();
             }
@@ -33,7 +33,7 @@ namespace HuaweiCloud.SDK.Cce.V3
 
             // error_message
             if (errorInfo.TryGetValue("error_msg", out var errorMsg) && errorMsg != null &&
-                !errorMsg.ToString().Equals(""))
+                !errorMsg.ToString().Equals(string.Empty))
             {
                 sdkError.ErrorMsg = errorMsg.ToString();
             }
@@ -42,9 +42,9 @@ namespace HuaweiCloud.SDK.Cce.V3
                 sdkError.ErrorMsg = errorMsg.ToString();
             }
 
-            if (errorInfo.TryGetValue("message", out var message) && message != null && !message.ToString().Equals(""))
+            if (errorInfo.TryGetValue("message", out var message) && message != null && !message.ToString().Equals(string.Empty))
             {
-                if (sdkError.ErrorMsg.Equals(""))
+                if (sdkError.ErrorMsg.Equals(string.Empty))
                 {
                     sdkError.ErrorMsg = message.ToString();
                 }

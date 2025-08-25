@@ -24,7 +24,7 @@ using System.Threading;
 
 namespace HuaweiCloud.SDK.Core
 {
-    internal class ThreadSafeTransferStreamByBytes : TransferStreamManager
+    public class ThreadSafeTransferStreamByBytes : TransferStreamManager
     {
 
         protected readonly object Lock = new object();

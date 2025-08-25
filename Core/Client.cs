@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Core
                 while (true)
                 {
                     var url = GetRealEndpoint(request) + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
-                                                       + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
+                                                       + (string.IsNullOrEmpty(request.QueryParams) ? string.Empty : "?" + request.QueryParams);
                     try
                     {
                         return await _async_http(url, methodType.ToUpperInvariant(), request);
@@ -192,7 +192,7 @@ namespace HuaweiCloud.SDK.Core
                 while (true)
                 {
                     var url = GetRealEndpoint(request) + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
-                                                       + (string.IsNullOrEmpty(request.QueryParams) ? "" : "?" + request.QueryParams);
+                                                       + (string.IsNullOrEmpty(request.QueryParams) ? string.Empty : "?" + request.QueryParams);
                     try
                     {
                         return _sync_http(url, methodType.ToUpperInvariant(), request);
@@ -231,7 +231,7 @@ namespace HuaweiCloud.SDK.Core
         {
             var request = new HttpRequest(method.ToUpperInvariant(), sdkRequest.ContentType, new Uri(url))
             {
-                Body = sdkRequest.Body ?? "",
+                Body = sdkRequest.Body ?? string.Empty,
                 FileStream = sdkRequest.FileStream,
                 FormData = sdkRequest.FormData,
                 SigningAlgorithm = _httpConfig.SigningAlgorithm

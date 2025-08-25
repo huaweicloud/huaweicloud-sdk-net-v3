@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Core.Auth
         private static Dictionary<string, string> ProcessCredentialsDict(List<string> lines)
         {
             var dict = new Dictionary<string, string>();
-            var section = "";
+            var section = string.Empty;
             foreach (var line in lines)
             {
                 if (line.Contains('='))

@@ -163,7 +163,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
             var request = new HttpRequest("GET", sdkRequest.ContentType, new Uri(url))
             {
-                Body = "",
+                Body = string.Empty,
                 Headers = new WebHeaderCollection
                 {
                     {
@@ -235,7 +235,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             var url = iamEndpoint + urlPath;
             var request = new HttpRequest("GET", sdkRequest.ContentType, new Uri(url))
             {
-                Body = "",
+                Body = string.Empty,
                 Headers = new WebHeaderCollection
                 {
                     {

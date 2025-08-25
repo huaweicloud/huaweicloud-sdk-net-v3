@@ -3783,7 +3783,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSslRequest);
             var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerializeNull<SwitchSslResponse>(response);
+            return JsonUtils.DeSerialize<SwitchSslResponse>(response);
         }
 
         public SyncInvoker<SwitchSslResponse> SwitchSslInvoker(SwitchSslRequest switchSslRequest)
@@ -3792,7 +3792,7 @@ namespace HuaweiCloud.SDK.Rds.V3
             urlParam.Add("instance_id", switchSslRequest.InstanceId.ToString());
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchSslRequest);
-            return new SyncInvoker<SwitchSslResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SwitchSslResponse>);
+            return new SyncInvoker<SwitchSslResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchSslResponse>);
         }
         
         /// <summary>

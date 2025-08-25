@@ -84,7 +84,7 @@ namespace HuaweiCloud.SDK.Core
             var match = Regex.Match(xml, " xmlns=\"http.*\">");
             if (match.Success)
             {
-                return xml.Replace(match.Value.TrimEnd('>'), "");
+                return xml.Replace(match.Value.TrimEnd('>'), string.Empty);
             }
             return xml;
         }
@@ -95,7 +95,7 @@ namespace HuaweiCloud.SDK.Core
             {
                 var xmlSerializer = new XmlSerializer(obj.GetType());
                 var xmlSerializerNamespaces = new XmlSerializerNamespaces();
-                xmlSerializerNamespaces.Add("", "");
+                xmlSerializerNamespaces.Add(string.Empty, string.Empty);
                 xmlSerializer.Serialize(stringWriter, obj, xmlSerializerNamespaces);
                 return stringWriter.ToString();
             }
