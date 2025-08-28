@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：负载均衡器信息
+    /// 
     /// </summary>
     public class LoadBalancerRef 
     {
 
         /// <summary>
-        /// 参数解释：负载均衡器ID。
+        /// **参数解释**：负载均衡器ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }

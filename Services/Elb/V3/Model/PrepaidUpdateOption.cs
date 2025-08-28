@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：更新负载均衡器实例的预付费计费配置。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg)
+    /// **参数解释**：更新负载均衡器实例的预付费计费配置。  **约束限制**：不涉及  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg)
     /// </summary>
     public class PrepaidUpdateOption 
     {
         /// <summary>
-        /// 规格变更类型： immediate：即时变更，规格变更立即生效。（默认） delay：续费变更，当前周期结束后变更为目标规格。
+        /// **参数解释**：规格变更类型。  **约束限制**：不涉及  **取值范围**： - immediate：即时变更，规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。  **默认取值**：不涉及
         /// </summary>
-        /// <value>规格变更类型： immediate：即时变更，规格变更立即生效。（默认） delay：续费变更，当前周期结束后变更为目标规格。</value>
+        /// <value>**参数解释**：规格变更类型。  **约束限制**：不涉及  **取值范围**： - immediate：即时变更，规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。  **默认取值**：不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<ChangeModeEnum>))]
         public class ChangeModeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         }
 
         /// <summary>
-        /// 订购周期类型，当前支持包月和包年： （仅在change_mode为delay时生效） month：月（默认）； year：年；
+        /// **参数解释**：订购周期类型。  **约束限制**：仅在change_mode为delay时生效。  **取值范围**： - month：月 - year：年  **默认取值**：不涉及
         /// </summary>
-        /// <value>订购周期类型，当前支持包月和包年： （仅在change_mode为delay时生效） month：月（默认）； year：年；</value>
+        /// <value>**参数解释**：订购周期类型。  **约束限制**：仅在change_mode为delay时生效。  **取值范围**： - month：月 - year：年  **默认取值**：不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
         public class PeriodTypeEnum
         {
@@ -247,24 +247,24 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// 下单订购后，是否自动从客户的账户中支付； true：自动支付； false：不自动支付（默认）。 自动支付时，只能使用账户的现金支付；如果要使用代金券，请选择不自动支付，然后在用户费用中心，选择代金券支付。
+        /// **参数解释**：下单订购后，是否自动从客户的账户中支付。  **约束限制**：自动支付时，只能使用账户的现金支付；如果要使用代金券，请选择不自动支付，然后在用户费用中心，选择代金券支付。  **取值范围**： - true：自动支付。 - false：不自动支付。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("auto_pay", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AutoPay { get; set; }
 
         /// <summary>
-        /// 规格变更类型： immediate：即时变更，规格变更立即生效。（默认） delay：续费变更，当前周期结束后变更为目标规格。
+        /// **参数解释**：规格变更类型。  **约束限制**：不涉及  **取值范围**： - immediate：即时变更，规格变更立即生效。 - delay：续费变更，当前周期结束后变更为目标规格。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("change_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChangeModeEnum ChangeMode { get; set; }
         /// <summary>
-        /// 订购周期数（默认1），取值会随运营策略变化。（仅在change_mode为delay时生效） period_type为month时，为[1,9]， period_type为year时，为[1,3]
+        /// **参数解释**：订购周期数，取值会随运营策略变化。  **约束限制**：仅在change_mode为delay时生效  **取值范围**： - period_type为month时，为[1,9] - period_type为year时，为[1,3]  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
 
         /// <summary>
-        /// 订购周期类型，当前支持包月和包年： （仅在change_mode为delay时生效） month：月（默认）； year：年；
+        /// **参数解释**：订购周期类型。  **约束限制**：仅在change_mode为delay时生效。  **取值范围**： - month：月 - year：年  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }

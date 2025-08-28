@@ -17,14 +17,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 策略ID。
+        /// **参数解释**：策略ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("l7policy_id", IsPath = true)]
         [JsonProperty("l7policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public string L7policyId { get; set; }
 
         /// <summary>
-        /// 规则ID。
+        /// **参数解释**：规则ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("l7rule_id", IsPath = true)]
         [JsonProperty("l7rule_id", NullValueHandling = NullValueHandling.Ignore)]

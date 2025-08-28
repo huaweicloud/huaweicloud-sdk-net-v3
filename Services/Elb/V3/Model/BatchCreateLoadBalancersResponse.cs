@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 批创负载均衡器ID（UUID）的列表。
+        /// **参数解释**：批创负载均衡器ID（UUID）的列表。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("loadbalancer_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> LoadbalancerIds { get; set; }
 
         /// <summary>
-        /// 批量创建负载均衡器的job ID。
+        /// **参数解释**：批量创建负载均衡器的job ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// 订单号[（只有批量创建包周期实例的场景返回该字段）](tag:hws)  [不支持该字段，请勿使用](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,srg,fcs,fcs_vm,dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,ct)
+        /// **参数解释**：订单号[（只有批量创建包周期实例的场景返回该字段）](tag:hws)  **取值范围**：不涉及  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,srg,fcs,fcs_vm,dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,ct)
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// 请求ID。 注：自动生成 。
+        /// **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }

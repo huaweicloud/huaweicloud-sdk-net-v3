@@ -11,61 +11,61 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 自定义安全策略信息
+    /// **参数解释**：自定义安全策略信息。
     /// </summary>
     public class SecurityPolicy 
     {
 
         /// <summary>
-        /// 自定义安全安全策略的id。
+        /// **参数解释**：自定义安全策略的ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 自定义安全策略的项目id。
+        /// **参数解释**：自定义安全策略的项目ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 自定义安全策略的名称
+        /// **参数解释**：自定义安全策略的名称。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 自定义安全策略的描述。
+        /// **参数解释**：自定义安全策略的描述。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 自定义安全策略关联的监听器。
+        /// **参数解释**：关联的监听器。
         /// </summary>
         [JsonProperty("listeners", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListenerRef> Listeners { get; set; }
 
         /// <summary>
-        /// 自定义安全策略的TLS协议列表。
+        /// **参数解释**：自定义安全策略的TLS协议列表。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("protocols", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Protocols { get; set; }
 
         /// <summary>
-        /// 自定义安全策略的加密套件列表。
+        /// **参数解释**：自定义安全策略的加密套件列表。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("ciphers", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ciphers { get; set; }
 
         /// <summary>
-        /// 自定义安全策略的创建时间。
+        /// **参数解释**：创建时间。  **取值范围**：格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 自定义安全策略的更新时间。
+        /// **参数解释**：更新时间。  **取值范围**：格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }

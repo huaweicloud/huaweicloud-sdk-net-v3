@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 子任务
+    /// **参数解释**：子任务
     /// </summary>
     public class SubJob 
     {
@@ -215,13 +215,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 参数解释：资源ID。
+        /// **参数解释**：资源ID。
         /// </summary>
         [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 任务关联的资源列表
+        /// **参数解释**：任务关联的资源列表。
         /// </summary>
         [JsonProperty("entities", NullValueHandling = NullValueHandling.Ignore)]
         public List<JobEntities> Entities { get; set; }

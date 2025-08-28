@@ -696,7 +696,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 解除LTS配置信息
         ///
         /// 解除LTS配置信息
         /// 
@@ -1180,7 +1180,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 查询实例的错误日志数据
         ///
         /// 查询实例的错误日志数据。
         /// 
@@ -1284,7 +1284,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 查询实例大版本升级检查历史
         ///
         /// 查询实例大版本升级检查历史。
         /// 
@@ -1510,7 +1510,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 获取LTS配置信息
         ///
         /// 获取LTS配置信息
         /// 
@@ -1703,7 +1703,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 查询预定义标签
         ///
         /// 查询预定义标签
         /// 
@@ -1928,7 +1928,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 获取指定实例详情
         ///
         /// 获取指定实例详情
         /// 
@@ -1979,7 +1979,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 查询实例慢日志的统计数据
         ///
         /// 查询实例慢日志的统计数据。
         /// 
@@ -2057,7 +2057,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 查询实例的慢日志数据
         ///
         /// 查询实例的慢日志数据。
         /// 
@@ -2237,7 +2237,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 查询实例大版本升级历史信息
         ///
         /// 查询实例大版本升级历史信息。
         /// 
@@ -2682,7 +2682,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 关联LTS配置信息
         ///
         /// 关联LTS配置信息
         /// 
@@ -2946,7 +2946,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 查询实例可升级的目标版本
         ///
         /// 查询实例可升级的目标版本
         /// 
@@ -3126,7 +3126,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 查询实例ipv4域名
         ///
         /// 查询实例ipv4域名
         /// 
@@ -3460,7 +3460,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 查询大版本检查状态或升级状态
         ///
         /// 查询大版本检查状态或升级状态。
         /// 
@@ -4160,7 +4160,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// PostgreSQL数据库升级大版本
         ///
         /// PostgreSQL数据库升级大版本。
         /// 
@@ -4186,7 +4186,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 大版本升级前进行升级检查
         ///
         /// 大版本升级前进行升级检查。
         /// 
@@ -5578,7 +5578,7 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
-        /// 
+        /// 数据库帐号授权
         ///
         /// 数据库帐号授权。
         /// 

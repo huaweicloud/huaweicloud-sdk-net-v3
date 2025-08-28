@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 回收站的回收配置。
+    /// **参数解释**：回收站的回收配置。
     /// </summary>
     public class RecycleBinPolicy 
     {
 
         /// <summary>
-        /// 允许进入回收站的最小创建时间，不足此时长则删除时不满足进入回收站的条件。
+        /// **参数解释**：允许进入回收站的最小创建时间，不足此时长则删除时不满足进入回收站的条件。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("recycle_threshold_hour", NullValueHandling = NullValueHandling.Ignore)]
         public int? RecycleThresholdHour { get; set; }
 
         /// <summary>
-        /// 进入回收站的最大保留时长。
+        /// **参数解释**：进入回收站的最大保留时长。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("retention_hour", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetentionHour { get; set; }

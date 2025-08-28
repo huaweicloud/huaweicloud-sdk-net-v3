@@ -59,6 +59,10 @@ namespace HuaweiCloud.SDK.Bms.V1
             "https://bms.my-kualalumpur-1.myhuaweicloud.com");
         public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
             "https://bms.ru-moscow-1.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_4 = new Region("cn-south-4",
+            "https://bms.cn-south-4.myhuaweicloud.com");
+        public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
+            "https://bms.cn-southwest-3.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("BMS");
 
@@ -90,6 +94,8 @@ namespace HuaweiCloud.SDK.Bms.V1
                 { "cn-east-4", CN_EAST_4 },
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
                 { "ru-moscow-1", RU_MOSCOW_1 },
+                { "cn-south-4", CN_SOUTH_4 },
+                { "cn-southwest-3", CN_SOUTHWEST_3 },
         };
 
         public static Region ValueOf(string regionId)

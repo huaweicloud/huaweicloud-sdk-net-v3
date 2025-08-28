@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 更新云日志请求体
+    /// 
     /// </summary>
     public class UpdateLogtankRequestBody 
     {

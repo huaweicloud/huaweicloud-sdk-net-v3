@@ -11,61 +11,61 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// IP地址组信息。
+    /// **参数解释**：IP地址组信息。
     /// </summary>
     public class IpGroup 
     {
 
         /// <summary>
-        /// 参数解释：IP地址组的ID。
+        /// **参数解释**：IP地址组的ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组的名称。
+        /// **参数解释**：IP地址组的名称。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组的描述信息。
+        /// **参数解释**：IP地址组的描述信息。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组中包含的IP或网段列表。[]表示任意IP。
+        /// **参数解释**：IP地址组中包含的IP地址列表。[]表示任意IP。
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpInfo> IpList { get; set; }
 
         /// <summary>
-        /// 参数解释：与IP地址组关联的监听器的ID列表。
+        /// **参数解释**：与IP地址组关联的监听器的ID列表。
         /// </summary>
         [JsonProperty("listeners", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListenerRef> Listeners { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组的项目ID。
+        /// **参数解释**：IP地址组的项目ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组所在的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+        /// **参数解释**：资源所属的企业项目ID。  **取值范围**： - \&quot;0\&quot;：表示资源属于default企业项目。 - UUID格式的字符串，表示非默认企业项目。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组的创建时间。
+        /// **参数解释**：IP地址组的创建时间。  **取值范围**：格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组的更新时间。
+        /// **参数解释**：IP地址组的更新时间。  **取值范围**：格式：yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;，UTC时区。
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }

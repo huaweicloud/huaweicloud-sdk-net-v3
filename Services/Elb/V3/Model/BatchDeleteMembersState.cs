@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 批量创建后端服务器响应结果
+    /// 
     /// </summary>
     public class BatchDeleteMembersState 
     {
 
         /// <summary>
-        /// 后端服务器ID。  &gt; 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
+        /// **参数解释**：后端服务器ID。  **取值范围**：不涉及  &gt; 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 当前后端服务器删除结果状态。  取值： - successful：删除成功。 - not found：member不存在。
+        /// **参数解释**：当前后端服务器删除结果状态。  **取值范围**： - successful：删除成功。 - not found：member不存在。
         /// </summary>
         [JsonProperty("ret_status", NullValueHandling = NullValueHandling.Ignore)]
         public string RetStatus { get; set; }

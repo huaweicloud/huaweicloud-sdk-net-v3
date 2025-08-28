@@ -11,37 +11,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 创建IP地址组请求参数。
+    /// **参数解释**：创建IP地址组的请求参数。  **约束限制**：不涉及
     /// </summary>
     public class CreateIpGroupOption 
     {
 
         /// <summary>
-        /// 参数解释：IP地址组所在的项目ID。
+        /// **参数解释**：项目ID。获取方式请参见[获取项目ID](elb_fl_0008.xml)。  **约束限制**：不涉及  **取值范围**：长度为32个字符，由小写字母和数字组成。  **默认取值**：不涉及  &gt; 该字段实际无效，最终使用url中的project_id。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组的描述。
+        /// **参数解释**：IP地址组的描述。  **约束限制**：不涉及  **取值范围**：长度为0-255个字符。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组的名称。
+        /// **参数解释**：IP地址组的名称。  **约束限制**：不涉及  **取值范围**：长度为0-255个字符。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组中包含的IP或网段列表。[]表示任意IP。
+        /// **参数解释**：IP地址组中的IP列表，支持IPv4和IPv6类型地址。  **约束限制**：不涉及
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<CreateIpGroupIpOption> IpList { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组所在的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+        /// **参数解释**：资源所属的企业项目ID。创建时不传则资源属于default企业项目，返回enterprise_project_id&#x3D;\&quot;0\&quot;。  **约束限制**：不能传入空字符串\&quot;\&quot;、\&quot;0\&quot;或不存在的企业项目ID。  **取值范围**：不涉及  **默认取值**：\&quot;0\&quot;  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }

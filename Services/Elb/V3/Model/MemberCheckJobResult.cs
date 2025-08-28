@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：后端服务器检测任务各检查项的检测结果。
+    /// **参数解释**：后端服务器检测任务各检查项的检测结果。
     /// </summary>
     public class MemberCheckJobResult 
     {

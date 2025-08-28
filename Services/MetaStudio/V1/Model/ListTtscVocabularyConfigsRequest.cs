@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string XAppUserId { get; set; }
 
         /// <summary>
-        /// 自定义读法类型 CHINESE_G2P：拼音
+        /// 自定义读法类型。 - CHINESE_G2P：拼音 - PHONETIC_SYMBOL：音标 - CONTINUUM：连读 - ALIAS：别名 - SAY_AS：数字英文读法
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

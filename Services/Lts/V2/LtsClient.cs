@@ -1128,6 +1128,34 @@ namespace HuaweiCloud.SDK.Lts.V2
         }
         
         /// <summary>
+        /// 查询日志流索引
+        ///
+        /// 查询日志流索引。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListLogStreamIndexResponse ListLogStreamIndex(ListLogStreamIndexRequest listLogStreamIndexRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", listLogStreamIndexRequest.GroupId.ToString());
+            urlParam.Add("stream_id", listLogStreamIndexRequest.StreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/stream/{stream_id}/index/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogStreamIndexRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListLogStreamIndexResponse>(response);
+        }
+
+        public SyncInvoker<ListLogStreamIndexResponse> ListLogStreamIndexInvoker(ListLogStreamIndexRequest listLogStreamIndexRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("group_id", listLogStreamIndexRequest.GroupId.ToString());
+            urlParam.Add("stream_id", listLogStreamIndexRequest.StreamId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/stream/{stream_id}/index/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogStreamIndexRequest);
+            return new SyncInvoker<ListLogStreamIndexResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLogStreamIndexResponse>);
+        }
+        
+        /// <summary>
         /// 查询日志流信息
         ///
         /// 该接口用于查询LTS日志流信息。

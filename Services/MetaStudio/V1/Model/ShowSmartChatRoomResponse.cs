@@ -16,6 +16,127 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     public class ShowSmartChatRoomResponse : SdkResponse
     {
         /// <summary>
+        /// 计费模式，默认值CONCURRENCY * CONCURRENCY：并发计费 * CLIENT：按接入端计费 * CLIENT_TOKENS: 按接入端计费（TOKENS）
+        /// </summary>
+        /// <value>计费模式，默认值CONCURRENCY * CONCURRENCY：并发计费 * CLIENT：按接入端计费 * CLIENT_TOKENS: 按接入端计费（TOKENS）</value>
+        [JsonConverter(typeof(EnumClassConverter<BillingModeEnum>))]
+        public class BillingModeEnum
+        {
+            /// <summary>
+            /// Enum CONCURRENCY for value: CONCURRENCY
+            /// </summary>
+            public static readonly BillingModeEnum CONCURRENCY = new BillingModeEnum("CONCURRENCY");
+
+            /// <summary>
+            /// Enum CLIENT for value: CLIENT
+            /// </summary>
+            public static readonly BillingModeEnum CLIENT = new BillingModeEnum("CLIENT");
+
+            /// <summary>
+            /// Enum CLIENT_TOKENS for value: CLIENT_TOKENS
+            /// </summary>
+            public static readonly BillingModeEnum CLIENT_TOKENS = new BillingModeEnum("CLIENT_TOKENS");
+
+            private static readonly Dictionary<string, BillingModeEnum> StaticFields =
+            new Dictionary<string, BillingModeEnum>()
+            {
+                { "CONCURRENCY", CONCURRENCY },
+                { "CLIENT", CLIENT },
+                { "CLIENT_TOKENS", CLIENT_TOKENS },
+            };
+
+            private string _value;
+
+            public BillingModeEnum()
+            {
+
+            }
+
+            public BillingModeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static BillingModeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as BillingModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(BillingModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(BillingModeEnum a, BillingModeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(BillingModeEnum a, BillingModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
         /// </summary>
         /// <value>默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）</value>
@@ -319,10 +440,27 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string RobotId { get; set; }
 
         /// <summary>
+        /// 计费模式，默认值CONCURRENCY * CONCURRENCY：并发计费 * CLIENT：按接入端计费 * CLIENT_TOKENS: 按接入端计费（TOKENS）
+        /// </summary>
+        [JsonProperty("billing_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public BillingModeEnum BillingMode { get; set; }
+        /// <summary>
+        /// 是否允许使用未分配的并发数（端模式下不能复用），默认不使用。
+        /// </summary>
+        [JsonProperty("reuse_resource", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReuseResource { get; set; }
+
+        /// <summary>
         /// **参数解释**： 并发路数。 **约束限制**： 默认没有并发路数，如果不配置并发数量，则无法启动智能交互对话任务。
         /// </summary>
         [JsonProperty("concurrency", NullValueHandling = NullValueHandling.Ignore)]
         public int? Concurrency { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 允许接入终端端数量。
+        /// </summary>
+        [JsonProperty("client_nums", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ClientNums { get; set; }
 
         /// <summary>
         /// 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
@@ -423,7 +561,10 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  voiceConfig: ").Append(VoiceConfig).Append("\n");
             sb.Append("  voiceConfigList: ").Append(VoiceConfigList).Append("\n");
             sb.Append("  robotId: ").Append(RobotId).Append("\n");
+            sb.Append("  billingMode: ").Append(BillingMode).Append("\n");
+            sb.Append("  reuseResource: ").Append(ReuseResource).Append("\n");
             sb.Append("  concurrency: ").Append(Concurrency).Append("\n");
+            sb.Append("  clientNums: ").Append(ClientNums).Append("\n");
             sb.Append("  defaultLanguage: ").Append(DefaultLanguage).Append("\n");
             sb.Append("  backgroundConfig: ").Append(BackgroundConfig).Append("\n");
             sb.Append("  layerConfig: ").Append(LayerConfig).Append("\n");
@@ -463,7 +604,10 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.VoiceConfig != input.VoiceConfig || (this.VoiceConfig != null && !this.VoiceConfig.Equals(input.VoiceConfig))) return false;
             if (this.VoiceConfigList != input.VoiceConfigList || (this.VoiceConfigList != null && input.VoiceConfigList != null && !this.VoiceConfigList.SequenceEqual(input.VoiceConfigList))) return false;
             if (this.RobotId != input.RobotId || (this.RobotId != null && !this.RobotId.Equals(input.RobotId))) return false;
+            if (this.BillingMode != input.BillingMode) return false;
+            if (this.ReuseResource != input.ReuseResource || (this.ReuseResource != null && !this.ReuseResource.Equals(input.ReuseResource))) return false;
             if (this.Concurrency != input.Concurrency || (this.Concurrency != null && !this.Concurrency.Equals(input.Concurrency))) return false;
+            if (this.ClientNums != input.ClientNums || (this.ClientNums != null && !this.ClientNums.Equals(input.ClientNums))) return false;
             if (this.DefaultLanguage != input.DefaultLanguage) return false;
             if (this.BackgroundConfig != input.BackgroundConfig || (this.BackgroundConfig != null && !this.BackgroundConfig.Equals(input.BackgroundConfig))) return false;
             if (this.LayerConfig != input.LayerConfig || (this.LayerConfig != null && input.LayerConfig != null && !this.LayerConfig.SequenceEqual(input.LayerConfig))) return false;
@@ -497,7 +641,10 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.VoiceConfig != null) hashCode = hashCode * 59 + this.VoiceConfig.GetHashCode();
                 if (this.VoiceConfigList != null) hashCode = hashCode * 59 + this.VoiceConfigList.GetHashCode();
                 if (this.RobotId != null) hashCode = hashCode * 59 + this.RobotId.GetHashCode();
+                hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
+                if (this.ReuseResource != null) hashCode = hashCode * 59 + this.ReuseResource.GetHashCode();
                 if (this.Concurrency != null) hashCode = hashCode * 59 + this.Concurrency.GetHashCode();
+                if (this.ClientNums != null) hashCode = hashCode * 59 + this.ClientNums.GetHashCode();
                 hashCode = hashCode * 59 + this.DefaultLanguage.GetHashCode();
                 if (this.BackgroundConfig != null) hashCode = hashCode * 59 + this.BackgroundConfig.GetHashCode();
                 if (this.LayerConfig != null) hashCode = hashCode * 59 + this.LayerConfig.GetHashCode();

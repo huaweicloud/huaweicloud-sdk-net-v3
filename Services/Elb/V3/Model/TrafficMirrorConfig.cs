@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：流量镜像的配置
+    /// **参数解释**：流量镜像的配置
     /// </summary>
     public class TrafficMirrorConfig 
     {
 
         /// <summary>
-        /// 流量镜像的目的后端服务器组ID。
+        /// **参数解释**：流量镜像的目的后端服务器组ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("target_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> TargetIds { get; set; }
 
         /// <summary>
-        /// 镜像请求是否携带请求体，默认true。
+        /// **参数解释**：镜像请求是否携带请求体，默认true。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("mirror_request_body_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? MirrorRequestBodyEnable { get; set; }

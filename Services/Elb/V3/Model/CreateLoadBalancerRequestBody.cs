@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：创建负载均衡器实例的参数对象。
+    /// **参数解释**：创建负载均衡器实例的参数对象。  **约束限制**：不涉及
     /// </summary>
     public class CreateLoadBalancerRequestBody 
     {

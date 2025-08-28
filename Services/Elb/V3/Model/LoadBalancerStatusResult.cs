@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// **参数解释**：负载均衡器状态树信息。  **默认取值**：不涉及
     /// </summary>
     public class LoadBalancerStatusResult 
     {

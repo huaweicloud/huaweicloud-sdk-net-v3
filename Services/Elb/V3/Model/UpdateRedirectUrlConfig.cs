@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：转发到的url配置。  约束限制： - 当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。 - 当转发策略的action为REDIRECT_TO_URL时生效，且为必选字段，其他action不可指定，否则报错。 [- 共享型负载均衡器下的转发策略不支持该字段，传入会报错。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt)  取值范围：格式：protocol://host:port/path?query  protocol、host、port、path不允许同时不传或同时传${xxx} （${xxx}表示原值，如${host}表示被转发的请求URL的host部分）。 protocol和port传入的值不能与l7policy关联的监听器一致且host、path同时不传或同时传${xxx}。  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+    /// **参数解释**：转发到的url配置。  **约束限制**： - 当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。 - 当转发策略的action为REDIRECT_TO_URL时生效，且为必选字段，其他action不可指定，否则报错。 [- 共享型负载均衡器下的转发策略不支持该字段，传入会报错。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt)  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt)
     /// </summary>
     public class UpdateRedirectUrlConfig 
     {
         /// <summary>
-        /// 参数解释：重定向的协议。  取值范围： - HTTP - HTTPS - ${protocol}，表示继承原值（即与被转发请求保持一致）。
+        /// **参数解释**：重定向的协议。  **约束限制**：不涉及  **取值范围**： - HTTP - HTTPS - ${protocol}，表示继承原值（即与被转发请求保持一致）。  **默认取值**：不涉及
         /// </summary>
-        /// <value>参数解释：重定向的协议。  取值范围： - HTTP - HTTPS - ${protocol}，表示继承原值（即与被转发请求保持一致）。</value>
+        /// <value>**参数解释**：重定向的协议。  **约束限制**：不涉及  **取值范围**： - HTTP - HTTPS - ${protocol}，表示继承原值（即与被转发请求保持一致）。  **默认取值**：不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<ProtocolEnum>))]
         public class ProtocolEnum
         {
@@ -137,9 +137,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         }
 
         /// <summary>
-        /// 参数解释：重定向后的返回码。  取值范围： - 301 - 302 - 303 - 307 - 308
+        /// **参数解释**：重定向后的返回码。  **约束限制**：不涉及  **取值范围**： - 301 - 302 - 303 - 307 - 308  **默认取值**：不涉及
         /// </summary>
-        /// <value>参数解释：重定向后的返回码。  取值范围： - 301 - 302 - 303 - 307 - 308</value>
+        /// <value>**参数解释**：重定向后的返回码。  **约束限制**：不涉及  **取值范围**： - 301 - 302 - 303 - 307 - 308  **默认取值**：不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<StatusCodeEnum>))]
         public class StatusCodeEnum
         {
@@ -271,36 +271,36 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// 参数解释：重定向的协议。  取值范围： - HTTP - HTTPS - ${protocol}，表示继承原值（即与被转发请求保持一致）。
+        /// **参数解释**：重定向的协议。  **约束限制**：不涉及  **取值范围**： - HTTP - HTTPS - ${protocol}，表示继承原值（即与被转发请求保持一致）。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public ProtocolEnum Protocol { get; set; }
         /// <summary>
-        /// 参数解释：重定向的主机名。  取值范围：字符串只能包含英文字母、数字、“-”、“.”，必须以字母、数字开头。  默认取值：${host}，表示继承原值（即与被转发请求保持一致）。
+        /// **参数解释**：重定向的主机名。  **约束限制**：不涉及  **取值范围**：字符串只能包含英文字母、数字、“-”、“.”，必须以字母、数字开头。  **默认取值**：${host}，表示继承原值（即与被转发请求保持一致）。
         /// </summary>
         [JsonProperty("host", NullValueHandling = NullValueHandling.Ignore)]
         public string Host { get; set; }
 
         /// <summary>
-        /// 参数解释：重定向到的端口。  默认取值：${port}表示继承原值（即与被转发请求保持一致）。
+        /// **参数解释**：重定向到的端口。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：${port}表示继承原值（即与被转发请求保持一致）。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public string Port { get; set; }
 
         /// <summary>
-        /// 参数解释：重定向的路径。  取值范围：只能包含英文字母、数字、_~&#39;;@^-%#&amp;$.\\*+?,&#x3D;!:|\\/()\\[\\]{}，且必须以\&quot;/\&quot;开头。  默认取值：${path}，表示继承原值（即与被转发请求保持一致）。
+        /// **参数解释**：重定向的路径。  **约束限制**：不涉及  **取值范围**：只能包含英文字母、数字、_~&#39;;@^-%#&amp;$.\\*+?,&#x3D;!:|\\/()\\[\\]{}，且必须以\&quot;/\&quot;开头。  **默认取值**：${path}，表示继承原值（即与被转发请求保持一致）。
         /// </summary>
         [JsonProperty("path", NullValueHandling = NullValueHandling.Ignore)]
         public string Path { get; set; }
 
         /// <summary>
-        /// 参数解释：重定向的查询字符串。举例如下：  将query设置为：${query}&amp;name&#x3D;my_name，则在转发符合条件的URL （如https://www.example.com:8080/elb?type&#x3D;loadbalancer）时，将会重定向到 https://www.example.com:8080/elb?type&#x3D;loadbalancer&amp;name&#x3D;my_name。在例子中${query}表示type&#x3D;loadbalancer。  取值范围：只能包含英文字母、数字和特殊字符：!$&amp;&#39;()\\*+,-./:;&#x3D;?@^_&#x60;。字母区分大小写。其中$1，$2会匹配请求url通配符星号（\\*）  默认取值：${query}表示继承原值（即与被转发请求保持一致）
+        /// **参数解释**：重定向的查询字符串。举例如下： 将query设置为：${query}&amp;name&#x3D;my_name，则在转发符合条件的URL（如https://www.example.com:8080/elb?type&#x3D;loadbalancer）时，将会重定向到https://www.example.com:8080/elb?type&#x3D;loadbalancer&amp;name&#x3D;my_name。在例子中${query}表示type&#x3D;loadbalancer。  **约束限制**：不涉及  **取值范围**：只能包含英文字母、数字和特殊字符：!$&amp;&#39;()\\*+,-./:;&#x3D;?@^_&#x60;。字母区分大小写。其中$1，$2会匹配请求url通配符星号（\\*）  **默认取值**：${query}表示继承原值（即与被转发请求保持一致）
         /// </summary>
         [JsonProperty("query", NullValueHandling = NullValueHandling.Ignore)]
         public string Query { get; set; }
 
         /// <summary>
-        /// 参数解释：重定向后的返回码。  取值范围： - 301 - 302 - 303 - 307 - 308
+        /// **参数解释**：重定向后的返回码。  **约束限制**：不涉及  **取值范围**： - 301 - 302 - 303 - 307 - 308  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("status_code", NullValueHandling = NullValueHandling.Ignore)]
         public StatusCodeEnum StatusCode { get; set; }

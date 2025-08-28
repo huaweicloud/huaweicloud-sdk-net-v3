@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 批量删除IP地址组中的IP。
+    /// **参数解释**：批量删除IP地址项的请求参数。  **约束限制**：不涉及
     /// </summary>
     public class BatchDeleteIpListOption 
     {
 
         /// <summary>
-        /// 参数解释：IP列表。
+        /// **参数解释**：IP地址组中IP列表的IP地址信息。  **约束限制**：不涉及
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpGroupIp> IpList { get; set; }

@@ -11,37 +11,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 云日志信息。
+    /// 
     /// </summary>
     public class Logtank 
     {
 
         /// <summary>
-        /// 云日志ID。
+        /// **参数解释**：云日志ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 参数解释：项目ID。
+        /// **参数解释**：项目ID。获取方式请参见[获取项目ID](elb_fl_0008.xml)。  **取值范围**：长度为32个字符，由小写字母和数字组成。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 负载均衡器ID。
+        /// **参数解释**：负载均衡器ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LoadbalancerId { get; set; }
 
         /// <summary>
-        /// 云日志分组ID。
+        /// **参数解释**：云日志分组ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogGroupId { get; set; }
 
         /// <summary>
-        /// 云日志主题ID。
+        /// **参数解释**：云日志主题ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("log_topic_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogTopicId { get; set; }

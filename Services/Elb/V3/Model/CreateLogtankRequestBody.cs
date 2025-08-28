@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 创建云日志请求体
+    /// **参数解释**：创建云日志请求参数。  **约束限制**：不涉及
     /// </summary>
     public class CreateLogtankRequestBody 
     {

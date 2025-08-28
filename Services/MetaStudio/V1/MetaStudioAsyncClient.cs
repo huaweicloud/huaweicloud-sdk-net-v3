@@ -1409,6 +1409,285 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 上传文档
+        ///
+        /// 该接口用于上传文档。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateDocumentResponse> CreateDocumentAsync(CreateDocumentRequest createDocumentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", createDocumentRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateDocumentResponse>(response);
+        }
+
+        public AsyncInvoker<CreateDocumentResponse> CreateDocumentAsyncInvoker(CreateDocumentRequest createDocumentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", createDocumentRequest);
+            return new AsyncInvoker<CreateDocumentResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDocumentResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除文档
+        ///
+        /// 该接口用于批量删除文档。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDocumentResponse> DeleteDocumentAsync(DeleteDocumentRequest deleteDocumentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDocumentRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<DeleteDocumentResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDocumentResponse> DeleteDocumentAsyncInvoker(DeleteDocumentRequest deleteDocumentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDocumentRequest);
+            return new AsyncInvoker<DeleteDocumentResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteDocumentResponse>);
+        }
+        
+        /// <summary>
+        /// 下载文档
+        ///
+        /// 该接口用于下载文档。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadDocumentResponse> DownloadDocumentAsync(DownloadDocumentRequest downloadDocumentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("document_id", downloadDocumentRequest.DocumentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/{document_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadDocumentRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<DownloadDocumentResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadDocumentResponse> DownloadDocumentAsyncInvoker(DownloadDocumentRequest downloadDocumentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("document_id", downloadDocumentRequest.DocumentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/{document_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadDocumentRequest);
+            return new AsyncInvoker<DownloadDocumentResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadDocumentResponse>);
+        }
+        
+        /// <summary>
+        /// 查询文档列表
+        ///
+        /// 该接口用于分页查询文档列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDocumentInfoResponse> ListDocumentInfoAsync(ListDocumentInfoRequest listDocumentInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDocumentInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDocumentInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ListDocumentInfoResponse> ListDocumentInfoAsyncInvoker(ListDocumentInfoRequest listDocumentInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDocumentInfoRequest);
+            return new AsyncInvoker<ListDocumentInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDocumentInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询文档详情
+        ///
+        /// 该接口用于查询文档详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDocumentInfoResponse> ShowDocumentInfoAsync(ShowDocumentInfoRequest showDocumentInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("document_id", showDocumentInfoRequest.DocumentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/detail/{document_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDocumentInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDocumentInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDocumentInfoResponse> ShowDocumentInfoAsyncInvoker(ShowDocumentInfoRequest showDocumentInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("document_id", showDocumentInfoRequest.DocumentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/detail/{document_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDocumentInfoRequest);
+            return new AsyncInvoker<ShowDocumentInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDocumentInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 修改文档
+        ///
+        /// 该接口用于修改文档
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateDocumentResponse> UpdateDocumentAsync(UpdateDocumentRequest updateDocumentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("document_id", updateDocumentRequest.DocumentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/update/{document_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", updateDocumentRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<UpdateDocumentResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDocumentResponse> UpdateDocumentAsyncInvoker(UpdateDocumentRequest updateDocumentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("document_id", updateDocumentRequest.DocumentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/update/{document_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", updateDocumentRequest);
+            return new AsyncInvoker<UpdateDocumentResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateDocumentResponse>);
+        }
+        
+        /// <summary>
+        /// 分页查询文档分段信息
+        ///
+        /// 该接口用于分页查询文档分段信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDocumentSegmentResponse> ListDocumentSegmentAsync(ListDocumentSegmentRequest listDocumentSegmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDocumentSegmentRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDocumentSegmentResponse>(response);
+        }
+
+        public AsyncInvoker<ListDocumentSegmentResponse> ListDocumentSegmentAsyncInvoker(ListDocumentSegmentRequest listDocumentSegmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/list", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDocumentSegmentRequest);
+            return new AsyncInvoker<ListDocumentSegmentResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDocumentSegmentResponse>);
+        }
+        
+        /// <summary>
+        /// 文档分段效果预览
+        ///
+        /// 该接口用于文档分段效果预览。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<PreviewDocumentSegmentResponse> PreviewDocumentSegmentAsync(PreviewDocumentSegmentRequest previewDocumentSegmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/preview", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", previewDocumentSegmentRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            var previewDocumentSegmentResponse = JsonUtils.DeSerializeNull<PreviewDocumentSegmentResponse>(response);
+            previewDocumentSegmentResponse.Body = JsonUtils.DeSerializeList<DocumentSegmentInfo>(response);
+            return previewDocumentSegmentResponse;
+        }
+
+        public AsyncInvoker<PreviewDocumentSegmentResponse> PreviewDocumentSegmentAsyncInvoker(PreviewDocumentSegmentRequest previewDocumentSegmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/preview", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", previewDocumentSegmentRequest);
+            return new AsyncInvoker<PreviewDocumentSegmentResponse>(this, "POST", request, response =>
+            {
+                var previewDocumentSegmentResponse = JsonUtils.DeSerializeNull<PreviewDocumentSegmentResponse>(response);
+                previewDocumentSegmentResponse.Body = JsonUtils.DeSerializeList<DocumentSegmentInfo>(response);
+                return previewDocumentSegmentResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 开始文档分段
+        ///
+        /// 该接口用于开始文档分段任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<StartDocumentSegmentResponse> StartDocumentSegmentAsync(StartDocumentSegmentRequest startDocumentSegmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/segment", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startDocumentSegmentRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<StartDocumentSegmentResponse>(response);
+        }
+
+        public AsyncInvoker<StartDocumentSegmentResponse> StartDocumentSegmentAsyncInvoker(StartDocumentSegmentRequest startDocumentSegmentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/segment", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startDocumentSegmentRequest);
+            return new AsyncInvoker<StartDocumentSegmentResponse>(this, "POST", request, JsonUtils.DeSerializeNull<StartDocumentSegmentResponse>);
+        }
+        
+        /// <summary>
+        /// 修改文档分段内容
+        ///
+        /// 该接口用于文档分段内容。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateDocumentSegmentInfoResponse> UpdateDocumentSegmentInfoAsync(UpdateDocumentSegmentInfoRequest updateDocumentSegmentInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDocumentSegmentInfoRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<UpdateDocumentSegmentInfoResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDocumentSegmentInfoResponse> UpdateDocumentSegmentInfoAsyncInvoker(UpdateDocumentSegmentInfoRequest updateDocumentSegmentInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDocumentSegmentInfoRequest);
+            return new AsyncInvoker<UpdateDocumentSegmentInfoResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateDocumentSegmentInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 更新文档分段配置
+        ///
+        /// 该接口用于更新文档分段配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateDocumentSegmentParamResponse> UpdateDocumentSegmentParamAsync(UpdateDocumentSegmentParamRequest updateDocumentSegmentParamRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("document_id", updateDocumentSegmentParamRequest.DocumentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/{document_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDocumentSegmentParamRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateDocumentSegmentParamResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateDocumentSegmentParamResponse> UpdateDocumentSegmentParamAsyncInvoker(UpdateDocumentSegmentParamRequest updateDocumentSegmentParamRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("document_id", updateDocumentSegmentParamRequest.DocumentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/{document_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDocumentSegmentParamRequest);
+            return new AsyncInvoker<UpdateDocumentSegmentParamResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDocumentSegmentParamResponse>);
+        }
+        
+        /// <summary>
         /// 确认文件已上传
         ///
         /// 资产文件上传完毕后，通过该接口确认上传完成。
@@ -1807,6 +2086,254 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 创建指令集
+        ///
+        /// 该接口用于创建指令集。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateInstructionLibraryResponse> CreateInstructionLibraryAsync(CreateInstructionLibraryRequest createInstructionLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstructionLibraryRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstructionLibraryResponse>(response);
+        }
+
+        public AsyncInvoker<CreateInstructionLibraryResponse> CreateInstructionLibraryAsyncInvoker(CreateInstructionLibraryRequest createInstructionLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstructionLibraryRequest);
+            return new AsyncInvoker<CreateInstructionLibraryResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstructionLibraryResponse>);
+        }
+        
+        /// <summary>
+        /// 删除指令集
+        ///
+        /// 该接口用于删除指令集。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteInstructionLibraryResponse> DeleteInstructionLibraryAsync(DeleteInstructionLibraryRequest deleteInstructionLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstructionLibraryRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<DeleteInstructionLibraryResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteInstructionLibraryResponse> DeleteInstructionLibraryAsyncInvoker(DeleteInstructionLibraryRequest deleteInstructionLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstructionLibraryRequest);
+            return new AsyncInvoker<DeleteInstructionLibraryResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteInstructionLibraryResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指令集列表
+        ///
+        /// 该接口用于查询指令集列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstructionLibraryResponse> ListInstructionLibraryAsync(ListInstructionLibraryRequest listInstructionLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstructionLibraryRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListInstructionLibraryResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstructionLibraryResponse> ListInstructionLibraryAsyncInvoker(ListInstructionLibraryRequest listInstructionLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstructionLibraryRequest);
+            return new AsyncInvoker<ListInstructionLibraryResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstructionLibraryResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指令集详情
+        ///
+        /// 该接口用于查询指令集详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowInstructionLibraryResponse> ShowInstructionLibraryAsync(ShowInstructionLibraryRequest showInstructionLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instruction_library_id", showInstructionLibraryRequest.InstructionLibraryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library/{instruction_library_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstructionLibraryRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstructionLibraryResponse>(response);
+        }
+
+        public AsyncInvoker<ShowInstructionLibraryResponse> ShowInstructionLibraryAsyncInvoker(ShowInstructionLibraryRequest showInstructionLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instruction_library_id", showInstructionLibraryRequest.InstructionLibraryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library/{instruction_library_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstructionLibraryRequest);
+            return new AsyncInvoker<ShowInstructionLibraryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstructionLibraryResponse>);
+        }
+        
+        /// <summary>
+        /// 修改指令集
+        ///
+        /// 该接口用于修改指令集。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateInstructionLibraryResponse> UpdateInstructionLibraryAsync(UpdateInstructionLibraryRequest updateInstructionLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instruction_library_id", updateInstructionLibraryRequest.InstructionLibraryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library/{instruction_library_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstructionLibraryRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateInstructionLibraryResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateInstructionLibraryResponse> UpdateInstructionLibraryAsyncInvoker(UpdateInstructionLibraryRequest updateInstructionLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instruction_library_id", updateInstructionLibraryRequest.InstructionLibraryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library/{instruction_library_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstructionLibraryRequest);
+            return new AsyncInvoker<UpdateInstructionLibraryResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstructionLibraryResponse>);
+        }
+        
+        /// <summary>
+        /// 创建指令
+        ///
+        /// 该接口用于创建指令。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateInstructionResponse> CreateInstructionAsync(CreateInstructionRequest createInstructionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstructionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateInstructionResponse>(response);
+        }
+
+        public AsyncInvoker<CreateInstructionResponse> CreateInstructionAsyncInvoker(CreateInstructionRequest createInstructionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstructionRequest);
+            return new AsyncInvoker<CreateInstructionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstructionResponse>);
+        }
+        
+        /// <summary>
+        /// 删除指令
+        ///
+        /// 该接口用于删除指令。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteInstructionResponse> DeleteInstructionAsync(DeleteInstructionRequest deleteInstructionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstructionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<DeleteInstructionResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteInstructionResponse> DeleteInstructionAsyncInvoker(DeleteInstructionRequest deleteInstructionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstructionRequest);
+            return new AsyncInvoker<DeleteInstructionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteInstructionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指令列表
+        ///
+        /// 该接口用于查询指令列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstructionResponse> ListInstructionAsync(ListInstructionRequest listInstructionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstructionRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListInstructionResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstructionResponse> ListInstructionAsyncInvoker(ListInstructionRequest listInstructionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstructionRequest);
+            return new AsyncInvoker<ListInstructionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstructionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指令详情
+        ///
+        /// 该接口用于查询指令详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowInstructionResponse> ShowInstructionAsync(ShowInstructionRequest showInstructionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instruction_id", showInstructionRequest.InstructionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction/{instruction_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstructionRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstructionResponse>(response);
+        }
+
+        public AsyncInvoker<ShowInstructionResponse> ShowInstructionAsyncInvoker(ShowInstructionRequest showInstructionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instruction_id", showInstructionRequest.InstructionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction/{instruction_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstructionRequest);
+            return new AsyncInvoker<ShowInstructionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstructionResponse>);
+        }
+        
+        /// <summary>
+        /// 修改指令
+        ///
+        /// 该接口用于修改指令。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateInstructionResponse> UpdateInstructionAsync(UpdateInstructionRequest updateInstructionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instruction_id", updateInstructionRequest.InstructionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction/{instruction_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstructionRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateInstructionResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateInstructionResponse> UpdateInstructionAsyncInvoker(UpdateInstructionRequest updateInstructionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instruction_id", updateInstructionRequest.InstructionId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction/{instruction_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstructionRequest);
+            return new AsyncInvoker<UpdateInstructionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstructionResponse>);
+        }
+        
+        /// <summary>
         /// 创建智能直播间互动规则库
         ///
         /// 该接口用于创建智能直播间互动规则库。
@@ -1904,6 +2431,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInteractionRuleGroupRequest);
             return new AsyncInvoker<UpdateInteractionRuleGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInteractionRuleGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 交互助手对话
+        ///
+        /// 该接口用于交互助手对话。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateInteractiveChatResponse> CreateInteractiveChatAsync(CreateInteractiveChatRequest createInteractiveChatRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/chat", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInteractiveChatRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateInteractiveChatResponse>(response);
+        }
+
+        public AsyncInvoker<CreateInteractiveChatResponse> CreateInteractiveChatAsyncInvoker(CreateInteractiveChatRequest createInteractiveChatRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/chat", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInteractiveChatRequest);
+            return new AsyncInvoker<CreateInteractiveChatResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInteractiveChatResponse>);
         }
         
         /// <summary>
@@ -2052,6 +2603,161 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/intent/{intent_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKnowledgeIntentRequest);
             return new AsyncInvoker<UpdateKnowledgeIntentResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateKnowledgeIntentResponse>);
+        }
+        
+        /// <summary>
+        /// 知识库召回测试
+        ///
+        /// 该接口用于知识库召回测试。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CheckRecallKnowledgeLibraryResponse> CheckRecallKnowledgeLibraryAsync(CheckRecallKnowledgeLibraryRequest checkRecallKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/recall", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkRecallKnowledgeLibraryRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            var checkRecallKnowledgeLibraryResponse = JsonUtils.DeSerializeNull<CheckRecallKnowledgeLibraryResponse>(response);
+            checkRecallKnowledgeLibraryResponse.Body = JsonUtils.DeSerializeList<RecallKnowledgeLibraryInfo>(response);
+            return checkRecallKnowledgeLibraryResponse;
+        }
+
+        public AsyncInvoker<CheckRecallKnowledgeLibraryResponse> CheckRecallKnowledgeLibraryAsyncInvoker(CheckRecallKnowledgeLibraryRequest checkRecallKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/recall", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkRecallKnowledgeLibraryRequest);
+            return new AsyncInvoker<CheckRecallKnowledgeLibraryResponse>(this, "POST", request, response =>
+            {
+                var checkRecallKnowledgeLibraryResponse = JsonUtils.DeSerializeNull<CheckRecallKnowledgeLibraryResponse>(response);
+                checkRecallKnowledgeLibraryResponse.Body = JsonUtils.DeSerializeList<RecallKnowledgeLibraryInfo>(response);
+                return checkRecallKnowledgeLibraryResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 创建知识库
+        ///
+        /// 该接口用于创建知识库。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateKnowledgeLibraryResponse> CreateKnowledgeLibraryAsync(CreateKnowledgeLibraryRequest createKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKnowledgeLibraryRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateKnowledgeLibraryResponse>(response);
+        }
+
+        public AsyncInvoker<CreateKnowledgeLibraryResponse> CreateKnowledgeLibraryAsyncInvoker(CreateKnowledgeLibraryRequest createKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKnowledgeLibraryRequest);
+            return new AsyncInvoker<CreateKnowledgeLibraryResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKnowledgeLibraryResponse>);
+        }
+        
+        /// <summary>
+        /// 删除知识库
+        ///
+        /// 该接口用于删除知识库。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteKnowledgeLibraryResponse> DeleteKnowledgeLibraryAsync(DeleteKnowledgeLibraryRequest deleteKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKnowledgeLibraryRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<DeleteKnowledgeLibraryResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteKnowledgeLibraryResponse> DeleteKnowledgeLibraryAsyncInvoker(DeleteKnowledgeLibraryRequest deleteKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKnowledgeLibraryRequest);
+            return new AsyncInvoker<DeleteKnowledgeLibraryResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteKnowledgeLibraryResponse>);
+        }
+        
+        /// <summary>
+        /// 查询知识库列表
+        ///
+        /// 该接口用于查询知识库列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListKnowledgeLibraryResponse> ListKnowledgeLibraryAsync(ListKnowledgeLibraryRequest listKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKnowledgeLibraryRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListKnowledgeLibraryResponse>(response);
+        }
+
+        public AsyncInvoker<ListKnowledgeLibraryResponse> ListKnowledgeLibraryAsyncInvoker(ListKnowledgeLibraryRequest listKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listKnowledgeLibraryRequest);
+            return new AsyncInvoker<ListKnowledgeLibraryResponse>(this, "GET", request, JsonUtils.DeSerialize<ListKnowledgeLibraryResponse>);
+        }
+        
+        /// <summary>
+        /// 查询知识库详情
+        ///
+        /// 该接口用于查询知识库详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowKnowledgeLibraryResponse> ShowKnowledgeLibraryAsync(ShowKnowledgeLibraryRequest showKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("knowledge_library_id", showKnowledgeLibraryRequest.KnowledgeLibraryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/{knowledge_library_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKnowledgeLibraryRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowKnowledgeLibraryResponse>(response);
+        }
+
+        public AsyncInvoker<ShowKnowledgeLibraryResponse> ShowKnowledgeLibraryAsyncInvoker(ShowKnowledgeLibraryRequest showKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("knowledge_library_id", showKnowledgeLibraryRequest.KnowledgeLibraryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/{knowledge_library_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKnowledgeLibraryRequest);
+            return new AsyncInvoker<ShowKnowledgeLibraryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKnowledgeLibraryResponse>);
+        }
+        
+        /// <summary>
+        /// 修改知识库
+        ///
+        /// 该接口用于修改知识库。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateKnowledgeLibraryResponse> UpdateKnowledgeLibraryAsync(UpdateKnowledgeLibraryRequest updateKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("knowledge_library_id", updateKnowledgeLibraryRequest.KnowledgeLibraryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/{knowledge_library_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKnowledgeLibraryRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateKnowledgeLibraryResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateKnowledgeLibraryResponse> UpdateKnowledgeLibraryAsyncInvoker(UpdateKnowledgeLibraryRequest updateKnowledgeLibraryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("knowledge_library_id", updateKnowledgeLibraryRequest.KnowledgeLibraryId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/{knowledge_library_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKnowledgeLibraryRequest);
+            return new AsyncInvoker<UpdateKnowledgeLibraryResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateKnowledgeLibraryResponse>);
         }
         
         /// <summary>
@@ -2527,6 +3233,254 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 创建大语言模型配置
+        ///
+        /// 该接口用于创建大语言模型配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateLlmConfigResponse> CreateLlmConfigAsync(CreateLlmConfigRequest createLlmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createLlmConfigRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateLlmConfigResponse>(response);
+        }
+
+        public AsyncInvoker<CreateLlmConfigResponse> CreateLlmConfigAsyncInvoker(CreateLlmConfigRequest createLlmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createLlmConfigRequest);
+            return new AsyncInvoker<CreateLlmConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateLlmConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 删除大语言模型配置
+        ///
+        /// 该接口用于删除大语言模型配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteLlmConfigResponse> DeleteLlmConfigAsync(DeleteLlmConfigRequest deleteLlmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLlmConfigRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<DeleteLlmConfigResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteLlmConfigResponse> DeleteLlmConfigAsyncInvoker(DeleteLlmConfigRequest deleteLlmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLlmConfigRequest);
+            return new AsyncInvoker<DeleteLlmConfigResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteLlmConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询大语言模型配置列表
+        ///
+        /// 该接口用于查询大语言模型配置列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListLlmConfigResponse> ListLlmConfigAsync(ListLlmConfigRequest listLlmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLlmConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListLlmConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ListLlmConfigResponse> ListLlmConfigAsyncInvoker(ListLlmConfigRequest listLlmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLlmConfigRequest);
+            return new AsyncInvoker<ListLlmConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLlmConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询大语言模型配置详情
+        ///
+        /// 该接口用于查询大语言模型配置详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowLlmConfigResponse> ShowLlmConfigAsync(ShowLlmConfigRequest showLlmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("llm_config_id", showLlmConfigRequest.LlmConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config/{llm_config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLlmConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowLlmConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ShowLlmConfigResponse> ShowLlmConfigAsyncInvoker(ShowLlmConfigRequest showLlmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("llm_config_id", showLlmConfigRequest.LlmConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config/{llm_config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLlmConfigRequest);
+            return new AsyncInvoker<ShowLlmConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLlmConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 修改大语言模型配置
+        ///
+        /// 该接口用于修改大语言模型配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateLlmConfigResponse> UpdateLlmConfigAsync(UpdateLlmConfigRequest updateLlmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("llm_config_id", updateLlmConfigRequest.LlmConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config/{llm_config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLlmConfigRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateLlmConfigResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateLlmConfigResponse> UpdateLlmConfigAsyncInvoker(UpdateLlmConfigRequest updateLlmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("llm_config_id", updateLlmConfigRequest.LlmConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config/{llm_config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLlmConfigRequest);
+            return new AsyncInvoker<UpdateLlmConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateLlmConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 创建MCP服务端对接配置
+        ///
+        /// 该接口用于创建MCP服务端对接配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateMcpServerResponse> CreateMcpServerAsync(CreateMcpServerRequest createMcpServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createMcpServerRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateMcpServerResponse>(response);
+        }
+
+        public AsyncInvoker<CreateMcpServerResponse> CreateMcpServerAsyncInvoker(CreateMcpServerRequest createMcpServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createMcpServerRequest);
+            return new AsyncInvoker<CreateMcpServerResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMcpServerResponse>);
+        }
+        
+        /// <summary>
+        /// 删除MCP服务端对接配置
+        ///
+        /// 该接口用于删除MCP服务端对接配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteMcpServerResponse> DeleteMcpServerAsync(DeleteMcpServerRequest deleteMcpServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMcpServerRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<DeleteMcpServerResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteMcpServerResponse> DeleteMcpServerAsyncInvoker(DeleteMcpServerRequest deleteMcpServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMcpServerRequest);
+            return new AsyncInvoker<DeleteMcpServerResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteMcpServerResponse>);
+        }
+        
+        /// <summary>
+        /// 查询MCP服务端对接配置列表
+        ///
+        /// 该接口用于查询MCP服务端对接配置列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListMcpServerResponse> ListMcpServerAsync(ListMcpServerRequest listMcpServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMcpServerRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListMcpServerResponse>(response);
+        }
+
+        public AsyncInvoker<ListMcpServerResponse> ListMcpServerAsyncInvoker(ListMcpServerRequest listMcpServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMcpServerRequest);
+            return new AsyncInvoker<ListMcpServerResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMcpServerResponse>);
+        }
+        
+        /// <summary>
+        /// 查询MCP服务端对接配置详情
+        ///
+        /// 该接口用于查询MCP服务端对接配置详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowMcpServerResponse> ShowMcpServerAsync(ShowMcpServerRequest showMcpServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("mcp_server_id", showMcpServerRequest.McpServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server/{mcp_server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMcpServerRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowMcpServerResponse>(response);
+        }
+
+        public AsyncInvoker<ShowMcpServerResponse> ShowMcpServerAsyncInvoker(ShowMcpServerRequest showMcpServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("mcp_server_id", showMcpServerRequest.McpServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server/{mcp_server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMcpServerRequest);
+            return new AsyncInvoker<ShowMcpServerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMcpServerResponse>);
+        }
+        
+        /// <summary>
+        /// 修改MCP服务端对接配置
+        ///
+        /// 该接口用于修改MCP服务端对接配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateMcpServerResponse> UpdateMcpServerAsync(UpdateMcpServerRequest updateMcpServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("mcp_server_id", updateMcpServerRequest.McpServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server/{mcp_server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateMcpServerRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateMcpServerResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateMcpServerResponse> UpdateMcpServerAsyncInvoker(UpdateMcpServerRequest updateMcpServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("mcp_server_id", updateMcpServerRequest.McpServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server/{mcp_server_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateMcpServerRequest);
+            return new AsyncInvoker<UpdateMcpServerResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateMcpServerResponse>);
+        }
+        
+        /// <summary>
         /// 创建一次性鉴权码
         ///
         /// 该接口用于创建一次性鉴权码，有效期5分钟，鉴权码只能使用一次，每次使用后需要重新获取。
@@ -2944,6 +3898,154 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 创建插件配置
+        ///
+        /// 该接口用于创建插件配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreatePluginConfigResponse> CreatePluginConfigAsync(CreatePluginConfigRequest createPluginConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPluginConfigRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreatePluginConfigResponse>(response);
+        }
+
+        public AsyncInvoker<CreatePluginConfigResponse> CreatePluginConfigAsyncInvoker(CreatePluginConfigRequest createPluginConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPluginConfigRequest);
+            return new AsyncInvoker<CreatePluginConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePluginConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 删除插件配置
+        ///
+        /// 该接口用于删除插件配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeletePluginConfigResponse> DeletePluginConfigAsync(DeletePluginConfigRequest deletePluginConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePluginConfigRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<DeletePluginConfigResponse>(response);
+        }
+
+        public AsyncInvoker<DeletePluginConfigResponse> DeletePluginConfigAsyncInvoker(DeletePluginConfigRequest deletePluginConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePluginConfigRequest);
+            return new AsyncInvoker<DeletePluginConfigResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeletePluginConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询插件配置列表
+        ///
+        /// 该接口用于查询插件配置列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPluginConfigResponse> ListPluginConfigAsync(ListPluginConfigRequest listPluginConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPluginConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPluginConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ListPluginConfigResponse> ListPluginConfigAsyncInvoker(ListPluginConfigRequest listPluginConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPluginConfigRequest);
+            return new AsyncInvoker<ListPluginConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPluginConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询插件配置详情
+        ///
+        /// 该接口用于查询插件配置详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPluginConfigResponse> ShowPluginConfigAsync(ShowPluginConfigRequest showPluginConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("plugin_config_id", showPluginConfigRequest.PluginConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config/{plugin_config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPluginConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowPluginConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPluginConfigResponse> ShowPluginConfigAsyncInvoker(ShowPluginConfigRequest showPluginConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("plugin_config_id", showPluginConfigRequest.PluginConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config/{plugin_config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPluginConfigRequest);
+            return new AsyncInvoker<ShowPluginConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPluginConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询插件配置默认信息
+        ///
+        /// 该接口用于查询插件配置默认信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowPluginConfigDefaultInfoResponse> ShowPluginConfigDefaultInfoAsync(ShowPluginConfigDefaultInfoRequest showPluginConfigDefaultInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config-default", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPluginConfigDefaultInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowPluginConfigDefaultInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowPluginConfigDefaultInfoResponse> ShowPluginConfigDefaultInfoAsyncInvoker(ShowPluginConfigDefaultInfoRequest showPluginConfigDefaultInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config-default", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPluginConfigDefaultInfoRequest);
+            return new AsyncInvoker<ShowPluginConfigDefaultInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPluginConfigDefaultInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 修改插件配置
+        ///
+        /// 该接口用于修改插件配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdatePluginConfigResponse> UpdatePluginConfigAsync(UpdatePluginConfigRequest updatePluginConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("plugin_config_id", updatePluginConfigRequest.PluginConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config/{plugin_config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePluginConfigRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdatePluginConfigResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePluginConfigResponse> UpdatePluginConfigAsyncInvoker(UpdatePluginConfigRequest updatePluginConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("plugin_config_id", updatePluginConfigRequest.PluginConfigId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config/{plugin_config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePluginConfigRequest);
+            return new AsyncInvoker<UpdatePluginConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePluginConfigResponse>);
+        }
+        
+        /// <summary>
         /// 创建商品
         ///
         /// Create product
@@ -3096,6 +4198,130 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 创建问答对
+        ///
+        /// 该接口用于创建问答对。一个问答对包含一个标准问题，一个答案，若干个相似问题等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateQuestionAnswerResponse> CreateQuestionAnswerAsync(CreateQuestionAnswerRequest createQuestionAnswerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createQuestionAnswerRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateQuestionAnswerResponse>(response);
+        }
+
+        public AsyncInvoker<CreateQuestionAnswerResponse> CreateQuestionAnswerAsyncInvoker(CreateQuestionAnswerRequest createQuestionAnswerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createQuestionAnswerRequest);
+            return new AsyncInvoker<CreateQuestionAnswerResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateQuestionAnswerResponse>);
+        }
+        
+        /// <summary>
+        /// 删除问答对
+        ///
+        /// 该接口用于删除问答对。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteQuestionAnswerResponse> DeleteQuestionAnswerAsync(DeleteQuestionAnswerRequest deleteQuestionAnswerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteQuestionAnswerRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<DeleteQuestionAnswerResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteQuestionAnswerResponse> DeleteQuestionAnswerAsyncInvoker(DeleteQuestionAnswerRequest deleteQuestionAnswerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteQuestionAnswerRequest);
+            return new AsyncInvoker<DeleteQuestionAnswerResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteQuestionAnswerResponse>);
+        }
+        
+        /// <summary>
+        /// 查询问答对列表
+        ///
+        /// 该接口用于查询问答对列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListQuestionAnswerResponse> ListQuestionAnswerAsync(ListQuestionAnswerRequest listQuestionAnswerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuestionAnswerRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListQuestionAnswerResponse>(response);
+        }
+
+        public AsyncInvoker<ListQuestionAnswerResponse> ListQuestionAnswerAsyncInvoker(ListQuestionAnswerRequest listQuestionAnswerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQuestionAnswerRequest);
+            return new AsyncInvoker<ListQuestionAnswerResponse>(this, "GET", request, JsonUtils.DeSerialize<ListQuestionAnswerResponse>);
+        }
+        
+        /// <summary>
+        /// 查询问答对详情
+        ///
+        /// 该接口用于查询问答对详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowQuestionAnswerResponse> ShowQuestionAnswerAsync(ShowQuestionAnswerRequest showQuestionAnswerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("question_answer_id", showQuestionAnswerRequest.QuestionAnswerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer/{question_answer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuestionAnswerRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowQuestionAnswerResponse>(response);
+        }
+
+        public AsyncInvoker<ShowQuestionAnswerResponse> ShowQuestionAnswerAsyncInvoker(ShowQuestionAnswerRequest showQuestionAnswerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("question_answer_id", showQuestionAnswerRequest.QuestionAnswerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer/{question_answer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuestionAnswerRequest);
+            return new AsyncInvoker<ShowQuestionAnswerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuestionAnswerResponse>);
+        }
+        
+        /// <summary>
+        /// 修改问答对
+        ///
+        /// 该接口用于修改问答对。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateQuestionAnswerResponse> UpdateQuestionAnswerAsync(UpdateQuestionAnswerRequest updateQuestionAnswerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("question_answer_id", updateQuestionAnswerRequest.QuestionAnswerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer/{question_answer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateQuestionAnswerRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateQuestionAnswerResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateQuestionAnswerResponse> UpdateQuestionAnswerAsyncInvoker(UpdateQuestionAnswerRequest updateQuestionAnswerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("question_answer_id", updateQuestionAnswerRequest.QuestionAnswerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer/{question_answer_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateQuestionAnswerRequest);
+            return new AsyncInvoker<UpdateQuestionAnswerResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateQuestionAnswerResponse>);
+        }
+        
+        /// <summary>
         /// 创建应用
         ///
         /// 该接口用于创建应用。
@@ -3241,6 +4467,130 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/robot/validate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateRobotRequest);
             return new AsyncInvoker<ValidateRobotResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ValidateRobotResponse>);
+        }
+        
+        /// <summary>
+        /// 创建角色
+        ///
+        /// 该接口用于创建角色。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateRoleResponse> CreateRoleAsync(CreateRoleRequest createRoleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRoleRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateRoleResponse>(response);
+        }
+
+        public AsyncInvoker<CreateRoleResponse> CreateRoleAsyncInvoker(CreateRoleRequest createRoleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRoleRequest);
+            return new AsyncInvoker<CreateRoleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRoleResponse>);
+        }
+        
+        /// <summary>
+        /// 删除角色
+        ///
+        /// 该接口用于删除角色。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteRoleResponse> DeleteRoleAsync(DeleteRoleRequest deleteRoleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRoleRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<DeleteRoleResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteRoleResponse> DeleteRoleAsyncInvoker(DeleteRoleRequest deleteRoleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRoleRequest);
+            return new AsyncInvoker<DeleteRoleResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteRoleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询角色列表
+        ///
+        /// 该接口用于查询角色列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListRoleResponse> ListRoleAsync(ListRoleRequest listRoleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRoleRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListRoleResponse>(response);
+        }
+
+        public AsyncInvoker<ListRoleResponse> ListRoleAsyncInvoker(ListRoleRequest listRoleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRoleRequest);
+            return new AsyncInvoker<ListRoleResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRoleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询角色详情
+        ///
+        /// 该接口用于查询角色详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowRoleResponse> ShowRoleAsync(ShowRoleRequest showRoleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("role_id", showRoleRequest.RoleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role/{role_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRoleRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowRoleResponse>(response);
+        }
+
+        public AsyncInvoker<ShowRoleResponse> ShowRoleAsyncInvoker(ShowRoleRequest showRoleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("role_id", showRoleRequest.RoleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role/{role_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRoleRequest);
+            return new AsyncInvoker<ShowRoleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRoleResponse>);
+        }
+        
+        /// <summary>
+        /// 修改角色
+        ///
+        /// 该接口用于修改角色。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateRoleResponse> UpdateRoleAsync(UpdateRoleRequest updateRoleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("role_id", updateRoleRequest.RoleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role/{role_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRoleRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateRoleResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateRoleResponse> UpdateRoleAsyncInvoker(UpdateRoleRequest updateRoleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("role_id", updateRoleRequest.RoleId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role/{role_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRoleRequest);
+            return new AsyncInvoker<UpdateRoleResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateRoleResponse>);
         }
         
         /// <summary>
@@ -4579,6 +5929,80 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 校验音色模型是否可用（自研和第三方音色）
+        ///
+        /// 该接口用于校验音色模型是否可用，模型可用返回模型信息，不可用返回具体不可用的原因
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CheckVoiceAssetResponse> CheckVoiceAssetAsync(CheckVoiceAssetRequest checkVoiceAssetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("voice_asset_id", checkVoiceAssetRequest.VoiceAssetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/check-voice-asset/{voice_asset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkVoiceAssetRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CheckVoiceAssetResponse>(response);
+        }
+
+        public AsyncInvoker<CheckVoiceAssetResponse> CheckVoiceAssetAsyncInvoker(CheckVoiceAssetRequest checkVoiceAssetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("voice_asset_id", checkVoiceAssetRequest.VoiceAssetId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/check-voice-asset/{voice_asset_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkVoiceAssetRequest);
+            return new AsyncInvoker<CheckVoiceAssetResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckVoiceAssetResponse>);
+        }
+        
+        /// <summary>
+        /// 获取TTS语音合成任务记录
+        ///
+        /// 该接口用于获取TTS语音合成任务记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTtsJobResponse> ShowTtsJobAsync(ShowTtsJobRequest showTtsJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/tts-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsJobRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTtsJobResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTtsJobResponse> ShowTtsJobAsyncInvoker(ShowTtsJobRequest showTtsJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/tts-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsJobRequest);
+            return new AsyncInvoker<ShowTtsJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTtsJobResponse>);
+        }
+        
+        /// <summary>
+        /// 获取英文单词音标
+        ///
+        /// 根据英文单词返回对应音标列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTtsPhoneticSymbolResponse> ShowTtsPhoneticSymbolAsync(ShowTtsPhoneticSymbolRequest showTtsPhoneticSymbolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/phonetic-symbol", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsPhoneticSymbolRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTtsPhoneticSymbolResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTtsPhoneticSymbolResponse> ShowTtsPhoneticSymbolAsyncInvoker(ShowTtsPhoneticSymbolRequest showTtsPhoneticSymbolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/phonetic-symbol", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsPhoneticSymbolRequest);
+            return new AsyncInvoker<ShowTtsPhoneticSymbolResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTtsPhoneticSymbolResponse>);
+        }
+        
+        /// <summary>
         /// 创建TTS异步任务
         ///
         /// 该接口用于对外生成音频文件。每个预置音色的计费标准详见[预置音色计费标准](metastudio_02_0060.xml)。
@@ -4632,6 +6056,58 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/audition", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTtsAuditionRequest);
             return new AsyncInvoker<CreateTtsAuditionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTtsAuditionResponse>);
+        }
+        
+        /// <summary>
+        /// 获取TTS异步任务
+        ///
+        /// 该接口用于获取TTS音频文件下载链接。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAsyncTtsJobResponse> ShowAsyncTtsJobAsync(ShowAsyncTtsJobRequest showAsyncTtsJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showAsyncTtsJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/async-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsyncTtsJobRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAsyncTtsJobResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAsyncTtsJobResponse> ShowAsyncTtsJobAsyncInvoker(ShowAsyncTtsJobRequest showAsyncTtsJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showAsyncTtsJobRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/async-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsyncTtsJobRequest);
+            return new AsyncInvoker<ShowAsyncTtsJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAsyncTtsJobResponse>);
+        }
+        
+        /// <summary>
+        /// 获取TTS试听文件
+        ///
+        /// 该接口用于获取TTS试听文件下载链接，返回List中包含当前已生产的试听文件。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTtsAuditionFileResponse> ShowTtsAuditionFileAsync(ShowTtsAuditionFileRequest showTtsAuditionFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showTtsAuditionFileRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/audition-file/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsAuditionFileRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTtsAuditionFileResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTtsAuditionFileResponse> ShowTtsAuditionFileAsyncInvoker(ShowTtsAuditionFileRequest showTtsAuditionFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("job_id", showTtsAuditionFileRequest.JobId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/audition-file/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsAuditionFileRequest);
+            return new AsyncInvoker<ShowTtsAuditionFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTtsAuditionFileResponse>);
         }
         
         /// <summary>
@@ -4781,6 +6257,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 设置租户级配置
+        ///
+        /// 该接口用于设置租户级配置，当前用于租户级自定义读法配置的全局开关。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SaveTtscTenantConfigsResponse> SaveTtscTenantConfigsAsync(SaveTtscTenantConfigsRequest saveTtscTenantConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/tenant-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveTtscTenantConfigsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<SaveTtscTenantConfigsResponse>(response);
+        }
+
+        public AsyncInvoker<SaveTtscTenantConfigsResponse> SaveTtscTenantConfigsAsyncInvoker(SaveTtscTenantConfigsRequest saveTtscTenantConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/tenant-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveTtscTenantConfigsRequest);
+            return new AsyncInvoker<SaveTtscTenantConfigsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SaveTtscTenantConfigsResponse>);
+        }
+        
+        /// <summary>
         /// 修改TTS租户级自定义读法配置
         ///
         /// 该接口用于修改TTS租户级自定义读法配置。
@@ -4833,79 +6333,27 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
-        /// 获取TTS异步任务
+        /// 获取租户级全局配置
         ///
-        /// 该接口用于获取TTS音频文件下载链接。
+        /// 该接口用于获取租户级全局配置。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public async Task<ShowAsyncTtsJobResponse> ShowAsyncTtsJobAsync(ShowAsyncTtsJobRequest showAsyncTtsJobRequest)
+        public async Task<ShowVocabularySwitchConfigsResponse> ShowVocabularySwitchConfigsAsync(ShowVocabularySwitchConfigsRequest showVocabularySwitchConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showAsyncTtsJobRequest.JobId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/async-jobs/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsyncTtsJobRequest);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/tenant-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVocabularySwitchConfigsRequest);
             var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowAsyncTtsJobResponse>(response);
+            return JsonUtils.DeSerialize<ShowVocabularySwitchConfigsResponse>(response);
         }
 
-        public AsyncInvoker<ShowAsyncTtsJobResponse> ShowAsyncTtsJobAsyncInvoker(ShowAsyncTtsJobRequest showAsyncTtsJobRequest)
+        public AsyncInvoker<ShowVocabularySwitchConfigsResponse> ShowVocabularySwitchConfigsAsyncInvoker(ShowVocabularySwitchConfigsRequest showVocabularySwitchConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showAsyncTtsJobRequest.JobId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/async-jobs/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsyncTtsJobRequest);
-            return new AsyncInvoker<ShowAsyncTtsJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAsyncTtsJobResponse>);
-        }
-        
-        /// <summary>
-        /// 获取TTS试听文件
-        ///
-        /// 该接口用于获取TTS试听文件下载链接，返回List中包含当前已生产的试听文件。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowTtsAuditionFileResponse> ShowTtsAuditionFileAsync(ShowTtsAuditionFileRequest showTtsAuditionFileRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showTtsAuditionFileRequest.JobId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/audition-file/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsAuditionFileRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowTtsAuditionFileResponse>(response);
-        }
-
-        public AsyncInvoker<ShowTtsAuditionFileResponse> ShowTtsAuditionFileAsyncInvoker(ShowTtsAuditionFileRequest showTtsAuditionFileRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showTtsAuditionFileRequest.JobId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/audition-file/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsAuditionFileRequest);
-            return new AsyncInvoker<ShowTtsAuditionFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTtsAuditionFileResponse>);
-        }
-        
-        /// <summary>
-        /// 获取英文单词音标
-        ///
-        /// 根据英文单词返回对应音标列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ShowTtsPhoneticSymbolResponse> ShowTtsPhoneticSymbolAsync(ShowTtsPhoneticSymbolRequest showTtsPhoneticSymbolRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/phonetic-symbol", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsPhoneticSymbolRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ShowTtsPhoneticSymbolResponse>(response);
-        }
-
-        public AsyncInvoker<ShowTtsPhoneticSymbolResponse> ShowTtsPhoneticSymbolAsyncInvoker(ShowTtsPhoneticSymbolRequest showTtsPhoneticSymbolRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/phonetic-symbol", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsPhoneticSymbolRequest);
-            return new AsyncInvoker<ShowTtsPhoneticSymbolResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTtsPhoneticSymbolResponse>);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/tenant-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVocabularySwitchConfigsRequest);
+            return new AsyncInvoker<ShowVocabularySwitchConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVocabularySwitchConfigsResponse>);
         }
         
         /// <summary>

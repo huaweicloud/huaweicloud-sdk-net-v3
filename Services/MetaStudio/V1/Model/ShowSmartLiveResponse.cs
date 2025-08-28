@@ -401,6 +401,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("used_resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public UsedResourceTypeEnum UsedResourceType { get; set; }
         /// <summary>
+        /// AI标识开关
+        /// </summary>
+        [JsonProperty("is_ai_mark_on", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsAiMarkOn { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("X-Request-Id", IsHeader = true)]
@@ -437,6 +443,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  liveJobLog: ").Append(LiveJobLog).Append("\n");
             sb.Append("  relationLivePlatformInfo: ").Append(RelationLivePlatformInfo).Append("\n");
             sb.Append("  usedResourceType: ").Append(UsedResourceType).Append("\n");
+            sb.Append("  isAiMarkOn: ").Append(IsAiMarkOn).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -477,6 +484,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.LiveJobLog != input.LiveJobLog || (this.LiveJobLog != null && !this.LiveJobLog.Equals(input.LiveJobLog))) return false;
             if (this.RelationLivePlatformInfo != input.RelationLivePlatformInfo || (this.RelationLivePlatformInfo != null && !this.RelationLivePlatformInfo.Equals(input.RelationLivePlatformInfo))) return false;
             if (this.UsedResourceType != input.UsedResourceType) return false;
+            if (this.IsAiMarkOn != input.IsAiMarkOn || (this.IsAiMarkOn != null && !this.IsAiMarkOn.Equals(input.IsAiMarkOn))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
             return true;
@@ -511,6 +519,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.LiveJobLog != null) hashCode = hashCode * 59 + this.LiveJobLog.GetHashCode();
                 if (this.RelationLivePlatformInfo != null) hashCode = hashCode * 59 + this.RelationLivePlatformInfo.GetHashCode();
                 hashCode = hashCode * 59 + this.UsedResourceType.GetHashCode();
+                if (this.IsAiMarkOn != null) hashCode = hashCode * 59 + this.IsAiMarkOn.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }

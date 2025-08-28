@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：创建后端服务器检测任务请求参数。
+    /// **参数解释**：创建后端服务器检测任务请求参数。
     /// </summary>
     public class CreateMemberHealthCheckJobOption 
     {
 
         /// <summary>
-        /// 参数解释：后端服务器所关联的监听器，查询在该监听器下后端服务器的状态。
+        /// **参数解释**：后端服务器所关联的监听器，查询在该监听器下后端服务器的状态。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("listener_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ListenerId { get; set; }
 
         /// <summary>
-        /// 参数法解释：检查项。  取值范围： - securityGroup：安全组检查。 - networkAcl：子网ACL配置检查。 - config：健康检查端口配置检查。 - all：所有检查项。
+        /// 参数法解释：检查项。  **取值范围**： - securityGroup：安全组检查。 - networkAcl：子网ACL配置检查。 - config：健康检查端口配置检查。 - all：所有检查项。
         /// </summary>
         [JsonProperty("subject", NullValueHandling = NullValueHandling.Ignore)]
         public string Subject { get; set; }

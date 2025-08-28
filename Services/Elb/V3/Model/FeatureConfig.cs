@@ -11,73 +11,73 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：特性配置信息。
+    /// **参数解释**：特性配置信息。
     /// </summary>
     public class FeatureConfig 
     {
 
         /// <summary>
-        /// 参数解释：配置的ID。
+        /// **参数解释**：配置的ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 参数解释：创建时间。
+        /// **参数解释**：创建时间。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 参数解释：更新时间。
+        /// **参数解释**：更新时间。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
-        /// 参数解释：所属服务，固定ELB。
+        /// **参数解释**：所属服务，固定ELB。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("service", NullValueHandling = NullValueHandling.Ignore)]
         public string Service { get; set; }
 
         /// <summary>
-        /// 参数解释：租户ID，含义同project_id。
+        /// **参数解释**：租户ID，含义同project_id。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TenantId { get; set; }
 
         /// <summary>
-        /// 参数解释：特性名称。
+        /// **参数解释**：特性名称。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("feature", NullValueHandling = NullValueHandling.Ignore)]
         public string Feature { get; set; }
 
         /// <summary>
-        /// 参数解释：特性配置启用开关，表示当前配置是否生效。  取值范围： - true：特性配置已生效。 - false: 特性配置未生效。
+        /// **参数解释**：特性配置启用开关，表示当前配置是否生效。  **取值范围**： - true：特性配置已生效。 - false: 特性配置未生效。
         /// </summary>
         [JsonProperty("switch", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Switch { get; set; }
 
         /// <summary>
-        /// 参数解释：特性配置值(value字段)的类型，如：INT，表示整型。
+        /// **参数解释**：特性配置值(value字段)的类型，如：INT，表示整型。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 参数解释：特性配置值。如开关类型的特性配置取值true/false，表示特性开启关闭；配额类型的特性配置取值整数，表示限制配额。
+        /// **参数解释**：特性配置值。如开关类型的特性配置取值true/false，表示特性开启关闭；配额类型的特性配置取值整数，表示限制配额。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
         /// <summary>
-        /// 参数解释：特性配置描述。
+        /// **参数解释**：特性配置描述。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 参数解释：配置创建者。
+        /// **参数解释**：配置创建者。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("caller", NullValueHandling = NullValueHandling.Ignore)]
         public string Caller { get; set; }

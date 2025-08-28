@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// **参数解释**：负载均衡器及其子资源的状态信息。
     /// </summary>
     public class LoadBalancerStatus 
     {
 
         /// <summary>
-        /// 负载均衡器名称。
+        /// **参数解释**：负载均衡器名称。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 负载均衡器的配置状态。  取值： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
+        /// **参数解释**：负载均衡器的配置状态。  **取值范围**： - ACTIVE：使用中。 - PENDING_DELETE：删除中。
         /// </summary>
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 负载均衡器关联的监听器列表。
+        /// **参数解释**：负载均衡器关联的所有监听器的状态信息。
         /// </summary>
         [JsonProperty("listeners", NullValueHandling = NullValueHandling.Ignore)]
         public List<LoadBalancerStatusListener> Listeners { get; set; }
 
         /// <summary>
-        /// 负载均衡器关联的后端服务器组列表。
+        /// **参数解释**：负载均衡器关联的所有后端服务器组的状态信息。
         /// </summary>
         [JsonProperty("pools", NullValueHandling = NullValueHandling.Ignore)]
         public List<LoadBalancerStatusPool> Pools { get; set; }
 
         /// <summary>
-        /// 负载均衡器ID。
+        /// **参数解释**：负载均衡器ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 负载均衡器的操作状态。  取值： - ONLINE：创建时默认状态，表示负载均衡器正常运行。 - FROZEN：已冻结。 - DEGRADED：负载均衡器下存在member的operating_status为OFFLINE时返回这个状态。 - DISABLED：负载均衡器的admin_state_up属性值为false。  说明：DEGRADED和DISABLED状态仅在当前接口中返回，LB详情等其他接口不返回这两个状态值。
+        /// **参数解释**：负载均衡器的操作状态。  **取值范围**： - ONLINE：创建时默认状态，表示负载均衡器正常运行。 - FROZEN：已冻结。 - DEGRADED：负载均衡器下存在member的operating_status为OFFLINE时返回这个状态。 - DISABLED：负载均衡器的admin_state_up属性值为false。  &gt; DEGRADED和DISABLED状态仅在当前接口中返回，查询负载均衡器详情等其他接口不会返回这两个状态值。
         /// </summary>
         [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OperatingStatus { get; set; }

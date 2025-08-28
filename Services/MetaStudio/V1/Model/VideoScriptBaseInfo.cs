@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     public class VideoScriptBaseInfo 
     {
         /// <summary>
-        /// 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人
+        /// 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人
         /// </summary>
-        /// <value>数字人模型类型。  * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人</value>
+        /// <value>数字人模型类型。  * HUMAN_MODEL_2D：分身数字人</value>
         [JsonConverter(typeof(EnumClassConverter<ModelAssetTypeEnum>))]
         public class ModelAssetTypeEnum
         {
@@ -27,16 +27,10 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly ModelAssetTypeEnum HUMAN_MODEL_2D = new ModelAssetTypeEnum("HUMAN_MODEL_2D");
 
-            /// <summary>
-            /// Enum HUMAN_MODEL_3D for value: HUMAN_MODEL_3D
-            /// </summary>
-            public static readonly ModelAssetTypeEnum HUMAN_MODEL_3D = new ModelAssetTypeEnum("HUMAN_MODEL_3D");
-
             private static readonly Dictionary<string, ModelAssetTypeEnum> StaticFields =
             new Dictionary<string, ModelAssetTypeEnum>()
             {
                 { "HUMAN_MODEL_2D", HUMAN_MODEL_2D },
-                { "HUMAN_MODEL_3D", HUMAN_MODEL_3D },
             };
 
             private string _value;
@@ -156,7 +150,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string ModelAssetId { get; set; }
 
         /// <summary>
-        /// 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人
+        /// 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人
         /// </summary>
         [JsonProperty("model_asset_type", NullValueHandling = NullValueHandling.Ignore)]
         public ModelAssetTypeEnum ModelAssetType { get; set; }

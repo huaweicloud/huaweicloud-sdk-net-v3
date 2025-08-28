@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 新实例相关信息
+        /// 
         /// </summary>
         [JsonProperty("loadbalancer_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<CloneLoadbalancerResponseBodyLoadbalancerList> LoadbalancerList { get; set; }
 
         /// <summary>
-        /// 请求id
+        /// **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }
 
         /// <summary>
-        /// 实例复制任务id
+        /// **参数解释**：实例复制任务ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }

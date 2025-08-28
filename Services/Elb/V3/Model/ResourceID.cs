@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 资源ID
+    /// **参数解释**：资源ID
     /// </summary>
     public class ResourceID 
     {
 
         /// <summary>
-        /// 资源ID
+        /// **参数解释**：资源ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }

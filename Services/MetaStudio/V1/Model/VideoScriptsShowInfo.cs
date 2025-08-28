@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         }
 
         /// <summary>
-        /// **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人  **默认取值**： 不涉及
+        /// **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人  **默认取值**： 不涉及
         /// </summary>
-        /// <value>**参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人  **默认取值**： 不涉及</value>
+        /// <value>**参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人  **默认取值**： 不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<ModelAssetTypeEnum>))]
         public class ModelAssetTypeEnum
         {
@@ -142,16 +142,10 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly ModelAssetTypeEnum HUMAN_MODEL_2D = new ModelAssetTypeEnum("HUMAN_MODEL_2D");
 
-            /// <summary>
-            /// Enum HUMAN_MODEL_3D for value: HUMAN_MODEL_3D
-            /// </summary>
-            public static readonly ModelAssetTypeEnum HUMAN_MODEL_3D = new ModelAssetTypeEnum("HUMAN_MODEL_3D");
-
             private static readonly Dictionary<string, ModelAssetTypeEnum> StaticFields =
             new Dictionary<string, ModelAssetTypeEnum>()
             {
                 { "HUMAN_MODEL_2D", HUMAN_MODEL_2D },
-                { "HUMAN_MODEL_3D", HUMAN_MODEL_3D },
             };
 
             private string _value;
@@ -270,7 +264,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string ModelAssetId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人  **默认取值**： 不涉及
+        /// **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人  **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("model_asset_type", NullValueHandling = NullValueHandling.Ignore)]
         public ModelAssetTypeEnum ModelAssetType { get; set; }
@@ -285,12 +279,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// </summary>
         [JsonProperty("video_config", NullValueHandling = NullValueHandling.Ignore)]
         public VideoConfig VideoConfig { get; set; }
-
-        /// <summary>
-        /// **参数解释**： 场景资产ID。 **约束限制**： 分身数字人视频制作不需要填写该参数。 **取值范围**： 字符长度0-64位 **默认取值**： 不涉及
-        /// </summary>
-        [JsonProperty("scene_asset_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string SceneAssetId { get; set; }
 
         /// <summary>
         /// **参数解释**： 私有数据，用户填写，原样带回。 **约束限制**： 不涉及 **取值范围**： 字符长度0-8192位 **默认取值**： 不涉及
@@ -344,7 +332,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  modelAssetType: ").Append(ModelAssetType).Append("\n");
             sb.Append("  voiceConfig: ").Append(VoiceConfig).Append("\n");
             sb.Append("  videoConfig: ").Append(VideoConfig).Append("\n");
-            sb.Append("  sceneAssetId: ").Append(SceneAssetId).Append("\n");
             sb.Append("  privData: ").Append(PrivData).Append("\n");
             sb.Append("  backgroundMusicConfig: ").Append(BackgroundMusicConfig).Append("\n");
             sb.Append("  reviewConfig: ").Append(ReviewConfig).Append("\n");
@@ -376,7 +363,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.ModelAssetType != input.ModelAssetType) return false;
             if (this.VoiceConfig != input.VoiceConfig || (this.VoiceConfig != null && !this.VoiceConfig.Equals(input.VoiceConfig))) return false;
             if (this.VideoConfig != input.VideoConfig || (this.VideoConfig != null && !this.VideoConfig.Equals(input.VideoConfig))) return false;
-            if (this.SceneAssetId != input.SceneAssetId || (this.SceneAssetId != null && !this.SceneAssetId.Equals(input.SceneAssetId))) return false;
             if (this.PrivData != input.PrivData || (this.PrivData != null && !this.PrivData.Equals(input.PrivData))) return false;
             if (this.BackgroundMusicConfig != input.BackgroundMusicConfig || (this.BackgroundMusicConfig != null && !this.BackgroundMusicConfig.Equals(input.BackgroundMusicConfig))) return false;
             if (this.ReviewConfig != input.ReviewConfig || (this.ReviewConfig != null && !this.ReviewConfig.Equals(input.ReviewConfig))) return false;
@@ -402,7 +388,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 hashCode = hashCode * 59 + this.ModelAssetType.GetHashCode();
                 if (this.VoiceConfig != null) hashCode = hashCode * 59 + this.VoiceConfig.GetHashCode();
                 if (this.VideoConfig != null) hashCode = hashCode * 59 + this.VideoConfig.GetHashCode();
-                if (this.SceneAssetId != null) hashCode = hashCode * 59 + this.SceneAssetId.GetHashCode();
                 if (this.PrivData != null) hashCode = hashCode * 59 + this.PrivData.GetHashCode();
                 if (this.BackgroundMusicConfig != null) hashCode = hashCode * 59 + this.BackgroundMusicConfig.GetHashCode();
                 if (this.ReviewConfig != null) hashCode = hashCode * 59 + this.ReviewConfig.GetHashCode();

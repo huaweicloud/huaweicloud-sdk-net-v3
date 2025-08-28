@@ -11,37 +11,37 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// **参数解释**：当前ELB占用的子网端口。  **取值范围**：不涉及
     /// </summary>
     public class LocalPort 
     {
 
         /// <summary>
-        /// port ID。
+        /// **参数解释**：负载均衡器占用的端口ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("port_id", NullValueHandling = NullValueHandling.Ignore)]
         public string PortId { get; set; }
 
         /// <summary>
-        /// port IPv4地址。
+        /// **参数解释**：负载均衡器占用的私有IPv4地址。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string IpAddress { get; set; }
 
         /// <summary>
-        /// port IPv6地址。
+        /// **参数解释**：负载均衡器占用的IPv6地址。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("ipv6_address", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6Address { get; set; }
 
         /// <summary>
-        /// port 类型。  取值范围： - l4_hc：四层dnat转发时健康检查使用的地址。 - l4 四层fullnat 转发时健康检查及业务转发使用的地址。 - l7 七层健康检查及业务转发使用的地址。
+        /// **参数解释**：子网端口类型。  **取值范围**： - l4_hc：四层dnat转发时健康检查使用的地址。 - l4 四层fullnat 转发时健康检查及业务转发使用的地址。 - l7 七层健康检查及业务转发使用的地址。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// port 虚拟子网ID。
+        /// **参数解释**：子网端口所在下联面子网网络ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VirsubnetId { get; set; }

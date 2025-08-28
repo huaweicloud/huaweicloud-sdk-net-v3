@@ -11,28 +11,28 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 
+    /// **参数解释**：更新IP地址组请求参数。  **约束限制**：不涉及
     /// </summary>
     public class UpdateIpGroupOption 
     {
 
         /// <summary>
-        /// 参数解释：IP地址组的描述信息
+        /// **参数解释**：IP地址组的描述信息。  **约束限制**：不涉及  **取值范围**：长度为0-255个字符。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组的名称
+        /// **参数解释**：IP地址组的名称  **约束限制**：不涉及  **取值范围**：长度为0-255个字符。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组中包含的IP列表。
+        /// **参数解释**：IP地址组的IP列表。 注意：只支持全量更新，即IP地址组中的ip_list将被全量覆盖，不在请求参数中的IP地址将被移除。  **约束限制**：不涉及
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UpadateIpGroupIpOption> IpList { get; set; }
+        public List<UpdateIpGroupIpOption> IpList { get; set; }
 
 
 

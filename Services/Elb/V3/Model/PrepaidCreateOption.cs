@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：创建负载均衡器实例的预付费计费配置。若传入该结构体，则创建预付费类型的负载均衡器实例。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg)
+    /// 
     /// </summary>
     public class PrepaidCreateOption 
     {
         /// <summary>
-        /// 参数解释：预付费实例的订购周期类型，当前支持月和年。  取值范围：  - month：月。  - year：年。
+        /// **参数解释**：预付费实例的订购周期类型，当前支持月和年。  **约束限制**：不涉及  **取值范围**：  - month：月  - year：年 **默认取值**：不涉及
         /// </summary>
-        /// <value>参数解释：预付费实例的订购周期类型，当前支持月和年。  取值范围：  - month：月。  - year：年。</value>
+        /// <value>**参数解释**：预付费实例的订购周期类型，当前支持月和年。  **约束限制**：不涉及  **取值范围**：  - month：月  - year：年 **默认取值**：不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
         public class PeriodTypeEnum
         {
@@ -132,24 +132,24 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// 参数解释：预付费实例的订购周期类型，当前支持月和年。  取值范围：  - month：月。  - year：年。
+        /// **参数解释**：预付费实例的订购周期类型，当前支持月和年。  **约束限制**：不涉及  **取值范围**：  - month：月  - year：年 **默认取值**：不涉及
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }
         /// <summary>
-        /// 参数解释：预付费实例的订购周期数。  取值范围： - period_type为month时，为[1,9]。 - period_type为year时，为[1,3]。
+        /// **参数解释**：预付费实例的订购周期数。  **约束限制**：不涉及  **取值范围**： - period_type为month时，为[1,9]。 - period_type为year时，为[1,3]。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
 
         /// <summary>
-        /// 参数解释：自动续订开关。  取值范围： - true：开启自动续订。 - false：关闭自动续订。
+        /// **参数解释**：自动续订开关。  **约束限制**：不涉及  **取值范围**： - true：开启自动续订。 - false：关闭自动续订。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("auto_renew", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AutoRenew { get; set; }
 
         /// <summary>
-        /// 参数解释：自动支付开关。下单订购后，是否自动从客户的账户中支付。  约束限制：开启自动支付时，只能使用账户的现金支付；如果要使用代金券，请选择关闭自动支付，然后在用户费用中心，选择代金券支付。  取值范围：  - true：开启自动支付。  - false：关闭自动支付。
+        /// **参数解释**：自动支付开关。下单订购后，是否自动从客户的账户中支付。  **约束限制**：开启自动支付时，只能使用账户的现金支付；如果要使用代金券，请选择关闭自动支付，然后在用户费用中心，选择代金券支付。  **取值范围**：  - true：开启自动支付。  - false：关闭自动支付。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("auto_pay", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AutoPay { get; set; }

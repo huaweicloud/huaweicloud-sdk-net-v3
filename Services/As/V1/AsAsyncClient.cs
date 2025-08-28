@@ -294,6 +294,32 @@ namespace HuaweiCloud.SDK.As.V1
         }
         
         /// <summary>
+        /// 关闭暖池
+        ///
+        /// 关闭伸缩组的暖池
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CloseWarmPoolResponse> CloseWarmPoolAsync(CloseWarmPoolRequest closeWarmPoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", closeWarmPoolRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/{project_id}/scaling-groups/{scaling_group_id}/warm-pool", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeWarmPoolRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<CloseWarmPoolResponse>(response);
+        }
+
+        public AsyncInvoker<CloseWarmPoolResponse> CloseWarmPoolAsyncInvoker(CloseWarmPoolRequest closeWarmPoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", closeWarmPoolRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/{project_id}/scaling-groups/{scaling_group_id}/warm-pool", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeWarmPoolRequest);
+            return new AsyncInvoker<CloseWarmPoolResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<CloseWarmPoolResponse>);
+        }
+        
+        /// <summary>
         /// 创建计划任务
         ///
         /// 创建计划任务
@@ -1076,6 +1102,32 @@ namespace HuaweiCloud.SDK.As.V1
         }
         
         /// <summary>
+        /// 查询暖池内实例信息
+        ///
+        /// 查询暖池内实例信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListWarmPoolInstancesResponse> ListWarmPoolInstancesAsync(ListWarmPoolInstancesRequest listWarmPoolInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listWarmPoolInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/{project_id}/scaling-groups/{scaling_group_id}/warm-pool-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWarmPoolInstancesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListWarmPoolInstancesResponse>(response);
+        }
+
+        public AsyncInvoker<ListWarmPoolInstancesResponse> ListWarmPoolInstancesAsyncInvoker(ListWarmPoolInstancesRequest listWarmPoolInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", listWarmPoolInstancesRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/{project_id}/scaling-groups/{scaling_group_id}/warm-pool-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWarmPoolInstancesRequest);
+            return new AsyncInvoker<ListWarmPoolInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListWarmPoolInstancesResponse>);
+        }
+        
+        /// <summary>
         /// 停止弹性伸缩组
         ///
         /// 启用或停止一个指定弹性伸缩组。已停用状态的伸缩组，不会自动触发任何伸缩活动。当伸缩组正在进行伸缩活动，即使停用，正在进行的伸缩活动也不会立即停止。
@@ -1125,6 +1177,32 @@ namespace HuaweiCloud.SDK.As.V1
             var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseScalingPolicyRequest);
             return new AsyncInvoker<PauseScalingPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<PauseScalingPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 开启暖池
+        ///
+        /// 开启并修改暖池参数
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<PutWarmPoolResponse> PutWarmPoolAsync(PutWarmPoolRequest putWarmPoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", putWarmPoolRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/{project_id}/scaling-groups/{scaling_group_id}/warm-pool", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", putWarmPoolRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<PutWarmPoolResponse>(response);
+        }
+
+        public AsyncInvoker<PutWarmPoolResponse> PutWarmPoolAsyncInvoker(PutWarmPoolRequest putWarmPoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", putWarmPoolRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/{project_id}/scaling-groups/{scaling_group_id}/warm-pool", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", putWarmPoolRequest);
+            return new AsyncInvoker<PutWarmPoolResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<PutWarmPoolResponse>);
         }
         
         /// <summary>
@@ -1333,6 +1411,32 @@ namespace HuaweiCloud.SDK.As.V1
             var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showScalingPolicyRequest);
             return new AsyncInvoker<ShowScalingPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowScalingPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询暖池信息
+        ///
+        /// 查询暖池信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowWarmPoolResponse> ShowWarmPoolAsync(ShowWarmPoolRequest showWarmPoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", showWarmPoolRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/{project_id}/scaling-groups/{scaling_group_id}/warm-pool", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWarmPoolRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowWarmPoolResponse>(response);
+        }
+
+        public AsyncInvoker<ShowWarmPoolResponse> ShowWarmPoolAsyncInvoker(ShowWarmPoolRequest showWarmPoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("scaling_group_id", showWarmPoolRequest.ScalingGroupId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/autoscaling-api/{project_id}/scaling-groups/{scaling_group_id}/warm-pool", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWarmPoolRequest);
+            return new AsyncInvoker<ShowWarmPoolResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWarmPoolResponse>);
         }
         
         /// <summary>

@@ -11,133 +11,133 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 负载均衡相关各类资源的配额信息。仅返回资源的总配额，不包括剩余可用配额。
+    /// **参数解释**：负载均衡相关各类资源的配额信息。仅返回资源的总配额，不包括剩余可用配额。
     /// </summary>
     public class Quota 
     {
 
         /// <summary>
-        /// 参数解释：项目ID。
+        /// **参数解释**：项目ID。获取方式请参见[获取项目ID](elb_fl_0008.xml)。  **取值范围**：长度为32个字符，由小写字母和数字组成。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 负载均衡器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：负载均衡器配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("loadbalancer", NullValueHandling = NullValueHandling.Ignore)]
         public int? Loadbalancer { get; set; }
 
         /// <summary>
-        /// 证书配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：证书配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("certificate", NullValueHandling = NullValueHandling.Ignore)]
         public int? Certificate { get; set; }
 
         /// <summary>
-        /// 监听器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：监听器配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("listener", NullValueHandling = NullValueHandling.Ignore)]
         public int? Listener { get; set; }
 
         /// <summary>
-        /// 转发策略配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：转发策略配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("l7policy", NullValueHandling = NullValueHandling.Ignore)]
         public int? L7policy { get; set; }
 
         /// <summary>
-        /// 单个转发策略下所有转发规则的condition总数配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：单个转发策略下所有转发规则的condition总数配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("condition_per_policy", NullValueHandling = NullValueHandling.Ignore)]
         public int? ConditionPerPolicy { get; set; }
 
         /// <summary>
-        /// 后端服务器组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：后端服务器组配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("pool", NullValueHandling = NullValueHandling.Ignore)]
         public int? Pool { get; set; }
 
         /// <summary>
-        /// 健康检查配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：健康检查配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("healthmonitor", NullValueHandling = NullValueHandling.Ignore)]
         public int? Healthmonitor { get; set; }
 
         /// <summary>
-        /// 后端服务器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：后端服务器配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("member", NullValueHandling = NullValueHandling.Ignore)]
         public int? Member { get; set; }
 
         /// <summary>
-        /// 单个pool下的member的配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：单个pool下的member的配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("members_per_pool", NullValueHandling = NullValueHandling.Ignore)]
         public int? MembersPerPool { get; set; }
 
         /// <summary>
-        /// 单个pool器关联的监听器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：单个pool关联的监听器配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("listeners_per_pool", NullValueHandling = NullValueHandling.Ignore)]
         public int? ListenersPerPool { get; set; }
 
         /// <summary>
-        /// IP地址组配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// **参数解释**：IP地址组配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("ipgroup", NullValueHandling = NullValueHandling.Ignore)]
         public int? Ipgroup { get; set; }
 
         /// <summary>
-        /// 单个IP地址组可以关联的监听器数量配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// **参数解释**：单个IP地址组可以关联的监听器数量配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("ipgroup_bindings", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpgroupBindings { get; set; }
 
         /// <summary>
-        /// 单个监听器下关联的所有IP地址组的ip列表中的IP总数不能超过ipgroup_max_length。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// **参数解释**：单个监听器下关联的所有IP地址组的ip列表中的IP总数不能超过ipgroup_max_length。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("ipgroup_max_length", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpgroupMaxLength { get; set; }
 
         /// <summary>
-        /// 自定义安全策略配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
+        /// **参数解释**：自定义安全策略配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  [不支持该字段，请勿使用。](tag:hcso_dt)
         /// </summary>
         [JsonProperty("security_policy", NullValueHandling = NullValueHandling.Ignore)]
         public int? SecurityPolicy { get; set; }
 
         /// <summary>
-        /// 单个LB实例下的监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  &gt; 当前单个LB下监听器配额实际未限制，但建议不要超过默认配额。
+        /// **参数解释**：单个LB实例下的监听器配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。  &gt; 当前单个LB下监听器配额实际未限制，但建议不要超过默认配额。
         /// </summary>
         [JsonProperty("listeners_per_loadbalancer", NullValueHandling = NullValueHandling.Ignore)]
         public int? ListenersPerLoadbalancer { get; set; }
 
         /// <summary>
-        /// 单个监听器下的IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：单个监听器下的IP地址组配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("ipgroups_per_listener", NullValueHandling = NullValueHandling.Ignore)]
         public int? IpgroupsPerListener { get; set; }
 
         /// <summary>
-        /// 单个转发策略下的后端服务器组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：单个转发策略下的后端服务器组配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("pools_per_l7policy", NullValueHandling = NullValueHandling.Ignore)]
         public int? PoolsPerL7policy { get; set; }
 
         /// <summary>
-        /// 单个监听器下的转发策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：单个监听器下的转发策略配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("l7policies_per_listener", NullValueHandling = NullValueHandling.Ignore)]
         public int? L7policiesPerListener { get; set; }
 
         /// <summary>
-        /// 单个pool实例下的免费member配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：单个pool实例下的免费member配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("free_instance_members_per_pool", NullValueHandling = NullValueHandling.Ignore)]
         public int? FreeInstanceMembersPerPool { get; set; }
 
         /// <summary>
-        /// 单个LB实例下的免费监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+        /// **参数解释**：单个LB实例下的免费监听器配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
         /// </summary>
         [JsonProperty("free_instance_listeners_per_loadbalancer", NullValueHandling = NullValueHandling.Ignore)]
         public int? FreeInstanceListenersPerLoadbalancer { get; set; }

@@ -16,12 +16,12 @@ namespace HuaweiCloud.SDK.Moderation.V3
         public static readonly Region CN_EAST_3 = new Region("cn-east-3",
             "https://moderation.cn-east-3.myhuaweicloud.com",
             "https://moderation.cn-east-3.myhuaweicloud.cn");
-        public static readonly Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
-            "https://moderation.ap-southeast-1.myhuaweicloud.com",
-            "https://moderation.ap-southeast-1.myhuaweicloud.cn");
         public static readonly Region AP_SOUTHEAST_3 = new Region("ap-southeast-3",
             "https://moderation.ap-southeast-3.myhuaweicloud.com",
             "https://moderation.ap-southeast-3.myhuaweicloud.cn");
+        public static readonly Region CN_SOUTHWEST_2 = new Region("cn-southwest-2",
+            "https://moderation.cn-southwest-2.myhuaweicloud.com",
+            "https://moderation.cn-southwest-2.myhuaweicloud.cn");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("MODERATION");
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Moderation.V3
                 { "cn-north-4", CN_NORTH_4 },
                 { "cn-north-1", CN_NORTH_1 },
                 { "cn-east-3", CN_EAST_3 },
-                { "ap-southeast-1", AP_SOUTHEAST_1 },
                 { "ap-southeast-3", AP_SOUTHEAST_3 },
+                { "cn-southwest-2", CN_SOUTHWEST_2 },
         };
 
         public static Region ValueOf(string regionId)

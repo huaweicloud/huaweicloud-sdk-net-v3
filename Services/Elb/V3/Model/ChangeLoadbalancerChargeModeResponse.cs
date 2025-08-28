@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 转包周期下单成功的EIP ID列表
+        /// **参数解释**：转包周期下单成功的EIP ID列表。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("eip_id_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EipIdList { get; set; }
 
         /// <summary>
-        /// 转包周期下单成功的LB ID列表
+        /// **参数解释**：转包周期下单成功的LB ID列表。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("loadbalancer_id_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> LoadbalancerIdList { get; set; }
 
         /// <summary>
-        /// 转包周期订单号
+        /// **参数解释**：转包周期订单号。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// 请求的UUIID
+        /// **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
         /// </summary>
         [JsonProperty("request_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestId { get; set; }

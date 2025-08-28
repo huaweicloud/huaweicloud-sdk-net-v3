@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// ipv4 vip地址
+        /// **参数解释**：ipv4 vip地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("vip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string VipAddress { get; set; }
 
         /// <summary>
-        /// ipv6 vip地址
+        /// **参数解释**：ipv6 vip地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("ipv6_vip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string Ipv6VipAddress { get; set; }

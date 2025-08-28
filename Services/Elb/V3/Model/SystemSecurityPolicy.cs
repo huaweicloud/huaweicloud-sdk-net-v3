@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 系统安全策略的名称。
+        /// **参数解释**：系统安全策略的名称。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 系统安全策略的TLS协议列表。
+        /// **参数解释**：系统安全策略的TLS协议列表。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("protocols", NullValueHandling = NullValueHandling.Ignore)]
         public string Protocols { get; set; }
 
         /// <summary>
-        /// 系统安全策略的加密套件列表。
+        /// **参数解释**：系统安全策略的加密套件列表。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("ciphers", NullValueHandling = NullValueHandling.Ignore)]
         public string Ciphers { get; set; }
 
         /// <summary>
-        /// 项目id。
+        /// **参数解释**：项目ID。获取方式请参见[获取项目ID](elb_fl_0008.xml)。  **取值范围**：长度为32个字符，由小写字母和数字组成。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ProjectId { get; set; }

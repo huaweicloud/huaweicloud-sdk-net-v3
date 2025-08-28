@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：后端服务器检测任务结果。
+    /// **参数解释**：后端服务器检测任务结果。
     /// </summary>
     public class MemberCheckJobInfo 
     {
 
         /// <summary>
-        /// 参数解释：processed检查完成，processing检查中，failed检查失败
+        /// **参数解释**：processed检查完成，processing检查中，failed检查失败。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -29,43 +29,43 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public MemberCheckJobResult Result { get; set; }
 
         /// <summary>
-        /// 参数解释：任务创建时间。
+        /// **参数解释**：任务创建时间。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 参数解释：任务更新时间
+        /// **参数解释**：任务更新时间。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
-        /// 参数解释：任务ID。
+        /// **参数解释**：任务ID。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// 参数解释：检查项总个数
+        /// **参数解释**：检查项总个数。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("check_item_total_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? CheckItemTotalNum { get; set; }
 
         /// <summary>
-        /// 参数解释：已检查完成的检查项个数
+        /// **参数解释**：已检查完成的检查项个数。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("check_item_finished_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? CheckItemFinishedNum { get; set; }
 
         /// <summary>
-        /// 参数解释：后端服务器所关联的监听器，查询在该监听器下后端服务器的状态。
+        /// **参数解释**：后端服务器所关联的监听器，查询在该监听器下后端服务器的状态。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("listener_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ListenerId { get; set; }
 
         /// <summary>
-        /// 参数解释：后端服务器ID。
+        /// **参数解释**：后端服务器ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("member_id", NullValueHandling = NullValueHandling.Ignore)]
         public string MemberId { get; set; }

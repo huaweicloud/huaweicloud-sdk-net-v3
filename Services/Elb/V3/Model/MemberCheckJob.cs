@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：后端服务器检测任务信息。
+    /// **参数解释**：后端服务器检测任务信息。
     /// </summary>
     public class MemberCheckJob 
     {
 
         /// <summary>
-        /// 参数解释：任务ID，根据该任务ID可以查询到任务执行结果。
+        /// **参数解释**：任务ID，根据该任务ID可以查询到任务执行结果。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }

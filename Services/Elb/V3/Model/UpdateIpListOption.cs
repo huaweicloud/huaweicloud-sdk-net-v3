@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 更新IP地址组IP列表请求参数。
+    /// **参数解释**：更新IP地址组IP列表的请求参数。  **约束限制**：不涉及
     /// </summary>
     public class UpdateIpListOption 
     {
 
         /// <summary>
-        /// 参数解释：IP地址组的名称
+        /// **参数解释**：IP地址组的名称。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组中包含的IP列表。
+        /// **参数解释**：IP地址组中包含的IP列表。 只支持添加新的IP地址到IP地址组的IP列表中，或更新已有IP地址的描述。不会删除或修改ip_list中已有的IP地址。  **约束限制**：不涉及
         /// </summary>
         [JsonProperty("ip_list", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UpadateIpGroupIpOption> IpList { get; set; }
+        public List<UpdateIpGroupIpOption> IpList { get; set; }
 
         /// <summary>
-        /// 参数解释：IP地址组的描述信息
+        /// **参数解释**：备注信息。  **约束限制**：不涉及  **取值范围**：长度为0-255个字符。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

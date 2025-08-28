@@ -150,6 +150,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public bool? IsActionEditable { get; set; }
 
         /// <summary>
+        /// **参数解释**： 是否是直播间复刻任务 **约束限制**： 不涉及 **取值范围**： * true: 是直播间复刻任务 * false: 不是直播间复刻任务
+        /// </summary>
+        [JsonProperty("is_live_copy", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsLiveCopy { get; set; }
+
+        /// <summary>
         /// **参数解释**： 是否是实景分身数字人 **约束限制**： 实景分身数字人不做背景替换。 **取值范围**： * true: 实景分身数字人 * false: 普通分身数字人，不带背景。
         /// </summary>
         [JsonProperty("is_real_background", NullValueHandling = NullValueHandling.Ignore)]
@@ -212,6 +218,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             var sb = new StringBuilder();
             sb.Append("class HumanModel2DAssetMeta {\n");
             sb.Append("  isActionEditable: ").Append(IsActionEditable).Append("\n");
+            sb.Append("  isLiveCopy: ").Append(IsLiveCopy).Append("\n");
             sb.Append("  isRealBackground: ").Append(IsRealBackground).Append("\n");
             sb.Append("  supportLive: ").Append(SupportLive).Append("\n");
             sb.Append("  modelVersion: ").Append(ModelVersion).Append("\n");
@@ -240,6 +247,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         {
             if (input == null) return false;
             if (this.IsActionEditable != input.IsActionEditable || (this.IsActionEditable != null && !this.IsActionEditable.Equals(input.IsActionEditable))) return false;
+            if (this.IsLiveCopy != input.IsLiveCopy || (this.IsLiveCopy != null && !this.IsLiveCopy.Equals(input.IsLiveCopy))) return false;
             if (this.IsRealBackground != input.IsRealBackground || (this.IsRealBackground != null && !this.IsRealBackground.Equals(input.IsRealBackground))) return false;
             if (this.SupportLive != input.SupportLive || (this.SupportLive != null && !this.SupportLive.Equals(input.SupportLive))) return false;
             if (this.ModelVersion != input.ModelVersion) return false;
@@ -262,6 +270,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             {
                 var hashCode = 41;
                 if (this.IsActionEditable != null) hashCode = hashCode * 59 + this.IsActionEditable.GetHashCode();
+                if (this.IsLiveCopy != null) hashCode = hashCode * 59 + this.IsLiveCopy.GetHashCode();
                 if (this.IsRealBackground != null) hashCode = hashCode * 59 + this.IsRealBackground.GetHashCode();
                 if (this.SupportLive != null) hashCode = hashCode * 59 + this.SupportLive.GetHashCode();
                 hashCode = hashCode * 59 + this.ModelVersion.GetHashCode();

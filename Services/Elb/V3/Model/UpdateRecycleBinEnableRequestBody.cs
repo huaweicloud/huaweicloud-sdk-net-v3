@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 更新回收站启用开关的请求体。
+    /// **参数解释**：更新回收站启用开关的请求体。
     /// </summary>
     public class UpdateRecycleBinEnableRequestBody 
     {

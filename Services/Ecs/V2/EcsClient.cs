@@ -513,6 +513,30 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 创建模板
+        ///
+        /// 创建启动模板。将创建一个全新的模板，并自动生成版本号为1的作为默认版本。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateLaunchTemplateResponse CreateLaunchTemplate(CreateLaunchTemplateRequest createLaunchTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/launch-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLaunchTemplateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateLaunchTemplateResponse>(response);
+        }
+
+        public SyncInvoker<CreateLaunchTemplateResponse> CreateLaunchTemplateInvoker(CreateLaunchTemplateRequest createLaunchTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/launch-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLaunchTemplateRequest);
+            return new SyncInvoker<CreateLaunchTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateLaunchTemplateResponse>);
+        }
+        
+        /// <summary>
         /// 创建云服务器(按需)
         ///
         /// 创建一台或多台[按需付费](https://support.huaweicloud.com/productdesc-ecs/ecs_01_0065.html)方式的云服务器。

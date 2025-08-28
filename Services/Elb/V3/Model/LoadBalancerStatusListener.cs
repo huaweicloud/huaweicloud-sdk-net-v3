@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// LB状态树的监听器状态信息
+    /// **参数解释**：监听器的状态信息。
     /// </summary>
     public class LoadBalancerStatusListener 
     {
 
         /// <summary>
-        /// 监听器的名称。
+        /// **参数解释**：监听器的名称。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 监听器的配置状态。  取值： - ACTIVE：使用中。
+        /// **参数解释**：监听器的配置状态。  **取值范围**： - ACTIVE：使用中。
         /// </summary>
         [JsonProperty("provisioning_status", NullValueHandling = NullValueHandling.Ignore)]
         public string ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 监听器下的后端主机组操作状态。
+        /// **参数解释**：监听器下的所有后端服务器组的状态信息。
         /// </summary>
         [JsonProperty("pools", NullValueHandling = NullValueHandling.Ignore)]
         public List<LoadBalancerStatusPool> Pools { get; set; }
 
         /// <summary>
-        /// 监听器下的7层转发策略操作状态。
+        /// **参数解释**：监听器下的7层转发策略的状态信息。
         /// </summary>
         [JsonProperty("l7policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<LoadBalancerStatusPolicy> L7policies { get; set; }
 
         /// <summary>
-        /// 监听器ID。
+        /// **参数解释**：监听器ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 监听器的操作状态。  取值： - ONLINE：创建时默认状态，表示监听器正常运行。 - DEGRADED：该监听器下存在l7policy或l7rule的Provisioning_status&#x3D;ERROR时返回这个状态。 或者状态树该监听器下存在member的operating_status&#x3D;OFFLINE。 - DISABLED：负载均衡器或监听器的admin_state_up&#x3D;false。  说明： DEGRADED和DISABLED状态仅在当前接口返回，查询监听器详情等其他接口返回字段operating_status不存在这两个状态值。
+        /// **参数解释**：监听器的操作状态。  **取值范围**： - ONLINE：创建时默认状态，表示监听器正常运行。 - DEGRADED：该监听器下存在l7policy或l7rule的Provisioning_status&#x3D;ERROR时返回这个状态。或者状态树该监听器下存在member的operating_status&#x3D;OFFLINE。 - DISABLED：负载均衡器或监听器的admin_state_up&#x3D;false。  &gt; DEGRADED和DISABLED状态仅在当前接口返回，查询监听器详情等其他接口返回字段operating_status不存在这两个状态值。
         /// </summary>
         [JsonProperty("operating_status", NullValueHandling = NullValueHandling.Ignore)]
         public string OperatingStatus { get; set; }

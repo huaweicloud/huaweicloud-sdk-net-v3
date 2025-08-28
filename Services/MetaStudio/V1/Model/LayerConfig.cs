@@ -161,6 +161,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string GroupId { get; set; }
 
         /// <summary>
+        /// **参数解释**： 播放到对应的段落，显示对应的图层。该字段向前兼容，可以不填，字段可选。 只支持直播业务。 **约束限制**： 段落sequence_no。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("sequence_no", NullValueHandling = NullValueHandling.Ignore)]
+        public int? SequenceNo { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("position", NullValueHandling = NullValueHandling.Ignore)]
@@ -208,6 +214,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  layerType: ").Append(LayerType).Append("\n");
             sb.Append("  assetId: ").Append(AssetId).Append("\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
+            sb.Append("  sequenceNo: ").Append(SequenceNo).Append("\n");
             sb.Append("  position: ").Append(Position).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  rotation: ").Append(Rotation).Append("\n");
@@ -235,6 +242,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.LayerType != input.LayerType) return false;
             if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
             if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.SequenceNo != input.SequenceNo || (this.SequenceNo != null && !this.SequenceNo.Equals(input.SequenceNo))) return false;
             if (this.Position != input.Position || (this.Position != null && !this.Position.Equals(input.Position))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.Rotation != input.Rotation || (this.Rotation != null && !this.Rotation.Equals(input.Rotation))) return false;
@@ -256,6 +264,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 hashCode = hashCode * 59 + this.LayerType.GetHashCode();
                 if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
                 if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.SequenceNo != null) hashCode = hashCode * 59 + this.SequenceNo.GetHashCode();
                 if (this.Position != null) hashCode = hashCode * 59 + this.Position.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Rotation != null) hashCode = hashCode * 59 + this.Rotation.GetHashCode();

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     public class ChangeLoadbalancerChargeModeRequestBody 
     {
         /// <summary>
-        /// 计费模式。取值： - prepaid：包周期计费[（仅当不传pay_type时，允许设为该值）](tag:hws)
+        /// **参数解释**：计费模式。  **约束限制**：不涉及  **取值范围**：仅支持设置为&#39;prepaid&#39;-包周期计费。  **默认取值**：不涉及
         /// </summary>
-        /// <value>计费模式。取值： - prepaid：包周期计费[（仅当不传pay_type时，允许设为该值）](tag:hws)</value>
+        /// <value>**参数解释**：计费模式。  **约束限制**：不涉及  **取值范围**：仅支持设置为&#39;prepaid&#39;-包周期计费。  **默认取值**：不涉及</value>
         [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
         public class ChargeModeEnum
         {
@@ -126,13 +126,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
 
 
         /// <summary>
-        /// 需要修改计费类型的负载均衡器ID列表。
+        /// **参数解释**：需要修改计费类型的负载均衡器ID列表。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("loadbalancer_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> LoadbalancerIds { get; set; }
 
         /// <summary>
-        /// 计费模式。取值： - prepaid：包周期计费[（仅当不传pay_type时，允许设为该值）](tag:hws)
+        /// **参数解释**：计费模式。  **约束限制**：不涉及  **取值范围**：仅支持设置为&#39;prepaid&#39;-包周期计费。  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }

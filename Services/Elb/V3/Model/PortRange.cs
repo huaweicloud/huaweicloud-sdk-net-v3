@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 端口监听范围（闭区间)，最多指定20个端口组，每个组范围不可有重叠部分 &gt;仅当protocol_port为0时可以传入。
+    /// 
     /// </summary>
     public class PortRange 
     {
 
         /// <summary>
-        /// 起始端口
+        /// **参数解释**：起始端口。  **约束限制**：不涉及  **取值范围**：1-65535  **默认取值：不涉及
         /// </summary>
         [JsonProperty("start_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? StartPort { get; set; }
 
         /// <summary>
-        /// 结束端口，需大于等于起始端口
+        /// **参数解释**：结束端口，需大于等于起始端口  **约束限制**：不涉及  **取值范围**：1-65535  **默认取值：不涉及
         /// </summary>
         [JsonProperty("end_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? EndPort { get; set; }

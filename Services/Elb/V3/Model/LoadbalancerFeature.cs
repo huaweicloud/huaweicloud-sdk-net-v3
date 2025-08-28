@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：ELB实例特性。
+    /// **参数解释**：ELB实例特性。
     /// </summary>
     public class LoadbalancerFeature 
     {
 
         /// <summary>
-        /// 参数解释：特性名称。
+        /// **参数解释**：特性名称。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("feature", NullValueHandling = NullValueHandling.Ignore)]
         public string Feature { get; set; }
 
         /// <summary>
-        /// 参数解释：特性值(value字段)的类型，如：INT，表示整型。
+        /// **参数解释**：特性值(value字段)的类型，如：INT，表示整型。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 参数解释：特性值。如开关类型的特性取值true/false，表示特性开启关闭；配额类型的特性取值整数，表示限制配额。
+        /// **参数解释**：特性值。如开关类型的特性取值true/false，表示特性开启关闭；配额类型的特性取值整数，表示限制配额。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

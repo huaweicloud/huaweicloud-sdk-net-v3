@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// ep id
+        /// **参数解释**：EP ID.  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("ep_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EpId { get; set; }
 
         /// <summary>
-        /// ep service id
+        /// **参数解释**：EP Service ID.  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("ep_service_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EpServiceId { get; set; }

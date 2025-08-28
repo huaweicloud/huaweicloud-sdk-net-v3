@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 新增负载均衡器可用区请求体
+    /// 
     /// </summary>
     public class BatchAddAvailableZonesRequestBody 
     {
 
         /// <summary>
-        /// 新增的可用区列表，不能为空。
+        /// **参数解释**：新增的可用区列表。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("availability_zone_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailabilityZoneList { get; set; }

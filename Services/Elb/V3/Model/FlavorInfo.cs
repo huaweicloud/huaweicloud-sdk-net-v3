@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 规格内容信息。
+    /// **参数解释**：规格指标信息。
     /// </summary>
     public class FlavorInfo 
     {
 
         /// <summary>
-        /// 参数解释：并发数。单位：个。
+        /// **参数解释**：最大并发连接数。单位：个。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("connection", NullValueHandling = NullValueHandling.Ignore)]
         public int? Connection { get; set; }
 
         /// <summary>
-        /// 参数解释：新建数。单位：个。
+        /// **参数解释**：每秒新建连接数。单位：个。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("cps", NullValueHandling = NullValueHandling.Ignore)]
         public int? Cps { get; set; }
 
         /// <summary>
-        /// 参数解释：每秒查询数。单位：个。  约束限制：仅7层LB有该指标。
+        /// **参数解释**：每秒查询速率。单位：个。仅7层LB有该指标。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("qps", NullValueHandling = NullValueHandling.Ignore)]
         public int? Qps { get; set; }
 
         /// <summary>
-        /// 参数解释：带宽。单位：Kbit/s。
+        /// **参数解释**：带宽。单位：Kbit/s。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("bandwidth", NullValueHandling = NullValueHandling.Ignore)]
         public int? Bandwidth { get; set; }
 
         /// <summary>
-        /// 参数解释：当前flavor对应的lcu数量。单位：个。  &gt; LCU是用来衡量独享型ELB处理性能综合指标，LCU值越大，性能越好。
+        /// **参数解释**：当前flavor对应的lcu数量。单位：个。  **取值范围**：不涉及  &gt; LCU是用来衡量独享型ELB处理性能综合指标，LCU值越大，性能越好。
         /// </summary>
         [JsonProperty("lcu", NullValueHandling = NullValueHandling.Ignore)]
         public int? Lcu { get; set; }
 
         /// <summary>
-        /// 参数解释：https新建连接数。单位：个。  约束限制：仅7层LB有该指标。
+        /// **参数解释**：https新建连接数，仅7层LB有该指标。单位：个。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("https_cps", NullValueHandling = NullValueHandling.Ignore)]
         public int? HttpsCps { get; set; }

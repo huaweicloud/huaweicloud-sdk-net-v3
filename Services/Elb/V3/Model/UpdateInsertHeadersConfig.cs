@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：要添加的请求头参数列表。
+    /// **参数解释**：要添加的请求头参数列表。  **约束限制**：不涉及
     /// </summary>
     public class UpdateInsertHeadersConfig 
     {
 
         /// <summary>
-        /// 参数解释：要添加请求头参数列表。
+        /// **参数解释**：要添加请求头参数列表。  **约束限制**：不涉及
         /// </summary>
         [JsonProperty("configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpdateInsertHeaderConfig> Configs { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     {
 
         /// <summary>
-        /// **参数解释**： 旋转角度。 **取值范围**： 角度范围0-360度。 **默认取值**： 0度。 **约束限制**： 以素材中心点旋转。
+        /// **参数解释**： 旋转角度。 **取值范围**： 角度范围0-360度。 **默认取值**： 0度。 **约束限制**： 以素材中心点旋转。 视频素材不支持旋转
         /// </summary>
         [JsonProperty("angle", NullValueHandling = NullValueHandling.Ignore)]
         public int? Angle { get; set; }

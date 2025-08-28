@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         }
 
         /// <summary>
-        /// **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： 不涉及
+        /// **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： H264
         /// </summary>
-        /// <value>**参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： 不涉及</value>
+        /// <value>**参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： H264</value>
         [JsonConverter(typeof(EnumClassConverter<CodecEnum>))]
         public class CodecEnum
         {
@@ -385,7 +385,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("clip_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ClipModeEnum ClipMode { get; set; }
         /// <summary>
-        /// **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： 不涉及
+        /// **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： H264
         /// </summary>
         [JsonProperty("codec", NullValueHandling = NullValueHandling.Ignore)]
         public CodecEnum Codec { get; set; }
@@ -454,6 +454,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("output_external_url", NullValueHandling = NullValueHandling.Ignore)]
         public string OutputExternalUrl { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 是否应用当前租户的读法配置 **约束限制**： 仅分身数字人视频制作支持。 **取值范围** * true: 开启 * false: 不开启
+        /// </summary>
+        [JsonProperty("is_vocabulary_config_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsVocabularyConfigEnable { get; set; }
+
 
 
         /// <summary>
@@ -476,6 +482,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  isEnableSuperResolution: ").Append(IsEnableSuperResolution).Append("\n");
             sb.Append("  isEndAtFirstFrame: ").Append(IsEndAtFirstFrame).Append("\n");
             sb.Append("  outputExternalUrl: ").Append(OutputExternalUrl).Append("\n");
+            sb.Append("  isVocabularyConfigEnable: ").Append(IsVocabularyConfigEnable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -507,6 +514,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.IsEnableSuperResolution != input.IsEnableSuperResolution || (this.IsEnableSuperResolution != null && !this.IsEnableSuperResolution.Equals(input.IsEnableSuperResolution))) return false;
             if (this.IsEndAtFirstFrame != input.IsEndAtFirstFrame || (this.IsEndAtFirstFrame != null && !this.IsEndAtFirstFrame.Equals(input.IsEndAtFirstFrame))) return false;
             if (this.OutputExternalUrl != input.OutputExternalUrl || (this.OutputExternalUrl != null && !this.OutputExternalUrl.Equals(input.OutputExternalUrl))) return false;
+            if (this.IsVocabularyConfigEnable != input.IsVocabularyConfigEnable || (this.IsVocabularyConfigEnable != null && !this.IsVocabularyConfigEnable.Equals(input.IsVocabularyConfigEnable))) return false;
 
             return true;
         }
@@ -532,6 +540,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.IsEnableSuperResolution != null) hashCode = hashCode * 59 + this.IsEnableSuperResolution.GetHashCode();
                 if (this.IsEndAtFirstFrame != null) hashCode = hashCode * 59 + this.IsEndAtFirstFrame.GetHashCode();
                 if (this.OutputExternalUrl != null) hashCode = hashCode * 59 + this.OutputExternalUrl.GetHashCode();
+                if (this.IsVocabularyConfigEnable != null) hashCode = hashCode * 59 + this.IsVocabularyConfigEnable.GetHashCode();
                 return hashCode;
             }
         }

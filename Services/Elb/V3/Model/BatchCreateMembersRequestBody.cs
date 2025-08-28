@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 后端服务器对象。
+        /// **参数解释**：批量添加member请求参数。  **约束限制**：不涉及
         /// </summary>
         [JsonProperty("members", NullValueHandling = NullValueHandling.Ignore)]
         public List<BatchCreateMembersOption> Members { get; set; }

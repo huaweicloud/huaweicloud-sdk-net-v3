@@ -55,6 +55,8 @@ namespace HuaweiCloud.SDK.Lts.V2
             "https://lts.me-east-1.myhuaweicloud.com");
         public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
             "https://lts.my-kualalumpur-1.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
+            "https://lts.ap-southeast-5.myhuaweicloud.com");
         public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
             "https://lts.ru-moscow-1.myhuaweicloud.com");
         
@@ -86,6 +88,7 @@ namespace HuaweiCloud.SDK.Lts.V2
                 { "tr-west-1", TR_WEST_1 },
                 { "me-east-1", ME_EAST_1 },
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
+                { "ap-southeast-5", AP_SOUTHEAST_5 },
                 { "ru-moscow-1", RU_MOSCOW_1 },
         };
 

@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("algorithm_failure_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string AlgorithmFailureReason { get; set; }
 
+        /// <summary>
+        /// 管理员驳回的原因
+        /// </summary>
+        [JsonProperty("admin_audit_failure_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string AdminAuditFailureReason { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("class OpExternalInfo {\n");
             sb.Append("  reviewIdList: ").Append(ReviewIdList).Append("\n");
             sb.Append("  algorithmFailureReason: ").Append(AlgorithmFailureReason).Append("\n");
+            sb.Append("  adminAuditFailureReason: ").Append(AdminAuditFailureReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (input == null) return false;
             if (this.ReviewIdList != input.ReviewIdList || (this.ReviewIdList != null && input.ReviewIdList != null && !this.ReviewIdList.SequenceEqual(input.ReviewIdList))) return false;
             if (this.AlgorithmFailureReason != input.AlgorithmFailureReason || (this.AlgorithmFailureReason != null && !this.AlgorithmFailureReason.Equals(input.AlgorithmFailureReason))) return false;
+            if (this.AdminAuditFailureReason != input.AdminAuditFailureReason || (this.AdminAuditFailureReason != null && !this.AdminAuditFailureReason.Equals(input.AdminAuditFailureReason))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 var hashCode = 41;
                 if (this.ReviewIdList != null) hashCode = hashCode * 59 + this.ReviewIdList.GetHashCode();
                 if (this.AlgorithmFailureReason != null) hashCode = hashCode * 59 + this.AlgorithmFailureReason.GetHashCode();
+                if (this.AdminAuditFailureReason != null) hashCode = hashCode * 59 + this.AdminAuditFailureReason.GetHashCode();
                 return hashCode;
             }
         }

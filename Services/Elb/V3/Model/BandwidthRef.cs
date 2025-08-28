@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：带宽对象ID。 约束限制： - 仅在创建或更新公网IPv6负载均衡器时有效。 - 若选择创建新EIP并指定共享带宽时，此EIP会被分进共享带宽里面。  [不支持IPv6，请勿使用。](tag:dt)
+    /// 
     /// </summary>
     public class BandwidthRef 
     {
 
         /// <summary>
-        /// 参数解释：共享带宽的ID。
+        /// **参数解释**：共享带宽的ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }

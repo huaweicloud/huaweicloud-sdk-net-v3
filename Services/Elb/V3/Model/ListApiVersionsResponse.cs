@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 可用API版本列表。
+        /// 
         /// </summary>
         [JsonProperty("versions", NullValueHandling = NullValueHandling.Ignore)]
         public List<ApiVersionInfo> Versions { get; set; }

@@ -17,42 +17,42 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 负载均衡器ID。
+        /// **参数解释**：负载均衡器ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("loadbalancer_id", IsPath = true)]
         [JsonProperty("loadbalancer_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LoadbalancerId { get; set; }
 
         /// <summary>
-        /// port id。  支持多值查询，查询条件格式：*port_id&#x3D;xxx&amp;port_id&#x3D;xxx*。
+        /// **参数解释**：负载均衡器占用的端口ID。  支持多值查询，查询条件格式：*port_id&#x3D;xxx&amp;port_id&#x3D;xxx*。
         /// </summary>
         [SDKProperty("port_id", IsQuery = true)]
         [JsonProperty("port_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PortId { get; set; }
 
         /// <summary>
-        /// ipv4 地址。  支持多值查询，查询条件格式：*ip_address&#x3D;xxx&amp;ip_address&#x3D;xxx*。
+        /// **参数解释**：负载均衡器占用的私有IPv4地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  支持多值查询，查询条件格式：*ip_address&#x3D;xxx&amp;ip_address&#x3D;xxx*。
         /// </summary>
         [SDKProperty("ip_address", IsQuery = true)]
         [JsonProperty("ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> IpAddress { get; set; }
 
         /// <summary>
-        /// ipv6 地址。  支持多值查询，查询条件格式：*ipv6_address&#x3D;xxx&amp;ipv6_address&#x3D;xxx*。
+        /// **参数解释**：负载均衡器占用的IPv6地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  支持多值查询，查询条件格式：*ipv6_address&#x3D;xxx&amp;ipv6_address&#x3D;xxx*。
         /// </summary>
         [SDKProperty("ipv6_address", IsQuery = true)]
         [JsonProperty("ipv6_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ipv6Address { get; set; }
 
         /// <summary>
-        /// port类型。  支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。
+        /// **参数解释**：子网端口类型。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  支持多值查询，查询条件格式：*type&#x3D;xxx&amp;type&#x3D;xxx*。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Type { get; set; }
 
         /// <summary>
-        /// 虚拟网络id。  支持多值查询，查询条件格式：*virsubnet_id&#x3D;xxx&amp;virsubnet_id&#x3D;xxx*。
+        /// **参数解释**：子网端口所在下联面子网网络ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  支持多值查询，查询条件格式：*virsubnet_id&#x3D;xxx&amp;virsubnet_id&#x3D;xxx*。
         /// </summary>
         [SDKProperty("virsubnet_id", IsQuery = true)]
         [JsonProperty("virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -128,6 +128,13 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
+        /// <summary>
+        /// 批量查询的任务ID
+        /// </summary>
+        [SDKProperty("job_ids", IsQuery = true)]
+        [JsonProperty("job_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> JobIds { get; set; }
+
 
 
         /// <summary>
@@ -153,6 +160,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  assetName: ").Append(AssetName).Append("\n");
             sb.Append("  jobType: ").Append(JobType).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  jobIds: ").Append(JobIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +195,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.AssetName != input.AssetName || (this.AssetName != null && !this.AssetName.Equals(input.AssetName))) return false;
             if (this.JobType != input.JobType || (this.JobType != null && !this.JobType.Equals(input.JobType))) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.JobIds != input.JobIds || (this.JobIds != null && input.JobIds != null && !this.JobIds.SequenceEqual(input.JobIds))) return false;
 
             return true;
         }
@@ -215,6 +224,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.AssetName != null) hashCode = hashCode * 59 + this.AssetName.GetHashCode();
                 if (this.JobType != null) hashCode = hashCode * 59 + this.JobType.GetHashCode();
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.JobIds != null) hashCode = hashCode * 59 + this.JobIds.GetHashCode();
                 return hashCode;
             }
         }

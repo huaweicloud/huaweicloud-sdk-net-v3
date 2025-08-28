@@ -11,25 +11,25 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：配置检查。
+    /// **参数解释**：配置检查。
     /// </summary>
     public class MemberCheckJobResultGroup 
     {
 
         /// <summary>
-        /// 参数解释：检查结果，true表示检查通过，false为检查不通过。
+        /// **参数解释**：检查结果，true表示检查通过，false为检查不通过。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("check_result", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CheckResult { get; set; }
 
         /// <summary>
-        /// 参数解释：分组检查项汇总。
+        /// 
         /// </summary>
         [JsonProperty("check_items", NullValueHandling = NullValueHandling.Ignore)]
         public List<MemberCheckJobResultItem> CheckItems { get; set; }
 
         /// <summary>
-        /// 参数解释：processed检查完成，processing检查中，failed检查失败
+        /// **参数解释**：processed检查完成，processing检查中，failed检查失败。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("check_status", NullValueHandling = NullValueHandling.Ignore)]
         public string CheckStatus { get; set; }

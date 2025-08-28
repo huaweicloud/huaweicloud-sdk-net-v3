@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 复制负载均衡器接口请求体。
+    /// **参数解释**：复制负载均衡器请求体。  **约束限制**：不涉及
     /// </summary>
     public class CloneLoadbalancerRequestBody 
     {
 
         /// <summary>
-        /// 参数解释：单次最大复制数量。  取值范围：1-10  默认取值：1
+        /// **参数解释**：单次最大复制数量。  **约束限制**：不涉及  **取值范围**：1-10  **默认取值**：1
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// 参数解释：创建后端服务器检测任务请求body体。
+    /// **参数解释**：创建后端服务器检测任务请求body体。
     /// </summary>
     public class CreateMemberHealthCheckJobRequestBody 
     {
