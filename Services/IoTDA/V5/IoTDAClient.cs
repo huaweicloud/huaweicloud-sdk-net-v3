@@ -1045,6 +1045,132 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 创建设备鉴权模板
+        ///
+        /// 应用服务器可调用此接口在物联网平台创建一个设备鉴权模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDeviceAuthenticationTemplateResponse CreateDeviceAuthenticationTemplate(CreateDeviceAuthenticationTemplateRequest createDeviceAuthenticationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authentication-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDeviceAuthenticationTemplateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateDeviceAuthenticationTemplateResponse>(response);
+        }
+
+        public SyncInvoker<CreateDeviceAuthenticationTemplateResponse> CreateDeviceAuthenticationTemplateInvoker(CreateDeviceAuthenticationTemplateRequest createDeviceAuthenticationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authentication-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDeviceAuthenticationTemplateRequest);
+            return new SyncInvoker<CreateDeviceAuthenticationTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDeviceAuthenticationTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 删除设备鉴权模板
+        ///
+        /// 应用服务器可调用此接口在物联网平台上删除指定设备鉴权模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDeviceAuthenticationTemplateResponse DeleteDeviceAuthenticationTemplate(DeleteDeviceAuthenticationTemplateRequest deleteDeviceAuthenticationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", deleteDeviceAuthenticationTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authentication-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceAuthenticationTemplateRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDeviceAuthenticationTemplateResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDeviceAuthenticationTemplateResponse> DeleteDeviceAuthenticationTemplateInvoker(DeleteDeviceAuthenticationTemplateRequest deleteDeviceAuthenticationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", deleteDeviceAuthenticationTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authentication-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceAuthenticationTemplateRequest);
+            return new SyncInvoker<DeleteDeviceAuthenticationTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDeviceAuthenticationTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 查询设备鉴权模板列表
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询设备鉴权模板列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDeviceAuthenticationTemplatesResponse ListDeviceAuthenticationTemplates(ListDeviceAuthenticationTemplatesRequest listDeviceAuthenticationTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authentication-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceAuthenticationTemplatesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDeviceAuthenticationTemplatesResponse>(response);
+        }
+
+        public SyncInvoker<ListDeviceAuthenticationTemplatesResponse> ListDeviceAuthenticationTemplatesInvoker(ListDeviceAuthenticationTemplatesRequest listDeviceAuthenticationTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authentication-templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceAuthenticationTemplatesRequest);
+            return new SyncInvoker<ListDeviceAuthenticationTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDeviceAuthenticationTemplatesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询设备鉴权模板详情
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询指定设备鉴权模板ID的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDeviceAuthenticationTemplateResponse ShowDeviceAuthenticationTemplate(ShowDeviceAuthenticationTemplateRequest showDeviceAuthenticationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", showDeviceAuthenticationTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authentication-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeviceAuthenticationTemplateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDeviceAuthenticationTemplateResponse>(response);
+        }
+
+        public SyncInvoker<ShowDeviceAuthenticationTemplateResponse> ShowDeviceAuthenticationTemplateInvoker(ShowDeviceAuthenticationTemplateRequest showDeviceAuthenticationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", showDeviceAuthenticationTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authentication-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeviceAuthenticationTemplateRequest);
+            return new SyncInvoker<ShowDeviceAuthenticationTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDeviceAuthenticationTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 修改设备鉴权模板
+        ///
+        /// 应用服务器可调用此接口在物联网平台上修改指定设备鉴权模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDeviceAuthenticationTemplateResponse UpdateDeviceAuthenticationTemplate(UpdateDeviceAuthenticationTemplateRequest updateDeviceAuthenticationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", updateDeviceAuthenticationTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authentication-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceAuthenticationTemplateRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateDeviceAuthenticationTemplateResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDeviceAuthenticationTemplateResponse> UpdateDeviceAuthenticationTemplateInvoker(UpdateDeviceAuthenticationTemplateRequest updateDeviceAuthenticationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("template_id", updateDeviceAuthenticationTemplateRequest.TemplateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authentication-templates/{template_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceAuthenticationTemplateRequest);
+            return new SyncInvoker<UpdateDeviceAuthenticationTemplateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDeviceAuthenticationTemplateResponse>);
+        }
+        
+        /// <summary>
         /// 创建自定义鉴权
         ///
         /// 应用服务器可调用此接口在物联网平台创建一个自定义鉴权。自定义鉴权是指用户可以通过函数服务自定义实现鉴权逻辑，以对接入平台的设备进行身份认证。
@@ -1170,6 +1296,134 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-authorizers/{authorizer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceAuthorizerRequest);
             return new SyncInvoker<UpdateDeviceAuthorizerResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDeviceAuthorizerResponse>);
+        }
+        
+        /// <summary>
+        /// 删除设备证书
+        ///
+        /// 应用服务器可调用此接口在物联网平台删除一个设备证书。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDeviceCertificateResponse DeleteDeviceCertificate(DeleteDeviceCertificateRequest deleteDeviceCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", deleteDeviceCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-certificates/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceCertificateRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDeviceCertificateResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDeviceCertificateResponse> DeleteDeviceCertificateInvoker(DeleteDeviceCertificateRequest deleteDeviceCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", deleteDeviceCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-certificates/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceCertificateRequest);
+            return new SyncInvoker<DeleteDeviceCertificateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDeviceCertificateResponse>);
+        }
+        
+        /// <summary>
+        /// 查询使用指定设备证书的设备列表
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询使用指定设备证书的设备列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDeviceByDeviceCertificateResponse ListDeviceByDeviceCertificate(ListDeviceByDeviceCertificateRequest listDeviceByDeviceCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", listDeviceByDeviceCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-certificates/{certificate_id}/list-device", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceByDeviceCertificateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListDeviceByDeviceCertificateResponse>(response);
+        }
+
+        public SyncInvoker<ListDeviceByDeviceCertificateResponse> ListDeviceByDeviceCertificateInvoker(ListDeviceByDeviceCertificateRequest listDeviceByDeviceCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", listDeviceByDeviceCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-certificates/{certificate_id}/list-device", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceByDeviceCertificateRequest);
+            return new SyncInvoker<ListDeviceByDeviceCertificateResponse>(this, "POST", request, JsonUtils.DeSerialize<ListDeviceByDeviceCertificateResponse>);
+        }
+        
+        /// <summary>
+        /// 查询设备证书列表
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询设备证书列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDeviceCertificateResponse ListDeviceCertificate(ListDeviceCertificateRequest listDeviceCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-certificates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceCertificateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDeviceCertificateResponse>(response);
+        }
+
+        public SyncInvoker<ListDeviceCertificateResponse> ListDeviceCertificateInvoker(ListDeviceCertificateRequest listDeviceCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-certificates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeviceCertificateRequest);
+            return new SyncInvoker<ListDeviceCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDeviceCertificateResponse>);
+        }
+        
+        /// <summary>
+        /// 查询设备证书
+        ///
+        /// 应用服务器可调用此接口在物联网平台更新一个设备证书状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDeviceCertificateResponse ShowDeviceCertificate(ShowDeviceCertificateRequest showDeviceCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", showDeviceCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-certificates/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeviceCertificateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDeviceCertificateResponse>(response);
+        }
+
+        public SyncInvoker<ShowDeviceCertificateResponse> ShowDeviceCertificateInvoker(ShowDeviceCertificateRequest showDeviceCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", showDeviceCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-certificates/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeviceCertificateRequest);
+            return new SyncInvoker<ShowDeviceCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDeviceCertificateResponse>);
+        }
+        
+        /// <summary>
+        /// 更新设备证书
+        ///
+        /// 应用服务器可调用此接口在物联网平台更新一个设备证书状态。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDeviceCertificateResponse UpdateDeviceCertificate(UpdateDeviceCertificateRequest updateDeviceCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", updateDeviceCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-certificates/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceCertificateRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateDeviceCertificateResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDeviceCertificateResponse> UpdateDeviceCertificateInvoker(UpdateDeviceCertificateRequest updateDeviceCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("certificate_id", updateDeviceCertificateRequest.CertificateId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/device-certificates/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceCertificateRequest);
+            return new SyncInvoker<UpdateDeviceCertificateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDeviceCertificateResponse>);
         }
         
         /// <summary>
@@ -1910,6 +2164,32 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 删除设备影子数据
+        ///
+        /// 应用服务器可调用此接口删除指定设备的设备影子信息，包括对设备的期望属性信息（desired区）和设备最新上报的属性信息（reported区）中的所有数据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDeviceShadowResponse DeleteDeviceShadow(DeleteDeviceShadowRequest deleteDeviceShadowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", deleteDeviceShadowRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/shadow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceShadowRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDeviceShadowResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDeviceShadowResponse> DeleteDeviceShadowInvoker(DeleteDeviceShadowRequest deleteDeviceShadowRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("device_id", deleteDeviceShadowRequest.DeviceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/devices/{device_id}/shadow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeviceShadowRequest);
+            return new SyncInvoker<DeleteDeviceShadowResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDeviceShadowResponse>);
+        }
+        
+        /// <summary>
         /// 查询设备影子数据
         ///
         /// 应用服务器可调用此接口查询指定设备的设备影子信息，包括对设备的期望属性信息（desired区）和设备最新上报的属性信息（reported区）。
@@ -2180,6 +2460,158 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/product-functions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionsRequest);
             return new SyncInvoker<ListFunctionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFunctionsResponse>);
+        }
+        
+        /// <summary>
+        /// 创建鸿蒙软总线
+        ///
+        /// 应用服务器可调用此接口新建鸿蒙软总线。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddHarmonySoftBusResponse AddHarmonySoftBus(AddHarmonySoftBusRequest addHarmonySoftBusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addHarmonySoftBusRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AddHarmonySoftBusResponse>(response);
+        }
+
+        public SyncInvoker<AddHarmonySoftBusResponse> AddHarmonySoftBusInvoker(AddHarmonySoftBusRequest addHarmonySoftBusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addHarmonySoftBusRequest);
+            return new SyncInvoker<AddHarmonySoftBusResponse>(this, "POST", request, JsonUtils.DeSerialize<AddHarmonySoftBusResponse>);
+        }
+        
+        /// <summary>
+        /// 同步鸿蒙软总线信息
+        ///
+        /// 应用服务器可调用此接口向组内设备同步鸿蒙软总线信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateSyncHarmonySoftBusResponse CreateSyncHarmonySoftBus(CreateSyncHarmonySoftBusRequest createSyncHarmonySoftBusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bus_id", createSyncHarmonySoftBusRequest.BusId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}/sync", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSyncHarmonySoftBusRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateSyncHarmonySoftBusResponse>(response);
+        }
+
+        public SyncInvoker<CreateSyncHarmonySoftBusResponse> CreateSyncHarmonySoftBusInvoker(CreateSyncHarmonySoftBusRequest createSyncHarmonySoftBusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bus_id", createSyncHarmonySoftBusRequest.BusId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}/sync", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSyncHarmonySoftBusRequest);
+            return new SyncInvoker<CreateSyncHarmonySoftBusResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateSyncHarmonySoftBusResponse>);
+        }
+        
+        /// <summary>
+        /// 删除鸿蒙软总线
+        ///
+        /// 应用服务器可调用此接口删除指定鸿蒙软总线。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteHarmonySoftBusResponse DeleteHarmonySoftBus(DeleteHarmonySoftBusRequest deleteHarmonySoftBusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bus_id", deleteHarmonySoftBusRequest.BusId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHarmonySoftBusRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteHarmonySoftBusResponse>(response);
+        }
+
+        public SyncInvoker<DeleteHarmonySoftBusResponse> DeleteHarmonySoftBusInvoker(DeleteHarmonySoftBusRequest deleteHarmonySoftBusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bus_id", deleteHarmonySoftBusRequest.BusId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHarmonySoftBusRequest);
+            return new SyncInvoker<DeleteHarmonySoftBusResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteHarmonySoftBusResponse>);
+        }
+        
+        /// <summary>
+        /// 查询鸿蒙软总线列表
+        ///
+        /// 应用服务器可调用此接口查询鸿蒙软总线列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListHarmonySoftBusResponse ListHarmonySoftBus(ListHarmonySoftBusRequest listHarmonySoftBusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHarmonySoftBusRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListHarmonySoftBusResponse>(response);
+        }
+
+        public SyncInvoker<ListHarmonySoftBusResponse> ListHarmonySoftBusInvoker(ListHarmonySoftBusRequest listHarmonySoftBusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHarmonySoftBusRequest);
+            return new SyncInvoker<ListHarmonySoftBusResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHarmonySoftBusResponse>);
+        }
+        
+        /// <summary>
+        /// 重置鸿蒙软总线秘钥
+        ///
+        /// 应用服务器可调用此接口重置鸿蒙软总线秘钥, 重置后状态变为未同步需要用户调用同步接口想组内设备同步最新秘钥。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ResetHarmonySoftBusKeyResponse ResetHarmonySoftBusKey(ResetHarmonySoftBusKeyRequest resetHarmonySoftBusKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bus_id", resetHarmonySoftBusKeyRequest.BusId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}/reset-bus-key", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetHarmonySoftBusKeyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<ResetHarmonySoftBusKeyResponse>(response);
+        }
+
+        public SyncInvoker<ResetHarmonySoftBusKeyResponse> ResetHarmonySoftBusKeyInvoker(ResetHarmonySoftBusKeyRequest resetHarmonySoftBusKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bus_id", resetHarmonySoftBusKeyRequest.BusId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}/reset-bus-key", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetHarmonySoftBusKeyRequest);
+            return new SyncInvoker<ResetHarmonySoftBusKeyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetHarmonySoftBusKeyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询鸿蒙软总线
+        ///
+        /// 应用服务器可调用此接口查询指定ID的鸿蒙软总线。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowHarmonySoftBusResponse ShowHarmonySoftBus(ShowHarmonySoftBusRequest showHarmonySoftBusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bus_id", showHarmonySoftBusRequest.BusId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHarmonySoftBusRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowHarmonySoftBusResponse>(response);
+        }
+
+        public SyncInvoker<ShowHarmonySoftBusResponse> ShowHarmonySoftBusInvoker(ShowHarmonySoftBusRequest showHarmonySoftBusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("bus_id", showHarmonySoftBusRequest.BusId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/harmony-soft-bus/{bus_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHarmonySoftBusRequest);
+            return new SyncInvoker<ShowHarmonySoftBusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHarmonySoftBusResponse>);
         }
         
         /// <summary>
@@ -3314,6 +3746,154 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/rules/{rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRuleRequest);
             return new SyncInvoker<UpdateRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 创建或更新安全态势感知配置
+        ///
+        /// #### 接口说明
+        /// 应用服务器调用该接口创建安全态势感知配置。
+        /// #### 限制
+        /// #### 目前支持的安全配置项有：
+        /// 
+        /// | 配置名              | 默认告警级别 |   默认安全级别   | 设备维度 | 平台检测/设备上报 | 配置结构体   | 说明        |
+        /// | :- -- -- -- -- -- -- -- -- - | :- -- -- -- -- -- | :- -- -- -- -- -- -- -- | :- -- -- -- | :- -- -- -- -- -- -- -- - | :- -- -- -- -- -- -- -- -- | :- -- -- -- -- --|
+        /// | DEVICE_MEMORY_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;memory_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备内存泄漏检测，report_period：上报周期单位(小时) 取值范围[1, 24]；memory_threshold内存检测阈值百分比，取值范围：[1, 100] |
+        /// | DEVICE_PORT_CHECK   | CRITICAL     | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;safety_ports\&quot;,\&quot;value\&quot;:[80,8080]},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备异常端口检测，report_period：上报周期单位(小时) 取值范围[1, 24]；safety_ports：安全端口白名单，数组，取值范围:[1, 65535] |
+        /// | DEVICE_CPU_USAGE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;cpu_usage_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备CPU使用率检测，report_period：上报周期单位(小时) 取值范围[1, 24]；cpu_usage_threshold：CPU检测阈值百分比，取值范围：[1, 100] |
+        /// | DEVICE_DISK_SPACE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;disk_space_threshold\&quot;,\&quot;value\&quot;:80},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备磁盘使用率检测，report_period：上报周期单位(小时) 取值范围[1, 24]；disk_space_threshold：磁盘检测阈值百分比，取值范围：[1, 100] |
+        /// | DEVICE_BATTERY_PERCENTAGE_CHECK | CRITICAL  | ADVANCE_SECURITY | 是       | 设备上报          | [{\&quot;key\&quot;:\&quot;battery_percentage_threshold\&quot;,\&quot;value\&quot;:20},{\&quot;key\&quot;:\&quot;report_period\&quot;,\&quot;value\&quot;:1}] | 设备电池电量检测，report_period：上报周期单位(小时) 取值范围[1, 24]；battery_percentage_threshold：电池检测阈值百分比，取值范围：[1, 100] |
+        /// | DEVICE_LOGIN_LOCAL_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备本地登录检测 |
+        /// | DEVICE_MALICIOUS_IP_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | {\&quot;key\&quot;:\&quot;safety_ips\&quot;,\&quot;value\&quot;:[\&quot;192.168.0.0/16\&quot;]} | 设备恶意ip检测 |
+        /// | DEVICE_LOGIN_BRUTE_FORCE_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备暴力破解登录检测 |
+        /// | DEVICE_FILE_TAMPER_CHECK | MINOR  | BASIC_SECURITY | 是       | 设备上报          | NA | 设备本地文件篡改检测 |
+        /// | INSECURE_TLS_PROTOCOL_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备使用不安全的TLS协议接入检测 |
+        /// | INSECURE_CIPHER_SUITE_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备使用不安全TLS加密套件接入检测 |
+        /// | CONNECT_MULTIPLE_TIMES_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备单位时间内多次建链检测 |
+        /// | SECRET_COMPLEXITY_CHECK | MAJOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备弱密码检测 |
+        /// | TLS_CONNECT_CHECK | MINOR  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备是否使用TLS加密通讯协议检测 |
+        /// | DEVICE_AUTH_FAIL_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备鉴权失败检测 |
+        /// | DEVICE_OFFLINE_CHECK | CRITICAL  | ULTIMATE_SECURITY | 是       | 平台检测          | NA | 设备异常离线检测 |
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateSecurityProfileResponse CreateSecurityProfile(CreateSecurityProfileRequest createSecurityProfileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/security-profiles", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSecurityProfileRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateSecurityProfileResponse>(response);
+        }
+
+        public SyncInvoker<CreateSecurityProfileResponse> CreateSecurityProfileInvoker(CreateSecurityProfileRequest createSecurityProfileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/security-profiles", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSecurityProfileRequest);
+            return new SyncInvoker<CreateSecurityProfileResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSecurityProfileResponse>);
+        }
+        
+        /// <summary>
+        /// 删除某个具体id的安全态势感知配置信息
+        ///
+        /// 应用服务器可调用此接口删除某个具体id的安全态势感知配置信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteSecurityProfileResponse DeleteSecurityProfile(DeleteSecurityProfileRequest deleteSecurityProfileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("profile_id", deleteSecurityProfileRequest.ProfileId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/security-profiles/{profile_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityProfileRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteSecurityProfileResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSecurityProfileResponse> DeleteSecurityProfileInvoker(DeleteSecurityProfileRequest deleteSecurityProfileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("profile_id", deleteSecurityProfileRequest.ProfileId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/security-profiles/{profile_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityProfileRequest);
+            return new SyncInvoker<DeleteSecurityProfileResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecurityProfileResponse>);
+        }
+        
+        /// <summary>
+        /// 查询安全态势感知配置信息列表
+        ///
+        /// 接口说明：应用服务器调用该接口查询安全态势感知配置列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSecurityProfilesResponse ListSecurityProfiles(ListSecurityProfilesRequest listSecurityProfilesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/security-profiles", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityProfilesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSecurityProfilesResponse>(response);
+        }
+
+        public SyncInvoker<ListSecurityProfilesResponse> ListSecurityProfilesInvoker(ListSecurityProfilesRequest listSecurityProfilesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/security-profiles", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecurityProfilesRequest);
+            return new SyncInvoker<ListSecurityProfilesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecurityProfilesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询某个具体id的安全态势感知配置详情
+        ///
+        /// 应用服务器可调用此接口查询某个具体id的安全态势感知配置详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSecurityProfileResponse ShowSecurityProfile(ShowSecurityProfileRequest showSecurityProfileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("profile_id", showSecurityProfileRequest.ProfileId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/security-profiles/{profile_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityProfileRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSecurityProfileResponse>(response);
+        }
+
+        public SyncInvoker<ShowSecurityProfileResponse> ShowSecurityProfileInvoker(ShowSecurityProfileRequest showSecurityProfileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("profile_id", showSecurityProfileRequest.ProfileId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/security-profiles/{profile_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityProfileRequest);
+            return new SyncInvoker<ShowSecurityProfileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecurityProfileResponse>);
+        }
+        
+        /// <summary>
+        /// 更新某个具体id的安全态势感知配置信息
+        ///
+        /// 应用服务器可调用此接口更新某个具体id的安全态势感知配置信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateSecurityProfileResponse UpdateSecurityProfile(UpdateSecurityProfileRequest updateSecurityProfileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("profile_id", updateSecurityProfileRequest.ProfileId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/security-profiles/{profile_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityProfileRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateSecurityProfileResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSecurityProfileResponse> UpdateSecurityProfileInvoker(UpdateSecurityProfileRequest updateSecurityProfileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("profile_id", updateSecurityProfileRequest.ProfileId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/security-profiles/{profile_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityProfileRequest);
+            return new SyncInvoker<UpdateSecurityProfileResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecurityProfileResponse>);
         }
         
         /// <summary>

@@ -119,13 +119,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string TenantId { get; set; }
 
         /// <summary>
-        /// 登录应用开始时间，格式 2022-10-31 08:07:39。
+        /// 登录应用开始时间，格式 2022-10-31T08:07:39Z。
         /// </summary>
         [JsonProperty("brokering_start_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? BrokeringStartTime { get; set; }
 
         /// <summary>
-        /// 登录应用结束时间，格式 2022-10-31 08:07:39。
+        /// 登录应用结束时间，格式 2022-10-31T08:07:39Z。
         /// </summary>
         [JsonProperty("brokering_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? BrokeringEndTime { get; set; }

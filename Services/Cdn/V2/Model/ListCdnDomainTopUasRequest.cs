@@ -1,0 +1,142 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Cdn.V2.Model
+{
+    /// <summary>
+    /// Request Object
+    /// </summary>
+    public class ListCdnDomainTopUasRequest 
+    {
+
+        /// <summary>
+        /// 查询起始时间戳，需与结束时间戳同时指定，左闭右开，设置方式如下： - interval为300时，start_time设置为整5分钟时刻点，如：1631240100000(对应2021-09-10 10:15:00) - interval为3600时，start_time设置为整小时时刻点，如：1631239200000(对应2021-09-10 10:00:00) - interval为86400时，start_time设置为东8区零点时刻点，如：1631203200000(对应2021-09-10 00:00:00)
+        /// </summary>
+        [SDKProperty("start_time", IsQuery = true)]
+        [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? StartTime { get; set; }
+
+        /// <summary>
+        /// 查询结束时间戳，需与开始时间戳同时指定，左闭右开，设置方式如下： - interval为300时，end_time设置为整5分钟时刻点，如：1631243700000(对应2021-09-10 11:15:00) - interval为3600时，end_time设置为整小时时刻点，如：1631325600000(对应2021-09-11 10:00:00) - interval为86400时，end_time设置为东8区零点时刻点，如：1631376000000(对应2021-09-12 00:00:00)
+        /// </summary>
+        [SDKProperty("end_time", IsQuery = true)]
+        [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? EndTime { get; set; }
+
+        /// <summary>
+        /// 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com all表示查询名下全部域名。如果域名在查询时间段内无数据，结果将不返回该域名的信息。
+        /// </summary>
+        [SDKProperty("domain_name", IsQuery = true)]
+        [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DomainName { get; set; }
+
+        /// <summary>
+        /// 数据分组方式，可选domain，默认不分组
+        /// </summary>
+        [SDKProperty("group_by", IsQuery = true)]
+        [JsonProperty("group_by", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupBy { get; set; }
+
+        /// <summary>
+        /// -  参数类型支持：flux(流量),req_num(请求数)
+        /// </summary>
+        [SDKProperty("stat_type", IsQuery = true)]
+        [JsonProperty("stat_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string StatType { get; set; }
+
+        /// <summary>
+        /// 服务区域：mainland_china(大陆)，outside_mainland_china(海外)，默认为mainland_china
+        /// </summary>
+        [SDKProperty("service_area", IsQuery = true)]
+        [JsonProperty("service_area", NullValueHandling = NullValueHandling.Ignore)]
+        public string ServiceArea { get; set; }
+
+        /// <summary>
+        /// 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，\&quot;all\&quot;表示所有项目。注意：当使用子账号调用接口时，该参数必传。
+        /// </summary>
+        [SDKProperty("enterprise_project_id", IsQuery = true)]
+        [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 是否包含百分比数据，默认false
+        /// </summary>
+        [SDKProperty("include_ratio", IsQuery = true)]
+        [JsonProperty("include_ratio", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IncludeRatio { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ListCdnDomainTopUasRequest {\n");
+            sb.Append("  startTime: ").Append(StartTime).Append("\n");
+            sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  domainName: ").Append(DomainName).Append("\n");
+            sb.Append("  groupBy: ").Append(GroupBy).Append("\n");
+            sb.Append("  statType: ").Append(StatType).Append("\n");
+            sb.Append("  serviceArea: ").Append(ServiceArea).Append("\n");
+            sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  includeRatio: ").Append(IncludeRatio).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ListCdnDomainTopUasRequest);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ListCdnDomainTopUasRequest input)
+        {
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.GroupBy != input.GroupBy || (this.GroupBy != null && !this.GroupBy.Equals(input.GroupBy))) return false;
+            if (this.StatType != input.StatType || (this.StatType != null && !this.StatType.Equals(input.StatType))) return false;
+            if (this.ServiceArea != input.ServiceArea || (this.ServiceArea != null && !this.ServiceArea.Equals(input.ServiceArea))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.IncludeRatio != input.IncludeRatio || (this.IncludeRatio != null && !this.IncludeRatio.Equals(input.IncludeRatio))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.GroupBy != null) hashCode = hashCode * 59 + this.GroupBy.GetHashCode();
+                if (this.StatType != null) hashCode = hashCode * 59 + this.StatType.GetHashCode();
+                if (this.ServiceArea != null) hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.IncludeRatio != null) hashCode = hashCode * 59 + this.IncludeRatio.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

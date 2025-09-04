@@ -66,13 +66,13 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// <summary>
         /// 错误信息。
         /// </summary>
-        [JsonProperty("errorMessage", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("error_message", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorMessage { get; set; }
 
         /// <summary>
         /// 是否创建成功。
         /// </summary>
-        [JsonProperty("isSuccess", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("is_success", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsSuccess { get; set; }
 
 

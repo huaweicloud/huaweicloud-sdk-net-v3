@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：白名单ip地址 
+        /// **参数说明**：白名单ip地址。 
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
         public string Address { get; set; }
 
         /// <summary>
-        /// **参数说明**：描述 
+        /// **参数说明**：描述。 
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

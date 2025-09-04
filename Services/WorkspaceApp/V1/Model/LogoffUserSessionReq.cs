@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string Title { get; set; }
 
         /// <summary>
-        /// 延迟多长时间注销会话。
+        /// 延迟多长时间注销会话， 单位：秒。
         /// </summary>
         [JsonProperty("delay_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? DelayTime { get; set; }

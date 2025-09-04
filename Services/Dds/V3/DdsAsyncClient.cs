@@ -1014,6 +1014,30 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 查询备份下载策略
+        ///
+        /// 查询备份下载策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListBackupDownloadPolicyResponse> ListBackupDownloadPolicyAsync(ListBackupDownloadPolicyRequest listBackupDownloadPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/download-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupDownloadPolicyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListBackupDownloadPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ListBackupDownloadPolicyResponse> ListBackupDownloadPolicyAsyncInvoker(ListBackupDownloadPolicyRequest listBackupDownloadPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/download-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupDownloadPolicyRequest);
+            return new AsyncInvoker<ListBackupDownloadPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBackupDownloadPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 查询备份列表
         ///
         /// 根据指定条件查询备份列表。
@@ -1893,6 +1917,30 @@ namespace HuaweiCloud.SDK.Dds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreNewInstanceRequest);
             return new AsyncInvoker<RestoreNewInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreNewInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 创建备份下载策略
+        ///
+        /// 创建备份下载策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SaveBackupDownloadPolicyResponse> SaveBackupDownloadPolicyAsync(SaveBackupDownloadPolicyRequest saveBackupDownloadPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/download-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveBackupDownloadPolicyRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<SaveBackupDownloadPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<SaveBackupDownloadPolicyResponse> SaveBackupDownloadPolicyAsyncInvoker(SaveBackupDownloadPolicyRequest saveBackupDownloadPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/download-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveBackupDownloadPolicyRequest);
+            return new AsyncInvoker<SaveBackupDownloadPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SaveBackupDownloadPolicyResponse>);
         }
         
         /// <summary>
@@ -2797,6 +2845,30 @@ namespace HuaweiCloud.SDK.Dds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchoverReplicaSetRequest);
             return new AsyncInvoker<SwitchoverReplicaSetResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchoverReplicaSetResponse>);
+        }
+        
+        /// <summary>
+        /// 更新备份下载策略
+        ///
+        /// 更新备份下载策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateBackupDownloadPolicyResponse> UpdateBackupDownloadPolicyAsync(UpdateBackupDownloadPolicyRequest updateBackupDownloadPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/download-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBackupDownloadPolicyRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateBackupDownloadPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateBackupDownloadPolicyResponse> UpdateBackupDownloadPolicyAsyncInvoker(UpdateBackupDownloadPolicyRequest updateBackupDownloadPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/download-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBackupDownloadPolicyRequest);
+            return new AsyncInvoker<UpdateBackupDownloadPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateBackupDownloadPolicyResponse>);
         }
         
         /// <summary>

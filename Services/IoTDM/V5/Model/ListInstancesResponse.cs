@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
     {
 
         /// <summary>
-        /// 设备接入实例的总数
+        /// **参数说明**：设备接入实例的总数。 
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }
 
         /// <summary>
-        /// 本次分页查询结果中最后一条记录的ID，可在下一次分页查询时使用
+        /// **参数说明**：本次分页查询结果中最后一条记录的ID，可在下一次分页查询时使用。 
         /// </summary>
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
         /// <summary>
-        /// 设备接入实例的详情列表
+        /// **参数说明**：设备接入实例的详情列表。 
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
         public List<QueryInstanceSimplify> Instances { get; set; }

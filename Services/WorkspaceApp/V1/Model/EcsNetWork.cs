@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
     {
 
         /// <summary>
-        /// IP地址信息。
+        /// IP地址信息
         /// </summary>
         [JsonProperty("addr", NullValueHandling = NullValueHandling.Ignore)]
         public string Addr { get; set; }

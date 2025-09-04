@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：企业版实例的VPCID 
+        /// **参数说明**：企业版实例的VPCID。 
         /// </summary>
         [JsonProperty("vpc_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VpcId { get; set; }
 
         /// <summary>
-        /// **参数说明**：企业版实例的子网ID 
+        /// **参数说明**：企业版实例的子网ID。 
         /// </summary>
         [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// **参数说明**：企业版实例的安全组ID 
+        /// **参数说明**：企业版实例的安全组ID。 
         /// </summary>
         [JsonProperty("security_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroupId { get; set; }
 
         /// <summary>
-        /// **参数说明**：实例支持的加密算法 **取值范围**： - COMMON_ALGORITHM: 通用加密算法（支持RSA，SHA256等国际通用的密码算法） - SM_ALGORITHM: 支持SM系列商密算法（支持SM2，SM3，SM4等国密算法） 
+        /// **参数说明**：实例支持的加密算法。 **取值范围**： - COMMON_ALGORITHM: 通用加密算法（支持RSA，SHA256等国际通用的密码算法） - SM_ALGORITHM: 支持SM系列商密算法（支持SM2，SM3，SM4等国密算法） 
         /// </summary>
         [JsonProperty("ciphering_algorithm", NullValueHandling = NullValueHandling.Ignore)]
         public string CipheringAlgorithm { get; set; }

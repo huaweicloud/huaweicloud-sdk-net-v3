@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public int? Count { get; set; }
 
         /// <summary>
+        /// 去除条件查询影响的策略总数量。
+        /// </summary>
+        [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalCount { get; set; }
+
+        /// <summary>
         /// 策略组列表，返回列表条目数量上限为分页的最大上限值。
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,6 +44,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             var sb = new StringBuilder();
             sb.Append("class ListPolicyGroupResponse {\n");
             sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
             sb.Append("  items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -58,6 +65,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         {
             if (input == null) return false;
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
             if (this.Items != input.Items || (this.Items != null && input.Items != null && !this.Items.SequenceEqual(input.Items))) return false;
 
             return true;
@@ -72,6 +80,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             {
                 var hashCode = 41;
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 if (this.Items != null) hashCode = hashCode * 59 + this.Items.GetHashCode();
                 return hashCode;
             }

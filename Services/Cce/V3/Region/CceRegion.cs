@@ -71,6 +71,8 @@ namespace HuaweiCloud.SDK.Cce.V3
             "https://cce.cn-east-5.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
             "https://cce.ap-southeast-5.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
+            "https://cce.cn-north-12.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CCE");
 
@@ -108,6 +110,7 @@ namespace HuaweiCloud.SDK.Cce.V3
                 { "af-north-1", AF_NORTH_1 },
                 { "cn-east-5", CN_EAST_5 },
                 { "ap-southeast-5", AP_SOUTHEAST_5 },
+                { "cn-north-12", CN_NORTH_12 },
         };
 
         public static Region ValueOf(string regionId)

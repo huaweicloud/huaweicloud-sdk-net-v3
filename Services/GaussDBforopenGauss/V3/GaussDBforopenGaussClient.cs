@@ -1011,6 +1011,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 表信息导出
+        ///
+        /// 表信息导出
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExportSlowSqlResponse ExportSlowSql(ExportSlowSqlRequest exportSlowSqlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", exportSlowSqlRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/table-volume/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportSlowSqlRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<ExportSlowSqlResponse>(response);
+        }
+
+        public SyncInvoker<ExportSlowSqlResponse> ExportSlowSqlInvoker(ExportSlowSqlRequest exportSlowSqlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", exportSlowSqlRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/table-volume/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", exportSlowSqlRequest);
+            return new SyncInvoker<ExportSlowSqlResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ExportSlowSqlResponse>);
+        }
+        
+        /// <summary>
         /// 安装插件
         ///
         /// 安装插件
@@ -2141,6 +2167,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/schedule-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listScheduleTaskRequest);
             return new SyncInvoker<ListScheduleTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListScheduleTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 识别SQL文本中的表信息
+        ///
+        /// 识别SQL文本中的表信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSchemaAndTableResponse ListSchemaAndTable(ListSchemaAndTableRequest listSchemaAndTableRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSchemaAndTableRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/parse/schema-table", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listSchemaAndTableRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListSchemaAndTableResponse>(response);
+        }
+
+        public SyncInvoker<ListSchemaAndTableResponse> ListSchemaAndTableInvoker(ListSchemaAndTableRequest listSchemaAndTableRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listSchemaAndTableRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/parse/schema-table", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listSchemaAndTableRequest);
+            return new SyncInvoker<ListSchemaAndTableResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSchemaAndTableResponse>);
         }
         
         /// <summary>

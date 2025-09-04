@@ -651,6 +651,32 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
         }
         
         /// <summary>
+        /// 删除附件
+        ///
+        /// 删除附件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteCacheFileResponse DeleteCacheFile(DeleteCacheFileRequest deleteCacheFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", deleteCacheFileRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/resources/temp-attachments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCacheFileRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteCacheFileResponse>(response);
+        }
+
+        public SyncInvoker<DeleteCacheFileResponse> DeleteCacheFileInvoker(DeleteCacheFileRequest deleteCacheFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", deleteCacheFileRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/resources/temp-attachments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCacheFileRequest);
+            return new SyncInvoker<DeleteCacheFileResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteCacheFileResponse>);
+        }
+        
+        /// <summary>
         /// 删除因子
         ///
         /// 删除因子
@@ -758,6 +784,38 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
             var urlPath = HttpUtils.AddUrlPath("/GT3KServer/v4/{project_id}/testcases/{testcase_id}/comments/{comment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTestCaseCommentRequest);
             return new SyncInvoker<DeleteTestCaseCommentResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteTestCaseCommentResponse>);
+        }
+        
+        /// <summary>
+        /// 删除测试报告自定义模块
+        ///
+        /// 删除测试报告自定义模块
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteTestReportCustomDetailByUriResponse DeleteTestReportCustomDetailByUri(DeleteTestReportCustomDetailByUriRequest deleteTestReportCustomDetailByUriRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", deleteTestReportCustomDetailByUriRequest.ProjectId.ToString());
+            urlParam.Add("version_uri", deleteTestReportCustomDetailByUriRequest.VersionUri.ToString());
+            urlParam.Add("report_uri", deleteTestReportCustomDetailByUriRequest.ReportUri.ToString());
+            urlParam.Add("custom_info_uri", deleteTestReportCustomDetailByUriRequest.CustomInfoUri.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/versions/{version_uri}/test-reports/{report_uri}/custom-infos/{custom_info_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTestReportCustomDetailByUriRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteTestReportCustomDetailByUriResponse>(response);
+        }
+
+        public SyncInvoker<DeleteTestReportCustomDetailByUriResponse> DeleteTestReportCustomDetailByUriInvoker(DeleteTestReportCustomDetailByUriRequest deleteTestReportCustomDetailByUriRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", deleteTestReportCustomDetailByUriRequest.ProjectId.ToString());
+            urlParam.Add("version_uri", deleteTestReportCustomDetailByUriRequest.VersionUri.ToString());
+            urlParam.Add("report_uri", deleteTestReportCustomDetailByUriRequest.ReportUri.ToString());
+            urlParam.Add("custom_info_uri", deleteTestReportCustomDetailByUriRequest.CustomInfoUri.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/versions/{version_uri}/test-reports/{report_uri}/custom-infos/{custom_info_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTestReportCustomDetailByUriRequest);
+            return new SyncInvoker<DeleteTestReportCustomDetailByUriResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteTestReportCustomDetailByUriResponse>);
         }
         
         /// <summary>
@@ -1209,6 +1267,30 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
             var urlPath = HttpUtils.AddUrlPath("/GT3KServer/v4/iterators/batch-query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIteratorsRequest);
             return new SyncInvoker<ListIteratorsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListIteratorsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询迭代计划列表，包含统计信息，对版本强校验
+        ///
+        /// 查询迭代计划列表，包含统计信息，对版本强校验
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListIteratorsInfoResponse ListIteratorsInfo(ListIteratorsInfoRequest listIteratorsInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators/info/batch-query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIteratorsInfoRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListIteratorsInfoResponse>(response);
+        }
+
+        public SyncInvoker<ListIteratorsInfoResponse> ListIteratorsInfoInvoker(ListIteratorsInfoRequest listIteratorsInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/iterators/info/batch-query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIteratorsInfoRequest);
+            return new SyncInvoker<ListIteratorsInfoResponse>(this, "POST", request, JsonUtils.DeSerialize<ListIteratorsInfoResponse>);
         }
         
         /// <summary>
@@ -2029,6 +2111,36 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{service_id}/task/settings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveTaskSettingRequest);
             return new SyncInvoker<SaveTaskSettingResponse>(this, "POST", request, JsonUtils.DeSerialize<SaveTaskSettingResponse>);
+        }
+        
+        /// <summary>
+        /// 创建测试报告自定义模块
+        ///
+        /// 创建测试报告自定义模块
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SaveTestReportCustomDetailResponse SaveTestReportCustomDetail(SaveTestReportCustomDetailRequest saveTestReportCustomDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", saveTestReportCustomDetailRequest.ProjectId.ToString());
+            urlParam.Add("version_uri", saveTestReportCustomDetailRequest.VersionUri.ToString());
+            urlParam.Add("report_uri", saveTestReportCustomDetailRequest.ReportUri.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/versions/{version_uri}/test-reports/{report_uri}/custom-infos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveTestReportCustomDetailRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SaveTestReportCustomDetailResponse>(response);
+        }
+
+        public SyncInvoker<SaveTestReportCustomDetailResponse> SaveTestReportCustomDetailInvoker(SaveTestReportCustomDetailRequest saveTestReportCustomDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", saveTestReportCustomDetailRequest.ProjectId.ToString());
+            urlParam.Add("version_uri", saveTestReportCustomDetailRequest.VersionUri.ToString());
+            urlParam.Add("report_uri", saveTestReportCustomDetailRequest.ReportUri.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/versions/{version_uri}/test-reports/{report_uri}/custom-infos", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveTestReportCustomDetailRequest);
+            return new SyncInvoker<SaveTestReportCustomDetailResponse>(this, "POST", request, JsonUtils.DeSerialize<SaveTestReportCustomDetailResponse>);
         }
         
         /// <summary>
@@ -3598,6 +3710,38 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
         }
         
         /// <summary>
+        /// 修改测试报告自定义模块
+        ///
+        /// 修改测试报告自定义模块
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateTestReportCustomDetailByUriResponse UpdateTestReportCustomDetailByUri(UpdateTestReportCustomDetailByUriRequest updateTestReportCustomDetailByUriRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", updateTestReportCustomDetailByUriRequest.ProjectId.ToString());
+            urlParam.Add("version_uri", updateTestReportCustomDetailByUriRequest.VersionUri.ToString());
+            urlParam.Add("report_uri", updateTestReportCustomDetailByUriRequest.ReportUri.ToString());
+            urlParam.Add("custom_info_uri", updateTestReportCustomDetailByUriRequest.CustomInfoUri.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/versions/{version_uri}/test-reports/{report_uri}/custom-infos/{custom_info_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTestReportCustomDetailByUriRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateTestReportCustomDetailByUriResponse>(response);
+        }
+
+        public SyncInvoker<UpdateTestReportCustomDetailByUriResponse> UpdateTestReportCustomDetailByUriInvoker(UpdateTestReportCustomDetailByUriRequest updateTestReportCustomDetailByUriRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", updateTestReportCustomDetailByUriRequest.ProjectId.ToString());
+            urlParam.Add("version_uri", updateTestReportCustomDetailByUriRequest.VersionUri.ToString());
+            urlParam.Add("report_uri", updateTestReportCustomDetailByUriRequest.ReportUri.ToString());
+            urlParam.Add("custom_info_uri", updateTestReportCustomDetailByUriRequest.CustomInfoUri.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/versions/{version_uri}/test-reports/{report_uri}/custom-infos/{custom_info_uri}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTestReportCustomDetailByUriRequest);
+            return new SyncInvoker<UpdateTestReportCustomDetailByUriResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTestReportCustomDetailByUriResponse>);
+        }
+        
+        /// <summary>
         /// 更新用户DNS映射
         ///
         /// 更新用户DNS映射，执行器自定义映射
@@ -3647,6 +3791,32 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
             var urlPath = HttpUtils.AddUrlPath("/GT3KServer/v4/testcases/{case_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVersionTestCaseRequest);
             return new SyncInvoker<UpdateVersionTestCaseResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVersionTestCaseResponse>);
+        }
+        
+        /// <summary>
+        /// 上传附件
+        ///
+        /// 上传附件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UploadCacheFileResponse UploadCacheFile(UploadCacheFileRequest uploadCacheFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", uploadCacheFileRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/resources/temp-attachments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadCacheFileRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UploadCacheFileResponse>(response);
+        }
+
+        public SyncInvoker<UploadCacheFileResponse> UploadCacheFileInvoker(UploadCacheFileRequest uploadCacheFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("project_id", uploadCacheFileRequest.ProjectId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/resources/temp-attachments", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadCacheFileRequest);
+            return new SyncInvoker<UploadCacheFileResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadCacheFileResponse>);
         }
         
         /// <summary>

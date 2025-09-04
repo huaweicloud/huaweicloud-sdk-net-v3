@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         public string UserName { get; set; }
 
         /// <summary>
+        /// 用户ID
+        /// </summary>
+        [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserId { get; set; }
+
+        /// <summary>
         /// 是否有设置权限
         /// </summary>
         [JsonProperty("setting", NullValueHandling = NullValueHandling.Ignore)]
@@ -72,6 +78,7 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             sb.Append("  modify: ").Append(Modify).Append("\n");
             sb.Append("  usage: ").Append(Usage).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
+            sb.Append("  userId: ").Append(UserId).Append("\n");
             sb.Append("  setting: ").Append(Setting).Append("\n");
             sb.Append("  canAbsent: ").Append(CanAbsent).Append("\n");
             sb.Append("}\n");
@@ -97,6 +104,7 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
             if (this.Modify != input.Modify || (this.Modify != null && !this.Modify.Equals(input.Modify))) return false;
             if (this.Usage != input.Usage || (this.Usage != null && !this.Usage.Equals(input.Usage))) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
             if (this.Setting != input.Setting || (this.Setting != null && !this.Setting.Equals(input.Setting))) return false;
             if (this.CanAbsent != input.CanAbsent || (this.CanAbsent != null && !this.CanAbsent.Equals(input.CanAbsent))) return false;
 
@@ -116,6 +124,7 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
                 if (this.Modify != null) hashCode = hashCode * 59 + this.Modify.GetHashCode();
                 if (this.Usage != null) hashCode = hashCode * 59 + this.Usage.GetHashCode();
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 if (this.Setting != null) hashCode = hashCode * 59 + this.Setting.GetHashCode();
                 if (this.CanAbsent != null) hashCode = hashCode * 59 + this.CanAbsent.GetHashCode();
                 return hashCode;

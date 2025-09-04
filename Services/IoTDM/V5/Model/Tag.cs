@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：标签键，标签的键可用字母(包含中文)、数字、空格和以下字符：下划线(_)点(.)冒号(:)等号(&#x3D;)加号(+)中划线(-)以及@，首尾不能有空格字符 
+        /// **参数说明**：标签键，标签的键可用字母(包含中文)、数字、空格和以下字符：下划线(_)点(.)冒号(:)等号(&#x3D;)加号(+)中划线(-)以及@，首尾不能有空格字符。 
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// **参数说明**：标签值，可为空字符串和null，标签的值可用字母(包含中文)、数字、空格和以下字符：下划线(_)点(.)冒号(:)等号(&#x3D;)加号(+)中划线(-)以及@ 
+        /// **参数说明**：标签值，可为空字符串和null，标签的值可用字母(包含中文)、数字、空格和以下字符：下划线(_)点(.)冒号(:)等号(&#x3D;)加号(+)中划线(-)以及@。 
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

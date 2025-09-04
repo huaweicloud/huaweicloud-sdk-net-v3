@@ -453,6 +453,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public string Tags { get; set; }
 
+        /// <summary>
+        /// 查询flexusrds实例，传flexus。其他场景不传。
+        /// </summary>
+        [SDKProperty("group_type", IsQuery = true)]
+        [JsonProperty("group_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupType { get; set; }
+
 
 
         /// <summary>
@@ -473,6 +480,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  groupType: ").Append(GroupType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -502,6 +510,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.GroupType != input.GroupType || (this.GroupType != null && !this.GroupType.Equals(input.GroupType))) return false;
 
             return true;
         }
@@ -525,6 +534,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.GroupType != null) hashCode = hashCode * 59 + this.GroupType.GetHashCode();
                 return hashCode;
             }
         }

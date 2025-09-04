@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string ServerGroupId { get; set; }
 
         /// <summary>
-        /// 可用分区。 &gt; - 将服务创建到指定的可用分区，如果不指定则使用系统随机的可用分区。 &gt; - 获取方式详见可用区管理ListAvailabilityZone：\&quot;GET  /v1/{project_id}/availability-zone\&quot;。
+        /// 可用分区。 &gt; - [将服务创建到指定的可用分区，如果不指定则使用系统随机的可用分区](tag:HW)[将服务创建到指定的可用分区](tag:HCS)。 &gt; - [获取方式详见可用区管理ListAvailabilityZone：\&quot;GET  /v1/{project_id}/availability-zone\&quot;。](tag:HW)[获取方式详见可用区管理ListAvailabilityZone：\&quot;GET  /v1/{project_id}/availability-zone/summary\&quot;。](tag:HCS)
         /// </summary>
         [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
         public string AvailabilityZone { get; set; }

@@ -88,6 +88,18 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("user_profile", NullValueHandling = NullValueHandling.Ignore)]
         public PoliciesUserProfile UserProfile { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("url_redirection", NullValueHandling = NullValueHandling.Ignore)]
+        public PoliciesUrlRedirection UrlRedirection { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("folder_redirection", NullValueHandling = NullValueHandling.Ignore)]
+        public PoliciesFolderRedirection FolderRedirection { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +121,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  custom: ").Append(Custom).Append("\n");
             sb.Append("  cloudStorage: ").Append(CloudStorage).Append("\n");
             sb.Append("  userProfile: ").Append(UserProfile).Append("\n");
+            sb.Append("  urlRedirection: ").Append(UrlRedirection).Append("\n");
+            sb.Append("  folderRedirection: ").Append(FolderRedirection).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +153,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.Custom != input.Custom || (this.Custom != null && !this.Custom.Equals(input.Custom))) return false;
             if (this.CloudStorage != input.CloudStorage || (this.CloudStorage != null && !this.CloudStorage.Equals(input.CloudStorage))) return false;
             if (this.UserProfile != input.UserProfile || (this.UserProfile != null && !this.UserProfile.Equals(input.UserProfile))) return false;
+            if (this.UrlRedirection != input.UrlRedirection || (this.UrlRedirection != null && !this.UrlRedirection.Equals(input.UrlRedirection))) return false;
+            if (this.FolderRedirection != input.FolderRedirection || (this.FolderRedirection != null && !this.FolderRedirection.Equals(input.FolderRedirection))) return false;
 
             return true;
         }
@@ -163,6 +179,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.Custom != null) hashCode = hashCode * 59 + this.Custom.GetHashCode();
                 if (this.CloudStorage != null) hashCode = hashCode * 59 + this.CloudStorage.GetHashCode();
                 if (this.UserProfile != null) hashCode = hashCode * 59 + this.UserProfile.GetHashCode();
+                if (this.UrlRedirection != null) hashCode = hashCode * 59 + this.UrlRedirection.GetHashCode();
+                if (this.FolderRedirection != null) hashCode = hashCode * 59 + this.FolderRedirection.GetHashCode();
                 return hashCode;
             }
         }

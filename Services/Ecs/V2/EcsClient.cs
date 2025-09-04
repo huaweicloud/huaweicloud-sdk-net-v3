@@ -258,6 +258,31 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 批量卸载卷
+        ///
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDetachVolumesResponse BatchDetachVolumes(BatchDetachVolumesRequest batchDetachVolumesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", batchDetachVolumesRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/batchaction/detachvolumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDetachVolumesRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchDetachVolumesResponse>(response);
+        }
+
+        public SyncInvoker<BatchDetachVolumesResponse> BatchDetachVolumesInvoker(BatchDetachVolumesRequest batchDetachVolumesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("volume_id", batchDetachVolumesRequest.VolumeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/batchaction/detachvolumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDetachVolumesRequest);
+            return new SyncInvoker<BatchDetachVolumesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDetachVolumesResponse>);
+        }
+        
+        /// <summary>
         /// 批量重启云服务器
         ///
         /// 根据给定的云服务器ID列表，批量重启云服务器，一次最多可以重启1000台。
@@ -303,6 +328,30 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/os-reset-passwords", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchResetServersPasswordRequest);
             return new SyncInvoker<BatchResetServersPasswordResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchResetServersPasswordResponse>);
+        }
+        
+        /// <summary>
+        /// 批量变更云服务器规格
+        ///
+        /// 批量变更云服务器规格
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchResizeServersResponse BatchResizeServers(BatchResizeServersRequest batchResizeServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/batch-resize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchResizeServersRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchResizeServersResponse>(response);
+        }
+
+        public SyncInvoker<BatchResizeServersResponse> BatchResizeServersInvoker(BatchResizeServersRequest batchResizeServersRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/batch-resize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchResizeServersRequest);
+            return new SyncInvoker<BatchResizeServersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchResizeServersResponse>);
         }
         
         /// <summary>
@@ -884,6 +933,58 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/nics/{nic_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disassociateServerVirtualIpRequest);
             return new SyncInvoker<DisassociateServerVirtualIpResponse>(this, "PUT", request, JsonUtils.DeSerialize<DisassociateServerVirtualIpResponse>);
+        }
+        
+        /// <summary>
+        /// 触发云服务器内核dump
+        ///
+        /// 触发云服务器内核dump
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExecuteServerDumpResponse ExecuteServerDump(ExecuteServerDumpRequest executeServerDumpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", executeServerDumpRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/actions/trigger-crash-dump", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeServerDumpRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<ExecuteServerDumpResponse>(response);
+        }
+
+        public SyncInvoker<ExecuteServerDumpResponse> ExecuteServerDumpInvoker(ExecuteServerDumpRequest executeServerDumpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", executeServerDumpRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/actions/trigger-crash-dump", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeServerDumpRequest);
+            return new SyncInvoker<ExecuteServerDumpResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ExecuteServerDumpResponse>);
+        }
+        
+        /// <summary>
+        /// 重部署云服务器
+        ///
+        /// 重部署云服务器
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExecuteServerRedeployResponse ExecuteServerRedeploy(ExecuteServerRedeployRequest executeServerRedeployRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", executeServerRedeployRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/actions/redeploy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeServerRedeployRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteServerRedeployResponse>(response);
+        }
+
+        public SyncInvoker<ExecuteServerRedeployResponse> ExecuteServerRedeployInvoker(ExecuteServerRedeployRequest executeServerRedeployRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", executeServerRedeployRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/actions/redeploy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeServerRedeployRequest);
+            return new SyncInvoker<ExecuteServerRedeployResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteServerRedeployResponse>);
         }
         
         /// <summary>
@@ -1926,6 +2027,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/recycle-bin/cloudservers/{server_id}/actions/revert", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revertRecycleBinServerRequest);
             return new SyncInvoker<RevertRecycleBinServerResponse>(this, "POST", request, JsonUtils.DeSerialize<RevertRecycleBinServerResponse>);
+        }
+        
+        /// <summary>
+        /// 查询包周期虚拟机可以追加卷数量
+        ///
+        /// 查询包周期虚拟机可以追加卷数量
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAppendableVolumeQuotaResponse ShowAppendableVolumeQuota(ShowAppendableVolumeQuotaRequest showAppendableVolumeQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showAppendableVolumeQuotaRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/appendvolumequota", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppendableVolumeQuotaRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAppendableVolumeQuotaResponse>(response);
+        }
+
+        public SyncInvoker<ShowAppendableVolumeQuotaResponse> ShowAppendableVolumeQuotaInvoker(ShowAppendableVolumeQuotaRequest showAppendableVolumeQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("server_id", showAppendableVolumeQuotaRequest.ServerId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/appendvolumequota", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppendableVolumeQuotaRequest);
+            return new SyncInvoker<ShowAppendableVolumeQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppendableVolumeQuotaResponse>);
         }
         
         /// <summary>

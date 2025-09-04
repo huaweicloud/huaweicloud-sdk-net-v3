@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：启用Ip白名单访问控制 
+        /// **参数说明**：启用Ip白名单访问控制。 
         /// </summary>
         [JsonProperty("enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enable { get; set; }
 
         /// <summary>
-        /// 允许访问企业版实例的IP地址列表 
+        /// **参数说明**：允许访问企业版实例的IP地址列表。 
         /// </summary>
         [JsonProperty("allow_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<IpAllowList> AllowList { get; set; }

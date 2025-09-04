@@ -65,6 +65,12 @@ namespace HuaweiCloud.SDK.Ces.V3
             "https://ces.my-kualalumpur-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
             "https://ces.ap-southeast-5.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
+            "https://ces.cn-north-12.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_11 = new Region("cn-north-11",
+            "https://ces.cn-north-11.myhuaweicloud.com");
+        public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
+            "https://ces.cn-southwest-3.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CES");
 
@@ -99,6 +105,9 @@ namespace HuaweiCloud.SDK.Ces.V3
                 { "af-north-1", AF_NORTH_1 },
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
                 { "ap-southeast-5", AP_SOUTHEAST_5 },
+                { "cn-north-12", CN_NORTH_12 },
+                { "cn-north-11", CN_NORTH_11 },
+                { "cn-southwest-3", CN_SOUTHWEST_3 },
         };
 
         public static Region ValueOf(string regionId)

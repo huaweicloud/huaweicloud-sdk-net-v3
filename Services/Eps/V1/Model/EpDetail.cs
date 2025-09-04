@@ -172,6 +172,12 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
+        /// <summary>
+        /// 删除标识，false-未删除；true-已删除
+        /// </summary>
+        [JsonProperty("delete_flag", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DeleteFlag { get; set; }
+
 
 
         /// <summary>
@@ -188,6 +194,7 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  deleteFlag: ").Append(DeleteFlag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -213,6 +220,7 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.Type != input.Type) return false;
+            if (this.DeleteFlag != input.DeleteFlag || (this.DeleteFlag != null && !this.DeleteFlag.Equals(input.DeleteFlag))) return false;
 
             return true;
         }
@@ -232,6 +240,7 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.DeleteFlag != null) hashCode = hashCode * 59 + this.DeleteFlag.GetHashCode();
                 return hashCode;
             }
         }

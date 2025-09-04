@@ -266,6 +266,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 创建运营报表订阅任务
+        ///
+        /// create subscription task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateSubscriptionTaskResponse CreateSubscriptionTask(CreateSubscriptionTaskRequest createSubscriptionTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/subscription-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubscriptionTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateSubscriptionTaskResponse>(response);
+        }
+
+        public SyncInvoker<CreateSubscriptionTaskResponse> CreateSubscriptionTaskInvoker(CreateSubscriptionTaskRequest createSubscriptionTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/subscription-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubscriptionTaskRequest);
+            return new SyncInvoker<CreateSubscriptionTaskResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateSubscriptionTaskResponse>);
+        }
+        
+        /// <summary>
         /// 创建资源标签配置接口
         ///
         /// 用于创建资源标签。
@@ -398,6 +422,32 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 删除运营报表订阅任务
+        ///
+        /// delete subscription task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteSubscriptionTaskResponse DeleteSubscriptionTask(DeleteSubscriptionTaskRequest deleteSubscriptionTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteSubscriptionTaskRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/subscription-tasks/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubscriptionTaskRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteSubscriptionTaskResponse>(response);
+        }
+
+        public SyncInvoker<DeleteSubscriptionTaskResponse> DeleteSubscriptionTaskInvoker(DeleteSubscriptionTaskRequest deleteSubscriptionTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", deleteSubscriptionTaskRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/subscription-tasks/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubscriptionTaskRequest);
+            return new SyncInvoker<DeleteSubscriptionTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSubscriptionTaskResponse>);
+        }
+        
+        /// <summary>
         /// 停用加速域名
         ///
         /// 停用加速域名。
@@ -522,6 +572,54 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 查询域名top ip统计分析数据
+        ///
+        /// - 查询域名top ip统计分析数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCdnDomainTopIpsResponse ListCdnDomainTopIps(ListCdnDomainTopIpsRequest listCdnDomainTopIpsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-ips", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopIpsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListCdnDomainTopIpsResponse>(response);
+        }
+
+        public SyncInvoker<ListCdnDomainTopIpsResponse> ListCdnDomainTopIpsInvoker(ListCdnDomainTopIpsRequest listCdnDomainTopIpsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-ips", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopIpsRequest);
+            return new SyncInvoker<ListCdnDomainTopIpsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCdnDomainTopIpsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询域名top回源URL数据
+        ///
+        /// - 查询域名top 回源URL数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCdnDomainTopOriginUrlResponse ListCdnDomainTopOriginUrl(ListCdnDomainTopOriginUrlRequest listCdnDomainTopOriginUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-origin-urls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopOriginUrlRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListCdnDomainTopOriginUrlResponse>(response);
+        }
+
+        public SyncInvoker<ListCdnDomainTopOriginUrlResponse> ListCdnDomainTopOriginUrlInvoker(ListCdnDomainTopOriginUrlRequest listCdnDomainTopOriginUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-origin-urls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopOriginUrlRequest);
+            return new SyncInvoker<ListCdnDomainTopOriginUrlResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCdnDomainTopOriginUrlResponse>);
+        }
+        
+        /// <summary>
         /// 查询统计TOP100 referer数据明细
         ///
         /// - 查询TOP100 referer数据。
@@ -549,6 +647,59 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-refers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopRefersRequest);
             return new SyncInvoker<ListCdnDomainTopRefersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCdnDomainTopRefersResponse>);
+        }
+        
+        /// <summary>
+        /// 查询域名top ua统计分析数据
+        ///
+        /// - 统计分析TOP UA统计数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCdnDomainTopUasResponse ListCdnDomainTopUas(ListCdnDomainTopUasRequest listCdnDomainTopUasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-uas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopUasRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListCdnDomainTopUasResponse>(response);
+        }
+
+        public SyncInvoker<ListCdnDomainTopUasResponse> ListCdnDomainTopUasInvoker(ListCdnDomainTopUasRequest listCdnDomainTopUasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-uas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopUasRequest);
+            return new SyncInvoker<ListCdnDomainTopUasResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCdnDomainTopUasResponse>);
+        }
+        
+        /// <summary>
+        /// 按域名维度查询每天客户端访问详情统计
+        ///
+        /// - 按域名维度查询每天客户端访问详情统计。
+        /// - 支持查询90天内的数据。
+        /// - ip_num查询跨度只支持1天,uv查询跨度只支持5分钟。
+        /// - 起始时间和结束时间，左闭右开，需要同时指定。如查询2022-07-12 00:00:00 到 2022-07-13 00:00:00 的数据，表示取 [2022-07-12 00:00:00, 2022-07-13 00:00:00)的统计数据。
+        /// - ip_num开始时间、结束时间必须传毫秒级时间戳，必须为凌晨0点整时刻点，如果传的不是凌晨0点整时刻点，返回数据可能与预期不一致。
+        /// - uv必须为5分钟整时刻点，如：0分、5分、10分、15分等，如果传的不是5分钟时刻点，返回数据可能与预期不一致
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDomainClientStatsResponse ListDomainClientStats(ListDomainClientStatsRequest listDomainClientStatsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-client-stats", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainClientStatsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDomainClientStatsResponse>(response);
+        }
+
+        public SyncInvoker<ListDomainClientStatsResponse> ListDomainClientStatsInvoker(ListDomainClientStatsRequest listDomainClientStatsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-client-stats", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainClientStatsRequest);
+            return new SyncInvoker<ListDomainClientStatsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainClientStatsResponse>);
         }
         
         /// <summary>
@@ -627,6 +778,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 分页查询运营报表订阅任务
+        ///
+        /// query subscription task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSubscriptionTasksResponse ListSubscriptionTasks(ListSubscriptionTasksRequest listSubscriptionTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/subscription-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubscriptionTasksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSubscriptionTasksResponse>(response);
+        }
+
+        public SyncInvoker<ListSubscriptionTasksResponse> ListSubscriptionTasksInvoker(ListSubscriptionTasksRequest listSubscriptionTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/subscription-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubscriptionTasksRequest);
+            return new SyncInvoker<ListSubscriptionTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSubscriptionTasksResponse>);
+        }
+        
+        /// <summary>
         /// 修改租户配置
         ///
         /// 修改租户配置，当前仅支持开启OBS和SCM委托授权。
@@ -680,6 +855,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/charge/charge-modes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setChargeModesRequest);
             return new SyncInvoker<SetChargeModesResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetChargeModesResponse>);
+        }
+        
+        /// <summary>
+        /// 设置统计配置
+        ///
+        /// - 设置统计配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetStatsConfigResponse SetStatsConfig(SetStatsConfigRequest setStatsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/stats-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setStatsConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<SetStatsConfigResponse>(response);
+        }
+
+        public SyncInvoker<SetStatsConfigResponse> SetStatsConfigInvoker(SetStatsConfigRequest setStatsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/stats-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setStatsConfigRequest);
+            return new SyncInvoker<SetStatsConfigResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SetStatsConfigResponse>);
         }
         
         /// <summary>
@@ -1071,6 +1270,32 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 查询统计配置
+        ///
+        /// - 配置类型：目前支持，
+        /// - 0：热点统计。
+        /// - 1：ces上报。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStatsConfigsResponse ShowStatsConfigs(ShowStatsConfigsRequest showStatsConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/stats-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatsConfigsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStatsConfigsResponse>(response);
+        }
+
+        public SyncInvoker<ShowStatsConfigsResponse> ShowStatsConfigsInvoker(ShowStatsConfigsRequest showStatsConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/stats-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatsConfigsRequest);
+            return new SyncInvoker<ShowStatsConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStatsConfigsResponse>);
+        }
+        
+        /// <summary>
         /// 查询资源标签列表配置接口
         ///
         /// 用于查询资源标签列表。
@@ -1399,6 +1624,32 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/share-cache-groups/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateShareCacheGroupsRequest);
             return new SyncInvoker<UpdateShareCacheGroupsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateShareCacheGroupsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改运营报表订阅任务
+        ///
+        /// modify subscription task
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateSubscriptionTaskResponse UpdateSubscriptionTask(UpdateSubscriptionTaskRequest updateSubscriptionTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateSubscriptionTaskRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/subscription-tasks/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSubscriptionTaskRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateSubscriptionTaskResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSubscriptionTaskResponse> UpdateSubscriptionTaskInvoker(UpdateSubscriptionTaskRequest updateSubscriptionTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("id", updateSubscriptionTaskRequest.Id.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/subscription-tasks/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSubscriptionTaskRequest);
+            return new SyncInvoker<UpdateSubscriptionTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateSubscriptionTaskResponse>);
         }
         
         /// <summary>

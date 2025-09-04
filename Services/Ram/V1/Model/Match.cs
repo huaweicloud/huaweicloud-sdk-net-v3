@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
     {
 
         /// <summary>
-        /// 键。取值范围为policy , organizational-unit, account。
+        /// 键。第一期限定为resource_name,后续扩展。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }

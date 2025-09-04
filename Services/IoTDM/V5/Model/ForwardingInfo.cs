@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         public string Eip { get; set; }
 
         /// <summary>
-        /// **参数说明**：是否启用SNAT配置 **取值范围**： - true: SNAT配置已启用 - false: SNAT配置未启用 
+        /// **参数说明**：是否启用SNAT配置。 **取值范围**： - true: SNAT配置已启用 - false: SNAT配置未启用 
         /// </summary>
         [JsonProperty("enable_snat", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableSnat { get; set; }

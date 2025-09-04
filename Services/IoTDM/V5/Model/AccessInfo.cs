@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：接入地址的类型，如应用接入的HTTPS协议的取值为：APP_HTTPS，设备接入的MQTT协议的取值为：DEVICE_MQTT **取值范围**： - APP_HTTPS：应用接入HTTPS协议 - APP_AMQP：应用接入AMQP协议 - APP_MQTT：应用接入MQTT协议 - DEVICE_COAP：设备接入COAP协议 - DEVICE_MQTT：设备接入MQTT协议 - DEVICE_HTTPS：设备接入HTTPS协议 
+        /// **参数说明**：接入地址的类型，如应用接入的HTTPS协议的取值为：APP_HTTPS，设备接入的MQTT协议的取值为：DEVICE_MQTT。 **取值范围**： - APP_HTTPS：应用接入HTTPS协议 - APP_AMQP：应用接入AMQP协议 - APP_MQTT：应用接入MQTT协议 - DEVICE_COAP：设备接入COAP协议 - DEVICE_MQTT：设备接入MQTT协议 - DEVICE_HTTPS：设备接入HTTPS协议 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// **参数说明**：实例的应用/设备的安全接入端口 
+        /// **参数说明**：实例的应用/设备的安全接入端口。 
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public int? Port { get; set; }
@@ -41,25 +41,25 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         public int? WebsocketPort { get; set; }
 
         /// <summary>
-        /// **参数说明**：实例的接入域名 
+        /// **参数说明**：实例的接入域名。 
         /// </summary>
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
         /// <summary>
-        /// **参数说明**：实例的私网接入地址列表 
+        /// **参数说明**：实例的私网接入地址列表。 
         /// </summary>
         [JsonProperty("private_addresses", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PrivateAddresses { get; set; }
 
         /// <summary>
-        /// **参数说明**：实例的公网接入地址 
+        /// **参数说明**：实例的公网接入地址。 
         /// </summary>
         [JsonProperty("public_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> PublicAddress { get; set; }
 
         /// <summary>
-        /// **参数说明**：实例的ipv6接入地址列表 
+        /// **参数说明**：实例的ipv6接入地址列表。 
         /// </summary>
         [JsonProperty("ipv6_address", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Ipv6Address { get; set; }

@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Bssintl.V2.Model
+{
+    /// <summary>
+    /// Response Object
+    /// </summary>
+    public class CreateEnterpriseRealnameAuthenticationResponse : SdkResponse
+    {
+
+        /// <summary>
+        /// 是否需要转人工审核，只有状态码为200才返回该参数。 0：不需要1：需要
+        /// </summary>
+        [JsonProperty("is_review", NullValueHandling = NullValueHandling.Ignore)]
+        public int? IsReview { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class CreateEnterpriseRealnameAuthenticationResponse {\n");
+            sb.Append("  isReview: ").Append(IsReview).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as CreateEnterpriseRealnameAuthenticationResponse);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(CreateEnterpriseRealnameAuthenticationResponse input)
+        {
+            if (input == null) return false;
+            if (this.IsReview != input.IsReview || (this.IsReview != null && !this.IsReview.Equals(input.IsReview))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.IsReview != null) hashCode = hashCode * 59 + this.IsReview.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

@@ -68,6 +68,30 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 批量实例小版本升级
+        ///
+        /// 批量实例小版本升级
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchUpgradeDatabasesResponse> BatchUpgradeDatabasesAsync(BatchUpgradeDatabasesRequest batchUpgradeDatabasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/database-version/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpgradeDatabasesRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchUpgradeDatabasesResponse>(response);
+        }
+
+        public AsyncInvoker<BatchUpgradeDatabasesResponse> BatchUpgradeDatabasesAsyncInvoker(BatchUpgradeDatabasesRequest batchUpgradeDatabasesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/database-version/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpgradeDatabasesRequest);
+            return new AsyncInvoker<BatchUpgradeDatabasesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchUpgradeDatabasesResponse>);
+        }
+        
+        /// <summary>
         /// 解绑弹性公网IP
         ///
         /// 实例解绑弹性公网IP。
@@ -504,6 +528,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 开启proxy内网DNS
+        ///
+        /// 开启proxy内网DNS。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateProxyDnsNameResponse> CreateProxyDnsNameAsync(CreateProxyDnsNameRequest createProxyDnsNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createProxyDnsNameRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", createProxyDnsNameRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProxyDnsNameRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateProxyDnsNameResponse>(response);
+        }
+
+        public AsyncInvoker<CreateProxyDnsNameResponse> CreateProxyDnsNameAsyncInvoker(CreateProxyDnsNameRequest createProxyDnsNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", createProxyDnsNameRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", createProxyDnsNameRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProxyDnsNameRequest);
+            return new AsyncInvoker<CreateProxyDnsNameResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateProxyDnsNameResponse>);
+        }
+        
+        /// <summary>
         /// 表级时间点恢复
         ///
         /// 表级时间点恢复。
@@ -761,6 +813,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/logs/lts-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteLtsConfigsRequest);
             return new AsyncInvoker<DeleteLtsConfigsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLtsConfigsResponse>);
+        }
+        
+        /// <summary>
+        /// 删除proxy内网dns
+        ///
+        /// 删除proxy内网dns。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteProxyPrivateDnsNameResponse> DeleteProxyPrivateDnsNameAsync(DeleteProxyPrivateDnsNameRequest deleteProxyPrivateDnsNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteProxyPrivateDnsNameRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", deleteProxyPrivateDnsNameRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProxyPrivateDnsNameRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteProxyPrivateDnsNameResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteProxyPrivateDnsNameResponse> DeleteProxyPrivateDnsNameAsyncInvoker(DeleteProxyPrivateDnsNameRequest deleteProxyPrivateDnsNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteProxyPrivateDnsNameRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", deleteProxyPrivateDnsNameRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProxyPrivateDnsNameRequest);
+            return new AsyncInvoker<DeleteProxyPrivateDnsNameResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteProxyPrivateDnsNameResponse>);
         }
         
         /// <summary>
@@ -1026,6 +1106,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/auditlog/download-link", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogDownloadLinkRequest);
             return new AsyncInvoker<ListAuditLogDownloadLinkResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuditLogDownloadLinkResponse>);
+        }
+        
+        /// <summary>
+        /// 获取审计日志列表
+        ///
+        /// 获取审计日志列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAuditLogsResponse> ListAuditLogsAsync(ListAuditLogsRequest listAuditLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditLogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAuditLogsResponse>(response);
+        }
+
+        public AsyncInvoker<ListAuditLogsResponse> ListAuditLogsAsyncInvoker(ListAuditLogsRequest listAuditLogsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditLogsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogsRequest);
+            return new AsyncInvoker<ListAuditLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuditLogsResponse>);
         }
         
         /// <summary>
@@ -1923,6 +2029,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 设置审计日志策略
+        ///
+        /// 设置审计日志策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SetAuditLogPolicyResponse> SetAuditLogPolicyAsync(SetAuditLogPolicyRequest setAuditLogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setAuditLogPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setAuditLogPolicyRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<SetAuditLogPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<SetAuditLogPolicyResponse> SetAuditLogPolicyAsyncInvoker(SetAuditLogPolicyRequest setAuditLogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", setAuditLogPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setAuditLogPolicyRequest);
+            return new AsyncInvoker<SetAuditLogPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetAuditLogPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 设置读写分离权重
         ///
         /// 设置读写分离权重。
@@ -2048,6 +2180,58 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/audit-log/switch-status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditLogRequest);
             return new AsyncInvoker<ShowAuditLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAuditLogResponse>);
+        }
+        
+        /// <summary>
+        /// 生成审计日志下载链接
+        ///
+        /// 生成审计日志下载链接。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAuditLogDownloadLinkResponse> ShowAuditLogDownloadLinkAsync(ShowAuditLogDownloadLinkRequest showAuditLogDownloadLinkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAuditLogDownloadLinkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-link", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showAuditLogDownloadLinkRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowAuditLogDownloadLinkResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAuditLogDownloadLinkResponse> ShowAuditLogDownloadLinkAsyncInvoker(ShowAuditLogDownloadLinkRequest showAuditLogDownloadLinkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAuditLogDownloadLinkRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-link", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showAuditLogDownloadLinkRequest);
+            return new AsyncInvoker<ShowAuditLogDownloadLinkResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowAuditLogDownloadLinkResponse>);
+        }
+        
+        /// <summary>
+        /// 查询审计日志策略
+        ///
+        /// 查询审计日志策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAuditLogPolicyResponse> ShowAuditLogPolicyAsync(ShowAuditLogPolicyRequest showAuditLogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAuditLogPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditLogPolicyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAuditLogPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAuditLogPolicyResponse> ShowAuditLogPolicyAsyncInvoker(ShowAuditLogPolicyRequest showAuditLogPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showAuditLogPolicyRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditLogPolicyRequest);
+            return new AsyncInvoker<ShowAuditLogPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAuditLogPolicyResponse>);
         }
         
         /// <summary>
@@ -2178,6 +2362,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dedicated-resource/{dedicated_resource_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDedicatedResourceInfoRequest);
             return new AsyncInvoker<ShowDedicatedResourceInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDedicatedResourceInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 错误日志下载
+        ///
+        /// 错误日志下载。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowErrorLogDownloadLinkResponse> ShowErrorLogDownloadLinkAsync(ShowErrorLogDownloadLinkRequest showErrorLogDownloadLinkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showErrorLogDownloadLinkRequest.InstanceId.ToString());
+            urlParam.Add("node_id", showErrorLogDownloadLinkRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/errorlog-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showErrorLogDownloadLinkRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowErrorLogDownloadLinkResponse>(response);
+        }
+
+        public AsyncInvoker<ShowErrorLogDownloadLinkResponse> ShowErrorLogDownloadLinkAsyncInvoker(ShowErrorLogDownloadLinkRequest showErrorLogDownloadLinkRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showErrorLogDownloadLinkRequest.InstanceId.ToString());
+            urlParam.Add("node_id", showErrorLogDownloadLinkRequest.NodeId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/errorlog-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showErrorLogDownloadLinkRequest);
+            return new AsyncInvoker<ShowErrorLogDownloadLinkResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowErrorLogDownloadLinkResponse>);
         }
         
         /// <summary>
@@ -2715,6 +2927,30 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 根据azCode查询数据库代理规格信息
+        ///
+        /// 根据azCode查询数据库代理规格信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowProxyFlavorsByAzCodeResponse> ShowProxyFlavorsByAzCodeAsync(ShowProxyFlavorsByAzCodeRequest showProxyFlavorsByAzCodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/proxy/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyFlavorsByAzCodeRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowProxyFlavorsByAzCodeResponse>(response);
+        }
+
+        public AsyncInvoker<ShowProxyFlavorsByAzCodeResponse> ShowProxyFlavorsByAzCodeAsyncInvoker(ShowProxyFlavorsByAzCodeRequest showProxyFlavorsByAzCodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/proxy/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyFlavorsByAzCodeRequest);
+            return new AsyncInvoker<ShowProxyFlavorsByAzCodeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProxyFlavorsByAzCodeResponse>);
+        }
+        
+        /// <summary>
         /// 查询代理实例访问控制
         ///
         /// 查询代理实例访问控制
@@ -2950,6 +3186,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterRuleRequest);
             return new AsyncInvoker<ShowSqlFilterRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSqlFilterRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例库表信息
+        ///
+        /// 查询实例库表信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTableMetaInfoResponse> ShowTableMetaInfoAsync(ShowTableMetaInfoRequest showTableMetaInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showTableMetaInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/table-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTableMetaInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTableMetaInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTableMetaInfoResponse> ShowTableMetaInfoAsyncInvoker(ShowTableMetaInfoRequest showTableMetaInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showTableMetaInfoRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/table-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTableMetaInfoRequest);
+            return new AsyncInvoker<ShowTableMetaInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTableMetaInfoResponse>);
         }
         
         /// <summary>
@@ -3721,6 +3983,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/port", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyPortRequest);
             return new AsyncInvoker<UpdateProxyPortResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProxyPortResponse>);
+        }
+        
+        /// <summary>
+        /// 修改proxy内网dns
+        ///
+        /// 修改proxy内网dns
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateProxyPrivateDnsNameResponse> UpdateProxyPrivateDnsNameAsync(UpdateProxyPrivateDnsNameRequest updateProxyPrivateDnsNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateProxyPrivateDnsNameRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", updateProxyPrivateDnsNameRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyPrivateDnsNameRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateProxyPrivateDnsNameResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateProxyPrivateDnsNameResponse> UpdateProxyPrivateDnsNameAsyncInvoker(UpdateProxyPrivateDnsNameRequest updateProxyPrivateDnsNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateProxyPrivateDnsNameRequest.InstanceId.ToString());
+            urlParam.Add("proxy_id", updateProxyPrivateDnsNameRequest.ProxyId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyPrivateDnsNameRequest);
+            return new AsyncInvoker<UpdateProxyPrivateDnsNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProxyPrivateDnsNameResponse>);
         }
         
         /// <summary>
@@ -4722,6 +5012,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询节点信息
+        ///
+        /// 查询节点信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstanceNodeResponse> ListInstanceNodeAsync(ListInstanceNodeRequest listInstanceNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceNodeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceNodeRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceNodeResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstanceNodeResponse> ListInstanceNodeAsyncInvoker(ListInstanceNodeRequest listInstanceNodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listInstanceNodeRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceNodeRequest);
+            return new AsyncInvoker<ListInstanceNodeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceNodeResponse>);
+        }
+        
+        /// <summary>
         /// 查询StarRocks数据库
         ///
         /// 查询StarRocks数据库。
@@ -4905,6 +5221,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyDataSyncRequest);
             return new AsyncInvoker<ModifyDataSyncResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyDataSyncResponse>);
+        }
+        
+        /// <summary>
+        /// 修改StarRocks安全组
+        ///
+        /// 修改StarRocks安全组。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyStarRocksSecurityGroupResponse> ModifyStarRocksSecurityGroupAsync(ModifyStarRocksSecurityGroupRequest modifyStarRocksSecurityGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyStarRocksSecurityGroupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/security-group", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyStarRocksSecurityGroupRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyStarRocksSecurityGroupResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyStarRocksSecurityGroupResponse> ModifyStarRocksSecurityGroupAsyncInvoker(ModifyStarRocksSecurityGroupRequest modifyStarRocksSecurityGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", modifyStarRocksSecurityGroupRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/security-group", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyStarRocksSecurityGroupRequest);
+            return new AsyncInvoker<ModifyStarRocksSecurityGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyStarRocksSecurityGroupResponse>);
         }
         
         /// <summary>
@@ -5217,6 +5559,108 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClickHouseSlowLogSensitiveStatusRequest);
             return new AsyncInvoker<ShowClickHouseSlowLogSensitiveStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClickHouseSlowLogSensitiveStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 查询错误日志
+        ///
+        /// 获取内核错误日志信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowHtapErrorLogDetailResponse> ShowHtapErrorLogDetailAsync(ShowHtapErrorLogDetailRequest showHtapErrorLogDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showHtapErrorLogDetailRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/error-logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showHtapErrorLogDetailRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowHtapErrorLogDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ShowHtapErrorLogDetailResponse> ShowHtapErrorLogDetailAsyncInvoker(ShowHtapErrorLogDetailRequest showHtapErrorLogDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showHtapErrorLogDetailRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/error-logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showHtapErrorLogDetailRequest);
+            return new AsyncInvoker<ShowHtapErrorLogDetailResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowHtapErrorLogDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例LTS日志配置列表
+        ///
+        /// 查询实例LTS日志配置列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowHtapLtsConfigResponse> ShowHtapLtsConfigAsync(ShowHtapLtsConfigRequest showHtapLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/starrocks/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHtapLtsConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowHtapLtsConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ShowHtapLtsConfigResponse> ShowHtapLtsConfigAsyncInvoker(ShowHtapLtsConfigRequest showHtapLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/starrocks/instances/logs/lts-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHtapLtsConfigRequest);
+            return new AsyncInvoker<ShowHtapLtsConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHtapLtsConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询HTAP主实例数据库
+        ///
+        /// 查询HTAP主实例数据库。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowInstanceDatabasesForHtapResponse> ShowInstanceDatabasesForHtapAsync(ShowInstanceDatabasesForHtapRequest showInstanceDatabasesForHtapRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceDatabasesForHtapRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/databases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showInstanceDatabasesForHtapRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowInstanceDatabasesForHtapResponse>(response);
+        }
+
+        public AsyncInvoker<ShowInstanceDatabasesForHtapResponse> ShowInstanceDatabasesForHtapAsyncInvoker(ShowInstanceDatabasesForHtapRequest showInstanceDatabasesForHtapRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceDatabasesForHtapRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/databases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showInstanceDatabasesForHtapRequest);
+            return new AsyncInvoker<ShowInstanceDatabasesForHtapResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowInstanceDatabasesForHtapResponse>);
+        }
+        
+        /// <summary>
+        /// 查询HTAP主实例数据库表列表
+        ///
+        /// 查询HTAP主实例数据表列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowInstanceTablesForHtapResponse> ShowInstanceTablesForHtapAsync(ShowInstanceTablesForHtapRequest showInstanceTablesForHtapRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceTablesForHtapRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/tables", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showInstanceTablesForHtapRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowInstanceTablesForHtapResponse>(response);
+        }
+
+        public AsyncInvoker<ShowInstanceTablesForHtapResponse> ShowInstanceTablesForHtapAsyncInvoker(ShowInstanceTablesForHtapRequest showInstanceTablesForHtapRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", showInstanceTablesForHtapRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/tables", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showInstanceTablesForHtapRequest);
+            return new AsyncInvoker<ShowInstanceTablesForHtapResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowInstanceTablesForHtapResponse>);
         }
         
         /// <summary>

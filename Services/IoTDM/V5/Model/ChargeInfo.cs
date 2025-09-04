@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         public string PeriodType { get; set; }
 
         /// <summary>
-        /// **参数说明**：订购设备接入实例的周期数。charge_mode为prePaid时生效，且为必选值。 **取值范围**：period_type&#x3D;month（周期类型为月）时，取值为[1，9]；period_type&#x3D;year（周期类型为年）时，取值为[1，3]\&quot; 
+        /// **参数说明**：订购设备接入实例的周期数。charge_mode为prePaid时生效，且为必选值。 **取值范围**：period_type&#x3D;month（周期类型为月）时，取值为[1，9]；period_type&#x3D;year（周期类型为年）时，取值为[1，3]\&quot;。 
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
@@ -41,10 +41,16 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         public bool? IsAutoRenew { get; set; }
 
         /// <summary>
-        /// **参数说明**：创建包年/包月实例时可指定，表示是否自动从客户的账户中支付，此字段不影响自动续订的支付方式。 **取值范围**：true - 自动支付，从账户余额自动扣费; false - 默认值，只提交订单不支付。[需要客户参考[\&quot;支付包年/包月产品订单\&quot;](https://support.huaweicloud.com/api-bpconsole/api_order_00016.html#section0)进行支付，或者在华为云官网页面使用进行支付。](tag:hws) 
+        /// **参数说明**：创建包年/包月实例时可指定，表示是否自动从客户的账户中支付，此字段不影响自动续订的支付方式。 **取值范围**：true - 自动支付，从账户余额自动扣费; false - 默认值，只提交订单不支付。[需要客户参考[支付包年/包月产品订单](https://support.huaweicloud.com/api-bpconsole/api_order_00016.html#section0)进行支付，或者在华为云官网页面使用进行支付。](tag:hws) 
         /// </summary>
         [JsonProperty("is_auto_pay", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAutoPay { get; set; }
+
+        /// <summary>
+        /// **参数说明**：促销信息。 
+        /// </summary>
+        [JsonProperty("promotion_infos", NullValueHandling = NullValueHandling.Ignore)]
+        public string PromotionInfos { get; set; }
 
 
 
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
             sb.Append("  periodNum: ").Append(PeriodNum).Append("\n");
             sb.Append("  isAutoRenew: ").Append(IsAutoRenew).Append("\n");
             sb.Append("  isAutoPay: ").Append(IsAutoPay).Append("\n");
+            sb.Append("  promotionInfos: ").Append(PromotionInfos).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
             if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
             if (this.IsAutoRenew != input.IsAutoRenew || (this.IsAutoRenew != null && !this.IsAutoRenew.Equals(input.IsAutoRenew))) return false;
             if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
+            if (this.PromotionInfos != input.PromotionInfos || (this.PromotionInfos != null && !this.PromotionInfos.Equals(input.PromotionInfos))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
                 if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
                 if (this.IsAutoRenew != null) hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
                 if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                if (this.PromotionInfos != null) hashCode = hashCode * 59 + this.PromotionInfos.GetHashCode();
                 return hashCode;
             }
         }

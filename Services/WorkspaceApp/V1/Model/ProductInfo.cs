@@ -161,7 +161,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string SeriesType { get; set; }
 
         /// <summary>
-        /// 产品套餐过期时间,产品将在改时间点后逐步下架。
+        /// 产品套餐过期时间,产品将在该时间点后逐步下架。
         /// </summary>
         [JsonProperty("expire_time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? ExpireTime { get; set; }

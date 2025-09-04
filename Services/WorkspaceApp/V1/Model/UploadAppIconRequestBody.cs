@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
         public FormDataFilePart Data { get; set; }
 
+        /// <summary>
+        /// base64编码后的png格式图标。
+        /// </summary>
+        [JsonProperty("icon_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string IconUrl { get; set; }
+
 
         
         public UploadAppIconRequestBody WithData(Stream stream, string filename)
@@ -42,7 +48,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         {
             var formData = new Dictionary<string, object>();
 
-            formData.Add("data", Data);
+            if (Data != null) {
+                formData.Add("data", Data);
+            }
+            if (IconUrl != null) {
+                formData.Add("icon_url", new FormDataPart<string>(IconUrl));
+            }
 
             return formData;
         }
@@ -55,6 +66,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             var sb = new StringBuilder();
             sb.Append("class UploadAppIconRequestBody {\n");
             sb.Append("  data: ").Append(Data).Append("\n");
+            sb.Append("  iconUrl: ").Append(IconUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,6 +86,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         {
             if (input == null) return false;
             if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
+            if (this.IconUrl != input.IconUrl || (this.IconUrl != null && !this.IconUrl.Equals(input.IconUrl))) return false;
 
             return true;
         }
@@ -87,6 +100,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             {
                 var hashCode = 41;
                 if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.IconUrl != null) hashCode = hashCode * 59 + this.IconUrl.GetHashCode();
                 return hashCode;
             }
         }

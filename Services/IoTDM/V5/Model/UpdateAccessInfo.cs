@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
     {
 
         /// <summary>
-        /// **参数说明**：接入地址的类型，如应用接入的HTTPS协议的取值为：APP_HTTPS，设备接入的MQTT协议的取值为：DEVICE_MQTT **取值范围**： - APP_HTTPS：应用接入HTTPS协议 - APP_AMQP：应用接入AMQP协议 - APP_MQTT：应用接入MQTT协议 - DEVICE_COAP：设备接入COAP协议 - DEVICE_MQTT：设备接入MQTT协议 - DEVICE_HTTPS：设备接入HTTPS协议 
+        /// **参数说明**：接入地址的类型，如应用接入的HTTPS协议的取值为：APP_HTTPS，设备接入的MQTT协议的取值为：DEVICE_MQTT。 **取值范围**： - APP_HTTPS：应用接入HTTPS协议 - APP_AMQP：应用接入AMQP协议 - APP_MQTT：应用接入MQTT协议 - DEVICE_COAP：设备接入COAP协议 - DEVICE_MQTT：设备接入MQTT协议 - DEVICE_HTTPS：设备接入HTTPS协议 
         /// </summary>
         [JsonProperty("access_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessType { get; set; }
@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// **参数说明**：是否配置公网接入地址，true，false **取值范围**： - true：配置公网接入地址，平台将自动分配公网接入地址。约束：分配地址后将不能修改或删除。 
+        /// **参数说明**：是否配置公网接入地址。 **取值范围**： - true：配置公网接入地址，平台将自动分配公网接入地址。约束：分配地址后将不能修改或删除。 
         /// </summary>
         [JsonProperty("public_addresses_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PublicAddressesEnable { get; set; }
