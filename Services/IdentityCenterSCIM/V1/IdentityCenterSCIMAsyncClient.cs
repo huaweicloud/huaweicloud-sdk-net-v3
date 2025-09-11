@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest createGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", createGroupRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGroupRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGroupRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -39,7 +39,7 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<CreateGroupResponse> CreateGroupAsyncInvoker(CreateGroupRequest createGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", createGroupRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGroupRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGroupRequest);
             return new AsyncInvoker<CreateGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGroupResponse>);
@@ -55,8 +55,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest deleteGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", deleteGroupRequest.TenantId.ToString());
-            urlParam.Add("group_id", deleteGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -66,8 +66,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<DeleteGroupResponse> DeleteGroupAsyncInvoker(DeleteGroupRequest deleteGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", deleteGroupRequest.TenantId.ToString());
-            urlParam.Add("group_id", deleteGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupRequest);
             return new AsyncInvoker<DeleteGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGroupResponse>);
@@ -86,8 +86,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<GetGroupResponse> GetGroupAsync(GetGroupRequest getGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", getGroupRequest.TenantId.ToString());
-            urlParam.Add("group_id", getGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getGroupRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(getGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getGroupRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -97,8 +97,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<GetGroupResponse> GetGroupAsyncInvoker(GetGroupRequest getGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", getGroupRequest.TenantId.ToString());
-            urlParam.Add("group_id", getGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getGroupRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(getGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getGroupRequest);
             return new AsyncInvoker<GetGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<GetGroupResponse>);
@@ -124,7 +124,7 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest listGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", listGroupsRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGroupsRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -134,7 +134,7 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<ListGroupsResponse> ListGroupsAsyncInvoker(ListGroupsRequest listGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", listGroupsRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGroupsRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupsRequest);
             return new AsyncInvoker<ListGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGroupsResponse>);
@@ -154,8 +154,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<PatchGroupResponse> PatchGroupAsync(PatchGroupRequest patchGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", patchGroupRequest.TenantId.ToString());
-            urlParam.Add("group_id", patchGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(patchGroupRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(patchGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", patchGroupRequest);
             var response = await DoHttpRequestAsync("PATCH", request);
@@ -165,8 +165,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<PatchGroupResponse> PatchGroupAsyncInvoker(PatchGroupRequest patchGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", patchGroupRequest.TenantId.ToString());
-            urlParam.Add("group_id", patchGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(patchGroupRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(patchGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", patchGroupRequest);
             return new AsyncInvoker<PatchGroupResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<PatchGroupResponse>);
@@ -182,7 +182,7 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<ServiceProviderConfigResponse> ServiceProviderConfigAsync(ServiceProviderConfigRequest serviceProviderConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", serviceProviderConfigRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(serviceProviderConfigRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/ServiceProviderConfig", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", serviceProviderConfigRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -192,7 +192,7 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<ServiceProviderConfigResponse> ServiceProviderConfigAsyncInvoker(ServiceProviderConfigRequest serviceProviderConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", serviceProviderConfigRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(serviceProviderConfigRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/ServiceProviderConfig", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", serviceProviderConfigRequest);
             return new AsyncInvoker<ServiceProviderConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ServiceProviderConfigResponse>);
@@ -222,7 +222,7 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<CreateUserResponse> CreateUserAsync(CreateUserRequest createUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", createUserRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createUserRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<CreateUserResponse> CreateUserAsyncInvoker(CreateUserRequest createUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", createUserRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createUserRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRequest);
             return new AsyncInvoker<CreateUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUserResponse>);
@@ -248,8 +248,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest deleteUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", deleteUserRequest.TenantId.ToString());
-            urlParam.Add("user_id", deleteUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -259,8 +259,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<DeleteUserResponse> DeleteUserAsyncInvoker(DeleteUserRequest deleteUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", deleteUserRequest.TenantId.ToString());
-            urlParam.Add("user_id", deleteUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
             return new AsyncInvoker<DeleteUserResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteUserResponse>);
@@ -276,8 +276,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<GetUserResponse> GetUserAsync(GetUserRequest getUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", getUserRequest.TenantId.ToString());
-            urlParam.Add("user_id", getUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getUserRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(getUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getUserRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -287,8 +287,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<GetUserResponse> GetUserAsyncInvoker(GetUserRequest getUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", getUserRequest.TenantId.ToString());
-            urlParam.Add("user_id", getUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getUserRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(getUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getUserRequest);
             return new AsyncInvoker<GetUserResponse>(this, "GET", request, JsonUtils.DeSerialize<GetUserResponse>);
@@ -314,7 +314,7 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<ListUsersResponse> ListUsersAsync(ListUsersRequest listUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", listUsersRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUsersRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -324,7 +324,7 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<ListUsersResponse> ListUsersAsyncInvoker(ListUsersRequest listUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", listUsersRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUsersRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
             return new AsyncInvoker<ListUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUsersResponse>);
@@ -357,8 +357,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<PatchUserResponse> PatchUserAsync(PatchUserRequest patchUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", patchUserRequest.TenantId.ToString());
-            urlParam.Add("user_id", patchUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(patchUserRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(patchUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", patchUserRequest);
             var response = await DoHttpRequestAsync("PATCH", request);
@@ -368,8 +368,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<PatchUserResponse> PatchUserAsyncInvoker(PatchUserRequest patchUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", patchUserRequest.TenantId.ToString());
-            urlParam.Add("user_id", patchUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(patchUserRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(patchUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", patchUserRequest);
             return new AsyncInvoker<PatchUserResponse>(this, "PATCH", request, JsonUtils.DeSerialize<PatchUserResponse>);
@@ -399,8 +399,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public async Task<PutUserResponse> PutUserAsync(PutUserRequest putUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", putUserRequest.TenantId.ToString());
-            urlParam.Add("user_id", putUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(putUserRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(putUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", putUserRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -410,8 +410,8 @@ namespace HuaweiCloud.SDK.IdentityCenterSCIM.V1
         public AsyncInvoker<PutUserResponse> PutUserAsyncInvoker(PutUserRequest putUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("tenant_id", putUserRequest.TenantId.ToString());
-            urlParam.Add("user_id", putUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(putUserRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(putUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/{tenant_id}/scim/v2/Users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", putUserRequest);
             return new AsyncInvoker<PutUserResponse>(this, "PUT", request, JsonUtils.DeSerialize<PutUserResponse>);

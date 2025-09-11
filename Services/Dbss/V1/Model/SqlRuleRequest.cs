@@ -17,6 +17,18 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
+        /// 当前页
+        /// </summary>
+        [JsonProperty("page", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Page { get; set; }
+
+        /// <summary>
+        /// 每页大小
+        /// </summary>
+        [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Size { get; set; }
+
+        /// <summary>
         /// 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
         /// </summary>
         [JsonProperty("risk_levels", NullValueHandling = NullValueHandling.Ignore)]
@@ -31,6 +43,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SqlRuleRequest {\n");
+            sb.Append("  page: ").Append(Page).Append("\n");
+            sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  riskLevels: ").Append(RiskLevels).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,6 +64,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public bool Equals(SqlRuleRequest input)
         {
             if (input == null) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.RiskLevels != input.RiskLevels || (this.RiskLevels != null && !this.RiskLevels.Equals(input.RiskLevels))) return false;
 
             return true;
@@ -63,6 +79,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.RiskLevels != null) hashCode = hashCode * 59 + this.RiskLevels.GetHashCode();
                 return hashCode;
             }

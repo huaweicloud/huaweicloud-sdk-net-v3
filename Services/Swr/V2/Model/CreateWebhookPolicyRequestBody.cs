@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public List<string> EventTypes { get; set; }
 
         /// <summary>
-        /// 是否使用
+        /// 是否启用
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }

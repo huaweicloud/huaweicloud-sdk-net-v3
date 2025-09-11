@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public int? Id { get; set; }
 
         /// <summary>
-        /// 触发器策略ID
+        /// 触发器ID
         /// </summary>
         [JsonProperty("policy_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? PolicyId { get; set; }

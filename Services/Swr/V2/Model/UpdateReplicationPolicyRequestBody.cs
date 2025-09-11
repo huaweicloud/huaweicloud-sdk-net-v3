@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 策略描述描述
+        /// 策略描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public bool? Override { get; set; }
 
         /// <summary>
-        /// 是否使用，默认为false
+        /// 是否启用，默认为false
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }

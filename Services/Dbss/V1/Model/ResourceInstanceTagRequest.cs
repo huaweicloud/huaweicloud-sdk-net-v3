@@ -47,10 +47,10 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public List<TagKeyValuesBean> NotTagsAny { get; set; }
 
         /// <summary>
-        /// 
+        /// 仅op_service权限可以使用此字段做资源实例过滤条件。 目前TMS调用时只包含一个tag结构体。 key：_sys_enterprise_project_id value：企业项目id列表 目前TMS调用时，key下面只包含一个value。0表示默认企业项目 sys_tags和租户标签过滤条件（without_any_tag 、tags、tags_any、not_tags、not_tags_any）不能同时使用 无sys_tags时按照tag接口处理，无tag过滤条件时返回全量数据
         /// </summary>
         [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public TagKeyValuesBean SysTags { get; set; }
+        public List<TagKeyValuesBean> SysTags { get; set; }
 
         /// <summary>
         /// 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略 “tags”、“tags_any”、“not_tags”、“not_tags_any”字段
@@ -97,7 +97,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.TagsAny != input.TagsAny || (this.TagsAny != null && input.TagsAny != null && !this.TagsAny.SequenceEqual(input.TagsAny))) return false;
             if (this.NotTagsAny != input.NotTagsAny || (this.NotTagsAny != null && input.NotTagsAny != null && !this.NotTagsAny.SequenceEqual(input.NotTagsAny))) return false;
-            if (this.SysTags != input.SysTags || (this.SysTags != null && !this.SysTags.Equals(input.SysTags))) return false;
+            if (this.SysTags != input.SysTags || (this.SysTags != null && input.SysTags != null && !this.SysTags.SequenceEqual(input.SysTags))) return false;
             if (this.WithoutAnyTag != input.WithoutAnyTag || (this.WithoutAnyTag != null && !this.WithoutAnyTag.Equals(input.WithoutAnyTag))) return false;
 
             return true;

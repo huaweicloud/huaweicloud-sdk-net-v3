@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     public class CreateInstanceRequestBody 
     {
         /// <summary>
-        /// 企业仓库实例规格，目前支持基础版(swr.ee.basic)，企业版(swr.ee.professional)
+        /// 企业仓库实例规格，目前支持企业版(swr.ee.professional)
         /// </summary>
-        /// <value>企业仓库实例规格，目前支持基础版(swr.ee.basic)，企业版(swr.ee.professional)</value>
+        /// <value>企业仓库实例规格，目前支持企业版(swr.ee.professional)</value>
         [JsonConverter(typeof(EnumClassConverter<SpecEnum>))]
         public class SpecEnum
         {
@@ -362,7 +362,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 企业仓库实例规格，目前支持基础版(swr.ee.basic)，企业版(swr.ee.professional)
+        /// 企业仓库实例规格，目前支持企业版(swr.ee.professional)
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public SpecEnum Spec { get; set; }

@@ -26,9 +26,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public AssociateAgencyWithAllProjectsPermissionResponse AssociateAgencyWithAllProjectsPermission(AssociateAgencyWithAllProjectsPermissionRequest associateAgencyWithAllProjectsPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", associateAgencyWithAllProjectsPermissionRequest.AgencyId.ToString());
-            urlParam.Add("domain_id", associateAgencyWithAllProjectsPermissionRequest.DomainId.ToString());
-            urlParam.Add("role_id", associateAgencyWithAllProjectsPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithAllProjectsPermissionRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithAllProjectsPermissionRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithAllProjectsPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateAgencyWithAllProjectsPermissionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -38,9 +38,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<AssociateAgencyWithAllProjectsPermissionResponse> AssociateAgencyWithAllProjectsPermissionInvoker(AssociateAgencyWithAllProjectsPermissionRequest associateAgencyWithAllProjectsPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", associateAgencyWithAllProjectsPermissionRequest.AgencyId.ToString());
-            urlParam.Add("domain_id", associateAgencyWithAllProjectsPermissionRequest.DomainId.ToString());
-            urlParam.Add("role_id", associateAgencyWithAllProjectsPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithAllProjectsPermissionRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithAllProjectsPermissionRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithAllProjectsPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateAgencyWithAllProjectsPermissionRequest);
             return new SyncInvoker<AssociateAgencyWithAllProjectsPermissionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<AssociateAgencyWithAllProjectsPermissionResponse>);
@@ -58,9 +58,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public AssociateAgencyWithDomainPermissionResponse AssociateAgencyWithDomainPermission(AssociateAgencyWithDomainPermissionRequest associateAgencyWithDomainPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", associateAgencyWithDomainPermissionRequest.DomainId.ToString());
-            urlParam.Add("agency_id", associateAgencyWithDomainPermissionRequest.AgencyId.ToString());
-            urlParam.Add("role_id", associateAgencyWithDomainPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithDomainPermissionRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithDomainPermissionRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithDomainPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateAgencyWithDomainPermissionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -70,9 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<AssociateAgencyWithDomainPermissionResponse> AssociateAgencyWithDomainPermissionInvoker(AssociateAgencyWithDomainPermissionRequest associateAgencyWithDomainPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", associateAgencyWithDomainPermissionRequest.DomainId.ToString());
-            urlParam.Add("agency_id", associateAgencyWithDomainPermissionRequest.AgencyId.ToString());
-            urlParam.Add("role_id", associateAgencyWithDomainPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithDomainPermissionRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithDomainPermissionRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithDomainPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateAgencyWithDomainPermissionRequest);
             return new SyncInvoker<AssociateAgencyWithDomainPermissionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<AssociateAgencyWithDomainPermissionResponse>);
@@ -90,9 +90,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public AssociateAgencyWithProjectPermissionResponse AssociateAgencyWithProjectPermission(AssociateAgencyWithProjectPermissionRequest associateAgencyWithProjectPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", associateAgencyWithProjectPermissionRequest.ProjectId.ToString());
-            urlParam.Add("agency_id", associateAgencyWithProjectPermissionRequest.AgencyId.ToString());
-            urlParam.Add("role_id", associateAgencyWithProjectPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithProjectPermissionRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithProjectPermissionRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithProjectPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateAgencyWithProjectPermissionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -102,9 +102,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<AssociateAgencyWithProjectPermissionResponse> AssociateAgencyWithProjectPermissionInvoker(AssociateAgencyWithProjectPermissionRequest associateAgencyWithProjectPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", associateAgencyWithProjectPermissionRequest.ProjectId.ToString());
-            urlParam.Add("agency_id", associateAgencyWithProjectPermissionRequest.AgencyId.ToString());
-            urlParam.Add("role_id", associateAgencyWithProjectPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithProjectPermissionRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithProjectPermissionRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(associateAgencyWithProjectPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateAgencyWithProjectPermissionRequest);
             return new SyncInvoker<AssociateAgencyWithProjectPermissionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<AssociateAgencyWithProjectPermissionResponse>);
@@ -146,9 +146,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public AssociateRoleToGroupOnEnterpriseProjectResponse AssociateRoleToGroupOnEnterpriseProject(AssociateRoleToGroupOnEnterpriseProjectRequest associateRoleToGroupOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", associateRoleToGroupOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("group_id", associateRoleToGroupOnEnterpriseProjectRequest.GroupId.ToString());
-            urlParam.Add("role_id", associateRoleToGroupOnEnterpriseProjectRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToGroupOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToGroupOnEnterpriseProjectRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToGroupOnEnterpriseProjectRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateRoleToGroupOnEnterpriseProjectRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -158,9 +158,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<AssociateRoleToGroupOnEnterpriseProjectResponse> AssociateRoleToGroupOnEnterpriseProjectInvoker(AssociateRoleToGroupOnEnterpriseProjectRequest associateRoleToGroupOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", associateRoleToGroupOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("group_id", associateRoleToGroupOnEnterpriseProjectRequest.GroupId.ToString());
-            urlParam.Add("role_id", associateRoleToGroupOnEnterpriseProjectRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToGroupOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToGroupOnEnterpriseProjectRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToGroupOnEnterpriseProjectRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateRoleToGroupOnEnterpriseProjectRequest);
             return new SyncInvoker<AssociateRoleToGroupOnEnterpriseProjectResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<AssociateRoleToGroupOnEnterpriseProjectResponse>);
@@ -177,9 +177,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public AssociateRoleToUserOnEnterpriseProjectResponse AssociateRoleToUserOnEnterpriseProject(AssociateRoleToUserOnEnterpriseProjectRequest associateRoleToUserOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", associateRoleToUserOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("user_id", associateRoleToUserOnEnterpriseProjectRequest.UserId.ToString());
-            urlParam.Add("role_id", associateRoleToUserOnEnterpriseProjectRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToUserOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToUserOnEnterpriseProjectRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToUserOnEnterpriseProjectRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateRoleToUserOnEnterpriseProjectRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -189,9 +189,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<AssociateRoleToUserOnEnterpriseProjectResponse> AssociateRoleToUserOnEnterpriseProjectInvoker(AssociateRoleToUserOnEnterpriseProjectRequest associateRoleToUserOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", associateRoleToUserOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("user_id", associateRoleToUserOnEnterpriseProjectRequest.UserId.ToString());
-            urlParam.Add("role_id", associateRoleToUserOnEnterpriseProjectRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToUserOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToUserOnEnterpriseProjectRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            if (StringUtils.TryConvertToNonEmptyString(associateRoleToUserOnEnterpriseProjectRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateRoleToUserOnEnterpriseProjectRequest);
             return new SyncInvoker<AssociateRoleToUserOnEnterpriseProjectResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<AssociateRoleToUserOnEnterpriseProjectResponse>);
@@ -209,9 +209,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public CheckAllProjectsPermissionForAgencyResponse CheckAllProjectsPermissionForAgency(CheckAllProjectsPermissionForAgencyRequest checkAllProjectsPermissionForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", checkAllProjectsPermissionForAgencyRequest.AgencyId.ToString());
-            urlParam.Add("domain_id", checkAllProjectsPermissionForAgencyRequest.DomainId.ToString());
-            urlParam.Add("role_id", checkAllProjectsPermissionForAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkAllProjectsPermissionForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(checkAllProjectsPermissionForAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(checkAllProjectsPermissionForAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkAllProjectsPermissionForAgencyRequest);
             var response = DoHttpRequestSync("HEAD", request);
@@ -221,9 +221,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<CheckAllProjectsPermissionForAgencyResponse> CheckAllProjectsPermissionForAgencyInvoker(CheckAllProjectsPermissionForAgencyRequest checkAllProjectsPermissionForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", checkAllProjectsPermissionForAgencyRequest.AgencyId.ToString());
-            urlParam.Add("domain_id", checkAllProjectsPermissionForAgencyRequest.DomainId.ToString());
-            urlParam.Add("role_id", checkAllProjectsPermissionForAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkAllProjectsPermissionForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(checkAllProjectsPermissionForAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(checkAllProjectsPermissionForAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkAllProjectsPermissionForAgencyRequest);
             return new SyncInvoker<CheckAllProjectsPermissionForAgencyResponse>(this, "HEAD", request, JsonUtils.DeSerializeNull<CheckAllProjectsPermissionForAgencyResponse>);
@@ -241,9 +241,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public CheckDomainPermissionForAgencyResponse CheckDomainPermissionForAgency(CheckDomainPermissionForAgencyRequest checkDomainPermissionForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", checkDomainPermissionForAgencyRequest.DomainId.ToString());
-            urlParam.Add("agency_id", checkDomainPermissionForAgencyRequest.AgencyId.ToString());
-            urlParam.Add("role_id", checkDomainPermissionForAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkDomainPermissionForAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(checkDomainPermissionForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(checkDomainPermissionForAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkDomainPermissionForAgencyRequest);
             var response = DoHttpRequestSync("HEAD", request);
@@ -253,9 +253,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<CheckDomainPermissionForAgencyResponse> CheckDomainPermissionForAgencyInvoker(CheckDomainPermissionForAgencyRequest checkDomainPermissionForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", checkDomainPermissionForAgencyRequest.DomainId.ToString());
-            urlParam.Add("agency_id", checkDomainPermissionForAgencyRequest.AgencyId.ToString());
-            urlParam.Add("role_id", checkDomainPermissionForAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkDomainPermissionForAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(checkDomainPermissionForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(checkDomainPermissionForAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkDomainPermissionForAgencyRequest);
             return new SyncInvoker<CheckDomainPermissionForAgencyResponse>(this, "HEAD", request, JsonUtils.DeSerializeNull<CheckDomainPermissionForAgencyResponse>);
@@ -273,9 +273,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public CheckProjectPermissionForAgencyResponse CheckProjectPermissionForAgency(CheckProjectPermissionForAgencyRequest checkProjectPermissionForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", checkProjectPermissionForAgencyRequest.ProjectId.ToString());
-            urlParam.Add("agency_id", checkProjectPermissionForAgencyRequest.AgencyId.ToString());
-            urlParam.Add("role_id", checkProjectPermissionForAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkProjectPermissionForAgencyRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(checkProjectPermissionForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(checkProjectPermissionForAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkProjectPermissionForAgencyRequest);
             var response = DoHttpRequestSync("HEAD", request);
@@ -285,9 +285,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<CheckProjectPermissionForAgencyResponse> CheckProjectPermissionForAgencyInvoker(CheckProjectPermissionForAgencyRequest checkProjectPermissionForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", checkProjectPermissionForAgencyRequest.ProjectId.ToString());
-            urlParam.Add("agency_id", checkProjectPermissionForAgencyRequest.AgencyId.ToString());
-            urlParam.Add("role_id", checkProjectPermissionForAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkProjectPermissionForAgencyRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(checkProjectPermissionForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(checkProjectPermissionForAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkProjectPermissionForAgencyRequest);
             return new SyncInvoker<CheckProjectPermissionForAgencyResponse>(this, "HEAD", request, JsonUtils.DeSerializeNull<CheckProjectPermissionForAgencyResponse>);
@@ -439,8 +439,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public CreateMetadataResponse CreateMetadata(CreateMetadataRequest createMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", createMetadataRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", createMetadataRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createMetadataRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(createMetadataRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3-ext/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMetadataRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -450,8 +450,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<CreateMetadataResponse> CreateMetadataInvoker(CreateMetadataRequest createMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", createMetadataRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", createMetadataRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createMetadataRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(createMetadataRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3-ext/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMetadataRequest);
             return new SyncInvoker<CreateMetadataResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMetadataResponse>);
@@ -493,7 +493,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public CreateOpenIdConnectConfigResponse CreateOpenIdConnectConfig(CreateOpenIdConnectConfigRequest createOpenIdConnectConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", createOpenIdConnectConfigRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createOpenIdConnectConfigRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOpenIdConnectConfigRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -503,7 +503,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<CreateOpenIdConnectConfigResponse> CreateOpenIdConnectConfigInvoker(CreateOpenIdConnectConfigRequest createOpenIdConnectConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", createOpenIdConnectConfigRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createOpenIdConnectConfigRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createOpenIdConnectConfigRequest);
             return new SyncInvoker<CreateOpenIdConnectConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateOpenIdConnectConfigResponse>);
@@ -572,8 +572,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public CreateUnscopedTokenWithIdTokenResponse CreateUnscopedTokenWithIdToken(CreateUnscopedTokenWithIdTokenRequest createUnscopedTokenWithIdTokenRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", createUnscopedTokenWithIdTokenRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", createUnscopedTokenWithIdTokenRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createUnscopedTokenWithIdTokenRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(createUnscopedTokenWithIdTokenRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/auth", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUnscopedTokenWithIdTokenRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -583,8 +583,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<CreateUnscopedTokenWithIdTokenResponse> CreateUnscopedTokenWithIdTokenInvoker(CreateUnscopedTokenWithIdTokenRequest createUnscopedTokenWithIdTokenRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", createUnscopedTokenWithIdTokenRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", createUnscopedTokenWithIdTokenRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createUnscopedTokenWithIdTokenRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(createUnscopedTokenWithIdTokenRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/auth", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUnscopedTokenWithIdTokenRequest);
             return new SyncInvoker<CreateUnscopedTokenWithIdTokenResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUnscopedTokenWithIdTokenResponse>);
@@ -602,7 +602,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public DeleteAgencyResponse DeleteAgency(DeleteAgencyRequest deleteAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", deleteAgencyRequest.AgencyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/agencies/{agency_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAgencyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -612,7 +612,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<DeleteAgencyResponse> DeleteAgencyInvoker(DeleteAgencyRequest deleteAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", deleteAgencyRequest.AgencyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/agencies/{agency_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAgencyRequest);
             return new SyncInvoker<DeleteAgencyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAgencyResponse>);
@@ -656,7 +656,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public DeleteCustomPolicyResponse DeleteCustomPolicy(DeleteCustomPolicyRequest deleteCustomPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", deleteCustomPolicyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomPolicyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCustomPolicyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -666,7 +666,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<DeleteCustomPolicyResponse> DeleteCustomPolicyInvoker(DeleteCustomPolicyRequest deleteCustomPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", deleteCustomPolicyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomPolicyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCustomPolicyRequest);
             return new SyncInvoker<DeleteCustomPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteCustomPolicyResponse>);
@@ -684,9 +684,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public DeleteDomainGroupInheritedRoleResponse DeleteDomainGroupInheritedRole(DeleteDomainGroupInheritedRoleRequest deleteDomainGroupInheritedRoleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", deleteDomainGroupInheritedRoleRequest.DomainId.ToString());
-            urlParam.Add("group_id", deleteDomainGroupInheritedRoleRequest.GroupId.ToString());
-            urlParam.Add("role_id", deleteDomainGroupInheritedRoleRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainGroupInheritedRoleRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainGroupInheritedRoleRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainGroupInheritedRoleRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainGroupInheritedRoleRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -696,9 +696,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<DeleteDomainGroupInheritedRoleResponse> DeleteDomainGroupInheritedRoleInvoker(DeleteDomainGroupInheritedRoleRequest deleteDomainGroupInheritedRoleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", deleteDomainGroupInheritedRoleRequest.DomainId.ToString());
-            urlParam.Add("group_id", deleteDomainGroupInheritedRoleRequest.GroupId.ToString());
-            urlParam.Add("role_id", deleteDomainGroupInheritedRoleRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainGroupInheritedRoleRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainGroupInheritedRoleRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainGroupInheritedRoleRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainGroupInheritedRoleRequest);
             return new SyncInvoker<DeleteDomainGroupInheritedRoleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDomainGroupInheritedRoleResponse>);
@@ -742,8 +742,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneAddUserToGroupResponse KeystoneAddUserToGroup(KeystoneAddUserToGroupRequest keystoneAddUserToGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneAddUserToGroupRequest.GroupId.ToString());
-            urlParam.Add("user_id", keystoneAddUserToGroupRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAddUserToGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAddUserToGroupRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneAddUserToGroupRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -753,8 +753,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneAddUserToGroupResponse> KeystoneAddUserToGroupInvoker(KeystoneAddUserToGroupRequest keystoneAddUserToGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneAddUserToGroupRequest.GroupId.ToString());
-            urlParam.Add("user_id", keystoneAddUserToGroupRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAddUserToGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAddUserToGroupRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneAddUserToGroupRequest);
             return new SyncInvoker<KeystoneAddUserToGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<KeystoneAddUserToGroupResponse>);
@@ -772,9 +772,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneAssociateGroupWithDomainPermissionResponse KeystoneAssociateGroupWithDomainPermission(KeystoneAssociateGroupWithDomainPermissionRequest keystoneAssociateGroupWithDomainPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneAssociateGroupWithDomainPermissionRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneAssociateGroupWithDomainPermissionRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneAssociateGroupWithDomainPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithDomainPermissionRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithDomainPermissionRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithDomainPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneAssociateGroupWithDomainPermissionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -784,9 +784,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneAssociateGroupWithDomainPermissionResponse> KeystoneAssociateGroupWithDomainPermissionInvoker(KeystoneAssociateGroupWithDomainPermissionRequest keystoneAssociateGroupWithDomainPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneAssociateGroupWithDomainPermissionRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneAssociateGroupWithDomainPermissionRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneAssociateGroupWithDomainPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithDomainPermissionRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithDomainPermissionRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithDomainPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneAssociateGroupWithDomainPermissionRequest);
             return new SyncInvoker<KeystoneAssociateGroupWithDomainPermissionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<KeystoneAssociateGroupWithDomainPermissionResponse>);
@@ -804,9 +804,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneAssociateGroupWithProjectPermissionResponse KeystoneAssociateGroupWithProjectPermission(KeystoneAssociateGroupWithProjectPermissionRequest keystoneAssociateGroupWithProjectPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneAssociateGroupWithProjectPermissionRequest.ProjectId.ToString());
-            urlParam.Add("group_id", keystoneAssociateGroupWithProjectPermissionRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneAssociateGroupWithProjectPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithProjectPermissionRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithProjectPermissionRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithProjectPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneAssociateGroupWithProjectPermissionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -816,9 +816,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneAssociateGroupWithProjectPermissionResponse> KeystoneAssociateGroupWithProjectPermissionInvoker(KeystoneAssociateGroupWithProjectPermissionRequest keystoneAssociateGroupWithProjectPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneAssociateGroupWithProjectPermissionRequest.ProjectId.ToString());
-            urlParam.Add("group_id", keystoneAssociateGroupWithProjectPermissionRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneAssociateGroupWithProjectPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithProjectPermissionRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithProjectPermissionRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneAssociateGroupWithProjectPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneAssociateGroupWithProjectPermissionRequest);
             return new SyncInvoker<KeystoneAssociateGroupWithProjectPermissionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<KeystoneAssociateGroupWithProjectPermissionResponse>);
@@ -836,9 +836,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneCheckDomainPermissionForGroupResponse KeystoneCheckDomainPermissionForGroup(KeystoneCheckDomainPermissionForGroupRequest keystoneCheckDomainPermissionForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneCheckDomainPermissionForGroupRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneCheckDomainPermissionForGroupRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneCheckDomainPermissionForGroupRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckDomainPermissionForGroupRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckDomainPermissionForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckDomainPermissionForGroupRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneCheckDomainPermissionForGroupRequest);
             var response = DoHttpRequestSync("HEAD", request);
@@ -848,9 +848,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneCheckDomainPermissionForGroupResponse> KeystoneCheckDomainPermissionForGroupInvoker(KeystoneCheckDomainPermissionForGroupRequest keystoneCheckDomainPermissionForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneCheckDomainPermissionForGroupRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneCheckDomainPermissionForGroupRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneCheckDomainPermissionForGroupRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckDomainPermissionForGroupRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckDomainPermissionForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckDomainPermissionForGroupRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneCheckDomainPermissionForGroupRequest);
             return new SyncInvoker<KeystoneCheckDomainPermissionForGroupResponse>(this, "HEAD", request, JsonUtils.DeSerializeNull<KeystoneCheckDomainPermissionForGroupResponse>);
@@ -868,9 +868,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneCheckProjectPermissionForGroupResponse KeystoneCheckProjectPermissionForGroup(KeystoneCheckProjectPermissionForGroupRequest keystoneCheckProjectPermissionForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneCheckProjectPermissionForGroupRequest.ProjectId.ToString());
-            urlParam.Add("group_id", keystoneCheckProjectPermissionForGroupRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneCheckProjectPermissionForGroupRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckProjectPermissionForGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckProjectPermissionForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckProjectPermissionForGroupRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneCheckProjectPermissionForGroupRequest);
             var response = DoHttpRequestSync("HEAD", request);
@@ -880,9 +880,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneCheckProjectPermissionForGroupResponse> KeystoneCheckProjectPermissionForGroupInvoker(KeystoneCheckProjectPermissionForGroupRequest keystoneCheckProjectPermissionForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneCheckProjectPermissionForGroupRequest.ProjectId.ToString());
-            urlParam.Add("group_id", keystoneCheckProjectPermissionForGroupRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneCheckProjectPermissionForGroupRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckProjectPermissionForGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckProjectPermissionForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckProjectPermissionForGroupRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneCheckProjectPermissionForGroupRequest);
             return new SyncInvoker<KeystoneCheckProjectPermissionForGroupResponse>(this, "HEAD", request, JsonUtils.DeSerializeNull<KeystoneCheckProjectPermissionForGroupResponse>);
@@ -900,8 +900,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneCheckUserInGroupResponse KeystoneCheckUserInGroup(KeystoneCheckUserInGroupRequest keystoneCheckUserInGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneCheckUserInGroupRequest.GroupId.ToString());
-            urlParam.Add("user_id", keystoneCheckUserInGroupRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckUserInGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckUserInGroupRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneCheckUserInGroupRequest);
             var response = DoHttpRequestSync("HEAD", request);
@@ -911,8 +911,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneCheckUserInGroupResponse> KeystoneCheckUserInGroupInvoker(KeystoneCheckUserInGroupRequest keystoneCheckUserInGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneCheckUserInGroupRequest.GroupId.ToString());
-            urlParam.Add("user_id", keystoneCheckUserInGroupRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckUserInGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckUserInGroupRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneCheckUserInGroupRequest);
             return new SyncInvoker<KeystoneCheckUserInGroupResponse>(this, "HEAD", request, JsonUtils.DeSerializeNull<KeystoneCheckUserInGroupResponse>);
@@ -930,9 +930,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneCheckroleForGroupResponse KeystoneCheckroleForGroup(KeystoneCheckroleForGroupRequest keystoneCheckroleForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneCheckroleForGroupRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneCheckroleForGroupRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneCheckroleForGroupRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckroleForGroupRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckroleForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckroleForGroupRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneCheckroleForGroupRequest);
             var response = DoHttpRequestSync("HEAD", request);
@@ -942,9 +942,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneCheckroleForGroupResponse> KeystoneCheckroleForGroupInvoker(KeystoneCheckroleForGroupRequest keystoneCheckroleForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneCheckroleForGroupRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneCheckroleForGroupRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneCheckroleForGroupRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckroleForGroupRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckroleForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCheckroleForGroupRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneCheckroleForGroupRequest);
             return new SyncInvoker<KeystoneCheckroleForGroupResponse>(this, "HEAD", request, JsonUtils.DeSerializeNull<KeystoneCheckroleForGroupResponse>);
@@ -988,7 +988,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneCreateIdentityProviderResponse KeystoneCreateIdentityProvider(KeystoneCreateIdentityProviderRequest keystoneCreateIdentityProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneCreateIdentityProviderRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCreateIdentityProviderRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateIdentityProviderRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -998,7 +998,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneCreateIdentityProviderResponse> KeystoneCreateIdentityProviderInvoker(KeystoneCreateIdentityProviderRequest keystoneCreateIdentityProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneCreateIdentityProviderRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCreateIdentityProviderRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateIdentityProviderRequest);
             return new SyncInvoker<KeystoneCreateIdentityProviderResponse>(this, "PUT", request, JsonUtils.DeSerialize<KeystoneCreateIdentityProviderResponse>);
@@ -1016,7 +1016,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneCreateMappingResponse KeystoneCreateMapping(KeystoneCreateMappingRequest keystoneCreateMappingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneCreateMappingRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCreateMappingRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateMappingRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1026,7 +1026,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneCreateMappingResponse> KeystoneCreateMappingInvoker(KeystoneCreateMappingRequest keystoneCreateMappingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneCreateMappingRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCreateMappingRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateMappingRequest);
             return new SyncInvoker<KeystoneCreateMappingResponse>(this, "PUT", request, JsonUtils.DeSerialize<KeystoneCreateMappingResponse>);
@@ -1070,8 +1070,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneCreateProtocolResponse KeystoneCreateProtocol(KeystoneCreateProtocolRequest keystoneCreateProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", keystoneCreateProtocolRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", keystoneCreateProtocolRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCreateProtocolRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCreateProtocolRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateProtocolRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1081,8 +1081,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneCreateProtocolResponse> KeystoneCreateProtocolInvoker(KeystoneCreateProtocolRequest keystoneCreateProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", keystoneCreateProtocolRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", keystoneCreateProtocolRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCreateProtocolRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneCreateProtocolRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneCreateProtocolRequest);
             return new SyncInvoker<KeystoneCreateProtocolResponse>(this, "PUT", request, JsonUtils.DeSerialize<KeystoneCreateProtocolResponse>);
@@ -1126,7 +1126,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneDeleteGroupResponse KeystoneDeleteGroup(KeystoneDeleteGroupRequest keystoneDeleteGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneDeleteGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneDeleteGroupRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1136,7 +1136,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneDeleteGroupResponse> KeystoneDeleteGroupInvoker(KeystoneDeleteGroupRequest keystoneDeleteGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneDeleteGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneDeleteGroupRequest);
             return new SyncInvoker<KeystoneDeleteGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<KeystoneDeleteGroupResponse>);
@@ -1154,7 +1154,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneDeleteIdentityProviderResponse KeystoneDeleteIdentityProvider(KeystoneDeleteIdentityProviderRequest keystoneDeleteIdentityProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneDeleteIdentityProviderRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteIdentityProviderRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneDeleteIdentityProviderRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1164,7 +1164,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneDeleteIdentityProviderResponse> KeystoneDeleteIdentityProviderInvoker(KeystoneDeleteIdentityProviderRequest keystoneDeleteIdentityProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneDeleteIdentityProviderRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteIdentityProviderRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneDeleteIdentityProviderRequest);
             return new SyncInvoker<KeystoneDeleteIdentityProviderResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<KeystoneDeleteIdentityProviderResponse>);
@@ -1182,7 +1182,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneDeleteMappingResponse KeystoneDeleteMapping(KeystoneDeleteMappingRequest keystoneDeleteMappingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneDeleteMappingRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteMappingRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneDeleteMappingRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1192,7 +1192,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneDeleteMappingResponse> KeystoneDeleteMappingInvoker(KeystoneDeleteMappingRequest keystoneDeleteMappingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneDeleteMappingRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteMappingRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneDeleteMappingRequest);
             return new SyncInvoker<KeystoneDeleteMappingResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<KeystoneDeleteMappingResponse>);
@@ -1210,8 +1210,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneDeleteProtocolResponse KeystoneDeleteProtocol(KeystoneDeleteProtocolRequest keystoneDeleteProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", keystoneDeleteProtocolRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", keystoneDeleteProtocolRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteProtocolRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteProtocolRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneDeleteProtocolRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1221,8 +1221,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneDeleteProtocolResponse> KeystoneDeleteProtocolInvoker(KeystoneDeleteProtocolRequest keystoneDeleteProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", keystoneDeleteProtocolRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", keystoneDeleteProtocolRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteProtocolRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteProtocolRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneDeleteProtocolRequest);
             return new SyncInvoker<KeystoneDeleteProtocolResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<KeystoneDeleteProtocolResponse>);
@@ -1238,8 +1238,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneListAllProjectPermissionsForGroupResponse KeystoneListAllProjectPermissionsForGroup(KeystoneListAllProjectPermissionsForGroupRequest keystoneListAllProjectPermissionsForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneListAllProjectPermissionsForGroupRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneListAllProjectPermissionsForGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListAllProjectPermissionsForGroupRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListAllProjectPermissionsForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListAllProjectPermissionsForGroupRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1249,8 +1249,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneListAllProjectPermissionsForGroupResponse> KeystoneListAllProjectPermissionsForGroupInvoker(KeystoneListAllProjectPermissionsForGroupRequest keystoneListAllProjectPermissionsForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneListAllProjectPermissionsForGroupRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneListAllProjectPermissionsForGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListAllProjectPermissionsForGroupRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListAllProjectPermissionsForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListAllProjectPermissionsForGroupRequest);
             return new SyncInvoker<KeystoneListAllProjectPermissionsForGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneListAllProjectPermissionsForGroupResponse>);
@@ -1320,8 +1320,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneListDomainPermissionsForGroupResponse KeystoneListDomainPermissionsForGroup(KeystoneListDomainPermissionsForGroupRequest keystoneListDomainPermissionsForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneListDomainPermissionsForGroupRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneListDomainPermissionsForGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListDomainPermissionsForGroupRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListDomainPermissionsForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListDomainPermissionsForGroupRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1331,8 +1331,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneListDomainPermissionsForGroupResponse> KeystoneListDomainPermissionsForGroupInvoker(KeystoneListDomainPermissionsForGroupRequest keystoneListDomainPermissionsForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneListDomainPermissionsForGroupRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneListDomainPermissionsForGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListDomainPermissionsForGroupRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListDomainPermissionsForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListDomainPermissionsForGroupRequest);
             return new SyncInvoker<KeystoneListDomainPermissionsForGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneListDomainPermissionsForGroupResponse>);
@@ -1534,8 +1534,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneListProjectPermissionsForGroupResponse KeystoneListProjectPermissionsForGroup(KeystoneListProjectPermissionsForGroupRequest keystoneListProjectPermissionsForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneListProjectPermissionsForGroupRequest.ProjectId.ToString());
-            urlParam.Add("group_id", keystoneListProjectPermissionsForGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListProjectPermissionsForGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListProjectPermissionsForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListProjectPermissionsForGroupRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1545,8 +1545,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneListProjectPermissionsForGroupResponse> KeystoneListProjectPermissionsForGroupInvoker(KeystoneListProjectPermissionsForGroupRequest keystoneListProjectPermissionsForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneListProjectPermissionsForGroupRequest.ProjectId.ToString());
-            urlParam.Add("group_id", keystoneListProjectPermissionsForGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListProjectPermissionsForGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListProjectPermissionsForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListProjectPermissionsForGroupRequest);
             return new SyncInvoker<KeystoneListProjectPermissionsForGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneListProjectPermissionsForGroupResponse>);
@@ -1590,7 +1590,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneListProjectsForUserResponse KeystoneListProjectsForUser(KeystoneListProjectsForUserRequest keystoneListProjectsForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneListProjectsForUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListProjectsForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}/projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListProjectsForUserRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1600,7 +1600,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneListProjectsForUserResponse> KeystoneListProjectsForUserInvoker(KeystoneListProjectsForUserRequest keystoneListProjectsForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneListProjectsForUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListProjectsForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}/projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListProjectsForUserRequest);
             return new SyncInvoker<KeystoneListProjectsForUserResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneListProjectsForUserResponse>);
@@ -1618,7 +1618,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneListProtocolsResponse KeystoneListProtocols(KeystoneListProtocolsRequest keystoneListProtocolsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", keystoneListProtocolsRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListProtocolsRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListProtocolsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1628,7 +1628,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneListProtocolsResponse> KeystoneListProtocolsInvoker(KeystoneListProtocolsRequest keystoneListProtocolsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", keystoneListProtocolsRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListProtocolsRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListProtocolsRequest);
             return new SyncInvoker<KeystoneListProtocolsResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneListProtocolsResponse>);
@@ -1724,9 +1724,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneRemoveDomainPermissionFromGroupResponse KeystoneRemoveDomainPermissionFromGroup(KeystoneRemoveDomainPermissionFromGroupRequest keystoneRemoveDomainPermissionFromGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneRemoveDomainPermissionFromGroupRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneRemoveDomainPermissionFromGroupRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneRemoveDomainPermissionFromGroupRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveDomainPermissionFromGroupRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveDomainPermissionFromGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveDomainPermissionFromGroupRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneRemoveDomainPermissionFromGroupRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1736,9 +1736,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneRemoveDomainPermissionFromGroupResponse> KeystoneRemoveDomainPermissionFromGroupInvoker(KeystoneRemoveDomainPermissionFromGroupRequest keystoneRemoveDomainPermissionFromGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneRemoveDomainPermissionFromGroupRequest.DomainId.ToString());
-            urlParam.Add("group_id", keystoneRemoveDomainPermissionFromGroupRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneRemoveDomainPermissionFromGroupRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveDomainPermissionFromGroupRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveDomainPermissionFromGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveDomainPermissionFromGroupRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneRemoveDomainPermissionFromGroupRequest);
             return new SyncInvoker<KeystoneRemoveDomainPermissionFromGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<KeystoneRemoveDomainPermissionFromGroupResponse>);
@@ -1756,9 +1756,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneRemoveProjectPermissionFromGroupResponse KeystoneRemoveProjectPermissionFromGroup(KeystoneRemoveProjectPermissionFromGroupRequest keystoneRemoveProjectPermissionFromGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneRemoveProjectPermissionFromGroupRequest.ProjectId.ToString());
-            urlParam.Add("group_id", keystoneRemoveProjectPermissionFromGroupRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneRemoveProjectPermissionFromGroupRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveProjectPermissionFromGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveProjectPermissionFromGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveProjectPermissionFromGroupRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneRemoveProjectPermissionFromGroupRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1768,9 +1768,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneRemoveProjectPermissionFromGroupResponse> KeystoneRemoveProjectPermissionFromGroupInvoker(KeystoneRemoveProjectPermissionFromGroupRequest keystoneRemoveProjectPermissionFromGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneRemoveProjectPermissionFromGroupRequest.ProjectId.ToString());
-            urlParam.Add("group_id", keystoneRemoveProjectPermissionFromGroupRequest.GroupId.ToString());
-            urlParam.Add("role_id", keystoneRemoveProjectPermissionFromGroupRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveProjectPermissionFromGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveProjectPermissionFromGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveProjectPermissionFromGroupRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneRemoveProjectPermissionFromGroupRequest);
             return new SyncInvoker<KeystoneRemoveProjectPermissionFromGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<KeystoneRemoveProjectPermissionFromGroupResponse>);
@@ -1788,8 +1788,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneRemoveUserFromGroupResponse KeystoneRemoveUserFromGroup(KeystoneRemoveUserFromGroupRequest keystoneRemoveUserFromGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneRemoveUserFromGroupRequest.GroupId.ToString());
-            urlParam.Add("user_id", keystoneRemoveUserFromGroupRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveUserFromGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveUserFromGroupRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneRemoveUserFromGroupRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1799,8 +1799,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneRemoveUserFromGroupResponse> KeystoneRemoveUserFromGroupInvoker(KeystoneRemoveUserFromGroupRequest keystoneRemoveUserFromGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneRemoveUserFromGroupRequest.GroupId.ToString());
-            urlParam.Add("user_id", keystoneRemoveUserFromGroupRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveUserFromGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneRemoveUserFromGroupRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneRemoveUserFromGroupRequest);
             return new SyncInvoker<KeystoneRemoveUserFromGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<KeystoneRemoveUserFromGroupResponse>);
@@ -1844,7 +1844,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowEndpointResponse KeystoneShowEndpoint(KeystoneShowEndpointRequest keystoneShowEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", keystoneShowEndpointRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowEndpointRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v3/endpoints/{endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowEndpointRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1854,7 +1854,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowEndpointResponse> KeystoneShowEndpointInvoker(KeystoneShowEndpointRequest keystoneShowEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", keystoneShowEndpointRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowEndpointRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v3/endpoints/{endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowEndpointRequest);
             return new SyncInvoker<KeystoneShowEndpointResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowEndpointResponse>);
@@ -1872,7 +1872,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowGroupResponse KeystoneShowGroup(KeystoneShowGroupRequest keystoneShowGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneShowGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowGroupRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1882,7 +1882,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowGroupResponse> KeystoneShowGroupInvoker(KeystoneShowGroupRequest keystoneShowGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneShowGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowGroupRequest);
             return new SyncInvoker<KeystoneShowGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowGroupResponse>);
@@ -1900,7 +1900,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowIdentityProviderResponse KeystoneShowIdentityProvider(KeystoneShowIdentityProviderRequest keystoneShowIdentityProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneShowIdentityProviderRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowIdentityProviderRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowIdentityProviderRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1910,7 +1910,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowIdentityProviderResponse> KeystoneShowIdentityProviderInvoker(KeystoneShowIdentityProviderRequest keystoneShowIdentityProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneShowIdentityProviderRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowIdentityProviderRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowIdentityProviderRequest);
             return new SyncInvoker<KeystoneShowIdentityProviderResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowIdentityProviderResponse>);
@@ -1928,7 +1928,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowMappingResponse KeystoneShowMapping(KeystoneShowMappingRequest keystoneShowMappingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneShowMappingRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowMappingRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowMappingRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1938,7 +1938,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowMappingResponse> KeystoneShowMappingInvoker(KeystoneShowMappingRequest keystoneShowMappingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneShowMappingRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowMappingRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowMappingRequest);
             return new SyncInvoker<KeystoneShowMappingResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowMappingResponse>);
@@ -1956,7 +1956,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowPermissionResponse KeystoneShowPermission(KeystoneShowPermissionRequest keystoneShowPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", keystoneShowPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowPermissionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1966,7 +1966,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowPermissionResponse> KeystoneShowPermissionInvoker(KeystoneShowPermissionRequest keystoneShowPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", keystoneShowPermissionRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowPermissionRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowPermissionRequest);
             return new SyncInvoker<KeystoneShowPermissionResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowPermissionResponse>);
@@ -1984,7 +1984,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowProjectResponse KeystoneShowProject(KeystoneShowProjectRequest keystoneShowProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneShowProjectRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowProjectRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowProjectRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1994,7 +1994,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowProjectResponse> KeystoneShowProjectInvoker(KeystoneShowProjectRequest keystoneShowProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneShowProjectRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowProjectRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowProjectRequest);
             return new SyncInvoker<KeystoneShowProjectResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowProjectResponse>);
@@ -2012,8 +2012,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowProtocolResponse KeystoneShowProtocol(KeystoneShowProtocolRequest keystoneShowProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", keystoneShowProtocolRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", keystoneShowProtocolRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowProtocolRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowProtocolRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowProtocolRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2023,8 +2023,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowProtocolResponse> KeystoneShowProtocolInvoker(KeystoneShowProtocolRequest keystoneShowProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", keystoneShowProtocolRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", keystoneShowProtocolRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowProtocolRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowProtocolRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowProtocolRequest);
             return new SyncInvoker<KeystoneShowProtocolResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowProtocolResponse>);
@@ -2042,7 +2042,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowRegionResponse KeystoneShowRegion(KeystoneShowRegionRequest keystoneShowRegionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region_id", keystoneShowRegionRequest.RegionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowRegionRequest.RegionId, out var valueOfRegionId)) urlParam.Add("region_id", valueOfRegionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/regions/{region_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowRegionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2052,7 +2052,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowRegionResponse> KeystoneShowRegionInvoker(KeystoneShowRegionRequest keystoneShowRegionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region_id", keystoneShowRegionRequest.RegionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowRegionRequest.RegionId, out var valueOfRegionId)) urlParam.Add("region_id", valueOfRegionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/regions/{region_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowRegionRequest);
             return new SyncInvoker<KeystoneShowRegionResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowRegionResponse>);
@@ -2070,7 +2070,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowSecurityComplianceResponse KeystoneShowSecurityCompliance(KeystoneShowSecurityComplianceRequest keystoneShowSecurityComplianceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneShowSecurityComplianceRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowSecurityComplianceRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/config/security_compliance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowSecurityComplianceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2080,7 +2080,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowSecurityComplianceResponse> KeystoneShowSecurityComplianceInvoker(KeystoneShowSecurityComplianceRequest keystoneShowSecurityComplianceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneShowSecurityComplianceRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowSecurityComplianceRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/config/security_compliance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowSecurityComplianceRequest);
             return new SyncInvoker<KeystoneShowSecurityComplianceResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowSecurityComplianceResponse>);
@@ -2098,8 +2098,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowSecurityComplianceByOptionResponse KeystoneShowSecurityComplianceByOption(KeystoneShowSecurityComplianceByOptionRequest keystoneShowSecurityComplianceByOptionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneShowSecurityComplianceByOptionRequest.DomainId.ToString());
-            urlParam.Add("option", keystoneShowSecurityComplianceByOptionRequest.Option.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowSecurityComplianceByOptionRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowSecurityComplianceByOptionRequest.Option, out var valueOfOption)) urlParam.Add("option", valueOfOption);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/config/security_compliance/{option}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowSecurityComplianceByOptionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2109,8 +2109,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowSecurityComplianceByOptionResponse> KeystoneShowSecurityComplianceByOptionInvoker(KeystoneShowSecurityComplianceByOptionRequest keystoneShowSecurityComplianceByOptionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", keystoneShowSecurityComplianceByOptionRequest.DomainId.ToString());
-            urlParam.Add("option", keystoneShowSecurityComplianceByOptionRequest.Option.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowSecurityComplianceByOptionRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowSecurityComplianceByOptionRequest.Option, out var valueOfOption)) urlParam.Add("option", valueOfOption);
             var urlPath = HttpUtils.AddUrlPath("/v3/domains/{domain_id}/config/security_compliance/{option}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowSecurityComplianceByOptionRequest);
             return new SyncInvoker<KeystoneShowSecurityComplianceByOptionResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowSecurityComplianceByOptionResponse>);
@@ -2128,7 +2128,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowServiceResponse KeystoneShowService(KeystoneShowServiceRequest keystoneShowServiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("service_id", keystoneShowServiceRequest.ServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowServiceRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/services/{service_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowServiceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2138,7 +2138,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowServiceResponse> KeystoneShowServiceInvoker(KeystoneShowServiceRequest keystoneShowServiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("service_id", keystoneShowServiceRequest.ServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowServiceRequest.ServiceId, out var valueOfServiceId)) urlParam.Add("service_id", valueOfServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/services/{service_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowServiceRequest);
             return new SyncInvoker<KeystoneShowServiceResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowServiceResponse>);
@@ -2182,7 +2182,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneUpdateGroupResponse KeystoneUpdateGroup(KeystoneUpdateGroupRequest keystoneUpdateGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneUpdateGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateGroupRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -2192,7 +2192,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneUpdateGroupResponse> KeystoneUpdateGroupInvoker(KeystoneUpdateGroupRequest keystoneUpdateGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneUpdateGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateGroupRequest);
             return new SyncInvoker<KeystoneUpdateGroupResponse>(this, "PATCH", request, JsonUtils.DeSerialize<KeystoneUpdateGroupResponse>);
@@ -2210,7 +2210,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneUpdateIdentityProviderResponse KeystoneUpdateIdentityProvider(KeystoneUpdateIdentityProviderRequest keystoneUpdateIdentityProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneUpdateIdentityProviderRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateIdentityProviderRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateIdentityProviderRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -2220,7 +2220,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneUpdateIdentityProviderResponse> KeystoneUpdateIdentityProviderInvoker(KeystoneUpdateIdentityProviderRequest keystoneUpdateIdentityProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneUpdateIdentityProviderRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateIdentityProviderRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateIdentityProviderRequest);
             return new SyncInvoker<KeystoneUpdateIdentityProviderResponse>(this, "PATCH", request, JsonUtils.DeSerialize<KeystoneUpdateIdentityProviderResponse>);
@@ -2238,7 +2238,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneUpdateMappingResponse KeystoneUpdateMapping(KeystoneUpdateMappingRequest keystoneUpdateMappingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneUpdateMappingRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateMappingRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateMappingRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -2248,7 +2248,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneUpdateMappingResponse> KeystoneUpdateMappingInvoker(KeystoneUpdateMappingRequest keystoneUpdateMappingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", keystoneUpdateMappingRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateMappingRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/mappings/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateMappingRequest);
             return new SyncInvoker<KeystoneUpdateMappingResponse>(this, "PATCH", request, JsonUtils.DeSerialize<KeystoneUpdateMappingResponse>);
@@ -2266,7 +2266,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneUpdateProjectResponse KeystoneUpdateProject(KeystoneUpdateProjectRequest keystoneUpdateProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneUpdateProjectRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateProjectRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateProjectRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -2276,7 +2276,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneUpdateProjectResponse> KeystoneUpdateProjectInvoker(KeystoneUpdateProjectRequest keystoneUpdateProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", keystoneUpdateProjectRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateProjectRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3/projects/{project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateProjectRequest);
             return new SyncInvoker<KeystoneUpdateProjectResponse>(this, "PATCH", request, JsonUtils.DeSerialize<KeystoneUpdateProjectResponse>);
@@ -2294,8 +2294,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneUpdateProtocolResponse KeystoneUpdateProtocol(KeystoneUpdateProtocolRequest keystoneUpdateProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", keystoneUpdateProtocolRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", keystoneUpdateProtocolRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateProtocolRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateProtocolRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateProtocolRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -2305,8 +2305,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneUpdateProtocolResponse> KeystoneUpdateProtocolInvoker(KeystoneUpdateProtocolRequest keystoneUpdateProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", keystoneUpdateProtocolRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", keystoneUpdateProtocolRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateProtocolRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateProtocolRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateProtocolRequest);
             return new SyncInvoker<KeystoneUpdateProtocolResponse>(this, "PATCH", request, JsonUtils.DeSerialize<KeystoneUpdateProtocolResponse>);
@@ -2350,8 +2350,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ListAllProjectsPermissionsForAgencyResponse ListAllProjectsPermissionsForAgency(ListAllProjectsPermissionsForAgencyRequest listAllProjectsPermissionsForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", listAllProjectsPermissionsForAgencyRequest.AgencyId.ToString());
-            urlParam.Add("domain_id", listAllProjectsPermissionsForAgencyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAllProjectsPermissionsForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(listAllProjectsPermissionsForAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllProjectsPermissionsForAgencyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2361,8 +2361,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ListAllProjectsPermissionsForAgencyResponse> ListAllProjectsPermissionsForAgencyInvoker(ListAllProjectsPermissionsForAgencyRequest listAllProjectsPermissionsForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", listAllProjectsPermissionsForAgencyRequest.AgencyId.ToString());
-            urlParam.Add("domain_id", listAllProjectsPermissionsForAgencyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAllProjectsPermissionsForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(listAllProjectsPermissionsForAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAllProjectsPermissionsForAgencyRequest);
             return new SyncInvoker<ListAllProjectsPermissionsForAgencyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAllProjectsPermissionsForAgencyResponse>);
@@ -2406,8 +2406,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ListDomainPermissionsForAgencyResponse ListDomainPermissionsForAgency(ListDomainPermissionsForAgencyRequest listDomainPermissionsForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listDomainPermissionsForAgencyRequest.DomainId.ToString());
-            urlParam.Add("agency_id", listDomainPermissionsForAgencyRequest.AgencyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDomainPermissionsForAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(listDomainPermissionsForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainPermissionsForAgencyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2417,8 +2417,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ListDomainPermissionsForAgencyResponse> ListDomainPermissionsForAgencyInvoker(ListDomainPermissionsForAgencyRequest listDomainPermissionsForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listDomainPermissionsForAgencyRequest.DomainId.ToString());
-            urlParam.Add("agency_id", listDomainPermissionsForAgencyRequest.AgencyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDomainPermissionsForAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(listDomainPermissionsForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainPermissionsForAgencyRequest);
             return new SyncInvoker<ListDomainPermissionsForAgencyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainPermissionsForAgencyResponse>);
@@ -2436,7 +2436,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ListEnterpriseProjectsForGroupResponse ListEnterpriseProjectsForGroup(ListEnterpriseProjectsForGroupRequest listEnterpriseProjectsForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listEnterpriseProjectsForGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEnterpriseProjectsForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/groups/{group_id}/enterprise-projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnterpriseProjectsForGroupRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2446,7 +2446,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ListEnterpriseProjectsForGroupResponse> ListEnterpriseProjectsForGroupInvoker(ListEnterpriseProjectsForGroupRequest listEnterpriseProjectsForGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listEnterpriseProjectsForGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEnterpriseProjectsForGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/groups/{group_id}/enterprise-projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnterpriseProjectsForGroupRequest);
             return new SyncInvoker<ListEnterpriseProjectsForGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEnterpriseProjectsForGroupResponse>);
@@ -2464,7 +2464,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ListEnterpriseProjectsForUserResponse ListEnterpriseProjectsForUser(ListEnterpriseProjectsForUserRequest listEnterpriseProjectsForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", listEnterpriseProjectsForUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEnterpriseProjectsForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/users/{user_id}/enterprise-projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnterpriseProjectsForUserRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2474,7 +2474,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ListEnterpriseProjectsForUserResponse> ListEnterpriseProjectsForUserInvoker(ListEnterpriseProjectsForUserRequest listEnterpriseProjectsForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", listEnterpriseProjectsForUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEnterpriseProjectsForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/users/{user_id}/enterprise-projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnterpriseProjectsForUserRequest);
             return new SyncInvoker<ListEnterpriseProjectsForUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEnterpriseProjectsForUserResponse>);
@@ -2492,7 +2492,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ListGroupsForEnterpriseProjectResponse ListGroupsForEnterpriseProject(ListGroupsForEnterpriseProjectRequest listGroupsForEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", listGroupsForEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGroupsForEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupsForEnterpriseProjectRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2502,7 +2502,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ListGroupsForEnterpriseProjectResponse> ListGroupsForEnterpriseProjectInvoker(ListGroupsForEnterpriseProjectRequest listGroupsForEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", listGroupsForEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGroupsForEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupsForEnterpriseProjectRequest);
             return new SyncInvoker<ListGroupsForEnterpriseProjectResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGroupsForEnterpriseProjectResponse>);
@@ -2520,8 +2520,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ListProjectPermissionsForAgencyResponse ListProjectPermissionsForAgency(ListProjectPermissionsForAgencyRequest listProjectPermissionsForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", listProjectPermissionsForAgencyRequest.ProjectId.ToString());
-            urlParam.Add("agency_id", listProjectPermissionsForAgencyRequest.AgencyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listProjectPermissionsForAgencyRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listProjectPermissionsForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectPermissionsForAgencyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2531,8 +2531,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ListProjectPermissionsForAgencyResponse> ListProjectPermissionsForAgencyInvoker(ListProjectPermissionsForAgencyRequest listProjectPermissionsForAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", listProjectPermissionsForAgencyRequest.ProjectId.ToString());
-            urlParam.Add("agency_id", listProjectPermissionsForAgencyRequest.AgencyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listProjectPermissionsForAgencyRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listProjectPermissionsForAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectPermissionsForAgencyRequest);
             return new SyncInvoker<ListProjectPermissionsForAgencyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectPermissionsForAgencyResponse>);
@@ -2550,8 +2550,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ListRolesForGroupOnEnterpriseProjectResponse ListRolesForGroupOnEnterpriseProject(ListRolesForGroupOnEnterpriseProjectRequest listRolesForGroupOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", listRolesForGroupOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("group_id", listRolesForGroupOnEnterpriseProjectRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRolesForGroupOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listRolesForGroupOnEnterpriseProjectRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRolesForGroupOnEnterpriseProjectRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2561,8 +2561,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ListRolesForGroupOnEnterpriseProjectResponse> ListRolesForGroupOnEnterpriseProjectInvoker(ListRolesForGroupOnEnterpriseProjectRequest listRolesForGroupOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", listRolesForGroupOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("group_id", listRolesForGroupOnEnterpriseProjectRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRolesForGroupOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listRolesForGroupOnEnterpriseProjectRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRolesForGroupOnEnterpriseProjectRequest);
             return new SyncInvoker<ListRolesForGroupOnEnterpriseProjectResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRolesForGroupOnEnterpriseProjectResponse>);
@@ -2579,8 +2579,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ListRolesForUserOnEnterpriseProjectResponse ListRolesForUserOnEnterpriseProject(ListRolesForUserOnEnterpriseProjectRequest listRolesForUserOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", listRolesForUserOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("user_id", listRolesForUserOnEnterpriseProjectRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRolesForUserOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listRolesForUserOnEnterpriseProjectRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRolesForUserOnEnterpriseProjectRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2590,8 +2590,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ListRolesForUserOnEnterpriseProjectResponse> ListRolesForUserOnEnterpriseProjectInvoker(ListRolesForUserOnEnterpriseProjectRequest listRolesForUserOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", listRolesForUserOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("user_id", listRolesForUserOnEnterpriseProjectRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRolesForUserOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listRolesForUserOnEnterpriseProjectRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRolesForUserOnEnterpriseProjectRequest);
             return new SyncInvoker<ListRolesForUserOnEnterpriseProjectResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRolesForUserOnEnterpriseProjectResponse>);
@@ -2608,7 +2608,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ListUsersForEnterpriseProjectResponse ListUsersForEnterpriseProject(ListUsersForEnterpriseProjectRequest listUsersForEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", listUsersForEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUsersForEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersForEnterpriseProjectRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2618,7 +2618,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ListUsersForEnterpriseProjectResponse> ListUsersForEnterpriseProjectInvoker(ListUsersForEnterpriseProjectRequest listUsersForEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", listUsersForEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUsersForEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersForEnterpriseProjectRequest);
             return new SyncInvoker<ListUsersForEnterpriseProjectResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUsersForEnterpriseProjectResponse>);
@@ -2636,9 +2636,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public RemoveAllProjectsPermissionFromAgencyResponse RemoveAllProjectsPermissionFromAgency(RemoveAllProjectsPermissionFromAgencyRequest removeAllProjectsPermissionFromAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", removeAllProjectsPermissionFromAgencyRequest.AgencyId.ToString());
-            urlParam.Add("domain_id", removeAllProjectsPermissionFromAgencyRequest.DomainId.ToString());
-            urlParam.Add("role_id", removeAllProjectsPermissionFromAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeAllProjectsPermissionFromAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(removeAllProjectsPermissionFromAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(removeAllProjectsPermissionFromAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeAllProjectsPermissionFromAgencyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2648,9 +2648,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<RemoveAllProjectsPermissionFromAgencyResponse> RemoveAllProjectsPermissionFromAgencyInvoker(RemoveAllProjectsPermissionFromAgencyRequest removeAllProjectsPermissionFromAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", removeAllProjectsPermissionFromAgencyRequest.AgencyId.ToString());
-            urlParam.Add("domain_id", removeAllProjectsPermissionFromAgencyRequest.DomainId.ToString());
-            urlParam.Add("role_id", removeAllProjectsPermissionFromAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeAllProjectsPermissionFromAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(removeAllProjectsPermissionFromAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(removeAllProjectsPermissionFromAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-INHERIT/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeAllProjectsPermissionFromAgencyRequest);
             return new SyncInvoker<RemoveAllProjectsPermissionFromAgencyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<RemoveAllProjectsPermissionFromAgencyResponse>);
@@ -2668,9 +2668,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public RemoveDomainPermissionFromAgencyResponse RemoveDomainPermissionFromAgency(RemoveDomainPermissionFromAgencyRequest removeDomainPermissionFromAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", removeDomainPermissionFromAgencyRequest.DomainId.ToString());
-            urlParam.Add("agency_id", removeDomainPermissionFromAgencyRequest.AgencyId.ToString());
-            urlParam.Add("role_id", removeDomainPermissionFromAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeDomainPermissionFromAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(removeDomainPermissionFromAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(removeDomainPermissionFromAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeDomainPermissionFromAgencyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2680,9 +2680,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<RemoveDomainPermissionFromAgencyResponse> RemoveDomainPermissionFromAgencyInvoker(RemoveDomainPermissionFromAgencyRequest removeDomainPermissionFromAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", removeDomainPermissionFromAgencyRequest.DomainId.ToString());
-            urlParam.Add("agency_id", removeDomainPermissionFromAgencyRequest.AgencyId.ToString());
-            urlParam.Add("role_id", removeDomainPermissionFromAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeDomainPermissionFromAgencyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(removeDomainPermissionFromAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(removeDomainPermissionFromAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/domains/{domain_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeDomainPermissionFromAgencyRequest);
             return new SyncInvoker<RemoveDomainPermissionFromAgencyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<RemoveDomainPermissionFromAgencyResponse>);
@@ -2700,9 +2700,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public RemoveProjectPermissionFromAgencyResponse RemoveProjectPermissionFromAgency(RemoveProjectPermissionFromAgencyRequest removeProjectPermissionFromAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", removeProjectPermissionFromAgencyRequest.ProjectId.ToString());
-            urlParam.Add("agency_id", removeProjectPermissionFromAgencyRequest.AgencyId.ToString());
-            urlParam.Add("role_id", removeProjectPermissionFromAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeProjectPermissionFromAgencyRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(removeProjectPermissionFromAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(removeProjectPermissionFromAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeProjectPermissionFromAgencyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2712,9 +2712,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<RemoveProjectPermissionFromAgencyResponse> RemoveProjectPermissionFromAgencyInvoker(RemoveProjectPermissionFromAgencyRequest removeProjectPermissionFromAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", removeProjectPermissionFromAgencyRequest.ProjectId.ToString());
-            urlParam.Add("agency_id", removeProjectPermissionFromAgencyRequest.AgencyId.ToString());
-            urlParam.Add("role_id", removeProjectPermissionFromAgencyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeProjectPermissionFromAgencyRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(removeProjectPermissionFromAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
+            if (StringUtils.TryConvertToNonEmptyString(removeProjectPermissionFromAgencyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/projects/{project_id}/agencies/{agency_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeProjectPermissionFromAgencyRequest);
             return new SyncInvoker<RemoveProjectPermissionFromAgencyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<RemoveProjectPermissionFromAgencyResponse>);
@@ -2756,9 +2756,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public RevokeRoleFromGroupOnEnterpriseProjectResponse RevokeRoleFromGroupOnEnterpriseProject(RevokeRoleFromGroupOnEnterpriseProjectRequest revokeRoleFromGroupOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", revokeRoleFromGroupOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("group_id", revokeRoleFromGroupOnEnterpriseProjectRequest.GroupId.ToString());
-            urlParam.Add("role_id", revokeRoleFromGroupOnEnterpriseProjectRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromGroupOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromGroupOnEnterpriseProjectRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromGroupOnEnterpriseProjectRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeRoleFromGroupOnEnterpriseProjectRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2768,9 +2768,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectResponse> RevokeRoleFromGroupOnEnterpriseProjectInvoker(RevokeRoleFromGroupOnEnterpriseProjectRequest revokeRoleFromGroupOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", revokeRoleFromGroupOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("group_id", revokeRoleFromGroupOnEnterpriseProjectRequest.GroupId.ToString());
-            urlParam.Add("role_id", revokeRoleFromGroupOnEnterpriseProjectRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromGroupOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromGroupOnEnterpriseProjectRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromGroupOnEnterpriseProjectRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/groups/{group_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeRoleFromGroupOnEnterpriseProjectRequest);
             return new SyncInvoker<RevokeRoleFromGroupOnEnterpriseProjectResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<RevokeRoleFromGroupOnEnterpriseProjectResponse>);
@@ -2787,9 +2787,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public RevokeRoleFromUserOnEnterpriseProjectResponse RevokeRoleFromUserOnEnterpriseProject(RevokeRoleFromUserOnEnterpriseProjectRequest revokeRoleFromUserOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", revokeRoleFromUserOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("user_id", revokeRoleFromUserOnEnterpriseProjectRequest.UserId.ToString());
-            urlParam.Add("role_id", revokeRoleFromUserOnEnterpriseProjectRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromUserOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromUserOnEnterpriseProjectRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromUserOnEnterpriseProjectRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeRoleFromUserOnEnterpriseProjectRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2799,9 +2799,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<RevokeRoleFromUserOnEnterpriseProjectResponse> RevokeRoleFromUserOnEnterpriseProjectInvoker(RevokeRoleFromUserOnEnterpriseProjectRequest revokeRoleFromUserOnEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", revokeRoleFromUserOnEnterpriseProjectRequest.EnterpriseProjectId.ToString());
-            urlParam.Add("user_id", revokeRoleFromUserOnEnterpriseProjectRequest.UserId.ToString());
-            urlParam.Add("role_id", revokeRoleFromUserOnEnterpriseProjectRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromUserOnEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromUserOnEnterpriseProjectRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            if (StringUtils.TryConvertToNonEmptyString(revokeRoleFromUserOnEnterpriseProjectRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-PERMISSION/enterprise-projects/{enterprise_project_id}/users/{user_id}/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revokeRoleFromUserOnEnterpriseProjectRequest);
             return new SyncInvoker<RevokeRoleFromUserOnEnterpriseProjectResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<RevokeRoleFromUserOnEnterpriseProjectResponse>);
@@ -2819,7 +2819,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowAgencyResponse ShowAgency(ShowAgencyRequest showAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", showAgencyRequest.AgencyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/agencies/{agency_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAgencyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2829,7 +2829,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowAgencyResponse> ShowAgencyInvoker(ShowAgencyRequest showAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", showAgencyRequest.AgencyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/agencies/{agency_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAgencyRequest);
             return new SyncInvoker<ShowAgencyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAgencyResponse>);
@@ -2847,7 +2847,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowCustomPolicyResponse ShowCustomPolicy(ShowCustomPolicyRequest showCustomPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", showCustomPolicyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCustomPolicyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCustomPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2857,7 +2857,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowCustomPolicyResponse> ShowCustomPolicyInvoker(ShowCustomPolicyRequest showCustomPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", showCustomPolicyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCustomPolicyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCustomPolicyRequest);
             return new SyncInvoker<ShowCustomPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCustomPolicyResponse>);
@@ -2875,7 +2875,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowDomainApiAclPolicyResponse ShowDomainApiAclPolicy(ShowDomainApiAclPolicyRequest showDomainApiAclPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainApiAclPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainApiAclPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/api-acl-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainApiAclPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2885,7 +2885,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowDomainApiAclPolicyResponse> ShowDomainApiAclPolicyInvoker(ShowDomainApiAclPolicyRequest showDomainApiAclPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainApiAclPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainApiAclPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/api-acl-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainApiAclPolicyRequest);
             return new SyncInvoker<ShowDomainApiAclPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainApiAclPolicyResponse>);
@@ -2903,7 +2903,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowDomainConsoleAclPolicyResponse ShowDomainConsoleAclPolicy(ShowDomainConsoleAclPolicyRequest showDomainConsoleAclPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainConsoleAclPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainConsoleAclPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/console-acl-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainConsoleAclPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2913,7 +2913,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowDomainConsoleAclPolicyResponse> ShowDomainConsoleAclPolicyInvoker(ShowDomainConsoleAclPolicyRequest showDomainConsoleAclPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainConsoleAclPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainConsoleAclPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/console-acl-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainConsoleAclPolicyRequest);
             return new SyncInvoker<ShowDomainConsoleAclPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainConsoleAclPolicyResponse>);
@@ -2931,7 +2931,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowDomainLoginPolicyResponse ShowDomainLoginPolicy(ShowDomainLoginPolicyRequest showDomainLoginPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainLoginPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainLoginPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/login-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainLoginPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2941,7 +2941,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowDomainLoginPolicyResponse> ShowDomainLoginPolicyInvoker(ShowDomainLoginPolicyRequest showDomainLoginPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainLoginPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainLoginPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/login-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainLoginPolicyRequest);
             return new SyncInvoker<ShowDomainLoginPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainLoginPolicyResponse>);
@@ -2959,7 +2959,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowDomainPasswordPolicyResponse ShowDomainPasswordPolicy(ShowDomainPasswordPolicyRequest showDomainPasswordPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainPasswordPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainPasswordPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/password-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainPasswordPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2969,7 +2969,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowDomainPasswordPolicyResponse> ShowDomainPasswordPolicyInvoker(ShowDomainPasswordPolicyRequest showDomainPasswordPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainPasswordPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainPasswordPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/password-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainPasswordPolicyRequest);
             return new SyncInvoker<ShowDomainPasswordPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainPasswordPolicyResponse>);
@@ -2987,7 +2987,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowDomainProtectPolicyResponse ShowDomainProtectPolicy(ShowDomainProtectPolicyRequest showDomainProtectPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainProtectPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainProtectPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/protect-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainProtectPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2997,7 +2997,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowDomainProtectPolicyResponse> ShowDomainProtectPolicyInvoker(ShowDomainProtectPolicyRequest showDomainProtectPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainProtectPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainProtectPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/protect-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainProtectPolicyRequest);
             return new SyncInvoker<ShowDomainProtectPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainProtectPolicyResponse>);
@@ -3015,7 +3015,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowDomainQuotaResponse ShowDomainQuota(ShowDomainQuotaRequest showDomainQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainQuotaRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainQuotaRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-QUOTA/domains/{domain_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainQuotaRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3025,7 +3025,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowDomainQuotaResponse> ShowDomainQuotaInvoker(ShowDomainQuotaRequest showDomainQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainQuotaRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainQuotaRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-QUOTA/domains/{domain_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainQuotaRequest);
             return new SyncInvoker<ShowDomainQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainQuotaResponse>);
@@ -3068,8 +3068,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowMetadataResponse ShowMetadata(ShowMetadataRequest showMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", showMetadataRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", showMetadataRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMetadataRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(showMetadataRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3-ext/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3079,8 +3079,8 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowMetadataResponse> ShowMetadataInvoker(ShowMetadataRequest showMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", showMetadataRequest.IdpId.ToString());
-            urlParam.Add("protocol_id", showMetadataRequest.ProtocolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMetadataRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
+            if (StringUtils.TryConvertToNonEmptyString(showMetadataRequest.ProtocolId, out var valueOfProtocolId)) urlParam.Add("protocol_id", valueOfProtocolId);
             var urlPath = HttpUtils.AddUrlPath("/v3-ext/OS-FEDERATION/identity_providers/{idp_id}/protocols/{protocol_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMetadataRequest);
             return new SyncInvoker<ShowMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMetadataResponse>);
@@ -3096,7 +3096,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowOpenIdConnectConfigResponse ShowOpenIdConnectConfig(ShowOpenIdConnectConfigRequest showOpenIdConnectConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", showOpenIdConnectConfigRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showOpenIdConnectConfigRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOpenIdConnectConfigRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3106,7 +3106,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowOpenIdConnectConfigResponse> ShowOpenIdConnectConfigInvoker(ShowOpenIdConnectConfigRequest showOpenIdConnectConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", showOpenIdConnectConfigRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showOpenIdConnectConfigRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOpenIdConnectConfigRequest);
             return new SyncInvoker<ShowOpenIdConnectConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowOpenIdConnectConfigResponse>);
@@ -3124,7 +3124,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowProjectDetailsAndStatusResponse ShowProjectDetailsAndStatus(ShowProjectDetailsAndStatusRequest showProjectDetailsAndStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", showProjectDetailsAndStatusRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProjectDetailsAndStatusRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3-ext/projects/{project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectDetailsAndStatusRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3134,7 +3134,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowProjectDetailsAndStatusResponse> ShowProjectDetailsAndStatusInvoker(ShowProjectDetailsAndStatusRequest showProjectDetailsAndStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", showProjectDetailsAndStatusRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProjectDetailsAndStatusRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3-ext/projects/{project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectDetailsAndStatusRequest);
             return new SyncInvoker<ShowProjectDetailsAndStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectDetailsAndStatusResponse>);
@@ -3152,7 +3152,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowProjectQuotaResponse ShowProjectQuota(ShowProjectQuotaRequest showProjectQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", showProjectQuotaRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProjectQuotaRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-QUOTA/projects/{project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectQuotaRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3162,7 +3162,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowProjectQuotaResponse> ShowProjectQuotaInvoker(ShowProjectQuotaRequest showProjectQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", showProjectQuotaRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProjectQuotaRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-QUOTA/projects/{project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectQuotaRequest);
             return new SyncInvoker<ShowProjectQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectQuotaResponse>);
@@ -3180,7 +3180,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateAgencyResponse UpdateAgency(UpdateAgencyRequest updateAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", updateAgencyRequest.AgencyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/agencies/{agency_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAgencyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3190,7 +3190,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateAgencyResponse> UpdateAgencyInvoker(UpdateAgencyRequest updateAgencyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("agency_id", updateAgencyRequest.AgencyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAgencyRequest.AgencyId, out var valueOfAgencyId)) urlParam.Add("agency_id", valueOfAgencyId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-AGENCY/agencies/{agency_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAgencyRequest);
             return new SyncInvoker<UpdateAgencyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAgencyResponse>);
@@ -3208,7 +3208,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateAgencyCustomPolicyResponse UpdateAgencyCustomPolicy(UpdateAgencyCustomPolicyRequest updateAgencyCustomPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", updateAgencyCustomPolicyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAgencyCustomPolicyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAgencyCustomPolicyRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -3218,7 +3218,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateAgencyCustomPolicyResponse> UpdateAgencyCustomPolicyInvoker(UpdateAgencyCustomPolicyRequest updateAgencyCustomPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", updateAgencyCustomPolicyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAgencyCustomPolicyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAgencyCustomPolicyRequest);
             return new SyncInvoker<UpdateAgencyCustomPolicyResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdateAgencyCustomPolicyResponse>);
@@ -3236,7 +3236,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateCloudServiceCustomPolicyResponse UpdateCloudServiceCustomPolicy(UpdateCloudServiceCustomPolicyRequest updateCloudServiceCustomPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", updateCloudServiceCustomPolicyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCloudServiceCustomPolicyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCloudServiceCustomPolicyRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -3246,7 +3246,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateCloudServiceCustomPolicyResponse> UpdateCloudServiceCustomPolicyInvoker(UpdateCloudServiceCustomPolicyRequest updateCloudServiceCustomPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", updateCloudServiceCustomPolicyRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCloudServiceCustomPolicyRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-ROLE/roles/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCloudServiceCustomPolicyRequest);
             return new SyncInvoker<UpdateCloudServiceCustomPolicyResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdateCloudServiceCustomPolicyResponse>);
@@ -3264,7 +3264,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateDomainApiAclPolicyResponse UpdateDomainApiAclPolicy(UpdateDomainApiAclPolicyRequest updateDomainApiAclPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainApiAclPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainApiAclPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/api-acl-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainApiAclPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3274,7 +3274,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateDomainApiAclPolicyResponse> UpdateDomainApiAclPolicyInvoker(UpdateDomainApiAclPolicyRequest updateDomainApiAclPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainApiAclPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainApiAclPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/api-acl-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainApiAclPolicyRequest);
             return new SyncInvoker<UpdateDomainApiAclPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainApiAclPolicyResponse>);
@@ -3292,7 +3292,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateDomainConsoleAclPolicyResponse UpdateDomainConsoleAclPolicy(UpdateDomainConsoleAclPolicyRequest updateDomainConsoleAclPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainConsoleAclPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainConsoleAclPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/console-acl-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainConsoleAclPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3302,7 +3302,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateDomainConsoleAclPolicyResponse> UpdateDomainConsoleAclPolicyInvoker(UpdateDomainConsoleAclPolicyRequest updateDomainConsoleAclPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainConsoleAclPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainConsoleAclPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/console-acl-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainConsoleAclPolicyRequest);
             return new SyncInvoker<UpdateDomainConsoleAclPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainConsoleAclPolicyResponse>);
@@ -3320,9 +3320,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateDomainGroupInheritRoleResponse UpdateDomainGroupInheritRole(UpdateDomainGroupInheritRoleRequest updateDomainGroupInheritRoleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainGroupInheritRoleRequest.DomainId.ToString());
-            urlParam.Add("group_id", updateDomainGroupInheritRoleRequest.GroupId.ToString());
-            urlParam.Add("role_id", updateDomainGroupInheritRoleRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainGroupInheritRoleRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainGroupInheritRoleRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainGroupInheritRoleRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainGroupInheritRoleRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3332,9 +3332,9 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateDomainGroupInheritRoleResponse> UpdateDomainGroupInheritRoleInvoker(UpdateDomainGroupInheritRoleRequest updateDomainGroupInheritRoleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainGroupInheritRoleRequest.DomainId.ToString());
-            urlParam.Add("group_id", updateDomainGroupInheritRoleRequest.GroupId.ToString());
-            urlParam.Add("role_id", updateDomainGroupInheritRoleRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainGroupInheritRoleRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainGroupInheritRoleRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainGroupInheritRoleRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/{role_id}/inherited_to_projects", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainGroupInheritRoleRequest);
             return new SyncInvoker<UpdateDomainGroupInheritRoleResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDomainGroupInheritRoleResponse>);
@@ -3352,7 +3352,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateDomainLoginPolicyResponse UpdateDomainLoginPolicy(UpdateDomainLoginPolicyRequest updateDomainLoginPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainLoginPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainLoginPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/login-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainLoginPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3362,7 +3362,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateDomainLoginPolicyResponse> UpdateDomainLoginPolicyInvoker(UpdateDomainLoginPolicyRequest updateDomainLoginPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainLoginPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainLoginPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/login-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainLoginPolicyRequest);
             return new SyncInvoker<UpdateDomainLoginPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainLoginPolicyResponse>);
@@ -3380,7 +3380,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateDomainPasswordPolicyResponse UpdateDomainPasswordPolicy(UpdateDomainPasswordPolicyRequest updateDomainPasswordPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainPasswordPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainPasswordPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/password-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainPasswordPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3390,7 +3390,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateDomainPasswordPolicyResponse> UpdateDomainPasswordPolicyInvoker(UpdateDomainPasswordPolicyRequest updateDomainPasswordPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainPasswordPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainPasswordPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/password-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainPasswordPolicyRequest);
             return new SyncInvoker<UpdateDomainPasswordPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainPasswordPolicyResponse>);
@@ -3408,7 +3408,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateDomainProtectPolicyResponse UpdateDomainProtectPolicy(UpdateDomainProtectPolicyRequest updateDomainProtectPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainProtectPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainProtectPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/protect-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainProtectPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3418,7 +3418,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateDomainProtectPolicyResponse> UpdateDomainProtectPolicyInvoker(UpdateDomainProtectPolicyRequest updateDomainProtectPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainProtectPolicyRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainProtectPolicyRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-SECURITYPOLICY/domains/{domain_id}/protect-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateDomainProtectPolicyRequest);
             return new SyncInvoker<UpdateDomainProtectPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainProtectPolicyResponse>);
@@ -3434,7 +3434,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateOpenIdConnectConfigResponse UpdateOpenIdConnectConfig(UpdateOpenIdConnectConfigRequest updateOpenIdConnectConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", updateOpenIdConnectConfigRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateOpenIdConnectConfigRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateOpenIdConnectConfigRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3444,7 +3444,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateOpenIdConnectConfigResponse> UpdateOpenIdConnectConfigInvoker(UpdateOpenIdConnectConfigRequest updateOpenIdConnectConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("idp_id", updateOpenIdConnectConfigRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateOpenIdConnectConfigRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-FEDERATION/identity-providers/{idp_id}/openid-connect-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateOpenIdConnectConfigRequest);
             return new SyncInvoker<UpdateOpenIdConnectConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateOpenIdConnectConfigResponse>);
@@ -3462,7 +3462,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateProjectStatusResponse UpdateProjectStatus(UpdateProjectStatusRequest updateProjectStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", updateProjectStatusRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProjectStatusRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3-ext/projects/{project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProjectStatusRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3472,7 +3472,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateProjectStatusResponse> UpdateProjectStatusInvoker(UpdateProjectStatusRequest updateProjectStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", updateProjectStatusRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProjectStatusRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v3-ext/projects/{project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProjectStatusRequest);
             return new SyncInvoker<UpdateProjectStatusResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateProjectStatusResponse>);
@@ -3574,7 +3574,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public DeletePermanentAccessKeyResponse DeletePermanentAccessKey(DeletePermanentAccessKeyRequest deletePermanentAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_key", deletePermanentAccessKeyRequest.AccessKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePermanentAccessKeyRequest.AccessKey, out var valueOfAccessKey)) urlParam.Add("access_key", valueOfAccessKey);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/credentials/{access_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePermanentAccessKeyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -3584,7 +3584,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<DeletePermanentAccessKeyResponse> DeletePermanentAccessKeyInvoker(DeletePermanentAccessKeyRequest deletePermanentAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_key", deletePermanentAccessKeyRequest.AccessKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePermanentAccessKeyRequest.AccessKey, out var valueOfAccessKey)) urlParam.Add("access_key", valueOfAccessKey);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/credentials/{access_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePermanentAccessKeyRequest);
             return new SyncInvoker<DeletePermanentAccessKeyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePermanentAccessKeyResponse>);
@@ -3628,7 +3628,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowPermanentAccessKeyResponse ShowPermanentAccessKey(ShowPermanentAccessKeyRequest showPermanentAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_key", showPermanentAccessKeyRequest.AccessKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPermanentAccessKeyRequest.AccessKey, out var valueOfAccessKey)) urlParam.Add("access_key", valueOfAccessKey);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/credentials/{access_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPermanentAccessKeyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3638,7 +3638,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowPermanentAccessKeyResponse> ShowPermanentAccessKeyInvoker(ShowPermanentAccessKeyRequest showPermanentAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_key", showPermanentAccessKeyRequest.AccessKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPermanentAccessKeyRequest.AccessKey, out var valueOfAccessKey)) urlParam.Add("access_key", valueOfAccessKey);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/credentials/{access_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPermanentAccessKeyRequest);
             return new SyncInvoker<ShowPermanentAccessKeyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPermanentAccessKeyResponse>);
@@ -3656,7 +3656,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdatePermanentAccessKeyResponse UpdatePermanentAccessKey(UpdatePermanentAccessKeyRequest updatePermanentAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_key", updatePermanentAccessKeyRequest.AccessKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePermanentAccessKeyRequest.AccessKey, out var valueOfAccessKey)) urlParam.Add("access_key", valueOfAccessKey);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/credentials/{access_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePermanentAccessKeyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3666,7 +3666,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdatePermanentAccessKeyResponse> UpdatePermanentAccessKeyInvoker(UpdatePermanentAccessKeyRequest updatePermanentAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_key", updatePermanentAccessKeyRequest.AccessKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePermanentAccessKeyRequest.AccessKey, out var valueOfAccessKey)) urlParam.Add("access_key", valueOfAccessKey);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-CREDENTIAL/credentials/{access_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePermanentAccessKeyRequest);
             return new SyncInvoker<UpdatePermanentAccessKeyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePermanentAccessKeyResponse>);
@@ -3736,7 +3736,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneDeleteUserResponse KeystoneDeleteUser(KeystoneDeleteUserRequest keystoneDeleteUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneDeleteUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneDeleteUserRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -3746,7 +3746,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneDeleteUserResponse> KeystoneDeleteUserInvoker(KeystoneDeleteUserRequest keystoneDeleteUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneDeleteUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneDeleteUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneDeleteUserRequest);
             return new SyncInvoker<KeystoneDeleteUserResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<KeystoneDeleteUserResponse>);
@@ -3764,7 +3764,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneListGroupsForUserResponse KeystoneListGroupsForUser(KeystoneListGroupsForUserRequest keystoneListGroupsForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneListGroupsForUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListGroupsForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListGroupsForUserRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3774,7 +3774,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneListGroupsForUserResponse> KeystoneListGroupsForUserInvoker(KeystoneListGroupsForUserRequest keystoneListGroupsForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneListGroupsForUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListGroupsForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListGroupsForUserRequest);
             return new SyncInvoker<KeystoneListGroupsForUserResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneListGroupsForUserResponse>);
@@ -3818,7 +3818,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneListUsersForGroupByAdminResponse KeystoneListUsersForGroupByAdmin(KeystoneListUsersForGroupByAdminRequest keystoneListUsersForGroupByAdminRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneListUsersForGroupByAdminRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListUsersForGroupByAdminRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListUsersForGroupByAdminRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3828,7 +3828,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneListUsersForGroupByAdminResponse> KeystoneListUsersForGroupByAdminInvoker(KeystoneListUsersForGroupByAdminRequest keystoneListUsersForGroupByAdminRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", keystoneListUsersForGroupByAdminRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneListUsersForGroupByAdminRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/groups/{group_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneListUsersForGroupByAdminRequest);
             return new SyncInvoker<KeystoneListUsersForGroupByAdminResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneListUsersForGroupByAdminResponse>);
@@ -3846,7 +3846,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneShowUserResponse KeystoneShowUser(KeystoneShowUserRequest keystoneShowUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneShowUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowUserRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3856,7 +3856,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneShowUserResponse> KeystoneShowUserInvoker(KeystoneShowUserRequest keystoneShowUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneShowUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneShowUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", keystoneShowUserRequest);
             return new SyncInvoker<KeystoneShowUserResponse>(this, "GET", request, JsonUtils.DeSerialize<KeystoneShowUserResponse>);
@@ -3874,7 +3874,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneUpdateUserByAdminResponse KeystoneUpdateUserByAdmin(KeystoneUpdateUserByAdminRequest keystoneUpdateUserByAdminRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneUpdateUserByAdminRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateUserByAdminRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateUserByAdminRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -3884,7 +3884,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneUpdateUserByAdminResponse> KeystoneUpdateUserByAdminInvoker(KeystoneUpdateUserByAdminRequest keystoneUpdateUserByAdminRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneUpdateUserByAdminRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateUserByAdminRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateUserByAdminRequest);
             return new SyncInvoker<KeystoneUpdateUserByAdminResponse>(this, "PATCH", request, JsonUtils.DeSerialize<KeystoneUpdateUserByAdminResponse>);
@@ -3902,7 +3902,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public KeystoneUpdateUserPasswordResponse KeystoneUpdateUserPassword(KeystoneUpdateUserPasswordRequest keystoneUpdateUserPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneUpdateUserPasswordRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateUserPasswordRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateUserPasswordRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -3912,7 +3912,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<KeystoneUpdateUserPasswordResponse> KeystoneUpdateUserPasswordInvoker(KeystoneUpdateUserPasswordRequest keystoneUpdateUserPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", keystoneUpdateUserPasswordRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(keystoneUpdateUserPasswordRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3/users/{user_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", keystoneUpdateUserPasswordRequest);
             return new SyncInvoker<KeystoneUpdateUserPasswordResponse>(this, "POST", request, JsonUtils.DeSerializeNull<KeystoneUpdateUserPasswordResponse>);
@@ -3982,7 +3982,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowUserResponse ShowUser(ShowUserRequest showUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", showUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3992,7 +3992,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowUserResponse> ShowUserInvoker(ShowUserRequest showUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", showUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserRequest);
             return new SyncInvoker<ShowUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserResponse>);
@@ -4010,7 +4010,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowUserLoginProtectResponse ShowUserLoginProtect(ShowUserLoginProtectRequest showUserLoginProtectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", showUserLoginProtectRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserLoginProtectRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}/login-protect", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserLoginProtectRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4020,7 +4020,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowUserLoginProtectResponse> ShowUserLoginProtectInvoker(ShowUserLoginProtectRequest showUserLoginProtectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", showUserLoginProtectRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserLoginProtectRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}/login-protect", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserLoginProtectRequest);
             return new SyncInvoker<ShowUserLoginProtectResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserLoginProtectResponse>);
@@ -4038,7 +4038,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public ShowUserMfaDeviceResponse ShowUserMfaDevice(ShowUserMfaDeviceRequest showUserMfaDeviceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", showUserMfaDeviceRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserMfaDeviceRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/users/{user_id}/virtual-mfa-device", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserMfaDeviceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4048,7 +4048,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<ShowUserMfaDeviceResponse> ShowUserMfaDeviceInvoker(ShowUserMfaDeviceRequest showUserMfaDeviceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", showUserMfaDeviceRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserMfaDeviceRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-MFA/users/{user_id}/virtual-mfa-device", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserMfaDeviceRequest);
             return new SyncInvoker<ShowUserMfaDeviceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserMfaDeviceResponse>);
@@ -4066,7 +4066,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateLoginProtectResponse UpdateLoginProtect(UpdateLoginProtectRequest updateLoginProtectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", updateLoginProtectRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLoginProtectRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}/login-protect", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLoginProtectRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4076,7 +4076,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateLoginProtectResponse> UpdateLoginProtectInvoker(UpdateLoginProtectRequest updateLoginProtectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", updateLoginProtectRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLoginProtectRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}/login-protect", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLoginProtectRequest);
             return new SyncInvoker<UpdateLoginProtectResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateLoginProtectResponse>);
@@ -4094,7 +4094,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateUserResponse UpdateUser(UpdateUserRequest updateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", updateUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4104,7 +4104,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateUserResponse> UpdateUserInvoker(UpdateUserRequest updateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", updateUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserRequest);
             return new SyncInvoker<UpdateUserResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateUserResponse>);
@@ -4122,7 +4122,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public UpdateUserInformationResponse UpdateUserInformation(UpdateUserInformationRequest updateUserInformationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", updateUserInformationRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserInformationRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}/info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserInformationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4132,7 +4132,7 @@ namespace HuaweiCloud.SDK.Iam.V3
         public SyncInvoker<UpdateUserInformationResponse> UpdateUserInformationInvoker(UpdateUserInformationRequest updateUserInformationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", updateUserInformationRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserInformationRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v3.0/OS-USER/users/{user_id}/info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserInformationRequest);
             return new SyncInvoker<UpdateUserInformationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateUserInformationResponse>);

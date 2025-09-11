@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 匹配条件 
+    /// **参数解释** 匹配条件 **约束限制** 不涉及 
     /// </summary>
     public class Condition 
     {
 
         /// <summary>
-        /// 企业项目ID
+        /// **参数解释** 企业项目ID **约束限制** 不涉及 **取值范围** 由数字、字母和-组成，或者为0（默认企业项目ID） **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("instance_name", NullValueHandling = NullValueHandling.Ignore)]
-        public ResourceNameItem InstanceName { get; set; }
+        public CombResourceName InstanceName { get; set; }
 
         /// <summary>
         /// 

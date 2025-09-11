@@ -59,6 +59,8 @@ namespace HuaweiCloud.SDK.Lts.V2
             "https://lts.ap-southeast-5.myhuaweicloud.com");
         public static readonly Region RU_MOSCOW_1 = new Region("ru-moscow-1",
             "https://lts.ru-moscow-1.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_4 = new Region("cn-south-4",
+            "https://lts.cn-south-4.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("LTS");
 
@@ -90,6 +92,7 @@ namespace HuaweiCloud.SDK.Lts.V2
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
                 { "ap-southeast-5", AP_SOUTHEAST_5 },
                 { "ru-moscow-1", RU_MOSCOW_1 },
+                { "cn-south-4", CN_SOUTH_4 },
         };
 
         public static Region ValueOf(string regionId)

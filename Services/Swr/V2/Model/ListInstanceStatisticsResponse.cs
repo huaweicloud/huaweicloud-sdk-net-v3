@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public long? RetentionPolicyQuota { get; set; }
 
         /// <summary>
-        /// 触发器策略的配额
+        /// 触发器的配额
         /// </summary>
         [JsonProperty("notify_policy_quota", NullValueHandling = NullValueHandling.Ignore)]
         public long? NotifyPolicyQuota { get; set; }
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public long? RetentionPolicyCount { get; set; }
 
         /// <summary>
-        /// 触发器策略的总数
+        /// 触发器的总数
         /// </summary>
         [JsonProperty("notify_policy_count", NullValueHandling = NullValueHandling.Ignore)]
         public long? NotifyPolicyCount { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 告警规则ID
+        /// **参数解释**： 告警规则ID **约束限制**： 不涉及。 **取值范围**： 以al开头，后跟22位字母或数字。 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("alarm_id", IsPath = true)]
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]

@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Sis.V1
         public async Task<CollectTranscriberJobResponse> CollectTranscriberJobAsync(CollectTranscriberJobRequest collectTranscriberJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", collectTranscriberJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(collectTranscriberJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/transcriber/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectTranscriberJobRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Sis.V1
         public AsyncInvoker<CollectTranscriberJobResponse> CollectTranscriberJobAsyncInvoker(CollectTranscriberJobRequest collectTranscriberJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", collectTranscriberJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(collectTranscriberJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/transcriber/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", collectTranscriberJobRequest);
             return new AsyncInvoker<CollectTranscriberJobResponse>(this, "GET", request, JsonUtils.DeSerialize<CollectTranscriberJobResponse>);
@@ -75,7 +75,7 @@ namespace HuaweiCloud.SDK.Sis.V1
         public async Task<DeleteVocabularyResponse> DeleteVocabularyAsync(DeleteVocabularyRequest deleteVocabularyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vocabulary_id", deleteVocabularyRequest.VocabularyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVocabularyRequest.VocabularyId, out var valueOfVocabularyId)) urlParam.Add("vocabulary_id", valueOfVocabularyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVocabularyRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -85,7 +85,7 @@ namespace HuaweiCloud.SDK.Sis.V1
         public AsyncInvoker<DeleteVocabularyResponse> DeleteVocabularyAsyncInvoker(DeleteVocabularyRequest deleteVocabularyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vocabulary_id", deleteVocabularyRequest.VocabularyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVocabularyRequest.VocabularyId, out var valueOfVocabularyId)) urlParam.Add("vocabulary_id", valueOfVocabularyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVocabularyRequest);
             return new AsyncInvoker<DeleteVocabularyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteVocabularyResponse>);
@@ -231,7 +231,7 @@ namespace HuaweiCloud.SDK.Sis.V1
         public async Task<ShowVocabularyResponse> ShowVocabularyAsync(ShowVocabularyRequest showVocabularyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vocabulary_id", showVocabularyRequest.VocabularyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVocabularyRequest.VocabularyId, out var valueOfVocabularyId)) urlParam.Add("vocabulary_id", valueOfVocabularyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVocabularyRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -241,7 +241,7 @@ namespace HuaweiCloud.SDK.Sis.V1
         public AsyncInvoker<ShowVocabularyResponse> ShowVocabularyAsyncInvoker(ShowVocabularyRequest showVocabularyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vocabulary_id", showVocabularyRequest.VocabularyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVocabularyRequest.VocabularyId, out var valueOfVocabularyId)) urlParam.Add("vocabulary_id", valueOfVocabularyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVocabularyRequest);
             return new AsyncInvoker<ShowVocabularyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVocabularyResponse>);
@@ -257,7 +257,7 @@ namespace HuaweiCloud.SDK.Sis.V1
         public async Task<UpdateVocabularyResponse> UpdateVocabularyAsync(UpdateVocabularyRequest updateVocabularyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vocabulary_id", updateVocabularyRequest.VocabularyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVocabularyRequest.VocabularyId, out var valueOfVocabularyId)) urlParam.Add("vocabulary_id", valueOfVocabularyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVocabularyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -267,7 +267,7 @@ namespace HuaweiCloud.SDK.Sis.V1
         public AsyncInvoker<UpdateVocabularyResponse> UpdateVocabularyAsyncInvoker(UpdateVocabularyRequest updateVocabularyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vocabulary_id", updateVocabularyRequest.VocabularyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVocabularyRequest.VocabularyId, out var valueOfVocabularyId)) urlParam.Add("vocabulary_id", valueOfVocabularyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/asr/vocabularies/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVocabularyRequest);
             return new AsyncInvoker<UpdateVocabularyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVocabularyResponse>);

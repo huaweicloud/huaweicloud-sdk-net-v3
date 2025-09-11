@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListDashboardInfosRequest 
     {
         /// <summary>
-        /// 监控看板类型, monitor_dashboard表示监控大盘,other表示自定义看板
+        /// **参数解释**： 监控看板类型。 **约束限制**： 不涉及。 **取值范围**： - monitor_dashboard:表示监控大盘 - other:表示自定义看板 **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>监控看板类型, monitor_dashboard表示监控大盘,other表示自定义看板</value>
+        /// <value>**参数解释**： 监控看板类型。 **约束限制**： 不涉及。 **取值范围**： - monitor_dashboard:表示监控大盘 - other:表示自定义看板 **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<DashboardTypeEnum>))]
         public class DashboardTypeEnum
         {
@@ -132,35 +132,35 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 企业项目Id
+        /// **参数解释**： 企业项目ID。 **约束限制**： 不涉及。 **取值范围**： 只能包含小写字母、数字、“-”、“_”，可以自定义企业项目ID，长度为36个字符。也可以为0（代表默认企业项目ID），all_granted_eps（代表所有企业项目ID）。           **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("enterprise_id", IsQuery = true)]
         [JsonProperty("enterprise_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseId { get; set; }
 
         /// <summary>
-        /// 指定企业项目下监控看板是否收藏，true:收藏，false:未收藏，填此参数时，enterprise_id必填
+        /// **参数解释**： 指定企业项目下监控看板是否收藏。 **约束限制**： 填此参数时，enterprise_id必填。 **取值范围**： - true:收藏 - false:未收藏          **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("is_favorite", IsQuery = true)]
         [JsonProperty("is_favorite", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsFavorite { get; set; }
 
         /// <summary>
-        /// 监控看板名称
+        /// **参数解释**： 监控看板名称。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,128]个字符，只允许中文、英文、数字0-9、_和-          **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("dashboard_name", IsQuery = true)]
         [JsonProperty("dashboard_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardName { get; set; }
 
         /// <summary>
-        /// 监控看板id
+        /// **参数解释**： 监控看板id。 **约束限制**： 不涉及。 **取值范围**： 以db开头，包含22个字母和数字，长度为24个字符 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("dashboard_id", IsQuery = true)]
         [JsonProperty("dashboard_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DashboardId { get; set; }
 
         /// <summary>
-        /// 监控看板类型, monitor_dashboard表示监控大盘,other表示自定义看板
+        /// **参数解释**： 监控看板类型。 **约束限制**： 不涉及。 **取值范围**： - monitor_dashboard:表示监控大盘 - other:表示自定义看板 **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("dashboard_type", IsQuery = true)]
         [JsonProperty("dashboard_type", NullValueHandling = NullValueHandling.Ignore)]

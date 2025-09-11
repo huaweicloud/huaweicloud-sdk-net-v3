@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 一键告警ID
+        /// **参数解释**： 一键告警ID。 **约束限制**： 不涉及。 **取值范围**： 只能为字母或者数字，字符长度为[1,64] **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("one_click_alarm_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OneClickAlarmId { get; set; }
@@ -150,37 +150,37 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public DimensionNames DimensionNames { get; set; }
 
         /// <summary>
-        /// 是否开启告警通知。true:开启，false:关闭。
+        /// **参数解释**： 是否开启告警通知。     **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
         /// </summary>
         [JsonProperty("notification_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotificationEnabled { get; set; }
 
         /// <summary>
-        /// **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 告警触发的动作数量最多为10个。 **默认取值**： 不涉及。 
+        /// **参数解释**： 触发告警时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("alarm_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<Notification> AlarmNotifications { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 告警恢复触发的动作数量最多为10个。 **默认取值**： 不涉及。 
+        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **约束限制**： 不涉及。 **取值范围**： 包含的通知信息的数量最多为10个。 **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("ok_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<Notification> OkNotifications { get; set; }
 
         /// <summary>
-        /// **参数解释**： 每天告警通知的开始时间。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
+        /// **参数解释**： 告警通知开启时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("notification_begin_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationBeginTime { get; set; }
 
         /// <summary>
-        /// **参数解释**： 每天告警通知的结束时间。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
+        /// **参数解释**： 告警通知关闭时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("notification_end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string NotificationEndTime { get; set; }
 
         /// <summary>
-        /// 时区，形如：\&quot;GMT-08:00\&quot;、\&quot;GMT+08:00\&quot;、\&quot;GMT+0:00\&quot;
+        /// **参数解释**： 时区，形如：\&quot;GMT-08:00\&quot;、\&quot;GMT+08:00\&quot;、\&quot;GMT+0:00\&quot;。    **约束限制**： 不涉及。 **取值范围**： 长度为[1,16]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("effective_timezone", NullValueHandling = NullValueHandling.Ignore)]
         public string EffectiveTimezone { get; set; }
@@ -201,6 +201,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         [JsonProperty("is_reset", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsReset { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 开启一键告警时可选需要的开启的一键告警规则ID，默认为该服务下的所有一键告警规则ID。 **约束限制**: 数组元素个数[0,50] **取值范围**: 不涉及。 **默认取值**: 该服务下一键告警全部告警规则。 
+        /// </summary>
+        [JsonProperty("enabled_alarm_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> EnabledAlarmIds { get; set; }
 
         /// <summary>
         /// 打开一键告警需要同时修改告警策略及通知(当前仅支持通知策略修改)时传递的参数
@@ -228,6 +234,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("  notificationManner: ").Append(NotificationManner).Append("\n");
             sb.Append("  notificationPolicyIds: ").Append(NotificationPolicyIds).Append("\n");
             sb.Append("  isReset: ").Append(IsReset).Append("\n");
+            sb.Append("  enabledAlarmIds: ").Append(EnabledAlarmIds).Append("\n");
             sb.Append("  oneClickUpdateAlarms: ").Append(OneClickUpdateAlarms).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -258,6 +265,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.NotificationManner != input.NotificationManner) return false;
             if (this.NotificationPolicyIds != input.NotificationPolicyIds || (this.NotificationPolicyIds != null && input.NotificationPolicyIds != null && !this.NotificationPolicyIds.SequenceEqual(input.NotificationPolicyIds))) return false;
             if (this.IsReset != input.IsReset || (this.IsReset != null && !this.IsReset.Equals(input.IsReset))) return false;
+            if (this.EnabledAlarmIds != input.EnabledAlarmIds || (this.EnabledAlarmIds != null && input.EnabledAlarmIds != null && !this.EnabledAlarmIds.SequenceEqual(input.EnabledAlarmIds))) return false;
             if (this.OneClickUpdateAlarms != input.OneClickUpdateAlarms || (this.OneClickUpdateAlarms != null && input.OneClickUpdateAlarms != null && !this.OneClickUpdateAlarms.SequenceEqual(input.OneClickUpdateAlarms))) return false;
 
             return true;
@@ -282,6 +290,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 hashCode = hashCode * 59 + this.NotificationManner.GetHashCode();
                 if (this.NotificationPolicyIds != null) hashCode = hashCode * 59 + this.NotificationPolicyIds.GetHashCode();
                 if (this.IsReset != null) hashCode = hashCode * 59 + this.IsReset.GetHashCode();
+                if (this.EnabledAlarmIds != null) hashCode = hashCode * 59 + this.EnabledAlarmIds.GetHashCode();
                 if (this.OneClickUpdateAlarms != null) hashCode = hashCode * 59 + this.OneClickUpdateAlarms.GetHashCode();
                 return hashCode;
             }

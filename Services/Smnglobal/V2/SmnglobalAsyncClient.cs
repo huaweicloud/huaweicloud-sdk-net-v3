@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2
         public async Task<DeleteSubscriptionUserResponse> DeleteSubscriptionUserAsync(DeleteSubscriptionUserRequest deleteSubscriptionUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteSubscriptionUserRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubscriptionUserRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{domain_id}/subscription-users/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubscriptionUserRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2
         public AsyncInvoker<DeleteSubscriptionUserResponse> DeleteSubscriptionUserAsyncInvoker(DeleteSubscriptionUserRequest deleteSubscriptionUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteSubscriptionUserRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubscriptionUserRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{domain_id}/subscription-users/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubscriptionUserRequest);
             return new AsyncInvoker<DeleteSubscriptionUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteSubscriptionUserResponse>);
@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2
         public async Task<UpdateSubscriptionUserResponse> UpdateSubscriptionUserAsync(UpdateSubscriptionUserRequest updateSubscriptionUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateSubscriptionUserRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSubscriptionUserRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{domain_id}/subscription-users/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSubscriptionUserRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -109,7 +109,7 @@ namespace HuaweiCloud.SDK.Smnglobal.V2
         public AsyncInvoker<UpdateSubscriptionUserResponse> UpdateSubscriptionUserAsyncInvoker(UpdateSubscriptionUserRequest updateSubscriptionUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateSubscriptionUserRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSubscriptionUserRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{domain_id}/subscription-users/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSubscriptionUserRequest);
             return new AsyncInvoker<UpdateSubscriptionUserResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSubscriptionUserResponse>);

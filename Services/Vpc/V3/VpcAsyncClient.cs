@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<AddSecurityGroupsResponse> AddSecurityGroupsAsync(AddSecurityGroupsRequest addSecurityGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", addSecurityGroupsRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addSecurityGroupsRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/insert-security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addSecurityGroupsRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<AddSecurityGroupsResponse> AddSecurityGroupsAsyncInvoker(AddSecurityGroupsRequest addSecurityGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", addSecurityGroupsRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addSecurityGroupsRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/insert-security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addSecurityGroupsRequest);
             return new AsyncInvoker<AddSecurityGroupsResponse>(this, "PUT", request, JsonUtils.DeSerialize<AddSecurityGroupsResponse>);
@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<AddSourcesToTrafficMirrorSessionResponse> AddSourcesToTrafficMirrorSessionAsync(AddSourcesToTrafficMirrorSessionRequest addSourcesToTrafficMirrorSessionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_session_id", addSourcesToTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addSourcesToTrafficMirrorSessionRequest.TrafficMirrorSessionId, out var valueOfTrafficMirrorSessionId)) urlParam.Add("traffic_mirror_session_id", valueOfTrafficMirrorSessionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}/add-sources", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addSourcesToTrafficMirrorSessionRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<AddSourcesToTrafficMirrorSessionResponse> AddSourcesToTrafficMirrorSessionAsyncInvoker(AddSourcesToTrafficMirrorSessionRequest addSourcesToTrafficMirrorSessionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_session_id", addSourcesToTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addSourcesToTrafficMirrorSessionRequest.TrafficMirrorSessionId, out var valueOfTrafficMirrorSessionId)) urlParam.Add("traffic_mirror_session_id", valueOfTrafficMirrorSessionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}/add-sources", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addSourcesToTrafficMirrorSessionRequest);
             return new AsyncInvoker<AddSourcesToTrafficMirrorSessionResponse>(this, "PUT", request, JsonUtils.DeSerialize<AddSourcesToTrafficMirrorSessionResponse>);
@@ -79,7 +79,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<BatchCreatePortTagsResponse> BatchCreatePortTagsAsync(BatchCreatePortTagsRequest batchCreatePortTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", batchCreatePortTagsRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreatePortTagsRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreatePortTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<BatchCreatePortTagsResponse> BatchCreatePortTagsAsyncInvoker(BatchCreatePortTagsRequest batchCreatePortTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", batchCreatePortTagsRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreatePortTagsRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreatePortTagsRequest);
             return new AsyncInvoker<BatchCreatePortTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreatePortTagsResponse>);
@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<BatchCreateSecurityGroupRulesResponse> BatchCreateSecurityGroupRulesAsync(BatchCreateSecurityGroupRulesRequest batchCreateSecurityGroupRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_id", batchCreateSecurityGroupRulesRequest.SecurityGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateSecurityGroupRulesRequest.SecurityGroupId, out var valueOfSecurityGroupId)) urlParam.Add("security_group_id", valueOfSecurityGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups/{security_group_id}/security-group-rules/batch-create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateSecurityGroupRulesRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -115,7 +115,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<BatchCreateSecurityGroupRulesResponse> BatchCreateSecurityGroupRulesAsyncInvoker(BatchCreateSecurityGroupRulesRequest batchCreateSecurityGroupRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_id", batchCreateSecurityGroupRulesRequest.SecurityGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateSecurityGroupRulesRequest.SecurityGroupId, out var valueOfSecurityGroupId)) urlParam.Add("security_group_id", valueOfSecurityGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups/{security_group_id}/security-group-rules/batch-create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateSecurityGroupRulesRequest);
             return new AsyncInvoker<BatchCreateSecurityGroupRulesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateSecurityGroupRulesResponse>);
@@ -157,7 +157,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<BatchDeletePortTagsResponse> BatchDeletePortTagsAsync(BatchDeletePortTagsRequest batchDeletePortTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", batchDeletePortTagsRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeletePortTagsRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeletePortTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -167,7 +167,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<BatchDeletePortTagsResponse> BatchDeletePortTagsAsyncInvoker(BatchDeletePortTagsRequest batchDeletePortTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", batchDeletePortTagsRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeletePortTagsRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeletePortTagsRequest);
             return new AsyncInvoker<BatchDeletePortTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeletePortTagsResponse>);
@@ -210,7 +210,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<CreatePortTagResponse> CreatePortTagAsync(CreatePortTagRequest createPortTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", createPortTagRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPortTagRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPortTagRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<CreatePortTagResponse> CreatePortTagAsyncInvoker(CreatePortTagRequest createPortTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", createPortTagRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPortTagRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPortTagRequest);
             return new AsyncInvoker<CreatePortTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreatePortTagResponse>);
@@ -382,8 +382,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeletePortTagResponse> DeletePortTagAsync(DeletePortTagRequest deletePortTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", deletePortTagRequest.PortId.ToString());
-            urlParam.Add("tag_key", deletePortTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePortTagRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
+            if (StringUtils.TryConvertToNonEmptyString(deletePortTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePortTagRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -393,8 +393,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeletePortTagResponse> DeletePortTagAsyncInvoker(DeletePortTagRequest deletePortTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", deletePortTagRequest.PortId.ToString());
-            urlParam.Add("tag_key", deletePortTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePortTagRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
+            if (StringUtils.TryConvertToNonEmptyString(deletePortTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePortTagRequest);
             return new AsyncInvoker<DeletePortTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePortTagResponse>);
@@ -410,7 +410,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteSecurityGroupResponse> DeleteSecurityGroupAsync(DeleteSecurityGroupRequest deleteSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_id", deleteSecurityGroupRequest.SecurityGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecurityGroupRequest.SecurityGroupId, out var valueOfSecurityGroupId)) urlParam.Add("security_group_id", valueOfSecurityGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -420,7 +420,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteSecurityGroupResponse> DeleteSecurityGroupAsyncInvoker(DeleteSecurityGroupRequest deleteSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_id", deleteSecurityGroupRequest.SecurityGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecurityGroupRequest.SecurityGroupId, out var valueOfSecurityGroupId)) urlParam.Add("security_group_id", valueOfSecurityGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupRequest);
             return new AsyncInvoker<DeleteSecurityGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecurityGroupResponse>);
@@ -436,7 +436,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteSecurityGroupRuleResponse> DeleteSecurityGroupRuleAsync(DeleteSecurityGroupRuleRequest deleteSecurityGroupRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_rule_id", deleteSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecurityGroupRuleRequest.SecurityGroupRuleId, out var valueOfSecurityGroupRuleId)) urlParam.Add("security_group_rule_id", valueOfSecurityGroupRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupRuleRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -446,7 +446,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteSecurityGroupRuleResponse> DeleteSecurityGroupRuleAsyncInvoker(DeleteSecurityGroupRuleRequest deleteSecurityGroupRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_rule_id", deleteSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecurityGroupRuleRequest.SecurityGroupRuleId, out var valueOfSecurityGroupRuleId)) urlParam.Add("security_group_rule_id", valueOfSecurityGroupRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityGroupRuleRequest);
             return new AsyncInvoker<DeleteSecurityGroupRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecurityGroupRuleResponse>);
@@ -462,7 +462,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteSubNetworkInterfaceResponse> DeleteSubNetworkInterfaceAsync(DeleteSubNetworkInterfaceRequest deleteSubNetworkInterfaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sub_network_interface_id", deleteSubNetworkInterfaceRequest.SubNetworkInterfaceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubNetworkInterfaceRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubNetworkInterfaceRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -472,7 +472,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteSubNetworkInterfaceResponse> DeleteSubNetworkInterfaceAsyncInvoker(DeleteSubNetworkInterfaceRequest deleteSubNetworkInterfaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sub_network_interface_id", deleteSubNetworkInterfaceRequest.SubNetworkInterfaceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubNetworkInterfaceRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubNetworkInterfaceRequest);
             return new AsyncInvoker<DeleteSubNetworkInterfaceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSubNetworkInterfaceResponse>);
@@ -488,7 +488,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteTrafficMirrorFilterResponse> DeleteTrafficMirrorFilterAsync(DeleteTrafficMirrorFilterRequest deleteTrafficMirrorFilterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_id", deleteTrafficMirrorFilterRequest.TrafficMirrorFilterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTrafficMirrorFilterRequest.TrafficMirrorFilterId, out var valueOfTrafficMirrorFilterId)) urlParam.Add("traffic_mirror_filter_id", valueOfTrafficMirrorFilterId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrafficMirrorFilterRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -498,7 +498,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteTrafficMirrorFilterResponse> DeleteTrafficMirrorFilterAsyncInvoker(DeleteTrafficMirrorFilterRequest deleteTrafficMirrorFilterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_id", deleteTrafficMirrorFilterRequest.TrafficMirrorFilterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTrafficMirrorFilterRequest.TrafficMirrorFilterId, out var valueOfTrafficMirrorFilterId)) urlParam.Add("traffic_mirror_filter_id", valueOfTrafficMirrorFilterId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrafficMirrorFilterRequest);
             return new AsyncInvoker<DeleteTrafficMirrorFilterResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTrafficMirrorFilterResponse>);
@@ -514,7 +514,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteTrafficMirrorFilterRuleResponse> DeleteTrafficMirrorFilterRuleAsync(DeleteTrafficMirrorFilterRuleRequest deleteTrafficMirrorFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_rule_id", deleteTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId, out var valueOfTrafficMirrorFilterRuleId)) urlParam.Add("traffic_mirror_filter_rule_id", valueOfTrafficMirrorFilterRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrafficMirrorFilterRuleRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -524,7 +524,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteTrafficMirrorFilterRuleResponse> DeleteTrafficMirrorFilterRuleAsyncInvoker(DeleteTrafficMirrorFilterRuleRequest deleteTrafficMirrorFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_rule_id", deleteTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId, out var valueOfTrafficMirrorFilterRuleId)) urlParam.Add("traffic_mirror_filter_rule_id", valueOfTrafficMirrorFilterRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrafficMirrorFilterRuleRequest);
             return new AsyncInvoker<DeleteTrafficMirrorFilterRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTrafficMirrorFilterRuleResponse>);
@@ -540,7 +540,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteTrafficMirrorSessionResponse> DeleteTrafficMirrorSessionAsync(DeleteTrafficMirrorSessionRequest deleteTrafficMirrorSessionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_session_id", deleteTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTrafficMirrorSessionRequest.TrafficMirrorSessionId, out var valueOfTrafficMirrorSessionId)) urlParam.Add("traffic_mirror_session_id", valueOfTrafficMirrorSessionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrafficMirrorSessionRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -550,7 +550,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteTrafficMirrorSessionResponse> DeleteTrafficMirrorSessionAsyncInvoker(DeleteTrafficMirrorSessionRequest deleteTrafficMirrorSessionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_session_id", deleteTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTrafficMirrorSessionRequest.TrafficMirrorSessionId, out var valueOfTrafficMirrorSessionId)) urlParam.Add("traffic_mirror_session_id", valueOfTrafficMirrorSessionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrafficMirrorSessionRequest);
             return new AsyncInvoker<DeleteTrafficMirrorSessionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTrafficMirrorSessionResponse>);
@@ -784,7 +784,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<RemoveSecurityGroupsResponse> RemoveSecurityGroupsAsync(RemoveSecurityGroupsRequest removeSecurityGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", removeSecurityGroupsRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeSecurityGroupsRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/remove-security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeSecurityGroupsRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -794,7 +794,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<RemoveSecurityGroupsResponse> RemoveSecurityGroupsAsyncInvoker(RemoveSecurityGroupsRequest removeSecurityGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", removeSecurityGroupsRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeSecurityGroupsRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/remove-security-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeSecurityGroupsRequest);
             return new AsyncInvoker<RemoveSecurityGroupsResponse>(this, "PUT", request, JsonUtils.DeSerialize<RemoveSecurityGroupsResponse>);
@@ -810,7 +810,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<RemoveSourcesFromTrafficMirrorSessionResponse> RemoveSourcesFromTrafficMirrorSessionAsync(RemoveSourcesFromTrafficMirrorSessionRequest removeSourcesFromTrafficMirrorSessionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_session_id", removeSourcesFromTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeSourcesFromTrafficMirrorSessionRequest.TrafficMirrorSessionId, out var valueOfTrafficMirrorSessionId)) urlParam.Add("traffic_mirror_session_id", valueOfTrafficMirrorSessionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}/remove-sources", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeSourcesFromTrafficMirrorSessionRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -820,7 +820,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<RemoveSourcesFromTrafficMirrorSessionResponse> RemoveSourcesFromTrafficMirrorSessionAsyncInvoker(RemoveSourcesFromTrafficMirrorSessionRequest removeSourcesFromTrafficMirrorSessionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_session_id", removeSourcesFromTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeSourcesFromTrafficMirrorSessionRequest.TrafficMirrorSessionId, out var valueOfTrafficMirrorSessionId)) urlParam.Add("traffic_mirror_session_id", valueOfTrafficMirrorSessionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}/remove-sources", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeSourcesFromTrafficMirrorSessionRequest);
             return new AsyncInvoker<RemoveSourcesFromTrafficMirrorSessionResponse>(this, "PUT", request, JsonUtils.DeSerialize<RemoveSourcesFromTrafficMirrorSessionResponse>);
@@ -837,7 +837,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowPortTagsResponse> ShowPortTagsAsync(ShowPortTagsRequest showPortTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", showPortTagsRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPortTagsRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPortTagsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -847,7 +847,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowPortTagsResponse> ShowPortTagsAsyncInvoker(ShowPortTagsRequest showPortTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("port_id", showPortTagsRequest.PortId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPortTagsRequest.PortId, out var valueOfPortId)) urlParam.Add("port_id", valueOfPortId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/ports/{port_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPortTagsRequest);
             return new AsyncInvoker<ShowPortTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPortTagsResponse>);
@@ -863,7 +863,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowSecurityGroupResponse> ShowSecurityGroupAsync(ShowSecurityGroupRequest showSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_id", showSecurityGroupRequest.SecurityGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecurityGroupRequest.SecurityGroupId, out var valueOfSecurityGroupId)) urlParam.Add("security_group_id", valueOfSecurityGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -873,7 +873,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowSecurityGroupResponse> ShowSecurityGroupAsyncInvoker(ShowSecurityGroupRequest showSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_id", showSecurityGroupRequest.SecurityGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecurityGroupRequest.SecurityGroupId, out var valueOfSecurityGroupId)) urlParam.Add("security_group_id", valueOfSecurityGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupRequest);
             return new AsyncInvoker<ShowSecurityGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecurityGroupResponse>);
@@ -889,7 +889,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowSecurityGroupRuleResponse> ShowSecurityGroupRuleAsync(ShowSecurityGroupRuleRequest showSecurityGroupRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_rule_id", showSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecurityGroupRuleRequest.SecurityGroupRuleId, out var valueOfSecurityGroupRuleId)) urlParam.Add("security_group_rule_id", valueOfSecurityGroupRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupRuleRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -899,7 +899,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowSecurityGroupRuleResponse> ShowSecurityGroupRuleAsyncInvoker(ShowSecurityGroupRuleRequest showSecurityGroupRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_rule_id", showSecurityGroupRuleRequest.SecurityGroupRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecurityGroupRuleRequest.SecurityGroupRuleId, out var valueOfSecurityGroupRuleId)) urlParam.Add("security_group_rule_id", valueOfSecurityGroupRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-group-rules/{security_group_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityGroupRuleRequest);
             return new AsyncInvoker<ShowSecurityGroupRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecurityGroupRuleResponse>);
@@ -915,7 +915,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowSubNetworkInterfaceResponse> ShowSubNetworkInterfaceAsync(ShowSubNetworkInterfaceRequest showSubNetworkInterfaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sub_network_interface_id", showSubNetworkInterfaceRequest.SubNetworkInterfaceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSubNetworkInterfaceRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubNetworkInterfaceRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -925,7 +925,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowSubNetworkInterfaceResponse> ShowSubNetworkInterfaceAsyncInvoker(ShowSubNetworkInterfaceRequest showSubNetworkInterfaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sub_network_interface_id", showSubNetworkInterfaceRequest.SubNetworkInterfaceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSubNetworkInterfaceRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubNetworkInterfaceRequest);
             return new AsyncInvoker<ShowSubNetworkInterfaceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSubNetworkInterfaceResponse>);
@@ -965,7 +965,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowTrafficMirrorFilterResponse> ShowTrafficMirrorFilterAsync(ShowTrafficMirrorFilterRequest showTrafficMirrorFilterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_id", showTrafficMirrorFilterRequest.TrafficMirrorFilterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTrafficMirrorFilterRequest.TrafficMirrorFilterId, out var valueOfTrafficMirrorFilterId)) urlParam.Add("traffic_mirror_filter_id", valueOfTrafficMirrorFilterId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrafficMirrorFilterRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -975,7 +975,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowTrafficMirrorFilterResponse> ShowTrafficMirrorFilterAsyncInvoker(ShowTrafficMirrorFilterRequest showTrafficMirrorFilterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_id", showTrafficMirrorFilterRequest.TrafficMirrorFilterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTrafficMirrorFilterRequest.TrafficMirrorFilterId, out var valueOfTrafficMirrorFilterId)) urlParam.Add("traffic_mirror_filter_id", valueOfTrafficMirrorFilterId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrafficMirrorFilterRequest);
             return new AsyncInvoker<ShowTrafficMirrorFilterResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTrafficMirrorFilterResponse>);
@@ -991,7 +991,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowTrafficMirrorFilterRuleResponse> ShowTrafficMirrorFilterRuleAsync(ShowTrafficMirrorFilterRuleRequest showTrafficMirrorFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_rule_id", showTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId, out var valueOfTrafficMirrorFilterRuleId)) urlParam.Add("traffic_mirror_filter_rule_id", valueOfTrafficMirrorFilterRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrafficMirrorFilterRuleRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1001,7 +1001,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowTrafficMirrorFilterRuleResponse> ShowTrafficMirrorFilterRuleAsyncInvoker(ShowTrafficMirrorFilterRuleRequest showTrafficMirrorFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_rule_id", showTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId, out var valueOfTrafficMirrorFilterRuleId)) urlParam.Add("traffic_mirror_filter_rule_id", valueOfTrafficMirrorFilterRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrafficMirrorFilterRuleRequest);
             return new AsyncInvoker<ShowTrafficMirrorFilterRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTrafficMirrorFilterRuleResponse>);
@@ -1017,7 +1017,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowTrafficMirrorSessionResponse> ShowTrafficMirrorSessionAsync(ShowTrafficMirrorSessionRequest showTrafficMirrorSessionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_session_id", showTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTrafficMirrorSessionRequest.TrafficMirrorSessionId, out var valueOfTrafficMirrorSessionId)) urlParam.Add("traffic_mirror_session_id", valueOfTrafficMirrorSessionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrafficMirrorSessionRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1027,7 +1027,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowTrafficMirrorSessionResponse> ShowTrafficMirrorSessionAsyncInvoker(ShowTrafficMirrorSessionRequest showTrafficMirrorSessionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_session_id", showTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTrafficMirrorSessionRequest.TrafficMirrorSessionId, out var valueOfTrafficMirrorSessionId)) urlParam.Add("traffic_mirror_session_id", valueOfTrafficMirrorSessionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrafficMirrorSessionRequest);
             return new AsyncInvoker<ShowTrafficMirrorSessionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTrafficMirrorSessionResponse>);
@@ -1043,7 +1043,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<UpdateSecurityGroupResponse> UpdateSecurityGroupAsync(UpdateSecurityGroupRequest updateSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_id", updateSecurityGroupRequest.SecurityGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSecurityGroupRequest.SecurityGroupId, out var valueOfSecurityGroupId)) urlParam.Add("security_group_id", valueOfSecurityGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityGroupRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1053,7 +1053,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<UpdateSecurityGroupResponse> UpdateSecurityGroupAsyncInvoker(UpdateSecurityGroupRequest updateSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_group_id", updateSecurityGroupRequest.SecurityGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSecurityGroupRequest.SecurityGroupId, out var valueOfSecurityGroupId)) urlParam.Add("security_group_id", valueOfSecurityGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/security-groups/{security_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityGroupRequest);
             return new AsyncInvoker<UpdateSecurityGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecurityGroupResponse>);
@@ -1069,7 +1069,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<UpdateSubNetworkInterfaceResponse> UpdateSubNetworkInterfaceAsync(UpdateSubNetworkInterfaceRequest updateSubNetworkInterfaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sub_network_interface_id", updateSubNetworkInterfaceRequest.SubNetworkInterfaceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSubNetworkInterfaceRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSubNetworkInterfaceRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1079,7 +1079,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<UpdateSubNetworkInterfaceResponse> UpdateSubNetworkInterfaceAsyncInvoker(UpdateSubNetworkInterfaceRequest updateSubNetworkInterfaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sub_network_interface_id", updateSubNetworkInterfaceRequest.SubNetworkInterfaceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSubNetworkInterfaceRequest.SubNetworkInterfaceId, out var valueOfSubNetworkInterfaceId)) urlParam.Add("sub_network_interface_id", valueOfSubNetworkInterfaceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/sub-network-interfaces/{sub_network_interface_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSubNetworkInterfaceRequest);
             return new AsyncInvoker<UpdateSubNetworkInterfaceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSubNetworkInterfaceResponse>);
@@ -1095,7 +1095,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<UpdateTrafficMirrorFilterResponse> UpdateTrafficMirrorFilterAsync(UpdateTrafficMirrorFilterRequest updateTrafficMirrorFilterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_id", updateTrafficMirrorFilterRequest.TrafficMirrorFilterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTrafficMirrorFilterRequest.TrafficMirrorFilterId, out var valueOfTrafficMirrorFilterId)) urlParam.Add("traffic_mirror_filter_id", valueOfTrafficMirrorFilterId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTrafficMirrorFilterRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1105,7 +1105,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<UpdateTrafficMirrorFilterResponse> UpdateTrafficMirrorFilterAsyncInvoker(UpdateTrafficMirrorFilterRequest updateTrafficMirrorFilterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_id", updateTrafficMirrorFilterRequest.TrafficMirrorFilterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTrafficMirrorFilterRequest.TrafficMirrorFilterId, out var valueOfTrafficMirrorFilterId)) urlParam.Add("traffic_mirror_filter_id", valueOfTrafficMirrorFilterId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filters/{traffic_mirror_filter_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTrafficMirrorFilterRequest);
             return new AsyncInvoker<UpdateTrafficMirrorFilterResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTrafficMirrorFilterResponse>);
@@ -1121,7 +1121,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<UpdateTrafficMirrorFilterRuleResponse> UpdateTrafficMirrorFilterRuleAsync(UpdateTrafficMirrorFilterRuleRequest updateTrafficMirrorFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_rule_id", updateTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId, out var valueOfTrafficMirrorFilterRuleId)) urlParam.Add("traffic_mirror_filter_rule_id", valueOfTrafficMirrorFilterRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTrafficMirrorFilterRuleRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1131,7 +1131,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<UpdateTrafficMirrorFilterRuleResponse> UpdateTrafficMirrorFilterRuleAsyncInvoker(UpdateTrafficMirrorFilterRuleRequest updateTrafficMirrorFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_filter_rule_id", updateTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTrafficMirrorFilterRuleRequest.TrafficMirrorFilterRuleId, out var valueOfTrafficMirrorFilterRuleId)) urlParam.Add("traffic_mirror_filter_rule_id", valueOfTrafficMirrorFilterRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-filter-rules/{traffic_mirror_filter_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTrafficMirrorFilterRuleRequest);
             return new AsyncInvoker<UpdateTrafficMirrorFilterRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTrafficMirrorFilterRuleResponse>);
@@ -1147,7 +1147,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<UpdateTrafficMirrorSessionResponse> UpdateTrafficMirrorSessionAsync(UpdateTrafficMirrorSessionRequest updateTrafficMirrorSessionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_session_id", updateTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTrafficMirrorSessionRequest.TrafficMirrorSessionId, out var valueOfTrafficMirrorSessionId)) urlParam.Add("traffic_mirror_session_id", valueOfTrafficMirrorSessionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTrafficMirrorSessionRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1157,7 +1157,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<UpdateTrafficMirrorSessionResponse> UpdateTrafficMirrorSessionAsyncInvoker(UpdateTrafficMirrorSessionRequest updateTrafficMirrorSessionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("traffic_mirror_session_id", updateTrafficMirrorSessionRequest.TrafficMirrorSessionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTrafficMirrorSessionRequest.TrafficMirrorSessionId, out var valueOfTrafficMirrorSessionId)) urlParam.Add("traffic_mirror_session_id", valueOfTrafficMirrorSessionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTrafficMirrorSessionRequest);
             return new AsyncInvoker<UpdateTrafficMirrorSessionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTrafficMirrorSessionResponse>);
@@ -1173,7 +1173,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<AddFirewallRulesResponse> AddFirewallRulesAsync(AddFirewallRulesRequest addFirewallRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", addFirewallRulesRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addFirewallRulesRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/insert-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFirewallRulesRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1183,7 +1183,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<AddFirewallRulesResponse> AddFirewallRulesAsyncInvoker(AddFirewallRulesRequest addFirewallRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", addFirewallRulesRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addFirewallRulesRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/insert-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFirewallRulesRequest);
             return new AsyncInvoker<AddFirewallRulesResponse>(this, "PUT", request, JsonUtils.DeSerialize<AddFirewallRulesResponse>);
@@ -1199,7 +1199,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<AssociateSubnetFirewallResponse> AssociateSubnetFirewallAsync(AssociateSubnetFirewallRequest associateSubnetFirewallRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", associateSubnetFirewallRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateSubnetFirewallRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/associate-subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateSubnetFirewallRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1209,7 +1209,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<AssociateSubnetFirewallResponse> AssociateSubnetFirewallAsyncInvoker(AssociateSubnetFirewallRequest associateSubnetFirewallRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", associateSubnetFirewallRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateSubnetFirewallRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/associate-subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateSubnetFirewallRequest);
             return new AsyncInvoker<AssociateSubnetFirewallResponse>(this, "PUT", request, JsonUtils.DeSerialize<AssociateSubnetFirewallResponse>);
@@ -1226,7 +1226,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<BatchCreateFirewallTagsResponse> BatchCreateFirewallTagsAsync(BatchCreateFirewallTagsRequest batchCreateFirewallTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", batchCreateFirewallTagsRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateFirewallTagsRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateFirewallTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1236,7 +1236,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<BatchCreateFirewallTagsResponse> BatchCreateFirewallTagsAsyncInvoker(BatchCreateFirewallTagsRequest batchCreateFirewallTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", batchCreateFirewallTagsRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateFirewallTagsRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateFirewallTagsRequest);
             return new AsyncInvoker<BatchCreateFirewallTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateFirewallTagsResponse>);
@@ -1253,7 +1253,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<BatchDeleteFirewallTagsResponse> BatchDeleteFirewallTagsAsync(BatchDeleteFirewallTagsRequest batchDeleteFirewallTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", batchDeleteFirewallTagsRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteFirewallTagsRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteFirewallTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1263,7 +1263,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<BatchDeleteFirewallTagsResponse> BatchDeleteFirewallTagsAsyncInvoker(BatchDeleteFirewallTagsRequest batchDeleteFirewallTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", batchDeleteFirewallTagsRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteFirewallTagsRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteFirewallTagsRequest);
             return new AsyncInvoker<BatchDeleteFirewallTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteFirewallTagsResponse>);
@@ -1328,7 +1328,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<CreateFirewallTagResponse> CreateFirewallTagAsync(CreateFirewallTagRequest createFirewallTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", createFirewallTagRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createFirewallTagRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFirewallTagRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1338,7 +1338,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<CreateFirewallTagResponse> CreateFirewallTagAsyncInvoker(CreateFirewallTagRequest createFirewallTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", createFirewallTagRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createFirewallTagRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFirewallTagRequest);
             return new AsyncInvoker<CreateFirewallTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateFirewallTagResponse>);
@@ -1354,7 +1354,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteFirewallResponse> DeleteFirewallAsync(DeleteFirewallRequest deleteFirewallRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", deleteFirewallRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFirewallRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFirewallRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -1364,7 +1364,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteFirewallResponse> DeleteFirewallAsyncInvoker(DeleteFirewallRequest deleteFirewallRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", deleteFirewallRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFirewallRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFirewallRequest);
             return new AsyncInvoker<DeleteFirewallResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFirewallResponse>);
@@ -1381,8 +1381,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteFirewallTagResponse> DeleteFirewallTagAsync(DeleteFirewallTagRequest deleteFirewallTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", deleteFirewallTagRequest.FirewallId.ToString());
-            urlParam.Add("tag_key", deleteFirewallTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFirewallTagRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteFirewallTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFirewallTagRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -1392,8 +1392,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteFirewallTagResponse> DeleteFirewallTagAsyncInvoker(DeleteFirewallTagRequest deleteFirewallTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", deleteFirewallTagRequest.FirewallId.ToString());
-            urlParam.Add("tag_key", deleteFirewallTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFirewallTagRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteFirewallTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFirewallTagRequest);
             return new AsyncInvoker<DeleteFirewallTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFirewallTagResponse>);
@@ -1409,7 +1409,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DisassociateSubnetFirewallResponse> DisassociateSubnetFirewallAsync(DisassociateSubnetFirewallRequest disassociateSubnetFirewallRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", disassociateSubnetFirewallRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateSubnetFirewallRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/disassociate-subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateSubnetFirewallRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1419,7 +1419,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DisassociateSubnetFirewallResponse> DisassociateSubnetFirewallAsyncInvoker(DisassociateSubnetFirewallRequest disassociateSubnetFirewallRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", disassociateSubnetFirewallRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateSubnetFirewallRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/disassociate-subnets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateSubnetFirewallRequest);
             return new AsyncInvoker<DisassociateSubnetFirewallResponse>(this, "PUT", request, JsonUtils.DeSerialize<DisassociateSubnetFirewallResponse>);
@@ -1507,7 +1507,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<RemoveFirewallRulesResponse> RemoveFirewallRulesAsync(RemoveFirewallRulesRequest removeFirewallRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", removeFirewallRulesRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeFirewallRulesRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/remove-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeFirewallRulesRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1517,7 +1517,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<RemoveFirewallRulesResponse> RemoveFirewallRulesAsyncInvoker(RemoveFirewallRulesRequest removeFirewallRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", removeFirewallRulesRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeFirewallRulesRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/remove-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeFirewallRulesRequest);
             return new AsyncInvoker<RemoveFirewallRulesResponse>(this, "PUT", request, JsonUtils.DeSerialize<RemoveFirewallRulesResponse>);
@@ -1533,7 +1533,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowFirewallResponse> ShowFirewallAsync(ShowFirewallRequest showFirewallRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", showFirewallRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFirewallRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFirewallRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1543,7 +1543,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowFirewallResponse> ShowFirewallAsyncInvoker(ShowFirewallRequest showFirewallRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", showFirewallRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFirewallRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFirewallRequest);
             return new AsyncInvoker<ShowFirewallResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFirewallResponse>);
@@ -1559,7 +1559,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowFirewallTagsResponse> ShowFirewallTagsAsync(ShowFirewallTagsRequest showFirewallTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", showFirewallTagsRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFirewallTagsRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFirewallTagsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1569,7 +1569,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowFirewallTagsResponse> ShowFirewallTagsAsyncInvoker(ShowFirewallTagsRequest showFirewallTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", showFirewallTagsRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFirewallTagsRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/firewalls/{firewall_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFirewallTagsRequest);
             return new AsyncInvoker<ShowFirewallTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFirewallTagsResponse>);
@@ -1585,7 +1585,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<UpdateFirewallResponse> UpdateFirewallAsync(UpdateFirewallRequest updateFirewallRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", updateFirewallRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFirewallRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFirewallRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1595,7 +1595,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<UpdateFirewallResponse> UpdateFirewallAsyncInvoker(UpdateFirewallRequest updateFirewallRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", updateFirewallRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFirewallRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFirewallRequest);
             return new AsyncInvoker<UpdateFirewallResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFirewallResponse>);
@@ -1611,7 +1611,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<UpdateFirewallRulesResponse> UpdateFirewallRulesAsync(UpdateFirewallRulesRequest updateFirewallRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", updateFirewallRulesRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFirewallRulesRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/update-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFirewallRulesRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1621,7 +1621,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<UpdateFirewallRulesResponse> UpdateFirewallRulesAsyncInvoker(UpdateFirewallRulesRequest updateFirewallRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("firewall_id", updateFirewallRulesRequest.FirewallId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFirewallRulesRequest.FirewallId, out var valueOfFirewallId)) urlParam.Add("firewall_id", valueOfFirewallId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/firewalls/{firewall_id}/update-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFirewallRulesRequest);
             return new AsyncInvoker<UpdateFirewallRulesResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFirewallRulesResponse>);
@@ -1637,7 +1637,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<AddClouddcnSubnetsTagsResponse> AddClouddcnSubnetsTagsAsync(AddClouddcnSubnetsTagsRequest addClouddcnSubnetsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", addClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addClouddcnSubnetsTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addClouddcnSubnetsTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1647,7 +1647,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<AddClouddcnSubnetsTagsResponse> AddClouddcnSubnetsTagsAsyncInvoker(AddClouddcnSubnetsTagsRequest addClouddcnSubnetsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", addClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addClouddcnSubnetsTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addClouddcnSubnetsTagsRequest);
             return new AsyncInvoker<AddClouddcnSubnetsTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddClouddcnSubnetsTagsResponse>);
@@ -1663,7 +1663,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<BatchCreateClouddcnSubnetsTagsResponse> BatchCreateClouddcnSubnetsTagsAsync(BatchCreateClouddcnSubnetsTagsRequest batchCreateClouddcnSubnetsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateClouddcnSubnetsTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateClouddcnSubnetsTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1673,7 +1673,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<BatchCreateClouddcnSubnetsTagsResponse> BatchCreateClouddcnSubnetsTagsAsyncInvoker(BatchCreateClouddcnSubnetsTagsRequest batchCreateClouddcnSubnetsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateClouddcnSubnetsTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateClouddcnSubnetsTagsRequest);
             return new AsyncInvoker<BatchCreateClouddcnSubnetsTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateClouddcnSubnetsTagsResponse>);
@@ -1689,7 +1689,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<BatchDeleteClouddcnSubnetsTagsResponse> BatchDeleteClouddcnSubnetsTagsAsync(BatchDeleteClouddcnSubnetsTagsRequest batchDeleteClouddcnSubnetsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchDeleteClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteClouddcnSubnetsTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteClouddcnSubnetsTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1699,7 +1699,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<BatchDeleteClouddcnSubnetsTagsResponse> BatchDeleteClouddcnSubnetsTagsAsyncInvoker(BatchDeleteClouddcnSubnetsTagsRequest batchDeleteClouddcnSubnetsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchDeleteClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteClouddcnSubnetsTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteClouddcnSubnetsTagsRequest);
             return new AsyncInvoker<BatchDeleteClouddcnSubnetsTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteClouddcnSubnetsTagsResponse>);
@@ -1739,7 +1739,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteClouddcnSubnetResponse> DeleteClouddcnSubnetAsync(DeleteClouddcnSubnetRequest deleteClouddcnSubnetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("clouddcn_subnet_id", deleteClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClouddcnSubnetRequest.ClouddcnSubnetId, out var valueOfClouddcnSubnetId)) urlParam.Add("clouddcn_subnet_id", valueOfClouddcnSubnetId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClouddcnSubnetRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -1749,7 +1749,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteClouddcnSubnetResponse> DeleteClouddcnSubnetAsyncInvoker(DeleteClouddcnSubnetRequest deleteClouddcnSubnetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("clouddcn_subnet_id", deleteClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClouddcnSubnetRequest.ClouddcnSubnetId, out var valueOfClouddcnSubnetId)) urlParam.Add("clouddcn_subnet_id", valueOfClouddcnSubnetId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClouddcnSubnetRequest);
             return new AsyncInvoker<DeleteClouddcnSubnetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteClouddcnSubnetResponse>);
@@ -1765,8 +1765,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteClouddcnSubnetsTagResponse> DeleteClouddcnSubnetsTagAsync(DeleteClouddcnSubnetsTagRequest deleteClouddcnSubnetsTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", deleteClouddcnSubnetsTagRequest.ResourceId.ToString());
-            urlParam.Add("tag_key", deleteClouddcnSubnetsTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClouddcnSubnetsTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteClouddcnSubnetsTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClouddcnSubnetsTagRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -1776,8 +1776,8 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteClouddcnSubnetsTagResponse> DeleteClouddcnSubnetsTagAsyncInvoker(DeleteClouddcnSubnetsTagRequest deleteClouddcnSubnetsTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", deleteClouddcnSubnetsTagRequest.ResourceId.ToString());
-            urlParam.Add("tag_key", deleteClouddcnSubnetsTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClouddcnSubnetsTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteClouddcnSubnetsTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClouddcnSubnetsTagRequest);
             return new AsyncInvoker<DeleteClouddcnSubnetsTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteClouddcnSubnetsTagResponse>);
@@ -1889,7 +1889,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowClouddcnSubnetResponse> ShowClouddcnSubnetAsync(ShowClouddcnSubnetRequest showClouddcnSubnetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("clouddcn_subnet_id", showClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClouddcnSubnetRequest.ClouddcnSubnetId, out var valueOfClouddcnSubnetId)) urlParam.Add("clouddcn_subnet_id", valueOfClouddcnSubnetId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClouddcnSubnetRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1899,7 +1899,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowClouddcnSubnetResponse> ShowClouddcnSubnetAsyncInvoker(ShowClouddcnSubnetRequest showClouddcnSubnetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("clouddcn_subnet_id", showClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClouddcnSubnetRequest.ClouddcnSubnetId, out var valueOfClouddcnSubnetId)) urlParam.Add("clouddcn_subnet_id", valueOfClouddcnSubnetId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClouddcnSubnetRequest);
             return new AsyncInvoker<ShowClouddcnSubnetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClouddcnSubnetResponse>);
@@ -1915,7 +1915,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowClouddcnSubnetsTagsResponse> ShowClouddcnSubnetsTagsAsync(ShowClouddcnSubnetsTagsRequest showClouddcnSubnetsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClouddcnSubnetsTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClouddcnSubnetsTagsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1925,7 +1925,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowClouddcnSubnetsTagsResponse> ShowClouddcnSubnetsTagsAsyncInvoker(ShowClouddcnSubnetsTagsRequest showClouddcnSubnetsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showClouddcnSubnetsTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClouddcnSubnetsTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/clouddcn-subnets/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClouddcnSubnetsTagsRequest);
             return new AsyncInvoker<ShowClouddcnSubnetsTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClouddcnSubnetsTagsResponse>);
@@ -1941,7 +1941,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<UpdateClouddcnSubnetResponse> UpdateClouddcnSubnetAsync(UpdateClouddcnSubnetRequest updateClouddcnSubnetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("clouddcn_subnet_id", updateClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateClouddcnSubnetRequest.ClouddcnSubnetId, out var valueOfClouddcnSubnetId)) urlParam.Add("clouddcn_subnet_id", valueOfClouddcnSubnetId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClouddcnSubnetRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1951,7 +1951,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<UpdateClouddcnSubnetResponse> UpdateClouddcnSubnetAsyncInvoker(UpdateClouddcnSubnetRequest updateClouddcnSubnetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("clouddcn_subnet_id", updateClouddcnSubnetRequest.ClouddcnSubnetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateClouddcnSubnetRequest.ClouddcnSubnetId, out var valueOfClouddcnSubnetId)) urlParam.Add("clouddcn_subnet_id", valueOfClouddcnSubnetId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/clouddcn-subnets/{clouddcn_subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClouddcnSubnetRequest);
             return new AsyncInvoker<UpdateClouddcnSubnetResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClouddcnSubnetResponse>);
@@ -1991,7 +1991,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteAddressGroupResponse> DeleteAddressGroupAsync(DeleteAddressGroupRequest deleteAddressGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("address_group_id", deleteAddressGroupRequest.AddressGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAddressGroupRequest.AddressGroupId, out var valueOfAddressGroupId)) urlParam.Add("address_group_id", valueOfAddressGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAddressGroupRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -2001,7 +2001,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteAddressGroupResponse> DeleteAddressGroupAsyncInvoker(DeleteAddressGroupRequest deleteAddressGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("address_group_id", deleteAddressGroupRequest.AddressGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAddressGroupRequest.AddressGroupId, out var valueOfAddressGroupId)) urlParam.Add("address_group_id", valueOfAddressGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAddressGroupRequest);
             return new AsyncInvoker<DeleteAddressGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAddressGroupResponse>);
@@ -2017,7 +2017,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteIpAddressGroupForceResponse> DeleteIpAddressGroupForceAsync(DeleteIpAddressGroupForceRequest deleteIpAddressGroupForceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("address_group_id", deleteIpAddressGroupForceRequest.AddressGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpAddressGroupForceRequest.AddressGroupId, out var valueOfAddressGroupId)) urlParam.Add("address_group_id", valueOfAddressGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}/force", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpAddressGroupForceRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -2027,7 +2027,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteIpAddressGroupForceResponse> DeleteIpAddressGroupForceAsyncInvoker(DeleteIpAddressGroupForceRequest deleteIpAddressGroupForceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("address_group_id", deleteIpAddressGroupForceRequest.AddressGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpAddressGroupForceRequest.AddressGroupId, out var valueOfAddressGroupId)) urlParam.Add("address_group_id", valueOfAddressGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}/force", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpAddressGroupForceRequest);
             return new AsyncInvoker<DeleteIpAddressGroupForceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteIpAddressGroupForceResponse>);
@@ -2067,7 +2067,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowAddressGroupResponse> ShowAddressGroupAsync(ShowAddressGroupRequest showAddressGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("address_group_id", showAddressGroupRequest.AddressGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAddressGroupRequest.AddressGroupId, out var valueOfAddressGroupId)) urlParam.Add("address_group_id", valueOfAddressGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAddressGroupRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2077,7 +2077,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowAddressGroupResponse> ShowAddressGroupAsyncInvoker(ShowAddressGroupRequest showAddressGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("address_group_id", showAddressGroupRequest.AddressGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAddressGroupRequest.AddressGroupId, out var valueOfAddressGroupId)) urlParam.Add("address_group_id", valueOfAddressGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAddressGroupRequest);
             return new AsyncInvoker<ShowAddressGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAddressGroupResponse>);
@@ -2093,7 +2093,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<UpdateAddressGroupResponse> UpdateAddressGroupAsync(UpdateAddressGroupRequest updateAddressGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("address_group_id", updateAddressGroupRequest.AddressGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAddressGroupRequest.AddressGroupId, out var valueOfAddressGroupId)) urlParam.Add("address_group_id", valueOfAddressGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAddressGroupRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2103,7 +2103,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<UpdateAddressGroupResponse> UpdateAddressGroupAsyncInvoker(UpdateAddressGroupRequest updateAddressGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("address_group_id", updateAddressGroupRequest.AddressGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAddressGroupRequest.AddressGroupId, out var valueOfAddressGroupId)) urlParam.Add("address_group_id", valueOfAddressGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/address-groups/{address_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAddressGroupRequest);
             return new AsyncInvoker<UpdateAddressGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAddressGroupResponse>);
@@ -2119,7 +2119,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<AddVpcExtendCidrResponse> AddVpcExtendCidrAsync(AddVpcExtendCidrRequest addVpcExtendCidrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", addVpcExtendCidrRequest.VpcId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addVpcExtendCidrRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}/add-extend-cidr", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addVpcExtendCidrRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2129,7 +2129,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<AddVpcExtendCidrResponse> AddVpcExtendCidrAsyncInvoker(AddVpcExtendCidrRequest addVpcExtendCidrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", addVpcExtendCidrRequest.VpcId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addVpcExtendCidrRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}/add-extend-cidr", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addVpcExtendCidrRequest);
             return new AsyncInvoker<AddVpcExtendCidrResponse>(this, "PUT", request, JsonUtils.DeSerialize<AddVpcExtendCidrResponse>);
@@ -2169,7 +2169,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<DeleteVpcResponse> DeleteVpcAsync(DeleteVpcRequest deleteVpcRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", deleteVpcRequest.VpcId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVpcRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -2179,7 +2179,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<DeleteVpcResponse> DeleteVpcAsyncInvoker(DeleteVpcRequest deleteVpcRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", deleteVpcRequest.VpcId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVpcRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcRequest);
             return new AsyncInvoker<DeleteVpcResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVpcResponse>);
@@ -2219,7 +2219,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<RemoveVpcExtendCidrResponse> RemoveVpcExtendCidrAsync(RemoveVpcExtendCidrRequest removeVpcExtendCidrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", removeVpcExtendCidrRequest.VpcId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeVpcExtendCidrRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}/remove-extend-cidr", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeVpcExtendCidrRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2229,7 +2229,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<RemoveVpcExtendCidrResponse> RemoveVpcExtendCidrAsyncInvoker(RemoveVpcExtendCidrRequest removeVpcExtendCidrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", removeVpcExtendCidrRequest.VpcId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeVpcExtendCidrRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}/remove-extend-cidr", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeVpcExtendCidrRequest);
             return new AsyncInvoker<RemoveVpcExtendCidrResponse>(this, "PUT", request, JsonUtils.DeSerialize<RemoveVpcExtendCidrResponse>);
@@ -2245,7 +2245,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<ShowVpcResponse> ShowVpcAsync(ShowVpcRequest showVpcRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", showVpcRequest.VpcId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVpcRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2255,7 +2255,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<ShowVpcResponse> ShowVpcAsyncInvoker(ShowVpcRequest showVpcRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", showVpcRequest.VpcId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVpcRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVpcRequest);
             return new AsyncInvoker<ShowVpcResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVpcResponse>);
@@ -2271,7 +2271,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public async Task<UpdateVpcResponse> UpdateVpcAsync(UpdateVpcRequest updateVpcRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", updateVpcRequest.VpcId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVpcRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVpcRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2281,7 +2281,7 @@ namespace HuaweiCloud.SDK.Vpc.V3
         public AsyncInvoker<UpdateVpcResponse> UpdateVpcAsyncInvoker(UpdateVpcRequest updateVpcRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", updateVpcRequest.VpcId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVpcRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/vpcs/{vpc_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVpcRequest);
             return new AsyncInvoker<UpdateVpcResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVpcResponse>);

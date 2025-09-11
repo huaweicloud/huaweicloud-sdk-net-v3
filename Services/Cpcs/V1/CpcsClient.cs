@@ -48,7 +48,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public AuthorizeAccessKeysResponse AuthorizeAccessKeys(AuthorizeAccessKeysRequest authorizeAccessKeysRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", authorizeAccessKeysRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(authorizeAccessKeysRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/authorize-access-keys", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", authorizeAccessKeysRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<AuthorizeAccessKeysResponse> AuthorizeAccessKeysInvoker(AuthorizeAccessKeysRequest authorizeAccessKeysRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", authorizeAccessKeysRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(authorizeAccessKeysRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/authorize-access-keys", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", authorizeAccessKeysRequest);
             return new SyncInvoker<AuthorizeAccessKeysResponse>(this, "POST", request, JsonUtils.DeSerialize<AuthorizeAccessKeysResponse>);
@@ -75,7 +75,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public BatchDisableAccessKeysResponse BatchDisableAccessKeys(BatchDisableAccessKeysRequest batchDisableAccessKeysRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", batchDisableAccessKeysRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDisableAccessKeysRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDisableAccessKeysRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -85,7 +85,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<BatchDisableAccessKeysResponse> BatchDisableAccessKeysInvoker(BatchDisableAccessKeysRequest batchDisableAccessKeysRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", batchDisableAccessKeysRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDisableAccessKeysRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDisableAccessKeysRequest);
             return new SyncInvoker<BatchDisableAccessKeysResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDisableAccessKeysResponse>);
@@ -102,7 +102,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public BatchEnableAccessKeysResponse BatchEnableAccessKeys(BatchEnableAccessKeysRequest batchEnableAccessKeysRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", batchEnableAccessKeysRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchEnableAccessKeysRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys/enable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchEnableAccessKeysRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -112,7 +112,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<BatchEnableAccessKeysResponse> BatchEnableAccessKeysInvoker(BatchEnableAccessKeysRequest batchEnableAccessKeysRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", batchEnableAccessKeysRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchEnableAccessKeysRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys/enable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchEnableAccessKeysRequest);
             return new SyncInvoker<BatchEnableAccessKeysResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchEnableAccessKeysResponse>);
@@ -128,7 +128,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public CancelAuthorizeAccessKeysResponse CancelAuthorizeAccessKeys(CancelAuthorizeAccessKeysRequest cancelAuthorizeAccessKeysRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", cancelAuthorizeAccessKeysRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelAuthorizeAccessKeysRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/de-authorize-access-keys", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelAuthorizeAccessKeysRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<CancelAuthorizeAccessKeysResponse> CancelAuthorizeAccessKeysInvoker(CancelAuthorizeAccessKeysRequest cancelAuthorizeAccessKeysRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", cancelAuthorizeAccessKeysRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelAuthorizeAccessKeysRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/de-authorize-access-keys", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelAuthorizeAccessKeysRequest);
             return new SyncInvoker<CancelAuthorizeAccessKeysResponse>(this, "POST", request, JsonUtils.DeSerialize<CancelAuthorizeAccessKeysResponse>);
@@ -178,7 +178,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public CreateAppAccessKeyResponse CreateAppAccessKey(CreateAppAccessKeyRequest createAppAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", createAppAccessKeyRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAppAccessKeyRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAppAccessKeyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -188,7 +188,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<CreateAppAccessKeyResponse> CreateAppAccessKeyInvoker(CreateAppAccessKeyRequest createAppAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", createAppAccessKeyRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAppAccessKeyRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAppAccessKeyRequest);
             return new SyncInvoker<CreateAppAccessKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAppAccessKeyResponse>);
@@ -230,8 +230,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public DeleteAccessKeyResponse DeleteAccessKey(DeleteAccessKeyRequest deleteAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_key_id", deleteAccessKeyRequest.AccessKeyId.ToString());
-            urlParam.Add("app_id", deleteAccessKeyRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAccessKeyRequest.AccessKeyId, out var valueOfAccessKeyId)) urlParam.Add("access_key_id", valueOfAccessKeyId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteAccessKeyRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys/{access_key_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAccessKeyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -241,8 +241,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<DeleteAccessKeyResponse> DeleteAccessKeyInvoker(DeleteAccessKeyRequest deleteAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_key_id", deleteAccessKeyRequest.AccessKeyId.ToString());
-            urlParam.Add("app_id", deleteAccessKeyRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAccessKeyRequest.AccessKeyId, out var valueOfAccessKeyId)) urlParam.Add("access_key_id", valueOfAccessKeyId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteAccessKeyRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys/{access_key_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAccessKeyRequest);
             return new SyncInvoker<DeleteAccessKeyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAccessKeyResponse>);
@@ -259,7 +259,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public DeleteAppResponse DeleteApp(DeleteAppRequest deleteAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", deleteAppRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAppRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -269,7 +269,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<DeleteAppResponse> DeleteAppInvoker(DeleteAppRequest deleteAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", deleteAppRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAppRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppRequest);
             return new SyncInvoker<DeleteAppResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAppResponse>);
@@ -286,7 +286,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public DeleteCcspClusterResponse DeleteCcspCluster(DeleteCcspClusterRequest deleteCcspClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", deleteCcspClusterRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCcspClusterRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCcspClusterRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -296,7 +296,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<DeleteCcspClusterResponse> DeleteCcspClusterInvoker(DeleteCcspClusterRequest deleteCcspClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", deleteCcspClusterRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCcspClusterRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCcspClusterRequest);
             return new SyncInvoker<DeleteCcspClusterResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteCcspClusterResponse>);
@@ -313,7 +313,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public DisableCcspInstanceResponse DisableCcspInstance(DisableCcspInstanceRequest disableCcspInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", disableCcspInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableCcspInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/instances/{instance_id}/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableCcspInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -323,7 +323,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<DisableCcspInstanceResponse> DisableCcspInstanceInvoker(DisableCcspInstanceRequest disableCcspInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", disableCcspInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableCcspInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/instances/{instance_id}/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableCcspInstanceRequest);
             return new SyncInvoker<DisableCcspInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<DisableCcspInstanceResponse>);
@@ -364,7 +364,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public EnableCcspInstanceResponse EnableCcspInstance(EnableCcspInstanceRequest enableCcspInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", enableCcspInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableCcspInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/instances/{instance_id}/enable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableCcspInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -374,7 +374,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<EnableCcspInstanceResponse> EnableCcspInstanceInvoker(EnableCcspInstanceRequest enableCcspInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", enableCcspInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableCcspInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/instances/{instance_id}/enable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableCcspInstanceRequest);
             return new SyncInvoker<EnableCcspInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<EnableCcspInstanceResponse>);
@@ -414,8 +414,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public ShowAccessKeyResponse ShowAccessKey(ShowAccessKeyRequest showAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_key_id", showAccessKeyRequest.AccessKeyId.ToString());
-            urlParam.Add("app_id", showAccessKeyRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAccessKeyRequest.AccessKeyId, out var valueOfAccessKeyId)) urlParam.Add("access_key_id", valueOfAccessKeyId);
+            if (StringUtils.TryConvertToNonEmptyString(showAccessKeyRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys/{access_key_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAccessKeyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -425,8 +425,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<ShowAccessKeyResponse> ShowAccessKeyInvoker(ShowAccessKeyRequest showAccessKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_key_id", showAccessKeyRequest.AccessKeyId.ToString());
-            urlParam.Add("app_id", showAccessKeyRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAccessKeyRequest.AccessKeyId, out var valueOfAccessKeyId)) urlParam.Add("access_key_id", valueOfAccessKeyId);
+            if (StringUtils.TryConvertToNonEmptyString(showAccessKeyRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys/{access_key_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAccessKeyRequest);
             return new SyncInvoker<ShowAccessKeyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAccessKeyResponse>);
@@ -442,7 +442,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public ShowAppAccessKeyListResponse ShowAppAccessKeyList(ShowAppAccessKeyListRequest showAppAccessKeyListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", showAppAccessKeyListRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAppAccessKeyListRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppAccessKeyListRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -452,7 +452,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<ShowAppAccessKeyListResponse> ShowAppAccessKeyListInvoker(ShowAppAccessKeyListRequest showAppAccessKeyListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", showAppAccessKeyListRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAppAccessKeyListRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/apps/{app_id}/access-keys", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppAccessKeyListRequest);
             return new SyncInvoker<ShowAppAccessKeyListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppAccessKeyListResponse>);
@@ -540,7 +540,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public ShowCcspClusterResponse ShowCcspCluster(ShowCcspClusterRequest showCcspClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", showCcspClusterRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCcspClusterRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCcspClusterRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -550,7 +550,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<ShowCcspClusterResponse> ShowCcspClusterInvoker(ShowCcspClusterRequest showCcspClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", showCcspClusterRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCcspClusterRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCcspClusterRequest);
             return new SyncInvoker<ShowCcspClusterResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCcspClusterResponse>);
@@ -614,7 +614,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public ShowClusterAccessKeyListResponse ShowClusterAccessKeyList(ShowClusterAccessKeyListRequest showClusterAccessKeyListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", showClusterAccessKeyListRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClusterAccessKeyListRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/access-keys", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterAccessKeyListRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -624,7 +624,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<ShowClusterAccessKeyListResponse> ShowClusterAccessKeyListInvoker(ShowClusterAccessKeyListRequest showClusterAccessKeyListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", showClusterAccessKeyListRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClusterAccessKeyListRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/access-keys", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterAccessKeyListRequest);
             return new SyncInvoker<ShowClusterAccessKeyListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterAccessKeyListResponse>);
@@ -641,7 +641,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public ShowClusterUriResponse ShowClusterUri(ShowClusterUriRequest showClusterUriRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", showClusterUriRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClusterUriRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/uri", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterUriRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -651,7 +651,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         public SyncInvoker<ShowClusterUriResponse> ShowClusterUriInvoker(ShowClusterUriRequest showClusterUriRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", showClusterUriRequest.ClusterId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClusterUriRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/uri", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterUriRequest);
             return new SyncInvoker<ShowClusterUriResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterUriResponse>);

@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
-    /// 查询table和schema请求体
+    /// 
     /// </summary>
     public class ListSchemaAndTableRequestBody 
     {
 
         /// <summary>
-        /// SQL文本
+        /// **参数解释**: SQL文本。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
         /// </summary>
         [JsonProperty("sql_text", NullValueHandling = NullValueHandling.Ignore)]
         public string SqlText { get; set; }
 
         /// <summary>
-        /// 实例ID
+        /// **参数解释**: 实例ID。 **约束限制**: 不涉及。 **取值范围**: 只能由英文字母、数字组成，且长度为36个字符。 **默认取值**: 不涉及。
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }

@@ -15,133 +15,6 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     /// </summary>
     public class AuditSqlRequest 
     {
-        /// <summary>
-        /// 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
-        /// </summary>
-        /// <value>风险级别 - HIGH - MEDIUM - LOW - NO_RISK</value>
-        [JsonConverter(typeof(EnumClassConverter<RiskLevelsEnum>))]
-        public class RiskLevelsEnum
-        {
-            /// <summary>
-            /// Enum HIGH for value: HIGH
-            /// </summary>
-            public static readonly RiskLevelsEnum HIGH = new RiskLevelsEnum("HIGH");
-
-            /// <summary>
-            /// Enum MEDIUM for value: MEDIUM
-            /// </summary>
-            public static readonly RiskLevelsEnum MEDIUM = new RiskLevelsEnum("MEDIUM");
-
-            /// <summary>
-            /// Enum LOW for value: LOW
-            /// </summary>
-            public static readonly RiskLevelsEnum LOW = new RiskLevelsEnum("LOW");
-
-            /// <summary>
-            /// Enum NO_RISK for value: NO_RISK
-            /// </summary>
-            public static readonly RiskLevelsEnum NO_RISK = new RiskLevelsEnum("NO_RISK");
-
-            private static readonly Dictionary<string, RiskLevelsEnum> StaticFields =
-            new Dictionary<string, RiskLevelsEnum>()
-            {
-                { "HIGH", HIGH },
-                { "MEDIUM", MEDIUM },
-                { "LOW", LOW },
-                { "NO_RISK", NO_RISK },
-            };
-
-            private string _value;
-
-            public RiskLevelsEnum()
-            {
-
-            }
-
-            public RiskLevelsEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static RiskLevelsEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as RiskLevelsEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(RiskLevelsEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(RiskLevelsEnum a, RiskLevelsEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(RiskLevelsEnum a, RiskLevelsEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
 
         /// <summary>
         /// 
@@ -150,10 +23,11 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public AuditSqlRequestTime Time { get; set; }
 
         /// <summary>
-        /// 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
+        /// 风险级别 - HIGH：高 - MEDIUM：中 - LOW：低 - NO_RISK：无
         /// </summary>
         [JsonProperty("risk_levels", NullValueHandling = NullValueHandling.Ignore)]
-        public RiskLevelsEnum RiskLevels { get; set; }
+        public string RiskLevels { get; set; }
+
         /// <summary>
         /// 客户端IP
         /// </summary>
@@ -261,7 +135,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             if (input == null) return false;
             if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
-            if (this.RiskLevels != input.RiskLevels) return false;
+            if (this.RiskLevels != input.RiskLevels || (this.RiskLevels != null && !this.RiskLevels.Equals(input.RiskLevels))) return false;
             if (this.ClientIp != input.ClientIp || (this.ClientIp != null && !this.ClientIp.Equals(input.ClientIp))) return false;
             if (this.ClientName != input.ClientName || (this.ClientName != null && !this.ClientName.Equals(input.ClientName))) return false;
             if (this.DbIp != input.DbIp || (this.DbIp != null && !this.DbIp.Equals(input.DbIp))) return false;
@@ -286,7 +160,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             {
                 var hashCode = 41;
                 if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
-                hashCode = hashCode * 59 + this.RiskLevels.GetHashCode();
+                if (this.RiskLevels != null) hashCode = hashCode * 59 + this.RiskLevels.GetHashCode();
                 if (this.ClientIp != null) hashCode = hashCode * 59 + this.ClientIp.GetHashCode();
                 if (this.ClientName != null) hashCode = hashCode * 59 + this.ClientName.GetHashCode();
                 if (this.DbIp != null) hashCode = hashCode * 59 + this.DbIp.GetHashCode();

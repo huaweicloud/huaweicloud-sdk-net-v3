@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// 数据库表信息列表
+        /// **参数解释**: 数据库表信息列表。
         /// </summary>
         [JsonProperty("database_tables", NullValueHandling = NullValueHandling.Ignore)]
         public List<DatabaseSchemaTableResult> DatabaseTables { get; set; }

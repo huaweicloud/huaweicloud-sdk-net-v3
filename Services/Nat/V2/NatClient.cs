@@ -96,8 +96,8 @@ namespace HuaweiCloud.SDK.Nat.V2
         public DeleteNatGatewayDnatRuleResponse DeleteNatGatewayDnatRule(DeleteNatGatewayDnatRuleRequest deleteNatGatewayDnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", deleteNatGatewayDnatRuleRequest.NatGatewayId.ToString());
-            urlParam.Add("dnat_rule_id", deleteNatGatewayDnatRuleRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewayDnatRuleRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewayDnatRuleRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}/dnat_rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayDnatRuleRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -107,8 +107,8 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<DeleteNatGatewayDnatRuleResponse> DeleteNatGatewayDnatRuleInvoker(DeleteNatGatewayDnatRuleRequest deleteNatGatewayDnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", deleteNatGatewayDnatRuleRequest.NatGatewayId.ToString());
-            urlParam.Add("dnat_rule_id", deleteNatGatewayDnatRuleRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewayDnatRuleRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewayDnatRuleRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}/dnat_rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayDnatRuleRequest);
             return new SyncInvoker<DeleteNatGatewayDnatRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNatGatewayDnatRuleResponse>);
@@ -124,7 +124,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public DeletePrivateDnatResponse DeletePrivateDnat(DeletePrivateDnatRequest deletePrivateDnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dnat_rule_id", deletePrivateDnatRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateDnatRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/dnat-rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateDnatRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -134,7 +134,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<DeletePrivateDnatResponse> DeletePrivateDnatInvoker(DeletePrivateDnatRequest deletePrivateDnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dnat_rule_id", deletePrivateDnatRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateDnatRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/dnat-rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateDnatRequest);
             return new SyncInvoker<DeletePrivateDnatResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateDnatResponse>);
@@ -198,7 +198,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public ShowNatGatewayDnatRuleResponse ShowNatGatewayDnatRule(ShowNatGatewayDnatRuleRequest showNatGatewayDnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dnat_rule_id", showNatGatewayDnatRuleRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNatGatewayDnatRuleRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dnat_rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayDnatRuleRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -208,7 +208,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<ShowNatGatewayDnatRuleResponse> ShowNatGatewayDnatRuleInvoker(ShowNatGatewayDnatRuleRequest showNatGatewayDnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dnat_rule_id", showNatGatewayDnatRuleRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNatGatewayDnatRuleRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dnat_rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayDnatRuleRequest);
             return new SyncInvoker<ShowNatGatewayDnatRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNatGatewayDnatRuleResponse>);
@@ -224,7 +224,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public ShowPrivateDnatResponse ShowPrivateDnat(ShowPrivateDnatRequest showPrivateDnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dnat_rule_id", showPrivateDnatRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateDnatRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/dnat-rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateDnatRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -234,7 +234,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<ShowPrivateDnatResponse> ShowPrivateDnatInvoker(ShowPrivateDnatRequest showPrivateDnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dnat_rule_id", showPrivateDnatRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateDnatRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/dnat-rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateDnatRequest);
             return new SyncInvoker<ShowPrivateDnatResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateDnatResponse>);
@@ -250,7 +250,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public UpdateNatGatewayDnatRuleResponse UpdateNatGatewayDnatRule(UpdateNatGatewayDnatRuleRequest updateNatGatewayDnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dnat_rule_id", updateNatGatewayDnatRuleRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNatGatewayDnatRuleRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dnat_rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNatGatewayDnatRuleRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -260,7 +260,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<UpdateNatGatewayDnatRuleResponse> UpdateNatGatewayDnatRuleInvoker(UpdateNatGatewayDnatRuleRequest updateNatGatewayDnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dnat_rule_id", updateNatGatewayDnatRuleRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNatGatewayDnatRuleRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dnat_rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNatGatewayDnatRuleRequest);
             return new SyncInvoker<UpdateNatGatewayDnatRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateNatGatewayDnatRuleResponse>);
@@ -276,7 +276,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public UpdatePrivateDnatResponse UpdatePrivateDnat(UpdatePrivateDnatRequest updatePrivateDnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dnat_rule_id", updatePrivateDnatRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateDnatRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/dnat-rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateDnatRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -286,7 +286,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<UpdatePrivateDnatResponse> UpdatePrivateDnatInvoker(UpdatePrivateDnatRequest updatePrivateDnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dnat_rule_id", updatePrivateDnatRequest.DnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateDnatRequest.DnatRuleId, out var valueOfDnatRuleId)) urlParam.Add("dnat_rule_id", valueOfDnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/dnat-rules/{dnat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateDnatRequest);
             return new SyncInvoker<UpdatePrivateDnatResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePrivateDnatResponse>);
@@ -304,7 +304,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public BatchCreateDeleteTransitIpTagsResponse BatchCreateDeleteTransitIpTags(BatchCreateDeleteTransitIpTagsRequest batchCreateDeleteTransitIpTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateDeleteTransitIpTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateDeleteTransitIpTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-ips/{resource_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateDeleteTransitIpTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -314,7 +314,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<BatchCreateDeleteTransitIpTagsResponse> BatchCreateDeleteTransitIpTagsInvoker(BatchCreateDeleteTransitIpTagsRequest batchCreateDeleteTransitIpTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateDeleteTransitIpTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateDeleteTransitIpTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-ips/{resource_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateDeleteTransitIpTagsRequest);
             return new SyncInvoker<BatchCreateDeleteTransitIpTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateDeleteTransitIpTagsResponse>);
@@ -332,7 +332,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public CreateTransitIpTagResponse CreateTransitIpTag(CreateTransitIpTagRequest createTransitIpTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", createTransitIpTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTransitIpTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-ips/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTransitIpTagRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -342,7 +342,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<CreateTransitIpTagResponse> CreateTransitIpTagInvoker(CreateTransitIpTagRequest createTransitIpTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", createTransitIpTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTransitIpTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-ips/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTransitIpTagRequest);
             return new SyncInvoker<CreateTransitIpTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateTransitIpTagResponse>);
@@ -359,8 +359,8 @@ namespace HuaweiCloud.SDK.Nat.V2
         public DeleteTransitIpTagResponse DeleteTransitIpTag(DeleteTransitIpTagRequest deleteTransitIpTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key", deleteTransitIpTagRequest.Key.ToString());
-            urlParam.Add("resource_id", deleteTransitIpTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitIpTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitIpTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-ips/{resource_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTransitIpTagRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -370,8 +370,8 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<DeleteTransitIpTagResponse> DeleteTransitIpTagInvoker(DeleteTransitIpTagRequest deleteTransitIpTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key", deleteTransitIpTagRequest.Key.ToString());
-            urlParam.Add("resource_id", deleteTransitIpTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitIpTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitIpTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-ips/{resource_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTransitIpTagRequest);
             return new SyncInvoker<DeleteTransitIpTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTransitIpTagResponse>);
@@ -438,7 +438,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public ShowTransitIpTagsResponse ShowTransitIpTags(ShowTransitIpTagsRequest showTransitIpTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showTransitIpTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTransitIpTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-ips/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransitIpTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -448,7 +448,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<ShowTransitIpTagsResponse> ShowTransitIpTagsInvoker(ShowTransitIpTagsRequest showTransitIpTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showTransitIpTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTransitIpTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-ips/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransitIpTagsRequest);
             return new SyncInvoker<ShowTransitIpTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTransitIpTagsResponse>);
@@ -466,7 +466,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public BatchCreateDeleteNatGatewayTagResponse BatchCreateDeleteNatGatewayTag(BatchCreateDeleteNatGatewayTagRequest batchCreateDeleteNatGatewayTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", batchCreateDeleteNatGatewayTagRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateDeleteNatGatewayTagRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateDeleteNatGatewayTagRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -476,7 +476,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<BatchCreateDeleteNatGatewayTagResponse> BatchCreateDeleteNatGatewayTagInvoker(BatchCreateDeleteNatGatewayTagRequest batchCreateDeleteNatGatewayTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", batchCreateDeleteNatGatewayTagRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateDeleteNatGatewayTagRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateDeleteNatGatewayTagRequest);
             return new SyncInvoker<BatchCreateDeleteNatGatewayTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateDeleteNatGatewayTagResponse>);
@@ -494,7 +494,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public BatchCreateDeletePrivateNatTagsResponse BatchCreateDeletePrivateNatTags(BatchCreateDeletePrivateNatTagsRequest batchCreateDeletePrivateNatTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateDeletePrivateNatTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateDeletePrivateNatTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat-gateways/{resource_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateDeletePrivateNatTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -504,7 +504,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<BatchCreateDeletePrivateNatTagsResponse> BatchCreateDeletePrivateNatTagsInvoker(BatchCreateDeletePrivateNatTagsRequest batchCreateDeletePrivateNatTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateDeletePrivateNatTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateDeletePrivateNatTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat-gateways/{resource_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateDeletePrivateNatTagsRequest);
             return new SyncInvoker<BatchCreateDeletePrivateNatTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateDeletePrivateNatTagsResponse>);
@@ -544,7 +544,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public CreateNatGatewayTagResponse CreateNatGatewayTag(CreateNatGatewayTagRequest createNatGatewayTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", createNatGatewayTagRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createNatGatewayTagRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNatGatewayTagRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -554,7 +554,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<CreateNatGatewayTagResponse> CreateNatGatewayTagInvoker(CreateNatGatewayTagRequest createNatGatewayTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", createNatGatewayTagRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createNatGatewayTagRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNatGatewayTagRequest);
             return new SyncInvoker<CreateNatGatewayTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateNatGatewayTagResponse>);
@@ -596,7 +596,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public CreatePrivateNatTagResponse CreatePrivateNatTag(CreatePrivateNatTagRequest createPrivateNatTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", createPrivateNatTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPrivateNatTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat-gateways/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPrivateNatTagRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -606,7 +606,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<CreatePrivateNatTagResponse> CreatePrivateNatTagInvoker(CreatePrivateNatTagRequest createPrivateNatTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", createPrivateNatTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPrivateNatTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat-gateways/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPrivateNatTagRequest);
             return new SyncInvoker<CreatePrivateNatTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreatePrivateNatTagResponse>);
@@ -622,7 +622,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest deleteNatGatewayRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", deleteNatGatewayRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewayRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -632,7 +632,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<DeleteNatGatewayResponse> DeleteNatGatewayInvoker(DeleteNatGatewayRequest deleteNatGatewayRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", deleteNatGatewayRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewayRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayRequest);
             return new SyncInvoker<DeleteNatGatewayResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNatGatewayResponse>);
@@ -648,8 +648,8 @@ namespace HuaweiCloud.SDK.Nat.V2
         public DeleteNatGatewayTagResponse DeleteNatGatewayTag(DeleteNatGatewayTagRequest deleteNatGatewayTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", deleteNatGatewayTagRequest.NatGatewayId.ToString());
-            urlParam.Add("key", deleteNatGatewayTagRequest.Key.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewayTagRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewayTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayTagRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -659,8 +659,8 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<DeleteNatGatewayTagResponse> DeleteNatGatewayTagInvoker(DeleteNatGatewayTagRequest deleteNatGatewayTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", deleteNatGatewayTagRequest.NatGatewayId.ToString());
-            urlParam.Add("key", deleteNatGatewayTagRequest.Key.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewayTagRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewayTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewayTagRequest);
             return new SyncInvoker<DeleteNatGatewayTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNatGatewayTagResponse>);
@@ -676,7 +676,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public DeletePrivateNatResponse DeletePrivateNat(DeletePrivateNatRequest deletePrivateNatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("gateway_id", deletePrivateNatRequest.GatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateNatRequest.GatewayId, out var valueOfGatewayId)) urlParam.Add("gateway_id", valueOfGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/gateways/{gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateNatRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -686,7 +686,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<DeletePrivateNatResponse> DeletePrivateNatInvoker(DeletePrivateNatRequest deletePrivateNatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("gateway_id", deletePrivateNatRequest.GatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateNatRequest.GatewayId, out var valueOfGatewayId)) urlParam.Add("gateway_id", valueOfGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/gateways/{gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateNatRequest);
             return new SyncInvoker<DeletePrivateNatResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateNatResponse>);
@@ -703,8 +703,8 @@ namespace HuaweiCloud.SDK.Nat.V2
         public DeletePrivateNatTagResponse DeletePrivateNatTag(DeletePrivateNatTagRequest deletePrivateNatTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key", deletePrivateNatTagRequest.Key.ToString());
-            urlParam.Add("resource_id", deletePrivateNatTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateNatTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateNatTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat-gateways/{resource_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateNatTagRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -714,8 +714,8 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<DeletePrivateNatTagResponse> DeletePrivateNatTagInvoker(DeletePrivateNatTagRequest deletePrivateNatTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key", deletePrivateNatTagRequest.Key.ToString());
-            urlParam.Add("resource_id", deletePrivateNatTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateNatTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateNatTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat-gateways/{resource_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateNatTagRequest);
             return new SyncInvoker<DeletePrivateNatTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateNatTagResponse>);
@@ -880,7 +880,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public ShowNatGatewayResponse ShowNatGateway(ShowNatGatewayRequest showNatGatewayRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", showNatGatewayRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNatGatewayRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -890,7 +890,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<ShowNatGatewayResponse> ShowNatGatewayInvoker(ShowNatGatewayRequest showNatGatewayRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", showNatGatewayRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNatGatewayRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayRequest);
             return new SyncInvoker<ShowNatGatewayResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNatGatewayResponse>);
@@ -907,7 +907,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public ShowNatGatewayTagResponse ShowNatGatewayTag(ShowNatGatewayTagRequest showNatGatewayTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", showNatGatewayTagRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNatGatewayTagRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayTagRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -917,7 +917,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<ShowNatGatewayTagResponse> ShowNatGatewayTagInvoker(ShowNatGatewayTagRequest showNatGatewayTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", showNatGatewayTagRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNatGatewayTagRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/nat_gateways/{nat_gateway_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewayTagRequest);
             return new SyncInvoker<ShowNatGatewayTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNatGatewayTagResponse>);
@@ -933,7 +933,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public ShowPrivateNatResponse ShowPrivateNat(ShowPrivateNatRequest showPrivateNatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("gateway_id", showPrivateNatRequest.GatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateNatRequest.GatewayId, out var valueOfGatewayId)) urlParam.Add("gateway_id", valueOfGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/gateways/{gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateNatRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -943,7 +943,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<ShowPrivateNatResponse> ShowPrivateNatInvoker(ShowPrivateNatRequest showPrivateNatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("gateway_id", showPrivateNatRequest.GatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateNatRequest.GatewayId, out var valueOfGatewayId)) urlParam.Add("gateway_id", valueOfGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/gateways/{gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateNatRequest);
             return new SyncInvoker<ShowPrivateNatResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateNatResponse>);
@@ -960,7 +960,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public ShowPrivateNatTagsResponse ShowPrivateNatTags(ShowPrivateNatTagsRequest showPrivateNatTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showPrivateNatTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateNatTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat-gateways/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateNatTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -970,7 +970,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<ShowPrivateNatTagsResponse> ShowPrivateNatTagsInvoker(ShowPrivateNatTagsRequest showPrivateNatTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showPrivateNatTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateNatTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat-gateways/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateNatTagsRequest);
             return new SyncInvoker<ShowPrivateNatTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateNatTagsResponse>);
@@ -986,7 +986,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public UpdateNatGatewayResponse UpdateNatGateway(UpdateNatGatewayRequest updateNatGatewayRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", updateNatGatewayRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNatGatewayRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNatGatewayRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -996,7 +996,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<UpdateNatGatewayResponse> UpdateNatGatewayInvoker(UpdateNatGatewayRequest updateNatGatewayRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", updateNatGatewayRequest.NatGatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNatGatewayRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNatGatewayRequest);
             return new SyncInvoker<UpdateNatGatewayResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateNatGatewayResponse>);
@@ -1012,7 +1012,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public UpdatePrivateNatResponse UpdatePrivateNat(UpdatePrivateNatRequest updatePrivateNatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("gateway_id", updatePrivateNatRequest.GatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateNatRequest.GatewayId, out var valueOfGatewayId)) urlParam.Add("gateway_id", valueOfGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/gateways/{gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateNatRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1022,7 +1022,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<UpdatePrivateNatResponse> UpdatePrivateNatInvoker(UpdatePrivateNatRequest updatePrivateNatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("gateway_id", updatePrivateNatRequest.GatewayId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateNatRequest.GatewayId, out var valueOfGatewayId)) urlParam.Add("gateway_id", valueOfGatewayId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/gateways/{gateway_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateNatRequest);
             return new SyncInvoker<UpdatePrivateNatResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePrivateNatResponse>);
@@ -1062,7 +1062,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public DeleteTransitIpResponse DeleteTransitIp(DeleteTransitIpRequest deleteTransitIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("transit_ip_id", deleteTransitIpRequest.TransitIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitIpRequest.TransitIpId, out var valueOfTransitIpId)) urlParam.Add("transit_ip_id", valueOfTransitIpId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-ips/{transit_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTransitIpRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1072,7 +1072,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<DeleteTransitIpResponse> DeleteTransitIpInvoker(DeleteTransitIpRequest deleteTransitIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("transit_ip_id", deleteTransitIpRequest.TransitIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitIpRequest.TransitIpId, out var valueOfTransitIpId)) urlParam.Add("transit_ip_id", valueOfTransitIpId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-ips/{transit_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTransitIpRequest);
             return new SyncInvoker<DeleteTransitIpResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTransitIpResponse>);
@@ -1112,7 +1112,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public ShowTransitIpResponse ShowTransitIp(ShowTransitIpRequest showTransitIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("transit_ip_id", showTransitIpRequest.TransitIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTransitIpRequest.TransitIpId, out var valueOfTransitIpId)) urlParam.Add("transit_ip_id", valueOfTransitIpId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-ips/{transit_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransitIpRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1122,7 +1122,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<ShowTransitIpResponse> ShowTransitIpInvoker(ShowTransitIpRequest showTransitIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("transit_ip_id", showTransitIpRequest.TransitIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTransitIpRequest.TransitIpId, out var valueOfTransitIpId)) urlParam.Add("transit_ip_id", valueOfTransitIpId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-ips/{transit_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransitIpRequest);
             return new SyncInvoker<ShowTransitIpResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTransitIpResponse>);
@@ -1186,8 +1186,8 @@ namespace HuaweiCloud.SDK.Nat.V2
         public DeleteNatGatewaySnatRuleResponse DeleteNatGatewaySnatRule(DeleteNatGatewaySnatRuleRequest deleteNatGatewaySnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", deleteNatGatewaySnatRuleRequest.NatGatewayId.ToString());
-            urlParam.Add("snat_rule_id", deleteNatGatewaySnatRuleRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewaySnatRuleRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewaySnatRuleRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}/snat_rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewaySnatRuleRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1197,8 +1197,8 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<DeleteNatGatewaySnatRuleResponse> DeleteNatGatewaySnatRuleInvoker(DeleteNatGatewaySnatRuleRequest deleteNatGatewaySnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("nat_gateway_id", deleteNatGatewaySnatRuleRequest.NatGatewayId.ToString());
-            urlParam.Add("snat_rule_id", deleteNatGatewaySnatRuleRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewaySnatRuleRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteNatGatewaySnatRuleRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}/snat_rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNatGatewaySnatRuleRequest);
             return new SyncInvoker<DeleteNatGatewaySnatRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNatGatewaySnatRuleResponse>);
@@ -1214,7 +1214,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public DeletePrivateSnatResponse DeletePrivateSnat(DeletePrivateSnatRequest deletePrivateSnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snat_rule_id", deletePrivateSnatRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateSnatRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/snat-rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateSnatRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1224,7 +1224,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<DeletePrivateSnatResponse> DeletePrivateSnatInvoker(DeletePrivateSnatRequest deletePrivateSnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snat_rule_id", deletePrivateSnatRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateSnatRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/snat-rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateSnatRequest);
             return new SyncInvoker<DeletePrivateSnatResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateSnatResponse>);
@@ -1288,7 +1288,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public ShowNatGatewaySnatRuleResponse ShowNatGatewaySnatRule(ShowNatGatewaySnatRuleRequest showNatGatewaySnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snat_rule_id", showNatGatewaySnatRuleRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNatGatewaySnatRuleRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/snat_rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewaySnatRuleRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1298,7 +1298,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<ShowNatGatewaySnatRuleResponse> ShowNatGatewaySnatRuleInvoker(ShowNatGatewaySnatRuleRequest showNatGatewaySnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snat_rule_id", showNatGatewaySnatRuleRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNatGatewaySnatRuleRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/snat_rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNatGatewaySnatRuleRequest);
             return new SyncInvoker<ShowNatGatewaySnatRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNatGatewaySnatRuleResponse>);
@@ -1314,7 +1314,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public ShowPrivateSnatResponse ShowPrivateSnat(ShowPrivateSnatRequest showPrivateSnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snat_rule_id", showPrivateSnatRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateSnatRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/snat-rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateSnatRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1324,7 +1324,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<ShowPrivateSnatResponse> ShowPrivateSnatInvoker(ShowPrivateSnatRequest showPrivateSnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snat_rule_id", showPrivateSnatRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateSnatRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/snat-rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateSnatRequest);
             return new SyncInvoker<ShowPrivateSnatResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateSnatResponse>);
@@ -1340,7 +1340,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public UpdateNatGatewaySnatRuleResponse UpdateNatGatewaySnatRule(UpdateNatGatewaySnatRuleRequest updateNatGatewaySnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snat_rule_id", updateNatGatewaySnatRuleRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNatGatewaySnatRuleRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/snat_rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNatGatewaySnatRuleRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1350,7 +1350,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<UpdateNatGatewaySnatRuleResponse> UpdateNatGatewaySnatRuleInvoker(UpdateNatGatewaySnatRuleRequest updateNatGatewaySnatRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snat_rule_id", updateNatGatewaySnatRuleRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNatGatewaySnatRuleRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/snat_rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNatGatewaySnatRuleRequest);
             return new SyncInvoker<UpdateNatGatewaySnatRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateNatGatewaySnatRuleResponse>);
@@ -1366,7 +1366,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public UpdatePrivateSnatResponse UpdatePrivateSnat(UpdatePrivateSnatRequest updatePrivateSnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snat_rule_id", updatePrivateSnatRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateSnatRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/snat-rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateSnatRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1376,7 +1376,7 @@ namespace HuaweiCloud.SDK.Nat.V2
         public SyncInvoker<UpdatePrivateSnatResponse> UpdatePrivateSnatInvoker(UpdatePrivateSnatRequest updatePrivateSnatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snat_rule_id", updatePrivateSnatRequest.SnatRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateSnatRequest.SnatRuleId, out var valueOfSnatRuleId)) urlParam.Add("snat_rule_id", valueOfSnatRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/snat-rules/{snat_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateSnatRequest);
             return new SyncInvoker<UpdatePrivateSnatResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePrivateSnatResponse>);

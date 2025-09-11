@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public CreateAccountAssignmentResponse CreateAccountAssignment(CreateAccountAssignmentRequest createAccountAssignmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createAccountAssignmentRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAccountAssignmentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAccountAssignmentRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<CreateAccountAssignmentResponse> CreateAccountAssignmentInvoker(CreateAccountAssignmentRequest createAccountAssignmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createAccountAssignmentRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAccountAssignmentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAccountAssignmentRequest);
             return new SyncInvoker<CreateAccountAssignmentResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAccountAssignmentResponse>);
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DeleteAccountAssignmentResponse DeleteAccountAssignment(DeleteAccountAssignmentRequest deleteAccountAssignmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteAccountAssignmentRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAccountAssignmentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAccountAssignmentRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -60,7 +60,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DeleteAccountAssignmentResponse> DeleteAccountAssignmentInvoker(DeleteAccountAssignmentRequest deleteAccountAssignmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteAccountAssignmentRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAccountAssignmentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAccountAssignmentRequest);
             return new SyncInvoker<DeleteAccountAssignmentResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteAccountAssignmentResponse>);
@@ -76,8 +76,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DescribeAccountAssignmentCreationStatusResponse DescribeAccountAssignmentCreationStatus(DescribeAccountAssignmentCreationStatusRequest describeAccountAssignmentCreationStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describeAccountAssignmentCreationStatusRequest.InstanceId.ToString());
-            urlParam.Add("request_id", describeAccountAssignmentCreationStatusRequest.RequestId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeAccountAssignmentCreationStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(describeAccountAssignmentCreationStatusRequest.RequestId, out var valueOfRequestId)) urlParam.Add("request_id", valueOfRequestId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/creation-status/{request_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeAccountAssignmentCreationStatusRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -87,8 +87,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DescribeAccountAssignmentCreationStatusResponse> DescribeAccountAssignmentCreationStatusInvoker(DescribeAccountAssignmentCreationStatusRequest describeAccountAssignmentCreationStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describeAccountAssignmentCreationStatusRequest.InstanceId.ToString());
-            urlParam.Add("request_id", describeAccountAssignmentCreationStatusRequest.RequestId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeAccountAssignmentCreationStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(describeAccountAssignmentCreationStatusRequest.RequestId, out var valueOfRequestId)) urlParam.Add("request_id", valueOfRequestId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/creation-status/{request_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeAccountAssignmentCreationStatusRequest);
             return new SyncInvoker<DescribeAccountAssignmentCreationStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribeAccountAssignmentCreationStatusResponse>);
@@ -104,8 +104,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DescribeAccountAssignmentDeletionStatusResponse DescribeAccountAssignmentDeletionStatus(DescribeAccountAssignmentDeletionStatusRequest describeAccountAssignmentDeletionStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describeAccountAssignmentDeletionStatusRequest.InstanceId.ToString());
-            urlParam.Add("request_id", describeAccountAssignmentDeletionStatusRequest.RequestId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeAccountAssignmentDeletionStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(describeAccountAssignmentDeletionStatusRequest.RequestId, out var valueOfRequestId)) urlParam.Add("request_id", valueOfRequestId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/deletion-status/{request_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeAccountAssignmentDeletionStatusRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -115,8 +115,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DescribeAccountAssignmentDeletionStatusResponse> DescribeAccountAssignmentDeletionStatusInvoker(DescribeAccountAssignmentDeletionStatusRequest describeAccountAssignmentDeletionStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describeAccountAssignmentDeletionStatusRequest.InstanceId.ToString());
-            urlParam.Add("request_id", describeAccountAssignmentDeletionStatusRequest.RequestId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeAccountAssignmentDeletionStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(describeAccountAssignmentDeletionStatusRequest.RequestId, out var valueOfRequestId)) urlParam.Add("request_id", valueOfRequestId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/deletion-status/{request_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeAccountAssignmentDeletionStatusRequest);
             return new SyncInvoker<DescribeAccountAssignmentDeletionStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribeAccountAssignmentDeletionStatusResponse>);
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DisassociateProfileResponse DisassociateProfile(DisassociateProfileRequest disassociateProfileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", disassociateProfileRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateProfileRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/disassociate-profile", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateProfileRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -142,7 +142,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DisassociateProfileResponse> DisassociateProfileInvoker(DisassociateProfileRequest disassociateProfileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", disassociateProfileRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateProfileRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/disassociate-profile", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateProfileRequest);
             return new SyncInvoker<DisassociateProfileResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisassociateProfileResponse>);
@@ -158,7 +158,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListAccountAssignmentCreationStatusResponse ListAccountAssignmentCreationStatus(ListAccountAssignmentCreationStatusRequest listAccountAssignmentCreationStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAccountAssignmentCreationStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAccountAssignmentCreationStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/creation-statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccountAssignmentCreationStatusRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -168,7 +168,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListAccountAssignmentCreationStatusResponse> ListAccountAssignmentCreationStatusInvoker(ListAccountAssignmentCreationStatusRequest listAccountAssignmentCreationStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAccountAssignmentCreationStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAccountAssignmentCreationStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/creation-statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccountAssignmentCreationStatusRequest);
             return new SyncInvoker<ListAccountAssignmentCreationStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAccountAssignmentCreationStatusResponse>);
@@ -184,7 +184,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListAccountAssignmentDeletionStatusResponse ListAccountAssignmentDeletionStatus(ListAccountAssignmentDeletionStatusRequest listAccountAssignmentDeletionStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAccountAssignmentDeletionStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAccountAssignmentDeletionStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/deletion-statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccountAssignmentDeletionStatusRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -194,7 +194,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListAccountAssignmentDeletionStatusResponse> ListAccountAssignmentDeletionStatusInvoker(ListAccountAssignmentDeletionStatusRequest listAccountAssignmentDeletionStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAccountAssignmentDeletionStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAccountAssignmentDeletionStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments/deletion-statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccountAssignmentDeletionStatusRequest);
             return new SyncInvoker<ListAccountAssignmentDeletionStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAccountAssignmentDeletionStatusResponse>);
@@ -210,7 +210,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListAccountAssignmentsResponse ListAccountAssignments(ListAccountAssignmentsRequest listAccountAssignmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAccountAssignmentsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAccountAssignmentsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccountAssignmentsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListAccountAssignmentsResponse> ListAccountAssignmentsInvoker(ListAccountAssignmentsRequest listAccountAssignmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAccountAssignmentsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAccountAssignmentsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccountAssignmentsRequest);
             return new SyncInvoker<ListAccountAssignmentsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAccountAssignmentsResponse>);
@@ -236,7 +236,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListAccountAssignmentsForPrincipalResponse ListAccountAssignmentsForPrincipal(ListAccountAssignmentsForPrincipalRequest listAccountAssignmentsForPrincipalRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAccountAssignmentsForPrincipalRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAccountAssignmentsForPrincipalRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments-for-principals", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccountAssignmentsForPrincipalRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -246,7 +246,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListAccountAssignmentsForPrincipalResponse> ListAccountAssignmentsForPrincipalInvoker(ListAccountAssignmentsForPrincipalRequest listAccountAssignmentsForPrincipalRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAccountAssignmentsForPrincipalRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAccountAssignmentsForPrincipalRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/account-assignments-for-principals", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccountAssignmentsForPrincipalRequest);
             return new SyncInvoker<ListAccountAssignmentsForPrincipalResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAccountAssignmentsForPrincipalResponse>);
@@ -262,7 +262,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public CreateApplicationInstanceResponse CreateApplicationInstance(CreateApplicationInstanceRequest createApplicationInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createApplicationInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createApplicationInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createApplicationInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -272,7 +272,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<CreateApplicationInstanceResponse> CreateApplicationInstanceInvoker(CreateApplicationInstanceRequest createApplicationInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createApplicationInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createApplicationInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createApplicationInstanceRequest);
             return new SyncInvoker<CreateApplicationInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateApplicationInstanceResponse>);
@@ -288,8 +288,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DeleteApplicationInstanceResponse DeleteApplicationInstance(DeleteApplicationInstanceRequest deleteApplicationInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteApplicationInstanceRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", deleteApplicationInstanceRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationInstanceRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteApplicationInstanceRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -299,8 +299,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DeleteApplicationInstanceResponse> DeleteApplicationInstanceInvoker(DeleteApplicationInstanceRequest deleteApplicationInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteApplicationInstanceRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", deleteApplicationInstanceRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationInstanceRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteApplicationInstanceRequest);
             return new SyncInvoker<DeleteApplicationInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteApplicationInstanceResponse>);
@@ -316,9 +316,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DeleteProfileResponse DeleteProfile(DeleteProfileRequest deleteProfileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteProfileRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", deleteProfileRequest.ApplicationInstanceId.ToString());
-            urlParam.Add("profile_id", deleteProfileRequest.ProfileId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteProfileRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteProfileRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteProfileRequest.ProfileId, out var valueOfProfileId)) urlParam.Add("profile_id", valueOfProfileId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/profiles/{profile_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProfileRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -328,9 +328,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DeleteProfileResponse> DeleteProfileInvoker(DeleteProfileRequest deleteProfileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteProfileRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", deleteProfileRequest.ApplicationInstanceId.ToString());
-            urlParam.Add("profile_id", deleteProfileRequest.ProfileId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteProfileRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteProfileRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteProfileRequest.ProfileId, out var valueOfProfileId)) urlParam.Add("profile_id", valueOfProfileId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/profiles/{profile_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProfileRequest);
             return new SyncInvoker<DeleteProfileResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteProfileResponse>);
@@ -346,8 +346,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DescribeApplicationResponse DescribeApplication(DescribeApplicationRequest describeApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describeApplicationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", describeApplicationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeApplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(describeApplicationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications/{application_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeApplicationRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -357,8 +357,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DescribeApplicationResponse> DescribeApplicationInvoker(DescribeApplicationRequest describeApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describeApplicationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", describeApplicationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeApplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(describeApplicationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications/{application_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeApplicationRequest);
             return new SyncInvoker<DescribeApplicationResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribeApplicationResponse>);
@@ -374,7 +374,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DescribeApplicationProviderResponse DescribeApplicationProvider(DescribeApplicationProviderRequest describeApplicationProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_provider_id", describeApplicationProviderRequest.ApplicationProviderId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeApplicationProviderRequest.ApplicationProviderId, out var valueOfApplicationProviderId)) urlParam.Add("application_provider_id", valueOfApplicationProviderId);
             var urlPath = HttpUtils.AddUrlPath("/v1/application-providers/{application_provider_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeApplicationProviderRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -384,7 +384,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DescribeApplicationProviderResponse> DescribeApplicationProviderInvoker(DescribeApplicationProviderRequest describeApplicationProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_provider_id", describeApplicationProviderRequest.ApplicationProviderId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeApplicationProviderRequest.ApplicationProviderId, out var valueOfApplicationProviderId)) urlParam.Add("application_provider_id", valueOfApplicationProviderId);
             var urlPath = HttpUtils.AddUrlPath("/v1/application-providers/{application_provider_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeApplicationProviderRequest);
             return new SyncInvoker<DescribeApplicationProviderResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribeApplicationProviderResponse>);
@@ -400,8 +400,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public GetApplicationAssignmentConfigurationResponse GetApplicationAssignmentConfiguration(GetApplicationAssignmentConfigurationRequest getApplicationAssignmentConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getApplicationAssignmentConfigurationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", getApplicationAssignmentConfigurationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getApplicationAssignmentConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(getApplicationAssignmentConfigurationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications/{application_instance_id}/assignments-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getApplicationAssignmentConfigurationRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -411,8 +411,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<GetApplicationAssignmentConfigurationResponse> GetApplicationAssignmentConfigurationInvoker(GetApplicationAssignmentConfigurationRequest getApplicationAssignmentConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getApplicationAssignmentConfigurationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", getApplicationAssignmentConfigurationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getApplicationAssignmentConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(getApplicationAssignmentConfigurationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications/{application_instance_id}/assignments-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getApplicationAssignmentConfigurationRequest);
             return new SyncInvoker<GetApplicationAssignmentConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<GetApplicationAssignmentConfigurationResponse>);
@@ -428,8 +428,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public GetApplicationInstanceResponse GetApplicationInstance(GetApplicationInstanceRequest getApplicationInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getApplicationInstanceRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", getApplicationInstanceRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getApplicationInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(getApplicationInstanceRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getApplicationInstanceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -439,8 +439,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<GetApplicationInstanceResponse> GetApplicationInstanceInvoker(GetApplicationInstanceRequest getApplicationInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getApplicationInstanceRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", getApplicationInstanceRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getApplicationInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(getApplicationInstanceRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getApplicationInstanceRequest);
             return new SyncInvoker<GetApplicationInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<GetApplicationInstanceResponse>);
@@ -456,8 +456,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ImportApplicationInstanceServiceProviderMetadataResponse ImportApplicationInstanceServiceProviderMetadata(ImportApplicationInstanceServiceProviderMetadataRequest importApplicationInstanceServiceProviderMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", importApplicationInstanceServiceProviderMetadataRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", importApplicationInstanceServiceProviderMetadataRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(importApplicationInstanceServiceProviderMetadataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(importApplicationInstanceServiceProviderMetadataRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", importApplicationInstanceServiceProviderMetadataRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -467,8 +467,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ImportApplicationInstanceServiceProviderMetadataResponse> ImportApplicationInstanceServiceProviderMetadataInvoker(ImportApplicationInstanceServiceProviderMetadataRequest importApplicationInstanceServiceProviderMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", importApplicationInstanceServiceProviderMetadataRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", importApplicationInstanceServiceProviderMetadataRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(importApplicationInstanceServiceProviderMetadataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(importApplicationInstanceServiceProviderMetadataRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", importApplicationInstanceServiceProviderMetadataRequest);
             return new SyncInvoker<ImportApplicationInstanceServiceProviderMetadataResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ImportApplicationInstanceServiceProviderMetadataResponse>);
@@ -484,7 +484,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListApplicationInstancesResponse ListApplicationInstances(ListApplicationInstancesRequest listApplicationInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listApplicationInstancesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationInstancesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApplicationInstancesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -494,7 +494,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListApplicationInstancesResponse> ListApplicationInstancesInvoker(ListApplicationInstancesRequest listApplicationInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listApplicationInstancesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationInstancesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApplicationInstancesRequest);
             return new SyncInvoker<ListApplicationInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApplicationInstancesResponse>);
@@ -558,7 +558,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListApplicationsResponse ListApplications(ListApplicationsRequest listApplicationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listApplicationsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApplicationsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -568,7 +568,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListApplicationsResponse> ListApplicationsInvoker(ListApplicationsRequest listApplicationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listApplicationsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApplicationsRequest);
             return new SyncInvoker<ListApplicationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApplicationsResponse>);
@@ -608,8 +608,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListProfilesResponse ListProfiles(ListProfilesRequest listProfilesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listProfilesRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", listProfilesRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listProfilesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listProfilesRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/profiles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProfilesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -619,8 +619,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListProfilesResponse> ListProfilesInvoker(ListProfilesRequest listProfilesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listProfilesRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", listProfilesRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listProfilesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listProfilesRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/profiles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProfilesRequest);
             return new SyncInvoker<ListProfilesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProfilesResponse>);
@@ -636,8 +636,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public UpdateApplicationInstanceDisplayDataResponse UpdateApplicationInstanceDisplayData(UpdateApplicationInstanceDisplayDataRequest updateApplicationInstanceDisplayDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceDisplayDataRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceDisplayDataRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceDisplayDataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceDisplayDataRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/display-data", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceDisplayDataRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -647,8 +647,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<UpdateApplicationInstanceDisplayDataResponse> UpdateApplicationInstanceDisplayDataInvoker(UpdateApplicationInstanceDisplayDataRequest updateApplicationInstanceDisplayDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceDisplayDataRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceDisplayDataRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceDisplayDataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceDisplayDataRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/display-data", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceDisplayDataRequest);
             return new SyncInvoker<UpdateApplicationInstanceDisplayDataResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateApplicationInstanceDisplayDataResponse>);
@@ -664,8 +664,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public UpdateApplicationInstanceResponseConfigurationResponse UpdateApplicationInstanceResponseConfiguration(UpdateApplicationInstanceResponseConfigurationRequest updateApplicationInstanceResponseConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceResponseConfigurationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceResponseConfigurationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceResponseConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceResponseConfigurationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/response-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceResponseConfigurationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -675,8 +675,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<UpdateApplicationInstanceResponseConfigurationResponse> UpdateApplicationInstanceResponseConfigurationInvoker(UpdateApplicationInstanceResponseConfigurationRequest updateApplicationInstanceResponseConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceResponseConfigurationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceResponseConfigurationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceResponseConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceResponseConfigurationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/response-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceResponseConfigurationRequest);
             return new SyncInvoker<UpdateApplicationInstanceResponseConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateApplicationInstanceResponseConfigurationResponse>);
@@ -692,8 +692,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public UpdateApplicationInstanceResponseSchemaConfigurationResponse UpdateApplicationInstanceResponseSchemaConfiguration(UpdateApplicationInstanceResponseSchemaConfigurationRequest updateApplicationInstanceResponseSchemaConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceResponseSchemaConfigurationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceResponseSchemaConfigurationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceResponseSchemaConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceResponseSchemaConfigurationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/response-schema-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceResponseSchemaConfigurationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -703,8 +703,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<UpdateApplicationInstanceResponseSchemaConfigurationResponse> UpdateApplicationInstanceResponseSchemaConfigurationInvoker(UpdateApplicationInstanceResponseSchemaConfigurationRequest updateApplicationInstanceResponseSchemaConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceResponseSchemaConfigurationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceResponseSchemaConfigurationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceResponseSchemaConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceResponseSchemaConfigurationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/response-schema-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceResponseSchemaConfigurationRequest);
             return new SyncInvoker<UpdateApplicationInstanceResponseSchemaConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateApplicationInstanceResponseSchemaConfigurationResponse>);
@@ -720,8 +720,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public UpdateApplicationInstanceSecurityConfigurationResponse UpdateApplicationInstanceSecurityConfiguration(UpdateApplicationInstanceSecurityConfigurationRequest updateApplicationInstanceSecurityConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceSecurityConfigurationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceSecurityConfigurationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceSecurityConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceSecurityConfigurationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/security-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceSecurityConfigurationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -731,8 +731,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<UpdateApplicationInstanceSecurityConfigurationResponse> UpdateApplicationInstanceSecurityConfigurationInvoker(UpdateApplicationInstanceSecurityConfigurationRequest updateApplicationInstanceSecurityConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceSecurityConfigurationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceSecurityConfigurationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceSecurityConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceSecurityConfigurationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/security-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceSecurityConfigurationRequest);
             return new SyncInvoker<UpdateApplicationInstanceSecurityConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateApplicationInstanceSecurityConfigurationResponse>);
@@ -748,8 +748,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public UpdateApplicationInstanceServiceProviderConfigurationResponse UpdateApplicationInstanceServiceProviderConfiguration(UpdateApplicationInstanceServiceProviderConfigurationRequest updateApplicationInstanceServiceProviderConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceServiceProviderConfigurationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceServiceProviderConfigurationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceServiceProviderConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceServiceProviderConfigurationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/service-provider-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceServiceProviderConfigurationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -759,8 +759,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<UpdateApplicationInstanceServiceProviderConfigurationResponse> UpdateApplicationInstanceServiceProviderConfigurationInvoker(UpdateApplicationInstanceServiceProviderConfigurationRequest updateApplicationInstanceServiceProviderConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceServiceProviderConfigurationRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceServiceProviderConfigurationRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceServiceProviderConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceServiceProviderConfigurationRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/service-provider-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceServiceProviderConfigurationRequest);
             return new SyncInvoker<UpdateApplicationInstanceServiceProviderConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateApplicationInstanceServiceProviderConfigurationResponse>);
@@ -776,8 +776,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public UpdateApplicationInstanceStatusResponse UpdateApplicationInstanceStatus(UpdateApplicationInstanceStatusRequest updateApplicationInstanceStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceStatusRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceStatusRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceStatusRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceStatusRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -787,8 +787,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<UpdateApplicationInstanceStatusResponse> UpdateApplicationInstanceStatusInvoker(UpdateApplicationInstanceStatusRequest updateApplicationInstanceStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceStatusRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceStatusRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceStatusRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceStatusRequest);
             return new SyncInvoker<UpdateApplicationInstanceStatusResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateApplicationInstanceStatusResponse>);
@@ -804,8 +804,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public CreateApplicationAssignmentResponse CreateApplicationAssignment(CreateApplicationAssignmentRequest createApplicationAssignmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createApplicationAssignmentRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", createApplicationAssignmentRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createApplicationAssignmentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createApplicationAssignmentRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications/{application_instance_id}/assignments/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createApplicationAssignmentRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -815,8 +815,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<CreateApplicationAssignmentResponse> CreateApplicationAssignmentInvoker(CreateApplicationAssignmentRequest createApplicationAssignmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createApplicationAssignmentRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", createApplicationAssignmentRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createApplicationAssignmentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createApplicationAssignmentRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications/{application_instance_id}/assignments/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createApplicationAssignmentRequest);
             return new SyncInvoker<CreateApplicationAssignmentResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateApplicationAssignmentResponse>);
@@ -832,8 +832,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DeleteApplicationAssignmentResponse DeleteApplicationAssignment(DeleteApplicationAssignmentRequest deleteApplicationAssignmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteApplicationAssignmentRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", deleteApplicationAssignmentRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationAssignmentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationAssignmentRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications/{application_instance_id}/assignments/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteApplicationAssignmentRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -843,8 +843,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DeleteApplicationAssignmentResponse> DeleteApplicationAssignmentInvoker(DeleteApplicationAssignmentRequest deleteApplicationAssignmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteApplicationAssignmentRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", deleteApplicationAssignmentRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationAssignmentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationAssignmentRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications/{application_instance_id}/assignments/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteApplicationAssignmentRequest);
             return new SyncInvoker<DeleteApplicationAssignmentResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteApplicationAssignmentResponse>);
@@ -860,8 +860,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListApplicationAssignmentsResponse ListApplicationAssignments(ListApplicationAssignmentsRequest listApplicationAssignmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listApplicationAssignmentsRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", listApplicationAssignmentsRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationAssignmentsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationAssignmentsRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications/{application_instance_id}/assignments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApplicationAssignmentsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -871,8 +871,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListApplicationAssignmentsResponse> ListApplicationAssignmentsInvoker(ListApplicationAssignmentsRequest listApplicationAssignmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listApplicationAssignmentsRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", listApplicationAssignmentsRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationAssignmentsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationAssignmentsRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/applications/{application_instance_id}/assignments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApplicationAssignmentsRequest);
             return new SyncInvoker<ListApplicationAssignmentsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApplicationAssignmentsResponse>);
@@ -888,7 +888,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListApplicationAssignmentsForPrincipalResponse ListApplicationAssignmentsForPrincipal(ListApplicationAssignmentsForPrincipalRequest listApplicationAssignmentsForPrincipalRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listApplicationAssignmentsForPrincipalRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationAssignmentsForPrincipalRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-assignments-for-principals", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApplicationAssignmentsForPrincipalRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -898,7 +898,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListApplicationAssignmentsForPrincipalResponse> ListApplicationAssignmentsForPrincipalInvoker(ListApplicationAssignmentsForPrincipalRequest listApplicationAssignmentsForPrincipalRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listApplicationAssignmentsForPrincipalRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationAssignmentsForPrincipalRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-assignments-for-principals", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApplicationAssignmentsForPrincipalRequest);
             return new SyncInvoker<ListApplicationAssignmentsForPrincipalResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApplicationAssignmentsForPrincipalResponse>);
@@ -914,8 +914,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public CreateApplicationInstanceCertificateResponse CreateApplicationInstanceCertificate(CreateApplicationInstanceCertificateRequest createApplicationInstanceCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createApplicationInstanceCertificateRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", createApplicationInstanceCertificateRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createApplicationInstanceCertificateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createApplicationInstanceCertificateRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createApplicationInstanceCertificateRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -925,8 +925,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<CreateApplicationInstanceCertificateResponse> CreateApplicationInstanceCertificateInvoker(CreateApplicationInstanceCertificateRequest createApplicationInstanceCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createApplicationInstanceCertificateRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", createApplicationInstanceCertificateRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createApplicationInstanceCertificateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createApplicationInstanceCertificateRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createApplicationInstanceCertificateRequest);
             return new SyncInvoker<CreateApplicationInstanceCertificateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateApplicationInstanceCertificateResponse>);
@@ -942,9 +942,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DeleteApplicationInstanceCertificateResponse DeleteApplicationInstanceCertificate(DeleteApplicationInstanceCertificateRequest deleteApplicationInstanceCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteApplicationInstanceCertificateRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", deleteApplicationInstanceCertificateRequest.ApplicationInstanceId.ToString());
-            urlParam.Add("certificate_id", deleteApplicationInstanceCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationInstanceCertificateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationInstanceCertificateRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationInstanceCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteApplicationInstanceCertificateRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -954,9 +954,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DeleteApplicationInstanceCertificateResponse> DeleteApplicationInstanceCertificateInvoker(DeleteApplicationInstanceCertificateRequest deleteApplicationInstanceCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteApplicationInstanceCertificateRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", deleteApplicationInstanceCertificateRequest.ApplicationInstanceId.ToString());
-            urlParam.Add("certificate_id", deleteApplicationInstanceCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationInstanceCertificateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationInstanceCertificateRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationInstanceCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteApplicationInstanceCertificateRequest);
             return new SyncInvoker<DeleteApplicationInstanceCertificateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteApplicationInstanceCertificateResponse>);
@@ -972,8 +972,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListApplicationInstanceCertificatesResponse ListApplicationInstanceCertificates(ListApplicationInstanceCertificatesRequest listApplicationInstanceCertificatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listApplicationInstanceCertificatesRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", listApplicationInstanceCertificatesRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationInstanceCertificatesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationInstanceCertificatesRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApplicationInstanceCertificatesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -983,8 +983,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListApplicationInstanceCertificatesResponse> ListApplicationInstanceCertificatesInvoker(ListApplicationInstanceCertificatesRequest listApplicationInstanceCertificatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listApplicationInstanceCertificatesRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", listApplicationInstanceCertificatesRequest.ApplicationInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationInstanceCertificatesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listApplicationInstanceCertificatesRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApplicationInstanceCertificatesRequest);
             return new SyncInvoker<ListApplicationInstanceCertificatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApplicationInstanceCertificatesResponse>);
@@ -1000,9 +1000,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public UpdateApplicationInstanceActiveCertificateResponse UpdateApplicationInstanceActiveCertificate(UpdateApplicationInstanceActiveCertificateRequest updateApplicationInstanceActiveCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceActiveCertificateRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceActiveCertificateRequest.ApplicationInstanceId.ToString());
-            urlParam.Add("certificate_id", updateApplicationInstanceActiveCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceActiveCertificateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceActiveCertificateRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceActiveCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceActiveCertificateRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1012,9 +1012,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<UpdateApplicationInstanceActiveCertificateResponse> UpdateApplicationInstanceActiveCertificateInvoker(UpdateApplicationInstanceActiveCertificateRequest updateApplicationInstanceActiveCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateApplicationInstanceActiveCertificateRequest.InstanceId.ToString());
-            urlParam.Add("application_instance_id", updateApplicationInstanceActiveCertificateRequest.ApplicationInstanceId.ToString());
-            urlParam.Add("certificate_id", updateApplicationInstanceActiveCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceActiveCertificateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceActiveCertificateRequest.ApplicationInstanceId, out var valueOfApplicationInstanceId)) urlParam.Add("application_instance_id", valueOfApplicationInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateApplicationInstanceActiveCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/application-instances/{application_instance_id}/certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateApplicationInstanceActiveCertificateRequest);
             return new SyncInvoker<UpdateApplicationInstanceActiveCertificateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateApplicationInstanceActiveCertificateResponse>);
@@ -1030,7 +1030,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public GetSsoConfigurationResponse GetSsoConfiguration(GetSsoConfigurationRequest getSsoConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getSsoConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getSsoConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/sso-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getSsoConfigurationRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1040,7 +1040,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<GetSsoConfigurationResponse> GetSsoConfigurationInvoker(GetSsoConfigurationRequest getSsoConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getSsoConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getSsoConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/sso-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getSsoConfigurationRequest);
             return new SyncInvoker<GetSsoConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<GetSsoConfigurationResponse>);
@@ -1056,7 +1056,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public UpdateSsoConfigurationResponse UpdateSsoConfiguration(UpdateSsoConfigurationRequest updateSsoConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateSsoConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSsoConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/sso-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSsoConfigurationRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1066,7 +1066,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<UpdateSsoConfigurationResponse> UpdateSsoConfigurationInvoker(UpdateSsoConfigurationRequest updateSsoConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateSsoConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSsoConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/sso-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSsoConfigurationRequest);
             return new SyncInvoker<UpdateSsoConfigurationResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateSsoConfigurationResponse>);
@@ -1082,7 +1082,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public CreateAliasResponse CreateAlias(CreateAliasRequest createAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createAliasRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAliasRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/alias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAliasRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1092,7 +1092,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<CreateAliasResponse> CreateAliasInvoker(CreateAliasRequest createAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createAliasRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAliasRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/alias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAliasRequest);
             return new SyncInvoker<CreateAliasResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateAliasResponse>);
@@ -1156,7 +1156,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public GetHaConfigurationResponse GetHaConfiguration(GetHaConfigurationRequest getHaConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getHaConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getHaConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/disaster-recovery-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getHaConfigurationRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1166,7 +1166,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<GetHaConfigurationResponse> GetHaConfigurationInvoker(GetHaConfigurationRequest getHaConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getHaConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getHaConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/disaster-recovery-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getHaConfigurationRequest);
             return new SyncInvoker<GetHaConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<GetHaConfigurationResponse>);
@@ -1206,7 +1206,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListIdentityStoreAssociationResponse ListIdentityStoreAssociation(ListIdentityStoreAssociationRequest listIdentityStoreAssociationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listIdentityStoreAssociationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listIdentityStoreAssociationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/identity-store-associations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIdentityStoreAssociationRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1216,7 +1216,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListIdentityStoreAssociationResponse> ListIdentityStoreAssociationInvoker(ListIdentityStoreAssociationRequest listIdentityStoreAssociationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listIdentityStoreAssociationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listIdentityStoreAssociationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/identity-store-associations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listIdentityStoreAssociationRequest);
             return new SyncInvoker<ListIdentityStoreAssociationResponse>(this, "GET", request, JsonUtils.DeSerialize<ListIdentityStoreAssociationResponse>);
@@ -1304,7 +1304,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public UpdateHaConfigurationResponse UpdateHaConfiguration(UpdateHaConfigurationRequest updateHaConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateHaConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHaConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/disaster-recovery-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHaConfigurationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1314,7 +1314,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<UpdateHaConfigurationResponse> UpdateHaConfigurationInvoker(UpdateHaConfigurationRequest updateHaConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateHaConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHaConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/disaster-recovery-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHaConfigurationRequest);
             return new SyncInvoker<UpdateHaConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateHaConfigurationResponse>);
@@ -1330,7 +1330,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public CreateInstanceAccessControlAttributeConfigurationResponse CreateInstanceAccessControlAttributeConfiguration(CreateInstanceAccessControlAttributeConfigurationRequest createInstanceAccessControlAttributeConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceAccessControlAttributeConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceAccessControlAttributeConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/access-control-attribute-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceAccessControlAttributeConfigurationRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1340,7 +1340,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<CreateInstanceAccessControlAttributeConfigurationResponse> CreateInstanceAccessControlAttributeConfigurationInvoker(CreateInstanceAccessControlAttributeConfigurationRequest createInstanceAccessControlAttributeConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceAccessControlAttributeConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceAccessControlAttributeConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/access-control-attribute-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceAccessControlAttributeConfigurationRequest);
             return new SyncInvoker<CreateInstanceAccessControlAttributeConfigurationResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateInstanceAccessControlAttributeConfigurationResponse>);
@@ -1356,7 +1356,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DeleteInstanceAccessControlAttributeConfigurationResponse DeleteInstanceAccessControlAttributeConfiguration(DeleteInstanceAccessControlAttributeConfigurationRequest deleteInstanceAccessControlAttributeConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceAccessControlAttributeConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceAccessControlAttributeConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/access-control-attribute-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceAccessControlAttributeConfigurationRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1366,7 +1366,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DeleteInstanceAccessControlAttributeConfigurationResponse> DeleteInstanceAccessControlAttributeConfigurationInvoker(DeleteInstanceAccessControlAttributeConfigurationRequest deleteInstanceAccessControlAttributeConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceAccessControlAttributeConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceAccessControlAttributeConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/access-control-attribute-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceAccessControlAttributeConfigurationRequest);
             return new SyncInvoker<DeleteInstanceAccessControlAttributeConfigurationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceAccessControlAttributeConfigurationResponse>);
@@ -1382,7 +1382,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DescribeInstanceAccessControlAttributeConfigurationResponse DescribeInstanceAccessControlAttributeConfiguration(DescribeInstanceAccessControlAttributeConfigurationRequest describeInstanceAccessControlAttributeConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describeInstanceAccessControlAttributeConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeInstanceAccessControlAttributeConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/access-control-attribute-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeInstanceAccessControlAttributeConfigurationRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1392,7 +1392,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DescribeInstanceAccessControlAttributeConfigurationResponse> DescribeInstanceAccessControlAttributeConfigurationInvoker(DescribeInstanceAccessControlAttributeConfigurationRequest describeInstanceAccessControlAttributeConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describeInstanceAccessControlAttributeConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeInstanceAccessControlAttributeConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/access-control-attribute-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeInstanceAccessControlAttributeConfigurationRequest);
             return new SyncInvoker<DescribeInstanceAccessControlAttributeConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribeInstanceAccessControlAttributeConfigurationResponse>);
@@ -1408,7 +1408,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public UpdateInstanceAccessControlAttributeConfigurationResponse UpdateInstanceAccessControlAttributeConfiguration(UpdateInstanceAccessControlAttributeConfigurationRequest updateInstanceAccessControlAttributeConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceAccessControlAttributeConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceAccessControlAttributeConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/access-control-attribute-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceAccessControlAttributeConfigurationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1418,7 +1418,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<UpdateInstanceAccessControlAttributeConfigurationResponse> UpdateInstanceAccessControlAttributeConfigurationInvoker(UpdateInstanceAccessControlAttributeConfigurationRequest updateInstanceAccessControlAttributeConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceAccessControlAttributeConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceAccessControlAttributeConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/access-control-attribute-configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceAccessControlAttributeConfigurationRequest);
             return new SyncInvoker<UpdateInstanceAccessControlAttributeConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceAccessControlAttributeConfigurationResponse>);
@@ -1434,7 +1434,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public GetMfaDeviceManagementForIdentityStoreResponse GetMfaDeviceManagementForIdentityStore(GetMfaDeviceManagementForIdentityStoreRequest getMfaDeviceManagementForIdentityStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getMfaDeviceManagementForIdentityStoreRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getMfaDeviceManagementForIdentityStoreRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/mfa-devices/management-settings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getMfaDeviceManagementForIdentityStoreRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1444,7 +1444,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<GetMfaDeviceManagementForIdentityStoreResponse> GetMfaDeviceManagementForIdentityStoreInvoker(GetMfaDeviceManagementForIdentityStoreRequest getMfaDeviceManagementForIdentityStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getMfaDeviceManagementForIdentityStoreRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getMfaDeviceManagementForIdentityStoreRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/mfa-devices/management-settings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getMfaDeviceManagementForIdentityStoreRequest);
             return new SyncInvoker<GetMfaDeviceManagementForIdentityStoreResponse>(this, "GET", request, JsonUtils.DeSerialize<GetMfaDeviceManagementForIdentityStoreResponse>);
@@ -1460,7 +1460,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public PutMfaDeviceManagementForIdentityStoreResponse PutMfaDeviceManagementForIdentityStore(PutMfaDeviceManagementForIdentityStoreRequest putMfaDeviceManagementForIdentityStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", putMfaDeviceManagementForIdentityStoreRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(putMfaDeviceManagementForIdentityStoreRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/mfa-devices/management-settings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", putMfaDeviceManagementForIdentityStoreRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1470,7 +1470,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<PutMfaDeviceManagementForIdentityStoreResponse> PutMfaDeviceManagementForIdentityStoreInvoker(PutMfaDeviceManagementForIdentityStoreRequest putMfaDeviceManagementForIdentityStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", putMfaDeviceManagementForIdentityStoreRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(putMfaDeviceManagementForIdentityStoreRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/mfa-devices/management-settings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", putMfaDeviceManagementForIdentityStoreRequest);
             return new SyncInvoker<PutMfaDeviceManagementForIdentityStoreResponse>(this, "POST", request, JsonUtils.DeSerializeNull<PutMfaDeviceManagementForIdentityStoreResponse>);
@@ -1486,8 +1486,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public AttachManagedPolicyToPermissionSetResponse AttachManagedPolicyToPermissionSet(AttachManagedPolicyToPermissionSetRequest attachManagedPolicyToPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", attachManagedPolicyToPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", attachManagedPolicyToPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(attachManagedPolicyToPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(attachManagedPolicyToPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/attach-managed-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachManagedPolicyToPermissionSetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1497,8 +1497,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<AttachManagedPolicyToPermissionSetResponse> AttachManagedPolicyToPermissionSetInvoker(AttachManagedPolicyToPermissionSetRequest attachManagedPolicyToPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", attachManagedPolicyToPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", attachManagedPolicyToPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(attachManagedPolicyToPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(attachManagedPolicyToPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/attach-managed-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachManagedPolicyToPermissionSetRequest);
             return new SyncInvoker<AttachManagedPolicyToPermissionSetResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AttachManagedPolicyToPermissionSetResponse>);
@@ -1514,8 +1514,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public AttachManagedRoleToPermissionSetResponse AttachManagedRoleToPermissionSet(AttachManagedRoleToPermissionSetRequest attachManagedRoleToPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", attachManagedRoleToPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", attachManagedRoleToPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(attachManagedRoleToPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(attachManagedRoleToPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/attach-managed-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachManagedRoleToPermissionSetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1525,8 +1525,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<AttachManagedRoleToPermissionSetResponse> AttachManagedRoleToPermissionSetInvoker(AttachManagedRoleToPermissionSetRequest attachManagedRoleToPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", attachManagedRoleToPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", attachManagedRoleToPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(attachManagedRoleToPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(attachManagedRoleToPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/attach-managed-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachManagedRoleToPermissionSetRequest);
             return new SyncInvoker<AttachManagedRoleToPermissionSetResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AttachManagedRoleToPermissionSetResponse>);
@@ -1542,7 +1542,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public CreatePermissionSetResponse CreatePermissionSet(CreatePermissionSetRequest createPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createPermissionSetRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPermissionSetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1552,7 +1552,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<CreatePermissionSetResponse> CreatePermissionSetInvoker(CreatePermissionSetRequest createPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createPermissionSetRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPermissionSetRequest);
             return new SyncInvoker<CreatePermissionSetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePermissionSetResponse>);
@@ -1568,8 +1568,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DeleteCustomPolicyFromPermissionSetResponse DeleteCustomPolicyFromPermissionSet(DeleteCustomPolicyFromPermissionSetRequest deleteCustomPolicyFromPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteCustomPolicyFromPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", deleteCustomPolicyFromPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomPolicyFromPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomPolicyFromPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCustomPolicyFromPermissionSetRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1579,8 +1579,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DeleteCustomPolicyFromPermissionSetResponse> DeleteCustomPolicyFromPermissionSetInvoker(DeleteCustomPolicyFromPermissionSetRequest deleteCustomPolicyFromPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteCustomPolicyFromPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", deleteCustomPolicyFromPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomPolicyFromPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomPolicyFromPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCustomPolicyFromPermissionSetRequest);
             return new SyncInvoker<DeleteCustomPolicyFromPermissionSetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteCustomPolicyFromPermissionSetResponse>);
@@ -1596,8 +1596,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DeleteCustomRoleFromPermissionSetResponse DeleteCustomRoleFromPermissionSet(DeleteCustomRoleFromPermissionSetRequest deleteCustomRoleFromPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteCustomRoleFromPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", deleteCustomRoleFromPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomRoleFromPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomRoleFromPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCustomRoleFromPermissionSetRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1607,8 +1607,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DeleteCustomRoleFromPermissionSetResponse> DeleteCustomRoleFromPermissionSetInvoker(DeleteCustomRoleFromPermissionSetRequest deleteCustomRoleFromPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteCustomRoleFromPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", deleteCustomRoleFromPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomRoleFromPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomRoleFromPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCustomRoleFromPermissionSetRequest);
             return new SyncInvoker<DeleteCustomRoleFromPermissionSetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteCustomRoleFromPermissionSetResponse>);
@@ -1624,8 +1624,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DeletePermissionSetResponse DeletePermissionSet(DeletePermissionSetRequest deletePermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deletePermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", deletePermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deletePermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePermissionSetRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1635,8 +1635,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DeletePermissionSetResponse> DeletePermissionSetInvoker(DeletePermissionSetRequest deletePermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deletePermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", deletePermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deletePermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePermissionSetRequest);
             return new SyncInvoker<DeletePermissionSetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePermissionSetResponse>);
@@ -1652,8 +1652,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DescribePermissionSetResponse DescribePermissionSet(DescribePermissionSetRequest describePermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describePermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", describePermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describePermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(describePermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describePermissionSetRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1663,8 +1663,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DescribePermissionSetResponse> DescribePermissionSetInvoker(DescribePermissionSetRequest describePermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describePermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", describePermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describePermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(describePermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describePermissionSetRequest);
             return new SyncInvoker<DescribePermissionSetResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribePermissionSetResponse>);
@@ -1680,8 +1680,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DescribePermissionSetProvisioningStatusResponse DescribePermissionSetProvisioningStatus(DescribePermissionSetProvisioningStatusRequest describePermissionSetProvisioningStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describePermissionSetProvisioningStatusRequest.InstanceId.ToString());
-            urlParam.Add("request_id", describePermissionSetProvisioningStatusRequest.RequestId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describePermissionSetProvisioningStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(describePermissionSetProvisioningStatusRequest.RequestId, out var valueOfRequestId)) urlParam.Add("request_id", valueOfRequestId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/provisioning-status/{request_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describePermissionSetProvisioningStatusRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1691,8 +1691,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DescribePermissionSetProvisioningStatusResponse> DescribePermissionSetProvisioningStatusInvoker(DescribePermissionSetProvisioningStatusRequest describePermissionSetProvisioningStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describePermissionSetProvisioningStatusRequest.InstanceId.ToString());
-            urlParam.Add("request_id", describePermissionSetProvisioningStatusRequest.RequestId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describePermissionSetProvisioningStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(describePermissionSetProvisioningStatusRequest.RequestId, out var valueOfRequestId)) urlParam.Add("request_id", valueOfRequestId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/provisioning-status/{request_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describePermissionSetProvisioningStatusRequest);
             return new SyncInvoker<DescribePermissionSetProvisioningStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribePermissionSetProvisioningStatusResponse>);
@@ -1708,8 +1708,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DetachManagedPolicyFromPermissionSetResponse DetachManagedPolicyFromPermissionSet(DetachManagedPolicyFromPermissionSetRequest detachManagedPolicyFromPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", detachManagedPolicyFromPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", detachManagedPolicyFromPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(detachManagedPolicyFromPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(detachManagedPolicyFromPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/detach-managed-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachManagedPolicyFromPermissionSetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1719,8 +1719,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DetachManagedPolicyFromPermissionSetResponse> DetachManagedPolicyFromPermissionSetInvoker(DetachManagedPolicyFromPermissionSetRequest detachManagedPolicyFromPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", detachManagedPolicyFromPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", detachManagedPolicyFromPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(detachManagedPolicyFromPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(detachManagedPolicyFromPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/detach-managed-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachManagedPolicyFromPermissionSetRequest);
             return new SyncInvoker<DetachManagedPolicyFromPermissionSetResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DetachManagedPolicyFromPermissionSetResponse>);
@@ -1736,8 +1736,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DetachManagedRoleFromPermissionSetResponse DetachManagedRoleFromPermissionSet(DetachManagedRoleFromPermissionSetRequest detachManagedRoleFromPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", detachManagedRoleFromPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", detachManagedRoleFromPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(detachManagedRoleFromPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(detachManagedRoleFromPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/detach-managed-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachManagedRoleFromPermissionSetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1747,8 +1747,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DetachManagedRoleFromPermissionSetResponse> DetachManagedRoleFromPermissionSetInvoker(DetachManagedRoleFromPermissionSetRequest detachManagedRoleFromPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", detachManagedRoleFromPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", detachManagedRoleFromPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(detachManagedRoleFromPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(detachManagedRoleFromPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/detach-managed-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachManagedRoleFromPermissionSetRequest);
             return new SyncInvoker<DetachManagedRoleFromPermissionSetResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DetachManagedRoleFromPermissionSetResponse>);
@@ -1764,8 +1764,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public GetCustomPolicyForPermissionSetResponse GetCustomPolicyForPermissionSet(GetCustomPolicyForPermissionSetRequest getCustomPolicyForPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getCustomPolicyForPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", getCustomPolicyForPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getCustomPolicyForPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(getCustomPolicyForPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getCustomPolicyForPermissionSetRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1775,8 +1775,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<GetCustomPolicyForPermissionSetResponse> GetCustomPolicyForPermissionSetInvoker(GetCustomPolicyForPermissionSetRequest getCustomPolicyForPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getCustomPolicyForPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", getCustomPolicyForPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getCustomPolicyForPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(getCustomPolicyForPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getCustomPolicyForPermissionSetRequest);
             return new SyncInvoker<GetCustomPolicyForPermissionSetResponse>(this, "GET", request, JsonUtils.DeSerialize<GetCustomPolicyForPermissionSetResponse>);
@@ -1792,8 +1792,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public GetCustomRoleForPermissionSetResponse GetCustomRoleForPermissionSet(GetCustomRoleForPermissionSetRequest getCustomRoleForPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getCustomRoleForPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", getCustomRoleForPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getCustomRoleForPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(getCustomRoleForPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getCustomRoleForPermissionSetRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1803,8 +1803,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<GetCustomRoleForPermissionSetResponse> GetCustomRoleForPermissionSetInvoker(GetCustomRoleForPermissionSetRequest getCustomRoleForPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getCustomRoleForPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", getCustomRoleForPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getCustomRoleForPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(getCustomRoleForPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getCustomRoleForPermissionSetRequest);
             return new SyncInvoker<GetCustomRoleForPermissionSetResponse>(this, "GET", request, JsonUtils.DeSerialize<GetCustomRoleForPermissionSetResponse>);
@@ -1820,7 +1820,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public GetPermissionSetSummaryResponse GetPermissionSetSummary(GetPermissionSetSummaryRequest getPermissionSetSummaryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getPermissionSetSummaryRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getPermissionSetSummaryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-set-summary", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getPermissionSetSummaryRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1830,7 +1830,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<GetPermissionSetSummaryResponse> GetPermissionSetSummaryInvoker(GetPermissionSetSummaryRequest getPermissionSetSummaryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", getPermissionSetSummaryRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getPermissionSetSummaryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-set-summary", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getPermissionSetSummaryRequest);
             return new SyncInvoker<GetPermissionSetSummaryResponse>(this, "GET", request, JsonUtils.DeSerialize<GetPermissionSetSummaryResponse>);
@@ -1846,8 +1846,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListAccountsForProvisionedPermissionSetResponse ListAccountsForProvisionedPermissionSet(ListAccountsForProvisionedPermissionSetRequest listAccountsForProvisionedPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAccountsForProvisionedPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", listAccountsForProvisionedPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAccountsForProvisionedPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listAccountsForProvisionedPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/accounts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccountsForProvisionedPermissionSetRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1857,8 +1857,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListAccountsForProvisionedPermissionSetResponse> ListAccountsForProvisionedPermissionSetInvoker(ListAccountsForProvisionedPermissionSetRequest listAccountsForProvisionedPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAccountsForProvisionedPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", listAccountsForProvisionedPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAccountsForProvisionedPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listAccountsForProvisionedPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/accounts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccountsForProvisionedPermissionSetRequest);
             return new SyncInvoker<ListAccountsForProvisionedPermissionSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAccountsForProvisionedPermissionSetResponse>);
@@ -1874,8 +1874,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListManagedPoliciesInPermissionSetResponse ListManagedPoliciesInPermissionSet(ListManagedPoliciesInPermissionSetRequest listManagedPoliciesInPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listManagedPoliciesInPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", listManagedPoliciesInPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listManagedPoliciesInPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listManagedPoliciesInPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/managed-policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listManagedPoliciesInPermissionSetRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1885,8 +1885,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListManagedPoliciesInPermissionSetResponse> ListManagedPoliciesInPermissionSetInvoker(ListManagedPoliciesInPermissionSetRequest listManagedPoliciesInPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listManagedPoliciesInPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", listManagedPoliciesInPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listManagedPoliciesInPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listManagedPoliciesInPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/managed-policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listManagedPoliciesInPermissionSetRequest);
             return new SyncInvoker<ListManagedPoliciesInPermissionSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ListManagedPoliciesInPermissionSetResponse>);
@@ -1902,8 +1902,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListManagedRolesInPermissionSetResponse ListManagedRolesInPermissionSet(ListManagedRolesInPermissionSetRequest listManagedRolesInPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listManagedRolesInPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", listManagedRolesInPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listManagedRolesInPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listManagedRolesInPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/managed-roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listManagedRolesInPermissionSetRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1913,8 +1913,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListManagedRolesInPermissionSetResponse> ListManagedRolesInPermissionSetInvoker(ListManagedRolesInPermissionSetRequest listManagedRolesInPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listManagedRolesInPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", listManagedRolesInPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listManagedRolesInPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listManagedRolesInPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/managed-roles", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listManagedRolesInPermissionSetRequest);
             return new SyncInvoker<ListManagedRolesInPermissionSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ListManagedRolesInPermissionSetResponse>);
@@ -1930,7 +1930,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListPermissionSetProvisioningStatusResponse ListPermissionSetProvisioningStatus(ListPermissionSetProvisioningStatusRequest listPermissionSetProvisioningStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listPermissionSetProvisioningStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPermissionSetProvisioningStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/provisioning-statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPermissionSetProvisioningStatusRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1940,7 +1940,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListPermissionSetProvisioningStatusResponse> ListPermissionSetProvisioningStatusInvoker(ListPermissionSetProvisioningStatusRequest listPermissionSetProvisioningStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listPermissionSetProvisioningStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPermissionSetProvisioningStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/provisioning-statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPermissionSetProvisioningStatusRequest);
             return new SyncInvoker<ListPermissionSetProvisioningStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPermissionSetProvisioningStatusResponse>);
@@ -1956,7 +1956,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListPermissionSetsResponse ListPermissionSets(ListPermissionSetsRequest listPermissionSetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listPermissionSetsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPermissionSetsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPermissionSetsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1966,7 +1966,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListPermissionSetsResponse> ListPermissionSetsInvoker(ListPermissionSetsRequest listPermissionSetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listPermissionSetsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPermissionSetsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPermissionSetsRequest);
             return new SyncInvoker<ListPermissionSetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPermissionSetsResponse>);
@@ -1982,7 +1982,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListPermissionSetsProvisionedToAccountResponse ListPermissionSetsProvisionedToAccount(ListPermissionSetsProvisionedToAccountRequest listPermissionSetsProvisionedToAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listPermissionSetsProvisionedToAccountRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPermissionSetsProvisionedToAccountRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/provisioned-to-accounts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPermissionSetsProvisionedToAccountRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1992,7 +1992,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListPermissionSetsProvisionedToAccountResponse> ListPermissionSetsProvisionedToAccountInvoker(ListPermissionSetsProvisionedToAccountRequest listPermissionSetsProvisionedToAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listPermissionSetsProvisionedToAccountRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPermissionSetsProvisionedToAccountRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/provisioned-to-accounts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPermissionSetsProvisionedToAccountRequest);
             return new SyncInvoker<ListPermissionSetsProvisionedToAccountResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPermissionSetsProvisionedToAccountResponse>);
@@ -2008,8 +2008,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ProvisionPermissionSetResponse ProvisionPermissionSet(ProvisionPermissionSetRequest provisionPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", provisionPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", provisionPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(provisionPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(provisionPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/provision", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", provisionPermissionSetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2019,8 +2019,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ProvisionPermissionSetResponse> ProvisionPermissionSetInvoker(ProvisionPermissionSetRequest provisionPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", provisionPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", provisionPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(provisionPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(provisionPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/provision", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", provisionPermissionSetRequest);
             return new SyncInvoker<ProvisionPermissionSetResponse>(this, "POST", request, JsonUtils.DeSerialize<ProvisionPermissionSetResponse>);
@@ -2036,8 +2036,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public PutCustomPolicyToPermissionSetResponse PutCustomPolicyToPermissionSet(PutCustomPolicyToPermissionSetRequest putCustomPolicyToPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", putCustomPolicyToPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", putCustomPolicyToPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(putCustomPolicyToPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(putCustomPolicyToPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", putCustomPolicyToPermissionSetRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2047,8 +2047,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<PutCustomPolicyToPermissionSetResponse> PutCustomPolicyToPermissionSetInvoker(PutCustomPolicyToPermissionSetRequest putCustomPolicyToPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", putCustomPolicyToPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", putCustomPolicyToPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(putCustomPolicyToPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(putCustomPolicyToPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", putCustomPolicyToPermissionSetRequest);
             return new SyncInvoker<PutCustomPolicyToPermissionSetResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<PutCustomPolicyToPermissionSetResponse>);
@@ -2064,8 +2064,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public PutCustomRoleToPermissionSetResponse PutCustomRoleToPermissionSet(PutCustomRoleToPermissionSetRequest putCustomRoleToPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", putCustomRoleToPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", putCustomRoleToPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(putCustomRoleToPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(putCustomRoleToPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", putCustomRoleToPermissionSetRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2075,8 +2075,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<PutCustomRoleToPermissionSetResponse> PutCustomRoleToPermissionSetInvoker(PutCustomRoleToPermissionSetRequest putCustomRoleToPermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", putCustomRoleToPermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", putCustomRoleToPermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(putCustomRoleToPermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(putCustomRoleToPermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}/custom-role", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", putCustomRoleToPermissionSetRequest);
             return new SyncInvoker<PutCustomRoleToPermissionSetResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<PutCustomRoleToPermissionSetResponse>);
@@ -2092,8 +2092,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public UpdatePermissionSetResponse UpdatePermissionSet(UpdatePermissionSetRequest updatePermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updatePermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", updatePermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updatePermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePermissionSetRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2103,8 +2103,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<UpdatePermissionSetResponse> UpdatePermissionSetInvoker(UpdatePermissionSetRequest updatePermissionSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updatePermissionSetRequest.InstanceId.ToString());
-            urlParam.Add("permission_set_id", updatePermissionSetRequest.PermissionSetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePermissionSetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updatePermissionSetRequest.PermissionSetId, out var valueOfPermissionSetId)) urlParam.Add("permission_set_id", valueOfPermissionSetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{instance_id}/permission-sets/{permission_set_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePermissionSetRequest);
             return new SyncInvoker<UpdatePermissionSetResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePermissionSetResponse>);
@@ -2120,8 +2120,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public CreateTagResourceResponse CreateTagResource(CreateTagResourceRequest createTagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createTagResourceRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createTagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTagResourceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createTagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{resource_type}/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagResourceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2131,8 +2131,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<CreateTagResourceResponse> CreateTagResourceInvoker(CreateTagResourceRequest createTagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createTagResourceRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createTagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTagResourceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createTagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{resource_type}/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagResourceRequest);
             return new SyncInvoker<CreateTagResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateTagResourceResponse>);
@@ -2148,8 +2148,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public DeleteTagResourceResponse DeleteTagResource(DeleteTagResourceRequest deleteTagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteTagResourceRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteTagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagResourceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{resource_type}/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagResourceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2159,8 +2159,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<DeleteTagResourceResponse> DeleteTagResourceInvoker(DeleteTagResourceRequest deleteTagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteTagResourceRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteTagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagResourceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{resource_type}/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagResourceRequest);
             return new SyncInvoker<DeleteTagResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteTagResourceResponse>);
@@ -2176,8 +2176,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public ListTagResourcesResponse ListTagResources(ListTagResourcesRequest listTagResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listTagResourcesRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listTagResourcesRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTagResourcesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listTagResourcesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagResourcesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2187,8 +2187,8 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         public SyncInvoker<ListTagResourcesResponse> ListTagResourcesInvoker(ListTagResourcesRequest listTagResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listTagResourcesRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listTagResourcesRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTagResourcesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listTagResourcesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/instances/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagResourcesRequest);
             return new SyncInvoker<ListTagResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTagResourcesResponse>);

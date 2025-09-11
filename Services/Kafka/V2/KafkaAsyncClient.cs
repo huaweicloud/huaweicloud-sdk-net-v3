@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<BatchCreateOrDeleteKafkaTagResponse> BatchCreateOrDeleteKafkaTagAsync(BatchCreateOrDeleteKafkaTagRequest batchCreateOrDeleteKafkaTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchCreateOrDeleteKafkaTagRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateOrDeleteKafkaTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/{instance_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteKafkaTagRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<BatchCreateOrDeleteKafkaTagResponse> BatchCreateOrDeleteKafkaTagAsyncInvoker(BatchCreateOrDeleteKafkaTagRequest batchCreateOrDeleteKafkaTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchCreateOrDeleteKafkaTagRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateOrDeleteKafkaTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/{instance_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteKafkaTagRequest);
             return new AsyncInvoker<BatchCreateOrDeleteKafkaTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateOrDeleteKafkaTagResponse>);
@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<BatchDeleteGroupResponse> BatchDeleteGroupAsync(BatchDeleteGroupRequest batchDeleteGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGroupRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<BatchDeleteGroupResponse> BatchDeleteGroupAsyncInvoker(BatchDeleteGroupRequest batchDeleteGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGroupRequest);
             return new AsyncInvoker<BatchDeleteGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteGroupResponse>);
@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<BatchDeleteInstanceTopicResponse> BatchDeleteInstanceTopicAsync(BatchDeleteInstanceTopicRequest batchDeleteInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceTopicRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -87,7 +87,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<BatchDeleteInstanceTopicResponse> BatchDeleteInstanceTopicAsyncInvoker(BatchDeleteInstanceTopicRequest batchDeleteInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceTopicRequest);
             return new AsyncInvoker<BatchDeleteInstanceTopicResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteInstanceTopicResponse>);
@@ -103,7 +103,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<BatchDeleteInstanceUsersResponse> BatchDeleteInstanceUsersAsync(BatchDeleteInstanceUsersRequest batchDeleteInstanceUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteInstanceUsersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceUsersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceUsersRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -113,7 +113,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<BatchDeleteInstanceUsersResponse> BatchDeleteInstanceUsersAsyncInvoker(BatchDeleteInstanceUsersRequest batchDeleteInstanceUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteInstanceUsersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceUsersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceUsersRequest);
             return new AsyncInvoker<BatchDeleteInstanceUsersResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<BatchDeleteInstanceUsersResponse>);
@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<BatchDeleteMessageDiagnosisReportsResponse> BatchDeleteMessageDiagnosisReportsAsync(BatchDeleteMessageDiagnosisReportsRequest batchDeleteMessageDiagnosisReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteMessageDiagnosisReportsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteMessageDiagnosisReportsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteMessageDiagnosisReportsRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -139,7 +139,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<BatchDeleteMessageDiagnosisReportsResponse> BatchDeleteMessageDiagnosisReportsAsyncInvoker(BatchDeleteMessageDiagnosisReportsRequest batchDeleteMessageDiagnosisReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteMessageDiagnosisReportsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteMessageDiagnosisReportsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteMessageDiagnosisReportsRequest);
             return new AsyncInvoker<BatchDeleteMessageDiagnosisReportsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteMessageDiagnosisReportsResponse>);
@@ -183,7 +183,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CloseKafkaManagerResponse> CloseKafkaManagerAsync(CloseKafkaManagerRequest closeKafkaManagerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", closeKafkaManagerRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(closeKafkaManagerRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/management", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeKafkaManagerRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -193,7 +193,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CloseKafkaManagerResponse> CloseKafkaManagerAsyncInvoker(CloseKafkaManagerRequest closeKafkaManagerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", closeKafkaManagerRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(closeKafkaManagerRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/management", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeKafkaManagerRequest);
             return new AsyncInvoker<CloseKafkaManagerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<CloseKafkaManagerResponse>);
@@ -211,7 +211,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateInstanceByEngineResponse> CreateInstanceByEngineAsync(CreateInstanceByEngineRequest createInstanceByEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", createInstanceByEngineRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceByEngineRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceByEngineRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -221,7 +221,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateInstanceByEngineResponse> CreateInstanceByEngineAsyncInvoker(CreateInstanceByEngineRequest createInstanceByEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", createInstanceByEngineRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceByEngineRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceByEngineRequest);
             return new AsyncInvoker<CreateInstanceByEngineResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceByEngineResponse>);
@@ -237,7 +237,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateInstanceTopicResponse> CreateInstanceTopicAsync(CreateInstanceTopicRequest createInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceTopicRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -247,7 +247,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateInstanceTopicResponse> CreateInstanceTopicAsyncInvoker(CreateInstanceTopicRequest createInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceTopicRequest);
             return new AsyncInvoker<CreateInstanceTopicResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceTopicResponse>);
@@ -263,7 +263,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateInstanceUserResponse> CreateInstanceUserAsync(CreateInstanceUserRequest createInstanceUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceUserRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -273,7 +273,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateInstanceUserResponse> CreateInstanceUserAsyncInvoker(CreateInstanceUserRequest createInstanceUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceUserRequest);
             return new AsyncInvoker<CreateInstanceUserResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateInstanceUserResponse>);
@@ -289,7 +289,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateKafkaConsumerGroupResponse> CreateKafkaConsumerGroupAsync(CreateKafkaConsumerGroupRequest createKafkaConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaConsumerGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/group", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaConsumerGroupRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -299,7 +299,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateKafkaConsumerGroupResponse> CreateKafkaConsumerGroupAsyncInvoker(CreateKafkaConsumerGroupRequest createKafkaConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaConsumerGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/group", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaConsumerGroupRequest);
             return new AsyncInvoker<CreateKafkaConsumerGroupResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateKafkaConsumerGroupResponse>);
@@ -315,7 +315,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateKafkaReassignmentTaskResponse> CreateKafkaReassignmentTaskAsync(CreateKafkaReassignmentTaskRequest createKafkaReassignmentTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaReassignmentTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaReassignmentTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/reassign", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaReassignmentTaskRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -325,7 +325,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateKafkaReassignmentTaskResponse> CreateKafkaReassignmentTaskAsyncInvoker(CreateKafkaReassignmentTaskRequest createKafkaReassignmentTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaReassignmentTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaReassignmentTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/reassign", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaReassignmentTaskRequest);
             return new AsyncInvoker<CreateKafkaReassignmentTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKafkaReassignmentTaskResponse>);
@@ -341,7 +341,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateKafkaRebalanceLogTaskResponse> CreateKafkaRebalanceLogTaskAsync(CreateKafkaRebalanceLogTaskRequest createKafkaRebalanceLogTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaRebalanceLogTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaRebalanceLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaRebalanceLogTaskRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -351,7 +351,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateKafkaRebalanceLogTaskResponse> CreateKafkaRebalanceLogTaskAsyncInvoker(CreateKafkaRebalanceLogTaskRequest createKafkaRebalanceLogTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaRebalanceLogTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaRebalanceLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaRebalanceLogTaskRequest);
             return new AsyncInvoker<CreateKafkaRebalanceLogTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKafkaRebalanceLogTaskResponse>);
@@ -367,7 +367,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateKafkaTopicQuotaResponse> CreateKafkaTopicQuotaAsync(CreateKafkaTopicQuotaRequest createKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaTopicQuotaRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -377,7 +377,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateKafkaTopicQuotaResponse> CreateKafkaTopicQuotaAsyncInvoker(CreateKafkaTopicQuotaRequest createKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaTopicQuotaRequest);
             return new AsyncInvoker<CreateKafkaTopicQuotaResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKafkaTopicQuotaResponse>);
@@ -393,7 +393,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateKafkaUserClientQuotaTaskResponse> CreateKafkaUserClientQuotaTaskAsync(CreateKafkaUserClientQuotaTaskRequest createKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaUserClientQuotaTaskRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -403,7 +403,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateKafkaUserClientQuotaTaskResponse> CreateKafkaUserClientQuotaTaskAsyncInvoker(CreateKafkaUserClientQuotaTaskRequest createKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaUserClientQuotaTaskRequest);
             return new AsyncInvoker<CreateKafkaUserClientQuotaTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKafkaUserClientQuotaTaskResponse>);
@@ -419,7 +419,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateMessageDiagnosisTaskResponse> CreateMessageDiagnosisTaskAsync(CreateMessageDiagnosisTaskRequest createMessageDiagnosisTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createMessageDiagnosisTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createMessageDiagnosisTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createMessageDiagnosisTaskRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -429,7 +429,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateMessageDiagnosisTaskResponse> CreateMessageDiagnosisTaskAsyncInvoker(CreateMessageDiagnosisTaskRequest createMessageDiagnosisTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createMessageDiagnosisTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createMessageDiagnosisTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createMessageDiagnosisTaskRequest);
             return new AsyncInvoker<CreateMessageDiagnosisTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMessageDiagnosisTaskResponse>);
@@ -495,7 +495,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateReassignmentTaskResponse> CreateReassignmentTaskAsync(CreateReassignmentTaskRequest createReassignmentTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createReassignmentTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createReassignmentTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/reassign", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReassignmentTaskRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -505,7 +505,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateReassignmentTaskResponse> CreateReassignmentTaskAsyncInvoker(CreateReassignmentTaskRequest createReassignmentTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createReassignmentTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createReassignmentTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/reassign", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReassignmentTaskRequest);
             return new AsyncInvoker<CreateReassignmentTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateReassignmentTaskResponse>);
@@ -521,8 +521,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<DeleteBackgroundTaskResponse> DeleteBackgroundTaskAsync(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", deleteBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackgroundTaskRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -532,8 +532,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<DeleteBackgroundTaskResponse> DeleteBackgroundTaskAsyncInvoker(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", deleteBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackgroundTaskRequest);
             return new AsyncInvoker<DeleteBackgroundTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBackgroundTaskResponse>);
@@ -549,8 +549,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<DeleteConsumerGroupOffsetsResponse> DeleteConsumerGroupOffsetsAsync(DeleteConsumerGroupOffsetsRequest deleteConsumerGroupOffsetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConsumerGroupOffsetsRequest.InstanceId.ToString());
-            urlParam.Add("group", deleteConsumerGroupOffsetsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupOffsetsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupOffsetsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/groups/{group}/delete-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupOffsetsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -560,8 +560,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<DeleteConsumerGroupOffsetsResponse> DeleteConsumerGroupOffsetsAsyncInvoker(DeleteConsumerGroupOffsetsRequest deleteConsumerGroupOffsetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConsumerGroupOffsetsRequest.InstanceId.ToString());
-            urlParam.Add("group", deleteConsumerGroupOffsetsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupOffsetsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupOffsetsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/groups/{group}/delete-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupOffsetsRequest);
             return new AsyncInvoker<DeleteConsumerGroupOffsetsResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteConsumerGroupOffsetsResponse>);
@@ -577,7 +577,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -587,7 +587,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<DeleteInstanceResponse> DeleteInstanceAsyncInvoker(DeleteInstanceRequest deleteInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             return new AsyncInvoker<DeleteInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceResponse>);
@@ -603,8 +603,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<DeleteKafkaMessageResponse> DeleteKafkaMessageAsync(DeleteKafkaMessageRequest deleteKafkaMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", deleteKafkaMessageRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaMessageRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -614,8 +614,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<DeleteKafkaMessageResponse> DeleteKafkaMessageAsyncInvoker(DeleteKafkaMessageRequest deleteKafkaMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", deleteKafkaMessageRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaMessageRequest);
             return new AsyncInvoker<DeleteKafkaMessageResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteKafkaMessageResponse>);
@@ -631,7 +631,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<DeleteKafkaTopicQuotaResponse> DeleteKafkaTopicQuotaAsync(DeleteKafkaTopicQuotaRequest deleteKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaTopicQuotaRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -641,7 +641,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<DeleteKafkaTopicQuotaResponse> DeleteKafkaTopicQuotaAsyncInvoker(DeleteKafkaTopicQuotaRequest deleteKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaTopicQuotaRequest);
             return new AsyncInvoker<DeleteKafkaTopicQuotaResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteKafkaTopicQuotaResponse>);
@@ -657,7 +657,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<DeleteKafkaUserClientQuotaTaskResponse> DeleteKafkaUserClientQuotaTaskAsync(DeleteKafkaUserClientQuotaTaskRequest deleteKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaUserClientQuotaTaskRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -667,7 +667,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<DeleteKafkaUserClientQuotaTaskResponse> DeleteKafkaUserClientQuotaTaskAsyncInvoker(DeleteKafkaUserClientQuotaTaskRequest deleteKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaUserClientQuotaTaskRequest);
             return new AsyncInvoker<DeleteKafkaUserClientQuotaTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteKafkaUserClientQuotaTaskResponse>);
@@ -683,7 +683,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<EnableDnsResponse> EnableDnsAsync(EnableDnsRequest enableDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", enableDnsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -693,7 +693,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<EnableDnsResponse> EnableDnsAsyncInvoker(EnableDnsRequest enableDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", enableDnsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
             return new AsyncInvoker<EnableDnsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableDnsResponse>);
@@ -733,7 +733,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListBackgroundTasksResponse> ListBackgroundTasksAsync(ListBackgroundTasksRequest listBackgroundTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listBackgroundTasksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBackgroundTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackgroundTasksRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -743,7 +743,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListBackgroundTasksResponse> ListBackgroundTasksAsyncInvoker(ListBackgroundTasksRequest listBackgroundTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listBackgroundTasksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBackgroundTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackgroundTasksRequest);
             return new AsyncInvoker<ListBackgroundTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBackgroundTasksResponse>);
@@ -759,7 +759,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListEngineProductsResponse> ListEngineProductsAsync(ListEngineProductsRequest listEngineProductsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listEngineProductsRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEngineProductsRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/products", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEngineProductsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -769,7 +769,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListEngineProductsResponse> ListEngineProductsAsyncInvoker(ListEngineProductsRequest listEngineProductsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listEngineProductsRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEngineProductsRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/products", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEngineProductsRequest);
             return new AsyncInvoker<ListEngineProductsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEngineProductsResponse>);
@@ -785,9 +785,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListInstanceConsumerGroupResponse> ListInstanceConsumerGroupAsync(ListInstanceConsumerGroupRequest listInstanceConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -797,9 +797,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListInstanceConsumerGroupResponse> ListInstanceConsumerGroupAsyncInvoker(ListInstanceConsumerGroupRequest listInstanceConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupRequest);
             return new AsyncInvoker<ListInstanceConsumerGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConsumerGroupResponse>);
@@ -815,9 +815,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListInstanceConsumerGroupMembersResponse> ListInstanceConsumerGroupMembersAsync(ListInstanceConsumerGroupMembersRequest listInstanceConsumerGroupMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupMembersRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupMembersRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupMembersRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/members", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupMembersRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -827,9 +827,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListInstanceConsumerGroupMembersResponse> ListInstanceConsumerGroupMembersAsyncInvoker(ListInstanceConsumerGroupMembersRequest listInstanceConsumerGroupMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupMembersRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupMembersRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupMembersRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/members", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupMembersRequest);
             return new AsyncInvoker<ListInstanceConsumerGroupMembersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConsumerGroupMembersResponse>);
@@ -845,9 +845,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListInstanceConsumerGroupMessageOffsetResponse> ListInstanceConsumerGroupMessageOffsetAsync(ListInstanceConsumerGroupMessageOffsetRequest listInstanceConsumerGroupMessageOffsetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupMessageOffsetRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupMessageOffsetRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupMessageOffsetRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupMessageOffsetRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -857,9 +857,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListInstanceConsumerGroupMessageOffsetResponse> ListInstanceConsumerGroupMessageOffsetAsyncInvoker(ListInstanceConsumerGroupMessageOffsetRequest listInstanceConsumerGroupMessageOffsetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupMessageOffsetRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupMessageOffsetRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupMessageOffsetRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupMessageOffsetRequest);
             return new AsyncInvoker<ListInstanceConsumerGroupMessageOffsetResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConsumerGroupMessageOffsetResponse>);
@@ -875,9 +875,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListInstanceConsumerGroupTopicsResponse> ListInstanceConsumerGroupTopicsAsync(ListInstanceConsumerGroupTopicsRequest listInstanceConsumerGroupTopicsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupTopicsRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupTopicsRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupTopicsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupTopicsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -887,9 +887,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListInstanceConsumerGroupTopicsResponse> ListInstanceConsumerGroupTopicsAsyncInvoker(ListInstanceConsumerGroupTopicsRequest listInstanceConsumerGroupTopicsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupTopicsRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupTopicsRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupTopicsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupTopicsRequest);
             return new AsyncInvoker<ListInstanceConsumerGroupTopicsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConsumerGroupTopicsResponse>);
@@ -905,7 +905,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListInstanceConsumerGroupsResponse> ListInstanceConsumerGroupsAsync(ListInstanceConsumerGroupsRequest listInstanceConsumerGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceConsumerGroupsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -915,7 +915,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListInstanceConsumerGroupsResponse> ListInstanceConsumerGroupsAsyncInvoker(ListInstanceConsumerGroupsRequest listInstanceConsumerGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceConsumerGroupsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupsRequest);
             return new AsyncInvoker<ListInstanceConsumerGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConsumerGroupsResponse>);
@@ -931,7 +931,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListInstanceTopicsResponse> ListInstanceTopicsAsync(ListInstanceTopicsRequest listInstanceTopicsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceTopicsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTopicsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTopicsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -941,7 +941,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListInstanceTopicsResponse> ListInstanceTopicsAsyncInvoker(ListInstanceTopicsRequest listInstanceTopicsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceTopicsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTopicsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTopicsRequest);
             return new AsyncInvoker<ListInstanceTopicsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceTopicsResponse>);
@@ -981,7 +981,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListMessageDiagnosisReportsResponse> ListMessageDiagnosisReportsAsync(ListMessageDiagnosisReportsRequest listMessageDiagnosisReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listMessageDiagnosisReportsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listMessageDiagnosisReportsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessageDiagnosisReportsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -991,7 +991,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListMessageDiagnosisReportsResponse> ListMessageDiagnosisReportsAsyncInvoker(ListMessageDiagnosisReportsRequest listMessageDiagnosisReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listMessageDiagnosisReportsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listMessageDiagnosisReportsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessageDiagnosisReportsRequest);
             return new AsyncInvoker<ListMessageDiagnosisReportsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMessageDiagnosisReportsResponse>);
@@ -1037,8 +1037,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListTopicPartitionsResponse> ListTopicPartitionsAsync(ListTopicPartitionsRequest listTopicPartitionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTopicPartitionsRequest.InstanceId.ToString());
-            urlParam.Add("topic", listTopicPartitionsRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTopicPartitionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listTopicPartitionsRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/partitions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicPartitionsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1048,8 +1048,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListTopicPartitionsResponse> ListTopicPartitionsAsyncInvoker(ListTopicPartitionsRequest listTopicPartitionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTopicPartitionsRequest.InstanceId.ToString());
-            urlParam.Add("topic", listTopicPartitionsRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTopicPartitionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listTopicPartitionsRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/partitions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicPartitionsRequest);
             return new AsyncInvoker<ListTopicPartitionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTopicPartitionsResponse>);
@@ -1065,8 +1065,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListTopicProducersResponse> ListTopicProducersAsync(ListTopicProducersRequest listTopicProducersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTopicProducersRequest.InstanceId.ToString());
-            urlParam.Add("topic", listTopicProducersRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTopicProducersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listTopicProducersRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/producers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicProducersRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1076,8 +1076,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListTopicProducersResponse> ListTopicProducersAsyncInvoker(ListTopicProducersRequest listTopicProducersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTopicProducersRequest.InstanceId.ToString());
-            urlParam.Add("topic", listTopicProducersRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTopicProducersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listTopicProducersRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/producers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicProducersRequest);
             return new AsyncInvoker<ListTopicProducersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTopicProducersResponse>);
@@ -1093,7 +1093,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ModifyInstanceConfigsResponse> ModifyInstanceConfigsAsync(ModifyInstanceConfigsRequest modifyInstanceConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyInstanceConfigsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyInstanceConfigsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyInstanceConfigsRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1103,7 +1103,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ModifyInstanceConfigsResponse> ModifyInstanceConfigsAsyncInvoker(ModifyInstanceConfigsRequest modifyInstanceConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyInstanceConfigsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyInstanceConfigsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyInstanceConfigsRequest);
             return new AsyncInvoker<ModifyInstanceConfigsResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyInstanceConfigsResponse>);
@@ -1119,7 +1119,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ModifyKafkaTopicQuotaResponse> ModifyKafkaTopicQuotaAsync(ModifyKafkaTopicQuotaRequest modifyKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyKafkaTopicQuotaRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1129,7 +1129,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ModifyKafkaTopicQuotaResponse> ModifyKafkaTopicQuotaAsyncInvoker(ModifyKafkaTopicQuotaRequest modifyKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyKafkaTopicQuotaRequest);
             return new AsyncInvoker<ModifyKafkaTopicQuotaResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyKafkaTopicQuotaResponse>);
@@ -1145,7 +1145,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ResetManagerPasswordResponse> ResetManagerPasswordAsync(ResetManagerPasswordRequest resetManagerPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetManagerPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetManagerPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/kafka-manager-password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetManagerPasswordRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1155,7 +1155,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ResetManagerPasswordResponse> ResetManagerPasswordAsyncInvoker(ResetManagerPasswordRequest resetManagerPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetManagerPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetManagerPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/kafka-manager-password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetManagerPasswordRequest);
             return new AsyncInvoker<ResetManagerPasswordResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetManagerPasswordResponse>);
@@ -1173,8 +1173,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ResetMessageOffsetResponse> ResetMessageOffsetAsync(ResetMessageOffsetRequest resetMessageOffsetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetMessageOffsetRequest.InstanceId.ToString());
-            urlParam.Add("group", resetMessageOffsetRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/groups/{group}/reset-message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1184,8 +1184,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ResetMessageOffsetResponse> ResetMessageOffsetAsyncInvoker(ResetMessageOffsetRequest resetMessageOffsetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetMessageOffsetRequest.InstanceId.ToString());
-            urlParam.Add("group", resetMessageOffsetRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/groups/{group}/reset-message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetRequest);
             return new AsyncInvoker<ResetMessageOffsetResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetMessageOffsetResponse>);
@@ -1203,8 +1203,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ResetMessageOffsetWithEngineResponse> ResetMessageOffsetWithEngineAsync(ResetMessageOffsetWithEngineRequest resetMessageOffsetWithEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetMessageOffsetWithEngineRequest.InstanceId.ToString());
-            urlParam.Add("group", resetMessageOffsetWithEngineRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetWithEngineRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetWithEngineRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetWithEngineRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1214,8 +1214,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ResetMessageOffsetWithEngineResponse> ResetMessageOffsetWithEngineAsyncInvoker(ResetMessageOffsetWithEngineRequest resetMessageOffsetWithEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetMessageOffsetWithEngineRequest.InstanceId.ToString());
-            urlParam.Add("group", resetMessageOffsetWithEngineRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetWithEngineRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetWithEngineRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetWithEngineRequest);
             return new AsyncInvoker<ResetMessageOffsetWithEngineResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetMessageOffsetWithEngineResponse>);
@@ -1231,7 +1231,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ResetPasswordResponse> ResetPasswordAsync(ResetPasswordRequest resetPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPasswordRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1241,7 +1241,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ResetPasswordResponse> ResetPasswordAsyncInvoker(ResetPasswordRequest resetPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPasswordRequest);
             return new AsyncInvoker<ResetPasswordResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetPasswordResponse>);
@@ -1257,8 +1257,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ResetUserPasswrodResponse> ResetUserPasswrodAsync(ResetUserPasswrodRequest resetUserPasswrodRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetUserPasswrodRequest.InstanceId.ToString());
-            urlParam.Add("user_name", resetUserPasswrodRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetUserPasswrodRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetUserPasswrodRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetUserPasswrodRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1268,8 +1268,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ResetUserPasswrodResponse> ResetUserPasswrodAsyncInvoker(ResetUserPasswrodRequest resetUserPasswrodRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetUserPasswrodRequest.InstanceId.ToString());
-            urlParam.Add("user_name", resetUserPasswrodRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetUserPasswrodRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetUserPasswrodRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetUserPasswrodRequest);
             return new AsyncInvoker<ResetUserPasswrodResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetUserPasswrodResponse>);
@@ -1285,8 +1285,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ResizeEngineInstanceResponse> ResizeEngineInstanceAsync(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", resizeEngineInstanceRequest.Engine.ToString());
-            urlParam.Add("instance_id", resizeEngineInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1296,8 +1296,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ResizeEngineInstanceResponse> ResizeEngineInstanceAsyncInvoker(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", resizeEngineInstanceRequest.Engine.ToString());
-            urlParam.Add("instance_id", resizeEngineInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
             return new AsyncInvoker<ResizeEngineInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeEngineInstanceResponse>);
@@ -1313,7 +1313,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ResizeInstanceResponse> ResizeInstanceAsync(ResizeInstanceRequest resizeInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1323,7 +1323,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ResizeInstanceResponse> ResizeInstanceAsyncInvoker(ResizeInstanceRequest resizeInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
             return new AsyncInvoker<ResizeInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeInstanceResponse>);
@@ -1339,7 +1339,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ResizeKafkaInstanceResponse> ResizeKafkaInstanceAsync(ResizeKafkaInstanceRequest resizeKafkaInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeKafkaInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeKafkaInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeKafkaInstanceRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1349,7 +1349,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ResizeKafkaInstanceResponse> ResizeKafkaInstanceAsyncInvoker(ResizeKafkaInstanceRequest resizeKafkaInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeKafkaInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeKafkaInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeKafkaInstanceRequest);
             return new AsyncInvoker<ResizeKafkaInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeKafkaInstanceResponse>);
@@ -1365,7 +1365,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<RestartManagerResponse> RestartManagerAsync(RestartManagerRequest restartManagerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartManagerRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartManagerRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/restart-kafka-manager", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartManagerRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1375,7 +1375,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<RestartManagerResponse> RestartManagerAsyncInvoker(RestartManagerRequest restartManagerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartManagerRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartManagerRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/restart-kafka-manager", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartManagerRequest);
             return new AsyncInvoker<RestartManagerResponse>(this, "PUT", request, JsonUtils.DeSerialize<RestartManagerResponse>);
@@ -1391,7 +1391,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<SendKafkaMessageResponse> SendKafkaMessageAsync(SendKafkaMessageRequest sendKafkaMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", sendKafkaMessageRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(sendKafkaMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendKafkaMessageRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1401,7 +1401,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<SendKafkaMessageResponse> SendKafkaMessageAsyncInvoker(SendKafkaMessageRequest sendKafkaMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", sendKafkaMessageRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(sendKafkaMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendKafkaMessageRequest);
             return new AsyncInvoker<SendKafkaMessageResponse>(this, "POST", request, JsonUtils.DeSerialize<SendKafkaMessageResponse>);
@@ -1417,8 +1417,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowBackgroundTaskResponse> ShowBackgroundTaskAsync(ShowBackgroundTaskRequest showBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", showBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackgroundTaskRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1428,8 +1428,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowBackgroundTaskResponse> ShowBackgroundTaskAsyncInvoker(ShowBackgroundTaskRequest showBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", showBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackgroundTaskRequest);
             return new AsyncInvoker<ShowBackgroundTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackgroundTaskResponse>);
@@ -1445,7 +1445,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowCesHierarchyResponse> ShowCesHierarchyAsync(ShowCesHierarchyRequest showCesHierarchyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showCesHierarchyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCesHierarchyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ces-hierarchy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCesHierarchyRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1455,7 +1455,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowCesHierarchyResponse> ShowCesHierarchyAsyncInvoker(ShowCesHierarchyRequest showCesHierarchyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showCesHierarchyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCesHierarchyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ces-hierarchy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCesHierarchyRequest);
             return new AsyncInvoker<ShowCesHierarchyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCesHierarchyResponse>);
@@ -1471,7 +1471,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowClusterResponse> ShowClusterAsync(ShowClusterRequest showClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showClusterRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClusterRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/cluster", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1481,7 +1481,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowClusterResponse> ShowClusterAsyncInvoker(ShowClusterRequest showClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showClusterRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClusterRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/cluster", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterRequest);
             return new AsyncInvoker<ShowClusterResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterResponse>);
@@ -1497,7 +1497,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowCoordinatorsResponse> ShowCoordinatorsAsync(ShowCoordinatorsRequest showCoordinatorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showCoordinatorsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCoordinatorsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/coordinators", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCoordinatorsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1507,7 +1507,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowCoordinatorsResponse> ShowCoordinatorsAsyncInvoker(ShowCoordinatorsRequest showCoordinatorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showCoordinatorsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCoordinatorsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/coordinators", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCoordinatorsRequest);
             return new AsyncInvoker<ShowCoordinatorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCoordinatorsResponse>);
@@ -1523,7 +1523,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowDiagnosisPreCheckResponse> ShowDiagnosisPreCheckAsync(ShowDiagnosisPreCheckRequest showDiagnosisPreCheckRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showDiagnosisPreCheckRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDiagnosisPreCheckRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/diagnosis-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisPreCheckRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1535,7 +1535,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowDiagnosisPreCheckResponse> ShowDiagnosisPreCheckAsyncInvoker(ShowDiagnosisPreCheckRequest showDiagnosisPreCheckRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showDiagnosisPreCheckRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDiagnosisPreCheckRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/diagnosis-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisPreCheckRequest);
             return new AsyncInvoker<ShowDiagnosisPreCheckResponse>(this, "GET", request, response =>
@@ -1556,8 +1556,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowEngineInstanceExtendProductInfoResponse> ShowEngineInstanceExtendProductInfoAsync(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", showEngineInstanceExtendProductInfoRequest.Engine.ToString());
-            urlParam.Add("instance_id", showEngineInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1567,8 +1567,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowEngineInstanceExtendProductInfoResponse> ShowEngineInstanceExtendProductInfoAsyncInvoker(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", showEngineInstanceExtendProductInfoRequest.Engine.ToString());
-            urlParam.Add("instance_id", showEngineInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
             return new AsyncInvoker<ShowEngineInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEngineInstanceExtendProductInfoResponse>);
@@ -1584,8 +1584,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowGroupsResponse> ShowGroupsAsync(ShowGroupsRequest showGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGroupsRequest.InstanceId.ToString());
-            urlParam.Add("group", showGroupsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGroupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showGroupsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGroupsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1595,8 +1595,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowGroupsResponse> ShowGroupsAsyncInvoker(ShowGroupsRequest showGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGroupsRequest.InstanceId.ToString());
-            urlParam.Add("group", showGroupsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGroupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showGroupsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGroupsRequest);
             return new AsyncInvoker<ShowGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGroupsResponse>);
@@ -1612,7 +1612,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowInstanceResponse> ShowInstanceAsync(ShowInstanceRequest showInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1622,7 +1622,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowInstanceResponse> ShowInstanceAsyncInvoker(ShowInstanceRequest showInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             return new AsyncInvoker<ShowInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceResponse>);
@@ -1638,7 +1638,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowInstanceConfigsResponse> ShowInstanceConfigsAsync(ShowInstanceConfigsRequest showInstanceConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceConfigsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceConfigsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1648,7 +1648,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowInstanceConfigsResponse> ShowInstanceConfigsAsyncInvoker(ShowInstanceConfigsRequest showInstanceConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceConfigsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceConfigsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigsRequest);
             return new AsyncInvoker<ShowInstanceConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceConfigsResponse>);
@@ -1664,7 +1664,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowInstanceExtendProductInfoResponse> ShowInstanceExtendProductInfoAsync(ShowInstanceExtendProductInfoRequest showInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceExtendProductInfoRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1674,7 +1674,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowInstanceExtendProductInfoResponse> ShowInstanceExtendProductInfoAsyncInvoker(ShowInstanceExtendProductInfoRequest showInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceExtendProductInfoRequest);
             return new AsyncInvoker<ShowInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceExtendProductInfoResponse>);
@@ -1691,7 +1691,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowInstanceMessagesResponse> ShowInstanceMessagesAsync(ShowInstanceMessagesRequest showInstanceMessagesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceMessagesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceMessagesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceMessagesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1701,7 +1701,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowInstanceMessagesResponse> ShowInstanceMessagesAsyncInvoker(ShowInstanceMessagesRequest showInstanceMessagesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceMessagesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceMessagesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceMessagesRequest);
             return new AsyncInvoker<ShowInstanceMessagesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceMessagesResponse>);
@@ -1717,8 +1717,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowInstanceTopicDetailResponse> ShowInstanceTopicDetailAsync(ShowInstanceTopicDetailRequest showInstanceTopicDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceTopicDetailRequest.InstanceId.ToString());
-            urlParam.Add("topic", showInstanceTopicDetailRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTopicDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTopicDetailRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTopicDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1728,8 +1728,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowInstanceTopicDetailResponse> ShowInstanceTopicDetailAsyncInvoker(ShowInstanceTopicDetailRequest showInstanceTopicDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceTopicDetailRequest.InstanceId.ToString());
-            urlParam.Add("topic", showInstanceTopicDetailRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTopicDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTopicDetailRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTopicDetailRequest);
             return new AsyncInvoker<ShowInstanceTopicDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceTopicDetailResponse>);
@@ -1747,7 +1747,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowInstanceUsersResponse> ShowInstanceUsersAsync(ShowInstanceUsersRequest showInstanceUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceUsersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceUsersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceUsersRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1757,7 +1757,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowInstanceUsersResponse> ShowInstanceUsersAsyncInvoker(ShowInstanceUsersRequest showInstanceUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceUsersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceUsersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceUsersRequest);
             return new AsyncInvoker<ShowInstanceUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceUsersResponse>);
@@ -1773,7 +1773,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowKafkaInstanceExtendProductInfoResponse> ShowKafkaInstanceExtendProductInfoAsync(ShowKafkaInstanceExtendProductInfoRequest showKafkaInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaInstanceExtendProductInfoRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1783,7 +1783,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowKafkaInstanceExtendProductInfoResponse> ShowKafkaInstanceExtendProductInfoAsyncInvoker(ShowKafkaInstanceExtendProductInfoRequest showKafkaInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaInstanceExtendProductInfoRequest);
             return new AsyncInvoker<ShowKafkaInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaInstanceExtendProductInfoResponse>);
@@ -1823,7 +1823,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowKafkaRebalanceLogResponse> ShowKafkaRebalanceLogAsync(ShowKafkaRebalanceLogRequest showKafkaRebalanceLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaRebalanceLogRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaRebalanceLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaRebalanceLogRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1833,7 +1833,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowKafkaRebalanceLogResponse> ShowKafkaRebalanceLogAsyncInvoker(ShowKafkaRebalanceLogRequest showKafkaRebalanceLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaRebalanceLogRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaRebalanceLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaRebalanceLogRequest);
             return new AsyncInvoker<ShowKafkaRebalanceLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaRebalanceLogResponse>);
@@ -1849,7 +1849,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowKafkaTagsResponse> ShowKafkaTagsAsync(ShowKafkaTagsRequest showKafkaTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/{instance_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTagsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1859,7 +1859,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowKafkaTagsResponse> ShowKafkaTagsAsyncInvoker(ShowKafkaTagsRequest showKafkaTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/{instance_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTagsRequest);
             return new AsyncInvoker<ShowKafkaTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaTagsResponse>);
@@ -1875,7 +1875,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowKafkaTopicPartitionDiskusageResponse> ShowKafkaTopicPartitionDiskusageAsync(ShowKafkaTopicPartitionDiskusageRequest showKafkaTopicPartitionDiskusageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTopicPartitionDiskusageRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTopicPartitionDiskusageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/diskusage", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTopicPartitionDiskusageRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1885,7 +1885,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowKafkaTopicPartitionDiskusageResponse> ShowKafkaTopicPartitionDiskusageAsyncInvoker(ShowKafkaTopicPartitionDiskusageRequest showKafkaTopicPartitionDiskusageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTopicPartitionDiskusageRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTopicPartitionDiskusageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/diskusage", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTopicPartitionDiskusageRequest);
             return new AsyncInvoker<ShowKafkaTopicPartitionDiskusageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaTopicPartitionDiskusageResponse>);
@@ -1901,7 +1901,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowKafkaTopicQuotaResponse> ShowKafkaTopicQuotaAsync(ShowKafkaTopicQuotaRequest showKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTopicQuotaRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1911,7 +1911,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowKafkaTopicQuotaResponse> ShowKafkaTopicQuotaAsyncInvoker(ShowKafkaTopicQuotaRequest showKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTopicQuotaRequest);
             return new AsyncInvoker<ShowKafkaTopicQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaTopicQuotaResponse>);
@@ -1927,7 +1927,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowKafkaUserClientQuotaResponse> ShowKafkaUserClientQuotaAsync(ShowKafkaUserClientQuotaRequest showKafkaUserClientQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaUserClientQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaUserClientQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaUserClientQuotaRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1937,7 +1937,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowKafkaUserClientQuotaResponse> ShowKafkaUserClientQuotaAsyncInvoker(ShowKafkaUserClientQuotaRequest showKafkaUserClientQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaUserClientQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaUserClientQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaUserClientQuotaRequest);
             return new AsyncInvoker<ShowKafkaUserClientQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaUserClientQuotaResponse>);
@@ -1977,8 +1977,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowMessageDiagnosisReportResponse> ShowMessageDiagnosisReportAsync(ShowMessageDiagnosisReportRequest showMessageDiagnosisReportRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showMessageDiagnosisReportRequest.InstanceId.ToString());
-            urlParam.Add("report_id", showMessageDiagnosisReportRequest.ReportId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMessageDiagnosisReportRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showMessageDiagnosisReportRequest.ReportId, out var valueOfReportId)) urlParam.Add("report_id", valueOfReportId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis/{report_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMessageDiagnosisReportRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1988,8 +1988,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowMessageDiagnosisReportResponse> ShowMessageDiagnosisReportAsyncInvoker(ShowMessageDiagnosisReportRequest showMessageDiagnosisReportRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showMessageDiagnosisReportRequest.InstanceId.ToString());
-            urlParam.Add("report_id", showMessageDiagnosisReportRequest.ReportId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMessageDiagnosisReportRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showMessageDiagnosisReportRequest.ReportId, out var valueOfReportId)) urlParam.Add("report_id", valueOfReportId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis/{report_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMessageDiagnosisReportRequest);
             return new AsyncInvoker<ShowMessageDiagnosisReportResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMessageDiagnosisReportResponse>);
@@ -2005,8 +2005,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowMessagesResponse> ShowMessagesAsync(ShowMessagesRequest showMessagesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showMessagesRequest.InstanceId.ToString());
-            urlParam.Add("topic", showMessagesRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMessagesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showMessagesRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMessagesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2016,8 +2016,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowMessagesResponse> ShowMessagesAsyncInvoker(ShowMessagesRequest showMessagesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showMessagesRequest.InstanceId.ToString());
-            urlParam.Add("topic", showMessagesRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMessagesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showMessagesRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMessagesRequest);
             return new AsyncInvoker<ShowMessagesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMessagesResponse>);
@@ -2033,9 +2033,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowPartitionBeginningMessageResponse> ShowPartitionBeginningMessageAsync(ShowPartitionBeginningMessageRequest showPartitionBeginningMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionBeginningMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionBeginningMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionBeginningMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/beginning-message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionBeginningMessageRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2045,9 +2045,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowPartitionBeginningMessageResponse> ShowPartitionBeginningMessageAsyncInvoker(ShowPartitionBeginningMessageRequest showPartitionBeginningMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionBeginningMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionBeginningMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionBeginningMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/beginning-message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionBeginningMessageRequest);
             return new AsyncInvoker<ShowPartitionBeginningMessageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPartitionBeginningMessageResponse>);
@@ -2063,9 +2063,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowPartitionEndMessageResponse> ShowPartitionEndMessageAsync(ShowPartitionEndMessageRequest showPartitionEndMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionEndMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionEndMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionEndMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/end-message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionEndMessageRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2075,9 +2075,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowPartitionEndMessageResponse> ShowPartitionEndMessageAsyncInvoker(ShowPartitionEndMessageRequest showPartitionEndMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionEndMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionEndMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionEndMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/end-message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionEndMessageRequest);
             return new AsyncInvoker<ShowPartitionEndMessageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPartitionEndMessageResponse>);
@@ -2093,9 +2093,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowPartitionMessageResponse> ShowPartitionMessageAsync(ShowPartitionMessageRequest showPartitionMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionMessageRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2105,9 +2105,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowPartitionMessageResponse> ShowPartitionMessageAsyncInvoker(ShowPartitionMessageRequest showPartitionMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionMessageRequest);
             return new AsyncInvoker<ShowPartitionMessageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPartitionMessageResponse>);
@@ -2149,8 +2149,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowTopicAccessPolicyResponse> ShowTopicAccessPolicyAsync(ShowTopicAccessPolicyRequest showTopicAccessPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showTopicAccessPolicyRequest.InstanceId.ToString());
-            urlParam.Add("topic_name", showTopicAccessPolicyRequest.TopicName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTopicAccessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showTopicAccessPolicyRequest.TopicName, out var valueOfTopicName)) urlParam.Add("topic_name", valueOfTopicName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/topics/{topic_name}/accesspolicy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopicAccessPolicyRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2160,8 +2160,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowTopicAccessPolicyResponse> ShowTopicAccessPolicyAsyncInvoker(ShowTopicAccessPolicyRequest showTopicAccessPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showTopicAccessPolicyRequest.InstanceId.ToString());
-            urlParam.Add("topic_name", showTopicAccessPolicyRequest.TopicName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTopicAccessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showTopicAccessPolicyRequest.TopicName, out var valueOfTopicName)) urlParam.Add("topic_name", valueOfTopicName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/topics/{topic_name}/accesspolicy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopicAccessPolicyRequest);
             return new AsyncInvoker<ShowTopicAccessPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTopicAccessPolicyResponse>);
@@ -2177,7 +2177,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<StopKafkaRebalanceLogTaskResponse> StopKafkaRebalanceLogTaskAsync(StopKafkaRebalanceLogTaskRequest stopKafkaRebalanceLogTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", stopKafkaRebalanceLogTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopKafkaRebalanceLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopKafkaRebalanceLogTaskRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -2187,7 +2187,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<StopKafkaRebalanceLogTaskResponse> StopKafkaRebalanceLogTaskAsyncInvoker(StopKafkaRebalanceLogTaskRequest stopKafkaRebalanceLogTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", stopKafkaRebalanceLogTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopKafkaRebalanceLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopKafkaRebalanceLogTaskRequest);
             return new AsyncInvoker<StopKafkaRebalanceLogTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<StopKafkaRebalanceLogTaskResponse>);
@@ -2203,7 +2203,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest updateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2213,7 +2213,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<UpdateInstanceResponse> UpdateInstanceAsyncInvoker(UpdateInstanceRequest updateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRequest);
             return new AsyncInvoker<UpdateInstanceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceResponse>);
@@ -2229,7 +2229,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<UpdateInstanceAutoCreateTopicResponse> UpdateInstanceAutoCreateTopicAsync(UpdateInstanceAutoCreateTopicRequest updateInstanceAutoCreateTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceAutoCreateTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceAutoCreateTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autotopic", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceAutoCreateTopicRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2239,7 +2239,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<UpdateInstanceAutoCreateTopicResponse> UpdateInstanceAutoCreateTopicAsyncInvoker(UpdateInstanceAutoCreateTopicRequest updateInstanceAutoCreateTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceAutoCreateTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceAutoCreateTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autotopic", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceAutoCreateTopicRequest);
             return new AsyncInvoker<UpdateInstanceAutoCreateTopicResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateInstanceAutoCreateTopicResponse>);
@@ -2255,9 +2255,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<UpdateInstanceConsumerGroupResponse> UpdateInstanceConsumerGroupAsync(UpdateInstanceConsumerGroupRequest updateInstanceConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceConsumerGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceConsumerGroupRequest.InstanceId.ToString());
-            urlParam.Add("group", updateInstanceConsumerGroupRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConsumerGroupRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2267,9 +2267,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<UpdateInstanceConsumerGroupResponse> UpdateInstanceConsumerGroupAsyncInvoker(UpdateInstanceConsumerGroupRequest updateInstanceConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceConsumerGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceConsumerGroupRequest.InstanceId.ToString());
-            urlParam.Add("group", updateInstanceConsumerGroupRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConsumerGroupRequest);
             return new AsyncInvoker<UpdateInstanceConsumerGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceConsumerGroupResponse>);
@@ -2285,7 +2285,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<UpdateInstanceCrossVpcIpResponse> UpdateInstanceCrossVpcIpAsync(UpdateInstanceCrossVpcIpRequest updateInstanceCrossVpcIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceCrossVpcIpRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceCrossVpcIpRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/crossvpc/modify", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceCrossVpcIpRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2295,7 +2295,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<UpdateInstanceCrossVpcIpResponse> UpdateInstanceCrossVpcIpAsyncInvoker(UpdateInstanceCrossVpcIpRequest updateInstanceCrossVpcIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceCrossVpcIpRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceCrossVpcIpRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/crossvpc/modify", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceCrossVpcIpRequest);
             return new AsyncInvoker<UpdateInstanceCrossVpcIpResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateInstanceCrossVpcIpResponse>);
@@ -2311,8 +2311,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<UpdateInstanceGroupResponse> UpdateInstanceGroupAsync(UpdateInstanceGroupRequest updateInstanceGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceGroupRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2322,8 +2322,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<UpdateInstanceGroupResponse> UpdateInstanceGroupAsyncInvoker(UpdateInstanceGroupRequest updateInstanceGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceGroupRequest);
             return new AsyncInvoker<UpdateInstanceGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceGroupResponse>);
@@ -2339,7 +2339,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<UpdateInstanceTopicResponse> UpdateInstanceTopicAsync(UpdateInstanceTopicRequest updateInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceTopicRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2349,7 +2349,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<UpdateInstanceTopicResponse> UpdateInstanceTopicAsyncInvoker(UpdateInstanceTopicRequest updateInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceTopicRequest);
             return new AsyncInvoker<UpdateInstanceTopicResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceTopicResponse>);
@@ -2365,9 +2365,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<UpdateInstanceUserResponse> UpdateInstanceUserAsync(UpdateInstanceUserRequest updateInstanceUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceUserRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name", updateInstanceUserRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceUserRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2377,9 +2377,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<UpdateInstanceUserResponse> UpdateInstanceUserAsyncInvoker(UpdateInstanceUserRequest updateInstanceUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceUserRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name", updateInstanceUserRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceUserRequest);
             return new AsyncInvoker<UpdateInstanceUserResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceUserResponse>);
@@ -2395,8 +2395,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<UpdateKafkaPortProtocolResponse> UpdateKafkaPortProtocolAsync(UpdateKafkaPortProtocolRequest updateKafkaPortProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateKafkaPortProtocolRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateKafkaPortProtocolRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaPortProtocolRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaPortProtocolRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/plain-ssl-switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKafkaPortProtocolRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2406,8 +2406,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<UpdateKafkaPortProtocolResponse> UpdateKafkaPortProtocolAsyncInvoker(UpdateKafkaPortProtocolRequest updateKafkaPortProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateKafkaPortProtocolRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateKafkaPortProtocolRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaPortProtocolRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaPortProtocolRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/plain-ssl-switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKafkaPortProtocolRequest);
             return new AsyncInvoker<UpdateKafkaPortProtocolResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateKafkaPortProtocolResponse>);
@@ -2423,7 +2423,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<UpdateKafkaUserClientQuotaTaskResponse> UpdateKafkaUserClientQuotaTaskAsync(UpdateKafkaUserClientQuotaTaskRequest updateKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKafkaUserClientQuotaTaskRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2433,7 +2433,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<UpdateKafkaUserClientQuotaTaskResponse> UpdateKafkaUserClientQuotaTaskAsyncInvoker(UpdateKafkaUserClientQuotaTaskRequest updateKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKafkaUserClientQuotaTaskRequest);
             return new AsyncInvoker<UpdateKafkaUserClientQuotaTaskResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateKafkaUserClientQuotaTaskResponse>);
@@ -2451,7 +2451,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<UpdateTopicAccessPolicyResponse> UpdateTopicAccessPolicyAsync(UpdateTopicAccessPolicyRequest updateTopicAccessPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTopicAccessPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicAccessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/topics/accesspolicy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicAccessPolicyRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2461,7 +2461,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<UpdateTopicAccessPolicyResponse> UpdateTopicAccessPolicyAsyncInvoker(UpdateTopicAccessPolicyRequest updateTopicAccessPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTopicAccessPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicAccessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/topics/accesspolicy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicAccessPolicyRequest);
             return new AsyncInvoker<UpdateTopicAccessPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateTopicAccessPolicyResponse>);
@@ -2477,8 +2477,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<UpdateTopicReplicaResponse> UpdateTopicReplicaAsync(UpdateTopicReplicaRequest updateTopicReplicaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTopicReplicaRequest.InstanceId.ToString());
-            urlParam.Add("topic", updateTopicReplicaRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/replicas-reassignment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicReplicaRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2488,8 +2488,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<UpdateTopicReplicaResponse> UpdateTopicReplicaAsyncInvoker(UpdateTopicReplicaRequest updateTopicReplicaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTopicReplicaRequest.InstanceId.ToString());
-            urlParam.Add("topic", updateTopicReplicaRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/replicas-reassignment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicReplicaRequest);
             return new AsyncInvoker<UpdateTopicReplicaResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateTopicReplicaResponse>);
@@ -2507,7 +2507,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest createConnectorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createConnectorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createConnectorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2517,7 +2517,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateConnectorResponse> CreateConnectorAsyncInvoker(CreateConnectorRequest createConnectorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createConnectorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createConnectorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorRequest);
             return new AsyncInvoker<CreateConnectorResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConnectorResponse>);
@@ -2533,7 +2533,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<CreateConnectorTaskResponse> CreateConnectorTaskAsync(CreateConnectorTaskRequest createConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createConnectorTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorTaskRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2543,7 +2543,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<CreateConnectorTaskResponse> CreateConnectorTaskAsyncInvoker(CreateConnectorTaskRequest createConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createConnectorTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorTaskRequest);
             return new AsyncInvoker<CreateConnectorTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConnectorTaskResponse>);
@@ -2559,7 +2559,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest deleteConnectorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConnectorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2569,7 +2569,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<DeleteConnectorResponse> DeleteConnectorAsyncInvoker(DeleteConnectorRequest deleteConnectorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConnectorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorRequest);
             return new AsyncInvoker<DeleteConnectorResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteConnectorResponse>);
@@ -2585,8 +2585,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<DeleteConnectorTaskResponse> DeleteConnectorTaskAsync(DeleteConnectorTaskRequest deleteConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", deleteConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorTaskRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -2596,8 +2596,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<DeleteConnectorTaskResponse> DeleteConnectorTaskAsyncInvoker(DeleteConnectorTaskRequest deleteConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", deleteConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorTaskRequest);
             return new AsyncInvoker<DeleteConnectorTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteConnectorTaskResponse>);
@@ -2613,7 +2613,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ListConnectorTasksResponse> ListConnectorTasksAsync(ListConnectorTasksRequest listConnectorTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listConnectorTasksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listConnectorTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConnectorTasksRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2623,7 +2623,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ListConnectorTasksResponse> ListConnectorTasksAsyncInvoker(ListConnectorTasksRequest listConnectorTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listConnectorTasksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listConnectorTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConnectorTasksRequest);
             return new AsyncInvoker<ListConnectorTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConnectorTasksResponse>);
@@ -2639,8 +2639,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ModifyConnectorTaskResponse> ModifyConnectorTaskAsync(ModifyConnectorTaskRequest modifyConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", modifyConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(modifyConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyConnectorTaskRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2650,8 +2650,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ModifyConnectorTaskResponse> ModifyConnectorTaskAsyncInvoker(ModifyConnectorTaskRequest modifyConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", modifyConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(modifyConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyConnectorTaskRequest);
             return new AsyncInvoker<ModifyConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyConnectorTaskResponse>);
@@ -2667,8 +2667,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<PauseConnectorTaskResponse> PauseConnectorTaskAsync(PauseConnectorTaskRequest pauseConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", pauseConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", pauseConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(pauseConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(pauseConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/pause", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseConnectorTaskRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2678,8 +2678,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<PauseConnectorTaskResponse> PauseConnectorTaskAsyncInvoker(PauseConnectorTaskRequest pauseConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", pauseConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", pauseConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(pauseConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(pauseConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/pause", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseConnectorTaskRequest);
             return new AsyncInvoker<PauseConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<PauseConnectorTaskResponse>);
@@ -2695,8 +2695,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<RestartConnectorTaskResponse> RestartConnectorTaskAsync(RestartConnectorTaskRequest restartConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", restartConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/connector/tasks/{task_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartConnectorTaskRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2706,8 +2706,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<RestartConnectorTaskResponse> RestartConnectorTaskAsyncInvoker(RestartConnectorTaskRequest restartConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", restartConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/connector/tasks/{task_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartConnectorTaskRequest);
             return new AsyncInvoker<RestartConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<RestartConnectorTaskResponse>);
@@ -2723,8 +2723,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<RestartSmartConnectorTaskResponse> RestartSmartConnectorTaskAsync(RestartSmartConnectorTaskRequest restartSmartConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartSmartConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", restartSmartConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartSmartConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartSmartConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartSmartConnectorTaskRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2734,8 +2734,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<RestartSmartConnectorTaskResponse> RestartSmartConnectorTaskAsyncInvoker(RestartSmartConnectorTaskRequest restartSmartConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartSmartConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", restartSmartConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartSmartConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartSmartConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartSmartConnectorTaskRequest);
             return new AsyncInvoker<RestartSmartConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<RestartSmartConnectorTaskResponse>);
@@ -2751,8 +2751,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ResumeConnectorTaskResponse> ResumeConnectorTaskAsync(ResumeConnectorTaskRequest resumeConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resumeConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", resumeConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resumeConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resumeConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/resume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resumeConnectorTaskRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2762,8 +2762,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ResumeConnectorTaskResponse> ResumeConnectorTaskAsyncInvoker(ResumeConnectorTaskRequest resumeConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resumeConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", resumeConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resumeConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resumeConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/resume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resumeConnectorTaskRequest);
             return new AsyncInvoker<ResumeConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResumeConnectorTaskResponse>);
@@ -2779,8 +2779,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ShowConnectorTaskResponse> ShowConnectorTaskAsync(ShowConnectorTaskRequest showConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", showConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConnectorTaskRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2790,8 +2790,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ShowConnectorTaskResponse> ShowConnectorTaskAsyncInvoker(ShowConnectorTaskRequest showConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", showConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConnectorTaskRequest);
             return new AsyncInvoker<ShowConnectorTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowConnectorTaskResponse>);
@@ -2807,7 +2807,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public async Task<ValidateConnectorConnectivityResponse> ValidateConnectorConnectivityAsync(ValidateConnectorConnectivityRequest validateConnectorConnectivityRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", validateConnectorConnectivityRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(validateConnectorConnectivityRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/validate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConnectorConnectivityRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2817,7 +2817,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public AsyncInvoker<ValidateConnectorConnectivityResponse> ValidateConnectorConnectivityAsyncInvoker(ValidateConnectorConnectivityRequest validateConnectorConnectivityRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", validateConnectorConnectivityRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(validateConnectorConnectivityRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/validate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConnectorConnectivityRequest);
             return new AsyncInvoker<ValidateConnectorConnectivityResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ValidateConnectorConnectivityResponse>);

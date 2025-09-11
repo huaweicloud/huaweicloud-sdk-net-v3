@@ -28,31 +28,31 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("mask_type", NullValueHandling = NullValueHandling.Ignore)]
         public MaskType MaskType { get; set; }
         /// <summary>
-        /// 屏蔽起始日期，yyyy-MM-dd。
+        /// **参数解释**： 屏蔽起始日期。           **约束限制**： 不涉及。 **取值范围**： 字符长度为10，格式为：yyyy-MM-dd           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("start_date", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// 屏蔽起始时间，HH:mm:ss。
+        /// **参数解释**： 屏蔽起始时间。          **约束限制**： 不涉及。 **取值范围**： 字符长度为8，格式为：HH:mm:ss         **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 屏蔽截止日期，yyyy-MM-dd。
+        /// **参数解释**： 屏蔽截止日期。           **约束限制**： 不涉及。 **取值范围**： 字符长度为10，格式为：yyyy-MM-dd           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("end_date", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// 屏蔽截止时间，HH:mm:ss。
+        /// **参数解释**： 屏蔽截止时间。          **约束限制**： 不涉及。 **取值范围**： 字符长度为8，格式为：HH:mm:ss         **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 时区，形如：\&quot;GMT-08:00\&quot;、\&quot;GMT+08:00\&quot;、\&quot;GMT+0:00\&quot;
+        /// **参数解释**： 时区，形如：\&quot;GMT-08:00\&quot;、\&quot;GMT+08:00\&quot;、\&quot;GMT+0:00\&quot;。    **约束限制**： 不涉及。 **取值范围**： 长度为[1,16]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("effective_timezone", NullValueHandling = NullValueHandling.Ignore)]
         public string EffectiveTimezone { get; set; }

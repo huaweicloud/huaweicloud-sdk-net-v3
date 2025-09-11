@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// audit log ID
+        /// Audit log ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public long? Id { get; set; }
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 操作时间
         /// </summary>
         [JsonProperty("op_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? OpTime { get; set; }
+        public string OpTime { get; set; }
 
 
 

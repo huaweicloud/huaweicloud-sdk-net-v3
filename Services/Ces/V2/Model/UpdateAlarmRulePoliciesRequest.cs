@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// Alarm实例ID
+        /// **参数解释**： 告警规则ID。 **约束限制**： 不涉及。 **取值范围**： 以al开头，只能由大写字母、小写字母、数字组成，且长度为24个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("alarm_id", IsPath = true)]
         [JsonProperty("alarm_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public PoliciesReqV2 Body { get; set; }
+        public UpdateAlarmRulePoliciesReqBodyV2 Body { get; set; }
 
 
 

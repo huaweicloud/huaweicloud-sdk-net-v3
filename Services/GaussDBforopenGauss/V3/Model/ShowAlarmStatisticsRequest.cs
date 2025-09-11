@@ -1,0 +1,206 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
+{
+    /// <summary>
+    /// Request Object
+    /// </summary>
+    public class ShowAlarmStatisticsRequest 
+    {
+        /// <summary>
+        /// **参数解释**: 语言。 **约束限制**: 不涉及。 **取值范围**: - zh-cn  - en-us  **默认取值**: en-us
+        /// </summary>
+        /// <value>**参数解释**: 语言。 **约束限制**: 不涉及。 **取值范围**: - zh-cn  - en-us  **默认取值**: en-us</value>
+        [JsonConverter(typeof(EnumClassConverter<XLanguageEnum>))]
+        public class XLanguageEnum
+        {
+            /// <summary>
+            /// Enum ZH_CN for value: zh-cn
+            /// </summary>
+            public static readonly XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
+
+            /// <summary>
+            /// Enum EN_US for value: en-us
+            /// </summary>
+            public static readonly XLanguageEnum EN_US = new XLanguageEnum("en-us");
+
+            private static readonly Dictionary<string, XLanguageEnum> StaticFields =
+            new Dictionary<string, XLanguageEnum>()
+            {
+                { "zh-cn", ZH_CN },
+                { "en-us", EN_US },
+            };
+
+            private string _value;
+
+            public XLanguageEnum()
+            {
+
+            }
+
+            public XLanguageEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static XLanguageEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as XLanguageEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(XLanguageEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(XLanguageEnum a, XLanguageEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(XLanguageEnum a, XLanguageEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// **参数解释**: 语言。 **约束限制**: 不涉及。 **取值范围**: - zh-cn  - en-us  **默认取值**: en-us
+        /// </summary>
+        [SDKProperty("X-Language", IsHeader = true)]
+        [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
+        public XLanguageEnum XLanguage { get; set; }
+        /// <summary>
+        /// **参数解释**: 查询开始时间。 **约束限制**: 最多可以统计最近7天的数据。 **取值范围**: 格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 **默认取值**: 不涉及。
+        /// </summary>
+        [SDKProperty("start_time", IsQuery = true)]
+        [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string StartTime { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 告警数量最多的实例的个数。 **约束限制**: 不涉及。 **取值范围**: 取值必须大于0。 **默认取值**: 5
+        /// </summary>
+        [SDKProperty("top_num", IsQuery = true)]
+        [JsonProperty("top_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TopNum { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ShowAlarmStatisticsRequest {\n");
+            sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  startTime: ").Append(StartTime).Append("\n");
+            sb.Append("  topNum: ").Append(TopNum).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ShowAlarmStatisticsRequest);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ShowAlarmStatisticsRequest input)
+        {
+            if (input == null) return false;
+            if (this.XLanguage != input.XLanguage) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.TopNum != input.TopNum || (this.TopNum != null && !this.TopNum.Equals(input.TopNum))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.TopNum != null) hashCode = hashCode * 59 + this.TopNum.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

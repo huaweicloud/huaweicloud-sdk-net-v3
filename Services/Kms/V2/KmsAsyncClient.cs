@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<BatchCreateKmsTagsResponse> BatchCreateKmsTagsAsync(BatchCreateKmsTagsRequest batchCreateKmsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", batchCreateKmsTagsRequest.KeyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateKmsTagsRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateKmsTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -60,7 +60,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<BatchCreateKmsTagsResponse> BatchCreateKmsTagsAsyncInvoker(BatchCreateKmsTagsRequest batchCreateKmsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", batchCreateKmsTagsRequest.KeyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateKmsTagsRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateKmsTagsRequest);
             return new AsyncInvoker<BatchCreateKmsTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateKmsTagsResponse>);
@@ -329,7 +329,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<CreateKmsTagResponse> CreateKmsTagAsync(CreateKmsTagRequest createKmsTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", createKmsTagRequest.KeyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKmsTagRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKmsTagRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -339,7 +339,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<CreateKmsTagResponse> CreateKmsTagAsyncInvoker(CreateKmsTagRequest createKmsTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", createKmsTagRequest.KeyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKmsTagRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKmsTagRequest);
             return new AsyncInvoker<CreateKmsTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateKmsTagResponse>);
@@ -573,7 +573,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<DeleteKeyStoreResponse> DeleteKeyStoreAsync(DeleteKeyStoreRequest deleteKeyStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id", deleteKeyStoreRequest.KeystoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKeyStoreRequest.KeystoreId, out var valueOfKeystoreId)) urlParam.Add("keystore_id", valueOfKeystoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeyStoreRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -583,7 +583,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<DeleteKeyStoreResponse> DeleteKeyStoreAsyncInvoker(DeleteKeyStoreRequest deleteKeyStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id", deleteKeyStoreRequest.KeystoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKeyStoreRequest.KeystoreId, out var valueOfKeystoreId)) urlParam.Add("keystore_id", valueOfKeystoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeyStoreRequest);
             return new AsyncInvoker<DeleteKeyStoreResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteKeyStoreResponse>);
@@ -599,8 +599,8 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<DeleteTagResponse> DeleteTagAsync(DeleteTagRequest deleteTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", deleteTagRequest.KeyId.ToString());
-            urlParam.Add("key", deleteTagRequest.Key.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -610,8 +610,8 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<DeleteTagResponse> DeleteTagAsyncInvoker(DeleteTagRequest deleteTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", deleteTagRequest.KeyId.ToString());
-            urlParam.Add("key", deleteTagRequest.Key.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
             return new AsyncInvoker<DeleteTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTagResponse>);
@@ -676,7 +676,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<DisableKeyStoreResponse> DisableKeyStoreAsync(DisableKeyStoreRequest disableKeyStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id", disableKeyStoreRequest.KeystoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableKeyStoreRequest.KeystoreId, out var valueOfKeystoreId)) urlParam.Add("keystore_id", valueOfKeystoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableKeyStoreRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -686,7 +686,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<DisableKeyStoreResponse> DisableKeyStoreAsyncInvoker(DisableKeyStoreRequest disableKeyStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id", disableKeyStoreRequest.KeystoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableKeyStoreRequest.KeystoreId, out var valueOfKeystoreId)) urlParam.Add("keystore_id", valueOfKeystoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableKeyStoreRequest);
             return new AsyncInvoker<DisableKeyStoreResponse>(this, "POST", request, JsonUtils.DeSerialize<DisableKeyStoreResponse>);
@@ -754,7 +754,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<EnableKeyStoreResponse> EnableKeyStoreAsync(EnableKeyStoreRequest enableKeyStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id", enableKeyStoreRequest.KeystoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableKeyStoreRequest.KeystoreId, out var valueOfKeystoreId)) urlParam.Add("keystore_id", valueOfKeystoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}/enable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableKeyStoreRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -764,7 +764,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<EnableKeyStoreResponse> EnableKeyStoreAsyncInvoker(EnableKeyStoreRequest enableKeyStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id", enableKeyStoreRequest.KeystoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableKeyStoreRequest.KeystoreId, out var valueOfKeystoreId)) urlParam.Add("keystore_id", valueOfKeystoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}/enable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableKeyStoreRequest);
             return new AsyncInvoker<EnableKeyStoreResponse>(this, "POST", request, JsonUtils.DeSerialize<EnableKeyStoreResponse>);
@@ -1003,7 +1003,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<ListKmsByTagsResponse> ListKmsByTagsAsync(ListKmsByTagsRequest listKmsByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_instances", listKmsByTagsRequest.ResourceInstances.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listKmsByTagsRequest.ResourceInstances, out var valueOfResourceInstances)) urlParam.Add("resource_instances", valueOfResourceInstances);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{resource_instances}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKmsByTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1013,7 +1013,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<ListKmsByTagsResponse> ListKmsByTagsAsyncInvoker(ListKmsByTagsRequest listKmsByTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_instances", listKmsByTagsRequest.ResourceInstances.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listKmsByTagsRequest.ResourceInstances, out var valueOfResourceInstances)) urlParam.Add("resource_instances", valueOfResourceInstances);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{resource_instances}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listKmsByTagsRequest);
             return new AsyncInvoker<ListKmsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListKmsByTagsResponse>);
@@ -1101,7 +1101,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<ReplicateKeyResponse> ReplicateKeyAsync(ReplicateKeyRequest replicateKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", replicateKeyRequest.KeyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(replicateKeyRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/keys/{key_id}/replicate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", replicateKeyRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1111,7 +1111,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<ReplicateKeyResponse> ReplicateKeyAsyncInvoker(ReplicateKeyRequest replicateKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", replicateKeyRequest.KeyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(replicateKeyRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/keys/{key_id}/replicate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", replicateKeyRequest);
             return new AsyncInvoker<ReplicateKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<ReplicateKeyResponse>);
@@ -1151,7 +1151,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<ShowKeyStoreResponse> ShowKeyStoreAsync(ShowKeyStoreRequest showKeyStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id", showKeyStoreRequest.KeystoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKeyStoreRequest.KeystoreId, out var valueOfKeystoreId)) urlParam.Add("keystore_id", valueOfKeystoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKeyStoreRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1161,7 +1161,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<ShowKeyStoreResponse> ShowKeyStoreAsyncInvoker(ShowKeyStoreRequest showKeyStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("keystore_id", showKeyStoreRequest.KeystoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKeyStoreRequest.KeystoreId, out var valueOfKeystoreId)) urlParam.Add("keystore_id", valueOfKeystoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/keystores/{keystore_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKeyStoreRequest);
             return new AsyncInvoker<ShowKeyStoreResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKeyStoreResponse>);
@@ -1177,7 +1177,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<ShowKmsTagsResponse> ShowKmsTagsAsync(ShowKmsTagsRequest showKmsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", showKmsTagsRequest.KeyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKmsTagsRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKmsTagsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1187,7 +1187,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<ShowKmsTagsResponse> ShowKmsTagsAsyncInvoker(ShowKmsTagsRequest showKmsTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", showKmsTagsRequest.KeyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKmsTagsRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/kms/{key_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKmsTagsRequest);
             return new AsyncInvoker<ShowKmsTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKmsTagsResponse>);
@@ -1377,7 +1377,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<UpdatePrimaryRegionResponse> UpdatePrimaryRegionAsync(UpdatePrimaryRegionRequest updatePrimaryRegionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", updatePrimaryRegionRequest.KeyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrimaryRegionRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/keys/{key_id}/update-primary-region", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePrimaryRegionRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1387,7 +1387,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<UpdatePrimaryRegionResponse> UpdatePrimaryRegionAsyncInvoker(UpdatePrimaryRegionRequest updatePrimaryRegionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("key_id", updatePrimaryRegionRequest.KeyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrimaryRegionRequest.KeyId, out var valueOfKeyId)) urlParam.Add("key_id", valueOfKeyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kms/keys/{key_id}/update-primary-region", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePrimaryRegionRequest);
             return new AsyncInvoker<UpdatePrimaryRegionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePrimaryRegionResponse>);
@@ -1451,7 +1451,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public async Task<ShowVersionResponse> ShowVersionAsync(ShowVersionRequest showVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("version_id", showVersionRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVersionRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1461,7 +1461,7 @@ namespace HuaweiCloud.SDK.Kms.V2
         public AsyncInvoker<ShowVersionResponse> ShowVersionAsyncInvoker(ShowVersionRequest showVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("version_id", showVersionRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVersionRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
             return new AsyncInvoker<ShowVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVersionResponse>);

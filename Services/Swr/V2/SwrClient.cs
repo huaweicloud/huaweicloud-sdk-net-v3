@@ -48,8 +48,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateImageSyncRepoResponse CreateImageSyncRepo(CreateImageSyncRepoRequest createImageSyncRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createImageSyncRepoRequest.Namespace.ToString());
-            urlParam.Add("repository", createImageSyncRepoRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createImageSyncRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createImageSyncRepoRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createImageSyncRepoRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -59,8 +59,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateImageSyncRepoResponse> CreateImageSyncRepoInvoker(CreateImageSyncRepoRequest createImageSyncRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createImageSyncRepoRequest.Namespace.ToString());
-            urlParam.Add("repository", createImageSyncRepoRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createImageSyncRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createImageSyncRepoRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createImageSyncRepoRequest);
             return new SyncInvoker<CreateImageSyncRepoResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateImageSyncRepoResponse>);
@@ -76,8 +76,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateManualImageSyncRepoResponse CreateManualImageSyncRepo(CreateManualImageSyncRepoRequest createManualImageSyncRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createManualImageSyncRepoRequest.Namespace.ToString());
-            urlParam.Add("repository", createManualImageSyncRepoRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createManualImageSyncRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createManualImageSyncRepoRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_images", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createManualImageSyncRepoRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -89,8 +89,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateManualImageSyncRepoResponse> CreateManualImageSyncRepoInvoker(CreateManualImageSyncRepoRequest createManualImageSyncRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createManualImageSyncRepoRequest.Namespace.ToString());
-            urlParam.Add("repository", createManualImageSyncRepoRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createManualImageSyncRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createManualImageSyncRepoRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_images", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createManualImageSyncRepoRequest);
             return new SyncInvoker<CreateManualImageSyncRepoResponse>(this, "POST", request, response =>
@@ -135,7 +135,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateNamespaceAuthResponse CreateNamespaceAuth(CreateNamespaceAuthRequest createNamespaceAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createNamespaceAuthRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createNamespaceAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNamespaceAuthRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -145,7 +145,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateNamespaceAuthResponse> CreateNamespaceAuthInvoker(CreateNamespaceAuthRequest createNamespaceAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createNamespaceAuthRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createNamespaceAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNamespaceAuthRequest);
             return new SyncInvoker<CreateNamespaceAuthResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateNamespaceAuthResponse>);
@@ -161,7 +161,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateRepoResponse CreateRepo(CreateRepoRequest createRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createRepoRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -171,7 +171,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateRepoResponse> CreateRepoInvoker(CreateRepoRequest createRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createRepoRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoRequest);
             return new SyncInvoker<CreateRepoResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateRepoResponse>);
@@ -187,8 +187,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateRepoDomainsResponse CreateRepoDomains(CreateRepoDomainsRequest createRepoDomainsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createRepoDomainsRequest.Namespace.ToString());
-            urlParam.Add("repository", createRepoDomainsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRepoDomainsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createRepoDomainsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoDomainsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -198,8 +198,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateRepoDomainsResponse> CreateRepoDomainsInvoker(CreateRepoDomainsRequest createRepoDomainsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createRepoDomainsRequest.Namespace.ToString());
-            urlParam.Add("repository", createRepoDomainsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRepoDomainsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createRepoDomainsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoDomainsRequest);
             return new SyncInvoker<CreateRepoDomainsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateRepoDomainsResponse>);
@@ -215,8 +215,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateRepoTagResponse CreateRepoTag(CreateRepoTagRequest createRepoTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createRepoTagRequest.Namespace.ToString());
-            urlParam.Add("repository", createRepoTagRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRepoTagRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createRepoTagRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoTagRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -226,8 +226,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateRepoTagResponse> CreateRepoTagInvoker(CreateRepoTagRequest createRepoTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createRepoTagRequest.Namespace.ToString());
-            urlParam.Add("repository", createRepoTagRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRepoTagRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createRepoTagRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRepoTagRequest);
             return new SyncInvoker<CreateRepoTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateRepoTagResponse>);
@@ -243,8 +243,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateRetentionResponse CreateRetention(CreateRetentionRequest createRetentionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createRetentionRequest.Namespace.ToString());
-            urlParam.Add("repository", createRetentionRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRetentionRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createRetentionRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRetentionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -254,8 +254,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateRetentionResponse> CreateRetentionInvoker(CreateRetentionRequest createRetentionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createRetentionRequest.Namespace.ToString());
-            urlParam.Add("repository", createRetentionRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRetentionRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createRetentionRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRetentionRequest);
             return new SyncInvoker<CreateRetentionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRetentionResponse>);
@@ -295,8 +295,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateTriggerResponse CreateTrigger(CreateTriggerRequest createTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createTriggerRequest.Namespace.ToString());
-            urlParam.Add("repository", createTriggerRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTriggerRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createTriggerRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTriggerRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -306,8 +306,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateTriggerResponse> CreateTriggerInvoker(CreateTriggerRequest createTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createTriggerRequest.Namespace.ToString());
-            urlParam.Add("repository", createTriggerRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTriggerRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createTriggerRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTriggerRequest);
             return new SyncInvoker<CreateTriggerResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateTriggerResponse>);
@@ -323,8 +323,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateUserRepositoryAuthResponse CreateUserRepositoryAuth(CreateUserRepositoryAuthRequest createUserRepositoryAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createUserRepositoryAuthRequest.Namespace.ToString());
-            urlParam.Add("repository", createUserRepositoryAuthRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createUserRepositoryAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createUserRepositoryAuthRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRepositoryAuthRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -334,8 +334,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateUserRepositoryAuthResponse> CreateUserRepositoryAuthInvoker(CreateUserRepositoryAuthRequest createUserRepositoryAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", createUserRepositoryAuthRequest.Namespace.ToString());
-            urlParam.Add("repository", createUserRepositoryAuthRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createUserRepositoryAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(createUserRepositoryAuthRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRepositoryAuthRequest);
             return new SyncInvoker<CreateUserRepositoryAuthResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateUserRepositoryAuthResponse>);
@@ -351,8 +351,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteImageSyncRepoResponse DeleteImageSyncRepo(DeleteImageSyncRepoRequest deleteImageSyncRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteImageSyncRepoRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteImageSyncRepoRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteImageSyncRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteImageSyncRepoRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImageSyncRepoRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -362,8 +362,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteImageSyncRepoResponse> DeleteImageSyncRepoInvoker(DeleteImageSyncRepoRequest deleteImageSyncRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteImageSyncRepoRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteImageSyncRepoRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteImageSyncRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteImageSyncRepoRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImageSyncRepoRequest);
             return new SyncInvoker<DeleteImageSyncRepoResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteImageSyncRepoResponse>);
@@ -379,7 +379,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteNamespaceAuthResponse DeleteNamespaceAuth(DeleteNamespaceAuthRequest deleteNamespaceAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteNamespaceAuthRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNamespaceAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNamespaceAuthRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -389,7 +389,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteNamespaceAuthResponse> DeleteNamespaceAuthInvoker(DeleteNamespaceAuthRequest deleteNamespaceAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteNamespaceAuthRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNamespaceAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNamespaceAuthRequest);
             return new SyncInvoker<DeleteNamespaceAuthResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNamespaceAuthResponse>);
@@ -405,7 +405,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteNamespacesResponse DeleteNamespaces(DeleteNamespacesRequest deleteNamespacesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteNamespacesRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNamespacesRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNamespacesRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -415,7 +415,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteNamespacesResponse> DeleteNamespacesInvoker(DeleteNamespacesRequest deleteNamespacesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteNamespacesRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNamespacesRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNamespacesRequest);
             return new SyncInvoker<DeleteNamespacesResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNamespacesResponse>);
@@ -431,8 +431,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteRepoResponse DeleteRepo(DeleteRepoRequest deleteRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteRepoRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteRepoRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -442,8 +442,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteRepoResponse> DeleteRepoInvoker(DeleteRepoRequest deleteRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteRepoRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteRepoRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoRequest);
             return new SyncInvoker<DeleteRepoResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRepoResponse>);
@@ -459,9 +459,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteRepoDomainsResponse DeleteRepoDomains(DeleteRepoDomainsRequest deleteRepoDomainsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteRepoDomainsRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteRepoDomainsRequest.Repository.ToString());
-            urlParam.Add("access_domain", deleteRepoDomainsRequest.AccessDomain.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoDomainsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoDomainsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoDomainsRequest.AccessDomain, out var valueOfAccessDomain)) urlParam.Add("access_domain", valueOfAccessDomain);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoDomainsRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -471,9 +471,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteRepoDomainsResponse> DeleteRepoDomainsInvoker(DeleteRepoDomainsRequest deleteRepoDomainsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteRepoDomainsRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteRepoDomainsRequest.Repository.ToString());
-            urlParam.Add("access_domain", deleteRepoDomainsRequest.AccessDomain.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoDomainsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoDomainsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoDomainsRequest.AccessDomain, out var valueOfAccessDomain)) urlParam.Add("access_domain", valueOfAccessDomain);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoDomainsRequest);
             return new SyncInvoker<DeleteRepoDomainsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRepoDomainsResponse>);
@@ -489,9 +489,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteRepoTagResponse DeleteRepoTag(DeleteRepoTagRequest deleteRepoTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteRepoTagRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteRepoTagRequest.Repository.ToString());
-            urlParam.Add("tag", deleteRepoTagRequest.Tag.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoTagRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoTagRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoTagRequest.Tag, out var valueOfTag)) urlParam.Add("tag", valueOfTag);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoTagRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -501,9 +501,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteRepoTagResponse> DeleteRepoTagInvoker(DeleteRepoTagRequest deleteRepoTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteRepoTagRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteRepoTagRequest.Repository.ToString());
-            urlParam.Add("tag", deleteRepoTagRequest.Tag.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoTagRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoTagRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRepoTagRequest.Tag, out var valueOfTag)) urlParam.Add("tag", valueOfTag);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRepoTagRequest);
             return new SyncInvoker<DeleteRepoTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRepoTagResponse>);
@@ -519,9 +519,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteRetentionResponse DeleteRetention(DeleteRetentionRequest deleteRetentionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteRetentionRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteRetentionRequest.Repository.ToString());
-            urlParam.Add("retention_id", deleteRetentionRequest.RetentionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRetentionRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRetentionRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRetentionRequest.RetentionId, out var valueOfRetentionId)) urlParam.Add("retention_id", valueOfRetentionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRetentionRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -531,9 +531,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteRetentionResponse> DeleteRetentionInvoker(DeleteRetentionRequest deleteRetentionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteRetentionRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteRetentionRequest.Repository.ToString());
-            urlParam.Add("retention_id", deleteRetentionRequest.RetentionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRetentionRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRetentionRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRetentionRequest.RetentionId, out var valueOfRetentionId)) urlParam.Add("retention_id", valueOfRetentionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRetentionRequest);
             return new SyncInvoker<DeleteRetentionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRetentionResponse>);
@@ -549,9 +549,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteTriggerResponse DeleteTrigger(DeleteTriggerRequest deleteTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteTriggerRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteTriggerRequest.Repository.ToString());
-            urlParam.Add("trigger", deleteTriggerRequest.Trigger.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTriggerRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTriggerRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTriggerRequest.Trigger, out var valueOfTrigger)) urlParam.Add("trigger", valueOfTrigger);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTriggerRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -561,9 +561,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteTriggerResponse> DeleteTriggerInvoker(DeleteTriggerRequest deleteTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteTriggerRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteTriggerRequest.Repository.ToString());
-            urlParam.Add("trigger", deleteTriggerRequest.Trigger.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTriggerRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTriggerRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTriggerRequest.Trigger, out var valueOfTrigger)) urlParam.Add("trigger", valueOfTrigger);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTriggerRequest);
             return new SyncInvoker<DeleteTriggerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTriggerResponse>);
@@ -579,8 +579,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteUserRepositoryAuthResponse DeleteUserRepositoryAuth(DeleteUserRepositoryAuthRequest deleteUserRepositoryAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteUserRepositoryAuthRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteUserRepositoryAuthRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRepositoryAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRepositoryAuthRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRepositoryAuthRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -590,8 +590,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteUserRepositoryAuthResponse> DeleteUserRepositoryAuthInvoker(DeleteUserRepositoryAuthRequest deleteUserRepositoryAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", deleteUserRepositoryAuthRequest.Namespace.ToString());
-            urlParam.Add("repository", deleteUserRepositoryAuthRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRepositoryAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRepositoryAuthRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRepositoryAuthRequest);
             return new SyncInvoker<DeleteUserRepositoryAuthResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteUserRepositoryAuthResponse>);
@@ -607,8 +607,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListImageAutoSyncReposDetailsResponse ListImageAutoSyncReposDetails(ListImageAutoSyncReposDetailsRequest listImageAutoSyncReposDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listImageAutoSyncReposDetailsRequest.Namespace.ToString());
-            urlParam.Add("repository", listImageAutoSyncReposDetailsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listImageAutoSyncReposDetailsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listImageAutoSyncReposDetailsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImageAutoSyncReposDetailsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -620,8 +620,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListImageAutoSyncReposDetailsResponse> ListImageAutoSyncReposDetailsInvoker(ListImageAutoSyncReposDetailsRequest listImageAutoSyncReposDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listImageAutoSyncReposDetailsRequest.Namespace.ToString());
-            urlParam.Add("repository", listImageAutoSyncReposDetailsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listImageAutoSyncReposDetailsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listImageAutoSyncReposDetailsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_repo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImageAutoSyncReposDetailsRequest);
             return new SyncInvoker<ListImageAutoSyncReposDetailsResponse>(this, "GET", request, response =>
@@ -714,8 +714,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListRepoDomainsResponse ListRepoDomains(ListRepoDomainsRequest listRepoDomainsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listRepoDomainsRequest.Namespace.ToString());
-            urlParam.Add("repository", listRepoDomainsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRepoDomainsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRepoDomainsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepoDomainsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -727,8 +727,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListRepoDomainsResponse> ListRepoDomainsInvoker(ListRepoDomainsRequest listRepoDomainsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listRepoDomainsRequest.Namespace.ToString());
-            urlParam.Add("repository", listRepoDomainsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRepoDomainsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRepoDomainsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepoDomainsRequest);
             return new SyncInvoker<ListRepoDomainsResponse>(this, "GET", request, response =>
@@ -780,8 +780,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListRepositoryTagResponse ListRepositoryTag(ListRepositoryTagRequest listRepositoryTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listRepositoryTagRequest.Namespace.ToString());
-            urlParam.Add("repository", listRepositoryTagRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryTagRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryTagRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v3/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryTagRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -791,8 +791,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListRepositoryTagResponse> ListRepositoryTagInvoker(ListRepositoryTagRequest listRepositoryTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listRepositoryTagRequest.Namespace.ToString());
-            urlParam.Add("repository", listRepositoryTagRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryTagRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryTagRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v3/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryTagRequest);
             return new SyncInvoker<ListRepositoryTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRepositoryTagResponse>);
@@ -808,8 +808,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListRepositoryTagsResponse ListRepositoryTags(ListRepositoryTagsRequest listRepositoryTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listRepositoryTagsRequest.Namespace.ToString());
-            urlParam.Add("repository", listRepositoryTagsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryTagsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryTagsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -821,8 +821,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListRepositoryTagsResponse> ListRepositoryTagsInvoker(ListRepositoryTagsRequest listRepositoryTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listRepositoryTagsRequest.Namespace.ToString());
-            urlParam.Add("repository", listRepositoryTagsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryTagsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRepositoryTagsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRepositoryTagsRequest);
             return new SyncInvoker<ListRepositoryTagsResponse>(this, "GET", request, response =>
@@ -843,8 +843,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListRetentionHistoriesResponse ListRetentionHistories(ListRetentionHistoriesRequest listRetentionHistoriesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listRetentionHistoriesRequest.Namespace.ToString());
-            urlParam.Add("repository", listRetentionHistoriesRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRetentionHistoriesRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRetentionHistoriesRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/histories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRetentionHistoriesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -854,8 +854,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListRetentionHistoriesResponse> ListRetentionHistoriesInvoker(ListRetentionHistoriesRequest listRetentionHistoriesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listRetentionHistoriesRequest.Namespace.ToString());
-            urlParam.Add("repository", listRetentionHistoriesRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRetentionHistoriesRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRetentionHistoriesRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/histories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRetentionHistoriesRequest);
             return new SyncInvoker<ListRetentionHistoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRetentionHistoriesResponse>);
@@ -871,8 +871,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListRetentionsResponse ListRetentions(ListRetentionsRequest listRetentionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listRetentionsRequest.Namespace.ToString());
-            urlParam.Add("repository", listRetentionsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRetentionsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRetentionsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRetentionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -884,8 +884,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListRetentionsResponse> ListRetentionsInvoker(ListRetentionsRequest listRetentionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listRetentionsRequest.Namespace.ToString());
-            urlParam.Add("repository", listRetentionsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRetentionsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listRetentionsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRetentionsRequest);
             return new SyncInvoker<ListRetentionsResponse>(this, "GET", request, response =>
@@ -961,8 +961,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListTriggersDetailsResponse ListTriggersDetails(ListTriggersDetailsRequest listTriggersDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listTriggersDetailsRequest.Namespace.ToString());
-            urlParam.Add("repository", listTriggersDetailsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTriggersDetailsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listTriggersDetailsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTriggersDetailsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -974,8 +974,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListTriggersDetailsResponse> ListTriggersDetailsInvoker(ListTriggersDetailsRequest listTriggersDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", listTriggersDetailsRequest.Namespace.ToString());
-            urlParam.Add("repository", listTriggersDetailsRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTriggersDetailsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(listTriggersDetailsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTriggersDetailsRequest);
             return new SyncInvoker<ListTriggersDetailsResponse>(this, "GET", request, response =>
@@ -996,9 +996,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowAccessDomainResponse ShowAccessDomain(ShowAccessDomainRequest showAccessDomainRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showAccessDomainRequest.Namespace.ToString());
-            urlParam.Add("repository", showAccessDomainRequest.Repository.ToString());
-            urlParam.Add("access_domain", showAccessDomainRequest.AccessDomain.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAccessDomainRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showAccessDomainRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(showAccessDomainRequest.AccessDomain, out var valueOfAccessDomain)) urlParam.Add("access_domain", valueOfAccessDomain);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAccessDomainRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1008,9 +1008,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowAccessDomainResponse> ShowAccessDomainInvoker(ShowAccessDomainRequest showAccessDomainRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showAccessDomainRequest.Namespace.ToString());
-            urlParam.Add("repository", showAccessDomainRequest.Repository.ToString());
-            urlParam.Add("access_domain", showAccessDomainRequest.AccessDomain.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAccessDomainRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showAccessDomainRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(showAccessDomainRequest.AccessDomain, out var valueOfAccessDomain)) urlParam.Add("access_domain", valueOfAccessDomain);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAccessDomainRequest);
             return new SyncInvoker<ShowAccessDomainResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAccessDomainResponse>);
@@ -1050,8 +1050,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowDomainResourceReportsResponse ShowDomainResourceReports(ShowDomainResourceReportsRequest showDomainResourceReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showDomainResourceReportsRequest.ResourceType.ToString());
-            urlParam.Add("frequency", showDomainResourceReportsRequest.Frequency.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainResourceReportsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(showDomainResourceReportsRequest.Frequency, out var valueOfFrequency)) urlParam.Add("frequency", valueOfFrequency);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/reports/{resource_type}/{frequency}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainResourceReportsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1063,8 +1063,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowDomainResourceReportsResponse> ShowDomainResourceReportsInvoker(ShowDomainResourceReportsRequest showDomainResourceReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showDomainResourceReportsRequest.ResourceType.ToString());
-            urlParam.Add("frequency", showDomainResourceReportsRequest.Frequency.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainResourceReportsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(showDomainResourceReportsRequest.Frequency, out var valueOfFrequency)) urlParam.Add("frequency", valueOfFrequency);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/reports/{resource_type}/{frequency}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainResourceReportsRequest);
             return new SyncInvoker<ShowDomainResourceReportsResponse>(this, "GET", request, response =>
@@ -1085,7 +1085,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowNamespaceResponse ShowNamespace(ShowNamespaceRequest showNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showNamespaceRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNamespaceRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNamespaceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1095,7 +1095,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowNamespaceResponse> ShowNamespaceInvoker(ShowNamespaceRequest showNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showNamespaceRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNamespaceRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNamespaceRequest);
             return new SyncInvoker<ShowNamespaceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNamespaceResponse>);
@@ -1111,7 +1111,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowNamespaceAuthResponse ShowNamespaceAuth(ShowNamespaceAuthRequest showNamespaceAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showNamespaceAuthRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNamespaceAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNamespaceAuthRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1121,7 +1121,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowNamespaceAuthResponse> ShowNamespaceAuthInvoker(ShowNamespaceAuthRequest showNamespaceAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showNamespaceAuthRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNamespaceAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNamespaceAuthRequest);
             return new SyncInvoker<ShowNamespaceAuthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNamespaceAuthResponse>);
@@ -1137,9 +1137,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowRepoTagResponse ShowRepoTag(ShowRepoTagRequest showRepoTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showRepoTagRequest.Namespace.ToString());
-            urlParam.Add("repository", showRepoTagRequest.Repository.ToString());
-            urlParam.Add("tag", showRepoTagRequest.Tag.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagRequest.Tag, out var valueOfTag)) urlParam.Add("tag", valueOfTag);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoTagRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1149,9 +1149,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowRepoTagResponse> ShowRepoTagInvoker(ShowRepoTagRequest showRepoTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showRepoTagRequest.Namespace.ToString());
-            urlParam.Add("repository", showRepoTagRequest.Repository.ToString());
-            urlParam.Add("tag", showRepoTagRequest.Tag.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(showRepoTagRequest.Tag, out var valueOfTag)) urlParam.Add("tag", valueOfTag);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/tags/{tag}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepoTagRequest);
             return new SyncInvoker<ShowRepoTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepoTagResponse>);
@@ -1167,8 +1167,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowRepositoryResponse ShowRepository(ShowRepositoryRequest showRepositoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showRepositoryRequest.Namespace.ToString());
-            urlParam.Add("repository", showRepositoryRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1178,8 +1178,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowRepositoryResponse> ShowRepositoryInvoker(ShowRepositoryRequest showRepositoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showRepositoryRequest.Namespace.ToString());
-            urlParam.Add("repository", showRepositoryRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showRepositoryRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRepositoryRequest);
             return new SyncInvoker<ShowRepositoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRepositoryResponse>);
@@ -1195,9 +1195,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowRetentionResponse ShowRetention(ShowRetentionRequest showRetentionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showRetentionRequest.Namespace.ToString());
-            urlParam.Add("repository", showRetentionRequest.Repository.ToString());
-            urlParam.Add("retention_id", showRetentionRequest.RetentionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRetentionRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showRetentionRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(showRetentionRequest.RetentionId, out var valueOfRetentionId)) urlParam.Add("retention_id", valueOfRetentionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRetentionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1207,9 +1207,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowRetentionResponse> ShowRetentionInvoker(ShowRetentionRequest showRetentionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showRetentionRequest.Namespace.ToString());
-            urlParam.Add("repository", showRetentionRequest.Repository.ToString());
-            urlParam.Add("retention_id", showRetentionRequest.RetentionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRetentionRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showRetentionRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(showRetentionRequest.RetentionId, out var valueOfRetentionId)) urlParam.Add("retention_id", valueOfRetentionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRetentionRequest);
             return new SyncInvoker<ShowRetentionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRetentionResponse>);
@@ -1249,8 +1249,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowSyncJobResponse ShowSyncJob(ShowSyncJobRequest showSyncJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showSyncJobRequest.Namespace.ToString());
-            urlParam.Add("repository", showSyncJobRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSyncJobRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showSyncJobRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_job", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSyncJobRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1262,8 +1262,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowSyncJobResponse> ShowSyncJobInvoker(ShowSyncJobRequest showSyncJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showSyncJobRequest.Namespace.ToString());
-            urlParam.Add("repository", showSyncJobRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSyncJobRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showSyncJobRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/sync_job", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSyncJobRequest);
             return new SyncInvoker<ShowSyncJobResponse>(this, "GET", request, response =>
@@ -1284,9 +1284,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowTriggerResponse ShowTrigger(ShowTriggerRequest showTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showTriggerRequest.Namespace.ToString());
-            urlParam.Add("repository", showTriggerRequest.Repository.ToString());
-            urlParam.Add("trigger", showTriggerRequest.Trigger.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTriggerRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showTriggerRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(showTriggerRequest.Trigger, out var valueOfTrigger)) urlParam.Add("trigger", valueOfTrigger);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTriggerRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1296,9 +1296,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowTriggerResponse> ShowTriggerInvoker(ShowTriggerRequest showTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showTriggerRequest.Namespace.ToString());
-            urlParam.Add("repository", showTriggerRequest.Repository.ToString());
-            urlParam.Add("trigger", showTriggerRequest.Trigger.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTriggerRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showTriggerRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(showTriggerRequest.Trigger, out var valueOfTrigger)) urlParam.Add("trigger", valueOfTrigger);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTriggerRequest);
             return new SyncInvoker<ShowTriggerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTriggerResponse>);
@@ -1314,8 +1314,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowUserRepositoryAuthResponse ShowUserRepositoryAuth(ShowUserRepositoryAuthRequest showUserRepositoryAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showUserRepositoryAuthRequest.Namespace.ToString());
-            urlParam.Add("repository", showUserRepositoryAuthRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserRepositoryAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showUserRepositoryAuthRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserRepositoryAuthRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1325,8 +1325,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowUserRepositoryAuthResponse> ShowUserRepositoryAuthInvoker(ShowUserRepositoryAuthRequest showUserRepositoryAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", showUserRepositoryAuthRequest.Namespace.ToString());
-            urlParam.Add("repository", showUserRepositoryAuthRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserRepositoryAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(showUserRepositoryAuthRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserRepositoryAuthRequest);
             return new SyncInvoker<ShowUserRepositoryAuthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserRepositoryAuthResponse>);
@@ -1342,7 +1342,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateNamespaceAuthResponse UpdateNamespaceAuth(UpdateNamespaceAuthRequest updateNamespaceAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateNamespaceAuthRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNamespaceAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNamespaceAuthRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1352,7 +1352,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateNamespaceAuthResponse> UpdateNamespaceAuthInvoker(UpdateNamespaceAuthRequest updateNamespaceAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateNamespaceAuthRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNamespaceAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNamespaceAuthRequest);
             return new SyncInvoker<UpdateNamespaceAuthResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateNamespaceAuthResponse>);
@@ -1368,8 +1368,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateRepoResponse UpdateRepo(UpdateRepoRequest updateRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateRepoRequest.Namespace.ToString());
-            urlParam.Add("repository", updateRepoRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepoRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1379,8 +1379,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateRepoResponse> UpdateRepoInvoker(UpdateRepoRequest updateRepoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateRepoRequest.Namespace.ToString());
-            urlParam.Add("repository", updateRepoRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepoRequest);
             return new SyncInvoker<UpdateRepoResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateRepoResponse>);
@@ -1396,9 +1396,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateRepoDomainsResponse UpdateRepoDomains(UpdateRepoDomainsRequest updateRepoDomainsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateRepoDomainsRequest.Namespace.ToString());
-            urlParam.Add("repository", updateRepoDomainsRequest.Repository.ToString());
-            urlParam.Add("access_domain", updateRepoDomainsRequest.AccessDomain.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoDomainsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoDomainsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoDomainsRequest.AccessDomain, out var valueOfAccessDomain)) urlParam.Add("access_domain", valueOfAccessDomain);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepoDomainsRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1408,9 +1408,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateRepoDomainsResponse> UpdateRepoDomainsInvoker(UpdateRepoDomainsRequest updateRepoDomainsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateRepoDomainsRequest.Namespace.ToString());
-            urlParam.Add("repository", updateRepoDomainsRequest.Repository.ToString());
-            urlParam.Add("access_domain", updateRepoDomainsRequest.AccessDomain.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoDomainsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoDomainsRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(updateRepoDomainsRequest.AccessDomain, out var valueOfAccessDomain)) urlParam.Add("access_domain", valueOfAccessDomain);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repositories/{repository}/access-domains/{access_domain}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRepoDomainsRequest);
             return new SyncInvoker<UpdateRepoDomainsResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateRepoDomainsResponse>);
@@ -1426,9 +1426,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateRetentionResponse UpdateRetention(UpdateRetentionRequest updateRetentionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateRetentionRequest.Namespace.ToString());
-            urlParam.Add("repository", updateRetentionRequest.Repository.ToString());
-            urlParam.Add("retention_id", updateRetentionRequest.RetentionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRetentionRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(updateRetentionRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(updateRetentionRequest.RetentionId, out var valueOfRetentionId)) urlParam.Add("retention_id", valueOfRetentionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRetentionRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1438,9 +1438,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateRetentionResponse> UpdateRetentionInvoker(UpdateRetentionRequest updateRetentionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateRetentionRequest.Namespace.ToString());
-            urlParam.Add("repository", updateRetentionRequest.Repository.ToString());
-            urlParam.Add("retention_id", updateRetentionRequest.RetentionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRetentionRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(updateRetentionRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(updateRetentionRequest.RetentionId, out var valueOfRetentionId)) urlParam.Add("retention_id", valueOfRetentionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/retentions/{retention_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRetentionRequest);
             return new SyncInvoker<UpdateRetentionResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateRetentionResponse>);
@@ -1456,9 +1456,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateTriggerResponse UpdateTrigger(UpdateTriggerRequest updateTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateTriggerRequest.Namespace.ToString());
-            urlParam.Add("repository", updateTriggerRequest.Repository.ToString());
-            urlParam.Add("trigger", updateTriggerRequest.Trigger.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.Trigger, out var valueOfTrigger)) urlParam.Add("trigger", valueOfTrigger);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTriggerRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1468,9 +1468,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateTriggerResponse> UpdateTriggerInvoker(UpdateTriggerRequest updateTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateTriggerRequest.Namespace.ToString());
-            urlParam.Add("repository", updateTriggerRequest.Repository.ToString());
-            urlParam.Add("trigger", updateTriggerRequest.Trigger.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.Trigger, out var valueOfTrigger)) urlParam.Add("trigger", valueOfTrigger);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/triggers/{trigger}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTriggerRequest);
             return new SyncInvoker<UpdateTriggerResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateTriggerResponse>);
@@ -1486,8 +1486,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateUserRepositoryAuthResponse UpdateUserRepositoryAuth(UpdateUserRepositoryAuthRequest updateUserRepositoryAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateUserRepositoryAuthRequest.Namespace.ToString());
-            urlParam.Add("repository", updateUserRepositoryAuthRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRepositoryAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRepositoryAuthRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRepositoryAuthRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1497,8 +1497,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateUserRepositoryAuthResponse> UpdateUserRepositoryAuthInvoker(UpdateUserRepositoryAuthRequest updateUserRepositoryAuthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("namespace", updateUserRepositoryAuthRequest.Namespace.ToString());
-            urlParam.Add("repository", updateUserRepositoryAuthRequest.Repository.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRepositoryAuthRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRepositoryAuthRequest.Repository, out var valueOfRepository)) urlParam.Add("repository", valueOfRepository);
             var urlPath = HttpUtils.AddUrlPath("/v2/manage/namespaces/{namespace}/repos/{repository}/access", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRepositoryAuthRequest);
             return new SyncInvoker<UpdateUserRepositoryAuthResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateUserRepositoryAuthResponse>);
@@ -1538,7 +1538,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowApiVersionResponse ShowApiVersion(ShowApiVersionRequest showApiVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showApiVersionRequest.ApiVersion, out var valueOfApiVersion)) urlParam.Add("api_version", valueOfApiVersion);
             var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1548,7 +1548,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowApiVersionResponse> ShowApiVersionInvoker(ShowApiVersionRequest showApiVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showApiVersionRequest.ApiVersion, out var valueOfApiVersion)) urlParam.Add("api_version", valueOfApiVersion);
             var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
             return new SyncInvoker<ShowApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiVersionResponse>);
@@ -1564,7 +1564,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public AddDomainNameResponse AddDomainName(AddDomainNameRequest addDomainNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", addDomainNameRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addDomainNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addDomainNameRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1574,7 +1574,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<AddDomainNameResponse> AddDomainNameInvoker(AddDomainNameRequest addDomainNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", addDomainNameRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addDomainNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addDomainNameRequest);
             return new SyncInvoker<AddDomainNameResponse>(this, "POST", request, JsonUtils.DeSerialize<AddDomainNameResponse>);
@@ -1590,8 +1590,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateImmutableRuleResponse CreateImmutableRule(CreateImmutableRuleRequest createImmutableRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createImmutableRuleRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", createImmutableRuleRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createImmutableRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createImmutableRuleRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createImmutableRuleRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1601,8 +1601,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateImmutableRuleResponse> CreateImmutableRuleInvoker(CreateImmutableRuleRequest createImmutableRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createImmutableRuleRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", createImmutableRuleRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createImmutableRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createImmutableRuleRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createImmutableRuleRequest);
             return new SyncInvoker<CreateImmutableRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateImmutableRuleResponse>);
@@ -1642,7 +1642,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateInstanceEndpointPolicyResponse CreateInstanceEndpointPolicy(CreateInstanceEndpointPolicyRequest createInstanceEndpointPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceEndpointPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceEndpointPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceEndpointPolicyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1652,7 +1652,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateInstanceEndpointPolicyResponse> CreateInstanceEndpointPolicyInvoker(CreateInstanceEndpointPolicyRequest createInstanceEndpointPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceEndpointPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceEndpointPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceEndpointPolicyRequest);
             return new SyncInvoker<CreateInstanceEndpointPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateInstanceEndpointPolicyResponse>);
@@ -1668,7 +1668,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateInstanceInternalEndpointResponse CreateInstanceInternalEndpoint(CreateInstanceInternalEndpointRequest createInstanceInternalEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceInternalEndpointRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceInternalEndpointRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceInternalEndpointRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1678,7 +1678,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateInstanceInternalEndpointResponse> CreateInstanceInternalEndpointInvoker(CreateInstanceInternalEndpointRequest createInstanceInternalEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceInternalEndpointRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceInternalEndpointRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceInternalEndpointRequest);
             return new SyncInvoker<CreateInstanceInternalEndpointResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceInternalEndpointResponse>);
@@ -1694,7 +1694,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateInstanceLtCredentialResponse CreateInstanceLtCredential(CreateInstanceLtCredentialRequest createInstanceLtCredentialRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceLtCredentialRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceLtCredentialRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credential", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceLtCredentialRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1704,7 +1704,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateInstanceLtCredentialResponse> CreateInstanceLtCredentialInvoker(CreateInstanceLtCredentialRequest createInstanceLtCredentialRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceLtCredentialRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceLtCredentialRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credential", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceLtCredentialRequest);
             return new SyncInvoker<CreateInstanceLtCredentialResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceLtCredentialResponse>);
@@ -1720,7 +1720,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateInstanceNamespaceResponse CreateInstanceNamespace(CreateInstanceNamespaceRequest createInstanceNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceNamespaceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceNamespaceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceNamespaceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1730,7 +1730,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateInstanceNamespaceResponse> CreateInstanceNamespaceInvoker(CreateInstanceNamespaceRequest createInstanceNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceNamespaceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceNamespaceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceNamespaceRequest);
             return new SyncInvoker<CreateInstanceNamespaceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceNamespaceResponse>);
@@ -1746,7 +1746,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateInstanceRegistryResponse CreateInstanceRegistry(CreateInstanceRegistryRequest createInstanceRegistryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceRegistryRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceRegistryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRegistryRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1756,7 +1756,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateInstanceRegistryResponse> CreateInstanceRegistryInvoker(CreateInstanceRegistryRequest createInstanceRegistryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceRegistryRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceRegistryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRegistryRequest);
             return new SyncInvoker<CreateInstanceRegistryResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceRegistryResponse>);
@@ -1772,7 +1772,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateInstanceReplicationPolicyResponse CreateInstanceReplicationPolicy(CreateInstanceReplicationPolicyRequest createInstanceReplicationPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceReplicationPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceReplicationPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceReplicationPolicyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1782,7 +1782,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateInstanceReplicationPolicyResponse> CreateInstanceReplicationPolicyInvoker(CreateInstanceReplicationPolicyRequest createInstanceReplicationPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceReplicationPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceReplicationPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceReplicationPolicyRequest);
             return new SyncInvoker<CreateInstanceReplicationPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceReplicationPolicyResponse>);
@@ -1798,8 +1798,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateInstanceResourceTagsResponse CreateInstanceResourceTags(CreateInstanceResourceTagsRequest createInstanceResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createInstanceResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createInstanceResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceResourceTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1809,8 +1809,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateInstanceResourceTagsResponse> CreateInstanceResourceTagsInvoker(CreateInstanceResourceTagsRequest createInstanceResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createInstanceResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createInstanceResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceResourceTagsRequest);
             return new SyncInvoker<CreateInstanceResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateInstanceResourceTagsResponse>);
@@ -1826,8 +1826,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateInstanceRetentionPolicyResponse CreateInstanceRetentionPolicy(CreateInstanceRetentionPolicyRequest createInstanceRetentionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceRetentionPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", createInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceRetentionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceRetentionPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRetentionPolicyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1837,8 +1837,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateInstanceRetentionPolicyResponse> CreateInstanceRetentionPolicyInvoker(CreateInstanceRetentionPolicyRequest createInstanceRetentionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceRetentionPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", createInstanceRetentionPolicyRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceRetentionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceRetentionPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceRetentionPolicyRequest);
             return new SyncInvoker<CreateInstanceRetentionPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceRetentionPolicyResponse>);
@@ -1854,8 +1854,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateInstanceSignPolicyResponse CreateInstanceSignPolicy(CreateInstanceSignPolicyRequest createInstanceSignPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceSignPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", createInstanceSignPolicyRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceSignPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceSignPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceSignPolicyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1865,8 +1865,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateInstanceSignPolicyResponse> CreateInstanceSignPolicyInvoker(CreateInstanceSignPolicyRequest createInstanceSignPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceSignPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", createInstanceSignPolicyRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceSignPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceSignPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceSignPolicyRequest);
             return new SyncInvoker<CreateInstanceSignPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceSignPolicyResponse>);
@@ -1882,7 +1882,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateInstanceTempCredentialResponse CreateInstanceTempCredential(CreateInstanceTempCredentialRequest createInstanceTempCredentialRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceTempCredentialRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceTempCredentialRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/temp-credential", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceTempCredentialRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1892,24 +1892,24 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateInstanceTempCredentialResponse> CreateInstanceTempCredentialInvoker(CreateInstanceTempCredentialRequest createInstanceTempCredentialRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceTempCredentialRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceTempCredentialRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/temp-credential", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceTempCredentialRequest);
             return new SyncInvoker<CreateInstanceTempCredentialResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceTempCredentialResponse>);
         }
         
         /// <summary>
-        /// 创建触发器策略
+        /// 创建触发器
         ///
-        /// 创建触发器策略
+        /// 创建触发器
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public CreateInstanceWebhookResponse CreateInstanceWebhook(CreateInstanceWebhookRequest createInstanceWebhookRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceWebhookRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", createInstanceWebhookRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceWebhookRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceWebhookRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceWebhookRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1919,8 +1919,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateInstanceWebhookResponse> CreateInstanceWebhookInvoker(CreateInstanceWebhookRequest createInstanceWebhookRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceWebhookRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", createInstanceWebhookRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceWebhookRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceWebhookRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceWebhookRequest);
             return new SyncInvoker<CreateInstanceWebhookResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceWebhookResponse>);
@@ -1936,10 +1936,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public CreateSubResourceTagsResponse CreateSubResourceTags(CreateSubResourceTagsRequest createSubResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createSubResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createSubResourceTagsRequest.ResourceId.ToString());
-            urlParam.Add("sub_resource_type", createSubResourceTagsRequest.SubResourceType.ToString());
-            urlParam.Add("sub_resource_id", createSubResourceTagsRequest.SubResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createSubResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createSubResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(createSubResourceTagsRequest.SubResourceType, out var valueOfSubResourceType)) urlParam.Add("sub_resource_type", valueOfSubResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createSubResourceTagsRequest.SubResourceId, out var valueOfSubResourceId)) urlParam.Add("sub_resource_id", valueOfSubResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubResourceTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1949,10 +1949,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<CreateSubResourceTagsResponse> CreateSubResourceTagsInvoker(CreateSubResourceTagsRequest createSubResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createSubResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createSubResourceTagsRequest.ResourceId.ToString());
-            urlParam.Add("sub_resource_type", createSubResourceTagsRequest.SubResourceType.ToString());
-            urlParam.Add("sub_resource_id", createSubResourceTagsRequest.SubResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createSubResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createSubResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(createSubResourceTagsRequest.SubResourceType, out var valueOfSubResourceType)) urlParam.Add("sub_resource_type", valueOfSubResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createSubResourceTagsRequest.SubResourceId, out var valueOfSubResourceId)) urlParam.Add("sub_resource_id", valueOfSubResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubResourceTagsRequest);
             return new SyncInvoker<CreateSubResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateSubResourceTagsResponse>);
@@ -1968,8 +1968,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest deleteDomainNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteDomainNameRequest.InstanceId.ToString());
-            urlParam.Add("domainname_id", deleteDomainNameRequest.DomainnameId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainNameRequest.DomainnameId, out var valueOfDomainnameId)) urlParam.Add("domainname_id", valueOfDomainnameId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname/{domainname_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainNameRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1979,8 +1979,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteDomainNameResponse> DeleteDomainNameInvoker(DeleteDomainNameRequest deleteDomainNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteDomainNameRequest.InstanceId.ToString());
-            urlParam.Add("domainname_id", deleteDomainNameRequest.DomainnameId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainNameRequest.DomainnameId, out var valueOfDomainnameId)) urlParam.Add("domainname_id", valueOfDomainnameId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname/{domainname_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainNameRequest);
             return new SyncInvoker<DeleteDomainNameResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDomainNameResponse>);
@@ -1996,9 +1996,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteImmutableRuleResponse DeleteImmutableRule(DeleteImmutableRuleRequest deleteImmutableRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteImmutableRuleRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteImmutableRuleRequest.NamespaceName.ToString());
-            urlParam.Add("immutable_rule_id", deleteImmutableRuleRequest.ImmutableRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteImmutableRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteImmutableRuleRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteImmutableRuleRequest.ImmutableRuleId, out var valueOfImmutableRuleId)) urlParam.Add("immutable_rule_id", valueOfImmutableRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules/{immutable_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImmutableRuleRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2008,9 +2008,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteImmutableRuleResponse> DeleteImmutableRuleInvoker(DeleteImmutableRuleRequest deleteImmutableRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteImmutableRuleRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteImmutableRuleRequest.NamespaceName.ToString());
-            urlParam.Add("immutable_rule_id", deleteImmutableRuleRequest.ImmutableRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteImmutableRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteImmutableRuleRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteImmutableRuleRequest.ImmutableRuleId, out var valueOfImmutableRuleId)) urlParam.Add("immutable_rule_id", valueOfImmutableRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules/{immutable_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImmutableRuleRequest);
             return new SyncInvoker<DeleteImmutableRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteImmutableRuleResponse>);
@@ -2026,7 +2026,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest deleteInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2036,26 +2036,26 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceResponse> DeleteInstanceInvoker(DeleteInstanceRequest deleteInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             return new SyncInvoker<DeleteInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceResponse>);
         }
         
         /// <summary>
-        /// 删除制品
+        /// 删除制品版本
         ///
-        /// 删除制品
+        /// 删除制品版本
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteInstanceArtifactResponse DeleteInstanceArtifact(DeleteInstanceArtifactRequest deleteInstanceArtifactRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceArtifactRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceArtifactRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", deleteInstanceArtifactRequest.RepositoryName.ToString());
-            urlParam.Add("reference", deleteInstanceArtifactRequest.Reference.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceArtifactRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceArtifactRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceArtifactRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceArtifactRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceArtifactRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2065,10 +2065,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceArtifactResponse> DeleteInstanceArtifactInvoker(DeleteInstanceArtifactRequest deleteInstanceArtifactRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceArtifactRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceArtifactRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", deleteInstanceArtifactRequest.RepositoryName.ToString());
-            urlParam.Add("reference", deleteInstanceArtifactRequest.Reference.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceArtifactRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceArtifactRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceArtifactRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceArtifactRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceArtifactRequest);
             return new SyncInvoker<DeleteInstanceArtifactResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceArtifactResponse>);
@@ -2084,8 +2084,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteInstanceInternalEndpointResponse DeleteInstanceInternalEndpoint(DeleteInstanceInternalEndpointRequest deleteInstanceInternalEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceInternalEndpointRequest.InstanceId.ToString());
-            urlParam.Add("internal_endpoints_id", deleteInstanceInternalEndpointRequest.InternalEndpointsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceInternalEndpointRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceInternalEndpointRequest.InternalEndpointsId, out var valueOfInternalEndpointsId)) urlParam.Add("internal_endpoints_id", valueOfInternalEndpointsId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints/{internal_endpoints_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceInternalEndpointRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2095,8 +2095,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceInternalEndpointResponse> DeleteInstanceInternalEndpointInvoker(DeleteInstanceInternalEndpointRequest deleteInstanceInternalEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceInternalEndpointRequest.InstanceId.ToString());
-            urlParam.Add("internal_endpoints_id", deleteInstanceInternalEndpointRequest.InternalEndpointsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceInternalEndpointRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceInternalEndpointRequest.InternalEndpointsId, out var valueOfInternalEndpointsId)) urlParam.Add("internal_endpoints_id", valueOfInternalEndpointsId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints/{internal_endpoints_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceInternalEndpointRequest);
             return new SyncInvoker<DeleteInstanceInternalEndpointResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceInternalEndpointResponse>);
@@ -2112,7 +2112,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteInstanceJobResponse DeleteInstanceJob(DeleteInstanceJobRequest deleteInstanceJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", deleteInstanceJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceJobRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2122,7 +2122,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceJobResponse> DeleteInstanceJobInvoker(DeleteInstanceJobRequest deleteInstanceJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", deleteInstanceJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceJobRequest);
             return new SyncInvoker<DeleteInstanceJobResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceJobResponse>);
@@ -2138,8 +2138,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteInstanceLtCredentialResponse DeleteInstanceLtCredential(DeleteInstanceLtCredentialRequest deleteInstanceLtCredentialRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceLtCredentialRequest.InstanceId.ToString());
-            urlParam.Add("credential_id", deleteInstanceLtCredentialRequest.CredentialId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceLtCredentialRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceLtCredentialRequest.CredentialId, out var valueOfCredentialId)) urlParam.Add("credential_id", valueOfCredentialId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials/{credential_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceLtCredentialRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2149,8 +2149,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceLtCredentialResponse> DeleteInstanceLtCredentialInvoker(DeleteInstanceLtCredentialRequest deleteInstanceLtCredentialRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceLtCredentialRequest.InstanceId.ToString());
-            urlParam.Add("credential_id", deleteInstanceLtCredentialRequest.CredentialId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceLtCredentialRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceLtCredentialRequest.CredentialId, out var valueOfCredentialId)) urlParam.Add("credential_id", valueOfCredentialId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials/{credential_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceLtCredentialRequest);
             return new SyncInvoker<DeleteInstanceLtCredentialResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceLtCredentialResponse>);
@@ -2166,8 +2166,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteInstanceNamespaceResponse DeleteInstanceNamespace(DeleteInstanceNamespaceRequest deleteInstanceNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceNamespaceRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceNamespaceRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceNamespaceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceNamespaceRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceNamespaceRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2177,8 +2177,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceNamespaceResponse> DeleteInstanceNamespaceInvoker(DeleteInstanceNamespaceRequest deleteInstanceNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceNamespaceRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceNamespaceRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceNamespaceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceNamespaceRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceNamespaceRequest);
             return new SyncInvoker<DeleteInstanceNamespaceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceNamespaceResponse>);
@@ -2194,8 +2194,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteInstanceRegistryResponse DeleteInstanceRegistry(DeleteInstanceRegistryRequest deleteInstanceRegistryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRegistryRequest.InstanceId.ToString());
-            urlParam.Add("registry_id", deleteInstanceRegistryRequest.RegistryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRegistryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRegistryRequest.RegistryId, out var valueOfRegistryId)) urlParam.Add("registry_id", valueOfRegistryId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRegistryRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2205,8 +2205,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceRegistryResponse> DeleteInstanceRegistryInvoker(DeleteInstanceRegistryRequest deleteInstanceRegistryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRegistryRequest.InstanceId.ToString());
-            urlParam.Add("registry_id", deleteInstanceRegistryRequest.RegistryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRegistryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRegistryRequest.RegistryId, out var valueOfRegistryId)) urlParam.Add("registry_id", valueOfRegistryId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRegistryRequest);
             return new SyncInvoker<DeleteInstanceRegistryResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceRegistryResponse>);
@@ -2222,8 +2222,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteInstanceReplicationPolicyResponse DeleteInstanceReplicationPolicy(DeleteInstanceReplicationPolicyRequest deleteInstanceReplicationPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceReplicationPolicyRequest.InstanceId.ToString());
-            urlParam.Add("policy_id", deleteInstanceReplicationPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceReplicationPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceReplicationPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceReplicationPolicyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2233,8 +2233,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceReplicationPolicyResponse> DeleteInstanceReplicationPolicyInvoker(DeleteInstanceReplicationPolicyRequest deleteInstanceReplicationPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceReplicationPolicyRequest.InstanceId.ToString());
-            urlParam.Add("policy_id", deleteInstanceReplicationPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceReplicationPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceReplicationPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceReplicationPolicyRequest);
             return new SyncInvoker<DeleteInstanceReplicationPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceReplicationPolicyResponse>);
@@ -2250,9 +2250,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteInstanceRepositoryResponse DeleteInstanceRepository(DeleteInstanceRepositoryRequest deleteInstanceRepositoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRepositoryRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceRepositoryRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", deleteInstanceRepositoryRequest.RepositoryName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRepositoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRepositoryRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRepositoryRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRepositoryRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2262,9 +2262,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceRepositoryResponse> DeleteInstanceRepositoryInvoker(DeleteInstanceRepositoryRequest deleteInstanceRepositoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRepositoryRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceRepositoryRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", deleteInstanceRepositoryRequest.RepositoryName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRepositoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRepositoryRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRepositoryRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRepositoryRequest);
             return new SyncInvoker<DeleteInstanceRepositoryResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceRepositoryResponse>);
@@ -2280,8 +2280,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteInstanceResourceTagsResponse DeleteInstanceResourceTags(DeleteInstanceResourceTagsRequest deleteInstanceResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteInstanceResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteInstanceResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceResourceTagsRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2291,8 +2291,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceResourceTagsResponse> DeleteInstanceResourceTagsInvoker(DeleteInstanceResourceTagsRequest deleteInstanceResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteInstanceResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteInstanceResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceResourceTagsRequest);
             return new SyncInvoker<DeleteInstanceResourceTagsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceResourceTagsResponse>);
@@ -2308,9 +2308,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteInstanceRetentionPolicyResponse DeleteInstanceRetentionPolicy(DeleteInstanceRetentionPolicyRequest deleteInstanceRetentionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRetentionPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceRetentionPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", deleteInstanceRetentionPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRetentionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRetentionPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRetentionPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRetentionPolicyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2320,9 +2320,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceRetentionPolicyResponse> DeleteInstanceRetentionPolicyInvoker(DeleteInstanceRetentionPolicyRequest deleteInstanceRetentionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRetentionPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceRetentionPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", deleteInstanceRetentionPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRetentionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRetentionPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRetentionPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRetentionPolicyRequest);
             return new SyncInvoker<DeleteInstanceRetentionPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceRetentionPolicyResponse>);
@@ -2338,9 +2338,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteInstanceSignPolicyResponse DeleteInstanceSignPolicy(DeleteInstanceSignPolicyRequest deleteInstanceSignPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceSignPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceSignPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", deleteInstanceSignPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceSignPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceSignPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceSignPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceSignPolicyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2350,27 +2350,59 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceSignPolicyResponse> DeleteInstanceSignPolicyInvoker(DeleteInstanceSignPolicyRequest deleteInstanceSignPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceSignPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceSignPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", deleteInstanceSignPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceSignPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceSignPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceSignPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceSignPolicyRequest);
             return new SyncInvoker<DeleteInstanceSignPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceSignPolicyResponse>);
         }
         
         /// <summary>
-        /// 删除触发器策略
+        /// 删除制品的Tag
         ///
-        /// 删除触发器策略
+        /// 删除制品Tag
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstanceTagResponse DeleteInstanceTag(DeleteInstanceTagRequest deleteInstanceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceTagRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceTagRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceTagRequest.TagName, out var valueOfTagName)) urlParam.Add("tag_name", valueOfTagName);
+            var urlPath = HttpUtils.AddUrlPath("/v2/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/tags/{tag_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceTagRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInstanceTagResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstanceTagResponse> DeleteInstanceTagInvoker(DeleteInstanceTagRequest deleteInstanceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceTagRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceTagRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceTagRequest.TagName, out var valueOfTagName)) urlParam.Add("tag_name", valueOfTagName);
+            var urlPath = HttpUtils.AddUrlPath("/v2/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/tags/{tag_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceTagRequest);
+            return new SyncInvoker<DeleteInstanceTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceTagResponse>);
+        }
+        
+        /// <summary>
+        /// 删除触发器
+        ///
+        /// 删除触发器
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DeleteInstanceWebhookResponse DeleteInstanceWebhook(DeleteInstanceWebhookRequest deleteInstanceWebhookRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceWebhookRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceWebhookRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", deleteInstanceWebhookRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceWebhookRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceWebhookRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceWebhookRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceWebhookRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2380,9 +2412,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteInstanceWebhookResponse> DeleteInstanceWebhookInvoker(DeleteInstanceWebhookRequest deleteInstanceWebhookRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceWebhookRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", deleteInstanceWebhookRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", deleteInstanceWebhookRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceWebhookRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceWebhookRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceWebhookRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceWebhookRequest);
             return new SyncInvoker<DeleteInstanceWebhookResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceWebhookResponse>);
@@ -2398,10 +2430,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public DeleteSubResourceTagsResponse DeleteSubResourceTags(DeleteSubResourceTagsRequest deleteSubResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteSubResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteSubResourceTagsRequest.ResourceId.ToString());
-            urlParam.Add("sub_resource_type", deleteSubResourceTagsRequest.SubResourceType.ToString());
-            urlParam.Add("sub_resource_id", deleteSubResourceTagsRequest.SubResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubResourceTagsRequest.SubResourceType, out var valueOfSubResourceType)) urlParam.Add("sub_resource_type", valueOfSubResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubResourceTagsRequest.SubResourceId, out var valueOfSubResourceId)) urlParam.Add("sub_resource_id", valueOfSubResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubResourceTagsRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2411,10 +2443,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<DeleteSubResourceTagsResponse> DeleteSubResourceTagsInvoker(DeleteSubResourceTagsRequest deleteSubResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteSubResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteSubResourceTagsRequest.ResourceId.ToString());
-            urlParam.Add("sub_resource_type", deleteSubResourceTagsRequest.SubResourceType.ToString());
-            urlParam.Add("sub_resource_id", deleteSubResourceTagsRequest.SubResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubResourceTagsRequest.SubResourceType, out var valueOfSubResourceType)) urlParam.Add("sub_resource_type", valueOfSubResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSubResourceTagsRequest.SubResourceId, out var valueOfSubResourceId)) urlParam.Add("sub_resource_id", valueOfSubResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSubResourceTagsRequest);
             return new SyncInvoker<DeleteSubResourceTagsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSubResourceTagsResponse>);
@@ -2430,7 +2462,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ExecuteInstanceReplicationPolicyResponse ExecuteInstanceReplicationPolicy(ExecuteInstanceReplicationPolicyRequest executeInstanceReplicationPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", executeInstanceReplicationPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceReplicationPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceReplicationPolicyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2440,7 +2472,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ExecuteInstanceReplicationPolicyResponse> ExecuteInstanceReplicationPolicyInvoker(ExecuteInstanceReplicationPolicyRequest executeInstanceReplicationPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", executeInstanceReplicationPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceReplicationPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceReplicationPolicyRequest);
             return new SyncInvoker<ExecuteInstanceReplicationPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteInstanceReplicationPolicyResponse>);
@@ -2456,9 +2488,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ExecuteInstanceRetentionPolicyResponse ExecuteInstanceRetentionPolicy(ExecuteInstanceRetentionPolicyRequest executeInstanceRetentionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", executeInstanceRetentionPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", executeInstanceRetentionPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", executeInstanceRetentionPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceRetentionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceRetentionPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceRetentionPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceRetentionPolicyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2468,9 +2500,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ExecuteInstanceRetentionPolicyResponse> ExecuteInstanceRetentionPolicyInvoker(ExecuteInstanceRetentionPolicyRequest executeInstanceRetentionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", executeInstanceRetentionPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", executeInstanceRetentionPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", executeInstanceRetentionPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceRetentionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceRetentionPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceRetentionPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceRetentionPolicyRequest);
             return new SyncInvoker<ExecuteInstanceRetentionPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteInstanceRetentionPolicyResponse>);
@@ -2486,9 +2518,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ExecuteInstanceSignPolicyResponse ExecuteInstanceSignPolicy(ExecuteInstanceSignPolicyRequest executeInstanceSignPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", executeInstanceSignPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", executeInstanceSignPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", executeInstanceSignPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceSignPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceSignPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceSignPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceSignPolicyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2498,9 +2530,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ExecuteInstanceSignPolicyResponse> ExecuteInstanceSignPolicyInvoker(ExecuteInstanceSignPolicyRequest executeInstanceSignPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", executeInstanceSignPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", executeInstanceSignPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", executeInstanceSignPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceSignPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceSignPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(executeInstanceSignPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeInstanceSignPolicyRequest);
             return new SyncInvoker<ExecuteInstanceSignPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteInstanceSignPolicyResponse>);
@@ -2516,7 +2548,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListAuditLogsResponse ListAuditLogs(ListAuditLogsRequest listAuditLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAuditLogsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAuditLogsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/audit-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2526,7 +2558,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListAuditLogsResponse> ListAuditLogsInvoker(ListAuditLogsRequest listAuditLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAuditLogsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAuditLogsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/audit-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogsRequest);
             return new SyncInvoker<ListAuditLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuditLogsResponse>);
@@ -2542,7 +2574,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest listDomainNamesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listDomainNamesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDomainNamesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainNamesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2552,7 +2584,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListDomainNamesResponse> ListDomainNamesInvoker(ListDomainNamesRequest listDomainNamesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listDomainNamesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDomainNamesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainNamesRequest);
             return new SyncInvoker<ListDomainNamesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainNamesResponse>);
@@ -2568,7 +2600,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListFeatureGatesResponse ListFeatureGates(ListFeatureGatesRequest listFeatureGatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listFeatureGatesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFeatureGatesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/feature-gates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFeatureGatesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2578,7 +2610,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListFeatureGatesResponse> ListFeatureGatesInvoker(ListFeatureGatesRequest listFeatureGatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listFeatureGatesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFeatureGatesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/feature-gates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFeatureGatesRequest);
             return new SyncInvoker<ListFeatureGatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFeatureGatesResponse>);
@@ -2618,7 +2650,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListImmutableRulesResponse ListImmutableRules(ListImmutableRulesRequest listImmutableRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listImmutableRulesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listImmutableRulesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/immutabletagrules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImmutableRulesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2628,7 +2660,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListImmutableRulesResponse> ListImmutableRulesInvoker(ListImmutableRulesRequest listImmutableRulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listImmutableRulesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listImmutableRulesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/immutabletagrules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listImmutableRulesRequest);
             return new SyncInvoker<ListImmutableRulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListImmutableRulesResponse>);
@@ -2668,10 +2700,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceAccessoriesResponse ListInstanceAccessories(ListInstanceAccessoriesRequest listInstanceAccessoriesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceAccessoriesRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceAccessoriesRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", listInstanceAccessoriesRequest.RepositoryName.ToString());
-            urlParam.Add("reference", listInstanceAccessoriesRequest.Reference.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAccessoriesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAccessoriesRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAccessoriesRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAccessoriesRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/accessories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceAccessoriesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2681,10 +2713,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceAccessoriesResponse> ListInstanceAccessoriesInvoker(ListInstanceAccessoriesRequest listInstanceAccessoriesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceAccessoriesRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceAccessoriesRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", listInstanceAccessoriesRequest.RepositoryName.ToString());
-            urlParam.Add("reference", listInstanceAccessoriesRequest.Reference.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAccessoriesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAccessoriesRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAccessoriesRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAccessoriesRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/accessories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceAccessoriesRequest);
             return new SyncInvoker<ListInstanceAccessoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceAccessoriesResponse>);
@@ -2693,14 +2725,14 @@ namespace HuaweiCloud.SDK.Swr.V2
         /// <summary>
         /// 获取仓库实例的所有制品版本列表
         ///
-        /// 获取仓库实例的所有制品版本列表（此接口只在企业仓库实例版本大于25.6.0以上的版本才支持）
+        /// 获取仓库实例的所有制品版本列表
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListInstanceAllArtifactsResponse ListInstanceAllArtifacts(ListInstanceAllArtifactsRequest listInstanceAllArtifactsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceAllArtifactsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAllArtifactsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/artifacts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceAllArtifactsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2710,7 +2742,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceAllArtifactsResponse> ListInstanceAllArtifactsInvoker(ListInstanceAllArtifactsRequest listInstanceAllArtifactsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceAllArtifactsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceAllArtifactsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/artifacts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceAllArtifactsRequest);
             return new SyncInvoker<ListInstanceAllArtifactsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceAllArtifactsResponse>);
@@ -2726,9 +2758,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceArtifactsResponse ListInstanceArtifacts(ListInstanceArtifactsRequest listInstanceArtifactsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceArtifactsRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceArtifactsRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", listInstanceArtifactsRequest.RepositoryName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactsRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactsRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceArtifactsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2738,9 +2770,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceArtifactsResponse> ListInstanceArtifactsInvoker(ListInstanceArtifactsRequest listInstanceArtifactsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceArtifactsRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceArtifactsRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", listInstanceArtifactsRequest.RepositoryName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactsRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactsRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceArtifactsRequest);
             return new SyncInvoker<ListInstanceArtifactsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceArtifactsResponse>);
@@ -2756,7 +2788,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceInternalEndpointsResponse ListInstanceInternalEndpoints(ListInstanceInternalEndpointsRequest listInstanceInternalEndpointsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceInternalEndpointsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceInternalEndpointsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceInternalEndpointsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2766,7 +2798,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceInternalEndpointsResponse> ListInstanceInternalEndpointsInvoker(ListInstanceInternalEndpointsRequest listInstanceInternalEndpointsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceInternalEndpointsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceInternalEndpointsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceInternalEndpointsRequest);
             return new SyncInvoker<ListInstanceInternalEndpointsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceInternalEndpointsResponse>);
@@ -2806,7 +2838,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceLtCredentialsResponse ListInstanceLtCredentials(ListInstanceLtCredentialsRequest listInstanceLtCredentialsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceLtCredentialsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceLtCredentialsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceLtCredentialsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2816,7 +2848,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceLtCredentialsResponse> ListInstanceLtCredentialsInvoker(ListInstanceLtCredentialsRequest listInstanceLtCredentialsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceLtCredentialsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceLtCredentialsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceLtCredentialsRequest);
             return new SyncInvoker<ListInstanceLtCredentialsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceLtCredentialsResponse>);
@@ -2832,7 +2864,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceNamespacesResponse ListInstanceNamespaces(ListInstanceNamespacesRequest listInstanceNamespacesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceNamespacesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceNamespacesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceNamespacesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2842,7 +2874,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceNamespacesResponse> ListInstanceNamespacesInvoker(ListInstanceNamespacesRequest listInstanceNamespacesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceNamespacesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceNamespacesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceNamespacesRequest);
             return new SyncInvoker<ListInstanceNamespacesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceNamespacesResponse>);
@@ -2882,7 +2914,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceRegistriesResponse ListInstanceRegistries(ListInstanceRegistriesRequest listInstanceRegistriesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRegistriesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRegistriesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRegistriesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2892,7 +2924,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceRegistriesResponse> ListInstanceRegistriesInvoker(ListInstanceRegistriesRequest listInstanceRegistriesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRegistriesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRegistriesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRegistriesRequest);
             return new SyncInvoker<ListInstanceRegistriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRegistriesResponse>);
@@ -2908,7 +2940,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceReplicationPoliciesResponse ListInstanceReplicationPolicies(ListInstanceReplicationPoliciesRequest listInstanceReplicationPoliciesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceReplicationPoliciesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPoliciesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPoliciesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2918,7 +2950,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceReplicationPoliciesResponse> ListInstanceReplicationPoliciesInvoker(ListInstanceReplicationPoliciesRequest listInstanceReplicationPoliciesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceReplicationPoliciesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPoliciesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPoliciesRequest);
             return new SyncInvoker<ListInstanceReplicationPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceReplicationPoliciesResponse>);
@@ -2934,9 +2966,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceReplicationPolicyExecSubTasksResponse ListInstanceReplicationPolicyExecSubTasks(ListInstanceReplicationPolicyExecSubTasksRequest listInstanceReplicationPolicyExecSubTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceReplicationPolicyExecSubTasksRequest.InstanceId.ToString());
-            urlParam.Add("execution_id", listInstanceReplicationPolicyExecSubTasksRequest.ExecutionId.ToString());
-            urlParam.Add("task_id", listInstanceReplicationPolicyExecSubTasksRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecSubTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecSubTasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecSubTasksRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecSubTasksRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2946,9 +2978,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceReplicationPolicyExecSubTasksResponse> ListInstanceReplicationPolicyExecSubTasksInvoker(ListInstanceReplicationPolicyExecSubTasksRequest listInstanceReplicationPolicyExecSubTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceReplicationPolicyExecSubTasksRequest.InstanceId.ToString());
-            urlParam.Add("execution_id", listInstanceReplicationPolicyExecSubTasksRequest.ExecutionId.ToString());
-            urlParam.Add("task_id", listInstanceReplicationPolicyExecSubTasksRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecSubTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecSubTasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecSubTasksRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecSubTasksRequest);
             return new SyncInvoker<ListInstanceReplicationPolicyExecSubTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceReplicationPolicyExecSubTasksResponse>);
@@ -2964,8 +2996,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceReplicationPolicyExecTasksResponse ListInstanceReplicationPolicyExecTasks(ListInstanceReplicationPolicyExecTasksRequest listInstanceReplicationPolicyExecTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceReplicationPolicyExecTasksRequest.InstanceId.ToString());
-            urlParam.Add("execution_id", listInstanceReplicationPolicyExecTasksRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecTasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecTasksRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2975,8 +3007,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceReplicationPolicyExecTasksResponse> ListInstanceReplicationPolicyExecTasksInvoker(ListInstanceReplicationPolicyExecTasksRequest listInstanceReplicationPolicyExecTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceReplicationPolicyExecTasksRequest.InstanceId.ToString());
-            urlParam.Add("execution_id", listInstanceReplicationPolicyExecTasksRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecTasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecTasksRequest);
             return new SyncInvoker<ListInstanceReplicationPolicyExecTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceReplicationPolicyExecTasksResponse>);
@@ -2992,7 +3024,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceReplicationPolicyExecutionsResponse ListInstanceReplicationPolicyExecutions(ListInstanceReplicationPolicyExecutionsRequest listInstanceReplicationPolicyExecutionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceReplicationPolicyExecutionsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecutionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecutionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3002,7 +3034,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceReplicationPolicyExecutionsResponse> ListInstanceReplicationPolicyExecutionsInvoker(ListInstanceReplicationPolicyExecutionsRequest listInstanceReplicationPolicyExecutionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceReplicationPolicyExecutionsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceReplicationPolicyExecutionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceReplicationPolicyExecutionsRequest);
             return new SyncInvoker<ListInstanceReplicationPolicyExecutionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceReplicationPolicyExecutionsResponse>);
@@ -3018,7 +3050,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceRepositoriesResponse ListInstanceRepositories(ListInstanceRepositoriesRequest listInstanceRepositoriesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRepositoriesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRepositoriesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/repositories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRepositoriesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3028,7 +3060,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceRepositoriesResponse> ListInstanceRepositoriesInvoker(ListInstanceRepositoriesRequest listInstanceRepositoriesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRepositoriesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRepositoriesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/repositories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRepositoriesRequest);
             return new SyncInvoker<ListInstanceRepositoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRepositoriesResponse>);
@@ -3044,7 +3076,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceResourceInstancesResponse ListInstanceResourceInstances(ListInstanceResourceInstancesRequest listInstanceResourceInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listInstanceResourceInstancesRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceResourceInstancesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource-instances/filter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceResourceInstancesRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -3054,7 +3086,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceResourceInstancesResponse> ListInstanceResourceInstancesInvoker(ListInstanceResourceInstancesRequest listInstanceResourceInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listInstanceResourceInstancesRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceResourceInstancesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource-instances/filter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceResourceInstancesRequest);
             return new SyncInvoker<ListInstanceResourceInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListInstanceResourceInstancesResponse>);
@@ -3070,8 +3102,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceResourceTagsResponse ListInstanceResourceTags(ListInstanceResourceTagsRequest listInstanceResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listInstanceResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listInstanceResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceResourceTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3081,8 +3113,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceResourceTagsResponse> ListInstanceResourceTagsInvoker(ListInstanceResourceTagsRequest listInstanceResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listInstanceResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listInstanceResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceResourceTagsRequest);
             return new SyncInvoker<ListInstanceResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceResourceTagsResponse>);
@@ -3098,7 +3130,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceRetentionPoliciesResponse ListInstanceRetentionPolicies(ListInstanceRetentionPoliciesRequest listInstanceRetentionPoliciesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRetentionPoliciesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPoliciesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/retention/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPoliciesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3108,7 +3140,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceRetentionPoliciesResponse> ListInstanceRetentionPoliciesInvoker(ListInstanceRetentionPoliciesRequest listInstanceRetentionPoliciesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRetentionPoliciesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPoliciesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/retention/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPoliciesRequest);
             return new SyncInvoker<ListInstanceRetentionPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRetentionPoliciesResponse>);
@@ -3124,11 +3156,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceRetentionPolicyExecSubTasksResponse ListInstanceRetentionPolicyExecSubTasks(ListInstanceRetentionPolicyExecSubTasksRequest listInstanceRetentionPolicyExecSubTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRetentionPolicyExecSubTasksRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecSubTasksRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceRetentionPolicyExecSubTasksRequest.PolicyId.ToString());
-            urlParam.Add("execution_id", listInstanceRetentionPolicyExecSubTasksRequest.ExecutionId.ToString());
-            urlParam.Add("task_id", listInstanceRetentionPolicyExecSubTasksRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecSubTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecSubTasksRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecSubTasksRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecSubTasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecSubTasksRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecSubTasksRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3138,11 +3170,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceRetentionPolicyExecSubTasksResponse> ListInstanceRetentionPolicyExecSubTasksInvoker(ListInstanceRetentionPolicyExecSubTasksRequest listInstanceRetentionPolicyExecSubTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRetentionPolicyExecSubTasksRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecSubTasksRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceRetentionPolicyExecSubTasksRequest.PolicyId.ToString());
-            urlParam.Add("execution_id", listInstanceRetentionPolicyExecSubTasksRequest.ExecutionId.ToString());
-            urlParam.Add("task_id", listInstanceRetentionPolicyExecSubTasksRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecSubTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecSubTasksRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecSubTasksRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecSubTasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecSubTasksRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecSubTasksRequest);
             return new SyncInvoker<ListInstanceRetentionPolicyExecSubTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRetentionPolicyExecSubTasksResponse>);
@@ -3158,10 +3190,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceRetentionPolicyExecTasksResponse ListInstanceRetentionPolicyExecTasks(ListInstanceRetentionPolicyExecTasksRequest listInstanceRetentionPolicyExecTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRetentionPolicyExecTasksRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecTasksRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceRetentionPolicyExecTasksRequest.PolicyId.ToString());
-            urlParam.Add("execution_id", listInstanceRetentionPolicyExecTasksRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecTasksRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecTasksRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecTasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions/{execution_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecTasksRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3171,10 +3203,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceRetentionPolicyExecTasksResponse> ListInstanceRetentionPolicyExecTasksInvoker(ListInstanceRetentionPolicyExecTasksRequest listInstanceRetentionPolicyExecTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRetentionPolicyExecTasksRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecTasksRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceRetentionPolicyExecTasksRequest.PolicyId.ToString());
-            urlParam.Add("execution_id", listInstanceRetentionPolicyExecTasksRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecTasksRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecTasksRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecTasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions/{execution_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecTasksRequest);
             return new SyncInvoker<ListInstanceRetentionPolicyExecTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRetentionPolicyExecTasksResponse>);
@@ -3190,9 +3222,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceRetentionPolicyExecutionsResponse ListInstanceRetentionPolicyExecutions(ListInstanceRetentionPolicyExecutionsRequest listInstanceRetentionPolicyExecutionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRetentionPolicyExecutionsRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecutionsRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceRetentionPolicyExecutionsRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecutionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecutionsRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecutionsRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecutionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3202,9 +3234,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceRetentionPolicyExecutionsResponse> ListInstanceRetentionPolicyExecutionsInvoker(ListInstanceRetentionPolicyExecutionsRequest listInstanceRetentionPolicyExecutionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceRetentionPolicyExecutionsRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceRetentionPolicyExecutionsRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceRetentionPolicyExecutionsRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecutionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecutionsRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceRetentionPolicyExecutionsRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceRetentionPolicyExecutionsRequest);
             return new SyncInvoker<ListInstanceRetentionPolicyExecutionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceRetentionPolicyExecutionsResponse>);
@@ -3220,7 +3252,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceSignPoliciesResponse ListInstanceSignPolicies(ListInstanceSignPoliciesRequest listInstanceSignPoliciesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceSignPoliciesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPoliciesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/signature/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPoliciesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3230,7 +3262,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceSignPoliciesResponse> ListInstanceSignPoliciesInvoker(ListInstanceSignPoliciesRequest listInstanceSignPoliciesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceSignPoliciesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPoliciesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/signature/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPoliciesRequest);
             return new SyncInvoker<ListInstanceSignPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceSignPoliciesResponse>);
@@ -3246,10 +3278,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceSignPolicyExecTasksResponse ListInstanceSignPolicyExecTasks(ListInstanceSignPolicyExecTasksRequest listInstanceSignPolicyExecTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceSignPolicyExecTasksRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceSignPolicyExecTasksRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceSignPolicyExecTasksRequest.PolicyId.ToString());
-            urlParam.Add("execution_id", listInstanceSignPolicyExecTasksRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecTasksRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecTasksRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecTasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions/{execution_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPolicyExecTasksRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3259,10 +3291,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceSignPolicyExecTasksResponse> ListInstanceSignPolicyExecTasksInvoker(ListInstanceSignPolicyExecTasksRequest listInstanceSignPolicyExecTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceSignPolicyExecTasksRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceSignPolicyExecTasksRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceSignPolicyExecTasksRequest.PolicyId.ToString());
-            urlParam.Add("execution_id", listInstanceSignPolicyExecTasksRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecTasksRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecTasksRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecTasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions/{execution_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPolicyExecTasksRequest);
             return new SyncInvoker<ListInstanceSignPolicyExecTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceSignPolicyExecTasksResponse>);
@@ -3278,9 +3310,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceSignPolicyExecutionsResponse ListInstanceSignPolicyExecutions(ListInstanceSignPolicyExecutionsRequest listInstanceSignPolicyExecutionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceSignPolicyExecutionsRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceSignPolicyExecutionsRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceSignPolicyExecutionsRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecutionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecutionsRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecutionsRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPolicyExecutionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3290,9 +3322,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceSignPolicyExecutionsResponse> ListInstanceSignPolicyExecutionsInvoker(ListInstanceSignPolicyExecutionsRequest listInstanceSignPolicyExecutionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceSignPolicyExecutionsRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceSignPolicyExecutionsRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceSignPolicyExecutionsRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecutionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecutionsRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignPolicyExecutionsRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignPolicyExecutionsRequest);
             return new SyncInvoker<ListInstanceSignPolicyExecutionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceSignPolicyExecutionsResponse>);
@@ -3308,11 +3340,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceSignatureExecutionSubtasksResponse ListInstanceSignatureExecutionSubtasks(ListInstanceSignatureExecutionSubtasksRequest listInstanceSignatureExecutionSubtasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceSignatureExecutionSubtasksRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceSignatureExecutionSubtasksRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceSignatureExecutionSubtasksRequest.PolicyId.ToString());
-            urlParam.Add("execution_id", listInstanceSignatureExecutionSubtasksRequest.ExecutionId.ToString());
-            urlParam.Add("task_id", listInstanceSignatureExecutionSubtasksRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignatureExecutionSubtasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignatureExecutionSubtasksRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignatureExecutionSubtasksRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignatureExecutionSubtasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignatureExecutionSubtasksRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignatureExecutionSubtasksRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3322,11 +3354,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceSignatureExecutionSubtasksResponse> ListInstanceSignatureExecutionSubtasksInvoker(ListInstanceSignatureExecutionSubtasksRequest listInstanceSignatureExecutionSubtasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceSignatureExecutionSubtasksRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceSignatureExecutionSubtasksRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceSignatureExecutionSubtasksRequest.PolicyId.ToString());
-            urlParam.Add("execution_id", listInstanceSignatureExecutionSubtasksRequest.ExecutionId.ToString());
-            urlParam.Add("task_id", listInstanceSignatureExecutionSubtasksRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignatureExecutionSubtasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignatureExecutionSubtasksRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignatureExecutionSubtasksRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignatureExecutionSubtasksRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceSignatureExecutionSubtasksRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}/executions/{execution_id}/tasks/{task_id}/subtasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceSignatureExecutionSubtasksRequest);
             return new SyncInvoker<ListInstanceSignatureExecutionSubtasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceSignatureExecutionSubtasksResponse>);
@@ -3342,7 +3374,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceStatisticsResponse ListInstanceStatistics(ListInstanceStatisticsRequest listInstanceStatisticsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceStatisticsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceStatisticsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceStatisticsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3352,7 +3384,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceStatisticsResponse> ListInstanceStatisticsInvoker(ListInstanceStatisticsRequest listInstanceStatisticsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceStatisticsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceStatisticsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceStatisticsRequest);
             return new SyncInvoker<ListInstanceStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceStatisticsResponse>);
@@ -3368,9 +3400,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceTagsResponse ListInstanceTags(ListInstanceTagsRequest listInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceTagsRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceTagsRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", listInstanceTagsRequest.RepositoryName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTagsRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTagsRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
             var urlPath = HttpUtils.AddUrlPath("/v2/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3380,9 +3412,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceTagsResponse> ListInstanceTagsInvoker(ListInstanceTagsRequest listInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceTagsRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceTagsRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", listInstanceTagsRequest.RepositoryName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTagsRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTagsRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
             var urlPath = HttpUtils.AddUrlPath("/v2/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
             return new SyncInvoker<ListInstanceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceTagsResponse>);
@@ -3398,9 +3430,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListInstanceWebhookJobsResponse ListInstanceWebhookJobs(ListInstanceWebhookJobsRequest listInstanceWebhookJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceWebhookJobsRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceWebhookJobsRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceWebhookJobsRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceWebhookJobsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceWebhookJobsRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceWebhookJobsRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}/jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceWebhookJobsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3410,25 +3442,25 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceWebhookJobsResponse> ListInstanceWebhookJobsInvoker(ListInstanceWebhookJobsRequest listInstanceWebhookJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceWebhookJobsRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listInstanceWebhookJobsRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", listInstanceWebhookJobsRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceWebhookJobsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceWebhookJobsRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceWebhookJobsRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}/jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceWebhookJobsRequest);
             return new SyncInvoker<ListInstanceWebhookJobsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceWebhookJobsResponse>);
         }
         
         /// <summary>
-        /// 获取触发器策略列表
+        /// 获取触发器列表
         ///
-        /// 获取触发器策略列表
+        /// 获取触发器列表
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ListInstanceWebhooksResponse ListInstanceWebhooks(ListInstanceWebhooksRequest listInstanceWebhooksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceWebhooksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceWebhooksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/webhook/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceWebhooksRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3438,7 +3470,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListInstanceWebhooksResponse> ListInstanceWebhooksInvoker(ListInstanceWebhooksRequest listInstanceWebhooksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceWebhooksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceWebhooksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/webhook/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceWebhooksRequest);
             return new SyncInvoker<ListInstanceWebhooksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceWebhooksResponse>);
@@ -3454,8 +3486,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListNamespaceRepositoriesResponse ListNamespaceRepositories(ListNamespaceRepositoriesRequest listNamespaceRepositoriesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listNamespaceRepositoriesRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listNamespaceRepositoriesRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listNamespaceRepositoriesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listNamespaceRepositoriesRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNamespaceRepositoriesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3465,8 +3497,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListNamespaceRepositoriesResponse> ListNamespaceRepositoriesInvoker(ListNamespaceRepositoriesRequest listNamespaceRepositoriesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listNamespaceRepositoriesRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", listNamespaceRepositoriesRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listNamespaceRepositoriesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listNamespaceRepositoriesRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNamespaceRepositoriesRequest);
             return new SyncInvoker<ListNamespaceRepositoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNamespaceRepositoriesResponse>);
@@ -3482,7 +3514,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListNamespaceTagsResponse ListNamespaceTags(ListNamespaceTagsRequest listNamespaceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listNamespaceTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listNamespaceTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces-tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNamespaceTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3492,7 +3524,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListNamespaceTagsResponse> ListNamespaceTagsInvoker(ListNamespaceTagsRequest listNamespaceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listNamespaceTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listNamespaceTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces-tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNamespaceTagsRequest);
             return new SyncInvoker<ListNamespaceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNamespaceTagsResponse>);
@@ -3508,9 +3540,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListSubResourceInstancesResponse ListSubResourceInstances(ListSubResourceInstancesRequest listSubResourceInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listSubResourceInstancesRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listSubResourceInstancesRequest.ResourceId.ToString());
-            urlParam.Add("sub_resource_type", listSubResourceInstancesRequest.SubResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceInstancesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceInstancesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceInstancesRequest.SubResourceType, out var valueOfSubResourceType)) urlParam.Add("sub_resource_type", valueOfSubResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/resource-instances/filter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubResourceInstancesRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -3520,9 +3552,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListSubResourceInstancesResponse> ListSubResourceInstancesInvoker(ListSubResourceInstancesRequest listSubResourceInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listSubResourceInstancesRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listSubResourceInstancesRequest.ResourceId.ToString());
-            urlParam.Add("sub_resource_type", listSubResourceInstancesRequest.SubResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceInstancesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceInstancesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceInstancesRequest.SubResourceType, out var valueOfSubResourceType)) urlParam.Add("sub_resource_type", valueOfSubResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/resource-instances/filter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubResourceInstancesRequest);
             return new SyncInvoker<ListSubResourceInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSubResourceInstancesResponse>);
@@ -3538,10 +3570,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ListSubResourceTagsResponse ListSubResourceTags(ListSubResourceTagsRequest listSubResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listSubResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listSubResourceTagsRequest.ResourceId.ToString());
-            urlParam.Add("sub_resource_type", listSubResourceTagsRequest.SubResourceType.ToString());
-            urlParam.Add("sub_resource_id", listSubResourceTagsRequest.SubResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceTagsRequest.SubResourceType, out var valueOfSubResourceType)) urlParam.Add("sub_resource_type", valueOfSubResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceTagsRequest.SubResourceId, out var valueOfSubResourceId)) urlParam.Add("sub_resource_id", valueOfSubResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubResourceTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3551,10 +3583,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ListSubResourceTagsResponse> ListSubResourceTagsInvoker(ListSubResourceTagsRequest listSubResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listSubResourceTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listSubResourceTagsRequest.ResourceId.ToString());
-            urlParam.Add("sub_resource_type", listSubResourceTagsRequest.SubResourceType.ToString());
-            urlParam.Add("sub_resource_id", listSubResourceTagsRequest.SubResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceTagsRequest.SubResourceType, out var valueOfSubResourceType)) urlParam.Add("sub_resource_type", valueOfSubResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listSubResourceTagsRequest.SubResourceId, out var valueOfSubResourceId)) urlParam.Add("sub_resource_id", valueOfSubResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/{sub_resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubResourceTagsRequest);
             return new SyncInvoker<ListSubResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSubResourceTagsResponse>);
@@ -3570,7 +3602,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceResponse ShowInstance(ShowInstanceRequest showInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3580,26 +3612,26 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceResponse> ShowInstanceInvoker(ShowInstanceRequest showInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             return new SyncInvoker<ShowInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceResponse>);
         }
         
         /// <summary>
-        /// 获取制品详情
+        /// 获取制品版本详情
         ///
-        /// 获取制品详情
+        /// 获取制品版本详情
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowInstanceArtifactResponse ShowInstanceArtifact(ShowInstanceArtifactRequest showInstanceArtifactRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceArtifactRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceArtifactRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", showInstanceArtifactRequest.RepositoryName.ToString());
-            urlParam.Add("reference", showInstanceArtifactRequest.Reference.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceArtifactRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3609,10 +3641,10 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceArtifactResponse> ShowInstanceArtifactInvoker(ShowInstanceArtifactRequest showInstanceArtifactRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceArtifactRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceArtifactRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", showInstanceArtifactRequest.RepositoryName.ToString());
-            urlParam.Add("reference", showInstanceArtifactRequest.Reference.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceArtifactRequest);
             return new SyncInvoker<ShowInstanceArtifactResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceArtifactResponse>);
@@ -3628,11 +3660,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceArtifactAdditionResponse ShowInstanceArtifactAddition(ShowInstanceArtifactAdditionRequest showInstanceArtifactAdditionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceArtifactAdditionRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceArtifactAdditionRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", showInstanceArtifactAdditionRequest.RepositoryName.ToString());
-            urlParam.Add("reference", showInstanceArtifactAdditionRequest.Reference.ToString());
-            urlParam.Add("addition", showInstanceArtifactAdditionRequest.Addition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactAdditionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactAdditionRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactAdditionRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactAdditionRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactAdditionRequest.Addition, out var valueOfAddition)) urlParam.Add("addition", valueOfAddition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/additions/{addition}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceArtifactAdditionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3642,11 +3674,11 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceArtifactAdditionResponse> ShowInstanceArtifactAdditionInvoker(ShowInstanceArtifactAdditionRequest showInstanceArtifactAdditionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceArtifactAdditionRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceArtifactAdditionRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", showInstanceArtifactAdditionRequest.RepositoryName.ToString());
-            urlParam.Add("reference", showInstanceArtifactAdditionRequest.Reference.ToString());
-            urlParam.Add("addition", showInstanceArtifactAdditionRequest.Addition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactAdditionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactAdditionRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactAdditionRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactAdditionRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceArtifactAdditionRequest.Addition, out var valueOfAddition)) urlParam.Add("addition", valueOfAddition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/additions/{addition}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceArtifactAdditionRequest);
             return new SyncInvoker<ShowInstanceArtifactAdditionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceArtifactAdditionResponse>);
@@ -3662,7 +3694,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceConfigurationResponse ShowInstanceConfiguration(ShowInstanceConfigurationRequest showInstanceConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigurationRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3672,7 +3704,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceConfigurationResponse> ShowInstanceConfigurationInvoker(ShowInstanceConfigurationRequest showInstanceConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigurationRequest);
             return new SyncInvoker<ShowInstanceConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceConfigurationResponse>);
@@ -3688,7 +3720,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceEndpointPolicyResponse ShowInstanceEndpointPolicy(ShowInstanceEndpointPolicyRequest showInstanceEndpointPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceEndpointPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceEndpointPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceEndpointPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3698,7 +3730,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceEndpointPolicyResponse> ShowInstanceEndpointPolicyInvoker(ShowInstanceEndpointPolicyRequest showInstanceEndpointPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceEndpointPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceEndpointPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceEndpointPolicyRequest);
             return new SyncInvoker<ShowInstanceEndpointPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceEndpointPolicyResponse>);
@@ -3714,8 +3746,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceInternalEndpointResponse ShowInstanceInternalEndpoint(ShowInstanceInternalEndpointRequest showInstanceInternalEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceInternalEndpointRequest.InstanceId.ToString());
-            urlParam.Add("internal_endpoints_id", showInstanceInternalEndpointRequest.InternalEndpointsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceInternalEndpointRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceInternalEndpointRequest.InternalEndpointsId, out var valueOfInternalEndpointsId)) urlParam.Add("internal_endpoints_id", valueOfInternalEndpointsId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints/{internal_endpoints_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceInternalEndpointRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3725,8 +3757,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceInternalEndpointResponse> ShowInstanceInternalEndpointInvoker(ShowInstanceInternalEndpointRequest showInstanceInternalEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceInternalEndpointRequest.InstanceId.ToString());
-            urlParam.Add("internal_endpoints_id", showInstanceInternalEndpointRequest.InternalEndpointsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceInternalEndpointRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceInternalEndpointRequest.InternalEndpointsId, out var valueOfInternalEndpointsId)) urlParam.Add("internal_endpoints_id", valueOfInternalEndpointsId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/internal-endpoints/{internal_endpoints_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceInternalEndpointRequest);
             return new SyncInvoker<ShowInstanceInternalEndpointResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceInternalEndpointResponse>);
@@ -3742,7 +3774,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceJobResponse ShowInstanceJob(ShowInstanceJobRequest showInstanceJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showInstanceJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceJobRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3752,7 +3784,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceJobResponse> ShowInstanceJobInvoker(ShowInstanceJobRequest showInstanceJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showInstanceJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceJobRequest);
             return new SyncInvoker<ShowInstanceJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceJobResponse>);
@@ -3768,8 +3800,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceNamespaceResponse ShowInstanceNamespace(ShowInstanceNamespaceRequest showInstanceNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceNamespaceRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceNamespaceRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceNamespaceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceNamespaceRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceNamespaceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3779,8 +3811,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceNamespaceResponse> ShowInstanceNamespaceInvoker(ShowInstanceNamespaceRequest showInstanceNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceNamespaceRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceNamespaceRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceNamespaceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceNamespaceRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceNamespaceRequest);
             return new SyncInvoker<ShowInstanceNamespaceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceNamespaceResponse>);
@@ -3796,8 +3828,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceRegistryResponse ShowInstanceRegistry(ShowInstanceRegistryRequest showInstanceRegistryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRegistryRequest.InstanceId.ToString());
-            urlParam.Add("registry_id", showInstanceRegistryRequest.RegistryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRegistryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRegistryRequest.RegistryId, out var valueOfRegistryId)) urlParam.Add("registry_id", valueOfRegistryId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRegistryRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3807,8 +3839,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceRegistryResponse> ShowInstanceRegistryInvoker(ShowInstanceRegistryRequest showInstanceRegistryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRegistryRequest.InstanceId.ToString());
-            urlParam.Add("registry_id", showInstanceRegistryRequest.RegistryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRegistryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRegistryRequest.RegistryId, out var valueOfRegistryId)) urlParam.Add("registry_id", valueOfRegistryId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRegistryRequest);
             return new SyncInvoker<ShowInstanceRegistryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceRegistryResponse>);
@@ -3824,8 +3856,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceReplicationPolicyResponse ShowInstanceReplicationPolicy(ShowInstanceReplicationPolicyRequest showInstanceReplicationPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceReplicationPolicyRequest.InstanceId.ToString());
-            urlParam.Add("policy_id", showInstanceReplicationPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceReplicationPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceReplicationPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceReplicationPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3835,8 +3867,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceReplicationPolicyResponse> ShowInstanceReplicationPolicyInvoker(ShowInstanceReplicationPolicyRequest showInstanceReplicationPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceReplicationPolicyRequest.InstanceId.ToString());
-            urlParam.Add("policy_id", showInstanceReplicationPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceReplicationPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceReplicationPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceReplicationPolicyRequest);
             return new SyncInvoker<ShowInstanceReplicationPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceReplicationPolicyResponse>);
@@ -3852,9 +3884,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceRepositoryResponse ShowInstanceRepository(ShowInstanceRepositoryRequest showInstanceRepositoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRepositoryRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceRepositoryRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", showInstanceRepositoryRequest.RepositoryName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRepositoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRepositoryRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRepositoryRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRepositoryRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3864,9 +3896,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceRepositoryResponse> ShowInstanceRepositoryInvoker(ShowInstanceRepositoryRequest showInstanceRepositoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRepositoryRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceRepositoryRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", showInstanceRepositoryRequest.RepositoryName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRepositoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRepositoryRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRepositoryRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRepositoryRequest);
             return new SyncInvoker<ShowInstanceRepositoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceRepositoryResponse>);
@@ -3882,7 +3914,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceResourceInstancesCountResponse ShowInstanceResourceInstancesCount(ShowInstanceResourceInstancesCountRequest showInstanceResourceInstancesCountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showInstanceResourceInstancesCountRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceResourceInstancesCountRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource-instances/count", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceResourceInstancesCountRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -3892,7 +3924,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceResourceInstancesCountResponse> ShowInstanceResourceInstancesCountInvoker(ShowInstanceResourceInstancesCountRequest showInstanceResourceInstancesCountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showInstanceResourceInstancesCountRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceResourceInstancesCountRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource-instances/count", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceResourceInstancesCountRequest);
             return new SyncInvoker<ShowInstanceResourceInstancesCountResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowInstanceResourceInstancesCountResponse>);
@@ -3908,9 +3940,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceRetentionPolicyResponse ShowInstanceRetentionPolicy(ShowInstanceRetentionPolicyRequest showInstanceRetentionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRetentionPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceRetentionPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", showInstanceRetentionPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRetentionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRetentionPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRetentionPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRetentionPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3920,9 +3952,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceRetentionPolicyResponse> ShowInstanceRetentionPolicyInvoker(ShowInstanceRetentionPolicyRequest showInstanceRetentionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRetentionPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceRetentionPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", showInstanceRetentionPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRetentionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRetentionPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRetentionPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRetentionPolicyRequest);
             return new SyncInvoker<ShowInstanceRetentionPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceRetentionPolicyResponse>);
@@ -3938,9 +3970,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowInstanceSignPolicyResponse ShowInstanceSignPolicy(ShowInstanceSignPolicyRequest showInstanceSignPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceSignPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceSignPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", showInstanceSignPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceSignPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceSignPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceSignPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceSignPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3950,27 +3982,27 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceSignPolicyResponse> ShowInstanceSignPolicyInvoker(ShowInstanceSignPolicyRequest showInstanceSignPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceSignPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceSignPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", showInstanceSignPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceSignPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceSignPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceSignPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceSignPolicyRequest);
             return new SyncInvoker<ShowInstanceSignPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceSignPolicyResponse>);
         }
         
         /// <summary>
-        /// 获取触发器策略详情
+        /// 获取触发器详情
         ///
-        /// 获取触发器策略详情
+        /// 获取触发器详情
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public ShowInstanceWebhookResponse ShowInstanceWebhook(ShowInstanceWebhookRequest showInstanceWebhookRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceWebhookRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceWebhookRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", showInstanceWebhookRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceWebhookRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceWebhookRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceWebhookRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceWebhookRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3980,9 +4012,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowInstanceWebhookResponse> ShowInstanceWebhookInvoker(ShowInstanceWebhookRequest showInstanceWebhookRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceWebhookRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", showInstanceWebhookRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", showInstanceWebhookRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceWebhookRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceWebhookRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceWebhookRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceWebhookRequest);
             return new SyncInvoker<ShowInstanceWebhookResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceWebhookResponse>);
@@ -3998,9 +4030,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public ShowSubResourceInstancesCountResponse ShowSubResourceInstancesCount(ShowSubResourceInstancesCountRequest showSubResourceInstancesCountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showSubResourceInstancesCountRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", showSubResourceInstancesCountRequest.ResourceId.ToString());
-            urlParam.Add("sub_resource_type", showSubResourceInstancesCountRequest.SubResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSubResourceInstancesCountRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(showSubResourceInstancesCountRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(showSubResourceInstancesCountRequest.SubResourceType, out var valueOfSubResourceType)) urlParam.Add("sub_resource_type", valueOfSubResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/resource-instances/count", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubResourceInstancesCountRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4010,9 +4042,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<ShowSubResourceInstancesCountResponse> ShowSubResourceInstancesCountInvoker(ShowSubResourceInstancesCountRequest showSubResourceInstancesCountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showSubResourceInstancesCountRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", showSubResourceInstancesCountRequest.ResourceId.ToString());
-            urlParam.Add("sub_resource_type", showSubResourceInstancesCountRequest.SubResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSubResourceInstancesCountRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(showSubResourceInstancesCountRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(showSubResourceInstancesCountRequest.SubResourceType, out var valueOfSubResourceType)) urlParam.Add("sub_resource_type", valueOfSubResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/resource-instances/count", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubResourceInstancesCountRequest);
             return new SyncInvoker<ShowSubResourceInstancesCountResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowSubResourceInstancesCountResponse>);
@@ -4028,8 +4060,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public StopInstanceReplicationPolicyExecutionResponse StopInstanceReplicationPolicyExecution(StopInstanceReplicationPolicyExecutionRequest stopInstanceReplicationPolicyExecutionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", stopInstanceReplicationPolicyExecutionRequest.InstanceId.ToString());
-            urlParam.Add("execution_id", stopInstanceReplicationPolicyExecutionRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopInstanceReplicationPolicyExecutionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(stopInstanceReplicationPolicyExecutionRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopInstanceReplicationPolicyExecutionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4039,8 +4071,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<StopInstanceReplicationPolicyExecutionResponse> StopInstanceReplicationPolicyExecutionInvoker(StopInstanceReplicationPolicyExecutionRequest stopInstanceReplicationPolicyExecutionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", stopInstanceReplicationPolicyExecutionRequest.InstanceId.ToString());
-            urlParam.Add("execution_id", stopInstanceReplicationPolicyExecutionRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopInstanceReplicationPolicyExecutionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(stopInstanceReplicationPolicyExecutionRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/executions/{execution_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopInstanceReplicationPolicyExecutionRequest);
             return new SyncInvoker<StopInstanceReplicationPolicyExecutionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<StopInstanceReplicationPolicyExecutionResponse>);
@@ -4056,8 +4088,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest updateDomainNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateDomainNameRequest.InstanceId.ToString());
-            urlParam.Add("domainname_id", updateDomainNameRequest.DomainnameId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainNameRequest.DomainnameId, out var valueOfDomainnameId)) urlParam.Add("domainname_id", valueOfDomainnameId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname/{domainname_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainNameRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4067,8 +4099,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateDomainNameResponse> UpdateDomainNameInvoker(UpdateDomainNameRequest updateDomainNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateDomainNameRequest.InstanceId.ToString());
-            urlParam.Add("domainname_id", updateDomainNameRequest.DomainnameId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainNameRequest.DomainnameId, out var valueOfDomainnameId)) urlParam.Add("domainname_id", valueOfDomainnameId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/domainname/{domainname_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainNameRequest);
             return new SyncInvoker<UpdateDomainNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainNameResponse>);
@@ -4084,9 +4116,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateImmutableRuleResponse UpdateImmutableRule(UpdateImmutableRuleRequest updateImmutableRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateImmutableRuleRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateImmutableRuleRequest.NamespaceName.ToString());
-            urlParam.Add("immutable_rule_id", updateImmutableRuleRequest.ImmutableRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateImmutableRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateImmutableRuleRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(updateImmutableRuleRequest.ImmutableRuleId, out var valueOfImmutableRuleId)) urlParam.Add("immutable_rule_id", valueOfImmutableRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules/{immutable_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateImmutableRuleRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4096,9 +4128,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateImmutableRuleResponse> UpdateImmutableRuleInvoker(UpdateImmutableRuleRequest updateImmutableRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateImmutableRuleRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateImmutableRuleRequest.NamespaceName.ToString());
-            urlParam.Add("immutable_rule_id", updateImmutableRuleRequest.ImmutableRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateImmutableRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateImmutableRuleRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(updateImmutableRuleRequest.ImmutableRuleId, out var valueOfImmutableRuleId)) urlParam.Add("immutable_rule_id", valueOfImmutableRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/immutabletagrules/{immutable_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateImmutableRuleRequest);
             return new SyncInvoker<UpdateImmutableRuleResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateImmutableRuleResponse>);
@@ -4114,7 +4146,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateInstanceConfigurationResponse UpdateInstanceConfiguration(UpdateInstanceConfigurationRequest updateInstanceConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4124,7 +4156,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateInstanceConfigurationResponse> UpdateInstanceConfigurationInvoker(UpdateInstanceConfigurationRequest updateInstanceConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceConfigurationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationRequest);
             return new SyncInvoker<UpdateInstanceConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceConfigurationResponse>);
@@ -4133,14 +4165,14 @@ namespace HuaweiCloud.SDK.Swr.V2
         /// <summary>
         /// 更新公网访问白名单
         ///
-        /// 更新公网访问白名单，更新为全量更新方式
+        /// 更新公网访问白名单，更新方式为全量更新方式
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateInstanceEndpointPolicyResponse UpdateInstanceEndpointPolicy(UpdateInstanceEndpointPolicyRequest updateInstanceEndpointPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceEndpointPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceEndpointPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceEndpointPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4150,7 +4182,7 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateInstanceEndpointPolicyResponse> UpdateInstanceEndpointPolicyInvoker(UpdateInstanceEndpointPolicyRequest updateInstanceEndpointPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceEndpointPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceEndpointPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/endpoint-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceEndpointPolicyRequest);
             return new SyncInvoker<UpdateInstanceEndpointPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceEndpointPolicyResponse>);
@@ -4166,8 +4198,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateInstanceLtCredentialResponse UpdateInstanceLtCredential(UpdateInstanceLtCredentialRequest updateInstanceLtCredentialRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceLtCredentialRequest.InstanceId.ToString());
-            urlParam.Add("credential_id", updateInstanceLtCredentialRequest.CredentialId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceLtCredentialRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceLtCredentialRequest.CredentialId, out var valueOfCredentialId)) urlParam.Add("credential_id", valueOfCredentialId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials/{credential_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceLtCredentialRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4177,8 +4209,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateInstanceLtCredentialResponse> UpdateInstanceLtCredentialInvoker(UpdateInstanceLtCredentialRequest updateInstanceLtCredentialRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceLtCredentialRequest.InstanceId.ToString());
-            urlParam.Add("credential_id", updateInstanceLtCredentialRequest.CredentialId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceLtCredentialRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceLtCredentialRequest.CredentialId, out var valueOfCredentialId)) urlParam.Add("credential_id", valueOfCredentialId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/long-term-credentials/{credential_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceLtCredentialRequest);
             return new SyncInvoker<UpdateInstanceLtCredentialResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceLtCredentialResponse>);
@@ -4194,8 +4226,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateInstanceNamespaceResponse UpdateInstanceNamespace(UpdateInstanceNamespaceRequest updateInstanceNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceNamespaceRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateInstanceNamespaceRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceNamespaceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceNamespaceRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceNamespaceRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4205,8 +4237,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateInstanceNamespaceResponse> UpdateInstanceNamespaceInvoker(UpdateInstanceNamespaceRequest updateInstanceNamespaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceNamespaceRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateInstanceNamespaceRequest.NamespaceName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceNamespaceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceNamespaceRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceNamespaceRequest);
             return new SyncInvoker<UpdateInstanceNamespaceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceNamespaceResponse>);
@@ -4222,8 +4254,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateInstanceRegistryResponse UpdateInstanceRegistry(UpdateInstanceRegistryRequest updateInstanceRegistryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRegistryRequest.InstanceId.ToString());
-            urlParam.Add("registry_id", updateInstanceRegistryRequest.RegistryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRegistryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRegistryRequest.RegistryId, out var valueOfRegistryId)) urlParam.Add("registry_id", valueOfRegistryId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRegistryRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4233,8 +4265,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateInstanceRegistryResponse> UpdateInstanceRegistryInvoker(UpdateInstanceRegistryRequest updateInstanceRegistryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRegistryRequest.InstanceId.ToString());
-            urlParam.Add("registry_id", updateInstanceRegistryRequest.RegistryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRegistryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRegistryRequest.RegistryId, out var valueOfRegistryId)) urlParam.Add("registry_id", valueOfRegistryId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/registries/{registry_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRegistryRequest);
             return new SyncInvoker<UpdateInstanceRegistryResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceRegistryResponse>);
@@ -4250,8 +4282,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateInstanceReplicationPolicyResponse UpdateInstanceReplicationPolicy(UpdateInstanceReplicationPolicyRequest updateInstanceReplicationPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceReplicationPolicyRequest.InstanceId.ToString());
-            urlParam.Add("policy_id", updateInstanceReplicationPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceReplicationPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceReplicationPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceReplicationPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4261,8 +4293,8 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateInstanceReplicationPolicyResponse> UpdateInstanceReplicationPolicyInvoker(UpdateInstanceReplicationPolicyRequest updateInstanceReplicationPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceReplicationPolicyRequest.InstanceId.ToString());
-            urlParam.Add("policy_id", updateInstanceReplicationPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceReplicationPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceReplicationPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/replication/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceReplicationPolicyRequest);
             return new SyncInvoker<UpdateInstanceReplicationPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceReplicationPolicyResponse>);
@@ -4278,9 +4310,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateInstanceRepositoryResponse UpdateInstanceRepository(UpdateInstanceRepositoryRequest updateInstanceRepositoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRepositoryRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateInstanceRepositoryRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", updateInstanceRepositoryRequest.RepositoryName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRepositoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRepositoryRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRepositoryRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRepositoryRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4290,9 +4322,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateInstanceRepositoryResponse> UpdateInstanceRepositoryInvoker(UpdateInstanceRepositoryRequest updateInstanceRepositoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRepositoryRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateInstanceRepositoryRequest.NamespaceName.ToString());
-            urlParam.Add("repository_name", updateInstanceRepositoryRequest.RepositoryName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRepositoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRepositoryRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRepositoryRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRepositoryRequest);
             return new SyncInvoker<UpdateInstanceRepositoryResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceRepositoryResponse>);
@@ -4308,9 +4340,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateInstanceRetentionPolicyResponse UpdateInstanceRetentionPolicy(UpdateInstanceRetentionPolicyRequest updateInstanceRetentionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRetentionPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateInstanceRetentionPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", updateInstanceRetentionPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRetentionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRetentionPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRetentionPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRetentionPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4320,9 +4352,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateInstanceRetentionPolicyResponse> UpdateInstanceRetentionPolicyInvoker(UpdateInstanceRetentionPolicyRequest updateInstanceRetentionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRetentionPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateInstanceRetentionPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", updateInstanceRetentionPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRetentionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRetentionPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRetentionPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/retention/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRetentionPolicyRequest);
             return new SyncInvoker<UpdateInstanceRetentionPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceRetentionPolicyResponse>);
@@ -4338,9 +4370,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public UpdateInstanceSignPolicyResponse UpdateInstanceSignPolicy(UpdateInstanceSignPolicyRequest updateInstanceSignPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceSignPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateInstanceSignPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", updateInstanceSignPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceSignPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceSignPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceSignPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceSignPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4350,27 +4382,27 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateInstanceSignPolicyResponse> UpdateInstanceSignPolicyInvoker(UpdateInstanceSignPolicyRequest updateInstanceSignPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceSignPolicyRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateInstanceSignPolicyRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", updateInstanceSignPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceSignPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceSignPolicyRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceSignPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/signature/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceSignPolicyRequest);
             return new SyncInvoker<UpdateInstanceSignPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceSignPolicyResponse>);
         }
         
         /// <summary>
-        /// 修改触发器策略
+        /// 修改触发器
         ///
-        /// 修改触发器策略
+        /// 修改触发器
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public UpdateInstanceWebhookResponse UpdateInstanceWebhook(UpdateInstanceWebhookRequest updateInstanceWebhookRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceWebhookRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateInstanceWebhookRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", updateInstanceWebhookRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceWebhookRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceWebhookRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceWebhookRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceWebhookRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4380,9 +4412,9 @@ namespace HuaweiCloud.SDK.Swr.V2
         public SyncInvoker<UpdateInstanceWebhookResponse> UpdateInstanceWebhookInvoker(UpdateInstanceWebhookRequest updateInstanceWebhookRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceWebhookRequest.InstanceId.ToString());
-            urlParam.Add("namespace_name", updateInstanceWebhookRequest.NamespaceName.ToString());
-            urlParam.Add("policy_id", updateInstanceWebhookRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceWebhookRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceWebhookRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceWebhookRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/webhook/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceWebhookRequest);
             return new SyncInvoker<UpdateInstanceWebhookResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceWebhookResponse>);

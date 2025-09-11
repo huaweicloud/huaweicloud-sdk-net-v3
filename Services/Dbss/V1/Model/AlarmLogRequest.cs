@@ -16,127 +16,6 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class AlarmLogRequest 
     {
         /// <summary>
-        /// 风险级别 - LOW - MEDIUM - HIGH
-        /// </summary>
-        /// <value>风险级别 - LOW - MEDIUM - HIGH</value>
-        [JsonConverter(typeof(EnumClassConverter<RiskEnum>))]
-        public class RiskEnum
-        {
-            /// <summary>
-            /// Enum LOW for value: LOW
-            /// </summary>
-            public static readonly RiskEnum LOW = new RiskEnum("LOW");
-
-            /// <summary>
-            /// Enum MEDIUM for value: MEDIUM
-            /// </summary>
-            public static readonly RiskEnum MEDIUM = new RiskEnum("MEDIUM");
-
-            /// <summary>
-            /// Enum HIGH for value: HIGH
-            /// </summary>
-            public static readonly RiskEnum HIGH = new RiskEnum("HIGH");
-
-            private static readonly Dictionary<string, RiskEnum> StaticFields =
-            new Dictionary<string, RiskEnum>()
-            {
-                { "LOW", LOW },
-                { "MEDIUM", MEDIUM },
-                { "HIGH", HIGH },
-            };
-
-            private string _value;
-
-            public RiskEnum()
-            {
-
-            }
-
-            public RiskEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static RiskEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as RiskEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(RiskEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(RiskEnum a, RiskEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(RiskEnum a, RiskEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 告警确认状态 - DONE: 已确认 - UNDO: 未确认
         /// </summary>
         /// <value>告警确认状态 - DONE: 已确认 - UNDO: 未确认</value>
@@ -259,10 +138,11 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public AlarmLogRequestTime Time { get; set; }
 
         /// <summary>
-        /// 风险级别 - LOW - MEDIUM - HIGH
+        /// 风险级别 - LOW: 低 - MEDIUM：中 - HIGH：高
         /// </summary>
         [JsonProperty("risk", NullValueHandling = NullValueHandling.Ignore)]
-        public RiskEnum Risk { get; set; }
+        public List<string> Risk { get; set; }
+
         /// <summary>
         /// 告警类型 - RISK_RULE: 风险规则 - RISK_CPU: CPU超限 - RISK_MEMORY: 内存超限 - RISK_DISK: 磁盘超限 - RISK_DISK_CAPACITY: 磁盘容量不足六个月 - RISK_BACKUP: 备份失败 - AUDIT_QPS_OVERFLOW: 流量超限入库延迟告警 - RISK_AGENT: Agent异常 - AUDIT_BACKUP_FAILED: 实例备份失败(运维侧)
         /// </summary>
@@ -320,7 +200,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             if (input == null) return false;
             if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
-            if (this.Risk != input.Risk) return false;
+            if (this.Risk != input.Risk || (this.Risk != null && input.Risk != null && !this.Risk.SequenceEqual(input.Risk))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Status != input.Status) return false;
             if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
@@ -338,7 +218,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             {
                 var hashCode = 41;
                 if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
-                hashCode = hashCode * 59 + this.Risk.GetHashCode();
+                if (this.Risk != null) hashCode = hashCode * 59 + this.Risk.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();

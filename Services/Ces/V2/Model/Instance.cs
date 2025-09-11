@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 资源名称匹配参数
+    /// **参数解释** 资源名称匹配参数 **约束限制** 不涉及 
     /// </summary>
     public class Instance 
     {
         /// <summary>
-        /// 逻辑运算符  ALL 所有条件匹配成功  ANY 任意条件匹配成功 
+        /// **参数解释** 逻辑运算符 **约束限制** 不涉及 **取值范围** - ALL: 所有条件匹配成功 - ANY: 任意条件匹配成功 **默认取值** 不涉及 
         /// </summary>
-        /// <value>逻辑运算符  ALL 所有条件匹配成功  ANY 任意条件匹配成功 </value>
+        /// <value>**参数解释** 逻辑运算符 **约束限制** 不涉及 **取值范围** - ALL: 所有条件匹配成功 - ANY: 任意条件匹配成功 **默认取值** 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<LogicalOperatorEnum>))]
         public class LogicalOperatorEnum
         {
@@ -132,18 +132,18 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 云产品名称
+        /// **参数解释** 云产品名称 **约束限制** 不涉及 **取值范围** 长度为[1,16]个字符 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ProductName { get; set; }
 
         /// <summary>
-        /// 逻辑运算符  ALL 所有条件匹配成功  ANY 任意条件匹配成功 
+        /// **参数解释** 逻辑运算符 **约束限制** 不涉及 **取值范围** - ALL: 所有条件匹配成功 - ANY: 任意条件匹配成功 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("logical_operator", NullValueHandling = NullValueHandling.Ignore)]
         public LogicalOperatorEnum LogicalOperator { get; set; }
         /// <summary>
-        /// 资源名称匹配参数数组
+        /// **参数解释** 资源名称匹配参数数组 **约束限制** 不超过10个名称 
         /// </summary>
         [JsonProperty("instance_names", NullValueHandling = NullValueHandling.Ignore)]
         public List<ResourceNameItem> InstanceNames { get; set; }

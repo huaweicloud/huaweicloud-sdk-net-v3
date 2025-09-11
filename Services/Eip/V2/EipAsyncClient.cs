@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<AddPublicipsIntoSharedBandwidthResponse> AddPublicipsIntoSharedBandwidthAsync(AddPublicipsIntoSharedBandwidthRequest addPublicipsIntoSharedBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", addPublicipsIntoSharedBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addPublicipsIntoSharedBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/bandwidths/{bandwidth_id}/insert", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addPublicipsIntoSharedBandwidthRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<AddPublicipsIntoSharedBandwidthResponse> AddPublicipsIntoSharedBandwidthAsyncInvoker(AddPublicipsIntoSharedBandwidthRequest addPublicipsIntoSharedBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", addPublicipsIntoSharedBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addPublicipsIntoSharedBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/bandwidths/{bandwidth_id}/insert", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addPublicipsIntoSharedBandwidthRequest);
             return new AsyncInvoker<AddPublicipsIntoSharedBandwidthResponse>(this, "POST", request, JsonUtils.DeSerialize<AddPublicipsIntoSharedBandwidthResponse>);
@@ -147,7 +147,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<DeleteSharedBandwidthResponse> DeleteSharedBandwidthAsync(DeleteSharedBandwidthRequest deleteSharedBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", deleteSharedBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSharedBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/bandwidths/{bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSharedBandwidthRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -157,7 +157,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<DeleteSharedBandwidthResponse> DeleteSharedBandwidthAsyncInvoker(DeleteSharedBandwidthRequest deleteSharedBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", deleteSharedBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSharedBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/bandwidths/{bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSharedBandwidthRequest);
             return new AsyncInvoker<DeleteSharedBandwidthResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSharedBandwidthResponse>);
@@ -245,7 +245,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<RemovePublicipsFromSharedBandwidthResponse> RemovePublicipsFromSharedBandwidthAsync(RemovePublicipsFromSharedBandwidthRequest removePublicipsFromSharedBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", removePublicipsFromSharedBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removePublicipsFromSharedBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/bandwidths/{bandwidth_id}/remove", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", removePublicipsFromSharedBandwidthRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -255,7 +255,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<RemovePublicipsFromSharedBandwidthResponse> RemovePublicipsFromSharedBandwidthAsyncInvoker(RemovePublicipsFromSharedBandwidthRequest removePublicipsFromSharedBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", removePublicipsFromSharedBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removePublicipsFromSharedBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/bandwidths/{bandwidth_id}/remove", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", removePublicipsFromSharedBandwidthRequest);
             return new AsyncInvoker<RemovePublicipsFromSharedBandwidthResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RemovePublicipsFromSharedBandwidthResponse>);
@@ -271,7 +271,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<ShowBandwidthResponse> ShowBandwidthAsync(ShowBandwidthRequest showBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", showBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/bandwidths/{bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBandwidthRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -281,7 +281,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<ShowBandwidthResponse> ShowBandwidthAsyncInvoker(ShowBandwidthRequest showBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", showBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/bandwidths/{bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBandwidthRequest);
             return new AsyncInvoker<ShowBandwidthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBandwidthResponse>);
@@ -297,7 +297,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<UpdateBandwidthResponse> UpdateBandwidthAsync(UpdateBandwidthRequest updateBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", updateBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/bandwidths/{bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBandwidthRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -307,7 +307,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<UpdateBandwidthResponse> UpdateBandwidthAsyncInvoker(UpdateBandwidthRequest updateBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", updateBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/bandwidths/{bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBandwidthRequest);
             return new AsyncInvoker<UpdateBandwidthResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateBandwidthResponse>);
@@ -323,7 +323,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<UpdatePrePaidBandwidthResponse> UpdatePrePaidBandwidthAsync(UpdatePrePaidBandwidthRequest updatePrePaidBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", updatePrePaidBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrePaidBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/bandwidths/{bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePrePaidBandwidthRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -333,7 +333,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<UpdatePrePaidBandwidthResponse> UpdatePrePaidBandwidthAsyncInvoker(UpdatePrePaidBandwidthRequest updatePrePaidBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("bandwidth_id", updatePrePaidBandwidthRequest.BandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrePaidBandwidthRequest.BandwidthId, out var valueOfBandwidthId)) urlParam.Add("bandwidth_id", valueOfBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/bandwidths/{bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePrePaidBandwidthRequest);
             return new AsyncInvoker<UpdatePrePaidBandwidthResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePrePaidBandwidthResponse>);
@@ -349,7 +349,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<BatchCreatePublicipTagsResponse> BatchCreatePublicipTagsAsync(BatchCreatePublicipTagsRequest batchCreatePublicipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", batchCreatePublicipTagsRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreatePublicipTagsRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreatePublicipTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -359,7 +359,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<BatchCreatePublicipTagsResponse> BatchCreatePublicipTagsAsyncInvoker(BatchCreatePublicipTagsRequest batchCreatePublicipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", batchCreatePublicipTagsRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreatePublicipTagsRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreatePublicipTagsRequest);
             return new AsyncInvoker<BatchCreatePublicipTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreatePublicipTagsResponse>);
@@ -423,7 +423,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<BatchDeletePublicipTagsResponse> BatchDeletePublicipTagsAsync(BatchDeletePublicipTagsRequest batchDeletePublicipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", batchDeletePublicipTagsRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeletePublicipTagsRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeletePublicipTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -433,7 +433,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<BatchDeletePublicipTagsResponse> BatchDeletePublicipTagsAsyncInvoker(BatchDeletePublicipTagsRequest batchDeletePublicipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", batchDeletePublicipTagsRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeletePublicipTagsRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeletePublicipTagsRequest);
             return new AsyncInvoker<BatchDeletePublicipTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeletePublicipTagsResponse>);
@@ -594,7 +594,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<CreatePublicipTagResponse> CreatePublicipTagAsync(CreatePublicipTagRequest createPublicipTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", createPublicipTagRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPublicipTagRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPublicipTagRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -604,7 +604,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<CreatePublicipTagResponse> CreatePublicipTagAsyncInvoker(CreatePublicipTagRequest createPublicipTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", createPublicipTagRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPublicipTagRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createPublicipTagRequest);
             return new AsyncInvoker<CreatePublicipTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreatePublicipTagResponse>);
@@ -620,7 +620,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<DeletePublicipResponse> DeletePublicipAsync(DeletePublicipRequest deletePublicipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", deletePublicipRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePublicipRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/publicips/{publicip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicipRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -630,7 +630,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<DeletePublicipResponse> DeletePublicipAsyncInvoker(DeletePublicipRequest deletePublicipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", deletePublicipRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePublicipRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/publicips/{publicip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicipRequest);
             return new AsyncInvoker<DeletePublicipResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePublicipResponse>);
@@ -646,8 +646,8 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<DeletePublicipTagResponse> DeletePublicipTagAsync(DeletePublicipTagRequest deletePublicipTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", deletePublicipTagRequest.PublicipId.ToString());
-            urlParam.Add("key", deletePublicipTagRequest.Key.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePublicipTagRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
+            if (StringUtils.TryConvertToNonEmptyString(deletePublicipTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicipTagRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -657,8 +657,8 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<DeletePublicipTagResponse> DeletePublicipTagAsyncInvoker(DeletePublicipTagRequest deletePublicipTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", deletePublicipTagRequest.PublicipId.ToString());
-            urlParam.Add("key", deletePublicipTagRequest.Key.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePublicipTagRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
+            if (StringUtils.TryConvertToNonEmptyString(deletePublicipTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicipTagRequest);
             return new AsyncInvoker<DeletePublicipTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePublicipTagResponse>);
@@ -770,7 +770,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<ShowPublicipResponse> ShowPublicipAsync(ShowPublicipRequest showPublicipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", showPublicipRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPublicipRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/publicips/{publicip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicipRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -780,7 +780,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<ShowPublicipResponse> ShowPublicipAsyncInvoker(ShowPublicipRequest showPublicipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", showPublicipRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPublicipRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/publicips/{publicip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicipRequest);
             return new AsyncInvoker<ShowPublicipResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPublicipResponse>);
@@ -796,7 +796,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<ShowPublicipTagsResponse> ShowPublicipTagsAsync(ShowPublicipTagsRequest showPublicipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", showPublicipTagsRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPublicipTagsRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicipTagsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -806,7 +806,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<ShowPublicipTagsResponse> ShowPublicipTagsAsyncInvoker(ShowPublicipTagsRequest showPublicipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", showPublicipTagsRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPublicipTagsRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/{project_id}/publicips/{publicip_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicipTagsRequest);
             return new AsyncInvoker<ShowPublicipTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPublicipTagsResponse>);
@@ -822,7 +822,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<UpdatePublicipResponse> UpdatePublicipAsync(UpdatePublicipRequest updatePublicipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", updatePublicipRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePublicipRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/publicips/{publicip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePublicipRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -832,7 +832,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<UpdatePublicipResponse> UpdatePublicipAsyncInvoker(UpdatePublicipRequest updatePublicipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("publicip_id", updatePublicipRequest.PublicipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePublicipRequest.PublicipId, out var valueOfPublicipId)) urlParam.Add("publicip_id", valueOfPublicipId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/publicips/{publicip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePublicipRequest);
             return new AsyncInvoker<UpdatePublicipResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePublicipResponse>);
@@ -848,7 +848,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<ShowResourcesJobDetailResponse> ShowResourcesJobDetailAsync(ShowResourcesJobDetailRequest showResourcesJobDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showResourcesJobDetailRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourcesJobDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourcesJobDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -858,7 +858,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<ShowResourcesJobDetailResponse> ShowResourcesJobDetailAsyncInvoker(ShowResourcesJobDetailRequest showResourcesJobDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showResourcesJobDetailRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourcesJobDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourcesJobDetailRequest);
             return new AsyncInvoker<ShowResourcesJobDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResourcesJobDetailResponse>);
@@ -898,7 +898,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<NeutronDeleteFloatingIpResponse> NeutronDeleteFloatingIpAsync(NeutronDeleteFloatingIpRequest neutronDeleteFloatingIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floatingip_id", neutronDeleteFloatingIpRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(neutronDeleteFloatingIpRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/floatingips/{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteFloatingIpRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -908,7 +908,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<NeutronDeleteFloatingIpResponse> NeutronDeleteFloatingIpAsyncInvoker(NeutronDeleteFloatingIpRequest neutronDeleteFloatingIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floatingip_id", neutronDeleteFloatingIpRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(neutronDeleteFloatingIpRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/floatingips/{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronDeleteFloatingIpRequest);
             return new AsyncInvoker<NeutronDeleteFloatingIpResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<NeutronDeleteFloatingIpResponse>);
@@ -948,7 +948,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<NeutronShowFloatingIpResponse> NeutronShowFloatingIpAsync(NeutronShowFloatingIpRequest neutronShowFloatingIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floatingip_id", neutronShowFloatingIpRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(neutronShowFloatingIpRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/floatingips/{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowFloatingIpRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -958,7 +958,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<NeutronShowFloatingIpResponse> NeutronShowFloatingIpAsyncInvoker(NeutronShowFloatingIpRequest neutronShowFloatingIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floatingip_id", neutronShowFloatingIpRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(neutronShowFloatingIpRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/floatingips/{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", neutronShowFloatingIpRequest);
             return new AsyncInvoker<NeutronShowFloatingIpResponse>(this, "GET", request, JsonUtils.DeSerialize<NeutronShowFloatingIpResponse>);
@@ -976,7 +976,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public async Task<NeutronUpdateFloatingIpResponse> NeutronUpdateFloatingIpAsync(NeutronUpdateFloatingIpRequest neutronUpdateFloatingIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floatingip_id", neutronUpdateFloatingIpRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(neutronUpdateFloatingIpRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/floatingips/{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateFloatingIpRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -986,7 +986,7 @@ namespace HuaweiCloud.SDK.Eip.V2
         public AsyncInvoker<NeutronUpdateFloatingIpResponse> NeutronUpdateFloatingIpAsyncInvoker(NeutronUpdateFloatingIpRequest neutronUpdateFloatingIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floatingip_id", neutronUpdateFloatingIpRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(neutronUpdateFloatingIpRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/floatingips/{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", neutronUpdateFloatingIpRequest);
             return new AsyncInvoker<NeutronUpdateFloatingIpResponse>(this, "PUT", request, JsonUtils.DeSerialize<NeutronUpdateFloatingIpResponse>);

@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest createGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createGroupRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGroupRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGroupRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<CreateGroupResponse> CreateGroupAsyncInvoker(CreateGroupRequest createGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createGroupRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGroupRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGroupRequest);
             return new AsyncInvoker<CreateGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGroupResponse>);
@@ -51,8 +51,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest deleteGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteGroupRequest.IdentityStoreId.ToString());
-            urlParam.Add("group_id", deleteGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -62,8 +62,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DeleteGroupResponse> DeleteGroupAsyncInvoker(DeleteGroupRequest deleteGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteGroupRequest.IdentityStoreId.ToString());
-            urlParam.Add("group_id", deleteGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupRequest);
             return new AsyncInvoker<DeleteGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGroupResponse>);
@@ -79,8 +79,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DescribeGroupResponse> DescribeGroupAsync(DescribeGroupRequest describeGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describeGroupRequest.IdentityStoreId.ToString());
-            urlParam.Add("group_id", describeGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeGroupRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(describeGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeGroupRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -90,8 +90,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DescribeGroupResponse> DescribeGroupAsyncInvoker(DescribeGroupRequest describeGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describeGroupRequest.IdentityStoreId.ToString());
-            urlParam.Add("group_id", describeGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeGroupRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(describeGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeGroupRequest);
             return new AsyncInvoker<DescribeGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribeGroupResponse>);
@@ -107,7 +107,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DescribeGroupsResponse> DescribeGroupsAsync(DescribeGroupsRequest describeGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describeGroupsRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeGroupsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups/batch-query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeGroupsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DescribeGroupsResponse> DescribeGroupsAsyncInvoker(DescribeGroupsRequest describeGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describeGroupsRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeGroupsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups/batch-query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeGroupsRequest);
             return new AsyncInvoker<DescribeGroupsResponse>(this, "POST", request, JsonUtils.DeSerialize<DescribeGroupsResponse>);
@@ -133,7 +133,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<GetGroupIdResponse> GetGroupIdAsync(GetGroupIdRequest getGroupIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", getGroupIdRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getGroupIdRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups/retrieve-group-id", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getGroupIdRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -143,7 +143,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<GetGroupIdResponse> GetGroupIdAsyncInvoker(GetGroupIdRequest getGroupIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", getGroupIdRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getGroupIdRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups/retrieve-group-id", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getGroupIdRequest);
             return new AsyncInvoker<GetGroupIdResponse>(this, "POST", request, JsonUtils.DeSerialize<GetGroupIdResponse>);
@@ -159,7 +159,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest listGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listGroupsRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGroupsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -169,7 +169,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ListGroupsResponse> ListGroupsAsyncInvoker(ListGroupsRequest listGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listGroupsRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGroupsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupsRequest);
             return new AsyncInvoker<ListGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGroupsResponse>);
@@ -185,8 +185,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest updateGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updateGroupRequest.IdentityStoreId.ToString());
-            urlParam.Add("group_id", updateGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGroupRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(updateGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGroupRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -196,8 +196,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<UpdateGroupResponse> UpdateGroupAsyncInvoker(UpdateGroupRequest updateGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updateGroupRequest.IdentityStoreId.ToString());
-            urlParam.Add("group_id", updateGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGroupRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(updateGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGroupRequest);
             return new AsyncInvoker<UpdateGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateGroupResponse>);
@@ -213,7 +213,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<CreateGroupMembershipResponse> CreateGroupMembershipAsync(CreateGroupMembershipRequest createGroupMembershipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createGroupMembershipRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGroupMembershipRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGroupMembershipRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -223,7 +223,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<CreateGroupMembershipResponse> CreateGroupMembershipAsyncInvoker(CreateGroupMembershipRequest createGroupMembershipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createGroupMembershipRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGroupMembershipRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGroupMembershipRequest);
             return new AsyncInvoker<CreateGroupMembershipResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGroupMembershipResponse>);
@@ -239,8 +239,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DeleteGroupMembershipResponse> DeleteGroupMembershipAsync(DeleteGroupMembershipRequest deleteGroupMembershipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteGroupMembershipRequest.IdentityStoreId.ToString());
-            urlParam.Add("membership_id", deleteGroupMembershipRequest.MembershipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupMembershipRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupMembershipRequest.MembershipId, out var valueOfMembershipId)) urlParam.Add("membership_id", valueOfMembershipId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships/{membership_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupMembershipRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -250,8 +250,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DeleteGroupMembershipResponse> DeleteGroupMembershipAsyncInvoker(DeleteGroupMembershipRequest deleteGroupMembershipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteGroupMembershipRequest.IdentityStoreId.ToString());
-            urlParam.Add("membership_id", deleteGroupMembershipRequest.MembershipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupMembershipRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGroupMembershipRequest.MembershipId, out var valueOfMembershipId)) urlParam.Add("membership_id", valueOfMembershipId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships/{membership_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGroupMembershipRequest);
             return new AsyncInvoker<DeleteGroupMembershipResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGroupMembershipResponse>);
@@ -267,8 +267,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DescribeGroupMembershipResponse> DescribeGroupMembershipAsync(DescribeGroupMembershipRequest describeGroupMembershipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describeGroupMembershipRequest.IdentityStoreId.ToString());
-            urlParam.Add("membership_id", describeGroupMembershipRequest.MembershipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeGroupMembershipRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(describeGroupMembershipRequest.MembershipId, out var valueOfMembershipId)) urlParam.Add("membership_id", valueOfMembershipId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships/{membership_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeGroupMembershipRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -278,8 +278,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DescribeGroupMembershipResponse> DescribeGroupMembershipAsyncInvoker(DescribeGroupMembershipRequest describeGroupMembershipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describeGroupMembershipRequest.IdentityStoreId.ToString());
-            urlParam.Add("membership_id", describeGroupMembershipRequest.MembershipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeGroupMembershipRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(describeGroupMembershipRequest.MembershipId, out var valueOfMembershipId)) urlParam.Add("membership_id", valueOfMembershipId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships/{membership_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeGroupMembershipRequest);
             return new AsyncInvoker<DescribeGroupMembershipResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribeGroupMembershipResponse>);
@@ -295,7 +295,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<GetGroupMembershipIdResponse> GetGroupMembershipIdAsync(GetGroupMembershipIdRequest getGroupMembershipIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", getGroupMembershipIdRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getGroupMembershipIdRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships/retrieve-group-membership-id", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getGroupMembershipIdRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -305,7 +305,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<GetGroupMembershipIdResponse> GetGroupMembershipIdAsyncInvoker(GetGroupMembershipIdRequest getGroupMembershipIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", getGroupMembershipIdRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getGroupMembershipIdRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships/retrieve-group-membership-id", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getGroupMembershipIdRequest);
             return new AsyncInvoker<GetGroupMembershipIdResponse>(this, "POST", request, JsonUtils.DeSerialize<GetGroupMembershipIdResponse>);
@@ -321,7 +321,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<IsMemberInGroupsResponse> IsMemberInGroupsAsync(IsMemberInGroupsRequest isMemberInGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", isMemberInGroupsRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(isMemberInGroupsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/is-member-in-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", isMemberInGroupsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -331,7 +331,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<IsMemberInGroupsResponse> IsMemberInGroupsAsyncInvoker(IsMemberInGroupsRequest isMemberInGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", isMemberInGroupsRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(isMemberInGroupsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/is-member-in-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", isMemberInGroupsRequest);
             return new AsyncInvoker<IsMemberInGroupsResponse>(this, "POST", request, JsonUtils.DeSerialize<IsMemberInGroupsResponse>);
@@ -347,7 +347,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ListGroupMembershipsResponse> ListGroupMembershipsAsync(ListGroupMembershipsRequest listGroupMembershipsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listGroupMembershipsRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGroupMembershipsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupMembershipsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -357,7 +357,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ListGroupMembershipsResponse> ListGroupMembershipsAsyncInvoker(ListGroupMembershipsRequest listGroupMembershipsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listGroupMembershipsRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGroupMembershipsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupMembershipsRequest);
             return new AsyncInvoker<ListGroupMembershipsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGroupMembershipsResponse>);
@@ -373,7 +373,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ListGroupMembershipsForMemberResponse> ListGroupMembershipsForMemberAsync(ListGroupMembershipsForMemberRequest listGroupMembershipsForMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listGroupMembershipsForMemberRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGroupMembershipsForMemberRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships-for-member", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupMembershipsForMemberRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -383,7 +383,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ListGroupMembershipsForMemberResponse> ListGroupMembershipsForMemberAsyncInvoker(ListGroupMembershipsForMemberRequest listGroupMembershipsForMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listGroupMembershipsForMemberRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGroupMembershipsForMemberRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/group-memberships-for-member", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGroupMembershipsForMemberRequest);
             return new AsyncInvoker<ListGroupMembershipsForMemberResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGroupMembershipsForMemberResponse>);
@@ -399,7 +399,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<CreateExternalIdPConfigurationForDirectoryResponse> CreateExternalIdPConfigurationForDirectoryAsync(CreateExternalIdPConfigurationForDirectoryRequest createExternalIdPConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createExternalIdPConfigurationForDirectoryRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createExternalIdPConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExternalIdPConfigurationForDirectoryRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -409,7 +409,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<CreateExternalIdPConfigurationForDirectoryResponse> CreateExternalIdPConfigurationForDirectoryAsyncInvoker(CreateExternalIdPConfigurationForDirectoryRequest createExternalIdPConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createExternalIdPConfigurationForDirectoryRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createExternalIdPConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExternalIdPConfigurationForDirectoryRequest);
             return new AsyncInvoker<CreateExternalIdPConfigurationForDirectoryResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateExternalIdPConfigurationForDirectoryResponse>);
@@ -425,9 +425,9 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DeleteExternalIdPCertificateResponse> DeleteExternalIdPCertificateAsync(DeleteExternalIdPCertificateRequest deleteExternalIdPCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteExternalIdPCertificateRequest.IdentityStoreId.ToString());
-            urlParam.Add("certificate_id", deleteExternalIdPCertificateRequest.CertificateId.ToString());
-            urlParam.Add("idp_id", deleteExternalIdPCertificateRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteExternalIdPCertificateRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteExternalIdPCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteExternalIdPCertificateRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}/certificate/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExternalIdPCertificateRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -437,9 +437,9 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DeleteExternalIdPCertificateResponse> DeleteExternalIdPCertificateAsyncInvoker(DeleteExternalIdPCertificateRequest deleteExternalIdPCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteExternalIdPCertificateRequest.IdentityStoreId.ToString());
-            urlParam.Add("certificate_id", deleteExternalIdPCertificateRequest.CertificateId.ToString());
-            urlParam.Add("idp_id", deleteExternalIdPCertificateRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteExternalIdPCertificateRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteExternalIdPCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteExternalIdPCertificateRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}/certificate/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExternalIdPCertificateRequest);
             return new AsyncInvoker<DeleteExternalIdPCertificateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteExternalIdPCertificateResponse>);
@@ -455,8 +455,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DeleteExternalIdPConfigurationForDirectoryResponse> DeleteExternalIdPConfigurationForDirectoryAsync(DeleteExternalIdPConfigurationForDirectoryRequest deleteExternalIdPConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteExternalIdPConfigurationForDirectoryRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", deleteExternalIdPConfigurationForDirectoryRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteExternalIdPConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteExternalIdPConfigurationForDirectoryRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExternalIdPConfigurationForDirectoryRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -466,8 +466,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DeleteExternalIdPConfigurationForDirectoryResponse> DeleteExternalIdPConfigurationForDirectoryAsyncInvoker(DeleteExternalIdPConfigurationForDirectoryRequest deleteExternalIdPConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteExternalIdPConfigurationForDirectoryRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", deleteExternalIdPConfigurationForDirectoryRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteExternalIdPConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteExternalIdPConfigurationForDirectoryRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExternalIdPConfigurationForDirectoryRequest);
             return new AsyncInvoker<DeleteExternalIdPConfigurationForDirectoryResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteExternalIdPConfigurationForDirectoryResponse>);
@@ -483,8 +483,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DisableExternalIdPConfigurationForDirectoryResponse> DisableExternalIdPConfigurationForDirectoryAsync(DisableExternalIdPConfigurationForDirectoryRequest disableExternalIdPConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", disableExternalIdPConfigurationForDirectoryRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", disableExternalIdPConfigurationForDirectoryRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableExternalIdPConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(disableExternalIdPConfigurationForDirectoryRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableExternalIdPConfigurationForDirectoryRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -494,8 +494,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DisableExternalIdPConfigurationForDirectoryResponse> DisableExternalIdPConfigurationForDirectoryAsyncInvoker(DisableExternalIdPConfigurationForDirectoryRequest disableExternalIdPConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", disableExternalIdPConfigurationForDirectoryRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", disableExternalIdPConfigurationForDirectoryRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableExternalIdPConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(disableExternalIdPConfigurationForDirectoryRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableExternalIdPConfigurationForDirectoryRequest);
             return new AsyncInvoker<DisableExternalIdPConfigurationForDirectoryResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisableExternalIdPConfigurationForDirectoryResponse>);
@@ -511,8 +511,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<EnableExternalIdPConfigurationForDirectoryResponse> EnableExternalIdPConfigurationForDirectoryAsync(EnableExternalIdPConfigurationForDirectoryRequest enableExternalIdPConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", enableExternalIdPConfigurationForDirectoryRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", enableExternalIdPConfigurationForDirectoryRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableExternalIdPConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(enableExternalIdPConfigurationForDirectoryRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}/enable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableExternalIdPConfigurationForDirectoryRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -522,8 +522,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<EnableExternalIdPConfigurationForDirectoryResponse> EnableExternalIdPConfigurationForDirectoryAsyncInvoker(EnableExternalIdPConfigurationForDirectoryRequest enableExternalIdPConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", enableExternalIdPConfigurationForDirectoryRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", enableExternalIdPConfigurationForDirectoryRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableExternalIdPConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(enableExternalIdPConfigurationForDirectoryRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}/enable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableExternalIdPConfigurationForDirectoryRequest);
             return new AsyncInvoker<EnableExternalIdPConfigurationForDirectoryResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableExternalIdPConfigurationForDirectoryResponse>);
@@ -539,8 +539,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ImportExternalIdPCertificateResponse> ImportExternalIdPCertificateAsync(ImportExternalIdPCertificateRequest importExternalIdPCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", importExternalIdPCertificateRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", importExternalIdPCertificateRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(importExternalIdPCertificateRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(importExternalIdPCertificateRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}/certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", importExternalIdPCertificateRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -550,8 +550,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ImportExternalIdPCertificateResponse> ImportExternalIdPCertificateAsyncInvoker(ImportExternalIdPCertificateRequest importExternalIdPCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", importExternalIdPCertificateRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", importExternalIdPCertificateRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(importExternalIdPCertificateRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(importExternalIdPCertificateRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}/certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", importExternalIdPCertificateRequest);
             return new AsyncInvoker<ImportExternalIdPCertificateResponse>(this, "POST", request, JsonUtils.DeSerialize<ImportExternalIdPCertificateResponse>);
@@ -567,8 +567,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ListExternalIdPCertificatesResponse> ListExternalIdPCertificatesAsync(ListExternalIdPCertificatesRequest listExternalIdPCertificatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listExternalIdPCertificatesRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", listExternalIdPCertificatesRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listExternalIdPCertificatesRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(listExternalIdPCertificatesRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}/certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExternalIdPCertificatesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -578,8 +578,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ListExternalIdPCertificatesResponse> ListExternalIdPCertificatesAsyncInvoker(ListExternalIdPCertificatesRequest listExternalIdPCertificatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listExternalIdPCertificatesRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", listExternalIdPCertificatesRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listExternalIdPCertificatesRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(listExternalIdPCertificatesRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}/certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExternalIdPCertificatesRequest);
             return new AsyncInvoker<ListExternalIdPCertificatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListExternalIdPCertificatesResponse>);
@@ -595,7 +595,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ListExternalIdPConfigurationsForDirectoryResponse> ListExternalIdPConfigurationsForDirectoryAsync(ListExternalIdPConfigurationsForDirectoryRequest listExternalIdPConfigurationsForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listExternalIdPConfigurationsForDirectoryRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listExternalIdPConfigurationsForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExternalIdPConfigurationsForDirectoryRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -605,7 +605,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ListExternalIdPConfigurationsForDirectoryResponse> ListExternalIdPConfigurationsForDirectoryAsyncInvoker(ListExternalIdPConfigurationsForDirectoryRequest listExternalIdPConfigurationsForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listExternalIdPConfigurationsForDirectoryRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listExternalIdPConfigurationsForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExternalIdPConfigurationsForDirectoryRequest);
             return new AsyncInvoker<ListExternalIdPConfigurationsForDirectoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ListExternalIdPConfigurationsForDirectoryResponse>);
@@ -621,8 +621,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<UpdateExternalIdPConfigurationForDirectoryResponse> UpdateExternalIdPConfigurationForDirectoryAsync(UpdateExternalIdPConfigurationForDirectoryRequest updateExternalIdPConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updateExternalIdPConfigurationForDirectoryRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", updateExternalIdPConfigurationForDirectoryRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateExternalIdPConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(updateExternalIdPConfigurationForDirectoryRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateExternalIdPConfigurationForDirectoryRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -632,8 +632,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<UpdateExternalIdPConfigurationForDirectoryResponse> UpdateExternalIdPConfigurationForDirectoryAsyncInvoker(UpdateExternalIdPConfigurationForDirectoryRequest updateExternalIdPConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updateExternalIdPConfigurationForDirectoryRequest.IdentityStoreId.ToString());
-            urlParam.Add("idp_id", updateExternalIdPConfigurationForDirectoryRequest.IdpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateExternalIdPConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(updateExternalIdPConfigurationForDirectoryRequest.IdpId, out var valueOfIdpId)) urlParam.Add("idp_id", valueOfIdpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/external-idp/{idp_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateExternalIdPConfigurationForDirectoryRequest);
             return new AsyncInvoker<UpdateExternalIdPConfigurationForDirectoryResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateExternalIdPConfigurationForDirectoryResponse>);
@@ -649,7 +649,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DescribePasswordPolicyResponse> DescribePasswordPolicyAsync(DescribePasswordPolicyRequest describePasswordPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describePasswordPolicyRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describePasswordPolicyRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/password-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describePasswordPolicyRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -659,7 +659,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DescribePasswordPolicyResponse> DescribePasswordPolicyAsyncInvoker(DescribePasswordPolicyRequest describePasswordPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describePasswordPolicyRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describePasswordPolicyRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/password-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describePasswordPolicyRequest);
             return new AsyncInvoker<DescribePasswordPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribePasswordPolicyResponse>);
@@ -675,7 +675,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<UpdatePasswordPolicyResponse> UpdatePasswordPolicyAsync(UpdatePasswordPolicyRequest updatePasswordPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updatePasswordPolicyRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePasswordPolicyRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/password-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePasswordPolicyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -685,7 +685,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<UpdatePasswordPolicyResponse> UpdatePasswordPolicyAsyncInvoker(UpdatePasswordPolicyRequest updatePasswordPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updatePasswordPolicyRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePasswordPolicyRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/password-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePasswordPolicyRequest);
             return new AsyncInvoker<UpdatePasswordPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePasswordPolicyResponse>);
@@ -701,7 +701,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<CreateSpCertificateResponse> CreateSpCertificateAsync(CreateSpCertificateRequest createSpCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createSpCertificateRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createSpCertificateRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/saml-certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSpCertificateRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -711,7 +711,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<CreateSpCertificateResponse> CreateSpCertificateAsyncInvoker(CreateSpCertificateRequest createSpCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createSpCertificateRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createSpCertificateRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/saml-certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSpCertificateRequest);
             return new AsyncInvoker<CreateSpCertificateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSpCertificateResponse>);
@@ -727,8 +727,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DeleteSpCertificateResponse> DeleteSpCertificateAsync(DeleteSpCertificateRequest deleteSpCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteSpCertificateRequest.IdentityStoreId.ToString());
-            urlParam.Add("certificate_id", deleteSpCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSpCertificateRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSpCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/saml-certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSpCertificateRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -738,8 +738,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DeleteSpCertificateResponse> DeleteSpCertificateAsyncInvoker(DeleteSpCertificateRequest deleteSpCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteSpCertificateRequest.IdentityStoreId.ToString());
-            urlParam.Add("certificate_id", deleteSpCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSpCertificateRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSpCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/saml-certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSpCertificateRequest);
             return new AsyncInvoker<DeleteSpCertificateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSpCertificateResponse>);
@@ -755,7 +755,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<GetSpConfigurationForDirectoryResponse> GetSpConfigurationForDirectoryAsync(GetSpConfigurationForDirectoryRequest getSpConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", getSpConfigurationForDirectoryRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getSpConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/sp-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getSpConfigurationForDirectoryRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -765,7 +765,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<GetSpConfigurationForDirectoryResponse> GetSpConfigurationForDirectoryAsyncInvoker(GetSpConfigurationForDirectoryRequest getSpConfigurationForDirectoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", getSpConfigurationForDirectoryRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getSpConfigurationForDirectoryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/sp-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getSpConfigurationForDirectoryRequest);
             return new AsyncInvoker<GetSpConfigurationForDirectoryResponse>(this, "GET", request, JsonUtils.DeSerialize<GetSpConfigurationForDirectoryResponse>);
@@ -781,7 +781,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ListSpCertificatesResponse> ListSpCertificatesAsync(ListSpCertificatesRequest listSpCertificatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listSpCertificatesRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSpCertificatesRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/saml-certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSpCertificatesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -793,7 +793,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ListSpCertificatesResponse> ListSpCertificatesAsyncInvoker(ListSpCertificatesRequest listSpCertificatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listSpCertificatesRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSpCertificatesRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/saml-certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSpCertificatesRequest);
             return new AsyncInvoker<ListSpCertificatesResponse>(this, "GET", request, response =>
@@ -814,8 +814,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<UpdateSpActiveCertificateResponse> UpdateSpActiveCertificateAsync(UpdateSpActiveCertificateRequest updateSpActiveCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updateSpActiveCertificateRequest.IdentityStoreId.ToString());
-            urlParam.Add("certificate_id", updateSpActiveCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSpActiveCertificateRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(updateSpActiveCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/saml-certificates/{certificate_id}/active", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSpActiveCertificateRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -825,8 +825,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<UpdateSpActiveCertificateResponse> UpdateSpActiveCertificateAsyncInvoker(UpdateSpActiveCertificateRequest updateSpActiveCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updateSpActiveCertificateRequest.IdentityStoreId.ToString());
-            urlParam.Add("certificate_id", updateSpActiveCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSpActiveCertificateRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(updateSpActiveCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/saml-certificates/{certificate_id}/active", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSpActiveCertificateRequest);
             return new AsyncInvoker<UpdateSpActiveCertificateResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateSpActiveCertificateResponse>);
@@ -842,7 +842,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<GetIdentityStoreSummaryResponse> GetIdentityStoreSummaryAsync(GetIdentityStoreSummaryRequest getIdentityStoreSummaryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", getIdentityStoreSummaryRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getIdentityStoreSummaryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/identity-store-summary", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getIdentityStoreSummaryRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -852,7 +852,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<GetIdentityStoreSummaryResponse> GetIdentityStoreSummaryAsyncInvoker(GetIdentityStoreSummaryRequest getIdentityStoreSummaryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", getIdentityStoreSummaryRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getIdentityStoreSummaryRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/identity-store-summary", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getIdentityStoreSummaryRequest);
             return new AsyncInvoker<GetIdentityStoreSummaryResponse>(this, "GET", request, JsonUtils.DeSerialize<GetIdentityStoreSummaryResponse>);
@@ -868,8 +868,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<CreateBearerTokenResponse> CreateBearerTokenAsync(CreateBearerTokenRequest createBearerTokenRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createBearerTokenRequest.IdentityStoreId.ToString());
-            urlParam.Add("tenant_id", createBearerTokenRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createBearerTokenRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(createBearerTokenRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/tenant/{tenant_id}/bearer-token", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBearerTokenRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -879,8 +879,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<CreateBearerTokenResponse> CreateBearerTokenAsyncInvoker(CreateBearerTokenRequest createBearerTokenRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createBearerTokenRequest.IdentityStoreId.ToString());
-            urlParam.Add("tenant_id", createBearerTokenRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createBearerTokenRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(createBearerTokenRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/tenant/{tenant_id}/bearer-token", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBearerTokenRequest);
             return new AsyncInvoker<CreateBearerTokenResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateBearerTokenResponse>);
@@ -896,7 +896,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<CreateProvisioningTenantResponse> CreateProvisioningTenantAsync(CreateProvisioningTenantRequest createProvisioningTenantRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createProvisioningTenantRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createProvisioningTenantRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/provision-tenant", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProvisioningTenantRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -906,7 +906,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<CreateProvisioningTenantResponse> CreateProvisioningTenantAsyncInvoker(CreateProvisioningTenantRequest createProvisioningTenantRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createProvisioningTenantRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createProvisioningTenantRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/provision-tenant", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProvisioningTenantRequest);
             return new AsyncInvoker<CreateProvisioningTenantResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateProvisioningTenantResponse>);
@@ -922,9 +922,9 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DeleteBearerTokenResponse> DeleteBearerTokenAsync(DeleteBearerTokenRequest deleteBearerTokenRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteBearerTokenRequest.IdentityStoreId.ToString());
-            urlParam.Add("tenant_id", deleteBearerTokenRequest.TenantId.ToString());
-            urlParam.Add("token_id", deleteBearerTokenRequest.TokenId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBearerTokenRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBearerTokenRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBearerTokenRequest.TokenId, out var valueOfTokenId)) urlParam.Add("token_id", valueOfTokenId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/tenant/{tenant_id}/bearer-token/{token_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBearerTokenRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -934,9 +934,9 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DeleteBearerTokenResponse> DeleteBearerTokenAsyncInvoker(DeleteBearerTokenRequest deleteBearerTokenRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteBearerTokenRequest.IdentityStoreId.ToString());
-            urlParam.Add("tenant_id", deleteBearerTokenRequest.TenantId.ToString());
-            urlParam.Add("token_id", deleteBearerTokenRequest.TokenId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBearerTokenRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBearerTokenRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBearerTokenRequest.TokenId, out var valueOfTokenId)) urlParam.Add("token_id", valueOfTokenId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/tenant/{tenant_id}/bearer-token/{token_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBearerTokenRequest);
             return new AsyncInvoker<DeleteBearerTokenResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBearerTokenResponse>);
@@ -952,8 +952,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DeleteProvisioningTenantResponse> DeleteProvisioningTenantAsync(DeleteProvisioningTenantRequest deleteProvisioningTenantRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteProvisioningTenantRequest.IdentityStoreId.ToString());
-            urlParam.Add("tenant_id", deleteProvisioningTenantRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteProvisioningTenantRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteProvisioningTenantRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/tenant/{tenant_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProvisioningTenantRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -963,8 +963,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DeleteProvisioningTenantResponse> DeleteProvisioningTenantAsyncInvoker(DeleteProvisioningTenantRequest deleteProvisioningTenantRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteProvisioningTenantRequest.IdentityStoreId.ToString());
-            urlParam.Add("tenant_id", deleteProvisioningTenantRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteProvisioningTenantRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteProvisioningTenantRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/tenant/{tenant_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProvisioningTenantRequest);
             return new AsyncInvoker<DeleteProvisioningTenantResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteProvisioningTenantResponse>);
@@ -980,8 +980,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ListBearerTokensResponse> ListBearerTokensAsync(ListBearerTokensRequest listBearerTokensRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listBearerTokensRequest.IdentityStoreId.ToString());
-            urlParam.Add("tenant_id", listBearerTokensRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBearerTokensRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(listBearerTokensRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/tenant/{tenant_id}/bearer-token", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBearerTokensRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -991,8 +991,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ListBearerTokensResponse> ListBearerTokensAsyncInvoker(ListBearerTokensRequest listBearerTokensRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listBearerTokensRequest.IdentityStoreId.ToString());
-            urlParam.Add("tenant_id", listBearerTokensRequest.TenantId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBearerTokensRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(listBearerTokensRequest.TenantId, out var valueOfTenantId)) urlParam.Add("tenant_id", valueOfTenantId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/tenant/{tenant_id}/bearer-token", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBearerTokensRequest);
             return new AsyncInvoker<ListBearerTokensResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBearerTokensResponse>);
@@ -1008,7 +1008,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ListProvisioningTenantsResponse> ListProvisioningTenantsAsync(ListProvisioningTenantsRequest listProvisioningTenantsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listProvisioningTenantsRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listProvisioningTenantsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/provision-tenant", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvisioningTenantsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1018,7 +1018,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ListProvisioningTenantsResponse> ListProvisioningTenantsAsyncInvoker(ListProvisioningTenantsRequest listProvisioningTenantsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listProvisioningTenantsRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listProvisioningTenantsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/provision-tenant", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProvisioningTenantsRequest);
             return new AsyncInvoker<ListProvisioningTenantsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProvisioningTenantsResponse>);
@@ -1034,8 +1034,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<BatchDeleteSessionsResponse> BatchDeleteSessionsAsync(BatchDeleteSessionsRequest batchDeleteSessionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", batchDeleteSessionsRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", batchDeleteSessionsRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteSessionsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteSessionsRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/sessions/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteSessionsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1045,8 +1045,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<BatchDeleteSessionsResponse> BatchDeleteSessionsAsyncInvoker(BatchDeleteSessionsRequest batchDeleteSessionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", batchDeleteSessionsRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", batchDeleteSessionsRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteSessionsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteSessionsRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/sessions/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteSessionsRequest);
             return new AsyncInvoker<BatchDeleteSessionsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteSessionsResponse>);
@@ -1062,7 +1062,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<BatchListMfaDevicesForUserResponse> BatchListMfaDevicesForUserAsync(BatchListMfaDevicesForUserRequest batchListMfaDevicesForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", batchListMfaDevicesForUserRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchListMfaDevicesForUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/retrieve-mfa-devices", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListMfaDevicesForUserRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1072,7 +1072,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<BatchListMfaDevicesForUserResponse> BatchListMfaDevicesForUserAsyncInvoker(BatchListMfaDevicesForUserRequest batchListMfaDevicesForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", batchListMfaDevicesForUserRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchListMfaDevicesForUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/retrieve-mfa-devices", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListMfaDevicesForUserRequest);
             return new AsyncInvoker<BatchListMfaDevicesForUserResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchListMfaDevicesForUserResponse>);
@@ -1088,7 +1088,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<CreateUserResponse> CreateUserAsync(CreateUserRequest createUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createUserRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1098,7 +1098,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<CreateUserResponse> CreateUserAsyncInvoker(CreateUserRequest createUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", createUserRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRequest);
             return new AsyncInvoker<CreateUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUserResponse>);
@@ -1114,9 +1114,9 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DeleteMfaDeviceForUserResponse> DeleteMfaDeviceForUserAsync(DeleteMfaDeviceForUserRequest deleteMfaDeviceForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteMfaDeviceForUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", deleteMfaDeviceForUserRequest.UserId.ToString());
-            urlParam.Add("device_id", deleteMfaDeviceForUserRequest.DeviceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteMfaDeviceForUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteMfaDeviceForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteMfaDeviceForUserRequest.DeviceId, out var valueOfDeviceId)) urlParam.Add("device_id", valueOfDeviceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/mfa-devices/{device_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMfaDeviceForUserRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -1126,9 +1126,9 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DeleteMfaDeviceForUserResponse> DeleteMfaDeviceForUserAsyncInvoker(DeleteMfaDeviceForUserRequest deleteMfaDeviceForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteMfaDeviceForUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", deleteMfaDeviceForUserRequest.UserId.ToString());
-            urlParam.Add("device_id", deleteMfaDeviceForUserRequest.DeviceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteMfaDeviceForUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteMfaDeviceForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteMfaDeviceForUserRequest.DeviceId, out var valueOfDeviceId)) urlParam.Add("device_id", valueOfDeviceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/mfa-devices/{device_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMfaDeviceForUserRequest);
             return new AsyncInvoker<DeleteMfaDeviceForUserResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteMfaDeviceForUserResponse>);
@@ -1144,8 +1144,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest deleteUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", deleteUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -1155,8 +1155,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DeleteUserResponse> DeleteUserAsyncInvoker(DeleteUserRequest deleteUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", deleteUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", deleteUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
             return new AsyncInvoker<DeleteUserResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteUserResponse>);
@@ -1172,8 +1172,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest describeUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describeUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", describeUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(describeUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeUserRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1183,8 +1183,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DescribeUserResponse> DescribeUserAsyncInvoker(DescribeUserRequest describeUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describeUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", describeUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(describeUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeUserRequest);
             return new AsyncInvoker<DescribeUserResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribeUserResponse>);
@@ -1200,7 +1200,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DescribeUsersResponse> DescribeUsersAsync(DescribeUsersRequest describeUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describeUsersRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeUsersRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/batch-query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeUsersRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1210,7 +1210,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DescribeUsersResponse> DescribeUsersAsyncInvoker(DescribeUsersRequest describeUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", describeUsersRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeUsersRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/batch-query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeUsersRequest);
             return new AsyncInvoker<DescribeUsersResponse>(this, "POST", request, JsonUtils.DeSerialize<DescribeUsersResponse>);
@@ -1226,8 +1226,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<DisableUserResponse> DisableUserAsync(DisableUserRequest disableUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", disableUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", disableUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(disableUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableUserRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1237,8 +1237,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<DisableUserResponse> DisableUserAsyncInvoker(DisableUserRequest disableUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", disableUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", disableUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(disableUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableUserRequest);
             return new AsyncInvoker<DisableUserResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisableUserResponse>);
@@ -1254,8 +1254,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<EnableUserResponse> EnableUserAsync(EnableUserRequest enableUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", enableUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", enableUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(enableUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/enable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableUserRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1265,8 +1265,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<EnableUserResponse> EnableUserAsyncInvoker(EnableUserRequest enableUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", enableUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", enableUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(enableUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/enable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableUserRequest);
             return new AsyncInvoker<EnableUserResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableUserResponse>);
@@ -1282,7 +1282,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<GetUserIdResponse> GetUserIdAsync(GetUserIdRequest getUserIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", getUserIdRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getUserIdRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/retrieve-user-id", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getUserIdRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1292,7 +1292,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<GetUserIdResponse> GetUserIdAsyncInvoker(GetUserIdRequest getUserIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", getUserIdRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getUserIdRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/retrieve-user-id", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getUserIdRequest);
             return new AsyncInvoker<GetUserIdResponse>(this, "POST", request, JsonUtils.DeSerialize<GetUserIdResponse>);
@@ -1308,8 +1308,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest listSessionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listSessionsRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", listSessionsRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSessionsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(listSessionsRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/sessions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSessionsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1319,8 +1319,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ListSessionsResponse> ListSessionsAsyncInvoker(ListSessionsRequest listSessionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listSessionsRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", listSessionsRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSessionsRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(listSessionsRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/sessions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSessionsRequest);
             return new AsyncInvoker<ListSessionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSessionsResponse>);
@@ -1336,7 +1336,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ListUsersResponse> ListUsersAsync(ListUsersRequest listUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listUsersRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUsersRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1346,7 +1346,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ListUsersResponse> ListUsersAsyncInvoker(ListUsersRequest listUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", listUsersRequest.IdentityStoreId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUsersRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
             return new AsyncInvoker<ListUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUsersResponse>);
@@ -1362,8 +1362,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<RegisterMfaDeviceForUserResponse> RegisterMfaDeviceForUserAsync(RegisterMfaDeviceForUserRequest registerMfaDeviceForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", registerMfaDeviceForUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", registerMfaDeviceForUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(registerMfaDeviceForUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(registerMfaDeviceForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/mfa-devices/register-mfa-device", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", registerMfaDeviceForUserRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1373,8 +1373,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<RegisterMfaDeviceForUserResponse> RegisterMfaDeviceForUserAsyncInvoker(RegisterMfaDeviceForUserRequest registerMfaDeviceForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", registerMfaDeviceForUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", registerMfaDeviceForUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(registerMfaDeviceForUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(registerMfaDeviceForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/mfa-devices/register-mfa-device", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", registerMfaDeviceForUserRequest);
             return new AsyncInvoker<RegisterMfaDeviceForUserResponse>(this, "POST", request, JsonUtils.DeSerialize<RegisterMfaDeviceForUserResponse>);
@@ -1390,8 +1390,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<ResetPwdModeResponse> ResetPwdModeAsync(ResetPwdModeRequest resetPwdModeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", resetPwdModeRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", resetPwdModeRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetPwdModeRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(resetPwdModeRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/reset-password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPwdModeRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1401,8 +1401,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<ResetPwdModeResponse> ResetPwdModeAsyncInvoker(ResetPwdModeRequest resetPwdModeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", resetPwdModeRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", resetPwdModeRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetPwdModeRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(resetPwdModeRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/reset-password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPwdModeRequest);
             return new AsyncInvoker<ResetPwdModeResponse>(this, "POST", request, JsonUtils.DeSerialize<ResetPwdModeResponse>);
@@ -1418,9 +1418,9 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<UpdateMfaDeviceForUserResponse> UpdateMfaDeviceForUserAsync(UpdateMfaDeviceForUserRequest updateMfaDeviceForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updateMfaDeviceForUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", updateMfaDeviceForUserRequest.UserId.ToString());
-            urlParam.Add("device_id", updateMfaDeviceForUserRequest.DeviceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMfaDeviceForUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(updateMfaDeviceForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            if (StringUtils.TryConvertToNonEmptyString(updateMfaDeviceForUserRequest.DeviceId, out var valueOfDeviceId)) urlParam.Add("device_id", valueOfDeviceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/mfa-devices/{device_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateMfaDeviceForUserRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1430,9 +1430,9 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<UpdateMfaDeviceForUserResponse> UpdateMfaDeviceForUserAsyncInvoker(UpdateMfaDeviceForUserRequest updateMfaDeviceForUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updateMfaDeviceForUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", updateMfaDeviceForUserRequest.UserId.ToString());
-            urlParam.Add("device_id", updateMfaDeviceForUserRequest.DeviceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMfaDeviceForUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(updateMfaDeviceForUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            if (StringUtils.TryConvertToNonEmptyString(updateMfaDeviceForUserRequest.DeviceId, out var valueOfDeviceId)) urlParam.Add("device_id", valueOfDeviceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/mfa-devices/{device_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateMfaDeviceForUserRequest);
             return new AsyncInvoker<UpdateMfaDeviceForUserResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateMfaDeviceForUserResponse>);
@@ -1448,8 +1448,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest updateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updateUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", updateUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1459,8 +1459,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<UpdateUserResponse> UpdateUserAsyncInvoker(UpdateUserRequest updateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", updateUserRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", updateUserRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
             return new AsyncInvoker<UpdateUserResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateUserResponse>);
@@ -1476,8 +1476,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public async Task<VerifyEmailResponse> VerifyEmailAsync(VerifyEmailRequest verifyEmailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", verifyEmailRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", verifyEmailRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(verifyEmailRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(verifyEmailRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/verify-email", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", verifyEmailRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1487,8 +1487,8 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1
         public AsyncInvoker<VerifyEmailResponse> VerifyEmailAsyncInvoker(VerifyEmailRequest verifyEmailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("identity_store_id", verifyEmailRequest.IdentityStoreId.ToString());
-            urlParam.Add("user_id", verifyEmailRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(verifyEmailRequest.IdentityStoreId, out var valueOfIdentityStoreId)) urlParam.Add("identity_store_id", valueOfIdentityStoreId);
+            if (StringUtils.TryConvertToNonEmptyString(verifyEmailRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/identity-stores/{identity_store_id}/users/{user_id}/verify-email", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", verifyEmailRequest);
             return new AsyncInvoker<VerifyEmailResponse>(this, "POST", request, JsonUtils.DeSerializeNull<VerifyEmailResponse>);

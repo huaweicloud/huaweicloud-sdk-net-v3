@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
     {
 
         /// <summary>
-        /// 
+        /// 已授权的访问密钥列表
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowClusterAccessKeyListResponseBodyResult> Result { get; set; }

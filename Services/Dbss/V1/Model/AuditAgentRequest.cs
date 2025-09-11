@@ -16,236 +16,6 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class AuditAgentRequest 
     {
         /// <summary>
-        /// 模式 - 0：创建agent - 1：选择已有agent
-        /// </summary>
-        /// <value>模式 - 0：创建agent - 1：选择已有agent</value>
-        [JsonConverter(typeof(EnumClassConverter<ModeEnum>))]
-        public class ModeEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_0 for value: 0
-            /// </summary>
-            public static readonly ModeEnum NUMBER_0 = new ModeEnum(0);
-
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly ModeEnum NUMBER_1 = new ModeEnum(1);
-
-            private static readonly Dictionary<int?, ModeEnum> StaticFields =
-            new Dictionary<int?, ModeEnum>()
-            {
-                { 0, NUMBER_0 },
-                { 1, NUMBER_1 },
-            };
-
-            private int? _value;
-
-            public ModeEnum()
-            {
-
-            }
-
-            public ModeEnum(int? value)
-            {
-                _value = value;
-            }
-
-            public static ModeEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ModeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ModeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ModeEnum a, ModeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ModeEnum a, ModeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// agent类型 - APP：应用端 - DB：数据库端
-        /// </summary>
-        /// <value>agent类型 - APP：应用端 - DB：数据库端</value>
-        [JsonConverter(typeof(EnumClassConverter<AgentTypeEnum>))]
-        public class AgentTypeEnum
-        {
-            /// <summary>
-            /// Enum APP for value: APP
-            /// </summary>
-            public static readonly AgentTypeEnum APP = new AgentTypeEnum("APP");
-
-            /// <summary>
-            /// Enum DB for value: DB
-            /// </summary>
-            public static readonly AgentTypeEnum DB = new AgentTypeEnum("DB");
-
-            private static readonly Dictionary<string, AgentTypeEnum> StaticFields =
-            new Dictionary<string, AgentTypeEnum>()
-            {
-                { "APP", APP },
-                { "DB", DB },
-            };
-
-            private string _value;
-
-            public AgentTypeEnum()
-            {
-
-            }
-
-            public AgentTypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static AgentTypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as AgentTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(AgentTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(AgentTypeEnum a, AgentTypeEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(AgentTypeEnum a, AgentTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// agent OS类型: - LINUX64_X86 - LINUX64_ARM - WINDOWS64
         /// </summary>
         /// <value>agent OS类型: - LINUX64_X86 - LINUX64_ARM - WINDOWS64</value>
@@ -377,7 +147,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// 模式 - 0：创建agent - 1：选择已有agent
         /// </summary>
         [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
-        public ModeEnum Mode { get; set; }
+        public int? Mode { get; set; }
+
         /// <summary>
         /// 选择已有agent时必输
         /// </summary>
@@ -388,7 +159,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// agent类型 - APP：应用端 - DB：数据库端
         /// </summary>
         [JsonProperty("agent_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AgentTypeEnum AgentType { get; set; }
+        public string AgentType { get; set; }
+
         /// <summary>
         /// agent OS类型: - LINUX64_X86 - LINUX64_ARM - WINDOWS64
         /// </summary>
@@ -455,9 +227,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             if (input == null) return false;
             if (this.DbId != input.DbId || (this.DbId != null && !this.DbId.Equals(input.DbId))) return false;
-            if (this.Mode != input.Mode) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
             if (this.AgentId != input.AgentId || (this.AgentId != null && !this.AgentId.Equals(input.AgentId))) return false;
-            if (this.AgentType != input.AgentType) return false;
+            if (this.AgentType != input.AgentType || (this.AgentType != null && !this.AgentType.Equals(input.AgentType))) return false;
             if (this.AgentOs != input.AgentOs) return false;
             if (this.AgentIp != input.AgentIp || (this.AgentIp != null && !this.AgentIp.Equals(input.AgentIp))) return false;
             if (this.AgentNic != input.AgentNic || (this.AgentNic != null && !this.AgentNic.Equals(input.AgentNic))) return false;
@@ -476,9 +248,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             {
                 var hashCode = 41;
                 if (this.DbId != null) hashCode = hashCode * 59 + this.DbId.GetHashCode();
-                hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.AgentId != null) hashCode = hashCode * 59 + this.AgentId.GetHashCode();
-                hashCode = hashCode * 59 + this.AgentType.GetHashCode();
+                if (this.AgentType != null) hashCode = hashCode * 59 + this.AgentType.GetHashCode();
                 hashCode = hashCode * 59 + this.AgentOs.GetHashCode();
                 if (this.AgentIp != null) hashCode = hashCode * 59 + this.AgentIp.GetHashCode();
                 if (this.AgentNic != null) hashCode = hashCode * 59 + this.AgentNic.GetHashCode();

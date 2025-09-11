@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class WidgetInfoWithId 
     {
         /// <summary>
-        /// 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
+        /// **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 
         /// </summary>
-        /// <value>监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图</value>
+        /// <value>**参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 </value>
         [JsonConverter(typeof(EnumClassConverter<ViewEnum>))]
         public class ViewEnum
         {
@@ -155,9 +155,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         }
 
         /// <summary>
-        /// 指标展示类型，single 单指标展示，multiple 多指标展示
+        /// **参数解释** 指标展示类型 **取值范围** - single:单指标展示 - multiple:多指标展示 
         /// </summary>
-        /// <value>指标展示类型，single 单指标展示，multiple 多指标展示</value>
+        /// <value>**参数解释** 指标展示类型 **取值范围** - single:单指标展示 - multiple:多指标展示 </value>
         [JsonConverter(typeof(EnumClassConverter<MetricDisplayModeEnum>))]
         public class MetricDisplayModeEnum
         {
@@ -271,48 +271,48 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 视图id
+        /// **参数解释** 视图id **取值范围** 字符串必须以wg开头，包含22个字母和数字，长度为24个字符。 
         /// </summary>
         [JsonProperty("widget_id", NullValueHandling = NullValueHandling.Ignore)]
         public string WidgetId { get; set; }
 
         /// <summary>
-        /// 视图分区id
+        /// **参数解释** 视图分组id **取值范围** 字符串必须以dg开头，包含22个字母和数字，长度为24个字符或者为default，default代表不分组 
         /// </summary>
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
         /// <summary>
-        /// 指标列表
+        /// **参数解释** 指标列表 
         /// </summary>
         [JsonProperty("metrics", NullValueHandling = NullValueHandling.Ignore)]
-        public List<WidgetMetric> Metrics { get; set; }
+        public List<WidgetMetricResp> Metrics { get; set; }
 
         /// <summary>
-        /// 监控视图标题
+        /// **参数解释** 监控视图标题 **取值范围** 长度为[1,128]个字符，允许包括以下内容：1、中文汉字；2、拉丁字母；3、英文大小写字母；4、数字(0-9)；5、符号： ” \&quot; ≤ &lt; &gt; &amp; % _ : / ; “ &#39; ? + , ~ ， （ ） º ( ) [ . - 
         /// </summary>
         [JsonProperty("title", NullValueHandling = NullValueHandling.Ignore)]
         public string Title { get; set; }
 
         /// <summary>
-        /// 监控视图指标的阈值
+        /// **参数解释** 监控视图指标的阈值 **取值范围** 最小值为0，最大值为1.7976931348623157e+308 
         /// </summary>
         [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
         public double? Threshold { get; set; }
 
         /// <summary>
-        /// 阈值是否展示，true:展示，false:不展示
+        /// **参数解释** 阈值是否展示 **取值范围** - true:展示 - false:不展示 
         /// </summary>
         [JsonProperty("threshold_enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ThresholdEnabled { get; set; }
 
         /// <summary>
-        /// 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
+        /// **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 
         /// </summary>
         [JsonProperty("view", NullValueHandling = NullValueHandling.Ignore)]
         public ViewEnum View { get; set; }
         /// <summary>
-        /// 指标展示类型，single 单指标展示，multiple 多指标展示
+        /// **参数解释** 指标展示类型 **取值范围** - single:单指标展示 - multiple:多指标展示 
         /// </summary>
         [JsonProperty("metric_display_mode", NullValueHandling = NullValueHandling.Ignore)]
         public MetricDisplayModeEnum MetricDisplayMode { get; set; }
@@ -320,22 +320,22 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("properties", NullValueHandling = NullValueHandling.Ignore)]
-        public BaseWidgetInfoProperties Properties { get; set; }
+        public BaseWidgetInfoRespProperties Properties { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("location", NullValueHandling = NullValueHandling.Ignore)]
-        public UpdateWidgetInfoLocation Location { get; set; }
+        public BaseWidgetInfoRespLocation Location { get; set; }
 
         /// <summary>
-        /// 单位
+        /// **参数解释** 单位 **取值范围** 长度为[0,32]个字符 
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }
 
         /// <summary>
-        /// 监控看板创建时间
+        /// **参数解释** 监控看板创建时间 **取值范围** 最小值为1111111111111，最大值为9999999999999 
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }

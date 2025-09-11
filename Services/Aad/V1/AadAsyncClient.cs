@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<ExecuteUnblockIpResponse> ExecuteUnblockIpAsync(ExecuteUnblockIpRequest executeUnblockIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", executeUnblockIpRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeUnblockIpRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/unblockservice/{domain_id}/unblock", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeUnblockIpRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<ExecuteUnblockIpResponse> ExecuteUnblockIpAsyncInvoker(ExecuteUnblockIpRequest executeUnblockIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", executeUnblockIpRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeUnblockIpRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/unblockservice/{domain_id}/unblock", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeUnblockIpRequest);
             return new AsyncInvoker<ExecuteUnblockIpResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteUnblockIpResponse>);
@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<ListBlockIpsResponse> ListBlockIpsAsync(ListBlockIpsRequest listBlockIpsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listBlockIpsRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBlockIpsRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/unblockservice/{domain_id}/block-list", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBlockIpsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<ListBlockIpsResponse> ListBlockIpsAsyncInvoker(ListBlockIpsRequest listBlockIpsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listBlockIpsRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBlockIpsRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/unblockservice/{domain_id}/block-list", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBlockIpsRequest);
             return new AsyncInvoker<ListBlockIpsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBlockIpsResponse>);
@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<ListUnblockQuotaStatisticsResponse> ListUnblockQuotaStatisticsAsync(ListUnblockQuotaStatisticsRequest listUnblockQuotaStatisticsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listUnblockQuotaStatisticsRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUnblockQuotaStatisticsRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/unblockservice/{domain_id}/unblock-quota-statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUnblockQuotaStatisticsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -87,7 +87,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<ListUnblockQuotaStatisticsResponse> ListUnblockQuotaStatisticsAsyncInvoker(ListUnblockQuotaStatisticsRequest listUnblockQuotaStatisticsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listUnblockQuotaStatisticsRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUnblockQuotaStatisticsRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/unblockservice/{domain_id}/unblock-quota-statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUnblockQuotaStatisticsRequest);
             return new AsyncInvoker<ListUnblockQuotaStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUnblockQuotaStatisticsResponse>);
@@ -103,7 +103,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<ShowBlockStatisticsResponse> ShowBlockStatisticsAsync(ShowBlockStatisticsRequest showBlockStatisticsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showBlockStatisticsRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBlockStatisticsRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/unblockservice/{domain_id}/block-statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBlockStatisticsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -113,7 +113,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<ShowBlockStatisticsResponse> ShowBlockStatisticsAsyncInvoker(ShowBlockStatisticsRequest showBlockStatisticsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showBlockStatisticsRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBlockStatisticsRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/unblockservice/{domain_id}/block-statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBlockStatisticsRequest);
             return new AsyncInvoker<ShowBlockStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBlockStatisticsResponse>);
@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<ShowUnblockRecordResponse> ShowUnblockRecordAsync(ShowUnblockRecordRequest showUnblockRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showUnblockRecordRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUnblockRecordRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/unblockservice/{domain_id}/unblock-record", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUnblockRecordRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -139,7 +139,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<ShowUnblockRecordResponse> ShowUnblockRecordAsyncInvoker(ShowUnblockRecordRequest showUnblockRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showUnblockRecordRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUnblockRecordRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/unblockservice/{domain_id}/unblock-record", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUnblockRecordRequest);
             return new AsyncInvoker<ShowUnblockRecordResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUnblockRecordResponse>);
@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<AddPolicyBlackAndWhiteIpListResponse> AddPolicyBlackAndWhiteIpListAsync(AddPolicyBlackAndWhiteIpListRequest addPolicyBlackAndWhiteIpListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", addPolicyBlackAndWhiteIpListRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addPolicyBlackAndWhiteIpListRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}/ip-list/add", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addPolicyBlackAndWhiteIpListRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -189,7 +189,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<AddPolicyBlackAndWhiteIpListResponse> AddPolicyBlackAndWhiteIpListAsyncInvoker(AddPolicyBlackAndWhiteIpListRequest addPolicyBlackAndWhiteIpListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", addPolicyBlackAndWhiteIpListRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addPolicyBlackAndWhiteIpListRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}/ip-list/add", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addPolicyBlackAndWhiteIpListRequest);
             return new AsyncInvoker<AddPolicyBlackAndWhiteIpListResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddPolicyBlackAndWhiteIpListResponse>);
@@ -205,7 +205,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<AssociateIpToPolicyResponse> AssociateIpToPolicyAsync(AssociateIpToPolicyRequest associateIpToPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", associateIpToPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateIpToPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}/bind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateIpToPolicyRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -215,7 +215,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<AssociateIpToPolicyResponse> AssociateIpToPolicyAsyncInvoker(AssociateIpToPolicyRequest associateIpToPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", associateIpToPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateIpToPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}/bind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateIpToPolicyRequest);
             return new AsyncInvoker<AssociateIpToPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AssociateIpToPolicyResponse>);
@@ -231,7 +231,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<AssociateIpToPolicyAndPackageResponse> AssociateIpToPolicyAndPackageAsync(AssociateIpToPolicyAndPackageRequest associateIpToPolicyAndPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", associateIpToPolicyAndPackageRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateIpToPolicyAndPackageRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/bind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateIpToPolicyAndPackageRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -241,7 +241,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<AssociateIpToPolicyAndPackageResponse> AssociateIpToPolicyAndPackageAsyncInvoker(AssociateIpToPolicyAndPackageRequest associateIpToPolicyAndPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", associateIpToPolicyAndPackageRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateIpToPolicyAndPackageRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/bind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateIpToPolicyAndPackageRequest);
             return new AsyncInvoker<AssociateIpToPolicyAndPackageResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AssociateIpToPolicyAndPackageResponse>);
@@ -257,8 +257,8 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<BatchCreateInstanceIpRuleResponse> BatchCreateInstanceIpRuleAsync(BatchCreateInstanceIpRuleRequest batchCreateInstanceIpRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchCreateInstanceIpRuleRequest.InstanceId.ToString());
-            urlParam.Add("ip", batchCreateInstanceIpRuleRequest.Ip.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateInstanceIpRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateInstanceIpRuleRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/instances/{instance_id}/{ip}/rules/batch-create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateInstanceIpRuleRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -268,8 +268,8 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<BatchCreateInstanceIpRuleResponse> BatchCreateInstanceIpRuleAsyncInvoker(BatchCreateInstanceIpRuleRequest batchCreateInstanceIpRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchCreateInstanceIpRuleRequest.InstanceId.ToString());
-            urlParam.Add("ip", batchCreateInstanceIpRuleRequest.Ip.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateInstanceIpRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateInstanceIpRuleRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/instances/{instance_id}/{ip}/rules/batch-create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateInstanceIpRuleRequest);
             return new AsyncInvoker<BatchCreateInstanceIpRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateInstanceIpRuleResponse>);
@@ -285,8 +285,8 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<BatchDeleteInstanceIpRuleResponse> BatchDeleteInstanceIpRuleAsync(BatchDeleteInstanceIpRuleRequest batchDeleteInstanceIpRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteInstanceIpRuleRequest.InstanceId.ToString());
-            urlParam.Add("ip", batchDeleteInstanceIpRuleRequest.Ip.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceIpRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceIpRuleRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/instances/{instance_id}/{ip}/rules/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceIpRuleRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -296,8 +296,8 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<BatchDeleteInstanceIpRuleResponse> BatchDeleteInstanceIpRuleAsyncInvoker(BatchDeleteInstanceIpRuleRequest batchDeleteInstanceIpRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteInstanceIpRuleRequest.InstanceId.ToString());
-            urlParam.Add("ip", batchDeleteInstanceIpRuleRequest.Ip.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceIpRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceIpRuleRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/instances/{instance_id}/{ip}/rules/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceIpRuleRequest);
             return new AsyncInvoker<BatchDeleteInstanceIpRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteInstanceIpRuleResponse>);
@@ -409,7 +409,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest deletePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", deletePolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePolicyRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -419,7 +419,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<DeletePolicyResponse> DeletePolicyAsyncInvoker(DeletePolicyRequest deletePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", deletePolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePolicyRequest);
             return new AsyncInvoker<DeletePolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePolicyResponse>);
@@ -435,7 +435,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<DeletePolicyBlackAndWhiteIpListResponse> DeletePolicyBlackAndWhiteIpListAsync(DeletePolicyBlackAndWhiteIpListRequest deletePolicyBlackAndWhiteIpListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", deletePolicyBlackAndWhiteIpListRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePolicyBlackAndWhiteIpListRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}/ip-list/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePolicyBlackAndWhiteIpListRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -445,7 +445,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<DeletePolicyBlackAndWhiteIpListResponse> DeletePolicyBlackAndWhiteIpListAsyncInvoker(DeletePolicyBlackAndWhiteIpListRequest deletePolicyBlackAndWhiteIpListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", deletePolicyBlackAndWhiteIpListRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePolicyBlackAndWhiteIpListRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}/ip-list/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePolicyBlackAndWhiteIpListRequest);
             return new AsyncInvoker<DeletePolicyBlackAndWhiteIpListResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeletePolicyBlackAndWhiteIpListResponse>);
@@ -461,7 +461,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<DisassociateIpFromPolicyResponse> DisassociateIpFromPolicyAsync(DisassociateIpFromPolicyRequest disassociateIpFromPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", disassociateIpFromPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateIpFromPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}/unbind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateIpFromPolicyRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -471,7 +471,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<DisassociateIpFromPolicyResponse> DisassociateIpFromPolicyAsyncInvoker(DisassociateIpFromPolicyRequest disassociateIpFromPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", disassociateIpFromPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateIpFromPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}/unbind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateIpFromPolicyRequest);
             return new AsyncInvoker<DisassociateIpFromPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisassociateIpFromPolicyResponse>);
@@ -487,7 +487,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<DisassociateIpFromPolicyAndPackageResponse> DisassociateIpFromPolicyAndPackageAsync(DisassociateIpFromPolicyAndPackageRequest disassociateIpFromPolicyAndPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", disassociateIpFromPolicyAndPackageRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateIpFromPolicyAndPackageRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/unbind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateIpFromPolicyAndPackageRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -497,7 +497,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<DisassociateIpFromPolicyAndPackageResponse> DisassociateIpFromPolicyAndPackageAsyncInvoker(DisassociateIpFromPolicyAndPackageRequest disassociateIpFromPolicyAndPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", disassociateIpFromPolicyAndPackageRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateIpFromPolicyAndPackageRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/cnad/policies/{policy_id}/unbind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateIpFromPolicyAndPackageRequest);
             return new AsyncInvoker<DisassociateIpFromPolicyAndPackageResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisassociateIpFromPolicyAndPackageResponse>);
@@ -561,7 +561,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<ListInstanceIdResponse> ListInstanceIdAsync(ListInstanceIdRequest listInstanceIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listInstanceIdRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceIdRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/protected-domains/{domain_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceIdRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -571,7 +571,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<ListInstanceIdResponse> ListInstanceIdAsyncInvoker(ListInstanceIdRequest listInstanceIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listInstanceIdRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceIdRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/protected-domains/{domain_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceIdRequest);
             return new AsyncInvoker<ListInstanceIdResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceIdResponse>);
@@ -587,8 +587,8 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<ListInstanceIpRuleResponse> ListInstanceIpRuleAsync(ListInstanceIpRuleRequest listInstanceIpRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceIpRuleRequest.InstanceId.ToString());
-            urlParam.Add("ip", listInstanceIpRuleRequest.Ip.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceIpRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceIpRuleRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/instances/{instance_id}/{ip}/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceIpRuleRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -598,8 +598,8 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<ListInstanceIpRuleResponse> ListInstanceIpRuleAsyncInvoker(ListInstanceIpRuleRequest listInstanceIpRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceIpRuleRequest.InstanceId.ToString());
-            urlParam.Add("ip", listInstanceIpRuleRequest.Ip.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceIpRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceIpRuleRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/instances/{instance_id}/{ip}/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceIpRuleRequest);
             return new AsyncInvoker<ListInstanceIpRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceIpRuleResponse>);
@@ -639,8 +639,8 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<ListPeakResponse> ListPeakAsync(ListPeakRequest listPeakRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listPeakRequest.InstanceId.ToString());
-            urlParam.Add("ip", listPeakRequest.Ip.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPeakRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listPeakRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/instances/{instance_id}/{ip}/ddos-statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPeakRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -650,8 +650,8 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<ListPeakResponse> ListPeakAsyncInvoker(ListPeakRequest listPeakRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listPeakRequest.InstanceId.ToString());
-            urlParam.Add("ip", listPeakRequest.Ip.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPeakRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listPeakRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/instances/{instance_id}/{ip}/ddos-statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPeakRequest);
             return new AsyncInvoker<ListPeakResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPeakResponse>);
@@ -739,7 +739,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<ListUnboundProtectedIpResponse> ListUnboundProtectedIpAsync(ListUnboundProtectedIpRequest listUnboundProtectedIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("package_id", listUnboundProtectedIpRequest.PackageId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUnboundProtectedIpRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/packages/{package_id}/unbound-protected-ips", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUnboundProtectedIpRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -749,7 +749,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<ListUnboundProtectedIpResponse> ListUnboundProtectedIpAsyncInvoker(ListUnboundProtectedIpRequest listUnboundProtectedIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("package_id", listUnboundProtectedIpRequest.PackageId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUnboundProtectedIpRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/packages/{package_id}/unbound-protected-ips", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUnboundProtectedIpRequest);
             return new AsyncInvoker<ListUnboundProtectedIpResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUnboundProtectedIpResponse>);
@@ -837,7 +837,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<ShowPolicyResponse> ShowPolicyAsync(ShowPolicyRequest showPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", showPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPolicyRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -847,7 +847,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<ShowPolicyResponse> ShowPolicyAsyncInvoker(ShowPolicyRequest showPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", showPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPolicyRequest);
             return new AsyncInvoker<ShowPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPolicyResponse>);
@@ -887,7 +887,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<UpdateDomainResponse> UpdateDomainAsync(UpdateDomainRequest updateDomainRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/protected-domains/{domain_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -897,7 +897,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<UpdateDomainResponse> UpdateDomainAsyncInvoker(UpdateDomainRequest updateDomainRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateDomainRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/protected-domains/{domain_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainRequest);
             return new AsyncInvoker<UpdateDomainResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDomainResponse>);
@@ -913,9 +913,9 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<UpdateInstanceIpRuleResponse> UpdateInstanceIpRuleAsync(UpdateInstanceIpRuleRequest updateInstanceIpRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceIpRuleRequest.InstanceId.ToString());
-            urlParam.Add("ip", updateInstanceIpRuleRequest.Ip.ToString());
-            urlParam.Add("rule_id", updateInstanceIpRuleRequest.RuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceIpRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceIpRuleRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceIpRuleRequest.RuleId, out var valueOfRuleId)) urlParam.Add("rule_id", valueOfRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/instances/{instance_id}/{ip}/rules/{rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceIpRuleRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -925,9 +925,9 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<UpdateInstanceIpRuleResponse> UpdateInstanceIpRuleAsyncInvoker(UpdateInstanceIpRuleRequest updateInstanceIpRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceIpRuleRequest.InstanceId.ToString());
-            urlParam.Add("ip", updateInstanceIpRuleRequest.Ip.ToString());
-            urlParam.Add("rule_id", updateInstanceIpRuleRequest.RuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceIpRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceIpRuleRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceIpRuleRequest.RuleId, out var valueOfRuleId)) urlParam.Add("rule_id", valueOfRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/instances/{instance_id}/{ip}/rules/{rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceIpRuleRequest);
             return new AsyncInvoker<UpdateInstanceIpRuleResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceIpRuleResponse>);
@@ -943,7 +943,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<UpdatePackageIpResponse> UpdatePackageIpAsync(UpdatePackageIpRequest updatePackageIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("package_id", updatePackageIpRequest.PackageId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePackageIpRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/packages/{package_id}/protected-ips", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePackageIpRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -953,7 +953,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<UpdatePackageIpResponse> UpdatePackageIpAsyncInvoker(UpdatePackageIpRequest updatePackageIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("package_id", updatePackageIpRequest.PackageId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePackageIpRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/packages/{package_id}/protected-ips", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePackageIpRequest);
             return new AsyncInvoker<UpdatePackageIpResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdatePackageIpResponse>);
@@ -969,7 +969,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<UpdatePackageNameResponse> UpdatePackageNameAsync(UpdatePackageNameRequest updatePackageNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("package_id", updatePackageNameRequest.PackageId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePackageNameRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/packages/{package_id}/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePackageNameRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -979,7 +979,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<UpdatePackageNameResponse> UpdatePackageNameAsyncInvoker(UpdatePackageNameRequest updatePackageNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("package_id", updatePackageNameRequest.PackageId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePackageNameRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/packages/{package_id}/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePackageNameRequest);
             return new AsyncInvoker<UpdatePackageNameResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePackageNameResponse>);
@@ -995,7 +995,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public async Task<UpdatePolicyResponse> UpdatePolicyAsync(UpdatePolicyRequest updatePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", updatePolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePolicyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1005,7 +1005,7 @@ namespace HuaweiCloud.SDK.Aad.V1
         public AsyncInvoker<UpdatePolicyResponse> UpdatePolicyAsyncInvoker(UpdatePolicyRequest updatePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", updatePolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/cnad/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePolicyRequest);
             return new AsyncInvoker<UpdatePolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePolicyResponse>);

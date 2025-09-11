@@ -224,7 +224,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<CreateLogStreamResponse> CreateLogStreamAsync(CreateLogStreamRequest createLogStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", createLogStreamRequest.LogGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createLogStreamRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createLogStreamRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -234,7 +234,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<CreateLogStreamResponse> CreateLogStreamAsyncInvoker(CreateLogStreamRequest createLogStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", createLogStreamRequest.LogGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createLogStreamRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createLogStreamRequest);
             return new AsyncInvoker<CreateLogStreamResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateLogStreamResponse>);
@@ -250,8 +250,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<CreateLogStreamIndexResponse> CreateLogStreamIndexAsync(CreateLogStreamIndexRequest createLogStreamIndexRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", createLogStreamIndexRequest.GroupId.ToString());
-            urlParam.Add("stream_id", createLogStreamIndexRequest.StreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createLogStreamIndexRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(createLogStreamIndexRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/stream/{stream_id}/index/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLogStreamIndexRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -261,8 +261,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<CreateLogStreamIndexResponse> CreateLogStreamIndexAsyncInvoker(CreateLogStreamIndexRequest createLogStreamIndexRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", createLogStreamIndexRequest.GroupId.ToString());
-            urlParam.Add("stream_id", createLogStreamIndexRequest.StreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createLogStreamIndexRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(createLogStreamIndexRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/stream/{stream_id}/index/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createLogStreamIndexRequest);
             return new AsyncInvoker<CreateLogStreamIndexResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateLogStreamIndexResponse>);
@@ -278,7 +278,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<CreateNotificationTemplateResponse> CreateNotificationTemplateAsync(CreateNotificationTemplateRequest createNotificationTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", createNotificationTemplateRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createNotificationTemplateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createNotificationTemplateRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -288,7 +288,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<CreateNotificationTemplateResponse> CreateNotificationTemplateAsyncInvoker(CreateNotificationTemplateRequest createNotificationTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", createNotificationTemplateRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createNotificationTemplateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createNotificationTemplateRequest);
             return new AsyncInvoker<CreateNotificationTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateNotificationTemplateResponse>);
@@ -304,8 +304,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<CreateSearchCriteriasResponse> CreateSearchCriteriasAsync(CreateSearchCriteriasRequest createSearchCriteriasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", createSearchCriteriasRequest.GroupId.ToString());
-            urlParam.Add("topic_id", createSearchCriteriasRequest.TopicId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createSearchCriteriasRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(createSearchCriteriasRequest.TopicId, out var valueOfTopicId)) urlParam.Add("topic_id", valueOfTopicId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/topics/{topic_id}/search-criterias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSearchCriteriasRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -315,8 +315,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<CreateSearchCriteriasResponse> CreateSearchCriteriasAsyncInvoker(CreateSearchCriteriasRequest createSearchCriteriasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", createSearchCriteriasRequest.GroupId.ToString());
-            urlParam.Add("topic_id", createSearchCriteriasRequest.TopicId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createSearchCriteriasRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(createSearchCriteriasRequest.TopicId, out var valueOfTopicId)) urlParam.Add("topic_id", valueOfTopicId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/topics/{topic_id}/search-criterias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSearchCriteriasRequest);
             return new AsyncInvoker<CreateSearchCriteriasResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSearchCriteriasResponse>);
@@ -380,8 +380,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest createTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -391,8 +391,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<CreateTagsResponse> CreateTagsAsyncInvoker(CreateTagsRequest createTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTagsRequest);
             return new AsyncInvoker<CreateTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateTagsResponse>);
@@ -480,7 +480,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<DeleteActiveAlarmsResponse> DeleteActiveAlarmsAsync(DeleteActiveAlarmsRequest deleteActiveAlarmsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", deleteActiveAlarmsRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteActiveAlarmsRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/alarms/sql-alarm/clear", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteActiveAlarmsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -490,7 +490,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<DeleteActiveAlarmsResponse> DeleteActiveAlarmsAsyncInvoker(DeleteActiveAlarmsRequest deleteActiveAlarmsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", deleteActiveAlarmsRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteActiveAlarmsRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/alarms/sql-alarm/clear", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteActiveAlarmsRequest);
             return new AsyncInvoker<DeleteActiveAlarmsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteActiveAlarmsResponse>);
@@ -554,7 +554,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<DeleteKeywordsAlarmRuleResponse> DeleteKeywordsAlarmRuleAsync(DeleteKeywordsAlarmRuleRequest deleteKeywordsAlarmRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("keywords_alarm_rule_id", deleteKeywordsAlarmRuleRequest.KeywordsAlarmRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKeywordsAlarmRuleRequest.KeywordsAlarmRuleId, out var valueOfKeywordsAlarmRuleId)) urlParam.Add("keywords_alarm_rule_id", valueOfKeywordsAlarmRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/lts/alarms/keywords-alarm-rule/{keywords_alarm_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeywordsAlarmRuleRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -564,7 +564,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<DeleteKeywordsAlarmRuleResponse> DeleteKeywordsAlarmRuleAsyncInvoker(DeleteKeywordsAlarmRuleRequest deleteKeywordsAlarmRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("keywords_alarm_rule_id", deleteKeywordsAlarmRuleRequest.KeywordsAlarmRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKeywordsAlarmRuleRequest.KeywordsAlarmRuleId, out var valueOfKeywordsAlarmRuleId)) urlParam.Add("keywords_alarm_rule_id", valueOfKeywordsAlarmRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/lts/alarms/keywords-alarm-rule/{keywords_alarm_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKeywordsAlarmRuleRequest);
             return new AsyncInvoker<DeleteKeywordsAlarmRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteKeywordsAlarmRuleResponse>);
@@ -580,7 +580,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<DeleteLogGroupResponse> DeleteLogGroupAsync(DeleteLogGroupRequest deleteLogGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", deleteLogGroupRequest.LogGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLogGroupRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogGroupRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -590,7 +590,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<DeleteLogGroupResponse> DeleteLogGroupAsyncInvoker(DeleteLogGroupRequest deleteLogGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", deleteLogGroupRequest.LogGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLogGroupRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogGroupRequest);
             return new AsyncInvoker<DeleteLogGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLogGroupResponse>);
@@ -606,8 +606,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<DeleteLogStreamResponse> DeleteLogStreamAsync(DeleteLogStreamRequest deleteLogStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", deleteLogStreamRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", deleteLogStreamRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLogStreamRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteLogStreamRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogStreamRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -617,8 +617,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<DeleteLogStreamResponse> DeleteLogStreamAsyncInvoker(DeleteLogStreamRequest deleteLogStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", deleteLogStreamRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", deleteLogStreamRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLogStreamRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteLogStreamRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogStreamRequest);
             return new AsyncInvoker<DeleteLogStreamResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLogStreamResponse>);
@@ -634,7 +634,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<DeleteNotificationTemplateResponse> DeleteNotificationTemplateAsync(DeleteNotificationTemplateRequest deleteNotificationTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", deleteNotificationTemplateRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNotificationTemplateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteNotificationTemplateRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -644,7 +644,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<DeleteNotificationTemplateResponse> DeleteNotificationTemplateAsyncInvoker(DeleteNotificationTemplateRequest deleteNotificationTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", deleteNotificationTemplateRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNotificationTemplateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteNotificationTemplateRequest);
             return new AsyncInvoker<DeleteNotificationTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNotificationTemplateResponse>);
@@ -660,8 +660,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<DeleteSearchCriteriasResponse> DeleteSearchCriteriasAsync(DeleteSearchCriteriasRequest deleteSearchCriteriasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteSearchCriteriasRequest.GroupId.ToString());
-            urlParam.Add("topic_id", deleteSearchCriteriasRequest.TopicId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSearchCriteriasRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSearchCriteriasRequest.TopicId, out var valueOfTopicId)) urlParam.Add("topic_id", valueOfTopicId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/topics/{topic_id}/search-criterias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSearchCriteriasRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -671,8 +671,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<DeleteSearchCriteriasResponse> DeleteSearchCriteriasAsyncInvoker(DeleteSearchCriteriasRequest deleteSearchCriteriasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteSearchCriteriasRequest.GroupId.ToString());
-            urlParam.Add("topic_id", deleteSearchCriteriasRequest.TopicId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSearchCriteriasRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSearchCriteriasRequest.TopicId, out var valueOfTopicId)) urlParam.Add("topic_id", valueOfTopicId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/topics/{topic_id}/search-criterias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSearchCriteriasRequest);
             return new AsyncInvoker<DeleteSearchCriteriasResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSearchCriteriasResponse>);
@@ -736,7 +736,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<DeletefavoriteResponse> DeletefavoriteAsync(DeletefavoriteRequest deletefavoriteRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("fav_res_id", deletefavoriteRequest.FavResId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletefavoriteRequest.FavResId, out var valueOfFavResId)) urlParam.Add("fav_res_id", valueOfFavResId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/lts/favorite/{fav_res_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletefavoriteRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -746,7 +746,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<DeletefavoriteResponse> DeletefavoriteAsyncInvoker(DeletefavoriteRequest deletefavoriteRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("fav_res_id", deletefavoriteRequest.FavResId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletefavoriteRequest.FavResId, out var valueOfFavResId)) urlParam.Add("fav_res_id", valueOfFavResId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/lts/favorite/{fav_res_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletefavoriteRequest);
             return new AsyncInvoker<DeletefavoriteResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletefavoriteResponse>);
@@ -834,7 +834,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListActiveOrHistoryAlarmsResponse> ListActiveOrHistoryAlarmsAsync(ListActiveOrHistoryAlarmsRequest listActiveOrHistoryAlarmsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listActiveOrHistoryAlarmsRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listActiveOrHistoryAlarmsRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/alarms/sql-alarm/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listActiveOrHistoryAlarmsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -844,7 +844,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListActiveOrHistoryAlarmsResponse> ListActiveOrHistoryAlarmsAsyncInvoker(ListActiveOrHistoryAlarmsRequest listActiveOrHistoryAlarmsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listActiveOrHistoryAlarmsRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listActiveOrHistoryAlarmsRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/alarms/sql-alarm/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listActiveOrHistoryAlarmsRequest);
             return new AsyncInvoker<ListActiveOrHistoryAlarmsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListActiveOrHistoryAlarmsResponse>);
@@ -884,8 +884,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListChartsResponse> ListChartsAsync(ListChartsRequest listChartsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", listChartsRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", listChartsRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listChartsRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listChartsRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/charts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listChartsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -895,8 +895,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListChartsResponse> ListChartsAsyncInvoker(ListChartsRequest listChartsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", listChartsRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", listChartsRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listChartsRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listChartsRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/charts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listChartsRequest);
             return new AsyncInvoker<ListChartsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListChartsResponse>);
@@ -912,8 +912,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListCriteriasResponse> ListCriteriasAsync(ListCriteriasRequest listCriteriasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listCriteriasRequest.GroupId.ToString());
-            urlParam.Add("topic_id", listCriteriasRequest.TopicId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCriteriasRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listCriteriasRequest.TopicId, out var valueOfTopicId)) urlParam.Add("topic_id", valueOfTopicId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/topics/{topic_id}/search-criterias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCriteriasRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -923,8 +923,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListCriteriasResponse> ListCriteriasAsyncInvoker(ListCriteriasRequest listCriteriasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listCriteriasRequest.GroupId.ToString());
-            urlParam.Add("topic_id", listCriteriasRequest.TopicId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCriteriasRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listCriteriasRequest.TopicId, out var valueOfTopicId)) urlParam.Add("topic_id", valueOfTopicId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/topics/{topic_id}/search-criterias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCriteriasRequest);
             return new AsyncInvoker<ListCriteriasResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCriteriasResponse>);
@@ -1036,8 +1036,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListLogContextResponse> ListLogContextAsync(ListLogContextRequest listLogContextRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", listLogContextRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", listLogContextRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLogContextRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listLogContextRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/context", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listLogContextRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1047,8 +1047,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListLogContextResponse> ListLogContextAsyncInvoker(ListLogContextRequest listLogContextRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", listLogContextRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", listLogContextRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLogContextRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listLogContextRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/context", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listLogContextRequest);
             return new AsyncInvoker<ListLogContextResponse>(this, "POST", request, JsonUtils.DeSerialize<ListLogContextResponse>);
@@ -1112,7 +1112,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListLogStreamResponse> ListLogStreamAsync(ListLogStreamRequest listLogStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", listLogStreamRequest.LogGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLogStreamRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogStreamRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1122,7 +1122,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListLogStreamResponse> ListLogStreamAsyncInvoker(ListLogStreamRequest listLogStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", listLogStreamRequest.LogGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLogStreamRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogStreamRequest);
             return new AsyncInvoker<ListLogStreamResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLogStreamResponse>);
@@ -1138,8 +1138,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListLogStreamIndexResponse> ListLogStreamIndexAsync(ListLogStreamIndexRequest listLogStreamIndexRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listLogStreamIndexRequest.GroupId.ToString());
-            urlParam.Add("stream_id", listLogStreamIndexRequest.StreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLogStreamIndexRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listLogStreamIndexRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/stream/{stream_id}/index/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogStreamIndexRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1149,8 +1149,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListLogStreamIndexResponse> ListLogStreamIndexAsyncInvoker(ListLogStreamIndexRequest listLogStreamIndexRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listLogStreamIndexRequest.GroupId.ToString());
-            urlParam.Add("stream_id", listLogStreamIndexRequest.StreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLogStreamIndexRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listLogStreamIndexRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/stream/{stream_id}/index/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogStreamIndexRequest);
             return new AsyncInvoker<ListLogStreamIndexResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLogStreamIndexResponse>);
@@ -1190,8 +1190,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListLogsResponse> ListLogsAsync(ListLogsRequest listLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", listLogsRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", listLogsRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLogsRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listLogsRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/content/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1201,8 +1201,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListLogsResponse> ListLogsAsyncInvoker(ListLogsRequest listLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", listLogsRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", listLogsRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLogsRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listLogsRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/content/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLogsRequest);
             return new AsyncInvoker<ListLogsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListLogsResponse>);
@@ -1218,7 +1218,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListNotificationTemplateResponse> ListNotificationTemplateAsync(ListNotificationTemplateRequest listNotificationTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listNotificationTemplateRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listNotificationTemplateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/templates/view", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listNotificationTemplateRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1228,7 +1228,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListNotificationTemplateResponse> ListNotificationTemplateAsyncInvoker(ListNotificationTemplateRequest listNotificationTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listNotificationTemplateRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listNotificationTemplateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/templates/view", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listNotificationTemplateRequest);
             return new AsyncInvoker<ListNotificationTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<ListNotificationTemplateResponse>);
@@ -1244,7 +1244,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListNotificationTemplatesResponse> ListNotificationTemplatesAsync(ListNotificationTemplatesRequest listNotificationTemplatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listNotificationTemplatesRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listNotificationTemplatesRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNotificationTemplatesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1254,7 +1254,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListNotificationTemplatesResponse> ListNotificationTemplatesAsyncInvoker(ListNotificationTemplatesRequest listNotificationTemplatesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", listNotificationTemplatesRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listNotificationTemplatesRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNotificationTemplatesRequest);
             return new AsyncInvoker<ListNotificationTemplatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNotificationTemplatesResponse>);
@@ -1294,7 +1294,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListQueryAllSearchCriteriasResponse> ListQueryAllSearchCriteriasAsync(ListQueryAllSearchCriteriasRequest listQueryAllSearchCriteriasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listQueryAllSearchCriteriasRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listQueryAllSearchCriteriasRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/lts/groups/{group_id}/search-criterias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQueryAllSearchCriteriasRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1304,7 +1304,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListQueryAllSearchCriteriasResponse> ListQueryAllSearchCriteriasAsyncInvoker(ListQueryAllSearchCriteriasRequest listQueryAllSearchCriteriasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listQueryAllSearchCriteriasRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listQueryAllSearchCriteriasRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/lts/groups/{group_id}/search-criterias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQueryAllSearchCriteriasRequest);
             return new AsyncInvoker<ListQueryAllSearchCriteriasResponse>(this, "GET", request, JsonUtils.DeSerialize<ListQueryAllSearchCriteriasResponse>);
@@ -1320,8 +1320,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListQueryStructuredLogsResponse> ListQueryStructuredLogsAsync(ListQueryStructuredLogsRequest listQueryStructuredLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", listQueryStructuredLogsRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", listQueryStructuredLogsRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listQueryStructuredLogsRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listQueryStructuredLogsRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/struct-content/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQueryStructuredLogsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1331,8 +1331,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListQueryStructuredLogsResponse> ListQueryStructuredLogsAsyncInvoker(ListQueryStructuredLogsRequest listQueryStructuredLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", listQueryStructuredLogsRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", listQueryStructuredLogsRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listQueryStructuredLogsRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listQueryStructuredLogsRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/struct-content/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQueryStructuredLogsRequest);
             return new AsyncInvoker<ListQueryStructuredLogsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListQueryStructuredLogsResponse>);
@@ -1372,7 +1372,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListStructuredLogsWithTimeRangeResponse> ListStructuredLogsWithTimeRangeAsync(ListStructuredLogsWithTimeRangeRequest listStructuredLogsWithTimeRangeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_stream_id", listStructuredLogsWithTimeRangeRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStructuredLogsWithTimeRangeRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/streams/{log_stream_id}/struct-content/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStructuredLogsWithTimeRangeRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1382,7 +1382,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListStructuredLogsWithTimeRangeResponse> ListStructuredLogsWithTimeRangeAsyncInvoker(ListStructuredLogsWithTimeRangeRequest listStructuredLogsWithTimeRangeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_stream_id", listStructuredLogsWithTimeRangeRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStructuredLogsWithTimeRangeRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/streams/{log_stream_id}/struct-content/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStructuredLogsWithTimeRangeRequest);
             return new AsyncInvoker<ListStructuredLogsWithTimeRangeResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ListStructuredLogsWithTimeRangeResponse>);
@@ -1518,7 +1518,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ShowLogConvergeConfigResponse> ShowLogConvergeConfigAsync(ShowLogConvergeConfigRequest showLogConvergeConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_account_id", showLogConvergeConfigRequest.MemberAccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLogConvergeConfigRequest.MemberAccountId, out var valueOfMemberAccountId)) urlParam.Add("member_account_id", valueOfMemberAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/log-converge-config/{member_account_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogConvergeConfigRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1528,7 +1528,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ShowLogConvergeConfigResponse> ShowLogConvergeConfigAsyncInvoker(ShowLogConvergeConfigRequest showLogConvergeConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_account_id", showLogConvergeConfigRequest.MemberAccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLogConvergeConfigRequest.MemberAccountId, out var valueOfMemberAccountId)) urlParam.Add("member_account_id", valueOfMemberAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/log-converge-config/{member_account_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogConvergeConfigRequest);
             return new AsyncInvoker<ShowLogConvergeConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLogConvergeConfigResponse>);
@@ -1544,7 +1544,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ShowMemberGroupAndStreamResponse> ShowMemberGroupAndStreamAsync(ShowMemberGroupAndStreamRequest showMemberGroupAndStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_account_id", showMemberGroupAndStreamRequest.MemberAccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMemberGroupAndStreamRequest.MemberAccountId, out var valueOfMemberAccountId)) urlParam.Add("member_account_id", valueOfMemberAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/{member_account_id}/all-streams", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberGroupAndStreamRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1554,7 +1554,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ShowMemberGroupAndStreamResponse> ShowMemberGroupAndStreamAsyncInvoker(ShowMemberGroupAndStreamRequest showMemberGroupAndStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_account_id", showMemberGroupAndStreamRequest.MemberAccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMemberGroupAndStreamRequest.MemberAccountId, out var valueOfMemberAccountId)) urlParam.Add("member_account_id", valueOfMemberAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/lts/{member_account_id}/all-streams", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberGroupAndStreamRequest);
             return new AsyncInvoker<ShowMemberGroupAndStreamResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMemberGroupAndStreamResponse>);
@@ -1570,8 +1570,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ShowNotificationTemplateResponse> ShowNotificationTemplateAsync(ShowNotificationTemplateRequest showNotificationTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showNotificationTemplateRequest.DomainId.ToString());
-            urlParam.Add("template_name", showNotificationTemplateRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNotificationTemplateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(showNotificationTemplateRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/template/{template_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNotificationTemplateRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1581,8 +1581,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ShowNotificationTemplateResponse> ShowNotificationTemplateAsyncInvoker(ShowNotificationTemplateRequest showNotificationTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showNotificationTemplateRequest.DomainId.ToString());
-            urlParam.Add("template_name", showNotificationTemplateRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNotificationTemplateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            if (StringUtils.TryConvertToNonEmptyString(showNotificationTemplateRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/template/{template_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNotificationTemplateRequest);
             return new AsyncInvoker<ShowNotificationTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNotificationTemplateResponse>);
@@ -1718,7 +1718,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<UpdateLogGroupResponse> UpdateLogGroupAsync(UpdateLogGroupRequest updateLogGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", updateLogGroupRequest.LogGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLogGroupRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLogGroupRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1728,7 +1728,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<UpdateLogGroupResponse> UpdateLogGroupAsyncInvoker(UpdateLogGroupRequest updateLogGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", updateLogGroupRequest.LogGroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLogGroupRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLogGroupRequest);
             return new AsyncInvoker<UpdateLogGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateLogGroupResponse>);
@@ -1744,8 +1744,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<UpdateLogStreamResponse> UpdateLogStreamAsync(UpdateLogStreamRequest updateLogStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", updateLogStreamRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", updateLogStreamRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLogStreamRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateLogStreamRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams-ttl/{log_stream_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLogStreamRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1755,8 +1755,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<UpdateLogStreamResponse> UpdateLogStreamAsyncInvoker(UpdateLogStreamRequest updateLogStreamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("log_group_id", updateLogStreamRequest.LogGroupId.ToString());
-            urlParam.Add("log_stream_id", updateLogStreamRequest.LogStreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLogStreamRequest.LogGroupId, out var valueOfLogGroupId)) urlParam.Add("log_group_id", valueOfLogGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateLogStreamRequest.LogStreamId, out var valueOfLogStreamId)) urlParam.Add("log_stream_id", valueOfLogStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/groups/{log_group_id}/streams-ttl/{log_stream_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLogStreamRequest);
             return new AsyncInvoker<UpdateLogStreamResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateLogStreamResponse>);
@@ -1772,7 +1772,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<UpdateNotificationTemplateResponse> UpdateNotificationTemplateAsync(UpdateNotificationTemplateRequest updateNotificationTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateNotificationTemplateRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNotificationTemplateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateNotificationTemplateRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1782,7 +1782,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<UpdateNotificationTemplateResponse> UpdateNotificationTemplateAsyncInvoker(UpdateNotificationTemplateRequest updateNotificationTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", updateNotificationTemplateRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNotificationTemplateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{domain_id}/lts/events/notification/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateNotificationTemplateRequest);
             return new AsyncInvoker<UpdateNotificationTemplateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateNotificationTemplateResponse>);
@@ -1956,7 +1956,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ShowAomMappingRuleResponse> ShowAomMappingRuleAsync(ShowAomMappingRuleRequest showAomMappingRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("rule_id", showAomMappingRuleRequest.RuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAomMappingRuleRequest.RuleId, out var valueOfRuleId)) urlParam.Add("rule_id", valueOfRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/lts/aom-mapping/{rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAomMappingRuleRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1968,7 +1968,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ShowAomMappingRuleResponse> ShowAomMappingRuleAsyncInvoker(ShowAomMappingRuleRequest showAomMappingRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("rule_id", showAomMappingRuleRequest.RuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAomMappingRuleRequest.RuleId, out var valueOfRuleId)) urlParam.Add("rule_id", valueOfRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/lts/aom-mapping/{rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAomMappingRuleRequest);
             return new AsyncInvoker<ShowAomMappingRuleResponse>(this, "GET", request, response =>
@@ -2044,9 +2044,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ConsumerGroupHeartBeatResponse> ConsumerGroupHeartBeatAsync(ConsumerGroupHeartBeatRequest consumerGroupHeartBeatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", consumerGroupHeartBeatRequest.GroupId.ToString());
-            urlParam.Add("stream_id", consumerGroupHeartBeatRequest.StreamId.ToString());
-            urlParam.Add("consumer_group_name", consumerGroupHeartBeatRequest.ConsumerGroupName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(consumerGroupHeartBeatRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(consumerGroupHeartBeatRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(consumerGroupHeartBeatRequest.ConsumerGroupName, out var valueOfConsumerGroupName)) urlParam.Add("consumer_group_name", valueOfConsumerGroupName);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}/heartbeat", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", consumerGroupHeartBeatRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2058,9 +2058,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ConsumerGroupHeartBeatResponse> ConsumerGroupHeartBeatAsyncInvoker(ConsumerGroupHeartBeatRequest consumerGroupHeartBeatRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", consumerGroupHeartBeatRequest.GroupId.ToString());
-            urlParam.Add("stream_id", consumerGroupHeartBeatRequest.StreamId.ToString());
-            urlParam.Add("consumer_group_name", consumerGroupHeartBeatRequest.ConsumerGroupName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(consumerGroupHeartBeatRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(consumerGroupHeartBeatRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(consumerGroupHeartBeatRequest.ConsumerGroupName, out var valueOfConsumerGroupName)) urlParam.Add("consumer_group_name", valueOfConsumerGroupName);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}/heartbeat", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", consumerGroupHeartBeatRequest);
             return new AsyncInvoker<ConsumerGroupHeartBeatResponse>(this, "POST", request, response =>
@@ -2081,8 +2081,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<CreateConsumerGroupResponse> CreateConsumerGroupAsync(CreateConsumerGroupRequest createConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", createConsumerGroupRequest.GroupId.ToString());
-            urlParam.Add("stream_id", createConsumerGroupRequest.StreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createConsumerGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(createConsumerGroupRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createConsumerGroupRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2092,8 +2092,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<CreateConsumerGroupResponse> CreateConsumerGroupAsyncInvoker(CreateConsumerGroupRequest createConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", createConsumerGroupRequest.GroupId.ToString());
-            urlParam.Add("stream_id", createConsumerGroupRequest.StreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createConsumerGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(createConsumerGroupRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createConsumerGroupRequest);
             return new AsyncInvoker<CreateConsumerGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConsumerGroupResponse>);
@@ -2109,9 +2109,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<DeleteConsumerGroupResponse> DeleteConsumerGroupAsync(DeleteConsumerGroupRequest deleteConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteConsumerGroupRequest.GroupId.ToString());
-            urlParam.Add("stream_id", deleteConsumerGroupRequest.StreamId.ToString());
-            urlParam.Add("consumer_group_name", deleteConsumerGroupRequest.ConsumerGroupName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupRequest.ConsumerGroupName, out var valueOfConsumerGroupName)) urlParam.Add("consumer_group_name", valueOfConsumerGroupName);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -2121,9 +2121,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<DeleteConsumerGroupResponse> DeleteConsumerGroupAsyncInvoker(DeleteConsumerGroupRequest deleteConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteConsumerGroupRequest.GroupId.ToString());
-            urlParam.Add("stream_id", deleteConsumerGroupRequest.StreamId.ToString());
-            urlParam.Add("consumer_group_name", deleteConsumerGroupRequest.ConsumerGroupName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupRequest.ConsumerGroupName, out var valueOfConsumerGroupName)) urlParam.Add("consumer_group_name", valueOfConsumerGroupName);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupRequest);
             return new AsyncInvoker<DeleteConsumerGroupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteConsumerGroupResponse>);
@@ -2139,8 +2139,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListConsumerGroupResponse> ListConsumerGroupAsync(ListConsumerGroupRequest listConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listConsumerGroupRequest.GroupId.ToString());
-            urlParam.Add("stream_id", listConsumerGroupRequest.StreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listConsumerGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listConsumerGroupRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumerGroupRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2152,8 +2152,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListConsumerGroupResponse> ListConsumerGroupAsyncInvoker(ListConsumerGroupRequest listConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listConsumerGroupRequest.GroupId.ToString());
-            urlParam.Add("stream_id", listConsumerGroupRequest.StreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listConsumerGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listConsumerGroupRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConsumerGroupRequest);
             return new AsyncInvoker<ListConsumerGroupResponse>(this, "GET", request, response =>
@@ -2174,9 +2174,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ListDetailsConsumerGroupResponse> ListDetailsConsumerGroupAsync(ListDetailsConsumerGroupRequest listDetailsConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listDetailsConsumerGroupRequest.GroupId.ToString());
-            urlParam.Add("stream_id", listDetailsConsumerGroupRequest.StreamId.ToString());
-            urlParam.Add("consumer_group_name", listDetailsConsumerGroupRequest.ConsumerGroupName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDetailsConsumerGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listDetailsConsumerGroupRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(listDetailsConsumerGroupRequest.ConsumerGroupName, out var valueOfConsumerGroupName)) urlParam.Add("consumer_group_name", valueOfConsumerGroupName);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDetailsConsumerGroupRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2188,9 +2188,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ListDetailsConsumerGroupResponse> ListDetailsConsumerGroupAsyncInvoker(ListDetailsConsumerGroupRequest listDetailsConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listDetailsConsumerGroupRequest.GroupId.ToString());
-            urlParam.Add("stream_id", listDetailsConsumerGroupRequest.StreamId.ToString());
-            urlParam.Add("consumer_group_name", listDetailsConsumerGroupRequest.ConsumerGroupName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDetailsConsumerGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(listDetailsConsumerGroupRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(listDetailsConsumerGroupRequest.ConsumerGroupName, out var valueOfConsumerGroupName)) urlParam.Add("consumer_group_name", valueOfConsumerGroupName);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDetailsConsumerGroupRequest);
             return new AsyncInvoker<ListDetailsConsumerGroupResponse>(this, "GET", request, response =>
@@ -2211,9 +2211,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ShowCursorByTimeResponse> ShowCursorByTimeAsync(ShowCursorByTimeRequest showCursorByTimeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showCursorByTimeRequest.GroupId.ToString());
-            urlParam.Add("stream_id", showCursorByTimeRequest.StreamId.ToString());
-            urlParam.Add("shard_id", showCursorByTimeRequest.ShardId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCursorByTimeRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(showCursorByTimeRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(showCursorByTimeRequest.ShardId, out var valueOfShardId)) urlParam.Add("shard_id", valueOfShardId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/cursor", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCursorByTimeRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2223,9 +2223,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ShowCursorByTimeResponse> ShowCursorByTimeAsyncInvoker(ShowCursorByTimeRequest showCursorByTimeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showCursorByTimeRequest.GroupId.ToString());
-            urlParam.Add("stream_id", showCursorByTimeRequest.StreamId.ToString());
-            urlParam.Add("shard_id", showCursorByTimeRequest.ShardId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCursorByTimeRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(showCursorByTimeRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(showCursorByTimeRequest.ShardId, out var valueOfShardId)) urlParam.Add("shard_id", valueOfShardId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/cursor", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCursorByTimeRequest);
             return new AsyncInvoker<ShowCursorByTimeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCursorByTimeResponse>);
@@ -2241,9 +2241,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ShowCursorTimeResponse> ShowCursorTimeAsync(ShowCursorTimeRequest showCursorTimeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showCursorTimeRequest.GroupId.ToString());
-            urlParam.Add("stream_id", showCursorTimeRequest.StreamId.ToString());
-            urlParam.Add("shard_id", showCursorTimeRequest.ShardId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCursorTimeRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(showCursorTimeRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(showCursorTimeRequest.ShardId, out var valueOfShardId)) urlParam.Add("shard_id", valueOfShardId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/time", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCursorTimeRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2253,9 +2253,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ShowCursorTimeResponse> ShowCursorTimeAsyncInvoker(ShowCursorTimeRequest showCursorTimeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showCursorTimeRequest.GroupId.ToString());
-            urlParam.Add("stream_id", showCursorTimeRequest.StreamId.ToString());
-            urlParam.Add("shard_id", showCursorTimeRequest.ShardId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCursorTimeRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(showCursorTimeRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(showCursorTimeRequest.ShardId, out var valueOfShardId)) urlParam.Add("shard_id", valueOfShardId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/time", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCursorTimeRequest);
             return new AsyncInvoker<ShowCursorTimeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCursorTimeResponse>);
@@ -2271,8 +2271,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<ShowLogStreamShardsResponse> ShowLogStreamShardsAsync(ShowLogStreamShardsRequest showLogStreamShardsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showLogStreamShardsRequest.GroupId.ToString());
-            urlParam.Add("stream_id", showLogStreamShardsRequest.StreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLogStreamShardsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(showLogStreamShardsRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogStreamShardsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2282,8 +2282,8 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<ShowLogStreamShardsResponse> ShowLogStreamShardsAsyncInvoker(ShowLogStreamShardsRequest showLogStreamShardsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showLogStreamShardsRequest.GroupId.ToString());
-            urlParam.Add("stream_id", showLogStreamShardsRequest.StreamId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLogStreamShardsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(showLogStreamShardsRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogStreamShardsRequest);
             return new AsyncInvoker<ShowLogStreamShardsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLogStreamShardsResponse>);
@@ -2299,9 +2299,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<UpdateCheckPointResponse> UpdateCheckPointAsync(UpdateCheckPointRequest updateCheckPointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateCheckPointRequest.GroupId.ToString());
-            urlParam.Add("stream_id", updateCheckPointRequest.StreamId.ToString());
-            urlParam.Add("consumer_group_name", updateCheckPointRequest.ConsumerGroupName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCheckPointRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateCheckPointRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(updateCheckPointRequest.ConsumerGroupName, out var valueOfConsumerGroupName)) urlParam.Add("consumer_group_name", valueOfConsumerGroupName);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCheckPointRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2311,9 +2311,9 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<UpdateCheckPointResponse> UpdateCheckPointAsyncInvoker(UpdateCheckPointRequest updateCheckPointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateCheckPointRequest.GroupId.ToString());
-            urlParam.Add("stream_id", updateCheckPointRequest.StreamId.ToString());
-            urlParam.Add("consumer_group_name", updateCheckPointRequest.ConsumerGroupName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCheckPointRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateCheckPointRequest.StreamId, out var valueOfStreamId)) urlParam.Add("stream_id", valueOfStreamId);
+            if (StringUtils.TryConvertToNonEmptyString(updateCheckPointRequest.ConsumerGroupName, out var valueOfConsumerGroupName)) urlParam.Add("consumer_group_name", valueOfConsumerGroupName);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCheckPointRequest);
             return new AsyncInvoker<UpdateCheckPointResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateCheckPointResponse>);
@@ -2353,7 +2353,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public async Task<DeleteSqlAlarmRuleResponse> DeleteSqlAlarmRuleAsync(DeleteSqlAlarmRuleRequest deleteSqlAlarmRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sql_alarm_rule_id", deleteSqlAlarmRuleRequest.SqlAlarmRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSqlAlarmRuleRequest.SqlAlarmRuleId, out var valueOfSqlAlarmRuleId)) urlParam.Add("sql_alarm_rule_id", valueOfSqlAlarmRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/lts/alarms/sql-alarm-rule/{sql_alarm_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlAlarmRuleRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -2363,7 +2363,7 @@ namespace HuaweiCloud.SDK.Lts.V2
         public AsyncInvoker<DeleteSqlAlarmRuleResponse> DeleteSqlAlarmRuleAsyncInvoker(DeleteSqlAlarmRuleRequest deleteSqlAlarmRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sql_alarm_rule_id", deleteSqlAlarmRuleRequest.SqlAlarmRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSqlAlarmRuleRequest.SqlAlarmRuleId, out var valueOfSqlAlarmRuleId)) urlParam.Add("sql_alarm_rule_id", valueOfSqlAlarmRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/lts/alarms/sql-alarm-rule/{sql_alarm_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSqlAlarmRuleRequest);
             return new AsyncInvoker<DeleteSqlAlarmRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSqlAlarmRuleResponse>);

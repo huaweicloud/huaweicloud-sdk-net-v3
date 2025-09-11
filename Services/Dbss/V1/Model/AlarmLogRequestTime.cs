@@ -28,45 +28,45 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             public static readonly TimeRangeEnum HALF_HOUR = new TimeRangeEnum("HALF_HOUR");
 
             /// <summary>
-            /// Enum _HOUR for value:  HOUR
+            /// Enum HOUR for value: HOUR
             /// </summary>
-            public static readonly TimeRangeEnum _HOUR = new TimeRangeEnum(" HOUR");
+            public static readonly TimeRangeEnum HOUR = new TimeRangeEnum("HOUR");
 
             /// <summary>
-            /// Enum _THREE_HOUR for value:  THREE_HOUR
+            /// Enum THREE_HOUR for value: THREE_HOUR
             /// </summary>
-            public static readonly TimeRangeEnum _THREE_HOUR = new TimeRangeEnum(" THREE_HOUR");
+            public static readonly TimeRangeEnum THREE_HOUR = new TimeRangeEnum("THREE_HOUR");
 
             /// <summary>
-            /// Enum _TWELVE_HOUR for value:  TWELVE_HOUR
+            /// Enum TWELVE_HOUR for value: TWELVE_HOUR
             /// </summary>
-            public static readonly TimeRangeEnum _TWELVE_HOUR = new TimeRangeEnum(" TWELVE_HOUR");
+            public static readonly TimeRangeEnum TWELVE_HOUR = new TimeRangeEnum("TWELVE_HOUR");
 
             /// <summary>
-            /// Enum _DAY for value:  DAY
+            /// Enum DAY for value: DAY
             /// </summary>
-            public static readonly TimeRangeEnum _DAY = new TimeRangeEnum(" DAY");
+            public static readonly TimeRangeEnum DAY = new TimeRangeEnum("DAY");
 
             /// <summary>
-            /// Enum _WEEK for value:  WEEK
+            /// Enum WEEK for value: WEEK
             /// </summary>
-            public static readonly TimeRangeEnum _WEEK = new TimeRangeEnum(" WEEK");
+            public static readonly TimeRangeEnum WEEK = new TimeRangeEnum("WEEK");
 
             /// <summary>
-            /// Enum _MONTH_ for value:  MONTH;
+            /// Enum MONTH for value: MONTH
             /// </summary>
-            public static readonly TimeRangeEnum _MONTH_ = new TimeRangeEnum(" MONTH;");
+            public static readonly TimeRangeEnum MONTH = new TimeRangeEnum("MONTH");
 
             private static readonly Dictionary<string, TimeRangeEnum> StaticFields =
             new Dictionary<string, TimeRangeEnum>()
             {
                 { "HALF_HOUR", HALF_HOUR },
-                { " HOUR", _HOUR },
-                { " THREE_HOUR", _THREE_HOUR },
-                { " TWELVE_HOUR", _TWELVE_HOUR },
-                { " DAY", _DAY },
-                { " WEEK", _WEEK },
-                { " MONTH;", _MONTH_ },
+                { "HOUR", HOUR },
+                { "THREE_HOUR", THREE_HOUR },
+                { "TWELVE_HOUR", TWELVE_HOUR },
+                { "DAY", DAY },
+                { "WEEK", WEEK },
+                { "MONTH", MONTH },
             };
 
             private string _value;

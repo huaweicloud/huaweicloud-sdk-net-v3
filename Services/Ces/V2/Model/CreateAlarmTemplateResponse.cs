@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 告警模板的ID，以at开头，后跟字母、数字，长度最长为64
+        /// **参数解释**： 告警模板的ID。     **约束限制**： 不涉及。 **取值范围**： 以at开头，后跟字母、数字，长度为[2,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("overwrite_result", NullValueHandling = NullValueHandling.Ignore)]
+        public OverwriteResultResp OverwriteResult { get; set; }
 
 
 
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateAlarmTemplateResponse {\n");
             sb.Append("  templateId: ").Append(TemplateId).Append("\n");
+            sb.Append("  overwriteResult: ").Append(OverwriteResult).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             if (input == null) return false;
             if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.OverwriteResult != input.OverwriteResult || (this.OverwriteResult != null && !this.OverwriteResult.Equals(input.OverwriteResult))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             {
                 var hashCode = 41;
                 if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.OverwriteResult != null) hashCode = hashCode * 59 + this.OverwriteResult.GetHashCode();
                 return hashCode;
             }
         }

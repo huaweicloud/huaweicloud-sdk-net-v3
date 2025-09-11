@@ -38,13 +38,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// 可以升级的热补丁信息。
         /// </summary>
         [JsonProperty("hotfix_upgrade_infos", NullValueHandling = NullValueHandling.Ignore)]
-        public List<HotfixInfo> HotfixUpgradeInfos { get; set; }
+        public List<HotfixInfoResult> HotfixUpgradeInfos { get; set; }
 
         /// <summary>
         /// 可以回滚的热补丁信息。
         /// </summary>
         [JsonProperty("hotfix_rollback_infos", NullValueHandling = NullValueHandling.Ignore)]
-        public List<HotfixInfo> HotfixRollbackInfos { get; set; }
+        public List<HotfixInfoResult> HotfixRollbackInfos { get; set; }
 
 
 

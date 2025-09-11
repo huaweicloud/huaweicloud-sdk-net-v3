@@ -44,13 +44,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// tag的上传时间
         /// </summary>
         [JsonProperty("push_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? PushTime { get; set; }
+        public string PushTime { get; set; }
 
         /// <summary>
         /// tag的下载时间
         /// </summary>
         [JsonProperty("pull_time", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? PullTime { get; set; }
+        public string PullTime { get; set; }
 
 
 

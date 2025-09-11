@@ -68,13 +68,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 创建时间
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? CreatedAt { get; set; }
+        public string CreatedAt { get; set; }
 
         /// <summary>
         /// 更新时间
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? UpdatedAt { get; set; }
+        public string UpdatedAt { get; set; }
 
 
 

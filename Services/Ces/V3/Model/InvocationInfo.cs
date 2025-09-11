@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
     public class InvocationInfo 
     {
         /// <summary>
-        /// 主机类型，ECS弹性云服务器，BMS裸金属服务器
+        /// **参数解释**: 主机类型，仅支持ECS弹性云服务器和BMS裸金属服务器 **取值范围**: - ECS: 弹性云服务器 - BMS：裸金属服务器 
         /// </summary>
-        /// <value>主机类型，ECS弹性云服务器，BMS裸金属服务器</value>
+        /// <value>**参数解释**: 主机类型，仅支持ECS弹性云服务器和BMS裸金属服务器 **取值范围**: - ECS: 弹性云服务器 - BMS：裸金属服务器 </value>
         [JsonConverter(typeof(EnumClassConverter<InstanceTypeEnum>))]
         public class InstanceTypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚，RETRY重试)
+        /// **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 
         /// </summary>
-        /// <value>任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚，RETRY重试)</value>
+        /// <value>**参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 </value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTypeEnum>))]
         public class InvocationTypeEnum
         {
@@ -258,9 +258,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务状态，PENDING 待执行，RUNNING 运行中，TIMEOUT 超时，FAILED 失败，SUCCEEDED 成功，CANCELED 取消，ROLLBACKED已回退
+        /// **参数解释**: 任务状态 **取值范围**: - PENDING：待执行 - RUNNING：运行中 - TIMEOUT：超时 - FAILED：失败 - SUCCEEDED：成功 - CANCELED：取消 - ROLLBACKED：已回退 
         /// </summary>
-        /// <value>任务状态，PENDING 待执行，RUNNING 运行中，TIMEOUT 超时，FAILED 失败，SUCCEEDED 成功，CANCELED 取消，ROLLBACKED已回退</value>
+        /// <value>**参数解释**: 任务状态 **取值范围**: - PENDING：待执行 - RUNNING：运行中 - TIMEOUT：超时 - FAILED：失败 - SUCCEEDED：成功 - CANCELED：取消 - ROLLBACKED：已回退 </value>
         [JsonConverter(typeof(EnumClassConverter<InvocationStatusEnum>))]
         public class InvocationStatusEnum
         {
@@ -403,9 +403,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务对象，目前支持telescope
+        /// **参数解释**: 任务对象, 支持telescope监控 **取值范围**: - telescope: 主机监控插件telescope 
         /// </summary>
-        /// <value>任务对象，目前支持telescope</value>
+        /// <value>**参数解释**: 任务对象, 支持telescope监控 **取值范围**: - telescope: 主机监控插件telescope </value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTargetEnum>))]
         public class InvocationTargetEnum
         {
@@ -513,81 +513,81 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
 
 
         /// <summary>
-        /// 任务id
+        /// **参数解释**: 任务id **取值范围**: 以字母或数字开头，后续可以包含字母、数字、下划线（_）或连字符（-），长度至少为1，且不允许出现其他字符 
         /// </summary>
         [JsonProperty("invocation_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InvocationId { get; set; }
 
         /// <summary>
-        /// 主机id
+        /// **参数解释**: 主机id **取值范围**: 1到64个字符的字符串，且只包含字母、数字和连字符 
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 主机名称
+        /// **参数解释**: 主机名称 **取值范围**: 字符串长度范围为[1,128] 
         /// </summary>
         [JsonProperty("instance_name", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceName { get; set; }
 
         /// <summary>
-        /// 主机类型，ECS弹性云服务器，BMS裸金属服务器
+        /// **参数解释**: 主机类型，仅支持ECS弹性云服务器和BMS裸金属服务器 **取值范围**: - ECS: 弹性云服务器 - BMS：裸金属服务器 
         /// </summary>
         [JsonProperty("instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public InstanceTypeEnum InstanceType { get; set; }
         /// <summary>
-        /// 内网ip列表
+        /// **参数解释**: 内网ip列表 **取值范围**: 返回数组长度为[0,10]，数组内元素格式为：长度为1到15个字符的字符串，其中每个字符可以是数字（0-9）或任意其他单个字符 
         /// </summary>
         [JsonProperty("intranet_ips", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> IntranetIps { get; set; }
 
         /// <summary>
-        /// 弹性公网ip列表
+        /// **参数解释**: 弹性公网ip列表 **取值范围**: 返回数组长度为[0,10]，数组内元素格式为：长度为1到15个字符的字符串，其中每个字符可以是数字（0-9）或任意其他单个字符 
         /// </summary>
         [JsonProperty("elastic_ips", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ElasticIps { get; set; }
 
         /// <summary>
-        /// 任务类型(INSTALL 安装，UPDATE升级，ROLLBACK回滚，RETRY重试)
+        /// **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 
         /// </summary>
         [JsonProperty("invocation_type", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTypeEnum InvocationType { get; set; }
         /// <summary>
-        /// 任务状态，PENDING 待执行，RUNNING 运行中，TIMEOUT 超时，FAILED 失败，SUCCEEDED 成功，CANCELED 取消，ROLLBACKED已回退
+        /// **参数解释**: 任务状态 **取值范围**: - PENDING：待执行 - RUNNING：运行中 - TIMEOUT：超时 - FAILED：失败 - SUCCEEDED：成功 - CANCELED：取消 - ROLLBACKED：已回退 
         /// </summary>
         [JsonProperty("invocation_status", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationStatusEnum InvocationStatus { get; set; }
         /// <summary>
-        /// 任务对象，目前支持telescope
+        /// **参数解释**: 任务对象, 支持telescope监控 **取值范围**: - telescope: 主机监控插件telescope 
         /// </summary>
         [JsonProperty("invocation_target", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTargetEnum InvocationTarget { get; set; }
         /// <summary>
-        /// 任务创建时间
+        /// **参数解释**: 任务创建时间 **取值范围**: 数字范围为[1111111111111,9999999999999] 
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 任务更新时间
+        /// **参数解释**: 任务更新时间 **取值范围**: 数字范围为[1111111111111,9999999999999] 
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? UpdateTime { get; set; }
 
         /// <summary>
-        /// 当前版本
+        /// **参数解释**: 当前版本 **取值范围**: 字符串长度范围为[1,64] 
         /// </summary>
         [JsonProperty("current_version", NullValueHandling = NullValueHandling.Ignore)]
         public string CurrentVersion { get; set; }
 
         /// <summary>
-        /// 目标版本
+        /// **参数解释**: 目标版本 **取值范围**: 字符串长度范围为[1,64] 
         /// </summary>
         [JsonProperty("target_version", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetVersion { get; set; }
 
         /// <summary>
-        /// 任务执行结果信息
+        /// **参数解释**: 任务执行结果信息 **取值范围**: 字符串长度范围为[1,5000] 
         /// </summary>
         [JsonProperty("result_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string ResultMsg { get; set; }

@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public async Task<DeleteEnterpriseProjectResponse> DeleteEnterpriseProjectAsync(DeleteEnterpriseProjectRequest deleteEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", deleteEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnterpriseProjectRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public AsyncInvoker<DeleteEnterpriseProjectResponse> DeleteEnterpriseProjectAsyncInvoker(DeleteEnterpriseProjectRequest deleteEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", deleteEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnterpriseProjectRequest);
             return new AsyncInvoker<DeleteEnterpriseProjectResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteEnterpriseProjectResponse>);
@@ -75,7 +75,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public async Task<DisableEnterpriseProjectResponse> DisableEnterpriseProjectAsync(DisableEnterpriseProjectRequest disableEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", disableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableEnterpriseProjectRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -85,7 +85,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public AsyncInvoker<DisableEnterpriseProjectResponse> DisableEnterpriseProjectAsyncInvoker(DisableEnterpriseProjectRequest disableEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", disableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", disableEnterpriseProjectRequest);
             return new AsyncInvoker<DisableEnterpriseProjectResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisableEnterpriseProjectResponse>);
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public async Task<EnableEnterpriseProjectResponse> EnableEnterpriseProjectAsync(EnableEnterpriseProjectRequest enableEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", enableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableEnterpriseProjectRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public AsyncInvoker<EnableEnterpriseProjectResponse> EnableEnterpriseProjectAsyncInvoker(EnableEnterpriseProjectRequest enableEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", enableEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", enableEnterpriseProjectRequest);
             return new AsyncInvoker<EnableEnterpriseProjectResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableEnterpriseProjectResponse>);
@@ -247,7 +247,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public async Task<MigrateResourceResponse> MigrateResourceAsync(MigrateResourceRequest migrateResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", migrateResourceRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(migrateResourceRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources-migrate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", migrateResourceRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -257,7 +257,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public AsyncInvoker<MigrateResourceResponse> MigrateResourceAsyncInvoker(MigrateResourceRequest migrateResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", migrateResourceRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(migrateResourceRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources-migrate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", migrateResourceRequest);
             return new AsyncInvoker<MigrateResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<MigrateResourceResponse>);
@@ -273,7 +273,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public async Task<ShowApiVersionResponse> ShowApiVersionAsync(ShowApiVersionRequest showApiVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showApiVersionRequest.ApiVersion, out var valueOfApiVersion)) urlParam.Add("api_version", valueOfApiVersion);
             var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -283,7 +283,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public AsyncInvoker<ShowApiVersionResponse> ShowApiVersionAsyncInvoker(ShowApiVersionRequest showApiVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showApiVersionRequest.ApiVersion, out var valueOfApiVersion)) urlParam.Add("api_version", valueOfApiVersion);
             var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
             return new AsyncInvoker<ShowApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiVersionResponse>);
@@ -299,7 +299,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public async Task<ShowAssociatedResourcesResponse> ShowAssociatedResourcesAsync(ShowAssociatedResourcesRequest showAssociatedResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showAssociatedResourcesRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAssociatedResourcesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/associated-resources/{resource_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssociatedResourcesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -309,7 +309,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public AsyncInvoker<ShowAssociatedResourcesResponse> ShowAssociatedResourcesAsyncInvoker(ShowAssociatedResourcesRequest showAssociatedResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showAssociatedResourcesRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAssociatedResourcesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/associated-resources/{resource_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssociatedResourcesRequest);
             return new AsyncInvoker<ShowAssociatedResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAssociatedResourcesResponse>);
@@ -325,7 +325,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public async Task<ShowEnterpriseProjectResponse> ShowEnterpriseProjectAsync(ShowEnterpriseProjectRequest showEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", showEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnterpriseProjectRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -335,7 +335,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public AsyncInvoker<ShowEnterpriseProjectResponse> ShowEnterpriseProjectAsyncInvoker(ShowEnterpriseProjectRequest showEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", showEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnterpriseProjectRequest);
             return new AsyncInvoker<ShowEnterpriseProjectResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEnterpriseProjectResponse>);
@@ -399,7 +399,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public async Task<ShowResourceBindEnterpriseProjectResponse> ShowResourceBindEnterpriseProjectAsync(ShowResourceBindEnterpriseProjectRequest showResourceBindEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", showResourceBindEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourceBindEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources/filter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showResourceBindEnterpriseProjectRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -409,7 +409,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public AsyncInvoker<ShowResourceBindEnterpriseProjectResponse> ShowResourceBindEnterpriseProjectAsyncInvoker(ShowResourceBindEnterpriseProjectRequest showResourceBindEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", showResourceBindEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourceBindEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}/resources/filter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showResourceBindEnterpriseProjectRequest);
             return new AsyncInvoker<ShowResourceBindEnterpriseProjectResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowResourceBindEnterpriseProjectResponse>);
@@ -425,7 +425,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public async Task<UpdateEnterpriseProjectResponse> UpdateEnterpriseProjectAsync(UpdateEnterpriseProjectRequest updateEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", updateEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEnterpriseProjectRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -435,7 +435,7 @@ namespace HuaweiCloud.SDK.Eps.V1
         public AsyncInvoker<UpdateEnterpriseProjectResponse> UpdateEnterpriseProjectAsyncInvoker(UpdateEnterpriseProjectRequest updateEnterpriseProjectRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("enterprise_project_id", updateEnterpriseProjectRequest.EnterpriseProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEnterpriseProjectRequest.EnterpriseProjectId, out var valueOfEnterpriseProjectId)) urlParam.Add("enterprise_project_id", valueOfEnterpriseProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1.0/enterprise-projects/{enterprise_project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEnterpriseProjectRequest);
             return new AsyncInvoker<UpdateEnterpriseProjectResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEnterpriseProjectResponse>);

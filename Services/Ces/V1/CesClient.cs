@@ -175,7 +175,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public DeleteAlarmResponse DeleteAlarm(DeleteAlarmRequest deleteAlarmRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_id", deleteAlarmRequest.AlarmId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAlarmRequest.AlarmId, out var valueOfAlarmId)) urlParam.Add("alarm_id", valueOfAlarmId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlarmRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -185,7 +185,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public SyncInvoker<DeleteAlarmResponse> DeleteAlarmInvoker(DeleteAlarmRequest deleteAlarmRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_id", deleteAlarmRequest.AlarmId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAlarmRequest.AlarmId, out var valueOfAlarmId)) urlParam.Add("alarm_id", valueOfAlarmId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlarmRequest);
             return new SyncInvoker<DeleteAlarmResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAlarmResponse>);
@@ -201,7 +201,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public DeleteAlarmTemplateResponse DeleteAlarmTemplate(DeleteAlarmTemplateRequest deleteAlarmTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_id", deleteAlarmTemplateRequest.TemplateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAlarmTemplateRequest.TemplateId, out var valueOfTemplateId)) urlParam.Add("template_id", valueOfTemplateId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarm-template/{template_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlarmTemplateRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -211,7 +211,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public SyncInvoker<DeleteAlarmTemplateResponse> DeleteAlarmTemplateInvoker(DeleteAlarmTemplateRequest deleteAlarmTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_id", deleteAlarmTemplateRequest.TemplateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAlarmTemplateRequest.TemplateId, out var valueOfTemplateId)) urlParam.Add("template_id", valueOfTemplateId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarm-template/{template_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlarmTemplateRequest);
             return new SyncInvoker<DeleteAlarmTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAlarmTemplateResponse>);
@@ -227,7 +227,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public DeleteResourceGroupResponse DeleteResourceGroup(DeleteResourceGroupRequest deleteResourceGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteResourceGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteResourceGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/resource-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteResourceGroupRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -237,7 +237,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public SyncInvoker<DeleteResourceGroupResponse> DeleteResourceGroupInvoker(DeleteResourceGroupRequest deleteResourceGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteResourceGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteResourceGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/resource-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteResourceGroupRequest);
             return new SyncInvoker<DeleteResourceGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteResourceGroupResponse>);
@@ -325,7 +325,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public ListEventDetailResponse ListEventDetail(ListEventDetailRequest listEventDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_name", listEventDetailRequest.EventName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEventDetailRequest.EventName, out var valueOfEventName)) urlParam.Add("event_name", valueOfEventName);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/event/{event_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEventDetailRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -335,7 +335,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public SyncInvoker<ListEventDetailResponse> ListEventDetailInvoker(ListEventDetailRequest listEventDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_name", listEventDetailRequest.EventName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEventDetailRequest.EventName, out var valueOfEventName)) urlParam.Add("event_name", valueOfEventName);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/event/{event_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEventDetailRequest);
             return new SyncInvoker<ListEventDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEventDetailResponse>);
@@ -423,7 +423,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public ShowAlarmResponse ShowAlarm(ShowAlarmRequest showAlarmRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_id", showAlarmRequest.AlarmId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAlarmRequest.AlarmId, out var valueOfAlarmId)) urlParam.Add("alarm_id", valueOfAlarmId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlarmRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -433,7 +433,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public SyncInvoker<ShowAlarmResponse> ShowAlarmInvoker(ShowAlarmRequest showAlarmRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_id", showAlarmRequest.AlarmId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAlarmRequest.AlarmId, out var valueOfAlarmId)) urlParam.Add("alarm_id", valueOfAlarmId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlarmRequest);
             return new SyncInvoker<ShowAlarmResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAlarmResponse>);
@@ -521,7 +521,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public ShowResourceGroupResponse ShowResourceGroup(ShowResourceGroupRequest showResourceGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showResourceGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourceGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/resource-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceGroupRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -531,7 +531,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public SyncInvoker<ShowResourceGroupResponse> ShowResourceGroupInvoker(ShowResourceGroupRequest showResourceGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showResourceGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourceGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/resource-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceGroupRequest);
             return new SyncInvoker<ShowResourceGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResourceGroupResponse>);
@@ -547,7 +547,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public UpdateAlarmResponse UpdateAlarm(UpdateAlarmRequest updateAlarmRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_id", updateAlarmRequest.AlarmId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAlarmRequest.AlarmId, out var valueOfAlarmId)) urlParam.Add("alarm_id", valueOfAlarmId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -557,7 +557,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public SyncInvoker<UpdateAlarmResponse> UpdateAlarmInvoker(UpdateAlarmRequest updateAlarmRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_id", updateAlarmRequest.AlarmId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAlarmRequest.AlarmId, out var valueOfAlarmId)) urlParam.Add("alarm_id", valueOfAlarmId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmRequest);
             return new SyncInvoker<UpdateAlarmResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateAlarmResponse>);
@@ -573,7 +573,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public UpdateAlarmActionResponse UpdateAlarmAction(UpdateAlarmActionRequest updateAlarmActionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_id", updateAlarmActionRequest.AlarmId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAlarmActionRequest.AlarmId, out var valueOfAlarmId)) urlParam.Add("alarm_id", valueOfAlarmId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmActionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -583,7 +583,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public SyncInvoker<UpdateAlarmActionResponse> UpdateAlarmActionInvoker(UpdateAlarmActionRequest updateAlarmActionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_id", updateAlarmActionRequest.AlarmId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAlarmActionRequest.AlarmId, out var valueOfAlarmId)) urlParam.Add("alarm_id", valueOfAlarmId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarms/{alarm_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmActionRequest);
             return new SyncInvoker<UpdateAlarmActionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateAlarmActionResponse>);
@@ -599,7 +599,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public UpdateAlarmTemplateResponse UpdateAlarmTemplate(UpdateAlarmTemplateRequest updateAlarmTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_id", updateAlarmTemplateRequest.TemplateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAlarmTemplateRequest.TemplateId, out var valueOfTemplateId)) urlParam.Add("template_id", valueOfTemplateId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarm-template/{template_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmTemplateRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -609,7 +609,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public SyncInvoker<UpdateAlarmTemplateResponse> UpdateAlarmTemplateInvoker(UpdateAlarmTemplateRequest updateAlarmTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_id", updateAlarmTemplateRequest.TemplateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAlarmTemplateRequest.TemplateId, out var valueOfTemplateId)) urlParam.Add("template_id", valueOfTemplateId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/alarm-template/{template_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAlarmTemplateRequest);
             return new SyncInvoker<UpdateAlarmTemplateResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateAlarmTemplateResponse>);
@@ -625,7 +625,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public UpdateResourceGroupResponse UpdateResourceGroup(UpdateResourceGroupRequest updateResourceGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateResourceGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateResourceGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/resource-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResourceGroupRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -635,7 +635,7 @@ namespace HuaweiCloud.SDK.Ces.V1
         public SyncInvoker<UpdateResourceGroupResponse> UpdateResourceGroupInvoker(UpdateResourceGroupRequest updateResourceGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateResourceGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateResourceGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/V1.0/{project_id}/resource-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResourceGroupRequest);
             return new SyncInvoker<UpdateResourceGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateResourceGroupResponse>);

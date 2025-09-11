@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 屏蔽类型。START_END_TIME：按起止时间屏蔽，FOREVER_TIME：永久时间屏蔽，CYCLE_TIME：按周期时间屏蔽。
+    /// **参数解释**： 屏蔽类型。          **约束限制**： 不涉及。 **取值范围**： 只能为START_END_TIME、FOREVER_TIME、CYCLE_TIME - START_END_TIME：按起止时间屏蔽。 - FOREVER_TIME：永久时间屏蔽。 - CYCLE_TIME：按周期时间屏蔽。           **默认取值**： 不涉及。 
     /// </summary>
-    /// <value>屏蔽类型。START_END_TIME：按起止时间屏蔽，FOREVER_TIME：永久时间屏蔽，CYCLE_TIME：按周期时间屏蔽。</value>
+    /// <value>**参数解释**： 屏蔽类型。          **约束限制**： 不涉及。 **取值范围**： 只能为START_END_TIME、FOREVER_TIME、CYCLE_TIME - START_END_TIME：按起止时间屏蔽。 - FOREVER_TIME：永久时间屏蔽。 - CYCLE_TIME：按周期时间屏蔽。           **默认取值**： 不涉及。 </value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

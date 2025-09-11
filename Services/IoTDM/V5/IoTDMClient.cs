@@ -15,6 +15,30 @@ namespace HuaweiCloud.SDK.IoTDM.V5
 
         
         /// <summary>
+        /// 查询实例规格列表
+        ///
+        /// 用户可以调用此接口查询设备接入服务支持的实例规格列表。支持的实例规格请参见[[产品规格说明](https://support.huaweicloud.com/productdesc-iothub/iot_04_0014.html)](tag:hws)[[产品规格说明](https://support.huaweicloud.com/intl/zh-cn/productdesc-iothub/iot_04_0014.html)](tag:hws_hk)。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceFlavorsResponse ListInstanceFlavors(ListInstanceFlavorsRequest listInstanceFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceFlavorsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceFlavorsResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceFlavorsResponse> ListInstanceFlavorsInvoker(ListInstanceFlavorsRequest listInstanceFlavorsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/flavors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceFlavorsRequest);
+            return new SyncInvoker<ListInstanceFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceFlavorsResponse>);
+        }
+        
+        /// <summary>
         /// 添加实例标签
         ///
         /// 添加实例标签。
@@ -24,7 +48,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public BindInstanceTagsResponse BindInstanceTags(BindInstanceTagsRequest bindInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", bindInstanceTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(bindInstanceTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/bind-tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", bindInstanceTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -34,7 +58,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public SyncInvoker<BindInstanceTagsResponse> BindInstanceTagsInvoker(BindInstanceTagsRequest bindInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", bindInstanceTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(bindInstanceTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/bind-tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", bindInstanceTagsRequest);
             return new SyncInvoker<BindInstanceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BindInstanceTagsResponse>);
@@ -51,7 +75,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public ChangeInstanceChargeModeResponse ChangeInstanceChargeMode(ChangeInstanceChargeModeRequest changeInstanceChargeModeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", changeInstanceChargeModeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(changeInstanceChargeModeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/change-charge-mode", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeInstanceChargeModeRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -61,7 +85,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public SyncInvoker<ChangeInstanceChargeModeResponse> ChangeInstanceChargeModeInvoker(ChangeInstanceChargeModeRequest changeInstanceChargeModeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", changeInstanceChargeModeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(changeInstanceChargeModeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/change-charge-mode", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeInstanceChargeModeRequest);
             return new SyncInvoker<ChangeInstanceChargeModeResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeInstanceChargeModeResponse>);
@@ -105,7 +129,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest deleteInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -115,7 +139,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public SyncInvoker<DeleteInstanceResponse> DeleteInstanceInvoker(DeleteInstanceRequest deleteInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             return new SyncInvoker<DeleteInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceResponse>);
@@ -155,7 +179,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public ResizeInstanceResponse ResizeInstance(ResizeInstanceRequest resizeInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/resize", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -165,7 +189,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public SyncInvoker<ResizeInstanceResponse> ResizeInstanceInvoker(ResizeInstanceRequest resizeInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/resize", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeInstanceRequest);
             return new SyncInvoker<ResizeInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeInstanceResponse>);
@@ -181,7 +205,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public ShowInstanceResponse ShowInstance(ShowInstanceRequest showInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -191,7 +215,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public SyncInvoker<ShowInstanceResponse> ShowInstanceInvoker(ShowInstanceRequest showInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             return new SyncInvoker<ShowInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceResponse>);
@@ -207,7 +231,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public UnbindInstanceTagsResponse UnbindInstanceTags(UnbindInstanceTagsRequest unbindInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", unbindInstanceTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(unbindInstanceTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/unbind-tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", unbindInstanceTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -217,7 +241,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public SyncInvoker<UnbindInstanceTagsResponse> UnbindInstanceTagsInvoker(UnbindInstanceTagsRequest unbindInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", unbindInstanceTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(unbindInstanceTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/unbind-tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", unbindInstanceTagsRequest);
             return new SyncInvoker<UnbindInstanceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UnbindInstanceTagsResponse>);
@@ -233,7 +257,7 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest updateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -243,10 +267,92 @@ namespace HuaweiCloud.SDK.IoTDM.V5
         public SyncInvoker<UpdateInstanceResponse> UpdateInstanceInvoker(UpdateInstanceRequest updateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceRequest);
             return new SyncInvoker<UpdateInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例任务列表
+        ///
+        /// 用户可以调用此接口查询设备接入实例任务列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInstanceTasksResponse ListInstanceTasks(ListInstanceTasksRequest listInstanceTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTasksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInstanceTasksResponse>(response);
+        }
+
+        public SyncInvoker<ListInstanceTasksResponse> ListInstanceTasksInvoker(ListInstanceTasksRequest listInstanceTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTasksRequest);
+            return new SyncInvoker<ListInstanceTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 重试实例任务
+        ///
+        /// 用户可以调用此接口对运行失败的实例任务进行重试。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RetryInstanceTaskResponse RetryInstanceTask(RetryInstanceTaskRequest retryInstanceTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(retryInstanceTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(retryInstanceTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks/{task_id}/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryInstanceTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RetryInstanceTaskResponse>(response);
+        }
+
+        public SyncInvoker<RetryInstanceTaskResponse> RetryInstanceTaskInvoker(RetryInstanceTaskRequest retryInstanceTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(retryInstanceTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(retryInstanceTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks/{task_id}/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryInstanceTaskRequest);
+            return new SyncInvoker<RetryInstanceTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<RetryInstanceTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例任务详情
+        ///
+        /// 用户可以调用此接口查询设备接入实例任务详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceTaskResponse ShowInstanceTask(ShowInstanceTaskRequest showInstanceTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceTaskResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceTaskResponse> ShowInstanceTaskInvoker(ShowInstanceTaskRequest showInstanceTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/iotda-instances/{instance_id}/tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTaskRequest);
+            return new SyncInvoker<ShowInstanceTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceTaskResponse>);
         }
         
     }

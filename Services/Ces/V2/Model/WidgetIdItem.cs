@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 视图id
+        /// **参数解释** 视图id **取值范围** 字符串必须以wg开头，包含22个字母和数字，长度为24个字符。 
         /// </summary>
         [JsonProperty("widget_id", NullValueHandling = NullValueHandling.Ignore)]
         public string WidgetId { get; set; }

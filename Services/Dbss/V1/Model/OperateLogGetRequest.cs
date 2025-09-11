@@ -16,133 +16,6 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class OperateLogGetRequest 
     {
         /// <summary>
-        /// 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
-        /// </summary>
-        /// <value>动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE</value>
-        [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
-        public class ActionEnum
-        {
-            /// <summary>
-            /// Enum CREATE for value: CREATE
-            /// </summary>
-            public static readonly ActionEnum CREATE = new ActionEnum("CREATE");
-
-            /// <summary>
-            /// Enum DELETE for value: DELETE
-            /// </summary>
-            public static readonly ActionEnum DELETE = new ActionEnum("DELETE");
-
-            /// <summary>
-            /// Enum DOWNLOAD for value: DOWNLOAD
-            /// </summary>
-            public static readonly ActionEnum DOWNLOAD = new ActionEnum("DOWNLOAD");
-
-            /// <summary>
-            /// Enum UPDATE for value: UPDATE
-            /// </summary>
-            public static readonly ActionEnum UPDATE = new ActionEnum("UPDATE");
-
-            private static readonly Dictionary<string, ActionEnum> StaticFields =
-            new Dictionary<string, ActionEnum>()
-            {
-                { "CREATE", CREATE },
-                { "DELETE", DELETE },
-                { "DOWNLOAD", DOWNLOAD },
-                { "UPDATE", UPDATE },
-            };
-
-            private string _value;
-
-            public ActionEnum()
-            {
-
-            }
-
-            public ActionEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static ActionEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as ActionEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(ActionEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(ActionEnum a, ActionEnum b)
-            {
-                if (System.Object.ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(ActionEnum a, ActionEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 执行结果 - success - fail
         /// </summary>
         /// <value>执行结果 - success - fail</value>
@@ -274,7 +147,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
-        public ActionEnum Action { get; set; }
+        public string Action { get; set; }
+
         /// <summary>
         /// 执行结果 - success - fail
         /// </summary>
@@ -327,7 +201,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             if (input == null) return false;
             if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
-            if (this.Action != input.Action) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
             if (this.Result != input.Result) return false;
             if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
@@ -345,7 +219,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
                 var hashCode = 41;
                 if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
                 hashCode = hashCode * 59 + this.Result.GetHashCode();
                 if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();

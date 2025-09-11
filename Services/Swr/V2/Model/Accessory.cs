@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public long? ArtifactId { get; set; }
 
         /// <summary>
-        /// 附件所属制品ID.
+        /// 附件所属的父制品ID.
         /// </summary>
         [JsonProperty("subject_artifact_id", NullValueHandling = NullValueHandling.Ignore)]
         public long? SubjectArtifactId { get; set; }
@@ -164,7 +164,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 附件的创建时间
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? CreatedAt { get; set; }
+        public string CreatedAt { get; set; }
 
 
 

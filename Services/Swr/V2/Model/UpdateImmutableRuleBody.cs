@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public int? Priority { get; set; }
 
         /// <summary>
-        /// 不可变规则是否生效，默认值为false
+        /// 不可变策略是否生效，默认值为false
         /// </summary>
         [JsonProperty("disabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Disabled { get; set; }

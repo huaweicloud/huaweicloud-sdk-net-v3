@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
     public class BatchCreateInvocationRequestBody 
     {
         /// <summary>
-        /// 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALL_HOST设置远程安装主机，REMOTE_INSTALL执行远程安装
+        /// **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 
         /// </summary>
-        /// <value>任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALL_HOST设置远程安装主机，REMOTE_INSTALL执行远程安装</value>
+        /// <value>**参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 </value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTypeEnum>))]
         public class InvocationTypeEnum
         {
@@ -43,9 +43,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
             public static readonly InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
 
             /// <summary>
-            /// Enum SET_REMOTE_INSTALL_HOST for value: SET_REMOTE_INSTALL_HOST
+            /// Enum SET_REMOTE_INSTALLER for value: SET_REMOTE_INSTALLER
             /// </summary>
-            public static readonly InvocationTypeEnum SET_REMOTE_INSTALL_HOST = new InvocationTypeEnum("SET_REMOTE_INSTALL_HOST");
+            public static readonly InvocationTypeEnum SET_REMOTE_INSTALLER = new InvocationTypeEnum("SET_REMOTE_INSTALLER");
 
             /// <summary>
             /// Enum REMOTE_INSTALL for value: REMOTE_INSTALL
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
                 { "UPDATE", UPDATE },
                 { "ROLLBACK", ROLLBACK },
                 { "RETRY", RETRY },
-                { "SET_REMOTE_INSTALL_HOST", SET_REMOTE_INSTALL_HOST },
+                { "SET_REMOTE_INSTALLER", SET_REMOTE_INSTALLER },
                 { "REMOTE_INSTALL", REMOTE_INSTALL },
             };
 
@@ -155,9 +155,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务对象，目前仅支持telescope
+        /// **参数解释**: 任务对象，目前仅支持telescope **取值范围**: - telescope：主机监控插件telescope 
         /// </summary>
-        /// <value>任务对象，目前仅支持telescope</value>
+        /// <value>**参数解释**: 任务对象，目前仅支持telescope **取值范围**: - telescope：主机监控插件telescope </value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTargetEnum>))]
         public class InvocationTargetEnum
         {
@@ -264,9 +264,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 插件升级时需要选择升级“基础版本”还是“增强版本”，传值“BASIC_VERSION”表示升级成基础版本，传值“ADVANCE_VERSION”表示升级成增强版本
+        /// **参数解释**: 插件升级时需要选择升级“基础版本”还是“增强版本” **取值范围**: - BASIC_VERSION: 升级成基础版本 - ADVANCE_VERSION: 升级成增强版本 
         /// </summary>
-        /// <value>插件升级时需要选择升级“基础版本”还是“增强版本”，传值“BASIC_VERSION”表示升级成基础版本，传值“ADVANCE_VERSION”表示升级成增强版本</value>
+        /// <value>**参数解释**: 插件升级时需要选择升级“基础版本”还是“增强版本” **取值范围**: - BASIC_VERSION: 升级成基础版本 - ADVANCE_VERSION: 升级成增强版本 </value>
         [JsonConverter(typeof(EnumClassConverter<VersionTypeEnum>))]
         public class VersionTypeEnum
         {
@@ -379,9 +379,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// Agent任务接口调用源，CES表示由Console调用，APICOM_BMS表示由裸金属服务器调用，ADMIN_SERVER表示由运维平台调用
+        /// **参数解释**: Agent任务接口调用源 **取值范围**: - CES: 由Console调用 - APICOM_BMS: 由裸金属服务器调用 - ADMIN_SERVER: 由运维平台调用 
         /// </summary>
-        /// <value>Agent任务接口调用源，CES表示由Console调用，APICOM_BMS表示由裸金属服务器调用，ADMIN_SERVER表示由运维平台调用</value>
+        /// <value>**参数解释**: Agent任务接口调用源 **取值范围**: - CES: 由Console调用 - APICOM_BMS: 由裸金属服务器调用 - ADMIN_SERVER: 由运维平台调用 </value>
         [JsonConverter(typeof(EnumClassConverter<OriginEnum>))]
         public class OriginEnum
         {
@@ -501,45 +501,45 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
 
 
         /// <summary>
-        /// 主机id列表（INSTALL和UPDATE时必须）
+        /// **参数解释**: 主机id列表（INSTALL和UPDATE时必须） **取值范围**: 数组长度范围为[1,100] 
         /// </summary>
         [JsonProperty("instance_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> InstanceIds { get; set; }
 
         /// <summary>
-        /// 任务类型，INSTALL 安装，UPDATE升级，ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALL_HOST设置远程安装主机，REMOTE_INSTALL执行远程安装
+        /// **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 
         /// </summary>
         [JsonProperty("invocation_type", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTypeEnum InvocationType { get; set; }
         /// <summary>
-        /// 任务对象，目前仅支持telescope
+        /// **参数解释**: 任务对象，目前仅支持telescope **取值范围**: - telescope：主机监控插件telescope 
         /// </summary>
         [JsonProperty("invocation_target", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTargetEnum InvocationTarget { get; set; }
         /// <summary>
-        /// 任务ID列表（ROLLBACK和RETRY时必须）
+        /// **参数解释**: 任务ID列表（ROLLBACK和RETRY时必须） **取值范围**: 数组长度范围为[1,100] 
         /// </summary>
         [JsonProperty("invocation_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> InvocationIds { get; set; }
 
         /// <summary>
-        /// 插件升级时需要选择升级“基础版本”还是“增强版本”，传值“BASIC_VERSION”表示升级成基础版本，传值“ADVANCE_VERSION”表示升级成增强版本
+        /// **参数解释**: 插件升级时需要选择升级“基础版本”还是“增强版本” **取值范围**: - BASIC_VERSION: 升级成基础版本 - ADVANCE_VERSION: 升级成增强版本 
         /// </summary>
         [JsonProperty("version_type", NullValueHandling = NullValueHandling.Ignore)]
         public VersionTypeEnum VersionType { get; set; }
         /// <summary>
-        /// Agent任务接口调用源，CES表示由Console调用，APICOM_BMS表示由裸金属服务器调用，ADMIN_SERVER表示由运维平台调用
+        /// **参数解释**: Agent任务接口调用源 **取值范围**: - CES: 由Console调用 - APICOM_BMS: 由裸金属服务器调用 - ADMIN_SERVER: 由运维平台调用 
         /// </summary>
         [JsonProperty("origin", NullValueHandling = NullValueHandling.Ignore)]
         public OriginEnum Origin { get; set; }
         /// <summary>
-        /// 版本号
+        /// **参数解释**: 版本号 **取值范围**: 数组长度范围为[0,64] 
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// 创建远程安装任务时需要下发的被安装主机相关信息
+        /// **参数解释**: 创建远程安装任务时需要下发的被安装主机相关信息 **取值范围**: 数组长度范围为[0,100] 
         /// </summary>
         [JsonProperty("remote_install_meta", NullValueHandling = NullValueHandling.Ignore)]
         public List<RemoteInstallHostInfo> RemoteInstallMeta { get; set; }

@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2
         public async Task<AutoRenewalResourcesResponse> AutoRenewalResourcesAsync(AutoRenewalResourcesRequest autoRenewalResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", autoRenewalResourcesRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(autoRenewalResourcesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/orders/subscriptions/resources/autorenew/{resource_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", autoRenewalResourcesRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2
         public AsyncInvoker<AutoRenewalResourcesResponse> AutoRenewalResourcesAsyncInvoker(AutoRenewalResourcesRequest autoRenewalResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", autoRenewalResourcesRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(autoRenewalResourcesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/orders/subscriptions/resources/autorenew/{resource_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", autoRenewalResourcesRequest);
             return new AsyncInvoker<AutoRenewalResourcesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AutoRenewalResourcesResponse>);
@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2
         public async Task<CancelAutoRenewalResourcesResponse> CancelAutoRenewalResourcesAsync(CancelAutoRenewalResourcesRequest cancelAutoRenewalResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", cancelAutoRenewalResourcesRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelAutoRenewalResourcesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/orders/subscriptions/resources/autorenew/{resource_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelAutoRenewalResourcesRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2
         public AsyncInvoker<CancelAutoRenewalResourcesResponse> CancelAutoRenewalResourcesAsyncInvoker(CancelAutoRenewalResourcesRequest cancelAutoRenewalResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", cancelAutoRenewalResourcesRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelAutoRenewalResourcesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/orders/subscriptions/resources/autorenew/{resource_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelAutoRenewalResourcesRequest);
             return new AsyncInvoker<CancelAutoRenewalResourcesResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<CancelAutoRenewalResourcesResponse>);
@@ -1113,7 +1113,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2
         public async Task<ShowCustomerOrderDetailsResponse> ShowCustomerOrderDetailsAsync(ShowCustomerOrderDetailsRequest showCustomerOrderDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("order_id", showCustomerOrderDetailsRequest.OrderId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCustomerOrderDetailsRequest.OrderId, out var valueOfOrderId)) urlParam.Add("order_id", valueOfOrderId);
             var urlPath = HttpUtils.AddUrlPath("/v2/orders/customer-orders/details/{order_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCustomerOrderDetailsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1123,7 +1123,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2
         public AsyncInvoker<ShowCustomerOrderDetailsResponse> ShowCustomerOrderDetailsAsyncInvoker(ShowCustomerOrderDetailsRequest showCustomerOrderDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("order_id", showCustomerOrderDetailsRequest.OrderId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCustomerOrderDetailsRequest.OrderId, out var valueOfOrderId)) urlParam.Add("order_id", valueOfOrderId);
             var urlPath = HttpUtils.AddUrlPath("/v2/orders/customer-orders/details/{order_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCustomerOrderDetailsRequest);
             return new AsyncInvoker<ShowCustomerOrderDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCustomerOrderDetailsResponse>);

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
     public class ListAgentInvocationsRequest 
     {
         /// <summary>
-        /// 主机类型，ECS弹性云服务器，BMS裸金属服务器
+        /// **参数解释**: 主机类型，仅支持ECS弹性云服务器和BMS裸金属服务器 **约束限制**: 不涉及 **取值范围**: - ECS: 弹性云服务器 - BMS：裸金属服务器 **默认取值**: 不涉及 
         /// </summary>
-        /// <value>主机类型，ECS弹性云服务器，BMS裸金属服务器</value>
+        /// <value>**参数解释**: 主机类型，仅支持ECS弹性云服务器和BMS裸金属服务器 **约束限制**: 不涉及 **取值范围**: - ECS: 弹性云服务器 - BMS：裸金属服务器 **默认取值**: 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<InstanceTypeEnum>))]
         public class InstanceTypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务类型, INSTALL安装, UPDATE升级, ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALLER设置远程安装主机，REMOTE_INSTALL执行远程安装
+        /// **参数解释**: 任务类型, 仅包含：INSTALL安装, UPDATE升级, ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALLER设置远程安装主机，REMOTE_INSTALL执行远程安装。 **约束限制**: 不涉及。 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回退 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 **默认取值**: 不涉及 
         /// </summary>
-        /// <value>任务类型, INSTALL安装, UPDATE升级, ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALLER设置远程安装主机，REMOTE_INSTALL执行远程安装</value>
+        /// <value>**参数解释**: 任务类型, 仅包含：INSTALL安装, UPDATE升级, ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALLER设置远程安装主机，REMOTE_INSTALL执行远程安装。 **约束限制**: 不涉及。 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回退 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 **默认取值**: 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTypeEnum>))]
         public class InvocationTypeEnum
         {
@@ -270,9 +270,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         }
 
         /// <summary>
-        /// 任务对象, 支持 telescope监控
+        /// **参数解释**: 任务对象, 支持telescope监控 **约束限制**: 不涉及。 **取值范围**: - telescope: 主机监控插件telescope **默认取值**: telescope。 
         /// </summary>
-        /// <value>任务对象, 支持 telescope监控</value>
+        /// <value>**参数解释**: 任务对象, 支持telescope监控 **约束限制**: 不涉及。 **取值范围**: - telescope: 主机监控插件telescope **默认取值**: telescope。 </value>
         [JsonConverter(typeof(EnumClassConverter<InvocationTargetEnum>))]
         public class InvocationTargetEnum
         {
@@ -380,46 +380,46 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
 
 
         /// <summary>
-        /// 主机id
+        /// **参数解释**: 主机id **约束限制**: 不涉及 **取值范围**: 1到64个字符的字符串，且只包含字母、数字和连字符 **默认取值**: 不涉及 
         /// </summary>
         [SDKProperty("instance_id", IsQuery = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 主机类型，ECS弹性云服务器，BMS裸金属服务器
+        /// **参数解释**: 主机类型，仅支持ECS弹性云服务器和BMS裸金属服务器 **约束限制**: 不涉及 **取值范围**: - ECS: 弹性云服务器 - BMS：裸金属服务器 **默认取值**: 不涉及 
         /// </summary>
         [SDKProperty("instance_type", IsQuery = true)]
         [JsonProperty("instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public InstanceTypeEnum InstanceType { get; set; }
         /// <summary>
-        /// 任务id
+        /// **参数解释**: 任务id **约束限制**: 不涉及 **取值范围**: 以字母或数字开头，后续可包含字母、数字、下划线或连字符的字符串，长度至少为 1 **默认取值**: 不涉及 
         /// </summary>
         [SDKProperty("invocation_id", IsQuery = true)]
         [JsonProperty("invocation_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InvocationId { get; set; }
 
         /// <summary>
-        /// 任务类型, INSTALL安装, UPDATE升级, ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALLER设置远程安装主机，REMOTE_INSTALL执行远程安装
+        /// **参数解释**: 任务类型, 仅包含：INSTALL安装, UPDATE升级, ROLLBACK回退，RETRY重试，SET_REMOTE_INSTALLER设置远程安装主机，REMOTE_INSTALL执行远程安装。 **约束限制**: 不涉及。 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回退 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 **默认取值**: 不涉及 
         /// </summary>
         [SDKProperty("invocation_type", IsQuery = true)]
         [JsonProperty("invocation_type", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTypeEnum InvocationType { get; set; }
         /// <summary>
-        /// 任务对象, 支持 telescope监控
+        /// **参数解释**: 任务对象, 支持telescope监控 **约束限制**: 不涉及。 **取值范围**: - telescope: 主机监控插件telescope **默认取值**: telescope。 
         /// </summary>
         [SDKProperty("invocation_target", IsQuery = true)]
         [JsonProperty("invocation_target", NullValueHandling = NullValueHandling.Ignore)]
         public InvocationTargetEnum InvocationTarget { get; set; }
         /// <summary>
-        /// 分页偏移量
+        /// **参数解释**: 分页偏移量 **约束限制**: 不涉及 **取值范围**: 数字范围为[0,9999999999999] **默认取值**: 0 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? Offset { get; set; }
 
         /// <summary>
-        /// 分页大小
+        /// **参数解释**: 分页大小。 **约束限制**: 不涉及。 **取值范围**: 数字范围为[1,100] **默认取值**: 100 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

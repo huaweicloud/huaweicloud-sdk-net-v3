@@ -19,12 +19,17 @@
  * under the License.
  */
 
+using System;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
 
 namespace HuaweiCloud.SDK.Core
 {
     public class StringUtils
     {
+        private const string LowerTrue = "true";
+        private const string LowerFalse = "false";
         public static string ToSnakeCase(string str)
         {
             return string.Concat(str.Select((x, i) => i > 0 && char.IsUpper(x) ? "_" + x : x.ToString()))
@@ -41,6 +46,34 @@ namespace HuaweiCloud.SDK.Core
                 str = str.Replace(newUpper, newUpper.Trim('_').ToUpperInvariant());
             }
             return str;
+        }
+        
+        public static bool TryConvertToNonEmptyString(object value, out string result)
+        {
+            result = string.Empty;
+            if (value is bool boolean)
+            {
+                result = boolean ? LowerTrue : LowerFalse;
+                return true;
+            }
+            if (value is Enum enumValue)
+            {
+                var type = enumValue.GetType();
+                var name = Enum.GetName(type, enumValue);
+                if (name == null) return false;
+
+                var field = type.GetField(name);
+                if (field == null) return false;
+
+                var attribute = field.GetCustomAttribute<EnumMemberAttribute>();
+                if (attribute == null) return false;
+
+                result = attribute.Value;
+                return true;
+            }
+
+            result = Convert.ToString(value);
+            return !string.IsNullOrEmpty(result);
         }
     }
 }

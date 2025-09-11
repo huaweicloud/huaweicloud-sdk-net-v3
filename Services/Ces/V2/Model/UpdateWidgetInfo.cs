@@ -329,7 +329,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public UpdateWidgetInfoLocation Location { get; set; }
 
         /// <summary>
-        /// 单位
+        /// **参数解释** 单位 **约束限制** 不涉及 **取值范围** 长度为[0,32]个字符 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
         public string Unit { get; set; }

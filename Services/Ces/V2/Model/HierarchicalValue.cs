@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 多层级告警阈值。当hierarchical_value和value同时使用时以hierarchical_value为准。 创建或修改告警规则以下2种场景只支持设置一个阈值：   1.告警类型为&#x60;指标告警&#x60;且告警策略为&#x60;所有策略都满足才告警&#x60;的场景。   2.告警类型为&#x60;事件告警&#x60;的场景。 
+    /// **参数解释**： 多层级告警阈值。    **约束限制**： 当hierarchical_value和value同时使用时以hierarchical_value为准。 创建或修改告警规则以下2种场景只支持设置一个阈值：   1.告警类型为&#x60;指标告警&#x60;且告警策略为&#x60;所有策略都满足才告警&#x60;的场景。   2.告警类型为&#x60;事件告警&#x60;的场景。 
     /// </summary>
     public class HierarchicalValue 
     {
 
         /// <summary>
-        /// 紧急级别的阈值
+        /// **参数解释**： 紧急级别的阈值。 **约束限制**： 不涉及。 **取值范围**： [-1.7976931348623157e+108, 1.7976931348623157e+108]           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("critical", NullValueHandling = NullValueHandling.Ignore)]
         public double? Critical { get; set; }
 
         /// <summary>
-        /// 重要级别的阈值
+        /// **参数解释**： 重要级别的阈值。 **约束限制**： 不涉及。 **取值范围**： [-1.7976931348623157e+108, 1.7976931348623157e+108]           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("major", NullValueHandling = NullValueHandling.Ignore)]
         public double? Major { get; set; }
 
         /// <summary>
-        /// 次要级别的阈值
+        /// **参数解释**： 次要级别的阈值。 **约束限制**： 不涉及。 **取值范围**： [-1.7976931348623157e+108, 1.7976931348623157e+108]           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("minor", NullValueHandling = NullValueHandling.Ignore)]
         public double? Minor { get; set; }
 
         /// <summary>
-        /// 提示级别的阈值
+        /// **参数解释**： 提示级别的阈值。 **约束限制**： 不涉及。 **取值范围**： [-1.7976931348623157e+108, 1.7976931348623157e+108]           **默认取值**： 不涉及。 
         /// </summary>
         [JsonProperty("info", NullValueHandling = NullValueHandling.Ignore)]
         public double? Info { get; set; }

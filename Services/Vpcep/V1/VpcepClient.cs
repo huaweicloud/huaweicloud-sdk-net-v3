@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public AcceptOrRejectEndpointResponse AcceptOrRejectEndpoint(AcceptOrRejectEndpointRequest acceptOrRejectEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", acceptOrRejectEndpointRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(acceptOrRejectEndpointRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/connections/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", acceptOrRejectEndpointRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<AcceptOrRejectEndpointResponse> AcceptOrRejectEndpointInvoker(AcceptOrRejectEndpointRequest acceptOrRejectEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", acceptOrRejectEndpointRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(acceptOrRejectEndpointRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/connections/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", acceptOrRejectEndpointRequest);
             return new SyncInvoker<AcceptOrRejectEndpointResponse>(this, "POST", request, JsonUtils.DeSerialize<AcceptOrRejectEndpointResponse>);
@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public AddOrRemoveServicePermissionsResponse AddOrRemoveServicePermissions(AddOrRemoveServicePermissionsRequest addOrRemoveServicePermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", addOrRemoveServicePermissionsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addOrRemoveServicePermissionsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addOrRemoveServicePermissionsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -62,7 +62,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<AddOrRemoveServicePermissionsResponse> AddOrRemoveServicePermissionsInvoker(AddOrRemoveServicePermissionsRequest addOrRemoveServicePermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", addOrRemoveServicePermissionsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addOrRemoveServicePermissionsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addOrRemoveServicePermissionsRequest);
             return new SyncInvoker<AddOrRemoveServicePermissionsResponse>(this, "POST", request, JsonUtils.DeSerialize<AddOrRemoveServicePermissionsResponse>);
@@ -80,7 +80,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public BatchAddEndpointServicePermissionsResponse BatchAddEndpointServicePermissions(BatchAddEndpointServicePermissionsRequest batchAddEndpointServicePermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", batchAddEndpointServicePermissionsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchAddEndpointServicePermissionsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions/batch-create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddEndpointServicePermissionsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -90,7 +90,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<BatchAddEndpointServicePermissionsResponse> BatchAddEndpointServicePermissionsInvoker(BatchAddEndpointServicePermissionsRequest batchAddEndpointServicePermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", batchAddEndpointServicePermissionsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchAddEndpointServicePermissionsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions/batch-create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddEndpointServicePermissionsRequest);
             return new SyncInvoker<BatchAddEndpointServicePermissionsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchAddEndpointServicePermissionsResponse>);
@@ -106,7 +106,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public BatchRemoveEndpointServicePermissionsResponse BatchRemoveEndpointServicePermissions(BatchRemoveEndpointServicePermissionsRequest batchRemoveEndpointServicePermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", batchRemoveEndpointServicePermissionsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchRemoveEndpointServicePermissionsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveEndpointServicePermissionsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -116,7 +116,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<BatchRemoveEndpointServicePermissionsResponse> BatchRemoveEndpointServicePermissionsInvoker(BatchRemoveEndpointServicePermissionsRequest batchRemoveEndpointServicePermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", batchRemoveEndpointServicePermissionsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchRemoveEndpointServicePermissionsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveEndpointServicePermissionsRequest);
             return new SyncInvoker<BatchRemoveEndpointServicePermissionsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchRemoveEndpointServicePermissionsResponse>);
@@ -190,7 +190,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest deleteEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", deleteEndpointRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEndpointRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEndpointRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -200,7 +200,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<DeleteEndpointResponse> DeleteEndpointInvoker(DeleteEndpointRequest deleteEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", deleteEndpointRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEndpointRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEndpointRequest);
             return new SyncInvoker<DeleteEndpointResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteEndpointResponse>);
@@ -216,7 +216,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public DeleteEndpointPolicyResponse DeleteEndpointPolicy(DeleteEndpointPolicyRequest deleteEndpointPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", deleteEndpointPolicyRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEndpointPolicyRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEndpointPolicyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<DeleteEndpointPolicyResponse> DeleteEndpointPolicyInvoker(DeleteEndpointPolicyRequest deleteEndpointPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", deleteEndpointPolicyRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEndpointPolicyRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEndpointPolicyRequest);
             return new SyncInvoker<DeleteEndpointPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteEndpointPolicyResponse>);
@@ -244,7 +244,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public DeleteEndpointServiceResponse DeleteEndpointService(DeleteEndpointServiceRequest deleteEndpointServiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", deleteEndpointServiceRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEndpointServiceRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEndpointServiceRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -254,7 +254,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<DeleteEndpointServiceResponse> DeleteEndpointServiceInvoker(DeleteEndpointServiceRequest deleteEndpointServiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", deleteEndpointServiceRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEndpointServiceRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEndpointServiceRequest);
             return new SyncInvoker<DeleteEndpointServiceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteEndpointServiceResponse>);
@@ -270,7 +270,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public ListEndpointInfoDetailsResponse ListEndpointInfoDetails(ListEndpointInfoDetailsRequest listEndpointInfoDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", listEndpointInfoDetailsRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEndpointInfoDetailsRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEndpointInfoDetailsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -280,7 +280,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<ListEndpointInfoDetailsResponse> ListEndpointInfoDetailsInvoker(ListEndpointInfoDetailsRequest listEndpointInfoDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", listEndpointInfoDetailsRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEndpointInfoDetailsRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEndpointInfoDetailsRequest);
             return new SyncInvoker<ListEndpointInfoDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEndpointInfoDetailsResponse>);
@@ -368,7 +368,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public ListServiceConnectionsResponse ListServiceConnections(ListServiceConnectionsRequest listServiceConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", listServiceConnectionsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listServiceConnectionsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/connections", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServiceConnectionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -378,7 +378,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<ListServiceConnectionsResponse> ListServiceConnectionsInvoker(ListServiceConnectionsRequest listServiceConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", listServiceConnectionsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listServiceConnectionsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/connections", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServiceConnectionsRequest);
             return new SyncInvoker<ListServiceConnectionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListServiceConnectionsResponse>);
@@ -418,7 +418,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public ListServiceDetailsResponse ListServiceDetails(ListServiceDetailsRequest listServiceDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", listServiceDetailsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listServiceDetailsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServiceDetailsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -428,7 +428,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<ListServiceDetailsResponse> ListServiceDetailsInvoker(ListServiceDetailsRequest listServiceDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", listServiceDetailsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listServiceDetailsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServiceDetailsRequest);
             return new SyncInvoker<ListServiceDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListServiceDetailsResponse>);
@@ -446,7 +446,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public ListServicePermissionsDetailsResponse ListServicePermissionsDetails(ListServicePermissionsDetailsRequest listServicePermissionsDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", listServicePermissionsDetailsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listServicePermissionsDetailsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServicePermissionsDetailsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -456,7 +456,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<ListServicePermissionsDetailsResponse> ListServicePermissionsDetailsInvoker(ListServicePermissionsDetailsRequest listServicePermissionsDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", listServicePermissionsDetailsRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listServicePermissionsDetailsRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServicePermissionsDetailsRequest);
             return new SyncInvoker<ListServicePermissionsDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListServicePermissionsDetailsResponse>);
@@ -497,7 +497,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public ListSpecifiedVersionDetailsResponse ListSpecifiedVersionDetails(ListSpecifiedVersionDetailsRequest listSpecifiedVersionDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("version", listSpecifiedVersionDetailsRequest.Version.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSpecifiedVersionDetailsRequest.Version, out var valueOfVersion)) urlParam.Add("version", valueOfVersion);
             var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSpecifiedVersionDetailsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -507,7 +507,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<ListSpecifiedVersionDetailsResponse> ListSpecifiedVersionDetailsInvoker(ListSpecifiedVersionDetailsRequest listSpecifiedVersionDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("version", listSpecifiedVersionDetailsRequest.Version.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSpecifiedVersionDetailsRequest.Version, out var valueOfVersion)) urlParam.Add("version", valueOfVersion);
             var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSpecifiedVersionDetailsRequest);
             return new SyncInvoker<ListSpecifiedVersionDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSpecifiedVersionDetailsResponse>);
@@ -547,7 +547,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public UpdateEndpointConnectionsDescResponse UpdateEndpointConnectionsDesc(UpdateEndpointConnectionsDescRequest updateEndpointConnectionsDescRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", updateEndpointConnectionsDescRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointConnectionsDescRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/connections/description", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointConnectionsDescRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -557,7 +557,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<UpdateEndpointConnectionsDescResponse> UpdateEndpointConnectionsDescInvoker(UpdateEndpointConnectionsDescRequest updateEndpointConnectionsDescRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", updateEndpointConnectionsDescRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointConnectionsDescRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/connections/description", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointConnectionsDescRequest);
             return new SyncInvoker<UpdateEndpointConnectionsDescResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEndpointConnectionsDescResponse>);
@@ -573,7 +573,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public UpdateEndpointPolicyResponse UpdateEndpointPolicy(UpdateEndpointPolicyRequest updateEndpointPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", updateEndpointPolicyRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointPolicyRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -583,7 +583,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<UpdateEndpointPolicyResponse> UpdateEndpointPolicyInvoker(UpdateEndpointPolicyRequest updateEndpointPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", updateEndpointPolicyRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointPolicyRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointPolicyRequest);
             return new SyncInvoker<UpdateEndpointPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEndpointPolicyResponse>);
@@ -599,7 +599,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public UpdateEndpointRoutetableResponse UpdateEndpointRoutetable(UpdateEndpointRoutetableRequest updateEndpointRoutetableRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", updateEndpointRoutetableRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointRoutetableRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}/routetables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointRoutetableRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -609,7 +609,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<UpdateEndpointRoutetableResponse> UpdateEndpointRoutetableInvoker(UpdateEndpointRoutetableRequest updateEndpointRoutetableRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", updateEndpointRoutetableRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointRoutetableRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}/routetables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointRoutetableRequest);
             return new SyncInvoker<UpdateEndpointRoutetableResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEndpointRoutetableResponse>);
@@ -625,7 +625,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public UpdateEndpointServiceResponse UpdateEndpointService(UpdateEndpointServiceRequest updateEndpointServiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", updateEndpointServiceRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointServiceRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointServiceRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -635,7 +635,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<UpdateEndpointServiceResponse> UpdateEndpointServiceInvoker(UpdateEndpointServiceRequest updateEndpointServiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", updateEndpointServiceRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointServiceRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointServiceRequest);
             return new SyncInvoker<UpdateEndpointServiceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEndpointServiceResponse>);
@@ -651,7 +651,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public UpdateEndpointServiceNameResponse UpdateEndpointServiceName(UpdateEndpointServiceNameRequest updateEndpointServiceNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", updateEndpointServiceNameRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointServiceNameRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointServiceNameRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -661,7 +661,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<UpdateEndpointServiceNameResponse> UpdateEndpointServiceNameInvoker(UpdateEndpointServiceNameRequest updateEndpointServiceNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", updateEndpointServiceNameRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointServiceNameRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointServiceNameRequest);
             return new SyncInvoker<UpdateEndpointServiceNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEndpointServiceNameResponse>);
@@ -677,8 +677,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public UpdateEndpointServicePermissionDescResponse UpdateEndpointServicePermissionDesc(UpdateEndpointServicePermissionDescRequest updateEndpointServicePermissionDescRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", updateEndpointServicePermissionDescRequest.VpcEndpointServiceId.ToString());
-            urlParam.Add("permission_id", updateEndpointServicePermissionDescRequest.PermissionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointServicePermissionDescRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointServicePermissionDescRequest.PermissionId, out var valueOfPermissionId)) urlParam.Add("permission_id", valueOfPermissionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions/{permission_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointServicePermissionDescRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -688,8 +688,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<UpdateEndpointServicePermissionDescResponse> UpdateEndpointServicePermissionDescInvoker(UpdateEndpointServicePermissionDescRequest updateEndpointServicePermissionDescRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", updateEndpointServicePermissionDescRequest.VpcEndpointServiceId.ToString());
-            urlParam.Add("permission_id", updateEndpointServicePermissionDescRequest.PermissionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointServicePermissionDescRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointServicePermissionDescRequest.PermissionId, out var valueOfPermissionId)) urlParam.Add("permission_id", valueOfPermissionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/permissions/{permission_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointServicePermissionDescRequest);
             return new SyncInvoker<UpdateEndpointServicePermissionDescResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEndpointServicePermissionDescResponse>);
@@ -705,7 +705,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public UpdateEndpointWhiteResponse UpdateEndpointWhite(UpdateEndpointWhiteRequest updateEndpointWhiteRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", updateEndpointWhiteRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointWhiteRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointWhiteRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -715,7 +715,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<UpdateEndpointWhiteResponse> UpdateEndpointWhiteInvoker(UpdateEndpointWhiteRequest updateEndpointWhiteRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_id", updateEndpointWhiteRequest.VpcEndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointWhiteRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/vpc-endpoints/{vpc_endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateEndpointWhiteRequest);
             return new SyncInvoker<UpdateEndpointWhiteResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEndpointWhiteResponse>);
@@ -732,7 +732,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public UpgradeEndpointServiceResponse UpgradeEndpointService(UpgradeEndpointServiceRequest upgradeEndpointServiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", upgradeEndpointServiceRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(upgradeEndpointServiceRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeEndpointServiceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -742,7 +742,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<UpgradeEndpointServiceResponse> UpgradeEndpointServiceInvoker(UpgradeEndpointServiceRequest upgradeEndpointServiceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_endpoint_service_id", upgradeEndpointServiceRequest.VpcEndpointServiceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(upgradeEndpointServiceRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeEndpointServiceRequest);
             return new SyncInvoker<UpgradeEndpointServiceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpgradeEndpointServiceResponse>);
@@ -759,8 +759,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public BatchAddOrRemoveResourceInstanceResponse BatchAddOrRemoveResourceInstance(BatchAddOrRemoveResourceInstanceRequest batchAddOrRemoveResourceInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", batchAddOrRemoveResourceInstanceRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", batchAddOrRemoveResourceInstanceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchAddOrRemoveResourceInstanceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(batchAddOrRemoveResourceInstanceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddOrRemoveResourceInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -770,8 +770,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<BatchAddOrRemoveResourceInstanceResponse> BatchAddOrRemoveResourceInstanceInvoker(BatchAddOrRemoveResourceInstanceRequest batchAddOrRemoveResourceInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", batchAddOrRemoveResourceInstanceRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", batchAddOrRemoveResourceInstanceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchAddOrRemoveResourceInstanceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(batchAddOrRemoveResourceInstanceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddOrRemoveResourceInstanceRequest);
             return new SyncInvoker<BatchAddOrRemoveResourceInstanceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchAddOrRemoveResourceInstanceResponse>);
@@ -787,7 +787,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public ListQueryProjectResourceTagsResponse ListQueryProjectResourceTags(ListQueryProjectResourceTagsRequest listQueryProjectResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listQueryProjectResourceTagsRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listQueryProjectResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQueryProjectResourceTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -797,7 +797,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<ListQueryProjectResourceTagsResponse> ListQueryProjectResourceTagsInvoker(ListQueryProjectResourceTagsRequest listQueryProjectResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listQueryProjectResourceTagsRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listQueryProjectResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQueryProjectResourceTagsRequest);
             return new SyncInvoker<ListQueryProjectResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListQueryProjectResourceTagsResponse>);
@@ -813,7 +813,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public ListResourceInstancesResponse ListResourceInstances(ListResourceInstancesRequest listResourceInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listResourceInstancesRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listResourceInstancesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstancesRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -823,7 +823,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         public SyncInvoker<ListResourceInstancesResponse> ListResourceInstancesInvoker(ListResourceInstancesRequest listResourceInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listResourceInstancesRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listResourceInstancesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstancesRequest);
             return new SyncInvoker<ListResourceInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListResourceInstancesResponse>);

@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<CloseAccountResponse> CloseAccountAsync(CloseAccountRequest closeAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", closeAccountRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(closeAccountRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}/close", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeAccountRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<CloseAccountResponse> CloseAccountAsyncInvoker(CloseAccountRequest closeAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", closeAccountRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(closeAccountRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}/close", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeAccountRequest);
             return new AsyncInvoker<CloseAccountResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CloseAccountResponse>);
@@ -195,7 +195,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<MoveAccountResponse> MoveAccountAsync(MoveAccountRequest moveAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", moveAccountRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(moveAccountRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}/move", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", moveAccountRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -205,7 +205,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<MoveAccountResponse> MoveAccountAsyncInvoker(MoveAccountRequest moveAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", moveAccountRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(moveAccountRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}/move", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", moveAccountRequest);
             return new AsyncInvoker<MoveAccountResponse>(this, "POST", request, JsonUtils.DeSerializeNull<MoveAccountResponse>);
@@ -221,7 +221,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<RemoveAccountResponse> RemoveAccountAsync(RemoveAccountRequest removeAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", removeAccountRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeAccountRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}/remove", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeAccountRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -231,7 +231,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<RemoveAccountResponse> RemoveAccountAsyncInvoker(RemoveAccountRequest removeAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", removeAccountRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(removeAccountRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}/remove", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removeAccountRequest);
             return new AsyncInvoker<RemoveAccountResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RemoveAccountResponse>);
@@ -247,7 +247,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ShowAccountResponse> ShowAccountAsync(ShowAccountRequest showAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", showAccountRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAccountRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAccountRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -257,7 +257,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ShowAccountResponse> ShowAccountAsyncInvoker(ShowAccountRequest showAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", showAccountRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAccountRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAccountRequest);
             return new AsyncInvoker<ShowAccountResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAccountResponse>);
@@ -273,7 +273,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ShowCreateAccountStatusResponse> ShowCreateAccountStatusAsync(ShowCreateAccountStatusRequest showCreateAccountStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("create_account_status_id", showCreateAccountStatusRequest.CreateAccountStatusId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCreateAccountStatusRequest.CreateAccountStatusId, out var valueOfCreateAccountStatusId)) urlParam.Add("create_account_status_id", valueOfCreateAccountStatusId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/create-account-status/{create_account_status_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCreateAccountStatusRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -283,7 +283,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ShowCreateAccountStatusResponse> ShowCreateAccountStatusAsyncInvoker(ShowCreateAccountStatusRequest showCreateAccountStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("create_account_status_id", showCreateAccountStatusRequest.CreateAccountStatusId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCreateAccountStatusRequest.CreateAccountStatusId, out var valueOfCreateAccountStatusId)) urlParam.Add("create_account_status_id", valueOfCreateAccountStatusId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/create-account-status/{create_account_status_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCreateAccountStatusRequest);
             return new AsyncInvoker<ShowCreateAccountStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCreateAccountStatusResponse>);
@@ -299,7 +299,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<UpdateAccountResponse> UpdateAccountAsync(UpdateAccountRequest updateAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", updateAccountRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAccountRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAccountRequest);
             var response = await DoHttpRequestAsync("PATCH", request);
@@ -309,7 +309,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<UpdateAccountResponse> UpdateAccountAsyncInvoker(UpdateAccountRequest updateAccountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", updateAccountRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAccountRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAccountRequest);
             return new AsyncInvoker<UpdateAccountResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdateAccountResponse>);
@@ -373,7 +373,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ListDelegatedServicesResponse> ListDelegatedServicesAsync(ListDelegatedServicesRequest listDelegatedServicesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", listDelegatedServicesRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDelegatedServicesRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}/delegated-services", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDelegatedServicesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -383,7 +383,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ListDelegatedServicesResponse> ListDelegatedServicesAsyncInvoker(ListDelegatedServicesRequest listDelegatedServicesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account_id", listDelegatedServicesRequest.AccountId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDelegatedServicesRequest.AccountId, out var valueOfAccountId)) urlParam.Add("account_id", valueOfAccountId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/accounts/{account_id}/delegated-services", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDelegatedServicesRequest);
             return new AsyncInvoker<ListDelegatedServicesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDelegatedServicesResponse>);
@@ -423,7 +423,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<AcceptHandshakeResponse> AcceptHandshakeAsync(AcceptHandshakeRequest acceptHandshakeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("handshake_id", acceptHandshakeRequest.HandshakeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(acceptHandshakeRequest.HandshakeId, out var valueOfHandshakeId)) urlParam.Add("handshake_id", valueOfHandshakeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/received-handshakes/{handshake_id}/accept", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", acceptHandshakeRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -433,7 +433,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<AcceptHandshakeResponse> AcceptHandshakeAsyncInvoker(AcceptHandshakeRequest acceptHandshakeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("handshake_id", acceptHandshakeRequest.HandshakeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(acceptHandshakeRequest.HandshakeId, out var valueOfHandshakeId)) urlParam.Add("handshake_id", valueOfHandshakeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/received-handshakes/{handshake_id}/accept", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", acceptHandshakeRequest);
             return new AsyncInvoker<AcceptHandshakeResponse>(this, "POST", request, JsonUtils.DeSerialize<AcceptHandshakeResponse>);
@@ -449,7 +449,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<CancelHandshakeResponse> CancelHandshakeAsync(CancelHandshakeRequest cancelHandshakeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("handshake_id", cancelHandshakeRequest.HandshakeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelHandshakeRequest.HandshakeId, out var valueOfHandshakeId)) urlParam.Add("handshake_id", valueOfHandshakeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/handshakes/{handshake_id}/cancel", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelHandshakeRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -459,7 +459,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<CancelHandshakeResponse> CancelHandshakeAsyncInvoker(CancelHandshakeRequest cancelHandshakeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("handshake_id", cancelHandshakeRequest.HandshakeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelHandshakeRequest.HandshakeId, out var valueOfHandshakeId)) urlParam.Add("handshake_id", valueOfHandshakeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/handshakes/{handshake_id}/cancel", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelHandshakeRequest);
             return new AsyncInvoker<CancelHandshakeResponse>(this, "POST", request, JsonUtils.DeSerialize<CancelHandshakeResponse>);
@@ -475,7 +475,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<DeclineHandshakeResponse> DeclineHandshakeAsync(DeclineHandshakeRequest declineHandshakeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("handshake_id", declineHandshakeRequest.HandshakeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(declineHandshakeRequest.HandshakeId, out var valueOfHandshakeId)) urlParam.Add("handshake_id", valueOfHandshakeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/received-handshakes/{handshake_id}/decline", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", declineHandshakeRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -485,7 +485,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<DeclineHandshakeResponse> DeclineHandshakeAsyncInvoker(DeclineHandshakeRequest declineHandshakeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("handshake_id", declineHandshakeRequest.HandshakeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(declineHandshakeRequest.HandshakeId, out var valueOfHandshakeId)) urlParam.Add("handshake_id", valueOfHandshakeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/received-handshakes/{handshake_id}/decline", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", declineHandshakeRequest);
             return new AsyncInvoker<DeclineHandshakeResponse>(this, "POST", request, JsonUtils.DeSerialize<DeclineHandshakeResponse>);
@@ -549,7 +549,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ShowHandshakeResponse> ShowHandshakeAsync(ShowHandshakeRequest showHandshakeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("handshake_id", showHandshakeRequest.HandshakeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHandshakeRequest.HandshakeId, out var valueOfHandshakeId)) urlParam.Add("handshake_id", valueOfHandshakeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/handshakes/{handshake_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHandshakeRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -559,7 +559,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ShowHandshakeResponse> ShowHandshakeAsyncInvoker(ShowHandshakeRequest showHandshakeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("handshake_id", showHandshakeRequest.HandshakeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHandshakeRequest.HandshakeId, out var valueOfHandshakeId)) urlParam.Add("handshake_id", valueOfHandshakeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/handshakes/{handshake_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHandshakeRequest);
             return new AsyncInvoker<ShowHandshakeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHandshakeResponse>);
@@ -839,7 +839,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<DeleteOrganizationalUnitResponse> DeleteOrganizationalUnitAsync(DeleteOrganizationalUnitRequest deleteOrganizationalUnitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("organizational_unit_id", deleteOrganizationalUnitRequest.OrganizationalUnitId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteOrganizationalUnitRequest.OrganizationalUnitId, out var valueOfOrganizationalUnitId)) urlParam.Add("organizational_unit_id", valueOfOrganizationalUnitId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/organizational-units/{organizational_unit_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOrganizationalUnitRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -849,7 +849,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<DeleteOrganizationalUnitResponse> DeleteOrganizationalUnitAsyncInvoker(DeleteOrganizationalUnitRequest deleteOrganizationalUnitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("organizational_unit_id", deleteOrganizationalUnitRequest.OrganizationalUnitId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteOrganizationalUnitRequest.OrganizationalUnitId, out var valueOfOrganizationalUnitId)) urlParam.Add("organizational_unit_id", valueOfOrganizationalUnitId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/organizational-units/{organizational_unit_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOrganizationalUnitRequest);
             return new AsyncInvoker<DeleteOrganizationalUnitResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteOrganizationalUnitResponse>);
@@ -889,7 +889,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ShowOrganizationalUnitResponse> ShowOrganizationalUnitAsync(ShowOrganizationalUnitRequest showOrganizationalUnitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("organizational_unit_id", showOrganizationalUnitRequest.OrganizationalUnitId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showOrganizationalUnitRequest.OrganizationalUnitId, out var valueOfOrganizationalUnitId)) urlParam.Add("organizational_unit_id", valueOfOrganizationalUnitId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/organizational-units/{organizational_unit_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOrganizationalUnitRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -899,7 +899,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ShowOrganizationalUnitResponse> ShowOrganizationalUnitAsyncInvoker(ShowOrganizationalUnitRequest showOrganizationalUnitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("organizational_unit_id", showOrganizationalUnitRequest.OrganizationalUnitId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showOrganizationalUnitRequest.OrganizationalUnitId, out var valueOfOrganizationalUnitId)) urlParam.Add("organizational_unit_id", valueOfOrganizationalUnitId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/organizational-units/{organizational_unit_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOrganizationalUnitRequest);
             return new AsyncInvoker<ShowOrganizationalUnitResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowOrganizationalUnitResponse>);
@@ -915,7 +915,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<UpdateOrganizationalUnitResponse> UpdateOrganizationalUnitAsync(UpdateOrganizationalUnitRequest updateOrganizationalUnitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("organizational_unit_id", updateOrganizationalUnitRequest.OrganizationalUnitId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateOrganizationalUnitRequest.OrganizationalUnitId, out var valueOfOrganizationalUnitId)) urlParam.Add("organizational_unit_id", valueOfOrganizationalUnitId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/organizational-units/{organizational_unit_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateOrganizationalUnitRequest);
             var response = await DoHttpRequestAsync("PATCH", request);
@@ -925,7 +925,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<UpdateOrganizationalUnitResponse> UpdateOrganizationalUnitAsyncInvoker(UpdateOrganizationalUnitRequest updateOrganizationalUnitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("organizational_unit_id", updateOrganizationalUnitRequest.OrganizationalUnitId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateOrganizationalUnitRequest.OrganizationalUnitId, out var valueOfOrganizationalUnitId)) urlParam.Add("organizational_unit_id", valueOfOrganizationalUnitId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/organizational-units/{organizational_unit_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateOrganizationalUnitRequest);
             return new AsyncInvoker<UpdateOrganizationalUnitResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdateOrganizationalUnitResponse>);
@@ -941,7 +941,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<AttachPolicyResponse> AttachPolicyAsync(AttachPolicyRequest attachPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", attachPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(attachPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}/attach", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachPolicyRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -951,7 +951,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<AttachPolicyResponse> AttachPolicyAsyncInvoker(AttachPolicyRequest attachPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", attachPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(attachPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}/attach", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachPolicyRequest);
             return new AsyncInvoker<AttachPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AttachPolicyResponse>);
@@ -991,7 +991,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest deletePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", deletePolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePolicyRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -1001,7 +1001,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<DeletePolicyResponse> DeletePolicyAsyncInvoker(DeletePolicyRequest deletePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", deletePolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePolicyRequest);
             return new AsyncInvoker<DeletePolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePolicyResponse>);
@@ -1017,7 +1017,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<DetachPolicyResponse> DetachPolicyAsync(DetachPolicyRequest detachPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", detachPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(detachPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}/detach", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachPolicyRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1027,7 +1027,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<DetachPolicyResponse> DetachPolicyAsyncInvoker(DetachPolicyRequest detachPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", detachPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(detachPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}/detach", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachPolicyRequest);
             return new AsyncInvoker<DetachPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DetachPolicyResponse>);
@@ -1091,7 +1091,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ListEntitiesForPolicyResponse> ListEntitiesForPolicyAsync(ListEntitiesForPolicyRequest listEntitiesForPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", listEntitiesForPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEntitiesForPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}/attached-entities", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEntitiesForPolicyRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1101,7 +1101,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ListEntitiesForPolicyResponse> ListEntitiesForPolicyAsyncInvoker(ListEntitiesForPolicyRequest listEntitiesForPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", listEntitiesForPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEntitiesForPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}/attached-entities", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEntitiesForPolicyRequest);
             return new AsyncInvoker<ListEntitiesForPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEntitiesForPolicyResponse>);
@@ -1141,7 +1141,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ShowPolicyResponse> ShowPolicyAsync(ShowPolicyRequest showPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", showPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPolicyRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1151,7 +1151,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ShowPolicyResponse> ShowPolicyAsyncInvoker(ShowPolicyRequest showPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", showPolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPolicyRequest);
             return new AsyncInvoker<ShowPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPolicyResponse>);
@@ -1167,7 +1167,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<UpdatePolicyResponse> UpdatePolicyAsync(UpdatePolicyRequest updatePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", updatePolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePolicyRequest);
             var response = await DoHttpRequestAsync("PATCH", request);
@@ -1177,7 +1177,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<UpdatePolicyResponse> UpdatePolicyAsyncInvoker(UpdatePolicyRequest updatePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", updatePolicyRequest.PolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePolicyRequest);
             return new AsyncInvoker<UpdatePolicyResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdatePolicyResponse>);
@@ -1193,8 +1193,8 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<CreateTagResourceResponse> CreateTagResourceAsync(CreateTagResourceRequest createTagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createTagResourceRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createTagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTagResourceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createTagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagResourceRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1204,8 +1204,8 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<CreateTagResourceResponse> CreateTagResourceAsyncInvoker(CreateTagResourceRequest createTagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createTagResourceRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createTagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTagResourceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createTagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagResourceRequest);
             return new AsyncInvoker<CreateTagResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateTagResourceResponse>);
@@ -1221,8 +1221,8 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<DeleteTagResourceResponse> DeleteTagResourceAsync(DeleteTagResourceRequest deleteTagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteTagResourceRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteTagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagResourceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagResourceRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1232,8 +1232,8 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<DeleteTagResourceResponse> DeleteTagResourceAsyncInvoker(DeleteTagResourceRequest deleteTagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteTagResourceRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteTagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagResourceRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagResourceRequest);
             return new AsyncInvoker<DeleteTagResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteTagResourceResponse>);
@@ -1249,7 +1249,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ListResourceInstancesResponse> ListResourceInstancesAsync(ListResourceInstancesRequest listResourceInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listResourceInstancesRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listResourceInstancesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/resource-instances/filter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceInstancesRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1259,7 +1259,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ListResourceInstancesResponse> ListResourceInstancesAsyncInvoker(ListResourceInstancesRequest listResourceInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listResourceInstancesRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listResourceInstancesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/resource-instances/filter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceInstancesRequest);
             return new AsyncInvoker<ListResourceInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListResourceInstancesResponse>);
@@ -1275,7 +1275,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ListResourceTagsResponse> ListResourceTagsAsync(ListResourceTagsRequest listResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listResourceTagsRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceTagsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1285,7 +1285,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ListResourceTagsResponse> ListResourceTagsAsyncInvoker(ListResourceTagsRequest listResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listResourceTagsRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceTagsRequest);
             return new AsyncInvoker<ListResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListResourceTagsResponse>);
@@ -1301,8 +1301,8 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ListTagResourcesResponse> ListTagResourcesAsync(ListTagResourcesRequest listTagResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listTagResourcesRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listTagResourcesRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTagResourcesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listTagResourcesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagResourcesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1312,8 +1312,8 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ListTagResourcesResponse> ListTagResourcesAsyncInvoker(ListTagResourcesRequest listTagResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listTagResourcesRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listTagResourcesRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTagResourcesRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listTagResourcesRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagResourcesRequest);
             return new AsyncInvoker<ListTagResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTagResourcesResponse>);
@@ -1329,7 +1329,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", listTagsForResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTagsForResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/resources/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsForResourceRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1339,7 +1339,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ListTagsForResourceResponse> ListTagsForResourceAsyncInvoker(ListTagsForResourceRequest listTagsForResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", listTagsForResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTagsForResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/resources/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsForResourceRequest);
             return new AsyncInvoker<ListTagsForResourceResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTagsForResourceResponse>);
@@ -1355,7 +1355,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<ShowResourceInstancesCountResponse> ShowResourceInstancesCountAsync(ShowResourceInstancesCountRequest showResourceInstancesCountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showResourceInstancesCountRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourceInstancesCountRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/resource-instances/count", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceInstancesCountRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1365,7 +1365,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<ShowResourceInstancesCountResponse> ShowResourceInstancesCountAsyncInvoker(ShowResourceInstancesCountRequest showResourceInstancesCountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showResourceInstancesCountRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourceInstancesCountRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/{resource_type}/resource-instances/count", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceInstancesCountRequest);
             return new AsyncInvoker<ShowResourceInstancesCountResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowResourceInstancesCountResponse>);
@@ -1381,7 +1381,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<TagResourceResponse> TagResourceAsync(TagResourceRequest tagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", tagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(tagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/resources/{resource_id}/tag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", tagResourceRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1391,7 +1391,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<TagResourceResponse> TagResourceAsyncInvoker(TagResourceRequest tagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", tagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(tagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/resources/{resource_id}/tag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", tagResourceRequest);
             return new AsyncInvoker<TagResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<TagResourceResponse>);
@@ -1407,7 +1407,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public async Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest untagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", untagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(untagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/resources/{resource_id}/untag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", untagResourceRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1417,7 +1417,7 @@ namespace HuaweiCloud.SDK.Organizations.V1
         public AsyncInvoker<UntagResourceResponse> UntagResourceAsyncInvoker(UntagResourceRequest untagResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", untagResourceRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(untagResourceRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/organizations/resources/{resource_id}/untag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", untagResourceRequest);
             return new AsyncInvoker<UntagResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UntagResourceResponse>);

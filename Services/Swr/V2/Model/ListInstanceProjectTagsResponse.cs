@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 项目下资源标签列表
+        /// 标签列表
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ProjectTag> Tags { get; set; }

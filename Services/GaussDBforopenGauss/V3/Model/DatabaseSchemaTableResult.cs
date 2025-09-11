@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 {
     /// <summary>
-    /// 数据库表结构及其所属 schema
+    /// 
     /// </summary>
     public class DatabaseSchemaTableResult 
     {
 
         /// <summary>
-        /// 表名称
+        /// **参数解释**: 表名称。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("table_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TableName { get; set; }
 
         /// <summary>
-        /// schema名称
+        /// **参数解释**: schema名称。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("schema_name", NullValueHandling = NullValueHandling.Ignore)]
         public string SchemaName { get; set; }

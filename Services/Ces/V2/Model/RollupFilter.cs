@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 聚合规则，last:最新值,max:最大值,min:最小值,average:平均值,sum:求和值
+    /// **参数解释** 聚合规则 **约束限制** 当rollup_enable开启时，rollup_filter和rollup_dimension必填 **取值范围** - last:最新值 - max:最大值 - min:最小值 - average:平均值 - sum:求和值 **默认取值** 不涉及 
     /// </summary>
-    /// <value>聚合规则，last:最新值,max:最大值,min:最小值,average:平均值,sum:求和值</value>
+    /// <value>**参数解释** 聚合规则 **约束限制** 当rollup_enable开启时，rollup_filter和rollup_dimension必填 **取值范围** - last:最新值 - max:最大值 - min:最小值 - average:平均值 - sum:求和值 **默认取值** 不涉及 </value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

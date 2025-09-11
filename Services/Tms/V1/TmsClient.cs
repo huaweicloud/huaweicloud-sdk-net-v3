@@ -288,7 +288,7 @@ namespace HuaweiCloud.SDK.Tms.V1
         public ShowApiVersionResponse ShowApiVersion(ShowApiVersionRequest showApiVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showApiVersionRequest.ApiVersion, out var valueOfApiVersion)) urlParam.Add("api_version", valueOfApiVersion);
             var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -298,7 +298,7 @@ namespace HuaweiCloud.SDK.Tms.V1
         public SyncInvoker<ShowApiVersionResponse> ShowApiVersionInvoker(ShowApiVersionRequest showApiVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("api_version", showApiVersionRequest.ApiVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showApiVersionRequest.ApiVersion, out var valueOfApiVersion)) urlParam.Add("api_version", valueOfApiVersion);
             var urlPath = HttpUtils.AddUrlPath("/{api_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiVersionRequest);
             return new SyncInvoker<ShowApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiVersionResponse>);
@@ -314,7 +314,7 @@ namespace HuaweiCloud.SDK.Tms.V1
         public ShowResourceTagResponse ShowResourceTag(ShowResourceTagRequest showResourceTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showResourceTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/resources/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceTagRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -324,7 +324,7 @@ namespace HuaweiCloud.SDK.Tms.V1
         public SyncInvoker<ShowResourceTagResponse> ShowResourceTagInvoker(ShowResourceTagRequest showResourceTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showResourceTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2.0/resources/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceTagRequest);
             return new SyncInvoker<ShowResourceTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResourceTagResponse>);

@@ -121,7 +121,7 @@ namespace HuaweiCloud.SDK.Aad.V2
         public async Task<ListDDoSAttackEventResponse> ListDDoSAttackEventAsync(ListDDoSAttackEventRequest listDDoSAttackEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listDDoSAttackEventRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDDoSAttackEventRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}/ddos-info/attack/events", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDDoSAttackEventRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -131,7 +131,7 @@ namespace HuaweiCloud.SDK.Aad.V2
         public AsyncInvoker<ListDDoSAttackEventResponse> ListDDoSAttackEventAsyncInvoker(ListDDoSAttackEventRequest listDDoSAttackEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listDDoSAttackEventRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDDoSAttackEventRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}/ddos-info/attack/events", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDDoSAttackEventRequest);
             return new AsyncInvoker<ListDDoSAttackEventResponse>(this, "POST", request, JsonUtils.DeSerialize<ListDDoSAttackEventResponse>);
@@ -147,7 +147,7 @@ namespace HuaweiCloud.SDK.Aad.V2
         public async Task<ListDDoSConnectionNumberResponse> ListDDoSConnectionNumberAsync(ListDDoSConnectionNumberRequest listDDoSConnectionNumberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listDDoSConnectionNumberRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDDoSConnectionNumberRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}/ddos-info/flow/connection-numbers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDDoSConnectionNumberRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -157,7 +157,7 @@ namespace HuaweiCloud.SDK.Aad.V2
         public AsyncInvoker<ListDDoSConnectionNumberResponse> ListDDoSConnectionNumberAsyncInvoker(ListDDoSConnectionNumberRequest listDDoSConnectionNumberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listDDoSConnectionNumberRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDDoSConnectionNumberRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}/ddos-info/flow/connection-numbers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDDoSConnectionNumberRequest);
             return new AsyncInvoker<ListDDoSConnectionNumberResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDDoSConnectionNumberResponse>);
@@ -173,7 +173,7 @@ namespace HuaweiCloud.SDK.Aad.V2
         public async Task<ListDDoSFlowResponse> ListDDoSFlowAsync(ListDDoSFlowRequest listDDoSFlowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listDDoSFlowRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDDoSFlowRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}/ddos-info/flow", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDDoSFlowRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -183,7 +183,7 @@ namespace HuaweiCloud.SDK.Aad.V2
         public AsyncInvoker<ListDDoSFlowResponse> ListDDoSFlowAsyncInvoker(ListDDoSFlowRequest listDDoSFlowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listDDoSFlowRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDDoSFlowRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}/ddos-info/flow", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDDoSFlowRequest);
             return new AsyncInvoker<ListDDoSFlowResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDDoSFlowResponse>);
@@ -223,7 +223,7 @@ namespace HuaweiCloud.SDK.Aad.V2
         public async Task<ListInstanceDomainsResponse> ListInstanceDomainsAsync(ListInstanceDomainsRequest listInstanceDomainsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceDomainsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceDomainsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}/domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDomainsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -233,7 +233,7 @@ namespace HuaweiCloud.SDK.Aad.V2
         public AsyncInvoker<ListInstanceDomainsResponse> ListInstanceDomainsAsyncInvoker(ListInstanceDomainsRequest listInstanceDomainsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceDomainsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceDomainsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}/domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDomainsRequest);
             return new AsyncInvoker<ListInstanceDomainsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceDomainsResponse>);
@@ -417,7 +417,7 @@ namespace HuaweiCloud.SDK.Aad.V2
         public async Task<ShowDomainCertificateResponse> ShowDomainCertificateAsync(ShowDomainCertificateRequest showDomainCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainCertificateRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainCertificateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains/{domain_id}/certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainCertificateRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -427,7 +427,7 @@ namespace HuaweiCloud.SDK.Aad.V2
         public AsyncInvoker<ShowDomainCertificateResponse> ShowDomainCertificateAsyncInvoker(ShowDomainCertificateRequest showDomainCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("domain_id", showDomainCertificateRequest.DomainId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDomainCertificateRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains/{domain_id}/certificate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainCertificateRequest);
             return new AsyncInvoker<ShowDomainCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainCertificateResponse>);

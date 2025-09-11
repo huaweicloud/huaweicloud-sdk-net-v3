@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public AsyncInvokeFunctionResponse AsyncInvokeFunction(AsyncInvokeFunctionRequest asyncInvokeFunctionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", asyncInvokeFunctionRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(asyncInvokeFunctionRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/invocations-async", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", asyncInvokeFunctionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<AsyncInvokeFunctionResponse> AsyncInvokeFunctionInvoker(AsyncInvokeFunctionRequest asyncInvokeFunctionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", asyncInvokeFunctionRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(asyncInvokeFunctionRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/invocations-async", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", asyncInvokeFunctionRequest);
             return new SyncInvoker<AsyncInvokeFunctionResponse>(this, "POST", request, JsonUtils.DeSerialize<AsyncInvokeFunctionResponse>);
@@ -54,7 +54,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public BatchDeleteFunctionTriggersResponse BatchDeleteFunctionTriggers(BatchDeleteFunctionTriggersRequest batchDeleteFunctionTriggersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", batchDeleteFunctionTriggersRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteFunctionTriggersRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteFunctionTriggersRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<BatchDeleteFunctionTriggersResponse> BatchDeleteFunctionTriggersInvoker(BatchDeleteFunctionTriggersRequest batchDeleteFunctionTriggersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", batchDeleteFunctionTriggersRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteFunctionTriggersRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteFunctionTriggersRequest);
             return new SyncInvoker<BatchDeleteFunctionTriggersResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<BatchDeleteFunctionTriggersResponse>);
@@ -104,7 +104,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public CancelAsyncInvocationResponse CancelAsyncInvocation(CancelAsyncInvocationRequest cancelAsyncInvocationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", cancelAsyncInvocationRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelAsyncInvocationRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/cancel", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelAsyncInvocationRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -114,7 +114,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<CancelAsyncInvocationResponse> CancelAsyncInvocationInvoker(CancelAsyncInvocationRequest cancelAsyncInvocationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", cancelAsyncInvocationRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelAsyncInvocationRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/cancel", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelAsyncInvocationRequest);
             return new SyncInvoker<CancelAsyncInvocationResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CancelAsyncInvocationResponse>);
@@ -130,7 +130,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public CreateCallbackWorkflowResponse CreateCallbackWorkflow(CreateCallbackWorkflowRequest createCallbackWorkflowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", createCallbackWorkflowRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createCallbackWorkflowRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/callback", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCallbackWorkflowRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -140,7 +140,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<CreateCallbackWorkflowResponse> CreateCallbackWorkflowInvoker(CreateCallbackWorkflowRequest createCallbackWorkflowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", createCallbackWorkflowRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createCallbackWorkflowRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/callback", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCallbackWorkflowRequest);
             return new SyncInvoker<CreateCallbackWorkflowResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateCallbackWorkflowResponse>);
@@ -180,7 +180,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public CreateEventResponse CreateEvent(CreateEventRequest createEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", createEventRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createEventRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEventRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -190,7 +190,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<CreateEventResponse> CreateEventInvoker(CreateEventRequest createEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", createEventRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createEventRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEventRequest);
             return new SyncInvoker<CreateEventResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateEventResponse>);
@@ -258,7 +258,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public CreateFunctionTriggerResponse CreateFunctionTrigger(CreateFunctionTriggerRequest createFunctionTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", createFunctionTriggerRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createFunctionTriggerRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFunctionTriggerRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -268,7 +268,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<CreateFunctionTriggerResponse> CreateFunctionTriggerInvoker(CreateFunctionTriggerRequest createFunctionTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", createFunctionTriggerRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createFunctionTriggerRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFunctionTriggerRequest);
             return new SyncInvoker<CreateFunctionTriggerResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFunctionTriggerResponse>);
@@ -284,7 +284,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public CreateFunctionVersionResponse CreateFunctionVersion(CreateFunctionVersionRequest createFunctionVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", createFunctionVersionRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createFunctionVersionRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFunctionVersionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -294,7 +294,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<CreateFunctionVersionResponse> CreateFunctionVersionInvoker(CreateFunctionVersionRequest createFunctionVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", createFunctionVersionRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createFunctionVersionRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createFunctionVersionRequest);
             return new SyncInvoker<CreateFunctionVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFunctionVersionResponse>);
@@ -310,8 +310,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public CreateTagsResponse CreateTags(CreateTagsRequest createTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -321,8 +321,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<CreateTagsResponse> CreateTagsInvoker(CreateTagsRequest createTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagsRequest);
             return new SyncInvoker<CreateTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateTagsResponse>);
@@ -338,7 +338,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public CreateVersionAliasResponse CreateVersionAlias(CreateVersionAliasRequest createVersionAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", createVersionAliasRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createVersionAliasRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createVersionAliasRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -348,7 +348,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<CreateVersionAliasResponse> CreateVersionAliasInvoker(CreateVersionAliasRequest createVersionAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", createVersionAliasRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createVersionAliasRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createVersionAliasRequest);
             return new SyncInvoker<CreateVersionAliasResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateVersionAliasResponse>);
@@ -412,8 +412,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public DeleteDependencyVersionResponse DeleteDependencyVersion(DeleteDependencyVersionRequest deleteDependencyVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", deleteDependencyVersionRequest.DependId.ToString());
-            urlParam.Add("version", deleteDependencyVersionRequest.Version.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDependencyVersionRequest.DependId, out var valueOfDependId)) urlParam.Add("depend_id", valueOfDependId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteDependencyVersionRequest.Version, out var valueOfVersion)) urlParam.Add("version", valueOfVersion);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}/version/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDependencyVersionRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -423,8 +423,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<DeleteDependencyVersionResponse> DeleteDependencyVersionInvoker(DeleteDependencyVersionRequest deleteDependencyVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", deleteDependencyVersionRequest.DependId.ToString());
-            urlParam.Add("version", deleteDependencyVersionRequest.Version.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDependencyVersionRequest.DependId, out var valueOfDependId)) urlParam.Add("depend_id", valueOfDependId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteDependencyVersionRequest.Version, out var valueOfVersion)) urlParam.Add("version", valueOfVersion);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}/version/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDependencyVersionRequest);
             return new SyncInvoker<DeleteDependencyVersionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDependencyVersionResponse>);
@@ -440,8 +440,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public DeleteEventResponse DeleteEvent(DeleteEventRequest deleteEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", deleteEventRequest.FunctionUrn.ToString());
-            urlParam.Add("event_id", deleteEventRequest.EventId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEventRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(deleteEventRequest.EventId, out var valueOfEventId)) urlParam.Add("event_id", valueOfEventId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEventRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -451,8 +451,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<DeleteEventResponse> DeleteEventInvoker(DeleteEventRequest deleteEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", deleteEventRequest.FunctionUrn.ToString());
-            urlParam.Add("event_id", deleteEventRequest.EventId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEventRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(deleteEventRequest.EventId, out var valueOfEventId)) urlParam.Add("event_id", valueOfEventId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEventRequest);
             return new SyncInvoker<DeleteEventResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteEventResponse>);
@@ -471,7 +471,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest deleteFunctionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", deleteFunctionRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -481,7 +481,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<DeleteFunctionResponse> DeleteFunctionInvoker(DeleteFunctionRequest deleteFunctionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", deleteFunctionRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionRequest);
             return new SyncInvoker<DeleteFunctionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFunctionResponse>);
@@ -497,7 +497,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public DeleteFunctionAppResponse DeleteFunctionApp(DeleteFunctionAppRequest deleteFunctionAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteFunctionAppRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionAppRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/applications/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionAppRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -507,7 +507,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<DeleteFunctionAppResponse> DeleteFunctionAppInvoker(DeleteFunctionAppRequest deleteFunctionAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteFunctionAppRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionAppRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/applications/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionAppRequest);
             return new SyncInvoker<DeleteFunctionAppResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFunctionAppResponse>);
@@ -523,7 +523,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public DeleteFunctionAsyncInvokeConfigResponse DeleteFunctionAsyncInvokeConfig(DeleteFunctionAsyncInvokeConfigRequest deleteFunctionAsyncInvokeConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", deleteFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionAsyncInvokeConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionAsyncInvokeConfigRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -533,7 +533,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<DeleteFunctionAsyncInvokeConfigResponse> DeleteFunctionAsyncInvokeConfigInvoker(DeleteFunctionAsyncInvokeConfigRequest deleteFunctionAsyncInvokeConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", deleteFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionAsyncInvokeConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionAsyncInvokeConfigRequest);
             return new SyncInvoker<DeleteFunctionAsyncInvokeConfigResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFunctionAsyncInvokeConfigResponse>);
@@ -549,9 +549,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public DeleteFunctionTriggerResponse DeleteFunctionTrigger(DeleteFunctionTriggerRequest deleteFunctionTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", deleteFunctionTriggerRequest.FunctionUrn.ToString());
-            urlParam.Add("trigger_type_code", deleteFunctionTriggerRequest.TriggerTypeCode.ToString());
-            urlParam.Add("trigger_id", deleteFunctionTriggerRequest.TriggerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionTriggerRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionTriggerRequest.TriggerTypeCode, out var valueOfTriggerTypeCode)) urlParam.Add("trigger_type_code", valueOfTriggerTypeCode);
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionTriggerRequest.TriggerId, out var valueOfTriggerId)) urlParam.Add("trigger_id", valueOfTriggerId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionTriggerRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -561,9 +561,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<DeleteFunctionTriggerResponse> DeleteFunctionTriggerInvoker(DeleteFunctionTriggerRequest deleteFunctionTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", deleteFunctionTriggerRequest.FunctionUrn.ToString());
-            urlParam.Add("trigger_type_code", deleteFunctionTriggerRequest.TriggerTypeCode.ToString());
-            urlParam.Add("trigger_id", deleteFunctionTriggerRequest.TriggerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionTriggerRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionTriggerRequest.TriggerTypeCode, out var valueOfTriggerTypeCode)) urlParam.Add("trigger_type_code", valueOfTriggerTypeCode);
+            if (StringUtils.TryConvertToNonEmptyString(deleteFunctionTriggerRequest.TriggerId, out var valueOfTriggerId)) urlParam.Add("trigger_id", valueOfTriggerId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFunctionTriggerRequest);
             return new SyncInvoker<DeleteFunctionTriggerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFunctionTriggerResponse>);
@@ -579,8 +579,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public DeleteTagsResponse DeleteTags(DeleteTagsRequest deleteTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagsRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -590,8 +590,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<DeleteTagsResponse> DeleteTagsInvoker(DeleteTagsRequest deleteTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagsRequest);
             return new SyncInvoker<DeleteTagsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTagsResponse>);
@@ -607,8 +607,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public DeleteVersionAliasResponse DeleteVersionAlias(DeleteVersionAliasRequest deleteVersionAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", deleteVersionAliasRequest.FunctionUrn.ToString());
-            urlParam.Add("alias_name", deleteVersionAliasRequest.AliasName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVersionAliasRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(deleteVersionAliasRequest.AliasName, out var valueOfAliasName)) urlParam.Add("alias_name", valueOfAliasName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVersionAliasRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -618,8 +618,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<DeleteVersionAliasResponse> DeleteVersionAliasInvoker(DeleteVersionAliasRequest deleteVersionAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", deleteVersionAliasRequest.FunctionUrn.ToString());
-            urlParam.Add("alias_name", deleteVersionAliasRequest.AliasName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVersionAliasRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(deleteVersionAliasRequest.AliasName, out var valueOfAliasName)) urlParam.Add("alias_name", valueOfAliasName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVersionAliasRequest);
             return new SyncInvoker<DeleteVersionAliasResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVersionAliasResponse>);
@@ -635,8 +635,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public DeleteVpcEndpointResponse DeleteVpcEndpoint(DeleteVpcEndpointRequest deleteVpcEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", deleteVpcEndpointRequest.VpcId.ToString());
-            urlParam.Add("subnet_id", deleteVpcEndpointRequest.SubnetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVpcEndpointRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteVpcEndpointRequest.SubnetId, out var valueOfSubnetId)) urlParam.Add("subnet_id", valueOfSubnetId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/vpc-endpoint/{vpc_id}/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcEndpointRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -646,8 +646,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<DeleteVpcEndpointResponse> DeleteVpcEndpointInvoker(DeleteVpcEndpointRequest deleteVpcEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vpc_id", deleteVpcEndpointRequest.VpcId.ToString());
-            urlParam.Add("subnet_id", deleteVpcEndpointRequest.SubnetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVpcEndpointRequest.VpcId, out var valueOfVpcId)) urlParam.Add("vpc_id", valueOfVpcId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteVpcEndpointRequest.SubnetId, out var valueOfSubnetId)) urlParam.Add("subnet_id", valueOfSubnetId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/vpc-endpoint/{vpc_id}/{subnet_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVpcEndpointRequest);
             return new SyncInvoker<DeleteVpcEndpointResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVpcEndpointResponse>);
@@ -711,7 +711,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ExportFunctionResponse ExportFunction(ExportFunctionRequest exportFunctionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", exportFunctionRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(exportFunctionRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/export", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportFunctionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -721,7 +721,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ExportFunctionResponse> ExportFunctionInvoker(ExportFunctionRequest exportFunctionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", exportFunctionRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(exportFunctionRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/export", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportFunctionRequest);
             return new SyncInvoker<ExportFunctionResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ExportFunctionResponse>);
@@ -761,7 +761,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public InvokeFunctionResponse InvokeFunction(InvokeFunctionRequest invokeFunctionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", invokeFunctionRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(invokeFunctionRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/invocations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", invokeFunctionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -771,7 +771,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<InvokeFunctionResponse> InvokeFunctionInvoker(InvokeFunctionRequest invokeFunctionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", invokeFunctionRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(invokeFunctionRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/invocations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", invokeFunctionRequest);
             return new SyncInvoker<InvokeFunctionResponse>(this, "POST", request, JsonUtils.DeSerialize<InvokeFunctionResponse>);
@@ -787,7 +787,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListActiveAsyncInvocationsResponse ListActiveAsyncInvocations(ListActiveAsyncInvocationsRequest listActiveAsyncInvocationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listActiveAsyncInvocationsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listActiveAsyncInvocationsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/active-async-invocations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listActiveAsyncInvocationsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -797,7 +797,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListActiveAsyncInvocationsResponse> ListActiveAsyncInvocationsInvoker(ListActiveAsyncInvocationsRequest listActiveAsyncInvocationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listActiveAsyncInvocationsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listActiveAsyncInvocationsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/active-async-invocations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listActiveAsyncInvocationsRequest);
             return new SyncInvoker<ListActiveAsyncInvocationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListActiveAsyncInvocationsResponse>);
@@ -837,7 +837,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListAsyncInvocationsResponse ListAsyncInvocations(ListAsyncInvocationsRequest listAsyncInvocationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listAsyncInvocationsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAsyncInvocationsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invocations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncInvocationsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -847,7 +847,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListAsyncInvocationsResponse> ListAsyncInvocationsInvoker(ListAsyncInvocationsRequest listAsyncInvocationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listAsyncInvocationsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAsyncInvocationsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invocations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsyncInvocationsRequest);
             return new SyncInvoker<ListAsyncInvocationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAsyncInvocationsResponse>);
@@ -863,7 +863,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListBridgeFunctionsResponse ListBridgeFunctions(ListBridgeFunctionsRequest listBridgeFunctionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listBridgeFunctionsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBridgeFunctionsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/servicebridge/relation", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBridgeFunctionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -875,7 +875,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListBridgeFunctionsResponse> ListBridgeFunctionsInvoker(ListBridgeFunctionsRequest listBridgeFunctionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listBridgeFunctionsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBridgeFunctionsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/servicebridge/relation", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBridgeFunctionsRequest);
             return new SyncInvoker<ListBridgeFunctionsResponse>(this, "GET", request, response =>
@@ -951,7 +951,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListDependencyVersionResponse ListDependencyVersion(ListDependencyVersionRequest listDependencyVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", listDependencyVersionRequest.DependId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDependencyVersionRequest.DependId, out var valueOfDependId)) urlParam.Add("depend_id", valueOfDependId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}/version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDependencyVersionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -961,7 +961,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListDependencyVersionResponse> ListDependencyVersionInvoker(ListDependencyVersionRequest listDependencyVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", listDependencyVersionRequest.DependId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDependencyVersionRequest.DependId, out var valueOfDependId)) urlParam.Add("depend_id", valueOfDependId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}/version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDependencyVersionRequest);
             return new SyncInvoker<ListDependencyVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDependencyVersionResponse>);
@@ -977,7 +977,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListEventsResponse ListEvents(ListEventsRequest listEventsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listEventsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEventsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEventsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -987,7 +987,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListEventsResponse> ListEventsInvoker(ListEventsRequest listEventsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listEventsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEventsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEventsRequest);
             return new SyncInvoker<ListEventsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEventsResponse>);
@@ -1053,7 +1053,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListFunctionAsyncInvokeConfigResponse ListFunctionAsyncInvokeConfig(ListFunctionAsyncInvokeConfigRequest listFunctionAsyncInvokeConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionAsyncInvokeConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionAsyncInvokeConfigRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1063,7 +1063,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListFunctionAsyncInvokeConfigResponse> ListFunctionAsyncInvokeConfigInvoker(ListFunctionAsyncInvokeConfigRequest listFunctionAsyncInvokeConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionAsyncInvokeConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionAsyncInvokeConfigRequest);
             return new SyncInvoker<ListFunctionAsyncInvokeConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFunctionAsyncInvokeConfigResponse>);
@@ -1103,8 +1103,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListFunctionStatisticsResponse ListFunctionStatistics(ListFunctionStatisticsRequest listFunctionStatisticsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("func_urn", listFunctionStatisticsRequest.FuncUrn.ToString());
-            urlParam.Add("period", listFunctionStatisticsRequest.Period.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionStatisticsRequest.FuncUrn, out var valueOfFuncUrn)) urlParam.Add("func_urn", valueOfFuncUrn);
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionStatisticsRequest.Period, out var valueOfPeriod)) urlParam.Add("period", valueOfPeriod);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/statistics/{period}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionStatisticsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1114,8 +1114,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListFunctionStatisticsResponse> ListFunctionStatisticsInvoker(ListFunctionStatisticsRequest listFunctionStatisticsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("func_urn", listFunctionStatisticsRequest.FuncUrn.ToString());
-            urlParam.Add("period", listFunctionStatisticsRequest.Period.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionStatisticsRequest.FuncUrn, out var valueOfFuncUrn)) urlParam.Add("func_urn", valueOfFuncUrn);
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionStatisticsRequest.Period, out var valueOfPeriod)) urlParam.Add("period", valueOfPeriod);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/statistics/{period}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionStatisticsRequest);
             return new SyncInvoker<ListFunctionStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFunctionStatisticsResponse>);
@@ -1131,8 +1131,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListFunctionTagsResponse ListFunctionTags(ListFunctionTagsRequest listFunctionTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listFunctionTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listFunctionTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1142,8 +1142,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListFunctionTagsResponse> ListFunctionTagsInvoker(ListFunctionTagsRequest listFunctionTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listFunctionTagsRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", listFunctionTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionTagsRequest);
             return new SyncInvoker<ListFunctionTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFunctionTagsResponse>);
@@ -1183,7 +1183,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListFunctionTriggersResponse ListFunctionTriggers(ListFunctionTriggersRequest listFunctionTriggersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listFunctionTriggersRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionTriggersRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionTriggersRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1195,7 +1195,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListFunctionTriggersResponse> ListFunctionTriggersInvoker(ListFunctionTriggersRequest listFunctionTriggersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listFunctionTriggersRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionTriggersRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionTriggersRequest);
             return new SyncInvoker<ListFunctionTriggersResponse>(this, "GET", request, response =>
@@ -1216,7 +1216,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListFunctionVersionsResponse ListFunctionVersions(ListFunctionVersionsRequest listFunctionVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listFunctionVersionsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionVersionsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionVersionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1226,7 +1226,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListFunctionVersionsResponse> ListFunctionVersionsInvoker(ListFunctionVersionsRequest listFunctionVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listFunctionVersionsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFunctionVersionsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFunctionVersionsRequest);
             return new SyncInvoker<ListFunctionVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFunctionVersionsResponse>);
@@ -1341,7 +1341,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListVersionAliasesResponse ListVersionAliases(ListVersionAliasesRequest listVersionAliasesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listVersionAliasesRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listVersionAliasesRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionAliasesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1353,7 +1353,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListVersionAliasesResponse> ListVersionAliasesInvoker(ListVersionAliasesRequest listVersionAliasesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", listVersionAliasesRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listVersionAliasesRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVersionAliasesRequest);
             return new SyncInvoker<ListVersionAliasesResponse>(this, "GET", request, response =>
@@ -1398,7 +1398,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ListWorkflowExecutionsResponse ListWorkflowExecutions(ListWorkflowExecutionsRequest listWorkflowExecutionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", listWorkflowExecutionsRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listWorkflowExecutionsRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkflowExecutionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1408,7 +1408,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ListWorkflowExecutionsResponse> ListWorkflowExecutionsInvoker(ListWorkflowExecutionsRequest listWorkflowExecutionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", listWorkflowExecutionsRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listWorkflowExecutionsRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWorkflowExecutionsRequest);
             return new SyncInvoker<ListWorkflowExecutionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListWorkflowExecutionsResponse>);
@@ -1424,8 +1424,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public RetryWorkFlowResponse RetryWorkFlow(RetryWorkFlowRequest retryWorkFlowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", retryWorkFlowRequest.WorkflowId.ToString());
-            urlParam.Add("execution_id", retryWorkFlowRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(retryWorkFlowRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
+            if (StringUtils.TryConvertToNonEmptyString(retryWorkFlowRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions/{execution_id}/retry", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryWorkFlowRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1435,8 +1435,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<RetryWorkFlowResponse> RetryWorkFlowInvoker(RetryWorkFlowRequest retryWorkFlowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", retryWorkFlowRequest.WorkflowId.ToString());
-            urlParam.Add("execution_id", retryWorkFlowRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(retryWorkFlowRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
+            if (StringUtils.TryConvertToNonEmptyString(retryWorkFlowRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions/{execution_id}/retry", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryWorkFlowRequest);
             return new SyncInvoker<RetryWorkFlowResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RetryWorkFlowResponse>);
@@ -1452,7 +1452,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowAppTemplateResponse ShowAppTemplate(ShowAppTemplateRequest showAppTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showAppTemplateRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAppTemplateRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/application/templates/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppTemplateRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1462,7 +1462,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowAppTemplateResponse> ShowAppTemplateInvoker(ShowAppTemplateRequest showAppTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showAppTemplateRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAppTemplateRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/application/templates/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppTemplateRequest);
             return new SyncInvoker<ShowAppTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppTemplateResponse>);
@@ -1478,8 +1478,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowDependencyVersionResponse ShowDependencyVersion(ShowDependencyVersionRequest showDependencyVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", showDependencyVersionRequest.DependId.ToString());
-            urlParam.Add("version", showDependencyVersionRequest.Version.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDependencyVersionRequest.DependId, out var valueOfDependId)) urlParam.Add("depend_id", valueOfDependId);
+            if (StringUtils.TryConvertToNonEmptyString(showDependencyVersionRequest.Version, out var valueOfVersion)) urlParam.Add("version", valueOfVersion);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}/version/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDependencyVersionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1489,8 +1489,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowDependencyVersionResponse> ShowDependencyVersionInvoker(ShowDependencyVersionRequest showDependencyVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("depend_id", showDependencyVersionRequest.DependId.ToString());
-            urlParam.Add("version", showDependencyVersionRequest.Version.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDependencyVersionRequest.DependId, out var valueOfDependId)) urlParam.Add("depend_id", valueOfDependId);
+            if (StringUtils.TryConvertToNonEmptyString(showDependencyVersionRequest.Version, out var valueOfVersion)) urlParam.Add("version", valueOfVersion);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/dependencies/{depend_id}/version/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDependencyVersionRequest);
             return new SyncInvoker<ShowDependencyVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDependencyVersionResponse>);
@@ -1506,8 +1506,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowEventResponse ShowEvent(ShowEventRequest showEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showEventRequest.FunctionUrn.ToString());
-            urlParam.Add("event_id", showEventRequest.EventId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEventRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(showEventRequest.EventId, out var valueOfEventId)) urlParam.Add("event_id", valueOfEventId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEventRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1517,8 +1517,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowEventResponse> ShowEventInvoker(ShowEventRequest showEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showEventRequest.FunctionUrn.ToString());
-            urlParam.Add("event_id", showEventRequest.EventId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEventRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(showEventRequest.EventId, out var valueOfEventId)) urlParam.Add("event_id", valueOfEventId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEventRequest);
             return new SyncInvoker<ShowEventResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEventResponse>);
@@ -1540,7 +1540,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowFuncReservedInstanceMetricsResponse ShowFuncReservedInstanceMetrics(ShowFuncReservedInstanceMetricsRequest showFuncReservedInstanceMetricsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("func_urn", showFuncReservedInstanceMetricsRequest.FuncUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFuncReservedInstanceMetricsRequest.FuncUrn, out var valueOfFuncUrn)) urlParam.Add("func_urn", valueOfFuncUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/instancereports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFuncReservedInstanceMetricsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1550,7 +1550,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowFuncReservedInstanceMetricsResponse> ShowFuncReservedInstanceMetricsInvoker(ShowFuncReservedInstanceMetricsRequest showFuncReservedInstanceMetricsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("func_urn", showFuncReservedInstanceMetricsRequest.FuncUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFuncReservedInstanceMetricsRequest.FuncUrn, out var valueOfFuncUrn)) urlParam.Add("func_urn", valueOfFuncUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/instancereports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFuncReservedInstanceMetricsRequest);
             return new SyncInvoker<ShowFuncReservedInstanceMetricsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFuncReservedInstanceMetricsResponse>);
@@ -1566,8 +1566,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowFuncSnapshotStateResponse ShowFuncSnapshotState(ShowFuncSnapshotStateRequest showFuncSnapshotStateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showFuncSnapshotStateRequest.FunctionUrn.ToString());
-            urlParam.Add("action", showFuncSnapshotStateRequest.Action.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFuncSnapshotStateRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(showFuncSnapshotStateRequest.Action, out var valueOfAction)) urlParam.Add("action", valueOfAction);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/{action}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFuncSnapshotStateRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1577,8 +1577,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowFuncSnapshotStateResponse> ShowFuncSnapshotStateInvoker(ShowFuncSnapshotStateRequest showFuncSnapshotStateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showFuncSnapshotStateRequest.FunctionUrn.ToString());
-            urlParam.Add("action", showFuncSnapshotStateRequest.Action.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFuncSnapshotStateRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(showFuncSnapshotStateRequest.Action, out var valueOfAction)) urlParam.Add("action", valueOfAction);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/{action}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFuncSnapshotStateRequest);
             return new SyncInvoker<ShowFuncSnapshotStateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFuncSnapshotStateResponse>);
@@ -1594,7 +1594,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowFunctionAppResponse ShowFunctionApp(ShowFunctionAppRequest showFunctionAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showFunctionAppRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionAppRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/applications/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionAppRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1604,7 +1604,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowFunctionAppResponse> ShowFunctionAppInvoker(ShowFunctionAppRequest showFunctionAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showFunctionAppRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionAppRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/applications/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionAppRequest);
             return new SyncInvoker<ShowFunctionAppResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFunctionAppResponse>);
@@ -1620,7 +1620,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowFunctionAsyncInvokeConfigResponse ShowFunctionAsyncInvokeConfig(ShowFunctionAsyncInvokeConfigRequest showFunctionAsyncInvokeConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionAsyncInvokeConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionAsyncInvokeConfigRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1630,7 +1630,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowFunctionAsyncInvokeConfigResponse> ShowFunctionAsyncInvokeConfigInvoker(ShowFunctionAsyncInvokeConfigRequest showFunctionAsyncInvokeConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionAsyncInvokeConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionAsyncInvokeConfigRequest);
             return new SyncInvoker<ShowFunctionAsyncInvokeConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFunctionAsyncInvokeConfigResponse>);
@@ -1646,7 +1646,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowFunctionCodeResponse ShowFunctionCode(ShowFunctionCodeRequest showFunctionCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showFunctionCodeRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionCodeRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/code", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionCodeRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1656,7 +1656,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowFunctionCodeResponse> ShowFunctionCodeInvoker(ShowFunctionCodeRequest showFunctionCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showFunctionCodeRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionCodeRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/code", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionCodeRequest);
             return new SyncInvoker<ShowFunctionCodeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFunctionCodeResponse>);
@@ -1672,7 +1672,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowFunctionConfigResponse ShowFunctionConfig(ShowFunctionConfigRequest showFunctionConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showFunctionConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionConfigRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1682,7 +1682,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowFunctionConfigResponse> ShowFunctionConfigInvoker(ShowFunctionConfigRequest showFunctionConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showFunctionConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionConfigRequest);
             return new SyncInvoker<ShowFunctionConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFunctionConfigResponse>);
@@ -1698,8 +1698,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowFunctionMetricsResponse ShowFunctionMetrics(ShowFunctionMetricsRequest showFunctionMetricsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("func_urn", showFunctionMetricsRequest.FuncUrn.ToString());
-            urlParam.Add("period", showFunctionMetricsRequest.Period.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionMetricsRequest.FuncUrn, out var valueOfFuncUrn)) urlParam.Add("func_urn", valueOfFuncUrn);
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionMetricsRequest.Period, out var valueOfPeriod)) urlParam.Add("period", valueOfPeriod);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/slareports/{period}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionMetricsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1709,8 +1709,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowFunctionMetricsResponse> ShowFunctionMetricsInvoker(ShowFunctionMetricsRequest showFunctionMetricsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("func_urn", showFunctionMetricsRequest.FuncUrn.ToString());
-            urlParam.Add("period", showFunctionMetricsRequest.Period.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionMetricsRequest.FuncUrn, out var valueOfFuncUrn)) urlParam.Add("func_urn", valueOfFuncUrn);
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionMetricsRequest.Period, out var valueOfPeriod)) urlParam.Add("period", valueOfPeriod);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/slareports/{period}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionMetricsRequest);
             return new SyncInvoker<ShowFunctionMetricsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFunctionMetricsResponse>);
@@ -1726,7 +1726,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowFunctionTemplateResponse ShowFunctionTemplate(ShowFunctionTemplateRequest showFunctionTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_id", showFunctionTemplateRequest.TemplateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionTemplateRequest.TemplateId, out var valueOfTemplateId)) urlParam.Add("template_id", valueOfTemplateId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/templates/{template_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionTemplateRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1736,7 +1736,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowFunctionTemplateResponse> ShowFunctionTemplateInvoker(ShowFunctionTemplateRequest showFunctionTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_id", showFunctionTemplateRequest.TemplateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionTemplateRequest.TemplateId, out var valueOfTemplateId)) urlParam.Add("template_id", valueOfTemplateId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/templates/{template_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionTemplateRequest);
             return new SyncInvoker<ShowFunctionTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFunctionTemplateResponse>);
@@ -1752,9 +1752,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowFunctionTriggerResponse ShowFunctionTrigger(ShowFunctionTriggerRequest showFunctionTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showFunctionTriggerRequest.FunctionUrn.ToString());
-            urlParam.Add("trigger_type_code", showFunctionTriggerRequest.TriggerTypeCode.ToString());
-            urlParam.Add("trigger_id", showFunctionTriggerRequest.TriggerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionTriggerRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionTriggerRequest.TriggerTypeCode, out var valueOfTriggerTypeCode)) urlParam.Add("trigger_type_code", valueOfTriggerTypeCode);
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionTriggerRequest.TriggerId, out var valueOfTriggerId)) urlParam.Add("trigger_id", valueOfTriggerId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionTriggerRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1764,9 +1764,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowFunctionTriggerResponse> ShowFunctionTriggerInvoker(ShowFunctionTriggerRequest showFunctionTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showFunctionTriggerRequest.FunctionUrn.ToString());
-            urlParam.Add("trigger_type_code", showFunctionTriggerRequest.TriggerTypeCode.ToString());
-            urlParam.Add("trigger_id", showFunctionTriggerRequest.TriggerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionTriggerRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionTriggerRequest.TriggerTypeCode, out var valueOfTriggerTypeCode)) urlParam.Add("trigger_type_code", valueOfTriggerTypeCode);
+            if (StringUtils.TryConvertToNonEmptyString(showFunctionTriggerRequest.TriggerId, out var valueOfTriggerId)) urlParam.Add("trigger_id", valueOfTriggerId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFunctionTriggerRequest);
             return new SyncInvoker<ShowFunctionTriggerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFunctionTriggerResponse>);
@@ -1782,7 +1782,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowLtsLogDetailsResponse ShowLtsLogDetails(ShowLtsLogDetailsRequest showLtsLogDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showLtsLogDetailsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLtsLogDetailsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/lts-log-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLtsLogDetailsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1792,7 +1792,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowLtsLogDetailsResponse> ShowLtsLogDetailsInvoker(ShowLtsLogDetailsRequest showLtsLogDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showLtsLogDetailsRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLtsLogDetailsRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/lts-log-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLtsLogDetailsRequest);
             return new SyncInvoker<ShowLtsLogDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLtsLogDetailsResponse>);
@@ -1832,7 +1832,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowProjectTagsListResponse ShowProjectTagsList(ShowProjectTagsListRequest showProjectTagsListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showProjectTagsListRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProjectTagsListRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectTagsListRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1842,7 +1842,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowProjectTagsListResponse> ShowProjectTagsListInvoker(ShowProjectTagsListRequest showProjectTagsListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showProjectTagsListRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProjectTagsListRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectTagsListRequest);
             return new SyncInvoker<ShowProjectTagsListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectTagsListResponse>);
@@ -1858,8 +1858,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowResInstanceInfoResponse ShowResInstanceInfo(ShowResInstanceInfoRequest showResInstanceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showResInstanceInfoRequest.ResourceType.ToString());
-            urlParam.Add("action", showResInstanceInfoRequest.Action.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResInstanceInfoRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(showResInstanceInfoRequest.Action, out var valueOfAction)) urlParam.Add("action", valueOfAction);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource-instances/{action}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResInstanceInfoRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1869,8 +1869,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowResInstanceInfoResponse> ShowResInstanceInfoInvoker(ShowResInstanceInfoRequest showResInstanceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showResInstanceInfoRequest.ResourceType.ToString());
-            urlParam.Add("action", showResInstanceInfoRequest.Action.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResInstanceInfoRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(showResInstanceInfoRequest.Action, out var valueOfAction)) urlParam.Add("action", valueOfAction);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource-instances/{action}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResInstanceInfoRequest);
             return new SyncInvoker<ShowResInstanceInfoResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowResInstanceInfoResponse>);
@@ -1910,7 +1910,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowTracingResponse ShowTracing(ShowTracingRequest showTracingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showTracingRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTracingRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/tracing", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTracingRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1920,7 +1920,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowTracingResponse> ShowTracingInvoker(ShowTracingRequest showTracingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showTracingRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTracingRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/tracing", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTracingRequest);
             return new SyncInvoker<ShowTracingResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTracingResponse>);
@@ -1936,8 +1936,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowVersionAliasResponse ShowVersionAlias(ShowVersionAliasRequest showVersionAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showVersionAliasRequest.FunctionUrn.ToString());
-            urlParam.Add("alias_name", showVersionAliasRequest.AliasName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVersionAliasRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(showVersionAliasRequest.AliasName, out var valueOfAliasName)) urlParam.Add("alias_name", valueOfAliasName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionAliasRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1947,8 +1947,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowVersionAliasResponse> ShowVersionAliasInvoker(ShowVersionAliasRequest showVersionAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", showVersionAliasRequest.FunctionUrn.ToString());
-            urlParam.Add("alias_name", showVersionAliasRequest.AliasName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVersionAliasRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(showVersionAliasRequest.AliasName, out var valueOfAliasName)) urlParam.Add("alias_name", valueOfAliasName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionAliasRequest);
             return new SyncInvoker<ShowVersionAliasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVersionAliasResponse>);
@@ -1964,7 +1964,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowWorkFlowResponse ShowWorkFlow(ShowWorkFlowRequest showWorkFlowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", showWorkFlowRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWorkFlowRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkFlowRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1974,7 +1974,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowWorkFlowResponse> ShowWorkFlowInvoker(ShowWorkFlowRequest showWorkFlowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", showWorkFlowRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWorkFlowRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkFlowRequest);
             return new SyncInvoker<ShowWorkFlowResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWorkFlowResponse>);
@@ -1990,7 +1990,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowWorkFlowMetricResponse ShowWorkFlowMetric(ShowWorkFlowMetricRequest showWorkFlowMetricRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_urn", showWorkFlowMetricRequest.WorkflowUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWorkFlowMetricRequest.WorkflowUrn, out var valueOfWorkflowUrn)) urlParam.Add("workflow_urn", valueOfWorkflowUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflow-statistic/{workflow_urn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkFlowMetricRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2000,7 +2000,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowWorkFlowMetricResponse> ShowWorkFlowMetricInvoker(ShowWorkFlowMetricRequest showWorkFlowMetricRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_urn", showWorkFlowMetricRequest.WorkflowUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWorkFlowMetricRequest.WorkflowUrn, out var valueOfWorkflowUrn)) urlParam.Add("workflow_urn", valueOfWorkflowUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflow-statistic/{workflow_urn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkFlowMetricRequest);
             return new SyncInvoker<ShowWorkFlowMetricResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWorkFlowMetricResponse>);
@@ -2016,8 +2016,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowWorkflowExecutionResponse ShowWorkflowExecution(ShowWorkflowExecutionRequest showWorkflowExecutionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", showWorkflowExecutionRequest.WorkflowId.ToString());
-            urlParam.Add("execution_id", showWorkflowExecutionRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWorkflowExecutionRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
+            if (StringUtils.TryConvertToNonEmptyString(showWorkflowExecutionRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions/{execution_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkflowExecutionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2027,8 +2027,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowWorkflowExecutionResponse> ShowWorkflowExecutionInvoker(ShowWorkflowExecutionRequest showWorkflowExecutionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", showWorkflowExecutionRequest.WorkflowId.ToString());
-            urlParam.Add("execution_id", showWorkflowExecutionRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWorkflowExecutionRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
+            if (StringUtils.TryConvertToNonEmptyString(showWorkflowExecutionRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions/{execution_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkflowExecutionRequest);
             return new SyncInvoker<ShowWorkflowExecutionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWorkflowExecutionResponse>);
@@ -2044,7 +2044,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public ShowWorkflowExecutionForPageResponse ShowWorkflowExecutionForPage(ShowWorkflowExecutionForPageRequest showWorkflowExecutionForPageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", showWorkflowExecutionForPageRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWorkflowExecutionForPageRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions-history", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkflowExecutionForPageRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2054,7 +2054,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<ShowWorkflowExecutionForPageResponse> ShowWorkflowExecutionForPageInvoker(ShowWorkflowExecutionForPageRequest showWorkflowExecutionForPageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", showWorkflowExecutionForPageRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWorkflowExecutionForPageRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions-history", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWorkflowExecutionForPageRequest);
             return new SyncInvoker<ShowWorkflowExecutionForPageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWorkflowExecutionForPageResponse>);
@@ -2070,7 +2070,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public StartSyncWorkflowExecutionResponse StartSyncWorkflowExecution(StartSyncWorkflowExecutionRequest startSyncWorkflowExecutionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", startSyncWorkflowExecutionRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startSyncWorkflowExecutionRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/sync-executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startSyncWorkflowExecutionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2080,7 +2080,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<StartSyncWorkflowExecutionResponse> StartSyncWorkflowExecutionInvoker(StartSyncWorkflowExecutionRequest startSyncWorkflowExecutionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", startSyncWorkflowExecutionRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startSyncWorkflowExecutionRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/sync-executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startSyncWorkflowExecutionRequest);
             return new SyncInvoker<StartSyncWorkflowExecutionResponse>(this, "POST", request, JsonUtils.DeSerialize<StartSyncWorkflowExecutionResponse>);
@@ -2096,7 +2096,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public StartWorkflowExecutionResponse StartWorkflowExecution(StartWorkflowExecutionRequest startWorkflowExecutionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", startWorkflowExecutionRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startWorkflowExecutionRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startWorkflowExecutionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2106,7 +2106,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<StartWorkflowExecutionResponse> StartWorkflowExecutionInvoker(StartWorkflowExecutionRequest startWorkflowExecutionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", startWorkflowExecutionRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startWorkflowExecutionRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startWorkflowExecutionRequest);
             return new SyncInvoker<StartWorkflowExecutionResponse>(this, "POST", request, JsonUtils.DeSerialize<StartWorkflowExecutionResponse>);
@@ -2122,8 +2122,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public StopWorkFlowResponse StopWorkFlow(StopWorkFlowRequest stopWorkFlowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", stopWorkFlowRequest.WorkflowId.ToString());
-            urlParam.Add("execution_id", stopWorkFlowRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopWorkFlowRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
+            if (StringUtils.TryConvertToNonEmptyString(stopWorkFlowRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions/{execution_id}/terminate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopWorkFlowRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2133,8 +2133,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<StopWorkFlowResponse> StopWorkFlowInvoker(StopWorkFlowRequest stopWorkFlowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", stopWorkFlowRequest.WorkflowId.ToString());
-            urlParam.Add("execution_id", stopWorkFlowRequest.ExecutionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopWorkFlowRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
+            if (StringUtils.TryConvertToNonEmptyString(stopWorkFlowRequest.ExecutionId, out var valueOfExecutionId)) urlParam.Add("execution_id", valueOfExecutionId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}/executions/{execution_id}/terminate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopWorkFlowRequest);
             return new SyncInvoker<StopWorkFlowResponse>(this, "POST", request, JsonUtils.DeSerializeNull<StopWorkFlowResponse>);
@@ -2150,8 +2150,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateEventResponse UpdateEvent(UpdateEventRequest updateEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateEventRequest.FunctionUrn.ToString());
-            urlParam.Add("event_id", updateEventRequest.EventId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEventRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateEventRequest.EventId, out var valueOfEventId)) urlParam.Add("event_id", valueOfEventId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEventRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2161,8 +2161,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateEventResponse> UpdateEventInvoker(UpdateEventRequest updateEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateEventRequest.FunctionUrn.ToString());
-            urlParam.Add("event_id", updateEventRequest.EventId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEventRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateEventRequest.EventId, out var valueOfEventId)) urlParam.Add("event_id", valueOfEventId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/events/{event_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEventRequest);
             return new SyncInvoker<UpdateEventResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEventResponse>);
@@ -2178,8 +2178,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateFuncSnapshotResponse UpdateFuncSnapshot(UpdateFuncSnapshotRequest updateFuncSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFuncSnapshotRequest.FunctionUrn.ToString());
-            urlParam.Add("action", updateFuncSnapshotRequest.Action.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFuncSnapshotRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateFuncSnapshotRequest.Action, out var valueOfAction)) urlParam.Add("action", valueOfAction);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/{action}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFuncSnapshotRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2189,8 +2189,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateFuncSnapshotResponse> UpdateFuncSnapshotInvoker(UpdateFuncSnapshotRequest updateFuncSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFuncSnapshotRequest.FunctionUrn.ToString());
-            urlParam.Add("action", updateFuncSnapshotRequest.Action.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFuncSnapshotRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateFuncSnapshotRequest.Action, out var valueOfAction)) urlParam.Add("action", valueOfAction);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/snapshots/{action}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFuncSnapshotRequest);
             return new SyncInvoker<UpdateFuncSnapshotResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateFuncSnapshotResponse>);
@@ -2206,7 +2206,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateFunctionAsyncInvokeConfigResponse UpdateFunctionAsyncInvokeConfig(UpdateFunctionAsyncInvokeConfigRequest updateFunctionAsyncInvokeConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionAsyncInvokeConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionAsyncInvokeConfigRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2216,7 +2216,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateFunctionAsyncInvokeConfigResponse> UpdateFunctionAsyncInvokeConfigInvoker(UpdateFunctionAsyncInvokeConfigRequest updateFunctionAsyncInvokeConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFunctionAsyncInvokeConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionAsyncInvokeConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionAsyncInvokeConfigRequest);
             return new SyncInvoker<UpdateFunctionAsyncInvokeConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFunctionAsyncInvokeConfigResponse>);
@@ -2232,7 +2232,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest updateFunctionCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFunctionCodeRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionCodeRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/code", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionCodeRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2242,7 +2242,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateFunctionCodeResponse> UpdateFunctionCodeInvoker(UpdateFunctionCodeRequest updateFunctionCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFunctionCodeRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionCodeRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/code", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionCodeRequest);
             return new SyncInvoker<UpdateFunctionCodeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFunctionCodeResponse>);
@@ -2258,8 +2258,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateFunctionCollectStateResponse UpdateFunctionCollectState(UpdateFunctionCollectStateRequest updateFunctionCollectStateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("func_urn", updateFunctionCollectStateRequest.FuncUrn.ToString());
-            urlParam.Add("state", updateFunctionCollectStateRequest.State.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionCollectStateRequest.FuncUrn, out var valueOfFuncUrn)) urlParam.Add("func_urn", valueOfFuncUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionCollectStateRequest.State, out var valueOfState)) urlParam.Add("state", valueOfState);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/collect/{state}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionCollectStateRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2269,8 +2269,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateFunctionCollectStateResponse> UpdateFunctionCollectStateInvoker(UpdateFunctionCollectStateRequest updateFunctionCollectStateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("func_urn", updateFunctionCollectStateRequest.FuncUrn.ToString());
-            urlParam.Add("state", updateFunctionCollectStateRequest.State.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionCollectStateRequest.FuncUrn, out var valueOfFuncUrn)) urlParam.Add("func_urn", valueOfFuncUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionCollectStateRequest.State, out var valueOfState)) urlParam.Add("state", valueOfState);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{func_urn}/collect/{state}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionCollectStateRequest);
             return new SyncInvoker<UpdateFunctionCollectStateResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateFunctionCollectStateResponse>);
@@ -2286,7 +2286,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateFunctionConfigResponse UpdateFunctionConfig(UpdateFunctionConfigRequest updateFunctionConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFunctionConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionConfigRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2296,7 +2296,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateFunctionConfigResponse> UpdateFunctionConfigInvoker(UpdateFunctionConfigRequest updateFunctionConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFunctionConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionConfigRequest);
             return new SyncInvoker<UpdateFunctionConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFunctionConfigResponse>);
@@ -2312,7 +2312,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateFunctionMaxInstanceConfigResponse UpdateFunctionMaxInstanceConfig(UpdateFunctionMaxInstanceConfigRequest updateFunctionMaxInstanceConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFunctionMaxInstanceConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionMaxInstanceConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/config-max-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionMaxInstanceConfigRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2322,7 +2322,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateFunctionMaxInstanceConfigResponse> UpdateFunctionMaxInstanceConfigInvoker(UpdateFunctionMaxInstanceConfigRequest updateFunctionMaxInstanceConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFunctionMaxInstanceConfigRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionMaxInstanceConfigRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/config-max-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionMaxInstanceConfigRequest);
             return new SyncInvoker<UpdateFunctionMaxInstanceConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFunctionMaxInstanceConfigResponse>);
@@ -2338,7 +2338,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateFunctionReservedInstancesCountResponse UpdateFunctionReservedInstancesCount(UpdateFunctionReservedInstancesCountRequest updateFunctionReservedInstancesCountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFunctionReservedInstancesCountRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionReservedInstancesCountRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/reservedinstances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionReservedInstancesCountRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2348,7 +2348,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateFunctionReservedInstancesCountResponse> UpdateFunctionReservedInstancesCountInvoker(UpdateFunctionReservedInstancesCountRequest updateFunctionReservedInstancesCountRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateFunctionReservedInstancesCountRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFunctionReservedInstancesCountRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/reservedinstances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFunctionReservedInstancesCountRequest);
             return new SyncInvoker<UpdateFunctionReservedInstancesCountResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFunctionReservedInstancesCountResponse>);
@@ -2364,7 +2364,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateTracingResponse UpdateTracing(UpdateTracingRequest updateTracingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateTracingRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTracingRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/tracing", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTracingRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2374,7 +2374,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateTracingResponse> UpdateTracingInvoker(UpdateTracingRequest updateTracingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateTracingRequest.FunctionUrn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTracingRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/tracing", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTracingRequest);
             return new SyncInvoker<UpdateTracingResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateTracingResponse>);
@@ -2390,9 +2390,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateTriggerResponse UpdateTrigger(UpdateTriggerRequest updateTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateTriggerRequest.FunctionUrn.ToString());
-            urlParam.Add("trigger_type_code", updateTriggerRequest.TriggerTypeCode.ToString());
-            urlParam.Add("trigger_id", updateTriggerRequest.TriggerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.TriggerTypeCode, out var valueOfTriggerTypeCode)) urlParam.Add("trigger_type_code", valueOfTriggerTypeCode);
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.TriggerId, out var valueOfTriggerId)) urlParam.Add("trigger_id", valueOfTriggerId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTriggerRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2402,9 +2402,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateTriggerResponse> UpdateTriggerInvoker(UpdateTriggerRequest updateTriggerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateTriggerRequest.FunctionUrn.ToString());
-            urlParam.Add("trigger_type_code", updateTriggerRequest.TriggerTypeCode.ToString());
-            urlParam.Add("trigger_id", updateTriggerRequest.TriggerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.TriggerTypeCode, out var valueOfTriggerTypeCode)) urlParam.Add("trigger_type_code", valueOfTriggerTypeCode);
+            if (StringUtils.TryConvertToNonEmptyString(updateTriggerRequest.TriggerId, out var valueOfTriggerId)) urlParam.Add("trigger_id", valueOfTriggerId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTriggerRequest);
             return new SyncInvoker<UpdateTriggerResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTriggerResponse>);
@@ -2420,8 +2420,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateVersionAliasResponse UpdateVersionAlias(UpdateVersionAliasRequest updateVersionAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateVersionAliasRequest.FunctionUrn.ToString());
-            urlParam.Add("alias_name", updateVersionAliasRequest.AliasName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVersionAliasRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateVersionAliasRequest.AliasName, out var valueOfAliasName)) urlParam.Add("alias_name", valueOfAliasName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVersionAliasRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2431,8 +2431,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateVersionAliasResponse> UpdateVersionAliasInvoker(UpdateVersionAliasRequest updateVersionAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("function_urn", updateVersionAliasRequest.FunctionUrn.ToString());
-            urlParam.Add("alias_name", updateVersionAliasRequest.AliasName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVersionAliasRequest.FunctionUrn, out var valueOfFunctionUrn)) urlParam.Add("function_urn", valueOfFunctionUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateVersionAliasRequest.AliasName, out var valueOfAliasName)) urlParam.Add("alias_name", valueOfAliasName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVersionAliasRequest);
             return new SyncInvoker<UpdateVersionAliasResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVersionAliasResponse>);
@@ -2448,7 +2448,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public UpdateWorkFlowResponse UpdateWorkFlow(UpdateWorkFlowRequest updateWorkFlowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", updateWorkFlowRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateWorkFlowRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateWorkFlowRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2458,7 +2458,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2
         public SyncInvoker<UpdateWorkFlowResponse> UpdateWorkFlowInvoker(UpdateWorkFlowRequest updateWorkFlowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("workflow_id", updateWorkFlowRequest.WorkflowId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateWorkFlowRequest.WorkflowId, out var valueOfWorkflowId)) urlParam.Add("workflow_id", valueOfWorkflowId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/fgs/workflows/{workflow_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateWorkFlowRequest);
             return new SyncInvoker<UpdateWorkFlowResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateWorkFlowResponse>);

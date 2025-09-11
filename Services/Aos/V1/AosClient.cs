@@ -169,7 +169,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public CreatePrivateProviderVersionResponse CreatePrivateProviderVersion(CreatePrivateProviderVersionRequest createPrivateProviderVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", createPrivateProviderVersionRequest.ProviderName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPrivateProviderVersionRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPrivateProviderVersionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<CreatePrivateProviderVersionResponse> CreatePrivateProviderVersionInvoker(CreatePrivateProviderVersionRequest createPrivateProviderVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", createPrivateProviderVersionRequest.ProviderName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPrivateProviderVersionRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPrivateProviderVersionRequest);
             return new SyncInvoker<CreatePrivateProviderVersionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreatePrivateProviderVersionResponse>);
@@ -201,7 +201,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeletePrivateProviderResponse DeletePrivateProvider(DeletePrivateProviderRequest deletePrivateProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", deletePrivateProviderRequest.ProviderName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateProviderRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateProviderRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -211,7 +211,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeletePrivateProviderResponse> DeletePrivateProviderInvoker(DeletePrivateProviderRequest deletePrivateProviderRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", deletePrivateProviderRequest.ProviderName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateProviderRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateProviderRequest);
             return new SyncInvoker<DeletePrivateProviderResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateProviderResponse>);
@@ -233,8 +233,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeletePrivateProviderVersionResponse DeletePrivateProviderVersion(DeletePrivateProviderVersionRequest deletePrivateProviderVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", deletePrivateProviderVersionRequest.ProviderName.ToString());
-            urlParam.Add("provider_version", deletePrivateProviderVersionRequest.ProviderVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateProviderVersionRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateProviderVersionRequest.ProviderVersion, out var valueOfProviderVersion)) urlParam.Add("provider_version", valueOfProviderVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions/{provider_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateProviderVersionRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -244,8 +244,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeletePrivateProviderVersionResponse> DeletePrivateProviderVersionInvoker(DeletePrivateProviderVersionRequest deletePrivateProviderVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", deletePrivateProviderVersionRequest.ProviderName.ToString());
-            urlParam.Add("provider_version", deletePrivateProviderVersionRequest.ProviderVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateProviderVersionRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateProviderVersionRequest.ProviderVersion, out var valueOfProviderVersion)) urlParam.Add("provider_version", valueOfProviderVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions/{provider_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateProviderVersionRequest);
             return new SyncInvoker<DeletePrivateProviderVersionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateProviderVersionResponse>);
@@ -269,7 +269,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ListPrivateProviderVersionsResponse ListPrivateProviderVersions(ListPrivateProviderVersionsRequest listPrivateProviderVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", listPrivateProviderVersionsRequest.ProviderName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPrivateProviderVersionsRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPrivateProviderVersionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -279,7 +279,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ListPrivateProviderVersionsResponse> ListPrivateProviderVersionsInvoker(ListPrivateProviderVersionsRequest listPrivateProviderVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", listPrivateProviderVersionsRequest.ProviderName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPrivateProviderVersionsRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPrivateProviderVersionsRequest);
             return new SyncInvoker<ListPrivateProviderVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPrivateProviderVersionsResponse>);
@@ -331,7 +331,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowPrivateProviderMetadataResponse ShowPrivateProviderMetadata(ShowPrivateProviderMetadataRequest showPrivateProviderMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", showPrivateProviderMetadataRequest.ProviderName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateProviderMetadataRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateProviderMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -341,7 +341,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowPrivateProviderMetadataResponse> ShowPrivateProviderMetadataInvoker(ShowPrivateProviderMetadataRequest showPrivateProviderMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", showPrivateProviderMetadataRequest.ProviderName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateProviderMetadataRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateProviderMetadataRequest);
             return new SyncInvoker<ShowPrivateProviderMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateProviderMetadataResponse>);
@@ -362,8 +362,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowPrivateProviderVersionMetadataResponse ShowPrivateProviderVersionMetadata(ShowPrivateProviderVersionMetadataRequest showPrivateProviderVersionMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", showPrivateProviderVersionMetadataRequest.ProviderName.ToString());
-            urlParam.Add("provider_version", showPrivateProviderVersionMetadataRequest.ProviderVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateProviderVersionMetadataRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateProviderVersionMetadataRequest.ProviderVersion, out var valueOfProviderVersion)) urlParam.Add("provider_version", valueOfProviderVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions/{provider_version}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateProviderVersionMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -373,8 +373,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowPrivateProviderVersionMetadataResponse> ShowPrivateProviderVersionMetadataInvoker(ShowPrivateProviderVersionMetadataRequest showPrivateProviderVersionMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", showPrivateProviderVersionMetadataRequest.ProviderName.ToString());
-            urlParam.Add("provider_version", showPrivateProviderVersionMetadataRequest.ProviderVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateProviderVersionMetadataRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateProviderVersionMetadataRequest.ProviderVersion, out var valueOfProviderVersion)) urlParam.Add("provider_version", valueOfProviderVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/versions/{provider_version}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateProviderVersionMetadataRequest);
             return new SyncInvoker<ShowPrivateProviderVersionMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateProviderVersionMetadataResponse>);
@@ -399,7 +399,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public UpdatePrivateProviderMetadataResponse UpdatePrivateProviderMetadata(UpdatePrivateProviderMetadataRequest updatePrivateProviderMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", updatePrivateProviderMetadataRequest.ProviderName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateProviderMetadataRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateProviderMetadataRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -409,7 +409,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<UpdatePrivateProviderMetadataResponse> UpdatePrivateProviderMetadataInvoker(UpdatePrivateProviderMetadataRequest updatePrivateProviderMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("provider_name", updatePrivateProviderMetadataRequest.ProviderName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateProviderMetadataRequest.ProviderName, out var valueOfProviderName)) urlParam.Add("provider_name", valueOfProviderName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-providers/{provider_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateProviderMetadataRequest);
             return new SyncInvoker<UpdatePrivateProviderMetadataResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdatePrivateProviderMetadataResponse>);
@@ -443,8 +443,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ApplyExecutionPlanResponse ApplyExecutionPlan(ApplyExecutionPlanRequest applyExecutionPlanRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", applyExecutionPlanRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name", applyExecutionPlanRequest.ExecutionPlanName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(applyExecutionPlanRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
+            if (StringUtils.TryConvertToNonEmptyString(applyExecutionPlanRequest.ExecutionPlanName, out var valueOfExecutionPlanName)) urlParam.Add("execution_plan_name", valueOfExecutionPlanName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyExecutionPlanRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -454,8 +454,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ApplyExecutionPlanResponse> ApplyExecutionPlanInvoker(ApplyExecutionPlanRequest applyExecutionPlanRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", applyExecutionPlanRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name", applyExecutionPlanRequest.ExecutionPlanName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(applyExecutionPlanRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
+            if (StringUtils.TryConvertToNonEmptyString(applyExecutionPlanRequest.ExecutionPlanName, out var valueOfExecutionPlanName)) urlParam.Add("execution_plan_name", valueOfExecutionPlanName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyExecutionPlanRequest);
             return new SyncInvoker<ApplyExecutionPlanResponse>(this, "POST", request, JsonUtils.DeSerialize<ApplyExecutionPlanResponse>);
@@ -485,7 +485,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public CreateExecutionPlanResponse CreateExecutionPlan(CreateExecutionPlanRequest createExecutionPlanRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", createExecutionPlanRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createExecutionPlanRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExecutionPlanRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -495,7 +495,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<CreateExecutionPlanResponse> CreateExecutionPlanInvoker(CreateExecutionPlanRequest createExecutionPlanRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", createExecutionPlanRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createExecutionPlanRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExecutionPlanRequest);
             return new SyncInvoker<CreateExecutionPlanResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateExecutionPlanResponse>);
@@ -515,8 +515,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeleteExecutionPlanResponse DeleteExecutionPlan(DeleteExecutionPlanRequest deleteExecutionPlanRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", deleteExecutionPlanRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name", deleteExecutionPlanRequest.ExecutionPlanName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteExecutionPlanRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteExecutionPlanRequest.ExecutionPlanName, out var valueOfExecutionPlanName)) urlParam.Add("execution_plan_name", valueOfExecutionPlanName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExecutionPlanRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -526,8 +526,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeleteExecutionPlanResponse> DeleteExecutionPlanInvoker(DeleteExecutionPlanRequest deleteExecutionPlanRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", deleteExecutionPlanRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name", deleteExecutionPlanRequest.ExecutionPlanName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteExecutionPlanRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteExecutionPlanRequest.ExecutionPlanName, out var valueOfExecutionPlanName)) urlParam.Add("execution_plan_name", valueOfExecutionPlanName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExecutionPlanRequest);
             return new SyncInvoker<DeleteExecutionPlanResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteExecutionPlanResponse>);
@@ -649,8 +649,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public EstimateExecutionPlanPriceResponse EstimateExecutionPlanPrice(EstimateExecutionPlanPriceRequest estimateExecutionPlanPriceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", estimateExecutionPlanPriceRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name", estimateExecutionPlanPriceRequest.ExecutionPlanName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(estimateExecutionPlanPriceRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
+            if (StringUtils.TryConvertToNonEmptyString(estimateExecutionPlanPriceRequest.ExecutionPlanName, out var valueOfExecutionPlanName)) urlParam.Add("execution_plan_name", valueOfExecutionPlanName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/prices", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", estimateExecutionPlanPriceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -660,8 +660,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<EstimateExecutionPlanPriceResponse> EstimateExecutionPlanPriceInvoker(EstimateExecutionPlanPriceRequest estimateExecutionPlanPriceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", estimateExecutionPlanPriceRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name", estimateExecutionPlanPriceRequest.ExecutionPlanName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(estimateExecutionPlanPriceRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
+            if (StringUtils.TryConvertToNonEmptyString(estimateExecutionPlanPriceRequest.ExecutionPlanName, out var valueOfExecutionPlanName)) urlParam.Add("execution_plan_name", valueOfExecutionPlanName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/prices", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", estimateExecutionPlanPriceRequest);
             return new SyncInvoker<EstimateExecutionPlanPriceResponse>(this, "GET", request, JsonUtils.DeSerialize<EstimateExecutionPlanPriceResponse>);
@@ -681,8 +681,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public GetExecutionPlanResponse GetExecutionPlan(GetExecutionPlanRequest getExecutionPlanRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", getExecutionPlanRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name", getExecutionPlanRequest.ExecutionPlanName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getExecutionPlanRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
+            if (StringUtils.TryConvertToNonEmptyString(getExecutionPlanRequest.ExecutionPlanName, out var valueOfExecutionPlanName)) urlParam.Add("execution_plan_name", valueOfExecutionPlanName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -692,8 +692,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<GetExecutionPlanResponse> GetExecutionPlanInvoker(GetExecutionPlanRequest getExecutionPlanRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", getExecutionPlanRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name", getExecutionPlanRequest.ExecutionPlanName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getExecutionPlanRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
+            if (StringUtils.TryConvertToNonEmptyString(getExecutionPlanRequest.ExecutionPlanName, out var valueOfExecutionPlanName)) urlParam.Add("execution_plan_name", valueOfExecutionPlanName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanRequest);
             return new SyncInvoker<GetExecutionPlanResponse>(this, "GET", request, JsonUtils.DeSerialize<GetExecutionPlanResponse>);
@@ -715,8 +715,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public GetExecutionPlanMetadataResponse GetExecutionPlanMetadata(GetExecutionPlanMetadataRequest getExecutionPlanMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", getExecutionPlanMetadataRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name", getExecutionPlanMetadataRequest.ExecutionPlanName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getExecutionPlanMetadataRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
+            if (StringUtils.TryConvertToNonEmptyString(getExecutionPlanMetadataRequest.ExecutionPlanName, out var valueOfExecutionPlanName)) urlParam.Add("execution_plan_name", valueOfExecutionPlanName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -726,8 +726,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<GetExecutionPlanMetadataResponse> GetExecutionPlanMetadataInvoker(GetExecutionPlanMetadataRequest getExecutionPlanMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", getExecutionPlanMetadataRequest.StackName.ToString());
-            urlParam.Add("execution_plan_name", getExecutionPlanMetadataRequest.ExecutionPlanName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getExecutionPlanMetadataRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
+            if (StringUtils.TryConvertToNonEmptyString(getExecutionPlanMetadataRequest.ExecutionPlanName, out var valueOfExecutionPlanName)) urlParam.Add("execution_plan_name", valueOfExecutionPlanName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans/{execution_plan_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getExecutionPlanMetadataRequest);
             return new SyncInvoker<GetExecutionPlanMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<GetExecutionPlanMetadataResponse>);
@@ -751,7 +751,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ListExecutionPlansResponse ListExecutionPlans(ListExecutionPlansRequest listExecutionPlansRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", listExecutionPlansRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listExecutionPlansRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExecutionPlansRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -761,7 +761,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ListExecutionPlansResponse> ListExecutionPlansInvoker(ListExecutionPlansRequest listExecutionPlansRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", listExecutionPlansRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listExecutionPlansRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/execution-plans", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExecutionPlansRequest);
             return new SyncInvoker<ListExecutionPlansResponse>(this, "GET", request, JsonUtils.DeSerialize<ListExecutionPlansResponse>);
@@ -849,7 +849,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public CreatePrivateHookVersionResponse CreatePrivateHookVersion(CreatePrivateHookVersionRequest createPrivateHookVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", createPrivateHookVersionRequest.HookName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPrivateHookVersionRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPrivateHookVersionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -859,7 +859,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<CreatePrivateHookVersionResponse> CreatePrivateHookVersionInvoker(CreatePrivateHookVersionRequest createPrivateHookVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", createPrivateHookVersionRequest.HookName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPrivateHookVersionRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPrivateHookVersionRequest);
             return new SyncInvoker<CreatePrivateHookVersionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreatePrivateHookVersionResponse>);
@@ -882,7 +882,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeletePrivateHookResponse DeletePrivateHook(DeletePrivateHookRequest deletePrivateHookRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", deletePrivateHookRequest.HookName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateHookRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateHookRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -892,7 +892,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeletePrivateHookResponse> DeletePrivateHookInvoker(DeletePrivateHookRequest deletePrivateHookRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", deletePrivateHookRequest.HookName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateHookRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateHookRequest);
             return new SyncInvoker<DeletePrivateHookResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateHookResponse>);
@@ -915,8 +915,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeletePrivateHookVersionResponse DeletePrivateHookVersion(DeletePrivateHookVersionRequest deletePrivateHookVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", deletePrivateHookVersionRequest.HookName.ToString());
-            urlParam.Add("hook_version", deletePrivateHookVersionRequest.HookVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateHookVersionRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateHookVersionRequest.HookVersion, out var valueOfHookVersion)) urlParam.Add("hook_version", valueOfHookVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/versions/{hook_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateHookVersionRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -926,8 +926,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeletePrivateHookVersionResponse> DeletePrivateHookVersionInvoker(DeletePrivateHookVersionRequest deletePrivateHookVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", deletePrivateHookVersionRequest.HookName.ToString());
-            urlParam.Add("hook_version", deletePrivateHookVersionRequest.HookVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateHookVersionRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateHookVersionRequest.HookVersion, out var valueOfHookVersion)) urlParam.Add("hook_version", valueOfHookVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/versions/{hook_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateHookVersionRequest);
             return new SyncInvoker<DeletePrivateHookVersionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateHookVersionResponse>);
@@ -979,7 +979,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowPrivateHookMetadataResponse ShowPrivateHookMetadata(ShowPrivateHookMetadataRequest showPrivateHookMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", showPrivateHookMetadataRequest.HookName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateHookMetadataRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateHookMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -989,7 +989,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowPrivateHookMetadataResponse> ShowPrivateHookMetadataInvoker(ShowPrivateHookMetadataRequest showPrivateHookMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", showPrivateHookMetadataRequest.HookName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateHookMetadataRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateHookMetadataRequest);
             return new SyncInvoker<ShowPrivateHookMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateHookMetadataResponse>);
@@ -1010,8 +1010,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowPrivateHookVersionMetadataResponse ShowPrivateHookVersionMetadata(ShowPrivateHookVersionMetadataRequest showPrivateHookVersionMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", showPrivateHookVersionMetadataRequest.HookName.ToString());
-            urlParam.Add("hook_version", showPrivateHookVersionMetadataRequest.HookVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateHookVersionMetadataRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateHookVersionMetadataRequest.HookVersion, out var valueOfHookVersion)) urlParam.Add("hook_version", valueOfHookVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/versions/{hook_version}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateHookVersionMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1021,8 +1021,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowPrivateHookVersionMetadataResponse> ShowPrivateHookVersionMetadataInvoker(ShowPrivateHookVersionMetadataRequest showPrivateHookVersionMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", showPrivateHookVersionMetadataRequest.HookName.ToString());
-            urlParam.Add("hook_version", showPrivateHookVersionMetadataRequest.HookVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateHookVersionMetadataRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateHookVersionMetadataRequest.HookVersion, out var valueOfHookVersion)) urlParam.Add("hook_version", valueOfHookVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/versions/{hook_version}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateHookVersionMetadataRequest);
             return new SyncInvoker<ShowPrivateHookVersionMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateHookVersionMetadataResponse>);
@@ -1043,8 +1043,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowPrivateHookVersionPolicyResponse ShowPrivateHookVersionPolicy(ShowPrivateHookVersionPolicyRequest showPrivateHookVersionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", showPrivateHookVersionPolicyRequest.HookName.ToString());
-            urlParam.Add("hook_version", showPrivateHookVersionPolicyRequest.HookVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateHookVersionPolicyRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateHookVersionPolicyRequest.HookVersion, out var valueOfHookVersion)) urlParam.Add("hook_version", valueOfHookVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/versions/{hook_version}/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateHookVersionPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1054,8 +1054,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowPrivateHookVersionPolicyResponse> ShowPrivateHookVersionPolicyInvoker(ShowPrivateHookVersionPolicyRequest showPrivateHookVersionPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", showPrivateHookVersionPolicyRequest.HookName.ToString());
-            urlParam.Add("hook_version", showPrivateHookVersionPolicyRequest.HookVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateHookVersionPolicyRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateHookVersionPolicyRequest.HookVersion, out var valueOfHookVersion)) urlParam.Add("hook_version", valueOfHookVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/versions/{hook_version}/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateHookVersionPolicyRequest);
             return new SyncInvoker<ShowPrivateHookVersionPolicyResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ShowPrivateHookVersionPolicyResponse>);
@@ -1080,7 +1080,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public UpdatePrivateHookMetadataResponse UpdatePrivateHookMetadata(UpdatePrivateHookMetadataRequest updatePrivateHookMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", updatePrivateHookMetadataRequest.HookName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateHookMetadataRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateHookMetadataRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1090,7 +1090,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<UpdatePrivateHookMetadataResponse> UpdatePrivateHookMetadataInvoker(UpdatePrivateHookMetadataRequest updatePrivateHookMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hook_name", updatePrivateHookMetadataRequest.HookName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateHookMetadataRequest.HookName, out var valueOfHookName)) urlParam.Add("hook_name", valueOfHookName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-hooks/{hook_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateHookMetadataRequest);
             return new SyncInvoker<UpdatePrivateHookMetadataResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdatePrivateHookMetadataResponse>);
@@ -1161,7 +1161,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public CreatePrivateModuleVersionResponse CreatePrivateModuleVersion(CreatePrivateModuleVersionRequest createPrivateModuleVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", createPrivateModuleVersionRequest.ModuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPrivateModuleVersionRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPrivateModuleVersionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1171,7 +1171,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<CreatePrivateModuleVersionResponse> CreatePrivateModuleVersionInvoker(CreatePrivateModuleVersionRequest createPrivateModuleVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", createPrivateModuleVersionRequest.ModuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPrivateModuleVersionRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPrivateModuleVersionRequest);
             return new SyncInvoker<CreatePrivateModuleVersionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreatePrivateModuleVersionResponse>);
@@ -1193,7 +1193,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeletePrivateModuleResponse DeletePrivateModule(DeletePrivateModuleRequest deletePrivateModuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", deletePrivateModuleRequest.ModuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateModuleRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateModuleRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1203,7 +1203,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeletePrivateModuleResponse> DeletePrivateModuleInvoker(DeletePrivateModuleRequest deletePrivateModuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", deletePrivateModuleRequest.ModuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateModuleRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateModuleRequest);
             return new SyncInvoker<DeletePrivateModuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateModuleResponse>);
@@ -1225,8 +1225,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeletePrivateModuleVersionResponse DeletePrivateModuleVersion(DeletePrivateModuleVersionRequest deletePrivateModuleVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", deletePrivateModuleVersionRequest.ModuleName.ToString());
-            urlParam.Add("module_version", deletePrivateModuleVersionRequest.ModuleVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateModuleVersionRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateModuleVersionRequest.ModuleVersion, out var valueOfModuleVersion)) urlParam.Add("module_version", valueOfModuleVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/versions/{module_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateModuleVersionRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1236,8 +1236,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeletePrivateModuleVersionResponse> DeletePrivateModuleVersionInvoker(DeletePrivateModuleVersionRequest deletePrivateModuleVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", deletePrivateModuleVersionRequest.ModuleName.ToString());
-            urlParam.Add("module_version", deletePrivateModuleVersionRequest.ModuleVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateModuleVersionRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateModuleVersionRequest.ModuleVersion, out var valueOfModuleVersion)) urlParam.Add("module_version", valueOfModuleVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/versions/{module_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateModuleVersionRequest);
             return new SyncInvoker<DeletePrivateModuleVersionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePrivateModuleVersionResponse>);
@@ -1262,7 +1262,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ListPrivateModuleVersionsResponse ListPrivateModuleVersions(ListPrivateModuleVersionsRequest listPrivateModuleVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", listPrivateModuleVersionsRequest.ModuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPrivateModuleVersionsRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPrivateModuleVersionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1272,7 +1272,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ListPrivateModuleVersionsResponse> ListPrivateModuleVersionsInvoker(ListPrivateModuleVersionsRequest listPrivateModuleVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", listPrivateModuleVersionsRequest.ModuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPrivateModuleVersionsRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPrivateModuleVersionsRequest);
             return new SyncInvoker<ListPrivateModuleVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPrivateModuleVersionsResponse>);
@@ -1326,7 +1326,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowPrivateModuleMetadataResponse ShowPrivateModuleMetadata(ShowPrivateModuleMetadataRequest showPrivateModuleMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", showPrivateModuleMetadataRequest.ModuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateModuleMetadataRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateModuleMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1336,7 +1336,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowPrivateModuleMetadataResponse> ShowPrivateModuleMetadataInvoker(ShowPrivateModuleMetadataRequest showPrivateModuleMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", showPrivateModuleMetadataRequest.ModuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateModuleMetadataRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateModuleMetadataRequest);
             return new SyncInvoker<ShowPrivateModuleMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateModuleMetadataResponse>);
@@ -1357,8 +1357,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowPrivateModuleVersionContentResponse ShowPrivateModuleVersionContent(ShowPrivateModuleVersionContentRequest showPrivateModuleVersionContentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", showPrivateModuleVersionContentRequest.ModuleName.ToString());
-            urlParam.Add("module_version", showPrivateModuleVersionContentRequest.ModuleVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateModuleVersionContentRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateModuleVersionContentRequest.ModuleVersion, out var valueOfModuleVersion)) urlParam.Add("module_version", valueOfModuleVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/versions/{module_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateModuleVersionContentRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1368,8 +1368,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowPrivateModuleVersionContentResponse> ShowPrivateModuleVersionContentInvoker(ShowPrivateModuleVersionContentRequest showPrivateModuleVersionContentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", showPrivateModuleVersionContentRequest.ModuleName.ToString());
-            urlParam.Add("module_version", showPrivateModuleVersionContentRequest.ModuleVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateModuleVersionContentRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateModuleVersionContentRequest.ModuleVersion, out var valueOfModuleVersion)) urlParam.Add("module_version", valueOfModuleVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/versions/{module_version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateModuleVersionContentRequest);
             return new SyncInvoker<ShowPrivateModuleVersionContentResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ShowPrivateModuleVersionContentResponse>);
@@ -1390,8 +1390,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowPrivateModuleVersionMetadataResponse ShowPrivateModuleVersionMetadata(ShowPrivateModuleVersionMetadataRequest showPrivateModuleVersionMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", showPrivateModuleVersionMetadataRequest.ModuleName.ToString());
-            urlParam.Add("module_version", showPrivateModuleVersionMetadataRequest.ModuleVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateModuleVersionMetadataRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateModuleVersionMetadataRequest.ModuleVersion, out var valueOfModuleVersion)) urlParam.Add("module_version", valueOfModuleVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/versions/{module_version}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateModuleVersionMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1401,8 +1401,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowPrivateModuleVersionMetadataResponse> ShowPrivateModuleVersionMetadataInvoker(ShowPrivateModuleVersionMetadataRequest showPrivateModuleVersionMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", showPrivateModuleVersionMetadataRequest.ModuleName.ToString());
-            urlParam.Add("module_version", showPrivateModuleVersionMetadataRequest.ModuleVersion.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateModuleVersionMetadataRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateModuleVersionMetadataRequest.ModuleVersion, out var valueOfModuleVersion)) urlParam.Add("module_version", valueOfModuleVersion);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/versions/{module_version}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateModuleVersionMetadataRequest);
             return new SyncInvoker<ShowPrivateModuleVersionMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateModuleVersionMetadataResponse>);
@@ -1427,7 +1427,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public UpdatePrivateModuleMetadataResponse UpdatePrivateModuleMetadata(UpdatePrivateModuleMetadataRequest updatePrivateModuleMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", updatePrivateModuleMetadataRequest.ModuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateModuleMetadataRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateModuleMetadataRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1437,7 +1437,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<UpdatePrivateModuleMetadataResponse> UpdatePrivateModuleMetadataInvoker(UpdatePrivateModuleMetadataRequest updatePrivateModuleMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("module_name", updatePrivateModuleMetadataRequest.ModuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateModuleMetadataRequest.ModuleName, out var valueOfModuleName)) urlParam.Add("module_name", valueOfModuleName);
             var urlPath = HttpUtils.AddUrlPath("/v1/private-modules/{module_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateModuleMetadataRequest);
             return new SyncInvoker<UpdatePrivateModuleMetadataResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdatePrivateModuleMetadataResponse>);
@@ -1459,7 +1459,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ContinueDeployStackResponse ContinueDeployStack(ContinueDeployStackRequest continueDeployStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", continueDeployStackRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(continueDeployStackRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/continuations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueDeployStackRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1469,7 +1469,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ContinueDeployStackResponse> ContinueDeployStackInvoker(ContinueDeployStackRequest continueDeployStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", continueDeployStackRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(continueDeployStackRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/continuations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueDeployStackRequest);
             return new SyncInvoker<ContinueDeployStackResponse>(this, "POST", request, JsonUtils.DeSerialize<ContinueDeployStackResponse>);
@@ -1492,7 +1492,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ContinueRollbackStackResponse ContinueRollbackStack(ContinueRollbackStackRequest continueRollbackStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", continueRollbackStackRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(continueRollbackStackRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/rollbacks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueRollbackStackRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1502,7 +1502,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ContinueRollbackStackResponse> ContinueRollbackStackInvoker(ContinueRollbackStackRequest continueRollbackStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", continueRollbackStackRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(continueRollbackStackRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/rollbacks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", continueRollbackStackRequest);
             return new SyncInvoker<ContinueRollbackStackResponse>(this, "POST", request, JsonUtils.DeSerialize<ContinueRollbackStackResponse>);
@@ -1558,7 +1558,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeleteStackResponse DeleteStack(DeleteStackRequest deleteStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", deleteStackRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStackRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1568,7 +1568,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeleteStackResponse> DeleteStackInvoker(DeleteStackRequest deleteStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", deleteStackRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStackRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackRequest);
             return new SyncInvoker<DeleteStackResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteStackResponse>);
@@ -1599,7 +1599,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeleteStackEnhancedResponse DeleteStackEnhanced(DeleteStackEnhancedRequest deleteStackEnhancedRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", deleteStackEnhancedRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStackEnhancedRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackEnhancedRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1609,7 +1609,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeleteStackEnhancedResponse> DeleteStackEnhancedInvoker(DeleteStackEnhancedRequest deleteStackEnhancedRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", deleteStackEnhancedRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStackEnhancedRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackEnhancedRequest);
             return new SyncInvoker<DeleteStackEnhancedResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteStackEnhancedResponse>);
@@ -1637,7 +1637,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeployStackResponse DeployStack(DeployStackRequest deployStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", deployStackRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deployStackRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deployments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1647,7 +1647,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeployStackResponse> DeployStackInvoker(DeployStackRequest deployStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", deployStackRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deployStackRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/deployments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackRequest);
             return new SyncInvoker<DeployStackResponse>(this, "POST", request, JsonUtils.DeSerialize<DeployStackResponse>);
@@ -1684,7 +1684,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public GetStackMetadataResponse GetStackMetadata(GetStackMetadataRequest getStackMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", getStackMetadataRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getStackMetadataRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1694,7 +1694,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<GetStackMetadataResponse> GetStackMetadataInvoker(GetStackMetadataRequest getStackMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", getStackMetadataRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getStackMetadataRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackMetadataRequest);
             return new SyncInvoker<GetStackMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<GetStackMetadataResponse>);
@@ -1732,7 +1732,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public GetStackTemplateResponse GetStackTemplate(GetStackTemplateRequest getStackTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", getStackTemplateRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getStackTemplateRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackTemplateRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1742,7 +1742,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<GetStackTemplateResponse> GetStackTemplateInvoker(GetStackTemplateRequest getStackTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", getStackTemplateRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(getStackTemplateRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getStackTemplateRequest);
             return new SyncInvoker<GetStackTemplateResponse>(this, "GET", request, JsonUtils.DeSerializeNull<GetStackTemplateResponse>);
@@ -1767,7 +1767,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ListStackEventsResponse ListStackEvents(ListStackEventsRequest listStackEventsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", listStackEventsRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStackEventsRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/events", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackEventsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1777,7 +1777,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ListStackEventsResponse> ListStackEventsInvoker(ListStackEventsRequest listStackEventsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", listStackEventsRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStackEventsRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/events", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackEventsRequest);
             return new SyncInvoker<ListStackEventsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackEventsResponse>);
@@ -1805,7 +1805,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ListStackOutputsResponse ListStackOutputs(ListStackOutputsRequest listStackOutputsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", listStackOutputsRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStackOutputsRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/outputs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackOutputsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1815,7 +1815,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ListStackOutputsResponse> ListStackOutputsInvoker(ListStackOutputsRequest listStackOutputsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", listStackOutputsRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStackOutputsRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/outputs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackOutputsRequest);
             return new SyncInvoker<ListStackOutputsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackOutputsResponse>);
@@ -1842,7 +1842,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ListStackResourcesResponse ListStackResources(ListStackResourcesRequest listStackResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", listStackResourcesRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStackResourcesRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/resources", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackResourcesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1852,7 +1852,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ListStackResourcesResponse> ListStackResourcesInvoker(ListStackResourcesRequest listStackResourcesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", listStackResourcesRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStackResourcesRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}/resources", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackResourcesRequest);
             return new SyncInvoker<ListStackResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackResourcesResponse>);
@@ -1918,7 +1918,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public UpdateStackResponse UpdateStack(UpdateStackRequest updateStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", updateStackRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStackRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1928,7 +1928,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<UpdateStackResponse> UpdateStackInvoker(UpdateStackRequest updateStackRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_name", updateStackRequest.StackName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStackRequest.StackName, out var valueOfStackName)) urlParam.Add("stack_name", valueOfStackName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stacks/{stack_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackRequest);
             return new SyncInvoker<UpdateStackResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateStackResponse>);
@@ -1954,7 +1954,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public CreateStackInstanceResponse CreateStackInstance(CreateStackInstanceRequest createStackInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", createStackInstanceRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createStackInstanceRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1964,7 +1964,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<CreateStackInstanceResponse> CreateStackInstanceInvoker(CreateStackInstanceRequest createStackInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", createStackInstanceRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createStackInstanceRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createStackInstanceRequest);
             return new SyncInvoker<CreateStackInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStackInstanceResponse>);
@@ -2012,7 +2012,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeleteStackInstanceResponse DeleteStackInstance(DeleteStackInstanceRequest deleteStackInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", deleteStackInstanceRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStackInstanceRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2022,7 +2022,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeleteStackInstanceResponse> DeleteStackInstanceInvoker(DeleteStackInstanceRequest deleteStackInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", deleteStackInstanceRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStackInstanceRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/deletion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceRequest);
             return new SyncInvoker<DeleteStackInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteStackInstanceResponse>);
@@ -2044,7 +2044,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeleteStackInstanceDeprecatedResponse DeleteStackInstanceDeprecated(DeleteStackInstanceDeprecatedRequest deleteStackInstanceDeprecatedRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", deleteStackInstanceDeprecatedRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStackInstanceDeprecatedRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceDeprecatedRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2054,7 +2054,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeleteStackInstanceDeprecatedResponse> DeleteStackInstanceDeprecatedInvoker(DeleteStackInstanceDeprecatedRequest deleteStackInstanceDeprecatedRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", deleteStackInstanceDeprecatedRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStackInstanceDeprecatedRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackInstanceDeprecatedRequest);
             return new SyncInvoker<DeleteStackInstanceDeprecatedResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStackInstanceDeprecatedResponse>);
@@ -2076,7 +2076,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeleteStackSetResponse DeleteStackSet(DeleteStackSetRequest deleteStackSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", deleteStackSetRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStackSetRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackSetRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2086,7 +2086,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeleteStackSetResponse> DeleteStackSetInvoker(DeleteStackSetRequest deleteStackSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", deleteStackSetRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStackSetRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStackSetRequest);
             return new SyncInvoker<DeleteStackSetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteStackSetResponse>);
@@ -2114,7 +2114,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeployStackSetResponse DeployStackSet(DeployStackSetRequest deployStackSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", deployStackSetRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deployStackSetRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/deployments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackSetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2124,7 +2124,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeployStackSetResponse> DeployStackSetInvoker(DeployStackSetRequest deployStackSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", deployStackSetRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deployStackSetRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/deployments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deployStackSetRequest);
             return new SyncInvoker<DeployStackSetResponse>(this, "POST", request, JsonUtils.DeSerialize<DeployStackSetResponse>);
@@ -2147,7 +2147,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ListStackInstancesResponse ListStackInstances(ListStackInstancesRequest listStackInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", listStackInstancesRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStackInstancesRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackInstancesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2157,7 +2157,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ListStackInstancesResponse> ListStackInstancesInvoker(ListStackInstancesRequest listStackInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", listStackInstancesRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStackInstancesRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackInstancesRequest);
             return new SyncInvoker<ListStackInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackInstancesResponse>);
@@ -2180,7 +2180,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ListStackSetOperationsResponse ListStackSetOperations(ListStackSetOperationsRequest listStackSetOperationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", listStackSetOperationsRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStackSetOperationsRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetOperationsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2190,7 +2190,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ListStackSetOperationsResponse> ListStackSetOperationsInvoker(ListStackSetOperationsRequest listStackSetOperationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", listStackSetOperationsRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStackSetOperationsRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStackSetOperationsRequest);
             return new SyncInvoker<ListStackSetOperationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStackSetOperationsResponse>);
@@ -2240,8 +2240,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowStackInstanceResponse ShowStackInstance(ShowStackInstanceRequest showStackInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", showStackInstanceRequest.StackSetName.ToString());
-            urlParam.Add("stack_instance_addr", showStackInstanceRequest.StackInstanceAddr.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStackInstanceRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
+            if (StringUtils.TryConvertToNonEmptyString(showStackInstanceRequest.StackInstanceAddr, out var valueOfStackInstanceAddr)) urlParam.Add("stack_instance_addr", valueOfStackInstanceAddr);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/{stack_instance_addr}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackInstanceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2251,8 +2251,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowStackInstanceResponse> ShowStackInstanceInvoker(ShowStackInstanceRequest showStackInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", showStackInstanceRequest.StackSetName.ToString());
-            urlParam.Add("stack_instance_addr", showStackInstanceRequest.StackInstanceAddr.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStackInstanceRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
+            if (StringUtils.TryConvertToNonEmptyString(showStackInstanceRequest.StackInstanceAddr, out var valueOfStackInstanceAddr)) urlParam.Add("stack_instance_addr", valueOfStackInstanceAddr);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances/{stack_instance_addr}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackInstanceRequest);
             return new SyncInvoker<ShowStackInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStackInstanceResponse>);
@@ -2270,7 +2270,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowStackSetMetadataResponse ShowStackSetMetadata(ShowStackSetMetadataRequest showStackSetMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", showStackSetMetadataRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStackSetMetadataRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2280,7 +2280,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowStackSetMetadataResponse> ShowStackSetMetadataInvoker(ShowStackSetMetadataRequest showStackSetMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", showStackSetMetadataRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStackSetMetadataRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetMetadataRequest);
             return new SyncInvoker<ShowStackSetMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStackSetMetadataResponse>);
@@ -2300,8 +2300,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowStackSetOperationMetadataResponse ShowStackSetOperationMetadata(ShowStackSetOperationMetadataRequest showStackSetOperationMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", showStackSetOperationMetadataRequest.StackSetName.ToString());
-            urlParam.Add("stack_set_operation_id", showStackSetOperationMetadataRequest.StackSetOperationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStackSetOperationMetadataRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
+            if (StringUtils.TryConvertToNonEmptyString(showStackSetOperationMetadataRequest.StackSetOperationId, out var valueOfStackSetOperationId)) urlParam.Add("stack_set_operation_id", valueOfStackSetOperationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations/{stack_set_operation_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetOperationMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2311,8 +2311,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowStackSetOperationMetadataResponse> ShowStackSetOperationMetadataInvoker(ShowStackSetOperationMetadataRequest showStackSetOperationMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", showStackSetOperationMetadataRequest.StackSetName.ToString());
-            urlParam.Add("stack_set_operation_id", showStackSetOperationMetadataRequest.StackSetOperationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStackSetOperationMetadataRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
+            if (StringUtils.TryConvertToNonEmptyString(showStackSetOperationMetadataRequest.StackSetOperationId, out var valueOfStackSetOperationId)) urlParam.Add("stack_set_operation_id", valueOfStackSetOperationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/operations/{stack_set_operation_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetOperationMetadataRequest);
             return new SyncInvoker<ShowStackSetOperationMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStackSetOperationMetadataResponse>);
@@ -2333,7 +2333,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowStackSetTemplateResponse ShowStackSetTemplate(ShowStackSetTemplateRequest showStackSetTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", showStackSetTemplateRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStackSetTemplateRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetTemplateRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2343,7 +2343,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowStackSetTemplateResponse> ShowStackSetTemplateInvoker(ShowStackSetTemplateRequest showStackSetTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", showStackSetTemplateRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStackSetTemplateRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStackSetTemplateRequest);
             return new SyncInvoker<ShowStackSetTemplateResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ShowStackSetTemplateResponse>);
@@ -2371,7 +2371,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public UpdateStackInstancesResponse UpdateStackInstances(UpdateStackInstancesRequest updateStackInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", updateStackInstancesRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStackInstancesRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackInstancesRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -2381,7 +2381,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<UpdateStackInstancesResponse> UpdateStackInstancesInvoker(UpdateStackInstancesRequest updateStackInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", updateStackInstancesRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStackInstancesRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}/stack-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackInstancesRequest);
             return new SyncInvoker<UpdateStackInstancesResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdateStackInstancesResponse>);
@@ -2407,7 +2407,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public UpdateStackSetResponse UpdateStackSet(UpdateStackSetRequest updateStackSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", updateStackSetRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStackSetRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackSetRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -2417,7 +2417,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<UpdateStackSetResponse> UpdateStackSetInvoker(UpdateStackSetRequest updateStackSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("stack_set_name", updateStackSetRequest.StackSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStackSetRequest.StackSetName, out var valueOfStackSetName)) urlParam.Add("stack_set_name", valueOfStackSetName);
             var urlPath = HttpUtils.AddUrlPath("/v1/stack-sets/{stack_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateStackSetRequest);
             return new SyncInvoker<UpdateStackSetResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateStackSetResponse>);
@@ -2501,7 +2501,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public CreateTemplateVersionResponse CreateTemplateVersion(CreateTemplateVersionRequest createTemplateVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", createTemplateVersionRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTemplateVersionRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateVersionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2511,7 +2511,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<CreateTemplateVersionResponse> CreateTemplateVersionInvoker(CreateTemplateVersionRequest createTemplateVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", createTemplateVersionRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTemplateVersionRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTemplateVersionRequest);
             return new SyncInvoker<CreateTemplateVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTemplateVersionResponse>);
@@ -2532,7 +2532,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest deleteTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", deleteTemplateRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTemplateRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2542,7 +2542,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeleteTemplateResponse> DeleteTemplateInvoker(DeleteTemplateRequest deleteTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", deleteTemplateRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTemplateRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateRequest);
             return new SyncInvoker<DeleteTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTemplateResponse>);
@@ -2565,8 +2565,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public DeleteTemplateVersionResponse DeleteTemplateVersion(DeleteTemplateVersionRequest deleteTemplateVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", deleteTemplateVersionRequest.TemplateName.ToString());
-            urlParam.Add("version_id", deleteTemplateVersionRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTemplateVersionRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTemplateVersionRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateVersionRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2576,8 +2576,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<DeleteTemplateVersionResponse> DeleteTemplateVersionInvoker(DeleteTemplateVersionRequest deleteTemplateVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", deleteTemplateVersionRequest.TemplateName.ToString());
-            urlParam.Add("version_id", deleteTemplateVersionRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTemplateVersionRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTemplateVersionRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTemplateVersionRequest);
             return new SyncInvoker<DeleteTemplateVersionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTemplateVersionResponse>);
@@ -2603,7 +2603,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ListTemplateVersionsResponse ListTemplateVersions(ListTemplateVersionsRequest listTemplateVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", listTemplateVersionsRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTemplateVersionsRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateVersionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2613,7 +2613,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ListTemplateVersionsResponse> ListTemplateVersionsInvoker(ListTemplateVersionsRequest listTemplateVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", listTemplateVersionsRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTemplateVersionsRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTemplateVersionsRequest);
             return new SyncInvoker<ListTemplateVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTemplateVersionsResponse>);
@@ -2668,7 +2668,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowTemplateMetadataResponse ShowTemplateMetadata(ShowTemplateMetadataRequest showTemplateMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", showTemplateMetadataRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTemplateMetadataRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2678,7 +2678,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowTemplateMetadataResponse> ShowTemplateMetadataInvoker(ShowTemplateMetadataRequest showTemplateMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", showTemplateMetadataRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTemplateMetadataRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateMetadataRequest);
             return new SyncInvoker<ShowTemplateMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTemplateMetadataResponse>);
@@ -2702,8 +2702,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowTemplateVersionContentResponse ShowTemplateVersionContent(ShowTemplateVersionContentRequest showTemplateVersionContentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", showTemplateVersionContentRequest.TemplateName.ToString());
-            urlParam.Add("version_id", showTemplateVersionContentRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTemplateVersionContentRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
+            if (StringUtils.TryConvertToNonEmptyString(showTemplateVersionContentRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionContentRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2713,8 +2713,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowTemplateVersionContentResponse> ShowTemplateVersionContentInvoker(ShowTemplateVersionContentRequest showTemplateVersionContentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", showTemplateVersionContentRequest.TemplateName.ToString());
-            urlParam.Add("version_id", showTemplateVersionContentRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTemplateVersionContentRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
+            if (StringUtils.TryConvertToNonEmptyString(showTemplateVersionContentRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionContentRequest);
             return new SyncInvoker<ShowTemplateVersionContentResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ShowTemplateVersionContentResponse>);
@@ -2736,8 +2736,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public ShowTemplateVersionMetadataResponse ShowTemplateVersionMetadata(ShowTemplateVersionMetadataRequest showTemplateVersionMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", showTemplateVersionMetadataRequest.TemplateName.ToString());
-            urlParam.Add("version_id", showTemplateVersionMetadataRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTemplateVersionMetadataRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
+            if (StringUtils.TryConvertToNonEmptyString(showTemplateVersionMetadataRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionMetadataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2747,8 +2747,8 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<ShowTemplateVersionMetadataResponse> ShowTemplateVersionMetadataInvoker(ShowTemplateVersionMetadataRequest showTemplateVersionMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", showTemplateVersionMetadataRequest.TemplateName.ToString());
-            urlParam.Add("version_id", showTemplateVersionMetadataRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTemplateVersionMetadataRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
+            if (StringUtils.TryConvertToNonEmptyString(showTemplateVersionMetadataRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/versions/{version_id}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTemplateVersionMetadataRequest);
             return new SyncInvoker<ShowTemplateVersionMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTemplateVersionMetadataResponse>);
@@ -2768,7 +2768,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public UpdateTemplateMetadataResponse UpdateTemplateMetadata(UpdateTemplateMetadataRequest updateTemplateMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", updateTemplateMetadataRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTemplateMetadataRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateMetadataRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -2778,7 +2778,7 @@ namespace HuaweiCloud.SDK.Aos.V1
         public SyncInvoker<UpdateTemplateMetadataResponse> UpdateTemplateMetadataInvoker(UpdateTemplateMetadataRequest updateTemplateMetadataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("template_name", updateTemplateMetadataRequest.TemplateName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTemplateMetadataRequest.TemplateName, out var valueOfTemplateName)) urlParam.Add("template_name", valueOfTemplateName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/templates/{template_name}/metadata", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTemplateMetadataRequest);
             return new SyncInvoker<UpdateTemplateMetadataResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<UpdateTemplateMetadataResponse>);

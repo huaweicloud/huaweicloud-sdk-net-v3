@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
     public class ExtensionInfo 
     {
         /// <summary>
-        /// 插件状态, none未安装，running运行中，stopped已停止，fault故障（进程异常），unknown故障（连接异常）
+        /// **参数解释**:  插件状态 **取值范围**: - none: 未安装 - running: 运行中 - stopped: 已停止 - fault: 故障（进程异常） - unknown: 故障（连接异常） 
         /// </summary>
-        /// <value>插件状态, none未安装，running运行中，stopped已停止，fault故障（进程异常），unknown故障（连接异常）</value>
+        /// <value>**参数解释**:  插件状态 **取值范围**: - none: 未安装 - running: 运行中 - stopped: 已停止 - fault: 故障（进程异常） - unknown: 故障（连接异常） </value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -150,18 +150,18 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
 
 
         /// <summary>
-        /// 插件名称
+        /// **参数解释**: 插件名称 **取值范围**: 数组长度为[1,64] 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 插件状态, none未安装，running运行中，stopped已停止，fault故障（进程异常），unknown故障（连接异常）
+        /// **参数解释**:  插件状态 **取值范围**: - none: 未安装 - running: 运行中 - stopped: 已停止 - fault: 故障（进程异常） - unknown: 故障（连接异常） 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 插件版本
+        /// **参数解释**: 插件版本 **取值范围**: 数组长度为[1,32] 
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }

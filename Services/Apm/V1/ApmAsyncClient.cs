@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public async Task<DeleteAkSkResponse> DeleteAkSkAsync(DeleteAkSkRequest deleteAkSkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ak", deleteAkSkRequest.Ak.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAkSkRequest.Ak, out var valueOfAk)) urlParam.Add("ak", valueOfAk);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/access-keys/{ak}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAkSkRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public AsyncInvoker<DeleteAkSkResponse> DeleteAkSkAsyncInvoker(DeleteAkSkRequest deleteAkSkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ak", deleteAkSkRequest.Ak.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAkSkRequest.Ak, out var valueOfAk)) urlParam.Add("ak", valueOfAk);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/access-keys/{ak}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAkSkRequest);
             return new AsyncInvoker<DeleteAkSkResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAkSkResponse>);
@@ -363,7 +363,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public async Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest deleteAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", deleteAppRequest.ApplicationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAppRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/openapi/cmdb/apps/delete-app/{application_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -373,7 +373,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public AsyncInvoker<DeleteAppResponse> DeleteAppAsyncInvoker(DeleteAppRequest deleteAppRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", deleteAppRequest.ApplicationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAppRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/openapi/cmdb/apps/delete-app/{application_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppRequest);
             return new AsyncInvoker<DeleteAppResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAppResponse>);
@@ -461,7 +461,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public async Task<ShowBusinessDetailResponse> ShowBusinessDetailAsync(ShowBusinessDetailRequest showBusinessDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("business_id", showBusinessDetailRequest.BusinessId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBusinessDetailRequest.BusinessId, out var valueOfBusinessId)) urlParam.Add("business_id", valueOfBusinessId);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/openapi/cmdb/business/get-business-detail/{business_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBusinessDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -471,7 +471,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public AsyncInvoker<ShowBusinessDetailResponse> ShowBusinessDetailAsyncInvoker(ShowBusinessDetailRequest showBusinessDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("business_id", showBusinessDetailRequest.BusinessId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBusinessDetailRequest.BusinessId, out var valueOfBusinessId)) urlParam.Add("business_id", valueOfBusinessId);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/openapi/cmdb/business/get-business-detail/{business_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBusinessDetailRequest);
             return new AsyncInvoker<ShowBusinessDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBusinessDetailResponse>);
@@ -487,7 +487,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public async Task<ShowSubBusinessDetailResponse> ShowSubBusinessDetailAsync(ShowSubBusinessDetailRequest showSubBusinessDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sub_business_id", showSubBusinessDetailRequest.SubBusinessId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSubBusinessDetailRequest.SubBusinessId, out var valueOfSubBusinessId)) urlParam.Add("sub_business_id", valueOfSubBusinessId);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/openapi/cmdb/sub-business/get-sub-business-detail/{sub_business_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubBusinessDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -497,7 +497,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public AsyncInvoker<ShowSubBusinessDetailResponse> ShowSubBusinessDetailAsyncInvoker(ShowSubBusinessDetailRequest showSubBusinessDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sub_business_id", showSubBusinessDetailRequest.SubBusinessId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSubBusinessDetailRequest.SubBusinessId, out var valueOfSubBusinessId)) urlParam.Add("sub_business_id", valueOfSubBusinessId);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/openapi/cmdb/sub-business/get-sub-business-detail/{sub_business_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubBusinessDetailRequest);
             return new AsyncInvoker<ShowSubBusinessDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSubBusinessDetailResponse>);
@@ -680,7 +680,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public async Task<ShowAccessPointResponse> ShowAccessPointAsync(ShowAccessPointRequest showAccessPointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("business_id", showAccessPointRequest.BusinessId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAccessPointRequest.BusinessId, out var valueOfBusinessId)) urlParam.Add("business_id", valueOfBusinessId);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/openapi/tracing/access/get-access-point/{business_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAccessPointRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -690,7 +690,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public AsyncInvoker<ShowAccessPointResponse> ShowAccessPointAsyncInvoker(ShowAccessPointRequest showAccessPointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("business_id", showAccessPointRequest.BusinessId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAccessPointRequest.BusinessId, out var valueOfBusinessId)) urlParam.Add("business_id", valueOfBusinessId);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/openapi/tracing/access/get-access-point/{business_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAccessPointRequest);
             return new AsyncInvoker<ShowAccessPointResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowAccessPointResponse>);
@@ -706,7 +706,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public async Task<ShowTokenResponse> ShowTokenAsync(ShowTokenRequest showTokenRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("business_id", showTokenRequest.BusinessId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTokenRequest.BusinessId, out var valueOfBusinessId)) urlParam.Add("business_id", valueOfBusinessId);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/openapi/tracing/business/token/{business_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTokenRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -716,7 +716,7 @@ namespace HuaweiCloud.SDK.Apm.V1
         public AsyncInvoker<ShowTokenResponse> ShowTokenAsyncInvoker(ShowTokenRequest showTokenRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("business_id", showTokenRequest.BusinessId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTokenRequest.BusinessId, out var valueOfBusinessId)) urlParam.Add("business_id", valueOfBusinessId);
             var urlPath = HttpUtils.AddUrlPath("/v1/apm2/openapi/tracing/business/token/{business_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTokenRequest);
             return new AsyncInvoker<ShowTokenResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTokenResponse>);

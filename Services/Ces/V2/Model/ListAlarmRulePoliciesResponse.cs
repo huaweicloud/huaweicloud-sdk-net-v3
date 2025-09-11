@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 策略信息
+        /// **参数解释**： 告警策略信息列表。 
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListPolicy> Policies { get; set; }
+        public List<ListPolicyResp> Policies { get; set; }
 
         /// <summary>
-        /// 指定告警规则对应的策略总数
+        /// **参数解释**： 指定告警规则对应的策略总数。 **取值范围**： 0-100 
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

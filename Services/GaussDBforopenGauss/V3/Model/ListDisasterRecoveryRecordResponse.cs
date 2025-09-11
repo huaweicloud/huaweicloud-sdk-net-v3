@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// 操作记录
+        /// **参数解释**: 操作记录。
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
-        public List<RecordInfoResponse> Records { get; set; }
+        public List<RecordInfoResponseResult> Records { get; set; }
 
 
 

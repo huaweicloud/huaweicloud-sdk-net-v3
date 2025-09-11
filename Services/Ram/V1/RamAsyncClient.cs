@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<AssociateResourceSharePermissionResponse> AssociateResourceSharePermissionAsync(AssociateResourceSharePermissionRequest associateResourceSharePermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", associateResourceSharePermissionRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateResourceSharePermissionRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/associate-permission", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateResourceSharePermissionRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<AssociateResourceSharePermissionResponse> AssociateResourceSharePermissionAsyncInvoker(AssociateResourceSharePermissionRequest associateResourceSharePermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", associateResourceSharePermissionRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateResourceSharePermissionRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/associate-permission", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateResourceSharePermissionRequest);
             return new AsyncInvoker<AssociateResourceSharePermissionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AssociateResourceSharePermissionResponse>);
@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<DisassociateResourceSharePermissionResponse> DisassociateResourceSharePermissionAsync(DisassociateResourceSharePermissionRequest disassociateResourceSharePermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", disassociateResourceSharePermissionRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateResourceSharePermissionRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/disassociate-permission", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateResourceSharePermissionRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<DisassociateResourceSharePermissionResponse> DisassociateResourceSharePermissionAsyncInvoker(DisassociateResourceSharePermissionRequest disassociateResourceSharePermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", disassociateResourceSharePermissionRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateResourceSharePermissionRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/disassociate-permission", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateResourceSharePermissionRequest);
             return new AsyncInvoker<DisassociateResourceSharePermissionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisassociateResourceSharePermissionResponse>);
@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<ListResourceSharePermissionsResponse> ListResourceSharePermissionsAsync(ListResourceSharePermissionsRequest listResourceSharePermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", listResourceSharePermissionsRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listResourceSharePermissionsRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/associated-permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceSharePermissionsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -87,7 +87,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<ListResourceSharePermissionsResponse> ListResourceSharePermissionsAsyncInvoker(ListResourceSharePermissionsRequest listResourceSharePermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", listResourceSharePermissionsRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listResourceSharePermissionsRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/associated-permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResourceSharePermissionsRequest);
             return new AsyncInvoker<ListResourceSharePermissionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListResourceSharePermissionsResponse>);
@@ -223,7 +223,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<ListPermissionVersionsResponse> ListPermissionVersionsAsync(ListPermissionVersionsRequest listPermissionVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("permission_id", listPermissionVersionsRequest.PermissionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPermissionVersionsRequest.PermissionId, out var valueOfPermissionId)) urlParam.Add("permission_id", valueOfPermissionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/permissions/{permission_id}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPermissionVersionsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -233,7 +233,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<ListPermissionVersionsResponse> ListPermissionVersionsAsyncInvoker(ListPermissionVersionsRequest listPermissionVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("permission_id", listPermissionVersionsRequest.PermissionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPermissionVersionsRequest.PermissionId, out var valueOfPermissionId)) urlParam.Add("permission_id", valueOfPermissionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/permissions/{permission_id}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPermissionVersionsRequest);
             return new AsyncInvoker<ListPermissionVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPermissionVersionsResponse>);
@@ -273,7 +273,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<ShowPermissionResponse> ShowPermissionAsync(ShowPermissionRequest showPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("permission_id", showPermissionRequest.PermissionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPermissionRequest.PermissionId, out var valueOfPermissionId)) urlParam.Add("permission_id", valueOfPermissionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/permissions/{permission_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPermissionRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -283,7 +283,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<ShowPermissionResponse> ShowPermissionAsyncInvoker(ShowPermissionRequest showPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("permission_id", showPermissionRequest.PermissionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPermissionRequest.PermissionId, out var valueOfPermissionId)) urlParam.Add("permission_id", valueOfPermissionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/permissions/{permission_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPermissionRequest);
             return new AsyncInvoker<ShowPermissionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPermissionResponse>);
@@ -419,7 +419,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<DeleteResourceShareResponse> DeleteResourceShareAsync(DeleteResourceShareRequest deleteResourceShareRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", deleteResourceShareRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteResourceShareRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteResourceShareRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -429,7 +429,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<DeleteResourceShareResponse> DeleteResourceShareAsyncInvoker(DeleteResourceShareRequest deleteResourceShareRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", deleteResourceShareRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteResourceShareRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteResourceShareRequest);
             return new AsyncInvoker<DeleteResourceShareResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteResourceShareResponse>);
@@ -469,7 +469,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<UpdateResourceShareResponse> UpdateResourceShareAsync(UpdateResourceShareRequest updateResourceShareRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", updateResourceShareRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateResourceShareRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResourceShareRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -479,7 +479,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<UpdateResourceShareResponse> UpdateResourceShareAsyncInvoker(UpdateResourceShareRequest updateResourceShareRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", updateResourceShareRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateResourceShareRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResourceShareRequest);
             return new AsyncInvoker<UpdateResourceShareResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateResourceShareResponse>);
@@ -495,7 +495,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<AssociateResourceShareResponse> AssociateResourceShareAsync(AssociateResourceShareRequest associateResourceShareRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", associateResourceShareRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateResourceShareRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/associate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateResourceShareRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -505,7 +505,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<AssociateResourceShareResponse> AssociateResourceShareAsyncInvoker(AssociateResourceShareRequest associateResourceShareRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", associateResourceShareRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateResourceShareRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/associate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateResourceShareRequest);
             return new AsyncInvoker<AssociateResourceShareResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateResourceShareResponse>);
@@ -521,7 +521,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<DisassociateResourceShareResponse> DisassociateResourceShareAsync(DisassociateResourceShareRequest disassociateResourceShareRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", disassociateResourceShareRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateResourceShareRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/disassociate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateResourceShareRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -531,7 +531,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<DisassociateResourceShareResponse> DisassociateResourceShareAsyncInvoker(DisassociateResourceShareRequest disassociateResourceShareRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", disassociateResourceShareRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateResourceShareRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/disassociate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateResourceShareRequest);
             return new AsyncInvoker<DisassociateResourceShareResponse>(this, "POST", request, JsonUtils.DeSerialize<DisassociateResourceShareResponse>);
@@ -571,7 +571,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<AcceptResourceShareInvitationResponse> AcceptResourceShareInvitationAsync(AcceptResourceShareInvitationRequest acceptResourceShareInvitationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_invitation_id", acceptResourceShareInvitationRequest.ResourceShareInvitationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(acceptResourceShareInvitationRequest.ResourceShareInvitationId, out var valueOfResourceShareInvitationId)) urlParam.Add("resource_share_invitation_id", valueOfResourceShareInvitationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-share-invitations/{resource_share_invitation_id}/accept", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", acceptResourceShareInvitationRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -581,7 +581,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<AcceptResourceShareInvitationResponse> AcceptResourceShareInvitationAsyncInvoker(AcceptResourceShareInvitationRequest acceptResourceShareInvitationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_invitation_id", acceptResourceShareInvitationRequest.ResourceShareInvitationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(acceptResourceShareInvitationRequest.ResourceShareInvitationId, out var valueOfResourceShareInvitationId)) urlParam.Add("resource_share_invitation_id", valueOfResourceShareInvitationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-share-invitations/{resource_share_invitation_id}/accept", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", acceptResourceShareInvitationRequest);
             return new AsyncInvoker<AcceptResourceShareInvitationResponse>(this, "POST", request, JsonUtils.DeSerialize<AcceptResourceShareInvitationResponse>);
@@ -597,7 +597,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<RejectResourceShareInvitationResponse> RejectResourceShareInvitationAsync(RejectResourceShareInvitationRequest rejectResourceShareInvitationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_invitation_id", rejectResourceShareInvitationRequest.ResourceShareInvitationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(rejectResourceShareInvitationRequest.ResourceShareInvitationId, out var valueOfResourceShareInvitationId)) urlParam.Add("resource_share_invitation_id", valueOfResourceShareInvitationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-share-invitations/{resource_share_invitation_id}/reject", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rejectResourceShareInvitationRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -607,7 +607,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<RejectResourceShareInvitationResponse> RejectResourceShareInvitationAsyncInvoker(RejectResourceShareInvitationRequest rejectResourceShareInvitationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_invitation_id", rejectResourceShareInvitationRequest.ResourceShareInvitationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(rejectResourceShareInvitationRequest.ResourceShareInvitationId, out var valueOfResourceShareInvitationId)) urlParam.Add("resource_share_invitation_id", valueOfResourceShareInvitationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-share-invitations/{resource_share_invitation_id}/reject", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rejectResourceShareInvitationRequest);
             return new AsyncInvoker<RejectResourceShareInvitationResponse>(this, "POST", request, JsonUtils.DeSerialize<RejectResourceShareInvitationResponse>);
@@ -647,7 +647,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<BatchCreateResourceShareTagsResponse> BatchCreateResourceShareTagsAsync(BatchCreateResourceShareTagsRequest batchCreateResourceShareTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", batchCreateResourceShareTagsRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateResourceShareTagsRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateResourceShareTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -657,7 +657,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<BatchCreateResourceShareTagsResponse> BatchCreateResourceShareTagsAsyncInvoker(BatchCreateResourceShareTagsRequest batchCreateResourceShareTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", batchCreateResourceShareTagsRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateResourceShareTagsRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateResourceShareTagsRequest);
             return new AsyncInvoker<BatchCreateResourceShareTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateResourceShareTagsResponse>);
@@ -673,7 +673,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public async Task<BatchDeleteResourceShareTagsResponse> BatchDeleteResourceShareTagsAsync(BatchDeleteResourceShareTagsRequest batchDeleteResourceShareTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", batchDeleteResourceShareTagsRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteResourceShareTagsRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteResourceShareTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -683,7 +683,7 @@ namespace HuaweiCloud.SDK.Ram.V1
         public AsyncInvoker<BatchDeleteResourceShareTagsResponse> BatchDeleteResourceShareTagsAsyncInvoker(BatchDeleteResourceShareTagsRequest batchDeleteResourceShareTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_share_id", batchDeleteResourceShareTagsRequest.ResourceShareId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteResourceShareTagsRequest.ResourceShareId, out var valueOfResourceShareId)) urlParam.Add("resource_share_id", valueOfResourceShareId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resource-shares/{resource_share_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteResourceShareTagsRequest);
             return new AsyncInvoker<BatchDeleteResourceShareTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteResourceShareTagsResponse>);

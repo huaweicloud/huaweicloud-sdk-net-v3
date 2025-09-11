@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class ListCesTargetProjectTagsRequest 
     {
         /// <summary>
-        /// 资源类型。CES-alarm：告警规则
+        /// **参数解释**： 资源类型。     **约束限制**： 不涉及。 **取值范围**： 只能为CES-alarm，代表告警规则。长度[1,32]个字符。      **默认取值**： 不涉及。 
         /// </summary>
-        /// <value>资源类型。CES-alarm：告警规则</value>
+        /// <value>**参数解释**： 资源类型。     **约束限制**： 不涉及。 **取值范围**： 只能为CES-alarm，代表告警规则。长度[1,32]个字符。      **默认取值**： 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 资源类型。CES-alarm：告警规则
+        /// **参数解释**： 资源类型。     **约束限制**： 不涉及。 **取值范围**： 只能为CES-alarm，代表告警规则。长度[1,32]个字符。      **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]

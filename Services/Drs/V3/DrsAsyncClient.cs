@@ -241,7 +241,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<BatchListStructDetailResponse> BatchListStructDetailAsync(BatchListStructDetailRequest batchListStructDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("type", batchListStructDetailRequest.Type.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchListStructDetailRequest.Type, out var valueOfType)) urlParam.Add("type", valueOfType);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{type}/batch-struct-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListStructDetailRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -251,7 +251,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<BatchListStructDetailResponse> BatchListStructDetailAsyncInvoker(BatchListStructDetailRequest batchListStructDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("type", batchListStructDetailRequest.Type.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchListStructDetailRequest.Type, out var valueOfType)) urlParam.Add("type", valueOfType);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{type}/batch-struct-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchListStructDetailRequest);
             return new AsyncInvoker<BatchListStructDetailResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchListStructDetailResponse>);
@@ -658,7 +658,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<CreateCompareResultFileResponse> CreateCompareResultFileAsync(CreateCompareResultFileRequest createCompareResultFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", createCompareResultFileRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createCompareResultFileRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/result/file", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCompareResultFileRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -668,7 +668,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<CreateCompareResultFileResponse> CreateCompareResultFileAsyncInvoker(CreateCompareResultFileRequest createCompareResultFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", createCompareResultFileRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createCompareResultFileRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/result/file", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCompareResultFileRequest);
             return new AsyncInvoker<CreateCompareResultFileResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateCompareResultFileResponse>);
@@ -708,7 +708,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<CreateDataLevelTableCompareJobResponse> CreateDataLevelTableCompareJobAsync(CreateDataLevelTableCompareJobRequest createDataLevelTableCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", createDataLevelTableCompareJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createDataLevelTableCompareJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDataLevelTableCompareJobRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -718,7 +718,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<CreateDataLevelTableCompareJobResponse> CreateDataLevelTableCompareJobAsyncInvoker(CreateDataLevelTableCompareJobRequest createDataLevelTableCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", createDataLevelTableCompareJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createDataLevelTableCompareJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDataLevelTableCompareJobRequest);
             return new AsyncInvoker<CreateDataLevelTableCompareJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDataLevelTableCompareJobResponse>);
@@ -734,7 +734,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<CreateObjectLevelCompareJobResponse> CreateObjectLevelCompareJobAsync(CreateObjectLevelCompareJobRequest createObjectLevelCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", createObjectLevelCompareJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createObjectLevelCompareJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/object/compare", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createObjectLevelCompareJobRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -744,7 +744,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<CreateObjectLevelCompareJobResponse> CreateObjectLevelCompareJobAsyncInvoker(CreateObjectLevelCompareJobRequest createObjectLevelCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", createObjectLevelCompareJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createObjectLevelCompareJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/object/compare", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createObjectLevelCompareJobRequest);
             return new AsyncInvoker<CreateObjectLevelCompareJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateObjectLevelCompareJobResponse>);
@@ -760,8 +760,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<DeleteCompareJobResponse> DeleteCompareJobAsync(DeleteCompareJobRequest deleteCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", deleteCompareJobRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", deleteCompareJobRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCompareJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteCompareJobRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCompareJobRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -771,8 +771,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<DeleteCompareJobResponse> DeleteCompareJobAsyncInvoker(DeleteCompareJobRequest deleteCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", deleteCompareJobRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", deleteCompareJobRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCompareJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteCompareJobRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCompareJobRequest);
             return new AsyncInvoker<DeleteCompareJobResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteCompareJobResponse>);
@@ -788,7 +788,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<DownloadCompareResultFileResponse> DownloadCompareResultFileAsync(DownloadCompareResultFileRequest downloadCompareResultFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", downloadCompareResultFileRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadCompareResultFileRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/result/file", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadCompareResultFileRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -798,7 +798,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<DownloadCompareResultFileResponse> DownloadCompareResultFileAsyncInvoker(DownloadCompareResultFileRequest downloadCompareResultFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", downloadCompareResultFileRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadCompareResultFileRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/result/file", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadCompareResultFileRequest);
             return new AsyncInvoker<DownloadCompareResultFileResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadCompareResultFileResponse>);
@@ -886,8 +886,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ListContentCompareDetailResponse> ListContentCompareDetailAsync(ListContentCompareDetailRequest listContentCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listContentCompareDetailRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", listContentCompareDetailRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareDetailRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listContentCompareDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -897,8 +897,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<ListContentCompareDetailResponse> ListContentCompareDetailAsyncInvoker(ListContentCompareDetailRequest listContentCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listContentCompareDetailRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", listContentCompareDetailRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareDetailRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listContentCompareDetailRequest);
             return new AsyncInvoker<ListContentCompareDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListContentCompareDetailResponse>);
@@ -914,8 +914,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ListContentCompareDifferenceResponse> ListContentCompareDifferenceAsync(ListContentCompareDifferenceRequest listContentCompareDifferenceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listContentCompareDifferenceRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", listContentCompareDifferenceRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareDifferenceRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareDifferenceRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-difference", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listContentCompareDifferenceRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -925,8 +925,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<ListContentCompareDifferenceResponse> ListContentCompareDifferenceAsyncInvoker(ListContentCompareDifferenceRequest listContentCompareDifferenceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listContentCompareDifferenceRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", listContentCompareDifferenceRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareDifferenceRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareDifferenceRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-difference", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listContentCompareDifferenceRequest);
             return new AsyncInvoker<ListContentCompareDifferenceResponse>(this, "GET", request, JsonUtils.DeSerialize<ListContentCompareDifferenceResponse>);
@@ -942,8 +942,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ListContentCompareOverviewResponse> ListContentCompareOverviewAsync(ListContentCompareOverviewRequest listContentCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listContentCompareOverviewRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", listContentCompareOverviewRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareOverviewRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareOverviewRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-overview", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listContentCompareOverviewRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -953,8 +953,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<ListContentCompareOverviewResponse> ListContentCompareOverviewAsyncInvoker(ListContentCompareOverviewRequest listContentCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listContentCompareOverviewRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", listContentCompareOverviewRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareOverviewRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listContentCompareOverviewRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/content-overview", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listContentCompareOverviewRequest);
             return new AsyncInvoker<ListContentCompareOverviewResponse>(this, "GET", request, JsonUtils.DeSerialize<ListContentCompareOverviewResponse>);
@@ -970,8 +970,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ListDataCompareDetailResponse> ListDataCompareDetailAsync(ListDataCompareDetailRequest listDataCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listDataCompareDetailRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", listDataCompareDetailRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDataCompareDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listDataCompareDetailRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/line-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataCompareDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -981,8 +981,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<ListDataCompareDetailResponse> ListDataCompareDetailAsyncInvoker(ListDataCompareDetailRequest listDataCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listDataCompareDetailRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", listDataCompareDetailRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDataCompareDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listDataCompareDetailRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/line-detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataCompareDetailRequest);
             return new AsyncInvoker<ListDataCompareDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDataCompareDetailResponse>);
@@ -998,8 +998,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ListDataCompareOverviewResponse> ListDataCompareOverviewAsync(ListDataCompareOverviewRequest listDataCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listDataCompareOverviewRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", listDataCompareOverviewRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDataCompareOverviewRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listDataCompareOverviewRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/line-overview", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataCompareOverviewRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1009,8 +1009,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<ListDataCompareOverviewResponse> ListDataCompareOverviewAsyncInvoker(ListDataCompareOverviewRequest listDataCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listDataCompareOverviewRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", listDataCompareOverviewRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDataCompareOverviewRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listDataCompareOverviewRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/compare/{compare_job_id}/line-overview", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataCompareOverviewRequest);
             return new AsyncInvoker<ListDataCompareOverviewResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDataCompareOverviewResponse>);
@@ -1026,7 +1026,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ListDataLevelTableCompareJobsResponse> ListDataLevelTableCompareJobsAsync(ListDataLevelTableCompareJobsRequest listDataLevelTableCompareJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listDataLevelTableCompareJobsRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDataLevelTableCompareJobsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataLevelTableCompareJobsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1036,7 +1036,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<ListDataLevelTableCompareJobsResponse> ListDataLevelTableCompareJobsAsyncInvoker(ListDataLevelTableCompareJobsRequest listDataLevelTableCompareJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listDataLevelTableCompareJobsRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDataLevelTableCompareJobsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDataLevelTableCompareJobsRequest);
             return new AsyncInvoker<ListDataLevelTableCompareJobsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDataLevelTableCompareJobsResponse>);
@@ -1052,8 +1052,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ListObejectLevelCompareDetailResponse> ListObejectLevelCompareDetailAsync(ListObejectLevelCompareDetailRequest listObejectLevelCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listObejectLevelCompareDetailRequest.JobId.ToString());
-            urlParam.Add("compare_type", listObejectLevelCompareDetailRequest.CompareType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listObejectLevelCompareDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listObejectLevelCompareDetailRequest.CompareType, out var valueOfCompareType)) urlParam.Add("compare_type", valueOfCompareType);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/object/compare/{compare_type}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObejectLevelCompareDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1063,8 +1063,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<ListObejectLevelCompareDetailResponse> ListObejectLevelCompareDetailAsyncInvoker(ListObejectLevelCompareDetailRequest listObejectLevelCompareDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listObejectLevelCompareDetailRequest.JobId.ToString());
-            urlParam.Add("compare_type", listObejectLevelCompareDetailRequest.CompareType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listObejectLevelCompareDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listObejectLevelCompareDetailRequest.CompareType, out var valueOfCompareType)) urlParam.Add("compare_type", valueOfCompareType);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/object/compare/{compare_type}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObejectLevelCompareDetailRequest);
             return new AsyncInvoker<ListObejectLevelCompareDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListObejectLevelCompareDetailResponse>);
@@ -1080,7 +1080,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ListObejectLevelCompareOverviewResponse> ListObejectLevelCompareOverviewAsync(ListObejectLevelCompareOverviewRequest listObejectLevelCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listObejectLevelCompareOverviewRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listObejectLevelCompareOverviewRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/object/compare", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObejectLevelCompareOverviewRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1090,7 +1090,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<ListObejectLevelCompareOverviewResponse> ListObejectLevelCompareOverviewAsyncInvoker(ListObejectLevelCompareOverviewRequest listObejectLevelCompareOverviewRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listObejectLevelCompareOverviewRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listObejectLevelCompareOverviewRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/object/compare", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listObejectLevelCompareOverviewRequest);
             return new AsyncInvoker<ListObejectLevelCompareOverviewResponse>(this, "GET", request, JsonUtils.DeSerialize<ListObejectLevelCompareOverviewResponse>);
@@ -1106,7 +1106,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<ListUsersResponse> ListUsersAsync(ListUsersRequest listUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listUsersRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUsersRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/get-src-user", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1116,7 +1116,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<ListUsersResponse> ListUsersAsyncInvoker(ListUsersRequest listUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listUsersRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUsersRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/get-src-user", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUsersRequest);
             return new AsyncInvoker<ListUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUsersResponse>);
@@ -1204,8 +1204,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<StartPromptlyDataLevelTableCompareJobResponse> StartPromptlyDataLevelTableCompareJobAsync(StartPromptlyDataLevelTableCompareJobRequest startPromptlyDataLevelTableCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", startPromptlyDataLevelTableCompareJobRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", startPromptlyDataLevelTableCompareJobRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startPromptlyDataLevelTableCompareJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(startPromptlyDataLevelTableCompareJobRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare/{compare_job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startPromptlyDataLevelTableCompareJobRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1215,8 +1215,8 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<StartPromptlyDataLevelTableCompareJobResponse> StartPromptlyDataLevelTableCompareJobAsyncInvoker(StartPromptlyDataLevelTableCompareJobRequest startPromptlyDataLevelTableCompareJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", startPromptlyDataLevelTableCompareJobRequest.JobId.ToString());
-            urlParam.Add("compare_job_id", startPromptlyDataLevelTableCompareJobRequest.CompareJobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startPromptlyDataLevelTableCompareJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(startPromptlyDataLevelTableCompareJobRequest.CompareJobId, out var valueOfCompareJobId)) urlParam.Add("compare_job_id", valueOfCompareJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/table/compare/{compare_job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startPromptlyDataLevelTableCompareJobRequest);
             return new AsyncInvoker<StartPromptlyDataLevelTableCompareJobResponse>(this, "POST", request, JsonUtils.DeSerialize<StartPromptlyDataLevelTableCompareJobResponse>);
@@ -1232,7 +1232,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<UpdateParamsResponse> UpdateParamsAsync(UpdateParamsRequest updateParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", updateParamsRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateParamsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateParamsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1242,7 +1242,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<UpdateParamsResponse> UpdateParamsAsyncInvoker(UpdateParamsRequest updateParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", updateParamsRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateParamsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateParamsRequest);
             return new AsyncInvoker<UpdateParamsResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateParamsResponse>);
@@ -1258,7 +1258,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public async Task<UpdateTuningParamsResponse> UpdateTuningParamsAsync(UpdateTuningParamsRequest updateTuningParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", updateTuningParamsRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTuningParamsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/job/{job_id}/tuning-params/modify-params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTuningParamsRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1268,7 +1268,7 @@ namespace HuaweiCloud.SDK.Drs.V3
         public AsyncInvoker<UpdateTuningParamsResponse> UpdateTuningParamsAsyncInvoker(UpdateTuningParamsRequest updateTuningParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", updateTuningParamsRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTuningParamsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/job/{job_id}/tuning-params/modify-params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTuningParamsRequest);
             return new AsyncInvoker<UpdateTuningParamsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTuningParamsResponse>);

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
     public class BatchCreateInvocationInfo 
     {
         /// <summary>
-        /// 任务结果, successful成功，error失败
+        /// **参数解释**: 任务结果, successful成功，error失败 **取值范围**: - successful: 成功 - error: 失败 
         /// </summary>
-        /// <value>任务结果, successful成功，error失败</value>
+        /// <value>**参数解释**: 任务结果, successful成功，error失败 **取值范围**: - successful: 成功 - error: 失败 </value>
         [JsonConverter(typeof(EnumClassConverter<RetStatusEnum>))]
         public class RetStatusEnum
         {
@@ -132,30 +132,30 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
 
 
         /// <summary>
-        /// 机器id
+        /// **参数解释**: 机器id **取值范围**: 1到64个字符的字符串，且只包含字母、数字和连字符 
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 任务id
+        /// **参数解释**: 任务id **取值范围**: 1到64个字符的字符串，且只包含字母、数字和连字符 
         /// </summary>
         [JsonProperty("invocation_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InvocationId { get; set; }
 
         /// <summary>
-        /// 任务结果, successful成功，error失败
+        /// **参数解释**: 任务结果, successful成功，error失败 **取值范围**: - successful: 成功 - error: 失败 
         /// </summary>
         [JsonProperty("ret_status", NullValueHandling = NullValueHandling.Ignore)]
         public RetStatusEnum RetStatus { get; set; }
         /// <summary>
-        /// 错误码
+        /// **参数解释**: 错误码 **取值范围**: 以\&quot;invocationmgr.\&quot;开头且后跟4位数字的完整字符串 
         /// </summary>
         [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorCode { get; set; }
 
         /// <summary>
-        /// 错误信息
+        /// **参数解释**: 错误信息 **取值范围**: 数组长度范围为[1,128] 
         /// </summary>
         [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorMsg { get; set; }

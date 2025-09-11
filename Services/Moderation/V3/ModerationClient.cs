@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.Moderation.V3
         public RunCloseAudioStreamModerationJobResponse RunCloseAudioStreamModerationJob(RunCloseAudioStreamModerationJobRequest runCloseAudioStreamModerationJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", runCloseAudioStreamModerationJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(runCloseAudioStreamModerationJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs/stop/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseAudioStreamModerationJobRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -82,7 +82,7 @@ namespace HuaweiCloud.SDK.Moderation.V3
         public SyncInvoker<RunCloseAudioStreamModerationJobResponse> RunCloseAudioStreamModerationJobInvoker(RunCloseAudioStreamModerationJobRequest runCloseAudioStreamModerationJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", runCloseAudioStreamModerationJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(runCloseAudioStreamModerationJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio-stream/jobs/stop/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runCloseAudioStreamModerationJobRequest);
             return new SyncInvoker<RunCloseAudioStreamModerationJobResponse>(this, "POST", request, JsonUtils.DeSerialize<RunCloseAudioStreamModerationJobResponse>);
@@ -169,7 +169,7 @@ namespace HuaweiCloud.SDK.Moderation.V3
         public RunQueryAudioModerationJobResponse RunQueryAudioModerationJob(RunQueryAudioModerationJobRequest runQueryAudioModerationJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", runQueryAudioModerationJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(runQueryAudioModerationJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryAudioModerationJobRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.Moderation.V3
         public SyncInvoker<RunQueryAudioModerationJobResponse> RunQueryAudioModerationJobInvoker(RunQueryAudioModerationJobRequest runQueryAudioModerationJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", runQueryAudioModerationJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(runQueryAudioModerationJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/audio/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryAudioModerationJobRequest);
             return new SyncInvoker<RunQueryAudioModerationJobResponse>(this, "GET", request, JsonUtils.DeSerialize<RunQueryAudioModerationJobResponse>);
@@ -195,7 +195,7 @@ namespace HuaweiCloud.SDK.Moderation.V3
         public RunQueryVideoModerationJobResponse RunQueryVideoModerationJob(RunQueryVideoModerationJobRequest runQueryVideoModerationJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", runQueryVideoModerationJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(runQueryVideoModerationJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryVideoModerationJobRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -205,7 +205,7 @@ namespace HuaweiCloud.SDK.Moderation.V3
         public SyncInvoker<RunQueryVideoModerationJobResponse> RunQueryVideoModerationJobInvoker(RunQueryVideoModerationJobRequest runQueryVideoModerationJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", runQueryVideoModerationJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(runQueryVideoModerationJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/moderation/video/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", runQueryVideoModerationJobRequest);
             return new SyncInvoker<RunQueryVideoModerationJobResponse>(this, "GET", request, JsonUtils.DeSerialize<RunQueryVideoModerationJobResponse>);

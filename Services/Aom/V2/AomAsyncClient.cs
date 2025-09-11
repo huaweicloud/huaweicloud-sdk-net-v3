@@ -241,7 +241,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         public async Task<DeleteAlarmRuleResponse> DeleteAlarmRuleAsync(DeleteAlarmRuleRequest deleteAlarmRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_rule_id", deleteAlarmRuleRequest.AlarmRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAlarmRuleRequest.AlarmRuleId, out var valueOfAlarmRuleId)) urlParam.Add("alarm_rule_id", valueOfAlarmRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/alarm-rules/{alarm_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlarmRuleRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -251,7 +251,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         public AsyncInvoker<DeleteAlarmRuleResponse> DeleteAlarmRuleAsyncInvoker(DeleteAlarmRuleRequest deleteAlarmRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_rule_id", deleteAlarmRuleRequest.AlarmRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAlarmRuleRequest.AlarmRuleId, out var valueOfAlarmRuleId)) urlParam.Add("alarm_rule_id", valueOfAlarmRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/alarm-rules/{alarm_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlarmRuleRequest);
             return new AsyncInvoker<DeleteAlarmRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAlarmRuleResponse>);
@@ -411,8 +411,8 @@ namespace HuaweiCloud.SDK.Aom.V2
         public async Task<ListAgentsResponse> ListAgentsAsync(ListAgentsRequest listAgentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", listAgentsRequest.ClusterId.ToString());
-            urlParam.Add("namespace", listAgentsRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAgentsRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(listAgentsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{cluster_id}/{namespace}/agents", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAgentsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -422,8 +422,8 @@ namespace HuaweiCloud.SDK.Aom.V2
         public AsyncInvoker<ListAgentsResponse> ListAgentsAsyncInvoker(ListAgentsRequest listAgentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("cluster_id", listAgentsRequest.ClusterId.ToString());
-            urlParam.Add("namespace", listAgentsRequest.Namespace.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAgentsRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(listAgentsRequest.Namespace, out var valueOfNamespace)) urlParam.Add("namespace", valueOfNamespace);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{cluster_id}/{namespace}/agents", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAgentsRequest);
             return new AsyncInvoker<ListAgentsResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ListAgentsResponse>);
@@ -765,7 +765,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         public async Task<ShowActionRuleResponse> ShowActionRuleAsync(ShowActionRuleRequest showActionRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("rule_name", showActionRuleRequest.RuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showActionRuleRequest.RuleName, out var valueOfRuleName)) urlParam.Add("rule_name", valueOfRuleName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/alert/action-rules/{rule_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showActionRuleRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -775,7 +775,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         public AsyncInvoker<ShowActionRuleResponse> ShowActionRuleAsyncInvoker(ShowActionRuleRequest showActionRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("rule_name", showActionRuleRequest.RuleName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showActionRuleRequest.RuleName, out var valueOfRuleName)) urlParam.Add("rule_name", valueOfRuleName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/alert/action-rules/{rule_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showActionRuleRequest);
             return new AsyncInvoker<ShowActionRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowActionRuleResponse>);
@@ -791,7 +791,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         public async Task<ShowAlarmRuleResponse> ShowAlarmRuleAsync(ShowAlarmRuleRequest showAlarmRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_rule_id", showAlarmRuleRequest.AlarmRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAlarmRuleRequest.AlarmRuleId, out var valueOfAlarmRuleId)) urlParam.Add("alarm_rule_id", valueOfAlarmRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/alarm-rules/{alarm_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlarmRuleRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -801,7 +801,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         public AsyncInvoker<ShowAlarmRuleResponse> ShowAlarmRuleAsyncInvoker(ShowAlarmRuleRequest showAlarmRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("alarm_rule_id", showAlarmRuleRequest.AlarmRuleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAlarmRuleRequest.AlarmRuleId, out var valueOfAlarmRuleId)) urlParam.Add("alarm_rule_id", valueOfAlarmRuleId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/alarm-rules/{alarm_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlarmRuleRequest);
             return new AsyncInvoker<ShowAlarmRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAlarmRuleResponse>);
@@ -961,7 +961,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         public async Task<CreateRecordingRuleResponse> CreateRecordingRuleAsync(CreateRecordingRuleRequest createRecordingRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("prometheus_instance", createRecordingRuleRequest.PrometheusInstance.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRecordingRuleRequest.PrometheusInstance, out var valueOfPrometheusInstance)) urlParam.Add("prometheus_instance", valueOfPrometheusInstance);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{prometheus_instance}/aom/api/v1/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordingRuleRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -971,7 +971,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         public AsyncInvoker<CreateRecordingRuleResponse> CreateRecordingRuleAsyncInvoker(CreateRecordingRuleRequest createRecordingRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("prometheus_instance", createRecordingRuleRequest.PrometheusInstance.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRecordingRuleRequest.PrometheusInstance, out var valueOfPrometheusInstance)) urlParam.Add("prometheus_instance", valueOfPrometheusInstance);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{prometheus_instance}/aom/api/v1/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordingRuleRequest);
             return new AsyncInvoker<CreateRecordingRuleResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateRecordingRuleResponse>);
@@ -1083,7 +1083,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         public async Task<ListLabelValuesAomPromGetResponse> ListLabelValuesAomPromGetAsync(ListLabelValuesAomPromGetRequest listLabelValuesAomPromGetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("label_name", listLabelValuesAomPromGetRequest.LabelName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLabelValuesAomPromGetRequest.LabelName, out var valueOfLabelName)) urlParam.Add("label_name", valueOfLabelName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aom/api/v1/label/{label_name}/values", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLabelValuesAomPromGetRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1093,7 +1093,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         public AsyncInvoker<ListLabelValuesAomPromGetResponse> ListLabelValuesAomPromGetAsyncInvoker(ListLabelValuesAomPromGetRequest listLabelValuesAomPromGetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("label_name", listLabelValuesAomPromGetRequest.LabelName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLabelValuesAomPromGetRequest.LabelName, out var valueOfLabelName)) urlParam.Add("label_name", valueOfLabelName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aom/api/v1/label/{label_name}/values", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLabelValuesAomPromGetRequest);
             return new AsyncInvoker<ListLabelValuesAomPromGetResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLabelValuesAomPromGetResponse>);

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
     {
 
         /// <summary>
-        /// 创建任务的信息列表
+        /// **参数解释**: 创建任务的信息列表 **取值范围**: 数组长度范围为[0,100] 
         /// </summary>
         [JsonProperty("invocations", NullValueHandling = NullValueHandling.Ignore)]
         public List<BatchCreateInvocationInfo> Invocations { get; set; }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class CountResourceInstanceByTagRequest 
     {
         /// <summary>
-        /// 资源类型。 - auditInstance
+        /// **参数解释**：  资源类型。 **约束限制**： 不涉及 **取值范围**：  - auditInstance: 审计  **默认取值**： 不涉及 
         /// </summary>
-        /// <value>资源类型。 - auditInstance</value>
+        /// <value>**参数解释**：  资源类型。 **约束限制**： 不涉及 **取值范围**：  - auditInstance: 审计  **默认取值**： 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
 
 
         /// <summary>
-        /// 资源类型。 - auditInstance
+        /// **参数解释**：  资源类型。 **约束限制**： 不涉及 **取值范围**：  - auditInstance: 审计  **默认取值**： 不涉及 
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]

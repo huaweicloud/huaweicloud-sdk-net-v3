@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public AddInternetBandwidthTagsResponse AddInternetBandwidthTags(AddInternetBandwidthTagsRequest addInternetBandwidthTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", addInternetBandwidthTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addInternetBandwidthTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/internet-bandwidth/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addInternetBandwidthTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<AddInternetBandwidthTagsResponse> AddInternetBandwidthTagsInvoker(AddInternetBandwidthTagsRequest addInternetBandwidthTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", addInternetBandwidthTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addInternetBandwidthTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/internet-bandwidth/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addInternetBandwidthTagsRequest);
             return new SyncInvoker<AddInternetBandwidthTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddInternetBandwidthTagsResponse>);
@@ -74,7 +74,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public BatchCreateInternetBandwidthTagsResponse BatchCreateInternetBandwidthTags(BatchCreateInternetBandwidthTagsRequest batchCreateInternetBandwidthTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateInternetBandwidthTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateInternetBandwidthTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/internet-bandwidth/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateInternetBandwidthTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -84,7 +84,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<BatchCreateInternetBandwidthTagsResponse> BatchCreateInternetBandwidthTagsInvoker(BatchCreateInternetBandwidthTagsRequest batchCreateInternetBandwidthTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateInternetBandwidthTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateInternetBandwidthTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/internet-bandwidth/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateInternetBandwidthTagsRequest);
             return new SyncInvoker<BatchCreateInternetBandwidthTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateInternetBandwidthTagsResponse>);
@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public BatchDeleteInternetBandwidthTagsResponse BatchDeleteInternetBandwidthTags(BatchDeleteInternetBandwidthTagsRequest batchDeleteInternetBandwidthTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchDeleteInternetBandwidthTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInternetBandwidthTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/internet-bandwidth/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInternetBandwidthTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -110,7 +110,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<BatchDeleteInternetBandwidthTagsResponse> BatchDeleteInternetBandwidthTagsInvoker(BatchDeleteInternetBandwidthTagsRequest batchDeleteInternetBandwidthTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchDeleteInternetBandwidthTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInternetBandwidthTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/internet-bandwidth/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInternetBandwidthTagsRequest);
             return new SyncInvoker<BatchDeleteInternetBandwidthTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteInternetBandwidthTagsResponse>);
@@ -198,7 +198,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public DeleteInternetBandwidthResponse DeleteInternetBandwidth(DeleteInternetBandwidthRequest deleteInternetBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("internet_bandwidth_id", deleteInternetBandwidthRequest.InternetBandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInternetBandwidthRequest.InternetBandwidthId, out var valueOfInternetBandwidthId)) urlParam.Add("internet_bandwidth_id", valueOfInternetBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/geip/internet-bandwidths/{internet_bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInternetBandwidthRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -208,7 +208,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<DeleteInternetBandwidthResponse> DeleteInternetBandwidthInvoker(DeleteInternetBandwidthRequest deleteInternetBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("internet_bandwidth_id", deleteInternetBandwidthRequest.InternetBandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInternetBandwidthRequest.InternetBandwidthId, out var valueOfInternetBandwidthId)) urlParam.Add("internet_bandwidth_id", valueOfInternetBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/geip/internet-bandwidths/{internet_bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInternetBandwidthRequest);
             return new SyncInvoker<DeleteInternetBandwidthResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInternetBandwidthResponse>);
@@ -224,8 +224,8 @@ namespace HuaweiCloud.SDK.Geip.V3
         public DeleteInternetBandwidthTagResponse DeleteInternetBandwidthTag(DeleteInternetBandwidthTagRequest deleteInternetBandwidthTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", deleteInternetBandwidthTagRequest.ResourceId.ToString());
-            urlParam.Add("tag_key", deleteInternetBandwidthTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInternetBandwidthTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInternetBandwidthTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/internet-bandwidth/{resource_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInternetBandwidthTagRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -235,8 +235,8 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<DeleteInternetBandwidthTagResponse> DeleteInternetBandwidthTagInvoker(DeleteInternetBandwidthTagRequest deleteInternetBandwidthTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", deleteInternetBandwidthTagRequest.ResourceId.ToString());
-            urlParam.Add("tag_key", deleteInternetBandwidthTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInternetBandwidthTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInternetBandwidthTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/internet-bandwidth/{resource_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInternetBandwidthTagRequest);
             return new SyncInvoker<DeleteInternetBandwidthTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInternetBandwidthTagResponse>);
@@ -468,7 +468,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public ShowInternetBandwidthResponse ShowInternetBandwidth(ShowInternetBandwidthRequest showInternetBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("internet_bandwidth_id", showInternetBandwidthRequest.InternetBandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInternetBandwidthRequest.InternetBandwidthId, out var valueOfInternetBandwidthId)) urlParam.Add("internet_bandwidth_id", valueOfInternetBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/geip/internet-bandwidths/{internet_bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInternetBandwidthRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -478,7 +478,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<ShowInternetBandwidthResponse> ShowInternetBandwidthInvoker(ShowInternetBandwidthRequest showInternetBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("internet_bandwidth_id", showInternetBandwidthRequest.InternetBandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInternetBandwidthRequest.InternetBandwidthId, out var valueOfInternetBandwidthId)) urlParam.Add("internet_bandwidth_id", valueOfInternetBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/geip/internet-bandwidths/{internet_bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInternetBandwidthRequest);
             return new SyncInvoker<ShowInternetBandwidthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInternetBandwidthResponse>);
@@ -494,7 +494,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public ShowInternetBandwidthTagsResponse ShowInternetBandwidthTags(ShowInternetBandwidthTagsRequest showInternetBandwidthTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showInternetBandwidthTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInternetBandwidthTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/internet-bandwidth/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInternetBandwidthTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -504,7 +504,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<ShowInternetBandwidthTagsResponse> ShowInternetBandwidthTagsInvoker(ShowInternetBandwidthTagsRequest showInternetBandwidthTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showInternetBandwidthTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInternetBandwidthTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/internet-bandwidth/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInternetBandwidthTagsRequest);
             return new SyncInvoker<ShowInternetBandwidthTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInternetBandwidthTagsResponse>);
@@ -544,7 +544,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public UpdateInternetBandwidthResponse UpdateInternetBandwidth(UpdateInternetBandwidthRequest updateInternetBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("internet_bandwidth_id", updateInternetBandwidthRequest.InternetBandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInternetBandwidthRequest.InternetBandwidthId, out var valueOfInternetBandwidthId)) urlParam.Add("internet_bandwidth_id", valueOfInternetBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/geip/internet-bandwidths/{internet_bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInternetBandwidthRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -554,7 +554,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<UpdateInternetBandwidthResponse> UpdateInternetBandwidthInvoker(UpdateInternetBandwidthRequest updateInternetBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("internet_bandwidth_id", updateInternetBandwidthRequest.InternetBandwidthId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInternetBandwidthRequest.InternetBandwidthId, out var valueOfInternetBandwidthId)) urlParam.Add("internet_bandwidth_id", valueOfInternetBandwidthId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/geip/internet-bandwidths/{internet_bandwidth_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInternetBandwidthRequest);
             return new SyncInvoker<UpdateInternetBandwidthResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInternetBandwidthResponse>);
@@ -570,7 +570,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public AddGeipSegmentTagsResponse AddGeipSegmentTags(AddGeipSegmentTagsRequest addGeipSegmentTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", addGeipSegmentTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addGeipSegmentTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip-segment/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addGeipSegmentTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -580,7 +580,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<AddGeipSegmentTagsResponse> AddGeipSegmentTagsInvoker(AddGeipSegmentTagsRequest addGeipSegmentTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", addGeipSegmentTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addGeipSegmentTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip-segment/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addGeipSegmentTagsRequest);
             return new SyncInvoker<AddGeipSegmentTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddGeipSegmentTagsResponse>);
@@ -596,7 +596,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public AddGlobalEipTagsResponse AddGlobalEipTags(AddGlobalEipTagsRequest addGlobalEipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", addGlobalEipTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addGlobalEipTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addGlobalEipTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -606,7 +606,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<AddGlobalEipTagsResponse> AddGlobalEipTagsInvoker(AddGlobalEipTagsRequest addGlobalEipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", addGlobalEipTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addGlobalEipTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addGlobalEipTagsRequest);
             return new SyncInvoker<AddGlobalEipTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddGlobalEipTagsResponse>);
@@ -622,7 +622,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public AssociateGeipSegmentInstanceResponse AssociateGeipSegmentInstance(AssociateGeipSegmentInstanceRequest associateGeipSegmentInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_segment_id", associateGeipSegmentInstanceRequest.GlobalEipSegmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateGeipSegmentInstanceRequest.GlobalEipSegmentId, out var valueOfGlobalEipSegmentId)) urlParam.Add("global_eip_segment_id", valueOfGlobalEipSegmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eip-segments/{global_eip_segment_id}/associate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateGeipSegmentInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -632,7 +632,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<AssociateGeipSegmentInstanceResponse> AssociateGeipSegmentInstanceInvoker(AssociateGeipSegmentInstanceRequest associateGeipSegmentInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_segment_id", associateGeipSegmentInstanceRequest.GlobalEipSegmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateGeipSegmentInstanceRequest.GlobalEipSegmentId, out var valueOfGlobalEipSegmentId)) urlParam.Add("global_eip_segment_id", valueOfGlobalEipSegmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eip-segments/{global_eip_segment_id}/associate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateGeipSegmentInstanceRequest);
             return new SyncInvoker<AssociateGeipSegmentInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateGeipSegmentInstanceResponse>);
@@ -648,7 +648,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public AssociateInstanceResponse AssociateInstance(AssociateInstanceRequest associateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", associateInstanceRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateInstanceRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}/associate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -658,7 +658,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<AssociateInstanceResponse> AssociateInstanceInvoker(AssociateInstanceRequest associateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", associateInstanceRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateInstanceRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}/associate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateInstanceRequest);
             return new SyncInvoker<AssociateInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateInstanceResponse>);
@@ -674,7 +674,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public AttachInternetBandwidthResponse AttachInternetBandwidth(AttachInternetBandwidthRequest attachInternetBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", attachInternetBandwidthRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(attachInternetBandwidthRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}/attach-internet-bandwidth", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachInternetBandwidthRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -684,7 +684,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<AttachInternetBandwidthResponse> AttachInternetBandwidthInvoker(AttachInternetBandwidthRequest attachInternetBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", attachInternetBandwidthRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(attachInternetBandwidthRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}/attach-internet-bandwidth", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", attachInternetBandwidthRequest);
             return new SyncInvoker<AttachInternetBandwidthResponse>(this, "POST", request, JsonUtils.DeSerialize<AttachInternetBandwidthResponse>);
@@ -748,7 +748,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public BatchCreateGeipSegmentTagsResponse BatchCreateGeipSegmentTags(BatchCreateGeipSegmentTagsRequest batchCreateGeipSegmentTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateGeipSegmentTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateGeipSegmentTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip-segment/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateGeipSegmentTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -758,7 +758,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<BatchCreateGeipSegmentTagsResponse> BatchCreateGeipSegmentTagsInvoker(BatchCreateGeipSegmentTagsRequest batchCreateGeipSegmentTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateGeipSegmentTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateGeipSegmentTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip-segment/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateGeipSegmentTagsRequest);
             return new SyncInvoker<BatchCreateGeipSegmentTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateGeipSegmentTagsResponse>);
@@ -798,7 +798,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public BatchCreateGlobalEipTagsResponse BatchCreateGlobalEipTags(BatchCreateGlobalEipTagsRequest batchCreateGlobalEipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateGlobalEipTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateGlobalEipTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateGlobalEipTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -808,7 +808,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<BatchCreateGlobalEipTagsResponse> BatchCreateGlobalEipTagsInvoker(BatchCreateGlobalEipTagsRequest batchCreateGlobalEipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateGlobalEipTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateGlobalEipTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateGlobalEipTagsRequest);
             return new SyncInvoker<BatchCreateGlobalEipTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateGlobalEipTagsResponse>);
@@ -824,7 +824,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public BatchDeleteGeipSegmentTagsResponse BatchDeleteGeipSegmentTags(BatchDeleteGeipSegmentTagsRequest batchDeleteGeipSegmentTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchDeleteGeipSegmentTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGeipSegmentTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip-segment/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGeipSegmentTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -834,7 +834,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<BatchDeleteGeipSegmentTagsResponse> BatchDeleteGeipSegmentTagsInvoker(BatchDeleteGeipSegmentTagsRequest batchDeleteGeipSegmentTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchDeleteGeipSegmentTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGeipSegmentTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip-segment/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGeipSegmentTagsRequest);
             return new SyncInvoker<BatchDeleteGeipSegmentTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteGeipSegmentTagsResponse>);
@@ -850,7 +850,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public BatchDeleteGlobalEipTagsResponse BatchDeleteGlobalEipTags(BatchDeleteGlobalEipTagsRequest batchDeleteGlobalEipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchDeleteGlobalEipTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGlobalEipTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGlobalEipTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -860,7 +860,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<BatchDeleteGlobalEipTagsResponse> BatchDeleteGlobalEipTagsInvoker(BatchDeleteGlobalEipTagsRequest batchDeleteGlobalEipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchDeleteGlobalEipTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGlobalEipTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGlobalEipTagsRequest);
             return new SyncInvoker<BatchDeleteGlobalEipTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteGlobalEipTagsResponse>);
@@ -1020,8 +1020,8 @@ namespace HuaweiCloud.SDK.Geip.V3
         public DeleteGeipSegmentTagResponse DeleteGeipSegmentTag(DeleteGeipSegmentTagRequest deleteGeipSegmentTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", deleteGeipSegmentTagRequest.ResourceId.ToString());
-            urlParam.Add("tag_key", deleteGeipSegmentTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGeipSegmentTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGeipSegmentTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip-segment/{resource_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGeipSegmentTagRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1031,8 +1031,8 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<DeleteGeipSegmentTagResponse> DeleteGeipSegmentTagInvoker(DeleteGeipSegmentTagRequest deleteGeipSegmentTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", deleteGeipSegmentTagRequest.ResourceId.ToString());
-            urlParam.Add("tag_key", deleteGeipSegmentTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGeipSegmentTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGeipSegmentTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip-segment/{resource_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGeipSegmentTagRequest);
             return new SyncInvoker<DeleteGeipSegmentTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGeipSegmentTagResponse>);
@@ -1048,7 +1048,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public DeleteGlobalEipResponse DeleteGlobalEip(DeleteGlobalEipRequest deleteGlobalEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", deleteGlobalEipRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGlobalEipRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGlobalEipRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1058,7 +1058,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<DeleteGlobalEipResponse> DeleteGlobalEipInvoker(DeleteGlobalEipRequest deleteGlobalEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", deleteGlobalEipRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGlobalEipRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGlobalEipRequest);
             return new SyncInvoker<DeleteGlobalEipResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGlobalEipResponse>);
@@ -1074,7 +1074,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public DeleteGlobalEipSegmentResponse DeleteGlobalEipSegment(DeleteGlobalEipSegmentRequest deleteGlobalEipSegmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_segment_id", deleteGlobalEipSegmentRequest.GlobalEipSegmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGlobalEipSegmentRequest.GlobalEipSegmentId, out var valueOfGlobalEipSegmentId)) urlParam.Add("global_eip_segment_id", valueOfGlobalEipSegmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eip-segments/{global_eip_segment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGlobalEipSegmentRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1084,7 +1084,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<DeleteGlobalEipSegmentResponse> DeleteGlobalEipSegmentInvoker(DeleteGlobalEipSegmentRequest deleteGlobalEipSegmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_segment_id", deleteGlobalEipSegmentRequest.GlobalEipSegmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGlobalEipSegmentRequest.GlobalEipSegmentId, out var valueOfGlobalEipSegmentId)) urlParam.Add("global_eip_segment_id", valueOfGlobalEipSegmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eip-segments/{global_eip_segment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGlobalEipSegmentRequest);
             return new SyncInvoker<DeleteGlobalEipSegmentResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGlobalEipSegmentResponse>);
@@ -1100,8 +1100,8 @@ namespace HuaweiCloud.SDK.Geip.V3
         public DeleteGlobalEipTagResponse DeleteGlobalEipTag(DeleteGlobalEipTagRequest deleteGlobalEipTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", deleteGlobalEipTagRequest.ResourceId.ToString());
-            urlParam.Add("tag_key", deleteGlobalEipTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGlobalEipTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGlobalEipTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip/{resource_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGlobalEipTagRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1111,8 +1111,8 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<DeleteGlobalEipTagResponse> DeleteGlobalEipTagInvoker(DeleteGlobalEipTagRequest deleteGlobalEipTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", deleteGlobalEipTagRequest.ResourceId.ToString());
-            urlParam.Add("tag_key", deleteGlobalEipTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGlobalEipTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGlobalEipTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip/{resource_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGlobalEipTagRequest);
             return new SyncInvoker<DeleteGlobalEipTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGlobalEipTagResponse>);
@@ -1128,7 +1128,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public DetachInternetBandwidthResponse DetachInternetBandwidth(DetachInternetBandwidthRequest detachInternetBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", detachInternetBandwidthRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(detachInternetBandwidthRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}/detach-internet-bandwidth", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachInternetBandwidthRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1138,7 +1138,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<DetachInternetBandwidthResponse> DetachInternetBandwidthInvoker(DetachInternetBandwidthRequest detachInternetBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", detachInternetBandwidthRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(detachInternetBandwidthRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}/detach-internet-bandwidth", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", detachInternetBandwidthRequest);
             return new SyncInvoker<DetachInternetBandwidthResponse>(this, "POST", request, JsonUtils.DeSerialize<DetachInternetBandwidthResponse>);
@@ -1154,7 +1154,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public DisassociateGeipSegmentInstanceResponse DisassociateGeipSegmentInstance(DisassociateGeipSegmentInstanceRequest disassociateGeipSegmentInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_segment_id", disassociateGeipSegmentInstanceRequest.GlobalEipSegmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateGeipSegmentInstanceRequest.GlobalEipSegmentId, out var valueOfGlobalEipSegmentId)) urlParam.Add("global_eip_segment_id", valueOfGlobalEipSegmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eip-segments/{global_eip_segment_id}/disassociate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateGeipSegmentInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1164,7 +1164,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<DisassociateGeipSegmentInstanceResponse> DisassociateGeipSegmentInstanceInvoker(DisassociateGeipSegmentInstanceRequest disassociateGeipSegmentInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_segment_id", disassociateGeipSegmentInstanceRequest.GlobalEipSegmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateGeipSegmentInstanceRequest.GlobalEipSegmentId, out var valueOfGlobalEipSegmentId)) urlParam.Add("global_eip_segment_id", valueOfGlobalEipSegmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eip-segments/{global_eip_segment_id}/disassociate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateGeipSegmentInstanceRequest);
             return new SyncInvoker<DisassociateGeipSegmentInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<DisassociateGeipSegmentInstanceResponse>);
@@ -1180,7 +1180,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public DisassociateInstanceResponse DisassociateInstance(DisassociateInstanceRequest disassociateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", disassociateInstanceRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateInstanceRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}/disassociate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1190,7 +1190,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<DisassociateInstanceResponse> DisassociateInstanceInvoker(DisassociateInstanceRequest disassociateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", disassociateInstanceRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateInstanceRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}/disassociate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateInstanceRequest);
             return new SyncInvoker<DisassociateInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<DisassociateInstanceResponse>);
@@ -1422,7 +1422,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public ShowGeipSegmentTagsResponse ShowGeipSegmentTags(ShowGeipSegmentTagsRequest showGeipSegmentTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showGeipSegmentTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGeipSegmentTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip-segment/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGeipSegmentTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1432,7 +1432,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<ShowGeipSegmentTagsResponse> ShowGeipSegmentTagsInvoker(ShowGeipSegmentTagsRequest showGeipSegmentTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showGeipSegmentTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGeipSegmentTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip-segment/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGeipSegmentTagsRequest);
             return new SyncInvoker<ShowGeipSegmentTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGeipSegmentTagsResponse>);
@@ -1448,7 +1448,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public ShowGlobalEipResponse ShowGlobalEip(ShowGlobalEipRequest showGlobalEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", showGlobalEipRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGlobalEipRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGlobalEipRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1458,7 +1458,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<ShowGlobalEipResponse> ShowGlobalEipInvoker(ShowGlobalEipRequest showGlobalEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", showGlobalEipRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGlobalEipRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGlobalEipRequest);
             return new SyncInvoker<ShowGlobalEipResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGlobalEipResponse>);
@@ -1474,7 +1474,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public ShowGlobalEipSegmentResponse ShowGlobalEipSegment(ShowGlobalEipSegmentRequest showGlobalEipSegmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_segment_id", showGlobalEipSegmentRequest.GlobalEipSegmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGlobalEipSegmentRequest.GlobalEipSegmentId, out var valueOfGlobalEipSegmentId)) urlParam.Add("global_eip_segment_id", valueOfGlobalEipSegmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eip-segments/{global_eip_segment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGlobalEipSegmentRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1484,7 +1484,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<ShowGlobalEipSegmentResponse> ShowGlobalEipSegmentInvoker(ShowGlobalEipSegmentRequest showGlobalEipSegmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_segment_id", showGlobalEipSegmentRequest.GlobalEipSegmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGlobalEipSegmentRequest.GlobalEipSegmentId, out var valueOfGlobalEipSegmentId)) urlParam.Add("global_eip_segment_id", valueOfGlobalEipSegmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eip-segments/{global_eip_segment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGlobalEipSegmentRequest);
             return new SyncInvoker<ShowGlobalEipSegmentResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGlobalEipSegmentResponse>);
@@ -1500,7 +1500,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public ShowGlobalEipTagsResponse ShowGlobalEipTags(ShowGlobalEipTagsRequest showGlobalEipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showGlobalEipTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGlobalEipTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGlobalEipTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1510,7 +1510,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<ShowGlobalEipTagsResponse> ShowGlobalEipTagsInvoker(ShowGlobalEipTagsRequest showGlobalEipTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", showGlobalEipTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGlobalEipTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/global-eip/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGlobalEipTagsRequest);
             return new SyncInvoker<ShowGlobalEipTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGlobalEipTagsResponse>);
@@ -1526,7 +1526,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public UpdateGlobalEipResponse UpdateGlobalEip(UpdateGlobalEipRequest updateGlobalEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", updateGlobalEipRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGlobalEipRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGlobalEipRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1536,7 +1536,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<UpdateGlobalEipResponse> UpdateGlobalEipInvoker(UpdateGlobalEipRequest updateGlobalEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_id", updateGlobalEipRequest.GlobalEipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGlobalEipRequest.GlobalEipId, out var valueOfGlobalEipId)) urlParam.Add("global_eip_id", valueOfGlobalEipId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/{global_eip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGlobalEipRequest);
             return new SyncInvoker<UpdateGlobalEipResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGlobalEipResponse>);
@@ -1552,7 +1552,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public UpdateGlobalEipSegmentResponse UpdateGlobalEipSegment(UpdateGlobalEipSegmentRequest updateGlobalEipSegmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_segment_id", updateGlobalEipSegmentRequest.GlobalEipSegmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGlobalEipSegmentRequest.GlobalEipSegmentId, out var valueOfGlobalEipSegmentId)) urlParam.Add("global_eip_segment_id", valueOfGlobalEipSegmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eip-segments/{global_eip_segment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGlobalEipSegmentRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1562,7 +1562,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<UpdateGlobalEipSegmentResponse> UpdateGlobalEipSegmentInvoker(UpdateGlobalEipSegmentRequest updateGlobalEipSegmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("global_eip_segment_id", updateGlobalEipSegmentRequest.GlobalEipSegmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGlobalEipSegmentRequest.GlobalEipSegmentId, out var valueOfGlobalEipSegmentId)) urlParam.Add("global_eip_segment_id", valueOfGlobalEipSegmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eip-segments/{global_eip_segment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGlobalEipSegmentRequest);
             return new SyncInvoker<UpdateGlobalEipSegmentResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGlobalEipSegmentResponse>);
@@ -1602,7 +1602,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public ShowJobsResponse ShowJobs(ShowJobsRequest showJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobsRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/geip/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1612,7 +1612,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<ShowJobsResponse> ShowJobsInvoker(ShowJobsRequest showJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobsRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/geip/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobsRequest);
             return new SyncInvoker<ShowJobsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobsResponse>);
@@ -1652,7 +1652,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public ListTenantGeipSupportInstancesResponse ListTenantGeipSupportInstances(ListTenantGeipSupportInstancesRequest listTenantGeipSupportInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_site", listTenantGeipSupportInstancesRequest.AccessSite.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTenantGeipSupportInstancesRequest.AccessSite, out var valueOfAccessSite)) urlParam.Add("access_site", valueOfAccessSite);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/support-instances/{access_site}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTenantGeipSupportInstancesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1662,7 +1662,7 @@ namespace HuaweiCloud.SDK.Geip.V3
         public SyncInvoker<ListTenantGeipSupportInstancesResponse> ListTenantGeipSupportInstancesInvoker(ListTenantGeipSupportInstancesRequest listTenantGeipSupportInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("access_site", listTenantGeipSupportInstancesRequest.AccessSite.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTenantGeipSupportInstancesRequest.AccessSite, out var valueOfAccessSite)) urlParam.Add("access_site", valueOfAccessSite);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/global-eips/support-instances/{access_site}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTenantGeipSupportInstancesRequest);
             return new SyncInvoker<ListTenantGeipSupportInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTenantGeipSupportInstancesResponse>);

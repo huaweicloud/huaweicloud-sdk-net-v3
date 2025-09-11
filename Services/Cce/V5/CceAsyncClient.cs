@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Cce.V5
         public async Task<DeleteImageCacheResponse> DeleteImageCacheAsync(DeleteImageCacheRequest deleteImageCacheRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_cache_id", deleteImageCacheRequest.ImageCacheId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteImageCacheRequest.ImageCacheId, out var valueOfImageCacheId)) urlParam.Add("image_cache_id", valueOfImageCacheId);
             var urlPath = HttpUtils.AddUrlPath("/v5/imagecaches/{image_cache_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImageCacheRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Cce.V5
         public AsyncInvoker<DeleteImageCacheResponse> DeleteImageCacheAsyncInvoker(DeleteImageCacheRequest deleteImageCacheRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_cache_id", deleteImageCacheRequest.ImageCacheId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteImageCacheRequest.ImageCacheId, out var valueOfImageCacheId)) urlParam.Add("image_cache_id", valueOfImageCacheId);
             var urlPath = HttpUtils.AddUrlPath("/v5/imagecaches/{image_cache_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteImageCacheRequest);
             return new AsyncInvoker<DeleteImageCacheResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteImageCacheResponse>);
@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.Cce.V5
         public async Task<ShowImageCacheResponse> ShowImageCacheAsync(ShowImageCacheRequest showImageCacheRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_cache_id", showImageCacheRequest.ImageCacheId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showImageCacheRequest.ImageCacheId, out var valueOfImageCacheId)) urlParam.Add("image_cache_id", valueOfImageCacheId);
             var urlPath = HttpUtils.AddUrlPath("/v5/imagecaches/{image_cache_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageCacheRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -109,7 +109,7 @@ namespace HuaweiCloud.SDK.Cce.V5
         public AsyncInvoker<ShowImageCacheResponse> ShowImageCacheAsyncInvoker(ShowImageCacheRequest showImageCacheRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("image_cache_id", showImageCacheRequest.ImageCacheId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showImageCacheRequest.ImageCacheId, out var valueOfImageCacheId)) urlParam.Add("image_cache_id", valueOfImageCacheId);
             var urlPath = HttpUtils.AddUrlPath("/v5/imagecaches/{image_cache_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageCacheRequest);
             return new AsyncInvoker<ShowImageCacheResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowImageCacheResponse>);

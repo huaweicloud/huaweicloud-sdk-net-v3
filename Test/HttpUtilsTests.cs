@@ -161,7 +161,7 @@ namespace Test
             var sdkRequest = HttpUtils.InitSdkRequest("path", "application/octet-stream", streamRequest);
             streamRequest.FileStream.Close();
             Assert.That(sdkRequest.FileStream, Is.InstanceOf<MemoryStream>());
-            
+
             streamRequest = new SdkStreamRequest();
             streamRequest.TransferProgress = (sender, status) => { };
             streamRequest.FileStream = new MemoryStream();
@@ -169,6 +169,32 @@ namespace Test
             sdkRequest = HttpUtils.InitSdkRequest("path", "application/octet-stream", streamRequest);
             streamRequest.FileStream.Close();
             Assert.That(sdkRequest.FileStream, Is.InstanceOf<TransferStream>());
+        }
+
+        [Test]
+        public void TestAddUrlPath()
+        {
+            const string originalPath = "/test/{limit}/{marker}/{enable}/{sort_dir}/{state}/{name}/{order}/{sort_dir2}/{state2}";
+            var path = HttpUtils.AddUrlPath(originalPath, new Dictionary<string, string>());
+
+            Assert.That(path, Is.EqualTo(originalPath));
+
+            var request = new PathRequest
+            {
+                Limit = 1,
+                Enable = true,
+                Marker = "mark",
+                SortDir = SortDir.DESC,
+                State = StateEnum.SUCCESS
+            };
+            var dictionary = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(request.Limit, out var limit)) dictionary.Add("limit", limit);
+            if (StringUtils.TryConvertToNonEmptyString(request.Enable, out var enable)) dictionary.Add("enable", enable);
+            if (StringUtils.TryConvertToNonEmptyString(request.Marker, out var marker)) dictionary.Add("marker", marker);
+            if (StringUtils.TryConvertToNonEmptyString(request.SortDir, out var sortDir)) dictionary.Add("sort_dir", sortDir);
+            if (StringUtils.TryConvertToNonEmptyString(request.State, out var state)) dictionary.Add("state", state);
+            path = HttpUtils.AddUrlPath(originalPath, dictionary);
+            Assert.That(path, Is.EqualTo("/test/1/mark/true/desc/success/{name}/{order}/{sort_dir2}/{state2}"));
         }
     }
 }

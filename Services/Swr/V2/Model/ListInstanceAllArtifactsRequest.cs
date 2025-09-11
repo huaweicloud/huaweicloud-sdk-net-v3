@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 分页查询时的查询标记，使用上一次接口调用返回的nextMarker值。默认值为1。**注意：marker和limit参数需要配套使用。**
+        /// 分页查询时的查询标记，使用上一次接口调用返回的next_marker值。默认值为1。**注意：marker和limit参数需要配套使用。**
         /// </summary>
         [SDKProperty("marker", IsQuery = true)]
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]

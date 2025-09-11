@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<BatchCreateVolumeTagsResponse> BatchCreateVolumeTagsAsync(BatchCreateVolumeTagsRequest batchCreateVolumeTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", batchCreateVolumeTagsRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateVolumeTagsRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateVolumeTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<BatchCreateVolumeTagsResponse> BatchCreateVolumeTagsAsyncInvoker(BatchCreateVolumeTagsRequest batchCreateVolumeTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", batchCreateVolumeTagsRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateVolumeTagsRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateVolumeTagsRequest);
             return new AsyncInvoker<BatchCreateVolumeTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateVolumeTagsResponse>);
@@ -54,7 +54,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<BatchDeleteVolumeTagsResponse> BatchDeleteVolumeTagsAsync(BatchDeleteVolumeTagsRequest batchDeleteVolumeTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", batchDeleteVolumeTagsRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteVolumeTagsRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteVolumeTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<BatchDeleteVolumeTagsResponse> BatchDeleteVolumeTagsAsyncInvoker(BatchDeleteVolumeTagsRequest batchDeleteVolumeTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", batchDeleteVolumeTagsRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteVolumeTagsRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteVolumeTagsRequest);
             return new AsyncInvoker<BatchDeleteVolumeTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteVolumeTagsResponse>);
@@ -108,7 +108,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<CinderAcceptVolumeTransferResponse> CinderAcceptVolumeTransferAsync(CinderAcceptVolumeTransferRequest cinderAcceptVolumeTransferRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("transfer_id", cinderAcceptVolumeTransferRequest.TransferId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cinderAcceptVolumeTransferRequest.TransferId, out var valueOfTransferId)) urlParam.Add("transfer_id", valueOfTransferId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}/accept", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cinderAcceptVolumeTransferRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -118,7 +118,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<CinderAcceptVolumeTransferResponse> CinderAcceptVolumeTransferAsyncInvoker(CinderAcceptVolumeTransferRequest cinderAcceptVolumeTransferRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("transfer_id", cinderAcceptVolumeTransferRequest.TransferId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cinderAcceptVolumeTransferRequest.TransferId, out var valueOfTransferId)) urlParam.Add("transfer_id", valueOfTransferId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}/accept", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cinderAcceptVolumeTransferRequest);
             return new AsyncInvoker<CinderAcceptVolumeTransferResponse>(this, "POST", request, JsonUtils.DeSerialize<CinderAcceptVolumeTransferResponse>);
@@ -159,7 +159,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<CinderDeleteVolumeTransferResponse> CinderDeleteVolumeTransferAsync(CinderDeleteVolumeTransferRequest cinderDeleteVolumeTransferRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("transfer_id", cinderDeleteVolumeTransferRequest.TransferId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cinderDeleteVolumeTransferRequest.TransferId, out var valueOfTransferId)) urlParam.Add("transfer_id", valueOfTransferId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderDeleteVolumeTransferRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -169,7 +169,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<CinderDeleteVolumeTransferResponse> CinderDeleteVolumeTransferAsyncInvoker(CinderDeleteVolumeTransferRequest cinderDeleteVolumeTransferRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("transfer_id", cinderDeleteVolumeTransferRequest.TransferId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cinderDeleteVolumeTransferRequest.TransferId, out var valueOfTransferId)) urlParam.Add("transfer_id", valueOfTransferId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderDeleteVolumeTransferRequest);
             return new AsyncInvoker<CinderDeleteVolumeTransferResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<CinderDeleteVolumeTransferResponse>);
@@ -209,7 +209,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<CinderListQuotasResponse> CinderListQuotasAsync(CinderListQuotasRequest cinderListQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("target_project_id", cinderListQuotasRequest.TargetProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cinderListQuotasRequest.TargetProjectId, out var valueOfTargetProjectId)) urlParam.Add("target_project_id", valueOfTargetProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-quota-sets/{target_project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListQuotasRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -219,7 +219,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<CinderListQuotasResponse> CinderListQuotasAsyncInvoker(CinderListQuotasRequest cinderListQuotasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("target_project_id", cinderListQuotasRequest.TargetProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cinderListQuotasRequest.TargetProjectId, out var valueOfTargetProjectId)) urlParam.Add("target_project_id", valueOfTargetProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-quota-sets/{target_project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderListQuotasRequest);
             return new AsyncInvoker<CinderListQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<CinderListQuotasResponse>);
@@ -283,7 +283,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<CinderShowVolumeTransferResponse> CinderShowVolumeTransferAsync(CinderShowVolumeTransferRequest cinderShowVolumeTransferRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("transfer_id", cinderShowVolumeTransferRequest.TransferId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cinderShowVolumeTransferRequest.TransferId, out var valueOfTransferId)) urlParam.Add("transfer_id", valueOfTransferId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderShowVolumeTransferRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -293,7 +293,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<CinderShowVolumeTransferResponse> CinderShowVolumeTransferAsyncInvoker(CinderShowVolumeTransferRequest cinderShowVolumeTransferRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("transfer_id", cinderShowVolumeTransferRequest.TransferId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cinderShowVolumeTransferRequest.TransferId, out var valueOfTransferId)) urlParam.Add("transfer_id", valueOfTransferId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/os-volume-transfer/{transfer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cinderShowVolumeTransferRequest);
             return new AsyncInvoker<CinderShowVolumeTransferResponse>(this, "GET", request, JsonUtils.DeSerialize<CinderShowVolumeTransferResponse>);
@@ -362,7 +362,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest deleteSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id", deleteSnapshotRequest.SnapshotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSnapshotRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -372,7 +372,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<DeleteSnapshotResponse> DeleteSnapshotAsyncInvoker(DeleteSnapshotRequest deleteSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id", deleteSnapshotRequest.SnapshotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSnapshotRequest);
             return new AsyncInvoker<DeleteSnapshotResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSnapshotResponse>);
@@ -388,7 +388,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest deleteVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", deleteVolumeRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVolumeRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVolumeRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -398,7 +398,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<DeleteVolumeResponse> DeleteVolumeAsyncInvoker(DeleteVolumeRequest deleteVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", deleteVolumeRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVolumeRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVolumeRequest);
             return new AsyncInvoker<DeleteVolumeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteVolumeResponse>);
@@ -510,7 +510,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<ModifyVolumeQoSResponse> ModifyVolumeQoSAsync(ModifyVolumeQoSRequest modifyVolumeQoSRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", modifyVolumeQoSRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyVolumeQoSRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/cloudvolumes/{volume_id}/qos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyVolumeQoSRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -520,7 +520,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<ModifyVolumeQoSResponse> ModifyVolumeQoSAsyncInvoker(ModifyVolumeQoSRequest modifyVolumeQoSRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", modifyVolumeQoSRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyVolumeQoSRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v5/{project_id}/cloudvolumes/{volume_id}/qos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyVolumeQoSRequest);
             return new AsyncInvoker<ModifyVolumeQoSResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyVolumeQoSResponse>);
@@ -541,7 +541,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<ResizeVolumeResponse> ResizeVolumeAsync(ResizeVolumeRequest resizeVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", resizeVolumeRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeVolumeRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/cloudvolumes/{volume_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeVolumeRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -551,7 +551,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<ResizeVolumeResponse> ResizeVolumeAsyncInvoker(ResizeVolumeRequest resizeVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", resizeVolumeRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeVolumeRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/cloudvolumes/{volume_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeVolumeRequest);
             return new AsyncInvoker<ResizeVolumeResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeVolumeResponse>);
@@ -572,7 +572,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<RetypeVolumeResponse> RetypeVolumeAsync(RetypeVolumeRequest retypeVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", retypeVolumeRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(retypeVolumeRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/volumes/{volume_id}/retype", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", retypeVolumeRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -582,7 +582,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<RetypeVolumeResponse> RetypeVolumeAsyncInvoker(RetypeVolumeRequest retypeVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", retypeVolumeRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(retypeVolumeRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/volumes/{volume_id}/retype", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", retypeVolumeRequest);
             return new AsyncInvoker<RetypeVolumeResponse>(this, "POST", request, JsonUtils.DeSerialize<RetypeVolumeResponse>);
@@ -598,7 +598,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<RollbackSnapshotResponse> RollbackSnapshotAsync(RollbackSnapshotRequest rollbackSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id", rollbackSnapshotRequest.SnapshotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(rollbackSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}/rollback", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rollbackSnapshotRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -608,7 +608,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<RollbackSnapshotResponse> RollbackSnapshotAsyncInvoker(RollbackSnapshotRequest rollbackSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id", rollbackSnapshotRequest.SnapshotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(rollbackSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}/rollback", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rollbackSnapshotRequest);
             return new AsyncInvoker<RollbackSnapshotResponse>(this, "POST", request, JsonUtils.DeSerialize<RollbackSnapshotResponse>);
@@ -625,7 +625,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<ShowJobResponse> ShowJobAsync(ShowJobRequest showJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -635,7 +635,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<ShowJobResponse> ShowJobAsyncInvoker(ShowJobRequest showJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
             return new AsyncInvoker<ShowJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobResponse>);
@@ -651,7 +651,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<ShowSnapshotResponse> ShowSnapshotAsync(ShowSnapshotRequest showSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id", showSnapshotRequest.SnapshotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSnapshotRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -661,7 +661,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<ShowSnapshotResponse> ShowSnapshotAsyncInvoker(ShowSnapshotRequest showSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id", showSnapshotRequest.SnapshotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSnapshotRequest);
             return new AsyncInvoker<ShowSnapshotResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSnapshotResponse>);
@@ -677,7 +677,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<ShowVolumeResponse> ShowVolumeAsync(ShowVolumeRequest showVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", showVolumeRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVolumeRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -687,7 +687,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<ShowVolumeResponse> ShowVolumeAsyncInvoker(ShowVolumeRequest showVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", showVolumeRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVolumeRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeRequest);
             return new AsyncInvoker<ShowVolumeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVolumeResponse>);
@@ -703,7 +703,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<ShowVolumeTagsResponse> ShowVolumeTagsAsync(ShowVolumeTagsRequest showVolumeTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", showVolumeTagsRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVolumeTagsRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeTagsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -713,7 +713,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<ShowVolumeTagsResponse> ShowVolumeTagsAsyncInvoker(ShowVolumeTagsRequest showVolumeTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", showVolumeTagsRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVolumeTagsRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeTagsRequest);
             return new AsyncInvoker<ShowVolumeTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVolumeTagsResponse>);
@@ -762,7 +762,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<UpdateSnapshotResponse> UpdateSnapshotAsync(UpdateSnapshotRequest updateSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id", updateSnapshotRequest.SnapshotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSnapshotRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -772,7 +772,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<UpdateSnapshotResponse> UpdateSnapshotAsyncInvoker(UpdateSnapshotRequest updateSnapshotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("snapshot_id", updateSnapshotRequest.SnapshotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSnapshotRequest.SnapshotId, out var valueOfSnapshotId)) urlParam.Add("snapshot_id", valueOfSnapshotId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudsnapshots/{snapshot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSnapshotRequest);
             return new AsyncInvoker<UpdateSnapshotResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSnapshotResponse>);
@@ -788,7 +788,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<UpdateVolumeResponse> UpdateVolumeAsync(UpdateVolumeRequest updateVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", updateVolumeRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVolumeRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVolumeRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -798,7 +798,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<UpdateVolumeResponse> UpdateVolumeAsyncInvoker(UpdateVolumeRequest updateVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("volume_id", updateVolumeRequest.VolumeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVolumeRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVolumeRequest);
             return new AsyncInvoker<UpdateVolumeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVolumeResponse>);
@@ -838,7 +838,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public async Task<ShowVersionResponse> ShowVersionAsync(ShowVersionRequest showVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("version", showVersionRequest.Version.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVersionRequest.Version, out var valueOfVersion)) urlParam.Add("version", valueOfVersion);
             var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -848,7 +848,7 @@ namespace HuaweiCloud.SDK.Evs.V2
         public AsyncInvoker<ShowVersionResponse> ShowVersionAsyncInvoker(ShowVersionRequest showVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("version", showVersionRequest.Version.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVersionRequest.Version, out var valueOfVersion)) urlParam.Add("version", valueOfVersion);
             var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVersionRequest);
             return new AsyncInvoker<ShowVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVersionResponse>);

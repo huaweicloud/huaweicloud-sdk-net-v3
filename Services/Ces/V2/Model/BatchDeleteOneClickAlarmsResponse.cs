@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 成功删除的一键告警ID列表
+        /// **参数解释**： 成功删除的一键告警ID列表。 
         /// </summary>
         [JsonProperty("one_click_alarm_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> OneClickAlarmIds { get; set; }

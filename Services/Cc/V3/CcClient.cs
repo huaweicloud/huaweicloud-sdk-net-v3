@@ -48,7 +48,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DeleteAuthorisationResponse DeleteAuthorisation(DeleteAuthorisationRequest deleteAuthorisationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteAuthorisationRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAuthorisationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/authorisations/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAuthorisationRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DeleteAuthorisationResponse> DeleteAuthorisationInvoker(DeleteAuthorisationRequest deleteAuthorisationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteAuthorisationRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAuthorisationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/authorisations/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAuthorisationRequest);
             return new SyncInvoker<DeleteAuthorisationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAuthorisationResponse>);
@@ -124,7 +124,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateAuthorisationResponse UpdateAuthorisation(UpdateAuthorisationRequest updateAuthorisationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateAuthorisationRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAuthorisationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/authorisations/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAuthorisationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -134,7 +134,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateAuthorisationResponse> UpdateAuthorisationInvoker(UpdateAuthorisationRequest updateAuthorisationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateAuthorisationRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAuthorisationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/authorisations/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAuthorisationRequest);
             return new SyncInvoker<UpdateAuthorisationResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAuthorisationResponse>);
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public AssociateBandwidthPackageResponse AssociateBandwidthPackage(AssociateBandwidthPackageRequest associateBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", associateBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}/associate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateBandwidthPackageRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -160,7 +160,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<AssociateBandwidthPackageResponse> AssociateBandwidthPackageInvoker(AssociateBandwidthPackageRequest associateBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", associateBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}/associate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateBandwidthPackageRequest);
             return new SyncInvoker<AssociateBandwidthPackageResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateBandwidthPackageResponse>);
@@ -200,7 +200,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DeleteBandwidthPackageResponse DeleteBandwidthPackage(DeleteBandwidthPackageRequest deleteBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBandwidthPackageRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -210,7 +210,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DeleteBandwidthPackageResponse> DeleteBandwidthPackageInvoker(DeleteBandwidthPackageRequest deleteBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBandwidthPackageRequest);
             return new SyncInvoker<DeleteBandwidthPackageResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBandwidthPackageResponse>);
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DisassociateBandwidthPackageResponse DisassociateBandwidthPackage(DisassociateBandwidthPackageRequest disassociateBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", disassociateBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}/disassociate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateBandwidthPackageRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -236,7 +236,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DisassociateBandwidthPackageResponse> DisassociateBandwidthPackageInvoker(DisassociateBandwidthPackageRequest disassociateBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", disassociateBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}/disassociate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateBandwidthPackageRequest);
             return new SyncInvoker<DisassociateBandwidthPackageResponse>(this, "POST", request, JsonUtils.DeSerialize<DisassociateBandwidthPackageResponse>);
@@ -325,7 +325,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ShowBandwidthPackageResponse ShowBandwidthPackage(ShowBandwidthPackageRequest showBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBandwidthPackageRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -335,7 +335,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ShowBandwidthPackageResponse> ShowBandwidthPackageInvoker(ShowBandwidthPackageRequest showBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBandwidthPackageRequest);
             return new SyncInvoker<ShowBandwidthPackageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBandwidthPackageResponse>);
@@ -351,7 +351,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public TagBandwidthPackageResponse TagBandwidthPackage(TagBandwidthPackageRequest tagBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", tagBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(tagBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}/tag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", tagBandwidthPackageRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -361,7 +361,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<TagBandwidthPackageResponse> TagBandwidthPackageInvoker(TagBandwidthPackageRequest tagBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", tagBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(tagBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}/tag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", tagBandwidthPackageRequest);
             return new SyncInvoker<TagBandwidthPackageResponse>(this, "POST", request, JsonUtils.DeSerializeNull<TagBandwidthPackageResponse>);
@@ -377,7 +377,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UntagBandwidthPackageResponse UntagBandwidthPackage(UntagBandwidthPackageRequest untagBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", untagBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(untagBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}/untag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", untagBandwidthPackageRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -387,7 +387,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UntagBandwidthPackageResponse> UntagBandwidthPackageInvoker(UntagBandwidthPackageRequest untagBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", untagBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(untagBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}/untag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", untagBandwidthPackageRequest);
             return new SyncInvoker<UntagBandwidthPackageResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UntagBandwidthPackageResponse>);
@@ -403,7 +403,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateBandwidthPackageResponse UpdateBandwidthPackage(UpdateBandwidthPackageRequest updateBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBandwidthPackageRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -413,7 +413,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateBandwidthPackageResponse> UpdateBandwidthPackageInvoker(UpdateBandwidthPackageRequest updateBandwidthPackageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateBandwidthPackageRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateBandwidthPackageRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/bandwidth-packages/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateBandwidthPackageRequest);
             return new SyncInvoker<UpdateBandwidthPackageResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateBandwidthPackageResponse>);
@@ -429,8 +429,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ApplyCentralNetworkPolicyResponse ApplyCentralNetworkPolicy(ApplyCentralNetworkPolicyRequest applyCentralNetworkPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", applyCentralNetworkPolicyRequest.PolicyId.ToString());
-            urlParam.Add("central_network_id", applyCentralNetworkPolicyRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(applyCentralNetworkPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(applyCentralNetworkPolicyRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/policies/{policy_id}/apply", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyCentralNetworkPolicyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -440,8 +440,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ApplyCentralNetworkPolicyResponse> ApplyCentralNetworkPolicyInvoker(ApplyCentralNetworkPolicyRequest applyCentralNetworkPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", applyCentralNetworkPolicyRequest.PolicyId.ToString());
-            urlParam.Add("central_network_id", applyCentralNetworkPolicyRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(applyCentralNetworkPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(applyCentralNetworkPolicyRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/policies/{policy_id}/apply", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", applyCentralNetworkPolicyRequest);
             return new SyncInvoker<ApplyCentralNetworkPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<ApplyCentralNetworkPolicyResponse>);
@@ -481,7 +481,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public CreateCentralNetworkPolicyResponse CreateCentralNetworkPolicy(CreateCentralNetworkPolicyRequest createCentralNetworkPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", createCentralNetworkPolicyRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createCentralNetworkPolicyRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCentralNetworkPolicyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -491,7 +491,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<CreateCentralNetworkPolicyResponse> CreateCentralNetworkPolicyInvoker(CreateCentralNetworkPolicyRequest createCentralNetworkPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", createCentralNetworkPolicyRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createCentralNetworkPolicyRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCentralNetworkPolicyRequest);
             return new SyncInvoker<CreateCentralNetworkPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateCentralNetworkPolicyResponse>);
@@ -507,7 +507,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DeleteCentralNetworkResponse DeleteCentralNetwork(DeleteCentralNetworkRequest deleteCentralNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", deleteCentralNetworkRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCentralNetworkRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-networks/{central_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCentralNetworkRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -517,7 +517,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DeleteCentralNetworkResponse> DeleteCentralNetworkInvoker(DeleteCentralNetworkRequest deleteCentralNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", deleteCentralNetworkRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCentralNetworkRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-networks/{central_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCentralNetworkRequest);
             return new SyncInvoker<DeleteCentralNetworkResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteCentralNetworkResponse>);
@@ -533,8 +533,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DeleteCentralNetworkPolicyResponse DeleteCentralNetworkPolicy(DeleteCentralNetworkPolicyRequest deleteCentralNetworkPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", deleteCentralNetworkPolicyRequest.PolicyId.ToString());
-            urlParam.Add("central_network_id", deleteCentralNetworkPolicyRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCentralNetworkPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteCentralNetworkPolicyRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCentralNetworkPolicyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -544,8 +544,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DeleteCentralNetworkPolicyResponse> DeleteCentralNetworkPolicyInvoker(DeleteCentralNetworkPolicyRequest deleteCentralNetworkPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", deleteCentralNetworkPolicyRequest.PolicyId.ToString());
-            urlParam.Add("central_network_id", deleteCentralNetworkPolicyRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCentralNetworkPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteCentralNetworkPolicyRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/policies/{policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCentralNetworkPolicyRequest);
             return new SyncInvoker<DeleteCentralNetworkPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteCentralNetworkPolicyResponse>);
@@ -562,7 +562,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ListCentralNetworkPoliciesResponse ListCentralNetworkPolicies(ListCentralNetworkPoliciesRequest listCentralNetworkPoliciesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", listCentralNetworkPoliciesRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkPoliciesRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkPoliciesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -572,7 +572,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ListCentralNetworkPoliciesResponse> ListCentralNetworkPoliciesInvoker(ListCentralNetworkPoliciesRequest listCentralNetworkPoliciesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", listCentralNetworkPoliciesRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkPoliciesRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/policies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkPoliciesRequest);
             return new SyncInvoker<ListCentralNetworkPoliciesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCentralNetworkPoliciesResponse>);
@@ -588,8 +588,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ListCentralNetworkPolicyChangeSetResponse ListCentralNetworkPolicyChangeSet(ListCentralNetworkPolicyChangeSetRequest listCentralNetworkPolicyChangeSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", listCentralNetworkPolicyChangeSetRequest.PolicyId.ToString());
-            urlParam.Add("central_network_id", listCentralNetworkPolicyChangeSetRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkPolicyChangeSetRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkPolicyChangeSetRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/policies/{policy_id}/change-set", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkPolicyChangeSetRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -599,8 +599,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ListCentralNetworkPolicyChangeSetResponse> ListCentralNetworkPolicyChangeSetInvoker(ListCentralNetworkPolicyChangeSetRequest listCentralNetworkPolicyChangeSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("policy_id", listCentralNetworkPolicyChangeSetRequest.PolicyId.ToString());
-            urlParam.Add("central_network_id", listCentralNetworkPolicyChangeSetRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkPolicyChangeSetRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkPolicyChangeSetRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/policies/{policy_id}/change-set", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkPolicyChangeSetRequest);
             return new SyncInvoker<ListCentralNetworkPolicyChangeSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCentralNetworkPolicyChangeSetResponse>);
@@ -689,7 +689,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ShowCentralNetworkResponse ShowCentralNetwork(ShowCentralNetworkRequest showCentralNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", showCentralNetworkRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCentralNetworkRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-networks/{central_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCentralNetworkRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -699,7 +699,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ShowCentralNetworkResponse> ShowCentralNetworkInvoker(ShowCentralNetworkRequest showCentralNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", showCentralNetworkRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCentralNetworkRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-networks/{central_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCentralNetworkRequest);
             return new SyncInvoker<ShowCentralNetworkResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCentralNetworkResponse>);
@@ -715,7 +715,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public TagCentralNetworkResponse TagCentralNetwork(TagCentralNetworkRequest tagCentralNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", tagCentralNetworkRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(tagCentralNetworkRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-networks/{central_network_id}/tag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", tagCentralNetworkRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -725,7 +725,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<TagCentralNetworkResponse> TagCentralNetworkInvoker(TagCentralNetworkRequest tagCentralNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", tagCentralNetworkRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(tagCentralNetworkRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-networks/{central_network_id}/tag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", tagCentralNetworkRequest);
             return new SyncInvoker<TagCentralNetworkResponse>(this, "POST", request, JsonUtils.DeSerializeNull<TagCentralNetworkResponse>);
@@ -741,7 +741,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UntagCentralNetworkResponse UntagCentralNetwork(UntagCentralNetworkRequest untagCentralNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", untagCentralNetworkRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(untagCentralNetworkRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-networks/{central_network_id}/untag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", untagCentralNetworkRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -751,7 +751,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UntagCentralNetworkResponse> UntagCentralNetworkInvoker(UntagCentralNetworkRequest untagCentralNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", untagCentralNetworkRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(untagCentralNetworkRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-networks/{central_network_id}/untag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", untagCentralNetworkRequest);
             return new SyncInvoker<UntagCentralNetworkResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UntagCentralNetworkResponse>);
@@ -767,7 +767,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateCentralNetworkResponse UpdateCentralNetwork(UpdateCentralNetworkRequest updateCentralNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", updateCentralNetworkRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-networks/{central_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCentralNetworkRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -777,7 +777,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateCentralNetworkResponse> UpdateCentralNetworkInvoker(UpdateCentralNetworkRequest updateCentralNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", updateCentralNetworkRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-networks/{central_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCentralNetworkRequest);
             return new SyncInvoker<UpdateCentralNetworkResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateCentralNetworkResponse>);
@@ -793,7 +793,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public CreateCentralNetworkErRouteTableAttachmentResponse CreateCentralNetworkErRouteTableAttachment(CreateCentralNetworkErRouteTableAttachmentRequest createCentralNetworkErRouteTableAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", createCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCentralNetworkErRouteTableAttachmentRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -803,7 +803,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<CreateCentralNetworkErRouteTableAttachmentResponse> CreateCentralNetworkErRouteTableAttachmentInvoker(CreateCentralNetworkErRouteTableAttachmentRequest createCentralNetworkErRouteTableAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", createCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCentralNetworkErRouteTableAttachmentRequest);
             return new SyncInvoker<CreateCentralNetworkErRouteTableAttachmentResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateCentralNetworkErRouteTableAttachmentResponse>);
@@ -819,7 +819,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public CreateCentralNetworkGdgwAttachmentResponse CreateCentralNetworkGdgwAttachment(CreateCentralNetworkGdgwAttachmentRequest createCentralNetworkGdgwAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", createCentralNetworkGdgwAttachmentRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createCentralNetworkGdgwAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/gdgw-attachments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCentralNetworkGdgwAttachmentRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -829,7 +829,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<CreateCentralNetworkGdgwAttachmentResponse> CreateCentralNetworkGdgwAttachmentInvoker(CreateCentralNetworkGdgwAttachmentRequest createCentralNetworkGdgwAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", createCentralNetworkGdgwAttachmentRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createCentralNetworkGdgwAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/gdgw-attachments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createCentralNetworkGdgwAttachmentRequest);
             return new SyncInvoker<CreateCentralNetworkGdgwAttachmentResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateCentralNetworkGdgwAttachmentResponse>);
@@ -845,8 +845,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DeleteCentralNetworkAttachmentResponse DeleteCentralNetworkAttachment(DeleteCentralNetworkAttachmentRequest deleteCentralNetworkAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", deleteCentralNetworkAttachmentRequest.CentralNetworkId.ToString());
-            urlParam.Add("attachment_id", deleteCentralNetworkAttachmentRequest.AttachmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCentralNetworkAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteCentralNetworkAttachmentRequest.AttachmentId, out var valueOfAttachmentId)) urlParam.Add("attachment_id", valueOfAttachmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/attachments/{attachment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCentralNetworkAttachmentRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -856,8 +856,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DeleteCentralNetworkAttachmentResponse> DeleteCentralNetworkAttachmentInvoker(DeleteCentralNetworkAttachmentRequest deleteCentralNetworkAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", deleteCentralNetworkAttachmentRequest.CentralNetworkId.ToString());
-            urlParam.Add("attachment_id", deleteCentralNetworkAttachmentRequest.AttachmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCentralNetworkAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteCentralNetworkAttachmentRequest.AttachmentId, out var valueOfAttachmentId)) urlParam.Add("attachment_id", valueOfAttachmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/attachments/{attachment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCentralNetworkAttachmentRequest);
             return new SyncInvoker<DeleteCentralNetworkAttachmentResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteCentralNetworkAttachmentResponse>);
@@ -873,7 +873,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ListCentralNetworkAttachmentsResponse ListCentralNetworkAttachments(ListCentralNetworkAttachmentsRequest listCentralNetworkAttachmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", listCentralNetworkAttachmentsRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkAttachmentsRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/attachments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkAttachmentsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -883,7 +883,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ListCentralNetworkAttachmentsResponse> ListCentralNetworkAttachmentsInvoker(ListCentralNetworkAttachmentsRequest listCentralNetworkAttachmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", listCentralNetworkAttachmentsRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkAttachmentsRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/attachments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkAttachmentsRequest);
             return new SyncInvoker<ListCentralNetworkAttachmentsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCentralNetworkAttachmentsResponse>);
@@ -900,7 +900,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ListCentralNetworkErRouteTableAttachmentsResponse ListCentralNetworkErRouteTableAttachments(ListCentralNetworkErRouteTableAttachmentsRequest listCentralNetworkErRouteTableAttachmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", listCentralNetworkErRouteTableAttachmentsRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkErRouteTableAttachmentsRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkErRouteTableAttachmentsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -910,7 +910,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ListCentralNetworkErRouteTableAttachmentsResponse> ListCentralNetworkErRouteTableAttachmentsInvoker(ListCentralNetworkErRouteTableAttachmentsRequest listCentralNetworkErRouteTableAttachmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", listCentralNetworkErRouteTableAttachmentsRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkErRouteTableAttachmentsRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkErRouteTableAttachmentsRequest);
             return new SyncInvoker<ListCentralNetworkErRouteTableAttachmentsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCentralNetworkErRouteTableAttachmentsResponse>);
@@ -927,7 +927,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ListCentralNetworkGdgwAttachmentsResponse ListCentralNetworkGdgwAttachments(ListCentralNetworkGdgwAttachmentsRequest listCentralNetworkGdgwAttachmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", listCentralNetworkGdgwAttachmentsRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkGdgwAttachmentsRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/gdgw-attachments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkGdgwAttachmentsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -937,7 +937,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ListCentralNetworkGdgwAttachmentsResponse> ListCentralNetworkGdgwAttachmentsInvoker(ListCentralNetworkGdgwAttachmentsRequest listCentralNetworkGdgwAttachmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", listCentralNetworkGdgwAttachmentsRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkGdgwAttachmentsRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/gdgw-attachments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkGdgwAttachmentsRequest);
             return new SyncInvoker<ListCentralNetworkGdgwAttachmentsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCentralNetworkGdgwAttachmentsResponse>);
@@ -953,8 +953,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ShowCentralNetworkErRouteTableAttachmentResponse ShowCentralNetworkErRouteTableAttachment(ShowCentralNetworkErRouteTableAttachmentRequest showCentralNetworkErRouteTableAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", showCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId.ToString());
-            urlParam.Add("er_route_table_attachment_id", showCentralNetworkErRouteTableAttachmentRequest.ErRouteTableAttachmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(showCentralNetworkErRouteTableAttachmentRequest.ErRouteTableAttachmentId, out var valueOfErRouteTableAttachmentId)) urlParam.Add("er_route_table_attachment_id", valueOfErRouteTableAttachmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments/{er_route_table_attachment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCentralNetworkErRouteTableAttachmentRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -964,8 +964,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ShowCentralNetworkErRouteTableAttachmentResponse> ShowCentralNetworkErRouteTableAttachmentInvoker(ShowCentralNetworkErRouteTableAttachmentRequest showCentralNetworkErRouteTableAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", showCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId.ToString());
-            urlParam.Add("er_route_table_attachment_id", showCentralNetworkErRouteTableAttachmentRequest.ErRouteTableAttachmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(showCentralNetworkErRouteTableAttachmentRequest.ErRouteTableAttachmentId, out var valueOfErRouteTableAttachmentId)) urlParam.Add("er_route_table_attachment_id", valueOfErRouteTableAttachmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments/{er_route_table_attachment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCentralNetworkErRouteTableAttachmentRequest);
             return new SyncInvoker<ShowCentralNetworkErRouteTableAttachmentResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCentralNetworkErRouteTableAttachmentResponse>);
@@ -981,8 +981,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ShowCentralNetworkGdgwAttachmentResponse ShowCentralNetworkGdgwAttachment(ShowCentralNetworkGdgwAttachmentRequest showCentralNetworkGdgwAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", showCentralNetworkGdgwAttachmentRequest.CentralNetworkId.ToString());
-            urlParam.Add("gdgw_attachment_id", showCentralNetworkGdgwAttachmentRequest.GdgwAttachmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCentralNetworkGdgwAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(showCentralNetworkGdgwAttachmentRequest.GdgwAttachmentId, out var valueOfGdgwAttachmentId)) urlParam.Add("gdgw_attachment_id", valueOfGdgwAttachmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/gdgw-attachments/{gdgw_attachment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCentralNetworkGdgwAttachmentRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -992,8 +992,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ShowCentralNetworkGdgwAttachmentResponse> ShowCentralNetworkGdgwAttachmentInvoker(ShowCentralNetworkGdgwAttachmentRequest showCentralNetworkGdgwAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", showCentralNetworkGdgwAttachmentRequest.CentralNetworkId.ToString());
-            urlParam.Add("gdgw_attachment_id", showCentralNetworkGdgwAttachmentRequest.GdgwAttachmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCentralNetworkGdgwAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(showCentralNetworkGdgwAttachmentRequest.GdgwAttachmentId, out var valueOfGdgwAttachmentId)) urlParam.Add("gdgw_attachment_id", valueOfGdgwAttachmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/gdgw-attachments/{gdgw_attachment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCentralNetworkGdgwAttachmentRequest);
             return new SyncInvoker<ShowCentralNetworkGdgwAttachmentResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCentralNetworkGdgwAttachmentResponse>);
@@ -1009,8 +1009,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateCentralNetworkErRouteTableAttachmentResponse UpdateCentralNetworkErRouteTableAttachment(UpdateCentralNetworkErRouteTableAttachmentRequest updateCentralNetworkErRouteTableAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", updateCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId.ToString());
-            urlParam.Add("er_route_table_attachment_id", updateCentralNetworkErRouteTableAttachmentRequest.ErRouteTableAttachmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkErRouteTableAttachmentRequest.ErRouteTableAttachmentId, out var valueOfErRouteTableAttachmentId)) urlParam.Add("er_route_table_attachment_id", valueOfErRouteTableAttachmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments/{er_route_table_attachment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCentralNetworkErRouteTableAttachmentRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1020,8 +1020,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateCentralNetworkErRouteTableAttachmentResponse> UpdateCentralNetworkErRouteTableAttachmentInvoker(UpdateCentralNetworkErRouteTableAttachmentRequest updateCentralNetworkErRouteTableAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", updateCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId.ToString());
-            urlParam.Add("er_route_table_attachment_id", updateCentralNetworkErRouteTableAttachmentRequest.ErRouteTableAttachmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkErRouteTableAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkErRouteTableAttachmentRequest.ErRouteTableAttachmentId, out var valueOfErRouteTableAttachmentId)) urlParam.Add("er_route_table_attachment_id", valueOfErRouteTableAttachmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/er-route-table-attachments/{er_route_table_attachment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCentralNetworkErRouteTableAttachmentRequest);
             return new SyncInvoker<UpdateCentralNetworkErRouteTableAttachmentResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateCentralNetworkErRouteTableAttachmentResponse>);
@@ -1037,8 +1037,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateCentralNetworkGdgwAttachmentResponse UpdateCentralNetworkGdgwAttachment(UpdateCentralNetworkGdgwAttachmentRequest updateCentralNetworkGdgwAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", updateCentralNetworkGdgwAttachmentRequest.CentralNetworkId.ToString());
-            urlParam.Add("gdgw_attachment_id", updateCentralNetworkGdgwAttachmentRequest.GdgwAttachmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkGdgwAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkGdgwAttachmentRequest.GdgwAttachmentId, out var valueOfGdgwAttachmentId)) urlParam.Add("gdgw_attachment_id", valueOfGdgwAttachmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/gdgw-attachments/{gdgw_attachment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCentralNetworkGdgwAttachmentRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1048,8 +1048,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateCentralNetworkGdgwAttachmentResponse> UpdateCentralNetworkGdgwAttachmentInvoker(UpdateCentralNetworkGdgwAttachmentRequest updateCentralNetworkGdgwAttachmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", updateCentralNetworkGdgwAttachmentRequest.CentralNetworkId.ToString());
-            urlParam.Add("gdgw_attachment_id", updateCentralNetworkGdgwAttachmentRequest.GdgwAttachmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkGdgwAttachmentRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkGdgwAttachmentRequest.GdgwAttachmentId, out var valueOfGdgwAttachmentId)) urlParam.Add("gdgw_attachment_id", valueOfGdgwAttachmentId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/gdgw-attachments/{gdgw_attachment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCentralNetworkGdgwAttachmentRequest);
             return new SyncInvoker<UpdateCentralNetworkGdgwAttachmentResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateCentralNetworkGdgwAttachmentResponse>);
@@ -1090,7 +1090,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ListCentralNetworkConnectionsResponse ListCentralNetworkConnections(ListCentralNetworkConnectionsRequest listCentralNetworkConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", listCentralNetworkConnectionsRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkConnectionsRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/connections", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkConnectionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1100,7 +1100,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ListCentralNetworkConnectionsResponse> ListCentralNetworkConnectionsInvoker(ListCentralNetworkConnectionsRequest listCentralNetworkConnectionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", listCentralNetworkConnectionsRequest.CentralNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listCentralNetworkConnectionsRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/connections", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCentralNetworkConnectionsRequest);
             return new SyncInvoker<ListCentralNetworkConnectionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCentralNetworkConnectionsResponse>);
@@ -1116,8 +1116,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateCentralNetworkConnectionResponse UpdateCentralNetworkConnection(UpdateCentralNetworkConnectionRequest updateCentralNetworkConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", updateCentralNetworkConnectionRequest.CentralNetworkId.ToString());
-            urlParam.Add("connection_id", updateCentralNetworkConnectionRequest.ConnectionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkConnectionRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkConnectionRequest.ConnectionId, out var valueOfConnectionId)) urlParam.Add("connection_id", valueOfConnectionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/connections/{connection_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCentralNetworkConnectionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1127,8 +1127,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateCentralNetworkConnectionResponse> UpdateCentralNetworkConnectionInvoker(UpdateCentralNetworkConnectionRequest updateCentralNetworkConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("central_network_id", updateCentralNetworkConnectionRequest.CentralNetworkId.ToString());
-            urlParam.Add("connection_id", updateCentralNetworkConnectionRequest.ConnectionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkConnectionRequest.CentralNetworkId, out var valueOfCentralNetworkId)) urlParam.Add("central_network_id", valueOfCentralNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(updateCentralNetworkConnectionRequest.ConnectionId, out var valueOfConnectionId)) urlParam.Add("connection_id", valueOfConnectionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcn/central-network/{central_network_id}/connections/{connection_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCentralNetworkConnectionRequest);
             return new SyncInvoker<UpdateCentralNetworkConnectionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateCentralNetworkConnectionResponse>);
@@ -1192,7 +1192,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DeleteCloudConnectionResponse DeleteCloudConnection(DeleteCloudConnectionRequest deleteCloudConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteCloudConnectionRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCloudConnectionRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connections/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCloudConnectionRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1202,7 +1202,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DeleteCloudConnectionResponse> DeleteCloudConnectionInvoker(DeleteCloudConnectionRequest deleteCloudConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteCloudConnectionRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCloudConnectionRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connections/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCloudConnectionRequest);
             return new SyncInvoker<DeleteCloudConnectionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteCloudConnectionResponse>);
@@ -1291,7 +1291,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ShowCloudConnectionResponse ShowCloudConnection(ShowCloudConnectionRequest showCloudConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showCloudConnectionRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCloudConnectionRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connections/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCloudConnectionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1301,7 +1301,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ShowCloudConnectionResponse> ShowCloudConnectionInvoker(ShowCloudConnectionRequest showCloudConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showCloudConnectionRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCloudConnectionRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connections/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCloudConnectionRequest);
             return new SyncInvoker<ShowCloudConnectionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCloudConnectionResponse>);
@@ -1317,7 +1317,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public TagCloudConnectionResponse TagCloudConnection(TagCloudConnectionRequest tagCloudConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", tagCloudConnectionRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(tagCloudConnectionRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connections/{id}/tag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", tagCloudConnectionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1327,7 +1327,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<TagCloudConnectionResponse> TagCloudConnectionInvoker(TagCloudConnectionRequest tagCloudConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", tagCloudConnectionRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(tagCloudConnectionRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connections/{id}/tag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", tagCloudConnectionRequest);
             return new SyncInvoker<TagCloudConnectionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<TagCloudConnectionResponse>);
@@ -1343,7 +1343,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UntagCloudConnectionResponse UntagCloudConnection(UntagCloudConnectionRequest untagCloudConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", untagCloudConnectionRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(untagCloudConnectionRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connections/{id}/untag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", untagCloudConnectionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1353,7 +1353,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UntagCloudConnectionResponse> UntagCloudConnectionInvoker(UntagCloudConnectionRequest untagCloudConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", untagCloudConnectionRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(untagCloudConnectionRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connections/{id}/untag", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", untagCloudConnectionRequest);
             return new SyncInvoker<UntagCloudConnectionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UntagCloudConnectionResponse>);
@@ -1369,7 +1369,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateCloudConnectionResponse UpdateCloudConnection(UpdateCloudConnectionRequest updateCloudConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateCloudConnectionRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCloudConnectionRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connections/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCloudConnectionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1379,7 +1379,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateCloudConnectionResponse> UpdateCloudConnectionInvoker(UpdateCloudConnectionRequest updateCloudConnectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateCloudConnectionRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCloudConnectionRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connections/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCloudConnectionRequest);
             return new SyncInvoker<UpdateCloudConnectionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateCloudConnectionResponse>);
@@ -1469,7 +1469,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ShowCloudConnectionRoutesResponse ShowCloudConnectionRoutes(ShowCloudConnectionRoutesRequest showCloudConnectionRoutesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showCloudConnectionRoutesRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCloudConnectionRoutesRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connection-routes/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCloudConnectionRoutesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1479,7 +1479,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ShowCloudConnectionRoutesResponse> ShowCloudConnectionRoutesInvoker(ShowCloudConnectionRoutesRequest showCloudConnectionRoutesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showCloudConnectionRoutesRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCloudConnectionRoutesRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/cloud-connection-routes/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCloudConnectionRoutesRequest);
             return new SyncInvoker<ShowCloudConnectionRoutesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCloudConnectionRoutesResponse>);
@@ -1495,7 +1495,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public BatchCreateGcbResourceTagsResponse BatchCreateGcbResourceTags(BatchCreateGcbResourceTagsRequest batchCreateGcbResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateGcbResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateGcbResourceTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1505,7 +1505,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<BatchCreateGcbResourceTagsResponse> BatchCreateGcbResourceTagsInvoker(BatchCreateGcbResourceTagsRequest batchCreateGcbResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchCreateGcbResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateGcbResourceTagsRequest);
             return new SyncInvoker<BatchCreateGcbResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateGcbResourceTagsResponse>);
@@ -1521,7 +1521,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public BatchDeleteGcbResourceTagsResponse BatchDeleteGcbResourceTags(BatchDeleteGcbResourceTagsRequest batchDeleteGcbResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchDeleteGcbResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGcbResourceTagsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1531,7 +1531,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<BatchDeleteGcbResourceTagsResponse> BatchDeleteGcbResourceTagsInvoker(BatchDeleteGcbResourceTagsRequest batchDeleteGcbResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", batchDeleteGcbResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGcbResourceTagsRequest);
             return new SyncInvoker<BatchDeleteGcbResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteGcbResourceTagsResponse>);
@@ -1571,7 +1571,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public CreateGcbResourceTagResponse CreateGcbResourceTag(CreateGcbResourceTagRequest createGcbResourceTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", createGcbResourceTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGcbResourceTagRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1581,7 +1581,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<CreateGcbResourceTagResponse> CreateGcbResourceTagInvoker(CreateGcbResourceTagRequest createGcbResourceTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", createGcbResourceTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGcbResourceTagRequest);
             return new SyncInvoker<CreateGcbResourceTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateGcbResourceTagResponse>);
@@ -1597,8 +1597,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DeleteGcbResourceTagResponse DeleteGcbResourceTag(DeleteGcbResourceTagRequest deleteGcbResourceTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", deleteGcbResourceTagRequest.ResourceId.ToString());
-            urlParam.Add("tag_key", deleteGcbResourceTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGcbResourceTagRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1608,8 +1608,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DeleteGcbResourceTagResponse> DeleteGcbResourceTagInvoker(DeleteGcbResourceTagRequest deleteGcbResourceTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", deleteGcbResourceTagRequest.ResourceId.ToString());
-            urlParam.Add("tag_key", deleteGcbResourceTagRequest.TagKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
             var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/{tag_key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGcbResourceTagRequest);
             return new SyncInvoker<DeleteGcbResourceTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGcbResourceTagResponse>);
@@ -1649,7 +1649,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ListGcbResourceTagsResponse ListGcbResourceTags(ListGcbResourceTagsRequest listGcbResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", listGcbResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbResourceTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1659,7 +1659,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ListGcbResourceTagsResponse> ListGcbResourceTagsInvoker(ListGcbResourceTagsRequest listGcbResourceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_id", listGcbResourceTagsRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbResourceTagsRequest);
             return new SyncInvoker<ListGcbResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGcbResourceTagsResponse>);
@@ -1699,7 +1699,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public AssociateGlobalConnectionBandwidthInstanceResponse AssociateGlobalConnectionBandwidthInstance(AssociateGlobalConnectionBandwidthInstanceRequest associateGlobalConnectionBandwidthInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", associateGlobalConnectionBandwidthInstanceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateGlobalConnectionBandwidthInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcb/gcbandwidths/{id}/associate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateGlobalConnectionBandwidthInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1709,7 +1709,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<AssociateGlobalConnectionBandwidthInstanceResponse> AssociateGlobalConnectionBandwidthInstanceInvoker(AssociateGlobalConnectionBandwidthInstanceRequest associateGlobalConnectionBandwidthInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", associateGlobalConnectionBandwidthInstanceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateGlobalConnectionBandwidthInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcb/gcbandwidths/{id}/associate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateGlobalConnectionBandwidthInstanceRequest);
             return new SyncInvoker<AssociateGlobalConnectionBandwidthInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateGlobalConnectionBandwidthInstanceResponse>);
@@ -1749,7 +1749,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DeleteGlobalConnectionBandwidthResponse DeleteGlobalConnectionBandwidth(DeleteGlobalConnectionBandwidthRequest deleteGlobalConnectionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteGlobalConnectionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGlobalConnectionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcb/gcbandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGlobalConnectionBandwidthRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1759,7 +1759,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DeleteGlobalConnectionBandwidthResponse> DeleteGlobalConnectionBandwidthInvoker(DeleteGlobalConnectionBandwidthRequest deleteGlobalConnectionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteGlobalConnectionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGlobalConnectionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcb/gcbandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGlobalConnectionBandwidthRequest);
             return new SyncInvoker<DeleteGlobalConnectionBandwidthResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGlobalConnectionBandwidthResponse>);
@@ -1775,7 +1775,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DisassociateGlobalConnectionBandwidthInstanceResponse DisassociateGlobalConnectionBandwidthInstance(DisassociateGlobalConnectionBandwidthInstanceRequest disassociateGlobalConnectionBandwidthInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", disassociateGlobalConnectionBandwidthInstanceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateGlobalConnectionBandwidthInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcb/gcbandwidths/{id}/disassociate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateGlobalConnectionBandwidthInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1785,7 +1785,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DisassociateGlobalConnectionBandwidthInstanceResponse> DisassociateGlobalConnectionBandwidthInstanceInvoker(DisassociateGlobalConnectionBandwidthInstanceRequest disassociateGlobalConnectionBandwidthInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", disassociateGlobalConnectionBandwidthInstanceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateGlobalConnectionBandwidthInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcb/gcbandwidths/{id}/disassociate-instance", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateGlobalConnectionBandwidthInstanceRequest);
             return new SyncInvoker<DisassociateGlobalConnectionBandwidthInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<DisassociateGlobalConnectionBandwidthInstanceResponse>);
@@ -1950,7 +1950,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ShowGlobalConnectionBandwidthResponse ShowGlobalConnectionBandwidth(ShowGlobalConnectionBandwidthRequest showGlobalConnectionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showGlobalConnectionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGlobalConnectionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcb/gcbandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGlobalConnectionBandwidthRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1960,7 +1960,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ShowGlobalConnectionBandwidthResponse> ShowGlobalConnectionBandwidthInvoker(ShowGlobalConnectionBandwidthRequest showGlobalConnectionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showGlobalConnectionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGlobalConnectionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcb/gcbandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGlobalConnectionBandwidthRequest);
             return new SyncInvoker<ShowGlobalConnectionBandwidthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGlobalConnectionBandwidthResponse>);
@@ -1976,7 +1976,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateGlobalConnectionBandwidthResponse UpdateGlobalConnectionBandwidth(UpdateGlobalConnectionBandwidthRequest updateGlobalConnectionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateGlobalConnectionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGlobalConnectionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcb/gcbandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGlobalConnectionBandwidthRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1986,7 +1986,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateGlobalConnectionBandwidthResponse> UpdateGlobalConnectionBandwidthInvoker(UpdateGlobalConnectionBandwidthRequest updateGlobalConnectionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateGlobalConnectionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGlobalConnectionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcb/gcbandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGlobalConnectionBandwidthRequest);
             return new SyncInvoker<UpdateGlobalConnectionBandwidthResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGlobalConnectionBandwidthResponse>);
@@ -2026,7 +2026,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DeleteInterRegionBandwidthResponse DeleteInterRegionBandwidth(DeleteInterRegionBandwidthRequest deleteInterRegionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteInterRegionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInterRegionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/inter-region-bandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInterRegionBandwidthRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2036,7 +2036,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DeleteInterRegionBandwidthResponse> DeleteInterRegionBandwidthInvoker(DeleteInterRegionBandwidthRequest deleteInterRegionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteInterRegionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInterRegionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/inter-region-bandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInterRegionBandwidthRequest);
             return new SyncInvoker<DeleteInterRegionBandwidthResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInterRegionBandwidthResponse>);
@@ -2077,7 +2077,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ShowInterRegionBandwidthResponse ShowInterRegionBandwidth(ShowInterRegionBandwidthRequest showInterRegionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showInterRegionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInterRegionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/inter-region-bandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInterRegionBandwidthRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2087,7 +2087,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ShowInterRegionBandwidthResponse> ShowInterRegionBandwidthInvoker(ShowInterRegionBandwidthRequest showInterRegionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showInterRegionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInterRegionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/inter-region-bandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInterRegionBandwidthRequest);
             return new SyncInvoker<ShowInterRegionBandwidthResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInterRegionBandwidthResponse>);
@@ -2103,7 +2103,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateInterRegionBandwidthResponse UpdateInterRegionBandwidth(UpdateInterRegionBandwidthRequest updateInterRegionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateInterRegionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInterRegionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/inter-region-bandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInterRegionBandwidthRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2113,7 +2113,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateInterRegionBandwidthResponse> UpdateInterRegionBandwidthInvoker(UpdateInterRegionBandwidthRequest updateInterRegionBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateInterRegionBandwidthRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInterRegionBandwidthRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/inter-region-bandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInterRegionBandwidthRequest);
             return new SyncInvoker<UpdateInterRegionBandwidthResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInterRegionBandwidthResponse>);
@@ -2153,7 +2153,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DeleteNetworkInstanceResponse DeleteNetworkInstance(DeleteNetworkInstanceRequest deleteNetworkInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteNetworkInstanceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNetworkInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/network-instances/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNetworkInstanceRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2163,7 +2163,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DeleteNetworkInstanceResponse> DeleteNetworkInstanceInvoker(DeleteNetworkInstanceRequest deleteNetworkInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteNetworkInstanceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteNetworkInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/network-instances/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNetworkInstanceRequest);
             return new SyncInvoker<DeleteNetworkInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNetworkInstanceResponse>);
@@ -2204,7 +2204,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ShowNetworkInstanceResponse ShowNetworkInstance(ShowNetworkInstanceRequest showNetworkInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showNetworkInstanceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNetworkInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/network-instances/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNetworkInstanceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2214,7 +2214,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ShowNetworkInstanceResponse> ShowNetworkInstanceInvoker(ShowNetworkInstanceRequest showNetworkInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showNetworkInstanceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showNetworkInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/network-instances/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showNetworkInstanceRequest);
             return new SyncInvoker<ShowNetworkInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowNetworkInstanceResponse>);
@@ -2230,7 +2230,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateNetworkInstanceResponse UpdateNetworkInstance(UpdateNetworkInstanceRequest updateNetworkInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateNetworkInstanceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNetworkInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/network-instances/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNetworkInstanceRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2240,7 +2240,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateNetworkInstanceResponse> UpdateNetworkInstanceInvoker(UpdateNetworkInstanceRequest updateNetworkInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateNetworkInstanceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNetworkInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/ccaas/network-instances/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNetworkInstanceRequest);
             return new SyncInvoker<UpdateNetworkInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateNetworkInstanceResponse>);
@@ -2256,8 +2256,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public AssociateSiteNetworkBandwidthResponse AssociateSiteNetworkBandwidth(AssociateSiteNetworkBandwidthRequest associateSiteNetworkBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", associateSiteNetworkBandwidthRequest.SiteNetworkId.ToString());
-            urlParam.Add("site_connection_id", associateSiteNetworkBandwidthRequest.SiteConnectionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateSiteNetworkBandwidthRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(associateSiteNetworkBandwidthRequest.SiteConnectionId, out var valueOfSiteConnectionId)) urlParam.Add("site_connection_id", valueOfSiteConnectionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/associate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateSiteNetworkBandwidthRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2267,8 +2267,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<AssociateSiteNetworkBandwidthResponse> AssociateSiteNetworkBandwidthInvoker(AssociateSiteNetworkBandwidthRequest associateSiteNetworkBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", associateSiteNetworkBandwidthRequest.SiteNetworkId.ToString());
-            urlParam.Add("site_connection_id", associateSiteNetworkBandwidthRequest.SiteConnectionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateSiteNetworkBandwidthRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(associateSiteNetworkBandwidthRequest.SiteConnectionId, out var valueOfSiteConnectionId)) urlParam.Add("site_connection_id", valueOfSiteConnectionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/associate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateSiteNetworkBandwidthRequest);
             return new SyncInvoker<AssociateSiteNetworkBandwidthResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateSiteNetworkBandwidthResponse>);
@@ -2284,8 +2284,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DisassociateSiteNetworkBandwidthResponse DisassociateSiteNetworkBandwidth(DisassociateSiteNetworkBandwidthRequest disassociateSiteNetworkBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", disassociateSiteNetworkBandwidthRequest.SiteNetworkId.ToString());
-            urlParam.Add("site_connection_id", disassociateSiteNetworkBandwidthRequest.SiteConnectionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateSiteNetworkBandwidthRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(disassociateSiteNetworkBandwidthRequest.SiteConnectionId, out var valueOfSiteConnectionId)) urlParam.Add("site_connection_id", valueOfSiteConnectionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/disassociate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateSiteNetworkBandwidthRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2295,8 +2295,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DisassociateSiteNetworkBandwidthResponse> DisassociateSiteNetworkBandwidthInvoker(DisassociateSiteNetworkBandwidthRequest disassociateSiteNetworkBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", disassociateSiteNetworkBandwidthRequest.SiteNetworkId.ToString());
-            urlParam.Add("site_connection_id", disassociateSiteNetworkBandwidthRequest.SiteConnectionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateSiteNetworkBandwidthRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(disassociateSiteNetworkBandwidthRequest.SiteConnectionId, out var valueOfSiteConnectionId)) urlParam.Add("site_connection_id", valueOfSiteConnectionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/disassociate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateSiteNetworkBandwidthRequest);
             return new SyncInvoker<DisassociateSiteNetworkBandwidthResponse>(this, "POST", request, JsonUtils.DeSerialize<DisassociateSiteNetworkBandwidthResponse>);
@@ -2312,8 +2312,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateSiteNetworkBandwidthResponse UpdateSiteNetworkBandwidth(UpdateSiteNetworkBandwidthRequest updateSiteNetworkBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", updateSiteNetworkBandwidthRequest.SiteNetworkId.ToString());
-            urlParam.Add("site_connection_id", updateSiteNetworkBandwidthRequest.SiteConnectionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSiteNetworkBandwidthRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(updateSiteNetworkBandwidthRequest.SiteConnectionId, out var valueOfSiteConnectionId)) urlParam.Add("site_connection_id", valueOfSiteConnectionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/update-bandwidth", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSiteNetworkBandwidthRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2323,8 +2323,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateSiteNetworkBandwidthResponse> UpdateSiteNetworkBandwidthInvoker(UpdateSiteNetworkBandwidthRequest updateSiteNetworkBandwidthRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", updateSiteNetworkBandwidthRequest.SiteNetworkId.ToString());
-            urlParam.Add("site_connection_id", updateSiteNetworkBandwidthRequest.SiteConnectionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSiteNetworkBandwidthRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(updateSiteNetworkBandwidthRequest.SiteConnectionId, out var valueOfSiteConnectionId)) urlParam.Add("site_connection_id", valueOfSiteConnectionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/update-bandwidth", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSiteNetworkBandwidthRequest);
             return new SyncInvoker<UpdateSiteNetworkBandwidthResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateSiteNetworkBandwidthResponse>);
@@ -2340,8 +2340,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateSiteNetworkBandwidthSizeResponse UpdateSiteNetworkBandwidthSize(UpdateSiteNetworkBandwidthSizeRequest updateSiteNetworkBandwidthSizeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", updateSiteNetworkBandwidthSizeRequest.SiteNetworkId.ToString());
-            urlParam.Add("site_connection_id", updateSiteNetworkBandwidthSizeRequest.SiteConnectionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSiteNetworkBandwidthSizeRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(updateSiteNetworkBandwidthSizeRequest.SiteConnectionId, out var valueOfSiteConnectionId)) urlParam.Add("site_connection_id", valueOfSiteConnectionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/update-bandwidth-size", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSiteNetworkBandwidthSizeRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2351,8 +2351,8 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateSiteNetworkBandwidthSizeResponse> UpdateSiteNetworkBandwidthSizeInvoker(UpdateSiteNetworkBandwidthSizeRequest updateSiteNetworkBandwidthSizeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", updateSiteNetworkBandwidthSizeRequest.SiteNetworkId.ToString());
-            urlParam.Add("site_connection_id", updateSiteNetworkBandwidthSizeRequest.SiteConnectionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSiteNetworkBandwidthSizeRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
+            if (StringUtils.TryConvertToNonEmptyString(updateSiteNetworkBandwidthSizeRequest.SiteConnectionId, out var valueOfSiteConnectionId)) urlParam.Add("site_connection_id", valueOfSiteConnectionId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/update-bandwidth-size", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSiteNetworkBandwidthSizeRequest);
             return new SyncInvoker<UpdateSiteNetworkBandwidthSizeResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateSiteNetworkBandwidthSizeResponse>);
@@ -2392,7 +2392,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public DeleteSiteNetworkResponse DeleteSiteNetwork(DeleteSiteNetworkRequest deleteSiteNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", deleteSiteNetworkRequest.SiteNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSiteNetworkRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-networks/{site_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSiteNetworkRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2402,7 +2402,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<DeleteSiteNetworkResponse> DeleteSiteNetworkInvoker(DeleteSiteNetworkRequest deleteSiteNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", deleteSiteNetworkRequest.SiteNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSiteNetworkRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-networks/{site_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSiteNetworkRequest);
             return new SyncInvoker<DeleteSiteNetworkResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteSiteNetworkResponse>);
@@ -2443,7 +2443,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public ShowSiteNetworkResponse ShowSiteNetwork(ShowSiteNetworkRequest showSiteNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", showSiteNetworkRequest.SiteNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSiteNetworkRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-networks/{site_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSiteNetworkRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2453,7 +2453,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<ShowSiteNetworkResponse> ShowSiteNetworkInvoker(ShowSiteNetworkRequest showSiteNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", showSiteNetworkRequest.SiteNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSiteNetworkRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-networks/{site_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSiteNetworkRequest);
             return new SyncInvoker<ShowSiteNetworkResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSiteNetworkResponse>);
@@ -2469,7 +2469,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public UpdateSiteNetworkResponse UpdateSiteNetwork(UpdateSiteNetworkRequest updateSiteNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", updateSiteNetworkRequest.SiteNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSiteNetworkRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-networks/{site_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSiteNetworkRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2479,7 +2479,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         public SyncInvoker<UpdateSiteNetworkResponse> UpdateSiteNetworkInvoker(UpdateSiteNetworkRequest updateSiteNetworkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("site_network_id", updateSiteNetworkRequest.SiteNetworkId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSiteNetworkRequest.SiteNetworkId, out var valueOfSiteNetworkId)) urlParam.Add("site_network_id", valueOfSiteNetworkId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/dcaas/site-networks/{site_network_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSiteNetworkRequest);
             return new SyncInvoker<UpdateSiteNetworkResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSiteNetworkResponse>);

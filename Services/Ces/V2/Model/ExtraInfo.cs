@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 指标信息
+    /// **参数解释** 指标信息 **约束限制** 不涉及 
     /// </summary>
     public class ExtraInfo 
     {
 
         /// <summary>
-        /// 指标名称
+        /// **参数解释** 指标名称 **约束限制** 不涉及 **取值范围** 长度为[1,4096]个字符 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("origin_metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginMetricName { get; set; }
 
         /// <summary>
-        /// 指标名称前缀
+        /// **参数解释** 指标名称前缀 **约束限制** 不涉及           **取值范围** 长度为[1,4096]个字符 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("metric_prefix", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricPrefix { get; set; }
 
         /// <summary>
-        /// 指标类型
+        /// **参数解释** 指标类型 **约束限制** 不涉及           **取值范围** 长度为[1,32]个字符 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("metric_type", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricType { get; set; }
 
         /// <summary>
-        /// 自定义进程名称
+        /// **参数解释** 自定义进程名称 **约束限制** 不涉及           **取值范围** 长度为[1,250]个字符 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("custom_proc_name", NullValueHandling = NullValueHandling.Ignore)]
         public string CustomProcName { get; set; }

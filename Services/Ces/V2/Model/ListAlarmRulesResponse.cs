@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 告警规则列表
+        /// **参数解释**： 告警规则列表。 **取值范围**： 长度为[1,100]个字符。 
         /// </summary>
         [JsonProperty("alarms", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListAlarmResponseAlarms> Alarms { get; set; }
+        public List<ListAlarmRespBodyAlarms> Alarms { get; set; }
 
         /// <summary>
-        /// 告警规则总数
+        /// **参数解释**： 告警规则总数。 **取值范围**： [0,10000] 
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

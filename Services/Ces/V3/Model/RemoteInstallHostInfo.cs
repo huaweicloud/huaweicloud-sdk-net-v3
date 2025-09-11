@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
     {
 
         /// <summary>
-        /// 被远程安装的主机名称
+        /// **参数解释**: 被远程安装的主机名称 **取值范围**: 数组长度范围为[1,128] 
         /// </summary>
         [JsonProperty("instance_name", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceName { get; set; }
 
         /// <summary>
-        /// 被远程安装的主机IP
+        /// **参数解释**: 被远程安装的主机IP **取值范围**: 仅由数字(0-9)和小数点(.)组成的字符串，字符串长度为[1,15] 
         /// </summary>
         [JsonProperty("remote_ip", NullValueHandling = NullValueHandling.Ignore)]
         public string RemoteIp { get; set; }
 
         /// <summary>
-        /// 被远程安装的主机的登录用户名
+        /// **参数解释**: 被远程安装的主机的登录用户名 **取值范围**: 数组长度范围为[1,16] 
         /// </summary>
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string UserName { get; set; }
 
         /// <summary>
-        /// 被远程安装的主机的登录端口
+        /// **参数解释**: 被远程安装的主机的登录端口 **取值范围**: 数组长度范围为[1,5] 
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public string Port { get; set; }
 
         /// <summary>
-        /// 被远程安装的主机的登录密码
+        /// **参数解释**: 被远程安装的主机的登录密码 **取值范围**: 数组长度范围为[1,3000] 
         /// </summary>
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
         public string Password { get; set; }
 
         /// <summary>
-        /// 被远程安装的主机远程连接是否采用秘钥方式（false时为密码方式）
+        /// **参数解释**: 被远程安装的主机远程连接是否采用密钥方式（false时为密码方式） **取值范围**: - false: 密码方式 - true: 密钥方式 
         /// </summary>
         [JsonProperty("remote_use_pem", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RemoteUsePem { get; set; }

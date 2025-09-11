@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<AddFacesByBase64Response> AddFacesByBase64Async(AddFacesByBase64Request addFacesByBase64Request)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", addFacesByBase64Request.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addFacesByBase64Request.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFacesByBase64Request);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<AddFacesByBase64Response> AddFacesByBase64AsyncInvoker(AddFacesByBase64Request addFacesByBase64Request)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", addFacesByBase64Request.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addFacesByBase64Request.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFacesByBase64Request);
             return new AsyncInvoker<AddFacesByBase64Response>(this, "POST", request, JsonUtils.DeSerialize<AddFacesByBase64Response>);
@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<AddFacesByFileResponse> AddFacesByFileAsync(AddFacesByFileRequest addFacesByFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", addFacesByFileRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addFacesByFileRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", addFacesByFileRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<AddFacesByFileResponse> AddFacesByFileAsyncInvoker(AddFacesByFileRequest addFacesByFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", addFacesByFileRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addFacesByFileRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", addFacesByFileRequest);
             return new AsyncInvoker<AddFacesByFileResponse>(this, "POST", request, JsonUtils.DeSerialize<AddFacesByFileResponse>);
@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<AddFacesByUrlResponse> AddFacesByUrlAsync(AddFacesByUrlRequest addFacesByUrlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", addFacesByUrlRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addFacesByUrlRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFacesByUrlRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -87,7 +87,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<AddFacesByUrlResponse> AddFacesByUrlAsyncInvoker(AddFacesByUrlRequest addFacesByUrlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", addFacesByUrlRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addFacesByUrlRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFacesByUrlRequest);
             return new AsyncInvoker<AddFacesByUrlResponse>(this, "POST", request, JsonUtils.DeSerialize<AddFacesByUrlResponse>);
@@ -103,7 +103,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<BatchDeleteFacesResponse> BatchDeleteFacesAsync(BatchDeleteFacesRequest batchDeleteFacesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", batchDeleteFacesRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteFacesRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces/batch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteFacesRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -113,7 +113,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<BatchDeleteFacesResponse> BatchDeleteFacesAsyncInvoker(BatchDeleteFacesRequest batchDeleteFacesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", batchDeleteFacesRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteFacesRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces/batch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteFacesRequest);
             return new AsyncInvoker<BatchDeleteFacesResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteFacesResponse>);
@@ -225,7 +225,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<DeleteFaceByExternalImageIdResponse> DeleteFaceByExternalImageIdAsync(DeleteFaceByExternalImageIdRequest deleteFaceByExternalImageIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", deleteFaceByExternalImageIdRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFaceByExternalImageIdRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceByExternalImageIdRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -235,7 +235,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<DeleteFaceByExternalImageIdResponse> DeleteFaceByExternalImageIdAsyncInvoker(DeleteFaceByExternalImageIdRequest deleteFaceByExternalImageIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", deleteFaceByExternalImageIdRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFaceByExternalImageIdRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceByExternalImageIdRequest);
             return new AsyncInvoker<DeleteFaceByExternalImageIdResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteFaceByExternalImageIdResponse>);
@@ -251,7 +251,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<DeleteFaceByFaceIdResponse> DeleteFaceByFaceIdAsync(DeleteFaceByFaceIdRequest deleteFaceByFaceIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", deleteFaceByFaceIdRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFaceByFaceIdRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceByFaceIdRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -261,7 +261,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<DeleteFaceByFaceIdResponse> DeleteFaceByFaceIdAsyncInvoker(DeleteFaceByFaceIdRequest deleteFaceByFaceIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", deleteFaceByFaceIdRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFaceByFaceIdRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceByFaceIdRequest);
             return new AsyncInvoker<DeleteFaceByFaceIdResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteFaceByFaceIdResponse>);
@@ -277,7 +277,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<DeleteFaceSetResponse> DeleteFaceSetAsync(DeleteFaceSetRequest deleteFaceSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", deleteFaceSetRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFaceSetRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceSetRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -287,7 +287,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<DeleteFaceSetResponse> DeleteFaceSetAsyncInvoker(DeleteFaceSetRequest deleteFaceSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", deleteFaceSetRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFaceSetRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFaceSetRequest);
             return new AsyncInvoker<DeleteFaceSetResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteFaceSetResponse>);
@@ -664,7 +664,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<SearchFaceByBase64Response> SearchFaceByBase64Async(SearchFaceByBase64Request searchFaceByBase64Request)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", searchFaceByBase64Request.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchFaceByBase64Request.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByBase64Request);
             var response = await DoHttpRequestAsync("POST", request);
@@ -674,7 +674,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<SearchFaceByBase64Response> SearchFaceByBase64AsyncInvoker(SearchFaceByBase64Request searchFaceByBase64Request)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", searchFaceByBase64Request.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchFaceByBase64Request.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByBase64Request);
             return new AsyncInvoker<SearchFaceByBase64Response>(this, "POST", request, JsonUtils.DeSerialize<SearchFaceByBase64Response>);
@@ -691,7 +691,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<SearchFaceByFaceIdResponse> SearchFaceByFaceIdAsync(SearchFaceByFaceIdRequest searchFaceByFaceIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", searchFaceByFaceIdRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchFaceByFaceIdRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByFaceIdRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -701,7 +701,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<SearchFaceByFaceIdResponse> SearchFaceByFaceIdAsyncInvoker(SearchFaceByFaceIdRequest searchFaceByFaceIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", searchFaceByFaceIdRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchFaceByFaceIdRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByFaceIdRequest);
             return new AsyncInvoker<SearchFaceByFaceIdResponse>(this, "POST", request, JsonUtils.DeSerialize<SearchFaceByFaceIdResponse>);
@@ -718,7 +718,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<SearchFaceByFileResponse> SearchFaceByFileAsync(SearchFaceByFileRequest searchFaceByFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", searchFaceByFileRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchFaceByFileRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", searchFaceByFileRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -728,7 +728,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<SearchFaceByFileResponse> SearchFaceByFileAsyncInvoker(SearchFaceByFileRequest searchFaceByFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", searchFaceByFileRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchFaceByFileRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", searchFaceByFileRequest);
             return new AsyncInvoker<SearchFaceByFileResponse>(this, "POST", request, JsonUtils.DeSerialize<SearchFaceByFileResponse>);
@@ -745,7 +745,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<SearchFaceByUrlResponse> SearchFaceByUrlAsync(SearchFaceByUrlRequest searchFaceByUrlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", searchFaceByUrlRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchFaceByUrlRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByUrlRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -755,7 +755,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<SearchFaceByUrlResponse> SearchFaceByUrlAsyncInvoker(SearchFaceByUrlRequest searchFaceByUrlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", searchFaceByUrlRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchFaceByUrlRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/search", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchFaceByUrlRequest);
             return new AsyncInvoker<SearchFaceByUrlResponse>(this, "POST", request, JsonUtils.DeSerialize<SearchFaceByUrlResponse>);
@@ -795,7 +795,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<ShowFaceSetResponse> ShowFaceSetAsync(ShowFaceSetRequest showFaceSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", showFaceSetRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFaceSetRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFaceSetRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -805,7 +805,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<ShowFaceSetResponse> ShowFaceSetAsyncInvoker(ShowFaceSetRequest showFaceSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", showFaceSetRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFaceSetRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFaceSetRequest);
             return new AsyncInvoker<ShowFaceSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFaceSetResponse>);
@@ -821,7 +821,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<ShowFacesByFaceIdResponse> ShowFacesByFaceIdAsync(ShowFacesByFaceIdRequest showFacesByFaceIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", showFacesByFaceIdRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFacesByFaceIdRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFacesByFaceIdRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -831,7 +831,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<ShowFacesByFaceIdResponse> ShowFacesByFaceIdAsyncInvoker(ShowFacesByFaceIdRequest showFacesByFaceIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", showFacesByFaceIdRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFacesByFaceIdRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFacesByFaceIdRequest);
             return new AsyncInvoker<ShowFacesByFaceIdResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFacesByFaceIdResponse>);
@@ -847,7 +847,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<ShowFacesByLimitResponse> ShowFacesByLimitAsync(ShowFacesByLimitRequest showFacesByLimitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", showFacesByLimitRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFacesByLimitRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFacesByLimitRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -857,7 +857,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<ShowFacesByLimitResponse> ShowFacesByLimitAsyncInvoker(ShowFacesByLimitRequest showFacesByLimitRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", showFacesByLimitRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFacesByLimitRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFacesByLimitRequest);
             return new AsyncInvoker<ShowFacesByLimitResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFacesByLimitResponse>);
@@ -873,7 +873,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public async Task<UpdateFaceResponse> UpdateFaceAsync(UpdateFaceRequest updateFaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", updateFaceRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFaceRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFaceRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -883,7 +883,7 @@ namespace HuaweiCloud.SDK.Frs.V2
         public AsyncInvoker<UpdateFaceResponse> UpdateFaceAsyncInvoker(UpdateFaceRequest updateFaceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("face_set_name", updateFaceRequest.FaceSetName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateFaceRequest.FaceSetName, out var valueOfFaceSetName)) urlParam.Add("face_set_name", valueOfFaceSetName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/face-sets/{face_set_name}/faces", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateFaceRequest);
             return new AsyncInvoker<UpdateFaceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateFaceResponse>);

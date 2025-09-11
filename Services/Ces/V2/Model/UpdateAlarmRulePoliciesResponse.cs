@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 策略信息
+        /// **参数解释**： 策略信息。 
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<UpdatePolicy> Policies { get; set; }
+        public List<UpdatePolicyResp> Policies { get; set; }
 
 
 

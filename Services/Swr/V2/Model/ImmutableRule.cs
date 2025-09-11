@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 不可变规则ID
+        /// 不可变策略ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int? Id { get; set; }
 
         /// <summary>
-        /// 
+        /// 命名空间ID
         /// </summary>
         [JsonProperty("namespace_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? NamespaceId { get; set; }
 
         /// <summary>
-        /// 
+        /// 命名空间名称
         /// </summary>
         [JsonProperty("namespace_name", NullValueHandling = NullValueHandling.Ignore)]
         public string NamespaceName { get; set; }
 
         /// <summary>
-        /// 
+        /// 优先级，保留字段
         /// </summary>
         [JsonProperty("priority", NullValueHandling = NullValueHandling.Ignore)]
         public int? Priority { get; set; }
 
         /// <summary>
-        /// 不可变规则是否生效
+        /// 不可变策略是否生效
         /// </summary>
         [JsonProperty("disabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Disabled { get; set; }

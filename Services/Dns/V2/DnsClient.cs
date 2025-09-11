@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public AssociateEndpointIpaddressResponse AssociateEndpointIpaddress(AssociateEndpointIpaddressRequest associateEndpointIpaddressRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", associateEndpointIpaddressRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateEndpointIpaddressRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}/ipaddresses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateEndpointIpaddressRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<AssociateEndpointIpaddressResponse> AssociateEndpointIpaddressInvoker(AssociateEndpointIpaddressRequest associateEndpointIpaddressRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", associateEndpointIpaddressRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateEndpointIpaddressRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}/ipaddresses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateEndpointIpaddressRequest);
             return new SyncInvoker<AssociateEndpointIpaddressResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateEndpointIpaddressResponse>);
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public AssociateResolverRuleRouterResponse AssociateResolverRuleRouter(AssociateResolverRuleRouterRequest associateResolverRuleRouterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resolverrule_id", associateResolverRuleRouterRequest.ResolverruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateResolverRuleRouterRequest.ResolverruleId, out var valueOfResolverruleId)) urlParam.Add("resolverrule_id", valueOfResolverruleId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrules/{resolverrule_id}/associaterouter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateResolverRuleRouterRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -60,7 +60,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<AssociateResolverRuleRouterResponse> AssociateResolverRuleRouterInvoker(AssociateResolverRuleRouterRequest associateResolverRuleRouterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resolverrule_id", associateResolverRuleRouterRequest.ResolverruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateResolverRuleRouterRequest.ResolverruleId, out var valueOfResolverruleId)) urlParam.Add("resolverrule_id", valueOfResolverruleId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrules/{resolverrule_id}/associaterouter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateResolverRuleRouterRequest);
             return new SyncInvoker<AssociateResolverRuleRouterResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateResolverRuleRouterResponse>);
@@ -76,7 +76,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public AssociateRouterResponse AssociateRouter(AssociateRouterRequest associateRouterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", associateRouterRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateRouterRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/associaterouter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateRouterRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -86,7 +86,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<AssociateRouterResponse> AssociateRouterInvoker(AssociateRouterRequest associateRouterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", associateRouterRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateRouterRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/associaterouter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateRouterRequest);
             return new SyncInvoker<AssociateRouterResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateRouterResponse>);
@@ -102,8 +102,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public BatchCreateTagResponse BatchCreateTag(BatchCreateTagRequest batchCreateTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", batchCreateTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", batchCreateTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateTagRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateTagRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -113,8 +113,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<BatchCreateTagResponse> BatchCreateTagInvoker(BatchCreateTagRequest batchCreateTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", batchCreateTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", batchCreateTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateTagRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateTagRequest);
             return new SyncInvoker<BatchCreateTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateTagResponse>);
@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public BatchDeleteRecordSetWithLineResponse BatchDeleteRecordSetWithLine(BatchDeleteRecordSetWithLineRequest batchDeleteRecordSetWithLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", batchDeleteRecordSetWithLineRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRecordSetWithLineRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -166,7 +166,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<BatchDeleteRecordSetWithLineResponse> BatchDeleteRecordSetWithLineInvoker(BatchDeleteRecordSetWithLineRequest batchDeleteRecordSetWithLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", batchDeleteRecordSetWithLineRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRecordSetWithLineRequest);
             return new SyncInvoker<BatchDeleteRecordSetWithLineResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteRecordSetWithLineResponse>);
@@ -287,7 +287,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public BatchUpdateRecordSetWithLineResponse BatchUpdateRecordSetWithLine(BatchUpdateRecordSetWithLineRequest batchUpdateRecordSetWithLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", batchUpdateRecordSetWithLineRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRecordSetWithLineRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -297,7 +297,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<BatchUpdateRecordSetWithLineResponse> BatchUpdateRecordSetWithLineInvoker(BatchUpdateRecordSetWithLineRequest batchUpdateRecordSetWithLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", batchUpdateRecordSetWithLineRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRecordSetWithLineRequest);
             return new SyncInvoker<BatchUpdateRecordSetWithLineResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateRecordSetWithLineResponse>);
@@ -436,7 +436,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public CreateRecordSetWithBatchLinesResponse CreateRecordSetWithBatchLines(CreateRecordSetWithBatchLinesRequest createRecordSetWithBatchLinesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", createRecordSetWithBatchLinesRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRecordSetWithBatchLinesRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch/lines", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithBatchLinesRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -446,7 +446,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<CreateRecordSetWithBatchLinesResponse> CreateRecordSetWithBatchLinesInvoker(CreateRecordSetWithBatchLinesRequest createRecordSetWithBatchLinesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", createRecordSetWithBatchLinesRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRecordSetWithBatchLinesRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch/lines", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithBatchLinesRequest);
             return new SyncInvoker<CreateRecordSetWithBatchLinesResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordSetWithBatchLinesResponse>);
@@ -486,8 +486,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public CreateTagResponse CreateTag(CreateTagRequest createTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTagRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -497,8 +497,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<CreateTagResponse> CreateTagInvoker(CreateTagRequest createTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", createTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", createTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createTagRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(createTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTagRequest);
             return new SyncInvoker<CreateTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateTagResponse>);
@@ -514,7 +514,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DeleteCustomLineResponse DeleteCustomLine(DeleteCustomLineRequest deleteCustomLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("line_id", deleteCustomLineRequest.LineId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomLineRequest.LineId, out var valueOfLineId)) urlParam.Add("line_id", valueOfLineId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/customlines/{line_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCustomLineRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -524,7 +524,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DeleteCustomLineResponse> DeleteCustomLineInvoker(DeleteCustomLineRequest deleteCustomLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("line_id", deleteCustomLineRequest.LineId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCustomLineRequest.LineId, out var valueOfLineId)) urlParam.Add("line_id", valueOfLineId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/customlines/{line_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCustomLineRequest);
             return new SyncInvoker<DeleteCustomLineResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteCustomLineResponse>);
@@ -540,7 +540,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest deleteEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", deleteEndpointRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEndpointRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEndpointRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -550,7 +550,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DeleteEndpointResponse> DeleteEndpointInvoker(DeleteEndpointRequest deleteEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", deleteEndpointRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEndpointRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEndpointRequest);
             return new SyncInvoker<DeleteEndpointResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteEndpointResponse>);
@@ -566,7 +566,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DeleteLineGroupResponse DeleteLineGroup(DeleteLineGroupRequest deleteLineGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("linegroup_id", deleteLineGroupRequest.LinegroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLineGroupRequest.LinegroupId, out var valueOfLinegroupId)) urlParam.Add("linegroup_id", valueOfLinegroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/linegroups/{linegroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLineGroupRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -576,7 +576,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DeleteLineGroupResponse> DeleteLineGroupInvoker(DeleteLineGroupRequest deleteLineGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("linegroup_id", deleteLineGroupRequest.LinegroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLineGroupRequest.LinegroupId, out var valueOfLinegroupId)) urlParam.Add("linegroup_id", valueOfLinegroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/linegroups/{linegroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLineGroupRequest);
             return new SyncInvoker<DeleteLineGroupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteLineGroupResponse>);
@@ -592,7 +592,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DeletePrivateZoneResponse DeletePrivateZone(DeletePrivateZoneRequest deletePrivateZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deletePrivateZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateZoneRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -602,7 +602,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DeletePrivateZoneResponse> DeletePrivateZoneInvoker(DeletePrivateZoneRequest deletePrivateZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deletePrivateZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePrivateZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePrivateZoneRequest);
             return new SyncInvoker<DeletePrivateZoneResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePrivateZoneResponse>);
@@ -621,7 +621,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DeletePublicZoneResponse DeletePublicZone(DeletePublicZoneRequest deletePublicZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deletePublicZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePublicZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicZoneRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -631,7 +631,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DeletePublicZoneResponse> DeletePublicZoneInvoker(DeletePublicZoneRequest deletePublicZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deletePublicZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePublicZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicZoneRequest);
             return new SyncInvoker<DeletePublicZoneResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePublicZoneResponse>);
@@ -647,7 +647,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DeleteResolverRuleResponse DeleteResolverRule(DeleteResolverRuleRequest deleteResolverRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resolverrule_id", deleteResolverRuleRequest.ResolverruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteResolverRuleRequest.ResolverruleId, out var valueOfResolverruleId)) urlParam.Add("resolverrule_id", valueOfResolverruleId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrules/{resolverrule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteResolverRuleRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -657,7 +657,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DeleteResolverRuleResponse> DeleteResolverRuleInvoker(DeleteResolverRuleRequest deleteResolverRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resolverrule_id", deleteResolverRuleRequest.ResolverruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteResolverRuleRequest.ResolverruleId, out var valueOfResolverruleId)) urlParam.Add("resolverrule_id", valueOfResolverruleId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrules/{resolverrule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteResolverRuleRequest);
             return new SyncInvoker<DeleteResolverRuleResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteResolverRuleResponse>);
@@ -673,9 +673,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DeleteTagResponse DeleteTag(DeleteTagRequest deleteTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteTagRequest.ResourceId.ToString());
-            urlParam.Add("key", deleteTagRequest.Key.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -685,9 +685,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DeleteTagResponse> DeleteTagInvoker(DeleteTagRequest deleteTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", deleteTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", deleteTagRequest.ResourceId.ToString());
-            urlParam.Add("key", deleteTagRequest.Key.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTagRequest);
             return new SyncInvoker<DeleteTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTagResponse>);
@@ -703,8 +703,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DisassociateEndpointIpaddressResponse DisassociateEndpointIpaddress(DisassociateEndpointIpaddressRequest disassociateEndpointIpaddressRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", disassociateEndpointIpaddressRequest.EndpointId.ToString());
-            urlParam.Add("ipaddress_id", disassociateEndpointIpaddressRequest.IpaddressId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateEndpointIpaddressRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
+            if (StringUtils.TryConvertToNonEmptyString(disassociateEndpointIpaddressRequest.IpaddressId, out var valueOfIpaddressId)) urlParam.Add("ipaddress_id", valueOfIpaddressId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}/ipaddresses/{ipaddress_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateEndpointIpaddressRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -714,8 +714,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DisassociateEndpointIpaddressResponse> DisassociateEndpointIpaddressInvoker(DisassociateEndpointIpaddressRequest disassociateEndpointIpaddressRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", disassociateEndpointIpaddressRequest.EndpointId.ToString());
-            urlParam.Add("ipaddress_id", disassociateEndpointIpaddressRequest.IpaddressId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateEndpointIpaddressRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
+            if (StringUtils.TryConvertToNonEmptyString(disassociateEndpointIpaddressRequest.IpaddressId, out var valueOfIpaddressId)) urlParam.Add("ipaddress_id", valueOfIpaddressId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}/ipaddresses/{ipaddress_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateEndpointIpaddressRequest);
             return new SyncInvoker<DisassociateEndpointIpaddressResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DisassociateEndpointIpaddressResponse>);
@@ -731,7 +731,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DisassociateResolverRuleRouterResponse DisassociateResolverRuleRouter(DisassociateResolverRuleRouterRequest disassociateResolverRuleRouterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resolverrule_id", disassociateResolverRuleRouterRequest.ResolverruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateResolverRuleRouterRequest.ResolverruleId, out var valueOfResolverruleId)) urlParam.Add("resolverrule_id", valueOfResolverruleId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrules/{resolverrule_id}/disassociaterouter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateResolverRuleRouterRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -741,7 +741,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DisassociateResolverRuleRouterResponse> DisassociateResolverRuleRouterInvoker(DisassociateResolverRuleRouterRequest disassociateResolverRuleRouterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resolverrule_id", disassociateResolverRuleRouterRequest.ResolverruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateResolverRuleRouterRequest.ResolverruleId, out var valueOfResolverruleId)) urlParam.Add("resolverrule_id", valueOfResolverruleId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrules/{resolverrule_id}/disassociaterouter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateResolverRuleRouterRequest);
             return new SyncInvoker<DisassociateResolverRuleRouterResponse>(this, "POST", request, JsonUtils.DeSerialize<DisassociateResolverRuleRouterResponse>);
@@ -757,7 +757,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DisassociateRouterResponse DisassociateRouter(DisassociateRouterRequest disassociateRouterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", disassociateRouterRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateRouterRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/disassociaterouter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateRouterRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -767,7 +767,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DisassociateRouterResponse> DisassociateRouterInvoker(DisassociateRouterRequest disassociateRouterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", disassociateRouterRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateRouterRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/disassociaterouter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateRouterRequest);
             return new SyncInvoker<DisassociateRouterResponse>(this, "POST", request, JsonUtils.DeSerialize<DisassociateRouterResponse>);
@@ -831,7 +831,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ListEndpointIpaddressesResponse ListEndpointIpaddresses(ListEndpointIpaddressesRequest listEndpointIpaddressesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", listEndpointIpaddressesRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEndpointIpaddressesRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}/ipaddresses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEndpointIpaddressesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -841,7 +841,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ListEndpointIpaddressesResponse> ListEndpointIpaddressesInvoker(ListEndpointIpaddressesRequest listEndpointIpaddressesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", listEndpointIpaddressesRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEndpointIpaddressesRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}/ipaddresses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEndpointIpaddressesRequest);
             return new SyncInvoker<ListEndpointIpaddressesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEndpointIpaddressesResponse>);
@@ -1028,7 +1028,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ListTagResponse ListTag(ListTagRequest listTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listTagRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTagRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1038,7 +1038,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ListTagResponse> ListTagInvoker(ListTagRequest listTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listTagRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTagRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagRequest);
             return new SyncInvoker<ListTagResponse>(this, "POST", request, JsonUtils.DeSerialize<ListTagResponse>);
@@ -1054,7 +1054,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ListTagsResponse ListTags(ListTagsRequest listTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listTagsRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1064,7 +1064,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ListTagsResponse> ListTagsInvoker(ListTagsRequest listTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listTagsRequest.ResourceType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTagsRequest);
             return new SyncInvoker<ListTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTagsResponse>);
@@ -1080,7 +1080,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SetPrivateZoneProxyPatternResponse SetPrivateZoneProxyPattern(SetPrivateZoneProxyPatternRequest setPrivateZoneProxyPatternRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", setPrivateZoneProxyPatternRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setPrivateZoneProxyPatternRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/actions/set-proxy-pattern", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setPrivateZoneProxyPatternRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1090,7 +1090,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<SetPrivateZoneProxyPatternResponse> SetPrivateZoneProxyPatternInvoker(SetPrivateZoneProxyPatternRequest setPrivateZoneProxyPatternRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", setPrivateZoneProxyPatternRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setPrivateZoneProxyPatternRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/actions/set-proxy-pattern", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setPrivateZoneProxyPatternRequest);
             return new SyncInvoker<SetPrivateZoneProxyPatternResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SetPrivateZoneProxyPatternResponse>);
@@ -1106,7 +1106,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowApiInfoResponse ShowApiInfo(ShowApiInfoRequest showApiInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("version", showApiInfoRequest.Version.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showApiInfoRequest.Version, out var valueOfVersion)) urlParam.Add("version", valueOfVersion);
             var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiInfoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1116,7 +1116,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowApiInfoResponse> ShowApiInfoInvoker(ShowApiInfoRequest showApiInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("version", showApiInfoRequest.Version.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showApiInfoRequest.Version, out var valueOfVersion)) urlParam.Add("version", valueOfVersion);
             var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiInfoRequest);
             return new SyncInvoker<ShowApiInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiInfoResponse>);
@@ -1156,7 +1156,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowEndpointResponse ShowEndpoint(ShowEndpointRequest showEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", showEndpointRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEndpointRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEndpointRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1166,7 +1166,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowEndpointResponse> ShowEndpointInvoker(ShowEndpointRequest showEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", showEndpointRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEndpointRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEndpointRequest);
             return new SyncInvoker<ShowEndpointResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEndpointResponse>);
@@ -1182,7 +1182,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowLineGroupResponse ShowLineGroup(ShowLineGroupRequest showLineGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("linegroup_id", showLineGroupRequest.LinegroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLineGroupRequest.LinegroupId, out var valueOfLinegroupId)) urlParam.Add("linegroup_id", valueOfLinegroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/linegroups/{linegroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLineGroupRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1192,7 +1192,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowLineGroupResponse> ShowLineGroupInvoker(ShowLineGroupRequest showLineGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("linegroup_id", showLineGroupRequest.LinegroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLineGroupRequest.LinegroupId, out var valueOfLinegroupId)) urlParam.Add("linegroup_id", valueOfLinegroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/linegroups/{linegroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLineGroupRequest);
             return new SyncInvoker<ShowLineGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLineGroupResponse>);
@@ -1208,7 +1208,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowPrivateZoneResponse ShowPrivateZone(ShowPrivateZoneRequest showPrivateZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showPrivateZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateZoneRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1218,7 +1218,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowPrivateZoneResponse> ShowPrivateZoneInvoker(ShowPrivateZoneRequest showPrivateZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showPrivateZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateZoneRequest);
             return new SyncInvoker<ShowPrivateZoneResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateZoneResponse>);
@@ -1234,7 +1234,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowPrivateZoneNameServerResponse ShowPrivateZoneNameServer(ShowPrivateZoneNameServerRequest showPrivateZoneNameServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showPrivateZoneNameServerRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateZoneNameServerRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/nameservers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateZoneNameServerRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1244,7 +1244,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowPrivateZoneNameServerResponse> ShowPrivateZoneNameServerInvoker(ShowPrivateZoneNameServerRequest showPrivateZoneNameServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showPrivateZoneNameServerRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPrivateZoneNameServerRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/nameservers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPrivateZoneNameServerRequest);
             return new SyncInvoker<ShowPrivateZoneNameServerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPrivateZoneNameServerResponse>);
@@ -1263,7 +1263,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowPublicZoneResponse ShowPublicZone(ShowPublicZoneRequest showPublicZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showPublicZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPublicZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicZoneRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1273,7 +1273,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowPublicZoneResponse> ShowPublicZoneInvoker(ShowPublicZoneRequest showPublicZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showPublicZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPublicZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicZoneRequest);
             return new SyncInvoker<ShowPublicZoneResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPublicZoneResponse>);
@@ -1292,7 +1292,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowPublicZoneNameServerResponse ShowPublicZoneNameServer(ShowPublicZoneNameServerRequest showPublicZoneNameServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showPublicZoneNameServerRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPublicZoneNameServerRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/nameservers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicZoneNameServerRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1302,7 +1302,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowPublicZoneNameServerResponse> ShowPublicZoneNameServerInvoker(ShowPublicZoneNameServerRequest showPublicZoneNameServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showPublicZoneNameServerRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPublicZoneNameServerRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/nameservers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicZoneNameServerRequest);
             return new SyncInvoker<ShowPublicZoneNameServerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPublicZoneNameServerResponse>);
@@ -1318,7 +1318,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowResolverRuleResponse ShowResolverRule(ShowResolverRuleRequest showResolverRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resolverrule_id", showResolverRuleRequest.ResolverruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResolverRuleRequest.ResolverruleId, out var valueOfResolverruleId)) urlParam.Add("resolverrule_id", valueOfResolverruleId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrules/{resolverrule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResolverRuleRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1328,7 +1328,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowResolverRuleResponse> ShowResolverRuleInvoker(ShowResolverRuleRequest showResolverRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resolverrule_id", showResolverRuleRequest.ResolverruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResolverRuleRequest.ResolverruleId, out var valueOfResolverruleId)) urlParam.Add("resolverrule_id", valueOfResolverruleId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrules/{resolverrule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResolverRuleRequest);
             return new SyncInvoker<ShowResolverRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResolverRuleResponse>);
@@ -1344,8 +1344,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowResourceTagResponse ShowResourceTag(ShowResourceTagRequest showResourceTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showResourceTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", showResourceTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourceTagRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(showResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceTagRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1355,8 +1355,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowResourceTagResponse> ShowResourceTagInvoker(ShowResourceTagRequest showResourceTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", showResourceTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", showResourceTagRequest.ResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showResourceTagRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(showResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceTagRequest);
             return new SyncInvoker<ShowResourceTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResourceTagResponse>);
@@ -1372,7 +1372,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdateCustomLineResponse UpdateCustomLine(UpdateCustomLineRequest updateCustomLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("line_id", updateCustomLineRequest.LineId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCustomLineRequest.LineId, out var valueOfLineId)) urlParam.Add("line_id", valueOfLineId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/customlines/{line_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCustomLineRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1382,7 +1382,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdateCustomLineResponse> UpdateCustomLineInvoker(UpdateCustomLineRequest updateCustomLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("line_id", updateCustomLineRequest.LineId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCustomLineRequest.LineId, out var valueOfLineId)) urlParam.Add("line_id", valueOfLineId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/customlines/{line_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCustomLineRequest);
             return new SyncInvoker<UpdateCustomLineResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateCustomLineResponse>);
@@ -1398,7 +1398,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest updateEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", updateEndpointRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEndpointRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1408,7 +1408,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdateEndpointResponse> UpdateEndpointInvoker(UpdateEndpointRequest updateEndpointRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("endpoint_id", updateEndpointRequest.EndpointId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEndpointRequest.EndpointId, out var valueOfEndpointId)) urlParam.Add("endpoint_id", valueOfEndpointId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/endpoints/{endpoint_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEndpointRequest);
             return new SyncInvoker<UpdateEndpointResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEndpointResponse>);
@@ -1424,7 +1424,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdateLineGroupsResponse UpdateLineGroups(UpdateLineGroupsRequest updateLineGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("linegroup_id", updateLineGroupsRequest.LinegroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLineGroupsRequest.LinegroupId, out var valueOfLinegroupId)) urlParam.Add("linegroup_id", valueOfLinegroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/linegroups/{linegroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLineGroupsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1434,7 +1434,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdateLineGroupsResponse> UpdateLineGroupsInvoker(UpdateLineGroupsRequest updateLineGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("linegroup_id", updateLineGroupsRequest.LinegroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLineGroupsRequest.LinegroupId, out var valueOfLinegroupId)) urlParam.Add("linegroup_id", valueOfLinegroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/linegroups/{linegroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLineGroupsRequest);
             return new SyncInvoker<UpdateLineGroupsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateLineGroupsResponse>);
@@ -1450,7 +1450,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdatePrivateZoneResponse UpdatePrivateZone(UpdatePrivateZoneRequest updatePrivateZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updatePrivateZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateZoneRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1460,7 +1460,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdatePrivateZoneResponse> UpdatePrivateZoneInvoker(UpdatePrivateZoneRequest updatePrivateZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updatePrivateZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateZoneRequest);
             return new SyncInvoker<UpdatePrivateZoneResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdatePrivateZoneResponse>);
@@ -1476,7 +1476,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdatePrivateZoneStatusResponse UpdatePrivateZoneStatus(UpdatePrivateZoneStatusRequest updatePrivateZoneStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updatePrivateZoneStatusRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateZoneStatusRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateZoneStatusRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1486,7 +1486,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdatePrivateZoneStatusResponse> UpdatePrivateZoneStatusInvoker(UpdatePrivateZoneStatusRequest updatePrivateZoneStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updatePrivateZoneStatusRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePrivateZoneStatusRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePrivateZoneStatusRequest);
             return new SyncInvoker<UpdatePrivateZoneStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePrivateZoneStatusResponse>);
@@ -1505,7 +1505,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdatePublicZoneResponse UpdatePublicZone(UpdatePublicZoneRequest updatePublicZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updatePublicZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePublicZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePublicZoneRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1515,7 +1515,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdatePublicZoneResponse> UpdatePublicZoneInvoker(UpdatePublicZoneRequest updatePublicZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updatePublicZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePublicZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePublicZoneRequest);
             return new SyncInvoker<UpdatePublicZoneResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdatePublicZoneResponse>);
@@ -1534,7 +1534,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdatePublicZoneStatusResponse UpdatePublicZoneStatus(UpdatePublicZoneStatusRequest updatePublicZoneStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updatePublicZoneStatusRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePublicZoneStatusRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePublicZoneStatusRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1544,7 +1544,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdatePublicZoneStatusResponse> UpdatePublicZoneStatusInvoker(UpdatePublicZoneStatusRequest updatePublicZoneStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updatePublicZoneStatusRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePublicZoneStatusRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePublicZoneStatusRequest);
             return new SyncInvoker<UpdatePublicZoneStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePublicZoneStatusResponse>);
@@ -1560,7 +1560,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdateResolverRuleResponse UpdateResolverRule(UpdateResolverRuleRequest updateResolverRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resolverrule_id", updateResolverRuleRequest.ResolverruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateResolverRuleRequest.ResolverruleId, out var valueOfResolverruleId)) urlParam.Add("resolverrule_id", valueOfResolverruleId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrules/{resolverrule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResolverRuleRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1570,7 +1570,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdateResolverRuleResponse> UpdateResolverRuleInvoker(UpdateResolverRuleRequest updateResolverRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resolverrule_id", updateResolverRuleRequest.ResolverruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateResolverRuleRequest.ResolverruleId, out var valueOfResolverruleId)) urlParam.Add("resolverrule_id", valueOfResolverruleId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrules/{resolverrule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResolverRuleRequest);
             return new SyncInvoker<UpdateResolverRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateResolverRuleResponse>);
@@ -1586,7 +1586,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DisableDnssecConfigResponse DisableDnssecConfig(DisableDnssecConfigRequest disableDnssecConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", disableDnssecConfigRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableDnssecConfigRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/disable-dnssec", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableDnssecConfigRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1596,7 +1596,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DisableDnssecConfigResponse> DisableDnssecConfigInvoker(DisableDnssecConfigRequest disableDnssecConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", disableDnssecConfigRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disableDnssecConfigRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/disable-dnssec", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableDnssecConfigRequest);
             return new SyncInvoker<DisableDnssecConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<DisableDnssecConfigResponse>);
@@ -1612,7 +1612,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public EnableDnssecConfigResponse EnableDnssecConfig(EnableDnssecConfigRequest enableDnssecConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", enableDnssecConfigRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableDnssecConfigRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/enable-dnssec", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnssecConfigRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1622,7 +1622,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<EnableDnssecConfigResponse> EnableDnssecConfigInvoker(EnableDnssecConfigRequest enableDnssecConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", enableDnssecConfigRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableDnssecConfigRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/enable-dnssec", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnssecConfigRequest);
             return new SyncInvoker<EnableDnssecConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<EnableDnssecConfigResponse>);
@@ -1638,7 +1638,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowDnssecConfigResponse ShowDnssecConfig(ShowDnssecConfigRequest showDnssecConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showDnssecConfigRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDnssecConfigRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/dnssec", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDnssecConfigRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1648,7 +1648,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowDnssecConfigResponse> ShowDnssecConfigInvoker(ShowDnssecConfigRequest showDnssecConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showDnssecConfigRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDnssecConfigRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/dnssec", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDnssecConfigRequest);
             return new SyncInvoker<ShowDnssecConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDnssecConfigResponse>);
@@ -1664,8 +1664,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public CreateEipRecordSetResponse CreateEipRecordSet(CreateEipRecordSetRequest createEipRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", createEipRecordSetRequest.Region.ToString());
-            urlParam.Add("floatingip_id", createEipRecordSetRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createEipRecordSetRequest.Region, out var valueOfRegion)) urlParam.Add("region", valueOfRegion);
+            if (StringUtils.TryConvertToNonEmptyString(createEipRecordSetRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEipRecordSetRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1675,8 +1675,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<CreateEipRecordSetResponse> CreateEipRecordSetInvoker(CreateEipRecordSetRequest createEipRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", createEipRecordSetRequest.Region.ToString());
-            urlParam.Add("floatingip_id", createEipRecordSetRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createEipRecordSetRequest.Region, out var valueOfRegion)) urlParam.Add("region", valueOfRegion);
+            if (StringUtils.TryConvertToNonEmptyString(createEipRecordSetRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEipRecordSetRequest);
             return new SyncInvoker<CreateEipRecordSetResponse>(this, "PATCH", request, JsonUtils.DeSerialize<CreateEipRecordSetResponse>);
@@ -1692,7 +1692,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public CreateRecordSetResponse CreateRecordSet(CreateRecordSetRequest createRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", createRecordSetRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1702,7 +1702,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<CreateRecordSetResponse> CreateRecordSetInvoker(CreateRecordSetRequest createRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", createRecordSetRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetRequest);
             return new SyncInvoker<CreateRecordSetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordSetResponse>);
@@ -1718,8 +1718,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DeleteRecordSetResponse DeleteRecordSet(DeleteRecordSetRequest deleteRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deleteRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", deleteRecordSetRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordSetRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1729,8 +1729,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DeleteRecordSetResponse> DeleteRecordSetInvoker(DeleteRecordSetRequest deleteRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deleteRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", deleteRecordSetRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordSetRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetRequest);
             return new SyncInvoker<DeleteRecordSetResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteRecordSetResponse>);
@@ -1794,7 +1794,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ListRecordSetsByZoneResponse ListRecordSetsByZone(ListRecordSetsByZoneRequest listRecordSetsByZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", listRecordSetsByZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRecordSetsByZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsByZoneRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1804,7 +1804,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ListRecordSetsByZoneResponse> ListRecordSetsByZoneInvoker(ListRecordSetsByZoneRequest listRecordSetsByZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", listRecordSetsByZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listRecordSetsByZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRecordSetsByZoneRequest);
             return new SyncInvoker<ListRecordSetsByZoneResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRecordSetsByZoneResponse>);
@@ -1820,8 +1820,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public RestorePtrRecordResponse RestorePtrRecord(RestorePtrRecordRequest restorePtrRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", restorePtrRecordRequest.Region.ToString());
-            urlParam.Add("floatingip_id", restorePtrRecordRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restorePtrRecordRequest.Region, out var valueOfRegion)) urlParam.Add("region", valueOfRegion);
+            if (StringUtils.TryConvertToNonEmptyString(restorePtrRecordRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restorePtrRecordRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1831,8 +1831,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<RestorePtrRecordResponse> RestorePtrRecordInvoker(RestorePtrRecordRequest restorePtrRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", restorePtrRecordRequest.Region.ToString());
-            urlParam.Add("floatingip_id", restorePtrRecordRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restorePtrRecordRequest.Region, out var valueOfRegion)) urlParam.Add("region", valueOfRegion);
+            if (StringUtils.TryConvertToNonEmptyString(restorePtrRecordRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restorePtrRecordRequest);
             return new SyncInvoker<RestorePtrRecordResponse>(this, "PATCH", request, JsonUtils.DeSerializeNull<RestorePtrRecordResponse>);
@@ -1848,8 +1848,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowPtrRecordSetResponse ShowPtrRecordSet(ShowPtrRecordSetRequest showPtrRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", showPtrRecordSetRequest.Region.ToString());
-            urlParam.Add("floatingip_id", showPtrRecordSetRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPtrRecordSetRequest.Region, out var valueOfRegion)) urlParam.Add("region", valueOfRegion);
+            if (StringUtils.TryConvertToNonEmptyString(showPtrRecordSetRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRecordSetRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1859,8 +1859,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowPtrRecordSetResponse> ShowPtrRecordSetInvoker(ShowPtrRecordSetRequest showPtrRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", showPtrRecordSetRequest.Region.ToString());
-            urlParam.Add("floatingip_id", showPtrRecordSetRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPtrRecordSetRequest.Region, out var valueOfRegion)) urlParam.Add("region", valueOfRegion);
+            if (StringUtils.TryConvertToNonEmptyString(showPtrRecordSetRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRecordSetRequest);
             return new SyncInvoker<ShowPtrRecordSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPtrRecordSetResponse>);
@@ -1876,8 +1876,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowRecordSetResponse ShowRecordSet(ShowRecordSetRequest showRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", showRecordSetRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(showRecordSetRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1887,8 +1887,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowRecordSetResponse> ShowRecordSetInvoker(ShowRecordSetRequest showRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", showRecordSetRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(showRecordSetRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetRequest);
             return new SyncInvoker<ShowRecordSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordSetResponse>);
@@ -1904,8 +1904,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdatePtrRecordResponse UpdatePtrRecord(UpdatePtrRecordRequest updatePtrRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", updatePtrRecordRequest.Region.ToString());
-            urlParam.Add("floatingip_id", updatePtrRecordRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePtrRecordRequest.Region, out var valueOfRegion)) urlParam.Add("region", valueOfRegion);
+            if (StringUtils.TryConvertToNonEmptyString(updatePtrRecordRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRecordRequest);
             var response = DoHttpRequestSync("PATCH", request);
@@ -1915,8 +1915,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdatePtrRecordResponse> UpdatePtrRecordInvoker(UpdatePtrRecordRequest updatePtrRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("region", updatePtrRecordRequest.Region.ToString());
-            urlParam.Add("floatingip_id", updatePtrRecordRequest.FloatingipId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePtrRecordRequest.Region, out var valueOfRegion)) urlParam.Add("region", valueOfRegion);
+            if (StringUtils.TryConvertToNonEmptyString(updatePtrRecordRequest.FloatingipId, out var valueOfFloatingipId)) urlParam.Add("floatingip_id", valueOfFloatingipId);
             var urlPath = HttpUtils.AddUrlPath("/v2/reverse/floatingips/{region}:{floatingip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRecordRequest);
             return new SyncInvoker<UpdatePtrRecordResponse>(this, "PATCH", request, JsonUtils.DeSerialize<UpdatePtrRecordResponse>);
@@ -1932,8 +1932,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdateRecordSetResponse UpdateRecordSet(UpdateRecordSetRequest updateRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updateRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", updateRecordSetRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordSetRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1943,8 +1943,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdateRecordSetResponse> UpdateRecordSetInvoker(UpdateRecordSetRequest updateRecordSetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updateRecordSetRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", updateRecordSetRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordSetRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetRequest);
             return new SyncInvoker<UpdateRecordSetResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecordSetResponse>);
@@ -1984,7 +1984,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public CreateRecordSetWithLineResponse CreateRecordSetWithLine(CreateRecordSetWithLineRequest createRecordSetWithLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", createRecordSetWithLineRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithLineRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1994,7 +1994,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<CreateRecordSetWithLineResponse> CreateRecordSetWithLineInvoker(CreateRecordSetWithLineRequest createRecordSetWithLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", createRecordSetWithLineRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithLineRequest);
             return new SyncInvoker<CreateRecordSetWithLineResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordSetWithLineResponse>);
@@ -2010,7 +2010,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DeletePtrResponse DeletePtr(DeletePtrRequest deletePtrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", deletePtrRequest.PtrId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePtrRequest.PtrId, out var valueOfPtrId)) urlParam.Add("ptr_id", valueOfPtrId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePtrRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2020,7 +2020,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DeletePtrResponse> DeletePtrInvoker(DeletePtrRequest deletePtrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", deletePtrRequest.PtrId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePtrRequest.PtrId, out var valueOfPtrId)) urlParam.Add("ptr_id", valueOfPtrId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePtrRequest);
             return new SyncInvoker<DeletePtrResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePtrResponse>);
@@ -2036,8 +2036,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public DeleteRecordSetsResponse DeleteRecordSets(DeleteRecordSetsRequest deleteRecordSetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deleteRecordSetsRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", deleteRecordSetsRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordSetsRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordSetsRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetsRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2047,8 +2047,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<DeleteRecordSetsResponse> DeleteRecordSetsInvoker(DeleteRecordSetsRequest deleteRecordSetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", deleteRecordSetsRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", deleteRecordSetsRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordSetsRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordSetsRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordSetsRequest);
             return new SyncInvoker<DeleteRecordSetsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteRecordSetsResponse>);
@@ -2088,7 +2088,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ListPublicZoneLinesResponse ListPublicZoneLines(ListPublicZoneLinesRequest listPublicZoneLinesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", listPublicZoneLinesRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPublicZoneLinesRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/lines", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicZoneLinesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2098,7 +2098,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ListPublicZoneLinesResponse> ListPublicZoneLinesInvoker(ListPublicZoneLinesRequest listPublicZoneLinesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", listPublicZoneLinesRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPublicZoneLinesRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/lines", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicZoneLinesRequest);
             return new SyncInvoker<ListPublicZoneLinesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPublicZoneLinesResponse>);
@@ -2138,7 +2138,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SetRecordSetsStatusResponse SetRecordSetsStatus(SetRecordSetsStatusRequest setRecordSetsStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("recordset_id", setRecordSetsStatusRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setRecordSetsStatusRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/statuses/set", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecordSetsStatusRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2148,7 +2148,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<SetRecordSetsStatusResponse> SetRecordSetsStatusInvoker(SetRecordSetsStatusRequest setRecordSetsStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("recordset_id", setRecordSetsStatusRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setRecordSetsStatusRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/statuses/set", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecordSetsStatusRequest);
             return new SyncInvoker<SetRecordSetsStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetRecordSetsStatusResponse>);
@@ -2164,7 +2164,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowPtrResponse ShowPtr(ShowPtrRequest showPtrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", showPtrRequest.PtrId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPtrRequest.PtrId, out var valueOfPtrId)) urlParam.Add("ptr_id", valueOfPtrId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2174,7 +2174,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowPtrResponse> ShowPtrInvoker(ShowPtrRequest showPtrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", showPtrRequest.PtrId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPtrRequest.PtrId, out var valueOfPtrId)) urlParam.Add("ptr_id", valueOfPtrId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPtrRequest);
             return new SyncInvoker<ShowPtrResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPtrResponse>);
@@ -2190,7 +2190,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowRecordSetByZoneResponse ShowRecordSetByZone(ShowRecordSetByZoneRequest showRecordSetByZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetByZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRecordSetByZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetByZoneRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2200,7 +2200,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowRecordSetByZoneResponse> ShowRecordSetByZoneInvoker(ShowRecordSetByZoneRequest showRecordSetByZoneRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetByZoneRequest.ZoneId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRecordSetByZoneRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetByZoneRequest);
             return new SyncInvoker<ShowRecordSetByZoneResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordSetByZoneResponse>);
@@ -2216,8 +2216,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public ShowRecordSetWithLineResponse ShowRecordSetWithLine(ShowRecordSetWithLineRequest showRecordSetWithLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetWithLineRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", showRecordSetWithLineRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(showRecordSetWithLineRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetWithLineRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2227,8 +2227,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<ShowRecordSetWithLineResponse> ShowRecordSetWithLineInvoker(ShowRecordSetWithLineRequest showRecordSetWithLineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", showRecordSetWithLineRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", showRecordSetWithLineRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(showRecordSetWithLineRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordSetWithLineRequest);
             return new SyncInvoker<ShowRecordSetWithLineResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordSetWithLineResponse>);
@@ -2244,7 +2244,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdatePtrResponse UpdatePtr(UpdatePtrRequest updatePtrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", updatePtrRequest.PtrId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePtrRequest.PtrId, out var valueOfPtrId)) urlParam.Add("ptr_id", valueOfPtrId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2254,7 +2254,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdatePtrResponse> UpdatePtrInvoker(UpdatePtrRequest updatePtrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ptr_id", updatePtrRequest.PtrId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePtrRequest.PtrId, out var valueOfPtrId)) urlParam.Add("ptr_id", valueOfPtrId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs/{ptr_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePtrRequest);
             return new SyncInvoker<UpdatePtrResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePtrResponse>);
@@ -2270,8 +2270,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public UpdateRecordSetsResponse UpdateRecordSets(UpdateRecordSetsRequest updateRecordSetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updateRecordSetsRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", updateRecordSetsRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordSetsRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordSetsRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2281,8 +2281,8 @@ namespace HuaweiCloud.SDK.Dns.V2
         public SyncInvoker<UpdateRecordSetsResponse> UpdateRecordSetsInvoker(UpdateRecordSetsRequest updateRecordSetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("zone_id", updateRecordSetsRequest.ZoneId.ToString());
-            urlParam.Add("recordset_id", updateRecordSetsRequest.RecordsetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordSetsRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordSetsRequest.RecordsetId, out var valueOfRecordsetId)) urlParam.Add("recordset_id", valueOfRecordsetId);
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/{recordset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRecordSetsRequest);
             return new SyncInvoker<UpdateRecordSetsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecordSetsResponse>);

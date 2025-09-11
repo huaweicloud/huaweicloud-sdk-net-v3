@@ -40,6 +40,30 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         [JsonProperty("enable_async_status_log", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableAsyncStatusLog { get; set; }
 
+        /// <summary>
+        /// 自定义日志查询组id。
+        /// </summary>
+        [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupId { get; set; }
+
+        /// <summary>
+        /// 自定义日志查询流id。
+        /// </summary>
+        [JsonProperty("log_stream_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogStreamId { get; set; }
+
+        /// <summary>
+        /// 自定义日志查询组名称。
+        /// </summary>
+        [JsonProperty("log_group_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupName { get; set; }
+
+        /// <summary>
+        /// 自定义日志查询流名称。
+        /// </summary>
+        [JsonProperty("log_stream_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogStreamName { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +77,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             sb.Append("  maxAsyncRetryAttempts: ").Append(MaxAsyncRetryAttempts).Append("\n");
             sb.Append("  destinationConfig: ").Append(DestinationConfig).Append("\n");
             sb.Append("  enableAsyncStatusLog: ").Append(EnableAsyncStatusLog).Append("\n");
+            sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
+            sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
+            sb.Append("  logGroupName: ").Append(LogGroupName).Append("\n");
+            sb.Append("  logStreamName: ").Append(LogStreamName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +103,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
             if (this.MaxAsyncRetryAttempts != input.MaxAsyncRetryAttempts || (this.MaxAsyncRetryAttempts != null && !this.MaxAsyncRetryAttempts.Equals(input.MaxAsyncRetryAttempts))) return false;
             if (this.DestinationConfig != input.DestinationConfig || (this.DestinationConfig != null && !this.DestinationConfig.Equals(input.DestinationConfig))) return false;
             if (this.EnableAsyncStatusLog != input.EnableAsyncStatusLog || (this.EnableAsyncStatusLog != null && !this.EnableAsyncStatusLog.Equals(input.EnableAsyncStatusLog))) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
+            if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
+            if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
+            if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
 
             return true;
         }
@@ -91,6 +123,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
                 if (this.MaxAsyncRetryAttempts != null) hashCode = hashCode * 59 + this.MaxAsyncRetryAttempts.GetHashCode();
                 if (this.DestinationConfig != null) hashCode = hashCode * 59 + this.DestinationConfig.GetHashCode();
                 if (this.EnableAsyncStatusLog != null) hashCode = hashCode * 59 + this.EnableAsyncStatusLog.GetHashCode();
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
+                if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
                 return hashCode;
             }
         }

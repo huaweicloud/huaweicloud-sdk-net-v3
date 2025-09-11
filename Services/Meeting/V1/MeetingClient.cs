@@ -216,7 +216,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public AddResourceResponse AddResource(AddResourceRequest addResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("corp_id", addResourceRequest.CorpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addResourceRequest.CorpId, out var valueOfCorpId)) urlParam.Add("corp_id", valueOfCorpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{corp_id}/resource", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addResourceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<AddResourceResponse> AddResourceInvoker(AddResourceRequest addResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("corp_id", addResourceRequest.CorpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addResourceRequest.CorpId, out var valueOfCorpId)) urlParam.Add("corp_id", valueOfCorpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{corp_id}/resource", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addResourceRequest);
             return new SyncInvoker<AddResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddResourceResponse>);
@@ -387,7 +387,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public AssociateVmrResponse AssociateVmr(AssociateVmrRequest associateVmrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", associateVmrRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateVmrRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/vmr/assign-to-member/{account}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateVmrRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -397,7 +397,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<AssociateVmrResponse> AssociateVmrInvoker(AssociateVmrRequest associateVmrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", associateVmrRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(associateVmrRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/vmr/assign-to-member/{account}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateVmrRequest);
             return new SyncInvoker<AssociateVmrResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AssociateVmrResponse>);
@@ -661,7 +661,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public BatchUpdateDevicesStatusResponse BatchUpdateDevicesStatus(BatchUpdateDevicesStatusRequest batchUpdateDevicesStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("value", batchUpdateDevicesStatusRequest.Value.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateDevicesStatusRequest.Value, out var valueOfValue)) urlParam.Add("value", valueOfValue);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/device/status/{value}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateDevicesStatusRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -671,7 +671,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<BatchUpdateDevicesStatusResponse> BatchUpdateDevicesStatusInvoker(BatchUpdateDevicesStatusRequest batchUpdateDevicesStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("value", batchUpdateDevicesStatusRequest.Value.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateDevicesStatusRequest.Value, out var valueOfValue)) urlParam.Add("value", valueOfValue);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/device/status/{value}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateDevicesStatusRequest);
             return new SyncInvoker<BatchUpdateDevicesStatusResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<BatchUpdateDevicesStatusResponse>);
@@ -687,7 +687,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public BatchUpdateUserStatusResponse BatchUpdateUserStatus(BatchUpdateUserStatusRequest batchUpdateUserStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("value", batchUpdateUserStatusRequest.Value.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateUserStatusRequest.Value, out var valueOfValue)) urlParam.Add("value", valueOfValue);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/member/status/{value}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateUserStatusRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -697,7 +697,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<BatchUpdateUserStatusResponse> BatchUpdateUserStatusInvoker(BatchUpdateUserStatusRequest batchUpdateUserStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("value", batchUpdateUserStatusRequest.Value.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateUserStatusRequest.Value, out var valueOfValue)) urlParam.Add("value", valueOfValue);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/member/status/{value}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateUserStatusRequest);
             return new SyncInvoker<BatchUpdateUserStatusResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<BatchUpdateUserStatusResponse>);
@@ -1183,7 +1183,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public DeleteAppIdResponse DeleteAppId(DeleteAppIdRequest deleteAppIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", deleteAppIdRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAppIdRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v2/usg/acs/corp/app/{app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppIdRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1193,7 +1193,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<DeleteAppIdResponse> DeleteAppIdInvoker(DeleteAppIdRequest deleteAppIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", deleteAppIdRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAppIdRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v2/usg/acs/corp/app/{app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppIdRequest);
             return new SyncInvoker<DeleteAppIdResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAppIdResponse>);
@@ -1233,7 +1233,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public DeleteCorpResponse DeleteCorp(DeleteCorpRequest deleteCorpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteCorpRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCorpRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCorpRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1243,7 +1243,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<DeleteCorpResponse> DeleteCorpInvoker(DeleteCorpRequest deleteCorpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteCorpRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCorpRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCorpRequest);
             return new SyncInvoker<DeleteCorpResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteCorpResponse>);
@@ -1283,7 +1283,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public DeleteDepartmentResponse DeleteDepartment(DeleteDepartmentRequest deleteDepartmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dept_code", deleteDepartmentRequest.DeptCode.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDepartmentRequest.DeptCode, out var valueOfDeptCode)) urlParam.Add("dept_code", valueOfDeptCode);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/dept/{dept_code}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDepartmentRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1293,7 +1293,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<DeleteDepartmentResponse> DeleteDepartmentInvoker(DeleteDepartmentRequest deleteDepartmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dept_code", deleteDepartmentRequest.DeptCode.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDepartmentRequest.DeptCode, out var valueOfDeptCode)) urlParam.Add("dept_code", valueOfDeptCode);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/dept/{dept_code}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDepartmentRequest);
             return new SyncInvoker<DeleteDepartmentResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDepartmentResponse>);
@@ -1357,7 +1357,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public DeleteResourceResponse DeleteResource(DeleteResourceRequest deleteResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("corp_id", deleteResourceRequest.CorpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteResourceRequest.CorpId, out var valueOfCorpId)) urlParam.Add("corp_id", valueOfCorpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{corp_id}/resource/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteResourceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1367,7 +1367,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<DeleteResourceResponse> DeleteResourceInvoker(DeleteResourceRequest deleteResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("corp_id", deleteResourceRequest.CorpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteResourceRequest.CorpId, out var valueOfCorpId)) urlParam.Add("corp_id", valueOfCorpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{corp_id}/resource/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteResourceRequest);
             return new SyncInvoker<DeleteResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteResourceResponse>);
@@ -1455,7 +1455,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public DeleteWebinarResponse DeleteWebinar(DeleteWebinarRequest deleteWebinarRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("conference_id", deleteWebinarRequest.ConferenceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteWebinarRequest.ConferenceId, out var valueOfConferenceId)) urlParam.Add("conference_id", valueOfConferenceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/wss/webinar/open/conferences/{conference_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWebinarRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1465,7 +1465,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<DeleteWebinarResponse> DeleteWebinarInvoker(DeleteWebinarRequest deleteWebinarRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("conference_id", deleteWebinarRequest.ConferenceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteWebinarRequest.ConferenceId, out var valueOfConferenceId)) urlParam.Add("conference_id", valueOfConferenceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/wss/webinar/open/conferences/{conference_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWebinarRequest);
             return new SyncInvoker<DeleteWebinarResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteWebinarResponse>);
@@ -1481,7 +1481,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public DisassociateVmrResponse DisassociateVmr(DisassociateVmrRequest disassociateVmrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", disassociateVmrRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateVmrRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/vmr/recycle-from-member/{account}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateVmrRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1491,7 +1491,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<DisassociateVmrResponse> DisassociateVmrInvoker(DisassociateVmrRequest disassociateVmrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", disassociateVmrRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(disassociateVmrRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/vmr/recycle-from-member/{account}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateVmrRequest);
             return new SyncInvoker<DisassociateVmrResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DisassociateVmrResponse>);
@@ -2040,7 +2040,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ResetActivecodeResponse ResetActivecode(ResetActivecodeRequest resetActivecodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sn", resetActivecodeRequest.Sn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetActivecodeRequest.Sn, out var valueOfSn)) urlParam.Add("sn", valueOfSn);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/device/{sn}/activecode", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetActivecodeRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2050,7 +2050,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ResetActivecodeResponse> ResetActivecodeInvoker(ResetActivecodeRequest resetActivecodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sn", resetActivecodeRequest.Sn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetActivecodeRequest.Sn, out var valueOfSn)) urlParam.Add("sn", valueOfSn);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/device/{sn}/activecode", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetActivecodeRequest);
             return new SyncInvoker<ResetActivecodeResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetActivecodeResponse>);
@@ -2066,7 +2066,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ResetAppKeyResponse ResetAppKey(ResetAppKeyRequest resetAppKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", resetAppKeyRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetAppKeyRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v2/usg/acs/corp/app/{app_id}/reset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetAppKeyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2076,7 +2076,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ResetAppKeyResponse> ResetAppKeyInvoker(ResetAppKeyRequest resetAppKeyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", resetAppKeyRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetAppKeyRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v2/usg/acs/corp/app/{app_id}/reset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetAppKeyRequest);
             return new SyncInvoker<ResetAppKeyResponse>(this, "PUT", request, JsonUtils.DeSerialize<ResetAppKeyResponse>);
@@ -2140,7 +2140,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ResetVisionActiveCodeResponse ResetVisionActiveCode(ResetVisionActiveCodeRequest resetVisionActiveCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", resetVisionActiveCodeRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetVisionActiveCodeRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/vision/activecode/{account}/reset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetVisionActiveCodeRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2150,7 +2150,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ResetVisionActiveCodeResponse> ResetVisionActiveCodeInvoker(ResetVisionActiveCodeRequest resetVisionActiveCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", resetVisionActiveCodeRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetVisionActiveCodeRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/vision/activecode/{account}/reset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetVisionActiveCodeRequest);
             return new SyncInvoker<ResetVisionActiveCodeResponse>(this, "PUT", request, JsonUtils.DeSerialize<ResetVisionActiveCodeResponse>);
@@ -2707,7 +2707,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SearchResourceResponse SearchResource(SearchResourceRequest searchResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("corp_id", searchResourceRequest.CorpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchResourceRequest.CorpId, out var valueOfCorpId)) urlParam.Add("corp_id", valueOfCorpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{corp_id}/resource", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchResourceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2717,7 +2717,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<SearchResourceResponse> SearchResourceInvoker(SearchResourceRequest searchResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("corp_id", searchResourceRequest.CorpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchResourceRequest.CorpId, out var valueOfCorpId)) urlParam.Add("corp_id", valueOfCorpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{corp_id}/resource", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchResourceRequest);
             return new SyncInvoker<SearchResourceResponse>(this, "GET", request, JsonUtils.DeSerialize<SearchResourceResponse>);
@@ -2733,7 +2733,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SearchResourceOpRecordResponse SearchResourceOpRecord(SearchResourceOpRecordRequest searchResourceOpRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("corp_id", searchResourceOpRecordRequest.CorpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchResourceOpRecordRequest.CorpId, out var valueOfCorpId)) urlParam.Add("corp_id", valueOfCorpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{corp_id}/resource-record", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchResourceOpRecordRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2743,7 +2743,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<SearchResourceOpRecordResponse> SearchResourceOpRecordInvoker(SearchResourceOpRecordRequest searchResourceOpRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("corp_id", searchResourceOpRecordRequest.CorpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(searchResourceOpRecordRequest.CorpId, out var valueOfCorpId)) urlParam.Add("corp_id", valueOfCorpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{corp_id}/resource-record", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", searchResourceOpRecordRequest);
             return new SyncInvoker<SearchResourceOpRecordResponse>(this, "GET", request, JsonUtils.DeSerialize<SearchResourceOpRecordResponse>);
@@ -3167,7 +3167,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SetUserProfileImageResponse SetUserProfileImage(SetUserProfileImageRequest setUserProfileImageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", setUserProfileImageRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setUserProfileImageRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/abs/profile-images/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", setUserProfileImageRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -3177,7 +3177,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<SetUserProfileImageResponse> SetUserProfileImageInvoker(SetUserProfileImageRequest setUserProfileImageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", setUserProfileImageRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setUserProfileImageRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/abs/profile-images/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", setUserProfileImageRequest);
             return new SyncInvoker<SetUserProfileImageResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SetUserProfileImageResponse>);
@@ -3241,7 +3241,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ShowCorpResponse ShowCorp(ShowCorpRequest showCorpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showCorpRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCorpRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCorpRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3251,7 +3251,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ShowCorpResponse> ShowCorpInvoker(ShowCorpRequest showCorpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showCorpRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCorpRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCorpRequest);
             return new SyncInvoker<ShowCorpResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCorpResponse>);
@@ -3267,7 +3267,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ShowCorpAdminResponse ShowCorpAdmin(ShowCorpAdminRequest showCorpAdminRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", showCorpAdminRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCorpAdminRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/admin/{account}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCorpAdminRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3277,7 +3277,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ShowCorpAdminResponse> ShowCorpAdminInvoker(ShowCorpAdminRequest showCorpAdminRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", showCorpAdminRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCorpAdminRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/admin/{account}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCorpAdminRequest);
             return new SyncInvoker<ShowCorpAdminResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCorpAdminResponse>);
@@ -3341,7 +3341,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ShowDepartmentResponse ShowDepartment(ShowDepartmentRequest showDepartmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dept_code", showDepartmentRequest.DeptCode.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDepartmentRequest.DeptCode, out var valueOfDeptCode)) urlParam.Add("dept_code", valueOfDeptCode);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/abs/departments/{dept_code}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDepartmentRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3351,7 +3351,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ShowDepartmentResponse> ShowDepartmentInvoker(ShowDepartmentRequest showDepartmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dept_code", showDepartmentRequest.DeptCode.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDepartmentRequest.DeptCode, out var valueOfDeptCode)) urlParam.Add("dept_code", valueOfDeptCode);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/abs/departments/{dept_code}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDepartmentRequest);
             return new SyncInvoker<ShowDepartmentResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDepartmentResponse>);
@@ -3367,7 +3367,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ShowDeptAndChildDeptResponse ShowDeptAndChildDept(ShowDeptAndChildDeptRequest showDeptAndChildDeptRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dept_code", showDeptAndChildDeptRequest.DeptCode.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDeptAndChildDeptRequest.DeptCode, out var valueOfDeptCode)) urlParam.Add("dept_code", valueOfDeptCode);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/member/dept/{dept_code}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeptAndChildDeptRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3377,7 +3377,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ShowDeptAndChildDeptResponse> ShowDeptAndChildDeptInvoker(ShowDeptAndChildDeptRequest showDeptAndChildDeptRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dept_code", showDeptAndChildDeptRequest.DeptCode.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDeptAndChildDeptRequest.DeptCode, out var valueOfDeptCode)) urlParam.Add("dept_code", valueOfDeptCode);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/member/dept/{dept_code}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeptAndChildDeptRequest);
             return new SyncInvoker<ShowDeptAndChildDeptResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDeptAndChildDeptResponse>);
@@ -3394,7 +3394,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ShowDeviceDetailResponse ShowDeviceDetail(ShowDeviceDetailRequest showDeviceDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sn", showDeviceDetailRequest.Sn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDeviceDetailRequest.Sn, out var valueOfSn)) urlParam.Add("sn", valueOfSn);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/device/{sn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeviceDetailRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3404,7 +3404,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ShowDeviceDetailResponse> ShowDeviceDetailInvoker(ShowDeviceDetailRequest showDeviceDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sn", showDeviceDetailRequest.Sn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDeviceDetailRequest.Sn, out var valueOfSn)) urlParam.Add("sn", valueOfSn);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/device/{sn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeviceDetailRequest);
             return new SyncInvoker<ShowDeviceDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDeviceDetailResponse>);
@@ -3557,7 +3557,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ShowMeetingFileResponse ShowMeetingFile(ShowMeetingFileRequest showMeetingFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("file_code", showMeetingFileRequest.FileCode.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMeetingFileRequest.FileCode, out var valueOfFileCode)) urlParam.Add("file_code", valueOfFileCode);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/meeting-files/{file_code}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMeetingFileRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3567,7 +3567,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ShowMeetingFileResponse> ShowMeetingFileInvoker(ShowMeetingFileRequest showMeetingFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("file_code", showMeetingFileRequest.FileCode.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMeetingFileRequest.FileCode, out var valueOfFileCode)) urlParam.Add("file_code", valueOfFileCode);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/meeting-files/{file_code}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMeetingFileRequest);
             return new SyncInvoker<ShowMeetingFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMeetingFileResponse>);
@@ -3703,7 +3703,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ShowProgramResponse ShowProgram(ShowProgramRequest showProgramRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showProgramRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProgramRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/programs/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProgramRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3713,7 +3713,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ShowProgramResponse> ShowProgramInvoker(ShowProgramRequest showProgramRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showProgramRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProgramRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/programs/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProgramRequest);
             return new SyncInvoker<ShowProgramResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProgramResponse>);
@@ -3729,7 +3729,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ShowPublicationResponse ShowPublication(ShowPublicationRequest showPublicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showPublicationRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPublicationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/publications/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicationRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3739,7 +3739,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ShowPublicationResponse> ShowPublicationInvoker(ShowPublicationRequest showPublicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showPublicationRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPublicationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/publications/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPublicationRequest);
             return new SyncInvoker<ShowPublicationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPublicationResponse>);
@@ -3877,7 +3877,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ShowRoomSettingResponse ShowRoomSetting(ShowRoomSettingRequest showRoomSettingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("conference_id", showRoomSettingRequest.ConferenceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRoomSettingRequest.ConferenceId, out var valueOfConferenceId)) urlParam.Add("conference_id", valueOfConferenceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/wss/webinar/open/room-setting/{conference_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRoomSettingRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3887,7 +3887,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ShowRoomSettingResponse> ShowRoomSettingInvoker(ShowRoomSettingRequest showRoomSettingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("conference_id", showRoomSettingRequest.ConferenceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRoomSettingRequest.ConferenceId, out var valueOfConferenceId)) urlParam.Add("conference_id", valueOfConferenceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/wss/webinar/open/room-setting/{conference_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRoomSettingRequest);
             return new SyncInvoker<ShowRoomSettingResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRoomSettingResponse>);
@@ -3975,7 +3975,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ShowUserDetailResponse ShowUserDetail(ShowUserDetailRequest showUserDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", showUserDetailRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserDetailRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/member/{account}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserDetailRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3985,7 +3985,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ShowUserDetailResponse> ShowUserDetailInvoker(ShowUserDetailRequest showUserDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", showUserDetailRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserDetailRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/member/{account}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserDetailRequest);
             return new SyncInvoker<ShowUserDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserDetailResponse>);
@@ -4025,7 +4025,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public ShowWebinarResponse ShowWebinar(ShowWebinarRequest showWebinarRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("conference_id", showWebinarRequest.ConferenceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWebinarRequest.ConferenceId, out var valueOfConferenceId)) urlParam.Add("conference_id", valueOfConferenceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/wss/webinar/open/conferences/{conference_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWebinarRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4035,7 +4035,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<ShowWebinarResponse> ShowWebinarInvoker(ShowWebinarRequest showWebinarRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("conference_id", showWebinarRequest.ConferenceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWebinarRequest.ConferenceId, out var valueOfConferenceId)) urlParam.Add("conference_id", valueOfConferenceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/wss/webinar/open/conferences/{conference_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWebinarRequest);
             return new SyncInvoker<ShowWebinarResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWebinarResponse>);
@@ -4126,7 +4126,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public UpdateAppIdResponse UpdateAppId(UpdateAppIdRequest updateAppIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", updateAppIdRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAppIdRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v2/usg/acs/corp/app/{app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateAppIdRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4136,7 +4136,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<UpdateAppIdResponse> UpdateAppIdInvoker(UpdateAppIdRequest updateAppIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", updateAppIdRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAppIdRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v2/usg/acs/corp/app/{app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", updateAppIdRequest);
             return new SyncInvoker<UpdateAppIdResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAppIdResponse>);
@@ -4176,7 +4176,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public UpdateCorpResponse UpdateCorp(UpdateCorpRequest updateCorpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateCorpRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCorpRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCorpRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4186,7 +4186,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<UpdateCorpResponse> UpdateCorpInvoker(UpdateCorpRequest updateCorpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateCorpRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCorpRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateCorpRequest);
             return new SyncInvoker<UpdateCorpResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateCorpResponse>);
@@ -4226,7 +4226,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public UpdateDepartmentResponse UpdateDepartment(UpdateDepartmentRequest updateDepartmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dept_code", updateDepartmentRequest.DeptCode.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDepartmentRequest.DeptCode, out var valueOfDeptCode)) urlParam.Add("dept_code", valueOfDeptCode);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/dept/{dept_code}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDepartmentRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4236,7 +4236,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<UpdateDepartmentResponse> UpdateDepartmentInvoker(UpdateDepartmentRequest updateDepartmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dept_code", updateDepartmentRequest.DeptCode.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDepartmentRequest.DeptCode, out var valueOfDeptCode)) urlParam.Add("dept_code", valueOfDeptCode);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/dept/{dept_code}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDepartmentRequest);
             return new SyncInvoker<UpdateDepartmentResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDepartmentResponse>);
@@ -4253,7 +4253,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public UpdateDeviceResponse UpdateDevice(UpdateDeviceRequest updateDeviceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sn", updateDeviceRequest.Sn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDeviceRequest.Sn, out var valueOfSn)) urlParam.Add("sn", valueOfSn);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/device/{sn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4263,7 +4263,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<UpdateDeviceResponse> UpdateDeviceInvoker(UpdateDeviceRequest updateDeviceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("sn", updateDeviceRequest.Sn.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDeviceRequest.Sn, out var valueOfSn)) urlParam.Add("sn", valueOfSn);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/device/{sn}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeviceRequest);
             return new SyncInvoker<UpdateDeviceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDeviceResponse>);
@@ -4279,7 +4279,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public UpdateMaterialResponse UpdateMaterial(UpdateMaterialRequest updateMaterialRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateMaterialRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMaterialRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/materials/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateMaterialRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4289,7 +4289,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<UpdateMaterialResponse> UpdateMaterialInvoker(UpdateMaterialRequest updateMaterialRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateMaterialRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMaterialRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/materials/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateMaterialRequest);
             return new SyncInvoker<UpdateMaterialResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateMaterialResponse>);
@@ -4336,7 +4336,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public UpdateMemberVmrResponse UpdateMemberVmr(UpdateMemberVmrRequest updateMemberVmrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateMemberVmrRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMemberVmrRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/member/vmr/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateMemberVmrRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4346,7 +4346,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<UpdateMemberVmrResponse> UpdateMemberVmrInvoker(UpdateMemberVmrRequest updateMemberVmrRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateMemberVmrRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMemberVmrRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/member/vmr/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateMemberVmrRequest);
             return new SyncInvoker<UpdateMemberVmrResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateMemberVmrResponse>);
@@ -4386,7 +4386,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public UpdateProgramResponse UpdateProgram(UpdateProgramRequest updateProgramRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateProgramRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProgramRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/programs/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProgramRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4396,7 +4396,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<UpdateProgramResponse> UpdateProgramInvoker(UpdateProgramRequest updateProgramRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateProgramRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProgramRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/programs/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProgramRequest);
             return new SyncInvoker<UpdateProgramResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateProgramResponse>);
@@ -4412,7 +4412,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public UpdatePublicationResponse UpdatePublication(UpdatePublicationRequest updatePublicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updatePublicationRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePublicationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/publications/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePublicationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4422,7 +4422,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<UpdatePublicationResponse> UpdatePublicationInvoker(UpdatePublicationRequest updatePublicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updatePublicationRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePublicationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/sss/publications/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePublicationRequest);
             return new SyncInvoker<UpdatePublicationResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePublicationResponse>);
@@ -4517,7 +4517,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public UpdateResourceResponse UpdateResource(UpdateResourceRequest updateResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("corp_id", updateResourceRequest.CorpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateResourceRequest.CorpId, out var valueOfCorpId)) urlParam.Add("corp_id", valueOfCorpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{corp_id}/resource", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResourceRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4527,7 +4527,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<UpdateResourceResponse> UpdateResourceInvoker(UpdateResourceRequest updateResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("corp_id", updateResourceRequest.CorpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateResourceRequest.CorpId, out var valueOfCorpId)) urlParam.Add("corp_id", valueOfCorpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/sp/corp/{corp_id}/resource", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateResourceRequest);
             return new SyncInvoker<UpdateResourceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateResourceResponse>);
@@ -4543,7 +4543,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public UpdateRoomSettingResponse UpdateRoomSetting(UpdateRoomSettingRequest updateRoomSettingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("conference_id", updateRoomSettingRequest.ConferenceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRoomSettingRequest.ConferenceId, out var valueOfConferenceId)) urlParam.Add("conference_id", valueOfConferenceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/wss/webinar/open/room-setting/{conference_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRoomSettingRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4553,7 +4553,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<UpdateRoomSettingResponse> UpdateRoomSettingInvoker(UpdateRoomSettingRequest updateRoomSettingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("conference_id", updateRoomSettingRequest.ConferenceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRoomSettingRequest.ConferenceId, out var valueOfConferenceId)) urlParam.Add("conference_id", valueOfConferenceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/wss/webinar/open/room-setting/{conference_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRoomSettingRequest);
             return new SyncInvoker<UpdateRoomSettingResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateRoomSettingResponse>);
@@ -4617,7 +4617,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public UpdateUserResponse UpdateUser(UpdateUserRequest updateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", updateUserRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/member/{account}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4627,7 +4627,7 @@ namespace HuaweiCloud.SDK.Meeting.V1
         public SyncInvoker<UpdateUserResponse> UpdateUserInvoker(UpdateUserRequest updateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("account", updateUserRequest.Account.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.Account, out var valueOfAccount)) urlParam.Add("account", valueOfAccount);
             var urlPath = HttpUtils.AddUrlPath("/v1/usg/dcs/corp/member/{account}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
             return new SyncInvoker<UpdateUserResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateUserResponse>);

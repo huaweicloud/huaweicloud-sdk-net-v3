@@ -505,7 +505,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public async Task<DeleteRecordCallbackConfigResponse> DeleteRecordCallbackConfigAsync(DeleteRecordCallbackConfigRequest deleteRecordCallbackConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteRecordCallbackConfigRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordCallbackConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/callbacks/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordCallbackConfigRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -515,7 +515,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public AsyncInvoker<DeleteRecordCallbackConfigResponse> DeleteRecordCallbackConfigAsyncInvoker(DeleteRecordCallbackConfigRequest deleteRecordCallbackConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteRecordCallbackConfigRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordCallbackConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/callbacks/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordCallbackConfigRequest);
             return new AsyncInvoker<DeleteRecordCallbackConfigResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRecordCallbackConfigResponse>);
@@ -531,7 +531,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public async Task<DeleteRecordRuleResponse> DeleteRecordRuleAsync(DeleteRecordRuleRequest deleteRecordRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteRecordRuleRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/rules/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordRuleRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -541,7 +541,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public AsyncInvoker<DeleteRecordRuleResponse> DeleteRecordRuleAsyncInvoker(DeleteRecordRuleRequest deleteRecordRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteRecordRuleRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecordRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/rules/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecordRuleRequest);
             return new AsyncInvoker<DeleteRecordRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRecordRuleResponse>);
@@ -1280,7 +1280,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public async Task<ShowRecordCallbackConfigResponse> ShowRecordCallbackConfigAsync(ShowRecordCallbackConfigRequest showRecordCallbackConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showRecordCallbackConfigRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRecordCallbackConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/callbacks/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordCallbackConfigRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1290,7 +1290,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public AsyncInvoker<ShowRecordCallbackConfigResponse> ShowRecordCallbackConfigAsyncInvoker(ShowRecordCallbackConfigRequest showRecordCallbackConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showRecordCallbackConfigRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRecordCallbackConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/callbacks/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordCallbackConfigRequest);
             return new AsyncInvoker<ShowRecordCallbackConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordCallbackConfigResponse>);
@@ -1306,7 +1306,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public async Task<ShowRecordRuleResponse> ShowRecordRuleAsync(ShowRecordRuleRequest showRecordRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showRecordRuleRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRecordRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/rules/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordRuleRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1316,7 +1316,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public AsyncInvoker<ShowRecordRuleResponse> ShowRecordRuleAsyncInvoker(ShowRecordRuleRequest showRecordRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showRecordRuleRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRecordRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/rules/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecordRuleRequest);
             return new AsyncInvoker<ShowRecordRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecordRuleResponse>);
@@ -1599,7 +1599,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public async Task<UpdateRecordCallbackConfigResponse> UpdateRecordCallbackConfigAsync(UpdateRecordCallbackConfigRequest updateRecordCallbackConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateRecordCallbackConfigRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordCallbackConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/callbacks/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateRecordCallbackConfigRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1609,7 +1609,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public AsyncInvoker<UpdateRecordCallbackConfigResponse> UpdateRecordCallbackConfigAsyncInvoker(UpdateRecordCallbackConfigRequest updateRecordCallbackConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateRecordCallbackConfigRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordCallbackConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/callbacks/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateRecordCallbackConfigRequest);
             return new AsyncInvoker<UpdateRecordCallbackConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecordCallbackConfigResponse>);
@@ -1625,7 +1625,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public async Task<UpdateRecordRuleResponse> UpdateRecordRuleAsync(UpdateRecordRuleRequest updateRecordRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateRecordRuleRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/rules/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateRecordRuleRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1635,7 +1635,7 @@ namespace HuaweiCloud.SDK.Live.V1
         public AsyncInvoker<UpdateRecordRuleResponse> UpdateRecordRuleAsyncInvoker(UpdateRecordRuleRequest updateRecordRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", updateRecordRuleRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRecordRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/record/rules/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateRecordRuleRequest);
             return new AsyncInvoker<UpdateRecordRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateRecordRuleResponse>);

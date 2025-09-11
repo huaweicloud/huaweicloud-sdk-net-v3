@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public BatchCreateOrDeleteKafkaTagResponse BatchCreateOrDeleteKafkaTag(BatchCreateOrDeleteKafkaTagRequest batchCreateOrDeleteKafkaTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchCreateOrDeleteKafkaTagRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateOrDeleteKafkaTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/{instance_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteKafkaTagRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<BatchCreateOrDeleteKafkaTagResponse> BatchCreateOrDeleteKafkaTagInvoker(BatchCreateOrDeleteKafkaTagRequest batchCreateOrDeleteKafkaTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchCreateOrDeleteKafkaTagRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateOrDeleteKafkaTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/{instance_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteKafkaTagRequest);
             return new SyncInvoker<BatchCreateOrDeleteKafkaTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateOrDeleteKafkaTagResponse>);
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public BatchDeleteGroupResponse BatchDeleteGroup(BatchDeleteGroupRequest batchDeleteGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGroupRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -60,7 +60,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<BatchDeleteGroupResponse> BatchDeleteGroupInvoker(BatchDeleteGroupRequest batchDeleteGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGroupRequest);
             return new SyncInvoker<BatchDeleteGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteGroupResponse>);
@@ -76,7 +76,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public BatchDeleteInstanceTopicResponse BatchDeleteInstanceTopic(BatchDeleteInstanceTopicRequest batchDeleteInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceTopicRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -86,7 +86,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<BatchDeleteInstanceTopicResponse> BatchDeleteInstanceTopicInvoker(BatchDeleteInstanceTopicRequest batchDeleteInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceTopicRequest);
             return new SyncInvoker<BatchDeleteInstanceTopicResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteInstanceTopicResponse>);
@@ -102,7 +102,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public BatchDeleteInstanceUsersResponse BatchDeleteInstanceUsers(BatchDeleteInstanceUsersRequest batchDeleteInstanceUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteInstanceUsersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceUsersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceUsersRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -112,7 +112,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<BatchDeleteInstanceUsersResponse> BatchDeleteInstanceUsersInvoker(BatchDeleteInstanceUsersRequest batchDeleteInstanceUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteInstanceUsersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceUsersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteInstanceUsersRequest);
             return new SyncInvoker<BatchDeleteInstanceUsersResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<BatchDeleteInstanceUsersResponse>);
@@ -128,7 +128,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public BatchDeleteMessageDiagnosisReportsResponse BatchDeleteMessageDiagnosisReports(BatchDeleteMessageDiagnosisReportsRequest batchDeleteMessageDiagnosisReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteMessageDiagnosisReportsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteMessageDiagnosisReportsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteMessageDiagnosisReportsRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<BatchDeleteMessageDiagnosisReportsResponse> BatchDeleteMessageDiagnosisReportsInvoker(BatchDeleteMessageDiagnosisReportsRequest batchDeleteMessageDiagnosisReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteMessageDiagnosisReportsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteMessageDiagnosisReportsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteMessageDiagnosisReportsRequest);
             return new SyncInvoker<BatchDeleteMessageDiagnosisReportsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteMessageDiagnosisReportsResponse>);
@@ -182,7 +182,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CloseKafkaManagerResponse CloseKafkaManager(CloseKafkaManagerRequest closeKafkaManagerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", closeKafkaManagerRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(closeKafkaManagerRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/management", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeKafkaManagerRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -192,7 +192,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CloseKafkaManagerResponse> CloseKafkaManagerInvoker(CloseKafkaManagerRequest closeKafkaManagerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", closeKafkaManagerRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(closeKafkaManagerRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/management", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", closeKafkaManagerRequest);
             return new SyncInvoker<CloseKafkaManagerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<CloseKafkaManagerResponse>);
@@ -210,7 +210,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateInstanceByEngineResponse CreateInstanceByEngine(CreateInstanceByEngineRequest createInstanceByEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", createInstanceByEngineRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceByEngineRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceByEngineRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateInstanceByEngineResponse> CreateInstanceByEngineInvoker(CreateInstanceByEngineRequest createInstanceByEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", createInstanceByEngineRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceByEngineRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceByEngineRequest);
             return new SyncInvoker<CreateInstanceByEngineResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceByEngineResponse>);
@@ -236,7 +236,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateInstanceTopicResponse CreateInstanceTopic(CreateInstanceTopicRequest createInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceTopicRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -246,7 +246,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateInstanceTopicResponse> CreateInstanceTopicInvoker(CreateInstanceTopicRequest createInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceTopicRequest);
             return new SyncInvoker<CreateInstanceTopicResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstanceTopicResponse>);
@@ -262,7 +262,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateInstanceUserResponse CreateInstanceUser(CreateInstanceUserRequest createInstanceUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceUserRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -272,7 +272,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateInstanceUserResponse> CreateInstanceUserInvoker(CreateInstanceUserRequest createInstanceUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createInstanceUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createInstanceUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInstanceUserRequest);
             return new SyncInvoker<CreateInstanceUserResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateInstanceUserResponse>);
@@ -288,7 +288,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateKafkaConsumerGroupResponse CreateKafkaConsumerGroup(CreateKafkaConsumerGroupRequest createKafkaConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaConsumerGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/group", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaConsumerGroupRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -298,7 +298,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateKafkaConsumerGroupResponse> CreateKafkaConsumerGroupInvoker(CreateKafkaConsumerGroupRequest createKafkaConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaConsumerGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/group", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaConsumerGroupRequest);
             return new SyncInvoker<CreateKafkaConsumerGroupResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateKafkaConsumerGroupResponse>);
@@ -314,7 +314,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateKafkaReassignmentTaskResponse CreateKafkaReassignmentTask(CreateKafkaReassignmentTaskRequest createKafkaReassignmentTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaReassignmentTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaReassignmentTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/reassign", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaReassignmentTaskRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -324,7 +324,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateKafkaReassignmentTaskResponse> CreateKafkaReassignmentTaskInvoker(CreateKafkaReassignmentTaskRequest createKafkaReassignmentTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaReassignmentTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaReassignmentTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/reassign", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaReassignmentTaskRequest);
             return new SyncInvoker<CreateKafkaReassignmentTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKafkaReassignmentTaskResponse>);
@@ -340,7 +340,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateKafkaRebalanceLogTaskResponse CreateKafkaRebalanceLogTask(CreateKafkaRebalanceLogTaskRequest createKafkaRebalanceLogTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaRebalanceLogTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaRebalanceLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaRebalanceLogTaskRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -350,7 +350,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateKafkaRebalanceLogTaskResponse> CreateKafkaRebalanceLogTaskInvoker(CreateKafkaRebalanceLogTaskRequest createKafkaRebalanceLogTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaRebalanceLogTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaRebalanceLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaRebalanceLogTaskRequest);
             return new SyncInvoker<CreateKafkaRebalanceLogTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKafkaRebalanceLogTaskResponse>);
@@ -366,7 +366,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateKafkaTopicQuotaResponse CreateKafkaTopicQuota(CreateKafkaTopicQuotaRequest createKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaTopicQuotaRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -376,7 +376,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateKafkaTopicQuotaResponse> CreateKafkaTopicQuotaInvoker(CreateKafkaTopicQuotaRequest createKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaTopicQuotaRequest);
             return new SyncInvoker<CreateKafkaTopicQuotaResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKafkaTopicQuotaResponse>);
@@ -392,7 +392,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateKafkaUserClientQuotaTaskResponse CreateKafkaUserClientQuotaTask(CreateKafkaUserClientQuotaTaskRequest createKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaUserClientQuotaTaskRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -402,7 +402,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateKafkaUserClientQuotaTaskResponse> CreateKafkaUserClientQuotaTaskInvoker(CreateKafkaUserClientQuotaTaskRequest createKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createKafkaUserClientQuotaTaskRequest);
             return new SyncInvoker<CreateKafkaUserClientQuotaTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKafkaUserClientQuotaTaskResponse>);
@@ -418,7 +418,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateMessageDiagnosisTaskResponse CreateMessageDiagnosisTask(CreateMessageDiagnosisTaskRequest createMessageDiagnosisTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createMessageDiagnosisTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createMessageDiagnosisTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createMessageDiagnosisTaskRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -428,7 +428,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateMessageDiagnosisTaskResponse> CreateMessageDiagnosisTaskInvoker(CreateMessageDiagnosisTaskRequest createMessageDiagnosisTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createMessageDiagnosisTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createMessageDiagnosisTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createMessageDiagnosisTaskRequest);
             return new SyncInvoker<CreateMessageDiagnosisTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMessageDiagnosisTaskResponse>);
@@ -494,7 +494,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateReassignmentTaskResponse CreateReassignmentTask(CreateReassignmentTaskRequest createReassignmentTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createReassignmentTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createReassignmentTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/reassign", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReassignmentTaskRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -504,7 +504,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateReassignmentTaskResponse> CreateReassignmentTaskInvoker(CreateReassignmentTaskRequest createReassignmentTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createReassignmentTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createReassignmentTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/reassign", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createReassignmentTaskRequest);
             return new SyncInvoker<CreateReassignmentTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateReassignmentTaskResponse>);
@@ -520,8 +520,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public DeleteBackgroundTaskResponse DeleteBackgroundTask(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", deleteBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackgroundTaskRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -531,8 +531,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<DeleteBackgroundTaskResponse> DeleteBackgroundTaskInvoker(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", deleteBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackgroundTaskRequest);
             return new SyncInvoker<DeleteBackgroundTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBackgroundTaskResponse>);
@@ -548,8 +548,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public DeleteConsumerGroupOffsetsResponse DeleteConsumerGroupOffsets(DeleteConsumerGroupOffsetsRequest deleteConsumerGroupOffsetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConsumerGroupOffsetsRequest.InstanceId.ToString());
-            urlParam.Add("group", deleteConsumerGroupOffsetsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupOffsetsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupOffsetsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/groups/{group}/delete-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupOffsetsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -559,8 +559,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<DeleteConsumerGroupOffsetsResponse> DeleteConsumerGroupOffsetsInvoker(DeleteConsumerGroupOffsetsRequest deleteConsumerGroupOffsetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConsumerGroupOffsetsRequest.InstanceId.ToString());
-            urlParam.Add("group", deleteConsumerGroupOffsetsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupOffsetsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConsumerGroupOffsetsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/groups/{group}/delete-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConsumerGroupOffsetsRequest);
             return new SyncInvoker<DeleteConsumerGroupOffsetsResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteConsumerGroupOffsetsResponse>);
@@ -576,7 +576,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest deleteInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -586,7 +586,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<DeleteInstanceResponse> DeleteInstanceInvoker(DeleteInstanceRequest deleteInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             return new SyncInvoker<DeleteInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceResponse>);
@@ -602,8 +602,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public DeleteKafkaMessageResponse DeleteKafkaMessage(DeleteKafkaMessageRequest deleteKafkaMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", deleteKafkaMessageRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaMessageRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -613,8 +613,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<DeleteKafkaMessageResponse> DeleteKafkaMessageInvoker(DeleteKafkaMessageRequest deleteKafkaMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", deleteKafkaMessageRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaMessageRequest);
             return new SyncInvoker<DeleteKafkaMessageResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteKafkaMessageResponse>);
@@ -630,7 +630,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public DeleteKafkaTopicQuotaResponse DeleteKafkaTopicQuota(DeleteKafkaTopicQuotaRequest deleteKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaTopicQuotaRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -640,7 +640,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<DeleteKafkaTopicQuotaResponse> DeleteKafkaTopicQuotaInvoker(DeleteKafkaTopicQuotaRequest deleteKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaTopicQuotaRequest);
             return new SyncInvoker<DeleteKafkaTopicQuotaResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteKafkaTopicQuotaResponse>);
@@ -656,7 +656,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public DeleteKafkaUserClientQuotaTaskResponse DeleteKafkaUserClientQuotaTask(DeleteKafkaUserClientQuotaTaskRequest deleteKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaUserClientQuotaTaskRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -666,7 +666,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<DeleteKafkaUserClientQuotaTaskResponse> DeleteKafkaUserClientQuotaTaskInvoker(DeleteKafkaUserClientQuotaTaskRequest deleteKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKafkaUserClientQuotaTaskRequest);
             return new SyncInvoker<DeleteKafkaUserClientQuotaTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteKafkaUserClientQuotaTaskResponse>);
@@ -682,7 +682,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public EnableDnsResponse EnableDns(EnableDnsRequest enableDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", enableDnsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -692,7 +692,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<EnableDnsResponse> EnableDnsInvoker(EnableDnsRequest enableDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", enableDnsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
             return new SyncInvoker<EnableDnsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableDnsResponse>);
@@ -732,7 +732,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListBackgroundTasksResponse ListBackgroundTasks(ListBackgroundTasksRequest listBackgroundTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listBackgroundTasksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBackgroundTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackgroundTasksRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -742,7 +742,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListBackgroundTasksResponse> ListBackgroundTasksInvoker(ListBackgroundTasksRequest listBackgroundTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listBackgroundTasksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBackgroundTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackgroundTasksRequest);
             return new SyncInvoker<ListBackgroundTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBackgroundTasksResponse>);
@@ -758,7 +758,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListEngineProductsResponse ListEngineProducts(ListEngineProductsRequest listEngineProductsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listEngineProductsRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEngineProductsRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/products", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEngineProductsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -768,7 +768,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListEngineProductsResponse> ListEngineProductsInvoker(ListEngineProductsRequest listEngineProductsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listEngineProductsRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEngineProductsRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/products", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEngineProductsRequest);
             return new SyncInvoker<ListEngineProductsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEngineProductsResponse>);
@@ -784,9 +784,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListInstanceConsumerGroupResponse ListInstanceConsumerGroup(ListInstanceConsumerGroupRequest listInstanceConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -796,9 +796,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListInstanceConsumerGroupResponse> ListInstanceConsumerGroupInvoker(ListInstanceConsumerGroupRequest listInstanceConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupRequest);
             return new SyncInvoker<ListInstanceConsumerGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConsumerGroupResponse>);
@@ -814,9 +814,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListInstanceConsumerGroupMembersResponse ListInstanceConsumerGroupMembers(ListInstanceConsumerGroupMembersRequest listInstanceConsumerGroupMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupMembersRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupMembersRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupMembersRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/members", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupMembersRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -826,9 +826,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListInstanceConsumerGroupMembersResponse> ListInstanceConsumerGroupMembersInvoker(ListInstanceConsumerGroupMembersRequest listInstanceConsumerGroupMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupMembersRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupMembersRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupMembersRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMembersRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/members", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupMembersRequest);
             return new SyncInvoker<ListInstanceConsumerGroupMembersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConsumerGroupMembersResponse>);
@@ -844,9 +844,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListInstanceConsumerGroupMessageOffsetResponse ListInstanceConsumerGroupMessageOffset(ListInstanceConsumerGroupMessageOffsetRequest listInstanceConsumerGroupMessageOffsetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupMessageOffsetRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupMessageOffsetRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupMessageOffsetRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupMessageOffsetRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -856,9 +856,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListInstanceConsumerGroupMessageOffsetResponse> ListInstanceConsumerGroupMessageOffsetInvoker(ListInstanceConsumerGroupMessageOffsetRequest listInstanceConsumerGroupMessageOffsetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupMessageOffsetRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupMessageOffsetRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupMessageOffsetRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupMessageOffsetRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupMessageOffsetRequest);
             return new SyncInvoker<ListInstanceConsumerGroupMessageOffsetResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConsumerGroupMessageOffsetResponse>);
@@ -874,9 +874,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListInstanceConsumerGroupTopicsResponse ListInstanceConsumerGroupTopics(ListInstanceConsumerGroupTopicsRequest listInstanceConsumerGroupTopicsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupTopicsRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupTopicsRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupTopicsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupTopicsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -886,9 +886,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListInstanceConsumerGroupTopicsResponse> ListInstanceConsumerGroupTopicsInvoker(ListInstanceConsumerGroupTopicsRequest listInstanceConsumerGroupTopicsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listInstanceConsumerGroupTopicsRequest.Engine.ToString());
-            urlParam.Add("instance_id", listInstanceConsumerGroupTopicsRequest.InstanceId.ToString());
-            urlParam.Add("group", listInstanceConsumerGroupTopicsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupTopicsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupTopicsRequest);
             return new SyncInvoker<ListInstanceConsumerGroupTopicsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConsumerGroupTopicsResponse>);
@@ -904,7 +904,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListInstanceConsumerGroupsResponse ListInstanceConsumerGroups(ListInstanceConsumerGroupsRequest listInstanceConsumerGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceConsumerGroupsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -914,7 +914,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListInstanceConsumerGroupsResponse> ListInstanceConsumerGroupsInvoker(ListInstanceConsumerGroupsRequest listInstanceConsumerGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceConsumerGroupsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConsumerGroupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConsumerGroupsRequest);
             return new SyncInvoker<ListInstanceConsumerGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConsumerGroupsResponse>);
@@ -930,7 +930,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListInstanceTopicsResponse ListInstanceTopics(ListInstanceTopicsRequest listInstanceTopicsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceTopicsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTopicsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTopicsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -940,7 +940,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListInstanceTopicsResponse> ListInstanceTopicsInvoker(ListInstanceTopicsRequest listInstanceTopicsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceTopicsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTopicsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTopicsRequest);
             return new SyncInvoker<ListInstanceTopicsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceTopicsResponse>);
@@ -980,7 +980,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListMessageDiagnosisReportsResponse ListMessageDiagnosisReports(ListMessageDiagnosisReportsRequest listMessageDiagnosisReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listMessageDiagnosisReportsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listMessageDiagnosisReportsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessageDiagnosisReportsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -990,7 +990,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListMessageDiagnosisReportsResponse> ListMessageDiagnosisReportsInvoker(ListMessageDiagnosisReportsRequest listMessageDiagnosisReportsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listMessageDiagnosisReportsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listMessageDiagnosisReportsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis-tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMessageDiagnosisReportsRequest);
             return new SyncInvoker<ListMessageDiagnosisReportsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMessageDiagnosisReportsResponse>);
@@ -1036,8 +1036,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListTopicPartitionsResponse ListTopicPartitions(ListTopicPartitionsRequest listTopicPartitionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTopicPartitionsRequest.InstanceId.ToString());
-            urlParam.Add("topic", listTopicPartitionsRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTopicPartitionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listTopicPartitionsRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/partitions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicPartitionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1047,8 +1047,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListTopicPartitionsResponse> ListTopicPartitionsInvoker(ListTopicPartitionsRequest listTopicPartitionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTopicPartitionsRequest.InstanceId.ToString());
-            urlParam.Add("topic", listTopicPartitionsRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTopicPartitionsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listTopicPartitionsRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/partitions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicPartitionsRequest);
             return new SyncInvoker<ListTopicPartitionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTopicPartitionsResponse>);
@@ -1064,8 +1064,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListTopicProducersResponse ListTopicProducers(ListTopicProducersRequest listTopicProducersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTopicProducersRequest.InstanceId.ToString());
-            urlParam.Add("topic", listTopicProducersRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTopicProducersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listTopicProducersRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/producers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicProducersRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1075,8 +1075,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListTopicProducersResponse> ListTopicProducersInvoker(ListTopicProducersRequest listTopicProducersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTopicProducersRequest.InstanceId.ToString());
-            urlParam.Add("topic", listTopicProducersRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTopicProducersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listTopicProducersRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/topics/{topic}/producers", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicProducersRequest);
             return new SyncInvoker<ListTopicProducersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTopicProducersResponse>);
@@ -1092,7 +1092,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ModifyInstanceConfigsResponse ModifyInstanceConfigs(ModifyInstanceConfigsRequest modifyInstanceConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyInstanceConfigsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyInstanceConfigsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyInstanceConfigsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1102,7 +1102,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ModifyInstanceConfigsResponse> ModifyInstanceConfigsInvoker(ModifyInstanceConfigsRequest modifyInstanceConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyInstanceConfigsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyInstanceConfigsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyInstanceConfigsRequest);
             return new SyncInvoker<ModifyInstanceConfigsResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyInstanceConfigsResponse>);
@@ -1118,7 +1118,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ModifyKafkaTopicQuotaResponse ModifyKafkaTopicQuota(ModifyKafkaTopicQuotaRequest modifyKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyKafkaTopicQuotaRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1128,7 +1128,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ModifyKafkaTopicQuotaResponse> ModifyKafkaTopicQuotaInvoker(ModifyKafkaTopicQuotaRequest modifyKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyKafkaTopicQuotaRequest);
             return new SyncInvoker<ModifyKafkaTopicQuotaResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyKafkaTopicQuotaResponse>);
@@ -1144,7 +1144,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ResetManagerPasswordResponse ResetManagerPassword(ResetManagerPasswordRequest resetManagerPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetManagerPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetManagerPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/kafka-manager-password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetManagerPasswordRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1154,7 +1154,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ResetManagerPasswordResponse> ResetManagerPasswordInvoker(ResetManagerPasswordRequest resetManagerPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetManagerPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetManagerPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/kafka-manager-password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetManagerPasswordRequest);
             return new SyncInvoker<ResetManagerPasswordResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetManagerPasswordResponse>);
@@ -1172,8 +1172,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ResetMessageOffsetResponse ResetMessageOffset(ResetMessageOffsetRequest resetMessageOffsetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetMessageOffsetRequest.InstanceId.ToString());
-            urlParam.Add("group", resetMessageOffsetRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/groups/{group}/reset-message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1183,8 +1183,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ResetMessageOffsetResponse> ResetMessageOffsetInvoker(ResetMessageOffsetRequest resetMessageOffsetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetMessageOffsetRequest.InstanceId.ToString());
-            urlParam.Add("group", resetMessageOffsetRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/groups/{group}/reset-message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetRequest);
             return new SyncInvoker<ResetMessageOffsetResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetMessageOffsetResponse>);
@@ -1202,8 +1202,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ResetMessageOffsetWithEngineResponse ResetMessageOffsetWithEngine(ResetMessageOffsetWithEngineRequest resetMessageOffsetWithEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetMessageOffsetWithEngineRequest.InstanceId.ToString());
-            urlParam.Add("group", resetMessageOffsetWithEngineRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetWithEngineRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetWithEngineRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetWithEngineRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1213,8 +1213,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ResetMessageOffsetWithEngineResponse> ResetMessageOffsetWithEngineInvoker(ResetMessageOffsetWithEngineRequest resetMessageOffsetWithEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetMessageOffsetWithEngineRequest.InstanceId.ToString());
-            urlParam.Add("group", resetMessageOffsetWithEngineRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetWithEngineRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetMessageOffsetWithEngineRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetMessageOffsetWithEngineRequest);
             return new SyncInvoker<ResetMessageOffsetWithEngineResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetMessageOffsetWithEngineResponse>);
@@ -1230,7 +1230,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ResetPasswordResponse ResetPassword(ResetPasswordRequest resetPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPasswordRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1240,7 +1240,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ResetPasswordResponse> ResetPasswordInvoker(ResetPasswordRequest resetPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPasswordRequest);
             return new SyncInvoker<ResetPasswordResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetPasswordResponse>);
@@ -1256,8 +1256,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ResetUserPasswrodResponse ResetUserPasswrod(ResetUserPasswrodRequest resetUserPasswrodRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetUserPasswrodRequest.InstanceId.ToString());
-            urlParam.Add("user_name", resetUserPasswrodRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetUserPasswrodRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetUserPasswrodRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetUserPasswrodRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1267,8 +1267,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ResetUserPasswrodResponse> ResetUserPasswrodInvoker(ResetUserPasswrodRequest resetUserPasswrodRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetUserPasswrodRequest.InstanceId.ToString());
-            urlParam.Add("user_name", resetUserPasswrodRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetUserPasswrodRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resetUserPasswrodRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetUserPasswrodRequest);
             return new SyncInvoker<ResetUserPasswrodResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetUserPasswrodResponse>);
@@ -1284,8 +1284,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ResizeEngineInstanceResponse ResizeEngineInstance(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", resizeEngineInstanceRequest.Engine.ToString());
-            urlParam.Add("instance_id", resizeEngineInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1295,8 +1295,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ResizeEngineInstanceResponse> ResizeEngineInstanceInvoker(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", resizeEngineInstanceRequest.Engine.ToString());
-            urlParam.Add("instance_id", resizeEngineInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
             return new SyncInvoker<ResizeEngineInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeEngineInstanceResponse>);
@@ -1312,7 +1312,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ResizeInstanceResponse ResizeInstance(ResizeInstanceRequest resizeInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1322,7 +1322,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ResizeInstanceResponse> ResizeInstanceInvoker(ResizeInstanceRequest resizeInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
             return new SyncInvoker<ResizeInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeInstanceResponse>);
@@ -1338,7 +1338,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ResizeKafkaInstanceResponse ResizeKafkaInstance(ResizeKafkaInstanceRequest resizeKafkaInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeKafkaInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeKafkaInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeKafkaInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1348,7 +1348,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ResizeKafkaInstanceResponse> ResizeKafkaInstanceInvoker(ResizeKafkaInstanceRequest resizeKafkaInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeKafkaInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeKafkaInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeKafkaInstanceRequest);
             return new SyncInvoker<ResizeKafkaInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeKafkaInstanceResponse>);
@@ -1364,7 +1364,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public RestartManagerResponse RestartManager(RestartManagerRequest restartManagerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartManagerRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartManagerRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/restart-kafka-manager", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartManagerRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1374,7 +1374,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<RestartManagerResponse> RestartManagerInvoker(RestartManagerRequest restartManagerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartManagerRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartManagerRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/restart-kafka-manager", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartManagerRequest);
             return new SyncInvoker<RestartManagerResponse>(this, "PUT", request, JsonUtils.DeSerialize<RestartManagerResponse>);
@@ -1390,7 +1390,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SendKafkaMessageResponse SendKafkaMessage(SendKafkaMessageRequest sendKafkaMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", sendKafkaMessageRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(sendKafkaMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendKafkaMessageRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1400,7 +1400,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<SendKafkaMessageResponse> SendKafkaMessageInvoker(SendKafkaMessageRequest sendKafkaMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", sendKafkaMessageRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(sendKafkaMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", sendKafkaMessageRequest);
             return new SyncInvoker<SendKafkaMessageResponse>(this, "POST", request, JsonUtils.DeSerialize<SendKafkaMessageResponse>);
@@ -1416,8 +1416,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowBackgroundTaskResponse ShowBackgroundTask(ShowBackgroundTaskRequest showBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", showBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackgroundTaskRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1427,8 +1427,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowBackgroundTaskResponse> ShowBackgroundTaskInvoker(ShowBackgroundTaskRequest showBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", showBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackgroundTaskRequest);
             return new SyncInvoker<ShowBackgroundTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackgroundTaskResponse>);
@@ -1444,7 +1444,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowCesHierarchyResponse ShowCesHierarchy(ShowCesHierarchyRequest showCesHierarchyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showCesHierarchyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCesHierarchyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ces-hierarchy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCesHierarchyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1454,7 +1454,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowCesHierarchyResponse> ShowCesHierarchyInvoker(ShowCesHierarchyRequest showCesHierarchyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showCesHierarchyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCesHierarchyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ces-hierarchy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCesHierarchyRequest);
             return new SyncInvoker<ShowCesHierarchyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCesHierarchyResponse>);
@@ -1470,7 +1470,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowClusterResponse ShowCluster(ShowClusterRequest showClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showClusterRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClusterRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/cluster", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1480,7 +1480,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowClusterResponse> ShowClusterInvoker(ShowClusterRequest showClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showClusterRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClusterRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/cluster", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterRequest);
             return new SyncInvoker<ShowClusterResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterResponse>);
@@ -1496,7 +1496,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowCoordinatorsResponse ShowCoordinators(ShowCoordinatorsRequest showCoordinatorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showCoordinatorsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCoordinatorsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/coordinators", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCoordinatorsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1506,7 +1506,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowCoordinatorsResponse> ShowCoordinatorsInvoker(ShowCoordinatorsRequest showCoordinatorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showCoordinatorsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCoordinatorsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/coordinators", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCoordinatorsRequest);
             return new SyncInvoker<ShowCoordinatorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCoordinatorsResponse>);
@@ -1522,7 +1522,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowDiagnosisPreCheckResponse ShowDiagnosisPreCheck(ShowDiagnosisPreCheckRequest showDiagnosisPreCheckRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showDiagnosisPreCheckRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDiagnosisPreCheckRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/diagnosis-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisPreCheckRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1534,7 +1534,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowDiagnosisPreCheckResponse> ShowDiagnosisPreCheckInvoker(ShowDiagnosisPreCheckRequest showDiagnosisPreCheckRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showDiagnosisPreCheckRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDiagnosisPreCheckRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/diagnosis-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDiagnosisPreCheckRequest);
             return new SyncInvoker<ShowDiagnosisPreCheckResponse>(this, "GET", request, response =>
@@ -1555,8 +1555,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowEngineInstanceExtendProductInfoResponse ShowEngineInstanceExtendProductInfo(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", showEngineInstanceExtendProductInfoRequest.Engine.ToString());
-            urlParam.Add("instance_id", showEngineInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1566,8 +1566,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowEngineInstanceExtendProductInfoResponse> ShowEngineInstanceExtendProductInfoInvoker(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", showEngineInstanceExtendProductInfoRequest.Engine.ToString());
-            urlParam.Add("instance_id", showEngineInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
             return new SyncInvoker<ShowEngineInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEngineInstanceExtendProductInfoResponse>);
@@ -1583,8 +1583,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowGroupsResponse ShowGroups(ShowGroupsRequest showGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGroupsRequest.InstanceId.ToString());
-            urlParam.Add("group", showGroupsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGroupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showGroupsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGroupsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1594,8 +1594,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowGroupsResponse> ShowGroupsInvoker(ShowGroupsRequest showGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGroupsRequest.InstanceId.ToString());
-            urlParam.Add("group", showGroupsRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGroupsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showGroupsRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGroupsRequest);
             return new SyncInvoker<ShowGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGroupsResponse>);
@@ -1611,7 +1611,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowInstanceResponse ShowInstance(ShowInstanceRequest showInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1621,7 +1621,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowInstanceResponse> ShowInstanceInvoker(ShowInstanceRequest showInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             return new SyncInvoker<ShowInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceResponse>);
@@ -1637,7 +1637,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowInstanceConfigsResponse ShowInstanceConfigs(ShowInstanceConfigsRequest showInstanceConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceConfigsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceConfigsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1647,7 +1647,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowInstanceConfigsResponse> ShowInstanceConfigsInvoker(ShowInstanceConfigsRequest showInstanceConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceConfigsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceConfigsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceConfigsRequest);
             return new SyncInvoker<ShowInstanceConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceConfigsResponse>);
@@ -1663,7 +1663,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowInstanceExtendProductInfoResponse ShowInstanceExtendProductInfo(ShowInstanceExtendProductInfoRequest showInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceExtendProductInfoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1673,7 +1673,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowInstanceExtendProductInfoResponse> ShowInstanceExtendProductInfoInvoker(ShowInstanceExtendProductInfoRequest showInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceExtendProductInfoRequest);
             return new SyncInvoker<ShowInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceExtendProductInfoResponse>);
@@ -1690,7 +1690,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowInstanceMessagesResponse ShowInstanceMessages(ShowInstanceMessagesRequest showInstanceMessagesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceMessagesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceMessagesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceMessagesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1700,7 +1700,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowInstanceMessagesResponse> ShowInstanceMessagesInvoker(ShowInstanceMessagesRequest showInstanceMessagesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceMessagesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceMessagesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceMessagesRequest);
             return new SyncInvoker<ShowInstanceMessagesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceMessagesResponse>);
@@ -1716,8 +1716,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowInstanceTopicDetailResponse ShowInstanceTopicDetail(ShowInstanceTopicDetailRequest showInstanceTopicDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceTopicDetailRequest.InstanceId.ToString());
-            urlParam.Add("topic", showInstanceTopicDetailRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTopicDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTopicDetailRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTopicDetailRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1727,8 +1727,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowInstanceTopicDetailResponse> ShowInstanceTopicDetailInvoker(ShowInstanceTopicDetailRequest showInstanceTopicDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceTopicDetailRequest.InstanceId.ToString());
-            urlParam.Add("topic", showInstanceTopicDetailRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTopicDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTopicDetailRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceTopicDetailRequest);
             return new SyncInvoker<ShowInstanceTopicDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceTopicDetailResponse>);
@@ -1746,7 +1746,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowInstanceUsersResponse ShowInstanceUsers(ShowInstanceUsersRequest showInstanceUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceUsersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceUsersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceUsersRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1756,7 +1756,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowInstanceUsersResponse> ShowInstanceUsersInvoker(ShowInstanceUsersRequest showInstanceUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceUsersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceUsersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceUsersRequest);
             return new SyncInvoker<ShowInstanceUsersResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceUsersResponse>);
@@ -1772,7 +1772,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowKafkaInstanceExtendProductInfoResponse ShowKafkaInstanceExtendProductInfo(ShowKafkaInstanceExtendProductInfoRequest showKafkaInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaInstanceExtendProductInfoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1782,7 +1782,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowKafkaInstanceExtendProductInfoResponse> ShowKafkaInstanceExtendProductInfoInvoker(ShowKafkaInstanceExtendProductInfoRequest showKafkaInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaInstanceExtendProductInfoRequest);
             return new SyncInvoker<ShowKafkaInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaInstanceExtendProductInfoResponse>);
@@ -1822,7 +1822,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowKafkaRebalanceLogResponse ShowKafkaRebalanceLog(ShowKafkaRebalanceLogRequest showKafkaRebalanceLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaRebalanceLogRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaRebalanceLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaRebalanceLogRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1832,7 +1832,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowKafkaRebalanceLogResponse> ShowKafkaRebalanceLogInvoker(ShowKafkaRebalanceLogRequest showKafkaRebalanceLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaRebalanceLogRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaRebalanceLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaRebalanceLogRequest);
             return new SyncInvoker<ShowKafkaRebalanceLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaRebalanceLogResponse>);
@@ -1848,7 +1848,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowKafkaTagsResponse ShowKafkaTags(ShowKafkaTagsRequest showKafkaTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/{instance_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1858,7 +1858,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowKafkaTagsResponse> ShowKafkaTagsInvoker(ShowKafkaTagsRequest showKafkaTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/{instance_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTagsRequest);
             return new SyncInvoker<ShowKafkaTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaTagsResponse>);
@@ -1874,7 +1874,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowKafkaTopicPartitionDiskusageResponse ShowKafkaTopicPartitionDiskusage(ShowKafkaTopicPartitionDiskusageRequest showKafkaTopicPartitionDiskusageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTopicPartitionDiskusageRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTopicPartitionDiskusageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/diskusage", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTopicPartitionDiskusageRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1884,7 +1884,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowKafkaTopicPartitionDiskusageResponse> ShowKafkaTopicPartitionDiskusageInvoker(ShowKafkaTopicPartitionDiskusageRequest showKafkaTopicPartitionDiskusageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTopicPartitionDiskusageRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTopicPartitionDiskusageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics/diskusage", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTopicPartitionDiskusageRequest);
             return new SyncInvoker<ShowKafkaTopicPartitionDiskusageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaTopicPartitionDiskusageResponse>);
@@ -1900,7 +1900,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowKafkaTopicQuotaResponse ShowKafkaTopicQuota(ShowKafkaTopicQuotaRequest showKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTopicQuotaRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1910,7 +1910,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowKafkaTopicQuotaResponse> ShowKafkaTopicQuotaInvoker(ShowKafkaTopicQuotaRequest showKafkaTopicQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaTopicQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaTopicQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-topic-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaTopicQuotaRequest);
             return new SyncInvoker<ShowKafkaTopicQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaTopicQuotaResponse>);
@@ -1926,7 +1926,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowKafkaUserClientQuotaResponse ShowKafkaUserClientQuota(ShowKafkaUserClientQuotaRequest showKafkaUserClientQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaUserClientQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaUserClientQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaUserClientQuotaRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1936,7 +1936,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowKafkaUserClientQuotaResponse> ShowKafkaUserClientQuotaInvoker(ShowKafkaUserClientQuotaRequest showKafkaUserClientQuotaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showKafkaUserClientQuotaRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKafkaUserClientQuotaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKafkaUserClientQuotaRequest);
             return new SyncInvoker<ShowKafkaUserClientQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKafkaUserClientQuotaResponse>);
@@ -1976,8 +1976,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowMessageDiagnosisReportResponse ShowMessageDiagnosisReport(ShowMessageDiagnosisReportRequest showMessageDiagnosisReportRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showMessageDiagnosisReportRequest.InstanceId.ToString());
-            urlParam.Add("report_id", showMessageDiagnosisReportRequest.ReportId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMessageDiagnosisReportRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showMessageDiagnosisReportRequest.ReportId, out var valueOfReportId)) urlParam.Add("report_id", valueOfReportId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis/{report_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMessageDiagnosisReportRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1987,8 +1987,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowMessageDiagnosisReportResponse> ShowMessageDiagnosisReportInvoker(ShowMessageDiagnosisReportRequest showMessageDiagnosisReportRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showMessageDiagnosisReportRequest.InstanceId.ToString());
-            urlParam.Add("report_id", showMessageDiagnosisReportRequest.ReportId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMessageDiagnosisReportRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showMessageDiagnosisReportRequest.ReportId, out var valueOfReportId)) urlParam.Add("report_id", valueOfReportId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/message-diagnosis/{report_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMessageDiagnosisReportRequest);
             return new SyncInvoker<ShowMessageDiagnosisReportResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMessageDiagnosisReportResponse>);
@@ -2004,8 +2004,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowMessagesResponse ShowMessages(ShowMessagesRequest showMessagesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showMessagesRequest.InstanceId.ToString());
-            urlParam.Add("topic", showMessagesRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMessagesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showMessagesRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMessagesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2015,8 +2015,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowMessagesResponse> ShowMessagesInvoker(ShowMessagesRequest showMessagesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showMessagesRequest.InstanceId.ToString());
-            urlParam.Add("topic", showMessagesRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMessagesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showMessagesRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/messages", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMessagesRequest);
             return new SyncInvoker<ShowMessagesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMessagesResponse>);
@@ -2032,9 +2032,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowPartitionBeginningMessageResponse ShowPartitionBeginningMessage(ShowPartitionBeginningMessageRequest showPartitionBeginningMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionBeginningMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionBeginningMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionBeginningMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/beginning-message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionBeginningMessageRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2044,9 +2044,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowPartitionBeginningMessageResponse> ShowPartitionBeginningMessageInvoker(ShowPartitionBeginningMessageRequest showPartitionBeginningMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionBeginningMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionBeginningMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionBeginningMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionBeginningMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/beginning-message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionBeginningMessageRequest);
             return new SyncInvoker<ShowPartitionBeginningMessageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPartitionBeginningMessageResponse>);
@@ -2062,9 +2062,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowPartitionEndMessageResponse ShowPartitionEndMessage(ShowPartitionEndMessageRequest showPartitionEndMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionEndMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionEndMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionEndMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/end-message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionEndMessageRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2074,9 +2074,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowPartitionEndMessageResponse> ShowPartitionEndMessageInvoker(ShowPartitionEndMessageRequest showPartitionEndMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionEndMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionEndMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionEndMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionEndMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/end-message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionEndMessageRequest);
             return new SyncInvoker<ShowPartitionEndMessageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPartitionEndMessageResponse>);
@@ -2092,9 +2092,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowPartitionMessageResponse ShowPartitionMessage(ShowPartitionMessageRequest showPartitionMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionMessageRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2104,9 +2104,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowPartitionMessageResponse> ShowPartitionMessageInvoker(ShowPartitionMessageRequest showPartitionMessageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showPartitionMessageRequest.InstanceId.ToString());
-            urlParam.Add("topic", showPartitionMessageRequest.Topic.ToString());
-            urlParam.Add("partition", showPartitionMessageRequest.Partition.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
+            if (StringUtils.TryConvertToNonEmptyString(showPartitionMessageRequest.Partition, out var valueOfPartition)) urlParam.Add("partition", valueOfPartition);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/message", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPartitionMessageRequest);
             return new SyncInvoker<ShowPartitionMessageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPartitionMessageResponse>);
@@ -2148,8 +2148,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowTopicAccessPolicyResponse ShowTopicAccessPolicy(ShowTopicAccessPolicyRequest showTopicAccessPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showTopicAccessPolicyRequest.InstanceId.ToString());
-            urlParam.Add("topic_name", showTopicAccessPolicyRequest.TopicName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTopicAccessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showTopicAccessPolicyRequest.TopicName, out var valueOfTopicName)) urlParam.Add("topic_name", valueOfTopicName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/topics/{topic_name}/accesspolicy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopicAccessPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2159,8 +2159,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowTopicAccessPolicyResponse> ShowTopicAccessPolicyInvoker(ShowTopicAccessPolicyRequest showTopicAccessPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showTopicAccessPolicyRequest.InstanceId.ToString());
-            urlParam.Add("topic_name", showTopicAccessPolicyRequest.TopicName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTopicAccessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showTopicAccessPolicyRequest.TopicName, out var valueOfTopicName)) urlParam.Add("topic_name", valueOfTopicName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/topics/{topic_name}/accesspolicy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTopicAccessPolicyRequest);
             return new SyncInvoker<ShowTopicAccessPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTopicAccessPolicyResponse>);
@@ -2176,7 +2176,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public StopKafkaRebalanceLogTaskResponse StopKafkaRebalanceLogTask(StopKafkaRebalanceLogTaskRequest stopKafkaRebalanceLogTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", stopKafkaRebalanceLogTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopKafkaRebalanceLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopKafkaRebalanceLogTaskRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2186,7 +2186,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<StopKafkaRebalanceLogTaskResponse> StopKafkaRebalanceLogTaskInvoker(StopKafkaRebalanceLogTaskRequest stopKafkaRebalanceLogTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", stopKafkaRebalanceLogTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopKafkaRebalanceLogTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/log/rebalance-log", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopKafkaRebalanceLogTaskRequest);
             return new SyncInvoker<StopKafkaRebalanceLogTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<StopKafkaRebalanceLogTaskResponse>);
@@ -2202,7 +2202,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest updateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2212,7 +2212,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<UpdateInstanceResponse> UpdateInstanceInvoker(UpdateInstanceRequest updateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRequest);
             return new SyncInvoker<UpdateInstanceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceResponse>);
@@ -2228,7 +2228,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public UpdateInstanceAutoCreateTopicResponse UpdateInstanceAutoCreateTopic(UpdateInstanceAutoCreateTopicRequest updateInstanceAutoCreateTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceAutoCreateTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceAutoCreateTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autotopic", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceAutoCreateTopicRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2238,7 +2238,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<UpdateInstanceAutoCreateTopicResponse> UpdateInstanceAutoCreateTopicInvoker(UpdateInstanceAutoCreateTopicRequest updateInstanceAutoCreateTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceAutoCreateTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceAutoCreateTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/autotopic", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceAutoCreateTopicRequest);
             return new SyncInvoker<UpdateInstanceAutoCreateTopicResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateInstanceAutoCreateTopicResponse>);
@@ -2254,9 +2254,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public UpdateInstanceConsumerGroupResponse UpdateInstanceConsumerGroup(UpdateInstanceConsumerGroupRequest updateInstanceConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceConsumerGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceConsumerGroupRequest.InstanceId.ToString());
-            urlParam.Add("group", updateInstanceConsumerGroupRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConsumerGroupRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2266,9 +2266,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<UpdateInstanceConsumerGroupResponse> UpdateInstanceConsumerGroupInvoker(UpdateInstanceConsumerGroupRequest updateInstanceConsumerGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceConsumerGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceConsumerGroupRequest.InstanceId.ToString());
-            urlParam.Add("group", updateInstanceConsumerGroupRequest.Group.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConsumerGroupRequest.Group, out var valueOfGroup)) urlParam.Add("group", valueOfGroup);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConsumerGroupRequest);
             return new SyncInvoker<UpdateInstanceConsumerGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceConsumerGroupResponse>);
@@ -2284,7 +2284,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public UpdateInstanceCrossVpcIpResponse UpdateInstanceCrossVpcIp(UpdateInstanceCrossVpcIpRequest updateInstanceCrossVpcIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceCrossVpcIpRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceCrossVpcIpRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/crossvpc/modify", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceCrossVpcIpRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2294,7 +2294,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<UpdateInstanceCrossVpcIpResponse> UpdateInstanceCrossVpcIpInvoker(UpdateInstanceCrossVpcIpRequest updateInstanceCrossVpcIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceCrossVpcIpRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceCrossVpcIpRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/crossvpc/modify", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceCrossVpcIpRequest);
             return new SyncInvoker<UpdateInstanceCrossVpcIpResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateInstanceCrossVpcIpResponse>);
@@ -2310,8 +2310,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public UpdateInstanceGroupResponse UpdateInstanceGroup(UpdateInstanceGroupRequest updateInstanceGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceGroupRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2321,8 +2321,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<UpdateInstanceGroupResponse> UpdateInstanceGroupInvoker(UpdateInstanceGroupRequest updateInstanceGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceGroupRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceGroupRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceGroupRequest);
             return new SyncInvoker<UpdateInstanceGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceGroupResponse>);
@@ -2338,7 +2338,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public UpdateInstanceTopicResponse UpdateInstanceTopic(UpdateInstanceTopicRequest updateInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceTopicRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2348,7 +2348,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<UpdateInstanceTopicResponse> UpdateInstanceTopicInvoker(UpdateInstanceTopicRequest updateInstanceTopicRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceTopicRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceTopicRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceTopicRequest);
             return new SyncInvoker<UpdateInstanceTopicResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceTopicResponse>);
@@ -2364,9 +2364,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public UpdateInstanceUserResponse UpdateInstanceUser(UpdateInstanceUserRequest updateInstanceUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceUserRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name", updateInstanceUserRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceUserRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2376,9 +2376,9 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<UpdateInstanceUserResponse> UpdateInstanceUserInvoker(UpdateInstanceUserRequest updateInstanceUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateInstanceUserRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateInstanceUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name", updateInstanceUserRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceUserRequest);
             return new SyncInvoker<UpdateInstanceUserResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceUserResponse>);
@@ -2394,8 +2394,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public UpdateKafkaPortProtocolResponse UpdateKafkaPortProtocol(UpdateKafkaPortProtocolRequest updateKafkaPortProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateKafkaPortProtocolRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateKafkaPortProtocolRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaPortProtocolRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaPortProtocolRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/plain-ssl-switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKafkaPortProtocolRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2405,8 +2405,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<UpdateKafkaPortProtocolResponse> UpdateKafkaPortProtocolInvoker(UpdateKafkaPortProtocolRequest updateKafkaPortProtocolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", updateKafkaPortProtocolRequest.Engine.ToString());
-            urlParam.Add("instance_id", updateKafkaPortProtocolRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaPortProtocolRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaPortProtocolRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{engine}/instances/{instance_id}/plain-ssl-switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKafkaPortProtocolRequest);
             return new SyncInvoker<UpdateKafkaPortProtocolResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateKafkaPortProtocolResponse>);
@@ -2422,7 +2422,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public UpdateKafkaUserClientQuotaTaskResponse UpdateKafkaUserClientQuotaTask(UpdateKafkaUserClientQuotaTaskRequest updateKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKafkaUserClientQuotaTaskRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2432,7 +2432,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<UpdateKafkaUserClientQuotaTaskResponse> UpdateKafkaUserClientQuotaTaskInvoker(UpdateKafkaUserClientQuotaTaskRequest updateKafkaUserClientQuotaTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateKafkaUserClientQuotaTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKafkaUserClientQuotaTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/kafka/{project_id}/instances/{instance_id}/kafka-user-client-quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKafkaUserClientQuotaTaskRequest);
             return new SyncInvoker<UpdateKafkaUserClientQuotaTaskResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateKafkaUserClientQuotaTaskResponse>);
@@ -2450,7 +2450,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public UpdateTopicAccessPolicyResponse UpdateTopicAccessPolicy(UpdateTopicAccessPolicyRequest updateTopicAccessPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTopicAccessPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicAccessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/topics/accesspolicy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicAccessPolicyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2460,7 +2460,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<UpdateTopicAccessPolicyResponse> UpdateTopicAccessPolicyInvoker(UpdateTopicAccessPolicyRequest updateTopicAccessPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTopicAccessPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicAccessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/topics/accesspolicy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicAccessPolicyRequest);
             return new SyncInvoker<UpdateTopicAccessPolicyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateTopicAccessPolicyResponse>);
@@ -2476,8 +2476,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public UpdateTopicReplicaResponse UpdateTopicReplica(UpdateTopicReplicaRequest updateTopicReplicaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTopicReplicaRequest.InstanceId.ToString());
-            urlParam.Add("topic", updateTopicReplicaRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/replicas-reassignment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicReplicaRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2487,8 +2487,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<UpdateTopicReplicaResponse> UpdateTopicReplicaInvoker(UpdateTopicReplicaRequest updateTopicReplicaRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTopicReplicaRequest.InstanceId.ToString());
-            urlParam.Add("topic", updateTopicReplicaRequest.Topic.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateTopicReplicaRequest.Topic, out var valueOfTopic)) urlParam.Add("topic", valueOfTopic);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/replicas-reassignment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTopicReplicaRequest);
             return new SyncInvoker<UpdateTopicReplicaResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateTopicReplicaResponse>);
@@ -2506,7 +2506,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateConnectorResponse CreateConnector(CreateConnectorRequest createConnectorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createConnectorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createConnectorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2516,7 +2516,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateConnectorResponse> CreateConnectorInvoker(CreateConnectorRequest createConnectorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createConnectorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createConnectorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorRequest);
             return new SyncInvoker<CreateConnectorResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConnectorResponse>);
@@ -2532,7 +2532,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public CreateConnectorTaskResponse CreateConnectorTask(CreateConnectorTaskRequest createConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createConnectorTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorTaskRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2542,7 +2542,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<CreateConnectorTaskResponse> CreateConnectorTaskInvoker(CreateConnectorTaskRequest createConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createConnectorTaskRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createConnectorTaskRequest);
             return new SyncInvoker<CreateConnectorTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateConnectorTaskResponse>);
@@ -2558,7 +2558,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest deleteConnectorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConnectorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2568,7 +2568,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<DeleteConnectorResponse> DeleteConnectorInvoker(DeleteConnectorRequest deleteConnectorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConnectorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/delete-connector", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorRequest);
             return new SyncInvoker<DeleteConnectorResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteConnectorResponse>);
@@ -2584,8 +2584,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public DeleteConnectorTaskResponse DeleteConnectorTask(DeleteConnectorTaskRequest deleteConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", deleteConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorTaskRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2595,8 +2595,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<DeleteConnectorTaskResponse> DeleteConnectorTaskInvoker(DeleteConnectorTaskRequest deleteConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", deleteConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConnectorTaskRequest);
             return new SyncInvoker<DeleteConnectorTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteConnectorTaskResponse>);
@@ -2612,7 +2612,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ListConnectorTasksResponse ListConnectorTasks(ListConnectorTasksRequest listConnectorTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listConnectorTasksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listConnectorTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConnectorTasksRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2622,7 +2622,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ListConnectorTasksResponse> ListConnectorTasksInvoker(ListConnectorTasksRequest listConnectorTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listConnectorTasksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listConnectorTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConnectorTasksRequest);
             return new SyncInvoker<ListConnectorTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConnectorTasksResponse>);
@@ -2638,8 +2638,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ModifyConnectorTaskResponse ModifyConnectorTask(ModifyConnectorTaskRequest modifyConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", modifyConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(modifyConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyConnectorTaskRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2649,8 +2649,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ModifyConnectorTaskResponse> ModifyConnectorTaskInvoker(ModifyConnectorTaskRequest modifyConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", modifyConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(modifyConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyConnectorTaskRequest);
             return new SyncInvoker<ModifyConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyConnectorTaskResponse>);
@@ -2666,8 +2666,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public PauseConnectorTaskResponse PauseConnectorTask(PauseConnectorTaskRequest pauseConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", pauseConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", pauseConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(pauseConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(pauseConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/pause", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseConnectorTaskRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2677,8 +2677,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<PauseConnectorTaskResponse> PauseConnectorTaskInvoker(PauseConnectorTaskRequest pauseConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", pauseConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", pauseConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(pauseConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(pauseConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/pause", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", pauseConnectorTaskRequest);
             return new SyncInvoker<PauseConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<PauseConnectorTaskResponse>);
@@ -2694,8 +2694,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public RestartConnectorTaskResponse RestartConnectorTask(RestartConnectorTaskRequest restartConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", restartConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/connector/tasks/{task_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartConnectorTaskRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2705,8 +2705,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<RestartConnectorTaskResponse> RestartConnectorTaskInvoker(RestartConnectorTaskRequest restartConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", restartConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/kafka/instances/{instance_id}/connector/tasks/{task_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartConnectorTaskRequest);
             return new SyncInvoker<RestartConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<RestartConnectorTaskResponse>);
@@ -2722,8 +2722,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public RestartSmartConnectorTaskResponse RestartSmartConnectorTask(RestartSmartConnectorTaskRequest restartSmartConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartSmartConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", restartSmartConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartSmartConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartSmartConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartSmartConnectorTaskRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2733,8 +2733,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<RestartSmartConnectorTaskResponse> RestartSmartConnectorTaskInvoker(RestartSmartConnectorTaskRequest restartSmartConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartSmartConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", restartSmartConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartSmartConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartSmartConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartSmartConnectorTaskRequest);
             return new SyncInvoker<RestartSmartConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<RestartSmartConnectorTaskResponse>);
@@ -2750,8 +2750,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ResumeConnectorTaskResponse ResumeConnectorTask(ResumeConnectorTaskRequest resumeConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resumeConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", resumeConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resumeConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resumeConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/resume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resumeConnectorTaskRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2761,8 +2761,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ResumeConnectorTaskResponse> ResumeConnectorTaskInvoker(ResumeConnectorTaskRequest resumeConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resumeConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", resumeConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resumeConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resumeConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}/resume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resumeConnectorTaskRequest);
             return new SyncInvoker<ResumeConnectorTaskResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResumeConnectorTaskResponse>);
@@ -2778,8 +2778,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ShowConnectorTaskResponse ShowConnectorTask(ShowConnectorTaskRequest showConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", showConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConnectorTaskRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2789,8 +2789,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ShowConnectorTaskResponse> ShowConnectorTaskInvoker(ShowConnectorTaskRequest showConnectorTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showConnectorTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", showConnectorTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showConnectorTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showConnectorTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showConnectorTaskRequest);
             return new SyncInvoker<ShowConnectorTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowConnectorTaskResponse>);
@@ -2806,7 +2806,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public ValidateConnectorConnectivityResponse ValidateConnectorConnectivity(ValidateConnectorConnectivityRequest validateConnectorConnectivityRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", validateConnectorConnectivityRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(validateConnectorConnectivityRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/validate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConnectorConnectivityRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2816,7 +2816,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
         public SyncInvoker<ValidateConnectorConnectivityResponse> ValidateConnectorConnectivityInvoker(ValidateConnectorConnectivityRequest validateConnectorConnectivityRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", validateConnectorConnectivityRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(validateConnectorConnectivityRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/connector/validate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", validateConnectorConnectivityRequest);
             return new SyncInvoker<ValidateConnectorConnectivityResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ValidateConnectorConnectivityResponse>);

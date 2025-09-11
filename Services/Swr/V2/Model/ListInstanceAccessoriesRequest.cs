@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     public class ListInstanceAccessoriesRequest 
     {
         /// <summary>
-        /// 附件类型，signature.cosign
+        /// 附件类型，支持的附件类型有：signature.cosign
         /// </summary>
-        /// <value>附件类型，signature.cosign</value>
+        /// <value>附件类型，支持的附件类型有：signature.cosign</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -168,7 +168,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 附件类型，signature.cosign
+        /// 附件类型，支持的附件类型有：signature.cosign
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

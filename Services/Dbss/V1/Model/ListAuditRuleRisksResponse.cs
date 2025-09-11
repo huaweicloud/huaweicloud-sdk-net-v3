@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }
 
+        /// <summary>
+        /// 自定义规则总数
+        /// </summary>
+        [JsonProperty("customize_total", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CustomizeTotal { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             sb.Append("class ListAuditRuleRisksResponse {\n");
             sb.Append("  rules: ").Append(Rules).Append("\n");
             sb.Append("  total: ").Append(Total).Append("\n");
+            sb.Append("  customizeTotal: ").Append(CustomizeTotal).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             if (input == null) return false;
             if (this.Rules != input.Rules || (this.Rules != null && input.Rules != null && !this.Rules.SequenceEqual(input.Rules))) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.CustomizeTotal != input.CustomizeTotal || (this.CustomizeTotal != null && !this.CustomizeTotal.Equals(input.CustomizeTotal))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
                 var hashCode = 41;
                 if (this.Rules != null) hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.CustomizeTotal != null) hashCode = hashCode * 59 + this.CustomizeTotal.GetHashCode();
                 return hashCode;
             }
         }

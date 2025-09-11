@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
     {
 
         /// <summary>
-        /// 触发器策略列表
+        /// 触发器列表
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
         public List<WebhookPolicyDetail> Policies { get; set; }
 
         /// <summary>
-        /// 触发器策略总数
+        /// 触发器总数
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

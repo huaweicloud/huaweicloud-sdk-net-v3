@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 批量创建监控视图返回结果
+        /// **参数解释** 批量创建监控视图返回结果 
         /// </summary>
         [JsonProperty("widget_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> WidgetIds { get; set; }

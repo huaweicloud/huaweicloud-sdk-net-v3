@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public int? Id { get; set; }
 
         /// <summary>
-        /// 触发器策略名称
+        /// 触发器名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 触发器策略描述
+        /// 触发器描述
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public List<string> EventTypes { get; set; }
 
         /// <summary>
-        /// 是否使用，可选true或false
+        /// 是否启用，可选true或false
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }

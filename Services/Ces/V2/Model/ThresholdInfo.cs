@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 监控视图的阈值辅助线配置
+    /// **参数解释** 监控视图的阈值辅助线配置 **约束限制** 不涉及 
     /// </summary>
     public class ThresholdInfo 
     {
         /// <summary>
-        /// 监控视图辅助线的颜色,\&quot;#B50E65\&quot;紫色,\&quot;#F23030\&quot;红色,\&quot;#FF8800\&quot;橙色,\&quot;#F2E70C\&quot;黄色
+        /// **参数解释** 监控视图辅助线的颜色 **约束限制** 不涉及           **取值范围** - \&quot;#B50E65\&quot;:紫色 - \&quot;#F23030\&quot;:红色 - \&quot;#FF8800\&quot;:橙色 - \&quot;#F2E70C\&quot;:黄色 **默认取值** 不涉及 
         /// </summary>
-        /// <value>监控视图辅助线的颜色,\&quot;#B50E65\&quot;紫色,\&quot;#F23030\&quot;红色,\&quot;#FF8800\&quot;橙色,\&quot;#F2E70C\&quot;黄色</value>
+        /// <value>**参数解释** 监控视图辅助线的颜色 **约束限制** 不涉及           **取值范围** - \&quot;#B50E65\&quot;:紫色 - \&quot;#F23030\&quot;:红色 - \&quot;#FF8800\&quot;:橙色 - \&quot;#F2E70C\&quot;:黄色 **默认取值** 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<ThresholdColorEnum>))]
         public class ThresholdColorEnum
         {
@@ -144,13 +144,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 监控视图辅助线的阈值
+        /// **参数解释** 监控视图辅助线的阈值 **约束限制** 不涉及 **取值范围** 最小值为0，最大值为2147483647 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("threshold", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Threshold { get; set; }
 
         /// <summary>
-        /// 监控视图辅助线的颜色,\&quot;#B50E65\&quot;紫色,\&quot;#F23030\&quot;红色,\&quot;#FF8800\&quot;橙色,\&quot;#F2E70C\&quot;黄色
+        /// **参数解释** 监控视图辅助线的颜色 **约束限制** 不涉及           **取值范围** - \&quot;#B50E65\&quot;:紫色 - \&quot;#F23030\&quot;:红色 - \&quot;#FF8800\&quot;:橙色 - \&quot;#F2E70C\&quot;:黄色 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("threshold_color", NullValueHandling = NullValueHandling.Ignore)]
         public ThresholdColorEnum ThresholdColor { get; set; }

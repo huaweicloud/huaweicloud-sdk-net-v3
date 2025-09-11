@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<BatchCreateOrDeleteRabbitMqTagResponse> BatchCreateOrDeleteRabbitMqTagAsync(BatchCreateOrDeleteRabbitMqTagRequest batchCreateOrDeleteRabbitMqTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchCreateOrDeleteRabbitMqTagRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateOrDeleteRabbitMqTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/{instance_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteRabbitMqTagRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<BatchCreateOrDeleteRabbitMqTagResponse> BatchCreateOrDeleteRabbitMqTagAsyncInvoker(BatchCreateOrDeleteRabbitMqTagRequest batchCreateOrDeleteRabbitMqTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchCreateOrDeleteRabbitMqTagRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateOrDeleteRabbitMqTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/{instance_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateOrDeleteRabbitMqTagRequest);
             return new AsyncInvoker<BatchCreateOrDeleteRabbitMqTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateOrDeleteRabbitMqTagResponse>);
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<CreatePostPaidInstanceByEngineResponse> CreatePostPaidInstanceByEngineAsync(CreatePostPaidInstanceByEngineRequest createPostPaidInstanceByEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", createPostPaidInstanceByEngineRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPostPaidInstanceByEngineRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostPaidInstanceByEngineRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<CreatePostPaidInstanceByEngineResponse> CreatePostPaidInstanceByEngineAsyncInvoker(CreatePostPaidInstanceByEngineRequest createPostPaidInstanceByEngineRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", createPostPaidInstanceByEngineRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createPostPaidInstanceByEngineRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPostPaidInstanceByEngineRequest);
             return new AsyncInvoker<CreatePostPaidInstanceByEngineResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePostPaidInstanceByEngineResponse>);
@@ -127,7 +127,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<CreateUserResponse> CreateUserAsync(CreateUserRequest createUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<CreateUserResponse> CreateUserAsyncInvoker(CreateUserRequest createUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserRequest);
             return new AsyncInvoker<CreateUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUserResponse>);
@@ -153,8 +153,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<DeleteBackgroundTaskResponse> DeleteBackgroundTaskAsync(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", deleteBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackgroundTaskRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -164,8 +164,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<DeleteBackgroundTaskResponse> DeleteBackgroundTaskAsyncInvoker(DeleteBackgroundTaskRequest deleteBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", deleteBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackgroundTaskRequest);
             return new AsyncInvoker<DeleteBackgroundTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBackgroundTaskResponse>);
@@ -181,7 +181,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -191,7 +191,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<DeleteInstanceResponse> DeleteInstanceAsyncInvoker(DeleteInstanceRequest deleteInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInstanceRequest);
             return new AsyncInvoker<DeleteInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInstanceResponse>);
@@ -207,8 +207,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest deleteUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name", deleteUserRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -218,8 +218,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<DeleteUserResponse> DeleteUserAsyncInvoker(DeleteUserRequest deleteUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name", deleteUserRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserRequest);
             return new AsyncInvoker<DeleteUserResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteUserResponse>);
@@ -235,7 +235,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<EnableDnsResponse> EnableDnsAsync(EnableDnsRequest enableDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", enableDnsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/instances/{instance_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -245,7 +245,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<EnableDnsResponse> EnableDnsAsyncInvoker(EnableDnsRequest enableDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", enableDnsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/instances/{instance_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
             return new AsyncInvoker<EnableDnsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableDnsResponse>);
@@ -285,7 +285,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ListBackgroundTasksResponse> ListBackgroundTasksAsync(ListBackgroundTasksRequest listBackgroundTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listBackgroundTasksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBackgroundTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackgroundTasksRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -295,7 +295,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ListBackgroundTasksResponse> ListBackgroundTasksAsyncInvoker(ListBackgroundTasksRequest listBackgroundTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listBackgroundTasksRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBackgroundTasksRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackgroundTasksRequest);
             return new AsyncInvoker<ListBackgroundTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBackgroundTasksResponse>);
@@ -311,7 +311,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ListEngineProductsResponse> ListEngineProductsAsync(ListEngineProductsRequest listEngineProductsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listEngineProductsRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEngineProductsRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/products", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEngineProductsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -321,7 +321,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ListEngineProductsResponse> ListEngineProductsAsyncInvoker(ListEngineProductsRequest listEngineProductsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", listEngineProductsRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEngineProductsRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/products", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEngineProductsRequest);
             return new AsyncInvoker<ListEngineProductsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEngineProductsResponse>);
@@ -361,7 +361,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ListPluginsResponse> ListPluginsAsync(ListPluginsRequest listPluginsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listPluginsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPluginsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/rabbitmq/plugins", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPluginsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -371,7 +371,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ListPluginsResponse> ListPluginsAsyncInvoker(ListPluginsRequest listPluginsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listPluginsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listPluginsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/rabbitmq/plugins", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPluginsRequest);
             return new AsyncInvoker<ListPluginsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPluginsResponse>);
@@ -411,7 +411,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ListUserResponse> ListUserAsync(ListUserRequest listUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -421,7 +421,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ListUserResponse> ListUserAsyncInvoker(ListUserRequest listUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserRequest);
             return new AsyncInvoker<ListUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUserResponse>);
@@ -437,7 +437,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ResetPasswordResponse> ResetPasswordAsync(ResetPasswordRequest resetPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPasswordRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -447,7 +447,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ResetPasswordResponse> ResetPasswordAsyncInvoker(ResetPasswordRequest resetPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetPasswordRequest);
             return new AsyncInvoker<ResetPasswordResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetPasswordResponse>);
@@ -465,8 +465,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ResizeEngineInstanceResponse> ResizeEngineInstanceAsync(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeEngineInstanceRequest.InstanceId.ToString());
-            urlParam.Add("engine", resizeEngineInstanceRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -476,8 +476,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ResizeEngineInstanceResponse> ResizeEngineInstanceAsyncInvoker(ResizeEngineInstanceRequest resizeEngineInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeEngineInstanceRequest.InstanceId.ToString());
-            urlParam.Add("engine", resizeEngineInstanceRequest.Engine.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(resizeEngineInstanceRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeEngineInstanceRequest);
             return new AsyncInvoker<ResizeEngineInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeEngineInstanceResponse>);
@@ -495,7 +495,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ResizeInstanceResponse> ResizeInstanceAsync(ResizeInstanceRequest resizeInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -505,7 +505,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ResizeInstanceResponse> ResizeInstanceAsyncInvoker(ResizeInstanceRequest resizeInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resizeInstanceRequest);
             return new AsyncInvoker<ResizeInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeInstanceResponse>);
@@ -521,8 +521,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ShowBackgroundTaskResponse> ShowBackgroundTaskAsync(ShowBackgroundTaskRequest showBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", showBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackgroundTaskRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -532,8 +532,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ShowBackgroundTaskResponse> ShowBackgroundTaskAsyncInvoker(ShowBackgroundTaskRequest showBackgroundTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showBackgroundTaskRequest.InstanceId.ToString());
-            urlParam.Add("task_id", showBackgroundTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showBackgroundTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackgroundTaskRequest);
             return new AsyncInvoker<ShowBackgroundTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackgroundTaskResponse>);
@@ -549,7 +549,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ShowCesHierarchyResponse> ShowCesHierarchyAsync(ShowCesHierarchyRequest showCesHierarchyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showCesHierarchyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCesHierarchyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ces-hierarchy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCesHierarchyRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -559,7 +559,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ShowCesHierarchyResponse> ShowCesHierarchyAsyncInvoker(ShowCesHierarchyRequest showCesHierarchyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showCesHierarchyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCesHierarchyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/ces-hierarchy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCesHierarchyRequest);
             return new AsyncInvoker<ShowCesHierarchyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCesHierarchyResponse>);
@@ -575,8 +575,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ShowEngineInstanceExtendProductInfoResponse> ShowEngineInstanceExtendProductInfoAsync(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", showEngineInstanceExtendProductInfoRequest.Engine.ToString());
-            urlParam.Add("instance_id", showEngineInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -586,8 +586,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ShowEngineInstanceExtendProductInfoResponse> ShowEngineInstanceExtendProductInfoAsyncInvoker(ShowEngineInstanceExtendProductInfoRequest showEngineInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine", showEngineInstanceExtendProductInfoRequest.Engine.ToString());
-            urlParam.Add("instance_id", showEngineInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.Engine, out var valueOfEngine)) urlParam.Add("engine", valueOfEngine);
+            if (StringUtils.TryConvertToNonEmptyString(showEngineInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{engine}/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEngineInstanceExtendProductInfoRequest);
             return new AsyncInvoker<ShowEngineInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEngineInstanceExtendProductInfoResponse>);
@@ -603,7 +603,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ShowInstanceResponse> ShowInstanceAsync(ShowInstanceRequest showInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -613,7 +613,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ShowInstanceResponse> ShowInstanceAsyncInvoker(ShowInstanceRequest showInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             return new AsyncInvoker<ShowInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceResponse>);
@@ -631,7 +631,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ShowInstanceExtendProductInfoResponse> ShowInstanceExtendProductInfoAsync(ShowInstanceExtendProductInfoRequest showInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceExtendProductInfoRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -641,7 +641,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ShowInstanceExtendProductInfoResponse> ShowInstanceExtendProductInfoAsyncInvoker(ShowInstanceExtendProductInfoRequest showInstanceExtendProductInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceExtendProductInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceExtendProductInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceExtendProductInfoRequest);
             return new AsyncInvoker<ShowInstanceExtendProductInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceExtendProductInfoResponse>);
@@ -753,7 +753,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ShowRabbitMqTagsResponse> ShowRabbitMqTagsAsync(ShowRabbitMqTagsRequest showRabbitMqTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showRabbitMqTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRabbitMqTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/{instance_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRabbitMqTagsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -763,7 +763,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ShowRabbitMqTagsResponse> ShowRabbitMqTagsAsyncInvoker(ShowRabbitMqTagsRequest showRabbitMqTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showRabbitMqTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRabbitMqTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/{instance_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRabbitMqTagsRequest);
             return new AsyncInvoker<ShowRabbitMqTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRabbitMqTagsResponse>);
@@ -779,7 +779,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest updateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -789,7 +789,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<UpdateInstanceResponse> UpdateInstanceAsyncInvoker(UpdateInstanceRequest updateInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceRequest);
             return new AsyncInvoker<UpdateInstanceResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceResponse>);
@@ -805,7 +805,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<UpdatePluginsResponse> UpdatePluginsAsync(UpdatePluginsRequest updatePluginsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updatePluginsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePluginsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/rabbitmq/plugins", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePluginsRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -815,7 +815,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<UpdatePluginsResponse> UpdatePluginsAsyncInvoker(UpdatePluginsRequest updatePluginsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updatePluginsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePluginsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/rabbitmq/plugins", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePluginsRequest);
             return new AsyncInvoker<UpdatePluginsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePluginsResponse>);
@@ -831,8 +831,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest updateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name", updateUserRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -842,8 +842,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<UpdateUserResponse> UpdateUserAsyncInvoker(UpdateUserRequest updateUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name", updateUserRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserRequest);
             return new AsyncInvoker<UpdateUserResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateUserResponse>);
@@ -859,9 +859,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<CreateBindingResponse> CreateBindingAsync(CreateBindingRequest createBindingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createBindingRequest.InstanceId.ToString());
-            urlParam.Add("vhost", createBindingRequest.Vhost.ToString());
-            urlParam.Add("exchange", createBindingRequest.Exchange.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createBindingRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createBindingRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
+            if (StringUtils.TryConvertToNonEmptyString(createBindingRequest.Exchange, out var valueOfExchange)) urlParam.Add("exchange", valueOfExchange);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/binding", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBindingRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -871,9 +871,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<CreateBindingResponse> CreateBindingAsyncInvoker(CreateBindingRequest createBindingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createBindingRequest.InstanceId.ToString());
-            urlParam.Add("vhost", createBindingRequest.Vhost.ToString());
-            urlParam.Add("exchange", createBindingRequest.Exchange.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createBindingRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createBindingRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
+            if (StringUtils.TryConvertToNonEmptyString(createBindingRequest.Exchange, out var valueOfExchange)) urlParam.Add("exchange", valueOfExchange);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/binding", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createBindingRequest);
             return new AsyncInvoker<CreateBindingResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateBindingResponse>);
@@ -889,12 +889,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<DeleteBindingResponse> DeleteBindingAsync(DeleteBindingRequest deleteBindingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteBindingRequest.InstanceId.ToString());
-            urlParam.Add("vhost", deleteBindingRequest.Vhost.ToString());
-            urlParam.Add("exchange", deleteBindingRequest.Exchange.ToString());
-            urlParam.Add("destination_type", deleteBindingRequest.DestinationType.ToString());
-            urlParam.Add("destination", deleteBindingRequest.Destination.ToString());
-            urlParam.Add("properties_key", deleteBindingRequest.PropertiesKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.Exchange, out var valueOfExchange)) urlParam.Add("exchange", valueOfExchange);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.DestinationType, out var valueOfDestinationType)) urlParam.Add("destination_type", valueOfDestinationType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.Destination, out var valueOfDestination)) urlParam.Add("destination", valueOfDestination);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.PropertiesKey, out var valueOfPropertiesKey)) urlParam.Add("properties_key", valueOfPropertiesKey);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/destination-type/{destination_type}/destination/{destination}/properties-key/{properties_key}/unbinding", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBindingRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -904,12 +904,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<DeleteBindingResponse> DeleteBindingAsyncInvoker(DeleteBindingRequest deleteBindingRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteBindingRequest.InstanceId.ToString());
-            urlParam.Add("vhost", deleteBindingRequest.Vhost.ToString());
-            urlParam.Add("exchange", deleteBindingRequest.Exchange.ToString());
-            urlParam.Add("destination_type", deleteBindingRequest.DestinationType.ToString());
-            urlParam.Add("destination", deleteBindingRequest.Destination.ToString());
-            urlParam.Add("properties_key", deleteBindingRequest.PropertiesKey.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.Exchange, out var valueOfExchange)) urlParam.Add("exchange", valueOfExchange);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.DestinationType, out var valueOfDestinationType)) urlParam.Add("destination_type", valueOfDestinationType);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.Destination, out var valueOfDestination)) urlParam.Add("destination", valueOfDestination);
+            if (StringUtils.TryConvertToNonEmptyString(deleteBindingRequest.PropertiesKey, out var valueOfPropertiesKey)) urlParam.Add("properties_key", valueOfPropertiesKey);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/destination-type/{destination_type}/destination/{destination}/properties-key/{properties_key}/unbinding", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBindingRequest);
             return new AsyncInvoker<DeleteBindingResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBindingResponse>);
@@ -925,9 +925,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ListBindingsResponse> ListBindingsAsync(ListBindingsRequest listBindingsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listBindingsRequest.InstanceId.ToString());
-            urlParam.Add("vhost", listBindingsRequest.Vhost.ToString());
-            urlParam.Add("exchange", listBindingsRequest.Exchange.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBindingsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listBindingsRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
+            if (StringUtils.TryConvertToNonEmptyString(listBindingsRequest.Exchange, out var valueOfExchange)) urlParam.Add("exchange", valueOfExchange);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/binding", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBindingsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -937,9 +937,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ListBindingsResponse> ListBindingsAsyncInvoker(ListBindingsRequest listBindingsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listBindingsRequest.InstanceId.ToString());
-            urlParam.Add("vhost", listBindingsRequest.Vhost.ToString());
-            urlParam.Add("exchange", listBindingsRequest.Exchange.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listBindingsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listBindingsRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
+            if (StringUtils.TryConvertToNonEmptyString(listBindingsRequest.Exchange, out var valueOfExchange)) urlParam.Add("exchange", valueOfExchange);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges/{exchange}/binding", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBindingsRequest);
             return new AsyncInvoker<ListBindingsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBindingsResponse>);
@@ -955,8 +955,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<BatchDeleteExchangesResponse> BatchDeleteExchangesAsync(BatchDeleteExchangesRequest batchDeleteExchangesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteExchangesRequest.InstanceId.ToString());
-            urlParam.Add("vhost", batchDeleteExchangesRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteExchangesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteExchangesRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteExchangesRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -966,8 +966,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<BatchDeleteExchangesResponse> BatchDeleteExchangesAsyncInvoker(BatchDeleteExchangesRequest batchDeleteExchangesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteExchangesRequest.InstanceId.ToString());
-            urlParam.Add("vhost", batchDeleteExchangesRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteExchangesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteExchangesRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteExchangesRequest);
             return new AsyncInvoker<BatchDeleteExchangesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteExchangesResponse>);
@@ -983,8 +983,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<CreateExchangeResponse> CreateExchangeAsync(CreateExchangeRequest createExchangeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createExchangeRequest.InstanceId.ToString());
-            urlParam.Add("vhost", createExchangeRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createExchangeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createExchangeRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExchangeRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -994,8 +994,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<CreateExchangeResponse> CreateExchangeAsyncInvoker(CreateExchangeRequest createExchangeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createExchangeRequest.InstanceId.ToString());
-            urlParam.Add("vhost", createExchangeRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createExchangeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createExchangeRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExchangeRequest);
             return new AsyncInvoker<CreateExchangeResponse>(this, "PUT", request, JsonUtils.DeSerialize<CreateExchangeResponse>);
@@ -1011,8 +1011,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ListExchangesResponse> ListExchangesAsync(ListExchangesRequest listExchangesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listExchangesRequest.InstanceId.ToString());
-            urlParam.Add("vhost", listExchangesRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listExchangesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listExchangesRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExchangesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1022,8 +1022,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ListExchangesResponse> ListExchangesAsyncInvoker(ListExchangesRequest listExchangesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listExchangesRequest.InstanceId.ToString());
-            urlParam.Add("vhost", listExchangesRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listExchangesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listExchangesRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/exchanges", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExchangesRequest);
             return new AsyncInvoker<ListExchangesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListExchangesResponse>);
@@ -1039,8 +1039,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<BatchDeleteQueuesResponse> BatchDeleteQueuesAsync(BatchDeleteQueuesRequest batchDeleteQueuesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteQueuesRequest.InstanceId.ToString());
-            urlParam.Add("vhost", batchDeleteQueuesRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteQueuesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteQueuesRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteQueuesRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1050,8 +1050,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<BatchDeleteQueuesResponse> BatchDeleteQueuesAsyncInvoker(BatchDeleteQueuesRequest batchDeleteQueuesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteQueuesRequest.InstanceId.ToString());
-            urlParam.Add("vhost", batchDeleteQueuesRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteQueuesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteQueuesRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteQueuesRequest);
             return new AsyncInvoker<BatchDeleteQueuesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteQueuesResponse>);
@@ -1067,8 +1067,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest createQueueRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createQueueRequest.InstanceId.ToString());
-            urlParam.Add("vhost", createQueueRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createQueueRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createQueueRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createQueueRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1078,8 +1078,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<CreateQueueResponse> CreateQueueAsyncInvoker(CreateQueueRequest createQueueRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createQueueRequest.InstanceId.ToString());
-            urlParam.Add("vhost", createQueueRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createQueueRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createQueueRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createQueueRequest);
             return new AsyncInvoker<CreateQueueResponse>(this, "PUT", request, JsonUtils.DeSerialize<CreateQueueResponse>);
@@ -1095,9 +1095,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<DeleteQueueInfoResponse> DeleteQueueInfoAsync(DeleteQueueInfoRequest deleteQueueInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteQueueInfoRequest.InstanceId.ToString());
-            urlParam.Add("vhost", deleteQueueInfoRequest.Vhost.ToString());
-            urlParam.Add("queue", deleteQueueInfoRequest.Queue.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteQueueInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteQueueInfoRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
+            if (StringUtils.TryConvertToNonEmptyString(deleteQueueInfoRequest.Queue, out var valueOfQueue)) urlParam.Add("queue", valueOfQueue);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues/{queue}/contents", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteQueueInfoRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -1107,9 +1107,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<DeleteQueueInfoResponse> DeleteQueueInfoAsyncInvoker(DeleteQueueInfoRequest deleteQueueInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteQueueInfoRequest.InstanceId.ToString());
-            urlParam.Add("vhost", deleteQueueInfoRequest.Vhost.ToString());
-            urlParam.Add("queue", deleteQueueInfoRequest.Queue.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteQueueInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteQueueInfoRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
+            if (StringUtils.TryConvertToNonEmptyString(deleteQueueInfoRequest.Queue, out var valueOfQueue)) urlParam.Add("queue", valueOfQueue);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues/{queue}/contents", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteQueueInfoRequest);
             return new AsyncInvoker<DeleteQueueInfoResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteQueueInfoResponse>);
@@ -1125,8 +1125,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest listQueuesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listQueuesRequest.InstanceId.ToString());
-            urlParam.Add("vhost", listQueuesRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listQueuesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listQueuesRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQueuesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1136,8 +1136,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ListQueuesResponse> ListQueuesAsyncInvoker(ListQueuesRequest listQueuesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listQueuesRequest.InstanceId.ToString());
-            urlParam.Add("vhost", listQueuesRequest.Vhost.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listQueuesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listQueuesRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listQueuesRequest);
             return new AsyncInvoker<ListQueuesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListQueuesResponse>);
@@ -1153,9 +1153,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ShowQueueDetailsResponse> ShowQueueDetailsAsync(ShowQueueDetailsRequest showQueueDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showQueueDetailsRequest.InstanceId.ToString());
-            urlParam.Add("vhost", showQueueDetailsRequest.Vhost.ToString());
-            urlParam.Add("queue", showQueueDetailsRequest.Queue.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showQueueDetailsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showQueueDetailsRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
+            if (StringUtils.TryConvertToNonEmptyString(showQueueDetailsRequest.Queue, out var valueOfQueue)) urlParam.Add("queue", valueOfQueue);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues/{queue}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQueueDetailsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1165,9 +1165,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ShowQueueDetailsResponse> ShowQueueDetailsAsyncInvoker(ShowQueueDetailsRequest showQueueDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showQueueDetailsRequest.InstanceId.ToString());
-            urlParam.Add("vhost", showQueueDetailsRequest.Vhost.ToString());
-            urlParam.Add("queue", showQueueDetailsRequest.Queue.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showQueueDetailsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showQueueDetailsRequest.Vhost, out var valueOfVhost)) urlParam.Add("vhost", valueOfVhost);
+            if (StringUtils.TryConvertToNonEmptyString(showQueueDetailsRequest.Queue, out var valueOfQueue)) urlParam.Add("queue", valueOfQueue);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts/{vhost}/queues/{queue}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQueueDetailsRequest);
             return new AsyncInvoker<ShowQueueDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQueueDetailsResponse>);
@@ -1183,7 +1183,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<BatchDeleteVhostsResponse> BatchDeleteVhostsAsync(BatchDeleteVhostsRequest batchDeleteVhostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteVhostsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteVhostsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteVhostsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -1193,7 +1193,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<BatchDeleteVhostsResponse> BatchDeleteVhostsAsyncInvoker(BatchDeleteVhostsRequest batchDeleteVhostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchDeleteVhostsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteVhostsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteVhostsRequest);
             return new AsyncInvoker<BatchDeleteVhostsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteVhostsResponse>);
@@ -1209,7 +1209,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<CreateVhostResponse> CreateVhostAsync(CreateVhostRequest createVhostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createVhostRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createVhostRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createVhostRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1219,7 +1219,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<CreateVhostResponse> CreateVhostAsyncInvoker(CreateVhostRequest createVhostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createVhostRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createVhostRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createVhostRequest);
             return new AsyncInvoker<CreateVhostResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<CreateVhostResponse>);
@@ -1235,7 +1235,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public async Task<ListVhostsResponse> ListVhostsAsync(ListVhostsRequest listVhostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listVhostsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listVhostsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVhostsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1245,7 +1245,7 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         public AsyncInvoker<ListVhostsResponse> ListVhostsAsyncInvoker(ListVhostsRequest listVhostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listVhostsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listVhostsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v2/rabbitmq/{project_id}/instances/{instance_id}/vhosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVhostsRequest);
             return new AsyncInvoker<ListVhostsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVhostsResponse>);

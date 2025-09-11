@@ -24,8 +24,8 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V2
         public ExecuteChatCompletionResponse ExecuteChatCompletion(ExecuteChatCompletionRequest executeChatCompletionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", executeChatCompletionRequest.PoolId.ToString());
-            urlParam.Add("deployment_id", executeChatCompletionRequest.DeploymentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeChatCompletionRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
+            if (StringUtils.TryConvertToNonEmptyString(executeChatCompletionRequest.DeploymentId, out var valueOfDeploymentId)) urlParam.Add("deployment_id", valueOfDeploymentId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/pools/{pool_id}/deployments/{deployment_id}/chat/completions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeChatCompletionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -35,8 +35,8 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V2
         public SyncInvoker<ExecuteChatCompletionResponse> ExecuteChatCompletionInvoker(ExecuteChatCompletionRequest executeChatCompletionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", executeChatCompletionRequest.PoolId.ToString());
-            urlParam.Add("deployment_id", executeChatCompletionRequest.DeploymentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeChatCompletionRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
+            if (StringUtils.TryConvertToNonEmptyString(executeChatCompletionRequest.DeploymentId, out var valueOfDeploymentId)) urlParam.Add("deployment_id", valueOfDeploymentId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/pools/{pool_id}/deployments/{deployment_id}/chat/completions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeChatCompletionRequest);
             return new SyncInvoker<ExecuteChatCompletionResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteChatCompletionResponse>);
@@ -52,8 +52,8 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V2
         public ExecuteTextCompletionResponse ExecuteTextCompletion(ExecuteTextCompletionRequest executeTextCompletionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", executeTextCompletionRequest.PoolId.ToString());
-            urlParam.Add("deployment_id", executeTextCompletionRequest.DeploymentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeTextCompletionRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
+            if (StringUtils.TryConvertToNonEmptyString(executeTextCompletionRequest.DeploymentId, out var valueOfDeploymentId)) urlParam.Add("deployment_id", valueOfDeploymentId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/pools/{pool_id}/deployments/{deployment_id}/text/completions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeTextCompletionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -63,8 +63,8 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V2
         public SyncInvoker<ExecuteTextCompletionResponse> ExecuteTextCompletionInvoker(ExecuteTextCompletionRequest executeTextCompletionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", executeTextCompletionRequest.PoolId.ToString());
-            urlParam.Add("deployment_id", executeTextCompletionRequest.DeploymentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeTextCompletionRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
+            if (StringUtils.TryConvertToNonEmptyString(executeTextCompletionRequest.DeploymentId, out var valueOfDeploymentId)) urlParam.Add("deployment_id", valueOfDeploymentId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/pools/{pool_id}/deployments/{deployment_id}/text/completions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeTextCompletionRequest);
             return new SyncInvoker<ExecuteTextCompletionResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteTextCompletionResponse>);

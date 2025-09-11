@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 需要批量删除的告警规则的ID列表
+        /// **参数解释**： 需要批量删除的告警规则的ID列表。 **约束限制**： 告警规则ID最多为10个，最少为1个。 
         /// </summary>
         [JsonProperty("alarm_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AlarmIds { get; set; }

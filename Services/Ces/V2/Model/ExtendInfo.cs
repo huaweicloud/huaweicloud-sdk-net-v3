@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 
+    /// 看板相关拓展信息
     /// </summary>
     public class ExtendInfo 
     {
@@ -572,7 +572,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public FilterEnum Filter { get; set; }
         /// <summary>
-        /// &#39;表示指标聚合周期，{1:表示原始值，60:表示一分钟，300:表示5分钟，1200:表示20分钟，3600:表示1小时，14400:表示4小时，86400:表示1天}&#39; 
+        /// &#39;表示指标聚合周期，{1:表示原始值，60:表示一分钟，300:表示5分钟，1200:表示20分钟，3600:表示1小时，14400:表示4小时，86400:表示1天}&#39;&#39; 
         /// </summary>
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public string Period { get; set; }
@@ -591,13 +591,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 开始时间
         /// </summary>
         [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
-        public int? From { get; set; }
+        public long? From { get; set; }
 
         /// <summary>
         /// 结束时间
         /// </summary>
         [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
-        public int? To { get; set; }
+        public long? To { get; set; }
 
         /// <summary>
         /// 监控大屏背景颜色

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 屏蔽规则ID
+        /// **参数解释**： 屏蔽规则ID。    **约束限制**： 不涉及。 **取值范围**： 只能包含字母、数字，长度为[1,64]个字符。           **默认取值**： 不涉及。 
         /// </summary>
         [SDKProperty("notification_mask_id", IsPath = true)]
         [JsonProperty("notification_mask_id", NullValueHandling = NullValueHandling.Ignore)]

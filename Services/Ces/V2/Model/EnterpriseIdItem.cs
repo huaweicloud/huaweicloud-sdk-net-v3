@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 企业项目Id
+        /// **参数解释** 企业项目ID **约束限制** 不涉及 **取值范围** 只能包含小写字母、数字、“-”、“_”，可以自定义企业项目ID，长度为36个字符。也可以为0（代表默认企业项目ID）。 **默认取值** 不涉及 
         /// </summary>
         [JsonProperty("enterprise_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseId { get; set; }

@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 资源信息
+        /// **参数解释**： 资源信息。 
         /// </summary>
         [JsonProperty("resources", NullValueHandling = NullValueHandling.Ignore)]
-        public List<List<Dimension>> Resources { get; set; }
+        public List<List<DimensionResp>> Resources { get; set; }
 
         /// <summary>
-        /// 资源总数
+        /// **参数解释**： 资源总数。 **取值范围**： [0,2147483647] 
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

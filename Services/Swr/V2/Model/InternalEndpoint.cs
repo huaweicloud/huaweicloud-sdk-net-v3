@@ -236,7 +236,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// 访问控制的创建时间
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? CreatedAt { get; set; }
+        public string CreatedAt { get; set; }
 
 
 

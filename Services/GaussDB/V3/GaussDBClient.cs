@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public AddDatabasePermissionResponse AddDatabasePermission(AddDatabasePermissionRequest addDatabasePermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", addDatabasePermissionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addDatabasePermissionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/privilege", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addDatabasePermissionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<AddDatabasePermissionResponse> AddDatabasePermissionInvoker(AddDatabasePermissionRequest addDatabasePermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", addDatabasePermissionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(addDatabasePermissionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/privilege", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addDatabasePermissionRequest);
             return new SyncInvoker<AddDatabasePermissionResponse>(this, "POST", request, JsonUtils.DeSerialize<AddDatabasePermissionResponse>);
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public BatchTagActionResponse BatchTagAction(BatchTagActionRequest batchTagActionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchTagActionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchTagActionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchTagActionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -60,7 +60,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<BatchTagActionResponse> BatchTagActionInvoker(BatchTagActionRequest batchTagActionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", batchTagActionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchTagActionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchTagActionRequest);
             return new SyncInvoker<BatchTagActionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchTagActionResponse>);
@@ -100,7 +100,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CancelGaussMySqlInstanceEipResponse CancelGaussMySqlInstanceEip(CancelGaussMySqlInstanceEipRequest cancelGaussMySqlInstanceEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", cancelGaussMySqlInstanceEipRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelGaussMySqlInstanceEipRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/public-ips/unbind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelGaussMySqlInstanceEipRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -110,7 +110,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CancelGaussMySqlInstanceEipResponse> CancelGaussMySqlInstanceEipInvoker(CancelGaussMySqlInstanceEipRequest cancelGaussMySqlInstanceEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", cancelGaussMySqlInstanceEipRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelGaussMySqlInstanceEipRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/public-ips/unbind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelGaussMySqlInstanceEipRequest);
             return new SyncInvoker<CancelGaussMySqlInstanceEipResponse>(this, "PUT", request, JsonUtils.DeSerialize<CancelGaussMySqlInstanceEipResponse>);
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ChangeGaussMySqlInstanceSpecificationResponse ChangeGaussMySqlInstanceSpecification(ChangeGaussMySqlInstanceSpecificationRequest changeGaussMySqlInstanceSpecificationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", changeGaussMySqlInstanceSpecificationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(changeGaussMySqlInstanceSpecificationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeGaussMySqlInstanceSpecificationRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -160,7 +160,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ChangeGaussMySqlInstanceSpecificationResponse> ChangeGaussMySqlInstanceSpecificationInvoker(ChangeGaussMySqlInstanceSpecificationRequest changeGaussMySqlInstanceSpecificationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", changeGaussMySqlInstanceSpecificationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(changeGaussMySqlInstanceSpecificationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeGaussMySqlInstanceSpecificationRequest);
             return new SyncInvoker<ChangeGaussMySqlInstanceSpecificationResponse>(this, "POST", request, JsonUtils.DeSerialize<ChangeGaussMySqlInstanceSpecificationResponse>);
@@ -176,8 +176,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ChangeGaussMySqlProxySpecificationResponse ChangeGaussMySqlProxySpecification(ChangeGaussMySqlProxySpecificationRequest changeGaussMySqlProxySpecificationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", changeGaussMySqlProxySpecificationRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", changeGaussMySqlProxySpecificationRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(changeGaussMySqlProxySpecificationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(changeGaussMySqlProxySpecificationRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/flavor", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeGaussMySqlProxySpecificationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -187,8 +187,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ChangeGaussMySqlProxySpecificationResponse> ChangeGaussMySqlProxySpecificationInvoker(ChangeGaussMySqlProxySpecificationRequest changeGaussMySqlProxySpecificationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", changeGaussMySqlProxySpecificationRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", changeGaussMySqlProxySpecificationRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(changeGaussMySqlProxySpecificationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(changeGaussMySqlProxySpecificationRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/flavor", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeGaussMySqlProxySpecificationRequest);
             return new SyncInvoker<ChangeGaussMySqlProxySpecificationResponse>(this, "PUT", request, JsonUtils.DeSerialize<ChangeGaussMySqlProxySpecificationResponse>);
@@ -228,7 +228,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CopyConfigurationsResponse CopyConfigurations(CopyConfigurationsRequest copyConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", copyConfigurationsRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(copyConfigurationsRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/copy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyConfigurationsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CopyConfigurationsResponse> CopyConfigurationsInvoker(CopyConfigurationsRequest copyConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", copyConfigurationsRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(copyConfigurationsRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/copy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyConfigurationsRequest);
             return new SyncInvoker<CopyConfigurationsResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyConfigurationsResponse>);
@@ -254,8 +254,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CopyInstanceConfigurationsResponse CopyInstanceConfigurations(CopyInstanceConfigurationsRequest copyInstanceConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", copyInstanceConfigurationsRequest.InstanceId.ToString());
-            urlParam.Add("configuration_id", copyInstanceConfigurationsRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(copyInstanceConfigurationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(copyInstanceConfigurationsRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations/{configuration_id}/copy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyInstanceConfigurationsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -265,8 +265,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CopyInstanceConfigurationsResponse> CopyInstanceConfigurationsInvoker(CopyInstanceConfigurationsRequest copyInstanceConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", copyInstanceConfigurationsRequest.InstanceId.ToString());
-            urlParam.Add("configuration_id", copyInstanceConfigurationsRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(copyInstanceConfigurationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(copyInstanceConfigurationsRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations/{configuration_id}/copy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyInstanceConfigurationsRequest);
             return new SyncInvoker<CopyInstanceConfigurationsResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyInstanceConfigurationsResponse>);
@@ -282,8 +282,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateAccessControlResponse CreateAccessControl(CreateAccessControlRequest createAccessControlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createAccessControlRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", createAccessControlRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAccessControlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createAccessControlRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/access-control", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAccessControlRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -293,8 +293,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateAccessControlResponse> CreateAccessControlInvoker(CreateAccessControlRequest createAccessControlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createAccessControlRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", createAccessControlRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAccessControlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createAccessControlRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/access-control", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createAccessControlRequest);
             return new SyncInvoker<CreateAccessControlResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAccessControlResponse>);
@@ -358,7 +358,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateGaussMySqlDatabaseResponse CreateGaussMySqlDatabase(CreateGaussMySqlDatabaseRequest createGaussMySqlDatabaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createGaussMySqlDatabaseRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGaussMySqlDatabaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMySqlDatabaseRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -368,7 +368,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateGaussMySqlDatabaseResponse> CreateGaussMySqlDatabaseInvoker(CreateGaussMySqlDatabaseRequest createGaussMySqlDatabaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createGaussMySqlDatabaseRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGaussMySqlDatabaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMySqlDatabaseRequest);
             return new SyncInvoker<CreateGaussMySqlDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGaussMySqlDatabaseResponse>);
@@ -384,7 +384,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateGaussMySqlDatabaseUserResponse CreateGaussMySqlDatabaseUser(CreateGaussMySqlDatabaseUserRequest createGaussMySqlDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createGaussMySqlDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGaussMySqlDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMySqlDatabaseUserRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -394,7 +394,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateGaussMySqlDatabaseUserResponse> CreateGaussMySqlDatabaseUserInvoker(CreateGaussMySqlDatabaseUserRequest createGaussMySqlDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createGaussMySqlDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGaussMySqlDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMySqlDatabaseUserRequest);
             return new SyncInvoker<CreateGaussMySqlDatabaseUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGaussMySqlDatabaseUserResponse>);
@@ -434,7 +434,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateGaussMySqlProxyResponse CreateGaussMySqlProxy(CreateGaussMySqlProxyRequest createGaussMySqlProxyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createGaussMySqlProxyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGaussMySqlProxyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMySqlProxyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -444,7 +444,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateGaussMySqlProxyResponse> CreateGaussMySqlProxyInvoker(CreateGaussMySqlProxyRequest createGaussMySqlProxyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createGaussMySqlProxyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGaussMySqlProxyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMySqlProxyRequest);
             return new SyncInvoker<CreateGaussMySqlProxyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGaussMySqlProxyResponse>);
@@ -460,7 +460,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateGaussMySqlReadonlyNodeResponse CreateGaussMySqlReadonlyNode(CreateGaussMySqlReadonlyNodeRequest createGaussMySqlReadonlyNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createGaussMySqlReadonlyNodeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGaussMySqlReadonlyNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/enlarge", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMySqlReadonlyNodeRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -470,7 +470,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateGaussMySqlReadonlyNodeResponse> CreateGaussMySqlReadonlyNodeInvoker(CreateGaussMySqlReadonlyNodeRequest createGaussMySqlReadonlyNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createGaussMySqlReadonlyNodeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGaussMySqlReadonlyNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/enlarge", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMySqlReadonlyNodeRequest);
             return new SyncInvoker<CreateGaussMySqlReadonlyNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGaussMySqlReadonlyNodeResponse>);
@@ -486,7 +486,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateGaussMysqlDnsResponse CreateGaussMysqlDns(CreateGaussMysqlDnsRequest createGaussMysqlDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createGaussMysqlDnsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGaussMysqlDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMysqlDnsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -496,7 +496,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateGaussMysqlDnsResponse> CreateGaussMysqlDnsInvoker(CreateGaussMysqlDnsRequest createGaussMysqlDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createGaussMysqlDnsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createGaussMysqlDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createGaussMysqlDnsRequest);
             return new SyncInvoker<CreateGaussMysqlDnsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateGaussMysqlDnsResponse>);
@@ -536,8 +536,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateProxyDnsNameResponse CreateProxyDnsName(CreateProxyDnsNameRequest createProxyDnsNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createProxyDnsNameRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", createProxyDnsNameRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createProxyDnsNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createProxyDnsNameRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProxyDnsNameRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -547,8 +547,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateProxyDnsNameResponse> CreateProxyDnsNameInvoker(CreateProxyDnsNameRequest createProxyDnsNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createProxyDnsNameRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", createProxyDnsNameRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createProxyDnsNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(createProxyDnsNameRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createProxyDnsNameRequest);
             return new SyncInvoker<CreateProxyDnsNameResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateProxyDnsNameResponse>);
@@ -564,7 +564,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateRestoreTablesResponse CreateRestoreTables(CreateRestoreTablesRequest createRestoreTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createRestoreTablesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRestoreTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restore/tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRestoreTablesRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -574,7 +574,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateRestoreTablesResponse> CreateRestoreTablesInvoker(CreateRestoreTablesRequest createRestoreTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createRestoreTablesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createRestoreTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restore/tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createRestoreTablesRequest);
             return new SyncInvoker<CreateRestoreTablesResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRestoreTablesResponse>);
@@ -590,7 +590,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteDatabasePermissionResponse DeleteDatabasePermission(DeleteDatabasePermissionRequest deleteDatabasePermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteDatabasePermissionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDatabasePermissionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/privilege", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteDatabasePermissionRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -600,7 +600,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteDatabasePermissionResponse> DeleteDatabasePermissionInvoker(DeleteDatabasePermissionRequest deleteDatabasePermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteDatabasePermissionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDatabasePermissionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/privilege", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteDatabasePermissionRequest);
             return new SyncInvoker<DeleteDatabasePermissionResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDatabasePermissionResponse>);
@@ -616,7 +616,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteGaussMySqlBackupResponse DeleteGaussMySqlBackup(DeleteGaussMySqlBackupRequest deleteGaussMySqlBackupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("backup_id", deleteGaussMySqlBackupRequest.BackupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlBackupRequest.BackupId, out var valueOfBackupId)) urlParam.Add("backup_id", valueOfBackupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGaussMySqlBackupRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -626,7 +626,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteGaussMySqlBackupResponse> DeleteGaussMySqlBackupInvoker(DeleteGaussMySqlBackupRequest deleteGaussMySqlBackupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("backup_id", deleteGaussMySqlBackupRequest.BackupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlBackupRequest.BackupId, out var valueOfBackupId)) urlParam.Add("backup_id", valueOfBackupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGaussMySqlBackupRequest);
             return new SyncInvoker<DeleteGaussMySqlBackupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteGaussMySqlBackupResponse>);
@@ -642,7 +642,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteGaussMySqlConfigurationResponse DeleteGaussMySqlConfiguration(DeleteGaussMySqlConfigurationRequest deleteGaussMySqlConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", deleteGaussMySqlConfigurationRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGaussMySqlConfigurationRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -652,7 +652,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteGaussMySqlConfigurationResponse> DeleteGaussMySqlConfigurationInvoker(DeleteGaussMySqlConfigurationRequest deleteGaussMySqlConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", deleteGaussMySqlConfigurationRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGaussMySqlConfigurationRequest);
             return new SyncInvoker<DeleteGaussMySqlConfigurationResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteGaussMySqlConfigurationResponse>);
@@ -668,7 +668,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteGaussMySqlDatabaseResponse DeleteGaussMySqlDatabase(DeleteGaussMySqlDatabaseRequest deleteGaussMySqlDatabaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteGaussMySqlDatabaseRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlDatabaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteGaussMySqlDatabaseRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -678,7 +678,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteGaussMySqlDatabaseResponse> DeleteGaussMySqlDatabaseInvoker(DeleteGaussMySqlDatabaseRequest deleteGaussMySqlDatabaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteGaussMySqlDatabaseRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlDatabaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteGaussMySqlDatabaseRequest);
             return new SyncInvoker<DeleteGaussMySqlDatabaseResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteGaussMySqlDatabaseResponse>);
@@ -694,7 +694,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteGaussMySqlDatabaseUserResponse DeleteGaussMySqlDatabaseUser(DeleteGaussMySqlDatabaseUserRequest deleteGaussMySqlDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteGaussMySqlDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteGaussMySqlDatabaseUserRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -704,7 +704,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteGaussMySqlDatabaseUserResponse> DeleteGaussMySqlDatabaseUserInvoker(DeleteGaussMySqlDatabaseUserRequest deleteGaussMySqlDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteGaussMySqlDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteGaussMySqlDatabaseUserRequest);
             return new SyncInvoker<DeleteGaussMySqlDatabaseUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteGaussMySqlDatabaseUserResponse>);
@@ -720,7 +720,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteGaussMySqlInstanceResponse DeleteGaussMySqlInstance(DeleteGaussMySqlInstanceRequest deleteGaussMySqlInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteGaussMySqlInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGaussMySqlInstanceRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -730,7 +730,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteGaussMySqlInstanceResponse> DeleteGaussMySqlInstanceInvoker(DeleteGaussMySqlInstanceRequest deleteGaussMySqlInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteGaussMySqlInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGaussMySqlInstanceRequest);
             return new SyncInvoker<DeleteGaussMySqlInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteGaussMySqlInstanceResponse>);
@@ -746,7 +746,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteGaussMySqlProxyResponse DeleteGaussMySqlProxy(DeleteGaussMySqlProxyRequest deleteGaussMySqlProxyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteGaussMySqlProxyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlProxyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteGaussMySqlProxyRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -756,7 +756,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteGaussMySqlProxyResponse> DeleteGaussMySqlProxyInvoker(DeleteGaussMySqlProxyRequest deleteGaussMySqlProxyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteGaussMySqlProxyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlProxyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteGaussMySqlProxyRequest);
             return new SyncInvoker<DeleteGaussMySqlProxyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteGaussMySqlProxyResponse>);
@@ -772,8 +772,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteGaussMySqlReadonlyNodeResponse DeleteGaussMySqlReadonlyNode(DeleteGaussMySqlReadonlyNodeRequest deleteGaussMySqlReadonlyNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteGaussMySqlReadonlyNodeRequest.InstanceId.ToString());
-            urlParam.Add("node_id", deleteGaussMySqlReadonlyNodeRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlReadonlyNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlReadonlyNodeRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGaussMySqlReadonlyNodeRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -783,8 +783,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteGaussMySqlReadonlyNodeResponse> DeleteGaussMySqlReadonlyNodeInvoker(DeleteGaussMySqlReadonlyNodeRequest deleteGaussMySqlReadonlyNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteGaussMySqlReadonlyNodeRequest.InstanceId.ToString());
-            urlParam.Add("node_id", deleteGaussMySqlReadonlyNodeRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlReadonlyNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGaussMySqlReadonlyNodeRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGaussMySqlReadonlyNodeRequest);
             return new SyncInvoker<DeleteGaussMySqlReadonlyNodeResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteGaussMySqlReadonlyNodeResponse>);
@@ -824,8 +824,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteProxyPrivateDnsNameResponse DeleteProxyPrivateDnsName(DeleteProxyPrivateDnsNameRequest deleteProxyPrivateDnsNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteProxyPrivateDnsNameRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", deleteProxyPrivateDnsNameRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteProxyPrivateDnsNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteProxyPrivateDnsNameRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProxyPrivateDnsNameRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -835,8 +835,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteProxyPrivateDnsNameResponse> DeleteProxyPrivateDnsNameInvoker(DeleteProxyPrivateDnsNameRequest deleteProxyPrivateDnsNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteProxyPrivateDnsNameRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", deleteProxyPrivateDnsNameRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteProxyPrivateDnsNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteProxyPrivateDnsNameRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProxyPrivateDnsNameRequest);
             return new SyncInvoker<DeleteProxyPrivateDnsNameResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteProxyPrivateDnsNameResponse>);
@@ -852,7 +852,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteScheduleTasKResponse DeleteScheduleTasK(DeleteScheduleTasKRequest deleteScheduleTasKRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteScheduleTasKRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteScheduleTasKRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/scheduled-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteScheduleTasKRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -862,7 +862,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteScheduleTasKResponse> DeleteScheduleTasKInvoker(DeleteScheduleTasKRequest deleteScheduleTasKRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteScheduleTasKRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteScheduleTasKRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/scheduled-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteScheduleTasKRequest);
             return new SyncInvoker<DeleteScheduleTasKResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteScheduleTasKResponse>);
@@ -878,7 +878,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteSqlFilterRuleResponse DeleteSqlFilterRule(DeleteSqlFilterRuleRequest deleteSqlFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteSqlFilterRuleRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSqlFilterRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSqlFilterRuleRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -888,7 +888,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteSqlFilterRuleResponse> DeleteSqlFilterRuleInvoker(DeleteSqlFilterRuleRequest deleteSqlFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteSqlFilterRuleRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSqlFilterRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSqlFilterRuleRequest);
             return new SyncInvoker<DeleteSqlFilterRuleResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteSqlFilterRuleResponse>);
@@ -904,7 +904,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteTaskRecordResponse DeleteTaskRecord(DeleteTaskRecordRequest deleteTaskRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", deleteTaskRecordRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTaskRecordRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTaskRecordRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -914,7 +914,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteTaskRecordResponse> DeleteTaskRecordInvoker(DeleteTaskRecordRequest deleteTaskRecordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", deleteTaskRecordRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTaskRecordRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTaskRecordRequest);
             return new SyncInvoker<DeleteTaskRecordResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTaskRecordResponse>);
@@ -930,8 +930,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteTaurusDbNodeProcessesResponse DeleteTaurusDbNodeProcesses(DeleteTaurusDbNodeProcessesRequest deleteTaurusDbNodeProcessesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteTaurusDbNodeProcessesRequest.InstanceId.ToString());
-            urlParam.Add("node_id", deleteTaurusDbNodeProcessesRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTaurusDbNodeProcessesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTaurusDbNodeProcessesRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteTaurusDbNodeProcessesRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -941,8 +941,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteTaurusDbNodeProcessesResponse> DeleteTaurusDbNodeProcessesInvoker(DeleteTaurusDbNodeProcessesRequest deleteTaurusDbNodeProcessesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteTaurusDbNodeProcessesRequest.InstanceId.ToString());
-            urlParam.Add("node_id", deleteTaurusDbNodeProcessesRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTaurusDbNodeProcessesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTaurusDbNodeProcessesRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteTaurusDbNodeProcessesRequest);
             return new SyncInvoker<DeleteTaurusDbNodeProcessesResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteTaurusDbNodeProcessesResponse>);
@@ -958,7 +958,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DescribeBackupEncryptStatusResponse DescribeBackupEncryptStatus(DescribeBackupEncryptStatusRequest describeBackupEncryptStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describeBackupEncryptStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeBackupEncryptStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/encryption", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeBackupEncryptStatusRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -968,7 +968,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DescribeBackupEncryptStatusResponse> DescribeBackupEncryptStatusInvoker(DescribeBackupEncryptStatusRequest describeBackupEncryptStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", describeBackupEncryptStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(describeBackupEncryptStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/encryption", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", describeBackupEncryptStatusRequest);
             return new SyncInvoker<DescribeBackupEncryptStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<DescribeBackupEncryptStatusResponse>);
@@ -984,8 +984,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DownloadSlowLogFileResponse DownloadSlowLogFile(DownloadSlowLogFileRequest downloadSlowLogFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", downloadSlowLogFileRequest.InstanceId.ToString());
-            urlParam.Add("node_id", downloadSlowLogFileRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadSlowLogFileRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(downloadSlowLogFileRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/slowlog-download", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowLogFileRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -995,8 +995,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DownloadSlowLogFileResponse> DownloadSlowLogFileInvoker(DownloadSlowLogFileRequest downloadSlowLogFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", downloadSlowLogFileRequest.InstanceId.ToString());
-            urlParam.Add("node_id", downloadSlowLogFileRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadSlowLogFileRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(downloadSlowLogFileRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/slowlog-download", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSlowLogFileRequest);
             return new SyncInvoker<DownloadSlowLogFileResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadSlowLogFileResponse>);
@@ -1012,7 +1012,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ExpandGaussMySqlInstanceVolumeResponse ExpandGaussMySqlInstanceVolume(ExpandGaussMySqlInstanceVolumeRequest expandGaussMySqlInstanceVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", expandGaussMySqlInstanceVolumeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(expandGaussMySqlInstanceVolumeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/volume/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", expandGaussMySqlInstanceVolumeRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1022,7 +1022,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ExpandGaussMySqlInstanceVolumeResponse> ExpandGaussMySqlInstanceVolumeInvoker(ExpandGaussMySqlInstanceVolumeRequest expandGaussMySqlInstanceVolumeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", expandGaussMySqlInstanceVolumeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(expandGaussMySqlInstanceVolumeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/volume/extend", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", expandGaussMySqlInstanceVolumeRequest);
             return new SyncInvoker<ExpandGaussMySqlInstanceVolumeResponse>(this, "POST", request, JsonUtils.DeSerialize<ExpandGaussMySqlInstanceVolumeResponse>);
@@ -1039,7 +1039,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ExpandGaussMySqlProxyResponse ExpandGaussMySqlProxy(ExpandGaussMySqlProxyRequest expandGaussMySqlProxyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", expandGaussMySqlProxyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(expandGaussMySqlProxyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/enlarge", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", expandGaussMySqlProxyRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1049,7 +1049,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ExpandGaussMySqlProxyResponse> ExpandGaussMySqlProxyInvoker(ExpandGaussMySqlProxyRequest expandGaussMySqlProxyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", expandGaussMySqlProxyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(expandGaussMySqlProxyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/enlarge", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", expandGaussMySqlProxyRequest);
             return new SyncInvoker<ExpandGaussMySqlProxyResponse>(this, "POST", request, JsonUtils.DeSerialize<ExpandGaussMySqlProxyResponse>);
@@ -1065,7 +1065,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public InvokeGaussMySqlInstanceSwitchOverResponse InvokeGaussMySqlInstanceSwitchOver(InvokeGaussMySqlInstanceSwitchOverRequest invokeGaussMySqlInstanceSwitchOverRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", invokeGaussMySqlInstanceSwitchOverRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(invokeGaussMySqlInstanceSwitchOverRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", invokeGaussMySqlInstanceSwitchOverRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1075,7 +1075,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<InvokeGaussMySqlInstanceSwitchOverResponse> InvokeGaussMySqlInstanceSwitchOverInvoker(InvokeGaussMySqlInstanceSwitchOverRequest invokeGaussMySqlInstanceSwitchOverRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", invokeGaussMySqlInstanceSwitchOverRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(invokeGaussMySqlInstanceSwitchOverRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/switchover", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", invokeGaussMySqlInstanceSwitchOverRequest);
             return new SyncInvoker<InvokeGaussMySqlInstanceSwitchOverResponse>(this, "PUT", request, JsonUtils.DeSerialize<InvokeGaussMySqlInstanceSwitchOverResponse>);
@@ -1091,7 +1091,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListAuditLogDownloadLinkResponse ListAuditLogDownloadLink(ListAuditLogDownloadLinkRequest listAuditLogDownloadLinkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAuditLogDownloadLinkRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAuditLogDownloadLinkRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/auditlog/download-link", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogDownloadLinkRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1101,7 +1101,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListAuditLogDownloadLinkResponse> ListAuditLogDownloadLinkInvoker(ListAuditLogDownloadLinkRequest listAuditLogDownloadLinkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAuditLogDownloadLinkRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAuditLogDownloadLinkRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/auditlog/download-link", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogDownloadLinkRequest);
             return new SyncInvoker<ListAuditLogDownloadLinkResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuditLogDownloadLinkResponse>);
@@ -1117,7 +1117,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListAuditLogsResponse ListAuditLogs(ListAuditLogsRequest listAuditLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAuditLogsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAuditLogsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1127,7 +1127,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListAuditLogsResponse> ListAuditLogsInvoker(ListAuditLogsRequest listAuditLogsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listAuditLogsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAuditLogsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditLogsRequest);
             return new SyncInvoker<ListAuditLogsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuditLogsResponse>);
@@ -1167,7 +1167,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListConfigurationsInstancesResponse ListConfigurationsInstances(ListConfigurationsInstancesRequest listConfigurationsInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", listConfigurationsInstancesRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listConfigurationsInstancesRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/applicable-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationsInstancesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1177,7 +1177,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListConfigurationsInstancesResponse> ListConfigurationsInstancesInvoker(ListConfigurationsInstancesRequest listConfigurationsInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", listConfigurationsInstancesRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listConfigurationsInstancesRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/applicable-instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationsInstancesRequest);
             return new SyncInvoker<ListConfigurationsInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConfigurationsInstancesResponse>);
@@ -1241,7 +1241,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListGaussMySqlDatabaseResponse ListGaussMySqlDatabase(ListGaussMySqlDatabaseRequest listGaussMySqlDatabaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listGaussMySqlDatabaseRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGaussMySqlDatabaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGaussMySqlDatabaseRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1251,7 +1251,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListGaussMySqlDatabaseResponse> ListGaussMySqlDatabaseInvoker(ListGaussMySqlDatabaseRequest listGaussMySqlDatabaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listGaussMySqlDatabaseRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGaussMySqlDatabaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGaussMySqlDatabaseRequest);
             return new SyncInvoker<ListGaussMySqlDatabaseResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGaussMySqlDatabaseResponse>);
@@ -1267,7 +1267,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListGaussMySqlDatabaseCharsetsResponse ListGaussMySqlDatabaseCharsets(ListGaussMySqlDatabaseCharsetsRequest listGaussMySqlDatabaseCharsetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listGaussMySqlDatabaseCharsetsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGaussMySqlDatabaseCharsetsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/charsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGaussMySqlDatabaseCharsetsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1277,7 +1277,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListGaussMySqlDatabaseCharsetsResponse> ListGaussMySqlDatabaseCharsetsInvoker(ListGaussMySqlDatabaseCharsetsRequest listGaussMySqlDatabaseCharsetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listGaussMySqlDatabaseCharsetsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGaussMySqlDatabaseCharsetsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/charsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGaussMySqlDatabaseCharsetsRequest);
             return new SyncInvoker<ListGaussMySqlDatabaseCharsetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGaussMySqlDatabaseCharsetsResponse>);
@@ -1293,7 +1293,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListGaussMySqlDatabaseUserResponse ListGaussMySqlDatabaseUser(ListGaussMySqlDatabaseUserRequest listGaussMySqlDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listGaussMySqlDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGaussMySqlDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGaussMySqlDatabaseUserRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1303,7 +1303,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListGaussMySqlDatabaseUserResponse> ListGaussMySqlDatabaseUserInvoker(ListGaussMySqlDatabaseUserRequest listGaussMySqlDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listGaussMySqlDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listGaussMySqlDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGaussMySqlDatabaseUserRequest);
             return new SyncInvoker<ListGaussMySqlDatabaseUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGaussMySqlDatabaseUserResponse>);
@@ -1463,7 +1463,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListInstanceConfigurationsResponse ListInstanceConfigurations(ListInstanceConfigurationsRequest listInstanceConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceConfigurationsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConfigurationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConfigurationsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1473,7 +1473,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListInstanceConfigurationsResponse> ListInstanceConfigurationsInvoker(ListInstanceConfigurationsRequest listInstanceConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceConfigurationsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceConfigurationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceConfigurationsRequest);
             return new SyncInvoker<ListInstanceConfigurationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceConfigurationsResponse>);
@@ -1489,7 +1489,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListInstanceTagsResponse ListInstanceTags(ListInstanceTagsRequest listInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1499,7 +1499,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListInstanceTagsResponse> ListInstanceTagsInvoker(ListInstanceTagsRequest listInstanceTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceTagsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceTagsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceTagsRequest);
             return new SyncInvoker<ListInstanceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceTagsResponse>);
@@ -1515,7 +1515,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListLtsErrorLogDetailsResponse ListLtsErrorLogDetails(ListLtsErrorLogDetailsRequest listLtsErrorLogDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listLtsErrorLogDetailsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLtsErrorLogDetailsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/error-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listLtsErrorLogDetailsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1525,7 +1525,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListLtsErrorLogDetailsResponse> ListLtsErrorLogDetailsInvoker(ListLtsErrorLogDetailsRequest listLtsErrorLogDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listLtsErrorLogDetailsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLtsErrorLogDetailsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/error-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listLtsErrorLogDetailsRequest);
             return new SyncInvoker<ListLtsErrorLogDetailsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListLtsErrorLogDetailsResponse>);
@@ -1541,7 +1541,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListLtsSlowlogDetailsResponse ListLtsSlowlogDetails(ListLtsSlowlogDetailsRequest listLtsSlowlogDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listLtsSlowlogDetailsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLtsSlowlogDetailsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listLtsSlowlogDetailsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1551,7 +1551,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListLtsSlowlogDetailsResponse> ListLtsSlowlogDetailsInvoker(ListLtsSlowlogDetailsRequest listLtsSlowlogDetailsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listLtsSlowlogDetailsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLtsSlowlogDetailsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listLtsSlowlogDetailsRequest);
             return new SyncInvoker<ListLtsSlowlogDetailsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListLtsSlowlogDetailsResponse>);
@@ -1567,7 +1567,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListModifyHistoryResponse ListModifyHistory(ListModifyHistoryRequest listModifyHistoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", listModifyHistoryRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listModifyHistoryRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/modify-history", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listModifyHistoryRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1577,7 +1577,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListModifyHistoryResponse> ListModifyHistoryInvoker(ListModifyHistoryRequest listModifyHistoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", listModifyHistoryRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listModifyHistoryRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/modify-history", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listModifyHistoryRequest);
             return new SyncInvoker<ListModifyHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ListModifyHistoryResponse>);
@@ -1593,7 +1593,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListParamsTemplateApplyHistoryResponse ListParamsTemplateApplyHistory(ListParamsTemplateApplyHistoryRequest listParamsTemplateApplyHistoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("config_id", listParamsTemplateApplyHistoryRequest.ConfigId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listParamsTemplateApplyHistoryRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply-history", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listParamsTemplateApplyHistoryRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1603,7 +1603,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListParamsTemplateApplyHistoryResponse> ListParamsTemplateApplyHistoryInvoker(ListParamsTemplateApplyHistoryRequest listParamsTemplateApplyHistoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("config_id", listParamsTemplateApplyHistoryRequest.ConfigId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listParamsTemplateApplyHistoryRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply-history", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listParamsTemplateApplyHistoryRequest);
             return new SyncInvoker<ListParamsTemplateApplyHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ListParamsTemplateApplyHistoryResponse>);
@@ -1691,8 +1691,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListTaurusDbNodeProcessesResponse ListTaurusDbNodeProcesses(ListTaurusDbNodeProcessesRequest listTaurusDbNodeProcessesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTaurusDbNodeProcessesRequest.InstanceId.ToString());
-            urlParam.Add("node_id", listTaurusDbNodeProcessesRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTaurusDbNodeProcessesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listTaurusDbNodeProcessesRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTaurusDbNodeProcessesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1702,8 +1702,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListTaurusDbNodeProcessesResponse> ListTaurusDbNodeProcessesInvoker(ListTaurusDbNodeProcessesRequest listTaurusDbNodeProcessesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listTaurusDbNodeProcessesRequest.InstanceId.ToString());
-            urlParam.Add("node_id", listTaurusDbNodeProcessesRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTaurusDbNodeProcessesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listTaurusDbNodeProcessesRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTaurusDbNodeProcessesRequest);
             return new SyncInvoker<ListTaurusDbNodeProcessesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTaurusDbNodeProcessesResponse>);
@@ -1719,7 +1719,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ModifyAutoExpandPolicyResponse ModifyAutoExpandPolicy(ModifyAutoExpandPolicyRequest modifyAutoExpandPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyAutoExpandPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyAutoExpandPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyAutoExpandPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1729,7 +1729,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ModifyAutoExpandPolicyResponse> ModifyAutoExpandPolicyInvoker(ModifyAutoExpandPolicyRequest modifyAutoExpandPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyAutoExpandPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyAutoExpandPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyAutoExpandPolicyRequest);
             return new SyncInvoker<ModifyAutoExpandPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyAutoExpandPolicyResponse>);
@@ -1745,7 +1745,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ModifyBackupEncryptStatusResponse ModifyBackupEncryptStatus(ModifyBackupEncryptStatusRequest modifyBackupEncryptStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyBackupEncryptStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyBackupEncryptStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/encryption", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyBackupEncryptStatusRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1755,7 +1755,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ModifyBackupEncryptStatusResponse> ModifyBackupEncryptStatusInvoker(ModifyBackupEncryptStatusRequest modifyBackupEncryptStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyBackupEncryptStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyBackupEncryptStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/encryption", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyBackupEncryptStatusRequest);
             return new SyncInvoker<ModifyBackupEncryptStatusResponse>(this, "POST", request, JsonUtils.DeSerialize<ModifyBackupEncryptStatusResponse>);
@@ -1771,8 +1771,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ModifyGaussMySqlProxyRouteModeResponse ModifyGaussMySqlProxyRouteMode(ModifyGaussMySqlProxyRouteModeRequest modifyGaussMySqlProxyRouteModeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyGaussMySqlProxyRouteModeRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", modifyGaussMySqlProxyRouteModeRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyGaussMySqlProxyRouteModeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(modifyGaussMySqlProxyRouteModeRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/route-mode", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyGaussMySqlProxyRouteModeRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1782,8 +1782,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ModifyGaussMySqlProxyRouteModeResponse> ModifyGaussMySqlProxyRouteModeInvoker(ModifyGaussMySqlProxyRouteModeRequest modifyGaussMySqlProxyRouteModeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyGaussMySqlProxyRouteModeRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", modifyGaussMySqlProxyRouteModeRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyGaussMySqlProxyRouteModeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(modifyGaussMySqlProxyRouteModeRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/route-mode", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyGaussMySqlProxyRouteModeRequest);
             return new SyncInvoker<ModifyGaussMySqlProxyRouteModeResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyGaussMySqlProxyRouteModeResponse>);
@@ -1799,7 +1799,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ModifyGaussMysqlDnsResponse ModifyGaussMysqlDns(ModifyGaussMysqlDnsRequest modifyGaussMysqlDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyGaussMysqlDnsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyGaussMysqlDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyGaussMysqlDnsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1809,7 +1809,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ModifyGaussMysqlDnsResponse> ModifyGaussMysqlDnsInvoker(ModifyGaussMysqlDnsRequest modifyGaussMysqlDnsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyGaussMysqlDnsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyGaussMysqlDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyGaussMysqlDnsRequest);
             return new SyncInvoker<ModifyGaussMysqlDnsResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyGaussMysqlDnsResponse>);
@@ -1825,8 +1825,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ModifyNodePriorityResponse ModifyNodePriority(ModifyNodePriorityRequest modifyNodePriorityRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyNodePriorityRequest.InstanceId.ToString());
-            urlParam.Add("node_id", modifyNodePriorityRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyNodePriorityRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(modifyNodePriorityRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/priority", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyNodePriorityRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1836,8 +1836,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ModifyNodePriorityResponse> ModifyNodePriorityInvoker(ModifyNodePriorityRequest modifyNodePriorityRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyNodePriorityRequest.InstanceId.ToString());
-            urlParam.Add("node_id", modifyNodePriorityRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyNodePriorityRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(modifyNodePriorityRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/priority", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyNodePriorityRequest);
             return new SyncInvoker<ModifyNodePriorityResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyNodePriorityResponse>);
@@ -1853,7 +1853,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public RenameInstanceNodeResponse RenameInstanceNode(RenameInstanceNodeRequest renameInstanceNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", renameInstanceNodeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(renameInstanceNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", renameInstanceNodeRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1863,7 +1863,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<RenameInstanceNodeResponse> RenameInstanceNodeInvoker(RenameInstanceNodeRequest renameInstanceNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", renameInstanceNodeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(renameInstanceNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", renameInstanceNodeRequest);
             return new SyncInvoker<RenameInstanceNodeResponse>(this, "PUT", request, JsonUtils.DeSerialize<RenameInstanceNodeResponse>);
@@ -1879,7 +1879,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ResetGaussMySqlDatabasePasswordResponse ResetGaussMySqlDatabasePassword(ResetGaussMySqlDatabasePasswordRequest resetGaussMySqlDatabasePasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetGaussMySqlDatabasePasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetGaussMySqlDatabasePasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetGaussMySqlDatabasePasswordRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1889,7 +1889,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ResetGaussMySqlDatabasePasswordResponse> ResetGaussMySqlDatabasePasswordInvoker(ResetGaussMySqlDatabasePasswordRequest resetGaussMySqlDatabasePasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetGaussMySqlDatabasePasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetGaussMySqlDatabasePasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetGaussMySqlDatabasePasswordRequest);
             return new SyncInvoker<ResetGaussMySqlDatabasePasswordResponse>(this, "PUT", request, JsonUtils.DeSerialize<ResetGaussMySqlDatabasePasswordResponse>);
@@ -1905,7 +1905,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ResetGaussMySqlPasswordResponse ResetGaussMySqlPassword(ResetGaussMySqlPasswordRequest resetGaussMySqlPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetGaussMySqlPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetGaussMySqlPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetGaussMySqlPasswordRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1915,7 +1915,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ResetGaussMySqlPasswordResponse> ResetGaussMySqlPasswordInvoker(ResetGaussMySqlPasswordRequest resetGaussMySqlPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resetGaussMySqlPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetGaussMySqlPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetGaussMySqlPasswordRequest);
             return new SyncInvoker<ResetGaussMySqlPasswordResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ResetGaussMySqlPasswordResponse>);
@@ -1931,7 +1931,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public RestartGaussMySqlInstanceResponse RestartGaussMySqlInstance(RestartGaussMySqlInstanceRequest restartGaussMySqlInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartGaussMySqlInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartGaussMySqlInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restartGaussMySqlInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1941,7 +1941,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<RestartGaussMySqlInstanceResponse> RestartGaussMySqlInstanceInvoker(RestartGaussMySqlInstanceRequest restartGaussMySqlInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartGaussMySqlInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartGaussMySqlInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restartGaussMySqlInstanceRequest);
             return new SyncInvoker<RestartGaussMySqlInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestartGaussMySqlInstanceResponse>);
@@ -1957,8 +1957,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public RestartGaussMySqlNodeResponse RestartGaussMySqlNode(RestartGaussMySqlNodeRequest restartGaussMySqlNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartGaussMySqlNodeRequest.InstanceId.ToString());
-            urlParam.Add("node_id", restartGaussMySqlNodeRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartGaussMySqlNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartGaussMySqlNodeRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restartGaussMySqlNodeRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1968,8 +1968,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<RestartGaussMySqlNodeResponse> RestartGaussMySqlNodeInvoker(RestartGaussMySqlNodeRequest restartGaussMySqlNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartGaussMySqlNodeRequest.InstanceId.ToString());
-            urlParam.Add("node_id", restartGaussMySqlNodeRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartGaussMySqlNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartGaussMySqlNodeRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restartGaussMySqlNodeRequest);
             return new SyncInvoker<RestartGaussMySqlNodeResponse>(this, "POST", request, JsonUtils.DeSerialize<RestartGaussMySqlNodeResponse>);
@@ -1985,8 +1985,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public RestartProxyInstanceResponse RestartProxyInstance(RestartProxyInstanceRequest restartProxyInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartProxyInstanceRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", restartProxyInstanceRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartProxyInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartProxyInstanceRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartProxyInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1996,8 +1996,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<RestartProxyInstanceResponse> RestartProxyInstanceInvoker(RestartProxyInstanceRequest restartProxyInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", restartProxyInstanceRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", restartProxyInstanceRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartProxyInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(restartProxyInstanceRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartProxyInstanceRequest);
             return new SyncInvoker<RestartProxyInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestartProxyInstanceResponse>);
@@ -2037,7 +2037,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SetAuditLogPolicyResponse SetAuditLogPolicy(SetAuditLogPolicyRequest setAuditLogPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", setAuditLogPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setAuditLogPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setAuditLogPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2047,7 +2047,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<SetAuditLogPolicyResponse> SetAuditLogPolicyInvoker(SetAuditLogPolicyRequest setAuditLogPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", setAuditLogPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setAuditLogPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setAuditLogPolicyRequest);
             return new SyncInvoker<SetAuditLogPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetAuditLogPolicyResponse>);
@@ -2063,8 +2063,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SetGaussMySqlProxyWeightResponse SetGaussMySqlProxyWeight(SetGaussMySqlProxyWeightRequest setGaussMySqlProxyWeightRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", setGaussMySqlProxyWeightRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", setGaussMySqlProxyWeightRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setGaussMySqlProxyWeightRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(setGaussMySqlProxyWeightRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/weight", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setGaussMySqlProxyWeightRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2074,8 +2074,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<SetGaussMySqlProxyWeightResponse> SetGaussMySqlProxyWeightInvoker(SetGaussMySqlProxyWeightRequest setGaussMySqlProxyWeightRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", setGaussMySqlProxyWeightRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", setGaussMySqlProxyWeightRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setGaussMySqlProxyWeightRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(setGaussMySqlProxyWeightRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/weight", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setGaussMySqlProxyWeightRequest);
             return new SyncInvoker<SetGaussMySqlProxyWeightResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetGaussMySqlProxyWeightResponse>);
@@ -2139,7 +2139,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SetSqlFilterRuleResponse SetSqlFilterRule(SetSqlFilterRuleRequest setSqlFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", setSqlFilterRuleRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setSqlFilterRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setSqlFilterRuleRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2149,7 +2149,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<SetSqlFilterRuleResponse> SetSqlFilterRuleInvoker(SetSqlFilterRuleRequest setSqlFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", setSqlFilterRuleRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setSqlFilterRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setSqlFilterRuleRequest);
             return new SyncInvoker<SetSqlFilterRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetSqlFilterRuleResponse>);
@@ -2165,7 +2165,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowAuditLogResponse ShowAuditLog(ShowAuditLogRequest showAuditLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAuditLogRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAuditLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/audit-log/switch-status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditLogRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2175,7 +2175,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowAuditLogResponse> ShowAuditLogInvoker(ShowAuditLogRequest showAuditLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAuditLogRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAuditLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/audit-log/switch-status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditLogRequest);
             return new SyncInvoker<ShowAuditLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAuditLogResponse>);
@@ -2191,7 +2191,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowAuditLogDownloadLinkResponse ShowAuditLogDownloadLink(ShowAuditLogDownloadLinkRequest showAuditLogDownloadLinkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAuditLogDownloadLinkRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAuditLogDownloadLinkRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-link", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showAuditLogDownloadLinkRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2201,7 +2201,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowAuditLogDownloadLinkResponse> ShowAuditLogDownloadLinkInvoker(ShowAuditLogDownloadLinkRequest showAuditLogDownloadLinkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAuditLogDownloadLinkRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAuditLogDownloadLinkRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-link", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showAuditLogDownloadLinkRequest);
             return new SyncInvoker<ShowAuditLogDownloadLinkResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowAuditLogDownloadLinkResponse>);
@@ -2217,7 +2217,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowAuditLogPolicyResponse ShowAuditLogPolicy(ShowAuditLogPolicyRequest showAuditLogPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAuditLogPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAuditLogPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditLogPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2227,7 +2227,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowAuditLogPolicyResponse> ShowAuditLogPolicyInvoker(ShowAuditLogPolicyRequest showAuditLogPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAuditLogPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAuditLogPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/audit-log-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditLogPolicyRequest);
             return new SyncInvoker<ShowAuditLogPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAuditLogPolicyResponse>);
@@ -2243,7 +2243,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowAutoExpandPolicyResponse ShowAutoExpandPolicy(ShowAutoExpandPolicyRequest showAutoExpandPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAutoExpandPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAutoExpandPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoExpandPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2253,7 +2253,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowAutoExpandPolicyResponse> ShowAutoExpandPolicyInvoker(ShowAutoExpandPolicyRequest showAutoExpandPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAutoExpandPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAutoExpandPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoExpandPolicyRequest);
             return new SyncInvoker<ShowAutoExpandPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoExpandPolicyResponse>);
@@ -2269,7 +2269,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowAutoScalingHistoryResponse ShowAutoScalingHistory(ShowAutoScalingHistoryRequest showAutoScalingHistoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAutoScalingHistoryRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAutoScalingHistoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-scaling/history", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoScalingHistoryRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2279,7 +2279,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowAutoScalingHistoryResponse> ShowAutoScalingHistoryInvoker(ShowAutoScalingHistoryRequest showAutoScalingHistoryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAutoScalingHistoryRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAutoScalingHistoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-scaling/history", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoScalingHistoryRequest);
             return new SyncInvoker<ShowAutoScalingHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoScalingHistoryResponse>);
@@ -2295,7 +2295,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowAutoScalingPolicyResponse ShowAutoScalingPolicy(ShowAutoScalingPolicyRequest showAutoScalingPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAutoScalingPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAutoScalingPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-scaling/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoScalingPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2305,7 +2305,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowAutoScalingPolicyResponse> ShowAutoScalingPolicyInvoker(ShowAutoScalingPolicyRequest showAutoScalingPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showAutoScalingPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAutoScalingPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-scaling/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoScalingPolicyRequest);
             return new SyncInvoker<ShowAutoScalingPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoScalingPolicyResponse>);
@@ -2321,7 +2321,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowBackupRestoreTimeResponse ShowBackupRestoreTime(ShowBackupRestoreTimeRequest showBackupRestoreTimeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showBackupRestoreTimeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBackupRestoreTimeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore-time", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupRestoreTimeRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2331,7 +2331,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowBackupRestoreTimeResponse> ShowBackupRestoreTimeInvoker(ShowBackupRestoreTimeRequest showBackupRestoreTimeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showBackupRestoreTimeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showBackupRestoreTimeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/restore-time", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupRestoreTimeRequest);
             return new SyncInvoker<ShowBackupRestoreTimeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupRestoreTimeResponse>);
@@ -2347,7 +2347,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowDedicatedResourceInfoResponse ShowDedicatedResourceInfo(ShowDedicatedResourceInfoRequest showDedicatedResourceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dedicated_resource_id", showDedicatedResourceInfoRequest.DedicatedResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDedicatedResourceInfoRequest.DedicatedResourceId, out var valueOfDedicatedResourceId)) urlParam.Add("dedicated_resource_id", valueOfDedicatedResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dedicated-resource/{dedicated_resource_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDedicatedResourceInfoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2357,7 +2357,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowDedicatedResourceInfoResponse> ShowDedicatedResourceInfoInvoker(ShowDedicatedResourceInfoRequest showDedicatedResourceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("dedicated_resource_id", showDedicatedResourceInfoRequest.DedicatedResourceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDedicatedResourceInfoRequest.DedicatedResourceId, out var valueOfDedicatedResourceId)) urlParam.Add("dedicated_resource_id", valueOfDedicatedResourceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/dedicated-resource/{dedicated_resource_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDedicatedResourceInfoRequest);
             return new SyncInvoker<ShowDedicatedResourceInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDedicatedResourceInfoResponse>);
@@ -2373,8 +2373,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowErrorLogDownloadLinkResponse ShowErrorLogDownloadLink(ShowErrorLogDownloadLinkRequest showErrorLogDownloadLinkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showErrorLogDownloadLinkRequest.InstanceId.ToString());
-            urlParam.Add("node_id", showErrorLogDownloadLinkRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showErrorLogDownloadLinkRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showErrorLogDownloadLinkRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/errorlog-download", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showErrorLogDownloadLinkRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -2384,8 +2384,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowErrorLogDownloadLinkResponse> ShowErrorLogDownloadLinkInvoker(ShowErrorLogDownloadLinkRequest showErrorLogDownloadLinkRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showErrorLogDownloadLinkRequest.InstanceId.ToString());
-            urlParam.Add("node_id", showErrorLogDownloadLinkRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showErrorLogDownloadLinkRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showErrorLogDownloadLinkRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/errorlog-download", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showErrorLogDownloadLinkRequest);
             return new SyncInvoker<ShowErrorLogDownloadLinkResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowErrorLogDownloadLinkResponse>);
@@ -2425,7 +2425,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowGaussMySqlBackupPolicyResponse ShowGaussMySqlBackupPolicy(ShowGaussMySqlBackupPolicyRequest showGaussMySqlBackupPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlBackupPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlBackupPolicyRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2435,7 +2435,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowGaussMySqlBackupPolicyResponse> ShowGaussMySqlBackupPolicyInvoker(ShowGaussMySqlBackupPolicyRequest showGaussMySqlBackupPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlBackupPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlBackupPolicyRequest);
             return new SyncInvoker<ShowGaussMySqlBackupPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGaussMySqlBackupPolicyResponse>);
@@ -2451,7 +2451,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowGaussMySqlConfigurationResponse ShowGaussMySqlConfiguration(ShowGaussMySqlConfigurationRequest showGaussMySqlConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", showGaussMySqlConfigurationRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlConfigurationRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2461,7 +2461,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowGaussMySqlConfigurationResponse> ShowGaussMySqlConfigurationInvoker(ShowGaussMySqlConfigurationRequest showGaussMySqlConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", showGaussMySqlConfigurationRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlConfigurationRequest);
             return new SyncInvoker<ShowGaussMySqlConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGaussMySqlConfigurationResponse>);
@@ -2477,7 +2477,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowGaussMySqlEngineVersionResponse ShowGaussMySqlEngineVersion(ShowGaussMySqlEngineVersionRequest showGaussMySqlEngineVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("database_name", showGaussMySqlEngineVersionRequest.DatabaseName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlEngineVersionRequest.DatabaseName, out var valueOfDatabaseName)) urlParam.Add("database_name", valueOfDatabaseName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{database_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlEngineVersionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2487,7 +2487,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowGaussMySqlEngineVersionResponse> ShowGaussMySqlEngineVersionInvoker(ShowGaussMySqlEngineVersionRequest showGaussMySqlEngineVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("database_name", showGaussMySqlEngineVersionRequest.DatabaseName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlEngineVersionRequest.DatabaseName, out var valueOfDatabaseName)) urlParam.Add("database_name", valueOfDatabaseName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{database_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlEngineVersionRequest);
             return new SyncInvoker<ShowGaussMySqlEngineVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGaussMySqlEngineVersionResponse>);
@@ -2503,7 +2503,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowGaussMySqlFlavorsResponse ShowGaussMySqlFlavors(ShowGaussMySqlFlavorsRequest showGaussMySqlFlavorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("database_name", showGaussMySqlFlavorsRequest.DatabaseName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlFlavorsRequest.DatabaseName, out var valueOfDatabaseName)) urlParam.Add("database_name", valueOfDatabaseName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/flavors/{database_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlFlavorsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2513,7 +2513,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowGaussMySqlFlavorsResponse> ShowGaussMySqlFlavorsInvoker(ShowGaussMySqlFlavorsRequest showGaussMySqlFlavorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("database_name", showGaussMySqlFlavorsRequest.DatabaseName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlFlavorsRequest.DatabaseName, out var valueOfDatabaseName)) urlParam.Add("database_name", valueOfDatabaseName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/flavors/{database_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlFlavorsRequest);
             return new SyncInvoker<ShowGaussMySqlFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGaussMySqlFlavorsResponse>);
@@ -2529,7 +2529,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowGaussMySqlIncrementalBackupListResponse ShowGaussMySqlIncrementalBackupList(ShowGaussMySqlIncrementalBackupListRequest showGaussMySqlIncrementalBackupListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlIncrementalBackupListRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlIncrementalBackupListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/incremental-backups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlIncrementalBackupListRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2539,7 +2539,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowGaussMySqlIncrementalBackupListResponse> ShowGaussMySqlIncrementalBackupListInvoker(ShowGaussMySqlIncrementalBackupListRequest showGaussMySqlIncrementalBackupListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlIncrementalBackupListRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlIncrementalBackupListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/incremental-backups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlIncrementalBackupListRequest);
             return new SyncInvoker<ShowGaussMySqlIncrementalBackupListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGaussMySqlIncrementalBackupListResponse>);
@@ -2555,7 +2555,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowGaussMySqlInstanceInfoResponse ShowGaussMySqlInstanceInfo(ShowGaussMySqlInstanceInfoRequest showGaussMySqlInstanceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlInstanceInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlInstanceInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlInstanceInfoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2565,7 +2565,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowGaussMySqlInstanceInfoResponse> ShowGaussMySqlInstanceInfoInvoker(ShowGaussMySqlInstanceInfoRequest showGaussMySqlInstanceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlInstanceInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlInstanceInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlInstanceInfoRequest);
             return new SyncInvoker<ShowGaussMySqlInstanceInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGaussMySqlInstanceInfoResponse>);
@@ -2581,7 +2581,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowGaussMySqlInstanceInfoUnifyStatusResponse ShowGaussMySqlInstanceInfoUnifyStatus(ShowGaussMySqlInstanceInfoUnifyStatusRequest showGaussMySqlInstanceInfoUnifyStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlInstanceInfoUnifyStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlInstanceInfoUnifyStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlInstanceInfoUnifyStatusRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2591,7 +2591,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowGaussMySqlInstanceInfoUnifyStatusResponse> ShowGaussMySqlInstanceInfoUnifyStatusInvoker(ShowGaussMySqlInstanceInfoUnifyStatusRequest showGaussMySqlInstanceInfoUnifyStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlInstanceInfoUnifyStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlInstanceInfoUnifyStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlInstanceInfoUnifyStatusRequest);
             return new SyncInvoker<ShowGaussMySqlInstanceInfoUnifyStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGaussMySqlInstanceInfoUnifyStatusResponse>);
@@ -2655,7 +2655,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowGaussMySqlProxyFlavorsResponse ShowGaussMySqlProxyFlavors(ShowGaussMySqlProxyFlavorsRequest showGaussMySqlProxyFlavorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlProxyFlavorsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlProxyFlavorsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/flavors", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlProxyFlavorsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2665,7 +2665,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowGaussMySqlProxyFlavorsResponse> ShowGaussMySqlProxyFlavorsInvoker(ShowGaussMySqlProxyFlavorsRequest showGaussMySqlProxyFlavorsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlProxyFlavorsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlProxyFlavorsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/flavors", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlProxyFlavorsRequest);
             return new SyncInvoker<ShowGaussMySqlProxyFlavorsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGaussMySqlProxyFlavorsResponse>);
@@ -2681,7 +2681,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowGaussMySqlProxyListResponse ShowGaussMySqlProxyList(ShowGaussMySqlProxyListRequest showGaussMySqlProxyListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlProxyListRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlProxyListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlProxyListRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2691,7 +2691,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowGaussMySqlProxyListResponse> ShowGaussMySqlProxyListInvoker(ShowGaussMySqlProxyListRequest showGaussMySqlProxyListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showGaussMySqlProxyListRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showGaussMySqlProxyListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxies", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlProxyListRequest);
             return new SyncInvoker<ShowGaussMySqlProxyListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGaussMySqlProxyListResponse>);
@@ -2731,7 +2731,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowInstanceDatabaseVersionResponse ShowInstanceDatabaseVersion(ShowInstanceDatabaseVersionRequest showInstanceDatabaseVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceDatabaseVersionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceDatabaseVersionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database-version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceDatabaseVersionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2741,7 +2741,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowInstanceDatabaseVersionResponse> ShowInstanceDatabaseVersionInvoker(ShowInstanceDatabaseVersionRequest showInstanceDatabaseVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceDatabaseVersionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceDatabaseVersionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database-version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceDatabaseVersionRequest);
             return new SyncInvoker<ShowInstanceDatabaseVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceDatabaseVersionResponse>);
@@ -2757,7 +2757,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowInstanceEipResponse ShowInstanceEip(ShowInstanceEipRequest showInstanceEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceEipRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceEipRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/eip", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceEipRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2767,7 +2767,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowInstanceEipResponse> ShowInstanceEipInvoker(ShowInstanceEipRequest showInstanceEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceEipRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceEipRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/eip", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceEipRequest);
             return new SyncInvoker<ShowInstanceEipResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceEipResponse>);
@@ -2783,7 +2783,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowInstanceMonitorExtendResponse ShowInstanceMonitorExtend(ShowInstanceMonitorExtendRequest showInstanceMonitorExtendRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceMonitorExtendRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceMonitorExtendRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/monitor-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceMonitorExtendRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2793,7 +2793,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowInstanceMonitorExtendResponse> ShowInstanceMonitorExtendInvoker(ShowInstanceMonitorExtendRequest showInstanceMonitorExtendRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceMonitorExtendRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceMonitorExtendRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/monitor-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceMonitorExtendRequest);
             return new SyncInvoker<ShowInstanceMonitorExtendResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceMonitorExtendResponse>);
@@ -2881,7 +2881,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowMultiTenantResponse ShowMultiTenant(ShowMultiTenantRequest showMultiTenantRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showMultiTenantRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMultiTenantRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/multi-tenant", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMultiTenantRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2891,7 +2891,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowMultiTenantResponse> ShowMultiTenantInvoker(ShowMultiTenantRequest showMultiTenantRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showMultiTenantRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMultiTenantRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/multi-tenant", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMultiTenantRequest);
             return new SyncInvoker<ShowMultiTenantResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMultiTenantResponse>);
@@ -2907,8 +2907,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowProxyConfigurationsResponse ShowProxyConfigurations(ShowProxyConfigurationsRequest showProxyConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showProxyConfigurationsRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", showProxyConfigurationsRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProxyConfigurationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showProxyConfigurationsRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyConfigurationsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2918,8 +2918,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowProxyConfigurationsResponse> ShowProxyConfigurationsInvoker(ShowProxyConfigurationsRequest showProxyConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showProxyConfigurationsRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", showProxyConfigurationsRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProxyConfigurationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showProxyConfigurationsRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyConfigurationsRequest);
             return new SyncInvoker<ShowProxyConfigurationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProxyConfigurationsResponse>);
@@ -2959,8 +2959,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowProxyIpgroupResponse ShowProxyIpgroup(ShowProxyIpgroupRequest showProxyIpgroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showProxyIpgroupRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", showProxyIpgroupRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProxyIpgroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showProxyIpgroupRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/ipgroup", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyIpgroupRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2970,8 +2970,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowProxyIpgroupResponse> ShowProxyIpgroupInvoker(ShowProxyIpgroupRequest showProxyIpgroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showProxyIpgroupRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", showProxyIpgroupRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProxyIpgroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showProxyIpgroupRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/ipgroup", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyIpgroupRequest);
             return new SyncInvoker<ShowProxyIpgroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProxyIpgroupResponse>);
@@ -2987,9 +2987,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowProxyVersionResponse ShowProxyVersion(ShowProxyVersionRequest showProxyVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showProxyVersionRequest.InstanceId.ToString());
-            urlParam.Add("engine_name", showProxyVersionRequest.EngineName.ToString());
-            urlParam.Add("proxy_id", showProxyVersionRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProxyVersionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showProxyVersionRequest.EngineName, out var valueOfEngineName)) urlParam.Add("engine_name", valueOfEngineName);
+            if (StringUtils.TryConvertToNonEmptyString(showProxyVersionRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/{engine_name}/proxy-version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyVersionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2999,9 +2999,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowProxyVersionResponse> ShowProxyVersionInvoker(ShowProxyVersionRequest showProxyVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showProxyVersionRequest.InstanceId.ToString());
-            urlParam.Add("engine_name", showProxyVersionRequest.EngineName.ToString());
-            urlParam.Add("proxy_id", showProxyVersionRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProxyVersionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showProxyVersionRequest.EngineName, out var valueOfEngineName)) urlParam.Add("engine_name", valueOfEngineName);
+            if (StringUtils.TryConvertToNonEmptyString(showProxyVersionRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/{engine_name}/proxy-version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProxyVersionRequest);
             return new SyncInvoker<ShowProxyVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProxyVersionResponse>);
@@ -3041,7 +3041,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowRestoreAvailableTablesResponse ShowRestoreAvailableTables(ShowRestoreAvailableTablesRequest showRestoreAvailableTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showRestoreAvailableTablesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRestoreAvailableTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/backups/restore/tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestoreAvailableTablesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3051,7 +3051,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowRestoreAvailableTablesResponse> ShowRestoreAvailableTablesInvoker(ShowRestoreAvailableTablesRequest showRestoreAvailableTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showRestoreAvailableTablesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRestoreAvailableTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/backups/restore/tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestoreAvailableTablesRequest);
             return new SyncInvoker<ShowRestoreAvailableTablesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRestoreAvailableTablesResponse>);
@@ -3067,7 +3067,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowRestoreTablesResponse ShowRestoreTables(ShowRestoreTablesRequest showRestoreTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showRestoreTablesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRestoreTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restore/tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestoreTablesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3077,7 +3077,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowRestoreTablesResponse> ShowRestoreTablesInvoker(ShowRestoreTablesRequest showRestoreTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showRestoreTablesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRestoreTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restore/tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRestoreTablesRequest);
             return new SyncInvoker<ShowRestoreTablesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRestoreTablesResponse>);
@@ -3093,7 +3093,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowSlowLogStatisticsResponse ShowSlowLogStatistics(ShowSlowLogStatisticsRequest showSlowLogStatisticsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSlowLogStatisticsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSlowLogStatisticsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slow-logs/statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showSlowLogStatisticsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -3103,7 +3103,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowSlowLogStatisticsResponse> ShowSlowLogStatisticsInvoker(ShowSlowLogStatisticsRequest showSlowLogStatisticsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSlowLogStatisticsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSlowLogStatisticsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slow-logs/statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showSlowLogStatisticsRequest);
             return new SyncInvoker<ShowSlowLogStatisticsResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowSlowLogStatisticsResponse>);
@@ -3119,7 +3119,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowSlowlogSensitiveStatusResponse ShowSlowlogSensitiveStatus(ShowSlowlogSensitiveStatusRequest showSlowlogSensitiveStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSlowlogSensitiveStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSlowlogSensitiveStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSlowlogSensitiveStatusRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3129,7 +3129,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowSlowlogSensitiveStatusResponse> ShowSlowlogSensitiveStatusInvoker(ShowSlowlogSensitiveStatusRequest showSlowlogSensitiveStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSlowlogSensitiveStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSlowlogSensitiveStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSlowlogSensitiveStatusRequest);
             return new SyncInvoker<ShowSlowlogSensitiveStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSlowlogSensitiveStatusResponse>);
@@ -3145,7 +3145,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowSqlFilterControlResponse ShowSqlFilterControl(ShowSqlFilterControlRequest showSqlFilterControlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSqlFilterControlRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSqlFilterControlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterControlRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3155,7 +3155,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowSqlFilterControlResponse> ShowSqlFilterControlInvoker(ShowSqlFilterControlRequest showSqlFilterControlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSqlFilterControlRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSqlFilterControlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterControlRequest);
             return new SyncInvoker<ShowSqlFilterControlResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSqlFilterControlResponse>);
@@ -3171,7 +3171,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowSqlFilterRuleResponse ShowSqlFilterRule(ShowSqlFilterRuleRequest showSqlFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSqlFilterRuleRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSqlFilterRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterRuleRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3181,7 +3181,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowSqlFilterRuleResponse> ShowSqlFilterRuleInvoker(ShowSqlFilterRuleRequest showSqlFilterRuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showSqlFilterRuleRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSqlFilterRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterRuleRequest);
             return new SyncInvoker<ShowSqlFilterRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSqlFilterRuleResponse>);
@@ -3197,7 +3197,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowTableMetaInfoResponse ShowTableMetaInfo(ShowTableMetaInfoRequest showTableMetaInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showTableMetaInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTableMetaInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/table-info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTableMetaInfoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3207,7 +3207,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowTableMetaInfoResponse> ShowTableMetaInfoInvoker(ShowTableMetaInfoRequest showTableMetaInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showTableMetaInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTableMetaInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/table-info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTableMetaInfoRequest);
             return new SyncInvoker<ShowTableMetaInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTableMetaInfoResponse>);
@@ -3224,8 +3224,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShrinkGaussMySqlProxyResponse ShrinkGaussMySqlProxy(ShrinkGaussMySqlProxyRequest shrinkGaussMySqlProxyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", shrinkGaussMySqlProxyRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", shrinkGaussMySqlProxyRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(shrinkGaussMySqlProxyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(shrinkGaussMySqlProxyRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/reduce", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", shrinkGaussMySqlProxyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3235,8 +3235,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShrinkGaussMySqlProxyResponse> ShrinkGaussMySqlProxyInvoker(ShrinkGaussMySqlProxyRequest shrinkGaussMySqlProxyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", shrinkGaussMySqlProxyRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", shrinkGaussMySqlProxyRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(shrinkGaussMySqlProxyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(shrinkGaussMySqlProxyRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/reduce", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", shrinkGaussMySqlProxyRequest);
             return new SyncInvoker<ShrinkGaussMySqlProxyResponse>(this, "PUT", request, JsonUtils.DeSerialize<ShrinkGaussMySqlProxyResponse>);
@@ -3252,8 +3252,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SwitchAccessControlResponse SwitchAccessControl(SwitchAccessControlRequest switchAccessControlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchAccessControlRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", switchAccessControlRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(switchAccessControlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchAccessControlRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/access-control-switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchAccessControlRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -3263,8 +3263,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<SwitchAccessControlResponse> SwitchAccessControlInvoker(SwitchAccessControlRequest switchAccessControlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchAccessControlRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", switchAccessControlRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(switchAccessControlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchAccessControlRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/access-control-switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchAccessControlRequest);
             return new SyncInvoker<SwitchAccessControlResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchAccessControlResponse>);
@@ -3280,7 +3280,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SwitchGaussMySqlConfigurationResponse SwitchGaussMySqlConfiguration(SwitchGaussMySqlConfigurationRequest switchGaussMySqlConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", switchGaussMySqlConfigurationRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/apply", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlConfigurationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3290,7 +3290,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<SwitchGaussMySqlConfigurationResponse> SwitchGaussMySqlConfigurationInvoker(SwitchGaussMySqlConfigurationRequest switchGaussMySqlConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", switchGaussMySqlConfigurationRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}/apply", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlConfigurationRequest);
             return new SyncInvoker<SwitchGaussMySqlConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchGaussMySqlConfigurationResponse>);
@@ -3306,7 +3306,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SwitchGaussMySqlInstanceSslResponse SwitchGaussMySqlInstanceSsl(SwitchGaussMySqlInstanceSslRequest switchGaussMySqlInstanceSslRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchGaussMySqlInstanceSslRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlInstanceSslRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-option", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlInstanceSslRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3316,7 +3316,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<SwitchGaussMySqlInstanceSslResponse> SwitchGaussMySqlInstanceSslInvoker(SwitchGaussMySqlInstanceSslRequest switchGaussMySqlInstanceSslRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchGaussMySqlInstanceSslRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlInstanceSslRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-option", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlInstanceSslRequest);
             return new SyncInvoker<SwitchGaussMySqlInstanceSslResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchGaussMySqlInstanceSslResponse>);
@@ -3332,8 +3332,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SwitchGaussMySqlProxyEipResponse SwitchGaussMySqlProxyEip(SwitchGaussMySqlProxyEipRequest switchGaussMySqlProxyEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchGaussMySqlProxyEipRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", switchGaussMySqlProxyEipRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxyEipRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxyEipRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/bind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlProxyEipRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3343,8 +3343,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<SwitchGaussMySqlProxyEipResponse> SwitchGaussMySqlProxyEipInvoker(SwitchGaussMySqlProxyEipRequest switchGaussMySqlProxyEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchGaussMySqlProxyEipRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", switchGaussMySqlProxyEipRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxyEipRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxyEipRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/bind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlProxyEipRequest);
             return new SyncInvoker<SwitchGaussMySqlProxyEipResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchGaussMySqlProxyEipResponse>);
@@ -3360,8 +3360,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SwitchGaussMySqlProxySslResponse SwitchGaussMySqlProxySsl(SwitchGaussMySqlProxySslRequest switchGaussMySqlProxySslRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchGaussMySqlProxySslRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", switchGaussMySqlProxySslRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxySslRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxySslRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/ssl", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlProxySslRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3371,8 +3371,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<SwitchGaussMySqlProxySslResponse> SwitchGaussMySqlProxySslInvoker(SwitchGaussMySqlProxySslRequest switchGaussMySqlProxySslRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchGaussMySqlProxySslRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", switchGaussMySqlProxySslRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxySslRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchGaussMySqlProxySslRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/ssl", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchGaussMySqlProxySslRequest);
             return new SyncInvoker<SwitchGaussMySqlProxySslResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchGaussMySqlProxySslResponse>);
@@ -3388,7 +3388,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateAuditLogResponse UpdateAuditLog(UpdateAuditLogRequest updateAuditLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateAuditLogRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAuditLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/audit-log/switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAuditLogRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -3398,7 +3398,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateAuditLogResponse> UpdateAuditLogInvoker(UpdateAuditLogRequest updateAuditLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateAuditLogRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAuditLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance/{instance_id}/audit-log/switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAuditLogRequest);
             return new SyncInvoker<UpdateAuditLogResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateAuditLogResponse>);
@@ -3414,7 +3414,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateAutoScalingPolicyResponse UpdateAutoScalingPolicy(UpdateAutoScalingPolicyRequest updateAutoScalingPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateAutoScalingPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAutoScalingPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-scaling/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAutoScalingPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3424,7 +3424,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateAutoScalingPolicyResponse> UpdateAutoScalingPolicyInvoker(UpdateAutoScalingPolicyRequest updateAutoScalingPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateAutoScalingPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAutoScalingPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-scaling/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAutoScalingPolicyRequest);
             return new SyncInvoker<UpdateAutoScalingPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAutoScalingPolicyResponse>);
@@ -3440,7 +3440,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateBackupOffsitePolicyResponse UpdateBackupOffsitePolicy(UpdateBackupOffsitePolicyRequest updateBackupOffsitePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateBackupOffsitePolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateBackupOffsitePolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBackupOffsitePolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3450,7 +3450,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateBackupOffsitePolicyResponse> UpdateBackupOffsitePolicyInvoker(UpdateBackupOffsitePolicyRequest updateBackupOffsitePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateBackupOffsitePolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateBackupOffsitePolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/offsite-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateBackupOffsitePolicyRequest);
             return new SyncInvoker<UpdateBackupOffsitePolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateBackupOffsitePolicyResponse>);
@@ -3466,7 +3466,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateGaussMySqlBackupPolicyResponse UpdateGaussMySqlBackupPolicy(UpdateGaussMySqlBackupPolicyRequest updateGaussMySqlBackupPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlBackupPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy/update", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlBackupPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3476,7 +3476,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateGaussMySqlBackupPolicyResponse> UpdateGaussMySqlBackupPolicyInvoker(UpdateGaussMySqlBackupPolicyRequest updateGaussMySqlBackupPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlBackupPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlBackupPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/policy/update", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlBackupPolicyRequest);
             return new SyncInvoker<UpdateGaussMySqlBackupPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGaussMySqlBackupPolicyResponse>);
@@ -3492,7 +3492,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateGaussMySqlConfigurationResponse UpdateGaussMySqlConfiguration(UpdateGaussMySqlConfigurationRequest updateGaussMySqlConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", updateGaussMySqlConfigurationRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlConfigurationRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3502,7 +3502,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateGaussMySqlConfigurationResponse> UpdateGaussMySqlConfigurationInvoker(UpdateGaussMySqlConfigurationRequest updateGaussMySqlConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("configuration_id", updateGaussMySqlConfigurationRequest.ConfigurationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlConfigurationRequest);
             return new SyncInvoker<UpdateGaussMySqlConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGaussMySqlConfigurationResponse>);
@@ -3518,7 +3518,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateGaussMySqlDatabaseCommentResponse UpdateGaussMySqlDatabaseComment(UpdateGaussMySqlDatabaseCommentRequest updateGaussMySqlDatabaseCommentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlDatabaseCommentRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlDatabaseCommentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/comment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlDatabaseCommentRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3528,7 +3528,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateGaussMySqlDatabaseCommentResponse> UpdateGaussMySqlDatabaseCommentInvoker(UpdateGaussMySqlDatabaseCommentRequest updateGaussMySqlDatabaseCommentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlDatabaseCommentRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlDatabaseCommentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/comment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlDatabaseCommentRequest);
             return new SyncInvoker<UpdateGaussMySqlDatabaseCommentResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGaussMySqlDatabaseCommentResponse>);
@@ -3544,7 +3544,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateGaussMySqlDatabaseUserCommentResponse UpdateGaussMySqlDatabaseUserComment(UpdateGaussMySqlDatabaseUserCommentRequest updateGaussMySqlDatabaseUserCommentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlDatabaseUserCommentRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlDatabaseUserCommentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/comment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlDatabaseUserCommentRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3554,7 +3554,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateGaussMySqlDatabaseUserCommentResponse> UpdateGaussMySqlDatabaseUserCommentInvoker(UpdateGaussMySqlDatabaseUserCommentRequest updateGaussMySqlDatabaseUserCommentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlDatabaseUserCommentRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlDatabaseUserCommentRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-users/comment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlDatabaseUserCommentRequest);
             return new SyncInvoker<UpdateGaussMySqlDatabaseUserCommentResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGaussMySqlDatabaseUserCommentResponse>);
@@ -3570,7 +3570,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateGaussMySqlInstanceAliasResponse UpdateGaussMySqlInstanceAlias(UpdateGaussMySqlInstanceAliasRequest updateGaussMySqlInstanceAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceAliasRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceAliasRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceAliasRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3580,7 +3580,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateGaussMySqlInstanceAliasResponse> UpdateGaussMySqlInstanceAliasInvoker(UpdateGaussMySqlInstanceAliasRequest updateGaussMySqlInstanceAliasRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceAliasRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceAliasRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceAliasRequest);
             return new SyncInvoker<UpdateGaussMySqlInstanceAliasResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateGaussMySqlInstanceAliasResponse>);
@@ -3596,7 +3596,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateGaussMySqlInstanceEipResponse UpdateGaussMySqlInstanceEip(UpdateGaussMySqlInstanceEipRequest updateGaussMySqlInstanceEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceEipRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceEipRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/public-ips/bind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceEipRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3606,7 +3606,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateGaussMySqlInstanceEipResponse> UpdateGaussMySqlInstanceEipInvoker(UpdateGaussMySqlInstanceEipRequest updateGaussMySqlInstanceEipRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceEipRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceEipRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/public-ips/bind", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceEipRequest);
             return new SyncInvoker<UpdateGaussMySqlInstanceEipResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGaussMySqlInstanceEipResponse>);
@@ -3622,7 +3622,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateGaussMySqlInstanceInternalIpResponse UpdateGaussMySqlInstanceInternalIp(UpdateGaussMySqlInstanceInternalIpRequest updateGaussMySqlInstanceInternalIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceInternalIpRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceInternalIpRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/internal-ip", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceInternalIpRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3632,7 +3632,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateGaussMySqlInstanceInternalIpResponse> UpdateGaussMySqlInstanceInternalIpInvoker(UpdateGaussMySqlInstanceInternalIpRequest updateGaussMySqlInstanceInternalIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceInternalIpRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceInternalIpRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/internal-ip", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceInternalIpRequest);
             return new SyncInvoker<UpdateGaussMySqlInstanceInternalIpResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGaussMySqlInstanceInternalIpResponse>);
@@ -3648,7 +3648,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateGaussMySqlInstanceNameResponse UpdateGaussMySqlInstanceName(UpdateGaussMySqlInstanceNameRequest updateGaussMySqlInstanceNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceNameRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceNameRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3658,7 +3658,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateGaussMySqlInstanceNameResponse> UpdateGaussMySqlInstanceNameInvoker(UpdateGaussMySqlInstanceNameRequest updateGaussMySqlInstanceNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceNameRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/name", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceNameRequest);
             return new SyncInvoker<UpdateGaussMySqlInstanceNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGaussMySqlInstanceNameResponse>);
@@ -3674,7 +3674,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateGaussMySqlInstanceOpsWindowResponse UpdateGaussMySqlInstanceOpsWindow(UpdateGaussMySqlInstanceOpsWindowRequest updateGaussMySqlInstanceOpsWindowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceOpsWindowRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceOpsWindowRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops-window", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceOpsWindowRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3684,7 +3684,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateGaussMySqlInstanceOpsWindowResponse> UpdateGaussMySqlInstanceOpsWindowInvoker(UpdateGaussMySqlInstanceOpsWindowRequest updateGaussMySqlInstanceOpsWindowRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceOpsWindowRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceOpsWindowRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops-window", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceOpsWindowRequest);
             return new SyncInvoker<UpdateGaussMySqlInstanceOpsWindowResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateGaussMySqlInstanceOpsWindowResponse>);
@@ -3700,7 +3700,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateGaussMySqlInstancePortResponse UpdateGaussMySqlInstancePort(UpdateGaussMySqlInstancePortRequest updateGaussMySqlInstancePortRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstancePortRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstancePortRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstancePortRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3710,7 +3710,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateGaussMySqlInstancePortResponse> UpdateGaussMySqlInstancePortInvoker(UpdateGaussMySqlInstancePortRequest updateGaussMySqlInstancePortRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstancePortRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstancePortRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstancePortRequest);
             return new SyncInvoker<UpdateGaussMySqlInstancePortResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGaussMySqlInstancePortResponse>);
@@ -3726,7 +3726,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateGaussMySqlInstanceSecurityGroupResponse UpdateGaussMySqlInstanceSecurityGroup(UpdateGaussMySqlInstanceSecurityGroupRequest updateGaussMySqlInstanceSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceSecurityGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceSecurityGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceSecurityGroupRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3736,7 +3736,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateGaussMySqlInstanceSecurityGroupResponse> UpdateGaussMySqlInstanceSecurityGroupInvoker(UpdateGaussMySqlInstanceSecurityGroupRequest updateGaussMySqlInstanceSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateGaussMySqlInstanceSecurityGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateGaussMySqlInstanceSecurityGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/security-group", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateGaussMySqlInstanceSecurityGroupRequest);
             return new SyncInvoker<UpdateGaussMySqlInstanceSecurityGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGaussMySqlInstanceSecurityGroupResponse>);
@@ -3776,7 +3776,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateInstanceConfigurationsResponse UpdateInstanceConfigurations(UpdateInstanceConfigurationsRequest updateInstanceConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceConfigurationsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConfigurationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceConfigurationsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3786,7 +3786,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateInstanceConfigurationsResponse> UpdateInstanceConfigurationsInvoker(UpdateInstanceConfigurationsRequest updateInstanceConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceConfigurationsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceConfigurationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceConfigurationsRequest);
             return new SyncInvoker<UpdateInstanceConfigurationsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceConfigurationsResponse>);
@@ -3802,7 +3802,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateInstanceMonitorResponse UpdateInstanceMonitor(UpdateInstanceMonitorRequest updateInstanceMonitorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceMonitorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceMonitorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/monitor-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceMonitorRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3812,7 +3812,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateInstanceMonitorResponse> UpdateInstanceMonitorInvoker(UpdateInstanceMonitorRequest updateInstanceMonitorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateInstanceMonitorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceMonitorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/monitor-policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceMonitorRequest);
             return new SyncInvoker<UpdateInstanceMonitorResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceMonitorResponse>);
@@ -3828,7 +3828,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateMultiTenantResponse UpdateMultiTenant(UpdateMultiTenantRequest updateMultiTenantRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateMultiTenantRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMultiTenantRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/multi-tenant", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMultiTenantRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3838,7 +3838,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateMultiTenantResponse> UpdateMultiTenantInvoker(UpdateMultiTenantRequest updateMultiTenantRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateMultiTenantRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMultiTenantRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/multi-tenant", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMultiTenantRequest);
             return new SyncInvoker<UpdateMultiTenantResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateMultiTenantResponse>);
@@ -3854,8 +3854,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateNewNodeAutoAddSwitchResponse UpdateNewNodeAutoAddSwitch(UpdateNewNodeAutoAddSwitchRequest updateNewNodeAutoAddSwitchRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateNewNodeAutoAddSwitchRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateNewNodeAutoAddSwitchRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNewNodeAutoAddSwitchRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateNewNodeAutoAddSwitchRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/new-node-auto-add", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateNewNodeAutoAddSwitchRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -3865,8 +3865,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateNewNodeAutoAddSwitchResponse> UpdateNewNodeAutoAddSwitchInvoker(UpdateNewNodeAutoAddSwitchRequest updateNewNodeAutoAddSwitchRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateNewNodeAutoAddSwitchRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateNewNodeAutoAddSwitchRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateNewNodeAutoAddSwitchRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateNewNodeAutoAddSwitchRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/new-node-auto-add", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateNewNodeAutoAddSwitchRequest);
             return new SyncInvoker<UpdateNewNodeAutoAddSwitchResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateNewNodeAutoAddSwitchResponse>);
@@ -3882,8 +3882,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateProxyConnectionPoolTypeResponse UpdateProxyConnectionPoolType(UpdateProxyConnectionPoolTypeRequest updateProxyConnectionPoolTypeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxyConnectionPoolTypeRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxyConnectionPoolTypeRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyConnectionPoolTypeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyConnectionPoolTypeRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/connection-pool-type", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyConnectionPoolTypeRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3893,8 +3893,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateProxyConnectionPoolTypeResponse> UpdateProxyConnectionPoolTypeInvoker(UpdateProxyConnectionPoolTypeRequest updateProxyConnectionPoolTypeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxyConnectionPoolTypeRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxyConnectionPoolTypeRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyConnectionPoolTypeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyConnectionPoolTypeRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/connection-pool-type", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyConnectionPoolTypeRequest);
             return new SyncInvoker<UpdateProxyConnectionPoolTypeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProxyConnectionPoolTypeResponse>);
@@ -3910,8 +3910,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateProxyNameResponse UpdateProxyName(UpdateProxyNameRequest updateProxyNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxyNameRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxyNameRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyNameRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/rename", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProxyNameRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3921,8 +3921,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateProxyNameResponse> UpdateProxyNameInvoker(UpdateProxyNameRequest updateProxyNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxyNameRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxyNameRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyNameRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/rename", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProxyNameRequest);
             return new SyncInvoker<UpdateProxyNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProxyNameResponse>);
@@ -3938,8 +3938,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateProxyNewConfigurationsResponse UpdateProxyNewConfigurations(UpdateProxyNewConfigurationsRequest updateProxyNewConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxyNewConfigurationsRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxyNewConfigurationsRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyNewConfigurationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyNewConfigurationsRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyNewConfigurationsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3949,8 +3949,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateProxyNewConfigurationsResponse> UpdateProxyNewConfigurationsInvoker(UpdateProxyNewConfigurationsRequest updateProxyNewConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxyNewConfigurationsRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxyNewConfigurationsRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyNewConfigurationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyNewConfigurationsRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyNewConfigurationsRequest);
             return new SyncInvoker<UpdateProxyNewConfigurationsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProxyNewConfigurationsResponse>);
@@ -3966,8 +3966,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateProxyPortResponse UpdateProxyPort(UpdateProxyPortRequest updateProxyPortRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxyPortRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxyPortRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyPortRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyPortRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/port", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyPortRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3977,8 +3977,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateProxyPortResponse> UpdateProxyPortInvoker(UpdateProxyPortRequest updateProxyPortRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxyPortRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxyPortRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyPortRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyPortRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/port", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyPortRequest);
             return new SyncInvoker<UpdateProxyPortResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProxyPortResponse>);
@@ -3994,8 +3994,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateProxyPrivateDnsNameResponse UpdateProxyPrivateDnsName(UpdateProxyPrivateDnsNameRequest updateProxyPrivateDnsNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxyPrivateDnsNameRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxyPrivateDnsNameRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyPrivateDnsNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyPrivateDnsNameRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyPrivateDnsNameRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4005,8 +4005,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateProxyPrivateDnsNameResponse> UpdateProxyPrivateDnsNameInvoker(UpdateProxyPrivateDnsNameRequest updateProxyPrivateDnsNameRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxyPrivateDnsNameRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxyPrivateDnsNameRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyPrivateDnsNameRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxyPrivateDnsNameRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/dns", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxyPrivateDnsNameRequest);
             return new SyncInvoker<UpdateProxyPrivateDnsNameResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProxyPrivateDnsNameResponse>);
@@ -4022,8 +4022,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateProxySessionConsistenceResponse UpdateProxySessionConsistence(UpdateProxySessionConsistenceRequest updateProxySessionConsistenceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxySessionConsistenceRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxySessionConsistenceRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxySessionConsistenceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxySessionConsistenceRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/session-consistence", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxySessionConsistenceRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4033,8 +4033,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateProxySessionConsistenceResponse> UpdateProxySessionConsistenceInvoker(UpdateProxySessionConsistenceRequest updateProxySessionConsistenceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateProxySessionConsistenceRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", updateProxySessionConsistenceRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProxySessionConsistenceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateProxySessionConsistenceRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/session-consistence", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateProxySessionConsistenceRequest);
             return new SyncInvoker<UpdateProxySessionConsistenceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateProxySessionConsistenceResponse>);
@@ -4050,7 +4050,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateServerlessPolicyResponse UpdateServerlessPolicy(UpdateServerlessPolicyRequest updateServerlessPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateServerlessPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateServerlessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerlessPolicyRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4060,7 +4060,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateServerlessPolicyResponse> UpdateServerlessPolicyInvoker(UpdateServerlessPolicyRequest updateServerlessPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateServerlessPolicyRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateServerlessPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerlessPolicyRequest);
             return new SyncInvoker<UpdateServerlessPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServerlessPolicyResponse>);
@@ -4076,7 +4076,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateSlowlogSensitiveSwitchResponse UpdateSlowlogSensitiveSwitch(UpdateSlowlogSensitiveSwitchRequest updateSlowlogSensitiveSwitchRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateSlowlogSensitiveSwitchRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSlowlogSensitiveSwitchRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog/modify", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSlowlogSensitiveSwitchRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4086,7 +4086,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateSlowlogSensitiveSwitchResponse> UpdateSlowlogSensitiveSwitchInvoker(UpdateSlowlogSensitiveSwitchRequest updateSlowlogSensitiveSwitchRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateSlowlogSensitiveSwitchRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSlowlogSensitiveSwitchRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog/modify", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSlowlogSensitiveSwitchRequest);
             return new SyncInvoker<UpdateSlowlogSensitiveSwitchResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateSlowlogSensitiveSwitchResponse>);
@@ -4102,7 +4102,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateSqlFilterControlResponse UpdateSqlFilterControl(UpdateSqlFilterControlRequest updateSqlFilterControlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateSqlFilterControlRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSqlFilterControlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSqlFilterControlRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4112,7 +4112,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateSqlFilterControlResponse> UpdateSqlFilterControlInvoker(UpdateSqlFilterControlRequest updateSqlFilterControlRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateSqlFilterControlRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSqlFilterControlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/switch", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSqlFilterControlRequest);
             return new SyncInvoker<UpdateSqlFilterControlResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateSqlFilterControlResponse>);
@@ -4128,8 +4128,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateTaurusNodeDataIpResponse UpdateTaurusNodeDataIp(UpdateTaurusNodeDataIpRequest updateTaurusNodeDataIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTaurusNodeDataIpRequest.InstanceId.ToString());
-            urlParam.Add("node_id", updateTaurusNodeDataIpRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTaurusNodeDataIpRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateTaurusNodeDataIpRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/internal-ip", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateTaurusNodeDataIpRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4139,8 +4139,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateTaurusNodeDataIpResponse> UpdateTaurusNodeDataIpInvoker(UpdateTaurusNodeDataIpRequest updateTaurusNodeDataIpRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTaurusNodeDataIpRequest.InstanceId.ToString());
-            urlParam.Add("node_id", updateTaurusNodeDataIpRequest.NodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTaurusNodeDataIpRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateTaurusNodeDataIpRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/{node_id}/internal-ip", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateTaurusNodeDataIpRequest);
             return new SyncInvoker<UpdateTaurusNodeDataIpResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTaurusNodeDataIpResponse>);
@@ -4156,7 +4156,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateTransactionSplitStatusResponse UpdateTransactionSplitStatus(UpdateTransactionSplitStatusRequest updateTransactionSplitStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTransactionSplitStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTransactionSplitStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/transaction-split", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateTransactionSplitStatusRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4166,7 +4166,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateTransactionSplitStatusResponse> UpdateTransactionSplitStatusInvoker(UpdateTransactionSplitStatusRequest updateTransactionSplitStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateTransactionSplitStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTransactionSplitStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/transaction-split", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateTransactionSplitStatusRequest);
             return new SyncInvoker<UpdateTransactionSplitStatusResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateTransactionSplitStatusResponse>);
@@ -4182,7 +4182,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpgradeGaussMySqlInstanceDatabaseResponse UpgradeGaussMySqlInstanceDatabase(UpgradeGaussMySqlInstanceDatabaseRequest upgradeGaussMySqlInstanceDatabaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", upgradeGaussMySqlInstanceDatabaseRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(upgradeGaussMySqlInstanceDatabaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeGaussMySqlInstanceDatabaseRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4192,7 +4192,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpgradeGaussMySqlInstanceDatabaseResponse> UpgradeGaussMySqlInstanceDatabaseInvoker(UpgradeGaussMySqlInstanceDatabaseRequest upgradeGaussMySqlInstanceDatabaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", upgradeGaussMySqlInstanceDatabaseRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(upgradeGaussMySqlInstanceDatabaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeGaussMySqlInstanceDatabaseRequest);
             return new SyncInvoker<UpgradeGaussMySqlInstanceDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeGaussMySqlInstanceDatabaseResponse>);
@@ -4208,8 +4208,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpgradeProxyVersionResponse UpgradeProxyVersion(UpgradeProxyVersionRequest upgradeProxyVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", upgradeProxyVersionRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", upgradeProxyVersionRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(upgradeProxyVersionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(upgradeProxyVersionRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/upgrade-version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeProxyVersionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4219,8 +4219,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpgradeProxyVersionResponse> UpgradeProxyVersionInvoker(UpgradeProxyVersionRequest upgradeProxyVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", upgradeProxyVersionRequest.InstanceId.ToString());
-            urlParam.Add("proxy_id", upgradeProxyVersionRequest.ProxyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(upgradeProxyVersionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(upgradeProxyVersionRequest.ProxyId, out var valueOfProxyId)) urlParam.Add("proxy_id", valueOfProxyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/upgrade-version", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeProxyVersionRequest);
             return new SyncInvoker<UpgradeProxyVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeProxyVersionResponse>);
@@ -4236,7 +4236,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CheckClickHouseDataBaseConfigResponse CheckClickHouseDataBaseConfig(CheckClickHouseDataBaseConfigRequest checkClickHouseDataBaseConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", checkClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkClickHouseDataBaseConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/database-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkClickHouseDataBaseConfigRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4246,7 +4246,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CheckClickHouseDataBaseConfigResponse> CheckClickHouseDataBaseConfigInvoker(CheckClickHouseDataBaseConfigRequest checkClickHouseDataBaseConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", checkClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkClickHouseDataBaseConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/database-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkClickHouseDataBaseConfigRequest);
             return new SyncInvoker<CheckClickHouseDataBaseConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckClickHouseDataBaseConfigResponse>);
@@ -4262,7 +4262,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CheckClickHouseTableConfigResponse CheckClickHouseTableConfig(CheckClickHouseTableConfigRequest checkClickHouseTableConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", checkClickHouseTableConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkClickHouseTableConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/table-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkClickHouseTableConfigRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4272,7 +4272,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CheckClickHouseTableConfigResponse> CheckClickHouseTableConfigInvoker(CheckClickHouseTableConfigRequest checkClickHouseTableConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", checkClickHouseTableConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkClickHouseTableConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/table-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkClickHouseTableConfigRequest);
             return new SyncInvoker<CheckClickHouseTableConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckClickHouseTableConfigResponse>);
@@ -4288,7 +4288,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CheckDataBaseConfigResponse CheckDataBaseConfig(CheckDataBaseConfigRequest checkDataBaseConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", checkDataBaseConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkDataBaseConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/database-config-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkDataBaseConfigRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4298,7 +4298,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CheckDataBaseConfigResponse> CheckDataBaseConfigInvoker(CheckDataBaseConfigRequest checkDataBaseConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", checkDataBaseConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkDataBaseConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/database-config-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkDataBaseConfigRequest);
             return new SyncInvoker<CheckDataBaseConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckDataBaseConfigResponse>);
@@ -4362,7 +4362,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CheckTableConfigResponse CheckTableConfig(CheckTableConfigRequest checkTableConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", checkTableConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkTableConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/table-config-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkTableConfigRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4372,7 +4372,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CheckTableConfigResponse> CheckTableConfigInvoker(CheckTableConfigRequest checkTableConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", checkTableConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkTableConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/table-config-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkTableConfigRequest);
             return new SyncInvoker<CheckTableConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckTableConfigResponse>);
@@ -4388,7 +4388,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateClickHouseDataBaseReplicationResponse CreateClickHouseDataBaseReplication(CreateClickHouseDataBaseReplicationRequest createClickHouseDataBaseReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createClickHouseDataBaseReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createClickHouseDataBaseReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseDataBaseReplicationRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4398,7 +4398,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateClickHouseDataBaseReplicationResponse> CreateClickHouseDataBaseReplicationInvoker(CreateClickHouseDataBaseReplicationRequest createClickHouseDataBaseReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createClickHouseDataBaseReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createClickHouseDataBaseReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseDataBaseReplicationRequest);
             return new SyncInvoker<CreateClickHouseDataBaseReplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateClickHouseDataBaseReplicationResponse>);
@@ -4414,7 +4414,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateClickHouseDatabaseUserResponse CreateClickHouseDatabaseUser(CreateClickHouseDatabaseUserRequest createClickHouseDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createClickHouseDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createClickHouseDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseDatabaseUserRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4424,7 +4424,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateClickHouseDatabaseUserResponse> CreateClickHouseDatabaseUserInvoker(CreateClickHouseDatabaseUserRequest createClickHouseDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createClickHouseDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createClickHouseDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseDatabaseUserRequest);
             return new SyncInvoker<CreateClickHouseDatabaseUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateClickHouseDatabaseUserResponse>);
@@ -4440,7 +4440,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateClickHouseInstanceResponse CreateClickHouseInstance(CreateClickHouseInstanceRequest createClickHouseInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createClickHouseInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createClickHouseInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4450,7 +4450,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateClickHouseInstanceResponse> CreateClickHouseInstanceInvoker(CreateClickHouseInstanceRequest createClickHouseInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createClickHouseInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createClickHouseInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createClickHouseInstanceRequest);
             return new SyncInvoker<CreateClickHouseInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateClickHouseInstanceResponse>);
@@ -4466,7 +4466,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateStarRocksDataReplicationResponse CreateStarRocksDataReplication(CreateStarRocksDataReplicationRequest createStarRocksDataReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createStarRocksDataReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createStarRocksDataReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStarRocksDataReplicationRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4476,7 +4476,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateStarRocksDataReplicationResponse> CreateStarRocksDataReplicationInvoker(CreateStarRocksDataReplicationRequest createStarRocksDataReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createStarRocksDataReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createStarRocksDataReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStarRocksDataReplicationRequest);
             return new SyncInvoker<CreateStarRocksDataReplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStarRocksDataReplicationResponse>);
@@ -4492,7 +4492,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateStarRocksDatabaseUserResponse CreateStarRocksDatabaseUser(CreateStarRocksDatabaseUserRequest createStarRocksDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createStarRocksDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createStarRocksDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStarRocksDatabaseUserRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4502,7 +4502,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateStarRocksDatabaseUserResponse> CreateStarRocksDatabaseUserInvoker(CreateStarRocksDatabaseUserRequest createStarRocksDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createStarRocksDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createStarRocksDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStarRocksDatabaseUserRequest);
             return new SyncInvoker<CreateStarRocksDatabaseUserResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStarRocksDatabaseUserResponse>);
@@ -4518,7 +4518,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public CreateStarrocksInstanceResponse CreateStarrocksInstance(CreateStarrocksInstanceRequest createStarrocksInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createStarrocksInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createStarrocksInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStarrocksInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4528,7 +4528,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<CreateStarrocksInstanceResponse> CreateStarrocksInstanceInvoker(CreateStarrocksInstanceRequest createStarrocksInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", createStarrocksInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createStarrocksInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createStarrocksInstanceRequest);
             return new SyncInvoker<CreateStarrocksInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateStarrocksInstanceResponse>);
@@ -4544,7 +4544,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteClickHouseDataBaseConfigResponse DeleteClickHouseDataBaseConfig(DeleteClickHouseDataBaseConfigRequest deleteClickHouseDataBaseConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseDataBaseConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases/replication/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDataBaseConfigRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -4554,7 +4554,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteClickHouseDataBaseConfigResponse> DeleteClickHouseDataBaseConfigInvoker(DeleteClickHouseDataBaseConfigRequest deleteClickHouseDataBaseConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseDataBaseConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases/replication/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDataBaseConfigRequest);
             return new SyncInvoker<DeleteClickHouseDataBaseConfigResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteClickHouseDataBaseConfigResponse>);
@@ -4570,8 +4570,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteClickHouseDataBaseReplicationResponse DeleteClickHouseDataBaseReplication(DeleteClickHouseDataBaseReplicationRequest deleteClickHouseDataBaseReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteClickHouseDataBaseReplicationRequest.InstanceId.ToString());
-            urlParam.Add("database_name", deleteClickHouseDataBaseReplicationRequest.DatabaseName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseDataBaseReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseDataBaseReplicationRequest.DatabaseName, out var valueOfDatabaseName)) urlParam.Add("database_name", valueOfDatabaseName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/{database_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDataBaseReplicationRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -4581,8 +4581,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteClickHouseDataBaseReplicationResponse> DeleteClickHouseDataBaseReplicationInvoker(DeleteClickHouseDataBaseReplicationRequest deleteClickHouseDataBaseReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteClickHouseDataBaseReplicationRequest.InstanceId.ToString());
-            urlParam.Add("database_name", deleteClickHouseDataBaseReplicationRequest.DatabaseName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseDataBaseReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseDataBaseReplicationRequest.DatabaseName, out var valueOfDatabaseName)) urlParam.Add("database_name", valueOfDatabaseName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/{database_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDataBaseReplicationRequest);
             return new SyncInvoker<DeleteClickHouseDataBaseReplicationResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteClickHouseDataBaseReplicationResponse>);
@@ -4598,8 +4598,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteClickHouseDatabaseUserResponse DeleteClickHouseDatabaseUser(DeleteClickHouseDatabaseUserRequest deleteClickHouseDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteClickHouseDatabaseUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name", deleteClickHouseDatabaseUserRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseDatabaseUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDatabaseUserRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -4609,8 +4609,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteClickHouseDatabaseUserResponse> DeleteClickHouseDatabaseUserInvoker(DeleteClickHouseDatabaseUserRequest deleteClickHouseDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteClickHouseDatabaseUserRequest.InstanceId.ToString());
-            urlParam.Add("user_name", deleteClickHouseDatabaseUserRequest.UserName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseDatabaseUserRequest.UserName, out var valueOfUserName)) urlParam.Add("user_name", valueOfUserName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/{user_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseDatabaseUserRequest);
             return new SyncInvoker<DeleteClickHouseDatabaseUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteClickHouseDatabaseUserResponse>);
@@ -4626,8 +4626,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteClickHouseInstanceResponse DeleteClickHouseInstance(DeleteClickHouseInstanceRequest deleteClickHouseInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteClickHouseInstanceRequest.InstanceId.ToString());
-            urlParam.Add("clickhouse_instance_id", deleteClickHouseInstanceRequest.ClickhouseInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseInstanceRequest.ClickhouseInstanceId, out var valueOfClickhouseInstanceId)) urlParam.Add("clickhouse_instance_id", valueOfClickhouseInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/{clickhouse_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseInstanceRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -4637,8 +4637,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteClickHouseInstanceResponse> DeleteClickHouseInstanceInvoker(DeleteClickHouseInstanceRequest deleteClickHouseInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteClickHouseInstanceRequest.InstanceId.ToString());
-            urlParam.Add("clickhouse_instance_id", deleteClickHouseInstanceRequest.ClickhouseInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteClickHouseInstanceRequest.ClickhouseInstanceId, out var valueOfClickhouseInstanceId)) urlParam.Add("clickhouse_instance_id", valueOfClickhouseInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/{clickhouse_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClickHouseInstanceRequest);
             return new SyncInvoker<DeleteClickHouseInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteClickHouseInstanceResponse>);
@@ -4678,7 +4678,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteStarRocksDataReplicationResponse DeleteStarRocksDataReplication(DeleteStarRocksDataReplicationRequest deleteStarRocksDataReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteStarRocksDataReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStarRocksDataReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteStarRocksDataReplicationRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -4688,7 +4688,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteStarRocksDataReplicationResponse> DeleteStarRocksDataReplicationInvoker(DeleteStarRocksDataReplicationRequest deleteStarRocksDataReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteStarRocksDataReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStarRocksDataReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteStarRocksDataReplicationRequest);
             return new SyncInvoker<DeleteStarRocksDataReplicationResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStarRocksDataReplicationResponse>);
@@ -4704,7 +4704,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteStarRocksDatabaseUserResponse DeleteStarRocksDatabaseUser(DeleteStarRocksDatabaseUserRequest deleteStarRocksDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteStarRocksDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStarRocksDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStarRocksDatabaseUserRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -4714,7 +4714,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteStarRocksDatabaseUserResponse> DeleteStarRocksDatabaseUserInvoker(DeleteStarRocksDatabaseUserRequest deleteStarRocksDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteStarRocksDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStarRocksDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStarRocksDatabaseUserRequest);
             return new SyncInvoker<DeleteStarRocksDatabaseUserResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStarRocksDatabaseUserResponse>);
@@ -4730,8 +4730,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public DeleteStarrocksInstanceResponse DeleteStarrocksInstance(DeleteStarrocksInstanceRequest deleteStarrocksInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteStarrocksInstanceRequest.InstanceId.ToString());
-            urlParam.Add("starrocks_instance_id", deleteStarrocksInstanceRequest.StarrocksInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStarrocksInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteStarrocksInstanceRequest.StarrocksInstanceId, out var valueOfStarrocksInstanceId)) urlParam.Add("starrocks_instance_id", valueOfStarrocksInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/{starrocks_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStarrocksInstanceRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -4741,8 +4741,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<DeleteStarrocksInstanceResponse> DeleteStarrocksInstanceInvoker(DeleteStarrocksInstanceRequest deleteStarrocksInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", deleteStarrocksInstanceRequest.InstanceId.ToString());
-            urlParam.Add("starrocks_instance_id", deleteStarrocksInstanceRequest.StarrocksInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteStarrocksInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteStarrocksInstanceRequest.StarrocksInstanceId, out var valueOfStarrocksInstanceId)) urlParam.Add("starrocks_instance_id", valueOfStarrocksInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/{starrocks_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteStarrocksInstanceRequest);
             return new SyncInvoker<DeleteStarrocksInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteStarrocksInstanceResponse>);
@@ -4758,7 +4758,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListClickHouseDataBaseResponse ListClickHouseDataBase(ListClickHouseDataBaseRequest listClickHouseDataBaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseDataBaseRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseDataBaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4768,7 +4768,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListClickHouseDataBaseResponse> ListClickHouseDataBaseInvoker(ListClickHouseDataBaseRequest listClickHouseDataBaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseDataBaseRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseDataBaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseRequest);
             return new SyncInvoker<ListClickHouseDataBaseResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseDataBaseResponse>);
@@ -4784,7 +4784,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListClickHouseDataBaseParameterResponse ListClickHouseDataBaseParameter(ListClickHouseDataBaseParameterRequest listClickHouseDataBaseParameterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseDataBaseParameterRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseDataBaseParameterRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/database-parameter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseParameterRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4794,7 +4794,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListClickHouseDataBaseParameterResponse> ListClickHouseDataBaseParameterInvoker(ListClickHouseDataBaseParameterRequest listClickHouseDataBaseParameterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseDataBaseParameterRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseDataBaseParameterRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/database-parameter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseParameterRequest);
             return new SyncInvoker<ListClickHouseDataBaseParameterResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseDataBaseParameterResponse>);
@@ -4810,7 +4810,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListClickHouseDataBaseReplicationResponse ListClickHouseDataBaseReplication(ListClickHouseDataBaseReplicationRequest listClickHouseDataBaseReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseDataBaseReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseDataBaseReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseReplicationRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4820,7 +4820,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListClickHouseDataBaseReplicationResponse> ListClickHouseDataBaseReplicationInvoker(ListClickHouseDataBaseReplicationRequest listClickHouseDataBaseReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseDataBaseReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseDataBaseReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseReplicationRequest);
             return new SyncInvoker<ListClickHouseDataBaseReplicationResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseDataBaseReplicationResponse>);
@@ -4836,7 +4836,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListClickHouseDataBaseReplicationConfigResponse ListClickHouseDataBaseReplicationConfig(ListClickHouseDataBaseReplicationConfigRequest listClickHouseDataBaseReplicationConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseDataBaseReplicationConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseDataBaseReplicationConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseReplicationConfigRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4846,7 +4846,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListClickHouseDataBaseReplicationConfigResponse> ListClickHouseDataBaseReplicationConfigInvoker(ListClickHouseDataBaseReplicationConfigRequest listClickHouseDataBaseReplicationConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseDataBaseReplicationConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseDataBaseReplicationConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/replication/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseDataBaseReplicationConfigRequest);
             return new SyncInvoker<ListClickHouseDataBaseReplicationConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseDataBaseReplicationConfigResponse>);
@@ -4862,8 +4862,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListClickHouseInstanceResponse ListClickHouseInstance(ListClickHouseInstanceRequest listClickHouseInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseInstanceRequest.InstanceId.ToString());
-            urlParam.Add("clickhouse_instance_id", listClickHouseInstanceRequest.ClickhouseInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseInstanceRequest.ClickhouseInstanceId, out var valueOfClickhouseInstanceId)) urlParam.Add("clickhouse_instance_id", valueOfClickhouseInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/{clickhouse_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseInstanceRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4873,8 +4873,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListClickHouseInstanceResponse> ListClickHouseInstanceInvoker(ListClickHouseInstanceRequest listClickHouseInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseInstanceRequest.InstanceId.ToString());
-            urlParam.Add("clickhouse_instance_id", listClickHouseInstanceRequest.ClickhouseInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseInstanceRequest.ClickhouseInstanceId, out var valueOfClickhouseInstanceId)) urlParam.Add("clickhouse_instance_id", valueOfClickhouseInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/{clickhouse_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseInstanceRequest);
             return new SyncInvoker<ListClickHouseInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseInstanceResponse>);
@@ -4890,7 +4890,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListClickHouseInstanceNodeResponse ListClickHouseInstanceNode(ListClickHouseInstanceNodeRequest listClickHouseInstanceNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseInstanceNodeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseInstanceNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/nodes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseInstanceNodeRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4900,7 +4900,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListClickHouseInstanceNodeResponse> ListClickHouseInstanceNodeInvoker(ListClickHouseInstanceNodeRequest listClickHouseInstanceNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listClickHouseInstanceNodeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClickHouseInstanceNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/nodes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClickHouseInstanceNodeRequest);
             return new SyncInvoker<ListClickHouseInstanceNodeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClickHouseInstanceNodeResponse>);
@@ -4916,7 +4916,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListHtapDataStoreResponse ListHtapDataStore(ListHtapDataStoreRequest listHtapDataStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine_name", listHtapDataStoreRequest.EngineName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHtapDataStoreRequest.EngineName, out var valueOfEngineName)) urlParam.Add("engine_name", valueOfEngineName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/datastores/{engine_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapDataStoreRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4926,7 +4926,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListHtapDataStoreResponse> ListHtapDataStoreInvoker(ListHtapDataStoreRequest listHtapDataStoreRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine_name", listHtapDataStoreRequest.EngineName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHtapDataStoreRequest.EngineName, out var valueOfEngineName)) urlParam.Add("engine_name", valueOfEngineName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/datastores/{engine_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapDataStoreRequest);
             return new SyncInvoker<ListHtapDataStoreResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHtapDataStoreResponse>);
@@ -4942,7 +4942,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListHtapFlavorResponse ListHtapFlavor(ListHtapFlavorRequest listHtapFlavorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine_name", listHtapFlavorRequest.EngineName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHtapFlavorRequest.EngineName, out var valueOfEngineName)) urlParam.Add("engine_name", valueOfEngineName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/flavors/{engine_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapFlavorRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4952,7 +4952,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListHtapFlavorResponse> ListHtapFlavorInvoker(ListHtapFlavorRequest listHtapFlavorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("engine_name", listHtapFlavorRequest.EngineName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHtapFlavorRequest.EngineName, out var valueOfEngineName)) urlParam.Add("engine_name", valueOfEngineName);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/flavors/{engine_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapFlavorRequest);
             return new SyncInvoker<ListHtapFlavorResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHtapFlavorResponse>);
@@ -4968,7 +4968,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListHtapInstanceInfoResponse ListHtapInstanceInfo(ListHtapInstanceInfoRequest listHtapInstanceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listHtapInstanceInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHtapInstanceInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapInstanceInfoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4978,7 +4978,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListHtapInstanceInfoResponse> ListHtapInstanceInfoInvoker(ListHtapInstanceInfoRequest listHtapInstanceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listHtapInstanceInfoRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHtapInstanceInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapInstanceInfoRequest);
             return new SyncInvoker<ListHtapInstanceInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHtapInstanceInfoResponse>);
@@ -4994,7 +4994,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListHtapStorageTypeResponse ListHtapStorageType(ListHtapStorageTypeRequest listHtapStorageTypeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("database", listHtapStorageTypeRequest.Database.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHtapStorageTypeRequest.Database, out var valueOfDatabase)) urlParam.Add("database", valueOfDatabase);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/storage-type/{database}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapStorageTypeRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5004,7 +5004,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListHtapStorageTypeResponse> ListHtapStorageTypeInvoker(ListHtapStorageTypeRequest listHtapStorageTypeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("database", listHtapStorageTypeRequest.Database.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHtapStorageTypeRequest.Database, out var valueOfDatabase)) urlParam.Add("database", valueOfDatabase);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/htap/storage-type/{database}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHtapStorageTypeRequest);
             return new SyncInvoker<ListHtapStorageTypeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHtapStorageTypeResponse>);
@@ -5020,7 +5020,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListInstanceNodeResponse ListInstanceNode(ListInstanceNodeRequest listInstanceNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceNodeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/nodes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceNodeRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5030,7 +5030,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListInstanceNodeResponse> ListInstanceNodeInvoker(ListInstanceNodeRequest listInstanceNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listInstanceNodeRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceNodeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/nodes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceNodeRequest);
             return new SyncInvoker<ListInstanceNodeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceNodeResponse>);
@@ -5046,7 +5046,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListStarRocksDataBasesResponse ListStarRocksDataBases(ListStarRocksDataBasesRequest listStarRocksDataBasesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarRocksDataBasesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDataBasesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarRocksDataBasesRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5056,7 +5056,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListStarRocksDataBasesResponse> ListStarRocksDataBasesInvoker(ListStarRocksDataBasesRequest listStarRocksDataBasesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarRocksDataBasesRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDataBasesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarRocksDataBasesRequest);
             return new SyncInvoker<ListStarRocksDataBasesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStarRocksDataBasesResponse>);
@@ -5072,7 +5072,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListStarRocksDataReplicationConfigResponse ListStarRocksDataReplicationConfig(ListStarRocksDataReplicationConfigRequest listStarRocksDataReplicationConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarRocksDataReplicationConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDataReplicationConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarRocksDataReplicationConfigRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5082,7 +5082,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListStarRocksDataReplicationConfigResponse> ListStarRocksDataReplicationConfigInvoker(ListStarRocksDataReplicationConfigRequest listStarRocksDataReplicationConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarRocksDataReplicationConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDataReplicationConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/configuration", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarRocksDataReplicationConfigRequest);
             return new SyncInvoker<ListStarRocksDataReplicationConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStarRocksDataReplicationConfigResponse>);
@@ -5098,8 +5098,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListStarRocksDataReplicationConfigByDataBaseResponse ListStarRocksDataReplicationConfigByDataBase(ListStarRocksDataReplicationConfigByDataBaseRequest listStarRocksDataReplicationConfigByDataBaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarRocksDataReplicationConfigByDataBaseRequest.InstanceId.ToString());
-            urlParam.Add("database", listStarRocksDataReplicationConfigByDataBaseRequest.Database.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDataReplicationConfigByDataBaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDataReplicationConfigByDataBaseRequest.Database, out var valueOfDatabase)) urlParam.Add("database", valueOfDatabase);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/configuration/{database}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarRocksDataReplicationConfigByDataBaseRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5109,8 +5109,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListStarRocksDataReplicationConfigByDataBaseResponse> ListStarRocksDataReplicationConfigByDataBaseInvoker(ListStarRocksDataReplicationConfigByDataBaseRequest listStarRocksDataReplicationConfigByDataBaseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarRocksDataReplicationConfigByDataBaseRequest.InstanceId.ToString());
-            urlParam.Add("database", listStarRocksDataReplicationConfigByDataBaseRequest.Database.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDataReplicationConfigByDataBaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDataReplicationConfigByDataBaseRequest.Database, out var valueOfDatabase)) urlParam.Add("database", valueOfDatabase);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/configuration/{database}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarRocksDataReplicationConfigByDataBaseRequest);
             return new SyncInvoker<ListStarRocksDataReplicationConfigByDataBaseResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStarRocksDataReplicationConfigByDataBaseResponse>);
@@ -5126,7 +5126,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListStarRocksDataReplicationsResponse ListStarRocksDataReplications(ListStarRocksDataReplicationsRequest listStarRocksDataReplicationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarRocksDataReplicationsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDataReplicationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarRocksDataReplicationsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5136,7 +5136,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListStarRocksDataReplicationsResponse> ListStarRocksDataReplicationsInvoker(ListStarRocksDataReplicationsRequest listStarRocksDataReplicationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarRocksDataReplicationsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDataReplicationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarRocksDataReplicationsRequest);
             return new SyncInvoker<ListStarRocksDataReplicationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStarRocksDataReplicationsResponse>);
@@ -5152,7 +5152,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListStarRocksDbParametersResponse ListStarRocksDbParameters(ListStarRocksDbParametersRequest listStarRocksDbParametersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarRocksDbParametersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDbParametersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/database-parameters", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarRocksDbParametersRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5162,7 +5162,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListStarRocksDbParametersResponse> ListStarRocksDbParametersInvoker(ListStarRocksDbParametersRequest listStarRocksDbParametersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarRocksDbParametersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarRocksDbParametersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/database-parameters", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarRocksDbParametersRequest);
             return new SyncInvoker<ListStarRocksDbParametersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStarRocksDbParametersResponse>);
@@ -5178,8 +5178,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ListStarrocksInstanceInfoResponse ListStarrocksInstanceInfo(ListStarrocksInstanceInfoRequest listStarrocksInstanceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarrocksInstanceInfoRequest.InstanceId.ToString());
-            urlParam.Add("starrocks_instance_id", listStarrocksInstanceInfoRequest.StarrocksInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarrocksInstanceInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listStarrocksInstanceInfoRequest.StarrocksInstanceId, out var valueOfStarrocksInstanceId)) urlParam.Add("starrocks_instance_id", valueOfStarrocksInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/{starrocks_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarrocksInstanceInfoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5189,8 +5189,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ListStarrocksInstanceInfoResponse> ListStarrocksInstanceInfoInvoker(ListStarrocksInstanceInfoRequest listStarrocksInstanceInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", listStarrocksInstanceInfoRequest.InstanceId.ToString());
-            urlParam.Add("starrocks_instance_id", listStarrocksInstanceInfoRequest.StarrocksInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listStarrocksInstanceInfoRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listStarrocksInstanceInfoRequest.StarrocksInstanceId, out var valueOfStarrocksInstanceId)) urlParam.Add("starrocks_instance_id", valueOfStarrocksInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/{starrocks_instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStarrocksInstanceInfoRequest);
             return new SyncInvoker<ListStarrocksInstanceInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStarrocksInstanceInfoResponse>);
@@ -5206,7 +5206,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ModifyDataSyncResponse ModifyDataSync(ModifyDataSyncRequest modifyDataSyncRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyDataSyncRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyDataSyncRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyDataSyncRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5216,7 +5216,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ModifyDataSyncResponse> ModifyDataSyncInvoker(ModifyDataSyncRequest modifyDataSyncRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyDataSyncRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyDataSyncRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyDataSyncRequest);
             return new SyncInvoker<ModifyDataSyncResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyDataSyncResponse>);
@@ -5232,7 +5232,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ModifyStarRocksSecurityGroupResponse ModifyStarRocksSecurityGroup(ModifyStarRocksSecurityGroupRequest modifyStarRocksSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyStarRocksSecurityGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyStarRocksSecurityGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/security-group", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyStarRocksSecurityGroupRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5242,7 +5242,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ModifyStarRocksSecurityGroupResponse> ModifyStarRocksSecurityGroupInvoker(ModifyStarRocksSecurityGroupRequest modifyStarRocksSecurityGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", modifyStarRocksSecurityGroupRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(modifyStarRocksSecurityGroupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/security-group", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyStarRocksSecurityGroupRequest);
             return new SyncInvoker<ModifyStarRocksSecurityGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyStarRocksSecurityGroupResponse>);
@@ -5258,7 +5258,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public PauseStarRocksDataReplicationResponse PauseStarRocksDataReplication(PauseStarRocksDataReplicationRequest pauseStarRocksDataReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", pauseStarRocksDataReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(pauseStarRocksDataReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/pause", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseStarRocksDataReplicationRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5268,7 +5268,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<PauseStarRocksDataReplicationResponse> PauseStarRocksDataReplicationInvoker(PauseStarRocksDataReplicationRequest pauseStarRocksDataReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", pauseStarRocksDataReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(pauseStarRocksDataReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/pause", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", pauseStarRocksDataReplicationRequest);
             return new SyncInvoker<PauseStarRocksDataReplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<PauseStarRocksDataReplicationResponse>);
@@ -5284,7 +5284,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public RebootClickHouseInstanceResponse RebootClickHouseInstance(RebootClickHouseInstanceRequest rebootClickHouseInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", rebootClickHouseInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(rebootClickHouseInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rebootClickHouseInstanceRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5294,7 +5294,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<RebootClickHouseInstanceResponse> RebootClickHouseInstanceInvoker(RebootClickHouseInstanceRequest rebootClickHouseInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", rebootClickHouseInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(rebootClickHouseInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rebootClickHouseInstanceRequest);
             return new SyncInvoker<RebootClickHouseInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<RebootClickHouseInstanceResponse>);
@@ -5310,7 +5310,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ResizeClickHouseFlavorResponse ResizeClickHouseFlavor(ResizeClickHouseFlavorRequest resizeClickHouseFlavorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeClickHouseFlavorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeClickHouseFlavorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/resize-flavor", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeClickHouseFlavorRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5320,7 +5320,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ResizeClickHouseFlavorResponse> ResizeClickHouseFlavorInvoker(ResizeClickHouseFlavorRequest resizeClickHouseFlavorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeClickHouseFlavorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeClickHouseFlavorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/resize-flavor", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeClickHouseFlavorRequest);
             return new SyncInvoker<ResizeClickHouseFlavorResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeClickHouseFlavorResponse>);
@@ -5336,7 +5336,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ResizeClickHouseInstanceResponse ResizeClickHouseInstance(ResizeClickHouseInstanceRequest resizeClickHouseInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeClickHouseInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeClickHouseInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/resize", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeClickHouseInstanceRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5346,7 +5346,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ResizeClickHouseInstanceResponse> ResizeClickHouseInstanceInvoker(ResizeClickHouseInstanceRequest resizeClickHouseInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeClickHouseInstanceRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeClickHouseInstanceRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/resize", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeClickHouseInstanceRequest);
             return new SyncInvoker<ResizeClickHouseInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<ResizeClickHouseInstanceResponse>);
@@ -5362,7 +5362,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ResizeStarRocksFlavorResponse ResizeStarRocksFlavor(ResizeStarRocksFlavorRequest resizeStarRocksFlavorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeStarRocksFlavorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeStarRocksFlavorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/resize-flavor", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeStarRocksFlavorRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5372,7 +5372,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ResizeStarRocksFlavorResponse> ResizeStarRocksFlavorInvoker(ResizeStarRocksFlavorRequest resizeStarRocksFlavorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resizeStarRocksFlavorRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resizeStarRocksFlavorRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/resize-flavor", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resizeStarRocksFlavorRequest);
             return new SyncInvoker<ResizeStarRocksFlavorResponse>(this, "POST", request, JsonUtils.DeSerialize<ResizeStarRocksFlavorResponse>);
@@ -5388,7 +5388,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public RestartStarrocksInstanceResponse RestartStarrocksInstance(RestartStarrocksInstanceRequest restartStarrocksInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("starrocks_instance_id", restartStarrocksInstanceRequest.StarrocksInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartStarrocksInstanceRequest.StarrocksInstanceId, out var valueOfStarrocksInstanceId)) urlParam.Add("starrocks_instance_id", valueOfStarrocksInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{starrocks_instance_id}/starrocks/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartStarrocksInstanceRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5398,7 +5398,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<RestartStarrocksInstanceResponse> RestartStarrocksInstanceInvoker(RestartStarrocksInstanceRequest restartStarrocksInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("starrocks_instance_id", restartStarrocksInstanceRequest.StarrocksInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartStarrocksInstanceRequest.StarrocksInstanceId, out var valueOfStarrocksInstanceId)) urlParam.Add("starrocks_instance_id", valueOfStarrocksInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{starrocks_instance_id}/starrocks/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartStarrocksInstanceRequest);
             return new SyncInvoker<RestartStarrocksInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<RestartStarrocksInstanceResponse>);
@@ -5414,8 +5414,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public RestartStarrocksNodeResponse RestartStarrocksNode(RestartStarrocksNodeRequest restartStarrocksNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("starrocks_node_id", restartStarrocksNodeRequest.StarrocksNodeId.ToString());
-            urlParam.Add("starrocks_instance_id", restartStarrocksNodeRequest.StarrocksInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartStarrocksNodeRequest.StarrocksNodeId, out var valueOfStarrocksNodeId)) urlParam.Add("starrocks_node_id", valueOfStarrocksNodeId);
+            if (StringUtils.TryConvertToNonEmptyString(restartStarrocksNodeRequest.StarrocksInstanceId, out var valueOfStarrocksInstanceId)) urlParam.Add("starrocks_instance_id", valueOfStarrocksInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{starrocks_instance_id}/starrocks/{starrocks_node_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartStarrocksNodeRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5425,8 +5425,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<RestartStarrocksNodeResponse> RestartStarrocksNodeInvoker(RestartStarrocksNodeRequest restartStarrocksNodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("starrocks_node_id", restartStarrocksNodeRequest.StarrocksNodeId.ToString());
-            urlParam.Add("starrocks_instance_id", restartStarrocksNodeRequest.StarrocksInstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restartStarrocksNodeRequest.StarrocksNodeId, out var valueOfStarrocksNodeId)) urlParam.Add("starrocks_node_id", valueOfStarrocksNodeId);
+            if (StringUtils.TryConvertToNonEmptyString(restartStarrocksNodeRequest.StarrocksInstanceId, out var valueOfStarrocksInstanceId)) urlParam.Add("starrocks_instance_id", valueOfStarrocksInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{starrocks_instance_id}/starrocks/{starrocks_node_id}/restart", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restartStarrocksNodeRequest);
             return new SyncInvoker<RestartStarrocksNodeResponse>(this, "PUT", request, JsonUtils.DeSerialize<RestartStarrocksNodeResponse>);
@@ -5442,7 +5442,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ResumeStarRocksDataReplicationResponse ResumeStarRocksDataReplication(ResumeStarRocksDataReplicationRequest resumeStarRocksDataReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resumeStarRocksDataReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resumeStarRocksDataReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/resume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeStarRocksDataReplicationRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5452,7 +5452,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ResumeStarRocksDataReplicationResponse> ResumeStarRocksDataReplicationInvoker(ResumeStarRocksDataReplicationRequest resumeStarRocksDataReplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", resumeStarRocksDataReplicationRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resumeStarRocksDataReplicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/resume", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resumeStarRocksDataReplicationRequest);
             return new SyncInvoker<ResumeStarRocksDataReplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<ResumeStarRocksDataReplicationResponse>);
@@ -5468,7 +5468,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowClickHouseDatabaseUserResponse ShowClickHouseDatabaseUser(ShowClickHouseDatabaseUserRequest showClickHouseDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showClickHouseDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClickHouseDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClickHouseDatabaseUserRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5478,7 +5478,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowClickHouseDatabaseUserResponse> ShowClickHouseDatabaseUserInvoker(ShowClickHouseDatabaseUserRequest showClickHouseDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showClickHouseDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClickHouseDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClickHouseDatabaseUserRequest);
             return new SyncInvoker<ShowClickHouseDatabaseUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClickHouseDatabaseUserResponse>);
@@ -5518,7 +5518,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowClickHouseSlowLogDetailResponse ShowClickHouseSlowLogDetail(ShowClickHouseSlowLogDetailRequest showClickHouseSlowLogDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showClickHouseSlowLogDetailRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClickHouseSlowLogDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showClickHouseSlowLogDetailRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5528,7 +5528,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowClickHouseSlowLogDetailResponse> ShowClickHouseSlowLogDetailInvoker(ShowClickHouseSlowLogDetailRequest showClickHouseSlowLogDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showClickHouseSlowLogDetailRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClickHouseSlowLogDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slow-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showClickHouseSlowLogDetailRequest);
             return new SyncInvoker<ShowClickHouseSlowLogDetailResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowClickHouseSlowLogDetailResponse>);
@@ -5544,7 +5544,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowClickHouseSlowLogSensitiveStatusResponse ShowClickHouseSlowLogSensitiveStatus(ShowClickHouseSlowLogSensitiveStatusRequest showClickHouseSlowLogSensitiveStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showClickHouseSlowLogSensitiveStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClickHouseSlowLogSensitiveStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClickHouseSlowLogSensitiveStatusRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5554,7 +5554,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowClickHouseSlowLogSensitiveStatusResponse> ShowClickHouseSlowLogSensitiveStatusInvoker(ShowClickHouseSlowLogSensitiveStatusRequest showClickHouseSlowLogSensitiveStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showClickHouseSlowLogSensitiveStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClickHouseSlowLogSensitiveStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClickHouseSlowLogSensitiveStatusRequest);
             return new SyncInvoker<ShowClickHouseSlowLogSensitiveStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClickHouseSlowLogSensitiveStatusResponse>);
@@ -5570,7 +5570,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowHtapErrorLogDetailResponse ShowHtapErrorLogDetail(ShowHtapErrorLogDetailRequest showHtapErrorLogDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showHtapErrorLogDetailRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHtapErrorLogDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/error-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showHtapErrorLogDetailRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5580,7 +5580,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowHtapErrorLogDetailResponse> ShowHtapErrorLogDetailInvoker(ShowHtapErrorLogDetailRequest showHtapErrorLogDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showHtapErrorLogDetailRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHtapErrorLogDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/error-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showHtapErrorLogDetailRequest);
             return new SyncInvoker<ShowHtapErrorLogDetailResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowHtapErrorLogDetailResponse>);
@@ -5620,7 +5620,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowInstanceDatabasesForHtapResponse ShowInstanceDatabasesForHtap(ShowInstanceDatabasesForHtapRequest showInstanceDatabasesForHtapRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceDatabasesForHtapRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceDatabasesForHtapRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showInstanceDatabasesForHtapRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5630,7 +5630,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowInstanceDatabasesForHtapResponse> ShowInstanceDatabasesForHtapInvoker(ShowInstanceDatabasesForHtapRequest showInstanceDatabasesForHtapRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceDatabasesForHtapRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceDatabasesForHtapRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/databases", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showInstanceDatabasesForHtapRequest);
             return new SyncInvoker<ShowInstanceDatabasesForHtapResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowInstanceDatabasesForHtapResponse>);
@@ -5646,7 +5646,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowInstanceTablesForHtapResponse ShowInstanceTablesForHtap(ShowInstanceTablesForHtapRequest showInstanceTablesForHtapRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceTablesForHtapRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTablesForHtapRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showInstanceTablesForHtapRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5656,7 +5656,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowInstanceTablesForHtapResponse> ShowInstanceTablesForHtapInvoker(ShowInstanceTablesForHtapRequest showInstanceTablesForHtapRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showInstanceTablesForHtapRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceTablesForHtapRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showInstanceTablesForHtapRequest);
             return new SyncInvoker<ShowInstanceTablesForHtapResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowInstanceTablesForHtapResponse>);
@@ -5672,7 +5672,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowStarRocksDatabaseUserResponse ShowStarRocksDatabaseUser(ShowStarRocksDatabaseUserRequest showStarRocksDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showStarRocksDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStarRocksDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStarRocksDatabaseUserRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5682,7 +5682,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowStarRocksDatabaseUserResponse> ShowStarRocksDatabaseUserInvoker(ShowStarRocksDatabaseUserRequest showStarRocksDatabaseUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showStarRocksDatabaseUserRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStarRocksDatabaseUserRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStarRocksDatabaseUserRequest);
             return new SyncInvoker<ShowStarRocksDatabaseUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStarRocksDatabaseUserResponse>);
@@ -5698,7 +5698,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public ShowStarrocksParamsResponse ShowStarrocksParams(ShowStarrocksParamsRequest showStarrocksParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showStarrocksParamsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStarrocksParamsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStarrocksParamsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5708,7 +5708,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<ShowStarrocksParamsResponse> ShowStarrocksParamsInvoker(ShowStarrocksParamsRequest showStarrocksParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", showStarrocksParamsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showStarrocksParamsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStarrocksParamsRequest);
             return new SyncInvoker<ShowStarrocksParamsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStarrocksParamsResponse>);
@@ -5724,7 +5724,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncStarRocksUsersResponse SyncStarRocksUsers(SyncStarRocksUsersRequest syncStarRocksUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", syncStarRocksUsersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(syncStarRocksUsersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/sync", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", syncStarRocksUsersRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5734,7 +5734,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<SyncStarRocksUsersResponse> SyncStarRocksUsersInvoker(SyncStarRocksUsersRequest syncStarRocksUsersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", syncStarRocksUsersRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(syncStarRocksUsersRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/sync", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", syncStarRocksUsersRequest);
             return new SyncInvoker<SyncStarRocksUsersResponse>(this, "POST", request, JsonUtils.DeSerialize<SyncStarRocksUsersResponse>);
@@ -5750,7 +5750,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateClickHouseDataBaseConfigResponse UpdateClickHouseDataBaseConfig(UpdateClickHouseDataBaseConfigRequest updateClickHouseDataBaseConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateClickHouseDataBaseConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases/replication/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDataBaseConfigRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5760,7 +5760,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateClickHouseDataBaseConfigResponse> UpdateClickHouseDataBaseConfigInvoker(UpdateClickHouseDataBaseConfigRequest updateClickHouseDataBaseConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateClickHouseDataBaseConfigRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateClickHouseDataBaseConfigRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/databases/replication/config", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDataBaseConfigRequest);
             return new SyncInvoker<UpdateClickHouseDataBaseConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClickHouseDataBaseConfigResponse>);
@@ -5776,7 +5776,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateClickHouseDatabaseUserPasswordResponse UpdateClickHouseDatabaseUserPassword(UpdateClickHouseDatabaseUserPasswordRequest updateClickHouseDatabaseUserPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateClickHouseDatabaseUserPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateClickHouseDatabaseUserPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDatabaseUserPasswordRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5786,7 +5786,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateClickHouseDatabaseUserPasswordResponse> UpdateClickHouseDatabaseUserPasswordInvoker(UpdateClickHouseDatabaseUserPasswordRequest updateClickHouseDatabaseUserPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateClickHouseDatabaseUserPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateClickHouseDatabaseUserPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDatabaseUserPasswordRequest);
             return new SyncInvoker<UpdateClickHouseDatabaseUserPasswordResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClickHouseDatabaseUserPasswordResponse>);
@@ -5802,7 +5802,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateClickHouseDatabaseUserPermissionResponse UpdateClickHouseDatabaseUserPermission(UpdateClickHouseDatabaseUserPermissionRequest updateClickHouseDatabaseUserPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateClickHouseDatabaseUserPermissionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateClickHouseDatabaseUserPermissionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/permission", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDatabaseUserPermissionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5812,7 +5812,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateClickHouseDatabaseUserPermissionResponse> UpdateClickHouseDatabaseUserPermissionInvoker(UpdateClickHouseDatabaseUserPermissionRequest updateClickHouseDatabaseUserPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateClickHouseDatabaseUserPermissionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateClickHouseDatabaseUserPermissionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/users/permission", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseDatabaseUserPermissionRequest);
             return new SyncInvoker<UpdateClickHouseDatabaseUserPermissionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClickHouseDatabaseUserPermissionResponse>);
@@ -5852,7 +5852,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateClickHouseSlowLogSensitiveStatusResponse UpdateClickHouseSlowLogSensitiveStatus(UpdateClickHouseSlowLogSensitiveStatusRequest updateClickHouseSlowLogSensitiveStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateClickHouseSlowLogSensitiveStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateClickHouseSlowLogSensitiveStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseSlowLogSensitiveStatusRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5862,7 +5862,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateClickHouseSlowLogSensitiveStatusResponse> UpdateClickHouseSlowLogSensitiveStatusInvoker(UpdateClickHouseSlowLogSensitiveStatusRequest updateClickHouseSlowLogSensitiveStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateClickHouseSlowLogSensitiveStatusRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateClickHouseSlowLogSensitiveStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseSlowLogSensitiveStatusRequest);
             return new SyncInvoker<UpdateClickHouseSlowLogSensitiveStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClickHouseSlowLogSensitiveStatusResponse>);
@@ -5878,7 +5878,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateStarRocksDatabaseUserPasswordResponse UpdateStarRocksDatabaseUserPassword(UpdateStarRocksDatabaseUserPasswordRequest updateStarRocksDatabaseUserPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateStarRocksDatabaseUserPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStarRocksDatabaseUserPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarRocksDatabaseUserPasswordRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5888,7 +5888,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateStarRocksDatabaseUserPasswordResponse> UpdateStarRocksDatabaseUserPasswordInvoker(UpdateStarRocksDatabaseUserPasswordRequest updateStarRocksDatabaseUserPasswordRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateStarRocksDatabaseUserPasswordRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStarRocksDatabaseUserPasswordRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/password", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarRocksDatabaseUserPasswordRequest);
             return new SyncInvoker<UpdateStarRocksDatabaseUserPasswordResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStarRocksDatabaseUserPasswordResponse>);
@@ -5904,7 +5904,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateStarRocksDatabaseUserPermissionResponse UpdateStarRocksDatabaseUserPermission(UpdateStarRocksDatabaseUserPermissionRequest updateStarRocksDatabaseUserPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateStarRocksDatabaseUserPermissionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStarRocksDatabaseUserPermissionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/permission", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarRocksDatabaseUserPermissionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5914,7 +5914,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateStarRocksDatabaseUserPermissionResponse> UpdateStarRocksDatabaseUserPermissionInvoker(UpdateStarRocksDatabaseUserPermissionRequest updateStarRocksDatabaseUserPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateStarRocksDatabaseUserPermissionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStarRocksDatabaseUserPermissionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/users/permission", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarRocksDatabaseUserPermissionRequest);
             return new SyncInvoker<UpdateStarRocksDatabaseUserPermissionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStarRocksDatabaseUserPermissionResponse>);
@@ -5930,7 +5930,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpdateStarrocksParamsResponse UpdateStarrocksParams(UpdateStarrocksParamsRequest updateStarrocksParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateStarrocksParamsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStarrocksParamsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarrocksParamsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5940,7 +5940,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpdateStarrocksParamsResponse> UpdateStarrocksParamsInvoker(UpdateStarrocksParamsRequest updateStarrocksParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", updateStarrocksParamsRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateStarrocksParamsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateStarrocksParamsRequest);
             return new SyncInvoker<UpdateStarrocksParamsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateStarrocksParamsResponse>);
@@ -5956,7 +5956,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public UpgradeSrKernelVersionResponse UpgradeSrKernelVersion(UpgradeSrKernelVersionRequest upgradeSrKernelVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", upgradeSrKernelVersionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(upgradeSrKernelVersionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeSrKernelVersionRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5966,7 +5966,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         public SyncInvoker<UpgradeSrKernelVersionResponse> UpgradeSrKernelVersionInvoker(UpgradeSrKernelVersionRequest upgradeSrKernelVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", upgradeSrKernelVersionRequest.InstanceId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(upgradeSrKernelVersionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeSrKernelVersionRequest);
             return new SyncInvoker<UpgradeSrKernelVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeSrKernelVersionResponse>);

@@ -35,19 +35,19 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public bool? EmptyLayer { get; set; }
 
         /// <summary>
-        /// 层格式
+        /// 镜像层格式
         /// </summary>
         [JsonProperty("mediaType", NullValueHandling = NullValueHandling.Ignore)]
         public string MediaType { get; set; }
 
         /// <summary>
-        /// 层大小
+        /// 镜像层大小
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
 
         /// <summary>
-        /// 层sha256信息
+        /// 镜像层sha256信息
         /// </summary>
         [JsonProperty("digest", NullValueHandling = NullValueHandling.Ignore)]
         public string Digest { get; set; }

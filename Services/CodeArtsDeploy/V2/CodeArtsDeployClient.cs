@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public CreateAppGroupsResponse CreateAppGroups(CreateAppGroupsRequest createAppGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", createAppGroupsRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAppGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAppGroupsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -34,7 +34,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<CreateAppGroupsResponse> CreateAppGroupsInvoker(CreateAppGroupsRequest createAppGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", createAppGroupsRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAppGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAppGroupsRequest);
             return new SyncInvoker<CreateAppGroupsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAppGroupsResponse>);
@@ -50,8 +50,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public DeleteAppGroupsResponse DeleteAppGroups(DeleteAppGroupsRequest deleteAppGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", deleteAppGroupsRequest.ProjectId.ToString());
-            urlParam.Add("group_id", deleteAppGroupsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAppGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteAppGroupsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppGroupsRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -61,8 +61,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<DeleteAppGroupsResponse> DeleteAppGroupsInvoker(DeleteAppGroupsRequest deleteAppGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", deleteAppGroupsRequest.ProjectId.ToString());
-            urlParam.Add("group_id", deleteAppGroupsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAppGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteAppGroupsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAppGroupsRequest);
             return new SyncInvoker<DeleteAppGroupsResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAppGroupsResponse>);
@@ -78,7 +78,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListAppGroupsResponse ListAppGroups(ListAppGroupsRequest listAppGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", listAppGroupsRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAppGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAppGroupsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -88,7 +88,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListAppGroupsResponse> ListAppGroupsInvoker(ListAppGroupsRequest listAppGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", listAppGroupsRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAppGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAppGroupsRequest);
             return new SyncInvoker<ListAppGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAppGroupsResponse>);
@@ -104,7 +104,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public MoveAppGroupsResponse MoveAppGroups(MoveAppGroupsRequest moveAppGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", moveAppGroupsRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(moveAppGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups/swap", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", moveAppGroupsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -114,7 +114,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<MoveAppGroupsResponse> MoveAppGroupsInvoker(MoveAppGroupsRequest moveAppGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", moveAppGroupsRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(moveAppGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups/swap", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", moveAppGroupsRequest);
             return new SyncInvoker<MoveAppGroupsResponse>(this, "PUT", request, JsonUtils.DeSerialize<MoveAppGroupsResponse>);
@@ -130,7 +130,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public MoveAppToGroupResponse MoveAppToGroup(MoveAppToGroupRequest moveAppToGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", moveAppToGroupRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(moveAppToGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups/move", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", moveAppToGroupRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -140,7 +140,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<MoveAppToGroupResponse> MoveAppToGroupInvoker(MoveAppToGroupRequest moveAppToGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", moveAppToGroupRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(moveAppToGroupRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups/move", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", moveAppToGroupRequest);
             return new SyncInvoker<MoveAppToGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<MoveAppToGroupResponse>);
@@ -156,8 +156,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public UpdateAppGroupsResponse UpdateAppGroups(UpdateAppGroupsRequest updateAppGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", updateAppGroupsRequest.ProjectId.ToString());
-            urlParam.Add("group_id", updateAppGroupsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAppGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(updateAppGroupsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAppGroupsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -167,8 +167,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<UpdateAppGroupsResponse> UpdateAppGroupsInvoker(UpdateAppGroupsRequest updateAppGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", updateAppGroupsRequest.ProjectId.ToString());
-            urlParam.Add("group_id", updateAppGroupsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAppGroupsRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(updateAppGroupsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/projects/{project_id}/applications/groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAppGroupsRequest);
             return new SyncInvoker<UpdateAppGroupsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAppGroupsResponse>);
@@ -328,7 +328,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public CopyApplicationResponse CopyApplication(CopyApplicationRequest copyApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", copyApplicationRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(copyApplicationRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}/duplicate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyApplicationRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -338,7 +338,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<CopyApplicationResponse> CopyApplicationInvoker(CopyApplicationRequest copyApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", copyApplicationRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(copyApplicationRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}/duplicate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyApplicationRequest);
             return new SyncInvoker<CopyApplicationResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyApplicationResponse>);
@@ -402,7 +402,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest deleteApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", deleteApplicationRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteApplicationRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -412,7 +412,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<DeleteApplicationResponse> DeleteApplicationInvoker(DeleteApplicationRequest deleteApplicationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", deleteApplicationRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteApplicationRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteApplicationRequest);
             return new SyncInvoker<DeleteApplicationResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteApplicationResponse>);
@@ -428,7 +428,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public DeleteDeployTaskResponse DeleteDeployTask(DeleteDeployTaskRequest deleteDeployTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id", deleteDeployTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDeployTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeployTaskRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -438,7 +438,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<DeleteDeployTaskResponse> DeleteDeployTaskInvoker(DeleteDeployTaskRequest deleteDeployTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id", deleteDeployTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDeployTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeployTaskRequest);
             return new SyncInvoker<DeleteDeployTaskResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDeployTaskResponse>);
@@ -478,8 +478,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListDeployTaskHistoryByDateResponse ListDeployTaskHistoryByDate(ListDeployTaskHistoryByDateRequest listDeployTaskHistoryByDateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", listDeployTaskHistoryByDateRequest.ProjectId.ToString());
-            urlParam.Add("id", listDeployTaskHistoryByDateRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDeployTaskHistoryByDateRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listDeployTaskHistoryByDateRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/task/{id}/history", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeployTaskHistoryByDateRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -489,8 +489,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListDeployTaskHistoryByDateResponse> ListDeployTaskHistoryByDateInvoker(ListDeployTaskHistoryByDateRequest listDeployTaskHistoryByDateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", listDeployTaskHistoryByDateRequest.ProjectId.ToString());
-            urlParam.Add("id", listDeployTaskHistoryByDateRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDeployTaskHistoryByDateRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
+            if (StringUtils.TryConvertToNonEmptyString(listDeployTaskHistoryByDateRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/task/{id}/history", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeployTaskHistoryByDateRequest);
             return new SyncInvoker<ListDeployTaskHistoryByDateResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDeployTaskHistoryByDateResponse>);
@@ -506,7 +506,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListDeployTasksResponse ListDeployTasks(ListDeployTasksRequest listDeployTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", listDeployTasksRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDeployTasksRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/tasks/list", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeployTasksRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -516,7 +516,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListDeployTasksResponse> ListDeployTasksInvoker(ListDeployTasksRequest listDeployTasksRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", listDeployTasksRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDeployTasksRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/tasks/list", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDeployTasksRequest);
             return new SyncInvoker<ListDeployTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDeployTasksResponse>);
@@ -532,7 +532,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ShowAppDetailByIdResponse ShowAppDetailById(ShowAppDetailByIdRequest showAppDetailByIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", showAppDetailByIdRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAppDetailByIdRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}/info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppDetailByIdRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -542,7 +542,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ShowAppDetailByIdResponse> ShowAppDetailByIdInvoker(ShowAppDetailByIdRequest showAppDetailByIdRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", showAppDetailByIdRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAppDetailByIdRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}/info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAppDetailByIdRequest);
             return new SyncInvoker<ShowAppDetailByIdResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAppDetailByIdResponse>);
@@ -558,7 +558,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ShowDeployTaskDetailResponse ShowDeployTaskDetail(ShowDeployTaskDetailRequest showDeployTaskDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id", showDeployTaskDetailRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDeployTaskDetailRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeployTaskDetailRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -568,7 +568,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ShowDeployTaskDetailResponse> ShowDeployTaskDetailInvoker(ShowDeployTaskDetailRequest showDeployTaskDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id", showDeployTaskDetailRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDeployTaskDetailRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeployTaskDetailRequest);
             return new SyncInvoker<ShowDeployTaskDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDeployTaskDetailResponse>);
@@ -584,7 +584,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ShowExecutionParamsResponse ShowExecutionParams(ShowExecutionParamsRequest showExecutionParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id", showExecutionParamsRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showExecutionParamsRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/history/tasks/{task_id}/params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showExecutionParamsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -596,7 +596,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ShowExecutionParamsResponse> ShowExecutionParamsInvoker(ShowExecutionParamsRequest showExecutionParamsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id", showExecutionParamsRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showExecutionParamsRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/history/tasks/{task_id}/params", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showExecutionParamsRequest);
             return new SyncInvoker<ShowExecutionParamsResponse>(this, "GET", request, response =>
@@ -617,7 +617,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public StartDeployTaskResponse StartDeployTask(StartDeployTaskRequest startDeployTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id", startDeployTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startDeployTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}/start", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startDeployTaskRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -627,7 +627,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<StartDeployTaskResponse> StartDeployTaskInvoker(StartDeployTaskRequest startDeployTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("task_id", startDeployTaskRequest.TaskId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startDeployTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
             var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}/start", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startDeployTaskRequest);
             return new SyncInvoker<StartDeployTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<StartDeployTaskResponse>);
@@ -643,7 +643,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public UpdateAppDisableStatusResponse UpdateAppDisableStatus(UpdateAppDisableStatusRequest updateAppDisableStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", updateAppDisableStatusRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAppDisableStatusRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAppDisableStatusRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -653,7 +653,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<UpdateAppDisableStatusResponse> UpdateAppDisableStatusInvoker(UpdateAppDisableStatusRequest updateAppDisableStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("app_id", updateAppDisableStatusRequest.AppId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateAppDisableStatusRequest.AppId, out var valueOfAppId)) urlParam.Add("app_id", valueOfAppId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{app_id}/disable", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAppDisableStatusRequest);
             return new SyncInvoker<UpdateAppDisableStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAppDisableStatusResponse>);
@@ -693,7 +693,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest createEnvironmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", createEnvironmentRequest.ApplicationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createEnvironmentRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEnvironmentRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -703,7 +703,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<CreateEnvironmentResponse> CreateEnvironmentInvoker(CreateEnvironmentRequest createEnvironmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", createEnvironmentRequest.ApplicationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createEnvironmentRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createEnvironmentRequest);
             return new SyncInvoker<CreateEnvironmentResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateEnvironmentResponse>);
@@ -719,8 +719,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest deleteEnvironmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", deleteEnvironmentRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", deleteEnvironmentRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEnvironmentRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteEnvironmentRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnvironmentRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -730,8 +730,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<DeleteEnvironmentResponse> DeleteEnvironmentInvoker(DeleteEnvironmentRequest deleteEnvironmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", deleteEnvironmentRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", deleteEnvironmentRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteEnvironmentRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteEnvironmentRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteEnvironmentRequest);
             return new SyncInvoker<DeleteEnvironmentResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteEnvironmentResponse>);
@@ -747,9 +747,9 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public DeleteHostFromEnvironmentResponse DeleteHostFromEnvironment(DeleteHostFromEnvironmentRequest deleteHostFromEnvironmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", deleteHostFromEnvironmentRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", deleteHostFromEnvironmentRequest.EnvironmentId.ToString());
-            urlParam.Add("host_id", deleteHostFromEnvironmentRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostFromEnvironmentRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostFromEnvironmentRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostFromEnvironmentRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHostFromEnvironmentRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -759,9 +759,9 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<DeleteHostFromEnvironmentResponse> DeleteHostFromEnvironmentInvoker(DeleteHostFromEnvironmentRequest deleteHostFromEnvironmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", deleteHostFromEnvironmentRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", deleteHostFromEnvironmentRequest.EnvironmentId.ToString());
-            urlParam.Add("host_id", deleteHostFromEnvironmentRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostFromEnvironmentRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostFromEnvironmentRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostFromEnvironmentRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHostFromEnvironmentRequest);
             return new SyncInvoker<DeleteHostFromEnvironmentResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteHostFromEnvironmentResponse>);
@@ -777,8 +777,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ImportHostToEnvironmentResponse ImportHostToEnvironment(ImportHostToEnvironmentRequest importHostToEnvironmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", importHostToEnvironmentRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", importHostToEnvironmentRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(importHostToEnvironmentRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(importHostToEnvironmentRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}/hosts/import", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", importHostToEnvironmentRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -788,8 +788,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ImportHostToEnvironmentResponse> ImportHostToEnvironmentInvoker(ImportHostToEnvironmentRequest importHostToEnvironmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", importHostToEnvironmentRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", importHostToEnvironmentRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(importHostToEnvironmentRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(importHostToEnvironmentRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}/hosts/import", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", importHostToEnvironmentRequest);
             return new SyncInvoker<ImportHostToEnvironmentResponse>(this, "POST", request, JsonUtils.DeSerialize<ImportHostToEnvironmentResponse>);
@@ -805,8 +805,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListEnvironmentHostsResponse ListEnvironmentHosts(ListEnvironmentHostsRequest listEnvironmentHostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", listEnvironmentHostsRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", listEnvironmentHostsRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEnvironmentHostsRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(listEnvironmentHostsRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}/hosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnvironmentHostsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -816,8 +816,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListEnvironmentHostsResponse> ListEnvironmentHostsInvoker(ListEnvironmentHostsRequest listEnvironmentHostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", listEnvironmentHostsRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", listEnvironmentHostsRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEnvironmentHostsRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(listEnvironmentHostsRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}/hosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnvironmentHostsRequest);
             return new SyncInvoker<ListEnvironmentHostsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEnvironmentHostsResponse>);
@@ -833,7 +833,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest listEnvironmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", listEnvironmentsRequest.ApplicationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEnvironmentsRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnvironmentsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -843,7 +843,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListEnvironmentsResponse> ListEnvironmentsInvoker(ListEnvironmentsRequest listEnvironmentsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", listEnvironmentsRequest.ApplicationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEnvironmentsRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnvironmentsRequest);
             return new SyncInvoker<ListEnvironmentsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListEnvironmentsResponse>);
@@ -859,8 +859,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ShowEnvironmentDetailResponse ShowEnvironmentDetail(ShowEnvironmentDetailRequest showEnvironmentDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", showEnvironmentDetailRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", showEnvironmentDetailRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEnvironmentDetailRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(showEnvironmentDetailRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnvironmentDetailRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -870,8 +870,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ShowEnvironmentDetailResponse> ShowEnvironmentDetailInvoker(ShowEnvironmentDetailRequest showEnvironmentDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", showEnvironmentDetailRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", showEnvironmentDetailRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showEnvironmentDetailRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(showEnvironmentDetailRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEnvironmentDetailRequest);
             return new SyncInvoker<ShowEnvironmentDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEnvironmentDetailResponse>);
@@ -887,8 +887,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest updateEnvironmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", updateEnvironmentRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", updateEnvironmentRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEnvironmentRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(updateEnvironmentRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEnvironmentRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -898,8 +898,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<UpdateEnvironmentResponse> UpdateEnvironmentInvoker(UpdateEnvironmentRequest updateEnvironmentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", updateEnvironmentRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", updateEnvironmentRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEnvironmentRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(updateEnvironmentRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/environments/{environment_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEnvironmentRequest);
             return new SyncInvoker<UpdateEnvironmentResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEnvironmentResponse>);
@@ -915,8 +915,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListEnvironmentPermissionsResponse ListEnvironmentPermissions(ListEnvironmentPermissionsRequest listEnvironmentPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", listEnvironmentPermissionsRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", listEnvironmentPermissionsRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEnvironmentPermissionsRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(listEnvironmentPermissionsRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v2/applications/{application_id}/environments/{environment_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnvironmentPermissionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -928,8 +928,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListEnvironmentPermissionsResponse> ListEnvironmentPermissionsInvoker(ListEnvironmentPermissionsRequest listEnvironmentPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", listEnvironmentPermissionsRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", listEnvironmentPermissionsRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listEnvironmentPermissionsRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(listEnvironmentPermissionsRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v2/applications/{application_id}/environments/{environment_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listEnvironmentPermissionsRequest);
             return new SyncInvoker<ListEnvironmentPermissionsResponse>(this, "GET", request, response =>
@@ -950,8 +950,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public UpdateEnvironmentPermissionResponse UpdateEnvironmentPermission(UpdateEnvironmentPermissionRequest updateEnvironmentPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", updateEnvironmentPermissionRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", updateEnvironmentPermissionRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEnvironmentPermissionRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(updateEnvironmentPermissionRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v2/applications/{application_id}/environments/{environment_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEnvironmentPermissionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -961,8 +961,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<UpdateEnvironmentPermissionResponse> UpdateEnvironmentPermissionInvoker(UpdateEnvironmentPermissionRequest updateEnvironmentPermissionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", updateEnvironmentPermissionRequest.ApplicationId.ToString());
-            urlParam.Add("environment_id", updateEnvironmentPermissionRequest.EnvironmentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateEnvironmentPermissionRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
+            if (StringUtils.TryConvertToNonEmptyString(updateEnvironmentPermissionRequest.EnvironmentId, out var valueOfEnvironmentId)) urlParam.Add("environment_id", valueOfEnvironmentId);
             var urlPath = HttpUtils.AddUrlPath("/v2/applications/{application_id}/environments/{environment_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEnvironmentPermissionRequest);
             return new SyncInvoker<UpdateEnvironmentPermissionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEnvironmentPermissionResponse>);
@@ -978,7 +978,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public BatchDeleteHostsResponse BatchDeleteHosts(BatchDeleteHostsRequest batchDeleteHostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", batchDeleteHostsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteHostsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteHostsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -988,7 +988,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<BatchDeleteHostsResponse> BatchDeleteHostsInvoker(BatchDeleteHostsRequest batchDeleteHostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", batchDeleteHostsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteHostsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteHostsRequest);
             return new SyncInvoker<BatchDeleteHostsResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteHostsResponse>);
@@ -1004,7 +1004,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public CopyHostsToTargetResponse CopyHostsToTarget(CopyHostsToTargetRequest copyHostsToTargetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", copyHostsToTargetRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(copyHostsToTargetRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyHostsToTargetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1014,7 +1014,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<CopyHostsToTargetResponse> CopyHostsToTargetInvoker(CopyHostsToTargetRequest copyHostsToTargetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", copyHostsToTargetRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(copyHostsToTargetRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts/replication", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyHostsToTargetRequest);
             return new SyncInvoker<CopyHostsToTargetResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyHostsToTargetResponse>);
@@ -1030,7 +1030,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public CreateDeploymentHostResponse CreateDeploymentHost(CreateDeploymentHostRequest createDeploymentHostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", createDeploymentHostRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createDeploymentHostRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/hosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDeploymentHostRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1040,7 +1040,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<CreateDeploymentHostResponse> CreateDeploymentHostInvoker(CreateDeploymentHostRequest createDeploymentHostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", createDeploymentHostRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createDeploymentHostRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/hosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDeploymentHostRequest);
             return new SyncInvoker<CreateDeploymentHostResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDeploymentHostResponse>);
@@ -1056,7 +1056,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public CreateHostResponse CreateHost(CreateHostRequest createHostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", createHostRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createHostRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createHostRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1066,7 +1066,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<CreateHostResponse> CreateHostInvoker(CreateHostRequest createHostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", createHostRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createHostRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createHostRequest);
             return new SyncInvoker<CreateHostResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateHostResponse>);
@@ -1082,8 +1082,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public DeleteDeploymentHostResponse DeleteDeploymentHost(DeleteDeploymentHostRequest deleteDeploymentHostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteDeploymentHostRequest.GroupId.ToString());
-            urlParam.Add("host_id", deleteDeploymentHostRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDeploymentHostRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteDeploymentHostRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeploymentHostRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1093,8 +1093,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<DeleteDeploymentHostResponse> DeleteDeploymentHostInvoker(DeleteDeploymentHostRequest deleteDeploymentHostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteDeploymentHostRequest.GroupId.ToString());
-            urlParam.Add("host_id", deleteDeploymentHostRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDeploymentHostRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteDeploymentHostRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeploymentHostRequest);
             return new SyncInvoker<DeleteDeploymentHostResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDeploymentHostResponse>);
@@ -1110,8 +1110,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public DeleteHostResponse DeleteHost(DeleteHostRequest deleteHostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteHostRequest.GroupId.ToString());
-            urlParam.Add("host_id", deleteHostRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHostRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1121,8 +1121,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<DeleteHostResponse> DeleteHostInvoker(DeleteHostRequest deleteHostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteHostRequest.GroupId.ToString());
-            urlParam.Add("host_id", deleteHostRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHostRequest);
             return new SyncInvoker<DeleteHostResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteHostResponse>);
@@ -1138,7 +1138,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListHostsResponse ListHosts(ListHostsRequest listHostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listHostsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHostsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/hosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHostsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1148,7 +1148,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListHostsResponse> ListHostsInvoker(ListHostsRequest listHostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listHostsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHostsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/hosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHostsRequest);
             return new SyncInvoker<ListHostsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHostsResponse>);
@@ -1164,7 +1164,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListNewHostsResponse ListNewHosts(ListNewHostsRequest listNewHostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listNewHostsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listNewHostsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNewHostsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1174,7 +1174,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListNewHostsResponse> ListNewHostsInvoker(ListNewHostsRequest listNewHostsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listNewHostsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listNewHostsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNewHostsRequest);
             return new SyncInvoker<ListNewHostsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNewHostsResponse>);
@@ -1190,8 +1190,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ShowDeploymentHostDetailResponse ShowDeploymentHostDetail(ShowDeploymentHostDetailRequest showDeploymentHostDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showDeploymentHostDetailRequest.GroupId.ToString());
-            urlParam.Add("host_id", showDeploymentHostDetailRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDeploymentHostDetailRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(showDeploymentHostDetailRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeploymentHostDetailRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1201,8 +1201,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ShowDeploymentHostDetailResponse> ShowDeploymentHostDetailInvoker(ShowDeploymentHostDetailRequest showDeploymentHostDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showDeploymentHostDetailRequest.GroupId.ToString());
-            urlParam.Add("host_id", showDeploymentHostDetailRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDeploymentHostDetailRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(showDeploymentHostDetailRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeploymentHostDetailRequest);
             return new SyncInvoker<ShowDeploymentHostDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDeploymentHostDetailResponse>);
@@ -1218,8 +1218,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ShowHostDetailResponse ShowHostDetail(ShowHostDetailRequest showHostDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showHostDetailRequest.GroupId.ToString());
-            urlParam.Add("host_id", showHostDetailRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHostDetailRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(showHostDetailRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHostDetailRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1229,8 +1229,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ShowHostDetailResponse> ShowHostDetailInvoker(ShowHostDetailRequest showHostDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showHostDetailRequest.GroupId.ToString());
-            urlParam.Add("host_id", showHostDetailRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHostDetailRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(showHostDetailRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHostDetailRequest);
             return new SyncInvoker<ShowHostDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHostDetailResponse>);
@@ -1246,8 +1246,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public UpdateDeploymentHostResponse UpdateDeploymentHost(UpdateDeploymentHostRequest updateDeploymentHostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateDeploymentHostRequest.GroupId.ToString());
-            urlParam.Add("host_id", updateDeploymentHostRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDeploymentHostRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateDeploymentHostRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeploymentHostRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1257,8 +1257,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<UpdateDeploymentHostResponse> UpdateDeploymentHostInvoker(UpdateDeploymentHostRequest updateDeploymentHostRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateDeploymentHostRequest.GroupId.ToString());
-            urlParam.Add("host_id", updateDeploymentHostRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDeploymentHostRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateDeploymentHostRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeploymentHostRequest);
             return new SyncInvoker<UpdateDeploymentHostResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDeploymentHostResponse>);
@@ -1274,8 +1274,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public UpdateHostInfoResponse UpdateHostInfo(UpdateHostInfoRequest updateHostInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateHostInfoRequest.GroupId.ToString());
-            urlParam.Add("host_id", updateHostInfoRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHostInfoRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateHostInfoRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHostInfoRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1285,8 +1285,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<UpdateHostInfoResponse> UpdateHostInfoInvoker(UpdateHostInfoRequest updateHostInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateHostInfoRequest.GroupId.ToString());
-            urlParam.Add("host_id", updateHostInfoRequest.HostId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHostInfoRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateHostInfoRequest.HostId, out var valueOfHostId)) urlParam.Add("host_id", valueOfHostId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/hosts/{host_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHostInfoRequest);
             return new SyncInvoker<UpdateHostInfoResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateHostInfoResponse>);
@@ -1350,7 +1350,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public DeleteDeploymentGroupResponse DeleteDeploymentGroup(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteDeploymentGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDeploymentGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeploymentGroupRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1360,7 +1360,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<DeleteDeploymentGroupResponse> DeleteDeploymentGroupInvoker(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteDeploymentGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDeploymentGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDeploymentGroupRequest);
             return new SyncInvoker<DeleteDeploymentGroupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteDeploymentGroupResponse>);
@@ -1376,7 +1376,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public DeleteHostClusterResponse DeleteHostCluster(DeleteHostClusterRequest deleteHostClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteHostClusterRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostClusterRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHostClusterRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1386,7 +1386,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<DeleteHostClusterResponse> DeleteHostClusterInvoker(DeleteHostClusterRequest deleteHostClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteHostClusterRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteHostClusterRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHostClusterRequest);
             return new SyncInvoker<DeleteHostClusterResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteHostClusterResponse>);
@@ -1402,7 +1402,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListAssociateEnvironmentsInfosResponse ListAssociateEnvironmentsInfos(ListAssociateEnvironmentsInfosRequest listAssociateEnvironmentsInfosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listAssociateEnvironmentsInfosRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAssociateEnvironmentsInfosRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/environments/infos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssociateEnvironmentsInfosRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1412,7 +1412,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListAssociateEnvironmentsInfosResponse> ListAssociateEnvironmentsInfosInvoker(ListAssociateEnvironmentsInfosRequest listAssociateEnvironmentsInfosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listAssociateEnvironmentsInfosRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listAssociateEnvironmentsInfosRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}/environments/infos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssociateEnvironmentsInfosRequest);
             return new SyncInvoker<ListAssociateEnvironmentsInfosResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAssociateEnvironmentsInfosResponse>);
@@ -1452,7 +1452,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListHostGroupBaseInfosResponse ListHostGroupBaseInfos(ListHostGroupBaseInfosRequest listHostGroupBaseInfosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", listHostGroupBaseInfosRequest.ApplicationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHostGroupBaseInfosRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/host-groups/base/infos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHostGroupBaseInfosRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1462,7 +1462,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListHostGroupBaseInfosResponse> ListHostGroupBaseInfosInvoker(ListHostGroupBaseInfosRequest listHostGroupBaseInfosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("application_id", listHostGroupBaseInfosRequest.ApplicationId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHostGroupBaseInfosRequest.ApplicationId, out var valueOfApplicationId)) urlParam.Add("application_id", valueOfApplicationId);
             var urlPath = HttpUtils.AddUrlPath("/v1/applications/{application_id}/host-groups/base/infos", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHostGroupBaseInfosRequest);
             return new SyncInvoker<ListHostGroupBaseInfosResponse>(this, "GET", request, JsonUtils.DeSerialize<ListHostGroupBaseInfosResponse>);
@@ -1502,7 +1502,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ShowDeploymentGroupDetailResponse ShowDeploymentGroupDetail(ShowDeploymentGroupDetailRequest showDeploymentGroupDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showDeploymentGroupDetailRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDeploymentGroupDetailRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeploymentGroupDetailRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1512,7 +1512,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ShowDeploymentGroupDetailResponse> ShowDeploymentGroupDetailInvoker(ShowDeploymentGroupDetailRequest showDeploymentGroupDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showDeploymentGroupDetailRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDeploymentGroupDetailRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDeploymentGroupDetailRequest);
             return new SyncInvoker<ShowDeploymentGroupDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDeploymentGroupDetailResponse>);
@@ -1528,7 +1528,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ShowHostClusterDetailResponse ShowHostClusterDetail(ShowHostClusterDetailRequest showHostClusterDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showHostClusterDetailRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHostClusterDetailRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHostClusterDetailRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1538,7 +1538,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ShowHostClusterDetailResponse> ShowHostClusterDetailInvoker(ShowHostClusterDetailRequest showHostClusterDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", showHostClusterDetailRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHostClusterDetailRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHostClusterDetailRequest);
             return new SyncInvoker<ShowHostClusterDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHostClusterDetailResponse>);
@@ -1554,7 +1554,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public UpdateDeploymentGroupResponse UpdateDeploymentGroup(UpdateDeploymentGroupRequest updateDeploymentGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateDeploymentGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDeploymentGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeploymentGroupRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1564,7 +1564,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<UpdateDeploymentGroupResponse> UpdateDeploymentGroupInvoker(UpdateDeploymentGroupRequest updateDeploymentGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateDeploymentGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDeploymentGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDeploymentGroupRequest);
             return new SyncInvoker<UpdateDeploymentGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDeploymentGroupResponse>);
@@ -1580,7 +1580,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public UpdateHostClusterResponse UpdateHostCluster(UpdateHostClusterRequest updateHostClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateHostClusterRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHostClusterRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHostClusterRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1590,7 +1590,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<UpdateHostClusterResponse> UpdateHostClusterInvoker(UpdateHostClusterRequest updateHostClusterRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateHostClusterRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHostClusterRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/resources/host-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHostClusterRequest);
             return new SyncInvoker<UpdateHostClusterResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateHostClusterResponse>);
@@ -1606,7 +1606,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public CheckWhetherHostGroupCanBeCreatedResponse CheckWhetherHostGroupCanBeCreated(CheckWhetherHostGroupCanBeCreatedRequest checkWhetherHostGroupCanBeCreatedRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", checkWhetherHostGroupCanBeCreatedRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkWhetherHostGroupCanBeCreatedRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1/host-groups/creatable/{project_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkWhetherHostGroupCanBeCreatedRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1616,7 +1616,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<CheckWhetherHostGroupCanBeCreatedResponse> CheckWhetherHostGroupCanBeCreatedInvoker(CheckWhetherHostGroupCanBeCreatedRequest checkWhetherHostGroupCanBeCreatedRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", checkWhetherHostGroupCanBeCreatedRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkWhetherHostGroupCanBeCreatedRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v1/host-groups/creatable/{project_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkWhetherHostGroupCanBeCreatedRequest);
             return new SyncInvoker<CheckWhetherHostGroupCanBeCreatedResponse>(this, "GET", request, JsonUtils.DeSerialize<CheckWhetherHostGroupCanBeCreatedResponse>);
@@ -1632,7 +1632,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListHostGroupPermissionsResponse ListHostGroupPermissions(ListHostGroupPermissionsRequest listHostGroupPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listHostGroupPermissionsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHostGroupPermissionsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHostGroupPermissionsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1644,7 +1644,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListHostGroupPermissionsResponse> ListHostGroupPermissionsInvoker(ListHostGroupPermissionsRequest listHostGroupPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", listHostGroupPermissionsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listHostGroupPermissionsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listHostGroupPermissionsRequest);
             return new SyncInvoker<ListHostGroupPermissionsResponse>(this, "GET", request, response =>
@@ -1665,7 +1665,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public UpdateHostGroupPermissionsResponse UpdateHostGroupPermissions(UpdateHostGroupPermissionsRequest updateHostGroupPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateHostGroupPermissionsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHostGroupPermissionsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHostGroupPermissionsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1675,7 +1675,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<UpdateHostGroupPermissionsResponse> UpdateHostGroupPermissionsInvoker(UpdateHostGroupPermissionsRequest updateHostGroupPermissionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateHostGroupPermissionsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHostGroupPermissionsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v2/host-groups/{group_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHostGroupPermissionsRequest);
             return new SyncInvoker<UpdateHostGroupPermissionsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateHostGroupPermissionsResponse>);
@@ -1691,7 +1691,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ListTaskSuccessRateResponse ListTaskSuccessRate(ListTaskSuccessRateRequest listTaskSuccessRateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", listTaskSuccessRateRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTaskSuccessRateRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/tasks/metrics/success-rate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTaskSuccessRateRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1701,7 +1701,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ListTaskSuccessRateResponse> ListTaskSuccessRateInvoker(ListTaskSuccessRateRequest listTaskSuccessRateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", listTaskSuccessRateRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTaskSuccessRateRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/tasks/metrics/success-rate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTaskSuccessRateRequest);
             return new SyncInvoker<ListTaskSuccessRateResponse>(this, "POST", request, JsonUtils.DeSerialize<ListTaskSuccessRateResponse>);
@@ -1717,7 +1717,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public ShowProjectSuccessRateResponse ShowProjectSuccessRate(ShowProjectSuccessRateRequest showProjectSuccessRateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", showProjectSuccessRateRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProjectSuccessRateRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/metrics/success-rate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectSuccessRateRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1727,7 +1727,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         public SyncInvoker<ShowProjectSuccessRateResponse> ShowProjectSuccessRateInvoker(ShowProjectSuccessRateRequest showProjectSuccessRateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("project_id", showProjectSuccessRateRequest.ProjectId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProjectSuccessRateRequest.ProjectId, out var valueOfProjectId)) urlParam.Add("project_id", valueOfProjectId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/metrics/success-rate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProjectSuccessRateRequest);
             return new SyncInvoker<ShowProjectSuccessRateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProjectSuccessRateResponse>);

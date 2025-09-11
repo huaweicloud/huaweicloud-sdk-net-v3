@@ -97,7 +97,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<EnableDefensePolicyResponse> EnableDefensePolicyAsync(EnableDefensePolicyRequest enableDefensePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", enableDefensePolicyRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableDefensePolicyRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDefensePolicyRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -107,7 +107,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public AsyncInvoker<EnableDefensePolicyResponse> EnableDefensePolicyAsyncInvoker(EnableDefensePolicyRequest enableDefensePolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", enableDefensePolicyRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(enableDefensePolicyRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDefensePolicyRequest);
             return new AsyncInvoker<EnableDefensePolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<EnableDefensePolicyResponse>);
@@ -147,7 +147,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<ListDailyLogResponse> ListDailyLogAsync(ListDailyLogRequest listDailyLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", listDailyLogRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDailyLogRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDailyLogRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -157,7 +157,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public AsyncInvoker<ListDailyLogResponse> ListDailyLogAsyncInvoker(ListDailyLogRequest listDailyLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", listDailyLogRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDailyLogRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDailyLogRequest);
             return new AsyncInvoker<ListDailyLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDailyLogResponse>);
@@ -173,7 +173,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<ListDailyReportResponse> ListDailyReportAsync(ListDailyReportRequest listDailyReportRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", listDailyReportRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDailyReportRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/daily", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDailyReportRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -183,7 +183,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public AsyncInvoker<ListDailyReportResponse> ListDailyReportAsyncInvoker(ListDailyReportRequest listDailyReportRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", listDailyReportRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listDailyReportRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/daily", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDailyReportRequest);
             return new AsyncInvoker<ListDailyReportResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDailyReportResponse>);
@@ -247,7 +247,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<ShowDDosResponse> ShowDDosAsync(ShowDDosRequest showDDosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", showDDosRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDDosRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDDosRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -257,7 +257,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public AsyncInvoker<ShowDDosResponse> ShowDDosAsyncInvoker(ShowDDosRequest showDDosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", showDDosRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDDosRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDDosRequest);
             return new AsyncInvoker<ShowDDosResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDDosResponse>);
@@ -273,7 +273,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<ShowDDosStatusResponse> ShowDDosStatusAsync(ShowDDosStatusRequest showDDosStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", showDDosStatusRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDDosStatusRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDDosStatusRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -283,7 +283,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public AsyncInvoker<ShowDDosStatusResponse> ShowDDosStatusAsyncInvoker(ShowDDosStatusRequest showDDosStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", showDDosStatusRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDDosStatusRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}/status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDDosStatusRequest);
             return new AsyncInvoker<ShowDDosStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDDosStatusResponse>);
@@ -323,7 +323,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public async Task<UpdateDDosResponse> UpdateDDosAsync(UpdateDDosRequest updateDDosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", updateDDosRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDDosRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDDosRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -333,7 +333,7 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1
         public AsyncInvoker<UpdateDDosResponse> UpdateDDosAsyncInvoker(UpdateDDosRequest updateDDosRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("floating_ip_id", updateDDosRequest.FloatingIpId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDDosRequest.FloatingIpId, out var valueOfFloatingIpId)) urlParam.Add("floating_ip_id", valueOfFloatingIpId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/antiddos/{floating_ip_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDDosRequest);
             return new AsyncInvoker<UpdateDDosResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDDosResponse>);

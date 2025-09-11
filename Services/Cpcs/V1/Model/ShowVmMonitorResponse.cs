@@ -28,6 +28,18 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
         [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }
 
+        /// <summary>
+        /// 最大值，未计算默认为0
+        /// </summary>
+        [JsonProperty("max", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Max { get; set; }
+
+        /// <summary>
+        /// 平均值，未计算默认为0
+        /// </summary>
+        [JsonProperty("average", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Average { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +51,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             sb.Append("class ShowVmMonitorResponse {\n");
             sb.Append("  datapoints: ").Append(Datapoints).Append("\n");
             sb.Append("  metricName: ").Append(MetricName).Append("\n");
+            sb.Append("  max: ").Append(Max).Append("\n");
+            sb.Append("  average: ").Append(Average).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +73,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
             if (input == null) return false;
             if (this.Datapoints != input.Datapoints || (this.Datapoints != null && input.Datapoints != null && !this.Datapoints.SequenceEqual(input.Datapoints))) return false;
             if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
+            if (this.Max != input.Max || (this.Max != null && !this.Max.Equals(input.Max))) return false;
+            if (this.Average != input.Average || (this.Average != null && !this.Average.Equals(input.Average))) return false;
 
             return true;
         }
@@ -73,6 +89,8 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
                 var hashCode = 41;
                 if (this.Datapoints != null) hashCode = hashCode * 59 + this.Datapoints.GetHashCode();
                 if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
+                if (this.Max != null) hashCode = hashCode * 59 + this.Max.GetHashCode();
+                if (this.Average != null) hashCode = hashCode * 59 + this.Average.GetHashCode();
                 return hashCode;
             }
         }

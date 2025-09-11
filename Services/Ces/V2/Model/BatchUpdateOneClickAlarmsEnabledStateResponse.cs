@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 成功启停的告警规则ID列表
+        /// **参数解释**： 成功启停的告警规则ID列表。 
         /// </summary>
         [JsonProperty("alarm_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AlarmIds { get; set; }

@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     {
 
         /// <summary>
-        /// 租户标签列表
+        /// **参数解释**： 租户标签列表。 
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Tag> Tags { get; set; }
+        public List<TagResp> Tags { get; set; }
 
 
 

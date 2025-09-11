@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
     {
 
         /// <summary>
-        /// agent插件状态列表
+        /// **参数解释**: agent插件状态列表 **取值范围**: 数组长度为[1,2000] 
         /// </summary>
         [JsonProperty("agent_status", NullValueHandling = NullValueHandling.Ignore)]
         public List<AgentStatusInfo> AgentStatus { get; set; }

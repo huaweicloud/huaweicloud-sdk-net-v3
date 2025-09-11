@@ -22,11 +22,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Reflection;
-using System.Runtime.Serialization;
 using System.Text;
 
 namespace HuaweiCloud.SDK.Core
@@ -44,21 +42,6 @@ namespace HuaweiCloud.SDK.Core
         private const string HttpHeaders = "HttpHeaders";
         private const string SetStream = "SetStream";
 
-        private static readonly List<string> HttpContentHeadersList = new List<string>
-        {
-            ContentType,
-            ContentLength,
-            "Allow",
-            "Content-Disposition",
-            "Content-Encoding",
-            "Content-Language",
-            "Content-Location",
-            "Content-MD5",
-            "Content-Range",
-            "Expires",
-            "Last-Modified",
-        };
-
         public static string AddUrlPath(string path, Dictionary<string, string> pathParams)
         {
             return pathParams.Aggregate(path,
@@ -66,35 +49,10 @@ namespace HuaweiCloud.SDK.Core
                     keyValuePair.Value));
         }
 
-        private static string ConvertToString(object value)
-        {
-            if (value is bool boolean)
-            {
-                return Convert.ToString(boolean).ToLowerInvariant();
-            }
-            if (value is Enum enumValue)
-            {
-                var type = enumValue.GetType();
-                var name = Enum.GetName(type, enumValue);
-                if (name == null) return string.Empty;
-
-                var field = type.GetField(name);
-                if (field == null) return string.Empty;
-
-                var attribute = field.GetCustomAttribute<EnumMemberAttribute>();
-                return attribute?.Value;
-            }
-
-            return Convert.ToString(value);
-        }
-
         private static StringBuilder BuildQueryStringParameter(string key, object value)
         {
             var sb = new StringBuilder();
-            var str = ConvertToString(value);
-            if (string.IsNullOrEmpty(str)) return sb;
-
-            return sb.Append(key).Append("=").Append(str).Append("&");
+            return StringUtils.TryConvertToNonEmptyString(value, out var str) ? sb.Append(key).Append("=").Append(str).Append("&") : sb;
         }
 
         private static StringBuilder BuildQueryListParameter(string key, IList list)
@@ -231,23 +189,12 @@ namespace HuaweiCloud.SDK.Core
                 var value = propertyInfo.GetValue(obj, null);
                 if (value == null) continue;
 
-                if (sdkPropertyAttribute.IsCname)
+                if (sdkPropertyAttribute.IsQuery) ProcessQueryParams(querySb, sdkPropertyAttribute.PropertyName, value);
+                else if (sdkPropertyAttribute.IsBody) ProcessRequestBody(request, value, contentType);
+                else if (StringUtils.TryConvertToNonEmptyString(value, out var strVal))
                 {
-                    var cname = Convert.ToString(value);
-                    if (!string.IsNullOrEmpty(cname)) request.Cname = cname;
-                }
-                else if (sdkPropertyAttribute.IsQuery)
-                {
-                    ProcessQueryParams(querySb, sdkPropertyAttribute.PropertyName, value);
-                }
-                else if (sdkPropertyAttribute.IsHeader)
-                {
-                    var strVal = Convert.ToString(value);
-                    if (!string.IsNullOrEmpty(strVal)) headers.Add(sdkPropertyAttribute.PropertyName, strVal);
-                }
-                else if (sdkPropertyAttribute.IsBody)
-                {
-                    ProcessRequestBody(request, value, contentType);
+                    if (sdkPropertyAttribute.IsHeader) headers.Add(sdkPropertyAttribute.PropertyName, strVal);
+                    else if (sdkPropertyAttribute.IsCname) request.Cname = strVal;
                 }
             }
 
@@ -298,7 +245,7 @@ namespace HuaweiCloud.SDK.Core
             var t = Activator.CreateInstance<T>();
             t.GetType().GetProperty(HttpStatusCode)?.SetValue(t, (int)message.StatusCode, null);
             t.GetType().GetProperty(HttpHeaders)?.SetValue(t, message.Headers.ToString(), null);
-            var flag = BindingFlags.Public | BindingFlags.Instance;
+            const BindingFlags flag = BindingFlags.Public | BindingFlags.Instance;
             t.GetType().GetMethod(SetStream)
                 ?.Invoke(t, flag, Type.DefaultBinder,
                     new object[]
@@ -343,7 +290,6 @@ namespace HuaweiCloud.SDK.Core
             }
 
             streamResponse.SetStream(stream);
-
             return streamResponse;
         }
 
@@ -362,46 +308,11 @@ namespace HuaweiCloud.SDK.Core
 
             foreach (var property in properties)
             {
-                string oriAttrName = null;
-                var customAttrs = property.GetCustomAttributes(typeof(SDKPropertyAttribute), true);
-                if (customAttrs.Length > 0)
-                {
-                    SDKPropertyAttribute sdkPropertyAttribute = null;
-                    foreach (var customAttr in customAttrs)
-                    {
-                        if (customAttr is SDKPropertyAttribute propertyAttribute)
-                        {
-                            sdkPropertyAttribute = propertyAttribute;
-                        }
+                var propertyAttribute = GetSdkPropertyAttribute(property);
+                if (propertyAttribute == null || !propertyAttribute.IsHeader || string.IsNullOrEmpty(propertyAttribute.PropertyName)) continue;
 
-                        if (sdkPropertyAttribute == null || !sdkPropertyAttribute.IsHeader)
-                        {
-                            continue;
-                        }
-
-                        oriAttrName = sdkPropertyAttribute.PropertyName;
-                    }
-                }
-
-                if (string.IsNullOrEmpty(oriAttrName))
-                {
-                    continue;
-                }
-
-                if (HttpContentHeadersList.Contains(oriAttrName))
-                {
-                    if (message.Content.Headers.Contains(oriAttrName))
-                    {
-                        property.SetValue(obj, message.Content.Headers.GetValues(oriAttrName).First());
-                    }
-                }
-                else
-                {
-                    if (message.Headers.Contains(oriAttrName))
-                    {
-                        property.SetValue(obj, message.Headers.GetValues(oriAttrName).First());
-                    }
-                }
+                if (message.Headers.TryGetValues(propertyAttribute.PropertyName, out var values)) property.SetValue(obj, values.First());
+                else if (message.Content.Headers.TryGetValues(propertyAttribute.PropertyName, out values)) property.SetValue(obj, values.First());
             }
         }
     }

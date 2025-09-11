@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// 组合匹配参数
+    /// **参数解释** 组合匹配参数。 **约束限制** 不涉及。 
     /// </summary>
     public class CombRelation 
     {
         /// <summary>
-        /// 逻辑运算符  ALL 所有条件匹配成功  ANY 任意条件匹配成功 
+        /// **参数解释** 逻辑运算符。 **约束限制** 不涉及。 **取值范围** - ALL: 所有条件匹配成功。 - ANY: 任意条件匹配成功。 **默认取值** 不涉及。 
         /// </summary>
-        /// <value>逻辑运算符  ALL 所有条件匹配成功  ANY 任意条件匹配成功 </value>
+        /// <value>**参数解释** 逻辑运算符。 **约束限制** 不涉及。 **取值范围** - ALL: 所有条件匹配成功。 - ANY: 任意条件匹配成功。 **默认取值** 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<LogicalOperatorEnum>))]
         public class LogicalOperatorEnum
         {
@@ -132,12 +132,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// 逻辑运算符  ALL 所有条件匹配成功  ANY 任意条件匹配成功 
+        /// **参数解释** 逻辑运算符。 **约束限制** 不涉及。 **取值范围** - ALL: 所有条件匹配成功。 - ANY: 任意条件匹配成功。 **默认取值** 不涉及。 
         /// </summary>
         [JsonProperty("logical_operator", NullValueHandling = NullValueHandling.Ignore)]
         public LogicalOperatorEnum LogicalOperator { get; set; }
         /// <summary>
-        /// 组合匹配资源分组的匹配条件
+        /// **参数解释** 组合匹配资源分组的匹配条件。 **约束限制** 不超过50个条件。 
         /// </summary>
         [JsonProperty("conditions", NullValueHandling = NullValueHandling.Ignore)]
         public List<Condition> Conditions { get; set; }

@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string AlarmStatus { get; set; }
 
         /// <summary>
-        /// 告警风险等级 - LOW - MEDIUM - HIGH
+        /// 告警风险等级 - LOW：低 - MEDIUM：中 - HIGH：高
         /// </summary>
         [JsonProperty("alarm_risk", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmRisk { get; set; }

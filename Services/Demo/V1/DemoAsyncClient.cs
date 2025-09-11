@@ -45,7 +45,7 @@ namespace HuaweiCloud.SDK.Demo.V1
         public async Task<DeleteDemoResourceResponse> DeleteDemoResourceAsync(DeleteDemoResourceRequest deleteDemoResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteDemoResourceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDemoResourceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/demo/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDemoResourceRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -55,7 +55,7 @@ namespace HuaweiCloud.SDK.Demo.V1
         public AsyncInvoker<DeleteDemoResourceResponse> DeleteDemoResourceAsyncInvoker(DeleteDemoResourceRequest deleteDemoResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteDemoResourceRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDemoResourceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/demo/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDemoResourceRequest);
             return new AsyncInvoker<DeleteDemoResourceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDemoResourceResponse>);

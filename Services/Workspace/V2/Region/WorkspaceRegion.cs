@@ -41,6 +41,8 @@ namespace HuaweiCloud.SDK.Workspace.V2
             "https://workspace.af-north-1.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_2 = new Region("ap-southeast-2",
             "https://workspace.ap-southeast-2.myhuaweicloud.com");
+        public static readonly Region EU_WEST_101 = new Region("eu-west-101",
+            "https://workspace.eu-west-101.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("WORKSPACE");
 
@@ -63,6 +65,7 @@ namespace HuaweiCloud.SDK.Workspace.V2
                 { "cn-north-11", CN_NORTH_11 },
                 { "af-north-1", AF_NORTH_1 },
                 { "ap-southeast-2", AP_SOUTHEAST_2 },
+                { "eu-west-101", EU_WEST_101 },
         };
 
         public static Region ValueOf(string regionId)

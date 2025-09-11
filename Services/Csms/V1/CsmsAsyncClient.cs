@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<BatchCreateOrDeleteTagsResponse> BatchCreateOrDeleteTagsAsync(BatchCreateOrDeleteTagsRequest batchCreateOrDeleteTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id", batchCreateOrDeleteTagsRequest.SecretId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateOrDeleteTagsRequest.SecretId, out var valueOfSecretId)) urlParam.Add("secret_id", valueOfSecretId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateOrDeleteTagsRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<BatchCreateOrDeleteTagsResponse> BatchCreateOrDeleteTagsAsyncInvoker(BatchCreateOrDeleteTagsRequest batchCreateOrDeleteTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id", batchCreateOrDeleteTagsRequest.SecretId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateOrDeleteTagsRequest.SecretId, out var valueOfSecretId)) urlParam.Add("secret_id", valueOfSecretId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateOrDeleteTagsRequest);
             return new AsyncInvoker<BatchCreateOrDeleteTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateOrDeleteTagsResponse>);
@@ -199,7 +199,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<CreateSecretTagResponse> CreateSecretTagAsync(CreateSecretTagRequest createSecretTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id", createSecretTagRequest.SecretId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createSecretTagRequest.SecretId, out var valueOfSecretId)) urlParam.Add("secret_id", valueOfSecretId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretTagRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -209,7 +209,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<CreateSecretTagResponse> CreateSecretTagAsyncInvoker(CreateSecretTagRequest createSecretTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id", createSecretTagRequest.SecretId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createSecretTagRequest.SecretId, out var valueOfSecretId)) urlParam.Add("secret_id", valueOfSecretId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretTagRequest);
             return new AsyncInvoker<CreateSecretTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateSecretTagResponse>);
@@ -225,7 +225,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<CreateSecretVersionResponse> CreateSecretVersionAsync(CreateSecretVersionRequest createSecretVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", createSecretVersionRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createSecretVersionRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretVersionRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -235,7 +235,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<CreateSecretVersionResponse> CreateSecretVersionAsyncInvoker(CreateSecretVersionRequest createSecretVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", createSecretVersionRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createSecretVersionRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createSecretVersionRequest);
             return new AsyncInvoker<CreateSecretVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSecretVersionResponse>);
@@ -275,7 +275,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<DeleteSecretResponse> DeleteSecretAsync(DeleteSecretRequest deleteSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", deleteSecretRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -285,7 +285,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<DeleteSecretResponse> DeleteSecretAsyncInvoker(DeleteSecretRequest deleteSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", deleteSecretRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretRequest);
             return new AsyncInvoker<DeleteSecretResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecretResponse>);
@@ -301,7 +301,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<DeleteSecretEventResponse> DeleteSecretEventAsync(DeleteSecretEventRequest deleteSecretEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_name", deleteSecretEventRequest.EventName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretEventRequest.EventName, out var valueOfEventName)) urlParam.Add("event_name", valueOfEventName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretEventRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -311,7 +311,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<DeleteSecretEventResponse> DeleteSecretEventAsyncInvoker(DeleteSecretEventRequest deleteSecretEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_name", deleteSecretEventRequest.EventName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretEventRequest.EventName, out var valueOfEventName)) urlParam.Add("event_name", valueOfEventName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretEventRequest);
             return new AsyncInvoker<DeleteSecretEventResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecretEventResponse>);
@@ -327,7 +327,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<DeleteSecretForScheduleResponse> DeleteSecretForScheduleAsync(DeleteSecretForScheduleRequest deleteSecretForScheduleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", deleteSecretForScheduleRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretForScheduleRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/scheduled-deleted-tasks/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSecretForScheduleRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -337,7 +337,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<DeleteSecretForScheduleResponse> DeleteSecretForScheduleAsyncInvoker(DeleteSecretForScheduleRequest deleteSecretForScheduleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", deleteSecretForScheduleRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretForScheduleRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/scheduled-deleted-tasks/create", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteSecretForScheduleRequest);
             return new AsyncInvoker<DeleteSecretForScheduleResponse>(this, "POST", request, JsonUtils.DeSerialize<DeleteSecretForScheduleResponse>);
@@ -353,8 +353,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<DeleteSecretStageResponse> DeleteSecretStageAsync(DeleteSecretStageRequest deleteSecretStageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", deleteSecretStageRequest.SecretName.ToString());
-            urlParam.Add("stage_name", deleteSecretStageRequest.StageName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretStageRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretStageRequest.StageName, out var valueOfStageName)) urlParam.Add("stage_name", valueOfStageName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretStageRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -364,8 +364,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<DeleteSecretStageResponse> DeleteSecretStageAsyncInvoker(DeleteSecretStageRequest deleteSecretStageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", deleteSecretStageRequest.SecretName.ToString());
-            urlParam.Add("stage_name", deleteSecretStageRequest.StageName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretStageRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretStageRequest.StageName, out var valueOfStageName)) urlParam.Add("stage_name", valueOfStageName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretStageRequest);
             return new AsyncInvoker<DeleteSecretStageResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecretStageResponse>);
@@ -381,8 +381,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<DeleteSecretTagResponse> DeleteSecretTagAsync(DeleteSecretTagRequest deleteSecretTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id", deleteSecretTagRequest.SecretId.ToString());
-            urlParam.Add("key", deleteSecretTagRequest.Key.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretTagRequest.SecretId, out var valueOfSecretId)) urlParam.Add("secret_id", valueOfSecretId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretTagRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -392,8 +392,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<DeleteSecretTagResponse> DeleteSecretTagAsyncInvoker(DeleteSecretTagRequest deleteSecretTagRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id", deleteSecretTagRequest.SecretId.ToString());
-            urlParam.Add("key", deleteSecretTagRequest.Key.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretTagRequest.SecretId, out var valueOfSecretId)) urlParam.Add("secret_id", valueOfSecretId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecretTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags/{key}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecretTagRequest);
             return new AsyncInvoker<DeleteSecretTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecretTagResponse>);
@@ -409,7 +409,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<DownloadSecretBlobResponse> DownloadSecretBlobAsync(DownloadSecretBlobRequest downloadSecretBlobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", downloadSecretBlobRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadSecretBlobRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/backup", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSecretBlobRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -419,7 +419,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<DownloadSecretBlobResponse> DownloadSecretBlobAsyncInvoker(DownloadSecretBlobRequest downloadSecretBlobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", downloadSecretBlobRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadSecretBlobRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/backup", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSecretBlobRequest);
             return new AsyncInvoker<DownloadSecretBlobResponse>(this, "POST", request, JsonUtils.DeSerialize<DownloadSecretBlobResponse>);
@@ -531,7 +531,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<ListResourceInstancesResponse> ListResourceInstancesAsync(ListResourceInstancesRequest listResourceInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_instances", listResourceInstancesRequest.ResourceInstances.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listResourceInstancesRequest.ResourceInstances, out var valueOfResourceInstances)) urlParam.Add("resource_instances", valueOfResourceInstances);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{resource_instances}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstancesRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -541,7 +541,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<ListResourceInstancesResponse> ListResourceInstancesAsyncInvoker(ListResourceInstancesRequest listResourceInstancesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_instances", listResourceInstancesRequest.ResourceInstances.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listResourceInstancesRequest.ResourceInstances, out var valueOfResourceInstances)) urlParam.Add("resource_instances", valueOfResourceInstances);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{resource_instances}/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstancesRequest);
             return new AsyncInvoker<ListResourceInstancesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListResourceInstancesResponse>);
@@ -581,7 +581,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<ListSecretTagsResponse> ListSecretTagsAsync(ListSecretTagsRequest listSecretTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id", listSecretTagsRequest.SecretId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSecretTagsRequest.SecretId, out var valueOfSecretId)) urlParam.Add("secret_id", valueOfSecretId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretTagsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -591,7 +591,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<ListSecretTagsResponse> ListSecretTagsAsyncInvoker(ListSecretTagsRequest listSecretTagsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_id", listSecretTagsRequest.SecretId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSecretTagsRequest.SecretId, out var valueOfSecretId)) urlParam.Add("secret_id", valueOfSecretId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/{secret_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretTagsRequest);
             return new AsyncInvoker<ListSecretTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecretTagsResponse>);
@@ -631,7 +631,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<ListSecretVersionsResponse> ListSecretVersionsAsync(ListSecretVersionsRequest listSecretVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", listSecretVersionsRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSecretVersionsRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretVersionsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -641,7 +641,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<ListSecretVersionsResponse> ListSecretVersionsAsyncInvoker(ListSecretVersionsRequest listSecretVersionsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", listSecretVersionsRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSecretVersionsRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSecretVersionsRequest);
             return new AsyncInvoker<ListSecretVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSecretVersionsResponse>);
@@ -705,7 +705,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<RestoreSecretResponse> RestoreSecretAsync(RestoreSecretRequest restoreSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", restoreSecretRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restoreSecretRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/scheduled-deleted-tasks/cancel", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreSecretRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -715,7 +715,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<RestoreSecretResponse> RestoreSecretAsyncInvoker(RestoreSecretRequest restoreSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", restoreSecretRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restoreSecretRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/scheduled-deleted-tasks/cancel", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreSecretRequest);
             return new AsyncInvoker<RestoreSecretResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreSecretResponse>);
@@ -731,7 +731,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<RotateSecretResponse> RotateSecretAsync(RotateSecretRequest rotateSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", rotateSecretRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(rotateSecretRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/rotate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rotateSecretRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -741,7 +741,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<RotateSecretResponse> RotateSecretAsyncInvoker(RotateSecretRequest rotateSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", rotateSecretRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(rotateSecretRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/rotate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rotateSecretRequest);
             return new AsyncInvoker<RotateSecretResponse>(this, "POST", request, JsonUtils.DeSerialize<RotateSecretResponse>);
@@ -781,7 +781,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<ShowSecretResponse> ShowSecretAsync(ShowSecretRequest showSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", showSecretRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecretRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -791,7 +791,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<ShowSecretResponse> ShowSecretAsyncInvoker(ShowSecretRequest showSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", showSecretRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecretRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretRequest);
             return new AsyncInvoker<ShowSecretResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretResponse>);
@@ -807,7 +807,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<ShowSecretEventResponse> ShowSecretEventAsync(ShowSecretEventRequest showSecretEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_name", showSecretEventRequest.EventName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecretEventRequest.EventName, out var valueOfEventName)) urlParam.Add("event_name", valueOfEventName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretEventRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -817,7 +817,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<ShowSecretEventResponse> ShowSecretEventAsyncInvoker(ShowSecretEventRequest showSecretEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_name", showSecretEventRequest.EventName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecretEventRequest.EventName, out var valueOfEventName)) urlParam.Add("event_name", valueOfEventName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretEventRequest);
             return new AsyncInvoker<ShowSecretEventResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretEventResponse>);
@@ -857,8 +857,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<ShowSecretStageResponse> ShowSecretStageAsync(ShowSecretStageRequest showSecretStageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", showSecretStageRequest.SecretName.ToString());
-            urlParam.Add("stage_name", showSecretStageRequest.StageName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecretStageRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
+            if (StringUtils.TryConvertToNonEmptyString(showSecretStageRequest.StageName, out var valueOfStageName)) urlParam.Add("stage_name", valueOfStageName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretStageRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -868,8 +868,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<ShowSecretStageResponse> ShowSecretStageAsyncInvoker(ShowSecretStageRequest showSecretStageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", showSecretStageRequest.SecretName.ToString());
-            urlParam.Add("stage_name", showSecretStageRequest.StageName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecretStageRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
+            if (StringUtils.TryConvertToNonEmptyString(showSecretStageRequest.StageName, out var valueOfStageName)) urlParam.Add("stage_name", valueOfStageName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretStageRequest);
             return new AsyncInvoker<ShowSecretStageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretStageResponse>);
@@ -886,8 +886,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<ShowSecretVersionResponse> ShowSecretVersionAsync(ShowSecretVersionRequest showSecretVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", showSecretVersionRequest.SecretName.ToString());
-            urlParam.Add("version_id", showSecretVersionRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecretVersionRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
+            if (StringUtils.TryConvertToNonEmptyString(showSecretVersionRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretVersionRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -897,8 +897,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<ShowSecretVersionResponse> ShowSecretVersionAsyncInvoker(ShowSecretVersionRequest showSecretVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", showSecretVersionRequest.SecretName.ToString());
-            urlParam.Add("version_id", showSecretVersionRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecretVersionRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
+            if (StringUtils.TryConvertToNonEmptyString(showSecretVersionRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecretVersionRequest);
             return new AsyncInvoker<ShowSecretVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecretVersionResponse>);
@@ -938,7 +938,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<ShowUserDetailResponse> ShowUserDetailAsync(ShowUserDetailRequest showUserDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", showUserDetailRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserDetailRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/csms/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -948,7 +948,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<ShowUserDetailResponse> ShowUserDetailAsyncInvoker(ShowUserDetailRequest showUserDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("user_id", showUserDetailRequest.UserId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showUserDetailRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
             var urlPath = HttpUtils.AddUrlPath("/v1/csms/users/{user_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserDetailRequest);
             return new AsyncInvoker<ShowUserDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserDetailResponse>);
@@ -988,7 +988,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<UpdateSecretResponse> UpdateSecretAsync(UpdateSecretRequest updateSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", updateSecretRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSecretRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -998,7 +998,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<UpdateSecretResponse> UpdateSecretAsyncInvoker(UpdateSecretRequest updateSecretRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", updateSecretRequest.SecretName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSecretRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretRequest);
             return new AsyncInvoker<UpdateSecretResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecretResponse>);
@@ -1014,7 +1014,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<UpdateSecretEventResponse> UpdateSecretEventAsync(UpdateSecretEventRequest updateSecretEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_name", updateSecretEventRequest.EventName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSecretEventRequest.EventName, out var valueOfEventName)) urlParam.Add("event_name", valueOfEventName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretEventRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1024,7 +1024,7 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<UpdateSecretEventResponse> UpdateSecretEventAsyncInvoker(UpdateSecretEventRequest updateSecretEventRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("event_name", updateSecretEventRequest.EventName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSecretEventRequest.EventName, out var valueOfEventName)) urlParam.Add("event_name", valueOfEventName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/csms/events/{event_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretEventRequest);
             return new AsyncInvoker<UpdateSecretEventResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecretEventResponse>);
@@ -1040,8 +1040,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<UpdateSecretStageResponse> UpdateSecretStageAsync(UpdateSecretStageRequest updateSecretStageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", updateSecretStageRequest.SecretName.ToString());
-            urlParam.Add("stage_name", updateSecretStageRequest.StageName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSecretStageRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
+            if (StringUtils.TryConvertToNonEmptyString(updateSecretStageRequest.StageName, out var valueOfStageName)) urlParam.Add("stage_name", valueOfStageName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretStageRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1051,8 +1051,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<UpdateSecretStageResponse> UpdateSecretStageAsyncInvoker(UpdateSecretStageRequest updateSecretStageRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", updateSecretStageRequest.SecretName.ToString());
-            urlParam.Add("stage_name", updateSecretStageRequest.StageName.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSecretStageRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
+            if (StringUtils.TryConvertToNonEmptyString(updateSecretStageRequest.StageName, out var valueOfStageName)) urlParam.Add("stage_name", valueOfStageName);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/stages/{stage_name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecretStageRequest);
             return new AsyncInvoker<UpdateSecretStageResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecretStageResponse>);
@@ -1116,8 +1116,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public async Task<UpdateVersionResponse> UpdateVersionAsync(UpdateVersionRequest updateVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", updateVersionRequest.SecretName.ToString());
-            urlParam.Add("version_id", updateVersionRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVersionRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
+            if (StringUtils.TryConvertToNonEmptyString(updateVersionRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVersionRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1127,8 +1127,8 @@ namespace HuaweiCloud.SDK.Csms.V1
         public AsyncInvoker<UpdateVersionResponse> UpdateVersionAsyncInvoker(UpdateVersionRequest updateVersionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("secret_name", updateVersionRequest.SecretName.ToString());
-            urlParam.Add("version_id", updateVersionRequest.VersionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVersionRequest.SecretName, out var valueOfSecretName)) urlParam.Add("secret_name", valueOfSecretName);
+            if (StringUtils.TryConvertToNonEmptyString(updateVersionRequest.VersionId, out var valueOfVersionId)) urlParam.Add("version_id", valueOfVersionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/secrets/{secret_name}/versions/{version_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateVersionRequest);
             return new AsyncInvoker<UpdateVersionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVersionResponse>);

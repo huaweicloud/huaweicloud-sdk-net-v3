@@ -96,7 +96,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ResetActiveCodeResponse ResetActiveCode(ResetActiveCodeRequest resetActiveCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("active_code_id", resetActiveCodeRequest.ActiveCodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetActiveCodeRequest.ActiveCodeId, out var valueOfActiveCodeId)) urlParam.Add("active_code_id", valueOfActiveCodeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/active-code/{active_code_id}/reset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetActiveCodeRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -106,7 +106,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ResetActiveCodeResponse> ResetActiveCodeInvoker(ResetActiveCodeRequest resetActiveCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("active_code_id", resetActiveCodeRequest.ActiveCodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(resetActiveCodeRequest.ActiveCodeId, out var valueOfActiveCodeId)) urlParam.Add("active_code_id", valueOfActiveCodeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/active-code/{active_code_id}/reset", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", resetActiveCodeRequest);
             return new SyncInvoker<ResetActiveCodeResponse>(this, "PUT", request, JsonUtils.DeSerialize<ResetActiveCodeResponse>);
@@ -122,7 +122,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowActiveCodeResponse ShowActiveCode(ShowActiveCodeRequest showActiveCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("active_code_id", showActiveCodeRequest.ActiveCodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showActiveCodeRequest.ActiveCodeId, out var valueOfActiveCodeId)) urlParam.Add("active_code_id", valueOfActiveCodeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/active-code/{active_code_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showActiveCodeRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowActiveCodeResponse> ShowActiveCodeInvoker(ShowActiveCodeRequest showActiveCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("active_code_id", showActiveCodeRequest.ActiveCodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showActiveCodeRequest.ActiveCodeId, out var valueOfActiveCodeId)) urlParam.Add("active_code_id", valueOfActiveCodeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/active-code/{active_code_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showActiveCodeRequest);
             return new SyncInvoker<ShowActiveCodeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowActiveCodeResponse>);
@@ -148,7 +148,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateActiveCodeResponse UpdateActiveCode(UpdateActiveCodeRequest updateActiveCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("active_code_id", updateActiveCodeRequest.ActiveCodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateActiveCodeRequest.ActiveCodeId, out var valueOfActiveCodeId)) urlParam.Add("active_code_id", valueOfActiveCodeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/active-code/{active_code_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateActiveCodeRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -158,7 +158,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateActiveCodeResponse> UpdateActiveCodeInvoker(UpdateActiveCodeRequest updateActiveCodeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("active_code_id", updateActiveCodeRequest.ActiveCodeId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateActiveCodeRequest.ActiveCodeId, out var valueOfActiveCodeId)) urlParam.Add("active_code_id", valueOfActiveCodeId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/active-code/{active_code_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateActiveCodeRequest);
             return new SyncInvoker<UpdateActiveCodeResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateActiveCodeResponse>);
@@ -174,7 +174,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public CreateAgencyWithRoleTypeResponse CreateAgencyWithRoleType(CreateAgencyWithRoleTypeRequest createAgencyWithRoleTypeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_type", createAgencyWithRoleTypeRequest.RoleType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAgencyWithRoleTypeRequest.RoleType, out var valueOfRoleType)) urlParam.Add("role_type", valueOfRoleType);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/agency/{role_type}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAgencyWithRoleTypeRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -184,7 +184,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<CreateAgencyWithRoleTypeResponse> CreateAgencyWithRoleTypeInvoker(CreateAgencyWithRoleTypeRequest createAgencyWithRoleTypeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_type", createAgencyWithRoleTypeRequest.RoleType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createAgencyWithRoleTypeRequest.RoleType, out var valueOfRoleType)) urlParam.Add("role_type", valueOfRoleType);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/agency/{role_type}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAgencyWithRoleTypeRequest);
             return new SyncInvoker<CreateAgencyWithRoleTypeResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAgencyWithRoleTypeResponse>);
@@ -200,7 +200,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteAgencyWithRoleTypeResponse DeleteAgencyWithRoleType(DeleteAgencyWithRoleTypeRequest deleteAgencyWithRoleTypeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_type", deleteAgencyWithRoleTypeRequest.RoleType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAgencyWithRoleTypeRequest.RoleType, out var valueOfRoleType)) urlParam.Add("role_type", valueOfRoleType);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/agency/{role_type}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAgencyWithRoleTypeRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -210,7 +210,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteAgencyWithRoleTypeResponse> DeleteAgencyWithRoleTypeInvoker(DeleteAgencyWithRoleTypeRequest deleteAgencyWithRoleTypeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_type", deleteAgencyWithRoleTypeRequest.RoleType.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAgencyWithRoleTypeRequest.RoleType, out var valueOfRoleType)) urlParam.Add("role_type", valueOfRoleType);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/agency/{role_type}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAgencyWithRoleTypeRequest);
             return new SyncInvoker<DeleteAgencyWithRoleTypeResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAgencyWithRoleTypeResponse>);
@@ -241,158 +241,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
-        /// 创建热词表
-        ///
-        /// 该接口用于创建热词表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateAsrVocabularyResponse CreateAsrVocabulary(CreateAsrVocabularyRequest createAsrVocabularyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAsrVocabularyRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateAsrVocabularyResponse>(response);
-        }
-
-        public SyncInvoker<CreateAsrVocabularyResponse> CreateAsrVocabularyInvoker(CreateAsrVocabularyRequest createAsrVocabularyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAsrVocabularyRequest);
-            return new SyncInvoker<CreateAsrVocabularyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAsrVocabularyResponse>);
-        }
-        
-        /// <summary>
-        /// 删除热词表
-        ///
-        /// 该接口用于删除热词表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public DeleteAsrVocabularyResponse DeleteAsrVocabulary(DeleteAsrVocabularyRequest deleteAsrVocabularyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asr_vocabulary_id", deleteAsrVocabularyRequest.AsrVocabularyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAsrVocabularyRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteAsrVocabularyResponse>(response);
-        }
-
-        public SyncInvoker<DeleteAsrVocabularyResponse> DeleteAsrVocabularyInvoker(DeleteAsrVocabularyRequest deleteAsrVocabularyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asr_vocabulary_id", deleteAsrVocabularyRequest.AsrVocabularyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAsrVocabularyRequest);
-            return new SyncInvoker<DeleteAsrVocabularyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAsrVocabularyResponse>);
-        }
-        
-        /// <summary>
-        /// 查询热词表列表
-        ///
-        /// 该接口用于查询热词表列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListAsrVocabularyResponse ListAsrVocabulary(ListAsrVocabularyRequest listAsrVocabularyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsrVocabularyRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListAsrVocabularyResponse>(response);
-        }
-
-        public SyncInvoker<ListAsrVocabularyResponse> ListAsrVocabularyInvoker(ListAsrVocabularyRequest listAsrVocabularyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAsrVocabularyRequest);
-            return new SyncInvoker<ListAsrVocabularyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAsrVocabularyResponse>);
-        }
-        
-        /// <summary>
-        /// 查询热词表详情
-        ///
-        /// 该接口用于查询热词表详情。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowAsrVocabularyResponse ShowAsrVocabulary(ShowAsrVocabularyRequest showAsrVocabularyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asr_vocabulary_id", showAsrVocabularyRequest.AsrVocabularyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsrVocabularyRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowAsrVocabularyResponse>(response);
-        }
-
-        public SyncInvoker<ShowAsrVocabularyResponse> ShowAsrVocabularyInvoker(ShowAsrVocabularyRequest showAsrVocabularyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asr_vocabulary_id", showAsrVocabularyRequest.AsrVocabularyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsrVocabularyRequest);
-            return new SyncInvoker<ShowAsrVocabularyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAsrVocabularyResponse>);
-        }
-        
-        /// <summary>
-        /// 查询热词表关联详情
-        ///
-        /// 该接口用于查询热词表关联详情。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowAsrVocabularyAssociationResponse ShowAsrVocabularyAssociation(ShowAsrVocabularyAssociationRequest showAsrVocabularyAssociationRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asr_vocabulary_id", showAsrVocabularyAssociationRequest.AsrVocabularyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/association/{asr_vocabulary_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsrVocabularyAssociationRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowAsrVocabularyAssociationResponse>(response);
-        }
-
-        public SyncInvoker<ShowAsrVocabularyAssociationResponse> ShowAsrVocabularyAssociationInvoker(ShowAsrVocabularyAssociationRequest showAsrVocabularyAssociationRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asr_vocabulary_id", showAsrVocabularyAssociationRequest.AsrVocabularyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/association/{asr_vocabulary_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsrVocabularyAssociationRequest);
-            return new SyncInvoker<ShowAsrVocabularyAssociationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAsrVocabularyAssociationResponse>);
-        }
-        
-        /// <summary>
-        /// 修改热词表
-        ///
-        /// 该接口用于修改热词表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public UpdateAsrVocabularyResponse UpdateAsrVocabulary(UpdateAsrVocabularyRequest updateAsrVocabularyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asr_vocabulary_id", updateAsrVocabularyRequest.AsrVocabularyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAsrVocabularyRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerialize<UpdateAsrVocabularyResponse>(response);
-        }
-
-        public SyncInvoker<UpdateAsrVocabularyResponse> UpdateAsrVocabularyInvoker(UpdateAsrVocabularyRequest updateAsrVocabularyRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asr_vocabulary_id", updateAsrVocabularyRequest.AsrVocabularyId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/asr-vocabulary/{asr_vocabulary_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAsrVocabularyRequest);
-            return new SyncInvoker<UpdateAsrVocabularyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAsrVocabularyResponse>);
-        }
-        
-        /// <summary>
         /// 删除导入导出任务
         ///
         /// 删除导入导出任务
@@ -402,7 +250,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteTaskResponse DeleteTask(DeleteTaskRequest deleteTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteTaskRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTaskRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/task/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTaskRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -412,7 +260,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteTaskResponse> DeleteTaskInvoker(DeleteTaskRequest deleteTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", deleteTaskRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTaskRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/task/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTaskRequest);
             return new SyncInvoker<DeleteTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTaskResponse>);
@@ -428,7 +276,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DownloadResultFileResponse DownloadResultFile(DownloadResultFileRequest downloadResultFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", downloadResultFileRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadResultFileRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/result/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadResultFileRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -438,7 +286,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DownloadResultFileResponse> DownloadResultFileInvoker(DownloadResultFileRequest downloadResultFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", downloadResultFileRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadResultFileRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/result/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadResultFileRequest);
             return new SyncInvoker<DownloadResultFileResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadResultFileResponse>);
@@ -454,7 +302,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DownloadTemplateResponse DownloadTemplate(DownloadTemplateRequest downloadTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource", downloadTemplateRequest.Resource.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadTemplateRequest.Resource, out var valueOfResource)) urlParam.Add("resource", valueOfResource);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/import/{resource}/template", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadTemplateRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -464,7 +312,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DownloadTemplateResponse> DownloadTemplateInvoker(DownloadTemplateRequest downloadTemplateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource", downloadTemplateRequest.Resource.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadTemplateRequest.Resource, out var valueOfResource)) urlParam.Add("resource", valueOfResource);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/import/{resource}/template", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadTemplateRequest);
             return new SyncInvoker<DownloadTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadTemplateResponse>);
@@ -480,7 +328,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ExportResourceResponse ExportResource(ExportResourceRequest exportResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource", exportResourceRequest.Resource.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(exportResourceRequest.Resource, out var valueOfResource)) urlParam.Add("resource", valueOfResource);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/export/{resource}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportResourceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -490,7 +338,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ExportResourceResponse> ExportResourceInvoker(ExportResourceRequest exportResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource", exportResourceRequest.Resource.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(exportResourceRequest.Resource, out var valueOfResource)) urlParam.Add("resource", valueOfResource);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/export/{resource}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportResourceRequest);
             return new SyncInvoker<ExportResourceResponse>(this, "POST", request, JsonUtils.DeSerialize<ExportResourceResponse>);
@@ -506,7 +354,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ImportResourceResponse ImportResource(ImportResourceRequest importResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource", importResourceRequest.Resource.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(importResourceRequest.Resource, out var valueOfResource)) urlParam.Add("resource", valueOfResource);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/import/{resource}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", importResourceRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -516,7 +364,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ImportResourceResponse> ImportResourceInvoker(ImportResourceRequest importResourceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource", importResourceRequest.Resource.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(importResourceRequest.Resource, out var valueOfResource)) urlParam.Add("resource", valueOfResource);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/import/{resource}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", importResourceRequest);
             return new SyncInvoker<ImportResourceResponse>(this, "POST", request, JsonUtils.DeSerialize<ImportResourceResponse>);
@@ -556,7 +404,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowTaskResponse ShowTask(ShowTaskRequest showTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showTaskRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTaskRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/task/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -566,7 +414,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowTaskResponse> ShowTaskInvoker(ShowTaskRequest showTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("id", showTaskRequest.Id.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTaskRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/task/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskRequest);
             return new SyncInvoker<ShowTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTaskResponse>);
@@ -606,7 +454,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ListSmartChatJobResponse ListSmartChatJob(ListSmartChatJobRequest listSmartChatJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", listSmartChatJobRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSmartChatJobRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/smart-chat-rooms/{room_id}/smart-chat-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSmartChatJobRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -616,7 +464,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ListSmartChatJobResponse> ListSmartChatJobInvoker(ListSmartChatJobRequest listSmartChatJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", listSmartChatJobRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSmartChatJobRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/smart-chat-rooms/{room_id}/smart-chat-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSmartChatJobRequest);
             return new SyncInvoker<ListSmartChatJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSmartChatJobResponse>);
@@ -632,8 +480,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowSmartChatJobResponse ShowSmartChatJob(ShowSmartChatJobRequest showSmartChatJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", showSmartChatJobRequest.RoomId.ToString());
-            urlParam.Add("job_id", showSmartChatJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSmartChatJobRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(showSmartChatJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/smart-chat-rooms/{room_id}/smart-chat-jobs/{job_id}/state", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmartChatJobRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -643,8 +491,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowSmartChatJobResponse> ShowSmartChatJobInvoker(ShowSmartChatJobRequest showSmartChatJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", showSmartChatJobRequest.RoomId.ToString());
-            urlParam.Add("job_id", showSmartChatJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSmartChatJobRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(showSmartChatJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/smart-chat-rooms/{room_id}/smart-chat-jobs/{job_id}/state", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmartChatJobRequest);
             return new SyncInvoker<ShowSmartChatJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSmartChatJobResponse>);
@@ -660,7 +508,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public StartSmartChatJobResponse StartSmartChatJob(StartSmartChatJobRequest startSmartChatJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", startSmartChatJobRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startSmartChatJobRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/smart-chat-rooms/{room_id}/smart-chat-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startSmartChatJobRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -670,7 +518,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<StartSmartChatJobResponse> StartSmartChatJobInvoker(StartSmartChatJobRequest startSmartChatJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", startSmartChatJobRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startSmartChatJobRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/smart-chat-rooms/{room_id}/smart-chat-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startSmartChatJobRequest);
             return new SyncInvoker<StartSmartChatJobResponse>(this, "POST", request, JsonUtils.DeSerialize<StartSmartChatJobResponse>);
@@ -686,8 +534,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public StopSmartChatJobResponse StopSmartChatJob(StopSmartChatJobRequest stopSmartChatJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", stopSmartChatJobRequest.RoomId.ToString());
-            urlParam.Add("job_id", stopSmartChatJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopSmartChatJobRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(stopSmartChatJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/smart-chat-rooms/{room_id}/smart-chat-jobs/{job_id}/stop", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopSmartChatJobRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -697,8 +545,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<StopSmartChatJobResponse> StopSmartChatJobInvoker(StopSmartChatJobRequest stopSmartChatJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", stopSmartChatJobRequest.RoomId.ToString());
-            urlParam.Add("job_id", stopSmartChatJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopSmartChatJobRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(stopSmartChatJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/smart-chat-rooms/{room_id}/smart-chat-jobs/{job_id}/stop", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopSmartChatJobRequest);
             return new SyncInvoker<StopSmartChatJobResponse>(this, "POST", request, JsonUtils.DeSerializeNull<StopSmartChatJobResponse>);
@@ -886,7 +734,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteAssetResponse DeleteAsset(DeleteAssetRequest deleteAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asset_id", deleteAssetRequest.AssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAssetRequest.AssetId, out var valueOfAssetId)) urlParam.Add("asset_id", valueOfAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets/{asset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssetRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -896,7 +744,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteAssetResponse> DeleteAssetInvoker(DeleteAssetRequest deleteAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asset_id", deleteAssetRequest.AssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteAssetRequest.AssetId, out var valueOfAssetId)) urlParam.Add("asset_id", valueOfAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets/{asset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAssetRequest);
             return new SyncInvoker<DeleteAssetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAssetResponse>);
@@ -960,7 +808,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public RestoreAssetResponse RestoreAsset(RestoreAssetRequest restoreAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asset_id", restoreAssetRequest.AssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restoreAssetRequest.AssetId, out var valueOfAssetId)) urlParam.Add("asset_id", valueOfAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets/{asset_id}/restore", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreAssetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -970,7 +818,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<RestoreAssetResponse> RestoreAssetInvoker(RestoreAssetRequest restoreAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asset_id", restoreAssetRequest.AssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restoreAssetRequest.AssetId, out var valueOfAssetId)) urlParam.Add("asset_id", valueOfAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets/{asset_id}/restore", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreAssetRequest);
             return new SyncInvoker<RestoreAssetResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RestoreAssetResponse>);
@@ -986,7 +834,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowAssetResponse ShowAsset(ShowAssetRequest showAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asset_id", showAssetRequest.AssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAssetRequest.AssetId, out var valueOfAssetId)) urlParam.Add("asset_id", valueOfAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets/{asset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -996,7 +844,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowAssetResponse> ShowAssetInvoker(ShowAssetRequest showAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asset_id", showAssetRequest.AssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAssetRequest.AssetId, out var valueOfAssetId)) urlParam.Add("asset_id", valueOfAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets/{asset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetRequest);
             return new SyncInvoker<ShowAssetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAssetResponse>);
@@ -1012,7 +860,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowAssetReplicationInfoResponse ShowAssetReplicationInfo(ShowAssetReplicationInfoRequest showAssetReplicationInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asset_id", showAssetReplicationInfoRequest.AssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAssetReplicationInfoRequest.AssetId, out var valueOfAssetId)) urlParam.Add("asset_id", valueOfAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets/{asset_id}/replication-info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetReplicationInfoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1022,7 +870,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowAssetReplicationInfoResponse> ShowAssetReplicationInfoInvoker(ShowAssetReplicationInfoRequest showAssetReplicationInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asset_id", showAssetReplicationInfoRequest.AssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAssetReplicationInfoRequest.AssetId, out var valueOfAssetId)) urlParam.Add("asset_id", valueOfAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets/{asset_id}/replication-info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetReplicationInfoRequest);
             return new SyncInvoker<ShowAssetReplicationInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAssetReplicationInfoResponse>);
@@ -1038,7 +886,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateDigitalAssetResponse UpdateDigitalAsset(UpdateDigitalAssetRequest updateDigitalAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asset_id", updateDigitalAssetRequest.AssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDigitalAssetRequest.AssetId, out var valueOfAssetId)) urlParam.Add("asset_id", valueOfAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets/{asset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDigitalAssetRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1048,7 +896,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateDigitalAssetResponse> UpdateDigitalAssetInvoker(UpdateDigitalAssetRequest updateDigitalAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("asset_id", updateDigitalAssetRequest.AssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDigitalAssetRequest.AssetId, out var valueOfAssetId)) urlParam.Add("asset_id", valueOfAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets/{asset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDigitalAssetRequest);
             return new SyncInvoker<UpdateDigitalAssetResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDigitalAssetResponse>);
@@ -1088,7 +936,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteDigitalHumanBusinessCardResponse DeleteDigitalHumanBusinessCard(DeleteDigitalHumanBusinessCardRequest deleteDigitalHumanBusinessCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", deleteDigitalHumanBusinessCardRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDigitalHumanBusinessCardRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-business-cards/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDigitalHumanBusinessCardRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1098,7 +946,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteDigitalHumanBusinessCardResponse> DeleteDigitalHumanBusinessCardInvoker(DeleteDigitalHumanBusinessCardRequest deleteDigitalHumanBusinessCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", deleteDigitalHumanBusinessCardRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteDigitalHumanBusinessCardRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-business-cards/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDigitalHumanBusinessCardRequest);
             return new SyncInvoker<DeleteDigitalHumanBusinessCardResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDigitalHumanBusinessCardResponse>);
@@ -1138,7 +986,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowDigitalHumanBusinessCardResponse ShowDigitalHumanBusinessCard(ShowDigitalHumanBusinessCardRequest showDigitalHumanBusinessCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showDigitalHumanBusinessCardRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDigitalHumanBusinessCardRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-business-cards/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDigitalHumanBusinessCardRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1148,7 +996,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowDigitalHumanBusinessCardResponse> ShowDigitalHumanBusinessCardInvoker(ShowDigitalHumanBusinessCardRequest showDigitalHumanBusinessCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showDigitalHumanBusinessCardRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDigitalHumanBusinessCardRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-business-cards/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDigitalHumanBusinessCardRequest);
             return new SyncInvoker<ShowDigitalHumanBusinessCardResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDigitalHumanBusinessCardResponse>);
@@ -1164,7 +1012,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateDigitalHumanBusinessCardResponse UpdateDigitalHumanBusinessCard(UpdateDigitalHumanBusinessCardRequest updateDigitalHumanBusinessCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", updateDigitalHumanBusinessCardRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDigitalHumanBusinessCardRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-business-cards/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDigitalHumanBusinessCardRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1174,7 +1022,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateDigitalHumanBusinessCardResponse> UpdateDigitalHumanBusinessCardInvoker(UpdateDigitalHumanBusinessCardRequest updateDigitalHumanBusinessCardRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", updateDigitalHumanBusinessCardRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDigitalHumanBusinessCardRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-business-cards/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDigitalHumanBusinessCardRequest);
             return new SyncInvoker<UpdateDigitalHumanBusinessCardResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDigitalHumanBusinessCardResponse>);
@@ -1215,7 +1063,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public Cancel2DDigitalHumanVideoResponse Cancel2DDigitalHumanVideo(Cancel2DDigitalHumanVideoRequest cancel2DDigitalHumanVideoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", cancel2DDigitalHumanVideoRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancel2DDigitalHumanVideoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/2d-digital-human-videos/{job_id}/cancel", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancel2DDigitalHumanVideoRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1225,7 +1073,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<Cancel2DDigitalHumanVideoResponse> Cancel2DDigitalHumanVideoInvoker(Cancel2DDigitalHumanVideoRequest cancel2DDigitalHumanVideoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", cancel2DDigitalHumanVideoRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancel2DDigitalHumanVideoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/2d-digital-human-videos/{job_id}/cancel", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancel2DDigitalHumanVideoRequest);
             return new SyncInvoker<Cancel2DDigitalHumanVideoResponse>(this, "POST", request, JsonUtils.DeSerializeNull<Cancel2DDigitalHumanVideoResponse>);
@@ -1265,7 +1113,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public Show2DDigitalHumanVideoResponse Show2DDigitalHumanVideo(Show2DDigitalHumanVideoRequest show2DDigitalHumanVideoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", show2DDigitalHumanVideoRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(show2DDigitalHumanVideoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/2d-digital-human-videos/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", show2DDigitalHumanVideoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1275,7 +1123,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<Show2DDigitalHumanVideoResponse> Show2DDigitalHumanVideoInvoker(Show2DDigitalHumanVideoRequest show2DDigitalHumanVideoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", show2DDigitalHumanVideoRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(show2DDigitalHumanVideoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/2d-digital-human-videos/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", show2DDigitalHumanVideoRequest);
             return new SyncInvoker<Show2DDigitalHumanVideoResponse>(this, "GET", request, JsonUtils.DeSerialize<Show2DDigitalHumanVideoResponse>);
@@ -1291,7 +1139,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public CancelPhotoDigitalHumanVideoResponse CancelPhotoDigitalHumanVideo(CancelPhotoDigitalHumanVideoRequest cancelPhotoDigitalHumanVideoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", cancelPhotoDigitalHumanVideoRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelPhotoDigitalHumanVideoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/photo-digital-human-videos/{job_id}/cancel", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelPhotoDigitalHumanVideoRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1301,7 +1149,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<CancelPhotoDigitalHumanVideoResponse> CancelPhotoDigitalHumanVideoInvoker(CancelPhotoDigitalHumanVideoRequest cancelPhotoDigitalHumanVideoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", cancelPhotoDigitalHumanVideoRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cancelPhotoDigitalHumanVideoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/photo-digital-human-videos/{job_id}/cancel", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelPhotoDigitalHumanVideoRequest);
             return new SyncInvoker<CancelPhotoDigitalHumanVideoResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CancelPhotoDigitalHumanVideoResponse>);
@@ -1365,7 +1213,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowPhotoDetectionResponse ShowPhotoDetection(ShowPhotoDetectionRequest showPhotoDetectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showPhotoDetectionRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPhotoDetectionRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/photo-detection/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPhotoDetectionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1375,7 +1223,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowPhotoDetectionResponse> ShowPhotoDetectionInvoker(ShowPhotoDetectionRequest showPhotoDetectionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showPhotoDetectionRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPhotoDetectionRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/photo-detection/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPhotoDetectionRequest);
             return new SyncInvoker<ShowPhotoDetectionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPhotoDetectionResponse>);
@@ -1391,7 +1239,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowPhotoDigitalHumanVideoResponse ShowPhotoDigitalHumanVideo(ShowPhotoDigitalHumanVideoRequest showPhotoDigitalHumanVideoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showPhotoDigitalHumanVideoRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPhotoDigitalHumanVideoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/photo-digital-human-videos/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPhotoDigitalHumanVideoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1401,7 +1249,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowPhotoDigitalHumanVideoResponse> ShowPhotoDigitalHumanVideoInvoker(ShowPhotoDigitalHumanVideoRequest showPhotoDigitalHumanVideoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showPhotoDigitalHumanVideoRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPhotoDigitalHumanVideoRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/photo-digital-human-videos/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPhotoDigitalHumanVideoRequest);
             return new SyncInvoker<ShowPhotoDigitalHumanVideoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPhotoDigitalHumanVideoResponse>);
@@ -1465,7 +1313,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DownloadDocumentResponse DownloadDocument(DownloadDocumentRequest downloadDocumentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("document_id", downloadDocumentRequest.DocumentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadDocumentRequest.DocumentId, out var valueOfDocumentId)) urlParam.Add("document_id", valueOfDocumentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/{document_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadDocumentRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1475,7 +1323,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DownloadDocumentResponse> DownloadDocumentInvoker(DownloadDocumentRequest downloadDocumentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("document_id", downloadDocumentRequest.DocumentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(downloadDocumentRequest.DocumentId, out var valueOfDocumentId)) urlParam.Add("document_id", valueOfDocumentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/{document_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadDocumentRequest);
             return new SyncInvoker<DownloadDocumentResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadDocumentResponse>);
@@ -1515,7 +1363,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowDocumentInfoResponse ShowDocumentInfo(ShowDocumentInfoRequest showDocumentInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("document_id", showDocumentInfoRequest.DocumentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDocumentInfoRequest.DocumentId, out var valueOfDocumentId)) urlParam.Add("document_id", valueOfDocumentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/detail/{document_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDocumentInfoRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1525,7 +1373,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowDocumentInfoResponse> ShowDocumentInfoInvoker(ShowDocumentInfoRequest showDocumentInfoRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("document_id", showDocumentInfoRequest.DocumentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showDocumentInfoRequest.DocumentId, out var valueOfDocumentId)) urlParam.Add("document_id", valueOfDocumentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/detail/{document_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDocumentInfoRequest);
             return new SyncInvoker<ShowDocumentInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDocumentInfoResponse>);
@@ -1541,7 +1389,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest updateDocumentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("document_id", updateDocumentRequest.DocumentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDocumentRequest.DocumentId, out var valueOfDocumentId)) urlParam.Add("document_id", valueOfDocumentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/update/{document_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", updateDocumentRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1551,7 +1399,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateDocumentResponse> UpdateDocumentInvoker(UpdateDocumentRequest updateDocumentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("document_id", updateDocumentRequest.DocumentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDocumentRequest.DocumentId, out var valueOfDocumentId)) urlParam.Add("document_id", valueOfDocumentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document/update/{document_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", updateDocumentRequest);
             return new SyncInvoker<UpdateDocumentResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpdateDocumentResponse>);
@@ -1670,7 +1518,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateDocumentSegmentParamResponse UpdateDocumentSegmentParam(UpdateDocumentSegmentParamRequest updateDocumentSegmentParamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("document_id", updateDocumentSegmentParamRequest.DocumentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDocumentSegmentParamRequest.DocumentId, out var valueOfDocumentId)) urlParam.Add("document_id", valueOfDocumentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/{document_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDocumentSegmentParamRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1680,7 +1528,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateDocumentSegmentParamResponse> UpdateDocumentSegmentParamInvoker(UpdateDocumentSegmentParamRequest updateDocumentSegmentParamRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("document_id", updateDocumentSegmentParamRequest.DocumentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateDocumentSegmentParamRequest.DocumentId, out var valueOfDocumentId)) urlParam.Add("document_id", valueOfDocumentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/document-segment/{document_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDocumentSegmentParamRequest);
             return new SyncInvoker<UpdateDocumentSegmentParamResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateDocumentSegmentParamResponse>);
@@ -1696,7 +1544,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ConfirmFileUploadResponse ConfirmFileUpload(ConfirmFileUploadRequest confirmFileUploadRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("file_id", confirmFileUploadRequest.FileId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(confirmFileUploadRequest.FileId, out var valueOfFileId)) urlParam.Add("file_id", valueOfFileId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/files/{file_id}/complete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmFileUploadRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -1706,7 +1554,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ConfirmFileUploadResponse> ConfirmFileUploadInvoker(ConfirmFileUploadRequest confirmFileUploadRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("file_id", confirmFileUploadRequest.FileId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(confirmFileUploadRequest.FileId, out var valueOfFileId)) urlParam.Add("file_id", valueOfFileId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/files/{file_id}/complete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmFileUploadRequest);
             return new SyncInvoker<ConfirmFileUploadResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ConfirmFileUploadResponse>);
@@ -1770,7 +1618,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteFileResponse DeleteFile(DeleteFileRequest deleteFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("file_id", deleteFileRequest.FileId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFileRequest.FileId, out var valueOfFileId)) urlParam.Add("file_id", valueOfFileId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/files/{file_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFileRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1780,7 +1628,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteFileResponse> DeleteFileInvoker(DeleteFileRequest deleteFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("file_id", deleteFileRequest.FileId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteFileRequest.FileId, out var valueOfFileId)) urlParam.Add("file_id", valueOfFileId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/files/{file_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteFileRequest);
             return new SyncInvoker<DeleteFileResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteFileResponse>);
@@ -1868,7 +1716,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowHotQuestionResponse ShowHotQuestion(ShowHotQuestionRequest showHotQuestionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hot_question_id", showHotQuestionRequest.HotQuestionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHotQuestionRequest.HotQuestionId, out var valueOfHotQuestionId)) urlParam.Add("hot_question_id", valueOfHotQuestionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/hot-question/{hot_question_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHotQuestionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -1878,7 +1726,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowHotQuestionResponse> ShowHotQuestionInvoker(ShowHotQuestionRequest showHotQuestionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hot_question_id", showHotQuestionRequest.HotQuestionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHotQuestionRequest.HotQuestionId, out var valueOfHotQuestionId)) urlParam.Add("hot_question_id", valueOfHotQuestionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/hot-question/{hot_question_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHotQuestionRequest);
             return new SyncInvoker<ShowHotQuestionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHotQuestionResponse>);
@@ -1894,7 +1742,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateHotQuestionResponse UpdateHotQuestion(UpdateHotQuestionRequest updateHotQuestionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hot_question_id", updateHotQuestionRequest.HotQuestionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHotQuestionRequest.HotQuestionId, out var valueOfHotQuestionId)) urlParam.Add("hot_question_id", valueOfHotQuestionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/hot-question/{hot_question_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHotQuestionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -1904,7 +1752,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateHotQuestionResponse> UpdateHotQuestionInvoker(UpdateHotQuestionRequest updateHotQuestionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hot_question_id", updateHotQuestionRequest.HotQuestionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHotQuestionRequest.HotQuestionId, out var valueOfHotQuestionId)) urlParam.Add("hot_question_id", valueOfHotQuestionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/hot-question/{hot_question_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHotQuestionRequest);
             return new SyncInvoker<UpdateHotQuestionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateHotQuestionResponse>);
@@ -1944,7 +1792,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteHotWordsResponse DeleteHotWords(DeleteHotWordsRequest deleteHotWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hot_words_id", deleteHotWordsRequest.HotWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteHotWordsRequest.HotWordsId, out var valueOfHotWordsId)) urlParam.Add("hot_words_id", valueOfHotWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/hot-words/{hot_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHotWordsRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -1954,7 +1802,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteHotWordsResponse> DeleteHotWordsInvoker(DeleteHotWordsRequest deleteHotWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hot_words_id", deleteHotWordsRequest.HotWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteHotWordsRequest.HotWordsId, out var valueOfHotWordsId)) urlParam.Add("hot_words_id", valueOfHotWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/hot-words/{hot_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHotWordsRequest);
             return new SyncInvoker<DeleteHotWordsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteHotWordsResponse>);
@@ -1994,7 +1842,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowHotWordsResponse ShowHotWords(ShowHotWordsRequest showHotWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hot_words_id", showHotWordsRequest.HotWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHotWordsRequest.HotWordsId, out var valueOfHotWordsId)) urlParam.Add("hot_words_id", valueOfHotWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/hot-words/{hot_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHotWordsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2004,7 +1852,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowHotWordsResponse> ShowHotWordsInvoker(ShowHotWordsRequest showHotWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hot_words_id", showHotWordsRequest.HotWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHotWordsRequest.HotWordsId, out var valueOfHotWordsId)) urlParam.Add("hot_words_id", valueOfHotWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/hot-words/{hot_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHotWordsRequest);
             return new SyncInvoker<ShowHotWordsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHotWordsResponse>);
@@ -2044,7 +1892,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateHotWordsResponse UpdateHotWords(UpdateHotWordsRequest updateHotWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hot_words_id", updateHotWordsRequest.HotWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHotWordsRequest.HotWordsId, out var valueOfHotWordsId)) urlParam.Add("hot_words_id", valueOfHotWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/hot-words/{hot_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHotWordsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2054,7 +1902,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateHotWordsResponse> UpdateHotWordsInvoker(UpdateHotWordsRequest updateHotWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("hot_words_id", updateHotWordsRequest.HotWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHotWordsRequest.HotWordsId, out var valueOfHotWordsId)) urlParam.Add("hot_words_id", valueOfHotWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/hot-words/{hot_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateHotWordsRequest);
             return new SyncInvoker<UpdateHotWordsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateHotWordsResponse>);
@@ -2166,7 +2014,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowInstructionLibraryResponse ShowInstructionLibrary(ShowInstructionLibraryRequest showInstructionLibraryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instruction_library_id", showInstructionLibraryRequest.InstructionLibraryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstructionLibraryRequest.InstructionLibraryId, out var valueOfInstructionLibraryId)) urlParam.Add("instruction_library_id", valueOfInstructionLibraryId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library/{instruction_library_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstructionLibraryRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2176,7 +2024,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowInstructionLibraryResponse> ShowInstructionLibraryInvoker(ShowInstructionLibraryRequest showInstructionLibraryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instruction_library_id", showInstructionLibraryRequest.InstructionLibraryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstructionLibraryRequest.InstructionLibraryId, out var valueOfInstructionLibraryId)) urlParam.Add("instruction_library_id", valueOfInstructionLibraryId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library/{instruction_library_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstructionLibraryRequest);
             return new SyncInvoker<ShowInstructionLibraryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstructionLibraryResponse>);
@@ -2192,7 +2040,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateInstructionLibraryResponse UpdateInstructionLibrary(UpdateInstructionLibraryRequest updateInstructionLibraryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instruction_library_id", updateInstructionLibraryRequest.InstructionLibraryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstructionLibraryRequest.InstructionLibraryId, out var valueOfInstructionLibraryId)) urlParam.Add("instruction_library_id", valueOfInstructionLibraryId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library/{instruction_library_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstructionLibraryRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2202,7 +2050,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateInstructionLibraryResponse> UpdateInstructionLibraryInvoker(UpdateInstructionLibraryRequest updateInstructionLibraryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instruction_library_id", updateInstructionLibraryRequest.InstructionLibraryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstructionLibraryRequest.InstructionLibraryId, out var valueOfInstructionLibraryId)) urlParam.Add("instruction_library_id", valueOfInstructionLibraryId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction-library/{instruction_library_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstructionLibraryRequest);
             return new SyncInvoker<UpdateInstructionLibraryResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstructionLibraryResponse>);
@@ -2290,7 +2138,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowInstructionResponse ShowInstruction(ShowInstructionRequest showInstructionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instruction_id", showInstructionRequest.InstructionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstructionRequest.InstructionId, out var valueOfInstructionId)) urlParam.Add("instruction_id", valueOfInstructionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction/{instruction_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstructionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2300,7 +2148,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowInstructionResponse> ShowInstructionInvoker(ShowInstructionRequest showInstructionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instruction_id", showInstructionRequest.InstructionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showInstructionRequest.InstructionId, out var valueOfInstructionId)) urlParam.Add("instruction_id", valueOfInstructionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction/{instruction_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstructionRequest);
             return new SyncInvoker<ShowInstructionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstructionResponse>);
@@ -2316,7 +2164,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateInstructionResponse UpdateInstruction(UpdateInstructionRequest updateInstructionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instruction_id", updateInstructionRequest.InstructionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstructionRequest.InstructionId, out var valueOfInstructionId)) urlParam.Add("instruction_id", valueOfInstructionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction/{instruction_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstructionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2326,7 +2174,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateInstructionResponse> UpdateInstructionInvoker(UpdateInstructionRequest updateInstructionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instruction_id", updateInstructionRequest.InstructionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInstructionRequest.InstructionId, out var valueOfInstructionId)) urlParam.Add("instruction_id", valueOfInstructionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/instruction/{instruction_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstructionRequest);
             return new SyncInvoker<UpdateInstructionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstructionResponse>);
@@ -2366,7 +2214,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteInteractionRuleGroupResponse DeleteInteractionRuleGroup(DeleteInteractionRuleGroupRequest deleteInteractionRuleGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteInteractionRuleGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInteractionRuleGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInteractionRuleGroupRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -2376,7 +2224,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteInteractionRuleGroupResponse> DeleteInteractionRuleGroupInvoker(DeleteInteractionRuleGroupRequest deleteInteractionRuleGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteInteractionRuleGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteInteractionRuleGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInteractionRuleGroupRequest);
             return new SyncInvoker<DeleteInteractionRuleGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInteractionRuleGroupResponse>);
@@ -2416,7 +2264,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateInteractionRuleGroupResponse UpdateInteractionRuleGroup(UpdateInteractionRuleGroupRequest updateInteractionRuleGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateInteractionRuleGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInteractionRuleGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInteractionRuleGroupRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2426,7 +2274,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateInteractionRuleGroupResponse> UpdateInteractionRuleGroupInvoker(UpdateInteractionRuleGroupRequest updateInteractionRuleGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateInteractionRuleGroupRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateInteractionRuleGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInteractionRuleGroupRequest);
             return new SyncInvoker<UpdateInteractionRuleGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInteractionRuleGroupResponse>);
@@ -2562,7 +2410,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowKnowledgeIntentResponse ShowKnowledgeIntent(ShowKnowledgeIntentRequest showKnowledgeIntentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("intent_id", showKnowledgeIntentRequest.IntentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKnowledgeIntentRequest.IntentId, out var valueOfIntentId)) urlParam.Add("intent_id", valueOfIntentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/intent/{intent_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKnowledgeIntentRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2572,7 +2420,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowKnowledgeIntentResponse> ShowKnowledgeIntentInvoker(ShowKnowledgeIntentRequest showKnowledgeIntentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("intent_id", showKnowledgeIntentRequest.IntentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKnowledgeIntentRequest.IntentId, out var valueOfIntentId)) urlParam.Add("intent_id", valueOfIntentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/intent/{intent_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKnowledgeIntentRequest);
             return new SyncInvoker<ShowKnowledgeIntentResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKnowledgeIntentResponse>);
@@ -2588,7 +2436,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateKnowledgeIntentResponse UpdateKnowledgeIntent(UpdateKnowledgeIntentRequest updateKnowledgeIntentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("intent_id", updateKnowledgeIntentRequest.IntentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKnowledgeIntentRequest.IntentId, out var valueOfIntentId)) urlParam.Add("intent_id", valueOfIntentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/intent/{intent_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKnowledgeIntentRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2598,7 +2446,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateKnowledgeIntentResponse> UpdateKnowledgeIntentInvoker(UpdateKnowledgeIntentRequest updateKnowledgeIntentRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("intent_id", updateKnowledgeIntentRequest.IntentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKnowledgeIntentRequest.IntentId, out var valueOfIntentId)) urlParam.Add("intent_id", valueOfIntentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/intent/{intent_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKnowledgeIntentRequest);
             return new SyncInvoker<UpdateKnowledgeIntentResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateKnowledgeIntentResponse>);
@@ -2717,7 +2565,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowKnowledgeLibraryResponse ShowKnowledgeLibrary(ShowKnowledgeLibraryRequest showKnowledgeLibraryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("knowledge_library_id", showKnowledgeLibraryRequest.KnowledgeLibraryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKnowledgeLibraryRequest.KnowledgeLibraryId, out var valueOfKnowledgeLibraryId)) urlParam.Add("knowledge_library_id", valueOfKnowledgeLibraryId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/{knowledge_library_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKnowledgeLibraryRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2727,7 +2575,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowKnowledgeLibraryResponse> ShowKnowledgeLibraryInvoker(ShowKnowledgeLibraryRequest showKnowledgeLibraryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("knowledge_library_id", showKnowledgeLibraryRequest.KnowledgeLibraryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKnowledgeLibraryRequest.KnowledgeLibraryId, out var valueOfKnowledgeLibraryId)) urlParam.Add("knowledge_library_id", valueOfKnowledgeLibraryId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/{knowledge_library_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKnowledgeLibraryRequest);
             return new SyncInvoker<ShowKnowledgeLibraryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKnowledgeLibraryResponse>);
@@ -2743,7 +2591,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateKnowledgeLibraryResponse UpdateKnowledgeLibrary(UpdateKnowledgeLibraryRequest updateKnowledgeLibraryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("knowledge_library_id", updateKnowledgeLibraryRequest.KnowledgeLibraryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKnowledgeLibraryRequest.KnowledgeLibraryId, out var valueOfKnowledgeLibraryId)) urlParam.Add("knowledge_library_id", valueOfKnowledgeLibraryId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/{knowledge_library_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKnowledgeLibraryRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2753,7 +2601,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateKnowledgeLibraryResponse> UpdateKnowledgeLibraryInvoker(UpdateKnowledgeLibraryRequest updateKnowledgeLibraryRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("knowledge_library_id", updateKnowledgeLibraryRequest.KnowledgeLibraryId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKnowledgeLibraryRequest.KnowledgeLibraryId, out var valueOfKnowledgeLibraryId)) urlParam.Add("knowledge_library_id", valueOfKnowledgeLibraryId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/knowledge-library/{knowledge_library_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKnowledgeLibraryRequest);
             return new SyncInvoker<UpdateKnowledgeLibraryResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateKnowledgeLibraryResponse>);
@@ -2865,7 +2713,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowKnowledgeQuestionResponse ShowKnowledgeQuestion(ShowKnowledgeQuestionRequest showKnowledgeQuestionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("question_id", showKnowledgeQuestionRequest.QuestionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKnowledgeQuestionRequest.QuestionId, out var valueOfQuestionId)) urlParam.Add("question_id", valueOfQuestionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/question/{question_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKnowledgeQuestionRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2875,7 +2723,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowKnowledgeQuestionResponse> ShowKnowledgeQuestionInvoker(ShowKnowledgeQuestionRequest showKnowledgeQuestionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("question_id", showKnowledgeQuestionRequest.QuestionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKnowledgeQuestionRequest.QuestionId, out var valueOfQuestionId)) urlParam.Add("question_id", valueOfQuestionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/question/{question_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKnowledgeQuestionRequest);
             return new SyncInvoker<ShowKnowledgeQuestionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKnowledgeQuestionResponse>);
@@ -2915,7 +2763,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateKnowledgeQuestionResponse UpdateKnowledgeQuestion(UpdateKnowledgeQuestionRequest updateKnowledgeQuestionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("question_id", updateKnowledgeQuestionRequest.QuestionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKnowledgeQuestionRequest.QuestionId, out var valueOfQuestionId)) urlParam.Add("question_id", valueOfQuestionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/question/{question_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKnowledgeQuestionRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -2925,7 +2773,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateKnowledgeQuestionResponse> UpdateKnowledgeQuestionInvoker(UpdateKnowledgeQuestionRequest updateKnowledgeQuestionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("question_id", updateKnowledgeQuestionRequest.QuestionId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKnowledgeQuestionRequest.QuestionId, out var valueOfQuestionId)) urlParam.Add("question_id", valueOfQuestionId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/question/{question_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKnowledgeQuestionRequest);
             return new SyncInvoker<UpdateKnowledgeQuestionResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateKnowledgeQuestionResponse>);
@@ -2989,7 +2837,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ExportKnowledgeSkillResponse ExportKnowledgeSkill(ExportKnowledgeSkillRequest exportKnowledgeSkillRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("skill_id", exportKnowledgeSkillRequest.SkillId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(exportKnowledgeSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/skill/{skill_id}/export", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportKnowledgeSkillRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -2999,7 +2847,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ExportKnowledgeSkillResponse> ExportKnowledgeSkillInvoker(ExportKnowledgeSkillRequest exportKnowledgeSkillRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("skill_id", exportKnowledgeSkillRequest.SkillId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(exportKnowledgeSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/skill/{skill_id}/export", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportKnowledgeSkillRequest);
             return new SyncInvoker<ExportKnowledgeSkillResponse>(this, "GET", request, JsonUtils.DeSerialize<ExportKnowledgeSkillResponse>);
@@ -3039,7 +2887,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowKnowledgeSkillResponse ShowKnowledgeSkill(ShowKnowledgeSkillRequest showKnowledgeSkillRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("skill_id", showKnowledgeSkillRequest.SkillId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKnowledgeSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/skill/{skill_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKnowledgeSkillRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3049,7 +2897,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowKnowledgeSkillResponse> ShowKnowledgeSkillInvoker(ShowKnowledgeSkillRequest showKnowledgeSkillRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("skill_id", showKnowledgeSkillRequest.SkillId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showKnowledgeSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/skill/{skill_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKnowledgeSkillRequest);
             return new SyncInvoker<ShowKnowledgeSkillResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKnowledgeSkillResponse>);
@@ -3065,7 +2913,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateKnowledgeSkillResponse UpdateKnowledgeSkill(UpdateKnowledgeSkillRequest updateKnowledgeSkillRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("skill_id", updateKnowledgeSkillRequest.SkillId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKnowledgeSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/skill/{skill_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKnowledgeSkillRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3075,7 +2923,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateKnowledgeSkillResponse> UpdateKnowledgeSkillInvoker(UpdateKnowledgeSkillRequest updateKnowledgeSkillRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("skill_id", updateKnowledgeSkillRequest.SkillId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateKnowledgeSkillRequest.SkillId, out var valueOfSkillId)) urlParam.Add("skill_id", valueOfSkillId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/knowledge/skill/{skill_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateKnowledgeSkillRequest);
             return new SyncInvoker<UpdateKnowledgeSkillResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateKnowledgeSkillResponse>);
@@ -3115,7 +2963,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteLivePlatformResponse DeleteLivePlatform(DeleteLivePlatformRequest deleteLivePlatformRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("platform_id", deleteLivePlatformRequest.PlatformId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLivePlatformRequest.PlatformId, out var valueOfPlatformId)) urlParam.Add("platform_id", valueOfPlatformId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-platforms/platforms/{platform_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLivePlatformRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -3125,7 +2973,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteLivePlatformResponse> DeleteLivePlatformInvoker(DeleteLivePlatformRequest deleteLivePlatformRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("platform_id", deleteLivePlatformRequest.PlatformId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLivePlatformRequest.PlatformId, out var valueOfPlatformId)) urlParam.Add("platform_id", valueOfPlatformId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-platforms/platforms/{platform_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLivePlatformRequest);
             return new SyncInvoker<DeleteLivePlatformResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLivePlatformResponse>);
@@ -3189,7 +3037,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowLivePlatformResponse ShowLivePlatform(ShowLivePlatformRequest showLivePlatformRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("platform_id", showLivePlatformRequest.PlatformId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLivePlatformRequest.PlatformId, out var valueOfPlatformId)) urlParam.Add("platform_id", valueOfPlatformId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-platforms/platforms/{platform_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLivePlatformRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3199,7 +3047,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowLivePlatformResponse> ShowLivePlatformInvoker(ShowLivePlatformRequest showLivePlatformRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("platform_id", showLivePlatformRequest.PlatformId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLivePlatformRequest.PlatformId, out var valueOfPlatformId)) urlParam.Add("platform_id", valueOfPlatformId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-platforms/platforms/{platform_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLivePlatformRequest);
             return new SyncInvoker<ShowLivePlatformResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLivePlatformResponse>);
@@ -3215,7 +3063,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateLivePlatformResponse UpdateLivePlatform(UpdateLivePlatformRequest updateLivePlatformRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("platform_id", updateLivePlatformRequest.PlatformId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLivePlatformRequest.PlatformId, out var valueOfPlatformId)) urlParam.Add("platform_id", valueOfPlatformId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-platforms/platforms/{platform_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLivePlatformRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3225,7 +3073,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateLivePlatformResponse> UpdateLivePlatformInvoker(UpdateLivePlatformRequest updateLivePlatformRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("platform_id", updateLivePlatformRequest.PlatformId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLivePlatformRequest.PlatformId, out var valueOfPlatformId)) urlParam.Add("platform_id", valueOfPlatformId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-platforms/platforms/{platform_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLivePlatformRequest);
             return new SyncInvoker<UpdateLivePlatformResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateLivePlatformResponse>);
@@ -3313,7 +3161,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowLlmConfigResponse ShowLlmConfig(ShowLlmConfigRequest showLlmConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("llm_config_id", showLlmConfigRequest.LlmConfigId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLlmConfigRequest.LlmConfigId, out var valueOfLlmConfigId)) urlParam.Add("llm_config_id", valueOfLlmConfigId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config/{llm_config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLlmConfigRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3323,7 +3171,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowLlmConfigResponse> ShowLlmConfigInvoker(ShowLlmConfigRequest showLlmConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("llm_config_id", showLlmConfigRequest.LlmConfigId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLlmConfigRequest.LlmConfigId, out var valueOfLlmConfigId)) urlParam.Add("llm_config_id", valueOfLlmConfigId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config/{llm_config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLlmConfigRequest);
             return new SyncInvoker<ShowLlmConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLlmConfigResponse>);
@@ -3339,7 +3187,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateLlmConfigResponse UpdateLlmConfig(UpdateLlmConfigRequest updateLlmConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("llm_config_id", updateLlmConfigRequest.LlmConfigId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLlmConfigRequest.LlmConfigId, out var valueOfLlmConfigId)) urlParam.Add("llm_config_id", valueOfLlmConfigId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config/{llm_config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLlmConfigRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3349,7 +3197,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateLlmConfigResponse> UpdateLlmConfigInvoker(UpdateLlmConfigRequest updateLlmConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("llm_config_id", updateLlmConfigRequest.LlmConfigId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLlmConfigRequest.LlmConfigId, out var valueOfLlmConfigId)) urlParam.Add("llm_config_id", valueOfLlmConfigId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/llm-config/{llm_config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLlmConfigRequest);
             return new SyncInvoker<UpdateLlmConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateLlmConfigResponse>);
@@ -3437,7 +3285,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowMcpServerResponse ShowMcpServer(ShowMcpServerRequest showMcpServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("mcp_server_id", showMcpServerRequest.McpServerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMcpServerRequest.McpServerId, out var valueOfMcpServerId)) urlParam.Add("mcp_server_id", valueOfMcpServerId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server/{mcp_server_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMcpServerRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3447,7 +3295,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowMcpServerResponse> ShowMcpServerInvoker(ShowMcpServerRequest showMcpServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("mcp_server_id", showMcpServerRequest.McpServerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMcpServerRequest.McpServerId, out var valueOfMcpServerId)) urlParam.Add("mcp_server_id", valueOfMcpServerId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server/{mcp_server_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMcpServerRequest);
             return new SyncInvoker<ShowMcpServerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMcpServerResponse>);
@@ -3463,7 +3311,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateMcpServerResponse UpdateMcpServer(UpdateMcpServerRequest updateMcpServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("mcp_server_id", updateMcpServerRequest.McpServerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMcpServerRequest.McpServerId, out var valueOfMcpServerId)) urlParam.Add("mcp_server_id", valueOfMcpServerId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server/{mcp_server_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateMcpServerRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3473,7 +3321,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateMcpServerResponse> UpdateMcpServerInvoker(UpdateMcpServerRequest updateMcpServerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("mcp_server_id", updateMcpServerRequest.McpServerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMcpServerRequest.McpServerId, out var valueOfMcpServerId)) urlParam.Add("mcp_server_id", valueOfMcpServerId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/mcp-server/{mcp_server_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateMcpServerRequest);
             return new SyncInvoker<UpdateMcpServerResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateMcpServerResponse>);
@@ -3586,7 +3434,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeletePacifyWordsResponse DeletePacifyWords(DeletePacifyWordsRequest deletePacifyWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pacify_words_id", deletePacifyWordsRequest.PacifyWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePacifyWordsRequest.PacifyWordsId, out var valueOfPacifyWordsId)) urlParam.Add("pacify_words_id", valueOfPacifyWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/pacify-words/{pacify_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePacifyWordsRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -3596,7 +3444,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeletePacifyWordsResponse> DeletePacifyWordsInvoker(DeletePacifyWordsRequest deletePacifyWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pacify_words_id", deletePacifyWordsRequest.PacifyWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePacifyWordsRequest.PacifyWordsId, out var valueOfPacifyWordsId)) urlParam.Add("pacify_words_id", valueOfPacifyWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/pacify-words/{pacify_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePacifyWordsRequest);
             return new SyncInvoker<DeletePacifyWordsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePacifyWordsResponse>);
@@ -3636,7 +3484,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowPacifyWordsResponse ShowPacifyWords(ShowPacifyWordsRequest showPacifyWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pacify_words_id", showPacifyWordsRequest.PacifyWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPacifyWordsRequest.PacifyWordsId, out var valueOfPacifyWordsId)) urlParam.Add("pacify_words_id", valueOfPacifyWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/pacify-words/{pacify_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPacifyWordsRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3646,7 +3494,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowPacifyWordsResponse> ShowPacifyWordsInvoker(ShowPacifyWordsRequest showPacifyWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pacify_words_id", showPacifyWordsRequest.PacifyWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPacifyWordsRequest.PacifyWordsId, out var valueOfPacifyWordsId)) urlParam.Add("pacify_words_id", valueOfPacifyWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/pacify-words/{pacify_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPacifyWordsRequest);
             return new SyncInvoker<ShowPacifyWordsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPacifyWordsResponse>);
@@ -3734,7 +3582,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdatePacifyWordsResponse UpdatePacifyWords(UpdatePacifyWordsRequest updatePacifyWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pacify_words_id", updatePacifyWordsRequest.PacifyWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePacifyWordsRequest.PacifyWordsId, out var valueOfPacifyWordsId)) urlParam.Add("pacify_words_id", valueOfPacifyWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/pacify-words/{pacify_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePacifyWordsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -3744,7 +3592,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdatePacifyWordsResponse> UpdatePacifyWordsInvoker(UpdatePacifyWordsRequest updatePacifyWordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pacify_words_id", updatePacifyWordsRequest.PacifyWordsId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePacifyWordsRequest.PacifyWordsId, out var valueOfPacifyWordsId)) urlParam.Add("pacify_words_id", valueOfPacifyWordsId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/pacify-words/{pacify_words_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePacifyWordsRequest);
             return new SyncInvoker<UpdatePacifyWordsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePacifyWordsResponse>);
@@ -3880,7 +3728,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowPictureModelingJobResponse ShowPictureModelingJob(ShowPictureModelingJobRequest showPictureModelingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showPictureModelingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPictureModelingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human/stylized/picture-modelings/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPictureModelingJobRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3890,7 +3738,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowPictureModelingJobResponse> ShowPictureModelingJobInvoker(ShowPictureModelingJobRequest showPictureModelingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showPictureModelingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPictureModelingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human/stylized/picture-modelings/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPictureModelingJobRequest);
             return new SyncInvoker<ShowPictureModelingJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPictureModelingJobResponse>);
@@ -3978,7 +3826,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowPluginConfigResponse ShowPluginConfig(ShowPluginConfigRequest showPluginConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("plugin_config_id", showPluginConfigRequest.PluginConfigId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPluginConfigRequest.PluginConfigId, out var valueOfPluginConfigId)) urlParam.Add("plugin_config_id", valueOfPluginConfigId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config/{plugin_config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPluginConfigRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -3988,7 +3836,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowPluginConfigResponse> ShowPluginConfigInvoker(ShowPluginConfigRequest showPluginConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("plugin_config_id", showPluginConfigRequest.PluginConfigId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPluginConfigRequest.PluginConfigId, out var valueOfPluginConfigId)) urlParam.Add("plugin_config_id", valueOfPluginConfigId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config/{plugin_config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPluginConfigRequest);
             return new SyncInvoker<ShowPluginConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPluginConfigResponse>);
@@ -4028,7 +3876,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdatePluginConfigResponse UpdatePluginConfig(UpdatePluginConfigRequest updatePluginConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("plugin_config_id", updatePluginConfigRequest.PluginConfigId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePluginConfigRequest.PluginConfigId, out var valueOfPluginConfigId)) urlParam.Add("plugin_config_id", valueOfPluginConfigId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config/{plugin_config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePluginConfigRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4038,7 +3886,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdatePluginConfigResponse> UpdatePluginConfigInvoker(UpdatePluginConfigRequest updatePluginConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("plugin_config_id", updatePluginConfigRequest.PluginConfigId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePluginConfigRequest.PluginConfigId, out var valueOfPluginConfigId)) urlParam.Add("plugin_config_id", valueOfPluginConfigId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/plugin-config/{plugin_config_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePluginConfigRequest);
             return new SyncInvoker<UpdatePluginConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdatePluginConfigResponse>);
@@ -4078,7 +3926,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteProductResponse DeleteProduct(DeleteProductRequest deleteProductRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("product_id", deleteProductRequest.ProductId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteProductRequest.ProductId, out var valueOfProductId)) urlParam.Add("product_id", valueOfProductId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/products/{product_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProductRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -4088,7 +3936,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteProductResponse> DeleteProductInvoker(DeleteProductRequest deleteProductRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("product_id", deleteProductRequest.ProductId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteProductRequest.ProductId, out var valueOfProductId)) urlParam.Add("product_id", valueOfProductId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/products/{product_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteProductRequest);
             return new SyncInvoker<DeleteProductResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteProductResponse>);
@@ -4128,7 +3976,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SetProductAssetResponse SetProductAsset(SetProductAssetRequest setProductAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("product_id", setProductAssetRequest.ProductId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setProductAssetRequest.ProductId, out var valueOfProductId)) urlParam.Add("product_id", valueOfProductId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/products/{product_id}/assets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setProductAssetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4138,7 +3986,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<SetProductAssetResponse> SetProductAssetInvoker(SetProductAssetRequest setProductAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("product_id", setProductAssetRequest.ProductId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setProductAssetRequest.ProductId, out var valueOfProductId)) urlParam.Add("product_id", valueOfProductId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/products/{product_id}/assets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setProductAssetRequest);
             return new SyncInvoker<SetProductAssetResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SetProductAssetResponse>);
@@ -4154,7 +4002,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowProductResponse ShowProduct(ShowProductRequest showProductRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("product_id", showProductRequest.ProductId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProductRequest.ProductId, out var valueOfProductId)) urlParam.Add("product_id", valueOfProductId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/products/{product_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProductRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4164,7 +4012,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowProductResponse> ShowProductInvoker(ShowProductRequest showProductRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("product_id", showProductRequest.ProductId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showProductRequest.ProductId, out var valueOfProductId)) urlParam.Add("product_id", valueOfProductId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/products/{product_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showProductRequest);
             return new SyncInvoker<ShowProductResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowProductResponse>);
@@ -4180,7 +4028,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateProductResponse UpdateProduct(UpdateProductRequest updateProductRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("product_id", updateProductRequest.ProductId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProductRequest.ProductId, out var valueOfProductId)) urlParam.Add("product_id", valueOfProductId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/products/{product_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProductRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4190,7 +4038,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateProductResponse> UpdateProductInvoker(UpdateProductRequest updateProductRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("product_id", updateProductRequest.ProductId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateProductRequest.ProductId, out var valueOfProductId)) urlParam.Add("product_id", valueOfProductId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/products/{product_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateProductRequest);
             return new SyncInvoker<UpdateProductResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateProductResponse>);
@@ -4278,7 +4126,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowQuestionAnswerResponse ShowQuestionAnswer(ShowQuestionAnswerRequest showQuestionAnswerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("question_answer_id", showQuestionAnswerRequest.QuestionAnswerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showQuestionAnswerRequest.QuestionAnswerId, out var valueOfQuestionAnswerId)) urlParam.Add("question_answer_id", valueOfQuestionAnswerId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer/{question_answer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuestionAnswerRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4288,7 +4136,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowQuestionAnswerResponse> ShowQuestionAnswerInvoker(ShowQuestionAnswerRequest showQuestionAnswerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("question_answer_id", showQuestionAnswerRequest.QuestionAnswerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showQuestionAnswerRequest.QuestionAnswerId, out var valueOfQuestionAnswerId)) urlParam.Add("question_answer_id", valueOfQuestionAnswerId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer/{question_answer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuestionAnswerRequest);
             return new SyncInvoker<ShowQuestionAnswerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuestionAnswerResponse>);
@@ -4304,7 +4152,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateQuestionAnswerResponse UpdateQuestionAnswer(UpdateQuestionAnswerRequest updateQuestionAnswerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("question_answer_id", updateQuestionAnswerRequest.QuestionAnswerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateQuestionAnswerRequest.QuestionAnswerId, out var valueOfQuestionAnswerId)) urlParam.Add("question_answer_id", valueOfQuestionAnswerId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer/{question_answer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateQuestionAnswerRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4314,7 +4162,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateQuestionAnswerResponse> UpdateQuestionAnswerInvoker(UpdateQuestionAnswerRequest updateQuestionAnswerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("question_answer_id", updateQuestionAnswerRequest.QuestionAnswerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateQuestionAnswerRequest.QuestionAnswerId, out var valueOfQuestionAnswerId)) urlParam.Add("question_answer_id", valueOfQuestionAnswerId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/question-answer/{question_answer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateQuestionAnswerRequest);
             return new SyncInvoker<UpdateQuestionAnswerResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateQuestionAnswerResponse>);
@@ -4402,7 +4250,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowRobotResponse ShowRobot(ShowRobotRequest showRobotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("robot_id", showRobotRequest.RobotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRobotRequest.RobotId, out var valueOfRobotId)) urlParam.Add("robot_id", valueOfRobotId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/robot/{robot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRobotRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4412,7 +4260,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowRobotResponse> ShowRobotInvoker(ShowRobotRequest showRobotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("robot_id", showRobotRequest.RobotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRobotRequest.RobotId, out var valueOfRobotId)) urlParam.Add("robot_id", valueOfRobotId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/robot/{robot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRobotRequest);
             return new SyncInvoker<ShowRobotResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRobotResponse>);
@@ -4428,7 +4276,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateRobotResponse UpdateRobot(UpdateRobotRequest updateRobotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("robot_id", updateRobotRequest.RobotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRobotRequest.RobotId, out var valueOfRobotId)) urlParam.Add("robot_id", valueOfRobotId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/robot/{robot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRobotRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4438,7 +4286,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateRobotResponse> UpdateRobotInvoker(UpdateRobotRequest updateRobotRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("robot_id", updateRobotRequest.RobotId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRobotRequest.RobotId, out var valueOfRobotId)) urlParam.Add("robot_id", valueOfRobotId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/robot/{robot_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRobotRequest);
             return new SyncInvoker<UpdateRobotResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateRobotResponse>);
@@ -4550,7 +4398,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowRoleResponse ShowRole(ShowRoleRequest showRoleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", showRoleRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRoleRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRoleRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4560,7 +4408,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowRoleResponse> ShowRoleInvoker(ShowRoleRequest showRoleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", showRoleRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showRoleRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRoleRequest);
             return new SyncInvoker<ShowRoleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRoleResponse>);
@@ -4576,7 +4424,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateRoleResponse UpdateRole(UpdateRoleRequest updateRoleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", updateRoleRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRoleRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRoleRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4586,7 +4434,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateRoleResponse> UpdateRoleInvoker(UpdateRoleRequest updateRoleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("role_id", updateRoleRequest.RoleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateRoleRequest.RoleId, out var valueOfRoleId)) urlParam.Add("role_id", valueOfRoleId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/role/{role_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateRoleRequest);
             return new SyncInvoker<UpdateRoleResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateRoleResponse>);
@@ -4626,7 +4474,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteSmartChatRoomResponse DeleteSmartChatRoom(DeleteSmartChatRoomRequest deleteSmartChatRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", deleteSmartChatRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSmartChatRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-chat-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSmartChatRoomRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -4636,7 +4484,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteSmartChatRoomResponse> DeleteSmartChatRoomInvoker(DeleteSmartChatRoomRequest deleteSmartChatRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", deleteSmartChatRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSmartChatRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-chat-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSmartChatRoomRequest);
             return new SyncInvoker<DeleteSmartChatRoomResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSmartChatRoomResponse>);
@@ -4676,7 +4524,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowSmartChatRoomResponse ShowSmartChatRoom(ShowSmartChatRoomRequest showSmartChatRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", showSmartChatRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSmartChatRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-chat-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmartChatRoomRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4686,7 +4534,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowSmartChatRoomResponse> ShowSmartChatRoomInvoker(ShowSmartChatRoomRequest showSmartChatRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", showSmartChatRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSmartChatRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-chat-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmartChatRoomRequest);
             return new SyncInvoker<ShowSmartChatRoomResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSmartChatRoomResponse>);
@@ -4702,7 +4550,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateSmartChatRoomResponse UpdateSmartChatRoom(UpdateSmartChatRoomRequest updateSmartChatRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", updateSmartChatRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSmartChatRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-chat-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSmartChatRoomRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -4712,7 +4560,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateSmartChatRoomResponse> UpdateSmartChatRoomInvoker(UpdateSmartChatRoomRequest updateSmartChatRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", updateSmartChatRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSmartChatRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-chat-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSmartChatRoomRequest);
             return new SyncInvoker<UpdateSmartChatRoomResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSmartChatRoomResponse>);
@@ -4728,8 +4576,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public BatchConfirmLiveCommandsResponse BatchConfirmLiveCommands(BatchConfirmLiveCommandsRequest batchConfirmLiveCommandsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", batchConfirmLiveCommandsRequest.RoomId.ToString());
-            urlParam.Add("job_id", batchConfirmLiveCommandsRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchConfirmLiveCommandsRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(batchConfirmLiveCommandsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/batch-commands-confirm", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchConfirmLiveCommandsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4739,8 +4587,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<BatchConfirmLiveCommandsResponse> BatchConfirmLiveCommandsInvoker(BatchConfirmLiveCommandsRequest batchConfirmLiveCommandsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", batchConfirmLiveCommandsRequest.RoomId.ToString());
-            urlParam.Add("job_id", batchConfirmLiveCommandsRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchConfirmLiveCommandsRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(batchConfirmLiveCommandsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/batch-commands-confirm", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchConfirmLiveCommandsRequest);
             return new SyncInvoker<BatchConfirmLiveCommandsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchConfirmLiveCommandsResponse>);
@@ -4756,8 +4604,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ExecuteSmartLiveCommandResponse ExecuteSmartLiveCommand(ExecuteSmartLiveCommandRequest executeSmartLiveCommandRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", executeSmartLiveCommandRequest.RoomId.ToString());
-            urlParam.Add("job_id", executeSmartLiveCommandRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeSmartLiveCommandRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(executeSmartLiveCommandRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/command", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeSmartLiveCommandRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4767,8 +4615,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ExecuteSmartLiveCommandResponse> ExecuteSmartLiveCommandInvoker(ExecuteSmartLiveCommandRequest executeSmartLiveCommandRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", executeSmartLiveCommandRequest.RoomId.ToString());
-            urlParam.Add("job_id", executeSmartLiveCommandRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeSmartLiveCommandRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(executeSmartLiveCommandRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/command", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeSmartLiveCommandRequest);
             return new SyncInvoker<ExecuteSmartLiveCommandResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteSmartLiveCommandResponse>);
@@ -4784,7 +4632,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ListSmartLiveResponse ListSmartLive(ListSmartLiveRequest listSmartLiveRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", listSmartLiveRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSmartLiveRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSmartLiveRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4794,7 +4642,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ListSmartLiveResponse> ListSmartLiveInvoker(ListSmartLiveRequest listSmartLiveRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", listSmartLiveRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listSmartLiveRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSmartLiveRequest);
             return new SyncInvoker<ListSmartLiveResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSmartLiveResponse>);
@@ -4882,8 +4730,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public LiveEventReportResponse LiveEventReport(LiveEventReportRequest liveEventReportRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", liveEventReportRequest.RoomId.ToString());
-            urlParam.Add("job_id", liveEventReportRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(liveEventReportRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(liveEventReportRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/live-event-report", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", liveEventReportRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4893,8 +4741,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<LiveEventReportResponse> LiveEventReportInvoker(LiveEventReportRequest liveEventReportRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", liveEventReportRequest.RoomId.ToString());
-            urlParam.Add("job_id", liveEventReportRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(liveEventReportRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(liveEventReportRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/live-event-report", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", liveEventReportRequest);
             return new SyncInvoker<LiveEventReportResponse>(this, "POST", request, JsonUtils.DeSerialize<LiveEventReportResponse>);
@@ -4910,8 +4758,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowSmartLiveResponse ShowSmartLive(ShowSmartLiveRequest showSmartLiveRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", showSmartLiveRequest.RoomId.ToString());
-            urlParam.Add("job_id", showSmartLiveRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSmartLiveRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(showSmartLiveRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmartLiveRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -4921,8 +4769,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowSmartLiveResponse> ShowSmartLiveInvoker(ShowSmartLiveRequest showSmartLiveRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", showSmartLiveRequest.RoomId.ToString());
-            urlParam.Add("job_id", showSmartLiveRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSmartLiveRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(showSmartLiveRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmartLiveRequest);
             return new SyncInvoker<ShowSmartLiveResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSmartLiveResponse>);
@@ -4938,7 +4786,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public StartSmartLiveResponse StartSmartLive(StartSmartLiveRequest startSmartLiveRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", startSmartLiveRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startSmartLiveRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startSmartLiveRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4948,7 +4796,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<StartSmartLiveResponse> StartSmartLiveInvoker(StartSmartLiveRequest startSmartLiveRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", startSmartLiveRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(startSmartLiveRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startSmartLiveRequest);
             return new SyncInvoker<StartSmartLiveResponse>(this, "POST", request, JsonUtils.DeSerialize<StartSmartLiveResponse>);
@@ -4964,8 +4812,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public StopSmartLiveResponse StopSmartLive(StopSmartLiveRequest stopSmartLiveRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", stopSmartLiveRequest.RoomId.ToString());
-            urlParam.Add("job_id", stopSmartLiveRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopSmartLiveRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(stopSmartLiveRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/stop", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopSmartLiveRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -4975,8 +4823,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<StopSmartLiveResponse> StopSmartLiveInvoker(StopSmartLiveRequest stopSmartLiveRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", stopSmartLiveRequest.RoomId.ToString());
-            urlParam.Add("job_id", stopSmartLiveRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopSmartLiveRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(stopSmartLiveRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/stop", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopSmartLiveRequest);
             return new SyncInvoker<StopSmartLiveResponse>(this, "POST", request, JsonUtils.DeSerializeNull<StopSmartLiveResponse>);
@@ -4992,7 +4840,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ConfirmSmarLiveRoomResponse ConfirmSmarLiveRoom(ConfirmSmarLiveRoomRequest confirmSmarLiveRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", confirmSmarLiveRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(confirmSmarLiveRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/confirm", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmSmarLiveRoomRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5002,7 +4850,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ConfirmSmarLiveRoomResponse> ConfirmSmarLiveRoomInvoker(ConfirmSmarLiveRoomRequest confirmSmarLiveRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", confirmSmarLiveRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(confirmSmarLiveRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/confirm", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmSmarLiveRoomRequest);
             return new SyncInvoker<ConfirmSmarLiveRoomResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ConfirmSmarLiveRoomResponse>);
@@ -5042,7 +4890,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteSmartLiveRoomResponse DeleteSmartLiveRoom(DeleteSmartLiveRoomRequest deleteSmartLiveRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", deleteSmartLiveRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSmartLiveRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSmartLiveRoomRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -5052,7 +4900,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteSmartLiveRoomResponse> DeleteSmartLiveRoomInvoker(DeleteSmartLiveRoomRequest deleteSmartLiveRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", deleteSmartLiveRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSmartLiveRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSmartLiveRoomRequest);
             return new SyncInvoker<DeleteSmartLiveRoomResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSmartLiveRoomResponse>);
@@ -5092,7 +4940,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowSmartLiveRoomResponse ShowSmartLiveRoom(ShowSmartLiveRoomRequest showSmartLiveRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", showSmartLiveRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSmartLiveRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmartLiveRoomRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5102,7 +4950,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowSmartLiveRoomResponse> ShowSmartLiveRoomInvoker(ShowSmartLiveRoomRequest showSmartLiveRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", showSmartLiveRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSmartLiveRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmartLiveRoomRequest);
             return new SyncInvoker<ShowSmartLiveRoomResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSmartLiveRoomResponse>);
@@ -5118,7 +4966,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateSmartLiveRoomResponse UpdateSmartLiveRoom(UpdateSmartLiveRoomRequest updateSmartLiveRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", updateSmartLiveRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSmartLiveRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSmartLiveRoomRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5128,7 +4976,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateSmartLiveRoomResponse> UpdateSmartLiveRoomInvoker(UpdateSmartLiveRoomRequest updateSmartLiveRoomRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("room_id", updateSmartLiveRoomRequest.RoomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSmartLiveRoomRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSmartLiveRoomRequest);
             return new SyncInvoker<UpdateSmartLiveRoomResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSmartLiveRoomResponse>);
@@ -5192,7 +5040,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowSubtitleFileResponse ShowSubtitleFile(ShowSubtitleFileRequest showSubtitleFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showSubtitleFileRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSubtitleFileRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subtitle-files/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubtitleFileRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5202,7 +5050,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowSubtitleFileResponse> ShowSubtitleFileInvoker(ShowSubtitleFileRequest showSubtitleFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showSubtitleFileRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSubtitleFileRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/subtitle-files/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubtitleFileRequest);
             return new SyncInvoker<ShowSubtitleFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSubtitleFileResponse>);
@@ -5285,6 +5133,54 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 签署云服务声明
+        ///
+        /// 签署云服务声明。调用此接口前请知悉[[metastudio隐私协议](https://www.huaweicloud.com/declaration/tsa_metastudio.html)](tag:hws)[[metastudio隐私协议](https://www.huaweicloud.com/intl/en-us/declaration-sg/tsa-metastudio.html)](tag:hws_hk)。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SignAgreementResponse SignAgreement(SignAgreementRequest signAgreementRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/service-agreements/signed", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", signAgreementRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SignAgreementResponse>(response);
+        }
+
+        public SyncInvoker<SignAgreementResponse> SignAgreementInvoker(SignAgreementRequest signAgreementRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/service-agreements/signed", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", signAgreementRequest);
+            return new SyncInvoker<SignAgreementResponse>(this, "POST", request, JsonUtils.DeSerialize<SignAgreementResponse>);
+        }
+        
+        /// <summary>
+        /// 签署特殊云服务声明
+        ///
+        /// 签署特殊云服务声明,目前可签署自动支付协议。开启自动支付协议之后,调用下单接口时，华为云将进行自动扣费。若因账户余额不足导致扣费失败，系统会生成待支付订单，您可前往费用中心-我的订单查看，届时您需手动完成支付。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SignSpecialAgreementResponse SignSpecialAgreement(SignSpecialAgreementRequest signSpecialAgreementRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/special-agreements/signed", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", signSpecialAgreementRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SignSpecialAgreementResponse>(response);
+        }
+
+        public SyncInvoker<SignSpecialAgreementResponse> SignSpecialAgreementInvoker(SignSpecialAgreementRequest signSpecialAgreementRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/special-agreements/signed", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", signSpecialAgreementRequest);
+            return new SyncInvoker<SignSpecialAgreementResponse>(this, "POST", request, JsonUtils.DeSerialize<SignSpecialAgreementResponse>);
+        }
+        
+        /// <summary>
         /// 提交语音训练任务
         ///
         /// 提交训练任务,执行该接口后,任务会进入审核状态,审核完成后会等待训练。
@@ -5294,7 +5190,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public CommitVoiceTrainingJobResponse CommitVoiceTrainingJob(CommitVoiceTrainingJobRequest commitVoiceTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", commitVoiceTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(commitVoiceTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", commitVoiceTrainingJobRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5304,7 +5200,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<CommitVoiceTrainingJobResponse> CommitVoiceTrainingJobInvoker(CommitVoiceTrainingJobRequest commitVoiceTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", commitVoiceTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(commitVoiceTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", commitVoiceTrainingJobRequest);
             return new SyncInvoker<CommitVoiceTrainingJobResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CommitVoiceTrainingJobResponse>);
@@ -5432,7 +5328,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteVoiceTrainingJobResponse DeleteVoiceTrainingJob(DeleteVoiceTrainingJobRequest deleteVoiceTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", deleteVoiceTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVoiceTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVoiceTrainingJobRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -5442,7 +5338,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteVoiceTrainingJobResponse> DeleteVoiceTrainingJobInvoker(DeleteVoiceTrainingJobRequest deleteVoiceTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", deleteVoiceTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVoiceTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVoiceTrainingJobRequest);
             return new SyncInvoker<DeleteVoiceTrainingJobResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVoiceTrainingJobResponse>);
@@ -5458,7 +5354,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ListJobOperationLogResponse ListJobOperationLog(ListJobOperationLogRequest listJobOperationLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listJobOperationLogRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listJobOperationLogRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/op-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobOperationLogRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5468,7 +5364,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ListJobOperationLogResponse> ListJobOperationLogInvoker(ListJobOperationLogRequest listJobOperationLogRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listJobOperationLogRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listJobOperationLogRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/op-logs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listJobOperationLogRequest);
             return new SyncInvoker<ListJobOperationLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ListJobOperationLogResponse>);
@@ -5533,7 +5429,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowJobAuditResultResponse ShowJobAuditResult(ShowJobAuditResultRequest showJobAuditResultRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobAuditResultRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobAuditResultRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/audit-result", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobAuditResultRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5543,7 +5439,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowJobAuditResultResponse> ShowJobAuditResultInvoker(ShowJobAuditResultRequest showJobAuditResultRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobAuditResultRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobAuditResultRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/audit-result", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobAuditResultRequest);
             return new SyncInvoker<ShowJobAuditResultResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobAuditResultResponse>);
@@ -5559,7 +5455,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowJobUploadingAddressResponse ShowJobUploadingAddress(ShowJobUploadingAddressRequest showJobUploadingAddressRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobUploadingAddressRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobUploadingAddressRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/uploading-address-url", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobUploadingAddressRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5569,7 +5465,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowJobUploadingAddressResponse> ShowJobUploadingAddressInvoker(ShowJobUploadingAddressRequest showJobUploadingAddressRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobUploadingAddressRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobUploadingAddressRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/uploading-address-url", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobUploadingAddressRequest);
             return new SyncInvoker<ShowJobUploadingAddressResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobUploadingAddressResponse>);
@@ -5633,7 +5529,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowVoiceTrainingJobResponse ShowVoiceTrainingJob(ShowVoiceTrainingJobRequest showVoiceTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showVoiceTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVoiceTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVoiceTrainingJobRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5643,7 +5539,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowVoiceTrainingJobResponse> ShowVoiceTrainingJobInvoker(ShowVoiceTrainingJobRequest showVoiceTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showVoiceTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVoiceTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVoiceTrainingJobRequest);
             return new SyncInvoker<ShowVoiceTrainingJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVoiceTrainingJobResponse>);
@@ -5684,7 +5580,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public Delete2dModelTrainingJobResponse Delete2dModelTrainingJob(Delete2dModelTrainingJobRequest delete2dModelTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", delete2dModelTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(delete2dModelTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", delete2dModelTrainingJobRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -5694,7 +5590,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<Delete2dModelTrainingJobResponse> Delete2dModelTrainingJobInvoker(Delete2dModelTrainingJobRequest delete2dModelTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", delete2dModelTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(delete2dModelTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", delete2dModelTrainingJobRequest);
             return new SyncInvoker<Delete2dModelTrainingJobResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<Delete2dModelTrainingJobResponse>);
@@ -5710,7 +5606,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public Execute2dModelTrainingCommandByUserResponse Execute2dModelTrainingCommandByUser(Execute2dModelTrainingCommandByUserRequest execute2dModelTrainingCommandByUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", execute2dModelTrainingCommandByUserRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(execute2dModelTrainingCommandByUserRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}/command", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", execute2dModelTrainingCommandByUserRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5720,7 +5616,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<Execute2dModelTrainingCommandByUserResponse> Execute2dModelTrainingCommandByUserInvoker(Execute2dModelTrainingCommandByUserRequest execute2dModelTrainingCommandByUserRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", execute2dModelTrainingCommandByUserRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(execute2dModelTrainingCommandByUserRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}/command", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", execute2dModelTrainingCommandByUserRequest);
             return new SyncInvoker<Execute2dModelTrainingCommandByUserResponse>(this, "POST", request, JsonUtils.DeSerialize<Execute2dModelTrainingCommandByUserResponse>);
@@ -5760,7 +5656,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public Show2dModelTrainingJobResponse Show2dModelTrainingJob(Show2dModelTrainingJobRequest show2dModelTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", show2dModelTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(show2dModelTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", show2dModelTrainingJobRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5770,7 +5666,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<Show2dModelTrainingJobResponse> Show2dModelTrainingJobInvoker(Show2dModelTrainingJobRequest show2dModelTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", show2dModelTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(show2dModelTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", show2dModelTrainingJobRequest);
             return new SyncInvoker<Show2dModelTrainingJobResponse>(this, "GET", request, JsonUtils.DeSerialize<Show2dModelTrainingJobResponse>);
@@ -5787,7 +5683,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public Update2dModelTrainingJobResponse Update2dModelTrainingJob(Update2dModelTrainingJobRequest update2dModelTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", update2dModelTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(update2dModelTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", update2dModelTrainingJobRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -5797,7 +5693,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<Update2dModelTrainingJobResponse> Update2dModelTrainingJobInvoker(Update2dModelTrainingJobRequest update2dModelTrainingJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", update2dModelTrainingJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(update2dModelTrainingJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", update2dModelTrainingJobRequest);
             return new SyncInvoker<Update2dModelTrainingJobResponse>(this, "PUT", request, JsonUtils.DeSerialize<Update2dModelTrainingJobResponse>);
@@ -5861,7 +5757,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ListFacialAnimationsDataResponse ListFacialAnimationsData(ListFacialAnimationsDataRequest listFacialAnimationsDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listFacialAnimationsDataRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFacialAnimationsDataRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fas-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFacialAnimationsDataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5871,7 +5767,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ListFacialAnimationsDataResponse> ListFacialAnimationsDataInvoker(ListFacialAnimationsDataRequest listFacialAnimationsDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listFacialAnimationsDataRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listFacialAnimationsDataRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fas-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFacialAnimationsDataRequest);
             return new SyncInvoker<ListFacialAnimationsDataResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFacialAnimationsDataResponse>);
@@ -5887,7 +5783,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ListTtsaDataResponse ListTtsaData(ListTtsaDataRequest listTtsaDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listTtsaDataRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTtsaDataRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsa-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTtsaDataRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -5897,7 +5793,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ListTtsaDataResponse> ListTtsaDataInvoker(ListTtsaDataRequest listTtsaDataRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listTtsaDataRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listTtsaDataRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsa-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTtsaDataRequest);
             return new SyncInvoker<ListTtsaDataResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTtsaDataResponse>);
@@ -5937,7 +5833,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public CheckVoiceAssetResponse CheckVoiceAsset(CheckVoiceAssetRequest checkVoiceAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("voice_asset_id", checkVoiceAssetRequest.VoiceAssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkVoiceAssetRequest.VoiceAssetId, out var valueOfVoiceAssetId)) urlParam.Add("voice_asset_id", valueOfVoiceAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/check-voice-asset/{voice_asset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkVoiceAssetRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -5947,7 +5843,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<CheckVoiceAssetResponse> CheckVoiceAssetInvoker(CheckVoiceAssetRequest checkVoiceAssetRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("voice_asset_id", checkVoiceAssetRequest.VoiceAssetId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(checkVoiceAssetRequest.VoiceAssetId, out var valueOfVoiceAssetId)) urlParam.Add("voice_asset_id", valueOfVoiceAssetId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/check-voice-asset/{voice_asset_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkVoiceAssetRequest);
             return new SyncInvoker<CheckVoiceAssetResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckVoiceAssetResponse>);
@@ -6067,7 +5963,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowAsyncTtsJobResponse ShowAsyncTtsJob(ShowAsyncTtsJobRequest showAsyncTtsJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showAsyncTtsJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAsyncTtsJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/async-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsyncTtsJobRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -6077,7 +5973,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowAsyncTtsJobResponse> ShowAsyncTtsJobInvoker(ShowAsyncTtsJobRequest showAsyncTtsJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showAsyncTtsJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showAsyncTtsJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/async-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAsyncTtsJobRequest);
             return new SyncInvoker<ShowAsyncTtsJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAsyncTtsJobResponse>);
@@ -6093,7 +5989,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowTtsAuditionFileResponse ShowTtsAuditionFile(ShowTtsAuditionFileRequest showTtsAuditionFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showTtsAuditionFileRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTtsAuditionFileRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/audition-file/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsAuditionFileRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -6103,7 +5999,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowTtsAuditionFileResponse> ShowTtsAuditionFileInvoker(ShowTtsAuditionFileRequest showTtsAuditionFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showTtsAuditionFileRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showTtsAuditionFileRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/audition-file/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsAuditionFileRequest);
             return new SyncInvoker<ShowTtsAuditionFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTtsAuditionFileResponse>);
@@ -6191,7 +6087,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteTtscVocabularyGroupsResponse DeleteTtscVocabularyGroups(DeleteTtscVocabularyGroupsRequest deleteTtscVocabularyGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteTtscVocabularyGroupsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTtscVocabularyGroupsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTtscVocabularyGroupsRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -6201,7 +6097,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteTtscVocabularyGroupsResponse> DeleteTtscVocabularyGroupsInvoker(DeleteTtscVocabularyGroupsRequest deleteTtscVocabularyGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", deleteTtscVocabularyGroupsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteTtscVocabularyGroupsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTtscVocabularyGroupsRequest);
             return new SyncInvoker<DeleteTtscVocabularyGroupsResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTtscVocabularyGroupsResponse>);
@@ -6289,7 +6185,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SaveTtscVocabularyConfigsResponse SaveTtscVocabularyConfigs(SaveTtscVocabularyConfigsRequest saveTtscVocabularyConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vocabulary_id", saveTtscVocabularyConfigsRequest.VocabularyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(saveTtscVocabularyConfigsRequest.VocabularyId, out var valueOfVocabularyId)) urlParam.Add("vocabulary_id", valueOfVocabularyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-configs/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveTtscVocabularyConfigsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -6299,7 +6195,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<SaveTtscVocabularyConfigsResponse> SaveTtscVocabularyConfigsInvoker(SaveTtscVocabularyConfigsRequest saveTtscVocabularyConfigsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("vocabulary_id", saveTtscVocabularyConfigsRequest.VocabularyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(saveTtscVocabularyConfigsRequest.VocabularyId, out var valueOfVocabularyId)) urlParam.Add("vocabulary_id", valueOfVocabularyId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-configs/{vocabulary_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", saveTtscVocabularyConfigsRequest);
             return new SyncInvoker<SaveTtscVocabularyConfigsResponse>(this, "PUT", request, JsonUtils.DeSerialize<SaveTtscVocabularyConfigsResponse>);
@@ -6315,7 +6211,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SetTtscGroupAssetsResponse SetTtscGroupAssets(SetTtscGroupAssetsRequest setTtscGroupAssetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", setTtscGroupAssetsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setTtscGroupAssetsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/group-assets/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTtscGroupAssetsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -6325,7 +6221,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<SetTtscGroupAssetsResponse> SetTtscGroupAssetsInvoker(SetTtscGroupAssetsRequest setTtscGroupAssetsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", setTtscGroupAssetsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(setTtscGroupAssetsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/group-assets/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTtscGroupAssetsRequest);
             return new SyncInvoker<SetTtscGroupAssetsResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetTtscGroupAssetsResponse>);
@@ -6365,7 +6261,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateTtscVocabularyGroupsResponse UpdateTtscVocabularyGroups(UpdateTtscVocabularyGroupsRequest updateTtscVocabularyGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateTtscVocabularyGroupsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTtscVocabularyGroupsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTtscVocabularyGroupsRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -6375,7 +6271,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateTtscVocabularyGroupsResponse> UpdateTtscVocabularyGroupsInvoker(UpdateTtscVocabularyGroupsRequest updateTtscVocabularyGroupsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("group_id", updateTtscVocabularyGroupsRequest.GroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateTtscVocabularyGroupsRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/vocabulary-groups/{group_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTtscVocabularyGroupsRequest);
             return new SyncInvoker<UpdateTtscVocabularyGroupsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTtscVocabularyGroupsResponse>);
@@ -6415,7 +6311,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ExecuteVideoMotionCaptureCommandResponse ExecuteVideoMotionCaptureCommand(ExecuteVideoMotionCaptureCommandRequest executeVideoMotionCaptureCommandRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", executeVideoMotionCaptureCommandRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeVideoMotionCaptureCommandRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/video-motion-capture-jobs/{job_id}/command", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeVideoMotionCaptureCommandRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -6425,7 +6321,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ExecuteVideoMotionCaptureCommandResponse> ExecuteVideoMotionCaptureCommandInvoker(ExecuteVideoMotionCaptureCommandRequest executeVideoMotionCaptureCommandRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", executeVideoMotionCaptureCommandRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeVideoMotionCaptureCommandRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/video-motion-capture-jobs/{job_id}/command", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeVideoMotionCaptureCommandRequest);
             return new SyncInvoker<ExecuteVideoMotionCaptureCommandResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ExecuteVideoMotionCaptureCommandResponse>);
@@ -6465,7 +6361,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowVideoMotionCaptureJobResponse ShowVideoMotionCaptureJob(ShowVideoMotionCaptureJobRequest showVideoMotionCaptureJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showVideoMotionCaptureJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVideoMotionCaptureJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/video-motion-capture-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoMotionCaptureJobRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -6475,7 +6371,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowVideoMotionCaptureJobResponse> ShowVideoMotionCaptureJobInvoker(ShowVideoMotionCaptureJobRequest showVideoMotionCaptureJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showVideoMotionCaptureJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVideoMotionCaptureJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/video-motion-capture-jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoMotionCaptureJobRequest);
             return new SyncInvoker<ShowVideoMotionCaptureJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVideoMotionCaptureJobResponse>);
@@ -6491,7 +6387,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public StopVideoMotionCaptureJobResponse StopVideoMotionCaptureJob(StopVideoMotionCaptureJobRequest stopVideoMotionCaptureJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", stopVideoMotionCaptureJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopVideoMotionCaptureJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/video-motion-capture-jobs/{job_id}/finish", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopVideoMotionCaptureJobRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -6501,7 +6397,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<StopVideoMotionCaptureJobResponse> StopVideoMotionCaptureJobInvoker(StopVideoMotionCaptureJobRequest stopVideoMotionCaptureJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", stopVideoMotionCaptureJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(stopVideoMotionCaptureJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/video-motion-capture-jobs/{job_id}/finish", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopVideoMotionCaptureJobRequest);
             return new SyncInvoker<StopVideoMotionCaptureJobResponse>(this, "POST", request, JsonUtils.DeSerializeNull<StopVideoMotionCaptureJobResponse>);
@@ -6517,7 +6413,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public CopyVideoScriptsResponse CopyVideoScripts(CopyVideoScriptsRequest copyVideoScriptsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("script_id", copyVideoScriptsRequest.ScriptId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(copyVideoScriptsRequest.ScriptId, out var valueOfScriptId)) urlParam.Add("script_id", valueOfScriptId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-video-scripts/{script_id}/copy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyVideoScriptsRequest);
             var response = DoHttpRequestSync("POST", request);
@@ -6527,7 +6423,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<CopyVideoScriptsResponse> CopyVideoScriptsInvoker(CopyVideoScriptsRequest copyVideoScriptsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("script_id", copyVideoScriptsRequest.ScriptId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(copyVideoScriptsRequest.ScriptId, out var valueOfScriptId)) urlParam.Add("script_id", valueOfScriptId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-video-scripts/{script_id}/copy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", copyVideoScriptsRequest);
             return new SyncInvoker<CopyVideoScriptsResponse>(this, "POST", request, JsonUtils.DeSerialize<CopyVideoScriptsResponse>);
@@ -6567,7 +6463,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public DeleteVideoScriptResponse DeleteVideoScript(DeleteVideoScriptRequest deleteVideoScriptRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("script_id", deleteVideoScriptRequest.ScriptId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVideoScriptRequest.ScriptId, out var valueOfScriptId)) urlParam.Add("script_id", valueOfScriptId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-video-scripts/{script_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVideoScriptRequest);
             var response = DoHttpRequestSync("DELETE", request);
@@ -6577,7 +6473,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<DeleteVideoScriptResponse> DeleteVideoScriptInvoker(DeleteVideoScriptRequest deleteVideoScriptRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("script_id", deleteVideoScriptRequest.ScriptId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteVideoScriptRequest.ScriptId, out var valueOfScriptId)) urlParam.Add("script_id", valueOfScriptId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-video-scripts/{script_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVideoScriptRequest);
             return new SyncInvoker<DeleteVideoScriptResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVideoScriptResponse>);
@@ -6617,7 +6513,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowVideoScriptResponse ShowVideoScript(ShowVideoScriptRequest showVideoScriptRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("script_id", showVideoScriptRequest.ScriptId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVideoScriptRequest.ScriptId, out var valueOfScriptId)) urlParam.Add("script_id", valueOfScriptId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-video-scripts/{script_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoScriptRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -6627,7 +6523,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowVideoScriptResponse> ShowVideoScriptInvoker(ShowVideoScriptRequest showVideoScriptRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("script_id", showVideoScriptRequest.ScriptId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showVideoScriptRequest.ScriptId, out var valueOfScriptId)) urlParam.Add("script_id", valueOfScriptId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-video-scripts/{script_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVideoScriptRequest);
             return new SyncInvoker<ShowVideoScriptResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVideoScriptResponse>);
@@ -6643,7 +6539,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateVideoScriptResponse UpdateVideoScript(UpdateVideoScriptRequest updateVideoScriptRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("script_id", updateVideoScriptRequest.ScriptId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVideoScriptRequest.ScriptId, out var valueOfScriptId)) urlParam.Add("script_id", valueOfScriptId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-video-scripts/{script_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVideoScriptRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -6653,7 +6549,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateVideoScriptResponse> UpdateVideoScriptInvoker(UpdateVideoScriptRequest updateVideoScriptRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("script_id", updateVideoScriptRequest.ScriptId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateVideoScriptRequest.ScriptId, out var valueOfScriptId)) urlParam.Add("script_id", valueOfScriptId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-video-scripts/{script_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVideoScriptRequest);
             return new SyncInvoker<UpdateVideoScriptResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVideoScriptResponse>);
@@ -6741,7 +6637,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public ShowWelcomeSpeechResponse ShowWelcomeSpeech(ShowWelcomeSpeechRequest showWelcomeSpeechRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("welcome_speech_id", showWelcomeSpeechRequest.WelcomeSpeechId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWelcomeSpeechRequest.WelcomeSpeechId, out var valueOfWelcomeSpeechId)) urlParam.Add("welcome_speech_id", valueOfWelcomeSpeechId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/welcome-speech/{welcome_speech_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWelcomeSpeechRequest);
             var response = DoHttpRequestSync("GET", request);
@@ -6751,7 +6647,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<ShowWelcomeSpeechResponse> ShowWelcomeSpeechInvoker(ShowWelcomeSpeechRequest showWelcomeSpeechRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("welcome_speech_id", showWelcomeSpeechRequest.WelcomeSpeechId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showWelcomeSpeechRequest.WelcomeSpeechId, out var valueOfWelcomeSpeechId)) urlParam.Add("welcome_speech_id", valueOfWelcomeSpeechId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/welcome-speech/{welcome_speech_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWelcomeSpeechRequest);
             return new SyncInvoker<ShowWelcomeSpeechResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWelcomeSpeechResponse>);
@@ -6791,7 +6687,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public UpdateWelcomeSpeechResponse UpdateWelcomeSpeech(UpdateWelcomeSpeechRequest updateWelcomeSpeechRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("welcome_speech_id", updateWelcomeSpeechRequest.WelcomeSpeechId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateWelcomeSpeechRequest.WelcomeSpeechId, out var valueOfWelcomeSpeechId)) urlParam.Add("welcome_speech_id", valueOfWelcomeSpeechId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/welcome-speech/{welcome_speech_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateWelcomeSpeechRequest);
             var response = DoHttpRequestSync("PUT", request);
@@ -6801,7 +6697,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         public SyncInvoker<UpdateWelcomeSpeechResponse> UpdateWelcomeSpeechInvoker(UpdateWelcomeSpeechRequest updateWelcomeSpeechRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("welcome_speech_id", updateWelcomeSpeechRequest.WelcomeSpeechId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateWelcomeSpeechRequest.WelcomeSpeechId, out var valueOfWelcomeSpeechId)) urlParam.Add("welcome_speech_id", valueOfWelcomeSpeechId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/welcome-speech/{welcome_speech_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateWelcomeSpeechRequest);
             return new SyncInvoker<UpdateWelcomeSpeechResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateWelcomeSpeechResponse>);

@@ -49,7 +49,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ShowJudgementDetailResponse> ShowJudgementDetailAsync(ShowJudgementDetailRequest showJudgementDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("judgement_id", showJudgementDetailRequest.JudgementId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJudgementDetailRequest.JudgementId, out var valueOfJudgementId)) urlParam.Add("judgement_id", valueOfJudgementId);
             var urlPath = HttpUtils.AddUrlPath("/v1/enablement/judgements/{judgement_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJudgementDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ShowJudgementDetailResponse> ShowJudgementDetailAsyncInvoker(ShowJudgementDetailRequest showJudgementDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("judgement_id", showJudgementDetailRequest.JudgementId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJudgementDetailRequest.JudgementId, out var valueOfJudgementId)) urlParam.Add("judgement_id", valueOfJudgementId);
             var urlPath = HttpUtils.AddUrlPath("/v1/enablement/judgements/{judgement_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJudgementDetailRequest);
             return new AsyncInvoker<ShowJudgementDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJudgementDetailResponse>);
@@ -75,7 +75,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ShowJudgementFileResponse> ShowJudgementFileAsync(ShowJudgementFileRequest showJudgementFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("file_id", showJudgementFileRequest.FileId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJudgementFileRequest.FileId, out var valueOfFileId)) urlParam.Add("file_id", valueOfFileId);
             var urlPath = HttpUtils.AddUrlPath("/v1/enablement/judgement/files/{file_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJudgementFileRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -85,7 +85,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ShowJudgementFileResponse> ShowJudgementFileAsyncInvoker(ShowJudgementFileRequest showJudgementFileRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("file_id", showJudgementFileRequest.FileId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJudgementFileRequest.FileId, out var valueOfFileId)) urlParam.Add("file_id", valueOfFileId);
             var urlPath = HttpUtils.AddUrlPath("/v1/enablement/judgement/files/{file_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJudgementFileRequest);
             return new AsyncInvoker<ShowJudgementFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJudgementFileResponse>);
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ExecuteExerciseResponse> ExecuteExerciseAsync(ExecuteExerciseRequest executeExerciseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("exercise_id", executeExerciseRequest.ExerciseId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeExerciseRequest.ExerciseId, out var valueOfExerciseId)) urlParam.Add("exercise_id", valueOfExerciseId);
             var urlPath = HttpUtils.AddUrlPath("/v1/assemble/exercise/{exercise_id}/judge", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeExerciseRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ExecuteExerciseResponse> ExecuteExerciseAsyncInvoker(ExecuteExerciseRequest executeExerciseRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("exercise_id", executeExerciseRequest.ExerciseId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeExerciseRequest.ExerciseId, out var valueOfExerciseId)) urlParam.Add("exercise_id", valueOfExerciseId);
             var urlPath = HttpUtils.AddUrlPath("/v1/assemble/exercise/{exercise_id}/judge", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", executeExerciseRequest);
             return new AsyncInvoker<ExecuteExerciseResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteExerciseResponse>);
@@ -127,7 +127,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ListExercisesResponse> ListExercisesAsync(ListExercisesRequest listExercisesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("package_id", listExercisesRequest.PackageId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listExercisesRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
             var urlPath = HttpUtils.AddUrlPath("/v1/assemble/package/{package_id}/exercise/list", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listExercisesRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ListExercisesResponse> ListExercisesAsyncInvoker(ListExercisesRequest listExercisesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("package_id", listExercisesRequest.PackageId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listExercisesRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
             var urlPath = HttpUtils.AddUrlPath("/v1/assemble/package/{package_id}/exercise/list", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listExercisesRequest);
             return new AsyncInvoker<ListExercisesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListExercisesResponse>);
@@ -177,7 +177,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ShowExerciseDetailResponse> ShowExerciseDetailAsync(ShowExerciseDetailRequest showExerciseDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("exercise_id", showExerciseDetailRequest.ExerciseId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showExerciseDetailRequest.ExerciseId, out var valueOfExerciseId)) urlParam.Add("exercise_id", valueOfExerciseId);
             var urlPath = HttpUtils.AddUrlPath("/v1/assemble/exercise/{exercise_id}/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showExerciseDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -187,7 +187,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ShowExerciseDetailResponse> ShowExerciseDetailAsyncInvoker(ShowExerciseDetailRequest showExerciseDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("exercise_id", showExerciseDetailRequest.ExerciseId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showExerciseDetailRequest.ExerciseId, out var valueOfExerciseId)) urlParam.Add("exercise_id", valueOfExerciseId);
             var urlPath = HttpUtils.AddUrlPath("/v1/assemble/exercise/{exercise_id}/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showExerciseDetailRequest);
             return new AsyncInvoker<ShowExerciseDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowExerciseDetailResponse>);
@@ -203,7 +203,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ShowPackageDetailResponse> ShowPackageDetailAsync(ShowPackageDetailRequest showPackageDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("package_id", showPackageDetailRequest.PackageId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPackageDetailRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
             var urlPath = HttpUtils.AddUrlPath("/v1/assemble/package/{package_id}/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPackageDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -213,7 +213,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ShowPackageDetailResponse> ShowPackageDetailAsyncInvoker(ShowPackageDetailRequest showPackageDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("package_id", showPackageDetailRequest.PackageId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPackageDetailRequest.PackageId, out var valueOfPackageId)) urlParam.Add("package_id", valueOfPackageId);
             var urlPath = HttpUtils.AddUrlPath("/v1/assemble/package/{package_id}/detail", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPackageDetailRequest);
             return new AsyncInvoker<ShowPackageDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPackageDetailResponse>);
@@ -277,7 +277,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ListClassroomMembersResponse> ListClassroomMembersAsync(ListClassroomMembersRequest listClassroomMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("classroom_id", listClassroomMembersRequest.ClassroomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClassroomMembersRequest.ClassroomId, out var valueOfClassroomId)) urlParam.Add("classroom_id", valueOfClassroomId);
             var urlPath = HttpUtils.AddUrlPath("/v3/classrooms/{classroom_id}/members", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClassroomMembersRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -287,7 +287,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ListClassroomMembersResponse> ListClassroomMembersAsyncInvoker(ListClassroomMembersRequest listClassroomMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("classroom_id", listClassroomMembersRequest.ClassroomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClassroomMembersRequest.ClassroomId, out var valueOfClassroomId)) urlParam.Add("classroom_id", valueOfClassroomId);
             var urlPath = HttpUtils.AddUrlPath("/v3/classrooms/{classroom_id}/members", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClassroomMembersRequest);
             return new AsyncInvoker<ListClassroomMembersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClassroomMembersResponse>);
@@ -327,7 +327,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ShowClassroomDetailResponse> ShowClassroomDetailAsync(ShowClassroomDetailRequest showClassroomDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("classroom_id", showClassroomDetailRequest.ClassroomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClassroomDetailRequest.ClassroomId, out var valueOfClassroomId)) urlParam.Add("classroom_id", valueOfClassroomId);
             var urlPath = HttpUtils.AddUrlPath("/v3/classrooms/{classroom_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClassroomDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -337,7 +337,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ShowClassroomDetailResponse> ShowClassroomDetailAsyncInvoker(ShowClassroomDetailRequest showClassroomDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("classroom_id", showClassroomDetailRequest.ClassroomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showClassroomDetailRequest.ClassroomId, out var valueOfClassroomId)) urlParam.Add("classroom_id", valueOfClassroomId);
             var urlPath = HttpUtils.AddUrlPath("/v3/classrooms/{classroom_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClassroomDetailRequest);
             return new AsyncInvoker<ShowClassroomDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClassroomDetailResponse>);
@@ -353,7 +353,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ListClassroomMemberJobsResponse> ListClassroomMemberJobsAsync(ListClassroomMemberJobsRequest listClassroomMemberJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("classroom_id", listClassroomMemberJobsRequest.ClassroomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClassroomMemberJobsRequest.ClassroomId, out var valueOfClassroomId)) urlParam.Add("classroom_id", valueOfClassroomId);
             var urlPath = HttpUtils.AddUrlPath("/v3/classrooms/{classroom_id}/jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClassroomMemberJobsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -363,7 +363,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ListClassroomMemberJobsResponse> ListClassroomMemberJobsAsyncInvoker(ListClassroomMemberJobsRequest listClassroomMemberJobsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("classroom_id", listClassroomMemberJobsRequest.ClassroomId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listClassroomMemberJobsRequest.ClassroomId, out var valueOfClassroomId)) urlParam.Add("classroom_id", valueOfClassroomId);
             var urlPath = HttpUtils.AddUrlPath("/v3/classrooms/{classroom_id}/jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClassroomMemberJobsRequest);
             return new AsyncInvoker<ListClassroomMemberJobsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClassroomMemberJobsResponse>);
@@ -403,8 +403,8 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ListMemberJobRecordsResponse> ListMemberJobRecordsAsync(ListMemberJobRecordsRequest listMemberJobRecordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listMemberJobRecordsRequest.JobId.ToString());
-            urlParam.Add("exercise_id", listMemberJobRecordsRequest.ExerciseId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listMemberJobRecordsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listMemberJobRecordsRequest.ExerciseId, out var valueOfExerciseId)) urlParam.Add("exercise_id", valueOfExerciseId);
             var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/exercises/{exercise_id}/records", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMemberJobRecordsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -414,8 +414,8 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ListMemberJobRecordsResponse> ListMemberJobRecordsAsyncInvoker(ListMemberJobRecordsRequest listMemberJobRecordsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", listMemberJobRecordsRequest.JobId.ToString());
-            urlParam.Add("exercise_id", listMemberJobRecordsRequest.ExerciseId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listMemberJobRecordsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(listMemberJobRecordsRequest.ExerciseId, out var valueOfExerciseId)) urlParam.Add("exercise_id", valueOfExerciseId);
             var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/exercises/{exercise_id}/records", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMemberJobRecordsRequest);
             return new AsyncInvoker<ListMemberJobRecordsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMemberJobRecordsResponse>);
@@ -431,7 +431,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ShowJobDetailResponse> ShowJobDetailAsync(ShowJobDetailRequest showJobDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobDetailRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobDetailRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -441,7 +441,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ShowJobDetailResponse> ShowJobDetailAsyncInvoker(ShowJobDetailRequest showJobDetailRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobDetailRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobDetailRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobDetailRequest);
             return new AsyncInvoker<ShowJobDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobDetailResponse>);
@@ -457,7 +457,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public async Task<ShowJobExercisesResponse> ShowJobExercisesAsync(ShowJobExercisesRequest showJobExercisesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobExercisesRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobExercisesRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/exercises", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobExercisesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -467,7 +467,7 @@ namespace HuaweiCloud.SDK.Classroom.V3
         public AsyncInvoker<ShowJobExercisesResponse> ShowJobExercisesAsyncInvoker(ShowJobExercisesRequest showJobExercisesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobExercisesRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobExercisesRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/jobs/{job_id}/exercises", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobExercisesRequest);
             return new AsyncInvoker<ShowJobExercisesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobExercisesResponse>);

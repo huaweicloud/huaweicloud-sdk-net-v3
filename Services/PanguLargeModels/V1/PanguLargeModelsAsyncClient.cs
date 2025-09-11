@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V1
         public async Task<ExecuteChatCompletionResponse> ExecuteChatCompletionAsync(ExecuteChatCompletionRequest executeChatCompletionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("deployment_id", executeChatCompletionRequest.DeploymentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeChatCompletionRequest.DeploymentId, out var valueOfDeploymentId)) urlParam.Add("deployment_id", valueOfDeploymentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/deployments/{deployment_id}/chat/completions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeChatCompletionRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V1
         public AsyncInvoker<ExecuteChatCompletionResponse> ExecuteChatCompletionAsyncInvoker(ExecuteChatCompletionRequest executeChatCompletionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("deployment_id", executeChatCompletionRequest.DeploymentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeChatCompletionRequest.DeploymentId, out var valueOfDeploymentId)) urlParam.Add("deployment_id", valueOfDeploymentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/deployments/{deployment_id}/chat/completions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeChatCompletionRequest);
             return new AsyncInvoker<ExecuteChatCompletionResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteChatCompletionResponse>);
@@ -51,7 +51,7 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V1
         public async Task<ExecuteTextCompletionResponse> ExecuteTextCompletionAsync(ExecuteTextCompletionRequest executeTextCompletionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("deployment_id", executeTextCompletionRequest.DeploymentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeTextCompletionRequest.DeploymentId, out var valueOfDeploymentId)) urlParam.Add("deployment_id", valueOfDeploymentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/deployments/{deployment_id}/text/completions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeTextCompletionRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V1
         public AsyncInvoker<ExecuteTextCompletionResponse> ExecuteTextCompletionAsyncInvoker(ExecuteTextCompletionRequest executeTextCompletionRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("deployment_id", executeTextCompletionRequest.DeploymentId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(executeTextCompletionRequest.DeploymentId, out var valueOfDeploymentId)) urlParam.Add("deployment_id", valueOfDeploymentId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/deployments/{deployment_id}/text/completions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeTextCompletionRequest);
             return new AsyncInvoker<ExecuteTextCompletionResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteTextCompletionResponse>);

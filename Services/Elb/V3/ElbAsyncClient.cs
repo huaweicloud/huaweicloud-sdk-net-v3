@@ -25,7 +25,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<BatchAddAvailableZonesResponse> BatchAddAvailableZonesAsync(BatchAddAvailableZonesRequest batchAddAvailableZonesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", batchAddAvailableZonesRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchAddAvailableZonesRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-add", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddAvailableZonesRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<BatchAddAvailableZonesResponse> BatchAddAvailableZonesAsyncInvoker(BatchAddAvailableZonesRequest batchAddAvailableZonesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", batchAddAvailableZonesRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchAddAvailableZonesRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-add", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddAvailableZonesRequest);
             return new AsyncInvoker<BatchAddAvailableZonesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchAddAvailableZonesResponse>);
@@ -88,7 +88,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<BatchCreateMembersResponse> BatchCreateMembersAsync(BatchCreateMembersRequest batchCreateMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", batchCreateMembersRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateMembersRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-add", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateMembersRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -98,7 +98,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<BatchCreateMembersResponse> BatchCreateMembersAsyncInvoker(BatchCreateMembersRequest batchCreateMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", batchCreateMembersRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateMembersRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-add", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateMembersRequest);
             return new AsyncInvoker<BatchCreateMembersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateMembersResponse>);
@@ -114,7 +114,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<BatchDeleteMembersResponse> BatchDeleteMembersAsync(BatchDeleteMembersRequest batchDeleteMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", batchDeleteMembersRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteMembersRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -124,7 +124,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<BatchDeleteMembersResponse> BatchDeleteMembersAsyncInvoker(BatchDeleteMembersRequest batchDeleteMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", batchDeleteMembersRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteMembersRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteMembersRequest);
             return new AsyncInvoker<BatchDeleteMembersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteMembersResponse>);
@@ -141,7 +141,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<BatchRemoveAvailableZonesResponse> BatchRemoveAvailableZonesAsync(BatchRemoveAvailableZonesRequest batchRemoveAvailableZonesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", batchRemoveAvailableZonesRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchRemoveAvailableZonesRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-remove", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveAvailableZonesRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -151,7 +151,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<BatchRemoveAvailableZonesResponse> BatchRemoveAvailableZonesAsyncInvoker(BatchRemoveAvailableZonesRequest batchRemoveAvailableZonesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", batchRemoveAvailableZonesRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchRemoveAvailableZonesRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/availability-zone/batch-remove", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchRemoveAvailableZonesRequest);
             return new AsyncInvoker<BatchRemoveAvailableZonesResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchRemoveAvailableZonesResponse>);
@@ -167,7 +167,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<BatchUpdateMembersResponse> BatchUpdateMembersAsync(BatchUpdateMembersRequest batchUpdateMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", batchUpdateMembersRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateMembersRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-update", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateMembersRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -177,7 +177,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<BatchUpdateMembersResponse> BatchUpdateMembersAsyncInvoker(BatchUpdateMembersRequest batchUpdateMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", batchUpdateMembersRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateMembersRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/batch-update", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchUpdateMembersRequest);
             return new AsyncInvoker<BatchUpdateMembersResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchUpdateMembersResponse>);
@@ -244,7 +244,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<CloneLoadbalancerResponse> CloneLoadbalancerAsync(CloneLoadbalancerRequest cloneLoadbalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", cloneLoadbalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cloneLoadbalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/clone", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cloneLoadbalancerRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -254,7 +254,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<CloneLoadbalancerResponse> CloneLoadbalancerAsyncInvoker(CloneLoadbalancerRequest cloneLoadbalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", cloneLoadbalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(cloneLoadbalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/clone", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", cloneLoadbalancerRequest);
             return new AsyncInvoker<CloneLoadbalancerResponse>(this, "POST", request, JsonUtils.DeSerialize<CloneLoadbalancerResponse>);
@@ -366,7 +366,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<CreateL7RuleResponse> CreateL7RuleAsync(CreateL7RuleRequest createL7RuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", createL7RuleRequest.L7policyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createL7RuleRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createL7RuleRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -376,7 +376,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<CreateL7RuleResponse> CreateL7RuleAsyncInvoker(CreateL7RuleRequest createL7RuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", createL7RuleRequest.L7policyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createL7RuleRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createL7RuleRequest);
             return new AsyncInvoker<CreateL7RuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateL7RuleResponse>);
@@ -504,7 +504,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<CreateMemberResponse> CreateMemberAsync(CreateMemberRequest createMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", createMemberRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createMemberRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMemberRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -514,7 +514,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<CreateMemberResponse> CreateMemberAsyncInvoker(CreateMemberRequest createMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", createMemberRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createMemberRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMemberRequest);
             return new AsyncInvoker<CreateMemberResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMemberResponse>);
@@ -530,7 +530,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<CreateMemberHealthCheckJobResponse> CreateMemberHealthCheckJobAsync(CreateMemberHealthCheckJobRequest createMemberHealthCheckJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_id", createMemberHealthCheckJobRequest.MemberId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createMemberHealthCheckJobRequest.MemberId, out var valueOfMemberId)) urlParam.Add("member_id", valueOfMemberId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members/{member_id}/health-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMemberHealthCheckJobRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -540,7 +540,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<CreateMemberHealthCheckJobResponse> CreateMemberHealthCheckJobAsyncInvoker(CreateMemberHealthCheckJobRequest createMemberHealthCheckJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_id", createMemberHealthCheckJobRequest.MemberId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(createMemberHealthCheckJobRequest.MemberId, out var valueOfMemberId)) urlParam.Add("member_id", valueOfMemberId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members/{member_id}/health-check", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createMemberHealthCheckJobRequest);
             return new AsyncInvoker<CreateMemberHealthCheckJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateMemberHealthCheckJobResponse>);
@@ -606,7 +606,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest deleteCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("certificate_id", deleteCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCertificateRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -616,7 +616,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteCertificateResponse> DeleteCertificateAsyncInvoker(DeleteCertificateRequest deleteCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("certificate_id", deleteCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteCertificateRequest);
             return new AsyncInvoker<DeleteCertificateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteCertificateResponse>);
@@ -632,7 +632,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteHealthMonitorResponse> DeleteHealthMonitorAsync(DeleteHealthMonitorRequest deleteHealthMonitorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("healthmonitor_id", deleteHealthMonitorRequest.HealthmonitorId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteHealthMonitorRequest.HealthmonitorId, out var valueOfHealthmonitorId)) urlParam.Add("healthmonitor_id", valueOfHealthmonitorId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHealthMonitorRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -642,7 +642,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteHealthMonitorResponse> DeleteHealthMonitorAsyncInvoker(DeleteHealthMonitorRequest deleteHealthMonitorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("healthmonitor_id", deleteHealthMonitorRequest.HealthmonitorId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteHealthMonitorRequest.HealthmonitorId, out var valueOfHealthmonitorId)) urlParam.Add("healthmonitor_id", valueOfHealthmonitorId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteHealthMonitorRequest);
             return new AsyncInvoker<DeleteHealthMonitorResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteHealthMonitorResponse>);
@@ -658,7 +658,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteL7PolicyResponse> DeleteL7PolicyAsync(DeleteL7PolicyRequest deleteL7PolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", deleteL7PolicyRequest.L7policyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteL7PolicyRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteL7PolicyRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -668,7 +668,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteL7PolicyResponse> DeleteL7PolicyAsyncInvoker(DeleteL7PolicyRequest deleteL7PolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", deleteL7PolicyRequest.L7policyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteL7PolicyRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteL7PolicyRequest);
             return new AsyncInvoker<DeleteL7PolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteL7PolicyResponse>);
@@ -684,8 +684,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteL7RuleResponse> DeleteL7RuleAsync(DeleteL7RuleRequest deleteL7RuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", deleteL7RuleRequest.L7policyId.ToString());
-            urlParam.Add("l7rule_id", deleteL7RuleRequest.L7ruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteL7RuleRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteL7RuleRequest.L7ruleId, out var valueOfL7ruleId)) urlParam.Add("l7rule_id", valueOfL7ruleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteL7RuleRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -695,8 +695,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteL7RuleResponse> DeleteL7RuleAsyncInvoker(DeleteL7RuleRequest deleteL7RuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", deleteL7RuleRequest.L7policyId.ToString());
-            urlParam.Add("l7rule_id", deleteL7RuleRequest.L7ruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteL7RuleRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteL7RuleRequest.L7ruleId, out var valueOfL7ruleId)) urlParam.Add("l7rule_id", valueOfL7ruleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteL7RuleRequest);
             return new AsyncInvoker<DeleteL7RuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteL7RuleResponse>);
@@ -712,7 +712,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteListenerResponse> DeleteListenerAsync(DeleteListenerRequest deleteListenerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id", deleteListenerRequest.ListenerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteListenerRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteListenerRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -722,7 +722,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteListenerResponse> DeleteListenerAsyncInvoker(DeleteListenerRequest deleteListenerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id", deleteListenerRequest.ListenerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteListenerRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteListenerRequest);
             return new AsyncInvoker<DeleteListenerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteListenerResponse>);
@@ -738,7 +738,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteListenerForceResponse> DeleteListenerForceAsync(DeleteListenerForceRequest deleteListenerForceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id", deleteListenerForceRequest.ListenerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteListenerForceRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}/force", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteListenerForceRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -748,7 +748,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteListenerForceResponse> DeleteListenerForceAsyncInvoker(DeleteListenerForceRequest deleteListenerForceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id", deleteListenerForceRequest.ListenerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteListenerForceRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}/force", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteListenerForceRequest);
             return new AsyncInvoker<DeleteListenerForceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteListenerForceResponse>);
@@ -764,7 +764,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest deleteLoadBalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", deleteLoadBalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLoadBalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -774,7 +774,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteLoadBalancerResponse> DeleteLoadBalancerAsyncInvoker(DeleteLoadBalancerRequest deleteLoadBalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", deleteLoadBalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLoadBalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerRequest);
             return new AsyncInvoker<DeleteLoadBalancerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLoadBalancerResponse>);
@@ -790,7 +790,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteLoadBalancerCascadeResponse> DeleteLoadBalancerCascadeAsync(DeleteLoadBalancerCascadeRequest deleteLoadBalancerCascadeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", deleteLoadBalancerCascadeRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLoadBalancerCascadeRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/delete-cascade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteLoadBalancerCascadeRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -800,7 +800,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteLoadBalancerCascadeResponse> DeleteLoadBalancerCascadeAsyncInvoker(DeleteLoadBalancerCascadeRequest deleteLoadBalancerCascadeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", deleteLoadBalancerCascadeRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLoadBalancerCascadeRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/delete-cascade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteLoadBalancerCascadeRequest);
             return new AsyncInvoker<DeleteLoadBalancerCascadeResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteLoadBalancerCascadeResponse>);
@@ -819,7 +819,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteLoadBalancerForceResponse> DeleteLoadBalancerForceAsync(DeleteLoadBalancerForceRequest deleteLoadBalancerForceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", deleteLoadBalancerForceRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLoadBalancerForceRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/force-elb", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerForceRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -829,7 +829,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteLoadBalancerForceResponse> DeleteLoadBalancerForceAsyncInvoker(DeleteLoadBalancerForceRequest deleteLoadBalancerForceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", deleteLoadBalancerForceRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLoadBalancerForceRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/force-elb", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLoadBalancerForceRequest);
             return new AsyncInvoker<DeleteLoadBalancerForceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLoadBalancerForceResponse>);
@@ -845,7 +845,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteLogtankResponse> DeleteLogtankAsync(DeleteLogtankRequest deleteLogtankRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("logtank_id", deleteLogtankRequest.LogtankId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLogtankRequest.LogtankId, out var valueOfLogtankId)) urlParam.Add("logtank_id", valueOfLogtankId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogtankRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -855,7 +855,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteLogtankResponse> DeleteLogtankAsyncInvoker(DeleteLogtankRequest deleteLogtankRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("logtank_id", deleteLogtankRequest.LogtankId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteLogtankRequest.LogtankId, out var valueOfLogtankId)) urlParam.Add("logtank_id", valueOfLogtankId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteLogtankRequest);
             return new AsyncInvoker<DeleteLogtankResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteLogtankResponse>);
@@ -871,7 +871,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteMasterSlavePoolResponse> DeleteMasterSlavePoolAsync(DeleteMasterSlavePoolRequest deleteMasterSlavePoolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", deleteMasterSlavePoolRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteMasterSlavePoolRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMasterSlavePoolRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -881,7 +881,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteMasterSlavePoolResponse> DeleteMasterSlavePoolAsyncInvoker(DeleteMasterSlavePoolRequest deleteMasterSlavePoolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", deleteMasterSlavePoolRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteMasterSlavePoolRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMasterSlavePoolRequest);
             return new AsyncInvoker<DeleteMasterSlavePoolResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteMasterSlavePoolResponse>);
@@ -897,8 +897,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteMemberResponse> DeleteMemberAsync(DeleteMemberRequest deleteMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", deleteMemberRequest.PoolId.ToString());
-            urlParam.Add("member_id", deleteMemberRequest.MemberId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteMemberRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteMemberRequest.MemberId, out var valueOfMemberId)) urlParam.Add("member_id", valueOfMemberId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMemberRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -908,8 +908,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteMemberResponse> DeleteMemberAsyncInvoker(DeleteMemberRequest deleteMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", deleteMemberRequest.PoolId.ToString());
-            urlParam.Add("member_id", deleteMemberRequest.MemberId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteMemberRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteMemberRequest.MemberId, out var valueOfMemberId)) urlParam.Add("member_id", valueOfMemberId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMemberRequest);
             return new AsyncInvoker<DeleteMemberResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteMemberResponse>);
@@ -925,7 +925,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeletePoolResponse> DeletePoolAsync(DeletePoolRequest deletePoolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", deletePoolRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePoolRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePoolRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -935,7 +935,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeletePoolResponse> DeletePoolAsyncInvoker(DeletePoolRequest deletePoolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", deletePoolRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePoolRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePoolRequest);
             return new AsyncInvoker<DeletePoolResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePoolResponse>);
@@ -951,7 +951,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeletePoolCascadeResponse> DeletePoolCascadeAsync(DeletePoolCascadeRequest deletePoolCascadeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", deletePoolCascadeRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePoolCascadeRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/delete-cascade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePoolCascadeRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -961,7 +961,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeletePoolCascadeResponse> DeletePoolCascadeAsyncInvoker(DeletePoolCascadeRequest deletePoolCascadeRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", deletePoolCascadeRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deletePoolCascadeRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/delete-cascade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePoolCascadeRequest);
             return new AsyncInvoker<DeletePoolCascadeResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePoolCascadeResponse>);
@@ -977,7 +977,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteRecycleLoadBalancerResponse> DeleteRecycleLoadBalancerAsync(DeleteRecycleLoadBalancerRequest deleteRecycleLoadBalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", deleteRecycleLoadBalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecycleLoadBalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/loadbalancers/{loadbalancer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecycleLoadBalancerRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -987,7 +987,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteRecycleLoadBalancerResponse> DeleteRecycleLoadBalancerAsyncInvoker(DeleteRecycleLoadBalancerRequest deleteRecycleLoadBalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", deleteRecycleLoadBalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteRecycleLoadBalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/loadbalancers/{loadbalancer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteRecycleLoadBalancerRequest);
             return new AsyncInvoker<DeleteRecycleLoadBalancerResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteRecycleLoadBalancerResponse>);
@@ -1003,7 +1003,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteSecurityPolicyResponse> DeleteSecurityPolicyAsync(DeleteSecurityPolicyRequest deleteSecurityPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_policy_id", deleteSecurityPolicyRequest.SecurityPolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecurityPolicyRequest.SecurityPolicyId, out var valueOfSecurityPolicyId)) urlParam.Add("security_policy_id", valueOfSecurityPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityPolicyRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -1013,7 +1013,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteSecurityPolicyResponse> DeleteSecurityPolicyAsyncInvoker(DeleteSecurityPolicyRequest deleteSecurityPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_policy_id", deleteSecurityPolicyRequest.SecurityPolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteSecurityPolicyRequest.SecurityPolicyId, out var valueOfSecurityPolicyId)) urlParam.Add("security_policy_id", valueOfSecurityPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteSecurityPolicyRequest);
             return new AsyncInvoker<DeleteSecurityPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteSecurityPolicyResponse>);
@@ -1231,7 +1231,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ListL7RulesResponse> ListL7RulesAsync(ListL7RulesRequest listL7RulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", listL7RulesRequest.L7policyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listL7RulesRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listL7RulesRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1241,7 +1241,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ListL7RulesResponse> ListL7RulesAsyncInvoker(ListL7RulesRequest listL7RulesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", listL7RulesRequest.L7policyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listL7RulesRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listL7RulesRequest);
             return new AsyncInvoker<ListL7RulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListL7RulesResponse>);
@@ -1305,7 +1305,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ListLoadbalancerFeatureResponse> ListLoadbalancerFeatureAsync(ListLoadbalancerFeatureRequest listLoadbalancerFeatureRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", listLoadbalancerFeatureRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLoadbalancerFeatureRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/features", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLoadbalancerFeatureRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1315,7 +1315,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ListLoadbalancerFeatureResponse> ListLoadbalancerFeatureAsyncInvoker(ListLoadbalancerFeatureRequest listLoadbalancerFeatureRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", listLoadbalancerFeatureRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listLoadbalancerFeatureRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/features", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listLoadbalancerFeatureRequest);
             return new AsyncInvoker<ListLoadbalancerFeatureResponse>(this, "GET", request, JsonUtils.DeSerialize<ListLoadbalancerFeatureResponse>);
@@ -1379,7 +1379,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ListMembersResponse> ListMembersAsync(ListMembersRequest listMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", listMembersRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listMembersRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMembersRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1389,7 +1389,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ListMembersResponse> ListMembersAsyncInvoker(ListMembersRequest listMembersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", listMembersRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(listMembersRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMembersRequest);
             return new AsyncInvoker<ListMembersResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMembersResponse>);
@@ -1527,7 +1527,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<RestoreLoadbalancerResponse> RestoreLoadbalancerAsync(RestoreLoadbalancerRequest restoreLoadbalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", restoreLoadbalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restoreLoadbalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/loadbalancers/{loadbalancer_id}/recover", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreLoadbalancerRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -1537,7 +1537,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<RestoreLoadbalancerResponse> RestoreLoadbalancerAsyncInvoker(RestoreLoadbalancerRequest restoreLoadbalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", restoreLoadbalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(restoreLoadbalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/recycle-bin/loadbalancers/{loadbalancer_id}/recover", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreLoadbalancerRequest);
             return new AsyncInvoker<RestoreLoadbalancerResponse>(this, "PUT", request, JsonUtils.DeSerialize<RestoreLoadbalancerResponse>);
@@ -1553,7 +1553,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowCertificateResponse> ShowCertificateAsync(ShowCertificateRequest showCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("certificate_id", showCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificateRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1563,7 +1563,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowCertificateResponse> ShowCertificateAsyncInvoker(ShowCertificateRequest showCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("certificate_id", showCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificateRequest);
             return new AsyncInvoker<ShowCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCertificateResponse>);
@@ -1603,7 +1603,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowFlavorResponse> ShowFlavorAsync(ShowFlavorRequest showFlavorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("flavor_id", showFlavorRequest.FlavorId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFlavorRequest.FlavorId, out var valueOfFlavorId)) urlParam.Add("flavor_id", valueOfFlavorId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/flavors/{flavor_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlavorRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1613,7 +1613,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowFlavorResponse> ShowFlavorAsyncInvoker(ShowFlavorRequest showFlavorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("flavor_id", showFlavorRequest.FlavorId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showFlavorRequest.FlavorId, out var valueOfFlavorId)) urlParam.Add("flavor_id", valueOfFlavorId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/flavors/{flavor_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlavorRequest);
             return new AsyncInvoker<ShowFlavorResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFlavorResponse>);
@@ -1629,7 +1629,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowHealthMonitorResponse> ShowHealthMonitorAsync(ShowHealthMonitorRequest showHealthMonitorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("healthmonitor_id", showHealthMonitorRequest.HealthmonitorId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHealthMonitorRequest.HealthmonitorId, out var valueOfHealthmonitorId)) urlParam.Add("healthmonitor_id", valueOfHealthmonitorId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHealthMonitorRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1639,7 +1639,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowHealthMonitorResponse> ShowHealthMonitorAsyncInvoker(ShowHealthMonitorRequest showHealthMonitorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("healthmonitor_id", showHealthMonitorRequest.HealthmonitorId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showHealthMonitorRequest.HealthmonitorId, out var valueOfHealthmonitorId)) urlParam.Add("healthmonitor_id", valueOfHealthmonitorId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHealthMonitorRequest);
             return new AsyncInvoker<ShowHealthMonitorResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHealthMonitorResponse>);
@@ -1655,7 +1655,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowJobResponse> ShowJobAsync(ShowJobRequest showJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1665,7 +1665,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowJobResponse> ShowJobAsyncInvoker(ShowJobRequest showJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showJobRequest);
             return new AsyncInvoker<ShowJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowJobResponse>);
@@ -1681,7 +1681,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowL7PolicyResponse> ShowL7PolicyAsync(ShowL7PolicyRequest showL7PolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", showL7PolicyRequest.L7policyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showL7PolicyRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showL7PolicyRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1691,7 +1691,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowL7PolicyResponse> ShowL7PolicyAsyncInvoker(ShowL7PolicyRequest showL7PolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", showL7PolicyRequest.L7policyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showL7PolicyRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showL7PolicyRequest);
             return new AsyncInvoker<ShowL7PolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowL7PolicyResponse>);
@@ -1707,8 +1707,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowL7RuleResponse> ShowL7RuleAsync(ShowL7RuleRequest showL7RuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", showL7RuleRequest.L7policyId.ToString());
-            urlParam.Add("l7rule_id", showL7RuleRequest.L7ruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showL7RuleRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
+            if (StringUtils.TryConvertToNonEmptyString(showL7RuleRequest.L7ruleId, out var valueOfL7ruleId)) urlParam.Add("l7rule_id", valueOfL7ruleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showL7RuleRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1718,8 +1718,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowL7RuleResponse> ShowL7RuleAsyncInvoker(ShowL7RuleRequest showL7RuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", showL7RuleRequest.L7policyId.ToString());
-            urlParam.Add("l7rule_id", showL7RuleRequest.L7ruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showL7RuleRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
+            if (StringUtils.TryConvertToNonEmptyString(showL7RuleRequest.L7ruleId, out var valueOfL7ruleId)) urlParam.Add("l7rule_id", valueOfL7ruleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showL7RuleRequest);
             return new AsyncInvoker<ShowL7RuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowL7RuleResponse>);
@@ -1735,7 +1735,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowListenerResponse> ShowListenerAsync(ShowListenerRequest showListenerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id", showListenerRequest.ListenerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showListenerRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListenerRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1745,7 +1745,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowListenerResponse> ShowListenerAsyncInvoker(ShowListenerRequest showListenerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id", showListenerRequest.ListenerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showListenerRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showListenerRequest);
             return new AsyncInvoker<ShowListenerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowListenerResponse>);
@@ -1761,7 +1761,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowLoadBalancerResponse> ShowLoadBalancerAsync(ShowLoadBalancerRequest showLoadBalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", showLoadBalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLoadBalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1771,7 +1771,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowLoadBalancerResponse> ShowLoadBalancerAsyncInvoker(ShowLoadBalancerRequest showLoadBalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", showLoadBalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLoadBalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerRequest);
             return new AsyncInvoker<ShowLoadBalancerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLoadBalancerResponse>);
@@ -1787,7 +1787,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowLoadBalancerPortsResponse> ShowLoadBalancerPortsAsync(ShowLoadBalancerPortsRequest showLoadBalancerPortsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", showLoadBalancerPortsRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLoadBalancerPortsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/local-ports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerPortsRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1797,7 +1797,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowLoadBalancerPortsResponse> ShowLoadBalancerPortsAsyncInvoker(ShowLoadBalancerPortsRequest showLoadBalancerPortsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", showLoadBalancerPortsRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLoadBalancerPortsRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/local-ports", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerPortsRequest);
             return new AsyncInvoker<ShowLoadBalancerPortsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLoadBalancerPortsResponse>);
@@ -1816,7 +1816,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowLoadBalancerStatusResponse> ShowLoadBalancerStatusAsync(ShowLoadBalancerStatusRequest showLoadBalancerStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", showLoadBalancerStatusRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLoadBalancerStatusRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerStatusRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1826,7 +1826,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowLoadBalancerStatusResponse> ShowLoadBalancerStatusAsyncInvoker(ShowLoadBalancerStatusRequest showLoadBalancerStatusRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", showLoadBalancerStatusRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLoadBalancerStatusRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/statuses", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLoadBalancerStatusRequest);
             return new AsyncInvoker<ShowLoadBalancerStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLoadBalancerStatusResponse>);
@@ -1842,7 +1842,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowLogtankResponse> ShowLogtankAsync(ShowLogtankRequest showLogtankRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("logtank_id", showLogtankRequest.LogtankId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLogtankRequest.LogtankId, out var valueOfLogtankId)) urlParam.Add("logtank_id", valueOfLogtankId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogtankRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1852,7 +1852,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowLogtankResponse> ShowLogtankAsyncInvoker(ShowLogtankRequest showLogtankRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("logtank_id", showLogtankRequest.LogtankId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showLogtankRequest.LogtankId, out var valueOfLogtankId)) urlParam.Add("logtank_id", valueOfLogtankId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLogtankRequest);
             return new AsyncInvoker<ShowLogtankResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLogtankResponse>);
@@ -1868,7 +1868,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowMasterSlavePoolResponse> ShowMasterSlavePoolAsync(ShowMasterSlavePoolRequest showMasterSlavePoolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", showMasterSlavePoolRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMasterSlavePoolRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMasterSlavePoolRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1878,7 +1878,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowMasterSlavePoolResponse> ShowMasterSlavePoolAsyncInvoker(ShowMasterSlavePoolRequest showMasterSlavePoolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", showMasterSlavePoolRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMasterSlavePoolRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/master-slave-pools/{pool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMasterSlavePoolRequest);
             return new AsyncInvoker<ShowMasterSlavePoolResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMasterSlavePoolResponse>);
@@ -1894,8 +1894,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowMemberResponse> ShowMemberAsync(ShowMemberRequest showMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", showMemberRequest.PoolId.ToString());
-            urlParam.Add("member_id", showMemberRequest.MemberId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMemberRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
+            if (StringUtils.TryConvertToNonEmptyString(showMemberRequest.MemberId, out var valueOfMemberId)) urlParam.Add("member_id", valueOfMemberId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1905,8 +1905,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowMemberResponse> ShowMemberAsyncInvoker(ShowMemberRequest showMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", showMemberRequest.PoolId.ToString());
-            urlParam.Add("member_id", showMemberRequest.MemberId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMemberRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
+            if (StringUtils.TryConvertToNonEmptyString(showMemberRequest.MemberId, out var valueOfMemberId)) urlParam.Add("member_id", valueOfMemberId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberRequest);
             return new AsyncInvoker<ShowMemberResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMemberResponse>);
@@ -1922,7 +1922,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowMemberHealthCheckJobResponse> ShowMemberHealthCheckJobAsync(ShowMemberHealthCheckJobRequest showMemberHealthCheckJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showMemberHealthCheckJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMemberHealthCheckJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members/check/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberHealthCheckJobRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1932,7 +1932,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowMemberHealthCheckJobResponse> ShowMemberHealthCheckJobAsyncInvoker(ShowMemberHealthCheckJobRequest showMemberHealthCheckJobRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("job_id", showMemberHealthCheckJobRequest.JobId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showMemberHealthCheckJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/members/check/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showMemberHealthCheckJobRequest);
             return new AsyncInvoker<ShowMemberHealthCheckJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowMemberHealthCheckJobResponse>);
@@ -1948,7 +1948,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowPoolResponse> ShowPoolAsync(ShowPoolRequest showPoolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", showPoolRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPoolRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPoolRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -1958,7 +1958,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowPoolResponse> ShowPoolAsyncInvoker(ShowPoolRequest showPoolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", showPoolRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showPoolRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showPoolRequest);
             return new AsyncInvoker<ShowPoolResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowPoolResponse>);
@@ -2022,7 +2022,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowSecurityPolicyResponse> ShowSecurityPolicyAsync(ShowSecurityPolicyRequest showSecurityPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_policy_id", showSecurityPolicyRequest.SecurityPolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecurityPolicyRequest.SecurityPolicyId, out var valueOfSecurityPolicyId)) urlParam.Add("security_policy_id", valueOfSecurityPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityPolicyRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2032,7 +2032,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowSecurityPolicyResponse> ShowSecurityPolicyAsyncInvoker(ShowSecurityPolicyRequest showSecurityPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_policy_id", showSecurityPolicyRequest.SecurityPolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showSecurityPolicyRequest.SecurityPolicyId, out var valueOfSecurityPolicyId)) urlParam.Add("security_policy_id", valueOfSecurityPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSecurityPolicyRequest);
             return new AsyncInvoker<ShowSecurityPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSecurityPolicyResponse>);
@@ -2049,7 +2049,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdateCertificateResponse> UpdateCertificateAsync(UpdateCertificateRequest updateCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("certificate_id", updateCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCertificateRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2059,7 +2059,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdateCertificateResponse> UpdateCertificateAsyncInvoker(UpdateCertificateRequest updateCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("certificate_id", updateCertificateRequest.CertificateId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/certificates/{certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateCertificateRequest);
             return new AsyncInvoker<UpdateCertificateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateCertificateResponse>);
@@ -2075,7 +2075,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdateHealthMonitorResponse> UpdateHealthMonitorAsync(UpdateHealthMonitorRequest updateHealthMonitorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("healthmonitor_id", updateHealthMonitorRequest.HealthmonitorId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHealthMonitorRequest.HealthmonitorId, out var valueOfHealthmonitorId)) urlParam.Add("healthmonitor_id", valueOfHealthmonitorId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateHealthMonitorRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2085,7 +2085,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdateHealthMonitorResponse> UpdateHealthMonitorAsyncInvoker(UpdateHealthMonitorRequest updateHealthMonitorRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("healthmonitor_id", updateHealthMonitorRequest.HealthmonitorId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateHealthMonitorRequest.HealthmonitorId, out var valueOfHealthmonitorId)) urlParam.Add("healthmonitor_id", valueOfHealthmonitorId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateHealthMonitorRequest);
             return new AsyncInvoker<UpdateHealthMonitorResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateHealthMonitorResponse>);
@@ -2101,7 +2101,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdateL7PolicyResponse> UpdateL7PolicyAsync(UpdateL7PolicyRequest updateL7PolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", updateL7PolicyRequest.L7policyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateL7PolicyRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateL7PolicyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2111,7 +2111,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdateL7PolicyResponse> UpdateL7PolicyAsyncInvoker(UpdateL7PolicyRequest updateL7PolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", updateL7PolicyRequest.L7policyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateL7PolicyRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateL7PolicyRequest);
             return new AsyncInvoker<UpdateL7PolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateL7PolicyResponse>);
@@ -2127,8 +2127,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdateL7RuleResponse> UpdateL7RuleAsync(UpdateL7RuleRequest updateL7RuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", updateL7RuleRequest.L7policyId.ToString());
-            urlParam.Add("l7rule_id", updateL7RuleRequest.L7ruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateL7RuleRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
+            if (StringUtils.TryConvertToNonEmptyString(updateL7RuleRequest.L7ruleId, out var valueOfL7ruleId)) urlParam.Add("l7rule_id", valueOfL7ruleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateL7RuleRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2138,8 +2138,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdateL7RuleResponse> UpdateL7RuleAsyncInvoker(UpdateL7RuleRequest updateL7RuleRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("l7policy_id", updateL7RuleRequest.L7policyId.ToString());
-            urlParam.Add("l7rule_id", updateL7RuleRequest.L7ruleId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateL7RuleRequest.L7policyId, out var valueOfL7policyId)) urlParam.Add("l7policy_id", valueOfL7policyId);
+            if (StringUtils.TryConvertToNonEmptyString(updateL7RuleRequest.L7ruleId, out var valueOfL7ruleId)) urlParam.Add("l7rule_id", valueOfL7ruleId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/l7policies/{l7policy_id}/rules/{l7rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateL7RuleRequest);
             return new AsyncInvoker<UpdateL7RuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateL7RuleResponse>);
@@ -2155,7 +2155,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdateListenerResponse> UpdateListenerAsync(UpdateListenerRequest updateListenerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id", updateListenerRequest.ListenerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateListenerRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateListenerRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2165,7 +2165,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdateListenerResponse> UpdateListenerAsyncInvoker(UpdateListenerRequest updateListenerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("listener_id", updateListenerRequest.ListenerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateListenerRequest.ListenerId, out var valueOfListenerId)) urlParam.Add("listener_id", valueOfListenerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/listeners/{listener_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateListenerRequest);
             return new AsyncInvoker<UpdateListenerResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateListenerResponse>);
@@ -2181,7 +2181,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdateLoadBalancerResponse> UpdateLoadBalancerAsync(UpdateLoadBalancerRequest updateLoadBalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", updateLoadBalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLoadBalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLoadBalancerRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2191,7 +2191,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdateLoadBalancerResponse> UpdateLoadBalancerAsyncInvoker(UpdateLoadBalancerRequest updateLoadBalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", updateLoadBalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLoadBalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLoadBalancerRequest);
             return new AsyncInvoker<UpdateLoadBalancerResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateLoadBalancerResponse>);
@@ -2207,7 +2207,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdateLogtankResponse> UpdateLogtankAsync(UpdateLogtankRequest updateLogtankRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("logtank_id", updateLogtankRequest.LogtankId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLogtankRequest.LogtankId, out var valueOfLogtankId)) urlParam.Add("logtank_id", valueOfLogtankId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLogtankRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2217,7 +2217,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdateLogtankResponse> UpdateLogtankAsyncInvoker(UpdateLogtankRequest updateLogtankRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("logtank_id", updateLogtankRequest.LogtankId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateLogtankRequest.LogtankId, out var valueOfLogtankId)) urlParam.Add("logtank_id", valueOfLogtankId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/logtanks/{logtank_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateLogtankRequest);
             return new AsyncInvoker<UpdateLogtankResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateLogtankResponse>);
@@ -2233,8 +2233,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdateMemberResponse> UpdateMemberAsync(UpdateMemberRequest updateMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_id", updateMemberRequest.MemberId.ToString());
-            urlParam.Add("pool_id", updateMemberRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMemberRequest.MemberId, out var valueOfMemberId)) urlParam.Add("member_id", valueOfMemberId);
+            if (StringUtils.TryConvertToNonEmptyString(updateMemberRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMemberRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2244,8 +2244,8 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdateMemberResponse> UpdateMemberAsyncInvoker(UpdateMemberRequest updateMemberRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("member_id", updateMemberRequest.MemberId.ToString());
-            urlParam.Add("pool_id", updateMemberRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateMemberRequest.MemberId, out var valueOfMemberId)) urlParam.Add("member_id", valueOfMemberId);
+            if (StringUtils.TryConvertToNonEmptyString(updateMemberRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}/members/{member_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateMemberRequest);
             return new AsyncInvoker<UpdateMemberResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateMemberResponse>);
@@ -2261,7 +2261,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdatePoolResponse> UpdatePoolAsync(UpdatePoolRequest updatePoolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", updatePoolRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePoolRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePoolRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2271,7 +2271,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdatePoolResponse> UpdatePoolAsyncInvoker(UpdatePoolRequest updatePoolRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("pool_id", updatePoolRequest.PoolId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updatePoolRequest.PoolId, out var valueOfPoolId)) urlParam.Add("pool_id", valueOfPoolId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/pools/{pool_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updatePoolRequest);
             return new AsyncInvoker<UpdatePoolResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePoolResponse>);
@@ -2335,7 +2335,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdateSecurityPolicyResponse> UpdateSecurityPolicyAsync(UpdateSecurityPolicyRequest updateSecurityPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_policy_id", updateSecurityPolicyRequest.SecurityPolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSecurityPolicyRequest.SecurityPolicyId, out var valueOfSecurityPolicyId)) urlParam.Add("security_policy_id", valueOfSecurityPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecurityPolicyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2345,7 +2345,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdateSecurityPolicyResponse> UpdateSecurityPolicyAsyncInvoker(UpdateSecurityPolicyRequest updateSecurityPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("security_policy_id", updateSecurityPolicyRequest.SecurityPolicyId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateSecurityPolicyRequest.SecurityPolicyId, out var valueOfSecurityPolicyId)) urlParam.Add("security_policy_id", valueOfSecurityPolicyId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/security-policies/{security_policy_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSecurityPolicyRequest);
             return new AsyncInvoker<UpdateSecurityPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecurityPolicyResponse>);
@@ -2361,7 +2361,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpgradeLoadbalancerResponse> UpgradeLoadbalancerAsync(UpgradeLoadbalancerRequest upgradeLoadbalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", upgradeLoadbalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(upgradeLoadbalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeLoadbalancerRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2371,7 +2371,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpgradeLoadbalancerResponse> UpgradeLoadbalancerAsyncInvoker(UpgradeLoadbalancerRequest upgradeLoadbalancerRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("loadbalancer_id", upgradeLoadbalancerRequest.LoadbalancerId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(upgradeLoadbalancerRequest.LoadbalancerId, out var valueOfLoadbalancerId)) urlParam.Add("loadbalancer_id", valueOfLoadbalancerId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeLoadbalancerRequest);
             return new AsyncInvoker<UpgradeLoadbalancerResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeLoadbalancerResponse>);
@@ -2416,7 +2416,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<BatchDeleteIpListResponse> BatchDeleteIpListAsync(BatchDeleteIpListRequest batchDeleteIpListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", batchDeleteIpListRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteIpListRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIpListRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2426,7 +2426,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<BatchDeleteIpListResponse> BatchDeleteIpListAsyncInvoker(BatchDeleteIpListRequest batchDeleteIpListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", batchDeleteIpListRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteIpListRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/batch-delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteIpListRequest);
             return new AsyncInvoker<BatchDeleteIpListResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteIpListResponse>);
@@ -2507,7 +2507,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<DeleteIpGroupResponse> DeleteIpGroupAsync(DeleteIpGroupRequest deleteIpGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", deleteIpGroupRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpGroupRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpGroupRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
@@ -2517,7 +2517,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<DeleteIpGroupResponse> DeleteIpGroupAsyncInvoker(DeleteIpGroupRequest deleteIpGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", deleteIpGroupRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpGroupRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpGroupRequest);
             return new AsyncInvoker<DeleteIpGroupResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteIpGroupResponse>);
@@ -2557,7 +2557,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowIpGroupResponse> ShowIpGroupAsync(ShowIpGroupRequest showIpGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", showIpGroupRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showIpGroupRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpGroupRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2567,7 +2567,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowIpGroupResponse> ShowIpGroupAsyncInvoker(ShowIpGroupRequest showIpGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", showIpGroupRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showIpGroupRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpGroupRequest);
             return new AsyncInvoker<ShowIpGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIpGroupResponse>);
@@ -2583,7 +2583,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<ShowIpGroupRelatedListenersResponse> ShowIpGroupRelatedListenersAsync(ShowIpGroupRelatedListenersRequest showIpGroupRelatedListenersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", showIpGroupRelatedListenersRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showIpGroupRelatedListenersRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/related-listeners", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpGroupRelatedListenersRequest);
             var response = await DoHttpRequestAsync("GET", request);
@@ -2593,7 +2593,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<ShowIpGroupRelatedListenersResponse> ShowIpGroupRelatedListenersAsyncInvoker(ShowIpGroupRelatedListenersRequest showIpGroupRelatedListenersRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", showIpGroupRelatedListenersRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(showIpGroupRelatedListenersRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/related-listeners", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIpGroupRelatedListenersRequest);
             return new AsyncInvoker<ShowIpGroupRelatedListenersResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIpGroupRelatedListenersResponse>);
@@ -2616,7 +2616,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdateIpGroupResponse> UpdateIpGroupAsync(UpdateIpGroupRequest updateIpGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", updateIpGroupRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateIpGroupRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpGroupRequest);
             var response = await DoHttpRequestAsync("PUT", request);
@@ -2626,7 +2626,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdateIpGroupResponse> UpdateIpGroupAsyncInvoker(UpdateIpGroupRequest updateIpGroupRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", updateIpGroupRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateIpGroupRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpGroupRequest);
             return new AsyncInvoker<UpdateIpGroupResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateIpGroupResponse>);
@@ -2647,7 +2647,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public async Task<UpdateIpListResponse> UpdateIpListAsync(UpdateIpListRequest updateIpListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", updateIpListRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateIpListRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/create-or-update", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpListRequest);
             var response = await DoHttpRequestAsync("POST", request);
@@ -2657,7 +2657,7 @@ namespace HuaweiCloud.SDK.Elb.V3
         public AsyncInvoker<UpdateIpListResponse> UpdateIpListAsyncInvoker(UpdateIpListRequest updateIpListRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("ipgroup_id", updateIpListRequest.IpgroupId.ToString());
+            if (StringUtils.TryConvertToNonEmptyString(updateIpListRequest.IpgroupId, out var valueOfIpgroupId)) urlParam.Add("ipgroup_id", valueOfIpgroupId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/iplist/create-or-update", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateIpListRequest);
             return new AsyncInvoker<UpdateIpListResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateIpListResponse>);
