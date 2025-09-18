@@ -128,7 +128,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
 
             public static bool operator ==(FieldsEnum a, FieldsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

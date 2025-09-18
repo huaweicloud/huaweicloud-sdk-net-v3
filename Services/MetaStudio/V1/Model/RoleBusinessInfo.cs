@@ -32,7 +32,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public LanguageEnum Language { get; set; }
+        public LanguageEnum? Language { get; set; }
+
         /// <summary>
         /// 提示词。
         /// </summary>
@@ -93,7 +94,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (input == null) return false;
             if (this.RoleBusinessId != input.RoleBusinessId || (this.RoleBusinessId != null && !this.RoleBusinessId.Equals(input.RoleBusinessId))) return false;
             if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
-            if (this.Language != input.Language) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
             if (this.Prompt != input.Prompt || (this.Prompt != null && !this.Prompt.Equals(input.Prompt))) return false;
             if (this.KnowledgeLibraryList != input.KnowledgeLibraryList || (this.KnowledgeLibraryList != null && input.KnowledgeLibraryList != null && !this.KnowledgeLibraryList.SequenceEqual(input.KnowledgeLibraryList))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
@@ -112,7 +113,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 var hashCode = 41;
                 if (this.RoleBusinessId != null) hashCode = hashCode * 59 + this.RoleBusinessId.GetHashCode();
                 if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
-                hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.Prompt != null) hashCode = hashCode * 59 + this.Prompt.GetHashCode();
                 if (this.KnowledgeLibraryList != null) hashCode = hashCode * 59 + this.KnowledgeLibraryList.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();

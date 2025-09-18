@@ -31,22 +31,13 @@ namespace HuaweiCloud.SDK.Core
 {
     public static class HttpUtils
     {
-        private const string ContentType = "Content-Type";
-        private const string ContentLength = "Content-Length";
-
-        private const string ApplicationXml = "application/xml";
-        private const string MultipartFormdata = "multipart/form-data";
-        private const string ApplicationFormUrlEncoded = "application/x-www-form-urlencoded";
-
         private const string HttpStatusCode = "HttpStatusCode";
         private const string HttpHeaders = "HttpHeaders";
         private const string SetStream = "SetStream";
 
         public static string AddUrlPath(string path, Dictionary<string, string> pathParams)
         {
-            return pathParams.Aggregate(path,
-                (current, keyValuePair) => current.Replace("{" + keyValuePair.Key + "}",
-                    keyValuePair.Value));
+            return pathParams.Aggregate(path, (current, keyValuePair) => current.Replace("{" + keyValuePair.Key + "}", keyValuePair.Value));
         }
 
         private static StringBuilder BuildQueryStringParameter(string key, object value)
@@ -62,29 +53,40 @@ namespace HuaweiCloud.SDK.Core
             {
                 sb.Append(BuildQueryStringParameter(key, item));
             }
-
             return sb;
         }
 
-        private static StringBuilder BuildQueryDictionaryParameter(string key, IDictionary dict)
+        private static StringBuilder BuildQueryDictionaryParameter(string key, IDictionary dict, HashSet<object> processedObjects = null)
         {
-            var sb = new StringBuilder();
-            foreach (var k in dict.Keys)
+            if (processedObjects == null)
             {
-                if (dict[k] is IList list)
+                processedObjects = new HashSet<object>();
+            }
+            if (processedObjects.Contains(dict))
+            {
+                return new StringBuilder();
+            }
+            processedObjects.Add(dict);
+
+            var sb = new StringBuilder();
+            foreach (KeyValuePair<string, object> pair in dict)
+            {
+                var inputKey = $"{key}[{pair.Key}]";
+                switch (pair.Value)
                 {
-                    sb.Append(BuildQueryListParameter(key + "[" + k + "]", list));
-                }
-                else if (dict[k] is IDictionary dictionary)
-                {
-                    sb.Append(BuildQueryDictionaryParameter(key + "[" + k + "]", dictionary));
-                }
-                else
-                {
-                    sb.Append(BuildQueryStringParameter(key + "[" + k + "]", dict[k]));
+                    case IList list:
+                        sb.Append(BuildQueryListParameter(inputKey, list));
+                        break;
+                    case IDictionary dictionary:
+                        sb.Append(BuildQueryDictionaryParameter(inputKey, dictionary, processedObjects));
+                        break;
+                    default:
+                        sb.Append(BuildQueryStringParameter(inputKey, pair.Value));
+                        break;
                 }
             }
 
+            processedObjects.Remove(dict);
             return sb;
         }
 
@@ -131,13 +133,13 @@ namespace HuaweiCloud.SDK.Core
                 return;
             }
 
-            if ((contentType == MultipartFormdata || contentType == ApplicationFormUrlEncoded) && value is IFormDataBody formDataBody)
+            if ((contentType == HttpContentType.MultipartFormData || contentType == HttpContentType.ApplicationFormUrlEncoded) && value is IFormDataBody formDataBody)
             {
                 request.FormData = formDataBody.BuildFormData();
                 return;
             }
 
-            request.Body = contentType == ApplicationXml ? XmlUtils.Serialize(value) : JsonUtils.Serialize(value);
+            request.Body = contentType == HttpContentType.ApplicationXml ? XmlUtils.Serialize(value) : JsonUtils.Serialize(value);
         }
 
         private static void ProcessStreamRequest(SdkRequest request, SdkStreamRequest streamRequest)
@@ -150,7 +152,7 @@ namespace HuaweiCloud.SDK.Core
                 return;
             }
 
-            var contentLength = request.Header.TryGetValue(ContentLength, out var contentLengthInHeader) ? long.Parse(contentLengthInHeader) : streamRequest.FileStream.Length;
+            var contentLength = request.Header.TryGetValue(HttpContentType.Length, out var contentLengthInHeader) ? long.Parse(contentLengthInHeader) : streamRequest.FileStream.Length;
             var transferStream = new TransferStream(streamRequest.FileStream);
             TransferStreamManager mgr;
             if (streamRequest.ProgressType == ProgressTypeEnum.ByBytes)
@@ -184,17 +186,35 @@ namespace HuaweiCloud.SDK.Core
             foreach (var propertyInfo in propertyInfos)
             {
                 var sdkPropertyAttribute = GetSdkPropertyAttribute(propertyInfo);
-                if (sdkPropertyAttribute == null) continue;
+                if (sdkPropertyAttribute == null)
+                {
+                    continue;
+                }
 
                 var value = propertyInfo.GetValue(obj, null);
-                if (value == null) continue;
+                if (value == null)
+                {
+                    continue;
+                }
 
-                if (sdkPropertyAttribute.IsQuery) ProcessQueryParams(querySb, sdkPropertyAttribute.PropertyName, value);
-                else if (sdkPropertyAttribute.IsBody) ProcessRequestBody(request, value, contentType);
+                if (sdkPropertyAttribute.IsQuery)
+                {
+                    ProcessQueryParams(querySb, sdkPropertyAttribute.PropertyName, value);
+                }
+                else if (sdkPropertyAttribute.IsBody)
+                {
+                    ProcessRequestBody(request, value, contentType);
+                }
                 else if (StringUtils.TryConvertToNonEmptyString(value, out var strVal))
                 {
-                    if (sdkPropertyAttribute.IsHeader) headers.Add(sdkPropertyAttribute.PropertyName, strVal);
-                    else if (sdkPropertyAttribute.IsCname) request.Cname = strVal;
+                    if (sdkPropertyAttribute.IsHeader)
+                    {
+                        headers.Add(sdkPropertyAttribute.PropertyName, strVal);
+                    }
+                    else if (sdkPropertyAttribute.IsCname)
+                    {
+                        request.Cname = strVal;
+                    }
                 }
             }
 
@@ -205,14 +225,17 @@ namespace HuaweiCloud.SDK.Core
                 querySb.Remove(strIndex - 1, 1);
             }
             var queryStr = querySb.ToString();
-            if (!string.IsNullOrEmpty(queryStr)) request.QueryParams = queryStr;
+            if (!string.IsNullOrEmpty(queryStr))
+            {
+                request.QueryParams = queryStr;
+            }
             // headers
             request.Header = headers;
             // content-type
             if (!string.IsNullOrEmpty(contentType))
             {
                 request.ContentType = contentType;
-                request.Header.Add(ContentType, request.ContentType);
+                request.Header.Add(HttpContentType.Name, request.ContentType);
             }
             // stream
             if (obj is SdkStreamRequest streamRequest)
@@ -228,13 +251,19 @@ namespace HuaweiCloud.SDK.Core
 
         public static SdkRequest InitSdkRequest(string path, string contentType, object data = null)
         {
-            if (string.IsNullOrEmpty(path)) throw new ArgumentNullException(nameof(path));
+            if (string.IsNullOrEmpty(path))
+            {
+                throw new ArgumentNullException(nameof(path));
+            }
 
             var request = new SdkRequest
             {
                 Path = path
             };
-            if (data == null) return request;
+            if (data == null)
+            {
+                return request;
+            }
 
             ProcessRequestParams(data, request, contentType);
             return request;
@@ -246,12 +275,11 @@ namespace HuaweiCloud.SDK.Core
             t.GetType().GetProperty(HttpStatusCode)?.SetValue(t, (int)message.StatusCode, null);
             t.GetType().GetProperty(HttpHeaders)?.SetValue(t, message.Headers.ToString(), null);
             const BindingFlags flag = BindingFlags.Public | BindingFlags.Instance;
-            t.GetType().GetMethod(SetStream)
-                ?.Invoke(t, flag, Type.DefaultBinder,
-                    new object[]
-                    {
-                        message.Content.ReadAsStreamAsync().Result
-                    }, null);
+            t.GetType().GetMethod(SetStream)?.Invoke(t, flag, Type.DefaultBinder,
+                new object[]
+                {
+                    message.Content.ReadAsStreamAsync().Result
+                }, null);
             return t;
         }
 
@@ -309,10 +337,19 @@ namespace HuaweiCloud.SDK.Core
             foreach (var property in properties)
             {
                 var propertyAttribute = GetSdkPropertyAttribute(property);
-                if (propertyAttribute == null || !propertyAttribute.IsHeader || string.IsNullOrEmpty(propertyAttribute.PropertyName)) continue;
+                if (propertyAttribute == null || !propertyAttribute.IsHeader || string.IsNullOrEmpty(propertyAttribute.PropertyName))
+                {
+                    continue;
+                }
 
-                if (message.Headers.TryGetValues(propertyAttribute.PropertyName, out var values)) property.SetValue(obj, values.First());
-                else if (message.Content.Headers.TryGetValues(propertyAttribute.PropertyName, out values)) property.SetValue(obj, values.First());
+                if (message.Headers.TryGetValues(propertyAttribute.PropertyName, out var values))
+                {
+                    property.SetValue(obj, values.First());
+                }
+                else if (message.Content.Headers.TryGetValues(propertyAttribute.PropertyName, out values))
+                {
+                    property.SetValue(obj, values.First());
+                }
             }
         }
     }

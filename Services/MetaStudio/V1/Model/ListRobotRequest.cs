@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(RobotTypeEnum a, RobotTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

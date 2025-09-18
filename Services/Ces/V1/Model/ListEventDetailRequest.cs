@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
 
             public static bool operator ==(EventTypeEnum a, EventTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
 
             public static bool operator ==(SubEventTypeEnum a, SubEventTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(ChargeModeEnum a, ChargeModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(SlaLevelEnum a, SlaLevelEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -371,7 +371,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(BindingServiceEnum a, BindingServiceEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

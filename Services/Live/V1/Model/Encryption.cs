@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(EncryptionMethodEnum a, EncryptionMethodEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(LevelEnum a, LevelEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -346,7 +346,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(SystemIdsEnum a, SystemIdsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -456,7 +456,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(SpekeVersionEnum a, SpekeVersionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -571,7 +571,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(RequestModeEnum a, RequestModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

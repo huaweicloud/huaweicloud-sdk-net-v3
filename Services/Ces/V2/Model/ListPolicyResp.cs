@@ -32,7 +32,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
-        public PeriodResp Period { get; set; }
+        public PeriodResp? Period { get; set; }
+
         /// <summary>
         /// **参数解释**： 聚合方式。         **取值范围**： average： 平均值，variance：方差，min：最小值，max：最大值，sum：求和。 
         /// </summary>
@@ -79,7 +80,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("suppress_duration", NullValueHandling = NullValueHandling.Ignore)]
-        public SuppressDurationResp SuppressDuration { get; set; }
+        public SuppressDurationResp? SuppressDuration { get; set; }
+
         /// <summary>
         /// **参数解释**： 告警级别。    **取值范围**： 只能为1、2、3、4。1为紧急，2为重要，3为次要，4为提示。 
         /// </summary>
@@ -141,7 +143,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (input == null) return false;
             if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
             if (this.ExtraInfo != input.ExtraInfo || (this.ExtraInfo != null && !this.ExtraInfo.Equals(input.ExtraInfo))) return false;
-            if (this.Period != input.Period) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
             if (this.Filter != input.Filter || (this.Filter != null && !this.Filter.Equals(input.Filter))) return false;
             if (this.ComparisonOperator != input.ComparisonOperator || (this.ComparisonOperator != null && !this.ComparisonOperator.Equals(input.ComparisonOperator))) return false;
             if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
@@ -149,7 +151,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
-            if (this.SuppressDuration != input.SuppressDuration) return false;
+            if (this.SuppressDuration != input.SuppressDuration || (this.SuppressDuration != null && !this.SuppressDuration.Equals(input.SuppressDuration))) return false;
             if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
             if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
             if (this.DimensionName != input.DimensionName || (this.DimensionName != null && !this.DimensionName.Equals(input.DimensionName))) return false;
@@ -167,7 +169,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 var hashCode = 41;
                 if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
                 if (this.ExtraInfo != null) hashCode = hashCode * 59 + this.ExtraInfo.GetHashCode();
-                hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
                 if (this.Filter != null) hashCode = hashCode * 59 + this.Filter.GetHashCode();
                 if (this.ComparisonOperator != null) hashCode = hashCode * 59 + this.ComparisonOperator.GetHashCode();
                 if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
@@ -175,7 +177,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
-                hashCode = hashCode * 59 + this.SuppressDuration.GetHashCode();
+                if (this.SuppressDuration != null) hashCode = hashCode * 59 + this.SuppressDuration.GetHashCode();
                 if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();
                 if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
                 if (this.DimensionName != null) hashCode = hashCode * 59 + this.DimensionName.GetHashCode();

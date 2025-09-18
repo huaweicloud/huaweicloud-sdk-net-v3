@@ -168,7 +168,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// 
         /// </summary>
         [JsonProperty("hosted_cloud", NullValueHandling = NullValueHandling.Ignore)]
-        public HostedCloudEnum HostedCloud { get; set; }
+        public HostedCloudEnum? HostedCloud { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -260,7 +261,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             if (this.AttachedErTableId != input.AttachedErTableId || (this.AttachedErTableId != null && !this.AttachedErTableId.Equals(input.AttachedErTableId))) return false;
             if (this.AttachedErAttachmentId != input.AttachedErAttachmentId || (this.AttachedErAttachmentId != null && !this.AttachedErAttachmentId.Equals(input.AttachedErAttachmentId))) return false;
             if (this.AttachedErTableSiteCode != input.AttachedErTableSiteCode || (this.AttachedErTableSiteCode != null && !this.AttachedErTableSiteCode.Equals(input.AttachedErTableSiteCode))) return false;
-            if (this.HostedCloud != input.HostedCloud) return false;
+            if (this.HostedCloud != input.HostedCloud || (this.HostedCloud != null && !this.HostedCloud.Equals(input.HostedCloud))) return false;
             if (this.ApprovedState != input.ApprovedState) return false;
             if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
 
@@ -300,7 +301,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
                 if (this.AttachedErTableId != null) hashCode = hashCode * 59 + this.AttachedErTableId.GetHashCode();
                 if (this.AttachedErAttachmentId != null) hashCode = hashCode * 59 + this.AttachedErAttachmentId.GetHashCode();
                 if (this.AttachedErTableSiteCode != null) hashCode = hashCode * 59 + this.AttachedErTableSiteCode.GetHashCode();
-                hashCode = hashCode * 59 + this.HostedCloud.GetHashCode();
+                if (this.HostedCloud != null) hashCode = hashCode * 59 + this.HostedCloud.GetHashCode();
                 hashCode = hashCode * 59 + this.ApprovedState.GetHashCode();
                 if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
                 return hashCode;

@@ -56,7 +56,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public ServerStatus Status { get; set; }
+        public ServerStatus? Status { get; set; }
+
         /// <summary>
         /// 服务器创建时间。
         /// </summary>
@@ -145,12 +146,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("job_type", NullValueHandling = NullValueHandling.Ignore)]
-        public JobType JobType { get; set; }
+        public JobType? JobType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("job_status", NullValueHandling = NullValueHandling.Ignore)]
-        public JobStatus JobStatus { get; set; }
+        public JobStatus? JobStatus { get; set; }
+
         /// <summary>
         /// 上一次执行job的执行时间。
         /// </summary>
@@ -235,7 +238,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.ServerGroupId != input.ServerGroupId || (this.ServerGroupId != null && !this.ServerGroupId.Equals(input.ServerGroupId))) return false;
             if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
-            if (this.Status != input.Status) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
@@ -250,8 +253,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.MaintainStatus != input.MaintainStatus || (this.MaintainStatus != null && !this.MaintainStatus.Equals(input.MaintainStatus))) return false;
             if (this.ScalingAutoCreate != input.ScalingAutoCreate || (this.ScalingAutoCreate != null && !this.ScalingAutoCreate.Equals(input.ScalingAutoCreate))) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
-            if (this.JobType != input.JobType) return false;
-            if (this.JobStatus != input.JobStatus) return false;
+            if (this.JobType != input.JobType || (this.JobType != null && !this.JobType.Equals(input.JobType))) return false;
+            if (this.JobStatus != input.JobStatus || (this.JobStatus != null && !this.JobStatus.Equals(input.JobStatus))) return false;
             if (this.JobTime != input.JobTime || (this.JobTime != null && !this.JobTime.Equals(input.JobTime))) return false;
             if (this.ResourcePoolId != input.ResourcePoolId || (this.ResourcePoolId != null && !this.ResourcePoolId.Equals(input.ResourcePoolId))) return false;
             if (this.ResourcePoolType != input.ResourcePoolType || (this.ResourcePoolType != null && !this.ResourcePoolType.Equals(input.ResourcePoolType))) return false;
@@ -274,7 +277,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.ServerGroupId != null) hashCode = hashCode * 59 + this.ServerGroupId.GetHashCode();
                 if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
@@ -289,8 +292,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.MaintainStatus != null) hashCode = hashCode * 59 + this.MaintainStatus.GetHashCode();
                 if (this.ScalingAutoCreate != null) hashCode = hashCode * 59 + this.ScalingAutoCreate.GetHashCode();
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                hashCode = hashCode * 59 + this.JobType.GetHashCode();
-                hashCode = hashCode * 59 + this.JobStatus.GetHashCode();
+                if (this.JobType != null) hashCode = hashCode * 59 + this.JobType.GetHashCode();
+                if (this.JobStatus != null) hashCode = hashCode * 59 + this.JobStatus.GetHashCode();
                 if (this.JobTime != null) hashCode = hashCode * 59 + this.JobTime.GetHashCode();
                 if (this.ResourcePoolId != null) hashCode = hashCode * 59 + this.ResourcePoolId.GetHashCode();
                 if (this.ResourcePoolType != null) hashCode = hashCode * 59 + this.ResourcePoolType.GetHashCode();

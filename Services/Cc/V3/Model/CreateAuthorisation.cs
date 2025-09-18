@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(InstanceTypeEnum a, InstanceTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

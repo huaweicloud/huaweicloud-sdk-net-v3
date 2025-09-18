@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
             public static bool operator ==(OrderEnum a, OrderEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -171,7 +171,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("rollup_filter", NullValueHandling = NullValueHandling.Ignore)]
-        public RollupFilter RollupFilter { get; set; }
+        public RollupFilter? RollupFilter { get; set; }
+
         /// <summary>
         /// **参数解释** 聚合维度 **约束限制** 不涉及 **取值范围** 长度为[1,32]个字符 **默认取值** 不涉及 
         /// </summary>
@@ -267,7 +268,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (this.Alias != input.Alias || (this.Alias != null && input.Alias != null && !this.Alias.SequenceEqual(input.Alias))) return false;
             if (this.ExtraInfo != input.ExtraInfo || (this.ExtraInfo != null && !this.ExtraInfo.Equals(input.ExtraInfo))) return false;
             if (this.RollupEnable != input.RollupEnable || (this.RollupEnable != null && !this.RollupEnable.Equals(input.RollupEnable))) return false;
-            if (this.RollupFilter != input.RollupFilter) return false;
+            if (this.RollupFilter != input.RollupFilter || (this.RollupFilter != null && !this.RollupFilter.Equals(input.RollupFilter))) return false;
             if (this.RollupDimension != input.RollupDimension || (this.RollupDimension != null && !this.RollupDimension.Equals(input.RollupDimension))) return false;
             if (this.LastWeekCompareEnable != input.LastWeekCompareEnable || (this.LastWeekCompareEnable != null && !this.LastWeekCompareEnable.Equals(input.LastWeekCompareEnable))) return false;
             if (this.YesterdayCompareEnable != input.YesterdayCompareEnable || (this.YesterdayCompareEnable != null && !this.YesterdayCompareEnable.Equals(input.YesterdayCompareEnable))) return false;
@@ -294,7 +295,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 if (this.Alias != null) hashCode = hashCode * 59 + this.Alias.GetHashCode();
                 if (this.ExtraInfo != null) hashCode = hashCode * 59 + this.ExtraInfo.GetHashCode();
                 if (this.RollupEnable != null) hashCode = hashCode * 59 + this.RollupEnable.GetHashCode();
-                hashCode = hashCode * 59 + this.RollupFilter.GetHashCode();
+                if (this.RollupFilter != null) hashCode = hashCode * 59 + this.RollupFilter.GetHashCode();
                 if (this.RollupDimension != null) hashCode = hashCode * 59 + this.RollupDimension.GetHashCode();
                 if (this.LastWeekCompareEnable != null) hashCode = hashCode * 59 + this.LastWeekCompareEnable.GetHashCode();
                 if (this.YesterdayCompareEnable != null) hashCode = hashCode * 59 + this.YesterdayCompareEnable.GetHashCode();

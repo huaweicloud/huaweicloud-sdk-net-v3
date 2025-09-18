@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public static bool operator ==(SortDirEnum a, SortDirEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -250,7 +250,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public static bool operator ==(SortKeyEnum a, SortKeyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

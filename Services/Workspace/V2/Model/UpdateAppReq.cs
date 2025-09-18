@@ -50,12 +50,14 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 
         /// </summary>
         [JsonProperty("install_type", NullValueHandling = NullValueHandling.Ignore)]
-        public InstallType InstallType { get; set; }
+        public InstallType? InstallType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("authorization_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AssignType AuthorizationType { get; set; }
+        public AssignType? AuthorizationType { get; set; }
+
         /// <summary>
         /// 安装命令(静默安装命令)。 例: ${FILE_PATH} /S。 预定义变量将采用以下值: ${FILE_PATH}: 应用安装包在桌面本地的存储路径。
         /// </summary>
@@ -72,7 +74,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 
         /// </summary>
         [JsonProperty("support_os", NullValueHandling = NullValueHandling.Ignore)]
-        public OsTypeEnum SupportOs { get; set; }
+        public OsTypeEnum? SupportOs { get; set; }
+
         /// <summary>
         /// 分类ID。
         /// </summary>
@@ -83,7 +86,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public AppStatusEnum Status { get; set; }
+        public AppStatusEnum? Status { get; set; }
+
         /// <summary>
         /// 安装信息。
         /// </summary>
@@ -135,13 +139,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.AppFileStore != input.AppFileStore || (this.AppFileStore != null && !this.AppFileStore.Equals(input.AppFileStore))) return false;
             if (this.AppIconUrl != input.AppIconUrl || (this.AppIconUrl != null && !this.AppIconUrl.Equals(input.AppIconUrl))) return false;
-            if (this.InstallType != input.InstallType) return false;
-            if (this.AuthorizationType != input.AuthorizationType) return false;
+            if (this.InstallType != input.InstallType || (this.InstallType != null && !this.InstallType.Equals(input.InstallType))) return false;
+            if (this.AuthorizationType != input.AuthorizationType || (this.AuthorizationType != null && !this.AuthorizationType.Equals(input.AuthorizationType))) return false;
             if (this.InstallCommand != input.InstallCommand || (this.InstallCommand != null && !this.InstallCommand.Equals(input.InstallCommand))) return false;
             if (this.UninstallCommand != input.UninstallCommand || (this.UninstallCommand != null && !this.UninstallCommand.Equals(input.UninstallCommand))) return false;
-            if (this.SupportOs != input.SupportOs) return false;
+            if (this.SupportOs != input.SupportOs || (this.SupportOs != null && !this.SupportOs.Equals(input.SupportOs))) return false;
             if (this.CatalogId != input.CatalogId || (this.CatalogId != null && !this.CatalogId.Equals(input.CatalogId))) return false;
-            if (this.Status != input.Status) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.InstallInfo != input.InstallInfo || (this.InstallInfo != null && !this.InstallInfo.Equals(input.InstallInfo))) return false;
 
             return true;
@@ -160,13 +164,13 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.AppFileStore != null) hashCode = hashCode * 59 + this.AppFileStore.GetHashCode();
                 if (this.AppIconUrl != null) hashCode = hashCode * 59 + this.AppIconUrl.GetHashCode();
-                hashCode = hashCode * 59 + this.InstallType.GetHashCode();
-                hashCode = hashCode * 59 + this.AuthorizationType.GetHashCode();
+                if (this.InstallType != null) hashCode = hashCode * 59 + this.InstallType.GetHashCode();
+                if (this.AuthorizationType != null) hashCode = hashCode * 59 + this.AuthorizationType.GetHashCode();
                 if (this.InstallCommand != null) hashCode = hashCode * 59 + this.InstallCommand.GetHashCode();
                 if (this.UninstallCommand != null) hashCode = hashCode * 59 + this.UninstallCommand.GetHashCode();
-                hashCode = hashCode * 59 + this.SupportOs.GetHashCode();
+                if (this.SupportOs != null) hashCode = hashCode * 59 + this.SupportOs.GetHashCode();
                 if (this.CatalogId != null) hashCode = hashCode * 59 + this.CatalogId.GetHashCode();
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.InstallInfo != null) hashCode = hashCode * 59 + this.InstallInfo.GetHashCode();
                 return hashCode;
             }

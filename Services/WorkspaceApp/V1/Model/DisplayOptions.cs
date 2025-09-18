@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 
             public static bool operator ==(LosslessCompressionModeEnum a, LosslessCompressionModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 
             public static bool operator ==(QualityBandwidthFirstEnum a, QualityBandwidthFirstEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -371,7 +371,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 
             public static bool operator ==(EncodingPresetEnum a, EncodingPresetEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

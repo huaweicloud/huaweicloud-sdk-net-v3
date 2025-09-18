@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(ChargeModeEnum a, ChargeModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -245,7 +245,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(ServicesEnum a, ServicesEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -373,7 +373,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(GcbTypeEnum a, GcbTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -495,7 +495,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(SlaLevelEnum a, SlaLevelEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -590,6 +590,12 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         [JsonProperty("enable_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableSpecCode { get; set; }
 
+        /// <summary>
+        /// 是否支持CES监控。
+        /// </summary>
+        [JsonProperty("ces_enabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CesEnabled { get; set; }
+
 
 
         /// <summary>
@@ -612,6 +618,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             sb.Append("  enableAreaBandwidth: ").Append(EnableAreaBandwidth).Append("\n");
             sb.Append("  enableChange95: ").Append(EnableChange95).Append("\n");
             sb.Append("  enableSpecCode: ").Append(EnableSpecCode).Append("\n");
+            sb.Append("  cesEnabled: ").Append(CesEnabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -643,6 +650,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             if (this.EnableAreaBandwidth != input.EnableAreaBandwidth || (this.EnableAreaBandwidth != null && !this.EnableAreaBandwidth.Equals(input.EnableAreaBandwidth))) return false;
             if (this.EnableChange95 != input.EnableChange95 || (this.EnableChange95 != null && !this.EnableChange95.Equals(input.EnableChange95))) return false;
             if (this.EnableSpecCode != input.EnableSpecCode || (this.EnableSpecCode != null && !this.EnableSpecCode.Equals(input.EnableSpecCode))) return false;
+            if (this.CesEnabled != input.CesEnabled || (this.CesEnabled != null && !this.CesEnabled.Equals(input.CesEnabled))) return false;
 
             return true;
         }
@@ -668,6 +676,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
                 if (this.EnableAreaBandwidth != null) hashCode = hashCode * 59 + this.EnableAreaBandwidth.GetHashCode();
                 if (this.EnableChange95 != null) hashCode = hashCode * 59 + this.EnableChange95.GetHashCode();
                 if (this.EnableSpecCode != null) hashCode = hashCode * 59 + this.EnableSpecCode.GetHashCode();
+                if (this.CesEnabled != null) hashCode = hashCode * 59 + this.CesEnabled.GetHashCode();
                 return hashCode;
             }
         }

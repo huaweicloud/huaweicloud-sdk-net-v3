@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 
         /// </summary>
         [JsonProperty("auth_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AuthAssistEnum AuthType { get; set; }
+        public AuthAssistEnum? AuthType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -56,7 +57,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(AssistAuthMethodConfigRequest input)
         {
             if (input == null) return false;
-            if (this.AuthType != input.AuthType) return false;
+            if (this.AuthType != input.AuthType || (this.AuthType != null && !this.AuthType.Equals(input.AuthType))) return false;
             if (this.OtpConfigInfo != input.OtpConfigInfo || (this.OtpConfigInfo != null && !this.OtpConfigInfo.Equals(input.OtpConfigInfo))) return false;
 
             return true;
@@ -70,7 +71,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.AuthType.GetHashCode();
+                if (this.AuthType != null) hashCode = hashCode * 59 + this.AuthType.GetHashCode();
                 if (this.OtpConfigInfo != null) hashCode = hashCode * 59 + this.OtpConfigInfo.GetHashCode();
                 return hashCode;
             }

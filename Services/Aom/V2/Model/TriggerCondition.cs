@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
             public static bool operator ==(MetricQueryModeEnum a, MetricQueryModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -250,7 +250,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
             public static bool operator ==(TriggerTypeEnum a, TriggerTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -383,7 +383,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
             public static bool operator ==(AggregateTypeEnum a, AggregateTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -498,7 +498,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
             public static bool operator ==(MetricStatisticMethodEnum a, MetricStatisticMethodEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

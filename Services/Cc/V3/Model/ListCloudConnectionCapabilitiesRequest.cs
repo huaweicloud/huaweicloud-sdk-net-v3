@@ -17,6 +17,20 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
     {
 
         /// <summary>
+        /// 每页返回的个数。 取值范围：1~2000。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// 翻页信息，从上次API调用返回的翻页数据中获取，可填写前一页marker或者后一页marker，填入前一页previous_marker就向前翻页，后一页next_marker就向后翻页。 翻页过程中，查询条件不能修改，包括过滤条件、排序条件、limit。
+        /// </summary>
+        [SDKProperty("marker", IsQuery = true)]
+        [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
+        public string Marker { get; set; }
+
+        /// <summary>
         /// 类型。
         /// </summary>
         [SDKProperty("resource_type", IsQuery = true)]
@@ -32,6 +46,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListCloudConnectionCapabilitiesRequest {\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -51,6 +67,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public bool Equals(ListCloudConnectionCapabilitiesRequest input)
         {
             if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
             if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
 
             return true;
@@ -64,6 +82,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
                 return hashCode;
             }

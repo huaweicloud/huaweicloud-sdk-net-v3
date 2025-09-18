@@ -684,6 +684,32 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
         }
         
         /// <summary>
+        /// 获取部署任务状态
+        ///
+        /// 获取部署任务状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckDeployStatusResponse CheckDeployStatus(CheckDeployStatusRequest checkDeployStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkDeployStatusRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}/state", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkDeployStatusRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<CheckDeployStatusResponse>(response);
+        }
+
+        public SyncInvoker<CheckDeployStatusResponse> CheckDeployStatusInvoker(CheckDeployStatusRequest checkDeployStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkDeployStatusRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}/state", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkDeployStatusRequest);
+            return new SyncInvoker<CheckDeployStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<CheckDeployStatusResponse>);
+        }
+        
+        /// <summary>
         /// 应用下创建环境
         ///
         /// 应用下创建环境。
@@ -966,6 +992,34 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/applications/{application_id}/environments/{environment_id}/permissions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateEnvironmentPermissionRequest);
             return new SyncInvoker<UpdateEnvironmentPermissionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateEnvironmentPermissionResponse>);
+        }
+        
+        /// <summary>
+        /// 停止部署任务
+        ///
+        /// 停止部署任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StopDeployTaskResponse StopDeployTask(StopDeployTaskRequest stopDeployTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(stopDeployTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            if (StringUtils.TryConvertToNonEmptyString(stopDeployTaskRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}/records/{record_id}/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopDeployTaskRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<StopDeployTaskResponse>(response);
+        }
+
+        public SyncInvoker<StopDeployTaskResponse> StopDeployTaskInvoker(StopDeployTaskRequest stopDeployTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(stopDeployTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            if (StringUtils.TryConvertToNonEmptyString(stopDeployTaskRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/tasks/{task_id}/records/{record_id}/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", stopDeployTaskRequest);
+            return new SyncInvoker<StopDeployTaskResponse>(this, "PUT", request, JsonUtils.DeSerialize<StopDeployTaskResponse>);
         }
         
         /// <summary>

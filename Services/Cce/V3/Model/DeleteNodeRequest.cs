@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(NodepoolScaleDownEnum a, NodepoolScaleDownEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

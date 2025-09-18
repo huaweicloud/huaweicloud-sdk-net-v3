@@ -183,7 +183,7 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
 
             public static bool operator ==(TextLangEnum a, TextLangEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

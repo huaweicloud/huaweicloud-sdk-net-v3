@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// 租户能力列表。
         /// </summary>
         [JsonProperty("capabilities", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CloudConnectionCapability> Capabilities { get; set; }
+        public List<CloudConnectionCapabilityInfo> Capabilities { get; set; }
 
 
 

@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(RoomTypeEnum a, RoomTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(RoomStateEnum a, RoomStateEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -353,7 +353,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(ViewModeEnum a, ViewModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -492,7 +492,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(LastJobStatusEnum a, LastJobStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -613,7 +613,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(ConfirmStateEnum a, ConfirmStateEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

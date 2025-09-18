@@ -237,7 +237,7 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
 
             public static bool operator ==(MidEnum a, MidEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

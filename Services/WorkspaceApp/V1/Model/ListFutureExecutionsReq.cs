@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 
             public static bool operator ==(ScheduledTypeEnum a, ScheduledTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

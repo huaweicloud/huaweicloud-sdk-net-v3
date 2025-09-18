@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(ImageTypeEnum a, ImageTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(ResourceTypeEnum a, ResourceTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -383,7 +383,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -504,7 +504,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(OwnTypeEnum a, OwnTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -625,7 +625,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(MemberStatusEnum a, MemberStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// 
         /// </summary>
         [JsonProperty("hosted_cloud", NullValueHandling = NullValueHandling.Ignore)]
-        public HostedCloudEnum HostedCloud { get; set; }
+        public HostedCloudEnum? HostedCloud { get; set; }
+
 
 
         /// <summary>
@@ -49,7 +50,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public bool Equals(NonRequiredHostedCloud input)
         {
             if (input == null) return false;
-            if (this.HostedCloud != input.HostedCloud) return false;
+            if (this.HostedCloud != input.HostedCloud || (this.HostedCloud != null && !this.HostedCloud.Equals(input.HostedCloud))) return false;
 
             return true;
         }
@@ -62,7 +63,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.HostedCloud.GetHashCode();
+                if (this.HostedCloud != null) hashCode = hashCode * 59 + this.HostedCloud.GetHashCode();
                 return hashCode;
             }
         }

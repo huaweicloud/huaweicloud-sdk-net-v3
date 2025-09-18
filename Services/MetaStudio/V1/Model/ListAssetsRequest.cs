@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(TagCombinationTypeEnum a, TagCombinationTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(AssetSourceEnum a, AssetSourceEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -347,7 +347,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(RoleEnum a, RoleEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -468,7 +468,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(SupportedServiceEnum a, SupportedServiceEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

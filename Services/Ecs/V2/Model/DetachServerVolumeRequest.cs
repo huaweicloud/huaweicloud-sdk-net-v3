@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
 
             public static bool operator ==(DeleteFlagEnum a, DeleteFlagEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

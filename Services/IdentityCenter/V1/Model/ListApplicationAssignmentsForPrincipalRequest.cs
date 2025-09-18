@@ -110,7 +110,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
 
             public static bool operator ==(PrincipalTypeEnum a, PrincipalTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

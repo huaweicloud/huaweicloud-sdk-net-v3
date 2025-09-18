@@ -55,7 +55,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("platform_type", NullValueHandling = NullValueHandling.Ignore)]
-        public PlatformTypeEnum PlatformType { get; set; }
+        public PlatformTypeEnum? PlatformType { get; set; }
+
 
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.Email != input.Email || (this.Email != null && !this.Email.Equals(input.Email))) return false;
             if (this.TelephoneNumber != input.TelephoneNumber || (this.TelephoneNumber != null && !this.TelephoneNumber.Equals(input.TelephoneNumber))) return false;
-            if (this.PlatformType != input.PlatformType) return false;
+            if (this.PlatformType != input.PlatformType || (this.PlatformType != null && !this.PlatformType.Equals(input.PlatformType))) return false;
 
             return true;
         }
@@ -115,7 +116,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.Email != null) hashCode = hashCode * 59 + this.Email.GetHashCode();
                 if (this.TelephoneNumber != null) hashCode = hashCode * 59 + this.TelephoneNumber.GetHashCode();
-                hashCode = hashCode * 59 + this.PlatformType.GetHashCode();
+                if (this.PlatformType != null) hashCode = hashCode * 59 + this.PlatformType.GetHashCode();
                 return hashCode;
             }
         }

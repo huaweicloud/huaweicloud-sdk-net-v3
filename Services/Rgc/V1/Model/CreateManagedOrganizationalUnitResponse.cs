@@ -44,7 +44,8 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
         /// 
         /// </summary>
         [JsonProperty("organizational_unit_type", NullValueHandling = NullValueHandling.Ignore)]
-        public OrganizationalUnitType OrganizationalUnitType { get; set; }
+        public OrganizationalUnitType? OrganizationalUnitType { get; set; }
+
         /// <summary>
         /// 父注册OU ID。
         /// </summary>
@@ -109,7 +110,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
             if (this.OrganizationalUnitId != input.OrganizationalUnitId || (this.OrganizationalUnitId != null && !this.OrganizationalUnitId.Equals(input.OrganizationalUnitId))) return false;
             if (this.OrganizationalUnitName != input.OrganizationalUnitName || (this.OrganizationalUnitName != null && !this.OrganizationalUnitName.Equals(input.OrganizationalUnitName))) return false;
             if (this.OrganizationalUnitStatus != input.OrganizationalUnitStatus || (this.OrganizationalUnitStatus != null && !this.OrganizationalUnitStatus.Equals(input.OrganizationalUnitStatus))) return false;
-            if (this.OrganizationalUnitType != input.OrganizationalUnitType) return false;
+            if (this.OrganizationalUnitType != input.OrganizationalUnitType || (this.OrganizationalUnitType != null && !this.OrganizationalUnitType.Equals(input.OrganizationalUnitType))) return false;
             if (this.ParentOrganizationalUnitId != input.ParentOrganizationalUnitId || (this.ParentOrganizationalUnitId != null && !this.ParentOrganizationalUnitId.Equals(input.ParentOrganizationalUnitId))) return false;
             if (this.ParentOrganizationalUnitName != input.ParentOrganizationalUnitName || (this.ParentOrganizationalUnitName != null && !this.ParentOrganizationalUnitName.Equals(input.ParentOrganizationalUnitName))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
@@ -130,7 +131,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
                 if (this.OrganizationalUnitId != null) hashCode = hashCode * 59 + this.OrganizationalUnitId.GetHashCode();
                 if (this.OrganizationalUnitName != null) hashCode = hashCode * 59 + this.OrganizationalUnitName.GetHashCode();
                 if (this.OrganizationalUnitStatus != null) hashCode = hashCode * 59 + this.OrganizationalUnitStatus.GetHashCode();
-                hashCode = hashCode * 59 + this.OrganizationalUnitType.GetHashCode();
+                if (this.OrganizationalUnitType != null) hashCode = hashCode * 59 + this.OrganizationalUnitType.GetHashCode();
                 if (this.ParentOrganizationalUnitId != null) hashCode = hashCode * 59 + this.ParentOrganizationalUnitId.GetHashCode();
                 if (this.ParentOrganizationalUnitName != null) hashCode = hashCode * 59 + this.ParentOrganizationalUnitName.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();

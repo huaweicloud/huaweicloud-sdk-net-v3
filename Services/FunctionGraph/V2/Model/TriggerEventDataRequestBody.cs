@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(ScheduleTypeEnum a, ScheduleTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(ProtocolEnum a, ProtocolEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -377,7 +377,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(ReqMethodEnum a, ReqMethodEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -492,7 +492,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(MatchModeEnum a, MatchModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -613,7 +613,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(AuthEnum a, AuthEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -722,7 +722,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(BackendTypeEnum a, BackendTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -837,7 +837,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(SharditeratorTypeEnum a, SharditeratorTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -952,7 +952,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(PollingUnitEnum a, PollingUnitEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1067,7 +1067,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(IsSerialEnum a, IsSerialEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1182,7 +1182,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -147,7 +147,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 
             public static bool operator ==(ImageCompressionLevelEnum a, ImageCompressionLevelEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

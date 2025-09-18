@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(CommentTypeEnum a, CommentTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

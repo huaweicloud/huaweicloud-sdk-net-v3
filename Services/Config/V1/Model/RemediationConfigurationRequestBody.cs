@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
 
             public static bool operator ==(TargetTypeEnum a, TargetTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
 
             public static bool operator ==(AuthTypeEnum a, AuthTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

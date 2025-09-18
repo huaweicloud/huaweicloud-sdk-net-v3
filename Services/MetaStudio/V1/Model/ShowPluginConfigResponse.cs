@@ -26,7 +26,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("plugin_provider", NullValueHandling = NullValueHandling.Ignore)]
-        public PluginProviderEnum PluginProvider { get; set; }
+        public PluginProviderEnum? PluginProvider { get; set; }
+
         /// <summary>
         /// 创建时间，格式遵循：RFC 3339 如\&quot;2021-01-10T08:43:17Z\&quot;。
         /// </summary>
@@ -79,7 +80,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         {
             if (input == null) return false;
             if (this.PluginConfigId != input.PluginConfigId || (this.PluginConfigId != null && !this.PluginConfigId.Equals(input.PluginConfigId))) return false;
-            if (this.PluginProvider != input.PluginProvider) return false;
+            if (this.PluginProvider != input.PluginProvider || (this.PluginProvider != null && !this.PluginProvider.Equals(input.PluginProvider))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
@@ -96,7 +97,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             {
                 var hashCode = 41;
                 if (this.PluginConfigId != null) hashCode = hashCode * 59 + this.PluginConfigId.GetHashCode();
-                hashCode = hashCode * 59 + this.PluginProvider.GetHashCode();
+                if (this.PluginProvider != null) hashCode = hashCode * 59 + this.PluginProvider.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();

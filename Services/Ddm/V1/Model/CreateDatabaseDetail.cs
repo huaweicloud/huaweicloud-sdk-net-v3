@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
 
             public static bool operator ==(ShardModeEnum a, ShardModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

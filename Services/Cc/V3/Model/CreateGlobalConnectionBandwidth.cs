@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(TypeEnum a, TypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -244,7 +244,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(ChargeModeEnum a, ChargeModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -365,7 +365,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(SlaLevelEnum a, SlaLevelEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -398,7 +398,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 功能说明：全域互联带宽是否跨境，判断依据：带宽是否涉及从中国大陆到其他国家。 取值范围：True：跨境；False：非跨境 
+        /// 全域互联带宽跨境属性。
         /// </summary>
         [JsonProperty("bordercross", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Bordercross { get; set; }

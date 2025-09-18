@@ -65,6 +65,8 @@ namespace HuaweiCloud.SDK.Dcs.V2
             "https://dcs.cn-east-4.myhuaweicloud.com");
         public static readonly Region AP_SOUTHEAST_5 = new Region("ap-southeast-5",
             "https://dcs.ap-southeast-5.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
+            "https://dcs.cn-north-12.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("DCS");
 
@@ -99,6 +101,7 @@ namespace HuaweiCloud.SDK.Dcs.V2
                 { "ru-moscow-1", RU_MOSCOW_1 },
                 { "cn-east-4", CN_EAST_4 },
                 { "ap-southeast-5", AP_SOUTHEAST_5 },
+                { "cn-north-12", CN_NORTH_12 },
         };
 
         public static Region ValueOf(string regionId)

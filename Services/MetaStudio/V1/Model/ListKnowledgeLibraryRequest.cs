@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(LanguageEnum a, LanguageEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(KnowledgeTypeEnum a, KnowledgeTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

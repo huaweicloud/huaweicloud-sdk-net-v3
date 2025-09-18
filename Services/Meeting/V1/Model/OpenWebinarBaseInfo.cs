@@ -62,7 +62,8 @@ namespace HuaweiCloud.SDK.Meeting.V1.Model
         /// 
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public MeetingStatus State { get; set; }
+        public MeetingStatus? State { get; set; }
+
         /// <summary>
         /// 网络研讨会预订者的用户UUID。
         /// </summary>
@@ -145,7 +146,8 @@ namespace HuaweiCloud.SDK.Meeting.V1.Model
         /// 
         /// </summary>
         [JsonProperty("enableRecording", NullValueHandling = NullValueHandling.Ignore)]
-        public YesNoEnum EnableRecording { get; set; }
+        public YesNoEnum? EnableRecording { get; set; }
+
         /// <summary>
         /// 主流直播推流地址，在录播类型为 :直播、直播+录播时有效。最大不超过255个字符。
         /// </summary>
@@ -223,7 +225,7 @@ namespace HuaweiCloud.SDK.Meeting.V1.Model
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
             if (this.TimeZoneId != input.TimeZoneId || (this.TimeZoneId != null && !this.TimeZoneId.Equals(input.TimeZoneId))) return false;
-            if (this.State != input.State) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
             if (this.ScheduserId != input.ScheduserId || (this.ScheduserId != null && !this.ScheduserId.Equals(input.ScheduserId))) return false;
             if (this.DeptName != input.DeptName || (this.DeptName != null && !this.DeptName.Equals(input.DeptName))) return false;
             if (this.ScheduserName != input.ScheduserName || (this.ScheduserName != null && !this.ScheduserName.Equals(input.ScheduserName))) return false;
@@ -237,7 +239,7 @@ namespace HuaweiCloud.SDK.Meeting.V1.Model
             if (this.GuestPasswd != input.GuestPasswd || (this.GuestPasswd != null && !this.GuestPasswd.Equals(input.GuestPasswd))) return false;
             if (this.AudienceJoinUri != input.AudienceJoinUri || (this.AudienceJoinUri != null && !this.AudienceJoinUri.Equals(input.AudienceJoinUri))) return false;
             if (this.AudiencePasswd != input.AudiencePasswd || (this.AudiencePasswd != null && !this.AudiencePasswd.Equals(input.AudiencePasswd))) return false;
-            if (this.EnableRecording != input.EnableRecording) return false;
+            if (this.EnableRecording != input.EnableRecording || (this.EnableRecording != null && !this.EnableRecording.Equals(input.EnableRecording))) return false;
             if (this.LiveAddress != input.LiveAddress || (this.LiveAddress != null && !this.LiveAddress.Equals(input.LiveAddress))) return false;
             if (this.AuxAddress != input.AuxAddress || (this.AuxAddress != null && !this.AuxAddress.Equals(input.AuxAddress))) return false;
             if (this.LiveUrl != input.LiveUrl || (this.LiveUrl != null && !this.LiveUrl.Equals(input.LiveUrl))) return false;
@@ -260,7 +262,7 @@ namespace HuaweiCloud.SDK.Meeting.V1.Model
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 if (this.TimeZoneId != null) hashCode = hashCode * 59 + this.TimeZoneId.GetHashCode();
-                hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.ScheduserId != null) hashCode = hashCode * 59 + this.ScheduserId.GetHashCode();
                 if (this.DeptName != null) hashCode = hashCode * 59 + this.DeptName.GetHashCode();
                 if (this.ScheduserName != null) hashCode = hashCode * 59 + this.ScheduserName.GetHashCode();
@@ -274,7 +276,7 @@ namespace HuaweiCloud.SDK.Meeting.V1.Model
                 if (this.GuestPasswd != null) hashCode = hashCode * 59 + this.GuestPasswd.GetHashCode();
                 if (this.AudienceJoinUri != null) hashCode = hashCode * 59 + this.AudienceJoinUri.GetHashCode();
                 if (this.AudiencePasswd != null) hashCode = hashCode * 59 + this.AudiencePasswd.GetHashCode();
-                hashCode = hashCode * 59 + this.EnableRecording.GetHashCode();
+                if (this.EnableRecording != null) hashCode = hashCode * 59 + this.EnableRecording.GetHashCode();
                 if (this.LiveAddress != null) hashCode = hashCode * 59 + this.LiveAddress.GetHashCode();
                 if (this.AuxAddress != null) hashCode = hashCode * 59 + this.AuxAddress.GetHashCode();
                 if (this.LiveUrl != null) hashCode = hashCode * 59 + this.LiveUrl.GetHashCode();

@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(SiteTypeEnum a, SiteTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -162,13 +162,19 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 功能说明：站点信息自定义的英文名字。 取值范围：1-255个字符
+        /// RegionID。
+        /// </summary>
+        [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RegionId { get; set; }
+
+        /// <summary>
+        /// 功能说明：站点信息自定义的英文名称。 取值范围：1-255个字符
         /// </summary>
         [JsonProperty("name_en", NullValueHandling = NullValueHandling.Ignore)]
         public string NameEn { get; set; }
 
         /// <summary>
-        /// 功能说明：站点信息自定义的中文名字。 取值范围：1-64个字符。
+        /// 功能说明：站点信息自定义的中文名称。 取值范围：1-64个字符。
         /// </summary>
         [JsonProperty("name_cn", NullValueHandling = NullValueHandling.Ignore)]
         public string NameCn { get; set; }
@@ -197,12 +203,6 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public List<SiteGroupReferenceInfo> GroupList { get; set; }
 
         /// <summary>
-        /// 功能说明：对应华为云标准region的id，该站点继承自华为云region时才需要填写该字段。 取值范围：0-64个字符。
-        /// </summary>
-        [JsonProperty("region_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string RegionId { get; set; }
-
-        /// <summary>
         /// 功能说明：用于标记是中心还是边缘站点。中心：center 取值范围：0-255个字符。
         /// </summary>
         [JsonProperty("public_border_group", NullValueHandling = NullValueHandling.Ignore)]
@@ -221,13 +221,13 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  regionId: ").Append(RegionId).Append("\n");
             sb.Append("  nameEn: ").Append(NameEn).Append("\n");
             sb.Append("  nameCn: ").Append(NameCn).Append("\n");
             sb.Append("  siteCode: ").Append(SiteCode).Append("\n");
             sb.Append("  siteType: ").Append(SiteType).Append("\n");
             sb.Append("  serviceList: ").Append(ServiceList).Append("\n");
             sb.Append("  groupList: ").Append(GroupList).Append("\n");
-            sb.Append("  regionId: ").Append(RegionId).Append("\n");
             sb.Append("  publicBorderGroup: ").Append(PublicBorderGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -251,13 +251,13 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
             if (this.NameEn != input.NameEn || (this.NameEn != null && !this.NameEn.Equals(input.NameEn))) return false;
             if (this.NameCn != input.NameCn || (this.NameCn != null && !this.NameCn.Equals(input.NameCn))) return false;
             if (this.SiteCode != input.SiteCode || (this.SiteCode != null && !this.SiteCode.Equals(input.SiteCode))) return false;
             if (this.SiteType != input.SiteType) return false;
             if (this.ServiceList != input.ServiceList || (this.ServiceList != null && !this.ServiceList.Equals(input.ServiceList))) return false;
             if (this.GroupList != input.GroupList || (this.GroupList != null && input.GroupList != null && !this.GroupList.SequenceEqual(input.GroupList))) return false;
-            if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
             if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
 
             return true;
@@ -275,13 +275,13 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
                 if (this.NameEn != null) hashCode = hashCode * 59 + this.NameEn.GetHashCode();
                 if (this.NameCn != null) hashCode = hashCode * 59 + this.NameCn.GetHashCode();
                 if (this.SiteCode != null) hashCode = hashCode * 59 + this.SiteCode.GetHashCode();
                 hashCode = hashCode * 59 + this.SiteType.GetHashCode();
                 if (this.ServiceList != null) hashCode = hashCode * 59 + this.ServiceList.GetHashCode();
                 if (this.GroupList != null) hashCode = hashCode * 59 + this.GroupList.GetHashCode();
-                if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
                 if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }

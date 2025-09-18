@@ -32,12 +32,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("last_status", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduleTaskStatus LastStatus { get; set; }
+        public ScheduleTaskStatus? LastStatus { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduleTaskTypeEnum TaskType { get; set; }
+        public ScheduleTaskTypeEnum? TaskType { get; set; }
+
         /// <summary>
         /// 定时任务表达式。
         /// </summary>
@@ -60,7 +62,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("scheduled_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduledTypeEnum ScheduledType { get; set; }
+        public ScheduledTypeEnum? ScheduledType { get; set; }
+
         /// <summary>
         /// 周期按天时：按x天间隔执行。
         /// </summary>
@@ -182,12 +185,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
-            if (this.LastStatus != input.LastStatus) return false;
-            if (this.TaskType != input.TaskType) return false;
+            if (this.LastStatus != input.LastStatus || (this.LastStatus != null && !this.LastStatus.Equals(input.LastStatus))) return false;
+            if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
             if (this.TaskCron != input.TaskCron || (this.TaskCron != null && !this.TaskCron.Equals(input.TaskCron))) return false;
             if (this.NextExecutionTime != input.NextExecutionTime || (this.NextExecutionTime != null && !this.NextExecutionTime.Equals(input.NextExecutionTime))) return false;
             if (this.ScheduleTaskPolicy != input.ScheduleTaskPolicy || (this.ScheduleTaskPolicy != null && !this.ScheduleTaskPolicy.Equals(input.ScheduleTaskPolicy))) return false;
-            if (this.ScheduledType != input.ScheduledType) return false;
+            if (this.ScheduledType != input.ScheduledType || (this.ScheduledType != null && !this.ScheduledType.Equals(input.ScheduledType))) return false;
             if (this.DayInterval != input.DayInterval || (this.DayInterval != null && !this.DayInterval.Equals(input.DayInterval))) return false;
             if (this.WeekList != input.WeekList || (this.WeekList != null && !this.WeekList.Equals(input.WeekList))) return false;
             if (this.MonthList != input.MonthList || (this.MonthList != null && !this.MonthList.Equals(input.MonthList))) return false;
@@ -214,12 +217,12 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                hashCode = hashCode * 59 + this.LastStatus.GetHashCode();
-                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.LastStatus != null) hashCode = hashCode * 59 + this.LastStatus.GetHashCode();
+                if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
                 if (this.TaskCron != null) hashCode = hashCode * 59 + this.TaskCron.GetHashCode();
                 if (this.NextExecutionTime != null) hashCode = hashCode * 59 + this.NextExecutionTime.GetHashCode();
                 if (this.ScheduleTaskPolicy != null) hashCode = hashCode * 59 + this.ScheduleTaskPolicy.GetHashCode();
-                hashCode = hashCode * 59 + this.ScheduledType.GetHashCode();
+                if (this.ScheduledType != null) hashCode = hashCode * 59 + this.ScheduledType.GetHashCode();
                 if (this.DayInterval != null) hashCode = hashCode * 59 + this.DayInterval.GetHashCode();
                 if (this.WeekList != null) hashCode = hashCode * 59 + this.WeekList.GetHashCode();
                 if (this.MonthList != null) hashCode = hashCode * 59 + this.MonthList.GetHashCode();

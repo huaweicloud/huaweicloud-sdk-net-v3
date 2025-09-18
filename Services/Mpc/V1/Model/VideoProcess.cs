@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
 
             public static bool operator ==(HlsStorageTypeEnum a, HlsStorageTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
 
             public static bool operator ==(AdaptationEnum a, AdaptationEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -347,7 +347,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
 
             public static bool operator ==(HlsSegmentTypeEnum a, HlsSegmentTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

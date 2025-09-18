@@ -80,7 +80,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public AppStateEnum State { get; set; }
+        public AppStateEnum? State { get; set; }
+
         /// <summary>
         /// 所在的租户ID。
         /// </summary>
@@ -192,7 +193,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.IconIndex != input.IconIndex || (this.IconIndex != null && !this.IconIndex.Equals(input.IconIndex))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.AppGroupId != input.AppGroupId || (this.AppGroupId != null && !this.AppGroupId.Equals(input.AppGroupId))) return false;
-            if (this.State != input.State) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
             if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
             if (this.PublishAt != input.PublishAt || (this.PublishAt != null && !this.PublishAt.Equals(input.PublishAt))) return false;
             if (this.SourceType != input.SourceType || (this.SourceType != null && !this.SourceType.Equals(input.SourceType))) return false;
@@ -224,7 +225,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.IconIndex != null) hashCode = hashCode * 59 + this.IconIndex.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.AppGroupId != null) hashCode = hashCode * 59 + this.AppGroupId.GetHashCode();
-                hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 if (this.PublishAt != null) hashCode = hashCode * 59 + this.PublishAt.GetHashCode();
                 if (this.SourceType != null) hashCode = hashCode * 59 + this.SourceType.GetHashCode();

@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(VideoCodecEnum a, VideoCodecEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(AudioCodecEnum a, AudioCodecEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

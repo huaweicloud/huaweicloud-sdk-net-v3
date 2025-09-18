@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(RepackageModeEnum a, RepackageModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(DeleteModeEnum a, DeleteModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

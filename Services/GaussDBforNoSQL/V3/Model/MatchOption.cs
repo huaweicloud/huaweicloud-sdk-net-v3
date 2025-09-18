@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 
             public static bool operator ==(KeyEnum a, KeyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

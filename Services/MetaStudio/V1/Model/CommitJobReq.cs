@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(SexEnum a, SexEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -135,7 +135,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
-        public JobTag Tag { get; set; }
+        public JobTag? Tag { get; set; }
+
         /// <summary>
         /// 一段描述信息,会呈现在资产库中。
         /// </summary>
@@ -219,7 +220,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public bool Equals(CommitJobReq input)
         {
             if (input == null) return false;
-            if (this.Tag != input.Tag) return false;
+            if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Sex != input.Sex) return false;
             if (this.VoiceName != input.VoiceName || (this.VoiceName != null && !this.VoiceName.Equals(input.VoiceName))) return false;
@@ -240,7 +241,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.Tag.GetHashCode();
+                if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 hashCode = hashCode * 59 + this.Sex.GetHashCode();
                 if (this.VoiceName != null) hashCode = hashCode * 59 + this.VoiceName.GetHashCode();

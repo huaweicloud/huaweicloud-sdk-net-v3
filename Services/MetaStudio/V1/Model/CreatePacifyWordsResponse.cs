@@ -32,7 +32,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public LanguageEnum Language { get; set; }
+        public LanguageEnum? Language { get; set; }
+
         /// <summary>
         /// 应用ID。
         /// </summary>
@@ -108,7 +109,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (input == null) return false;
             if (this.PacifyWordsId != input.PacifyWordsId || (this.PacifyWordsId != null && !this.PacifyWordsId.Equals(input.PacifyWordsId))) return false;
             if (this.PacifyWords != input.PacifyWords || (this.PacifyWords != null && !this.PacifyWords.Equals(input.PacifyWords))) return false;
-            if (this.Language != input.Language) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
             if (this.RobotId != input.RobotId || (this.RobotId != null && !this.RobotId.Equals(input.RobotId))) return false;
             if (this.PacifyWordsType != input.PacifyWordsType || (this.PacifyWordsType != null && !this.PacifyWordsType.Equals(input.PacifyWordsType))) return false;
             if (this.Intent != input.Intent || (this.Intent != null && !this.Intent.Equals(input.Intent))) return false;
@@ -129,7 +130,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 var hashCode = 41;
                 if (this.PacifyWordsId != null) hashCode = hashCode * 59 + this.PacifyWordsId.GetHashCode();
                 if (this.PacifyWords != null) hashCode = hashCode * 59 + this.PacifyWords.GetHashCode();
-                hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.RobotId != null) hashCode = hashCode * 59 + this.RobotId.GetHashCode();
                 if (this.PacifyWordsType != null) hashCode = hashCode * 59 + this.PacifyWordsType.GetHashCode();
                 if (this.Intent != null) hashCode = hashCode * 59 + this.Intent.GetHashCode();

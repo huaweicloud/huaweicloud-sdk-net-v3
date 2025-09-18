@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
-        public WorkFlowPhase Phase { get; set; }
+        public WorkFlowPhase? Phase { get; set; }
+
         /// <summary>
         /// 升级流程中的各个任务项的执行状态
         /// </summary>
@@ -63,7 +64,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool Equals(WorkFlowStatus input)
         {
             if (input == null) return false;
-            if (this.Phase != input.Phase) return false;
+            if (this.Phase != input.Phase || (this.Phase != null && !this.Phase.Equals(input.Phase))) return false;
             if (this.PointStatuses != input.PointStatuses || (this.PointStatuses != null && input.PointStatuses != null && !this.PointStatuses.SequenceEqual(input.PointStatuses))) return false;
             if (this.LineStatuses != input.LineStatuses || (this.LineStatuses != null && input.LineStatuses != null && !this.LineStatuses.SequenceEqual(input.LineStatuses))) return false;
 
@@ -78,7 +79,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.Phase != null) hashCode = hashCode * 59 + this.Phase.GetHashCode();
                 if (this.PointStatuses != null) hashCode = hashCode * 59 + this.PointStatuses.GetHashCode();
                 if (this.LineStatuses != null) hashCode = hashCode * 59 + this.LineStatuses.GetHashCode();
                 return hashCode;

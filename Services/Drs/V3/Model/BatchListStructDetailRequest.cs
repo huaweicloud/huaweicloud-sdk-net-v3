@@ -153,7 +153,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
             public static bool operator ==(TypeEnum a, TypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -268,7 +268,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
             public static bool operator ==(XLanguageEnum a, XLanguageEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

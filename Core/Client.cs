@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Core
         private const string XRequestAgent = "User-Agent";
         private const string CredentialsNull = "Credentials cannot be null.";
         private const string ConstSdkExchange = "SDK_EXCHANGE";
-        
+
         private ICredential _credentials;
         private volatile int _endpointIndex;
 
@@ -124,8 +124,8 @@ namespace HuaweiCloud.SDK.Core
                 SdkExchange.Cache.Remove(exchangeId);
             }
         }
-        
-        private  HttpResponseMessage _sync_http(string url, string method, SdkRequest sdkRequest)
+
+        private HttpResponseMessage _sync_http(string url, string method, SdkRequest sdkRequest)
         {
             var request = GetHttpRequest(url, method, sdkRequest);
             if (string.IsNullOrEmpty(request.Headers.Get("Authorization")))
@@ -133,7 +133,7 @@ namespace HuaweiCloud.SDK.Core
                 request = _credentials.SignAuthRequest(request, _sdkHttpClient).Result;
             }
 
-            var message = _sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
+            var message = request.ToHttpRequestMessage();
             try
             {
                 var response = _sdkHttpClient.DoHttpRequest(message).Result;
@@ -154,7 +154,7 @@ namespace HuaweiCloud.SDK.Core
                 request = await _credentials.SignAuthRequest(request, _sdkHttpClient);
             }
 
-            var message = _sdkHttpClient.InitHttpRequest(request, _httpConfig.IgnoreBodyForGetRequest);
+            var message = request.ToHttpRequestMessage();
             try
             {
                 var response = await _sdkHttpClient.DoHttpRequest(message);
@@ -186,7 +186,7 @@ namespace HuaweiCloud.SDK.Core
             {
                 request.Header.Add(ConstSdkExchange, exchangeId);
             }
-            
+
             try
             {
                 while (true)
@@ -248,12 +248,20 @@ namespace HuaweiCloud.SDK.Core
                 return;
             }
 
+            var uaValue = string.IsNullOrEmpty(_httpConfig.UserAgent) ? Constants.UsdkValue : $"{Constants.UsdkValue}; {_httpConfig.UserAgent}";
             foreach (var header in headers)
             {
-                request.Headers.Add(header.Key, header.Value);
+                if (XRequestAgent.Equals(header.Key))
+                {
+                    uaValue = $"{uaValue}; {header.Value}";
+                }
+                else
+                {
+                    request.Headers.Add(header.Key, header.Value);
+                }
             }
-
-            request.Headers.Add(XRequestAgent, "huaweicloud-usdk-net/3.0");
+            request.Headers.Set(XRequestAgent, uaValue);
+            headers[XRequestAgent] = uaValue;
         }
 
         public class ClientBuilder<T> where T : Client
@@ -303,7 +311,7 @@ namespace HuaweiCloud.SDK.Core
                 _region = region;
                 return this;
             }
-            
+
             public ClientBuilder<T> WithEndPoint(params string[] endpoint)
             {
                 return WithEndPoints(endpoint.ToList());
@@ -359,7 +367,11 @@ namespace HuaweiCloud.SDK.Core
                 {
                     client._exceptionHandler = _exceptionHandler;
                 }
-                client.WithHttpConfig(_httpConfig ?? HttpConfig.GetDefaultConfig())
+
+                if (_httpConfig == null) _httpConfig = HttpConfig.GetDefaultConfig();
+                if (string.IsNullOrEmpty(_httpConfig.UserAgent)) _httpConfig.UserAgent = SystemUtils.GetEnvInfoString();
+
+                client.WithHttpConfig(_httpConfig)
                     .InitSdkHttpClient(_httpHandler, _enableLogging, _logLevel);
 
                 if (_region != null)

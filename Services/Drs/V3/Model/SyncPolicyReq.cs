@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
             public static bool operator ==(ConflictPolicyEnum a, ConflictPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
             public static bool operator ==(FilterDdlPolicyEnum a, FilterDdlPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -353,7 +353,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
             public static bool operator ==(TopicPolicyEnum a, TopicPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -480,7 +480,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
             public static bool operator ==(PartitionPolicyEnum a, PartitionPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -595,7 +595,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
             public static bool operator ==(KafkaDataFormatEnum a, KafkaDataFormatEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public static bool operator ==(SourceTypeEnum a, SourceTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public static bool operator ==(SinkTypeEnum a, SinkTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

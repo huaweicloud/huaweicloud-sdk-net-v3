@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
 
             public static bool operator ==(PrincipalIsRootUserEnum a, PrincipalIsRootUserEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

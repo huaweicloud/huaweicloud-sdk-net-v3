@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(ImageSourceTypeEnum a, ImageSourceTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(ImagetypeEnum a, ImagetypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -353,7 +353,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(IsregisteredEnum a, IsregisteredEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -468,7 +468,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(OsBitEnum a, OsBitEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -589,7 +589,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(OsTypeEnum a, OsTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -764,7 +764,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(PlatformEnum a, PlatformEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -897,7 +897,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(DiskFormatEnum a, DiskFormatEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1030,7 +1030,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1151,7 +1151,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(VirtualEnvTypeEnum a, VirtualEnvTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1272,7 +1272,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(VisibilityEnum a, VisibilityEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1387,7 +1387,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(SupportFcInjectEnum a, SupportFcInjectEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1502,7 +1502,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(HwFirmwareTypeEnum a, HwFirmwareTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1617,7 +1617,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(SupportArmEnum a, SupportArmEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1732,7 +1732,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(IsOffshelvedEnum a, IsOffshelvedEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Apm.V1.Model
 
             public static bool operator ==(NodeTypeEnum a, NodeTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("job_type", NullValueHandling = NullValueHandling.Ignore)]
-        public JobType JobType { get; set; }
+        public JobType? JobType { get; set; }
+
         /// <summary>
         /// 任务id。
         /// </summary>
@@ -55,7 +56,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public JobState State { get; set; }
+        public JobState? State { get; set; }
+
         /// <summary>
         /// 本次任务中该状态出现的次数
         /// </summary>
@@ -108,12 +110,14 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("create_type", NullValueHandling = NullValueHandling.Ignore)]
-        public CreateType CreateType { get; set; }
+        public CreateType? CreateType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
-        public JobTag Tag { get; set; }
+        public JobTag? Tag { get; set; }
+
         /// <summary>
         /// 手机号
         /// </summary>
@@ -214,13 +218,13 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public bool Equals(ShowVoiceTrainingJobResponse input)
         {
             if (input == null) return false;
-            if (this.JobType != input.JobType) return false;
+            if (this.JobType != input.JobType || (this.JobType != null && !this.JobType.Equals(input.JobType))) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
             if (this.AppUserId != input.AppUserId || (this.AppUserId != null && !this.AppUserId.Equals(input.AppUserId))) return false;
             if (this.VoiceName != input.VoiceName || (this.VoiceName != null && !this.VoiceName.Equals(input.VoiceName))) return false;
             if (this.Sex != input.Sex || (this.Sex != null && !this.Sex.Equals(input.Sex))) return false;
             if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
-            if (this.State != input.State) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
             if (this.RejectTimes != input.RejectTimes || (this.RejectTimes != null && !this.RejectTimes.Equals(input.RejectTimes))) return false;
             if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
             if (this.JobFailedCode != input.JobFailedCode || (this.JobFailedCode != null && !this.JobFailedCode.Equals(input.JobFailedCode))) return false;
@@ -229,8 +233,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.LastupdateTime != input.LastupdateTime || (this.LastupdateTime != null && !this.LastupdateTime.Equals(input.LastupdateTime))) return false;
             if (this.VoiceAuthorizationUrl != input.VoiceAuthorizationUrl || (this.VoiceAuthorizationUrl != null && !this.VoiceAuthorizationUrl.Equals(input.VoiceAuthorizationUrl))) return false;
             if (this.TrainingInputSourceUrl != input.TrainingInputSourceUrl || (this.TrainingInputSourceUrl != null && !this.TrainingInputSourceUrl.Equals(input.TrainingInputSourceUrl))) return false;
-            if (this.CreateType != input.CreateType) return false;
-            if (this.Tag != input.Tag) return false;
+            if (this.CreateType != input.CreateType || (this.CreateType != null && !this.CreateType.Equals(input.CreateType))) return false;
+            if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
             if (this.Phone != input.Phone || (this.Phone != null && !this.Phone.Equals(input.Phone))) return false;
             if (this.DhtmsJobId != input.DhtmsJobId || (this.DhtmsJobId != null && !this.DhtmsJobId.Equals(input.DhtmsJobId))) return false;
             if (this.BatchName != input.BatchName || (this.BatchName != null && !this.BatchName.Equals(input.BatchName))) return false;
@@ -251,13 +255,13 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.JobType.GetHashCode();
+                if (this.JobType != null) hashCode = hashCode * 59 + this.JobType.GetHashCode();
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.AppUserId != null) hashCode = hashCode * 59 + this.AppUserId.GetHashCode();
                 if (this.VoiceName != null) hashCode = hashCode * 59 + this.VoiceName.GetHashCode();
                 if (this.Sex != null) hashCode = hashCode * 59 + this.Sex.GetHashCode();
                 if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
-                hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.RejectTimes != null) hashCode = hashCode * 59 + this.RejectTimes.GetHashCode();
                 if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
                 if (this.JobFailedCode != null) hashCode = hashCode * 59 + this.JobFailedCode.GetHashCode();
@@ -266,8 +270,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.LastupdateTime != null) hashCode = hashCode * 59 + this.LastupdateTime.GetHashCode();
                 if (this.VoiceAuthorizationUrl != null) hashCode = hashCode * 59 + this.VoiceAuthorizationUrl.GetHashCode();
                 if (this.TrainingInputSourceUrl != null) hashCode = hashCode * 59 + this.TrainingInputSourceUrl.GetHashCode();
-                hashCode = hashCode * 59 + this.CreateType.GetHashCode();
-                hashCode = hashCode * 59 + this.Tag.GetHashCode();
+                if (this.CreateType != null) hashCode = hashCode * 59 + this.CreateType.GetHashCode();
+                if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 if (this.Phone != null) hashCode = hashCode * 59 + this.Phone.GetHashCode();
                 if (this.DhtmsJobId != null) hashCode = hashCode * 59 + this.DhtmsJobId.GetHashCode();
                 if (this.BatchName != null) hashCode = hashCode * 59 + this.BatchName.GetHashCode();

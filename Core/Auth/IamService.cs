@@ -160,14 +160,14 @@ namespace HuaweiCloud.SDK.Core.Auth
             var sdkRequest = HttpUtils.InitSdkRequest(urlPath);
 
             var url = iamEndpoint + urlPath + "?name=" + regionId;
-
+            var uaValue = string.IsNullOrEmpty(httpConfig.UserAgent) ? Constants.UsdkValue : $"{Constants.UsdkValue}; {httpConfig.UserAgent}";
             var request = new HttpRequest("GET", sdkRequest.ContentType, new Uri(url))
             {
                 Body = string.Empty,
                 Headers = new WebHeaderCollection
                 {
                     {
-                        "User-Agent", "huaweicloud-usdk-net/3.0"
+                        "User-Agent", uaValue
                     }
                 },
                 SigningAlgorithm = httpConfig.SigningAlgorithm
@@ -179,7 +179,7 @@ namespace HuaweiCloud.SDK.Core.Auth
         [Obsolete("This method is for internal use only and is deprecated. It will be removed in a future release.")]
         public static string KeystoneListProjects(SdkHttpClient client, HttpRequest request)
         {
-            var message = client.InitHttpRequest(request, true);
+            var message = request.ToHttpRequestMessage();
             try
             {
                 var response = TaskUtils.RunSync(() => client.DoHttpRequest(message));
@@ -209,7 +209,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         internal static KeystoneListProjectsResponse InternalKeystoneListProjects(SdkHttpClient client, HttpRequest request)
         {
-            var message = client.InitHttpRequest(request, true);
+            var message = request.ToHttpRequestMessage();
             try
             {
                 var response = TaskUtils.RunSync(() => client.DoHttpRequest(message));
@@ -233,13 +233,14 @@ namespace HuaweiCloud.SDK.Core.Auth
             var sdkRequest = HttpUtils.InitSdkRequest(urlPath);
 
             var url = iamEndpoint + urlPath;
+            var uaValue = string.IsNullOrEmpty(httpConfig.UserAgent) ? Constants.UsdkValue : $"{Constants.UsdkValue}; {httpConfig.UserAgent}";
             var request = new HttpRequest("GET", sdkRequest.ContentType, new Uri(url))
             {
                 Body = string.Empty,
                 Headers = new WebHeaderCollection
                 {
                     {
-                        "User-Agent", "huaweicloud-usdk-net/3.0"
+                        "User-Agent", uaValue
                     }
                 },
                 SigningAlgorithm = httpConfig.SigningAlgorithm
@@ -251,7 +252,7 @@ namespace HuaweiCloud.SDK.Core.Auth
         [Obsolete("This method is for internal use only and is deprecated. It will be removed in a future release.")]
         public static string KeystoneListAuthDomains(SdkHttpClient client, HttpRequest request)
         {
-            var message = client.InitHttpRequest(request, true);
+            var message = request.ToHttpRequestMessage();
             try
             {
                 var response = TaskUtils.RunSync(() => client.DoHttpRequest(message));
@@ -276,7 +277,7 @@ namespace HuaweiCloud.SDK.Core.Auth
 
         internal static KeystoneListAuthDomainsResponse InternalKeystoneListAuthDomains(SdkHttpClient client, HttpRequest request)
         {
-            var message = client.InitHttpRequest(request, true);
+            var message = request.ToHttpRequestMessage();
             try
             {
                 var response = TaskUtils.RunSync(() => client.DoHttpRequest(message));

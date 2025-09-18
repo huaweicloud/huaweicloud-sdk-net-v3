@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 
         /// </summary>
         [JsonProperty("log_type", NullValueHandling = NullValueHandling.Ignore)]
-        public LtsLogType LogType { get; set; }
+        public LtsLogType? LogType { get; set; }
+
         /// <summary>
         /// 云日志服务LTS日志组ID。
         /// </summary>
@@ -70,7 +71,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public bool Equals(ListLtsLogPolicyRespondBodyLtsConfigs input)
         {
             if (input == null) return false;
-            if (this.LogType != input.LogType) return false;
+            if (this.LogType != input.LogType || (this.LogType != null && !this.LogType.Equals(input.LogType))) return false;
             if (this.LtsGroupId != input.LtsGroupId || (this.LtsGroupId != null && !this.LtsGroupId.Equals(input.LtsGroupId))) return false;
             if (this.LtsStreamId != input.LtsStreamId || (this.LtsStreamId != null && !this.LtsStreamId.Equals(input.LtsStreamId))) return false;
             if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
@@ -86,7 +87,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.LogType.GetHashCode();
+                if (this.LogType != null) hashCode = hashCode * 59 + this.LogType.GetHashCode();
                 if (this.LtsGroupId != null) hashCode = hashCode * 59 + this.LtsGroupId.GetHashCode();
                 if (this.LtsStreamId != null) hashCode = hashCode * 59 + this.LtsStreamId.GetHashCode();
                 if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();

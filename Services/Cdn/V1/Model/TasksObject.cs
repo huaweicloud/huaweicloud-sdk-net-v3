@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
 
             public static bool operator ==(TaskTypeEnum a, TaskTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
 
             public static bool operator ==(FileTypeEnum a, FileTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

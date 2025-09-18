@@ -135,7 +135,7 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
 
             public static bool operator ==(TrackerIdEnum a, TrackerIdEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

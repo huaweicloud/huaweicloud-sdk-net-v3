@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -20,12 +20,7 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -34,6 +29,8 @@ namespace HuaweiCloud.SDK.Core
 {
     public class SdkHttpClient
     {
+        private const string Name = "SdkHttpClient";
+        private const string LoggerName = "HuaweiCloud.Sdk";
         private readonly HttpHandler _httpHandler;
         private readonly ILogger _logger;
         private readonly HttpClient _myHttpClient;
@@ -44,9 +41,9 @@ namespace HuaweiCloud.SDK.Core
         {
             var serviceProvider = GetServiceCollection(config, logging, logLevel).BuildServiceProvider();
             var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
-            _logger = loggerFactory.CreateLogger("HuaweiCloud.Sdk");
+            _logger = loggerFactory.CreateLogger(LoggerName);
             var httpClientFactory = serviceProvider.GetService<IHttpClientFactory>();
-            _myHttpClient = httpClientFactory.CreateClient("SdkHttpClient");
+            _myHttpClient = httpClientFactory.CreateClient(Name);
             _httpHandler = httpHandler;
             _httpConfig = config;
         }
@@ -61,11 +58,11 @@ namespace HuaweiCloud.SDK.Core
             return _logger;
         }
 
-        private IServiceCollection GetServiceCollection(HttpConfig httpConfig, bool logging, LogLevel logLevel)
+        private static IServiceCollection GetServiceCollection(HttpConfig httpConfig, bool logging, LogLevel logLevel)
         {
             var service = new ServiceCollection()
                 .AddHttpClient(
-                    "SdkHttpClient",
+                    Name,
                     x => { x.Timeout = TimeSpan.FromSeconds(httpConfig.Timeout ?? 60); }
                 ).ConfigurePrimaryHttpMessageHandler(
                     () => new HwMessageHandlerFactory(httpConfig).GetHandler()
@@ -83,120 +80,18 @@ namespace HuaweiCloud.SDK.Core
             return service;
         }
 
-        public HttpRequestMessage InitHttpRequest(HttpRequest request, bool ignoreBodyForGetRequest)
-        {
-            var message = new HttpRequestMessage
-            {
-                RequestUri = request.Url,
-                Method = new HttpMethod(request.Method)
-            };
-
-            foreach (var key in request.Headers.AllKeys)
-            {
-                if (key.Equals(HttpRequestHeader.Authorization.ToString()))
-                {
-                    message.Headers.TryAddWithoutValidation(HttpRequestHeader.Authorization.ToString(),
-                        request.Headers.GetValues(key));
-                }
-                else
-                {
-                    message.Headers.TryAddWithoutValidation(key, request.Headers.GetValues(key));
-                }
-            }
-
-            // Temporary workaround for .NET Framework, this framework does not support Content-Type headers in GET requests.
-            if (!ignoreBodyForGetRequest || message.Method != HttpMethod.Get)
-            {
-                message.Content = new StringContent(request.Body);
-                message.Content.Headers.ContentType =
-                    new MediaTypeHeaderValue(SelectHeaderContentType(request.ContentType));
-            }
-
-            if (request.FileStream != null && request.FileStream != Stream.Null)
-            {
-                message.Content = new StreamContent(request.FileStream);
-                message.Content.Headers.ContentType =
-                    new MediaTypeHeaderValue(SelectHeaderContentType(request.ContentType));
-            }
-
-            if (request.FormData != null && request.FormData.Count != 0)
-            {
-                message.Content = request.ContentType == "application/x-www-form-urlencoded" ? GetFormUrlEncodedContent(request) : GetFormDataContent(request);
-            }
-
-            return message;
-        }
-
-        private string SelectHeaderContentType(string contentType)
-        {
-            if (contentType == null)
-            {
-                return "application/json";
-            }
-
-            if (contentType.Contains("application/json") || contentType.Contains("*/*"))
-            {
-                return "application/json";
-            }
-
-            return contentType;
-        }
-
-        private HttpContent GetFormUrlEncodedContent(HttpRequest request)
-        {
-            var pairs = request.FormData.Select(pair => new KeyValuePair<string, string>(pair.Key, pair.Value.ToString())).ToList();
-            return new FormUrlEncodedContent(pairs);
-        }
-
-        private HttpContent GetFormDataContent(HttpRequest request)
-        {
-            var boundary = Guid.NewGuid().ToString("N");
-            var contentType = "multipart/form-data; boundary=" + boundary;
-            var multipartContent = new MultipartFormDataContent(boundary);
-            request.Headers.Add("ContentType", contentType);
-            multipartContent.Headers.Remove("Content-Type");
-            multipartContent.Headers.TryAddWithoutValidation("Content-Type", contentType);
-
-            var fileParts = new Dictionary<string, FormDataFilePart>();
-
-            foreach (var pair in request.FormData)
-            {
-                if (pair.Value is FormDataFilePart formDataFilePart)
-                {
-                    fileParts.Add(pair.Key, formDataFilePart);
-                }
-                else
-                {
-                    multipartContent.Add(new StringContent(pair.Value.ToString()), $"\"{pair.Key}\"");
-                }
-            }
-
-            foreach (var pair in fileParts)
-            {
-                var filePart = pair.Value;
-                var streamContent = new StreamContent(filePart.GetValue());
-                if (filePart.GetContentType() != null)
-                {
-                    streamContent.Headers.ContentType = new MediaTypeHeaderValue(filePart.GetContentType());
-                }
-                multipartContent.Add(streamContent, $"\"{pair.Key}\"", $"\"{filePart.GetFilename()}\"");
-            }
-
-            foreach (var content in multipartContent) {
-                var headerContent = content.Headers.ContentDisposition.Parameters.SingleOrDefault(x => x.Name == "filename*");
-                if(headerContent != null)
-                    content.Headers.ContentDisposition.Parameters.Remove(headerContent);
-            }
-
-            return multipartContent;
-        }
-
         public async Task<HttpResponseMessage> DoHttpRequest(HttpRequestMessage request)
         {
             _httpHandler?.ProcessRequest(request, _logger);
             var response = await _myHttpClient.SendAsync(request);
             _httpHandler?.ProcessResponse(response, _logger);
             return response;
+        }
+
+        [Obsolete("Use HttpRequest.ToHttpRequestMessage() instead.")]
+        public HttpRequestMessage InitHttpRequest(HttpRequest request, bool ignoreBodyForGetRequest)
+        {
+            return request.ToHttpRequestMessage();
         }
     }
 }

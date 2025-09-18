@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cc.V3.Model
 {
     /// <summary>
-    /// 带宽包实例在大陆站或国际站的计费方式。 1：大陆站包周期。 2：国际站包周期。 3：大陆站按需计费。 4：国际站按需计费。 5：大陆站按95方式计费。 6：国际站按95方式计费。
+    /// 带宽包实例在大陆站或国际站的计费方式。 1：大陆站包周期。 2：国际站包周期。 3：大陆站按需计费。 4：国际站按需计费。 5：大陆站按95方式计费。 6：国际站按95方式计费。 7：大陆站按日95方式计费。 8：国际站按日95方式计费。
     /// </summary>
-    /// <value>带宽包实例在大陆站或国际站的计费方式。 1：大陆站包周期。 2：国际站包周期。 3：大陆站按需计费。 4：国际站按需计费。 5：大陆站按95方式计费。 6：国际站按95方式计费。</value>
+    /// <value>带宽包实例在大陆站或国际站的计费方式。 1：大陆站包周期。 2：国际站包周期。 3：大陆站按需计费。 4：国际站按需计费。 5：大陆站按95方式计费。 6：国际站按95方式计费。 7：大陆站按日95方式计费。 8：国际站按日95方式计费。</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
@@ -53,7 +53,19 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// Enum NUMBER_6 for value: 6
         /// </summary>
         [EnumMember(Value = "6")]
-        NUMBER_6 = 6
+        NUMBER_6 = 6,
+
+        /// <summary>
+        /// Enum NUMBER_7 for value: 7
+        /// </summary>
+        [EnumMember(Value = "7")]
+        NUMBER_7 = 7,
+
+        /// <summary>
+        /// Enum NUMBER_8 for value: 8
+        /// </summary>
+        [EnumMember(Value = "8")]
+        NUMBER_8 = 8
 
     }
 

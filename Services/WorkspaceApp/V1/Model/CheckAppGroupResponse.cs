@@ -26,7 +26,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("validate_rule", NullValueHandling = NullValueHandling.Ignore)]
-        public ValidateRuleEnum ValidateRule { get; set; }
+        public ValidateRuleEnum? ValidateRule { get; set; }
+
 
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         {
             if (input == null) return false;
             if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
-            if (this.ValidateRule != input.ValidateRule) return false;
+            if (this.ValidateRule != input.ValidateRule || (this.ValidateRule != null && !this.ValidateRule.Equals(input.ValidateRule))) return false;
 
             return true;
         }
@@ -71,7 +72,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             {
                 var hashCode = 41;
                 if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
-                hashCode = hashCode * 59 + this.ValidateRule.GetHashCode();
+                if (this.ValidateRule != null) hashCode = hashCode * 59 + this.ValidateRule.GetHashCode();
                 return hashCode;
             }
         }

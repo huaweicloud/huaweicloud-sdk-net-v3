@@ -32,7 +32,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("hot_words_type", NullValueHandling = NullValueHandling.Ignore)]
-        public HotWordsTypeEnum HotWordsType { get; set; }
+        public HotWordsTypeEnum? HotWordsType { get; set; }
+
         /// <summary>
         /// 热词ID(sis中配置)。
         /// </summary>
@@ -55,7 +56,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public LanguageEnum Language { get; set; }
+        public LanguageEnum? Language { get; set; }
+
         /// <summary>
         /// 创建时间，格式遵循：RFC 3339 如\&quot;2021-01-10T08:43:17Z\&quot;。
         /// </summary>
@@ -114,11 +116,11 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (input == null) return false;
             if (this.HotWordsId != input.HotWordsId || (this.HotWordsId != null && !this.HotWordsId.Equals(input.HotWordsId))) return false;
             if (this.RobotId != input.RobotId || (this.RobotId != null && !this.RobotId.Equals(input.RobotId))) return false;
-            if (this.HotWordsType != input.HotWordsType) return false;
+            if (this.HotWordsType != input.HotWordsType || (this.HotWordsType != null && !this.HotWordsType.Equals(input.HotWordsType))) return false;
             if (this.VocabularyId != input.VocabularyId || (this.VocabularyId != null && !this.VocabularyId.Equals(input.VocabularyId))) return false;
             if (this.SisProjectId != input.SisProjectId || (this.SisProjectId != null && !this.SisProjectId.Equals(input.SisProjectId))) return false;
             if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
-            if (this.Language != input.Language) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
@@ -136,11 +138,11 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 var hashCode = 41;
                 if (this.HotWordsId != null) hashCode = hashCode * 59 + this.HotWordsId.GetHashCode();
                 if (this.RobotId != null) hashCode = hashCode * 59 + this.RobotId.GetHashCode();
-                hashCode = hashCode * 59 + this.HotWordsType.GetHashCode();
+                if (this.HotWordsType != null) hashCode = hashCode * 59 + this.HotWordsType.GetHashCode();
                 if (this.VocabularyId != null) hashCode = hashCode * 59 + this.VocabularyId.GetHashCode();
                 if (this.SisProjectId != null) hashCode = hashCode * 59 + this.SisProjectId.GetHashCode();
                 if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
-                hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();

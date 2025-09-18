@@ -159,7 +159,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
 
             public static bool operator ==(SigningAlgorithmEnum a, SigningAlgorithmEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -274,7 +274,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
 
             public static bool operator ==(MessageTypeEnum a, MessageTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

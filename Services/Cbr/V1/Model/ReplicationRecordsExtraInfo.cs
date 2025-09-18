@@ -43,8 +43,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// <summary>
         /// 目标端的存储库id
         /// </summary>
-        [JsonProperty("destinatio_vault_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string DestinatioVaultId { get; set; }
+        [JsonProperty("destination_vault_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string DestinationVaultId { get; set; }
 
 
 
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  failCode: ").Append(FailCode).Append("\n");
             sb.Append("  failReason: ").Append(FailReason).Append("\n");
             sb.Append("  autoTrigger: ").Append(AutoTrigger).Append("\n");
-            sb.Append("  destinatioVaultId: ").Append(DestinatioVaultId).Append("\n");
+            sb.Append("  destinationVaultId: ").Append(DestinationVaultId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,7 +82,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.FailCode != input.FailCode || (this.FailCode != null && !this.FailCode.Equals(input.FailCode))) return false;
             if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
             if (this.AutoTrigger != input.AutoTrigger || (this.AutoTrigger != null && !this.AutoTrigger.Equals(input.AutoTrigger))) return false;
-            if (this.DestinatioVaultId != input.DestinatioVaultId || (this.DestinatioVaultId != null && !this.DestinatioVaultId.Equals(input.DestinatioVaultId))) return false;
+            if (this.DestinationVaultId != input.DestinationVaultId || (this.DestinationVaultId != null && !this.DestinationVaultId.Equals(input.DestinationVaultId))) return false;
 
             return true;
         }
@@ -99,7 +99,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.FailCode != null) hashCode = hashCode * 59 + this.FailCode.GetHashCode();
                 if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();
                 if (this.AutoTrigger != null) hashCode = hashCode * 59 + this.AutoTrigger.GetHashCode();
-                if (this.DestinatioVaultId != null) hashCode = hashCode * 59 + this.DestinatioVaultId.GetHashCode();
+                if (this.DestinationVaultId != null) hashCode = hashCode * 59 + this.DestinationVaultId.GetHashCode();
                 return hashCode;
             }
         }

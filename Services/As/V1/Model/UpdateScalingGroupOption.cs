@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public static bool operator ==(HealthPeriodicAuditMethodEnum a, HealthPeriodicAuditMethodEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public static bool operator ==(InstanceTerminatePolicyEnum a, InstanceTerminatePolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

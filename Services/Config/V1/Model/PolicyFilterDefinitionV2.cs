@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
 
             public static bool operator ==(TagKeyLogicEnum a, TagKeyLogicEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
 
             public static bool operator ==(ExcludeTagKeyLogicEnum a, ExcludeTagKeyLogicEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

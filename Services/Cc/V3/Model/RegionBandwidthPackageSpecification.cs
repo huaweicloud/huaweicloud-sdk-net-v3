@@ -29,31 +29,31 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public string RemoteRegionId { get; set; }
 
         /// <summary>
-        /// 互通Region带宽包的规格ID。
+        /// 互通区域带宽包的规格ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 互通Region带宽包的规格名字。
+        /// 互通区域带宽包的规格名称。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 互通Region带宽包的规格英文名字。
+        /// 互通区域带宽包的规格英文名称。
         /// </summary>
         [JsonProperty("en_name", NullValueHandling = NullValueHandling.Ignore)]
         public string EnName { get; set; }
 
         /// <summary>
-        /// 互通Region带宽包的规格西语名字。
+        /// 互通区域带宽包的规格西语名称。
         /// </summary>
         [JsonProperty("es_name", NullValueHandling = NullValueHandling.Ignore)]
         public string EsName { get; set; }
 
         /// <summary>
-        /// 互通Region带宽包的规格葡语名字。
+        /// 互通区域带宽包的规格葡语名称。
         /// </summary>
         [JsonProperty("pt_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PtName { get; set; }

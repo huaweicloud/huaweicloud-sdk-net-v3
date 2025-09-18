@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
             public static bool operator ==(ActionTypeEnum a, ActionTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -280,7 +280,7 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
 
             public static bool operator ==(AffectedOsEnum a, AffectedOsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

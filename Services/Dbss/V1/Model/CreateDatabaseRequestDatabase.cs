@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
 
             public static bool operator ==(CharsetEnum a, CharsetEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.IdentityCenterStore.V1.Model
 
             public static bool operator ==(PasswordModeEnum a, PasswordModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

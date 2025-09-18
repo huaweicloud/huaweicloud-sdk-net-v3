@@ -74,7 +74,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public ImageServerStatus Status { get; set; }
+        public ImageServerStatus? Status { get; set; }
+
         /// <summary>
         /// 应用组授权用户， * 限制用户类型：&#39;USER&#39; - 用户
         /// </summary>
@@ -149,7 +150,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
-            if (this.Status != input.Status) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.AuthorizeAccounts != input.AuthorizeAccounts || (this.AuthorizeAccounts != null && input.AuthorizeAccounts != null && !this.AuthorizeAccounts.SequenceEqual(input.AuthorizeAccounts))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
@@ -175,7 +176,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.AuthorizeAccounts != null) hashCode = hashCode * 59 + this.AuthorizeAccounts.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();

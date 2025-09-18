@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
             public static bool operator ==(ThirdPasswordUpdateTypeEnum a, ThirdPasswordUpdateTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

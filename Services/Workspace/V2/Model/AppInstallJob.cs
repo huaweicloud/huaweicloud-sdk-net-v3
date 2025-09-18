@@ -74,7 +74,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 
         /// </summary>
         [JsonProperty("job_status", NullValueHandling = NullValueHandling.Ignore)]
-        public JobStatus JobStatus { get; set; }
+        public JobStatus? JobStatus { get; set; }
+
         /// <summary>
         /// 任务失败时的原因。
         /// </summary>
@@ -142,7 +143,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
             if (this.Operator != input.Operator || (this.Operator != null && !this.Operator.Equals(input.Operator))) return false;
             if (this.Target != input.Target || (this.Target != null && !this.Target.Equals(input.Target))) return false;
-            if (this.JobStatus != input.JobStatus) return false;
+            if (this.JobStatus != input.JobStatus || (this.JobStatus != null && !this.JobStatus.Equals(input.JobStatus))) return false;
             if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
@@ -167,7 +168,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 if (this.Operator != null) hashCode = hashCode * 59 + this.Operator.GetHashCode();
                 if (this.Target != null) hashCode = hashCode * 59 + this.Target.GetHashCode();
-                hashCode = hashCode * 59 + this.JobStatus.GetHashCode();
+                if (this.JobStatus != null) hashCode = hashCode * 59 + this.JobStatus.GetHashCode();
                 if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();

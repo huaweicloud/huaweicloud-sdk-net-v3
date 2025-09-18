@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(ChargeModeEnum a, ChargeModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -125,12 +125,22 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         }
 
         /// <summary>
-        /// 带宽包实例在大陆站或国际站的计费方式： - 3：大陆站按需计费 - 4：国际站按需计费 - 5：大陆站按95方式计费 - 6：国际站按95方式计费
+        /// 带宽包实例在大陆站或国际站的计费方式： - 1：大陆站包周期 - 2：国际站包周期 - 3：大陆站按需计费 - 4：国际站按需计费 - 5：大陆站按95方式计费 - 6：国际站按95方式计费
         /// </summary>
-        /// <value>带宽包实例在大陆站或国际站的计费方式： - 3：大陆站按需计费 - 4：国际站按需计费 - 5：大陆站按95方式计费 - 6：国际站按95方式计费</value>
+        /// <value>带宽包实例在大陆站或国际站的计费方式： - 1：大陆站包周期 - 2：国际站包周期 - 3：大陆站按需计费 - 4：国际站按需计费 - 5：大陆站按95方式计费 - 6：国际站按95方式计费</value>
         [JsonConverter(typeof(EnumClassConverter<BillingModeEnum>))]
         public class BillingModeEnum
         {
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly BillingModeEnum NUMBER_1 = new BillingModeEnum(1);
+
+            /// <summary>
+            /// Enum NUMBER_2 for value: 2
+            /// </summary>
+            public static readonly BillingModeEnum NUMBER_2 = new BillingModeEnum(2);
+
             /// <summary>
             /// Enum NUMBER_3 for value: 3
             /// </summary>
@@ -154,6 +164,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             private static readonly Dictionary<int?, BillingModeEnum> StaticFields =
             new Dictionary<int?, BillingModeEnum>()
             {
+                { 1, NUMBER_1 },
+                { 2, NUMBER_2 },
                 { 3, NUMBER_3 },
                 { 4, NUMBER_4 },
                 { 5, NUMBER_5 },
@@ -232,7 +244,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(BillingModeEnum a, BillingModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -341,7 +353,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(ResourceTypeEnum a, ResourceTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -456,7 +468,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(InterflowModeEnum a, InterflowModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -504,19 +516,19 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// 
         /// </summary>
         [JsonProperty("local_area_id", NullValueHandling = NullValueHandling.Ignore)]
-        public AreaIdDef LocalAreaId { get; set; }
+        public LocalAreaIdDef LocalAreaId { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("remote_area_id", NullValueHandling = NullValueHandling.Ignore)]
-        public AreaIdDef RemoteAreaId { get; set; }
+        public RemoteAreaIdDef RemoteAreaId { get; set; }
         /// <summary>
         /// 带宽包实例的计费方式。 bandwidth是按带宽计费。
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }
         /// <summary>
-        /// 带宽包实例在大陆站或国际站的计费方式： - 3：大陆站按需计费 - 4：国际站按需计费 - 5：大陆站按95方式计费 - 6：国际站按95方式计费
+        /// 带宽包实例在大陆站或国际站的计费方式： - 1：大陆站包周期 - 2：国际站包周期 - 3：大陆站按需计费 - 4：国际站按需计费 - 5：大陆站按95方式计费 - 6：国际站按95方式计费
         /// </summary>
         [JsonProperty("billing_mode", NullValueHandling = NullValueHandling.Ignore)]
         public BillingModeEnum BillingMode { get; set; }
@@ -548,6 +560,12 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// </summary>
         [JsonProperty("interflow_mode", NullValueHandling = NullValueHandling.Ignore)]
         public InterflowModeEnum InterflowMode { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("prepaid_options", NullValueHandling = NullValueHandling.Ignore)]
+        public CreatePrepaidOptions PrepaidOptions { get; set; }
+
 
 
         /// <summary>
@@ -570,6 +588,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             sb.Append("  resourceType: ").Append(ResourceType).Append("\n");
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("  interflowMode: ").Append(InterflowMode).Append("\n");
+            sb.Append("  prepaidOptions: ").Append(PrepaidOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -601,6 +620,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             if (this.ResourceType != input.ResourceType) return false;
             if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
             if (this.InterflowMode != input.InterflowMode) return false;
+            if (this.PrepaidOptions != input.PrepaidOptions || (this.PrepaidOptions != null && !this.PrepaidOptions.Equals(input.PrepaidOptions))) return false;
 
             return true;
         }
@@ -626,6 +646,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
                 hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
                 if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 hashCode = hashCode * 59 + this.InterflowMode.GetHashCode();
+                if (this.PrepaidOptions != null) hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
                 return hashCode;
             }
         }

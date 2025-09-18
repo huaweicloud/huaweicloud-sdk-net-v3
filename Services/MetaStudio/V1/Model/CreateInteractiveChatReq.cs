@@ -38,7 +38,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public LanguageEnum Language { get; set; }
+        public LanguageEnum? Language { get; set; }
+
 
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
             if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
             if (this.SessionId != input.SessionId || (this.SessionId != null && !this.SessionId.Equals(input.SessionId))) return false;
-            if (this.Language != input.Language) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
 
             return true;
         }
@@ -89,7 +90,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
                 if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 if (this.SessionId != null) hashCode = hashCode * 59 + this.SessionId.GetHashCode();
-                hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 return hashCode;
             }
         }

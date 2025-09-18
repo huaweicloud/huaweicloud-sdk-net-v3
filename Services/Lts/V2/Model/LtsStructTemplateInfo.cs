@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
 
             public static bool operator ==(ParseTypeEnum a, ParseTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

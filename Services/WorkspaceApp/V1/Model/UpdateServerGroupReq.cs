@@ -38,7 +38,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("storage_mount_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public StorageFolderMountType StorageMountPolicy { get; set; }
+        public StorageFolderMountType? StorageMountPolicy { get; set; }
+
         /// <summary>
         /// 服务器组关联的镜像ID，更新镜像ID只对组下新创建的云服务器生效。
         /// </summary>
@@ -55,12 +56,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("image_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ImageTypeEnum ImageType { get; set; }
+        public ImageTypeEnum? ImageType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("system_disk_type", NullValueHandling = NullValueHandling.Ignore)]
-        public VolumeType SystemDiskType { get; set; }
+        public VolumeType? SystemDiskType { get; set; }
+
         /// <summary>
         /// 磁盘容量，单位GB。
         /// </summary>
@@ -77,7 +80,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("app_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AppTypeEnum AppType { get; set; }
+        public AppTypeEnum? AppType { get; set; }
+
         /// <summary>
         /// 服务器是否处于禁用状态： * &#x60;true&#x60; - 启用状态 * &#x60;false&#x60; - 禁用状态
         /// </summary>
@@ -126,14 +130,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.RoutePolicy != input.RoutePolicy || (this.RoutePolicy != null && !this.RoutePolicy.Equals(input.RoutePolicy))) return false;
-            if (this.StorageMountPolicy != input.StorageMountPolicy) return false;
+            if (this.StorageMountPolicy != input.StorageMountPolicy || (this.StorageMountPolicy != null && !this.StorageMountPolicy.Equals(input.StorageMountPolicy))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
             if (this.ImageProductId != input.ImageProductId || (this.ImageProductId != null && !this.ImageProductId.Equals(input.ImageProductId))) return false;
-            if (this.ImageType != input.ImageType) return false;
-            if (this.SystemDiskType != input.SystemDiskType) return false;
+            if (this.ImageType != input.ImageType || (this.ImageType != null && !this.ImageType.Equals(input.ImageType))) return false;
+            if (this.SystemDiskType != input.SystemDiskType || (this.SystemDiskType != null && !this.SystemDiskType.Equals(input.SystemDiskType))) return false;
             if (this.SystemDiskSize != input.SystemDiskSize || (this.SystemDiskSize != null && !this.SystemDiskSize.Equals(input.SystemDiskSize))) return false;
             if (this.OuName != input.OuName || (this.OuName != null && !this.OuName.Equals(input.OuName))) return false;
-            if (this.AppType != input.AppType) return false;
+            if (this.AppType != input.AppType || (this.AppType != null && !this.AppType.Equals(input.AppType))) return false;
             if (this.ServerGroupStatus != input.ServerGroupStatus || (this.ServerGroupStatus != null && !this.ServerGroupStatus.Equals(input.ServerGroupStatus))) return false;
 
             return true;
@@ -150,14 +154,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.RoutePolicy != null) hashCode = hashCode * 59 + this.RoutePolicy.GetHashCode();
-                hashCode = hashCode * 59 + this.StorageMountPolicy.GetHashCode();
+                if (this.StorageMountPolicy != null) hashCode = hashCode * 59 + this.StorageMountPolicy.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
                 if (this.ImageProductId != null) hashCode = hashCode * 59 + this.ImageProductId.GetHashCode();
-                hashCode = hashCode * 59 + this.ImageType.GetHashCode();
-                hashCode = hashCode * 59 + this.SystemDiskType.GetHashCode();
+                if (this.ImageType != null) hashCode = hashCode * 59 + this.ImageType.GetHashCode();
+                if (this.SystemDiskType != null) hashCode = hashCode * 59 + this.SystemDiskType.GetHashCode();
                 if (this.SystemDiskSize != null) hashCode = hashCode * 59 + this.SystemDiskSize.GetHashCode();
                 if (this.OuName != null) hashCode = hashCode * 59 + this.OuName.GetHashCode();
-                hashCode = hashCode * 59 + this.AppType.GetHashCode();
+                if (this.AppType != null) hashCode = hashCode * 59 + this.AppType.GetHashCode();
                 if (this.ServerGroupStatus != null) hashCode = hashCode * 59 + this.ServerGroupStatus.GetHashCode();
                 return hashCode;
             }

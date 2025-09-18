@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
 
             public static bool operator ==(SetupLandingZoneActionTypeEnum a, SetupLandingZoneActionTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
 
             public static bool operator ==(IdentityCenterStatusEnum a, IdentityCenterStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -347,7 +347,7 @@ namespace HuaweiCloud.SDK.Rgc.V1.Model
 
             public static bool operator ==(OrganizationStructureTypeEnum a, OrganizationStructureTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

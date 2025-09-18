@@ -38,12 +38,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("authorization_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AuthorizationTypeEnum AuthorizationType { get; set; }
+        public AuthorizationTypeEnum? AuthorizationType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("app_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AppTypeEnum AppType { get; set; }
+        public AppTypeEnum? AppType { get; set; }
+
 
 
         /// <summary>
@@ -79,8 +81,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.AppServerGroupId != input.AppServerGroupId || (this.AppServerGroupId != null && !this.AppServerGroupId.Equals(input.AppServerGroupId))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
-            if (this.AuthorizationType != input.AuthorizationType) return false;
-            if (this.AppType != input.AppType) return false;
+            if (this.AuthorizationType != input.AuthorizationType || (this.AuthorizationType != null && !this.AuthorizationType.Equals(input.AuthorizationType))) return false;
+            if (this.AppType != input.AppType || (this.AppType != null && !this.AppType.Equals(input.AppType))) return false;
 
             return true;
         }
@@ -96,8 +98,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.AppServerGroupId != null) hashCode = hashCode * 59 + this.AppServerGroupId.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
-                hashCode = hashCode * 59 + this.AuthorizationType.GetHashCode();
-                hashCode = hashCode * 59 + this.AppType.GetHashCode();
+                if (this.AuthorizationType != null) hashCode = hashCode * 59 + this.AuthorizationType.GetHashCode();
+                if (this.AppType != null) hashCode = hashCode * 59 + this.AppType.GetHashCode();
                 return hashCode;
             }
         }

@@ -59,6 +59,8 @@ namespace HuaweiCloud.SDK.Aom.V2
             "https://aom.ap-southeast-5.myhuaweicloud.com");
         public static readonly Region AF_NORTH_1 = new Region("af-north-1",
             "https://aom.af-north-1.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
+            "https://aom.cn-north-12.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("AOM");
 
@@ -90,6 +92,7 @@ namespace HuaweiCloud.SDK.Aom.V2
                 { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
                 { "ap-southeast-5", AP_SOUTHEAST_5 },
                 { "af-north-1", AF_NORTH_1 },
+                { "cn-north-12", CN_NORTH_12 },
         };
 
         public static Region ValueOf(string regionId)

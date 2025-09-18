@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(JobTypeEnum a, JobTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(EngineTypeEnum a, EngineTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -359,7 +359,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(SourceEndpointTypeEnum a, SourceEndpointTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -480,7 +480,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(TargetEndpointTypeEnum a, TargetEndpointTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -601,7 +601,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(JobDirectionEnum a, JobDirectionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -722,7 +722,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(NetTypeEnum a, NetTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -842,7 +842,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(TaskTypesEnum a, TaskTypesEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -975,7 +975,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(ClusterModesEnum a, ClusterModesEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

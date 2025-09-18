@@ -38,7 +38,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public LanguageEnum Language { get; set; }
+        public LanguageEnum? Language { get; set; }
+
         /// <summary>
         /// 应用ID。
         /// </summary>
@@ -102,7 +103,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.WelcomeSpeechId != input.WelcomeSpeechId || (this.WelcomeSpeechId != null && !this.WelcomeSpeechId.Equals(input.WelcomeSpeechId))) return false;
             if (this.WelcomeSpeech != input.WelcomeSpeech || (this.WelcomeSpeech != null && !this.WelcomeSpeech.Equals(input.WelcomeSpeech))) return false;
             if (this.EnableWelcomeSpeech != input.EnableWelcomeSpeech || (this.EnableWelcomeSpeech != null && !this.EnableWelcomeSpeech.Equals(input.EnableWelcomeSpeech))) return false;
-            if (this.Language != input.Language) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
             if (this.RobotId != input.RobotId || (this.RobotId != null && !this.RobotId.Equals(input.RobotId))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
@@ -122,7 +123,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.WelcomeSpeechId != null) hashCode = hashCode * 59 + this.WelcomeSpeechId.GetHashCode();
                 if (this.WelcomeSpeech != null) hashCode = hashCode * 59 + this.WelcomeSpeech.GetHashCode();
                 if (this.EnableWelcomeSpeech != null) hashCode = hashCode * 59 + this.EnableWelcomeSpeech.GetHashCode();
-                hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.RobotId != null) hashCode = hashCode * 59 + this.RobotId.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();

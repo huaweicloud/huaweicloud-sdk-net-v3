@@ -147,7 +147,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(StateEnum a, StateEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -268,7 +268,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(ChatVideoTypeEnum a, ChatVideoTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -407,7 +407,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(DefaultLanguageEnum a, DefaultLanguageEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -522,7 +522,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
             public static bool operator ==(JobFinishReasonEnum a, JobFinishReasonEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -656,7 +656,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public LanguageEnum Language { get; set; }
+        public LanguageEnum? Language { get; set; }
+
         /// <summary>
         /// 智能交互接入地址。
         /// </summary>
@@ -745,7 +746,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.JobFinishReason != input.JobFinishReason) return false;
             if (this.RtcRoomInfo != input.RtcRoomInfo || (this.RtcRoomInfo != null && !this.RtcRoomInfo.Equals(input.RtcRoomInfo))) return false;
             if (this.ChatState != input.ChatState || (this.ChatState != null && !this.ChatState.Equals(input.ChatState))) return false;
-            if (this.Language != input.Language) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
             if (this.ChatAccessAddress != input.ChatAccessAddress || (this.ChatAccessAddress != null && !this.ChatAccessAddress.Equals(input.ChatAccessAddress))) return false;
             if (this.ChatAccessRestAddress != input.ChatAccessRestAddress || (this.ChatAccessRestAddress != null && !this.ChatAccessRestAddress.Equals(input.ChatAccessRestAddress))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
@@ -780,7 +781,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 hashCode = hashCode * 59 + this.JobFinishReason.GetHashCode();
                 if (this.RtcRoomInfo != null) hashCode = hashCode * 59 + this.RtcRoomInfo.GetHashCode();
                 if (this.ChatState != null) hashCode = hashCode * 59 + this.ChatState.GetHashCode();
-                hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.ChatAccessAddress != null) hashCode = hashCode * 59 + this.ChatAccessAddress.GetHashCode();
                 if (this.ChatAccessRestAddress != null) hashCode = hashCode * 59 + this.ChatAccessRestAddress.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();

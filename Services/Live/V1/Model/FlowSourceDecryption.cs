@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(AlgorithmEnum a, AlgorithmEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(KeyTypeEnum a, KeyTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

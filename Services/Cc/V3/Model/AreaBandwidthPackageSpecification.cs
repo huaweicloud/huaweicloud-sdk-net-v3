@@ -20,12 +20,12 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// 
         /// </summary>
         [JsonProperty("local_area_id", NullValueHandling = NullValueHandling.Ignore)]
-        public AreaIdDef LocalAreaId { get; set; }
+        public LocalAreaIdDef LocalAreaId { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("remote_area_id", NullValueHandling = NullValueHandling.Ignore)]
-        public AreaIdDef RemoteAreaId { get; set; }
+        public RemoteAreaIdDef RemoteAreaId { get; set; }
         /// <summary>
         /// 互通大区带宽包的规格ID。
         /// </summary>

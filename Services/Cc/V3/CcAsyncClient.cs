@@ -1487,210 +1487,6 @@ namespace HuaweiCloud.SDK.Cc.V3
         }
         
         /// <summary>
-        /// 批量添加账户全域互联带宽资源标签
-        ///
-        /// TMS批量添加资源标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<BatchCreateGcbResourceTagsResponse> BatchCreateGcbResourceTagsAsync(BatchCreateGcbResourceTagsRequest batchCreateGcbResourceTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchCreateGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/create", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateGcbResourceTagsRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<BatchCreateGcbResourceTagsResponse>(response);
-        }
-
-        public AsyncInvoker<BatchCreateGcbResourceTagsResponse> BatchCreateGcbResourceTagsAsyncInvoker(BatchCreateGcbResourceTagsRequest batchCreateGcbResourceTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchCreateGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/create", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateGcbResourceTagsRequest);
-            return new AsyncInvoker<BatchCreateGcbResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateGcbResourceTagsResponse>);
-        }
-        
-        /// <summary>
-        /// 批量删除账户全域互联带宽资源标签
-        ///
-        /// 批量删除账户全域互联带宽资源标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<BatchDeleteGcbResourceTagsResponse> BatchDeleteGcbResourceTagsAsync(BatchDeleteGcbResourceTagsRequest batchDeleteGcbResourceTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/delete", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGcbResourceTagsRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<BatchDeleteGcbResourceTagsResponse>(response);
-        }
-
-        public AsyncInvoker<BatchDeleteGcbResourceTagsResponse> BatchDeleteGcbResourceTagsAsyncInvoker(BatchDeleteGcbResourceTagsRequest batchDeleteGcbResourceTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/delete", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGcbResourceTagsRequest);
-            return new AsyncInvoker<BatchDeleteGcbResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteGcbResourceTagsResponse>);
-        }
-        
-        /// <summary>
-        /// 查询账户全域互联带宽资源标签数量
-        ///
-        /// 查询账户全域互联带宽资源标签数量
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CountGcbResourceByTagResponse> CountGcbResourceByTagAsync(CountGcbResourceByTagRequest countGcbResourceByTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/resource-instances/count", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countGcbResourceByTagRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<CountGcbResourceByTagResponse>(response);
-        }
-
-        public AsyncInvoker<CountGcbResourceByTagResponse> CountGcbResourceByTagAsyncInvoker(CountGcbResourceByTagRequest countGcbResourceByTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/resource-instances/count", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countGcbResourceByTagRequest);
-            return new AsyncInvoker<CountGcbResourceByTagResponse>(this, "POST", request, JsonUtils.DeSerialize<CountGcbResourceByTagResponse>);
-        }
-        
-        /// <summary>
-        /// 添加账户全域互联带宽资源标签
-        ///
-        /// 添加账户全域互联带宽资源标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<CreateGcbResourceTagResponse> CreateGcbResourceTagAsync(CreateGcbResourceTagRequest createGcbResourceTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGcbResourceTagRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<CreateGcbResourceTagResponse>(response);
-        }
-
-        public AsyncInvoker<CreateGcbResourceTagResponse> CreateGcbResourceTagAsyncInvoker(CreateGcbResourceTagRequest createGcbResourceTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGcbResourceTagRequest);
-            return new AsyncInvoker<CreateGcbResourceTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateGcbResourceTagResponse>);
-        }
-        
-        /// <summary>
-        /// 删除账户全域互联带宽资源标签
-        ///
-        /// 删除账户全域互联带宽资源标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<DeleteGcbResourceTagResponse> DeleteGcbResourceTagAsync(DeleteGcbResourceTagRequest deleteGcbResourceTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
-            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/{tag_key}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGcbResourceTagRequest);
-            var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteGcbResourceTagResponse>(response);
-        }
-
-        public AsyncInvoker<DeleteGcbResourceTagResponse> DeleteGcbResourceTagAsyncInvoker(DeleteGcbResourceTagRequest deleteGcbResourceTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
-            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/{tag_key}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGcbResourceTagRequest);
-            return new AsyncInvoker<DeleteGcbResourceTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGcbResourceTagResponse>);
-        }
-        
-        /// <summary>
-        /// 查询账户全域互联带宽资源实例列表
-        ///
-        /// 查询账户全域互联带宽资源实例列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListGcbResourceByTagResponse> ListGcbResourceByTagAsync(ListGcbResourceByTagRequest listGcbResourceByTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/resource-instances/filter", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbResourceByTagRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<ListGcbResourceByTagResponse>(response);
-        }
-
-        public AsyncInvoker<ListGcbResourceByTagResponse> ListGcbResourceByTagAsyncInvoker(ListGcbResourceByTagRequest listGcbResourceByTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/resource-instances/filter", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbResourceByTagRequest);
-            return new AsyncInvoker<ListGcbResourceByTagResponse>(this, "POST", request, JsonUtils.DeSerialize<ListGcbResourceByTagResponse>);
-        }
-        
-        /// <summary>
-        /// 查询账户全域互联带宽资源的标签
-        ///
-        /// 查询账户全域互联带宽资源的标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListGcbResourceTagsResponse> ListGcbResourceTagsAsync(ListGcbResourceTagsRequest listGcbResourceTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbResourceTagsRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ListGcbResourceTagsResponse>(response);
-        }
-
-        public AsyncInvoker<ListGcbResourceTagsResponse> ListGcbResourceTagsAsyncInvoker(ListGcbResourceTagsRequest listGcbResourceTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbResourceTagsRequest);
-            return new AsyncInvoker<ListGcbResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGcbResourceTagsResponse>);
-        }
-        
-        /// <summary>
-        /// 查询账户全域互联带宽所有资源标签
-        ///
-        /// 查询账户全域互联带宽所有资源标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<ListGcbTenantTagsResponse> ListGcbTenantTagsAsync(ListGcbTenantTagsRequest listGcbTenantTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbTenantTagsRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerialize<ListGcbTenantTagsResponse>(response);
-        }
-
-        public AsyncInvoker<ListGcbTenantTagsResponse> ListGcbTenantTagsAsyncInvoker(ListGcbTenantTagsRequest listGcbTenantTagsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbTenantTagsRequest);
-            return new AsyncInvoker<ListGcbTenantTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGcbTenantTagsResponse>);
-        }
-        
-        /// <summary>
         /// 全域互联带宽绑定实例
         ///
         /// 全域互联带宽绑定实例。
@@ -1991,6 +1787,210 @@ namespace HuaweiCloud.SDK.Cc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{domain_id}/gcb/gcbandwidths/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateGlobalConnectionBandwidthRequest);
             return new AsyncInvoker<UpdateGlobalConnectionBandwidthResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateGlobalConnectionBandwidthResponse>);
+        }
+        
+        /// <summary>
+        /// 批量添加账户全域互联带宽资源标签
+        ///
+        /// TMS批量添加资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreateGcbResourceTagsResponse> BatchCreateGcbResourceTagsAsync(BatchCreateGcbResourceTagsRequest batchCreateGcbResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateGcbResourceTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchCreateGcbResourceTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreateGcbResourceTagsResponse> BatchCreateGcbResourceTagsAsyncInvoker(BatchCreateGcbResourceTagsRequest batchCreateGcbResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateGcbResourceTagsRequest);
+            return new AsyncInvoker<BatchCreateGcbResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateGcbResourceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除账户全域互联带宽资源标签
+        ///
+        /// 批量删除账户全域互联带宽资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteGcbResourceTagsResponse> BatchDeleteGcbResourceTagsAsync(BatchDeleteGcbResourceTagsRequest batchDeleteGcbResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGcbResourceTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteGcbResourceTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteGcbResourceTagsResponse> BatchDeleteGcbResourceTagsAsyncInvoker(BatchDeleteGcbResourceTagsRequest batchDeleteGcbResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteGcbResourceTagsRequest);
+            return new AsyncInvoker<BatchDeleteGcbResourceTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchDeleteGcbResourceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询账户全域互联带宽资源标签数量
+        ///
+        /// 查询账户全域互联带宽资源标签数量
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CountGcbResourceByTagResponse> CountGcbResourceByTagAsync(CountGcbResourceByTagRequest countGcbResourceByTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countGcbResourceByTagRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CountGcbResourceByTagResponse>(response);
+        }
+
+        public AsyncInvoker<CountGcbResourceByTagResponse> CountGcbResourceByTagAsyncInvoker(CountGcbResourceByTagRequest countGcbResourceByTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countGcbResourceByTagRequest);
+            return new AsyncInvoker<CountGcbResourceByTagResponse>(this, "POST", request, JsonUtils.DeSerialize<CountGcbResourceByTagResponse>);
+        }
+        
+        /// <summary>
+        /// 添加账户全域互联带宽资源标签
+        ///
+        /// 添加账户全域互联带宽资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateGcbResourceTagResponse> CreateGcbResourceTagAsync(CreateGcbResourceTagRequest createGcbResourceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGcbResourceTagRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateGcbResourceTagResponse>(response);
+        }
+
+        public AsyncInvoker<CreateGcbResourceTagResponse> CreateGcbResourceTagAsyncInvoker(CreateGcbResourceTagRequest createGcbResourceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createGcbResourceTagRequest);
+            return new AsyncInvoker<CreateGcbResourceTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateGcbResourceTagResponse>);
+        }
+        
+        /// <summary>
+        /// 删除账户全域互联带宽资源标签
+        ///
+        /// 删除账户全域互联带宽资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteGcbResourceTagResponse> DeleteGcbResourceTagAsync(DeleteGcbResourceTagRequest deleteGcbResourceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/{tag_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGcbResourceTagRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteGcbResourceTagResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteGcbResourceTagResponse> DeleteGcbResourceTagAsyncInvoker(DeleteGcbResourceTagRequest deleteGcbResourceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteGcbResourceTagRequest.TagKey, out var valueOfTagKey)) urlParam.Add("tag_key", valueOfTagKey);
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags/{tag_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteGcbResourceTagRequest);
+            return new AsyncInvoker<DeleteGcbResourceTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteGcbResourceTagResponse>);
+        }
+        
+        /// <summary>
+        /// 查询账户全域互联带宽资源实例列表
+        ///
+        /// 查询账户全域互联带宽资源实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListGcbResourceByTagResponse> ListGcbResourceByTagAsync(ListGcbResourceByTagRequest listGcbResourceByTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbResourceByTagRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListGcbResourceByTagResponse>(response);
+        }
+
+        public AsyncInvoker<ListGcbResourceByTagResponse> ListGcbResourceByTagAsyncInvoker(ListGcbResourceByTagRequest listGcbResourceByTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbResourceByTagRequest);
+            return new AsyncInvoker<ListGcbResourceByTagResponse>(this, "POST", request, JsonUtils.DeSerialize<ListGcbResourceByTagResponse>);
+        }
+        
+        /// <summary>
+        /// 查询账户全域互联带宽资源的标签
+        ///
+        /// 查询账户全域互联带宽资源的标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListGcbResourceTagsResponse> ListGcbResourceTagsAsync(ListGcbResourceTagsRequest listGcbResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbResourceTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListGcbResourceTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListGcbResourceTagsResponse> ListGcbResourceTagsAsyncInvoker(ListGcbResourceTagsRequest listGcbResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listGcbResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbResourceTagsRequest);
+            return new AsyncInvoker<ListGcbResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGcbResourceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询账户全域互联带宽所有资源标签
+        ///
+        /// 查询账户全域互联带宽所有资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListGcbTenantTagsResponse> ListGcbTenantTagsAsync(ListGcbTenantTagsRequest listGcbTenantTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbTenantTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListGcbTenantTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListGcbTenantTagsResponse> ListGcbTenantTagsAsyncInvoker(ListGcbTenantTagsRequest listGcbTenantTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/gcb/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGcbTenantTagsRequest);
+            return new AsyncInvoker<ListGcbTenantTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGcbTenantTagsResponse>);
         }
         
         /// <summary>
@@ -2559,7 +2559,7 @@ namespace HuaweiCloud.SDK.Cc.V3
         }
         
         /// <summary>
-        /// 查询当前支持的Area列表
+        /// 查询当前支持的大区列表
         ///
         /// 查询当前支持的大区列表。
         /// 
@@ -2679,9 +2679,9 @@ namespace HuaweiCloud.SDK.Cc.V3
         }
         
         /// <summary>
-        /// 查询当前支持的Region列表
+        /// 查询当前支持的区域列表
         ///
-        /// 查询当前支持的Region列表。
+        /// 查询当前支持的区域列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

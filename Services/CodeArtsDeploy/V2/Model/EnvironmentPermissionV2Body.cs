@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
 
             public static bool operator ==(PermissionNameEnum a, PermissionNameEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

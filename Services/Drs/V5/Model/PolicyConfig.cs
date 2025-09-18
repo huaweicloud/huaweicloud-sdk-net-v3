@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(FilterDdlPolicyEnum a, FilterDdlPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(ConflictPolicyEnum a, ConflictPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -347,7 +347,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(DataSyncTopologyTypeEnum a, DataSyncTopologyTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -498,7 +498,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(SupportDdlInfoEnum a, SupportDdlInfoEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public List<CentralNetworkCapabilityEnum> Capability { get; set; }
 
         /// <summary>
-        /// 每页返回的个数。 取值范围：1~1000。
+        /// 每页返回的个数。 取值范围：1~2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

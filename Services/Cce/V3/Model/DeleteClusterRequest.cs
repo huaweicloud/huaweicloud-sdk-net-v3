@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(DeleteEfsEnum a, DeleteEfsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -262,7 +262,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(DeleteEniEnum a, DeleteEniEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -395,7 +395,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(DeleteEvsEnum a, DeleteEvsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -528,7 +528,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(DeleteNetEnum a, DeleteNetEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -661,7 +661,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(DeleteObsEnum a, DeleteObsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -794,7 +794,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(DeleteSfsEnum a, DeleteSfsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -927,7 +927,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(DeleteSfs30Enum a, DeleteSfs30Enum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1060,7 +1060,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(LtsReclaimPolicyEnum a, LtsReclaimPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1169,7 +1169,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(TobedeletedEnum a, TobedeletedEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1290,7 +1290,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(OndemandNodePolicyEnum a, OndemandNodePolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1405,7 +1405,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
             public static bool operator ==(PeriodicNodePolicyEnum a, PeriodicNodePolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

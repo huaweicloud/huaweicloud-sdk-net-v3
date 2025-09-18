@@ -153,7 +153,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
             public static bool operator ==(ResourceStatusEnum a, ResourceStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

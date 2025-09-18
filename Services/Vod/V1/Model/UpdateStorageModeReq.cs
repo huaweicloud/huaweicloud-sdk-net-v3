@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(StorageModeEnum a, StorageModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(RestoreModeEnum a, RestoreModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -347,7 +347,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(RestoreTierEnum a, RestoreTierEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

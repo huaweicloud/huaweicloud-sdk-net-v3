@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
 
             public static bool operator ==(OrderColumnEnum a, OrderColumnEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
 
             public static bool operator ==(OrderTypeEnum a, OrderTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
             public static bool operator ==(DimNameEnum a, DimNameEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -302,7 +302,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
             public static bool operator ==(AvailableActionsEnum a, AvailableActionsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -609,7 +609,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
             public static bool operator ==(UnavailableActionsEnum a, UnavailableActionsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -725,7 +725,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
             public static bool operator ==(CurrentActionEnum a, CurrentActionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

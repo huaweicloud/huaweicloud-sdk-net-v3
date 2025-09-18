@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     public class SetLogLtsConfigsRequest 
     {
         /// <summary>
-        /// 引擎，暂只支持mysql。
+        /// 发动机类型。
         /// </summary>
-        /// <value>引擎，暂只支持mysql。</value>
+        /// <value>发动机类型。</value>
         [JsonConverter(typeof(EnumClassConverter<EngineEnum>))]
         public class EngineEnum
         {
@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
 
             public static bool operator ==(EngineEnum a, EngineEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
 
             public static bool operator ==(XLanguageEnum a, XLanguageEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -241,7 +241,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
 
 
         /// <summary>
-        /// 引擎，暂只支持mysql。
+        /// 发动机类型。
         /// </summary>
         [SDKProperty("engine", IsPath = true)]
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]

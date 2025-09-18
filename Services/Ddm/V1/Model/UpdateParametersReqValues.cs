@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
 
             public static bool operator ==(CharacterSetServerEnum a, CharacterSetServerEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -256,7 +256,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
 
             public static bool operator ==(CollationServerEnum a, CollationServerEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -377,7 +377,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
 
             public static bool operator ==(ConcurrentExecutionLevelEnum a, ConcurrentExecutionLevelEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -492,7 +492,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
 
             public static bool operator ==(EnableTableRecycleEnum a, EnableTableRecycleEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -607,7 +607,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
 
             public static bool operator ==(InsertToLoadDataEnum a, InsertToLoadDataEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -722,7 +722,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
 
             public static bool operator ==(NotFromPushdownEnum a, NotFromPushdownEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -837,7 +837,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
 
             public static bool operator ==(SqlAuditEnum a, SqlAuditEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -952,7 +952,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
 
             public static bool operator ==(SupportDdlBinlogHintEnum a, SupportDdlBinlogHintEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1073,7 +1073,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
 
             public static bool operator ==(TransactionPolicyEnum a, TransactionPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -1188,7 +1188,7 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
 
             public static bool operator ==(UltimateOptimizeEnum a, UltimateOptimizeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

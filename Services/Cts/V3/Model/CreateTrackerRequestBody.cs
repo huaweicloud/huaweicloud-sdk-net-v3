@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
 
             public static bool operator ==(TrackerTypeEnum a, TrackerTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
 
             public static bool operator ==(AgencyNameEnum a, AgencyNameEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

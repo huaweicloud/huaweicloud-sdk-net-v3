@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(TaskVersionEnum a, TaskVersionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

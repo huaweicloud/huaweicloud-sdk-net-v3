@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
     public class CloudConnectionQuota 
     {
         /// <summary>
-        /// 配额类型： - cloud_connection: 可加载的云连接实例数 - cloud_connection_region: 某云连接实例下可加载的Region数 - cloud_connection_route: 某云连接实例下可加载的路由数 - region_network_instance: 某云连接实例下某个Region下可加载的网络实例数
+        /// 配额类型： - cloud_connection: 可加载的云连接实例数 - cloud_connection_region: 云连接实例下可加载的Region数 - cloud_connection_route: 云连接实例下可加载的路由数 - region_network_instance: 云连接实例下某个Region下可加载的网络实例数
         /// </summary>
-        /// <value>配额类型： - cloud_connection: 可加载的云连接实例数 - cloud_connection_region: 某云连接实例下可加载的Region数 - cloud_connection_route: 某云连接实例下可加载的路由数 - region_network_instance: 某云连接实例下某个Region下可加载的网络实例数</value>
+        /// <value>配额类型： - cloud_connection: 可加载的云连接实例数 - cloud_connection_region: 云连接实例下可加载的Region数 - cloud_connection_route: 云连接实例下可加载的路由数 - region_network_instance: 云连接实例下某个Region下可加载的网络实例数</value>
         [JsonConverter(typeof(EnumClassConverter<QuotaTypeEnum>))]
         public class QuotaTypeEnum
         {
@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(QuotaTypeEnum a, QuotaTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public string RegionId { get; set; }
 
         /// <summary>
-        /// 配额类型： - cloud_connection: 可加载的云连接实例数 - cloud_connection_region: 某云连接实例下可加载的Region数 - cloud_connection_route: 某云连接实例下可加载的路由数 - region_network_instance: 某云连接实例下某个Region下可加载的网络实例数
+        /// 配额类型： - cloud_connection: 可加载的云连接实例数 - cloud_connection_region: 云连接实例下可加载的Region数 - cloud_connection_route: 云连接实例下可加载的路由数 - region_network_instance: 云连接实例下某个Region下可加载的网络实例数
         /// </summary>
         [JsonProperty("quota_type", NullValueHandling = NullValueHandling.Ignore)]
         public QuotaTypeEnum QuotaType { get; set; }

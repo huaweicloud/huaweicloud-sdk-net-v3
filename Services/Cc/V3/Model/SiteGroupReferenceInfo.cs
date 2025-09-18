@@ -29,13 +29,13 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 功能说明：站点分组自定义的英文名字。 取值范围：1-255个字符。
+        /// 功能说明：站点分组自定义的英文名称。 取值范围：1-255个字符。
         /// </summary>
         [JsonProperty("name_en", NullValueHandling = NullValueHandling.Ignore)]
         public string NameEn { get; set; }
 
         /// <summary>
-        /// 功能说明：站点分组自定义的中文名字。 取值范围：1-64个字符。
+        /// 功能说明：站点分组自定义的中文名称。 取值范围：1-64个字符。
         /// </summary>
         [JsonProperty("name_cn", NullValueHandling = NullValueHandling.Ignore)]
         public string NameCn { get; set; }

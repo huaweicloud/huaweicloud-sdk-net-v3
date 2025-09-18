@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(WatermarkTypeEnum a, WatermarkTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(ImageProcessEnum a, ImageProcessEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -359,7 +359,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(PositionEnum a, PositionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

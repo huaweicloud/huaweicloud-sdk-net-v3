@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public static bool operator ==(ResourceTypeEnum a, ResourceTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public static bool operator ==(CapabilitiescpuArchEnum a, CapabilitiescpuArchEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -335,7 +335,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public static bool operator ==(BaremetalextBootTypeEnum a, BaremetalextBootTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -468,7 +468,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public static bool operator ==(CondoperationstatusEnum a, CondoperationstatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

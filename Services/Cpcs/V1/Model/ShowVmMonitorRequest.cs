@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
 
             public static bool operator ==(NamespaceEnum a, NamespaceEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.Cpcs.V1.Model
 
             public static bool operator ==(MetricNameEnum a, MetricNameEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

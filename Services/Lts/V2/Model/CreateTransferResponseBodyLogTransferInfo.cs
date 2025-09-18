@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
 
             public static bool operator ==(LogStorageFormatEnum a, LogStorageFormatEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
 
             public static bool operator ==(LogTransferModeEnum a, LogTransferModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -347,7 +347,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
 
             public static bool operator ==(LogTransferStatusEnum a, LogTransferStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -468,7 +468,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
 
             public static bool operator ==(LogTransferTypeEnum a, LogTransferTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -32,12 +32,14 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// 
         /// </summary>
         [JsonProperty("hosted_cloud", NullValueHandling = NullValueHandling.Ignore)]
-        public HostedCloudEnum HostedCloud { get; set; }
+        public HostedCloudEnum? HostedCloud { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("approved_state", NullValueHandling = NullValueHandling.Ignore)]
-        public ApprovedStateEnum ApprovedState { get; set; }
+        public ApprovedStateEnum? ApprovedState { get; set; }
+
         /// <summary>
         /// 审批拒绝创建附件的原因。
         /// </summary>
@@ -78,8 +80,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             if (input == null) return false;
             if (this.EnterpriseRouterTableId != input.EnterpriseRouterTableId || (this.EnterpriseRouterTableId != null && !this.EnterpriseRouterTableId.Equals(input.EnterpriseRouterTableId))) return false;
             if (this.AttachmentParentInstanceId != input.AttachmentParentInstanceId || (this.AttachmentParentInstanceId != null && !this.AttachmentParentInstanceId.Equals(input.AttachmentParentInstanceId))) return false;
-            if (this.HostedCloud != input.HostedCloud) return false;
-            if (this.ApprovedState != input.ApprovedState) return false;
+            if (this.HostedCloud != input.HostedCloud || (this.HostedCloud != null && !this.HostedCloud.Equals(input.HostedCloud))) return false;
+            if (this.ApprovedState != input.ApprovedState || (this.ApprovedState != null && !this.ApprovedState.Equals(input.ApprovedState))) return false;
             if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
 
             return true;
@@ -95,8 +97,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
                 var hashCode = 41;
                 if (this.EnterpriseRouterTableId != null) hashCode = hashCode * 59 + this.EnterpriseRouterTableId.GetHashCode();
                 if (this.AttachmentParentInstanceId != null) hashCode = hashCode * 59 + this.AttachmentParentInstanceId.GetHashCode();
-                hashCode = hashCode * 59 + this.HostedCloud.GetHashCode();
-                hashCode = hashCode * 59 + this.ApprovedState.GetHashCode();
+                if (this.HostedCloud != null) hashCode = hashCode * 59 + this.HostedCloud.GetHashCode();
+                if (this.ApprovedState != null) hashCode = hashCode * 59 + this.ApprovedState.GetHashCode();
                 if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
                 return hashCode;
             }

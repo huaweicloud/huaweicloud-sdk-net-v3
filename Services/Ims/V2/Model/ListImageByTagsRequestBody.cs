@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
 
             public static bool operator ==(ActionEnum a, ActionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

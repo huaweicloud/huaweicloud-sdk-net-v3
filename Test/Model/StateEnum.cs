@@ -66,9 +66,9 @@ namespace Test.Model
                 return null;
             }
 
-            if (StaticFields.ContainsKey(value))
+            if (StaticFields.TryGetValue(value, out var val))
             {
-                return StaticFields[value];
+                return val;
             }
 
             return null;

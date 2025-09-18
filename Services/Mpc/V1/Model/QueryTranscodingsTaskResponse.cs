@@ -141,7 +141,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -274,6 +274,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("additional_manifests", NullValueHandling = NullValueHandling.Ignore)]
         public List<AdditionalManifests> AdditionalManifests { get; set; }
 
+        /// <summary>
+        /// 输出文件的metadata信息 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public List<FileMetaData> Metadata { get; set; }
+
 
 
         /// <summary>
@@ -302,6 +308,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  picInfo: ").Append(PicInfo).Append("\n");
             sb.Append("  avParameters: ").Append(AvParameters).Append("\n");
             sb.Append("  additionalManifests: ").Append(AdditionalManifests).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -339,6 +346,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.PicInfo != input.PicInfo || (this.PicInfo != null && input.PicInfo != null && !this.PicInfo.SequenceEqual(input.PicInfo))) return false;
             if (this.AvParameters != input.AvParameters || (this.AvParameters != null && input.AvParameters != null && !this.AvParameters.SequenceEqual(input.AvParameters))) return false;
             if (this.AdditionalManifests != input.AdditionalManifests || (this.AdditionalManifests != null && input.AdditionalManifests != null && !this.AdditionalManifests.SequenceEqual(input.AdditionalManifests))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
 
             return true;
         }
@@ -370,6 +378,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.PicInfo != null) hashCode = hashCode * 59 + this.PicInfo.GetHashCode();
                 if (this.AvParameters != null) hashCode = hashCode * 59 + this.AvParameters.GetHashCode();
                 if (this.AdditionalManifests != null) hashCode = hashCode * 59 + this.AdditionalManifests.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

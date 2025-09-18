@@ -26,5 +26,6 @@ namespace HuaweiCloud.SDK.Core
         public const long DefaultProgressInterval = 102400;
         public const string DefaultProfileDirName = ".huaweicloud";
         public const SigningAlgorithm DefaultSigningAlgorithm = SigningAlgorithm.HmacSha256;
+        public const string UsdkValue = "huaweicloud-usdk-net/3.0";
     }
 }

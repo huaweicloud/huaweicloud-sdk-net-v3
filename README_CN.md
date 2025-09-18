@@ -6,6 +6,10 @@
 
 <h1 align="center">华为云开发者 .Net 软件开发工具包（.Net SDK）</h1>
 
+[![Multi-Target Framework](https://img.shields.io/badge/Targets-.NET%20Standard%202.0%20|%20.NET%20Framework%204.6.2%2B%20|%20.NET%20%205.0%2B-512BD4?logo=dotnet)](https://docs.microsoft.com/en-us/dotnet/standard/frameworks)
+[![NuGet Version](https://img.shields.io/nuget/v/HuaweiCloud.SDK.Core)](https://www.nuget.org/profiles/HuaweiCloud)
+[![License](https://img.shields.io/badge/license-Apache--2.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
+
 欢迎使用华为云 .Net SDK 。
 
 华为云 .Net SDK 让您无需关心请求细节即可快速使用弹性云服务器（ECS）、虚拟私有云（VPC）等多个华为云服务。
@@ -20,9 +24,10 @@
 - 要使用华为云 .Net SDK 访问指定服务的 API
   ，您需要确认已在 [华为云控制台](https://console.huaweicloud.com/console/?locale=zh-cn&region=cn-north-4#/home) 开通当前服务。
 
-- 华为云 .Net SDK 适用于：
-  - **.NET and .NET Core 2.0** 及以上版本
-  - **.NET Framework 4.6.2** 及以上版本
+- 华为云 .NET SDK 基于.NET Standard 2.0 规范开发，适用的框架：
+  - **.NET Framework 4.6.2+**
+  - **.NET 5.0+**
+  - **.NET Core 2.0+**
 
 更多版本维护信息请参考 [.NET Core](https://learn.microsoft.com/zh-cn/lifecycle/faq/dotnet-core)、[.NET Framework](https://learn.microsoft.com/zh-cn/lifecycle/faq/dotnet-framework) 生命周期常见问题解答。
 
@@ -111,7 +116,7 @@ namespace ListVpcsSolution
 
 **详细示例**
 
-```java
+```csharp
 using System;
 using HuaweiCloud.SDK.Core;
 using HuaweiCloud.SDK.Core.Auth;
@@ -231,6 +236,7 @@ namespace ListVpcsSolution
     * [3.3 自定义配置](#33-自定义配置-top)
         * [3.3.1 IAM endpoint配置](#331-IAM-endpoint配置-top)
         * [3.3.2 Region配置](#332-Region配置-top)
+    * [3.4 用户代理](#34-用户代理-top)
 * [4. 发送请求并查看响应](#4-发送请求并查看响应-top)
     * [4.1 异常处理](#41-异常处理-top)
 * [5. 异步客户端使用](#5-异步客户端使用-top)
@@ -676,6 +682,23 @@ var request = new ListVpcsRequest
 
 var response = vpcClient.ListVpcs(request)
 Console.WriteLine(JsonUtils.Serialize(response.Vpcs));
+```
+
+#### 3.4 用户代理 [:top:](#用户手册-top)
+
+从**3.1.165**版本起，默认会在请求头User-Agent中附加额外信息，用于识别客户端调用服务时所使用的SDK语言、客户端库版本以及平台信息等。 User-Agent包含.NET版本、操作系统和时区语言信息，同时会生成一个随机标识符追加到User-Agent信息中。随机标识符会存储在用户主目录下，linux为 `~/.huaweicloud/application_id`，windows为`C:\Users\USER_NAME\.huaweicloud\application_id`。
+
+上述信息将用于保护您及您的用户的华为云账号安全。
+
+您可以通过自定义User-Agent的方式关闭上述行为，自定义User-Agent信息建议长度不超过50个字符，仅可包含ASCII可打印字符：
+
+``` csharp
+// 追加自定义User-Agent信息，替代默认追加内容
+var httpConfig = HttpConfig.GetDefaultConfig().WithUserAgent("custom user agent...");
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 #### 4.1 异常处理 [:top:](#用户手册-top)

@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
 
             public static bool operator ==(PeriodTypeEnum a, PeriodTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

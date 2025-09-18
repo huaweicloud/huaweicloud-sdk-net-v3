@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(ChargingModeEnum a, ChargingModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(CloudTypeEnum a, CloudTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -341,7 +341,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(ConsistentLevelEnum a, ConsistentLevelEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -486,7 +486,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(ObjectTypeEnum a, ObjectTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -607,7 +607,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(ProtectTypeEnum a, ProtectTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -746,7 +746,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(SpecCodeEnum a, SpecCodeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -879,7 +879,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

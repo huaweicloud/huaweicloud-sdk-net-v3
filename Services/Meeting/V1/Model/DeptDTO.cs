@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Meeting.V1.Model
 
             public static bool operator ==(InPermissionEnum a, InPermissionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -250,7 +250,7 @@ namespace HuaweiCloud.SDK.Meeting.V1.Model
 
             public static bool operator ==(OutPermissionEnum a, OutPermissionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

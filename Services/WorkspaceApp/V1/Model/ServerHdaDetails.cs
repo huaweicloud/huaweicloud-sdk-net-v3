@@ -68,7 +68,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public ServerStatus Status { get; set; }
+        public ServerStatus? Status { get; set; }
+
         /// <summary>
         /// 当前的accessAgent版本。
         /// </summary>
@@ -120,7 +121,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.ServerGroupName != input.ServerGroupName || (this.ServerGroupName != null && !this.ServerGroupName.Equals(input.ServerGroupName))) return false;
             if (this.Sid != input.Sid || (this.Sid != null && !this.Sid.Equals(input.Sid))) return false;
             if (this.SessionCount != input.SessionCount || (this.SessionCount != null && !this.SessionCount.Equals(input.SessionCount))) return false;
-            if (this.Status != input.Status) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.CurrentVersion != input.CurrentVersion || (this.CurrentVersion != null && !this.CurrentVersion.Equals(input.CurrentVersion))) return false;
 
             return true;
@@ -142,7 +143,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.ServerGroupName != null) hashCode = hashCode * 59 + this.ServerGroupName.GetHashCode();
                 if (this.Sid != null) hashCode = hashCode * 59 + this.Sid.GetHashCode();
                 if (this.SessionCount != null) hashCode = hashCode * 59 + this.SessionCount.GetHashCode();
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.CurrentVersion != null) hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
                 return hashCode;
             }

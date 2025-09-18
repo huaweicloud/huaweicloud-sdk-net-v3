@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 
         /// </summary>
         [JsonProperty("auth_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AuthTypeEnum AuthType { get; set; }
+        public AuthTypeEnum? AuthType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -70,7 +71,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         public bool Equals(AuthMethodConfigRequest input)
         {
             if (input == null) return false;
-            if (this.AuthType != input.AuthType) return false;
+            if (this.AuthType != input.AuthType || (this.AuthType != null && !this.AuthType.Equals(input.AuthType))) return false;
             if (this.RadiusGatewayConfig != input.RadiusGatewayConfig || (this.RadiusGatewayConfig != null && !this.RadiusGatewayConfig.Equals(input.RadiusGatewayConfig))) return false;
             if (this.ThirdPartyAuthConfig != input.ThirdPartyAuthConfig || (this.ThirdPartyAuthConfig != null && !this.ThirdPartyAuthConfig.Equals(input.ThirdPartyAuthConfig))) return false;
             if (this.EmergencyLoginMode != input.EmergencyLoginMode || (this.EmergencyLoginMode != null && !this.EmergencyLoginMode.Equals(input.EmergencyLoginMode))) return false;
@@ -86,7 +87,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.AuthType.GetHashCode();
+                if (this.AuthType != null) hashCode = hashCode * 59 + this.AuthType.GetHashCode();
                 if (this.RadiusGatewayConfig != null) hashCode = hashCode * 59 + this.RadiusGatewayConfig.GetHashCode();
                 if (this.ThirdPartyAuthConfig != null) hashCode = hashCode * 59 + this.ThirdPartyAuthConfig.GetHashCode();
                 if (this.EmergencyLoginMode != null) hashCode = hashCode * 59 + this.EmergencyLoginMode.GetHashCode();

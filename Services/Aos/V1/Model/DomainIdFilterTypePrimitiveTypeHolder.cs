@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
             public static bool operator ==(DomainIdFilterTypeEnum a, DomainIdFilterTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

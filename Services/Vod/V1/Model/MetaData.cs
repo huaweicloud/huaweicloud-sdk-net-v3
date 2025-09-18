@@ -261,7 +261,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(PackTypeEnum a, PackTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -484,7 +484,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(CodecEnum a, CodecEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

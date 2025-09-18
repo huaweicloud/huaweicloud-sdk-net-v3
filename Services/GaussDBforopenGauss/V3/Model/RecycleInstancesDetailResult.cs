@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
             public static bool operator ==(HaModeEnum a, HaModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
             public static bool operator ==(PayModelEnum a, PayModelEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -347,7 +347,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
             public static bool operator ==(VolumeTypeEnum a, VolumeTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -462,7 +462,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
             public static bool operator ==(RecycleStatusEnum a, RecycleStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -583,7 +583,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
             public static bool operator ==(ModeEnum a, ModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

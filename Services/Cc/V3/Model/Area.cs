@@ -23,25 +23,25 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Area ID。
+        /// 大区ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 英文 Area Name。
+        /// 大区英文名称。
         /// </summary>
         [JsonProperty("en_name", NullValueHandling = NullValueHandling.Ignore)]
         public string EnName { get; set; }
 
         /// <summary>
-        /// 西语 Area Name。
+        /// 大区西语名称。
         /// </summary>
         [JsonProperty("es_name", NullValueHandling = NullValueHandling.Ignore)]
         public string EsName { get; set; }
 
         /// <summary>
-        /// 葡语 Area Name。
+        /// 大区葡语名称。
         /// </summary>
         [JsonProperty("pt_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PtName { get; set; }

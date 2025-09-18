@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(QuotaTypeEnum a, QuotaTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
 
         /// <summary>
-        /// 每页返回的个数。 取值范围：1~1000。
+        /// 每页返回的个数。 取值范围：1~2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

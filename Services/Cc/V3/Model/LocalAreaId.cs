@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// 
         /// </summary>
         [JsonProperty("local_area_id", NullValueHandling = NullValueHandling.Ignore)]
-        public AreaIdDef _LocalAreaId { get; set; }
+        public LocalAreaIdDef _LocalAreaId { get; set; }
 
 
         /// <summary>

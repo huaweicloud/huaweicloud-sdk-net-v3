@@ -32,17 +32,20 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduleTaskTypeEnum TaskType { get; set; }
+        public ScheduleTaskTypeEnum? TaskType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduleTaskStatus Status { get; set; }
+        public ScheduleTaskStatus? Status { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("scheduled_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduledTypeEnum ScheduledType { get; set; }
+        public ScheduledTypeEnum? ScheduledType { get; set; }
+
         /// <summary>
         /// 总子任务数。
         /// </summary>
@@ -133,9 +136,9 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
-            if (this.TaskType != input.TaskType) return false;
-            if (this.Status != input.Status) return false;
-            if (this.ScheduledType != input.ScheduledType) return false;
+            if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.ScheduledType != input.ScheduledType || (this.ScheduledType != null && !this.ScheduledType.Equals(input.ScheduledType))) return false;
             if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
             if (this.SuccessCount != input.SuccessCount || (this.SuccessCount != null && !this.SuccessCount.Equals(input.SuccessCount))) return false;
             if (this.FailedCount != input.FailedCount || (this.FailedCount != null && !this.FailedCount.Equals(input.FailedCount))) return false;
@@ -158,9 +161,9 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
-                hashCode = hashCode * 59 + this.ScheduledType.GetHashCode();
+                if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ScheduledType != null) hashCode = hashCode * 59 + this.ScheduledType.GetHashCode();
                 if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 if (this.SuccessCount != null) hashCode = hashCode * 59 + this.SuccessCount.GetHashCode();
                 if (this.FailedCount != null) hashCode = hashCode * 59 + this.FailedCount.GetHashCode();

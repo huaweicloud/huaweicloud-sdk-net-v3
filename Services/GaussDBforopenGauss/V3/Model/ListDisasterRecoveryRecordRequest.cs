@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
             public static bool operator ==(XLanguageEnum a, XLanguageEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
             public static bool operator ==(EntityTypeEnum a, EntityTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

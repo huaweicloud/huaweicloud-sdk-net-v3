@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
 
             public static bool operator ==(NotifyStatusEnum a, NotifyStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
 
             public static bool operator ==(CreateSourceEnum a, CreateSourceEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -353,7 +353,7 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
 
             public static bool operator ==(FreezedStatusEnum a, FreezedStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -147,7 +147,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
             public static bool operator ==(PromTypeEnum a, PromTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -268,7 +268,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
             public static bool operator ==(PromStatusEnum a, PromStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

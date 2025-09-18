@@ -38,7 +38,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public VolumeType Type { get; set; }
+        public VolumeType? Type { get; set; }
+
         /// <summary>
         /// 磁盘容量，单位GB。
         /// </summary>
@@ -115,7 +116,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.EncryptFlag != input.EncryptFlag || (this.EncryptFlag != null && !this.EncryptFlag.Equals(input.EncryptFlag))) return false;
             if (this.KmsKey != input.KmsKey || (this.KmsKey != null && !this.KmsKey.Equals(input.KmsKey))) return false;
             if (this.KeyAlias != input.KeyAlias || (this.KeyAlias != null && !this.KeyAlias.Equals(input.KeyAlias))) return false;
-            if (this.Type != input.Type) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.KmsGrantId != input.KmsGrantId || (this.KmsGrantId != null && !this.KmsGrantId.Equals(input.KmsGrantId))) return false;
             if (this.Device != input.Device || (this.Device != null && !this.Device.Equals(input.Device))) return false;
@@ -137,7 +138,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.EncryptFlag != null) hashCode = hashCode * 59 + this.EncryptFlag.GetHashCode();
                 if (this.KmsKey != null) hashCode = hashCode * 59 + this.KmsKey.GetHashCode();
                 if (this.KeyAlias != null) hashCode = hashCode * 59 + this.KeyAlias.GetHashCode();
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.KmsGrantId != null) hashCode = hashCode * 59 + this.KmsGrantId.GetHashCode();
                 if (this.Device != null) hashCode = hashCode * 59 + this.Device.GetHashCode();

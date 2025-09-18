@@ -56,12 +56,14 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("robot_type", NullValueHandling = NullValueHandling.Ignore)]
-        public RobotTypeEnum RobotType { get; set; }
+        public RobotTypeEnum? RobotType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public LanguageEnum Language { get; set; }
+        public LanguageEnum? Language { get; set; }
+
         /// <summary>
         /// 创建时间，格式遵循：RFC 3339 如\&quot;2021-01-10T08:43:17Z\&quot;。
         /// </summary>
@@ -150,7 +152,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("asr_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AsrTypeEnum AsrType { get; set; }
+        public AsrTypeEnum? AsrType { get; set; }
+
         /// <summary>
         /// ASR帐号。
         /// </summary>
@@ -214,8 +217,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
             if (this.AppType != input.AppType || (this.AppType != null && !this.AppType.Equals(input.AppType))) return false;
             if (this.AppKey != input.AppKey || (this.AppKey != null && !this.AppKey.Equals(input.AppKey))) return false;
-            if (this.RobotType != input.RobotType) return false;
-            if (this.Language != input.Language) return false;
+            if (this.RobotType != input.RobotType || (this.RobotType != null && !this.RobotType.Equals(input.RobotType))) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
@@ -230,7 +233,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.SisProjectId != input.SisProjectId || (this.SisProjectId != null && !this.SisProjectId.Equals(input.SisProjectId))) return false;
             if (this.EnableHotWords != input.EnableHotWords || (this.EnableHotWords != null && !this.EnableHotWords.Equals(input.EnableHotWords))) return false;
             if (this.EnableQuestionAudit != input.EnableQuestionAudit || (this.EnableQuestionAudit != null && !this.EnableQuestionAudit.Equals(input.EnableQuestionAudit))) return false;
-            if (this.AsrType != input.AsrType) return false;
+            if (this.AsrType != input.AsrType || (this.AsrType != null && !this.AsrType.Equals(input.AsrType))) return false;
             if (this.AsrAccount != input.AsrAccount || (this.AsrAccount != null && !this.AsrAccount.Equals(input.AsrAccount))) return false;
 
             return true;
@@ -250,8 +253,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 if (this.AppType != null) hashCode = hashCode * 59 + this.AppType.GetHashCode();
                 if (this.AppKey != null) hashCode = hashCode * 59 + this.AppKey.GetHashCode();
-                hashCode = hashCode * 59 + this.RobotType.GetHashCode();
-                hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.RobotType != null) hashCode = hashCode * 59 + this.RobotType.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
@@ -266,7 +269,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.SisProjectId != null) hashCode = hashCode * 59 + this.SisProjectId.GetHashCode();
                 if (this.EnableHotWords != null) hashCode = hashCode * 59 + this.EnableHotWords.GetHashCode();
                 if (this.EnableQuestionAudit != null) hashCode = hashCode * 59 + this.EnableQuestionAudit.GetHashCode();
-                hashCode = hashCode * 59 + this.AsrType.GetHashCode();
+                if (this.AsrType != null) hashCode = hashCode * 59 + this.AsrType.GetHashCode();
                 if (this.AsrAccount != null) hashCode = hashCode * 59 + this.AsrAccount.GetHashCode();
                 return hashCode;
             }

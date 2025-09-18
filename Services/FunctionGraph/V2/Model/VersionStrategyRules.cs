@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(RuleTypeEnum a, RuleTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
 
             public static bool operator ==(OpEnum a, OpEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

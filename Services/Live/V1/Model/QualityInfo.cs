@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(PvcEnum a, PvcEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(HdlbEnum a, HdlbEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -341,7 +341,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(CodecEnum a, CodecEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -462,7 +462,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(ProtocolEnum a, ProtocolEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -577,7 +577,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(BitrateAdaptiveEnum a, BitrateAdaptiveEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -692,7 +692,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(IFramePolicyEnum a, IFramePolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

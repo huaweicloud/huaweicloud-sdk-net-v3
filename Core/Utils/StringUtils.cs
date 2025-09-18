@@ -21,15 +21,17 @@
 
 using System;
 using System.Linq;
+using System.Text;
 using System.Reflection;
 using System.Runtime.Serialization;
 
 namespace HuaweiCloud.SDK.Core
 {
-    public class StringUtils
+    public static class StringUtils
     {
         private const string LowerTrue = "true";
         private const string LowerFalse = "false";
+
         public static string ToSnakeCase(string str)
         {
             return string.Concat(str.Select((x, i) => i > 0 && char.IsUpper(x) ? "_" + x : x.ToString()))
@@ -47,7 +49,7 @@ namespace HuaweiCloud.SDK.Core
             }
             return str;
         }
-        
+
         public static bool TryConvertToNonEmptyString(object value, out string result)
         {
             result = string.Empty;
@@ -60,13 +62,22 @@ namespace HuaweiCloud.SDK.Core
             {
                 var type = enumValue.GetType();
                 var name = Enum.GetName(type, enumValue);
-                if (name == null) return false;
+                if (name == null)
+                {
+                    return false;
+                }
 
                 var field = type.GetField(name);
-                if (field == null) return false;
+                if (field == null)
+                {
+                    return false;
+                }
 
                 var attribute = field.GetCustomAttribute<EnumMemberAttribute>();
-                if (attribute == null) return false;
+                if (attribute == null)
+                {
+                    return false;
+                }
 
                 result = attribute.Value;
                 return true;
@@ -74,6 +85,21 @@ namespace HuaweiCloud.SDK.Core
 
             result = Convert.ToString(value);
             return !string.IsNullOrEmpty(result);
+        }
+
+        public static string ReplaceNonAscii(string input, char replacement = ' ')
+        {
+            if (input == null)
+            {
+                throw new ArgumentNullException(nameof(input));
+            }
+
+            var sb = new StringBuilder(input.Length);
+            foreach (var c in input)
+            {
+                sb.Append(c <= 0x7F ? c : replacement);
+            }
+            return sb.ToString();
         }
     }
 }

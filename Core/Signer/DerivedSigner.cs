@@ -115,13 +115,13 @@ namespace HuaweiCloud.SDK.Core
 
             private const string HmacSha256 = "HMACSHA256";
 
-            private static readonly int DERIVATION_KEY_LENGTH = 32;
+            private const int DerivationKeyLength = 32;
 
-            private static readonly string HMAC_ALGORITHM = HmacSha256;
+            private const string HmacAlgorithm = HmacSha256;
 
-            private static readonly int AlgorithmHashLength = GetHashLen(HMAC_ALGORITHM);
+            private static readonly int AlgorithmHashLength = GetHashLen(HmacAlgorithm);
 
-            private static readonly int ExpandCeil = (int)Math.Ceiling(DERIVATION_KEY_LENGTH / (double)AlgorithmHashLength);
+            private static readonly int ExpandCeil = (int)Math.Ceiling(DerivationKeyLength / (double)AlgorithmHashLength);
 
             public static string GetDerKeySha(string ak, string sk, string info)
             {
@@ -148,7 +148,7 @@ namespace HuaweiCloud.SDK.Core
 
             private static byte[] Expend(byte[] prk, byte[] info)
             {
-                var hMacSha = HMAC.Create(HMAC_ALGORITHM);
+                var hMacSha = HMAC.Create(HmacAlgorithm);
                 if (hMacSha == null)
                 {
                     throw new ArgumentException("unknown in HMAC algorithm");
@@ -175,17 +175,17 @@ namespace HuaweiCloud.SDK.Core
                 }
 
                 byte[] ret = null;
-                if (DERIVATION_KEY_LENGTH <= rawResult.Length)
+                if (DerivationKeyLength <= rawResult.Length)
                 {
-                    ret = new byte[DERIVATION_KEY_LENGTH];
-                    Array.Copy(rawResult, 0, ret, 0, Math.Min(DERIVATION_KEY_LENGTH, rawResult.Length));
+                    ret = new byte[DerivationKeyLength];
+                    Array.Copy(rawResult, 0, ret, 0, Math.Min(DerivationKeyLength, rawResult.Length));
                 }
                 return ret;
             }
 
             private static byte[] Extract(string ak, string sk)
             {
-                var hMacSha = HMAC.Create(HMAC_ALGORITHM);
+                var hMacSha = HMAC.Create(HmacAlgorithm);
                 if (hMacSha == null)
                 {
                     throw new ArgumentException("unknown in HMAC algorithm");

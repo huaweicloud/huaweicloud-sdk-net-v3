@@ -19,6 +19,8 @@
  * under the License.
  */
 
+using System;
+
 namespace HuaweiCloud.SDK.Core
 {
     public class HttpConfig
@@ -26,7 +28,8 @@ namespace HuaweiCloud.SDK.Core
         public int? Timeout = 120;
 
         public bool IgnoreSslVerification;
-
+        
+        [Obsolete("This configuration has been deprecated and can be safely removed. Retaining it will not cause errors, but it also has no effect.")]
         public bool IgnoreBodyForGetRequest;
 
         /// <summary>
@@ -47,6 +50,8 @@ namespace HuaweiCloud.SDK.Core
 
         public int? ProxyPort { get; set; }
 
+        public string UserAgent { get; set; }
+
         public static HttpConfig GetDefaultConfig()
         {
             return new HttpConfig();
@@ -63,6 +68,8 @@ namespace HuaweiCloud.SDK.Core
             IgnoreSslVerification = ignore;
             return this;
         }
+        
+        [Obsolete("This configuration has been deprecated and can be safely removed. Retaining it will not cause errors, but it also has no effect.")]
 
         public HttpConfig WithIgnoreBodyForGetRequest(bool ignore)
         {
@@ -113,6 +120,12 @@ namespace HuaweiCloud.SDK.Core
         public HttpConfig WithProxyPort(int port)
         {
             ProxyPort = port;
+            return this;
+        }
+
+        public HttpConfig WithUserAgent(string userAgent)
+        {
+            UserAgent = userAgent;
             return this;
         }
     }

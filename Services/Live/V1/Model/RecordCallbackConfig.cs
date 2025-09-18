@@ -122,7 +122,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(NotifyEventSubscriptionEnum a, NotifyEventSubscriptionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(SignTypeEnum a, SignTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(ResolutionAdaptationEnum a, ResolutionAdaptationEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(ResolutionUpsampleEnum a, ResolutionUpsampleEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -365,7 +365,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(FormatEnum a, FormatEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -486,7 +486,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(ReferenceEnum a, ReferenceEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

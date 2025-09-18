@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
 
             public static bool operator ==(TriggerEventTypeEnum a, TriggerEventTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -250,7 +250,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
 
             public static bool operator ==(SecretTypeEnum a, SecretTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -371,7 +371,7 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
 
             public static bool operator ==(NotificationStatusEnum a, NotificationStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

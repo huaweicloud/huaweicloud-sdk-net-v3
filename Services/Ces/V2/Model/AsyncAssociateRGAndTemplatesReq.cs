@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
             public static bool operator ==(NotificationMannerEnum a, NotificationMannerEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

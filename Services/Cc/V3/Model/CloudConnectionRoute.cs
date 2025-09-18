@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(TypeEnum a, TypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -168,16 +168,16 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public string RegionId { get; set; }
 
         /// <summary>
-        /// 路由条目下一跳指向的网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。
-        /// </summary>
-        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public TypeEnum Type { get; set; }
-        /// <summary>
         /// 目的地址。
         /// </summary>
         [JsonProperty("destination", NullValueHandling = NullValueHandling.Ignore)]
         public string Destination { get; set; }
 
+        /// <summary>
+        /// 路由条目下一跳指向的网络实例的类型。 - VPC：虚拟私有云。 - VGW：虚拟网关。
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public TypeEnum Type { get; set; }
 
 
         /// <summary>
@@ -193,8 +193,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  regionId: ").Append(RegionId).Append("\n");
-            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  destination: ").Append(Destination).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -219,8 +219,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
-            if (this.Type != input.Type) return false;
             if (this.Destination != input.Destination || (this.Destination != null && !this.Destination.Equals(input.Destination))) return false;
+            if (this.Type != input.Type) return false;
 
             return true;
         }
@@ -239,8 +239,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Destination != null) hashCode = hashCode * 59 + this.Destination.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

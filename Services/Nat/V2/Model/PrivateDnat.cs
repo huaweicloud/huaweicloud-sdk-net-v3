@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
 
             public static bool operator ==(ProtocolEnum a, ProtocolEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

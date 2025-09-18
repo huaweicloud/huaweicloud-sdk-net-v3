@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -244,7 +244,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public static bool operator ==(NodeRoleEnum a, NodeRoleEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -365,7 +365,7 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
 
             public static bool operator ==(NodeTypeEnum a, NodeTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

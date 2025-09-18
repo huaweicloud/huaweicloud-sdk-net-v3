@@ -104,7 +104,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("extra_session_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ExtraSessionTypeEnum ExtraSessionType { get; set; }
+        public ExtraSessionTypeEnum? ExtraSessionType { get; set; }
+
         /// <summary>
         /// 需要付费的会话数，单位/个。
         /// </summary>
@@ -189,7 +190,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.OuName != input.OuName || (this.OuName != null && !this.OuName.Equals(input.OuName))) return false;
             if (this.IsVdi != input.IsVdi || (this.IsVdi != null && !this.IsVdi.Equals(input.IsVdi))) return false;
             if (this.SchedulerHints != input.SchedulerHints || (this.SchedulerHints != null && !this.SchedulerHints.Equals(input.SchedulerHints))) return false;
-            if (this.ExtraSessionType != input.ExtraSessionType) return false;
+            if (this.ExtraSessionType != input.ExtraSessionType || (this.ExtraSessionType != null && !this.ExtraSessionType.Equals(input.ExtraSessionType))) return false;
             if (this.ExtraSessionSize != input.ExtraSessionSize || (this.ExtraSessionSize != null && !this.ExtraSessionSize.Equals(input.ExtraSessionSize))) return false;
             if (this.RoutePolicy != input.RoutePolicy || (this.RoutePolicy != null && !this.RoutePolicy.Equals(input.RoutePolicy))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
@@ -220,7 +221,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.OuName != null) hashCode = hashCode * 59 + this.OuName.GetHashCode();
                 if (this.IsVdi != null) hashCode = hashCode * 59 + this.IsVdi.GetHashCode();
                 if (this.SchedulerHints != null) hashCode = hashCode * 59 + this.SchedulerHints.GetHashCode();
-                hashCode = hashCode * 59 + this.ExtraSessionType.GetHashCode();
+                if (this.ExtraSessionType != null) hashCode = hashCode * 59 + this.ExtraSessionType.GetHashCode();
                 if (this.ExtraSessionSize != null) hashCode = hashCode * 59 + this.ExtraSessionSize.GetHashCode();
                 if (this.RoutePolicy != null) hashCode = hashCode * 59 + this.RoutePolicy.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();

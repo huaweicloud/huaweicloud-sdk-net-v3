@@ -26,7 +26,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 
         /// </summary>
         [JsonProperty("receive_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public ReceiveModeEnum ReceiveMode { get; set; }
+        public ReceiveModeEnum? ReceiveMode { get; set; }
+
         /// <summary>
         /// 辅助认证服务器地址。
         /// </summary>
@@ -49,7 +50,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 
         /// </summary>
         [JsonProperty("auth_server_access_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public AuthServerAccessMode AuthServerAccessMode { get; set; }
+        public AuthServerAccessMode? AuthServerAccessMode { get; set; }
+
         /// <summary>
         /// pem格式证书内容。
         /// </summary>
@@ -98,11 +100,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         {
             if (input == null) return false;
             if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
-            if (this.ReceiveMode != input.ReceiveMode) return false;
+            if (this.ReceiveMode != input.ReceiveMode || (this.ReceiveMode != null && !this.ReceiveMode.Equals(input.ReceiveMode))) return false;
             if (this.AuthUrl != input.AuthUrl || (this.AuthUrl != null && !this.AuthUrl.Equals(input.AuthUrl))) return false;
             if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
             if (this.AppSecret != input.AppSecret || (this.AppSecret != null && !this.AppSecret.Equals(input.AppSecret))) return false;
-            if (this.AuthServerAccessMode != input.AuthServerAccessMode) return false;
+            if (this.AuthServerAccessMode != input.AuthServerAccessMode || (this.AuthServerAccessMode != null && !this.AuthServerAccessMode.Equals(input.AuthServerAccessMode))) return false;
             if (this.CertContent != input.CertContent || (this.CertContent != null && !this.CertContent.Equals(input.CertContent))) return false;
             if (this.ApplyRule != input.ApplyRule || (this.ApplyRule != null && !this.ApplyRule.Equals(input.ApplyRule))) return false;
 
@@ -118,11 +120,11 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             {
                 var hashCode = 41;
                 if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                hashCode = hashCode * 59 + this.ReceiveMode.GetHashCode();
+                if (this.ReceiveMode != null) hashCode = hashCode * 59 + this.ReceiveMode.GetHashCode();
                 if (this.AuthUrl != null) hashCode = hashCode * 59 + this.AuthUrl.GetHashCode();
                 if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 if (this.AppSecret != null) hashCode = hashCode * 59 + this.AppSecret.GetHashCode();
-                hashCode = hashCode * 59 + this.AuthServerAccessMode.GetHashCode();
+                if (this.AuthServerAccessMode != null) hashCode = hashCode * 59 + this.AuthServerAccessMode.GetHashCode();
                 if (this.CertContent != null) hashCode = hashCode * 59 + this.CertContent.GetHashCode();
                 if (this.ApplyRule != null) hashCode = hashCode * 59 + this.ApplyRule.GetHashCode();
                 return hashCode;

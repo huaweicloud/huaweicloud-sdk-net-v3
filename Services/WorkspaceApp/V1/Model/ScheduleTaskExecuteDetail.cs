@@ -44,12 +44,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduleTaskStatus Status { get; set; }
+        public ScheduleTaskStatus? Status { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduleTaskTypeEnum TaskType { get; set; }
+        public ScheduleTaskTypeEnum? TaskType { get; set; }
+
         /// <summary>
         /// 时区。
         /// </summary>
@@ -122,8 +124,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.ExecuteId != input.ExecuteId || (this.ExecuteId != null && !this.ExecuteId.Equals(input.ExecuteId))) return false;
             if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
             if (this.ServerName != input.ServerName || (this.ServerName != null && !this.ServerName.Equals(input.ServerName))) return false;
-            if (this.Status != input.Status) return false;
-            if (this.TaskType != input.TaskType) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
             if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
             if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
@@ -145,8 +147,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.ExecuteId != null) hashCode = hashCode * 59 + this.ExecuteId.GetHashCode();
                 if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
                 if (this.ServerName != null) hashCode = hashCode * 59 + this.ServerName.GetHashCode();
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
-                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
                 if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
                 if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();

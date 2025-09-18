@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
     {
 
         /// <summary>
-        /// 中心网络默认平面的名字。
+        /// 中心网络默认平面的名称。
         /// </summary>
         [JsonProperty("default_plane", NullValueHandling = NullValueHandling.Ignore)]
         public string DefaultPlane { get; set; }

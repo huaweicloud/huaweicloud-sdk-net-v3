@@ -56,7 +56,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public AppStateEnum State { get; set; }
+        public AppStateEnum? State { get; set; }
+
         /// <summary>
         /// 是否使用沙箱模式运行，取值为： - false: 表示不以沙箱模式运行 - true: 表示以沙箱模式运行
         /// </summary>
@@ -111,7 +112,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.WorkPath != input.WorkPath || (this.WorkPath != null && !this.WorkPath.Equals(input.WorkPath))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.CommandParam != input.CommandParam || (this.CommandParam != null && !this.CommandParam.Equals(input.CommandParam))) return false;
-            if (this.State != input.State) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
             if (this.SandboxEnable != input.SandboxEnable || (this.SandboxEnable != null && !this.SandboxEnable.Equals(input.SandboxEnable))) return false;
             if (this.AppExtendedInfo != input.AppExtendedInfo || (this.AppExtendedInfo != null && !this.AppExtendedInfo.Equals(input.AppExtendedInfo))) return false;
 
@@ -132,7 +133,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.WorkPath != null) hashCode = hashCode * 59 + this.WorkPath.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.CommandParam != null) hashCode = hashCode * 59 + this.CommandParam.GetHashCode();
-                hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.SandboxEnable != null) hashCode = hashCode * 59 + this.SandboxEnable.GetHashCode();
                 if (this.AppExtendedInfo != null) hashCode = hashCode * 59 + this.AppExtendedInfo.GetHashCode();
                 return hashCode;

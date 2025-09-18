@@ -26,7 +26,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// 
         /// </summary>
         [JsonProperty("log_type", NullValueHandling = NullValueHandling.Ignore)]
-        public LtsLogType LogType { get; set; }
+        public LtsLogType? LogType { get; set; }
+
 
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             if (input == null) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.LogType != input.LogType) return false;
+            if (this.LogType != input.LogType || (this.LogType != null && !this.LogType.Equals(input.LogType))) return false;
 
             return true;
         }
@@ -71,7 +72,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             {
                 var hashCode = 41;
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                hashCode = hashCode * 59 + this.LogType.GetHashCode();
+                if (this.LogType != null) hashCode = hashCode * 59 + this.LogType.GetHashCode();
                 return hashCode;
             }
         }

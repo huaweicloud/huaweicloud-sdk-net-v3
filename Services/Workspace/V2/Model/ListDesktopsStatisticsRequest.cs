@@ -116,7 +116,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
             public static bool operator ==(StatisticsTypeEnum a, StatisticsTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

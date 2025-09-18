@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
 
             public static bool operator ==(OsEnum a, OsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
 
             public static bool operator ==(SortTypeEnum a, SortTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

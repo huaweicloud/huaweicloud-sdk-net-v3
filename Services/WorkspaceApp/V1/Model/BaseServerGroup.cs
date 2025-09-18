@@ -44,7 +44,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("os_type", NullValueHandling = NullValueHandling.Ignore)]
-        public OsTypeEnum OsType { get; set; }
+        public OsTypeEnum? OsType { get; set; }
+
         /// <summary>
         /// 产品id。
         /// </summary>
@@ -61,7 +62,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("system_disk_type", NullValueHandling = NullValueHandling.Ignore)]
-        public VolumeType SystemDiskType { get; set; }
+        public VolumeType? SystemDiskType { get; set; }
+
         /// <summary>
         /// 磁盘容量，单位GB。
         /// </summary>
@@ -78,7 +80,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("extra_session_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ExtraSessionTypeEnum ExtraSessionType { get; set; }
+        public ExtraSessionTypeEnum? ExtraSessionType { get; set; }
+
         /// <summary>
         /// 付费会话个数。
         /// </summary>
@@ -89,7 +92,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("app_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AppTypeEnum AppType { get; set; }
+        public AppTypeEnum? AppType { get; set; }
+
         /// <summary>
         /// 服务器组创建时间。
         /// </summary>
@@ -106,7 +110,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("storage_mount_policy", NullValueHandling = NullValueHandling.Ignore)]
-        public StorageFolderMountType StorageMountPolicy { get; set; }
+        public StorageFolderMountType? StorageMountPolicy { get; set; }
+
         /// <summary>
         /// 企业项目ID(0表示默认企业项目Id)。
         /// </summary>
@@ -196,18 +201,18 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
-            if (this.OsType != input.OsType) return false;
+            if (this.OsType != input.OsType || (this.OsType != null && !this.OsType.Equals(input.OsType))) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
             if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
-            if (this.SystemDiskType != input.SystemDiskType) return false;
+            if (this.SystemDiskType != input.SystemDiskType || (this.SystemDiskType != null && !this.SystemDiskType.Equals(input.SystemDiskType))) return false;
             if (this.SystemDiskSize != input.SystemDiskSize || (this.SystemDiskSize != null && !this.SystemDiskSize.Equals(input.SystemDiskSize))) return false;
             if (this.IsVdi != input.IsVdi || (this.IsVdi != null && !this.IsVdi.Equals(input.IsVdi))) return false;
-            if (this.ExtraSessionType != input.ExtraSessionType) return false;
+            if (this.ExtraSessionType != input.ExtraSessionType || (this.ExtraSessionType != null && !this.ExtraSessionType.Equals(input.ExtraSessionType))) return false;
             if (this.ExtraSessionSize != input.ExtraSessionSize || (this.ExtraSessionSize != null && !this.ExtraSessionSize.Equals(input.ExtraSessionSize))) return false;
-            if (this.AppType != input.AppType) return false;
+            if (this.AppType != input.AppType || (this.AppType != null && !this.AppType.Equals(input.AppType))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
-            if (this.StorageMountPolicy != input.StorageMountPolicy) return false;
+            if (this.StorageMountPolicy != input.StorageMountPolicy || (this.StorageMountPolicy != null && !this.StorageMountPolicy.Equals(input.StorageMountPolicy))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.PrimaryServerGroupIds != input.PrimaryServerGroupIds || (this.PrimaryServerGroupIds != null && input.PrimaryServerGroupIds != null && !this.PrimaryServerGroupIds.SequenceEqual(input.PrimaryServerGroupIds))) return false;
             if (this.SecondaryServerGroupIds != input.SecondaryServerGroupIds || (this.SecondaryServerGroupIds != null && input.SecondaryServerGroupIds != null && !this.SecondaryServerGroupIds.SequenceEqual(input.SecondaryServerGroupIds))) return false;
@@ -230,18 +235,18 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
-                hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                if (this.OsType != null) hashCode = hashCode * 59 + this.OsType.GetHashCode();
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
                 if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                hashCode = hashCode * 59 + this.SystemDiskType.GetHashCode();
+                if (this.SystemDiskType != null) hashCode = hashCode * 59 + this.SystemDiskType.GetHashCode();
                 if (this.SystemDiskSize != null) hashCode = hashCode * 59 + this.SystemDiskSize.GetHashCode();
                 if (this.IsVdi != null) hashCode = hashCode * 59 + this.IsVdi.GetHashCode();
-                hashCode = hashCode * 59 + this.ExtraSessionType.GetHashCode();
+                if (this.ExtraSessionType != null) hashCode = hashCode * 59 + this.ExtraSessionType.GetHashCode();
                 if (this.ExtraSessionSize != null) hashCode = hashCode * 59 + this.ExtraSessionSize.GetHashCode();
-                hashCode = hashCode * 59 + this.AppType.GetHashCode();
+                if (this.AppType != null) hashCode = hashCode * 59 + this.AppType.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                hashCode = hashCode * 59 + this.StorageMountPolicy.GetHashCode();
+                if (this.StorageMountPolicy != null) hashCode = hashCode * 59 + this.StorageMountPolicy.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.PrimaryServerGroupIds != null) hashCode = hashCode * 59 + this.PrimaryServerGroupIds.GetHashCode();
                 if (this.SecondaryServerGroupIds != null) hashCode = hashCode * 59 + this.SecondaryServerGroupIds.GetHashCode();

@@ -32,7 +32,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("account_auth_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AccountTypeEnum AccountAuthType { get; set; }
+        public AccountTypeEnum? AccountAuthType { get; set; }
+
         /// <summary>
         /// 授权对象名称。
         /// </summary>
@@ -114,7 +115,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Account != input.Account || (this.Account != null && !this.Account.Equals(input.Account))) return false;
-            if (this.AccountAuthType != input.AccountAuthType) return false;
+            if (this.AccountAuthType != input.AccountAuthType || (this.AccountAuthType != null && !this.AccountAuthType.Equals(input.AccountAuthType))) return false;
             if (this.AccountAuthName != input.AccountAuthName || (this.AccountAuthName != null && !this.AccountAuthName.Equals(input.AccountAuthName))) return false;
             if (this.AppGroupId != input.AppGroupId || (this.AppGroupId != null && !this.AppGroupId.Equals(input.AppGroupId))) return false;
             if (this.AppGroupName != input.AppGroupName || (this.AppGroupName != null && !this.AppGroupName.Equals(input.AppGroupName))) return false;
@@ -136,7 +137,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Account != null) hashCode = hashCode * 59 + this.Account.GetHashCode();
-                hashCode = hashCode * 59 + this.AccountAuthType.GetHashCode();
+                if (this.AccountAuthType != null) hashCode = hashCode * 59 + this.AccountAuthType.GetHashCode();
                 if (this.AccountAuthName != null) hashCode = hashCode * 59 + this.AccountAuthName.GetHashCode();
                 if (this.AppGroupId != null) hashCode = hashCode * 59 + this.AppGroupId.GetHashCode();
                 if (this.AppGroupName != null) hashCode = hashCode * 59 + this.AppGroupName.GetHashCode();

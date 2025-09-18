@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
 
             public static bool operator ==(SiteTypeEnum a, SiteTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

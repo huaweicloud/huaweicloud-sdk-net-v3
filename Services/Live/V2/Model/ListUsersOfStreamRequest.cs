@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Live.V2.Model
 
             public static bool operator ==(ProtocolEnum a, ProtocolEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Live.V2.Model
 
             public static bool operator ==(IntervalEnum a, IntervalEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -347,7 +347,7 @@ namespace HuaweiCloud.SDK.Live.V2.Model
 
             public static bool operator ==(ServiceTypeEnum a, ServiceTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

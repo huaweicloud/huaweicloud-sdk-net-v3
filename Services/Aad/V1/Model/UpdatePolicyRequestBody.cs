@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
 
             public static bool operator ==(UdpEnum a, UdpEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
 
             public static bool operator ==(TcpEnum a, TcpEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -359,7 +359,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
 
             public static bool operator ==(IcmpEnum a, IcmpEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -480,7 +480,7 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
 
             public static bool operator ==(OtherEnum a, OtherEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

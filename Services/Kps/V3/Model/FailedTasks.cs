@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
 
             public static bool operator ==(OperateTypeEnum a, OperateTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

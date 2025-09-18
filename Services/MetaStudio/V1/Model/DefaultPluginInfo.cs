@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("plugin_type", NullValueHandling = NullValueHandling.Ignore)]
-        public PluginTypeEnum PluginType { get; set; }
+        public PluginTypeEnum? PluginType { get; set; }
+
         /// <summary>
         /// 支持默认插件。
         /// </summary>
@@ -56,7 +57,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public bool Equals(DefaultPluginInfo input)
         {
             if (input == null) return false;
-            if (this.PluginType != input.PluginType) return false;
+            if (this.PluginType != input.PluginType || (this.PluginType != null && !this.PluginType.Equals(input.PluginType))) return false;
             if (this.SupportDefault != input.SupportDefault || (this.SupportDefault != null && !this.SupportDefault.Equals(input.SupportDefault))) return false;
 
             return true;
@@ -70,7 +71,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.PluginType.GetHashCode();
+                if (this.PluginType != null) hashCode = hashCode * 59 + this.PluginType.GetHashCode();
                 if (this.SupportDefault != null) hashCode = hashCode * 59 + this.SupportDefault.GetHashCode();
                 return hashCode;
             }

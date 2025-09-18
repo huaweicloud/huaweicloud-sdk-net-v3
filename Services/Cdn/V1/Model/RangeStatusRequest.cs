@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
 
             public static bool operator ==(RangeStatusEnum a, RangeStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

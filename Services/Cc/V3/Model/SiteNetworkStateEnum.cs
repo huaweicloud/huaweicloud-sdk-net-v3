@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cc.V3.Model
 {
     /// <summary>
-    /// 分支网络状态。 - AVAILABLE (可用) - UPDATING (处理中) - FAILED (失败) - CREATING (创建中 - DELETING (删除中) - DELETED (已刪除) - NON-COMPLETE (配置未完成) - RESTORING (恢复中)
+    /// 分支网络状态。 - AVAILABLE (可用) - UPDATING (处理中) - FAILED (失败) - CREATING (创建中 - DELETING (删除中) - DELETED (已删除) - NON-COMPLETE (配置未完成) - RESTORING (恢复中)
     /// </summary>
-    /// <value>分支网络状态。 - AVAILABLE (可用) - UPDATING (处理中) - FAILED (失败) - CREATING (创建中 - DELETING (删除中) - DELETED (已刪除) - NON-COMPLETE (配置未完成) - RESTORING (恢复中)</value>
+    /// <value>分支网络状态。 - AVAILABLE (可用) - UPDATING (处理中) - FAILED (失败) - CREATING (创建中 - DELETING (删除中) - DELETED (已删除) - NON-COMPLETE (配置未完成) - RESTORING (恢复中)</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

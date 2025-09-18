@@ -141,7 +141,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(QualityEnum a, QualityEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

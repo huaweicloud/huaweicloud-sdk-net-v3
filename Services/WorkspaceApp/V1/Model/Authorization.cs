@@ -62,17 +62,20 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("authorization_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AuthorizationTypeEnum AuthorizationType { get; set; }
+        public AuthorizationTypeEnum? AuthorizationType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("account_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AccountTypeEnum AccountType { get; set; }
+        public AccountTypeEnum? AccountType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("platform_type", NullValueHandling = NullValueHandling.Ignore)]
-        public PlatformTypeEnum PlatformType { get; set; }
+        public PlatformTypeEnum? PlatformType { get; set; }
+
         /// <summary>
         /// 域名城。
         /// </summary>
@@ -131,9 +134,9 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
             if (this.AppGroupId != input.AppGroupId || (this.AppGroupId != null && !this.AppGroupId.Equals(input.AppGroupId))) return false;
             if (this.AppGroupName != input.AppGroupName || (this.AppGroupName != null && !this.AppGroupName.Equals(input.AppGroupName))) return false;
-            if (this.AuthorizationType != input.AuthorizationType) return false;
-            if (this.AccountType != input.AccountType) return false;
-            if (this.PlatformType != input.PlatformType) return false;
+            if (this.AuthorizationType != input.AuthorizationType || (this.AuthorizationType != null && !this.AuthorizationType.Equals(input.AuthorizationType))) return false;
+            if (this.AccountType != input.AccountType || (this.AccountType != null && !this.AccountType.Equals(input.AccountType))) return false;
+            if (this.PlatformType != input.PlatformType || (this.PlatformType != null && !this.PlatformType.Equals(input.PlatformType))) return false;
             if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
 
@@ -155,9 +158,9 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
                 if (this.AppGroupId != null) hashCode = hashCode * 59 + this.AppGroupId.GetHashCode();
                 if (this.AppGroupName != null) hashCode = hashCode * 59 + this.AppGroupName.GetHashCode();
-                hashCode = hashCode * 59 + this.AuthorizationType.GetHashCode();
-                hashCode = hashCode * 59 + this.AccountType.GetHashCode();
-                hashCode = hashCode * 59 + this.PlatformType.GetHashCode();
+                if (this.AuthorizationType != null) hashCode = hashCode * 59 + this.AuthorizationType.GetHashCode();
+                if (this.AccountType != null) hashCode = hashCode * 59 + this.AccountType.GetHashCode();
+                if (this.PlatformType != null) hashCode = hashCode * 59 + this.PlatformType.GetHashCode();
                 if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
                 return hashCode;

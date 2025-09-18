@@ -3409,6 +3409,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 获取任务信息
+        ///
+        /// 获取任务信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTaskDetailResponse> ShowTaskDetailAsync(ShowTaskDetailRequest showTaskDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/task-center-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskDetailRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowTaskDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTaskDetailResponse> ShowTaskDetailAsyncInvoker(ShowTaskDetailRequest showTaskDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/task-center-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskDetailRequest);
+            return new AsyncInvoker<ShowTaskDetailResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowTaskDetailResponse>);
+        }
+        
+        /// <summary>
         /// 根据实例id查询sqlserver TDE状态
         ///
         /// 根据实例id查询sqlserver TDE状态
@@ -5736,6 +5762,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/proxy/weight", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateReadWeightRequest);
             return new AsyncInvoker<UpdateReadWeightResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateReadWeightResponse>);
+        }
+        
+        /// <summary>
+        /// 查询无索引表诊断数据
+        ///
+        /// 查询无索引表诊断数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstancesNoIndexTablesResponse> ListInstancesNoIndexTablesAsync(ListInstancesNoIndexTablesRequest listInstancesNoIndexTablesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstancesNoIndexTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/no-index-tables", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesNoIndexTablesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerializeNull<ListInstancesNoIndexTablesResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstancesNoIndexTablesResponse> ListInstancesNoIndexTablesAsyncInvoker(ListInstancesNoIndexTablesRequest listInstancesNoIndexTablesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstancesNoIndexTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/no-index-tables", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesNoIndexTablesRequest);
+            return new AsyncInvoker<ListInstancesNoIndexTablesResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ListInstancesNoIndexTablesResponse>);
         }
         
         /// <summary>

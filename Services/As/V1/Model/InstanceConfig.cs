@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public static bool operator ==(TenancyEnum a, TenancyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public static bool operator ==(MultiFlavorPriorityPolicyEnum a, MultiFlavorPriorityPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -329,7 +329,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public static bool operator ==(MarketTypeEnum a, MarketTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("scheduled_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduledTypeEnum ScheduledType { get; set; }
+        public ScheduledTypeEnum? ScheduledType { get; set; }
+
         /// <summary>
         /// 周期按天时：按x天间隔执行。
         /// </summary>
@@ -79,7 +80,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ScheduleTaskTypeEnum TaskType { get; set; }
+        public ScheduleTaskTypeEnum? TaskType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -139,7 +141,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public bool Equals(CreateScheduleTaskReq input)
         {
             if (input == null) return false;
-            if (this.ScheduledType != input.ScheduledType) return false;
+            if (this.ScheduledType != input.ScheduledType || (this.ScheduledType != null && !this.ScheduledType.Equals(input.ScheduledType))) return false;
             if (this.DayInterval != input.DayInterval || (this.DayInterval != null && !this.DayInterval.Equals(input.DayInterval))) return false;
             if (this.WeekList != input.WeekList || (this.WeekList != null && !this.WeekList.Equals(input.WeekList))) return false;
             if (this.MonthList != input.MonthList || (this.MonthList != null && !this.MonthList.Equals(input.MonthList))) return false;
@@ -149,7 +151,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.ScheduledTime != input.ScheduledTime || (this.ScheduledTime != null && !this.ScheduledTime.Equals(input.ScheduledTime))) return false;
             if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
             if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
-            if (this.TaskType != input.TaskType) return false;
+            if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
             if (this.ScheduleTaskPolicy != input.ScheduleTaskPolicy || (this.ScheduleTaskPolicy != null && !this.ScheduleTaskPolicy.Equals(input.ScheduleTaskPolicy))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.TargetInfos != input.TargetInfos || (this.TargetInfos != null && input.TargetInfos != null && !this.TargetInfos.SequenceEqual(input.TargetInfos))) return false;
@@ -165,7 +167,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.ScheduledType.GetHashCode();
+                if (this.ScheduledType != null) hashCode = hashCode * 59 + this.ScheduledType.GetHashCode();
                 if (this.DayInterval != null) hashCode = hashCode * 59 + this.DayInterval.GetHashCode();
                 if (this.WeekList != null) hashCode = hashCode * 59 + this.WeekList.GetHashCode();
                 if (this.MonthList != null) hashCode = hashCode * 59 + this.MonthList.GetHashCode();
@@ -175,7 +177,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.ScheduledTime != null) hashCode = hashCode * 59 + this.ScheduledTime.GetHashCode();
                 if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
                 if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
                 if (this.ScheduleTaskPolicy != null) hashCode = hashCode * 59 + this.ScheduleTaskPolicy.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.TargetInfos != null) hashCode = hashCode * 59 + this.TargetInfos.GetHashCode();

@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public static bool operator ==(RetentionPolicyEnum a, RetentionPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

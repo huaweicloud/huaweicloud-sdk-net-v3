@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
             public static bool operator ==(FilterEnum a, FilterEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -292,7 +292,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
             public static bool operator ==(DisplayTimeEnum a, DisplayTimeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -425,7 +425,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
             public static bool operator ==(RefreshTimeEnum a, RefreshTimeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -546,7 +546,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
             public static bool operator ==(TimeIntervalEnum a, TimeIntervalEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

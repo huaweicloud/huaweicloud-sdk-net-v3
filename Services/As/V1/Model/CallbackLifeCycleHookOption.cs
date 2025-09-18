@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public static bool operator ==(LifecycleActionResultEnum a, LifecycleActionResultEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

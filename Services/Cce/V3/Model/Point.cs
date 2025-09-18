@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("taskType", NullValueHandling = NullValueHandling.Ignore)]
-        public TaskType TaskType { get; set; }
+        public TaskType? TaskType { get; set; }
+
 
 
         /// <summary>
@@ -49,7 +50,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool Equals(Point input)
         {
             if (input == null) return false;
-            if (this.TaskType != input.TaskType) return false;
+            if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
 
             return true;
         }
@@ -62,7 +63,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
                 return hashCode;
             }
         }

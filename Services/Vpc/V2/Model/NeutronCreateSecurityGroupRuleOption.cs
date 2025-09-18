@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             public static bool operator ==(DirectionEnum a, DirectionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             public static bool operator ==(EthertypeEnum a, EthertypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

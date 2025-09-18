@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 
             public static bool operator ==(RichTextClipboardRedirectionEnum a, RichTextClipboardRedirectionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -250,7 +250,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
 
             public static bool operator ==(FileClipboardRedirectionEnum a, FileClipboardRedirectionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

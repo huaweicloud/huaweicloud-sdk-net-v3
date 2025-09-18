@@ -32,7 +32,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("template_type", NullValueHandling = NullValueHandling.Ignore)]
-        public TemplateType TemplateType { get; set; }
+        public TemplateType? TemplateType { get; set; }
+
         /// <summary>
         /// 告警模板的创建时间
         /// </summary>
@@ -86,7 +87,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (input == null) return false;
             if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
             if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
-            if (this.TemplateType != input.TemplateType) return false;
+            if (this.TemplateType != input.TemplateType || (this.TemplateType != null && !this.TemplateType.Equals(input.TemplateType))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.TemplateDescription != input.TemplateDescription || (this.TemplateDescription != null && !this.TemplateDescription.Equals(input.TemplateDescription))) return false;
             if (this.Policies != input.Policies || (this.Policies != null && input.Policies != null && !this.Policies.SequenceEqual(input.Policies))) return false;
@@ -104,7 +105,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 var hashCode = 41;
                 if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
                 if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
+                if (this.TemplateType != null) hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.TemplateDescription != null) hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
                 if (this.Policies != null) hashCode = hashCode * 59 + this.Policies.GetHashCode();

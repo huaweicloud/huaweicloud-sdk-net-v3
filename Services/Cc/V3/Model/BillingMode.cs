@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cc.V3.Model
 {
     /// <summary>
-    /// 本端大区ID。
+    /// 计费方式。
     /// </summary>
     public class BillingMode 
     {

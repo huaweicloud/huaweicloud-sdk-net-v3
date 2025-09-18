@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public static bool operator ==(ActionEnum a, ActionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public static bool operator ==(AllFailureEnum a, AllFailureEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

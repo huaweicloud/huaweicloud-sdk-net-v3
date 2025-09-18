@@ -38,7 +38,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("claim_mode", NullValueHandling = NullValueHandling.Ignore)]
-        public ClaimMode ClaimMode { get; set; }
+        public ClaimMode? ClaimMode { get; set; }
+
         /// <summary>
         /// 共享目录的关联用户、用户组数量。
         /// </summary>
@@ -80,7 +81,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.StorageClaimId != input.StorageClaimId || (this.StorageClaimId != null && !this.StorageClaimId.Equals(input.StorageClaimId))) return false;
             if (this.FolderPath != input.FolderPath || (this.FolderPath != null && !this.FolderPath.Equals(input.FolderPath))) return false;
             if (this.Delimiter != input.Delimiter || (this.Delimiter != null && !this.Delimiter.Equals(input.Delimiter))) return false;
-            if (this.ClaimMode != input.ClaimMode) return false;
+            if (this.ClaimMode != input.ClaimMode || (this.ClaimMode != null && !this.ClaimMode.Equals(input.ClaimMode))) return false;
             if (this.Count != input.Count || (this.Count != null && input.Count != null && !this.Count.SequenceEqual(input.Count))) return false;
 
             return true;
@@ -97,7 +98,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.StorageClaimId != null) hashCode = hashCode * 59 + this.StorageClaimId.GetHashCode();
                 if (this.FolderPath != null) hashCode = hashCode * 59 + this.FolderPath.GetHashCode();
                 if (this.Delimiter != null) hashCode = hashCode * 59 + this.Delimiter.GetHashCode();
-                hashCode = hashCode * 59 + this.ClaimMode.GetHashCode();
+                if (this.ClaimMode != null) hashCode = hashCode * 59 + this.ClaimMode.GetHashCode();
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }

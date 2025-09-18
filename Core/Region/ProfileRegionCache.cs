@@ -85,16 +85,6 @@ namespace HuaweiCloud.SDK.Core
             return result;
         }
 
-        private static string GetUserHomePath()
-        {
-            if (Environment.OSVersion.Platform == PlatformID.Unix)
-            {
-                return Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            }
-
-            return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        }
-
         private static string GetRegionsFilePath()
         {
             var regionsFile = Environment.GetEnvironmentVariable(RegionsFileEnv);
@@ -103,7 +93,7 @@ namespace HuaweiCloud.SDK.Core
                 return regionsFile;
             }
 
-            var userHomePath = GetUserHomePath();
+            var userHomePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             return string.IsNullOrEmpty(userHomePath) ? null : Path.Combine(userHomePath, Constants.DefaultProfileDirName, DefaultRegionsFileName);
         }
 

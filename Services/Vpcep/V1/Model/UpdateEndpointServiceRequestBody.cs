@@ -129,7 +129,7 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
 
             public static bool operator ==(TcpProxyEnum a, TcpProxyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -44,12 +44,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("app_category", NullValueHandling = NullValueHandling.Ignore)]
-        public AppCategoryEnum AppCategory { get; set; }
+        public AppCategoryEnum? AppCategory { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("os_type", NullValueHandling = NullValueHandling.Ignore)]
-        public OsTypeEnum OsType { get; set; }
+        public OsTypeEnum? OsType { get; set; }
+
         /// <summary>
         /// 版本号。
         /// </summary>
@@ -108,7 +110,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("verify_status", NullValueHandling = NullValueHandling.Ignore)]
-        public VerifyStatusEnum VerifyStatus { get; set; }
+        public VerifyStatusEnum? VerifyStatus { get; set; }
+
         /// <summary>
         /// 审核的评论意见。
         /// </summary>
@@ -177,8 +180,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
             if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
             if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
-            if (this.AppCategory != input.AppCategory) return false;
-            if (this.OsType != input.OsType) return false;
+            if (this.AppCategory != input.AppCategory || (this.AppCategory != null && !this.AppCategory.Equals(input.AppCategory))) return false;
+            if (this.OsType != input.OsType || (this.OsType != null && !this.OsType.Equals(input.OsType))) return false;
             if (this.VersionId != input.VersionId || (this.VersionId != null && !this.VersionId.Equals(input.VersionId))) return false;
             if (this.VersionName != input.VersionName || (this.VersionName != null && !this.VersionName.Equals(input.VersionName))) return false;
             if (this.AppfileStorePath != input.AppfileStorePath || (this.AppfileStorePath != null && !this.AppfileStorePath.Equals(input.AppfileStorePath))) return false;
@@ -188,7 +191,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.ModifyTime != input.ModifyTime || (this.ModifyTime != null && !this.ModifyTime.Equals(input.ModifyTime))) return false;
             if (this.VerifyTime != input.VerifyTime || (this.VerifyTime != null && !this.VerifyTime.Equals(input.VerifyTime))) return false;
-            if (this.VerifyStatus != input.VerifyStatus) return false;
+            if (this.VerifyStatus != input.VerifyStatus || (this.VerifyStatus != null && !this.VerifyStatus.Equals(input.VerifyStatus))) return false;
             if (this.VerifyComment != input.VerifyComment || (this.VerifyComment != null && !this.VerifyComment.Equals(input.VerifyComment))) return false;
             if (this.AppIcon != input.AppIcon || (this.AppIcon != null && !this.AppIcon.Equals(input.AppIcon))) return false;
             if (this.AppExtendedInfo != input.AppExtendedInfo || (this.AppExtendedInfo != null && !this.AppExtendedInfo.Equals(input.AppExtendedInfo))) return false;
@@ -208,8 +211,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                hashCode = hashCode * 59 + this.AppCategory.GetHashCode();
-                hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                if (this.AppCategory != null) hashCode = hashCode * 59 + this.AppCategory.GetHashCode();
+                if (this.OsType != null) hashCode = hashCode * 59 + this.OsType.GetHashCode();
                 if (this.VersionId != null) hashCode = hashCode * 59 + this.VersionId.GetHashCode();
                 if (this.VersionName != null) hashCode = hashCode * 59 + this.VersionName.GetHashCode();
                 if (this.AppfileStorePath != null) hashCode = hashCode * 59 + this.AppfileStorePath.GetHashCode();
@@ -219,7 +222,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.ModifyTime != null) hashCode = hashCode * 59 + this.ModifyTime.GetHashCode();
                 if (this.VerifyTime != null) hashCode = hashCode * 59 + this.VerifyTime.GetHashCode();
-                hashCode = hashCode * 59 + this.VerifyStatus.GetHashCode();
+                if (this.VerifyStatus != null) hashCode = hashCode * 59 + this.VerifyStatus.GetHashCode();
                 if (this.VerifyComment != null) hashCode = hashCode * 59 + this.VerifyComment.GetHashCode();
                 if (this.AppIcon != null) hashCode = hashCode * 59 + this.AppIcon.GetHashCode();
                 if (this.AppExtendedInfo != null) hashCode = hashCode * 59 + this.AppExtendedInfo.GetHashCode();

@@ -86,7 +86,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                     return request;
                 }
 
-                IAkSkSigner signer = AkSkSignerFactory.GetSigner(request.SigningAlgorithm);
+                var signer = AkSkSignerFactory.GetSigner(request.SigningAlgorithm);
                 signer.Sign(request, this);
                 return request;
             });
@@ -102,9 +102,9 @@ namespace HuaweiCloud.SDK.Core.Auth
             }
 
             var akWithName = Ak + regionId;
-            if (AuthCache.Value.ContainsKey(akWithName))
+            if (AuthCache.Value.TryGetValue(akWithName, out var id))
             {
-                ProjectId = AuthCache.Value[akWithName];
+                ProjectId = id;
                 return this;
             }
 
@@ -122,15 +122,15 @@ namespace HuaweiCloud.SDK.Core.Auth
                 var response = IamService.InternalKeystoneListProjects(client, request);
                 if (response.Projects == null || response.Projects.Count == 0)
                 {
-                    throw new SdkException(string.Format("Failed to get project id of region '{}', automatically, X-IAM-Trace-Id={}. " +
+                    throw new SdkException($"Failed to get project id of region '{regionId}', automatically, X-IAM-Trace-Id={response.TraceId}. " +
                                                          "Confirm that the project exists in your account, or set project id manually: " +
-                                                         "new BasicCredentials(ak, sk, projectId);", regionId, response.TraceId));
+                                                         "new BasicCredentials(ak, sk, projectId);");
                 }
                 if (response.Projects.Count > 1)
                 {
                     var projectIds = string.Join(",", response.Projects.Select(project => project.Id).ToList());
-                    throw new Exception(string.Format("Multiple project ids found: [{}], X-IAM-Trace-Id={}. " +
-                                                      "Please select one when initializing the credentials: new BasicCredentials(ak, sk, projectId);", projectIds, response.TraceId));
+                    throw new SdkException($"Multiple project ids found: [{projectIds}], X-IAM-Trace-Id={response.TraceId}. " +
+                                                      "Please select one when initializing the credentials: new BasicCredentials(ak, sk, projectId);");
                 }
                 ProjectId = response.Projects[0].Id;
                 logger.LogInformation("Success to obtain project id of region '{}': {}", regionId, ProjectId);
@@ -140,7 +140,7 @@ namespace HuaweiCloud.SDK.Core.Auth
             }
             catch (ServiceResponseException e)
             {
-                throw new SdkException(string.Format("Failed to get project id of region '{}', {}", regionId, e.ErrorMsg));
+                throw new SdkException($"Failed to get project id of region '{regionId}', {e.ErrorMsg}", e);
             }
         }
     }

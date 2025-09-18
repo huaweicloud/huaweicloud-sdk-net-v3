@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// 
         /// </summary>
         [JsonProperty("frozen_effect", NullValueHandling = NullValueHandling.Ignore)]
-        public FrozenEffectEnum _FrozenEffect { get; set; }
+        public FrozenEffectEnum? _FrozenEffect { get; set; }
+
 
 
         /// <summary>
@@ -49,7 +50,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public bool Equals(FrozenEffect input)
         {
             if (input == null) return false;
-            if (this._FrozenEffect != input._FrozenEffect) return false;
+            if (this._FrozenEffect != input._FrozenEffect || (this._FrozenEffect != null && !this._FrozenEffect.Equals(input._FrozenEffect))) return false;
 
             return true;
         }
@@ -62,7 +63,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this._FrozenEffect.GetHashCode();
+                if (this._FrozenEffect != null) hashCode = hashCode * 59 + this._FrozenEffect.GetHashCode();
                 return hashCode;
             }
         }

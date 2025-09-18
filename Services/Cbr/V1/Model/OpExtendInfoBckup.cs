@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(AppConsistencyStatusEnum a, AppConsistencyStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(IncrementalEnum a, IncrementalEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

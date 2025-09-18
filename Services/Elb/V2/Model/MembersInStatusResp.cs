@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
 
             public static bool operator ==(OperatingStatusEnum a, OperatingStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

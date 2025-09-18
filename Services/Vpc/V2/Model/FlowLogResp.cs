@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             public static bool operator ==(ResourceTypeEnum a, ResourceTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             public static bool operator ==(TrafficTypeEnum a, TrafficTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -347,7 +347,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             public static bool operator ==(LogStoreTypeEnum a, LogStoreTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -468,7 +468,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

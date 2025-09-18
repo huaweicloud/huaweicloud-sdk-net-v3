@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public static bool operator ==(ScalingResourceTypeEnum a, ScalingResourceTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public static bool operator ==(ScalingPolicyTypeEnum a, ScalingPolicyTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

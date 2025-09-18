@@ -26,7 +26,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("access_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AccessTypeEnum AccessType { get; set; }
+        public AccessTypeEnum? AccessType { get; set; }
+
         /// <summary>
         /// 直播平台名称
         /// </summary>
@@ -93,7 +94,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         {
             if (input == null) return false;
             if (this.PlatformId != input.PlatformId || (this.PlatformId != null && !this.PlatformId.Equals(input.PlatformId))) return false;
-            if (this.AccessType != input.AccessType) return false;
+            if (this.AccessType != input.AccessType || (this.AccessType != null && !this.AccessType.Equals(input.AccessType))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.AuthorizationInfo != input.AuthorizationInfo || (this.AuthorizationInfo != null && !this.AuthorizationInfo.Equals(input.AuthorizationInfo))) return false;
             if (this.AuthConfig != input.AuthConfig || (this.AuthConfig != null && !this.AuthConfig.Equals(input.AuthConfig))) return false;
@@ -112,7 +113,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             {
                 var hashCode = 41;
                 if (this.PlatformId != null) hashCode = hashCode * 59 + this.PlatformId.GetHashCode();
-                hashCode = hashCode * 59 + this.AccessType.GetHashCode();
+                if (this.AccessType != null) hashCode = hashCode * 59 + this.AccessType.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.AuthorizationInfo != null) hashCode = hashCode * 59 + this.AuthorizationInfo.GetHashCode();
                 if (this.AuthConfig != null) hashCode = hashCode * 59 + this.AuthConfig.GetHashCode();

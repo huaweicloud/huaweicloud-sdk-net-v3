@@ -147,7 +147,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -262,7 +262,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public static bool operator ==(OSDCFdiskConfigEnum a, OSDCFdiskConfigEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -413,7 +413,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public static bool operator ==(OSEXTSTStaskStateEnum a, OSEXTSTStaskStateEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -534,7 +534,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public static bool operator ==(OSEXTSTSvmStateEnum a, OSEXTSTSvmStateEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -661,7 +661,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public static bool operator ==(HostStatusEnum a, HostStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

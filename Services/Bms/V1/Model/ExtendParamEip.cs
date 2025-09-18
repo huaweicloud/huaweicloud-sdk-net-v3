@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
 
             public static bool operator ==(ChargingModeEnum a, ChargingModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2020 Huawei Technologies Co.,Ltd.
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -22,7 +22,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace HuaweiCloud.SDK.Core
 {
@@ -80,6 +83,108 @@ namespace HuaweiCloud.SDK.Core
             }
 
             SigningAlgorithm = signingAlgorithm;
+        }
+
+        public HttpRequestMessage ToHttpRequestMessage()
+        {
+            var message = new HttpRequestMessage
+            {
+                RequestUri = Url,
+                Method = new HttpMethod(Method)
+            };
+
+            foreach (var kvp in Headers.AllKeys.Select(k => new KeyValuePair<string, string[]>(k, Headers.GetValues(k))))
+            {
+                message.Headers.TryAddWithoutValidation(kvp.Key, kvp.Value);
+            }
+
+            if (TryProcessHttpContent(out var httpContent))
+            {
+                message.Content = httpContent;
+            }
+            return message;
+        }
+
+        private bool TryProcessHttpContent(out HttpContent httpContent)
+        {
+            httpContent = null;
+            if (string.Equals(Method, "GET", StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
+            var contentType = HttpContentType.Process(ContentType);
+            if (FileStream != null && FileStream != Stream.Null)
+            {
+                httpContent = new StreamContent(FileStream);
+                httpContent.Headers.ContentType = new MediaTypeHeaderValue(contentType);
+                return true;
+            }
+
+            if (FormData != null && FormData.Count != 0)
+            {
+                httpContent = ContentType == HttpContentType.ApplicationFormUrlEncoded ? ProcessFormUrlEncodedContent() : ProcessFormDataContent();
+                return true;
+            }
+
+            if (contentType.StartsWith(HttpContentType.ApplicationJson))
+            {
+                httpContent = new StringContent(Body);
+                httpContent.Headers.ContentType = new MediaTypeHeaderValue(contentType);
+                return true;
+            }
+
+            return false;
+        }
+
+        private HttpContent ProcessFormUrlEncodedContent()
+        {
+            var pairs = FormData.Select(pair => new KeyValuePair<string, string>(pair.Key, pair.Value.ToString())).ToList();
+            return new FormUrlEncodedContent(pairs);
+        }
+
+        private HttpContent ProcessFormDataContent()
+        {
+            var boundary = Guid.NewGuid().ToString("N");
+            var contentType = "multipart/form-data; boundary=" + boundary;
+            var multipartContent = new MultipartFormDataContent(boundary);
+            Headers.Set(HttpContentType.Name, contentType);
+            multipartContent.Headers.Remove(HttpContentType.Name);
+            multipartContent.Headers.TryAddWithoutValidation(HttpContentType.Name, contentType);
+
+            var fileParts = new Dictionary<string, FormDataFilePart>();
+
+            foreach (var pair in FormData)
+            {
+                if (pair.Value is FormDataFilePart formDataFilePart)
+                {
+                    fileParts[pair.Key] = formDataFilePart;
+                }
+                else
+                {
+                    multipartContent.Add(new StringContent(pair.Value.ToString()), $"\"{pair.Key}\"");
+                }
+            }
+
+            foreach (var pair in fileParts)
+            {
+                var filePart = pair.Value;
+                var streamContent = new StreamContent(filePart.GetValue());
+                if (filePart.GetContentType() != null)
+                {
+                    streamContent.Headers.ContentType = new MediaTypeHeaderValue(filePart.GetContentType());
+                }
+                multipartContent.Add(streamContent, $"\"{pair.Key}\"", $"\"{filePart.GetFilename()}\"");
+            }
+
+            foreach (var content in multipartContent)
+            {
+                var headerContent = content.Headers.ContentDisposition.Parameters.SingleOrDefault(x => x.Name == "filename*");
+                if (headerContent != null)
+                    content.Headers.ContentDisposition.Parameters.Remove(headerContent);
+            }
+
+            return multipartContent;
         }
 
         private void ParseQueryParam()

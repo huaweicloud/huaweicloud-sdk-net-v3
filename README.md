@@ -6,6 +6,10 @@ English | [简体中文](README_CN.md)
 
 <h1 align="center">Huawei Cloud .Net Software Development Kit (.Net SDK)</h1>
 
+[![Multi-Target Framework](https://img.shields.io/badge/Targets-.NET%20Standard%202.0%20|%20.NET%20Framework%204.6.2%2B%20|%20.NET%20%205.0%2B-512BD4?logo=dotnet)](https://docs.microsoft.com/en-us/dotnet/standard/frameworks)
+[![NuGet Version](https://img.shields.io/nuget/v/HuaweiCloud.SDK.Core)](https://www.nuget.org/profiles/HuaweiCloud)
+[![License](https://img.shields.io/badge/license-Apache--2.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
+
 The Huawei Cloud .Net SDK allows you to easily work with Huawei Cloud services such as Elastic Compute Service (ECS) and
 Virtual Private Cloud(VPC) without the need to handle API related tasks.
 
@@ -20,9 +24,10 @@ This document introduces how to obtain and use Huawei Cloud .Net SDK.
 - To use Huawei Cloud .Net SDK to access the APIs of specific service, please make sure you do have activated the
   service in [Huawei Cloud console](https://console.huaweicloud.com/?locale=en-us) if needed.
 
-- The .NET SDK requires：
-  - **.NET and .NET Core 2.0** or above
-  - **.NET Framework 4.6.2** or above
+- The HuaweiCloud .NET SDK is developed based on the.NET Standard 2.0 specification and is compatible with the following frameworks:
+  - **.NET Framework 4.6.2+**
+  - **.NET 5.0+**
+  - **.NET Core 2.0+**
 
 For more version maintenance information, please refer to **Lifecycle FAQ** - [.NET Core](https://learn.microsoft.com/en-us/lifecycle/faq/dotnet-core), [.NET Framework](https://learn.microsoft.com/en-us/lifecycle/faq/dotnet-framework)
 
@@ -233,6 +238,7 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-net-v3/blob/ma
     * [3.3 Custom Configuration](#33-custom-configuration-top)
         * [3.3.1 IAM endpoint configuration](#331-iam-endpoint-configuration-top)
         * [3.3.2 Region configuration](#332-region-configuration-top)
+    * [3.4 User Agent](#34-user-agent-top)
 * [4. Send Requests and Handle Responses](#4-send-requests-and-handle-responses-top)
     * [4.1 Exceptions](#41-exceptions-top)
 * [5. Use Asynchronous Client](#5-use-asynchronous-client-top)
@@ -427,7 +433,7 @@ set HUAWEICLOUD_SDK_SK=YOUR_SK
 
 Get the credentials from configured environment variables:
 
-```java
+```csharp
 using HuaweiCloud.SDK.Core.Auth;
 
 // basic
@@ -676,6 +682,23 @@ The default lookup order is **environment variables -> profile -> region defined
 using HuaweiCloud.SDK.Ecs.V2;
 
 var region = EcsRegion.ValueOf("cn-north-9");
+```
+
+#### 3.4 User Agent [:top:](#user-manual-top)
+
+Additional information will be appended to the User-Agent in the request header by default since **v3.1.165**. It is used by service to identify what SDK language, .NET version, and platform info a client is using to call into their service, and a random identifier will be generated and appended to the User-Agent. The identifier will be stored in the user's home directory, as `~/.huaweicloud/application_id` on Linux and `C:\Users\USER_NAME\.huaweicloud\application_id` on Windows.
+
+The above information will be used to protect the security of your and your users' Huawei Cloud accounts.
+
+You can disable this automatic User-Agent augmentation by explicitly setting a custom User-Agent header value. The value is recommended to be less than 50 characters and should use US-ASCII visible characters:
+
+``` csharp
+// Append custom User-Agent information to replace the default
+var httpConfig = HttpConfig.GetDefaultConfig().WithUserAgent("custom user agent...");
+
+var client = VpcClient.NewBuilder()
+    .WithHttpConfig(httpConfig)
+    .Build();
 ```
 
 ### 4. Send Requests and Handle Responses [:top:](#user-manual-top)

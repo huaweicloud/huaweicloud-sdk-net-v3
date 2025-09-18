@@ -50,7 +50,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("authorization_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AuthorizationTypeEnum AuthorizationType { get; set; }
+        public AuthorizationTypeEnum? AuthorizationType { get; set; }
+
         /// <summary>
         /// 租户ID。
         /// </summary>
@@ -61,7 +62,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("app_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AppTypeEnum AppType { get; set; }
+        public AppTypeEnum? AppType { get; set; }
+
         /// <summary>
         /// 发布时间。
         /// </summary>
@@ -116,9 +118,9 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.AppServerGroupId != input.AppServerGroupId || (this.AppServerGroupId != null && !this.AppServerGroupId.Equals(input.AppServerGroupId))) return false;
             if (this.AppServerGroupName != input.AppServerGroupName || (this.AppServerGroupName != null && !this.AppServerGroupName.Equals(input.AppServerGroupName))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
-            if (this.AuthorizationType != input.AuthorizationType) return false;
+            if (this.AuthorizationType != input.AuthorizationType || (this.AuthorizationType != null && !this.AuthorizationType.Equals(input.AuthorizationType))) return false;
             if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
-            if (this.AppType != input.AppType) return false;
+            if (this.AppType != input.AppType || (this.AppType != null && !this.AppType.Equals(input.AppType))) return false;
             if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
             if (this.AppCount != input.AppCount || (this.AppCount != null && !this.AppCount.Equals(input.AppCount))) return false;
 
@@ -138,9 +140,9 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.AppServerGroupId != null) hashCode = hashCode * 59 + this.AppServerGroupId.GetHashCode();
                 if (this.AppServerGroupName != null) hashCode = hashCode * 59 + this.AppServerGroupName.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
-                hashCode = hashCode * 59 + this.AuthorizationType.GetHashCode();
+                if (this.AuthorizationType != null) hashCode = hashCode * 59 + this.AuthorizationType.GetHashCode();
                 if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                hashCode = hashCode * 59 + this.AppType.GetHashCode();
+                if (this.AppType != null) hashCode = hashCode * 59 + this.AppType.GetHashCode();
                 if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
                 if (this.AppCount != null) hashCode = hashCode * 59 + this.AppCount.GetHashCode();
                 return hashCode;

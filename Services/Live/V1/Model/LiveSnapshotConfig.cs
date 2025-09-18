@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(CallBackEnableEnum a, CallBackEnableEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Live.V1.Model
 
             public static bool operator ==(ImageAccessProtocolEnum a, ImageAccessProtocolEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

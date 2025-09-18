@@ -38,12 +38,14 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("robot_type", NullValueHandling = NullValueHandling.Ignore)]
-        public RobotTypeEnum RobotType { get; set; }
+        public RobotTypeEnum? RobotType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public LanguageEnum Language { get; set; }
+        public LanguageEnum? Language { get; set; }
+
         /// <summary>
         /// 语音识别后端点静音时长默认500ms
         /// </summary>
@@ -135,8 +137,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.AppType != input.AppType || (this.AppType != null && !this.AppType.Equals(input.AppType))) return false;
             if (this.RoomId != input.RoomId || (this.RoomId != null && !this.RoomId.Equals(input.RoomId))) return false;
-            if (this.RobotType != input.RobotType) return false;
-            if (this.Language != input.Language) return false;
+            if (this.RobotType != input.RobotType || (this.RobotType != null && !this.RobotType.Equals(input.RobotType))) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
             if (this.TailSilenceTime != input.TailSilenceTime || (this.TailSilenceTime != null && !this.TailSilenceTime.Equals(input.TailSilenceTime))) return false;
             if (this.EnableQuestionAudit != input.EnableQuestionAudit || (this.EnableQuestionAudit != null && !this.EnableQuestionAudit.Equals(input.EnableQuestionAudit))) return false;
             if (this.HuaweiEiCbs != input.HuaweiEiCbs || (this.HuaweiEiCbs != null && !this.HuaweiEiCbs.Equals(input.HuaweiEiCbs))) return false;
@@ -160,8 +162,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.AppType != null) hashCode = hashCode * 59 + this.AppType.GetHashCode();
                 if (this.RoomId != null) hashCode = hashCode * 59 + this.RoomId.GetHashCode();
-                hashCode = hashCode * 59 + this.RobotType.GetHashCode();
-                hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.RobotType != null) hashCode = hashCode * 59 + this.RobotType.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.TailSilenceTime != null) hashCode = hashCode * 59 + this.TailSilenceTime.GetHashCode();
                 if (this.EnableQuestionAudit != null) hashCode = hashCode * 59 + this.EnableQuestionAudit.GetHashCode();
                 if (this.HuaweiEiCbs != null) hashCode = hashCode * 59 + this.HuaweiEiCbs.GetHashCode();

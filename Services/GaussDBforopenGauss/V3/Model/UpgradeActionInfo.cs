@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
             public static bool operator ==(UpgradeActionEnum a, UpgradeActionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
 
             public static bool operator ==(ProtocolEnum a, ProtocolEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -250,7 +250,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
 
             public static bool operator ==(TlsCiphersPolicyEnum a, TlsCiphersPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -365,7 +365,7 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
 
             public static bool operator ==(ProtectionStatusEnum a, ProtectionStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

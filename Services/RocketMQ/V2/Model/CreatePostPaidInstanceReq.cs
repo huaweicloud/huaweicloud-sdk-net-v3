@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public static bool operator ==(EngineEnum a, EngineEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -214,7 +214,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public static bool operator ==(EngineVersionEnum a, EngineVersionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -377,7 +377,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public static bool operator ==(ProductIdEnum a, ProductIdEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -492,7 +492,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public static bool operator ==(StorageSpecCodeEnum a, StorageSpecCodeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

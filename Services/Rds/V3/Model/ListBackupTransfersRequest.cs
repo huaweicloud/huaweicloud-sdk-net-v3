@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
 
             public static bool operator ==(TransferTypeEnum a, TransferTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

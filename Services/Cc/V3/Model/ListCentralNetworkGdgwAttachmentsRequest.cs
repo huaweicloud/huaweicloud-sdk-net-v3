@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
     {
 
         /// <summary>
-        /// 每页返回的个数。 取值范围：1~1000。
+        /// 每页返回的个数。 取值范围：1~2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -42,7 +42,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// </summary>
         [SDKProperty("sort_dir", IsQuery = true)]
         [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
-        public SortDir SortDir { get; set; }
+        public SortDir? SortDir { get; set; }
+
         /// <summary>
         /// 根据ID查询，可查询多个ID。
         /// </summary>
@@ -51,7 +52,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 根据名字查询，可查询多个名字。
+        /// 根据名称查询，可查询多个名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -117,7 +118,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
             if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
-            if (this.SortDir != input.SortDir) return false;
+            if (this.SortDir != input.SortDir || (this.SortDir != null && !this.SortDir.Equals(input.SortDir))) return false;
             if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
             if (this.State != input.State || (this.State != null && input.State != null && !this.State.SequenceEqual(input.State))) return false;
@@ -138,7 +139,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                if (this.SortDir != null) hashCode = hashCode * 59 + this.SortDir.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();

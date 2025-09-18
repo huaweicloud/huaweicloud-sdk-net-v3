@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
 
             public static bool operator ==(KeyEnum a, KeyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -214,7 +214,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
 
             public static bool operator ==(ValueEnum a, ValueEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaResourceTypeEnum Type { get; set; }
+        public QuotaResourceTypeEnum? Type { get; set; }
+
         /// <summary>
         /// 剩余配额。
         /// </summary>
@@ -63,7 +64,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public bool Equals(QuotaRemainderData input)
         {
             if (input == null) return false;
-            if (this.Type != input.Type) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Remainder != input.Remainder || (this.Remainder != null && !this.Remainder.Equals(input.Remainder))) return false;
             if (this.Need != input.Need || (this.Need != null && !this.Need.Equals(input.Need))) return false;
 
@@ -78,7 +79,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Remainder != null) hashCode = hashCode * 59 + this.Remainder.GetHashCode();
                 if (this.Need != null) hashCode = hashCode * 59 + this.Need.GetHashCode();
                 return hashCode;

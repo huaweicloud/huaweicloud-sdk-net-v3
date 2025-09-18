@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
 
             public static bool operator ==(AutoConnectionTestSwitchEnum a, AutoConnectionTestSwitchEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
 
             public static bool operator ==(VideoTypeEnum a, VideoTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
 
             public static bool operator ==(SelectStreamTypeEnum a, SelectStreamTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

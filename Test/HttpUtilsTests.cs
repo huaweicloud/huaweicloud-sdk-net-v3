@@ -20,6 +20,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
+using System.Net.Http;
+using System.Text;
 using HuaweiCloud.SDK.Core;
 using NUnit.Framework;
 using Test.Model;
@@ -188,13 +191,56 @@ namespace Test
                 State = StateEnum.SUCCESS
             };
             var dictionary = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(request.Limit, out var limit)) dictionary.Add("limit", limit);
-            if (StringUtils.TryConvertToNonEmptyString(request.Enable, out var enable)) dictionary.Add("enable", enable);
-            if (StringUtils.TryConvertToNonEmptyString(request.Marker, out var marker)) dictionary.Add("marker", marker);
-            if (StringUtils.TryConvertToNonEmptyString(request.SortDir, out var sortDir)) dictionary.Add("sort_dir", sortDir);
-            if (StringUtils.TryConvertToNonEmptyString(request.State, out var state)) dictionary.Add("state", state);
+            if (StringUtils.TryConvertToNonEmptyString(request.Limit, out var limit))
+            {
+                dictionary.Add("limit", limit);
+            }
+            if (StringUtils.TryConvertToNonEmptyString(request.Enable, out var enable))
+            {
+                dictionary.Add("enable", enable);
+            }
+            if (StringUtils.TryConvertToNonEmptyString(request.Marker, out var marker))
+            {
+                dictionary.Add("marker", marker);
+            }
+            if (StringUtils.TryConvertToNonEmptyString(request.SortDir, out var sortDir))
+            {
+                dictionary.Add("sort_dir", sortDir);
+            }
+            if (StringUtils.TryConvertToNonEmptyString(request.State, out var state))
+            {
+                dictionary.Add("state", state);
+            }
             path = HttpUtils.AddUrlPath(originalPath, dictionary);
             Assert.That(path, Is.EqualTo("/test/1/mark/true/desc/success/{name}/{order}/{sort_dir2}/{state2}"));
+        }
+
+        [Test]
+        public void TestSetResponseHeaders()
+        {
+            var message = new HttpResponseMessage
+            {
+                StatusCode = HttpStatusCode.OK,
+                Content = new StringContent("{\"name\":\"John\"}", Encoding.UTF8, "application/json"),
+                Headers =
+                {
+                    {
+                        "X-Request-Id", "request-id"
+                    },
+                    {
+                        "X-AAA", "BBB"
+                    }
+                }
+            };
+
+            var response = new HeaderResponse();
+            HttpUtils.SetResponseHeaders(message, response);
+            Assert.Multiple(() =>
+            {
+                Assert.That(response.ContentType, Is.EqualTo("application/json; charset=utf-8"));
+                Assert.That(response.XRequestId, Is.EqualTo("request-id"));
+                Assert.That(response.Extra, Is.Null);
+            });
         }
     }
 }

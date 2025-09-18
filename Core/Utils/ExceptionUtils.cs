@@ -159,22 +159,22 @@ namespace HuaweiCloud.SDK.Core
 
         private static void ProcessSdkError(JObject jObject, SdkError sdkError)
         {
-            if (jObject.ContainsKey(EncodedAuthorizationMessage))
+            if (jObject.TryGetValue(EncodedAuthorizationMessage, out var encodedMsg))
             {
-                sdkError.EncodedAuthorizationMessage = jObject[EncodedAuthorizationMessage].ToString();
+                sdkError.EncodedAuthorizationMessage = encodedMsg.ToString();
             }
 
-            if (jObject.ContainsKey(ErrorCode) && jObject.ContainsKey(ErrorMsg))
+            if (jObject.TryGetValue(ErrorCode, out var errCode) && jObject.TryGetValue(ErrorMsg, out var errMsg))
             {
-                sdkError.ErrorCode = jObject[ErrorCode].ToString();
-                sdkError.ErrorMsg = jObject[ErrorMsg].ToString();
+                sdkError.ErrorCode = errCode.ToString();
+                sdkError.ErrorMsg = errMsg.ToString();
                 return;
             }
 
-            if (jObject.ContainsKey(Code) && jObject.ContainsKey(Message))
+            if (jObject.TryGetValue(Code, out errCode) && jObject.TryGetValue(Message, out errMsg))
             {
-                sdkError.ErrorCode = jObject[Code].ToString();
-                sdkError.ErrorMsg = jObject[Message].ToString();
+                sdkError.ErrorCode = errCode.ToString();
+                sdkError.ErrorMsg = errMsg.ToString();
                 return;
             }
 

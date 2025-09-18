@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public static bool operator ==(EngineEnum a, EngineEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -262,7 +262,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public static bool operator ==(SpecificationEnum a, SpecificationEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -413,7 +413,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public static bool operator ==(PartitionNumEnum a, PartitionNumEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -527,7 +527,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public static bool operator ==(SaslEnabledMechanismsEnum a, SaslEnabledMechanismsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -643,7 +643,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public static bool operator ==(RetentionPolicyEnum a, RetentionPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -776,7 +776,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
 
             public static bool operator ==(StorageSpecCodeEnum a, StorageSpecCodeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

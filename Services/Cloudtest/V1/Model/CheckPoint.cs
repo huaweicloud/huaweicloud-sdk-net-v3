@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cloudtest.V1.Model
 
             public static bool operator ==(FunctionTypeEnum a, FunctionTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

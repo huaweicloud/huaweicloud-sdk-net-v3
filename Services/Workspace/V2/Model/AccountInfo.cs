@@ -37,7 +37,8 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
         /// 
         /// </summary>
         [JsonProperty("platform_type", NullValueHandling = NullValueHandling.Ignore)]
-        public PlatformTypeEnum PlatformType { get; set; }
+        public PlatformTypeEnum? PlatformType { get; set; }
+
 
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
             if (this.Account != input.Account || (this.Account != null && !this.Account.Equals(input.Account))) return false;
             if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
             if (this.AccountType != input.AccountType) return false;
-            if (this.PlatformType != input.PlatformType) return false;
+            if (this.PlatformType != input.PlatformType || (this.PlatformType != null && !this.PlatformType.Equals(input.PlatformType))) return false;
 
             return true;
         }
@@ -88,7 +89,7 @@ namespace HuaweiCloud.SDK.Workspace.V2.Model
                 if (this.Account != null) hashCode = hashCode * 59 + this.Account.GetHashCode();
                 if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 hashCode = hashCode * 59 + this.AccountType.GetHashCode();
-                hashCode = hashCode * 59 + this.PlatformType.GetHashCode();
+                if (this.PlatformType != null) hashCode = hashCode * 59 + this.PlatformType.GetHashCode();
                 return hashCode;
             }
         }

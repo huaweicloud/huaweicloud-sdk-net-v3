@@ -62,7 +62,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("attach_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AttachType AttachType { get; set; }
+        public AttachType? AttachType { get; set; }
+
         /// <summary>
         /// 错误信息。
         /// </summary>
@@ -119,7 +120,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.FolderName != input.FolderName || (this.FolderName != null && !this.FolderName.Equals(input.FolderName))) return false;
             if (this.Attach != input.Attach || (this.Attach != null && !this.Attach.Equals(input.Attach))) return false;
             if (this.AttachId != input.AttachId || (this.AttachId != null && !this.AttachId.Equals(input.AttachId))) return false;
-            if (this.AttachType != input.AttachType) return false;
+            if (this.AttachType != input.AttachType || (this.AttachType != null && !this.AttachType.Equals(input.AttachType))) return false;
             if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
             if (this.IsSuccess != input.IsSuccess || (this.IsSuccess != null && !this.IsSuccess.Equals(input.IsSuccess))) return false;
 
@@ -141,7 +142,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.FolderName != null) hashCode = hashCode * 59 + this.FolderName.GetHashCode();
                 if (this.Attach != null) hashCode = hashCode * 59 + this.Attach.GetHashCode();
                 if (this.AttachId != null) hashCode = hashCode * 59 + this.AttachId.GetHashCode();
-                hashCode = hashCode * 59 + this.AttachType.GetHashCode();
+                if (this.AttachType != null) hashCode = hashCode * 59 + this.AttachType.GetHashCode();
                 if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
                 if (this.IsSuccess != null) hashCode = hashCode * 59 + this.IsSuccess.GetHashCode();
                 return hashCode;

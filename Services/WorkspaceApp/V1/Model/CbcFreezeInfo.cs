@@ -26,7 +26,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("scene", NullValueHandling = NullValueHandling.Ignore)]
-        public CbcFreezeScene Scene { get; set; }
+        public CbcFreezeScene? Scene { get; set; }
+
 
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         {
             if (input == null) return false;
             if (this.Effect != input.Effect || (this.Effect != null && !this.Effect.Equals(input.Effect))) return false;
-            if (this.Scene != input.Scene) return false;
+            if (this.Scene != input.Scene || (this.Scene != null && !this.Scene.Equals(input.Scene))) return false;
 
             return true;
         }
@@ -71,7 +72,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             {
                 var hashCode = 41;
                 if (this.Effect != null) hashCode = hashCode * 59 + this.Effect.GetHashCode();
-                hashCode = hashCode * 59 + this.Scene.GetHashCode();
+                if (this.Scene != null) hashCode = hashCode * 59 + this.Scene.GetHashCode();
                 return hashCode;
             }
         }

@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(CoverTypeEnum a, CoverTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -226,7 +226,7 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
 
             public static bool operator ==(AutoPublishEnum a, AutoPublishEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

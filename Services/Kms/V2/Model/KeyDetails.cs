@@ -147,7 +147,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
 
             public static bool operator ==(KeySpecEnum a, KeySpecEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -262,7 +262,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
 
             public static bool operator ==(KeyUsageEnum a, KeyUsageEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -377,7 +377,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
 
             public static bool operator ==(OriginEnum a, OriginEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

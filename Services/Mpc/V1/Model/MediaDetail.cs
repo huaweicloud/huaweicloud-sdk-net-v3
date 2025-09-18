@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("output_watermark_paras", NullValueHandling = NullValueHandling.Ignore)]
         public OutputWatermarkPara OutputWatermarkParas { get; set; }
 
+        /// <summary>
+        /// 输出文件的metadata信息 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public List<FileMetaData> Metadata { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  replaceSubIndex: ").Append(ReplaceSubIndex).Append("\n");
             sb.Append("  outputThumbnailPara: ").Append(OutputThumbnailPara).Append("\n");
             sb.Append("  outputWatermarkParas: ").Append(OutputWatermarkParas).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.ReplaceSubIndex != input.ReplaceSubIndex || (this.ReplaceSubIndex != null && input.ReplaceSubIndex != null && !this.ReplaceSubIndex.SequenceEqual(input.ReplaceSubIndex))) return false;
             if (this.OutputThumbnailPara != input.OutputThumbnailPara || (this.OutputThumbnailPara != null && !this.OutputThumbnailPara.Equals(input.OutputThumbnailPara))) return false;
             if (this.OutputWatermarkParas != input.OutputWatermarkParas || (this.OutputWatermarkParas != null && !this.OutputWatermarkParas.Equals(input.OutputWatermarkParas))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.ReplaceSubIndex != null) hashCode = hashCode * 59 + this.ReplaceSubIndex.GetHashCode();
                 if (this.OutputThumbnailPara != null) hashCode = hashCode * 59 + this.OutputThumbnailPara.GetHashCode();
                 if (this.OutputWatermarkParas != null) hashCode = hashCode * 59 + this.OutputWatermarkParas.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(TypeEnum a, TypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -256,7 +256,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(BindingServiceEnum a, BindingServiceEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -377,7 +377,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(ChargeModeEnum a, ChargeModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -498,7 +498,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(SlaLevelEnum a, SlaLevelEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -613,7 +613,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(AdminStateEnum a, AdminStateEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -658,7 +658,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 功能说明：全域互联带宽是否跨境，判断依据：带宽是否涉及从中国大陆到其他国家。 取值范围：True：跨境；False：非跨境 
+        /// 全域互联带宽跨境属性。
         /// </summary>
         [JsonProperty("bordercross", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Bordercross { get; set; }
@@ -755,6 +755,12 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
+        /// 有向连接列表。
+        /// </summary>
+        [JsonProperty("directional_connections", NullValueHandling = NullValueHandling.Ignore)]
+        public List<DirectionalConnection> DirectionalConnections { get; set; }
+
+        /// <summary>
         /// 功能说明: 全域互联带宽是否支持绑定多实例。 取值范围：     true-支持     false-不支持
         /// </summary>
         [JsonProperty("enable_share", NullValueHandling = NullValueHandling.Ignore)]
@@ -796,6 +802,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  directionalConnections: ").Append(DirectionalConnections).Append("\n");
             sb.Append("  enableShare: ").Append(EnableShare).Append("\n");
             sb.Append("  instances: ").Append(Instances).Append("\n");
             sb.Append("}\n");
@@ -837,6 +844,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.DirectionalConnections != input.DirectionalConnections || (this.DirectionalConnections != null && input.DirectionalConnections != null && !this.DirectionalConnections.SequenceEqual(input.DirectionalConnections))) return false;
             if (this.EnableShare != input.EnableShare || (this.EnableShare != null && !this.EnableShare.Equals(input.EnableShare))) return false;
             if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
 
@@ -872,6 +880,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.DirectionalConnections != null) hashCode = hashCode * 59 + this.DirectionalConnections.GetHashCode();
                 if (this.EnableShare != null) hashCode = hashCode * 59 + this.EnableShare.GetHashCode();
                 if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
                 return hashCode;

@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
 
             public static bool operator ==(OperationTypeEnum a, OperationTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -172,6 +172,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("associated_vaults", NullValueHandling = NullValueHandling.Ignore)]
         public List<PolicyAssociateVault> AssociatedVaults { get; set; }
 
+        /// <summary>
+        /// 策略类型，取值范围如下： - custom_policy：普通用户策略 - organization_policy_v1：老版本组织策略 - organization_policy_v2：新版本组织策略 - organization_policy_removed：退出组织的用户已绑定在存储库上的新版本组织策略（不自动解绑策略与存储库绑定关系，但是不能新绑定存储库）
+        /// </summary>
+        [JsonProperty("policy_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string PolicyType { get; set; }
+
 
 
         /// <summary>
@@ -188,6 +194,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  operationType: ").Append(OperationType).Append("\n");
             sb.Append("  trigger: ").Append(Trigger).Append("\n");
             sb.Append("  associatedVaults: ").Append(AssociatedVaults).Append("\n");
+            sb.Append("  policyType: ").Append(PolicyType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -213,6 +220,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.OperationType != input.OperationType) return false;
             if (this.Trigger != input.Trigger || (this.Trigger != null && !this.Trigger.Equals(input.Trigger))) return false;
             if (this.AssociatedVaults != input.AssociatedVaults || (this.AssociatedVaults != null && input.AssociatedVaults != null && !this.AssociatedVaults.SequenceEqual(input.AssociatedVaults))) return false;
+            if (this.PolicyType != input.PolicyType || (this.PolicyType != null && !this.PolicyType.Equals(input.PolicyType))) return false;
 
             return true;
         }
@@ -232,6 +240,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 hashCode = hashCode * 59 + this.OperationType.GetHashCode();
                 if (this.Trigger != null) hashCode = hashCode * 59 + this.Trigger.GetHashCode();
                 if (this.AssociatedVaults != null) hashCode = hashCode * 59 + this.AssociatedVaults.GetHashCode();
+                if (this.PolicyType != null) hashCode = hashCode * 59 + this.PolicyType.GetHashCode();
                 return hashCode;
             }
         }

@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public static bool operator ==(TraceTypeEnum a, TraceTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -250,7 +250,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public static bool operator ==(MsgTypeEnum a, MsgTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -371,7 +371,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public static bool operator ==(TransactionStateEnum a, TransactionStateEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

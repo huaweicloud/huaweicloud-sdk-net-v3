@@ -125,12 +125,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("app_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AppTypeEnum AppType { get; set; }
+        public AppTypeEnum? AppType { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("extra_session_type", NullValueHandling = NullValueHandling.Ignore)]
-        public ExtraSessionTypeEnum ExtraSessionType { get; set; }
+        public ExtraSessionTypeEnum? ExtraSessionType { get; set; }
+
         /// <summary>
         /// 付费会话数，单位/个。
         /// </summary>
@@ -231,8 +233,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.IpVirtual != input.IpVirtual || (this.IpVirtual != null && !this.IpVirtual.Equals(input.IpVirtual))) return false;
             if (this.IsVdi != input.IsVdi || (this.IsVdi != null && !this.IsVdi.Equals(input.IsVdi))) return false;
-            if (this.AppType != input.AppType) return false;
-            if (this.ExtraSessionType != input.ExtraSessionType) return false;
+            if (this.AppType != input.AppType || (this.AppType != null && !this.AppType.Equals(input.AppType))) return false;
+            if (this.ExtraSessionType != input.ExtraSessionType || (this.ExtraSessionType != null && !this.ExtraSessionType.Equals(input.ExtraSessionType))) return false;
             if (this.ExtraSessionSize != input.ExtraSessionSize || (this.ExtraSessionSize != null && !this.ExtraSessionSize.Equals(input.ExtraSessionSize))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
@@ -268,8 +270,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.IpVirtual != null) hashCode = hashCode * 59 + this.IpVirtual.GetHashCode();
                 if (this.IsVdi != null) hashCode = hashCode * 59 + this.IsVdi.GetHashCode();
-                hashCode = hashCode * 59 + this.AppType.GetHashCode();
-                hashCode = hashCode * 59 + this.ExtraSessionType.GetHashCode();
+                if (this.AppType != null) hashCode = hashCode * 59 + this.AppType.GetHashCode();
+                if (this.ExtraSessionType != null) hashCode = hashCode * 59 + this.ExtraSessionType.GetHashCode();
                 if (this.ExtraSessionSize != null) hashCode = hashCode * 59 + this.ExtraSessionSize.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();

@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.IdentityCenterOIDC.V1.Model
 
             public static bool operator ==(ClientTypeEnum a, ClientTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -214,7 +214,7 @@ namespace HuaweiCloud.SDK.IdentityCenterOIDC.V1.Model
 
             public static bool operator ==(TokenEndpointAuthMethodEnum a, TokenEndpointAuthMethodEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -328,7 +328,7 @@ namespace HuaweiCloud.SDK.IdentityCenterOIDC.V1.Model
 
             public static bool operator ==(GrantTypesEnum a, GrantTypesEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -437,7 +437,7 @@ namespace HuaweiCloud.SDK.IdentityCenterOIDC.V1.Model
 
             public static bool operator ==(ResponseTypesEnum a, ResponseTypesEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

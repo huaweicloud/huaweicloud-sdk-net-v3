@@ -104,7 +104,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
             public static bool operator ==(FieldsEnum a, FieldsEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -219,7 +219,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
             public static bool operator ==(IpVersionEnum a, IpVersionEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -346,7 +346,7 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

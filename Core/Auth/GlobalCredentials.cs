@@ -85,7 +85,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                     return request;
                 }
 
-                IAkSkSigner signer = AkSkSignerFactory.GetSigner(request.SigningAlgorithm);
+                var signer = AkSkSignerFactory.GetSigner(request.SigningAlgorithm);
                 signer.Sign(request, this);
                 return request;
             });
@@ -100,9 +100,9 @@ namespace HuaweiCloud.SDK.Core.Auth
                 return this;
             }
 
-            if (AuthCache.Value.ContainsKey(Ak))
+            if (AuthCache.Value.TryGetValue(Ak, out var id))
             {
-                DomainId = AuthCache.Value[Ak];
+                DomainId = id;
                 return this;
             }
 
@@ -119,9 +119,9 @@ namespace HuaweiCloud.SDK.Core.Auth
                 var response = IamService.InternalKeystoneListAuthDomains(client, request);
                 if (response.Domains == null || response.Domains.Count == 0)
                 {
-                    throw new SdkException(string.Format("Failed to get domain id automatically, X-IAM-Trace-Id={}. " +
+                    throw new SdkException($"Failed to get domain id automatically, X-IAM-Trace-Id={response.TraceId}. " +
                                                          "Please confirm that you have 'iam:users:getUser' permission, " +
-                                                         "or specify domain id manually: new GlobalCredentials(ak, sk, domainId);", response.TraceId));
+                                                         "or specify domain id manually: new GlobalCredentials(ak, sk, domainId);");
                 }
                 DomainId = response.Domains[0].Id;
                 logger.LogInformation("Success to obtain domain id: {}", DomainId);

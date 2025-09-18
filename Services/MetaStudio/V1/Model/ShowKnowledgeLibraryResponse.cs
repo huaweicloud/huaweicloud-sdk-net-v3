@@ -32,12 +32,14 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public LanguageEnum Language { get; set; }
+        public LanguageEnum? Language { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("knowledge_type", NullValueHandling = NullValueHandling.Ignore)]
-        public KnowledgeTypeEnum KnowledgeType { get; set; }
+        public KnowledgeTypeEnum? KnowledgeType { get; set; }
+
         /// <summary>
         /// 知识库大小(文档库为文档数量)
         /// </summary>
@@ -114,8 +116,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (input == null) return false;
             if (this.KnowledgeLibraryId != input.KnowledgeLibraryId || (this.KnowledgeLibraryId != null && !this.KnowledgeLibraryId.Equals(input.KnowledgeLibraryId))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
-            if (this.Language != input.Language) return false;
-            if (this.KnowledgeType != input.KnowledgeType) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
+            if (this.KnowledgeType != input.KnowledgeType || (this.KnowledgeType != null && !this.KnowledgeType.Equals(input.KnowledgeType))) return false;
             if (this.KnowledgeSize != input.KnowledgeSize || (this.KnowledgeSize != null && !this.KnowledgeSize.Equals(input.KnowledgeSize))) return false;
             if (this.Topk != input.Topk || (this.Topk != null && !this.Topk.Equals(input.Topk))) return false;
             if (this.Score != input.Score || (this.Score != null && !this.Score.Equals(input.Score))) return false;
@@ -136,8 +138,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 var hashCode = 41;
                 if (this.KnowledgeLibraryId != null) hashCode = hashCode * 59 + this.KnowledgeLibraryId.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
-                hashCode = hashCode * 59 + this.Language.GetHashCode();
-                hashCode = hashCode * 59 + this.KnowledgeType.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.KnowledgeType != null) hashCode = hashCode * 59 + this.KnowledgeType.GetHashCode();
                 if (this.KnowledgeSize != null) hashCode = hashCode * 59 + this.KnowledgeSize.GetHashCode();
                 if (this.Topk != null) hashCode = hashCode * 59 + this.Topk.GetHashCode();
                 if (this.Score != null) hashCode = hashCode * 59 + this.Score.GetHashCode();

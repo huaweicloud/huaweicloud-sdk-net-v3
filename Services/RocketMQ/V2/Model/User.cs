@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public static bool operator ==(DefaultTopicPermEnum a, DefaultTopicPermEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
 
             public static bool operator ==(DefaultGroupPermEnum a, DefaultGroupPermEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

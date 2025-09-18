@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
 
             public static bool operator ==(ProxyModeEnum a, ProxyModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
 
             public static bool operator ==(RegisterTypeEnum a, RegisterTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

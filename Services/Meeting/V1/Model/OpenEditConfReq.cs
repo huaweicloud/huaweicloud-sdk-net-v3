@@ -98,7 +98,8 @@ namespace HuaweiCloud.SDK.Meeting.V1.Model
         /// 
         /// </summary>
         [JsonProperty("enableRecording", NullValueHandling = NullValueHandling.Ignore)]
-        public YesNoEnum EnableRecording { get; set; }
+        public YesNoEnum? EnableRecording { get; set; }
+
         /// <summary>
         /// 主流直播推流地址，在录播类型为 :直播、直播+录播时有效。最大不超过255个字符。
         /// </summary>
@@ -174,7 +175,7 @@ namespace HuaweiCloud.SDK.Meeting.V1.Model
             if (this.CallRestriction != input.CallRestriction || (this.CallRestriction != null && !this.CallRestriction.Equals(input.CallRestriction))) return false;
             if (this.Scope != input.Scope || (this.Scope != null && !this.Scope.Equals(input.Scope))) return false;
             if (this.AudienceScope != input.AudienceScope || (this.AudienceScope != null && !this.AudienceScope.Equals(input.AudienceScope))) return false;
-            if (this.EnableRecording != input.EnableRecording) return false;
+            if (this.EnableRecording != input.EnableRecording || (this.EnableRecording != null && !this.EnableRecording.Equals(input.EnableRecording))) return false;
             if (this.LiveAddress != input.LiveAddress || (this.LiveAddress != null && !this.LiveAddress.Equals(input.LiveAddress))) return false;
             if (this.AuxAddress != input.AuxAddress || (this.AuxAddress != null && !this.AuxAddress.Equals(input.AuxAddress))) return false;
             if (this.LiveUrl != input.LiveUrl || (this.LiveUrl != null && !this.LiveUrl.Equals(input.LiveUrl))) return false;
@@ -203,7 +204,7 @@ namespace HuaweiCloud.SDK.Meeting.V1.Model
                 if (this.CallRestriction != null) hashCode = hashCode * 59 + this.CallRestriction.GetHashCode();
                 if (this.Scope != null) hashCode = hashCode * 59 + this.Scope.GetHashCode();
                 if (this.AudienceScope != null) hashCode = hashCode * 59 + this.AudienceScope.GetHashCode();
-                hashCode = hashCode * 59 + this.EnableRecording.GetHashCode();
+                if (this.EnableRecording != null) hashCode = hashCode * 59 + this.EnableRecording.GetHashCode();
                 if (this.LiveAddress != null) hashCode = hashCode * 59 + this.LiveAddress.GetHashCode();
                 if (this.AuxAddress != null) hashCode = hashCode * 59 + this.AuxAddress.GetHashCode();
                 if (this.LiveUrl != null) hashCode = hashCode * 59 + this.LiveUrl.GetHashCode();

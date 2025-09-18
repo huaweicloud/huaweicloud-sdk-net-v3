@@ -78,7 +78,8 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         /// 
         /// </summary>
         [JsonProperty("frozen_effect", NullValueHandling = NullValueHandling.Ignore)]
-        public FrozenEffectEnum FrozenEffect { get; set; }
+        public FrozenEffectEnum? FrozenEffect { get; set; }
+
         /// <summary>
         /// 是否绑定带宽包。
         /// </summary>
@@ -134,7 +135,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             if (this.GlobalConnectionBandwidthId != input.GlobalConnectionBandwidthId || (this.GlobalConnectionBandwidthId != null && !this.GlobalConnectionBandwidthId.Equals(input.GlobalConnectionBandwidthId))) return false;
             if (this.BandwidthSize != input.BandwidthSize || (this.BandwidthSize != null && !this.BandwidthSize.Equals(input.BandwidthSize))) return false;
             if (this.IsFrozen != input.IsFrozen || (this.IsFrozen != null && !this.IsFrozen.Equals(input.IsFrozen))) return false;
-            if (this.FrozenEffect != input.FrozenEffect) return false;
+            if (this.FrozenEffect != input.FrozenEffect || (this.FrozenEffect != null && !this.FrozenEffect.Equals(input.FrozenEffect))) return false;
             if (this.IsBindBandwidth != input.IsBindBandwidth || (this.IsBindBandwidth != null && !this.IsBindBandwidth.Equals(input.IsBindBandwidth))) return false;
 
             return true;
@@ -158,7 +159,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
                 if (this.GlobalConnectionBandwidthId != null) hashCode = hashCode * 59 + this.GlobalConnectionBandwidthId.GetHashCode();
                 if (this.BandwidthSize != null) hashCode = hashCode * 59 + this.BandwidthSize.GetHashCode();
                 if (this.IsFrozen != null) hashCode = hashCode * 59 + this.IsFrozen.GetHashCode();
-                hashCode = hashCode * 59 + this.FrozenEffect.GetHashCode();
+                if (this.FrozenEffect != null) hashCode = hashCode * 59 + this.FrozenEffect.GetHashCode();
                 if (this.IsBindBandwidth != null) hashCode = hashCode * 59 + this.IsBindBandwidth.GetHashCode();
                 return hashCode;
             }

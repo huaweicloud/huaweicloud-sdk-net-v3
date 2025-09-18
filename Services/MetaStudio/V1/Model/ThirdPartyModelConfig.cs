@@ -68,7 +68,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("asr_type", NullValueHandling = NullValueHandling.Ignore)]
-        public AsrTypeEnum AsrType { get; set; }
+        public AsrTypeEnum? AsrType { get; set; }
+
         /// <summary>
         /// ASR帐号（asr_type选择EI_SIS时不需要配置）。
         /// </summary>
@@ -127,7 +128,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.SisRegion != input.SisRegion || (this.SisRegion != null && !this.SisRegion.Equals(input.SisRegion))) return false;
             if (this.SisProjectId != input.SisProjectId || (this.SisProjectId != null && !this.SisProjectId.Equals(input.SisProjectId))) return false;
             if (this.EnableHotWords != input.EnableHotWords || (this.EnableHotWords != null && !this.EnableHotWords.Equals(input.EnableHotWords))) return false;
-            if (this.AsrType != input.AsrType) return false;
+            if (this.AsrType != input.AsrType || (this.AsrType != null && !this.AsrType.Equals(input.AsrType))) return false;
             if (this.AsrAccount != input.AsrAccount || (this.AsrAccount != null && !this.AsrAccount.Equals(input.AsrAccount))) return false;
             if (this.AsrSecret != input.AsrSecret || (this.AsrSecret != null && !this.AsrSecret.Equals(input.AsrSecret))) return false;
 
@@ -150,7 +151,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.SisRegion != null) hashCode = hashCode * 59 + this.SisRegion.GetHashCode();
                 if (this.SisProjectId != null) hashCode = hashCode * 59 + this.SisProjectId.GetHashCode();
                 if (this.EnableHotWords != null) hashCode = hashCode * 59 + this.EnableHotWords.GetHashCode();
-                hashCode = hashCode * 59 + this.AsrType.GetHashCode();
+                if (this.AsrType != null) hashCode = hashCode * 59 + this.AsrType.GetHashCode();
                 if (this.AsrAccount != null) hashCode = hashCode * 59 + this.AsrAccount.GetHashCode();
                 if (this.AsrSecret != null) hashCode = hashCode * 59 + this.AsrSecret.GetHashCode();
                 return hashCode;

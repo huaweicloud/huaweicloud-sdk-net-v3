@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
             public static bool operator ==(ResourceLevelEnum a, ResourceLevelEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -147,7 +147,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// 
         /// </summary>
         [JsonProperty("relation_type", NullValueHandling = NullValueHandling.Ignore)]
-        public RelationType RelationType { get; set; }
+        public RelationType? RelationType { get; set; }
+
         /// <summary>
         /// 关联指标名称，relation_type为RESOURCE可选填，不填视为对资源所有指标进行告警屏蔽
         /// </summary>
@@ -255,7 +256,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (input == null) return false;
             if (this.MaskName != input.MaskName || (this.MaskName != null && !this.MaskName.Equals(input.MaskName))) return false;
             if (this.RelationIds != input.RelationIds || (this.RelationIds != null && input.RelationIds != null && !this.RelationIds.SequenceEqual(input.RelationIds))) return false;
-            if (this.RelationType != input.RelationType) return false;
+            if (this.RelationType != input.RelationType || (this.RelationType != null && !this.RelationType.Equals(input.RelationType))) return false;
             if (this.MetricNames != input.MetricNames || (this.MetricNames != null && input.MetricNames != null && !this.MetricNames.SequenceEqual(input.MetricNames))) return false;
             if (this.ProductMetrics != input.ProductMetrics || (this.ProductMetrics != null && input.ProductMetrics != null && !this.ProductMetrics.SequenceEqual(input.ProductMetrics))) return false;
             if (this.ResourceLevel != input.ResourceLevel) return false;
@@ -281,7 +282,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 var hashCode = 41;
                 if (this.MaskName != null) hashCode = hashCode * 59 + this.MaskName.GetHashCode();
                 if (this.RelationIds != null) hashCode = hashCode * 59 + this.RelationIds.GetHashCode();
-                hashCode = hashCode * 59 + this.RelationType.GetHashCode();
+                if (this.RelationType != null) hashCode = hashCode * 59 + this.RelationType.GetHashCode();
                 if (this.MetricNames != null) hashCode = hashCode * 59 + this.MetricNames.GetHashCode();
                 if (this.ProductMetrics != null) hashCode = hashCode * 59 + this.ProductMetrics.GetHashCode();
                 hashCode = hashCode * 59 + this.ResourceLevel.GetHashCode();

@@ -20,7 +20,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("taskType", NullValueHandling = NullValueHandling.Ignore)]
-        public TaskType TaskType { get; set; }
+        public TaskType? TaskType { get; set; }
+
         /// <summary>
         /// 升级任务项ID
         /// </summary>
@@ -31,7 +32,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public UpgradeWorkflowTaskStatus Status { get; set; }
+        public UpgradeWorkflowTaskStatus? Status { get; set; }
+
         /// <summary>
         /// 升级任务开始时间
         /// </summary>
@@ -83,9 +85,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool Equals(PointStatus input)
         {
             if (input == null) return false;
-            if (this.TaskType != input.TaskType) return false;
+            if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
             if (this.TaskID != input.TaskID || (this.TaskID != null && !this.TaskID.Equals(input.TaskID))) return false;
-            if (this.Status != input.Status) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.StartTimeStamp != input.StartTimeStamp || (this.StartTimeStamp != null && !this.StartTimeStamp.Equals(input.StartTimeStamp))) return false;
             if (this.EndTimeStamp != input.EndTimeStamp || (this.EndTimeStamp != null && !this.EndTimeStamp.Equals(input.EndTimeStamp))) return false;
             if (this.ExpireTimeStamp != input.ExpireTimeStamp || (this.ExpireTimeStamp != null && !this.ExpireTimeStamp.Equals(input.ExpireTimeStamp))) return false;
@@ -101,9 +103,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
                 if (this.TaskID != null) hashCode = hashCode * 59 + this.TaskID.GetHashCode();
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.StartTimeStamp != null) hashCode = hashCode * 59 + this.StartTimeStamp.GetHashCode();
                 if (this.EndTimeStamp != null) hashCode = hashCode * 59 + this.EndTimeStamp.GetHashCode();
                 if (this.ExpireTimeStamp != null) hashCode = hashCode * 59 + this.ExpireTimeStamp.GetHashCode();

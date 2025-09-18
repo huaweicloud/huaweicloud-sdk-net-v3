@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         public PrePaidServerPublicip Publicip { get; set; }
 
         /// <summary>
-        /// 创建云服务器数量。  约束：  - 不传该字段时默认取值为1。 - 租户的配额足够时，最大值为500。
+        /// 创建云服务器数量。  约束：  - 不传该字段时默认取值为1。 - 租户的配额足够时，最大值为100。
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }

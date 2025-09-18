@@ -44,7 +44,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// 
         /// </summary>
         [JsonProperty("llm_source", NullValueHandling = NullValueHandling.Ignore)]
-        public LlmSourceEnum LlmSource { get; set; }
+        public LlmSourceEnum? LlmSource { get; set; }
+
         /// <summary>
         /// 大语言模型配置ID。
         /// </summary>
@@ -131,7 +132,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.RoleBusinessList != input.RoleBusinessList || (this.RoleBusinessList != null && input.RoleBusinessList != null && !this.RoleBusinessList.SequenceEqual(input.RoleBusinessList))) return false;
-            if (this.LlmSource != input.LlmSource) return false;
+            if (this.LlmSource != input.LlmSource || (this.LlmSource != null && !this.LlmSource.Equals(input.LlmSource))) return false;
             if (this.LlmConfigId != input.LlmConfigId || (this.LlmConfigId != null && !this.LlmConfigId.Equals(input.LlmConfigId))) return false;
             if (this.PluginConfigList != input.PluginConfigList || (this.PluginConfigList != null && input.PluginConfigList != null && !this.PluginConfigList.SequenceEqual(input.PluginConfigList))) return false;
             if (this.McpServerInfoList != input.McpServerInfoList || (this.McpServerInfoList != null && input.McpServerInfoList != null && !this.McpServerInfoList.SequenceEqual(input.McpServerInfoList))) return false;
@@ -155,7 +156,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.RoleBusinessList != null) hashCode = hashCode * 59 + this.RoleBusinessList.GetHashCode();
-                hashCode = hashCode * 59 + this.LlmSource.GetHashCode();
+                if (this.LlmSource != null) hashCode = hashCode * 59 + this.LlmSource.GetHashCode();
                 if (this.LlmConfigId != null) hashCode = hashCode * 59 + this.LlmConfigId.GetHashCode();
                 if (this.PluginConfigList != null) hashCode = hashCode * 59 + this.PluginConfigList.GetHashCode();
                 if (this.McpServerInfoList != null) hashCode = hashCode * 59 + this.McpServerInfoList.GetHashCode();

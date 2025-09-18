@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
 
             public static bool operator ==(EventTypeEnum a, EventTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -231,7 +231,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
 
             public static bool operator ==(ImageCategoriesEnum a, ImageCategoriesEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -364,7 +364,7 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
 
             public static bool operator ==(AudioCategoriesEnum a, AudioCategoriesEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

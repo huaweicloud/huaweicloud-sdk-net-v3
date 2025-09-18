@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
 
             public static bool operator ==(OutputPolicyEnum a, OutputPolicyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -155,16 +155,22 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public Object Crf { get; set; }
 
         /// <summary>
-        /// 输出最大码率  单位：kbit/s  带crf时使用，参考原片的平均码率进行设置（一般为1.5倍） 
+        /// 输出最大码率，基于crf，设置max_bitrate字段才会开启ccrf  取值范围：0或[40,800000]之间的整数。   单位：kbit/s  带crf时使用，参考原片的平均码率进行设置（一般为1.5倍） 
         /// </summary>
         [JsonProperty("max_bitrate", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxBitrate { get; set; }
 
         /// <summary>
-        /// 输出平均码率。  取值范围：0或[40,30000]之间的整数。  单位：kbit/s  若设置为0，则输出平均码率为自适应值。 
+        /// 输出平均码率。  取值范围：0或[40,50000]之间的整数。  单位：kbit/s  若设置为0，则输出平均码率为自适应值。 
         /// </summary>
         [JsonProperty("bitrate", NullValueHandling = NullValueHandling.Ignore)]
         public int? Bitrate { get; set; }
+
+        /// <summary>
+        /// ccrf时的缓冲区大小,建议与max_bitrate保持一致，避免编码器缓冲区溢出  取值范围：0或[40,800000]之间的整数。  单位：kbit 
+        /// </summary>
+        [JsonProperty("buf_size", NullValueHandling = NullValueHandling.Ignore)]
+        public int? BufSize { get; set; }
 
         /// <summary>
         /// 编码档次  取值如下： - 1：VIDEO_PROFILE_H264_BASE - 2：VIDEO_PROFILE_H264_MAIN - 3：VIDEO_PROFILE_H264_HIGH - 4：VIDEO_PROFILE_H265_MAIN 
@@ -179,7 +185,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public int? Level { get; set; }
 
         /// <summary>
-        /// 编码质量等级  取值如下： - 1：VIDEO_PRESET_HSPEED2 (只用于h.265, h.265 default) - 2：VIDEO_PRESET_HSPEED (只用于h.265) - 3：VIDEO_PRESET_NORMAL (h264/h.265可用，h.264 default) 
+        /// 编码质量等级  取值如下： - 1：VIDEO_PRESET_SPEED，编码快速档位 - 3：VIDEO_PRESET_HIGHQUALITY，编码高质量档位 - 4：VIDEO_PRESET_QUALITY，编码质量档位 - 5：VIDEO_PRESET_BALANCE，编码平衡档位  默认值1。 
         /// </summary>
         [JsonProperty("preset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Preset { get; set; }
@@ -240,6 +246,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  crf: ").Append(Crf).Append("\n");
             sb.Append("  maxBitrate: ").Append(MaxBitrate).Append("\n");
             sb.Append("  bitrate: ").Append(Bitrate).Append("\n");
+            sb.Append("  bufSize: ").Append(BufSize).Append("\n");
             sb.Append("  profile: ").Append(Profile).Append("\n");
             sb.Append("  level: ").Append(Level).Append("\n");
             sb.Append("  preset: ").Append(Preset).Append("\n");
@@ -273,6 +280,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.Crf != input.Crf || (this.Crf != null && !this.Crf.Equals(input.Crf))) return false;
             if (this.MaxBitrate != input.MaxBitrate || (this.MaxBitrate != null && !this.MaxBitrate.Equals(input.MaxBitrate))) return false;
             if (this.Bitrate != input.Bitrate || (this.Bitrate != null && !this.Bitrate.Equals(input.Bitrate))) return false;
+            if (this.BufSize != input.BufSize || (this.BufSize != null && !this.BufSize.Equals(input.BufSize))) return false;
             if (this.Profile != input.Profile || (this.Profile != null && !this.Profile.Equals(input.Profile))) return false;
             if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
             if (this.Preset != input.Preset || (this.Preset != null && !this.Preset.Equals(input.Preset))) return false;
@@ -300,6 +308,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.Crf != null) hashCode = hashCode * 59 + this.Crf.GetHashCode();
                 if (this.MaxBitrate != null) hashCode = hashCode * 59 + this.MaxBitrate.GetHashCode();
                 if (this.Bitrate != null) hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
+                if (this.BufSize != null) hashCode = hashCode * 59 + this.BufSize.GetHashCode();
                 if (this.Profile != null) hashCode = hashCode * 59 + this.Profile.GetHashCode();
                 if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();
                 if (this.Preset != null) hashCode = hashCode * 59 + this.Preset.GetHashCode();

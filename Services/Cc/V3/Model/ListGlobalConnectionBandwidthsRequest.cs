@@ -122,7 +122,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(InstanceTypeEnum a, InstanceTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -249,7 +249,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(BindingServiceEnum a, BindingServiceEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -376,7 +376,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(TypeEnum a, TypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -491,7 +491,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(AdminStateEnum a, AdminStateEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -612,7 +612,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(ChargeModeEnum a, ChargeModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -634,7 +634,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
 
         /// <summary>
-        /// 每页返回的个数。 取值范围：1~1000。
+        /// 每页返回的个数。 取值范围：1~2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -655,7 +655,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public List<string> Id { get; set; }
 
         /// <summary>
-        /// 根据名字查询，可查询多个名字。
+        /// 根据名称查询，可查询多个名称。
         /// </summary>
         [SDKProperty("name", IsQuery = true)]
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -700,7 +700,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         [JsonProperty("admin_state", NullValueHandling = NullValueHandling.Ignore)]
         public List<AdminStateEnum> AdminState { get; set; }
         /// <summary>
-        /// 根据计费方式过滤全域互联带宽列表： - bwd: 按带宽计费 - 95: 按传统型95计费 - 95avr (日95计费)
+        /// 根据计费方式过滤全域互联带宽列表： - bwd: 按带宽计费 - &#39;95&#39;: 按传统型95计费 - 95avr (日95计费)
         /// </summary>
         [SDKProperty("charge_mode", IsQuery = true)]
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]

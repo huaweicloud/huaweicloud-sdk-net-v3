@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
 
             public static bool operator ==(MfaModeEnum a, MfaModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -244,7 +244,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
 
             public static bool operator ==(NoMfaSigninBehaviorEnum a, NoMfaSigninBehaviorEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -359,7 +359,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
 
             public static bool operator ==(NoPasswordSigninBehaviorEnum a, NoPasswordSigninBehaviorEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -479,7 +479,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
 
             public static bool operator ==(AllowedMfaTypesEnum a, AllowedMfaTypesEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

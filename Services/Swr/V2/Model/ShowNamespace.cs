@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
 
             public static bool operator ==(AuthEnum a, AuthEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

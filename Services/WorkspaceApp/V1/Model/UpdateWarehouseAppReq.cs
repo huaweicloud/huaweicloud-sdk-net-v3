@@ -26,12 +26,14 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         /// 
         /// </summary>
         [JsonProperty("app_category", NullValueHandling = NullValueHandling.Ignore)]
-        public AppCategoryEnum AppCategory { get; set; }
+        public AppCategoryEnum? AppCategory { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("os_type", NullValueHandling = NullValueHandling.Ignore)]
-        public OsTypeEnum OsType { get; set; }
+        public OsTypeEnum? OsType { get; set; }
+
         /// <summary>
         /// 版本号,名称需满足如下规则: 1. 由可见字符组成。 2. 长度范围1~64个字符。
         /// </summary>
@@ -98,8 +100,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         {
             if (input == null) return false;
             if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
-            if (this.AppCategory != input.AppCategory) return false;
-            if (this.OsType != input.OsType) return false;
+            if (this.AppCategory != input.AppCategory || (this.AppCategory != null && !this.AppCategory.Equals(input.AppCategory))) return false;
+            if (this.OsType != input.OsType || (this.OsType != null && !this.OsType.Equals(input.OsType))) return false;
             if (this.VersionId != input.VersionId || (this.VersionId != null && !this.VersionId.Equals(input.VersionId))) return false;
             if (this.AppDescription != input.AppDescription || (this.AppDescription != null && !this.AppDescription.Equals(input.AppDescription))) return false;
             if (this.VersionName != input.VersionName || (this.VersionName != null && !this.VersionName.Equals(input.VersionName))) return false;
@@ -118,8 +120,8 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             {
                 var hashCode = 41;
                 if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                hashCode = hashCode * 59 + this.AppCategory.GetHashCode();
-                hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                if (this.AppCategory != null) hashCode = hashCode * 59 + this.AppCategory.GetHashCode();
+                if (this.OsType != null) hashCode = hashCode * 59 + this.OsType.GetHashCode();
                 if (this.VersionId != null) hashCode = hashCode * 59 + this.VersionId.GetHashCode();
                 if (this.AppDescription != null) hashCode = hashCode * 59 + this.AppDescription.GetHashCode();
                 if (this.VersionName != null) hashCode = hashCode * 59 + this.VersionName.GetHashCode();

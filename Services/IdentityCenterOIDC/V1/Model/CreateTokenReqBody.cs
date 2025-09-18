@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.IdentityCenterOIDC.V1.Model
 
             public static bool operator ==(GrantTypeEnum a, GrantTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

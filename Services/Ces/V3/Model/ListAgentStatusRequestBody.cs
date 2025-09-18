@@ -123,7 +123,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
 
             public static bool operator ==(UniagentStatusEnum a, UniagentStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
 
             public static bool operator ==(ExtensionNameEnum a, ExtensionNameEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -365,7 +365,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
 
             public static bool operator ==(ExtensionStatusEnum a, ExtensionStatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

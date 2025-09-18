@@ -117,7 +117,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
 
             public static bool operator ==(AudioFormatEnum a, AudioFormatEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -232,7 +232,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
 
             public static bool operator ==(SampleRateEnum a, SampleRateEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -563,7 +563,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
 
             public static bool operator ==(PropertyEnum a, PropertyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

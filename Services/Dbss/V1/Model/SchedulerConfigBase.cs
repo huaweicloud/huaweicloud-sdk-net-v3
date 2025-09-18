@@ -111,7 +111,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
 
             public static bool operator ==(FormatEnum a, FormatEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -244,7 +244,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
 
             public static bool operator ==(FrequencyEnum a, FrequencyEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -359,7 +359,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
 
             public static bool operator ==(ModeEnum a, ModeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -474,7 +474,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
 
             public static bool operator ==(NoticeEnum a, NoticeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -589,7 +589,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
 
             public static bool operator ==(StatusEnum a, StatusEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

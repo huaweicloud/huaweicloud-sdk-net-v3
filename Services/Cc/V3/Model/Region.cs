@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cc.V3.Model
 {
     /// <summary>
-    /// 支持的Region。
+    /// 支持的区域。
     /// </summary>
     public class Region 
     {
@@ -116,7 +116,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
 
             public static bool operator ==(UsedScenesEnum a, UsedScenesEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -149,19 +149,19 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         [JsonProperty("area_id", NullValueHandling = NullValueHandling.Ignore)]
         public AreaIdDef AreaId { get; set; }
         /// <summary>
-        /// Region ID。
+        /// 区域ID。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 大区名。
+        /// 大区名称。
         /// </summary>
         [JsonProperty("area_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AreaName { get; set; }
 
         /// <summary>
-        /// 云连接使用场景 er vpc vgw。
+        /// 云连接使用场景。  - er（企业路由器） - vpc（虚拟私有云） - vgw（虚拟网关）
         /// </summary>
         [JsonProperty("used_scenes", NullValueHandling = NullValueHandling.Ignore)]
         public List<UsedScenesEnum> UsedScenes { get; set; }

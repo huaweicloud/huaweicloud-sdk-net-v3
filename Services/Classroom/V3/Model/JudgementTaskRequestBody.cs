@@ -105,7 +105,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
 
             public static bool operator ==(CodeTypeEnum a, CodeTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -238,7 +238,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
 
             public static bool operator ==(RuntimeTypeEnum a, RuntimeTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -371,7 +371,7 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
 
             public static bool operator ==(OutputTypeEnum a, OutputTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }

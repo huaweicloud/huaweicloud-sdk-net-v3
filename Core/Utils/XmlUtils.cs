@@ -28,7 +28,7 @@ using System.Xml.Serialization;
 
 namespace HuaweiCloud.SDK.Core
 {
-    public class XmlUtils
+    public static class XmlUtils
     {
         public static T DeSerialize<T>(HttpResponseMessage message) where T : SdkResponse
         {

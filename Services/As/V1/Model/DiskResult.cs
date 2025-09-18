@@ -141,7 +141,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public static bool operator ==(VolumeTypeEnum a, VolumeTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
@@ -256,7 +256,7 @@ namespace HuaweiCloud.SDK.As.V1.Model
 
             public static bool operator ==(DiskTypeEnum a, DiskTypeEnum b)
             {
-                if (System.Object.ReferenceEquals(a, b))
+                if (ReferenceEquals(a, b))
                 {
                     return true;
                 }
