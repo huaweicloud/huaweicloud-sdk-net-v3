@@ -118,6 +118,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         [JsonProperty("audio_process", NullValueHandling = NullValueHandling.Ignore)]
         public AudioProcess AudioProcess { get; set; }
 
+        /// <summary>
+        /// metadata设置，默认只支持AIGC 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public List<FileMetaData> Metadata { get; set; }
+
 
 
         /// <summary>
@@ -144,6 +150,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  multiAudio: ").Append(MultiAudio).Append("\n");
             sb.Append("  videoProcess: ").Append(VideoProcess).Append("\n");
             sb.Append("  audioProcess: ").Append(AudioProcess).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -179,6 +186,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.MultiAudio != input.MultiAudio || (this.MultiAudio != null && !this.MultiAudio.Equals(input.MultiAudio))) return false;
             if (this.VideoProcess != input.VideoProcess || (this.VideoProcess != null && !this.VideoProcess.Equals(input.VideoProcess))) return false;
             if (this.AudioProcess != input.AudioProcess || (this.AudioProcess != null && !this.AudioProcess.Equals(input.AudioProcess))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
 
             return true;
         }
@@ -208,6 +216,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.MultiAudio != null) hashCode = hashCode * 59 + this.MultiAudio.GetHashCode();
                 if (this.VideoProcess != null) hashCode = hashCode * 59 + this.VideoProcess.GetHashCode();
                 if (this.AudioProcess != null) hashCode = hashCode * 59 + this.AudioProcess.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

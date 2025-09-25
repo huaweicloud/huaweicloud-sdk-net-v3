@@ -124,6 +124,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("locked", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// 存储库可用区信息，最大支持32字符。
+        /// </summary>
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public string AvailabilityZone { get; set; }
+
 
 
         /// <summary>
@@ -151,6 +157,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
             sb.Append("  sysLockSourceService: ").Append(SysLockSourceService).Append("\n");
             sb.Append("  locked: ").Append(Locked).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -187,6 +194,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
             if (this.SysLockSourceService != input.SysLockSourceService || (this.SysLockSourceService != null && !this.SysLockSourceService.Equals(input.SysLockSourceService))) return false;
             if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
 
             return true;
         }
@@ -217,6 +225,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
                 if (this.SysLockSourceService != null) hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
                 if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 return hashCode;
             }
         }

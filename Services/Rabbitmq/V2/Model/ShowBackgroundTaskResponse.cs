@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
     {
 
         /// <summary>
-        /// 任务数量。
+        /// **参数解释**： 任务数量。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("task_count", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskCount { get; set; }
 
         /// <summary>
-        /// 任务列表。
+        /// **参数解释**： 任务列表。
         /// </summary>
         [JsonProperty("tasks", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListBackgroundTasksRespTasks> Tasks { get; set; }

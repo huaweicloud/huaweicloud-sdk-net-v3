@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// **参数解释**: 环比比率。 **取值范围**: 值为0表示环比没有变化，值为空表示上一周期没有告警。
         /// </summary>
         [JsonProperty("ring_percentage", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? RingPercentage { get; set; }
+        public double? RingPercentage { get; set; }
 
         /// <summary>
         /// **参数解释**: 实例级别的告警统计。

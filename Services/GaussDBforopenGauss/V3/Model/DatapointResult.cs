@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// 指标项名，实例指标用实例ID、节点指标用节点名称、组件指标用组件名称。
+        /// **参数解释**: 指标项名，实例指标用实例ID、节点指标用节点名称、组件指标用组件名称。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("datapoint_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DatapointName { get; set; }
 
         /// <summary>
-        /// 指标值集合。
+        /// **参数解释**: 指标值集合。
         /// </summary>
         [JsonProperty("datapoint_values", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> DatapointValues { get; set; }

@@ -2159,6 +2159,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 获取串口登录地址
+        ///
+        /// 获取云服务器云主机串口登录地址。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSerialConsoleActionsResponse> ShowSerialConsoleActionsAsync(ShowSerialConsoleActionsRequest showSerialConsoleActionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSerialConsoleActionsRequest.ServerId, out var valueOfServerId)) urlParam.Add("server_id", valueOfServerId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/actions/serial-console", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSerialConsoleActionsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowSerialConsoleActionsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSerialConsoleActionsResponse> ShowSerialConsoleActionsAsyncInvoker(ShowSerialConsoleActionsRequest showSerialConsoleActionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSerialConsoleActionsRequest.ServerId, out var valueOfServerId)) urlParam.Add("server_id", valueOfServerId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/actions/serial-console", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSerialConsoleActionsRequest);
+            return new AsyncInvoker<ShowSerialConsoleActionsResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowSerialConsoleActionsResponse>);
+        }
+        
+        /// <summary>
         /// 查询云服务器详情
         ///
         /// 查询弹性云服务器的详细信息。
@@ -2469,6 +2495,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instance-scheduled-events/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateScheduledEventRequest);
             return new AsyncInvoker<UpdateScheduledEventResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateScheduledEventResponse>);
+        }
+        
+        /// <summary>
+        /// 设置云服务器云主机串口登录
+        ///
+        /// 设置云服务器云主机串口登录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateSerialConsoleOptionsResponse> UpdateSerialConsoleOptionsAsync(UpdateSerialConsoleOptionsRequest updateSerialConsoleOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSerialConsoleOptionsRequest.ServerId, out var valueOfServerId)) urlParam.Add("server_id", valueOfServerId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/serial-console-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSerialConsoleOptionsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateSerialConsoleOptionsResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateSerialConsoleOptionsResponse> UpdateSerialConsoleOptionsAsyncInvoker(UpdateSerialConsoleOptionsRequest updateSerialConsoleOptionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSerialConsoleOptionsRequest.ServerId, out var valueOfServerId)) urlParam.Add("server_id", valueOfServerId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/serial-console-options", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSerialConsoleOptionsRequest);
+            return new AsyncInvoker<UpdateSerialConsoleOptionsResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateSerialConsoleOptionsResponse>);
         }
         
         /// <summary>

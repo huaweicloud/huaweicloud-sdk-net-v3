@@ -65,6 +65,8 @@ namespace HuaweiCloud.SDK.Csms.V1
             "https://kms.af-north-1.myhuaweicloud.com");
         public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
             "https://kms.cn-southwest-3.myhuaweicloud.com");
+        public static readonly Region AF_SOUTH_1 = new Region("af-south-1",
+            "https://kms.af-south-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("CSMS");
 
@@ -99,6 +101,7 @@ namespace HuaweiCloud.SDK.Csms.V1
                 { "cn-north-11", CN_NORTH_11 },
                 { "af-north-1", AF_NORTH_1 },
                 { "cn-southwest-3", CN_SOUTHWEST_3 },
+                { "af-south-1", AF_SOUTH_1 },
         };
 
         public static Region ValueOf(string regionId)

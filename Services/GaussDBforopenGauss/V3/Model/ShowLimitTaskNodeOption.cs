@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// 节点id。
+        /// **参数解释**: 节点ID。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeId { get; set; }
 
         /// <summary>
-        /// 该节点执行的sql语句id。
+        /// **参数解释**: 该节点执行的sql语句ID。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("sql_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SqlId { get; set; }

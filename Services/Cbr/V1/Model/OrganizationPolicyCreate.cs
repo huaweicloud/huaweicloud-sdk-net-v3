@@ -172,6 +172,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("policy_trigger", NullValueHandling = NullValueHandling.Ignore)]
         public PolicyTriggerReq PolicyTrigger { get; set; }
 
+        /// <summary>
+        /// 组织策略生效范围
+        /// </summary>
+        [JsonProperty("effective_scope", NullValueHandling = NullValueHandling.Ignore)]
+        public string EffectiveScope { get; set; }
+
 
 
         /// <summary>
@@ -188,6 +194,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  policyEnabled: ").Append(PolicyEnabled).Append("\n");
             sb.Append("  policyOperationDefinition: ").Append(PolicyOperationDefinition).Append("\n");
             sb.Append("  policyTrigger: ").Append(PolicyTrigger).Append("\n");
+            sb.Append("  effectiveScope: ").Append(EffectiveScope).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -213,6 +220,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.PolicyEnabled != input.PolicyEnabled || (this.PolicyEnabled != null && !this.PolicyEnabled.Equals(input.PolicyEnabled))) return false;
             if (this.PolicyOperationDefinition != input.PolicyOperationDefinition || (this.PolicyOperationDefinition != null && !this.PolicyOperationDefinition.Equals(input.PolicyOperationDefinition))) return false;
             if (this.PolicyTrigger != input.PolicyTrigger || (this.PolicyTrigger != null && !this.PolicyTrigger.Equals(input.PolicyTrigger))) return false;
+            if (this.EffectiveScope != input.EffectiveScope || (this.EffectiveScope != null && !this.EffectiveScope.Equals(input.EffectiveScope))) return false;
 
             return true;
         }
@@ -232,6 +240,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.PolicyEnabled != null) hashCode = hashCode * 59 + this.PolicyEnabled.GetHashCode();
                 if (this.PolicyOperationDefinition != null) hashCode = hashCode * 59 + this.PolicyOperationDefinition.GetHashCode();
                 if (this.PolicyTrigger != null) hashCode = hashCode * 59 + this.PolicyTrigger.GetHashCode();
+                if (this.EffectiveScope != null) hashCode = hashCode * 59 + this.EffectiveScope.GetHashCode();
                 return hashCode;
             }
         }

@@ -3085,6 +3085,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 获取StarRocks实例内核慢日志信息
+        ///
+        /// 获取StarRocks实例内核慢日志信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowSlowLogDetailResponse> ShowSlowLogDetailAsync(ShowSlowLogDetailRequest showSlowLogDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSlowLogDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/slow-logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showSlowLogDetailRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ShowSlowLogDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ShowSlowLogDetailResponse> ShowSlowLogDetailAsyncInvoker(ShowSlowLogDetailRequest showSlowLogDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSlowLogDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/slow-logs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showSlowLogDetailRequest);
+            return new AsyncInvoker<ShowSlowLogDetailResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowSlowLogDetailResponse>);
+        }
+        
+        /// <summary>
         /// 查询慢日志统计信息
         ///
         /// 查询慢日志统计信息
@@ -3186,6 +3212,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSqlFilterRuleRequest);
             return new AsyncInvoker<ShowSqlFilterRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSqlFilterRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询StarRocks实例慢日志脱敏状态
+        ///
+        /// 查询StarRocks实例慢日志脱敏状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowStarRocksSlowlogSensitiveStatusResponse> ShowStarRocksSlowlogSensitiveStatusAsync(ShowStarRocksSlowlogSensitiveStatusRequest showStarRocksSlowlogSensitiveStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showStarRocksSlowlogSensitiveStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/slowlog-sensitive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStarRocksSlowlogSensitiveStatusRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowStarRocksSlowlogSensitiveStatusResponse>(response);
+        }
+
+        public AsyncInvoker<ShowStarRocksSlowlogSensitiveStatusResponse> ShowStarRocksSlowlogSensitiveStatusAsyncInvoker(ShowStarRocksSlowlogSensitiveStatusRequest showStarRocksSlowlogSensitiveStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showStarRocksSlowlogSensitiveStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/slowlog-sensitive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStarRocksSlowlogSensitiveStatusRequest);
+            return new AsyncInvoker<ShowStarRocksSlowlogSensitiveStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStarRocksSlowlogSensitiveStatusResponse>);
         }
         
         /// <summary>
@@ -4065,6 +4117,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerlessPolicyRequest);
             return new AsyncInvoker<UpdateServerlessPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServerlessPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 开启或关闭StarRocks实例慢日志脱敏状态
+        ///
+        /// 开启或关闭StarRocks实例慢日志脱敏状态
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateSlowlogSensitiveStatusResponse> UpdateSlowlogSensitiveStatusAsync(UpdateSlowlogSensitiveStatusRequest updateSlowlogSensitiveStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSlowlogSensitiveStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/slowlog-sensitive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSlowlogSensitiveStatusRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateSlowlogSensitiveStatusResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateSlowlogSensitiveStatusResponse> UpdateSlowlogSensitiveStatusAsyncInvoker(UpdateSlowlogSensitiveStatusRequest updateSlowlogSensitiveStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateSlowlogSensitiveStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/slowlog-sensitive", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateSlowlogSensitiveStatusRequest);
+            return new AsyncInvoker<UpdateSlowlogSensitiveStatusResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateSlowlogSensitiveStatusResponse>);
         }
         
         /// <summary>

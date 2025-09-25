@@ -209,6 +209,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         public int? FrameRate { get; set; }
 
         /// <summary>
+        /// 帧率。  取值范围：0或[5,60]，0表示自适应。  单位：帧每秒。  &gt; 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 
+        /// </summary>
+        [JsonProperty("frame_rate_float", NullValueHandling = NullValueHandling.Ignore)]
+        public float? FrameRateFloat { get; set; }
+
+        /// <summary>
         /// 视频宽度（单位：像素）  - H264：范围[32,4096]，必须为2的倍数 - H265：范围[320,4096]，必须是4的倍数 
         /// </summary>
         [JsonProperty("width", NullValueHandling = NullValueHandling.Ignore)]
@@ -253,6 +259,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             sb.Append("  maxIframesInterval: ").Append(MaxIframesInterval).Append("\n");
             sb.Append("  bframesCount: ").Append(BframesCount).Append("\n");
             sb.Append("  frameRate: ").Append(FrameRate).Append("\n");
+            sb.Append("  frameRateFloat: ").Append(FrameRateFloat).Append("\n");
             sb.Append("  width: ").Append(Width).Append("\n");
             sb.Append("  height: ").Append(Height).Append("\n");
             sb.Append("  blackCut: ").Append(BlackCut).Append("\n");
@@ -287,6 +294,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
             if (this.MaxIframesInterval != input.MaxIframesInterval || (this.MaxIframesInterval != null && !this.MaxIframesInterval.Equals(input.MaxIframesInterval))) return false;
             if (this.BframesCount != input.BframesCount || (this.BframesCount != null && !this.BframesCount.Equals(input.BframesCount))) return false;
             if (this.FrameRate != input.FrameRate || (this.FrameRate != null && !this.FrameRate.Equals(input.FrameRate))) return false;
+            if (this.FrameRateFloat != input.FrameRateFloat || (this.FrameRateFloat != null && !this.FrameRateFloat.Equals(input.FrameRateFloat))) return false;
             if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
             if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
             if (this.BlackCut != input.BlackCut || (this.BlackCut != null && !this.BlackCut.Equals(input.BlackCut))) return false;
@@ -315,6 +323,7 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
                 if (this.MaxIframesInterval != null) hashCode = hashCode * 59 + this.MaxIframesInterval.GetHashCode();
                 if (this.BframesCount != null) hashCode = hashCode * 59 + this.BframesCount.GetHashCode();
                 if (this.FrameRate != null) hashCode = hashCode * 59 + this.FrameRate.GetHashCode();
+                if (this.FrameRateFloat != null) hashCode = hashCode * 59 + this.FrameRateFloat.GetHashCode();
                 if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
                 if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
                 if (this.BlackCut != null) hashCode = hashCode * 59 + this.BlackCut.GetHashCode();

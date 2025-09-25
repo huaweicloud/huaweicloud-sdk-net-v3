@@ -19,14 +19,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// **参数解释**: 需要修改的hba配置信息。 **约束限制**: 不涉及。
         /// </summary>
-        [JsonProperty("before_confs", NullValueHandling = NullValueHandling.Ignore)]
-        public Object BeforeConfs { get; set; }
+        [JsonProperty("before_conf", NullValueHandling = NullValueHandling.Ignore)]
+        public Object BeforeConf { get; set; }
 
         /// <summary>
         /// **参数解释**: 修改后的hba配置信息。 **约束限制**: 不涉及。
         /// </summary>
-        [JsonProperty("after_confs", NullValueHandling = NullValueHandling.Ignore)]
-        public Object AfterConfs { get; set; }
+        [JsonProperty("after_conf", NullValueHandling = NullValueHandling.Ignore)]
+        public Object AfterConf { get; set; }
 
 
 
@@ -37,8 +37,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ModifyHbaConfRequestBody {\n");
-            sb.Append("  beforeConfs: ").Append(BeforeConfs).Append("\n");
-            sb.Append("  afterConfs: ").Append(AfterConfs).Append("\n");
+            sb.Append("  beforeConf: ").Append(BeforeConf).Append("\n");
+            sb.Append("  afterConf: ").Append(AfterConf).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,8 +57,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool Equals(ModifyHbaConfRequestBody input)
         {
             if (input == null) return false;
-            if (this.BeforeConfs != input.BeforeConfs || (this.BeforeConfs != null && !this.BeforeConfs.Equals(input.BeforeConfs))) return false;
-            if (this.AfterConfs != input.AfterConfs || (this.AfterConfs != null && !this.AfterConfs.Equals(input.AfterConfs))) return false;
+            if (this.BeforeConf != input.BeforeConf || (this.BeforeConf != null && !this.BeforeConf.Equals(input.BeforeConf))) return false;
+            if (this.AfterConf != input.AfterConf || (this.AfterConf != null && !this.AfterConf.Equals(input.AfterConf))) return false;
 
             return true;
         }
@@ -71,8 +71,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.BeforeConfs != null) hashCode = hashCode * 59 + this.BeforeConfs.GetHashCode();
-                if (this.AfterConfs != null) hashCode = hashCode * 59 + this.AfterConfs.GetHashCode();
+                if (this.BeforeConf != null) hashCode = hashCode * 59 + this.BeforeConf.GetHashCode();
+                if (this.AfterConf != null) hashCode = hashCode * 59 + this.AfterConf.GetHashCode();
                 return hashCode;
             }
         }

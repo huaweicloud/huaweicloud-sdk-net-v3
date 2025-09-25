@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("allow_ip_ranges", NullValueHandling = NullValueHandling.Ignore)]
         public List<AllowIpRangesResult> AllowIpRanges { get; set; }
 
+        /// <summary>
+        /// 允许访问的VPC端点。
+        /// </summary>
+        [JsonProperty("allow_vpc_endpoints", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AllowVpcEndpointsResult> AllowVpcEndpoints { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("class AclPolicyResult {\n");
             sb.Append("  allowAddressNetmasks: ").Append(AllowAddressNetmasks).Append("\n");
             sb.Append("  allowIpRanges: ").Append(AllowIpRanges).Append("\n");
+            sb.Append("  allowVpcEndpoints: ").Append(AllowVpcEndpoints).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (input == null) return false;
             if (this.AllowAddressNetmasks != input.AllowAddressNetmasks || (this.AllowAddressNetmasks != null && input.AllowAddressNetmasks != null && !this.AllowAddressNetmasks.SequenceEqual(input.AllowAddressNetmasks))) return false;
             if (this.AllowIpRanges != input.AllowIpRanges || (this.AllowIpRanges != null && input.AllowIpRanges != null && !this.AllowIpRanges.SequenceEqual(input.AllowIpRanges))) return false;
+            if (this.AllowVpcEndpoints != input.AllowVpcEndpoints || (this.AllowVpcEndpoints != null && input.AllowVpcEndpoints != null && !this.AllowVpcEndpoints.SequenceEqual(input.AllowVpcEndpoints))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 var hashCode = 41;
                 if (this.AllowAddressNetmasks != null) hashCode = hashCode * 59 + this.AllowAddressNetmasks.GetHashCode();
                 if (this.AllowIpRanges != null) hashCode = hashCode * 59 + this.AllowIpRanges.GetHashCode();
+                if (this.AllowVpcEndpoints != null) hashCode = hashCode * 59 + this.AllowVpcEndpoints.GetHashCode();
                 return hashCode;
             }
         }

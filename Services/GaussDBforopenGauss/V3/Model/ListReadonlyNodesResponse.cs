@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// **参数解释**: 只读节点列表。 **约束限制**: 不涉及。
         /// </summary>
-        [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListReadonlyNodesResult> Instances { get; set; }
+        [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ListReadonlyNodesResult> Nodes { get; set; }
 
         /// <summary>
         /// **参数解释**: 数据库名称。 **取值范围**: 不涉及。
@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListReadonlyNodesResponse {\n");
-            sb.Append("  instances: ").Append(Instances).Append("\n");
+            sb.Append("  nodes: ").Append(Nodes).Append("\n");
             sb.Append("  maxReadonlyNodeNum: ").Append(MaxReadonlyNodeNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -57,7 +57,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool Equals(ListReadonlyNodesResponse input)
         {
             if (input == null) return false;
-            if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
+            if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
             if (this.MaxReadonlyNodeNum != input.MaxReadonlyNodeNum || (this.MaxReadonlyNodeNum != null && !this.MaxReadonlyNodeNum.Equals(input.MaxReadonlyNodeNum))) return false;
 
             return true;
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
+                if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
                 if (this.MaxReadonlyNodeNum != null) hashCode = hashCode * 59 + this.MaxReadonlyNodeNum.GetHashCode();
                 return hashCode;
             }

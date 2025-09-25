@@ -1,3 +1,490 @@
+# 3.1.166 2025-09-25
+
+### HuaweiCloud SDK BSS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListCustomerOrders**
+    - 响应参数变更
+      - `+ order_infos.agent_pay_info`
+
+### HuaweiCloud SDK BSSINTL
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListCustomerOrders**
+    - 响应参数变更
+      - `+ order_infos.agent_pay_info`
+
+### HuaweiCloud SDK CBR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ListFeatures`、`ShowFeature`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListOrganizationPolicies**
+    - 响应参数变更
+      - `+ policies.effective_scope`
+  - **CreateOrganizationPolicy**
+    - 请求参数变更
+      - `+ policy.effective_scope`
+    - 响应参数变更
+      - `+ policy.effective_scope`
+  - **ShowOrganizationPolicy**
+    - 响应参数变更
+      - `+ policy.effective_scope`
+  - **UpdateOrganizationPolicy**
+    - 请求参数变更
+      - `+ policy.effective_scope`
+    - 响应参数变更
+      - `+ policy.effective_scope`
+  - **ListVault**
+    - 响应参数变更
+      - `+ vaults.availability_zone`
+  - **CreateVault**
+    - 请求参数变更
+      - `+ vault.availability_zone`
+    - 响应参数变更
+      - `+ orders`
+      - `+ error_code`
+      - `+ retCode`
+      - `+ errText`
+      - `+ vault.availability_zone`
+      - `- vault.errText`
+      - `- vault.retCode`
+      - `- vault.orders`
+  - **ShowVault**
+    - 响应参数变更
+      - `+ vault.availability_zone`
+  - **UpdateVault**
+    - 响应参数变更
+      - `+ vault.availability_zone`
+  - **ListExternalVault**
+    - 响应参数变更
+      - `+ vaults.availability_zone`
+  - **ListProtectable**
+    - 响应参数变更
+      - `+ instances.protectable.vault.availability_zone`
+  - **ShowProtectable**
+    - 响应参数变更
+      - `+ instance.protectable.vault.availability_zone`
+  - **ShowVaultResourceInstances**
+    - 响应参数变更
+      - `+ resources.resource_detail.vault.availability_zone`
+
+### HuaweiCloud SDK CC
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAreaBandwidthPackageSpecifications**
+    - 请求参数变更
+      - `+ limit`
+
+### HuaweiCloud SDK CodeArtsBuild
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `DownloadBuildRealTimeLog`
+    - `DownloadBuildFullLog`
+    - `ShowActionIInfo`
+    - `AddFavouriteOfficialTemplate`
+    - `RemoverFavouriteOfficialTemplate`
+    - `AddFavouriteTask`
+    - `RemoverFavouriteTask`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CodeArtsDeploy
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`CheckDeployStatus`、`StopDeployTask`
+  - **ListEnvironments**
+    - 响应参数变更
+      - `- result.project_id`
+  - **ShowEnvironmentDetail**
+    - 响应参数变更
+      - `- result.project_id`
+
+### HuaweiCloud SDK Config
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListRegions**
+    - 请求参数变更
+      - `+ X-Language: enum value [fr-fr,es-us,pt-br]`
+  - **ShowBuiltInConformancePackTemplate**
+    - 请求参数变更
+      - `+ X-Language: enum value [fr-fr,es-us,pt-br]`
+  - **ListProviders**
+    - 请求参数变更
+      - `+ X-Language: enum value [fr-fr,es-us,pt-br]`
+  - **ListAllProviders**
+    - 请求参数变更
+      - `+ X-Language: enum value [fr-fr,es-us,pt-br]`
+  - **ListBuiltInConformancePackTemplates**
+    - 请求参数变更
+      - `+ X-Language: enum value [fr-fr,es-us,pt-br]`
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`UpdateSerialConsoleOptions`、`ShowSerialConsoleActions`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ShowSlowLogDetail`、`ShowStarRocksSlowlogSensitiveStatus`、`UpdateSlowlogSensitiveStatus`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持以下接口：
+    - `CreateSqlLimitTask`
+    - `ShowSqlLimitTask`
+    - `UpdateSqlLimitTask`
+    - `DeleteSqlLimitTask`
+    - `ListSqlLimitTask`
+    - `DeleteSharding`
+    - `StopFullSql`
+    - `ListEnhanceFullSqls`
+    - `ListFullSqlSwitches`
+    - `StartFullSql`
+    - `ShowAlarmHistoryRecord`
+    - `ListSqlTrace`
+    - `ShowShardDiskMessages`
+    - `ListDatabaseVersions`
+    - `BatchSetBackupPolicy`
+    - `ModifyHotfixes`
+    - `ShowExpansionParameters`
+    - `UpdateInstanceVersions`
+    - `ShowSqlPatch`
+    - `StopTransaction`
+    - `ListTransaction`
+    - `ShowAutoKillTransactionConfig`
+    - `ListWaitEvent`
+    - `ListAspInfos`
+    - `CollectAsp`
+    - `ShowAspStatus`
+    - `SwitchAspStatus`
+    - `UpdateExpansionParameters`
+    - `ShowRedistributionParameters`
+    - `ShowEpsRemainingQuota`
+    - `ListEnterpriseProjects`
+    - `ModifyAutoEnlargePolicy`
+    - `ShrinkCn`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeleteInstance**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ShowBalanceStatus**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ResetPwd**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **UpdateInstanceName**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **RestartInstance**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **DeleteManualBackup**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListRestoreTimes**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListDatastores**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **CreateDbUser**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **SetDbUserPwd**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ResizeInstanceFlavor**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **UpgradeInstanceVersion**
+    - 请求参数变更
+      - `* body: object<OpenGaussUpgradeRequest> -> object<UpgradeRequestBody>`
+  - **ListSessionStatistics**
+    - 响应参数变更
+      - `+ statistics_list`
+      - `- statistics`
+  - **ListHbaInfoHistory**
+    - 响应参数变更
+      - `+ hba_histories`
+      - `- hba_confs`
+  - **ListSlowSqls**
+    - 响应参数变更
+      - `* slow_sql_infos.calls: string -> int32`
+  - **SetRecyclePolicy**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **UpdateInstanceConfiguration**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ShowInstanceConfiguration**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListConfigurations**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ShowBackupPolicy**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **SetBackupPolicy**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **SetNewBackupPolicy**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **DeleteDatabaseSchema**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **CreateDatabaseSchemas**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **AllowDbPrivileges**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **AllowDbRolePrivileges**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListDatabases**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListDbUsers**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListDatabaseSchemas**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **SwitchShard**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListCnInfosBeforeReduce**
+    - 请求参数变更
+      - `- x-auth-token`
+      - `+ X-Language: enum value [zh-cn,en-us]`
+  - **DownloadBackup**
+    - 请求参数变更
+      - `- x-auth-token`
+    - 响应参数变更
+      - `* files.size: number -> int32`
+  - **ListEnhanceFullSqlStatistics**
+    - 响应参数变更
+      - `+ statistics.total_sql_time`
+      - `+ statistics.avg_sql_time`
+      - `+ statistics.total_db_time`
+      - `+ statistics.total_cpu_time`
+      - `+ statistics.avg_parse_time`
+      - `+ statistics.avg_plan_time`
+      - `+ statistics.total_data_io_time`
+      - `+ statistics.avg_n_returned_rows`
+      - `+ statistics.avg_n_tuples_fetched`
+      - `* statistics.start_time_stamp: string -> int64`
+      - `* statistics.end_time_stamp: string -> int64`
+  - **ModifyHbaConf**
+    - 请求参数变更
+      - `+ before_conf`
+      - `+ after_conf`
+      - `- before_confs`
+      - `- after_confs`
+  - **ListReadonlyNodes**
+    - 响应参数变更
+      - `+ nodes`
+      - `- instances`
+  - **ListSlowSqlDetails**
+    - 响应参数变更
+      - `+ slow_sql_details.db_name`
+      - `+ slow_sql_details.schema_name`
+      - `+ slow_sql_details.sql`
+  - **ListDatabaseVolumeSummary**
+    - 响应参数变更
+      - `- cn_components.role`
+      - `* cn_components: list<ComponentInfoResult> -> list<CnComponentInfoResult>`
+  - **ShowAlarmStatistics**
+    - 响应参数变更
+      - `* ring_percentage: number -> double`
+  - **ShowGlobalSlowSqlDetail**
+    - 响应参数变更
+      - `+ slow_sql_details.db_name`
+      - `+ slow_sql_details.schema_name`
+      - `+ slow_sql_details.sql`
+  - **ShowJobDetail**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListInstances**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **CreateInstance**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **RunInstanceAction**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **CreateManualBackup**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListBackups**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **CreateRestoreInstance**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListFlavors**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListStorageTypes**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **CreateDbRole**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListDatabaseRoles**
+    - 请求参数变更
+      - `- x-auth-token`
+  - **ListComponentInfos**
+    - 请求参数变更
+      - `- x-auth-token`
+
+### HuaweiCloud SDK IAM
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowDomainApiAclPolicy**
+    - 响应参数变更
+      - `+ api_acl_policy.allow_vpc_endpoints`
+  - **UpdateDomainApiAclPolicy**
+    - 响应参数变更
+      - `+ api_acl_policy.allow_vpc_endpoints`
+  - **KeystoneListMappings**
+    - 响应参数变更
+      - `+ mappings.rules.remote.regex`
+  - **KeystoneShowMapping**
+    - 响应参数变更
+      - `+ mapping.rules.remote.regex`
+  - **KeystoneCreateMapping**
+    - 请求参数变更
+      - `+ mapping.rules.remote.regex`
+    - 响应参数变更
+      - `+ mapping.rules.remote.regex`
+  - **KeystoneUpdateMapping**
+    - 请求参数变更
+      - `+ mapping.rules.remote.regex`
+    - 响应参数变更
+      - `+ mapping.rules.remote.regex`
+
+### HuaweiCloud SDK IAM
+
+- _接口版本_
+  - V5
+- _新增特性_
+  - 支持接口`GetFeatureStatusV5`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK Kafka
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`EnableDns`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`EnableDns`
+
+### HuaweiCloud SDK RocketMQ
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 移除接口`EnableDns`
+  - **SendMessage**
+    - 请求参数变更
+      - `- property_list`
+      - `- broker_name`
+      - `- topic`
+      - `- body`
+      - `- msg_id`
+      - `- queue_id`
+      - `- queue_offset`
+
 # 3.1.165 2025-09-18
 
 ### HuaweiCloud SDK CBR

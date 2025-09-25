@@ -779,6 +779,38 @@ namespace HuaweiCloud.SDK.Cbr.V1
         }
         
         /// <summary>
+        /// 查询服务支持的特性列表
+        ///
+        /// 查询服务支持的特性列表
+        /// &gt; 该接口目前属于公测阶段，部分region暂时无法使用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListFeaturesResponse ListFeatures(ListFeaturesRequest listFeaturesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/cbr-features", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFeaturesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var listFeaturesResponse = JsonUtils.DeSerializeNull<ListFeaturesResponse>(response);
+            listFeaturesResponse.Body = JsonUtils.DeSerializeMap<string, Object>(response);
+            return listFeaturesResponse;
+        }
+
+        public SyncInvoker<ListFeaturesResponse> ListFeaturesInvoker(ListFeaturesRequest listFeaturesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/cbr-features", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFeaturesRequest);
+            return new SyncInvoker<ListFeaturesResponse>(this, "GET", request, response =>
+            {
+                var listFeaturesResponse = JsonUtils.DeSerializeNull<ListFeaturesResponse>(response);
+                listFeaturesResponse.Body = JsonUtils.DeSerializeMap<string, Object>(response);
+                return listFeaturesResponse;
+            });
+        }
+        
+        /// <summary>
         /// 查询任务列表
         ///
         /// 查询任务列表
@@ -1237,6 +1269,40 @@ namespace HuaweiCloud.SDK.Cbr.V1
             var urlPath = HttpUtils.AddUrlPath("/v3/domain/{source_project_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainRequest);
             return new SyncInvoker<ShowDomainResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定特性
+        ///
+        /// 查询服务指定特性
+        /// &gt; 该接口目前属于公测阶段，部分region暂时无法使用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowFeatureResponse ShowFeature(ShowFeatureRequest showFeatureRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFeatureRequest.FeatureKey, out var valueOfFeatureKey)) urlParam.Add("feature_key", valueOfFeatureKey);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/cbr-features/{feature_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFeatureRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var showFeatureResponse = JsonUtils.DeSerializeNull<ShowFeatureResponse>(response);
+            showFeatureResponse.Body = JsonUtils.DeSerializeMap<string, Object>(response);
+            return showFeatureResponse;
+        }
+
+        public SyncInvoker<ShowFeatureResponse> ShowFeatureInvoker(ShowFeatureRequest showFeatureRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFeatureRequest.FeatureKey, out var valueOfFeatureKey)) urlParam.Add("feature_key", valueOfFeatureKey);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/cbr-features/{feature_key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFeatureRequest);
+            return new SyncInvoker<ShowFeatureResponse>(this, "GET", request, response =>
+            {
+                var showFeatureResponse = JsonUtils.DeSerializeNull<ShowFeatureResponse>(response);
+                showFeatureResponse.Body = JsonUtils.DeSerializeMap<string, Object>(response);
+                return showFeatureResponse;
+            });
         }
         
         /// <summary>

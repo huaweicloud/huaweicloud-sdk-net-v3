@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// 文件大小。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Size { get; set; }
+        public int? Size { get; set; }
 
         /// <summary>
         /// 下载链接。

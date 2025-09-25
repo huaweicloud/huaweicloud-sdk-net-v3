@@ -113,24 +113,6 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public int? Threshold { get; set; }
 
         /// <summary>
-        /// 包周期创建错误信息
-        /// </summary>
-        [JsonProperty("errText", NullValueHandling = NullValueHandling.Ignore)]
-        public string ErrText { get; set; }
-
-        /// <summary>
-        /// 包周期订购结果
-        /// </summary>
-        [JsonProperty("retCode", NullValueHandling = NullValueHandling.Ignore)]
-        public string RetCode { get; set; }
-
-        /// <summary>
-        /// 包周期创建订单信息
-        /// </summary>
-        [JsonProperty("orders", NullValueHandling = NullValueHandling.Ignore)]
-        public List<CbcOrderResult> Orders { get; set; }
-
-        /// <summary>
         /// 备份名称前缀
         /// </summary>
         [JsonProperty("backup_name_prefix", NullValueHandling = NullValueHandling.Ignore)]
@@ -166,6 +148,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("locked", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Locked { get; set; }
 
+        /// <summary>
+        /// 存储库可用区信息，最大支持32字符。
+        /// </summary>
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public string AvailabilityZone { get; set; }
+
 
 
         /// <summary>
@@ -191,15 +179,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  autoExpand: ").Append(AutoExpand).Append("\n");
             sb.Append("  smnNotify: ").Append(SmnNotify).Append("\n");
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
-            sb.Append("  errText: ").Append(ErrText).Append("\n");
-            sb.Append("  retCode: ").Append(RetCode).Append("\n");
-            sb.Append("  orders: ").Append(Orders).Append("\n");
             sb.Append("  backupNamePrefix: ").Append(BackupNamePrefix).Append("\n");
             sb.Append("  demandBilling: ").Append(DemandBilling).Append("\n");
             sb.Append("  cbcDeleteCount: ").Append(CbcDeleteCount).Append("\n");
             sb.Append("  frozen: ").Append(Frozen).Append("\n");
             sb.Append("  sysLockSourceService: ").Append(SysLockSourceService).Append("\n");
             sb.Append("  locked: ").Append(Locked).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -234,15 +220,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.AutoExpand != input.AutoExpand || (this.AutoExpand != null && !this.AutoExpand.Equals(input.AutoExpand))) return false;
             if (this.SmnNotify != input.SmnNotify || (this.SmnNotify != null && !this.SmnNotify.Equals(input.SmnNotify))) return false;
             if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
-            if (this.ErrText != input.ErrText || (this.ErrText != null && !this.ErrText.Equals(input.ErrText))) return false;
-            if (this.RetCode != input.RetCode || (this.RetCode != null && !this.RetCode.Equals(input.RetCode))) return false;
-            if (this.Orders != input.Orders || (this.Orders != null && input.Orders != null && !this.Orders.SequenceEqual(input.Orders))) return false;
             if (this.BackupNamePrefix != input.BackupNamePrefix || (this.BackupNamePrefix != null && !this.BackupNamePrefix.Equals(input.BackupNamePrefix))) return false;
             if (this.DemandBilling != input.DemandBilling || (this.DemandBilling != null && !this.DemandBilling.Equals(input.DemandBilling))) return false;
             if (this.CbcDeleteCount != input.CbcDeleteCount || (this.CbcDeleteCount != null && !this.CbcDeleteCount.Equals(input.CbcDeleteCount))) return false;
             if (this.Frozen != input.Frozen || (this.Frozen != null && !this.Frozen.Equals(input.Frozen))) return false;
             if (this.SysLockSourceService != input.SysLockSourceService || (this.SysLockSourceService != null && !this.SysLockSourceService.Equals(input.SysLockSourceService))) return false;
             if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
 
             return true;
         }
@@ -271,15 +255,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.AutoExpand != null) hashCode = hashCode * 59 + this.AutoExpand.GetHashCode();
                 if (this.SmnNotify != null) hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
                 if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
-                if (this.ErrText != null) hashCode = hashCode * 59 + this.ErrText.GetHashCode();
-                if (this.RetCode != null) hashCode = hashCode * 59 + this.RetCode.GetHashCode();
-                if (this.Orders != null) hashCode = hashCode * 59 + this.Orders.GetHashCode();
                 if (this.BackupNamePrefix != null) hashCode = hashCode * 59 + this.BackupNamePrefix.GetHashCode();
                 if (this.DemandBilling != null) hashCode = hashCode * 59 + this.DemandBilling.GetHashCode();
                 if (this.CbcDeleteCount != null) hashCode = hashCode * 59 + this.CbcDeleteCount.GetHashCode();
                 if (this.Frozen != null) hashCode = hashCode * 59 + this.Frozen.GetHashCode();
                 if (this.SysLockSourceService != null) hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
                 if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 return hashCode;
             }
         }

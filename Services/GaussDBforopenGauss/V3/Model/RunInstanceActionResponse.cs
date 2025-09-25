@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// 任务id。按需实例时仅返回任务id。
+        /// **参数解释**: 任务ID。按需实例时仅返回任务ID。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// 订单id。包周期实例时仅返回订单id。
+        /// **参数解释**: 订单ID。包周期实例时仅返回订单ID。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string OrderId { get; set; }

@@ -17,49 +17,49 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// 磁盘自动扩容开关。
+        /// **参数解释**: 磁盘自动扩容开关。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("switch_option", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SwitchOption { get; set; }
 
         /// <summary>
-        /// 存储自动扩容上限。
+        /// **参数解释**: 存储自动扩容上限。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("limit_volume_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? LimitVolumeSize { get; set; }
 
         /// <summary>
-        /// 最小扩容磁盘容量。
+        /// **参数解释**: 最小扩容磁盘容量。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("min_volume_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? MinVolumeSize { get; set; }
 
         /// <summary>
-        /// 最大扩容磁盘容量。
+        /// **参数解释**: 最大扩容磁盘容量。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("max_volume_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxVolumeSize { get; set; }
 
         /// <summary>
-        /// 可用存储空间率。
+        /// **参数解释**: 可用存储空间率。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("trigger_available_percent", NullValueHandling = NullValueHandling.Ignore)]
         public int? TriggerAvailablePercent { get; set; }
 
         /// <summary>
-        /// 空间率集合。
+        /// **参数解释**: 空间率集合。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("percents", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> Percents { get; set; }
 
         /// <summary>
-        /// 扩容步长，固定大小扩容方式。
+        /// **参数解释**: 扩容步长，固定大小扩容方式。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("step_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? StepSize { get; set; }
 
         /// <summary>
-        /// 扩容步长，百分比扩容方式。
+        /// **参数解释**: 扩容步长，百分比扩容方式。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("step_percent", NullValueHandling = NullValueHandling.Ignore)]
         public int? StepPercent { get; set; }

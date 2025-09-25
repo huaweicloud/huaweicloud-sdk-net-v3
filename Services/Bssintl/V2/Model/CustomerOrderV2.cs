@@ -118,6 +118,12 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         [JsonProperty("sub_order_infos", NullValueHandling = NullValueHandling.Ignore)]
         public List<SubCustomerOrderV2> SubOrderInfos { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("agent_pay_info", NullValueHandling = NullValueHandling.Ignore)]
+        public AgentPayInfoV2 AgentPayInfo { get; set; }
+
 
 
         /// <summary>
@@ -144,6 +150,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             sb.Append("  amountInfo: ").Append(AmountInfo).Append("\n");
             sb.Append("  enterpriseProjects: ").Append(EnterpriseProjects).Append("\n");
             sb.Append("  subOrderInfos: ").Append(SubOrderInfos).Append("\n");
+            sb.Append("  agentPayInfo: ").Append(AgentPayInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -179,6 +186,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             if (this.AmountInfo != input.AmountInfo || (this.AmountInfo != null && !this.AmountInfo.Equals(input.AmountInfo))) return false;
             if (this.EnterpriseProjects != input.EnterpriseProjects || (this.EnterpriseProjects != null && input.EnterpriseProjects != null && !this.EnterpriseProjects.SequenceEqual(input.EnterpriseProjects))) return false;
             if (this.SubOrderInfos != input.SubOrderInfos || (this.SubOrderInfos != null && input.SubOrderInfos != null && !this.SubOrderInfos.SequenceEqual(input.SubOrderInfos))) return false;
+            if (this.AgentPayInfo != input.AgentPayInfo || (this.AgentPayInfo != null && !this.AgentPayInfo.Equals(input.AgentPayInfo))) return false;
 
             return true;
         }
@@ -208,6 +216,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
                 if (this.AmountInfo != null) hashCode = hashCode * 59 + this.AmountInfo.GetHashCode();
                 if (this.EnterpriseProjects != null) hashCode = hashCode * 59 + this.EnterpriseProjects.GetHashCode();
                 if (this.SubOrderInfos != null) hashCode = hashCode * 59 + this.SubOrderInfos.GetHashCode();
+                if (this.AgentPayInfo != null) hashCode = hashCode * 59 + this.AgentPayInfo.GetHashCode();
                 return hashCode;
             }
         }

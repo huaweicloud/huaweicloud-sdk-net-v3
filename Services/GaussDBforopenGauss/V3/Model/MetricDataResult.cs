@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     public class MetricDataResult 
     {
         /// <summary>
-        /// **参数解释** 指标类型 *取值范围* - INSTANCE：实例类型。 - NODE：节点类型。 - COMPONENT：组件类型。 
+        /// **参数解释** 指标类型 **取值范围** - INSTANCE：实例类型。 - NODE：节点类型。 - COMPONENT：组件类型。 
         /// </summary>
-        /// <value>**参数解释** 指标类型 *取值范围* - INSTANCE：实例类型。 - NODE：节点类型。 - COMPONENT：组件类型。 </value>
+        /// <value>**参数解释** 指标类型 **取值范围** - INSTANCE：实例类型。 - NODE：节点类型。 - COMPONENT：组件类型。 </value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -144,7 +144,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string Metric { get; set; }
 
         /// <summary>
-        /// **参数解释** 指标类型 *取值范围* - INSTANCE：实例类型。 - NODE：节点类型。 - COMPONENT：组件类型。 
+        /// **参数解释** 指标类型 **取值范围** - INSTANCE：实例类型。 - NODE：节点类型。 - COMPONENT：组件类型。 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }
@@ -155,13 +155,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string Unit { get; set; }
 
         /// <summary>
-        /// **参数解释**: 指标维度及指标值。 **取值范围**: 不涉及。
+        /// **参数解释**: 指标维度及指标值。
         /// </summary>
         [JsonProperty("datapoints", NullValueHandling = NullValueHandling.Ignore)]
         public List<DatapointResult> Datapoints { get; set; }
 
         /// <summary>
-        /// **参数解释**: 时间戳，例如1699495140000。 **取值范围**: 不涉及。
+        /// **参数解释**: 时间戳，例如1699495140000。
         /// </summary>
         [JsonProperty("timestamps", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Timestamps { get; set; }

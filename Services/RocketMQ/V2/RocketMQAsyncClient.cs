@@ -412,32 +412,6 @@ namespace HuaweiCloud.SDK.RocketMQ.V2
         }
         
         /// <summary>
-        /// 开启RocketMQ实例域名访问能力
-        ///
-        /// 开启RocketMQ实例域名访问能力。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<EnableDnsResponse> EnableDnsAsync(EnableDnsRequest enableDnsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/instances/{instance_id}/dns", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
-            var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerializeNull<EnableDnsResponse>(response);
-        }
-
-        public AsyncInvoker<EnableDnsResponse> EnableDnsAsyncInvoker(EnableDnsRequest enableDnsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rocketmq/instances/{instance_id}/dns", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
-            return new AsyncInvoker<EnableDnsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableDnsResponse>);
-        }
-        
-        /// <summary>
         /// 导出死信消息
         ///
         /// 导出死信消息。

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
     {
 
         /// <summary>
-        /// 资源聚合器名称。
+        /// 资源聚合器名称
         /// </summary>
         [JsonProperty("aggregator_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AggregatorName { get; set; }

@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// **参数解释**: 执行次数（次）。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("calls", NullValueHandling = NullValueHandling.Ignore)]
-        public string Calls { get; set; }
+        public int? Calls { get; set; }
 
         /// <summary>
         /// **参数解释**: 平均执行时间（us）。 **取值范围**: 不涉及。

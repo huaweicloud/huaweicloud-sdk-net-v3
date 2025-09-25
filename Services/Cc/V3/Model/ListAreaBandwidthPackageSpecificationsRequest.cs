@@ -17,6 +17,13 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
     {
 
         /// <summary>
+        /// 每页返回的个数。 取值范围：1~2000。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
         /// （索引位置，偏移量）， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数（action为count时无此参数） 从第一条数据偏移offset条数据后开始查询，如果action为filter默认为0（偏移0条数据，表示从第一条数据开始查询）,必须为数字，不能为负数。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
@@ -46,6 +53,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListAreaBandwidthPackageSpecificationsRequest {\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  localAreaId: ").Append(LocalAreaId).Append("\n");
             sb.Append("  remoteAreaId: ").Append(RemoteAreaId).Append("\n");
@@ -67,6 +75,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
         public bool Equals(ListAreaBandwidthPackageSpecificationsRequest input)
         {
             if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.LocalAreaId != input.LocalAreaId || (this.LocalAreaId != null && input.LocalAreaId != null && !this.LocalAreaId.SequenceEqual(input.LocalAreaId))) return false;
             if (this.RemoteAreaId != input.RemoteAreaId || (this.RemoteAreaId != null && input.RemoteAreaId != null && !this.RemoteAreaId.SequenceEqual(input.RemoteAreaId))) return false;
@@ -82,6 +91,7 @@ namespace HuaweiCloud.SDK.Cc.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.LocalAreaId != null) hashCode = hashCode * 59 + this.LocalAreaId.GetHashCode();
                 if (this.RemoteAreaId != null) hashCode = hashCode * 59 + this.RemoteAreaId.GetHashCode();

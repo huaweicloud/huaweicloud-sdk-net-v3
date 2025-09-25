@@ -17,49 +17,49 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 任务ID。
+        /// **参数解释**： 任务ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 任务名称。
+        /// **参数解释**： 任务名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 用户名。
+        /// **参数解释**： 用户名。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string UserName { get; set; }
 
         /// <summary>
-        /// 用户ID。
+        /// **参数解释**： 用户ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
         public string UserId { get; set; }
 
         /// <summary>
-        /// 任务参数。
+        /// **参数解释**： 任务参数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("params", NullValueHandling = NullValueHandling.Ignore)]
         public string Params { get; set; }
 
         /// <summary>
-        /// 任务状态。
+        /// **参数解释**： 任务状态。 **取值范围**： - CREATED：后台任务状态为创建成功。 - SUCCESS：后台任务状态为成功。 - FAILED：后台任务状态为失败。 - DELETED：后台任务状态为已删除。 - EXECUTING：后台任务状态为执行中。 - CANCELLED：定时任务状态为取消。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 启动时间。
+        /// **参数解释**： 启动时间。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// 结束时间。
+        /// **参数解释**： 结束时间。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }

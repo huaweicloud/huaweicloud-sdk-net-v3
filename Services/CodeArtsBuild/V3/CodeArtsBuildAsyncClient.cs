@@ -1193,6 +1193,32 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         }
         
         /// <summary>
+        /// 收藏任务
+        ///
+        /// 收藏任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddFavouriteTaskResponse> AddFavouriteTaskAsync(AddFavouriteTaskRequest addFavouriteTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addFavouriteTaskRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/job/{job_id}/follow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFavouriteTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AddFavouriteTaskResponse>(response);
+        }
+
+        public AsyncInvoker<AddFavouriteTaskResponse> AddFavouriteTaskAsyncInvoker(AddFavouriteTaskRequest addFavouriteTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addFavouriteTaskRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/job/{job_id}/follow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFavouriteTaskRequest);
+            return new AsyncInvoker<AddFavouriteTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<AddFavouriteTaskResponse>);
+        }
+        
+        /// <summary>
         /// 任务是否使用项目级权限
         ///
         /// 任务是否使用项目级权限
@@ -1660,6 +1686,32 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
             var urlPath = HttpUtils.AddUrlPath("/v1/job/{job_id}/history", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUpdateJobHistoryRequest);
             return new AsyncInvoker<ListUpdateJobHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUpdateJobHistoryResponse>);
+        }
+        
+        /// <summary>
+        /// 取消收藏任务
+        ///
+        /// 取消收藏任务
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RemoverFavouriteTaskResponse> RemoverFavouriteTaskAsync(RemoverFavouriteTaskRequest removerFavouriteTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(removerFavouriteTaskRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/job/{job_id}/unfollow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removerFavouriteTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<RemoverFavouriteTaskResponse>(response);
+        }
+
+        public AsyncInvoker<RemoverFavouriteTaskResponse> RemoverFavouriteTaskAsyncInvoker(RemoverFavouriteTaskRequest removerFavouriteTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(removerFavouriteTaskRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/job/{job_id}/unfollow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removerFavouriteTaskRequest);
+            return new AsyncInvoker<RemoverFavouriteTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<RemoverFavouriteTaskResponse>);
         }
         
         /// <summary>
@@ -2465,6 +2517,84 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         }
         
         /// <summary>
+        /// 下载全量构建日志
+        ///
+        /// 下载全量构建日志
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadBuildFullLogResponse> DownloadBuildFullLogAsync(DownloadBuildFullLogRequest downloadBuildFullLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadBuildFullLogRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/log/{record_id}/download-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadBuildFullLogRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<DownloadBuildFullLogResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadBuildFullLogResponse> DownloadBuildFullLogAsyncInvoker(DownloadBuildFullLogRequest downloadBuildFullLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadBuildFullLogRequest.RecordId, out var valueOfRecordId)) urlParam.Add("record_id", valueOfRecordId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/log/{record_id}/download-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadBuildFullLogRequest);
+            return new AsyncInvoker<DownloadBuildFullLogResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadBuildFullLogResponse>);
+        }
+        
+        /// <summary>
+        /// 获取运行全量日志
+        ///
+        /// 获取运行全量日志
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadBuildRealTimeLogResponse> DownloadBuildRealTimeLogAsync(DownloadBuildRealTimeLogRequest downloadBuildRealTimeLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadBuildRealTimeLogRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(downloadBuildRealTimeLogRequest.BuildNo, out var valueOfBuildNo)) urlParam.Add("build_no", valueOfBuildNo);
+            var urlPath = HttpUtils.AddUrlPath("/v1/log/{job_id}/{build_no}/real-time-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadBuildRealTimeLogRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<DownloadBuildRealTimeLogResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadBuildRealTimeLogResponse> DownloadBuildRealTimeLogAsyncInvoker(DownloadBuildRealTimeLogRequest downloadBuildRealTimeLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadBuildRealTimeLogRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(downloadBuildRealTimeLogRequest.BuildNo, out var valueOfBuildNo)) urlParam.Add("build_no", valueOfBuildNo);
+            var urlPath = HttpUtils.AddUrlPath("/v1/log/{job_id}/{build_no}/real-time-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadBuildRealTimeLogRequest);
+            return new AsyncInvoker<DownloadBuildRealTimeLogResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadBuildRealTimeLogResponse>);
+        }
+        
+        /// <summary>
+        /// 任务执行后获取构建日志
+        ///
+        /// 任务执行后获取构建日志
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowActionIInfoResponse> ShowActionIInfoAsync(ShowActionIInfoRequest showActionIInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/log/stage/page", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showActionIInfoRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowActionIInfoResponse>(response);
+        }
+
+        public AsyncInvoker<ShowActionIInfoResponse> ShowActionIInfoAsyncInvoker(ShowActionIInfoRequest showActionIInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/log/stage/page", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showActionIInfoRequest);
+            return new AsyncInvoker<ShowActionIInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowActionIInfoResponse>);
+        }
+        
+        /// <summary>
         /// 下载构建日志(待下线)
         ///
         /// 下载构建日志(待下线)
@@ -3029,6 +3159,32 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
         }
         
         /// <summary>
+        /// 收藏官方模板
+        ///
+        /// 收藏官方模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddFavouriteOfficialTemplateResponse> AddFavouriteOfficialTemplateAsync(AddFavouriteOfficialTemplateRequest addFavouriteOfficialTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addFavouriteOfficialTemplateRequest.Uuid, out var valueOfUuid)) urlParam.Add("uuid", valueOfUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v1/template/official/{uuid}/follow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFavouriteOfficialTemplateRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AddFavouriteOfficialTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<AddFavouriteOfficialTemplateResponse> AddFavouriteOfficialTemplateAsyncInvoker(AddFavouriteOfficialTemplateRequest addFavouriteOfficialTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addFavouriteOfficialTemplateRequest.Uuid, out var valueOfUuid)) urlParam.Add("uuid", valueOfUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v1/template/official/{uuid}/follow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addFavouriteOfficialTemplateRequest);
+            return new AsyncInvoker<AddFavouriteOfficialTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<AddFavouriteOfficialTemplateResponse>);
+        }
+        
+        /// <summary>
         /// 创建构建模板
         ///
         /// 创建构建模板
@@ -3174,6 +3330,32 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3
             var urlPath = HttpUtils.AddUrlPath("/v1/template/custom/{uuid}/unfollow", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removerFavouriteCustomTemplateRequest);
             return new AsyncInvoker<RemoverFavouriteCustomTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<RemoverFavouriteCustomTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 取消收藏官方模板
+        ///
+        /// 取消收藏官方模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RemoverFavouriteOfficialTemplateResponse> RemoverFavouriteOfficialTemplateAsync(RemoverFavouriteOfficialTemplateRequest removerFavouriteOfficialTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(removerFavouriteOfficialTemplateRequest.Uuid, out var valueOfUuid)) urlParam.Add("uuid", valueOfUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v1/template/official/{uuid}/unfollow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removerFavouriteOfficialTemplateRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<RemoverFavouriteOfficialTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<RemoverFavouriteOfficialTemplateResponse> RemoverFavouriteOfficialTemplateAsyncInvoker(RemoverFavouriteOfficialTemplateRequest removerFavouriteOfficialTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(removerFavouriteOfficialTemplateRequest.Uuid, out var valueOfUuid)) urlParam.Add("uuid", valueOfUuid);
+            var urlPath = HttpUtils.AddUrlPath("/v1/template/official/{uuid}/unfollow", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", removerFavouriteOfficialTemplateRequest);
+            return new AsyncInvoker<RemoverFavouriteOfficialTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<RemoverFavouriteOfficialTemplateResponse>);
         }
         
         /// <summary>

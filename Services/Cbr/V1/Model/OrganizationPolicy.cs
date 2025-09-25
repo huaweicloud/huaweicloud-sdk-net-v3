@@ -196,6 +196,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainName { get; set; }
 
+        /// <summary>
+        /// 组织策略生效范围
+        /// </summary>
+        [JsonProperty("effective_scope", NullValueHandling = NullValueHandling.Ignore)]
+        public string EffectiveScope { get; set; }
+
 
 
         /// <summary>
@@ -216,6 +222,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  policyTrigger: ").Append(PolicyTrigger).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  domainName: ").Append(DomainName).Append("\n");
+            sb.Append("  effectiveScope: ").Append(EffectiveScope).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -245,6 +252,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.PolicyTrigger != input.PolicyTrigger || (this.PolicyTrigger != null && !this.PolicyTrigger.Equals(input.PolicyTrigger))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.EffectiveScope != input.EffectiveScope || (this.EffectiveScope != null && !this.EffectiveScope.Equals(input.EffectiveScope))) return false;
 
             return true;
         }
@@ -268,6 +276,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.PolicyTrigger != null) hashCode = hashCode * 59 + this.PolicyTrigger.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.EffectiveScope != null) hashCode = hashCode * 59 + this.EffectiveScope.GetHashCode();
                 return hashCode;
             }
         }

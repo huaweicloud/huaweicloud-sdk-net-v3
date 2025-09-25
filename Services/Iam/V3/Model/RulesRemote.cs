@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         [JsonProperty("not_any_of", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> NotAnyOf { get; set; }
 
+        /// <summary>
+        /// 同级的any_one_of或not_any_of的值是否支持正则表达式，true：支持正则表达式，false：不支持正则表达式，默认为false。
+        /// </summary>
+        [JsonProperty("regex", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Regex { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  anyOneOf: ").Append(AnyOneOf).Append("\n");
             sb.Append("  notAnyOf: ").Append(NotAnyOf).Append("\n");
+            sb.Append("  regex: ").Append(Regex).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.AnyOneOf != input.AnyOneOf || (this.AnyOneOf != null && input.AnyOneOf != null && !this.AnyOneOf.SequenceEqual(input.AnyOneOf))) return false;
             if (this.NotAnyOf != input.NotAnyOf || (this.NotAnyOf != null && input.NotAnyOf != null && !this.NotAnyOf.SequenceEqual(input.NotAnyOf))) return false;
+            if (this.Regex != input.Regex || (this.Regex != null && !this.Regex.Equals(input.Regex))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.AnyOneOf != null) hashCode = hashCode * 59 + this.AnyOneOf.GetHashCode();
                 if (this.NotAnyOf != null) hashCode = hashCode * 59 + this.NotAnyOf.GetHashCode();
+                if (this.Regex != null) hashCode = hashCode * 59 + this.Regex.GetHashCode();
                 return hashCode;
             }
         }

@@ -1,0 +1,89 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class EventTimeInfo 
+    {
+
+        /// <summary>
+        /// **参数解释**: TOP5事件耗时信息列表。
+        /// </summary>
+        [JsonProperty("events", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TopEventInfoResult> Events { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 其余事件耗时（单位：微秒）。 **取值范围**: 不涉及。
+        /// </summary>
+        [JsonProperty("left_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? LeftTime { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 事件外耗时（单位：微秒）。 **取值范围**: 不涉及。
+        /// </summary>
+        [JsonProperty("other_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? OtherTime { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class EventTimeInfo {\n");
+            sb.Append("  events: ").Append(Events).Append("\n");
+            sb.Append("  leftTime: ").Append(LeftTime).Append("\n");
+            sb.Append("  otherTime: ").Append(OtherTime).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as EventTimeInfo);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(EventTimeInfo input)
+        {
+            if (input == null) return false;
+            if (this.Events != input.Events || (this.Events != null && input.Events != null && !this.Events.SequenceEqual(input.Events))) return false;
+            if (this.LeftTime != input.LeftTime || (this.LeftTime != null && !this.LeftTime.Equals(input.LeftTime))) return false;
+            if (this.OtherTime != input.OtherTime || (this.OtherTime != null && !this.OtherTime.Equals(input.OtherTime))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.Events != null) hashCode = hashCode * 59 + this.Events.GetHashCode();
+                if (this.LeftTime != null) hashCode = hashCode * 59 + this.LeftTime.GetHashCode();
+                if (this.OtherTime != null) hashCode = hashCode * 59 + this.OtherTime.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

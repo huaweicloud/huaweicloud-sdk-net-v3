@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public Object AzStatus { get; set; }
 
         /// <summary>
-        /// **参数解释**：  是否支持ipv6。  **取值范围**： - true: 支持ipv6。 - false: 不支持ipv6。
+        /// **参数解释**：  是否支持ipv6。  **取值范围**：  - true: 支持ipv6。 - false: 不支持ipv6。
         /// </summary>
         [JsonProperty("supported_ipv6", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SupportedIpv6 { get; set; }

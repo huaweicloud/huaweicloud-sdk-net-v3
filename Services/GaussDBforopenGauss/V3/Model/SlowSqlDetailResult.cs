@@ -17,6 +17,24 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
+        /// **参数解释**: 数据库名称。 **取值范围**: 不涉及。
+        /// </summary>
+        [JsonProperty("db_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string DbName { get; set; }
+
+        /// <summary>
+        /// **参数解释**: SCHEMA名称。 **取值范围**: 不涉及。
+        /// </summary>
+        [JsonProperty("schema_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string SchemaName { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 变量替换后的完整SQL。当sql_text不返回变量值时，sql返回空字符串。 **取值范围**: 不涉及。
+        /// </summary>
+        [JsonProperty("sql", NullValueHandling = NullValueHandling.Ignore)]
+        public string Sql { get; set; }
+
+        /// <summary>
         /// **参数解释**: SQL ID。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("sql_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -145,6 +163,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SlowSqlDetailResult {\n");
+            sb.Append("  dbName: ").Append(DbName).Append("\n");
+            sb.Append("  schemaName: ").Append(SchemaName).Append("\n");
+            sb.Append("  sql: ").Append(Sql).Append("\n");
             sb.Append("  sqlId: ").Append(SqlId).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
             sb.Append("  clientIp: ").Append(ClientIp).Append("\n");
@@ -183,6 +204,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool Equals(SlowSqlDetailResult input)
         {
             if (input == null) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
+            if (this.SchemaName != input.SchemaName || (this.SchemaName != null && !this.SchemaName.Equals(input.SchemaName))) return false;
+            if (this.Sql != input.Sql || (this.Sql != null && !this.Sql.Equals(input.Sql))) return false;
             if (this.SqlId != input.SqlId || (this.SqlId != null && !this.SqlId.Equals(input.SqlId))) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
             if (this.ClientIp != input.ClientIp || (this.ClientIp != null && !this.ClientIp.Equals(input.ClientIp))) return false;
@@ -215,6 +239,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                if (this.SchemaName != null) hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
+                if (this.Sql != null) hashCode = hashCode * 59 + this.Sql.GetHashCode();
                 if (this.SqlId != null) hashCode = hashCode * 59 + this.SqlId.GetHashCode();
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.ClientIp != null) hashCode = hashCode * 59 + this.ClientIp.GetHashCode();

@@ -25,8 +25,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// **参数解释**: 会话统计列表。
         /// </summary>
-        [JsonProperty("statistics", NullValueHandling = NullValueHandling.Ignore)]
-        public List<DimensionListResult> Statistics { get; set; }
+        [JsonProperty("statistics_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<DimensionListResult> StatisticsList { get; set; }
 
 
 
@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListSessionStatisticsResponse {\n");
             sb.Append("  total: ").Append(Total).Append("\n");
-            sb.Append("  statistics: ").Append(Statistics).Append("\n");
+            sb.Append("  statisticsList: ").Append(StatisticsList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             if (input == null) return false;
             if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
-            if (this.Statistics != input.Statistics || (this.Statistics != null && input.Statistics != null && !this.Statistics.SequenceEqual(input.Statistics))) return false;
+            if (this.StatisticsList != input.StatisticsList || (this.StatisticsList != null && input.StatisticsList != null && !this.StatisticsList.SequenceEqual(input.StatisticsList))) return false;
 
             return true;
         }
@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             {
                 var hashCode = 41;
                 if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Statistics != null) hashCode = hashCode * 59 + this.Statistics.GetHashCode();
+                if (this.StatisticsList != null) hashCode = hashCode * 59 + this.StatisticsList.GetHashCode();
                 return hashCode;
             }
         }

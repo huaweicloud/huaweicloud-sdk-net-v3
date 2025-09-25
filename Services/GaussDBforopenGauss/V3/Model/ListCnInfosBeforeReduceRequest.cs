@@ -15,14 +15,128 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     /// </summary>
     public class ListCnInfosBeforeReduceRequest 
     {
+        /// <summary>
+        /// **参数解释**: 语言。 **约束限制**: 不涉及。 **取值范围**:   - zh-cn   - en-us  **默认取值**: en-us
+        /// </summary>
+        /// <value>**参数解释**: 语言。 **约束限制**: 不涉及。 **取值范围**:   - zh-cn   - en-us  **默认取值**: en-us</value>
+        [JsonConverter(typeof(EnumClassConverter<XLanguageEnum>))]
+        public class XLanguageEnum
+        {
+            /// <summary>
+            /// Enum ZH_CN for value: zh-cn
+            /// </summary>
+            public static readonly XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
+
+            /// <summary>
+            /// Enum EN_US for value: en-us
+            /// </summary>
+            public static readonly XLanguageEnum EN_US = new XLanguageEnum("en-us");
+
+            private static readonly Dictionary<string, XLanguageEnum> StaticFields =
+            new Dictionary<string, XLanguageEnum>()
+            {
+                { "zh-cn", ZH_CN },
+                { "en-us", EN_US },
+            };
+
+            private string _value;
+
+            public XLanguageEnum()
+            {
+
+            }
+
+            public XLanguageEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static XLanguageEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as XLanguageEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(XLanguageEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(XLanguageEnum a, XLanguageEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(XLanguageEnum a, XLanguageEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 语言
+        /// **参数解释**: 语言。 **约束限制**: 不涉及。 **取值范围**:   - zh-cn   - en-us  **默认取值**: en-us
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
-        public string XLanguage { get; set; }
-
+        public XLanguageEnum XLanguage { get; set; }
         /// <summary>
         /// **参数解释**: 实例ID，此参数是用户创建实例的唯一标识。 **约束限制**: 不涉及。 **取值范围**: 只能由英文字母、数字组成，且长度为36个字符。 **默认取值**: 不涉及。
         /// </summary>
@@ -59,7 +173,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool Equals(ListCnInfosBeforeReduceRequest input)
         {
             if (input == null) return false;
-            if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
+            if (this.XLanguage != input.XLanguage) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
 
             return true;
@@ -73,7 +187,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }

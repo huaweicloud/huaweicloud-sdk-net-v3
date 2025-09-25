@@ -44,13 +44,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// **参数解释**: CN节点信息。
         /// </summary>
         [JsonProperty("cn_components", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ComponentInfoResult> CnComponents { get; set; }
+        public List<CnComponentInfoResult> CnComponents { get; set; }
 
         /// <summary>
         /// **参数解释**: DN节点信息。
         /// </summary>
         [JsonProperty("dn_components", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ComponentInfoResult> DnComponents { get; set; }
+        public List<DnComponentInfoResult> DnComponents { get; set; }
 
 
 

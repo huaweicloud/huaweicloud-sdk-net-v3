@@ -225,32 +225,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2
         }
         
         /// <summary>
-        /// 开启RabbitMQ实例域名访问能力
-        ///
-        /// 开启RabbitMQ实例域名访问功能后，客户端可以通过域名连接RabbitMQ实例。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public EnableDnsResponse EnableDns(EnableDnsRequest enableDnsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/instances/{instance_id}/dns", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<EnableDnsResponse>(response);
-        }
-
-        public SyncInvoker<EnableDnsResponse> EnableDnsInvoker(EnableDnsRequest enableDnsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(enableDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/rabbitmq/instances/{instance_id}/dns", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableDnsRequest);
-            return new SyncInvoker<EnableDnsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<EnableDnsResponse>);
-        }
-        
-        /// <summary>
         /// 查询可用区信息
         ///
         /// 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。

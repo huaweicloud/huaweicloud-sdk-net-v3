@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public SendMessageResp Body { get; set; }
+        public SendMessageRep Body { get; set; }
 
 
 

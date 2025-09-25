@@ -145,35 +145,35 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 开始时间，时间戳格式，例如：1756971683303。
+        /// **参数解释**: 开始时间，时间戳格式，例如：1756971683303。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
         /// </summary>
         [SDKProperty("start_time", IsQuery = true)]
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 结束时间，时间戳格式，例如：1756975283303。
+        /// **参数解释**: 结束时间，时间戳格式，例如：1756975283303。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
         /// </summary>
         [SDKProperty("end_time", IsQuery = true)]
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// 指标ID，可通过“查询指标分组的指标名称”接口获取，例如查询CPU使用率，传值 rds001_cpu_util。
+        /// **参数解释**: 指标ID，可通过“查询指标分组的指标名称”接口获取，例如查询CPU使用率，传值 rds001_cpu_util。 **约束限制**: 不涉及。
         /// </summary>
         [SDKProperty("metric", IsQuery = true)]
         [JsonProperty("metric", NullValueHandling = NullValueHandling.Ignore)]
         public string Metric { get; set; }
 
         /// <summary>
-        /// 节点ID。
+        /// **参数解释**: 节点ID。 **约束限制**: 不涉及。
         /// </summary>
         [SDKProperty("node_id", IsQuery = true)]
         [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeId { get; set; }
 
         /// <summary>
-        /// 组件ID，例如dn_6001。
+        /// **参数解释**: 组件ID，例如dn_6001。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
         /// </summary>
         [SDKProperty("component_id", IsQuery = true)]
         [JsonProperty("component_id", NullValueHandling = NullValueHandling.Ignore)]

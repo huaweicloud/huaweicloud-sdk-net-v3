@@ -1,0 +1,444 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.CodeHub.V4.Model
+{
+    /// <summary>
+    /// Request Object
+    /// </summary>
+    public class ListRepositoryForksRequest 
+    {
+        /// <summary>
+        /// **参数解释：**  排序字段。 **约束限制：**  必须为枚举值中的选项。 **取值范围：**  - created_at，创建时间。 - updated_at，更新时间。 **默认取值：**  created_at。
+        /// </summary>
+        /// <value>**参数解释：**  排序字段。 **约束限制：**  必须为枚举值中的选项。 **取值范围：**  - created_at，创建时间。 - updated_at，更新时间。 **默认取值：**  created_at。</value>
+        [JsonConverter(typeof(EnumClassConverter<OrderByEnum>))]
+        public class OrderByEnum
+        {
+            /// <summary>
+            /// Enum CREATED_AT for value: created_at
+            /// </summary>
+            public static readonly OrderByEnum CREATED_AT = new OrderByEnum("created_at");
+
+            /// <summary>
+            /// Enum UPDATED_AT for value: updated_at
+            /// </summary>
+            public static readonly OrderByEnum UPDATED_AT = new OrderByEnum("updated_at");
+
+            private static readonly Dictionary<string, OrderByEnum> StaticFields =
+            new Dictionary<string, OrderByEnum>()
+            {
+                { "created_at", CREATED_AT },
+                { "updated_at", UPDATED_AT },
+            };
+
+            private string _value;
+
+            public OrderByEnum()
+            {
+
+            }
+
+            public OrderByEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static OrderByEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as OrderByEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(OrderByEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(OrderByEnum a, OrderByEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(OrderByEnum a, OrderByEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// **参数解释：** 排列顺序。 **约束限制：** 必须为枚举值中的选项。 **取值范围：**  - asc - desc **默认取值：** desc。
+        /// </summary>
+        /// <value>**参数解释：** 排列顺序。 **约束限制：** 必须为枚举值中的选项。 **取值范围：**  - asc - desc **默认取值：** desc。</value>
+        [JsonConverter(typeof(EnumClassConverter<SortEnum>))]
+        public class SortEnum
+        {
+            /// <summary>
+            /// Enum ASC for value: asc
+            /// </summary>
+            public static readonly SortEnum ASC = new SortEnum("asc");
+
+            /// <summary>
+            /// Enum DESC for value: desc
+            /// </summary>
+            public static readonly SortEnum DESC = new SortEnum("desc");
+
+            private static readonly Dictionary<string, SortEnum> StaticFields =
+            new Dictionary<string, SortEnum>()
+            {
+                { "asc", ASC },
+                { "desc", DESC },
+            };
+
+            private string _value;
+
+            public SortEnum()
+            {
+
+            }
+
+            public SortEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SortEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SortEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SortEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SortEnum a, SortEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SortEnum a, SortEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// **参数解释：**  视图。 **约束限制：**  必须为枚举值中的选项。 **取值范围：**  - basic，基本信息。  - least，最简信息。 **默认取值：**  least。
+        /// </summary>
+        /// <value>**参数解释：**  视图。 **约束限制：**  必须为枚举值中的选项。 **取值范围：**  - basic，基本信息。  - least，最简信息。 **默认取值：**  least。</value>
+        [JsonConverter(typeof(EnumClassConverter<ViewEnum>))]
+        public class ViewEnum
+        {
+            /// <summary>
+            /// Enum BASIC for value: basic
+            /// </summary>
+            public static readonly ViewEnum BASIC = new ViewEnum("basic");
+
+            /// <summary>
+            /// Enum LEAST for value: least
+            /// </summary>
+            public static readonly ViewEnum LEAST = new ViewEnum("least");
+
+            private static readonly Dictionary<string, ViewEnum> StaticFields =
+            new Dictionary<string, ViewEnum>()
+            {
+                { "basic", BASIC },
+                { "least", LEAST },
+            };
+
+            private string _value;
+
+            public ViewEnum()
+            {
+
+            }
+
+            public ViewEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ViewEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ViewEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ViewEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ViewEnum a, ViewEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ViewEnum a, ViewEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+        /// </summary>
+        [SDKProperty("repository_id", IsPath = true)]
+        [JsonProperty("repository_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RepositoryId { get; set; }
+
+        /// <summary>
+        /// **参数解释：**  排序字段。 **约束限制：**  必须为枚举值中的选项。 **取值范围：**  - created_at，创建时间。 - updated_at，更新时间。 **默认取值：**  created_at。
+        /// </summary>
+        [SDKProperty("order_by", IsQuery = true)]
+        [JsonProperty("order_by", NullValueHandling = NullValueHandling.Ignore)]
+        public OrderByEnum OrderBy { get; set; }
+        /// <summary>
+        /// **参数解释：** 排列顺序。 **约束限制：** 必须为枚举值中的选项。 **取值范围：**  - asc - desc **默认取值：** desc。
+        /// </summary>
+        [SDKProperty("sort", IsQuery = true)]
+        [JsonProperty("sort", NullValueHandling = NullValueHandling.Ignore)]
+        public SortEnum Sort { get; set; }
+        /// <summary>
+        /// **参数解释：**  视图。 **约束限制：**  必须为枚举值中的选项。 **取值范围：**  - basic，基本信息。  - least，最简信息。 **默认取值：**  least。
+        /// </summary>
+        [SDKProperty("view", IsQuery = true)]
+        [JsonProperty("view", NullValueHandling = NullValueHandling.Ignore)]
+        public ViewEnum View { get; set; }
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ListRepositoryForksRequest {\n");
+            sb.Append("  repositoryId: ").Append(RepositoryId).Append("\n");
+            sb.Append("  orderBy: ").Append(OrderBy).Append("\n");
+            sb.Append("  sort: ").Append(Sort).Append("\n");
+            sb.Append("  view: ").Append(View).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ListRepositoryForksRequest);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ListRepositoryForksRequest input)
+        {
+            if (input == null) return false;
+            if (this.RepositoryId != input.RepositoryId || (this.RepositoryId != null && !this.RepositoryId.Equals(input.RepositoryId))) return false;
+            if (this.OrderBy != input.OrderBy) return false;
+            if (this.Sort != input.Sort) return false;
+            if (this.View != input.View) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.RepositoryId != null) hashCode = hashCode * 59 + this.RepositoryId.GetHashCode();
+                hashCode = hashCode * 59 + this.OrderBy.GetHashCode();
+                hashCode = hashCode * 59 + this.Sort.GetHashCode();
+                hashCode = hashCode * 59 + this.View.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

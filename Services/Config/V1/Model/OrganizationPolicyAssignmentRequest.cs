@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Config.V1.Model
         public List<string> ExcludedAccounts { get; set; }
 
         /// <summary>
-        /// 组织合规规则名称。
+        /// 组织合规规则名称
         /// </summary>
         [JsonProperty("organization_policy_assignment_name", NullValueHandling = NullValueHandling.Ignore)]
         public string OrganizationPolicyAssignmentName { get; set; }

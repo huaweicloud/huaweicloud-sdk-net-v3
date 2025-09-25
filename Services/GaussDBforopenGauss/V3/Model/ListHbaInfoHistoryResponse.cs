@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// <summary>
         /// **参数解释**: hba修改历史信息。
         /// </summary>
-        [JsonProperty("hba_confs", NullValueHandling = NullValueHandling.Ignore)]
-        public List<HbaHistoryResult> HbaConfs { get; set; }
+        [JsonProperty("hba_histories", NullValueHandling = NullValueHandling.Ignore)]
+        public List<HbaHistoryResult> HbaHistories { get; set; }
 
         /// <summary>
         /// **参数解释**: hba配置总数。 **取值范围**: 不涉及。
@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListHbaInfoHistoryResponse {\n");
-            sb.Append("  hbaConfs: ").Append(HbaConfs).Append("\n");
+            sb.Append("  hbaHistories: ").Append(HbaHistories).Append("\n");
             sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -57,7 +57,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool Equals(ListHbaInfoHistoryResponse input)
         {
             if (input == null) return false;
-            if (this.HbaConfs != input.HbaConfs || (this.HbaConfs != null && input.HbaConfs != null && !this.HbaConfs.SequenceEqual(input.HbaConfs))) return false;
+            if (this.HbaHistories != input.HbaHistories || (this.HbaHistories != null && input.HbaHistories != null && !this.HbaHistories.SequenceEqual(input.HbaHistories))) return false;
             if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
 
             return true;
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.HbaConfs != null) hashCode = hashCode * 59 + this.HbaConfs.GetHashCode();
+                if (this.HbaHistories != null) hashCode = hashCode * 59 + this.HbaHistories.GetHashCode();
                 if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;
             }

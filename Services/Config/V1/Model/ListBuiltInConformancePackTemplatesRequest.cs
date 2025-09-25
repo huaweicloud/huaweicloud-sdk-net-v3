@@ -32,11 +32,29 @@ namespace HuaweiCloud.SDK.Config.V1.Model
             /// </summary>
             public static readonly XLanguageEnum EN_US = new XLanguageEnum("en-us");
 
+            /// <summary>
+            /// Enum FR_FR for value: fr-fr
+            /// </summary>
+            public static readonly XLanguageEnum FR_FR = new XLanguageEnum("fr-fr");
+
+            /// <summary>
+            /// Enum ES_US for value: es-us
+            /// </summary>
+            public static readonly XLanguageEnum ES_US = new XLanguageEnum("es-us");
+
+            /// <summary>
+            /// Enum PT_BR for value: pt-br
+            /// </summary>
+            public static readonly XLanguageEnum PT_BR = new XLanguageEnum("pt-br");
+
             private static readonly Dictionary<string, XLanguageEnum> StaticFields =
             new Dictionary<string, XLanguageEnum>()
             {
                 { "zh-cn", ZH_CN },
                 { "en-us", EN_US },
+                { "fr-fr", FR_FR },
+                { "es-us", ES_US },
+                { "pt-br", PT_BR },
             };
 
             private string _value;

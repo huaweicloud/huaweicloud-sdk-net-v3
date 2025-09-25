@@ -125,6 +125,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         public bool? Locked { get; set; }
 
         /// <summary>
+        /// 存储库可用区信息，最大支持32字符。
+        /// </summary>
+        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
+        public string AvailabilityZone { get; set; }
+
+        /// <summary>
         /// 更新时间,例如:\&quot;2020-02-05T10:38:34.209782\&quot;
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
@@ -163,6 +169,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  threshold: ").Append(Threshold).Append("\n");
             sb.Append("  sysLockSourceService: ").Append(SysLockSourceService).Append("\n");
             sb.Append("  locked: ").Append(Locked).Append("\n");
+            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("}\n");
@@ -201,6 +208,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
             if (this.SysLockSourceService != input.SysLockSourceService || (this.SysLockSourceService != null && !this.SysLockSourceService.Equals(input.SysLockSourceService))) return false;
             if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
 
@@ -233,6 +241,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
                 if (this.SysLockSourceService != null) hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
                 if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;

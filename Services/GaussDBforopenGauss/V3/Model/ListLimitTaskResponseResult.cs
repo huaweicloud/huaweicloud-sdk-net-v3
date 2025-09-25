@@ -17,127 +17,127 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// 限流任务ID。
+        /// **参数解释**: 限流任务ID。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("task_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskId { get; set; }
 
         /// <summary>
-        /// 任务限流范围。
+        /// **参数解释**: 任务限流范围。 **取值范围**: 目前支持SQL，SESSION两种级别范围。
         /// </summary>
         [JsonProperty("task_scope", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskScope { get; set; }
 
         /// <summary>
-        /// 任务限流类型。
+        /// **参数解释**: 任务限流类型。 **取值范围**: - 当“task_scope”为SQL时，可选SQL_ID、SQL_TYPE类型。 - 当“task_scope”为SESSION时，可选SESSION_ACTIVE_MAX_COUNT类型。
         /// </summary>
         [JsonProperty("limit_type", NullValueHandling = NullValueHandling.Ignore)]
         public string LimitType { get; set; }
 
         /// <summary>
-        /// 任务限流类型值。
+        /// **参数解释**: 任务限流类型值。 **取值范围**: - 当“limit_type”为SQL_ID类型时，该值为选中模板的sql_id。 - 当“limit_type”为SQL_TYPE类型时，值为SQL类型，为select，update，insert，delete，merge的一种。 - 当“limit_type”为SESSION_ACTIVE_MAX_COUNT类型时，该值为CPU_OR_MEMORY。
         /// </summary>
         [JsonProperty("limit_type_value", NullValueHandling = NullValueHandling.Ignore)]
         public string LimitTypeValue { get; set; }
 
         /// <summary>
-        /// 限流任务名。
+        /// **参数解释**: 限流任务名。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("task_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TaskName { get; set; }
 
         /// <summary>
-        /// CN节点数据库组,每个数据库字符串以逗号形式隔开。
+        /// **参数解释**: 实例的数据库列表，每个数据库以英文逗号形式隔开。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("databases", NullValueHandling = NullValueHandling.Ignore)]
         public string Databases { get; set; }
 
         /// <summary>
-        /// SQL模板,仅当任务类型为SQL_ID时，返回该值。
+        /// **参数解释**: SQL模板，仅当任务类型为SQL_ID时，返回该值。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("sql_model", NullValueHandling = NullValueHandling.Ignore)]
         public string SqlModel { get; set; }
 
         /// <summary>
-        /// 关键词，仅当任务类型为SQL_TYPE时，返回该值。
+        /// **参数解释**: 关键词，仅当任务类型为SQL_TYPE时，返回该值。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("key_words", NullValueHandling = NullValueHandling.Ignore)]
         public string KeyWords { get; set; }
 
         /// <summary>
-        /// 限流任务状态，当前支持：CREATING，UPDATEING，DELETING，WAIT_EXCUTE，EXCUTING，TIME_OVER，DELETED，CREATE_FAILED，UPDATE_FAILED，DELETE_FAILED，EXCEPTION，NODE_SHUT_DOWN。
+        /// **参数解释**: 限流任务状态。 **取值范围**: 当前支持：CREATING，UPDATING，DELETING，WAIT_EXECUTE，EXCUTING，TIME_OVER，DELETED，CREATE_FAILED，UPDATE_FAILED，DELETE_FAILED，EXCEPTION，NODE_SHUT_DOWN。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// **参数解释**: 实例ID。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+        /// **参数解释**: 实例ID。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 规则名。
+        /// **参数解释**: 规则名。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("rule_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleName { get; set; }
 
         /// <summary>
-        /// 并发数。
+        /// **参数解释**: 并发数。 **取值范围**: [0, 2147483647]
         /// </summary>
         [JsonProperty("parallel_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? ParallelSize { get; set; }
 
         /// <summary>
-        /// 限流任务开始时间,格式为yyyy-mm-ddThh:mm:ssZ，当前时间指UTC时间。
+        /// **参数解释**: 限流任务开始时间。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 限流任务结束时间,格式为yyyy-mm-ddThh:mm:ssZ，当前时间指UTC时间。
+        /// **参数解释**: 限流任务结束时间。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// cpu利用率，仅当任务类型为SESSION_ACTIVE_MAX_COUNT时，返回该值。
+        /// **参数解释**: CPU利用率阈值，仅当任务类型为SESSION_ACTIVE_MAX_COUNT时，返回该值且只保留整数部分。 **取值范围**: [0, 100)
         /// </summary>
         [JsonProperty("cpu_utilization", NullValueHandling = NullValueHandling.Ignore)]
         public int? CpuUtilization { get; set; }
 
         /// <summary>
-        /// 内存利用率，仅当任务类型为SESSION_ACTIVE_MAX_COUNT时，返回该值。
+        /// **参数解释**: 内存利用率阈值，仅当任务类型为SESSION_ACTIVE_MAX_COUNT时，返回该值且只保留整数部分。 **取值范围**: [0, 100)
         /// </summary>
         [JsonProperty("memory_utilization", NullValueHandling = NullValueHandling.Ignore)]
         public int? MemoryUtilization { get; set; }
 
         /// <summary>
-        /// 创建时间为本地时间，格式为yyyy-mm-ddThh:mm:ssZ，当前时间指UTC时间。
+        /// **参数解释**: 限流任务创建时间。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("created", NullValueHandling = NullValueHandling.Ignore)]
         public string Created { get; set; }
 
         /// <summary>
-        /// 更新时间为本地时间，格式为yyyy-mm-ddThh:mm:ssZ，当前时间指UTC时间。
+        /// **参数解释**: 限流任务更新时间。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("updated", NullValueHandling = NullValueHandling.Ignore)]
         public string Updated { get; set; }
 
         /// <summary>
-        /// 创建者。
+        /// **参数解释**: 创建者。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("creator", NullValueHandling = NullValueHandling.Ignore)]
         public string Creator { get; set; }
 
         /// <summary>
-        /// 更新者。
+        /// **参数解释**: 更新者。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("modifier", NullValueHandling = NullValueHandling.Ignore)]
         public string Modifier { get; set; }
 
         /// <summary>
-        /// CN节点信息列表。
+        /// **参数解释**: CN节点信息列表。
         /// </summary>
         [JsonProperty("node_infos", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowLimitTaskNodeOption> NodeInfos { get; set; }
