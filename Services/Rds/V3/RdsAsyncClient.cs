@@ -1005,6 +1005,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询参数组应用历史
+        ///
+        /// 查询参数组应用历史
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListConfigurationApplyHistoriesResponse> ListConfigurationApplyHistoriesAsync(ListConfigurationApplyHistoriesRequest listConfigurationApplyHistoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listConfigurationApplyHistoriesRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply-histories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationApplyHistoriesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListConfigurationApplyHistoriesResponse>(response);
+        }
+
+        public AsyncInvoker<ListConfigurationApplyHistoriesResponse> ListConfigurationApplyHistoriesAsyncInvoker(ListConfigurationApplyHistoriesRequest listConfigurationApplyHistoriesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listConfigurationApplyHistoriesRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply-histories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listConfigurationApplyHistoriesRequest);
+            return new AsyncInvoker<ListConfigurationApplyHistoriesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListConfigurationApplyHistoriesResponse>);
+        }
+        
+        /// <summary>
         /// 获取参数模板列表
         ///
         /// 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
@@ -1408,6 +1434,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesRequest);
             return new AsyncInvoker<ListInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstancesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询应用参数模版的实例列表
+        ///
+        /// 查询应用参数模版的实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstancesConfigurationsResponse> ListInstancesConfigurationsAsync(ListInstancesConfigurationsRequest listInstancesConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstancesConfigurationsRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/query-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesConfigurationsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListInstancesConfigurationsResponse>(response);
+        }
+
+        public AsyncInvoker<ListInstancesConfigurationsResponse> ListInstancesConfigurationsAsyncInvoker(ListInstancesConfigurationsRequest listInstancesConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstancesConfigurationsRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/query-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesConfigurationsRequest);
+            return new AsyncInvoker<ListInstancesConfigurationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstancesConfigurationsResponse>);
         }
         
         /// <summary>

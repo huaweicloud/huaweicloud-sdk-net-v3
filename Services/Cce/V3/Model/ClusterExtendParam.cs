@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string KubeProxyMode { get; set; }
 
         /// <summary>
-        /// master 弹性公网IP
+        /// **参数解释：** 集群控制节点弹性公网IP，绑定后可以通过该弹性公网IP访问集群管控面API。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("clusterExternalIP", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterExternalIP { get; set; }
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string IsAutoPay { get; set; }
 
         /// <summary>
-        /// 记录集群通过何种升级方式升级到当前版本。 
+        /// **参数解释：** 记录集群通过何种升级方式升级到当前版本。 **约束限制：** 仅查询接口返回该字段 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("upgradefrom", NullValueHandling = NullValueHandling.Ignore)]
         public string Upgradefrom { get; set; }

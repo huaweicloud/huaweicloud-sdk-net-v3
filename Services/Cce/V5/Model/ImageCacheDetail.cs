@@ -165,7 +165,7 @@ namespace HuaweiCloud.SDK.Cce.V5.Model
         /// 镜像缓存创建时间戳。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 镜像缓存中的容器镜像列表。

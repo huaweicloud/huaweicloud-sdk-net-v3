@@ -148,6 +148,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 授权备份文件下载
+        ///
+        /// 授权租户使用OBS Browser+方式下载备份文件，支持实例级、表级的全量备份及差量备份。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AuthorizeBackupDownloadResponse> AuthorizeBackupDownloadAsync(AuthorizeBackupDownloadRequest authorizeBackupDownloadRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(authorizeBackupDownloadRequest.BackupId, out var valueOfBackupId)) urlParam.Add("backup_id", valueOfBackupId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}/download/authorization", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", authorizeBackupDownloadRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<AuthorizeBackupDownloadResponse>(response);
+        }
+
+        public AsyncInvoker<AuthorizeBackupDownloadResponse> AuthorizeBackupDownloadAsyncInvoker(AuthorizeBackupDownloadRequest authorizeBackupDownloadRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(authorizeBackupDownloadRequest.BackupId, out var valueOfBackupId)) urlParam.Add("backup_id", valueOfBackupId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}/download/authorization", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", authorizeBackupDownloadRequest);
+            return new AsyncInvoker<AuthorizeBackupDownloadResponse>(this, "POST", request, JsonUtils.DeSerialize<AuthorizeBackupDownloadResponse>);
+        }
+        
+        /// <summary>
         /// 批量设置自动备份策略
         ///
         /// 批量设置自动备份策略。
@@ -723,6 +749,30 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schema", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteDatabaseSchemaRequest);
             return new AsyncInvoker<DeleteDatabaseSchemaResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDatabaseSchemaResponse>);
+        }
+        
+        /// <summary>
+        /// 删除容灾记录
+        ///
+        /// 删除容灾记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDisasterRecordResponse> DeleteDisasterRecordAsync(DeleteDisasterRecordRequest deleteDisasterRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disaster/record/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteDisasterRecordRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDisasterRecordResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDisasterRecordResponse> DeleteDisasterRecordAsyncInvoker(DeleteDisasterRecordRequest deleteDisasterRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disaster/record/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteDisasterRecordRequest);
+            return new AsyncInvoker<DeleteDisasterRecordResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDisasterRecordResponse>);
         }
         
         /// <summary>
@@ -1596,6 +1646,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询数据库占用空间大小列表
+        ///
+        /// 查询限流任务详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDatabaseVolumeResponse> ListDatabaseVolumeAsync(ListDatabaseVolumeRequest listDatabaseVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDatabaseVolumeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database-volume", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatabaseVolumeRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDatabaseVolumeResponse>(response);
+        }
+
+        public AsyncInvoker<ListDatabaseVolumeResponse> ListDatabaseVolumeAsyncInvoker(ListDatabaseVolumeRequest listDatabaseVolumeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDatabaseVolumeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database-volume", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatabaseVolumeRequest);
+            return new AsyncInvoker<ListDatabaseVolumeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDatabaseVolumeResponse>);
+        }
+        
+        /// <summary>
         /// 查询数据盘空间概况
         ///
         /// 查询数据盘空间概况。
@@ -2358,6 +2434,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询插件列表
+        ///
+        /// 查询插件列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListPluginInfoListResponse> ListPluginInfoListAsync(ListPluginInfoListRequest listPluginInfoListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPluginInfoListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/plugins", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPluginInfoListRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListPluginInfoListResponse>(response);
+        }
+
+        public AsyncInvoker<ListPluginInfoListResponse> ListPluginInfoListAsyncInvoker(ListPluginInfoListRequest listPluginInfoListRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPluginInfoListRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/plugins", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPluginInfoListRequest);
+            return new AsyncInvoker<ListPluginInfoListResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPluginInfoListResponse>);
+        }
+        
+        /// <summary>
         /// 查询预定义标签
         ///
         /// 查询预预定义标签。
@@ -2916,27 +3018,29 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
-        /// 修改热补丁属性
+        /// 修改指定实例端口号
         ///
-        /// 修改热补丁属性。
+        /// 修改指定实例端口号。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public async Task<ModifyHotfixesResponse> ModifyHotfixesAsync(ModifyHotfixesRequest modifyHotfixesRequest)
+        public async Task<ModifyInstancePortResponse> ModifyInstancePortAsync(ModifyInstancePortRequest modifyInstancePortRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/hotfix-property", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyHotfixesRequest);
+            if (StringUtils.TryConvertToNonEmptyString(modifyInstancePortRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyInstancePortRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerializeNull<ModifyHotfixesResponse>(response);
+            return JsonUtils.DeSerialize<ModifyInstancePortResponse>(response);
         }
 
-        public AsyncInvoker<ModifyHotfixesResponse> ModifyHotfixesAsyncInvoker(ModifyHotfixesRequest modifyHotfixesRequest)
+        public AsyncInvoker<ModifyInstancePortResponse> ModifyInstancePortAsyncInvoker(ModifyInstancePortRequest modifyInstancePortRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/hotfix-property", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyHotfixesRequest);
-            return new AsyncInvoker<ModifyHotfixesResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ModifyHotfixesResponse>);
+            if (StringUtils.TryConvertToNonEmptyString(modifyInstancePortRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/port", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyInstancePortRequest);
+            return new AsyncInvoker<ModifyInstancePortResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyInstancePortResponse>);
         }
         
         /// <summary>

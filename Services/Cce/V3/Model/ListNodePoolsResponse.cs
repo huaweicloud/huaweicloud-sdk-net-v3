@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// /
+        /// **参数解释**： 节点池的信息。
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public List<NodePoolResp> Items { get; set; }

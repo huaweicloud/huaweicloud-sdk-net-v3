@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class PackageOptions 
     {
         /// <summary>
-        /// 参数生效方式  - static：节点创建时生效，后续不可修改 - immediately：节点运行中时可以修改，修改后生效 
+        /// **参数解释**： 参数生效方式 **取值范围**： - static：集群、节点池创建时生效，后续不可修改 - immediately：集群、节点池运行中时可以修改，修改后生效
         /// </summary>
-        /// <value>参数生效方式  - static：节点创建时生效，后续不可修改 - immediately：节点运行中时可以修改，修改后生效 </value>
+        /// <value>**参数解释**： 参数生效方式 **取值范围**： - static：集群、节点池创建时生效，后续不可修改 - immediately：集群、节点池运行中时可以修改，修改后生效</value>
         [JsonConverter(typeof(EnumClassConverter<ValidAtEnum>))]
         public class ValidAtEnum
         {
@@ -132,36 +132,36 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 参数名称
+        /// **参数解释**： 参数名称 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 参数默认值，不指定时按默认值生效, 参数类型以实际返回为准，可能为integer,string或者boolean
+        /// **参数解释**： 参数默认值，不指定时按默认值生效, 参数类型以实际返回为准，可能为integer,string或者boolean **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("default", NullValueHandling = NullValueHandling.Ignore)]
         public Object Default { get; set; }
 
         /// <summary>
-        /// 参数生效方式  - static：节点创建时生效，后续不可修改 - immediately：节点运行中时可以修改，修改后生效 
+        /// **参数解释**： 参数生效方式 **取值范围**： - static：集群、节点池创建时生效，后续不可修改 - immediately：集群、节点池运行中时可以修改，修改后生效
         /// </summary>
         [JsonProperty("validAt", NullValueHandling = NullValueHandling.Ignore)]
         public ValidAtEnum ValidAt { get; set; }
         /// <summary>
-        /// 配置项是否可以为空  - true：配置项为空时，不使用默认值，为空值 - false：配置项为空时，使用默认值 
+        /// **参数解释**： 配置项是否可以为空 **取值范围**： - true：配置项为空时，不使用默认值，为空值 - false：配置项为空时，使用默认值
         /// </summary>
         [JsonProperty("empty", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Empty { get; set; }
 
         /// <summary>
-        /// 参数分类
+        /// **参数解释**： 参数分类 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("schema", NullValueHandling = NullValueHandling.Ignore)]
         public string Schema { get; set; }
 
         /// <summary>
-        /// 参数类型
+        /// **参数解释**： 参数类型 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

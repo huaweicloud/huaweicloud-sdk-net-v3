@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string VolumeID { get; set; }
 
         /// <summary>
-        /// 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。  - bs：EVS云存储 - nfs：SFS弹性文件存储 - obs：OBS对象存储 - efs：SFS Turbo极速文件存储
+        /// 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。  - bs：EVS云存储 - nfs：SFS1.0弹性文件存储 - obs：OBS对象存储 - efs：SFS Turbo极速文件存储
         /// </summary>
         [JsonProperty("storageType", NullValueHandling = NullValueHandling.Ignore)]
         public string StorageType { get; set; }

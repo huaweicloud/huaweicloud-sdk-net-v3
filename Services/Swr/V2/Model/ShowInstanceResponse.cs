@@ -388,6 +388,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("subnet_cidr", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetCidr { get; set; }
 
+        /// <summary>
+        /// 实例对应的VPC终端节点服务ID
+        /// </summary>
+        [JsonProperty("vpcep_service_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string VpcepServiceId { get; set; }
+
 
 
         /// <summary>
@@ -420,6 +426,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  vpcCidr: ").Append(VpcCidr).Append("\n");
             sb.Append("  subnetName: ").Append(SubnetName).Append("\n");
             sb.Append("  subnetCidr: ").Append(SubnetCidr).Append("\n");
+            sb.Append("  vpcepServiceId: ").Append(VpcepServiceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -461,6 +468,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.VpcCidr != input.VpcCidr || (this.VpcCidr != null && !this.VpcCidr.Equals(input.VpcCidr))) return false;
             if (this.SubnetName != input.SubnetName || (this.SubnetName != null && !this.SubnetName.Equals(input.SubnetName))) return false;
             if (this.SubnetCidr != input.SubnetCidr || (this.SubnetCidr != null && !this.SubnetCidr.Equals(input.SubnetCidr))) return false;
+            if (this.VpcepServiceId != input.VpcepServiceId || (this.VpcepServiceId != null && !this.VpcepServiceId.Equals(input.VpcepServiceId))) return false;
 
             return true;
         }
@@ -496,6 +504,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.VpcCidr != null) hashCode = hashCode * 59 + this.VpcCidr.GetHashCode();
                 if (this.SubnetName != null) hashCode = hashCode * 59 + this.SubnetName.GetHashCode();
                 if (this.SubnetCidr != null) hashCode = hashCode * 59 + this.SubnetCidr.GetHashCode();
+                if (this.VpcepServiceId != null) hashCode = hashCode * 59 + this.VpcepServiceId.GetHashCode();
                 return hashCode;
             }
         }

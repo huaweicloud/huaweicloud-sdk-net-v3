@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Alias { get; set; }
 
         /// <summary>
-        /// 集群注解，由key/value组成：  &#x60;&#x60;&#x60; \&quot;annotations\&quot;: {    \&quot;key1\&quot; : \&quot;value1\&quot;,    \&quot;key2\&quot; : \&quot;value2\&quot; } &#x60;&#x60;&#x60;  &gt;    - Annotations不用于标识和选择对象。Annotations中的元数据可以是small或large，structured或unstructured，并且可以包括标签不允许使用的字符。 &gt;    - 该字段不会被数据库保存，当前仅用于指定集群待安装插件。 &gt;    - 可通过加入\&quot;cluster.install.addons.external/install\&quot;:\&quot;[{\&quot;addonTemplateName\&quot;:\&quot;icagent\&quot;}]\&quot;的键值对在创建集群时安装ICAgent。 
+        /// **参数解释：** 集群注解，由key/value组成：  &#x60;&#x60;&#x60; \&quot;annotations\&quot;: {    \&quot;key1\&quot; : \&quot;value1\&quot;,    \&quot;key2\&quot; : \&quot;value2\&quot; } &#x60;&#x60;&#x60; **约束限制：** 该字段不会被数据库保存，当前仅用于指定集群待安装插件。 **取值范围：** 不涉及 **默认取值：** 不涉及  &gt;    - Annotations不用于标识和选择对象。Annotations中的元数据可以是small或large，structured或unstructured，并且可以包括标签不允许使用的字符。 &gt;    - 可通过加入\&quot;cluster.install.addons.external/install\&quot;: \&quot;[{\\\\\&quot;addonTemplateName\\\\\&quot;:\\\\\&quot;icagent\\\\\&quot;}]\&quot;的键值对在创建集群时安装ICAgent。 
         /// </summary>
         [JsonProperty("annotations", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Annotations { get; set; }
@@ -47,16 +47,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Dictionary<string, string> Labels { get; set; }
 
         /// <summary>
-        /// 集群创建时间
+        /// **参数解释：** 集群创建时间。 **约束限制：** 创建集群时自动记录，不支持传入。 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public string CreationTimestamp { get; set; }
 
         /// <summary>
-        /// 集群更新时间
+        /// **参数解释：** 集群更新时间。 **约束限制：** 更新集群时自动记录，不支持传入。 **取值范围：** 不涉及 **默认取值：** 不涉及 
         /// </summary>
         [JsonProperty("updateTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateTimestamp { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 集群时区。[IANA Time Zone Database](https://www.iana.org/time-zones)中收录的时区名称, 例如：\&quot;Asia/Shanghai\&quot;。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及 
+        /// </summary>
+        [JsonProperty("timezone", NullValueHandling = NullValueHandling.Ignore)]
+        public string Timezone { get; set; }
 
 
 
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  labels: ").Append(Labels).Append("\n");
             sb.Append("  creationTimestamp: ").Append(CreationTimestamp).Append("\n");
             sb.Append("  updateTimestamp: ").Append(UpdateTimestamp).Append("\n");
+            sb.Append("  timezone: ").Append(Timezone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,6 +106,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Labels != input.Labels || (this.Labels != null && input.Labels != null && !this.Labels.SequenceEqual(input.Labels))) return false;
             if (this.CreationTimestamp != input.CreationTimestamp || (this.CreationTimestamp != null && !this.CreationTimestamp.Equals(input.CreationTimestamp))) return false;
             if (this.UpdateTimestamp != input.UpdateTimestamp || (this.UpdateTimestamp != null && !this.UpdateTimestamp.Equals(input.UpdateTimestamp))) return false;
+            if (this.Timezone != input.Timezone || (this.Timezone != null && !this.Timezone.Equals(input.Timezone))) return false;
 
             return true;
         }
@@ -118,6 +126,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.Labels != null) hashCode = hashCode * 59 + this.Labels.GetHashCode();
                 if (this.CreationTimestamp != null) hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
                 if (this.UpdateTimestamp != null) hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
+                if (this.Timezone != null) hashCode = hashCode * 59 + this.Timezone.GetHashCode();
                 return hashCode;
             }
         }

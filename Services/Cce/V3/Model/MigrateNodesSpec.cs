@@ -41,6 +41,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Runtime Runtime { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("serverConfig", NullValueHandling = NullValueHandling.Ignore)]
+        public MigrateServerConfig ServerConfig { get; set; }
+
+        /// <summary>
         /// 待操作节点列表
         /// </summary>
         [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,6 +65,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
             sb.Append("  login: ").Append(Login).Append("\n");
             sb.Append("  runtime: ").Append(Runtime).Append("\n");
+            sb.Append("  serverConfig: ").Append(ServerConfig).Append("\n");
             sb.Append("  nodes: ").Append(Nodes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -82,6 +89,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
             if (this.Login != input.Login || (this.Login != null && !this.Login.Equals(input.Login))) return false;
             if (this.Runtime != input.Runtime || (this.Runtime != null && !this.Runtime.Equals(input.Runtime))) return false;
+            if (this.ServerConfig != input.ServerConfig || (this.ServerConfig != null && !this.ServerConfig.Equals(input.ServerConfig))) return false;
             if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
 
             return true;
@@ -99,6 +107,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 if (this.Login != null) hashCode = hashCode * 59 + this.Login.GetHashCode();
                 if (this.Runtime != null) hashCode = hashCode * 59 + this.Runtime.GetHashCode();
+                if (this.ServerConfig != null) hashCode = hashCode * 59 + this.ServerConfig.GetHashCode();
                 if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
                 return hashCode;
             }

@@ -206,6 +206,30 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 创建访问策略
+        ///
+        /// 该API用于创建访问策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAccessPolicyResponse CreateAccessPolicy(CreateAccessPolicyRequest createAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/access-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAccessPolicyRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateAccessPolicyResponse>(response);
+        }
+
+        public SyncInvoker<CreateAccessPolicyResponse> CreateAccessPolicyInvoker(CreateAccessPolicyRequest createAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/access-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAccessPolicyRequest);
+            return new SyncInvoker<CreateAccessPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAccessPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 创建AddonInstance
         ///
         /// 根据提供的插件模板，安装插件实例。
@@ -531,6 +555,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 删除访问策略
+        ///
+        /// 该API用于删除单个访问策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteAccessPolicyResponse DeleteAccessPolicy(DeleteAccessPolicyRequest deleteAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAccessPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/access-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAccessPolicyRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAccessPolicyResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAccessPolicyResponse> DeleteAccessPolicyInvoker(DeleteAccessPolicyRequest deleteAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAccessPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/access-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAccessPolicyRequest);
+            return new SyncInvoker<DeleteAccessPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAccessPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 删除AddonInstance
         ///
         /// 删除插件实例的功能。
@@ -753,6 +803,223 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 获取访问策略详情
+        ///
+        /// 该API用于获取单个访问策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GetAccessPolicyResponse GetAccessPolicy(GetAccessPolicyRequest getAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getAccessPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/access-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getAccessPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<GetAccessPolicyResponse>(response);
+        }
+
+        public SyncInvoker<GetAccessPolicyResponse> GetAccessPolicyInvoker(GetAccessPolicyRequest getAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getAccessPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/access-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getAccessPolicyRequest);
+            return new SyncInvoker<GetAccessPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<GetAccessPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询可用区列表
+        ///
+        /// 该API用于查询可用区列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GetAvaliableZoneResponse GetAvaliableZone(GetAvaliableZoneRequest getAvaliableZoneRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v2/availabilityZones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getAvaliableZoneRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var getAvaliableZoneResponse = JsonUtils.DeSerializeNull<GetAvaliableZoneResponse>(response);
+            getAvaliableZoneResponse.Body = JsonUtils.DeSerializeList<GetAvailableZoneResponseBody>(response);
+            return getAvaliableZoneResponse;
+        }
+
+        public SyncInvoker<GetAvaliableZoneResponse> GetAvaliableZoneInvoker(GetAvaliableZoneRequest getAvaliableZoneRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v2/availabilityZones", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getAvaliableZoneRequest);
+            return new SyncInvoker<GetAvaliableZoneResponse>(this, "GET", request, response =>
+            {
+                var getAvaliableZoneResponse = JsonUtils.DeSerializeNull<GetAvaliableZoneResponse>(response);
+                getAvaliableZoneResponse.Body = JsonUtils.DeSerializeList<GetAvailableZoneResponseBody>(response);
+                return getAvaliableZoneResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 查询集群可售卖规格
+        ///
+        /// 该API用于查询集群可售卖规格
+        /// &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GetClusterFlavorSpecsResponse GetClusterFlavorSpecs(GetClusterFlavorSpecsRequest getClusterFlavorSpecsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v2/flavor/specifications", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getClusterFlavorSpecsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<GetClusterFlavorSpecsResponse>(response);
+        }
+
+        public SyncInvoker<GetClusterFlavorSpecsResponse> GetClusterFlavorSpecsInvoker(GetClusterFlavorSpecsRequest getClusterFlavorSpecsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v2/flavor/specifications", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getClusterFlavorSpecsRequest);
+            return new SyncInvoker<GetClusterFlavorSpecsResponse>(this, "GET", request, JsonUtils.DeSerialize<GetClusterFlavorSpecsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群配额
+        ///
+        /// 该API用于获取集群配额
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GetClusterQuotaResponse GetClusterQuota(GetClusterQuotaRequest getClusterQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cce/v1/projects/{project_id}/quota", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getClusterQuotaRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<GetClusterQuotaResponse>(response);
+        }
+
+        public SyncInvoker<GetClusterQuotaResponse> GetClusterQuotaInvoker(GetClusterQuotaRequest getClusterQuotaRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/cce/v1/projects/{project_id}/quota", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getClusterQuotaRequest);
+            return new SyncInvoker<GetClusterQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<GetClusterQuotaResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群支持的可配置参数列表
+        ///
+        /// 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GetClusterSupportConfigurationResponse GetClusterSupportConfiguration(GetClusterSupportConfigurationRequest getClusterSupportConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusters/configuration/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getClusterSupportConfigurationRequest);
+            var response = DoHttpRequestSync("GET", request);
+            var getClusterSupportConfigurationResponse = JsonUtils.DeSerializeNull<GetClusterSupportConfigurationResponse>(response);
+            getClusterSupportConfigurationResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
+            return getClusterSupportConfigurationResponse;
+        }
+
+        public SyncInvoker<GetClusterSupportConfigurationResponse> GetClusterSupportConfigurationInvoker(GetClusterSupportConfigurationRequest getClusterSupportConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusters/configuration/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getClusterSupportConfigurationRequest);
+            return new SyncInvoker<GetClusterSupportConfigurationResponse>(this, "GET", request, response =>
+            {
+                var getClusterSupportConfigurationResponse = JsonUtils.DeSerializeNull<GetClusterSupportConfigurationResponse>(response);
+                getClusterSupportConfigurationResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
+                return getClusterSupportConfigurationResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 查询自定义标签
+        ///
+        /// 该API用于查询自定义标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GetCustomizeTagsResponse GetCustomizeTags(GetCustomizeTagsRequest getCustomizeTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getCustomizeTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getCustomizeTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<GetCustomizeTagsResponse>(response);
+        }
+
+        public SyncInvoker<GetCustomizeTagsResponse> GetCustomizeTagsInvoker(GetCustomizeTagsRequest getCustomizeTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getCustomizeTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getCustomizeTagsRequest);
+            return new SyncInvoker<GetCustomizeTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<GetCustomizeTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取节点标签
+        ///
+        /// 该API用于获取集群所有节点的标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GetLabelsResponse GetLabels(GetLabelsRequest getLabelsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getLabelsRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/labels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getLabelsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<GetLabelsResponse>(response);
+        }
+
+        public SyncInvoker<GetLabelsResponse> GetLabelsInvoker(GetLabelsRequest getLabelsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getLabelsRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/labels", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getLabelsRequest);
+            return new SyncInvoker<GetLabelsResponse>(this, "GET", request, JsonUtils.DeSerialize<GetLabelsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询资源标签
+        ///
+        /// 该API用于查询资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public GetResourceTagsResponse GetResourceTags(GetResourceTagsRequest getResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(getResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getResourceTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<GetResourceTagsResponse>(response);
+        }
+
+        public SyncInvoker<GetResourceTagsResponse> GetResourceTagsInvoker(GetResourceTagsRequest getResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getResourceTagsRequest.ResourceType, out var valueOfResourceType)) urlParam.Add("resource_type", valueOfResourceType);
+            if (StringUtils.TryConvertToNonEmptyString(getResourceTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/cce/v1/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getResourceTagsRequest);
+            return new SyncInvoker<GetResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<GetResourceTagsResponse>);
+        }
+        
+        /// <summary>
         /// 集群休眠
         ///
         /// 集群休眠用于将运行中的集群置于休眠状态，休眠后，将不再收取控制节点资源费用。
@@ -776,6 +1043,30 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/operation/hibernate", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", hibernateClusterRequest);
             return new SyncInvoker<HibernateClusterResponse>(this, "POST", request, JsonUtils.DeSerializeNull<HibernateClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 获取访问策略列表
+        ///
+        /// 该API用于获取访问策略列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAccessPolicyResponse ListAccessPolicy(ListAccessPolicyRequest listAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/access-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccessPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAccessPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ListAccessPolicyResponse> ListAccessPolicyInvoker(ListAccessPolicyRequest listAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/access-policies", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccessPolicyRequest);
+            return new SyncInvoker<ListAccessPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAccessPolicyResponse>);
         }
         
         /// <summary>
@@ -1413,7 +1704,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/operation/scale", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", scaleNodePoolRequest);
             var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<ScaleNodePoolResponse>(response);
+            return JsonUtils.DeSerialize<ScaleNodePoolResponse>(response);
         }
 
         public SyncInvoker<ScaleNodePoolResponse> ScaleNodePoolInvoker(ScaleNodePoolRequest scaleNodePoolRequest)
@@ -1423,7 +1714,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             if (StringUtils.TryConvertToNonEmptyString(scaleNodePoolRequest.NodepoolId, out var valueOfNodepoolId)) urlParam.Add("nodepool_id", valueOfNodepoolId);
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/operation/scale", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", scaleNodePoolRequest);
-            return new SyncInvoker<ScaleNodePoolResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ScaleNodePoolResponse>);
+            return new SyncInvoker<ScaleNodePoolResponse>(this, "POST", request, JsonUtils.DeSerialize<ScaleNodePoolResponse>);
         }
         
         /// <summary>
@@ -1618,37 +1909,6 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
-        /// 根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定
-        ///
-        /// 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowClusterSupportConfigurationResponse ShowClusterSupportConfiguration(ShowClusterSupportConfigurationRequest showClusterSupportConfigurationRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusters/configuration/detail", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterSupportConfigurationRequest);
-            var response = DoHttpRequestSync("GET", request);
-            var showClusterSupportConfigurationResponse = JsonUtils.DeSerializeNull<ShowClusterSupportConfigurationResponse>(response);
-            showClusterSupportConfigurationResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
-            return showClusterSupportConfigurationResponse;
-        }
-
-        public SyncInvoker<ShowClusterSupportConfigurationResponse> ShowClusterSupportConfigurationInvoker(ShowClusterSupportConfigurationRequest showClusterSupportConfigurationRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusters/configuration/detail", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterSupportConfigurationRequest);
-            return new SyncInvoker<ShowClusterSupportConfigurationResponse>(this, "GET", request, response =>
-            {
-                var showClusterSupportConfigurationResponse = JsonUtils.DeSerializeNull<ShowClusterSupportConfigurationResponse>(response);
-                showClusterSupportConfigurationResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
-                return showClusterSupportConfigurationResponse;
-            });
-        }
-        
-        /// <summary>
         /// 获取集群升级相关信息
         ///
         /// 获取集群升级相关信息
@@ -1672,6 +1932,31 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/upgradeinfo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterUpgradeInfoRequest);
             return new SyncInvoker<ShowClusterUpgradeInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterUpgradeInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询特性开关状态
+        ///
+        /// 该API用于查询特性开关状态
+        /// &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowFeatureGatesResponse ShowFeatureGates(ShowFeatureGatesRequest showFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3.1/feature-gates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFeatureGatesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowFeatureGatesResponse>(response);
+        }
+
+        public SyncInvoker<ShowFeatureGatesResponse> ShowFeatureGatesInvoker(ShowFeatureGatesRequest showFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3.1/feature-gates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFeatureGatesRequest);
+            return new SyncInvoker<ShowFeatureGatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFeatureGatesResponse>);
         }
         
         /// <summary>
@@ -2106,6 +2391,32 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/unlocknodescaledown", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unlockNodepoolNodeScaleDownRequest);
             return new SyncInvoker<UnlockNodepoolNodeScaleDownResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UnlockNodepoolNodeScaleDownResponse>);
+        }
+        
+        /// <summary>
+        /// 更新访问策略
+        ///
+        /// 该API用于更新单个访问策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAccessPolicyResponse UpdateAccessPolicy(UpdateAccessPolicyRequest updateAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateAccessPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/access-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAccessPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAccessPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAccessPolicyResponse> UpdateAccessPolicyInvoker(UpdateAccessPolicyRequest updateAccessPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateAccessPolicyRequest.PolicyId, out var valueOfPolicyId)) urlParam.Add("policy_id", valueOfPolicyId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/access-policies/{policy_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAccessPolicyRequest);
+            return new SyncInvoker<UpdateAccessPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAccessPolicyResponse>);
         }
         
         /// <summary>

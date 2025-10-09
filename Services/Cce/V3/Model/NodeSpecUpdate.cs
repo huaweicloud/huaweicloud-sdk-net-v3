@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// **参数解释：** 节点的规格。  **约束限制**： 不涉及 **取值范围：** CCE支持的节点规格请参考[节点规格说明](cce_02_0368.xml)获取。 **默认取值：** 不涉及
+        /// **参数解释：** 节点的规格。  **约束限制**： 节点的规格不允许修改。 &gt; 仅在删除节点池的默认伸缩组场景，允许设置为空字符串。当且仅当 **az** 字段也设置为空字符串时，才能删除默认伸缩组。如果节点池没有扩容伸缩组，默认伸缩组无法删除。  **取值范围：** CCE支持的节点规格请参考[节点规格说明](cce_02_0368.xml)获取。 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("flavor", NullValueHandling = NullValueHandling.Ignore)]
         public string Flavor { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 节点所在的可用区，需要指定可用区（AZ）的名称。  **约束限制**： 节点的可用区不允许修改。 &gt; 仅在删除节点池的默认伸缩组场景，允许设置为空字符串。当且仅当 **flavor** 字段也设置为空字符串时，才能删除默认伸缩组。如果节点池没有扩容伸缩组，默认伸缩组无法删除。  **取值范围**： [CCE支持的可用区请参考[地区和终端节点](https://console.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws) [CCE支持的可用区请参考[地区和终端节点](https://console-intl.huaweicloud.com/apiexplorer/#/endpoint/CCE)。](tag:hws_hk) **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("az", NullValueHandling = NullValueHandling.Ignore)]
+        public string Az { get; set; }
 
         /// <summary>
         /// **参数解释**： 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 **约束限制**： - 若当前集群版本不支持该OS类型，则会自动替换为当前集群版本支持的同系列OS类型。 - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 - 该参数缺省时，CCE会根据集群版本自动选择支持的OS版本。 - 创建节点池时，该参数为必选。 - 若创建节点时使用共享磁盘空间，即磁盘初始化配置管理参数使用storage，且StorageGroups中virtualSpaces的name字段指定为share，该参数为必选。  **取值范围**： 不涉及 **默认取值**： 不涉及
@@ -59,25 +65,25 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Runtime Runtime { get; set; }
 
         /// <summary>
-        /// **参数解释**： 支持给创建出来的节点加Taints来设置反亲和性。每条Taints包含以下3个参数：  - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 - Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。  示例：  &#x60;&#x60;&#x60; \&quot;taints\&quot;: [{   \&quot;key\&quot;: \&quot;status\&quot;,   \&quot;value\&quot;: \&quot;unavailable\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }, {   \&quot;key\&quot;: \&quot;looks\&quot;,   \&quot;value\&quot;: \&quot;bad\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }] &#x60;&#x60;&#x60;  **约束限制**： - taints配置不超过20条。 - 参数未指定或者为空数组时将删除节点池的自定义Taints。 - 更新节点池时，此字段为非必填字段。
+        /// **参数解释**： 支持给创建出来的节点加Taints来设置反亲和性。每条Taints包含以下3个参数：  - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 - Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。  示例：  &#x60;&#x60;&#x60; \&quot;taints\&quot;: [{   \&quot;key\&quot;: \&quot;status\&quot;,   \&quot;value\&quot;: \&quot;unavailable\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }, {   \&quot;key\&quot;: \&quot;looks\&quot;,   \&quot;value\&quot;: \&quot;bad\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }] &#x60;&#x60;&#x60;  **约束限制**： - taints配置不超过20条。 - 参数未指定时将不会更新节点池的自定义Taints。 - 参数为空数组时将删除节点池的自定义Taints。
         /// </summary>
         [JsonProperty("taints", NullValueHandling = NullValueHandling.Ignore)]
         public List<Taint> Taints { get; set; }
 
         /// <summary>
-        /// **参数解释**： 格式为key/value键值对。 - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。   示例： &#x60;&#x60;&#x60; \&quot;k8sTags\&quot;: {   \&quot;key\&quot;: \&quot;value\&quot; } &#x60;&#x60;&#x60;  **约束限制**： - 键值对个数不超过20条。 - 参数未指定或者为空对象时将删除节点池的自定义K8s标签。 - 更新节点池时，此字段为非必填字段。
+        /// **参数解释：** 该参数用于控制更新节点池时 **post-install脚本执行完成前允许节点调度** 行为。当该参数未设置或者为false时，在kubernetes节点就绪时，容器即可被调度到可用节点。当该参数为true时，在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **约束限制：** 不涉及  **取值范围：** - false：在kubernetes节点就绪时，容器即可被调度到可用节点。           - true：在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **默认取值：** false
+        /// </summary>
+        [JsonProperty("waitPostInstallFinish", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WaitPostInstallFinish { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 格式为key/value键值对。 - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。   示例： &#x60;&#x60;&#x60; \&quot;k8sTags\&quot;: {   \&quot;key\&quot;: \&quot;value\&quot; } &#x60;&#x60;&#x60;  **约束限制**： - 键值对个数不超过20条。 - 参数未指定时将不会更新节点池的自定义K8s标签。 - 参数为空对象时将删除节点池的自定义K8s标签。
         /// </summary>
         [JsonProperty("k8sTags", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> K8sTags { get; set; }
 
         /// <summary>
-        /// **参数解释**： 云服务器组ID，若指定，将节点创建在该云服务器组下。 **约束限制**： 创建节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置。 **取值范围**： 不涉及 **默认取值**： 不涉及
-        /// </summary>
-        [JsonProperty("ecsGroupId", NullValueHandling = NullValueHandling.Ignore)]
-        public string EcsGroupId { get; set; }
-
-        /// <summary>
-        /// **参数解释**： 云服务器标签（资源标签）。 **约束限制**： - 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 - 参数未指定或者为空数组时将删除节点池的自定义云服务器标签。 - 更新节点池时，此字段为非必填字段。  **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// **参数解释**： 云服务器标签（资源标签）。 **约束限制**： - 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 - 参数未指定时将不会更新节点池的自定义云服务器标签。 - 参数为空数组时将删除节点池的自定义云服务器标签。
         /// </summary>
         [JsonProperty("userTags", NullValueHandling = NullValueHandling.Ignore)]
         public List<UserTag> UserTags { get; set; }
@@ -128,6 +134,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             var sb = new StringBuilder();
             sb.Append("class NodeSpecUpdate {\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
+            sb.Append("  az: ").Append(Az).Append("\n");
             sb.Append("  os: ").Append(Os).Append("\n");
             sb.Append("  login: ").Append(Login).Append("\n");
             sb.Append("  rootVolumeUpdate: ").Append(RootVolumeUpdate).Append("\n");
@@ -135,8 +142,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  storage: ").Append(Storage).Append("\n");
             sb.Append("  runtime: ").Append(Runtime).Append("\n");
             sb.Append("  taints: ").Append(Taints).Append("\n");
+            sb.Append("  waitPostInstallFinish: ").Append(WaitPostInstallFinish).Append("\n");
             sb.Append("  k8sTags: ").Append(K8sTags).Append("\n");
-            sb.Append("  ecsGroupId: ").Append(EcsGroupId).Append("\n");
             sb.Append("  userTags: ").Append(UserTags).Append("\n");
             sb.Append("  nodeNameTemplate: ").Append(NodeNameTemplate).Append("\n");
             sb.Append("  initializedConditions: ").Append(InitializedConditions).Append("\n");
@@ -163,6 +170,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             if (input == null) return false;
             if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
+            if (this.Az != input.Az || (this.Az != null && !this.Az.Equals(input.Az))) return false;
             if (this.Os != input.Os || (this.Os != null && !this.Os.Equals(input.Os))) return false;
             if (this.Login != input.Login || (this.Login != null && !this.Login.Equals(input.Login))) return false;
             if (this.RootVolumeUpdate != input.RootVolumeUpdate || (this.RootVolumeUpdate != null && !this.RootVolumeUpdate.Equals(input.RootVolumeUpdate))) return false;
@@ -170,8 +178,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Storage != input.Storage || (this.Storage != null && !this.Storage.Equals(input.Storage))) return false;
             if (this.Runtime != input.Runtime || (this.Runtime != null && !this.Runtime.Equals(input.Runtime))) return false;
             if (this.Taints != input.Taints || (this.Taints != null && input.Taints != null && !this.Taints.SequenceEqual(input.Taints))) return false;
+            if (this.WaitPostInstallFinish != input.WaitPostInstallFinish || (this.WaitPostInstallFinish != null && !this.WaitPostInstallFinish.Equals(input.WaitPostInstallFinish))) return false;
             if (this.K8sTags != input.K8sTags || (this.K8sTags != null && input.K8sTags != null && !this.K8sTags.SequenceEqual(input.K8sTags))) return false;
-            if (this.EcsGroupId != input.EcsGroupId || (this.EcsGroupId != null && !this.EcsGroupId.Equals(input.EcsGroupId))) return false;
             if (this.UserTags != input.UserTags || (this.UserTags != null && input.UserTags != null && !this.UserTags.SequenceEqual(input.UserTags))) return false;
             if (this.NodeNameTemplate != input.NodeNameTemplate || (this.NodeNameTemplate != null && !this.NodeNameTemplate.Equals(input.NodeNameTemplate))) return false;
             if (this.InitializedConditions != input.InitializedConditions || (this.InitializedConditions != null && input.InitializedConditions != null && !this.InitializedConditions.SequenceEqual(input.InitializedConditions))) return false;
@@ -192,6 +200,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             {
                 var hashCode = 41;
                 if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.Az != null) hashCode = hashCode * 59 + this.Az.GetHashCode();
                 if (this.Os != null) hashCode = hashCode * 59 + this.Os.GetHashCode();
                 if (this.Login != null) hashCode = hashCode * 59 + this.Login.GetHashCode();
                 if (this.RootVolumeUpdate != null) hashCode = hashCode * 59 + this.RootVolumeUpdate.GetHashCode();
@@ -199,8 +208,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.Storage != null) hashCode = hashCode * 59 + this.Storage.GetHashCode();
                 if (this.Runtime != null) hashCode = hashCode * 59 + this.Runtime.GetHashCode();
                 if (this.Taints != null) hashCode = hashCode * 59 + this.Taints.GetHashCode();
+                if (this.WaitPostInstallFinish != null) hashCode = hashCode * 59 + this.WaitPostInstallFinish.GetHashCode();
                 if (this.K8sTags != null) hashCode = hashCode * 59 + this.K8sTags.GetHashCode();
-                if (this.EcsGroupId != null) hashCode = hashCode * 59 + this.EcsGroupId.GetHashCode();
                 if (this.UserTags != null) hashCode = hashCode * 59 + this.UserTags.GetHashCode();
                 if (this.NodeNameTemplate != null) hashCode = hashCode * 59 + this.NodeNameTemplate.GetHashCode();
                 if (this.InitializedConditions != null) hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();

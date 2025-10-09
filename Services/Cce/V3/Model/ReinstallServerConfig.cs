@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为5个。
+        /// **参数解释**： 云服务器标签（资源标签）。 **约束限制**： 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。
         /// </summary>
         [JsonProperty("userTags", NullValueHandling = NullValueHandling.Ignore)]
         public List<UserTag> UserTags { get; set; }

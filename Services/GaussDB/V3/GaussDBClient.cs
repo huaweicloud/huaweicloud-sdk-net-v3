@@ -3084,6 +3084,58 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 查询Serverless算力策略
+        ///
+        /// 查询Serverless算力策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowServerlessComputeAbilityPolicyResponse ShowServerlessComputeAbilityPolicy(ShowServerlessComputeAbilityPolicyRequest showServerlessComputeAbilityPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showServerlessComputeAbilityPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerlessComputeAbilityPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowServerlessComputeAbilityPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowServerlessComputeAbilityPolicyResponse> ShowServerlessComputeAbilityPolicyInvoker(ShowServerlessComputeAbilityPolicyRequest showServerlessComputeAbilityPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showServerlessComputeAbilityPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerlessComputeAbilityPolicyRequest);
+            return new SyncInvoker<ShowServerlessComputeAbilityPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowServerlessComputeAbilityPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询Serverless自定义扩容策略
+        ///
+        /// 查询Serverless自定义扩容策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowServerlessScalingPolicyResponse ShowServerlessScalingPolicy(ShowServerlessScalingPolicyRequest showServerlessScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showServerlessScalingPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/scaling-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerlessScalingPolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowServerlessScalingPolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowServerlessScalingPolicyResponse> ShowServerlessScalingPolicyInvoker(ShowServerlessScalingPolicyRequest showServerlessScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showServerlessScalingPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/scaling-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerlessScalingPolicyRequest);
+            return new SyncInvoker<ShowServerlessScalingPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowServerlessScalingPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 获取StarRocks实例内核慢日志信息
         ///
         /// 获取StarRocks实例内核慢日志信息。
@@ -3263,6 +3315,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/table-info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTableMetaInfoRequest);
             return new SyncInvoker<ShowTableMetaInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTableMetaInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 获取TaurusDB异步任务详情
+        ///
+        /// 获取TaurusDB异步任务详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTaskDetailsResponse ShowTaskDetails(ShowTaskDetailsRequest showTaskDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskDetailsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/task-center-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskDetailsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTaskDetailsResponse>(response);
+        }
+
+        public SyncInvoker<ShowTaskDetailsResponse> ShowTaskDetailsInvoker(ShowTaskDetailsRequest showTaskDetailsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTaskDetailsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/task-center-detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskDetailsRequest);
+            return new SyncInvoker<ShowTaskDetailsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTaskDetailsResponse>);
         }
         
         /// <summary>
@@ -4093,6 +4171,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 设置Serverless算力策略
+        ///
+        /// 设置Serverless算力策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateServerlessComputeAbilityPolicyResponse UpdateServerlessComputeAbilityPolicy(UpdateServerlessComputeAbilityPolicyRequest updateServerlessComputeAbilityPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateServerlessComputeAbilityPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/serverless/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerlessComputeAbilityPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateServerlessComputeAbilityPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateServerlessComputeAbilityPolicyResponse> UpdateServerlessComputeAbilityPolicyInvoker(UpdateServerlessComputeAbilityPolicyRequest updateServerlessComputeAbilityPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateServerlessComputeAbilityPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/serverless/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerlessComputeAbilityPolicyRequest);
+            return new SyncInvoker<UpdateServerlessComputeAbilityPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServerlessComputeAbilityPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 设置Serverless配置策略
         ///
         /// 设置Serverless配置策略。
@@ -4116,6 +4220,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerlessPolicyRequest);
             return new SyncInvoker<UpdateServerlessPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateServerlessPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 设置Serverless自定义扩容策略
+        ///
+        /// 设置Serverless自定义扩容策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateServerlessScalingPolicyResponse UpdateServerlessScalingPolicy(UpdateServerlessScalingPolicyRequest updateServerlessScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateServerlessScalingPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/scaling-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerlessScalingPolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateServerlessScalingPolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateServerlessScalingPolicyResponse> UpdateServerlessScalingPolicyInvoker(UpdateServerlessScalingPolicyRequest updateServerlessScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateServerlessScalingPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/serverless/scaling-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateServerlessScalingPolicyRequest);
+            return new SyncInvoker<UpdateServerlessScalingPolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateServerlessScalingPolicyResponse>);
         }
         
         /// <summary>
@@ -5537,6 +5667,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 设置当前查询队列阈值
+        ///
+        /// 设置当前查询队列阈值。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetHtapQueryQueuesRuleResponse SetHtapQueryQueuesRule(SetHtapQueryQueuesRuleRequest setHtapQueryQueuesRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(setHtapQueryQueuesRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/query-queue/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setHtapQueryQueuesRuleRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<SetHtapQueryQueuesRuleResponse>(response);
+        }
+
+        public SyncInvoker<SetHtapQueryQueuesRuleResponse> SetHtapQueryQueuesRuleInvoker(SetHtapQueryQueuesRuleRequest setHtapQueryQueuesRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(setHtapQueryQueuesRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/query-queue/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setHtapQueryQueuesRuleRequest);
+            return new SyncInvoker<SetHtapQueryQueuesRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetHtapQueryQueuesRuleResponse>);
+        }
+        
+        /// <summary>
         /// 查询数据库账户
         ///
         /// 查询数据库账户。
@@ -5686,6 +5842,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/starrocks/instances/logs/lts-configs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHtapLtsConfigRequest);
             return new SyncInvoker<ShowHtapLtsConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHtapLtsConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询当前查询队列开关和阈值
+        ///
+        /// 查询当前查询队列开关和阈值。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowHtapQueryQueuesRuleResponse ShowHtapQueryQueuesRule(ShowHtapQueryQueuesRuleRequest showHtapQueryQueuesRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showHtapQueryQueuesRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/query-queue/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHtapQueryQueuesRuleRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowHtapQueryQueuesRuleResponse>(response);
+        }
+
+        public SyncInvoker<ShowHtapQueryQueuesRuleResponse> ShowHtapQueryQueuesRuleInvoker(ShowHtapQueryQueuesRuleRequest showHtapQueryQueuesRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showHtapQueryQueuesRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/query-queue/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHtapQueryQueuesRuleRequest);
+            return new SyncInvoker<ShowHtapQueryQueuesRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHtapQueryQueuesRuleResponse>);
         }
         
         /// <summary>
@@ -5944,6 +6126,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/clickhouse/slowlog-sensitive", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateClickHouseSlowLogSensitiveStatusRequest);
             return new SyncInvoker<UpdateClickHouseSlowLogSensitiveStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateClickHouseSlowLogSensitiveStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 开启或者关闭查询队列功能
+        ///
+        /// 开启或者关闭查询队列功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateHtapQueryQueuesControlResponse UpdateHtapQueryQueuesControl(UpdateHtapQueryQueuesControlRequest updateHtapQueryQueuesControlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateHtapQueryQueuesControlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/query-queue/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateHtapQueryQueuesControlRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateHtapQueryQueuesControlResponse>(response);
+        }
+
+        public SyncInvoker<UpdateHtapQueryQueuesControlResponse> UpdateHtapQueryQueuesControlInvoker(UpdateHtapQueryQueuesControlRequest updateHtapQueryQueuesControlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateHtapQueryQueuesControlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/query-queue/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateHtapQueryQueuesControlRequest);
+            return new SyncInvoker<UpdateHtapQueryQueuesControlResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateHtapQueryQueuesControlResponse>);
         }
         
         /// <summary>

@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// PersistentVolumeClaim标签，key/value对格式。   - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。  - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。 
         /// </summary>
         [JsonProperty("labels", NullValueHandling = NullValueHandling.Ignore)]
-        public string Labels { get; set; }
+        public Dictionary<string, string> Labels { get; set; }
 
 
 
@@ -58,7 +58,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
-            if (this.Labels != input.Labels || (this.Labels != null && !this.Labels.Equals(input.Labels))) return false;
+            if (this.Labels != input.Labels || (this.Labels != null && input.Labels != null && !this.Labels.SequenceEqual(input.Labels))) return false;
 
             return true;
         }

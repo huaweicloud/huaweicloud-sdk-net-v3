@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 安全组ID。
+        /// **参数解释**： 节点上的容器安全组ID。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }

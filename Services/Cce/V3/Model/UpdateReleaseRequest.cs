@@ -31,6 +31,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Namespace { get; set; }
 
         /// <summary>
+        /// **参数解释：** 是否展示模板实例的资源信息。 **约束限制：** 不涉及 **取值范围：** 指定为“true”时展示模板实例的资源信息，不指定该参数时默认不展示。 **默认取值：** 无
+        /// </summary>
+        [SDKProperty("show_resources", IsQuery = true)]
+        [JsonProperty("show_resources", NullValueHandling = NullValueHandling.Ignore)]
+        public string ShowResources { get; set; }
+
+        /// <summary>
         /// 集群ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
         /// </summary>
         [SDKProperty("cluster_id", IsPath = true)]
@@ -55,6 +62,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("class UpdateReleaseRequest {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
+            sb.Append("  showResources: ").Append(ShowResources).Append("\n");
             sb.Append("  clusterId: ").Append(ClusterId).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
@@ -77,6 +85,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.ShowResources != input.ShowResources || (this.ShowResources != null && !this.ShowResources.Equals(input.ShowResources))) return false;
             if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
@@ -93,6 +102,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 var hashCode = 41;
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.ShowResources != null) hashCode = hashCode * 59 + this.ShowResources.GetHashCode();
                 if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;

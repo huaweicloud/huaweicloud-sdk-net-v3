@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public string CreationTimestamp { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 节点池最后更新时间的时间戳。 **约束限制**： 创建节点池时自动记录，不支持传入。 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("resourceVersion", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ResourceVersion { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  annotations: ").Append(Annotations).Append("\n");
             sb.Append("  updateTimestamp: ").Append(UpdateTimestamp).Append("\n");
             sb.Append("  creationTimestamp: ").Append(CreationTimestamp).Append("\n");
+            sb.Append("  resourceVersion: ").Append(ResourceVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Annotations != input.Annotations || (this.Annotations != null && input.Annotations != null && !this.Annotations.SequenceEqual(input.Annotations))) return false;
             if (this.UpdateTimestamp != input.UpdateTimestamp || (this.UpdateTimestamp != null && !this.UpdateTimestamp.Equals(input.UpdateTimestamp))) return false;
             if (this.CreationTimestamp != input.CreationTimestamp || (this.CreationTimestamp != null && !this.CreationTimestamp.Equals(input.CreationTimestamp))) return false;
+            if (this.ResourceVersion != input.ResourceVersion || (this.ResourceVersion != null && !this.ResourceVersion.Equals(input.ResourceVersion))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.Annotations != null) hashCode = hashCode * 59 + this.Annotations.GetHashCode();
                 if (this.UpdateTimestamp != null) hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
                 if (this.CreationTimestamp != null) hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
+                if (this.ResourceVersion != null) hashCode = hashCode * 59 + this.ResourceVersion.GetHashCode();
                 return hashCode;
             }
         }

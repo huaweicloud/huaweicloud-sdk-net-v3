@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**： 节点名称前缀。如果用户填写为空串或缺省，则节点名称不会增加前缀。 **约束限制**： 仅支持小写字母、数字、连字符（-）和点（.），必须以小写字母开头。 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// **参数解释**： 节点名称前缀。如果用户填写为空串或缺省，则节点名称不会增加前缀。 **约束限制**： 仅支持小写字母、数字、连字符（-）和点（.），必须以小写字母开头，并且符合[FRC 1123](https://tools.ietf.org/html/rfc1123)中定义的DNS子域名命名规范。 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("nodeNamePrefix", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeNamePrefix { get; set; }
 
         /// <summary>
-        /// **参数解释**： 节点名称后缀。如果用户填写为空串或缺省，则节点名称不会增加后缀。 **约束限制**： 仅支持小写字母、数字、连字符（-）和点（.），必须以小写字母开头。 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// **参数解释**： 节点名称后缀。如果用户填写为空串或缺省，则节点名称不会增加后缀。 **约束限制**： 仅支持小写字母、数字、连字符（-）和点（.），后缀结尾必须为小写字母或者数字，并且符合[FRC 1123](https://tools.ietf.org/html/rfc1123)中定义的DNS子域名命名规范。 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("nodeNameSuffix", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeNameSuffix { get; set; }

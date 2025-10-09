@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class NodeStatus 
     {
         /// <summary>
-        /// 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现，取值如下 - Build：创建中，表示节点正处于创建过程中。 - Installing：纳管中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：正常，表示节点处于正常状态。 - Abnormal：异常，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：故障，表示节点处于故障状态。
+        /// **参数解释**： 节点状态 **约束限制**： 创建节点接口返回中无该参数。 **取值范围**： 节点资源生命周期管理（如安装卸载等）状态和集群内K8s node状态的综合体现，取值如下 - Build：创建中，表示节点正处于创建过程中。 - Installing：安装中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：运行中，表示节点处于正常状态。 - Abnormal：不可用，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：错误，表示节点处于故障状态。
         /// </summary>
-        /// <value>节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现，取值如下 - Build：创建中，表示节点正处于创建过程中。 - Installing：纳管中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：正常，表示节点处于正常状态。 - Abnormal：异常，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：故障，表示节点处于故障状态。</value>
+        /// <value>**参数解释**： 节点状态 **约束限制**： 创建节点接口返回中无该参数。 **取值范围**： 节点资源生命周期管理（如安装卸载等）状态和集群内K8s node状态的综合体现，取值如下 - Build：创建中，表示节点正处于创建过程中。 - Installing：安装中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：运行中，表示节点处于正常状态。 - Abnormal：不可用，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：错误，表示节点处于故障状态。</value>
         [JsonConverter(typeof(EnumClassConverter<PhaseEnum>))]
         public class PhaseEnum
         {
@@ -162,42 +162,42 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 节点状态：节点资源生命周期管理（如安装卸载等）状态和集群内k8s node状态的综合体现，取值如下 - Build：创建中，表示节点正处于创建过程中。 - Installing：纳管中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：正常，表示节点处于正常状态。 - Abnormal：异常，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：故障，表示节点处于故障状态。
+        /// **参数解释**： 节点状态 **约束限制**： 创建节点接口返回中无该参数。 **取值范围**： 节点资源生命周期管理（如安装卸载等）状态和集群内K8s node状态的综合体现，取值如下 - Build：创建中，表示节点正处于创建过程中。 - Installing：安装中，表示节点正处于纳管过程中。 - Upgrading：升级中，表示节点正处于升级过程中。 - Active：运行中，表示节点处于正常状态。 - Abnormal：不可用，表示节点处于异常状态。 - Deleting： 删除中，表示节点正处于删除过程中。 - Error：错误，表示节点处于故障状态。
         /// </summary>
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
         public PhaseEnum Phase { get; set; }
         /// <summary>
-        /// 节点最近一次状态检查时间。集群处于异常、冻结或者中间态（例如创建中）时，节点的状态检查动作可能受影响。检查时间超过5分的节点状态不具有参考意义。
+        /// **参数解释**： 节点最近一次状态检查时间。集群处于异常、冻结或者中间态（例如创建中）时，节点的状态检查动作可能受影响。检查时间超过5分的节点状态不具有参考意义。 **约束限制**： 创建节点接口返回中无该参数。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("lastProbeTime", NullValueHandling = NullValueHandling.Ignore)]
         public string LastProbeTime { get; set; }
 
         /// <summary>
-        /// 创建或删除时的任务ID。
+        /// **参数解释**： 创建或删除时的任务ID。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("jobID", NullValueHandling = NullValueHandling.Ignore)]
         public string JobID { get; set; }
 
         /// <summary>
-        /// 底层云服务器或裸金属节点ID。
+        /// **参数解释**： 底层云服务器或裸金属节点ID。 **约束限制**： 创建节点接口返回中无该参数。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("serverId", NullValueHandling = NullValueHandling.Ignore)]
         public string ServerId { get; set; }
 
         /// <summary>
-        /// 节点主网卡私有网段IP地址。
+        /// **参数解释**： 节点主网卡私有网段IP地址。 **约束限制**： 创建节点接口返回中无该参数。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("privateIP", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateIP { get; set; }
 
         /// <summary>
-        /// 节点主网卡私有网段IPv6地址。
+        /// **参数解释**： 节点主网卡私有网段IPv6地址。 **约束限制**： 创建节点接口返回中无该参数。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("privateIPv6IP", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateIPv6IP { get; set; }
 
         /// <summary>
-        /// 节点弹性公网IP地址。如果ECS的数据没有实时同步，可在界面上通过“同步节点信息”手动进行更新。
+        /// **参数解释**： 节点弹性公网IP地址。如果ECS的数据没有实时同步，可在界面上通过“同步节点信息”手动进行更新。 **约束限制**： 创建节点接口返回中无该参数。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("publicIP", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicIP { get; set; }
@@ -207,6 +207,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         [JsonProperty("deleteStatus", NullValueHandling = NullValueHandling.Ignore)]
         public DeleteStatus DeleteStatus { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 节点配置是否与所属节点池的节点模板最新配置一致。当更新节点池os或runtime后，该节点池中存量节点的os或runtime便与节点池存在差异，configurationUpToDate参数值即为false。重置节点后，存量节点的os和runtime与节点池配置保持一致，configurationUpToDate参数值即为true。 **约束限制**： 创建、更新节点接口返回中无该参数。 **取值范围**： 不涉及
+        /// </summary>
+        [JsonProperty("configurationUpToDate", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ConfigurationUpToDate { get; set; }
 
 
 
@@ -225,6 +231,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  privateIPv6IP: ").Append(PrivateIPv6IP).Append("\n");
             sb.Append("  publicIP: ").Append(PublicIP).Append("\n");
             sb.Append("  deleteStatus: ").Append(DeleteStatus).Append("\n");
+            sb.Append("  configurationUpToDate: ").Append(ConfigurationUpToDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -251,6 +258,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.PrivateIPv6IP != input.PrivateIPv6IP || (this.PrivateIPv6IP != null && !this.PrivateIPv6IP.Equals(input.PrivateIPv6IP))) return false;
             if (this.PublicIP != input.PublicIP || (this.PublicIP != null && !this.PublicIP.Equals(input.PublicIP))) return false;
             if (this.DeleteStatus != input.DeleteStatus || (this.DeleteStatus != null && !this.DeleteStatus.Equals(input.DeleteStatus))) return false;
+            if (this.ConfigurationUpToDate != input.ConfigurationUpToDate || (this.ConfigurationUpToDate != null && !this.ConfigurationUpToDate.Equals(input.ConfigurationUpToDate))) return false;
 
             return true;
         }
@@ -271,6 +279,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.PrivateIPv6IP != null) hashCode = hashCode * 59 + this.PrivateIPv6IP.GetHashCode();
                 if (this.PublicIP != null) hashCode = hashCode * 59 + this.PublicIP.GetHashCode();
                 if (this.DeleteStatus != null) hashCode = hashCode * 59 + this.DeleteStatus.GetHashCode();
+                if (this.ConfigurationUpToDate != null) hashCode = hashCode * 59 + this.ConfigurationUpToDate.GetHashCode();
                 return hashCode;
             }
         }

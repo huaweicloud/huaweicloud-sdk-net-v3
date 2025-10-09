@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         [JsonProperty("securityReinforcementType", NullValueHandling = NullValueHandling.Ignore)]
         public SecurityReinforcementTypeEnum SecurityReinforcementType { get; set; }
+        /// <summary>
+        /// **参数解释**： 节点自定义镜像ID，从IMS控制台获取，需要使用自定义镜像时用此参数。 **约束限制**： 不涉及 [&gt; - 若指定了extendParam中的securityReinforcementType参数为cybersecurity，节点将开启安全等保加固功能，则节点的操作系统类型必须使用HCE2.0。](tag:hws)  **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("alpha.cce/NodeImageID", NullValueHandling = NullValueHandling.Ignore)]
+        public string AlphaCceNodeImageID { get; set; }
+
 
 
         /// <summary>
@@ -174,6 +180,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  alphaCcePostInstall: ").Append(AlphaCcePostInstall).Append("\n");
             sb.Append("  spotPrice: ").Append(SpotPrice).Append("\n");
             sb.Append("  securityReinforcementType: ").Append(SecurityReinforcementType).Append("\n");
+            sb.Append("  alphaCceNodeImageID: ").Append(AlphaCceNodeImageID).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -197,6 +204,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.AlphaCcePostInstall != input.AlphaCcePostInstall || (this.AlphaCcePostInstall != null && !this.AlphaCcePostInstall.Equals(input.AlphaCcePostInstall))) return false;
             if (this.SpotPrice != input.SpotPrice || (this.SpotPrice != null && !this.SpotPrice.Equals(input.SpotPrice))) return false;
             if (this.SecurityReinforcementType != input.SecurityReinforcementType) return false;
+            if (this.AlphaCceNodeImageID != input.AlphaCceNodeImageID || (this.AlphaCceNodeImageID != null && !this.AlphaCceNodeImageID.Equals(input.AlphaCceNodeImageID))) return false;
 
             return true;
         }
@@ -214,6 +222,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.AlphaCcePostInstall != null) hashCode = hashCode * 59 + this.AlphaCcePostInstall.GetHashCode();
                 if (this.SpotPrice != null) hashCode = hashCode * 59 + this.SpotPrice.GetHashCode();
                 hashCode = hashCode * 59 + this.SecurityReinforcementType.GetHashCode();
+                if (this.AlphaCceNodeImageID != null) hashCode = hashCode * 59 + this.AlphaCceNodeImageID.GetHashCode();
                 return hashCode;
             }
         }

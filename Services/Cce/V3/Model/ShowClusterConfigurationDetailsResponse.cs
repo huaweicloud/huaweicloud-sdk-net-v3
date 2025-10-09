@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 获取指定集群配置项列表返回体
+        /// **参数解释**： 集群支持的配置项详情
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, List<PackageOptions>> Body { get; set; }

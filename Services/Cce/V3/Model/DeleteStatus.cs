@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 集群删除时已经存在的集群资源记录总数
+        /// **参数解释：** 节点删除时已经存在的集群资源记录总数。 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("previous_total", NullValueHandling = NullValueHandling.Ignore)]
         public int? PreviousTotal { get; set; }
 
         /// <summary>
-        /// 基于当前集群资源记录信息，生成实际最新资源记录总数
+        /// **参数解释：** 基于当前集群资源记录信息，生成实际最新资源记录总数。 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("current_total", NullValueHandling = NullValueHandling.Ignore)]
         public int? CurrentTotal { get; set; }
 
         /// <summary>
-        /// 集群删除时更新的资源记录总数
+        /// **参数解释：** 节点删除时更新的待删除资源记录总数。 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("updated", NullValueHandling = NullValueHandling.Ignore)]
         public int? Updated { get; set; }
 
         /// <summary>
-        /// 集群删除时更新的资源记录总数
+        /// **参数解释：** 节点删除时新增的待删除资源记录总数。 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("added", NullValueHandling = NullValueHandling.Ignore)]
         public int? Added { get; set; }
 
         /// <summary>
-        /// 集群删除时删除的资源记录总数
+        /// **参数解释：** 节点删除时删除的资源记录总数。 **取值范围：** 不涉及
         /// </summary>
         [JsonProperty("deleted", NullValueHandling = NullValueHandling.Ignore)]
         public int? Deleted { get; set; }

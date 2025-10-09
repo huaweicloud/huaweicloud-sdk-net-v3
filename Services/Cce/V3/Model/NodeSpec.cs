@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     /// </summary>
     public class NodeSpec 
     {
+        /// <summary>
+        /// **参数解释**： 节点的计费模式。 **约束限制**： 不涉及 **取值范围**： -  0: 按需付费 [- 1: 包周期](tag:hws,hws_hk) [- 2: 已废弃：自动付费包周期](tag:hws,hws_hk)  **默认取值**： 0 
+        /// </summary>
+        /// <value>**参数解释**： 节点的计费模式。 **约束限制**： 不涉及 **取值范围**： -  0: 按需付费 [- 1: 包周期](tag:hws,hws_hk) [- 2: 已废弃：自动付费包周期](tag:hws,hws_hk)  **默认取值**： 0 </value>
+        [JsonConverter(typeof(EnumClassConverter<BillingModeEnum>))]
+        public class BillingModeEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            public static readonly BillingModeEnum NUMBER_0 = new BillingModeEnum(0);
+
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly BillingModeEnum NUMBER_1 = new BillingModeEnum(1);
+
+            private static readonly Dictionary<int?, BillingModeEnum> StaticFields =
+            new Dictionary<int?, BillingModeEnum>()
+            {
+                { 0, NUMBER_0 },
+                { 1, NUMBER_1 },
+            };
+
+            private int? _value;
+
+            public BillingModeEnum()
+            {
+
+            }
+
+            public BillingModeEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static BillingModeEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as BillingModeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(BillingModeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(BillingModeEnum a, BillingModeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(BillingModeEnum a, BillingModeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 节点的规格，CCE支持的节点规格请参考[节点规格说明](https://support.huaweicloud.com/api-cce/cce_02_0368.html)获取。 
@@ -29,7 +144,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string Az { get; set; }
 
         /// <summary>
-        /// [节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](https://support.huaweicloud.com/api-cce/node-os.html)。](tag:hws) [节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](https://support.huaweicloud.com/intl/zh-cn/api-cce/node-os.html)。](tag:hws_hk) &gt; - 系统会根据集群版本自动选择支持的系统版本。当前集群版本不支持该系统类型，则会报错。 &gt; - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 &gt; - 创建节点池时，该参数为必选。 &gt; - 若创建节点时使用共享磁盘空间，即磁盘初始化配置管理参数使用storage，且StorageGroups中virtualSpaces的name字段指定为share，该参数为必选。 
+        /// **参数解释**： 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 **约束限制**： - 若在创建节点时未指定该配置，CCE会根据集群版本自动选择支持的OS版本。 - 若当前集群版本不支持该OS类型，则会自动替换为当前集群版本支持的同系列OS类型。 - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，节点将使用私有镜像，则该参数为非必选参数。 [- 若在创建节点时指定了extendParam中的securityReinforcementType参数为cybersecurity，节点将开启安全等保加固功能，则节点的操作系统类型必须使用HCE2.0。当用户未配置私有镜像时，该参数必须为“Huawei Cloud EulerOS 2.0”；当用户配置了私有镜像且私有镜像操作系统类型为HCE2.0，则该参数为非必选参数。](tag:hws)  **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("os", NullValueHandling = NullValueHandling.Ignore)]
         public string Os { get; set; }
@@ -71,22 +186,27 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public NodeNicSpec NodeNicSpec { get; set; }
 
         /// <summary>
-        /// 批量创建时节点的个数，必须为大于等于1，小于等于最大限额的正整数。作用于节点池时该项可以不填写。
+        /// **参数解释**： 批量创建时节点的个数。 **约束限制**： - 作用于节点池时该项可以不填写。 - 创建、更新节点池场景返回中无该参数。 - 创建节点时该参数为必填参数  **取值范围**： 必须为大于等于1，小于等于最大限额的正整数。 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
         public int? Count { get; set; }
 
         /// <summary>
-        /// 节点的计费模式： -  0: 按需付费 [- 1: 包周期](tag:hws,hws_hk) [- 2: 已废弃：自动付费包周期](tag:hws,hws_hk) 
+        /// **参数解释**： 节点的计费模式。 **约束限制**： 不涉及 **取值范围**： -  0: 按需付费 [- 1: 包周期](tag:hws,hws_hk) [- 2: 已废弃：自动付费包周期](tag:hws,hws_hk)  **默认取值**： 0 
         /// </summary>
         [JsonProperty("billingMode", NullValueHandling = NullValueHandling.Ignore)]
-        public int? BillingMode { get; set; }
-
+        public BillingModeEnum BillingMode { get; set; }
         /// <summary>
         /// 支持给创建出来的节点加Taints来设置反亲和性，taints配置不超过20条。每条Taints包含以下3个参数：  - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。 - Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。  示例：  &#x60;&#x60;&#x60; \&quot;taints\&quot;: [{   \&quot;key\&quot;: \&quot;status\&quot;,   \&quot;value\&quot;: \&quot;unavailable\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }, {   \&quot;key\&quot;: \&quot;looks\&quot;,   \&quot;value\&quot;: \&quot;bad\&quot;,   \&quot;effect\&quot;: \&quot;NoSchedule\&quot; }] &#x60;&#x60;&#x60; 
         /// </summary>
         [JsonProperty("taints", NullValueHandling = NullValueHandling.Ignore)]
         public List<Taint> Taints { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 该参数用于控制创建节点时 **post-install脚本执行完成前允许节点调度** 行为。当该参数未设置或者为false时，在kubernetes节点就绪时，容器即可被调度到可用节点。当该参数为true时，在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **约束限制：** 不涉及  **取值范围：** - false：在kubernetes节点就绪时，容器即可被调度到可用节点。           - true：在kubernetes节点就绪时且post-install脚本执行完成时，容器才可被调度到可用节点。  **默认取值：** false
+        /// </summary>
+        [JsonProperty("waitPostInstallFinish", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WaitPostInstallFinish { get; set; }
 
         /// <summary>
         /// 格式为key/value键值对。键值对个数不超过20条。 - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。   示例： &#x60;&#x60;&#x60; \&quot;k8sTags\&quot;: {   \&quot;key\&quot;: \&quot;value\&quot; } &#x60;&#x60;&#x60; 
@@ -95,19 +215,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Dictionary<string, string> K8sTags { get; set; }
 
         /// <summary>
-        /// 云服务器组ID，若指定，将节点创建在该云服务器组下 &gt; 创建节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置
+        /// **参数解释**： 云服务器组ID，若指定，将节点创建在该云服务器组下。 **约束限制**： 创建、更新节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置。 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("ecsGroupId", NullValueHandling = NullValueHandling.Ignore)]
         public string EcsGroupId { get; set; }
 
         /// <summary>
-        /// 指定DeH主机的ID，将节点调度到自己的DeH上。 &gt;创建节点池添加节点时不支持该参数。 
+        /// **参数解释**： 指定DeH主机的ID，将节点调度到自己的DeH上。 **约束限制**： 创建节点池添加节点时不支持该参数。 **取值范围**： 不涉及 **默认取值**： 不涉及
         /// </summary>
         [JsonProperty("dedicatedHostId", NullValueHandling = NullValueHandling.Ignore)]
         public string DedicatedHostId { get; set; }
 
         /// <summary>
-        /// 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。 &gt; 标签键只能包含大写字母.小写字母、数字和特殊字符(-_)以及Unicode字符，长度不超过36个字符。 
+        /// **参数解释**： 云服务器标签（资源标签）。字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。 **约束限制**： - 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。
         /// </summary>
         [JsonProperty("userTags", NullValueHandling = NullValueHandling.Ignore)]
         public List<UserTag> UserTags { get; set; }
@@ -148,6 +268,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public string Partition { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("nodeNameTemplate", NullValueHandling = NullValueHandling.Ignore)]
+        public NodeSpecNodeNameTemplate NodeNameTemplate { get; set; }
+
 
 
         /// <summary>
@@ -169,6 +295,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  billingMode: ").Append(BillingMode).Append("\n");
             sb.Append("  taints: ").Append(Taints).Append("\n");
+            sb.Append("  waitPostInstallFinish: ").Append(WaitPostInstallFinish).Append("\n");
             sb.Append("  k8sTags: ").Append(K8sTags).Append("\n");
             sb.Append("  ecsGroupId: ").Append(EcsGroupId).Append("\n");
             sb.Append("  dedicatedHostId: ").Append(DedicatedHostId).Append("\n");
@@ -179,6 +306,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  hostnameConfig: ").Append(HostnameConfig).Append("\n");
             sb.Append("  serverEnterpriseProjectID: ").Append(ServerEnterpriseProjectID).Append("\n");
             sb.Append("  partition: ").Append(Partition).Append("\n");
+            sb.Append("  nodeNameTemplate: ").Append(NodeNameTemplate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -207,8 +335,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.PublicIP != input.PublicIP || (this.PublicIP != null && !this.PublicIP.Equals(input.PublicIP))) return false;
             if (this.NodeNicSpec != input.NodeNicSpec || (this.NodeNicSpec != null && !this.NodeNicSpec.Equals(input.NodeNicSpec))) return false;
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
-            if (this.BillingMode != input.BillingMode || (this.BillingMode != null && !this.BillingMode.Equals(input.BillingMode))) return false;
+            if (this.BillingMode != input.BillingMode) return false;
             if (this.Taints != input.Taints || (this.Taints != null && input.Taints != null && !this.Taints.SequenceEqual(input.Taints))) return false;
+            if (this.WaitPostInstallFinish != input.WaitPostInstallFinish || (this.WaitPostInstallFinish != null && !this.WaitPostInstallFinish.Equals(input.WaitPostInstallFinish))) return false;
             if (this.K8sTags != input.K8sTags || (this.K8sTags != null && input.K8sTags != null && !this.K8sTags.SequenceEqual(input.K8sTags))) return false;
             if (this.EcsGroupId != input.EcsGroupId || (this.EcsGroupId != null && !this.EcsGroupId.Equals(input.EcsGroupId))) return false;
             if (this.DedicatedHostId != input.DedicatedHostId || (this.DedicatedHostId != null && !this.DedicatedHostId.Equals(input.DedicatedHostId))) return false;
@@ -219,6 +348,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.HostnameConfig != input.HostnameConfig || (this.HostnameConfig != null && !this.HostnameConfig.Equals(input.HostnameConfig))) return false;
             if (this.ServerEnterpriseProjectID != input.ServerEnterpriseProjectID || (this.ServerEnterpriseProjectID != null && !this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))) return false;
             if (this.Partition != input.Partition || (this.Partition != null && !this.Partition.Equals(input.Partition))) return false;
+            if (this.NodeNameTemplate != input.NodeNameTemplate || (this.NodeNameTemplate != null && !this.NodeNameTemplate.Equals(input.NodeNameTemplate))) return false;
 
             return true;
         }
@@ -241,8 +371,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.PublicIP != null) hashCode = hashCode * 59 + this.PublicIP.GetHashCode();
                 if (this.NodeNicSpec != null) hashCode = hashCode * 59 + this.NodeNicSpec.GetHashCode();
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.BillingMode != null) hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
+                hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
                 if (this.Taints != null) hashCode = hashCode * 59 + this.Taints.GetHashCode();
+                if (this.WaitPostInstallFinish != null) hashCode = hashCode * 59 + this.WaitPostInstallFinish.GetHashCode();
                 if (this.K8sTags != null) hashCode = hashCode * 59 + this.K8sTags.GetHashCode();
                 if (this.EcsGroupId != null) hashCode = hashCode * 59 + this.EcsGroupId.GetHashCode();
                 if (this.DedicatedHostId != null) hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
@@ -253,6 +384,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.HostnameConfig != null) hashCode = hashCode * 59 + this.HostnameConfig.GetHashCode();
                 if (this.ServerEnterpriseProjectID != null) hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
                 if (this.Partition != null) hashCode = hashCode * 59 + this.Partition.GetHashCode();
+                if (this.NodeNameTemplate != null) hashCode = hashCode * 59 + this.NodeNameTemplate.GetHashCode();
                 return hashCode;
             }
         }

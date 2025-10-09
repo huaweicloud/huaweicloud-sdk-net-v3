@@ -146,7 +146,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("nodeTemplate", NullValueHandling = NullValueHandling.Ignore)]
-        public NodeSpec NodeTemplate { get; set; }
+        public NodeTemplate NodeTemplate { get; set; }
 
         /// <summary>
         /// 节点池初始化节点个数。查询时为节点池目标节点数量。
@@ -184,6 +184,24 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("customSecurityGroups", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> CustomSecurityGroups { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 存量节点污点同步策略 **约束限制**： 不涉及 **取值范围**： - ignore：配置为\&quot;ignore\&quot;后，节点池不再同步更新存量节点的污点。 - refresh：配置为\&quot;refresh\&quot;后，节点池将同步更新存量节点的污点。  **默认取值**： refresh
+        /// </summary>
+        [JsonProperty("taintPolicyOnExistingNodes", NullValueHandling = NullValueHandling.Ignore)]
+        public string TaintPolicyOnExistingNodes { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 存量节点标签同步策略 **约束限制**： 不涉及 **取值范围**： - ignore：配置为\&quot;ignore\&quot;后，节点池不再同步更新存量节点的标签。 - refresh：配置为\&quot;refresh\&quot;后，节点池将同步更新存量节点的标签。  **默认取值**： refresh
+        /// </summary>
+        [JsonProperty("labelPolicyOnExistingNodes", NullValueHandling = NullValueHandling.Ignore)]
+        public string LabelPolicyOnExistingNodes { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 存量节点资源标签同步策略 **约束限制**： 不涉及 **取值范围**： - ignore：配置为\&quot;ignore\&quot;后，节点池不再同步更新存量节点的资源标签。 - refresh：配置为\&quot;refresh\&quot;后，节点池将同步更新存量节点的资源标签。  **默认取值**： ignore
+        /// </summary>
+        [JsonProperty("userTagsPolicyOnExistingNodes", NullValueHandling = NullValueHandling.Ignore)]
+        public string UserTagsPolicyOnExistingNodes { get; set; }
+
 
 
         /// <summary>
@@ -201,6 +219,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  podSecurityGroups: ").Append(PodSecurityGroups).Append("\n");
             sb.Append("  extensionScaleGroups: ").Append(ExtensionScaleGroups).Append("\n");
             sb.Append("  customSecurityGroups: ").Append(CustomSecurityGroups).Append("\n");
+            sb.Append("  taintPolicyOnExistingNodes: ").Append(TaintPolicyOnExistingNodes).Append("\n");
+            sb.Append("  labelPolicyOnExistingNodes: ").Append(LabelPolicyOnExistingNodes).Append("\n");
+            sb.Append("  userTagsPolicyOnExistingNodes: ").Append(UserTagsPolicyOnExistingNodes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -227,6 +248,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.PodSecurityGroups != input.PodSecurityGroups || (this.PodSecurityGroups != null && input.PodSecurityGroups != null && !this.PodSecurityGroups.SequenceEqual(input.PodSecurityGroups))) return false;
             if (this.ExtensionScaleGroups != input.ExtensionScaleGroups || (this.ExtensionScaleGroups != null && input.ExtensionScaleGroups != null && !this.ExtensionScaleGroups.SequenceEqual(input.ExtensionScaleGroups))) return false;
             if (this.CustomSecurityGroups != input.CustomSecurityGroups || (this.CustomSecurityGroups != null && input.CustomSecurityGroups != null && !this.CustomSecurityGroups.SequenceEqual(input.CustomSecurityGroups))) return false;
+            if (this.TaintPolicyOnExistingNodes != input.TaintPolicyOnExistingNodes || (this.TaintPolicyOnExistingNodes != null && !this.TaintPolicyOnExistingNodes.Equals(input.TaintPolicyOnExistingNodes))) return false;
+            if (this.LabelPolicyOnExistingNodes != input.LabelPolicyOnExistingNodes || (this.LabelPolicyOnExistingNodes != null && !this.LabelPolicyOnExistingNodes.Equals(input.LabelPolicyOnExistingNodes))) return false;
+            if (this.UserTagsPolicyOnExistingNodes != input.UserTagsPolicyOnExistingNodes || (this.UserTagsPolicyOnExistingNodes != null && !this.UserTagsPolicyOnExistingNodes.Equals(input.UserTagsPolicyOnExistingNodes))) return false;
 
             return true;
         }
@@ -247,6 +271,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.PodSecurityGroups != null) hashCode = hashCode * 59 + this.PodSecurityGroups.GetHashCode();
                 if (this.ExtensionScaleGroups != null) hashCode = hashCode * 59 + this.ExtensionScaleGroups.GetHashCode();
                 if (this.CustomSecurityGroups != null) hashCode = hashCode * 59 + this.CustomSecurityGroups.GetHashCode();
+                if (this.TaintPolicyOnExistingNodes != null) hashCode = hashCode * 59 + this.TaintPolicyOnExistingNodes.GetHashCode();
+                if (this.LabelPolicyOnExistingNodes != null) hashCode = hashCode * 59 + this.LabelPolicyOnExistingNodes.GetHashCode();
+                if (this.UserTagsPolicyOnExistingNodes != null) hashCode = hashCode * 59 + this.UserTagsPolicyOnExistingNodes.GetHashCode();
                 return hashCode;
             }
         }
