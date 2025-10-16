@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
+namespace HuaweiCloud.SDK.Config.V1.Model
 {
     /// <summary>
-    /// 
+    /// Request Object
     /// </summary>
-    public class CreateWdrSnapshotResponseBody 
+    public class ListPolicyStatesStatisticsRequest 
     {
 
 

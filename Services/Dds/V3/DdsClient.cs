@@ -677,6 +677,32 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
+        /// 删除集群的Shard/Config IP
+        ///
+        /// 删除集群的Shard/Config IP
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteIpResponse DeleteIp(DeleteIpRequest deleteIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteIpResponse>(response);
+        }
+
+        public SyncInvoker<DeleteIpResponse> DeleteIpInvoker(DeleteIpRequest deleteIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteIpRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteIpRequest);
+            return new SyncInvoker<DeleteIpResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteIpResponse>);
+        }
+        
+        /// <summary>
         /// 删除killOp规则
         ///
         /// 删除killOp规则。

@@ -41,6 +41,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string ProductId { get; set; }
 
         /// <summary>
+        /// 设备关联的产品名称
+        /// </summary>
+        [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProductName { get; set; }
+
+        /// <summary>
+        /// **参数说明**：OTA模块名称，产品下唯一且不可修改。 **取值范围**：长度不超过64，号只允许字母、数字、下划线（_）、连接符（-）、英文点（.）的组合。
+        /// </summary>
+        [JsonProperty("module_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ModuleName { get; set; }
+
+        /// <summary>
         /// **参数说明**：升级包版本号。 **取值范围**：长度不超过256，只允许字母、数字、下划线（_）、连接符（-）、英文点（.）的组合。
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
@@ -83,6 +95,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  appId: ").Append(AppId).Append("\n");
             sb.Append("  packageType: ").Append(PackageType).Append("\n");
             sb.Append("  productId: ").Append(ProductId).Append("\n");
+            sb.Append("  productName: ").Append(ProductName).Append("\n");
+            sb.Append("  moduleName: ").Append(ModuleName).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("  supportSourceVersions: ").Append(SupportSourceVersions).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -110,6 +124,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
             if (this.PackageType != input.PackageType || (this.PackageType != null && !this.PackageType.Equals(input.PackageType))) return false;
             if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
+            if (this.ProductName != input.ProductName || (this.ProductName != null && !this.ProductName.Equals(input.ProductName))) return false;
+            if (this.ModuleName != input.ModuleName || (this.ModuleName != null && !this.ModuleName.Equals(input.ModuleName))) return false;
             if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
             if (this.SupportSourceVersions != input.SupportSourceVersions || (this.SupportSourceVersions != null && input.SupportSourceVersions != null && !this.SupportSourceVersions.SequenceEqual(input.SupportSourceVersions))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
@@ -131,6 +147,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
                 if (this.PackageType != null) hashCode = hashCode * 59 + this.PackageType.GetHashCode();
                 if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.ProductName != null) hashCode = hashCode * 59 + this.ProductName.GetHashCode();
+                if (this.ModuleName != null) hashCode = hashCode * 59 + this.ModuleName.GetHashCode();
                 if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 if (this.SupportSourceVersions != null) hashCode = hashCode * 59 + this.SupportSourceVersions.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();

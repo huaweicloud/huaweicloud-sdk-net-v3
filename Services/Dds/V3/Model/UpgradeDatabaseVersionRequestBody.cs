@@ -17,10 +17,16 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 升级模式。  取值为“minimized_interrupt_time”为中断时间最短优先模式：升级过程对业务影响相对较小的升级方式  取值为“minimized_upgrade_time”为升级时长最短优先模式：升级过程时长相对较快的升级方式。  默认取值为“minimized_interrupt_time”。
+        /// **参数解释：** 升级模式。 **约束限制：** 不涉及。 **取值范围：** minimized_interrupt_time：表示中断时间最短优先模式：升级过程对业务影响相对较小的升级方式。 minimized_upgrade_time：表示升级时长最短优先模式：升级过程时长相对较快的升级方式。 **默认取值：** minimized_interrupt_time。
         /// </summary>
         [JsonProperty("upgrade_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string UpgradeMode { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 实例是否在可维护时间窗内自动升级。 **约束限制：** 不涉及。 **取值范围：** true：表示延迟升级，实例将在可维护时间窗内自动升级。 false：表示立即升级。 **默认取值：** false。
+        /// </summary>
+        [JsonProperty("is_delayed", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsDelayed { get; set; }
 
 
 
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             var sb = new StringBuilder();
             sb.Append("class UpgradeDatabaseVersionRequestBody {\n");
             sb.Append("  upgradeMode: ").Append(UpgradeMode).Append("\n");
+            sb.Append("  isDelayed: ").Append(IsDelayed).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             if (input == null) return false;
             if (this.UpgradeMode != input.UpgradeMode || (this.UpgradeMode != null && !this.UpgradeMode.Equals(input.UpgradeMode))) return false;
+            if (this.IsDelayed != input.IsDelayed || (this.IsDelayed != null && !this.IsDelayed.Equals(input.IsDelayed))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             {
                 var hashCode = 41;
                 if (this.UpgradeMode != null) hashCode = hashCode * 59 + this.UpgradeMode.GetHashCode();
+                if (this.IsDelayed != null) hashCode = hashCode * 59 + this.IsDelayed.GetHashCode();
                 return hashCode;
             }
         }

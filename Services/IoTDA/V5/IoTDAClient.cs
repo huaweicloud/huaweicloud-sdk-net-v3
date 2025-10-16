@@ -2726,6 +2726,132 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 创建OTA模块
+        ///
+        /// 用户可调用此接口创建产品的OTA模块,同一产品下最多自定义10个OTA模块。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateOtaModuleResponse CreateOtaModule(CreateOtaModuleRequest createOtaModuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/modules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createOtaModuleRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateOtaModuleResponse>(response);
+        }
+
+        public SyncInvoker<CreateOtaModuleResponse> CreateOtaModuleInvoker(CreateOtaModuleRequest createOtaModuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/modules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createOtaModuleRequest);
+            return new SyncInvoker<CreateOtaModuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateOtaModuleResponse>);
+        }
+        
+        /// <summary>
+        /// 删除OTA模块
+        ///
+        /// 用户可调用此接口删除产品对应的OTA模块
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteOtaModuleResponse DeleteOtaModule(DeleteOtaModuleRequest deleteOtaModuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteOtaModuleRequest.ModuleId, out var valueOfModuleId)) urlParam.Add("module_id", valueOfModuleId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/modules/{module_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOtaModuleRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteOtaModuleResponse>(response);
+        }
+
+        public SyncInvoker<DeleteOtaModuleResponse> DeleteOtaModuleInvoker(DeleteOtaModuleRequest deleteOtaModuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteOtaModuleRequest.ModuleId, out var valueOfModuleId)) urlParam.Add("module_id", valueOfModuleId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/modules/{module_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteOtaModuleRequest);
+            return new SyncInvoker<DeleteOtaModuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteOtaModuleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询OTA模块列表
+        ///
+        /// 用户可调用此接口查询指定产品的OTA模块列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListOtaModulesResponse ListOtaModules(ListOtaModulesRequest listOtaModulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/modules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOtaModulesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListOtaModulesResponse>(response);
+        }
+
+        public SyncInvoker<ListOtaModulesResponse> ListOtaModulesInvoker(ListOtaModulesRequest listOtaModulesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/modules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listOtaModulesRequest);
+            return new SyncInvoker<ListOtaModulesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListOtaModulesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询OTA模块详情
+        ///
+        /// 用户可调用此接口查询OTA模块详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowOtaModuleResponse ShowOtaModule(ShowOtaModuleRequest showOtaModuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showOtaModuleRequest.ModuleId, out var valueOfModuleId)) urlParam.Add("module_id", valueOfModuleId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/modules/{module_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOtaModuleRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowOtaModuleResponse>(response);
+        }
+
+        public SyncInvoker<ShowOtaModuleResponse> ShowOtaModuleInvoker(ShowOtaModuleRequest showOtaModuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showOtaModuleRequest.ModuleId, out var valueOfModuleId)) urlParam.Add("module_id", valueOfModuleId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/modules/{module_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showOtaModuleRequest);
+            return new SyncInvoker<ShowOtaModuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowOtaModuleResponse>);
+        }
+        
+        /// <summary>
+        /// 修改OTA模块
+        ///
+        /// 用户可调用此接口修改对应的OTA模块的别名和描述。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateOtaModuleResponse UpdateOtaModule(UpdateOtaModuleRequest updateOtaModuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateOtaModuleRequest.ModuleId, out var valueOfModuleId)) urlParam.Add("module_id", valueOfModuleId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/modules/{module_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateOtaModuleRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateOtaModuleResponse>(response);
+        }
+
+        public SyncInvoker<UpdateOtaModuleResponse> UpdateOtaModuleInvoker(UpdateOtaModuleRequest updateOtaModuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateOtaModuleRequest.ModuleId, out var valueOfModuleId)) urlParam.Add("module_id", valueOfModuleId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/ota-upgrades/modules/{module_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateOtaModuleRequest);
+            return new SyncInvoker<UpdateOtaModuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateOtaModuleResponse>);
+        }
+        
+        /// <summary>
         /// 创建OTA升级包
         ///
         /// 用户可调用此接口创建升级包关联OBS对象

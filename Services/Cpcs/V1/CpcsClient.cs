@@ -15,6 +15,32 @@ namespace HuaweiCloud.SDK.Cpcs.V1
 
         
         /// <summary>
+        /// 创建集群模式端口
+        ///
+        /// 创建集群模式端口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddClusterPortResponse AddClusterPort(AddClusterPortRequest addClusterPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addClusterPortRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addClusterPortRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AddClusterPortResponse>(response);
+        }
+
+        public SyncInvoker<AddClusterPortResponse> AddClusterPortInvoker(AddClusterPortRequest addClusterPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addClusterPortRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", addClusterPortRequest);
+            return new SyncInvoker<AddClusterPortResponse>(this, "POST", request, JsonUtils.DeSerialize<AddClusterPortResponse>);
+        }
+        
+        /// <summary>
         /// 创建密码服务集群与应用绑定关系
         ///
         /// 创建密码服务集群与应用绑定关系
@@ -142,6 +168,35 @@ namespace HuaweiCloud.SDK.Cpcs.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/de-authorize-access-keys", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelAuthorizeAccessKeysRequest);
             return new SyncInvoker<CancelAuthorizeAccessKeysResponse>(this, "POST", request, JsonUtils.DeSerialize<CancelAuthorizeAccessKeysResponse>);
+        }
+        
+        /// <summary>
+        /// 检测集群模式端口是否正常
+        ///
+        /// 检测该端口关联的监听器、后端服务器组是否正确无误。
+        /// &gt; 该接口调用后会根据实际情况，更新检查结果。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckClusterPortResponse CheckClusterPort(CheckClusterPortRequest checkClusterPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkClusterPortRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(checkClusterPortRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkClusterPortRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<CheckClusterPortResponse>(response);
+        }
+
+        public SyncInvoker<CheckClusterPortResponse> CheckClusterPortInvoker(CheckClusterPortRequest checkClusterPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkClusterPortRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(checkClusterPortRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkClusterPortRequest);
+            return new SyncInvoker<CheckClusterPortResponse>(this, "PUT", request, JsonUtils.DeSerialize<CheckClusterPortResponse>);
         }
         
         /// <summary>
@@ -303,6 +358,35 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         }
         
         /// <summary>
+        /// 删除集群模式端口
+        ///
+        /// 删除集群模式端口。
+        /// &gt; 由于端口可能被租户二次修改过，并用于其他业务,所以删除会有几个不同选项，具体查看参数说明。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteClusterPortResponse DeleteClusterPort(DeleteClusterPortRequest deleteClusterPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteClusterPortRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteClusterPortRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClusterPortRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteClusterPortResponse>(response);
+        }
+
+        public SyncInvoker<DeleteClusterPortResponse> DeleteClusterPortInvoker(DeleteClusterPortRequest deleteClusterPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteClusterPortRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteClusterPortRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteClusterPortRequest);
+            return new SyncInvoker<DeleteClusterPortResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteClusterPortResponse>);
+        }
+        
+        /// <summary>
         /// 停用密码服务实例的业务功能
         ///
         /// 停用密码服务实例的业务功能
@@ -405,6 +489,32 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         }
         
         /// <summary>
+        /// 查询集群模式端口列表
+        ///
+        /// 列出当前集群下的所有集群模式端口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListClusterPortResponse ListClusterPort(ListClusterPortRequest listClusterPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listClusterPortRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClusterPortRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListClusterPortResponse>(response);
+        }
+
+        public SyncInvoker<ListClusterPortResponse> ListClusterPortInvoker(ListClusterPortRequest listClusterPortRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listClusterPortRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/{cluster_id}/port", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listClusterPortRequest);
+            return new SyncInvoker<ListClusterPortResponse>(this, "GET", request, JsonUtils.DeSerialize<ListClusterPortResponse>);
+        }
+        
+        /// <summary>
         /// 下载访问密钥
         ///
         /// 下载访问密钥且只能下载一次。
@@ -504,6 +614,30 @@ namespace HuaweiCloud.SDK.Cpcs.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/associations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssociationListRequest);
             return new SyncInvoker<ShowAssociationListResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAssociationListResponse>);
+        }
+        
+        /// <summary>
+        /// 查询平台审计日志
+        ///
+        /// 查询平台审计日志
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAuditLogResponse ShowAuditLog(ShowAuditLogRequest showAuditLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/platform/audit-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditLogRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAuditLogResponse>(response);
+        }
+
+        public SyncInvoker<ShowAuditLogResponse> ShowAuditLogInvoker(ShowAuditLogRequest showAuditLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/platform/audit-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuditLogRequest);
+            return new SyncInvoker<ShowAuditLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAuditLogResponse>);
         }
         
         /// <summary>
@@ -658,6 +792,54 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         }
         
         /// <summary>
+        /// 获取AK详情
+        ///
+        /// 获取所监控或者统计的AK详情列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowResourceDetailAccessKeyResponse ShowResourceDetailAccessKey(ShowResourceDetailAccessKeyRequest showResourceDetailAccessKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/resource/access-key", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceDetailAccessKeyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowResourceDetailAccessKeyResponse>(response);
+        }
+
+        public SyncInvoker<ShowResourceDetailAccessKeyResponse> ShowResourceDetailAccessKeyInvoker(ShowResourceDetailAccessKeyRequest showResourceDetailAccessKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/resource/access-key", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceDetailAccessKeyRequest);
+            return new SyncInvoker<ShowResourceDetailAccessKeyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResourceDetailAccessKeyResponse>);
+        }
+        
+        /// <summary>
+        /// 获取证书详情
+        ///
+        /// 获取所监控或者统计的证书详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowResourceDetailCertificateResponse ShowResourceDetailCertificate(ShowResourceDetailCertificateRequest showResourceDetailCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/resource/certificates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceDetailCertificateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowResourceDetailCertificateResponse>(response);
+        }
+
+        public SyncInvoker<ShowResourceDetailCertificateResponse> ShowResourceDetailCertificateInvoker(ShowResourceDetailCertificateRequest showResourceDetailCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/resource/certificates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceDetailCertificateRequest);
+            return new SyncInvoker<ShowResourceDetailCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResourceDetailCertificateResponse>);
+        }
+        
+        /// <summary>
         /// 查询租户的资源分布信息
         ///
         /// 查询租户的资源分布信息
@@ -682,6 +864,198 @@ namespace HuaweiCloud.SDK.Cpcs.V1
         }
         
         /// <summary>
+        /// 获取证书分布统计信息
+        ///
+        /// 获取CPCS中证书分布统计信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStatisticCertificateResponse ShowStatisticCertificate(ShowStatisticCertificateRequest showStatisticCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/certificate/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatisticCertificateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStatisticCertificateResponse>(response);
+        }
+
+        public SyncInvoker<ShowStatisticCertificateResponse> ShowStatisticCertificateInvoker(ShowStatisticCertificateRequest showStatisticCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/certificate/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatisticCertificateRequest);
+            return new SyncInvoker<ShowStatisticCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStatisticCertificateResponse>);
+        }
+        
+        /// <summary>
+        /// 获取接口调用统计信息
+        ///
+        /// 获取CPCS中接口调用统计信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStatisticInterfaceResponse ShowStatisticInterface(ShowStatisticInterfaceRequest showStatisticInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/interface/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatisticInterfaceRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStatisticInterfaceResponse>(response);
+        }
+
+        public SyncInvoker<ShowStatisticInterfaceResponse> ShowStatisticInterfaceInvoker(ShowStatisticInterfaceRequest showStatisticInterfaceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/interface/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatisticInterfaceRequest);
+            return new SyncInvoker<ShowStatisticInterfaceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStatisticInterfaceResponse>);
+        }
+        
+        /// <summary>
+        /// 获取资源总量统计信息
+        ///
+        /// 获取CPCS中\\资源总量统计信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStatisticResourceResponse ShowStatisticResource(ShowStatisticResourceRequest showStatisticResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/resource/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatisticResourceRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStatisticResourceResponse>(response);
+        }
+
+        public SyncInvoker<ShowStatisticResourceResponse> ShowStatisticResourceInvoker(ShowStatisticResourceRequest showStatisticResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/resource/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatisticResourceRequest);
+            return new SyncInvoker<ShowStatisticResourceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStatisticResourceResponse>);
+        }
+        
+        /// <summary>
+        /// 获取密钥分布统计信息
+        ///
+        /// 获取CPCS中密钥分布统计信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStatisticSecretKeyResponse ShowStatisticSecretKey(ShowStatisticSecretKeyRequest showStatisticSecretKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/secret-key/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatisticSecretKeyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStatisticSecretKeyResponse>(response);
+        }
+
+        public SyncInvoker<ShowStatisticSecretKeyResponse> ShowStatisticSecretKeyInvoker(ShowStatisticSecretKeyRequest showStatisticSecretKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/secret-key/statistic", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatisticSecretKeyRequest);
+            return new SyncInvoker<ShowStatisticSecretKeyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStatisticSecretKeyResponse>);
+        }
+        
+        /// <summary>
+        /// 获取应用状态监控
+        ///
+        /// CPCS服务创建的应用状态监控
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStatusAppResponse ShowStatusApp(ShowStatusAppRequest showStatusAppRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/app/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatusAppRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStatusAppResponse>(response);
+        }
+
+        public SyncInvoker<ShowStatusAppResponse> ShowStatusAppInvoker(ShowStatusAppRequest showStatusAppRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/app/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatusAppRequest);
+            return new SyncInvoker<ShowStatusAppResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStatusAppResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群监控信息
+        ///
+        /// CPCS服务创建的集群的状态监控
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStatusClusterResponse ShowStatusCluster(ShowStatusClusterRequest showStatusClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatusClusterRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStatusClusterResponse>(response);
+        }
+
+        public SyncInvoker<ShowStatusClusterResponse> ShowStatusClusterInvoker(ShowStatusClusterRequest showStatusClusterRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/cluster/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatusClusterRequest);
+            return new SyncInvoker<ShowStatusClusterResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStatusClusterResponse>);
+        }
+        
+        /// <summary>
+        /// 获取实例监控信息
+        ///
+        /// CPCS服务创建的密码服务实例的状态监控
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStatusInstanceResponse ShowStatusInstance(ShowStatusInstanceRequest showStatusInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/instance/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatusInstanceRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStatusInstanceResponse>(response);
+        }
+
+        public SyncInvoker<ShowStatusInstanceResponse> ShowStatusInstanceInvoker(ShowStatusInstanceRequest showStatusInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/instance/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatusInstanceRequest);
+            return new SyncInvoker<ShowStatusInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStatusInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 获取服务监控信息
+        ///
+        /// CPCS服务的状态监控
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowStatusServiceResponse ShowStatusService(ShowStatusServiceRequest showStatusServiceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/service/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatusServiceRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowStatusServiceResponse>(response);
+        }
+
+        public SyncInvoker<ShowStatusServiceResponse> ShowStatusServiceInvoker(ShowStatusServiceRequest showStatusServiceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/service/status", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showStatusServiceRequest);
+            return new SyncInvoker<ShowStatusServiceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowStatusServiceResponse>);
+        }
+        
+        /// <summary>
         /// 密码资源指标监控
         ///
         /// 获取密码服务实例与虚拟密码机实例的指标（cpu使用率，内存使用率等指标）。
@@ -703,6 +1077,30 @@ namespace HuaweiCloud.SDK.Cpcs.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/vm-monitor", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVmMonitorRequest);
             return new SyncInvoker<ShowVmMonitorResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVmMonitorResponse>);
+        }
+        
+        /// <summary>
+        /// AK/SK 换取Cpcs token
+        ///
+        /// 使用aksk换取cpcs token
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchCpcsTokenResponse SwitchCpcsToken(SwitchCpcsTokenRequest switchCpcsTokenRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/token/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchCpcsTokenRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SwitchCpcsTokenResponse>(response);
+        }
+
+        public SyncInvoker<SwitchCpcsTokenResponse> SwitchCpcsTokenInvoker(SwitchCpcsTokenRequest switchCpcsTokenRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dew/cpcs/token/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchCpcsTokenRequest);
+            return new SyncInvoker<SwitchCpcsTokenResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchCpcsTokenResponse>);
         }
         
     }

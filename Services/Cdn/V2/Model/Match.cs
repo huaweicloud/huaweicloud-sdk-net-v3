@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// **参数解释：** 匹配条件列表 **约束限制：** 不涉及
         /// </summary>
         [JsonProperty("criteria", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Criteria> Criteria { get; set; }
+        public List<CriteriaItem> Criteria { get; set; }
 
 
 

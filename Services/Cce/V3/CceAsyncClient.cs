@@ -910,37 +910,6 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
-        /// 获取集群支持的可配置参数列表
-        ///
-        /// 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public async Task<GetClusterSupportConfigurationResponse> GetClusterSupportConfigurationAsync(GetClusterSupportConfigurationRequest getClusterSupportConfigurationRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusters/configuration/detail", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getClusterSupportConfigurationRequest);
-            var response = await DoHttpRequestAsync("GET", request);
-            var getClusterSupportConfigurationResponse = JsonUtils.DeSerializeNull<GetClusterSupportConfigurationResponse>(response);
-            getClusterSupportConfigurationResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
-            return getClusterSupportConfigurationResponse;
-        }
-
-        public AsyncInvoker<GetClusterSupportConfigurationResponse> GetClusterSupportConfigurationAsyncInvoker(GetClusterSupportConfigurationRequest getClusterSupportConfigurationRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusters/configuration/detail", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getClusterSupportConfigurationRequest);
-            return new AsyncInvoker<GetClusterSupportConfigurationResponse>(this, "GET", request, response =>
-            {
-                var getClusterSupportConfigurationResponse = JsonUtils.DeSerializeNull<GetClusterSupportConfigurationResponse>(response);
-                getClusterSupportConfigurationResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
-                return getClusterSupportConfigurationResponse;
-            });
-        }
-        
-        /// <summary>
         /// 查询自定义标签
         ///
         /// 该API用于查询自定义标签
@@ -1907,6 +1876,37 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/openapi", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterEndpointsRequest);
             return new AsyncInvoker<ShowClusterEndpointsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowClusterEndpointsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取集群支持的可配置参数列表
+        ///
+        /// 该API用于根据集群版本类型等查询集群支持的详细配置项，用于集群创建时指定。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowClusterSupportConfigurationResponse> ShowClusterSupportConfigurationAsync(ShowClusterSupportConfigurationRequest showClusterSupportConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusters/configuration/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterSupportConfigurationRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var showClusterSupportConfigurationResponse = JsonUtils.DeSerializeNull<ShowClusterSupportConfigurationResponse>(response);
+            showClusterSupportConfigurationResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
+            return showClusterSupportConfigurationResponse;
+        }
+
+        public AsyncInvoker<ShowClusterSupportConfigurationResponse> ShowClusterSupportConfigurationAsyncInvoker(ShowClusterSupportConfigurationRequest showClusterSupportConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/clusters/configuration/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showClusterSupportConfigurationRequest);
+            return new AsyncInvoker<ShowClusterSupportConfigurationResponse>(this, "GET", request, response =>
+            {
+                var showClusterSupportConfigurationResponse = JsonUtils.DeSerializeNull<ShowClusterSupportConfigurationResponse>(response);
+                showClusterSupportConfigurationResponse.Body = JsonUtils.DeSerializeMap<string, List<PackageOptions>>(response);
+                return showClusterSupportConfigurationResponse;
+            });
         }
         
         /// <summary>

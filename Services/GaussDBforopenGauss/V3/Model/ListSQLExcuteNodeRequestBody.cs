@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     public class ListSQLExcuteNodeRequestBody 
     {
         /// <summary>
-        /// **参数描述**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 
+        /// **参数解释**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 
         /// </summary>
-        /// <value>**参数描述**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 </value>
+        /// <value>**参数解释**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 </value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
 
 
         /// <summary>
-        /// **参数描述**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 
+        /// **参数解释**: 类型。 **约束限制**: 不涉及。 **取值范围**: - slow  **默认取值**: 不涉及。 
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }

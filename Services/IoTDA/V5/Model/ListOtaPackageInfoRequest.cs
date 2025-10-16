@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string AppId { get; set; }
 
         /// <summary>
-        /// **参数说明**：升级包类型。 **取值范围**：软件包必须设置为：softwarePackage，固件包必须设置为：firmwarePackage。
+        /// **参数说明**：升级包类型。 **取值范围**：软件包必须设置为：softwarePackage，固件包必须设置为：firmwarePackage, OTA模块升级包必须设置为：modulePackage。
         /// </summary>
         [SDKProperty("package_type", IsQuery = true)]
         [JsonProperty("package_type", NullValueHandling = NullValueHandling.Ignore)]

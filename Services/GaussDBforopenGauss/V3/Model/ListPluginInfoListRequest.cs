@@ -130,6 +130,115 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             }
         }
 
+        /// <summary>
+        /// **参数解释**: 插件包名称。 **约束限制**: 不涉及。 **取值范围**: - postgis  **默认取值**: 不涉及。 
+        /// </summary>
+        /// <value>**参数解释**: 插件包名称。 **约束限制**: 不涉及。 **取值范围**: - postgis  **默认取值**: 不涉及。 </value>
+        [JsonConverter(typeof(EnumClassConverter<PluginNameEnum>))]
+        public class PluginNameEnum
+        {
+            /// <summary>
+            /// Enum POSTGIS for value: postgis
+            /// </summary>
+            public static readonly PluginNameEnum POSTGIS = new PluginNameEnum("postgis");
+
+            private static readonly Dictionary<string, PluginNameEnum> StaticFields =
+            new Dictionary<string, PluginNameEnum>()
+            {
+                { "postgis", POSTGIS },
+            };
+
+            private string _value;
+
+            public PluginNameEnum()
+            {
+
+            }
+
+            public PluginNameEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static PluginNameEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PluginNameEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PluginNameEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(PluginNameEnum a, PluginNameEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PluginNameEnum a, PluginNameEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// **参数解释**: 实例ID，此参数是用户创建实例的唯一标识。 **约束限制**: 不涉及。 **取值范围**: 只能由英文字母、数字组成，且长度为36个字符。 **默认取值**: 不涉及。
@@ -139,18 +248,31 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// **参数解释**: 查询插件名。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
-        /// </summary>
-        [SDKProperty("plugin_name", IsQuery = true)]
-        [JsonProperty("plugin_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string PluginName { get; set; }
-
-        /// <summary>
         /// **参数解释**: 用户Token。 通过调用IAM服务[获取用户token](https://support.huaweicloud.com/intl/zh-cn/api-iam/iam_30_0001.html)。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
         /// </summary>
         [SDKProperty("X-Language", IsHeader = true)]
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
+        /// <summary>
+        /// **参数解释**: 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询。例如：该参数指定为1，limit指定为10，则只展示第2-11条数据。 **约束限制**: 不涉及。 **取值范围**: [0, 2^31-1] **默认取值**: 默认为0（偏移0条数据，表示从第一条数据开始查询）。 
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 查询记录数。例如该参数设定为10，则查询结果最多只显示10条记录。 **约束限制**: 不涉及。 **取值范围**: [1, 100] **默认取值**: 默认为100。 
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 插件包名称。 **约束限制**: 不涉及。 **取值范围**: - postgis  **默认取值**: 不涉及。 
+        /// </summary>
+        [SDKProperty("plugin_name", IsQuery = true)]
+        [JsonProperty("plugin_name", NullValueHandling = NullValueHandling.Ignore)]
+        public PluginNameEnum PluginName { get; set; }
 
 
         /// <summary>
@@ -161,8 +283,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListPluginInfoListRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  pluginName: ").Append(PluginName).Append("\n");
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  pluginName: ").Append(PluginName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -182,8 +306,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             if (input == null) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.PluginName != input.PluginName || (this.PluginName != null && !this.PluginName.Equals(input.PluginName))) return false;
             if (this.XLanguage != input.XLanguage) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.PluginName != input.PluginName) return false;
 
             return true;
         }
@@ -197,8 +323,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             {
                 var hashCode = 41;
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.PluginName != null) hashCode = hashCode * 59 + this.PluginName.GetHashCode();
                 hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                hashCode = hashCode * 59 + this.PluginName.GetHashCode();
                 return hashCode;
             }
         }

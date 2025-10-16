@@ -304,6 +304,64 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
+        /// 创建公网子域名授权
+        ///
+        /// 当创建子域名时提示“域名与其他租户冲突，你需要添加TXT授权校验”，通过调用当前接口生成子域名授权的TXT记录验证信息。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// &gt; TXT记录验证信息生成后，请前往主域名所属的DNS服务商处添加相应的TXT类型解析记录，主机记录和记录值与验证信息保持一致。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAuthorizeTxtRecordResponse CreateAuthorizeTxtRecord(CreateAuthorizeTxtRecordRequest createAuthorizeTxtRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/authorize-txtrecord", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAuthorizeTxtRecordRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateAuthorizeTxtRecordResponse>(response);
+        }
+
+        public SyncInvoker<CreateAuthorizeTxtRecordResponse> CreateAuthorizeTxtRecordInvoker(CreateAuthorizeTxtRecordRequest createAuthorizeTxtRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/authorize-txtrecord", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAuthorizeTxtRecordRequest);
+            return new SyncInvoker<CreateAuthorizeTxtRecordResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAuthorizeTxtRecordResponse>);
+        }
+        
+        /// <summary>
+        /// 验证公网子域名授权
+        ///
+        /// 用户在主域名所属DNS服务商处添加TXT类型解析记录后，调用当前接口验证子域名授权状态。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAuthorizeTxtRecordVerificationResponse CreateAuthorizeTxtRecordVerification(CreateAuthorizeTxtRecordVerificationRequest createAuthorizeTxtRecordVerificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createAuthorizeTxtRecordVerificationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/authorize-txtrecord/{id}/verify", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAuthorizeTxtRecordVerificationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateAuthorizeTxtRecordVerificationResponse>(response);
+        }
+
+        public SyncInvoker<CreateAuthorizeTxtRecordVerificationResponse> CreateAuthorizeTxtRecordVerificationInvoker(CreateAuthorizeTxtRecordVerificationRequest createAuthorizeTxtRecordVerificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createAuthorizeTxtRecordVerificationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/authorize-txtrecord/{id}/verify", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAuthorizeTxtRecordVerificationRequest);
+            return new SyncInvoker<CreateAuthorizeTxtRecordVerificationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAuthorizeTxtRecordVerificationResponse>);
+        }
+        
+        /// <summary>
         /// 创建自定义线路
         ///
         /// 创建自定义线路。
@@ -1120,6 +1178,33 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/{version}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showApiInfoRequest);
             return new SyncInvoker<ShowApiInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowApiInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公网子域名授权
+        ///
+        /// 查询已生成的子域名授权TXT记录验证信息。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAuthorizeTxtRecordResponse ShowAuthorizeTxtRecord(ShowAuthorizeTxtRecordRequest showAuthorizeTxtRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/authorize-txtrecord", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuthorizeTxtRecordRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAuthorizeTxtRecordResponse>(response);
+        }
+
+        public SyncInvoker<ShowAuthorizeTxtRecordResponse> ShowAuthorizeTxtRecordInvoker(ShowAuthorizeTxtRecordRequest showAuthorizeTxtRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/authorize-txtrecord", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAuthorizeTxtRecordRequest);
+            return new SyncInvoker<ShowAuthorizeTxtRecordResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAuthorizeTxtRecordResponse>);
         }
         
         /// <summary>

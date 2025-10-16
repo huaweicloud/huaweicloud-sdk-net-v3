@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string EndTime { get; set; }
 
         /// <summary>
+        /// **参数解释**: SQL模板。 **约束限制**: 如果“limit_type”为SQLID，必传。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+        /// </summary>
+        [JsonProperty("sql_model", NullValueHandling = NullValueHandling.Ignore)]
+        public string SqlModel { get; set; }
+
+        /// <summary>
         /// **参数解释**: 限流类型。 **约束限制**: 不涉及。 **取值范围**: - 当“task_scope”为SQL时，可选SQL_ID、SQL_TYPE类型。 - 当“task_scope”为SESSION时，可选SESSION_ACTIVE_MAX_COUNT类型。  **默认取值**: 不涉及。
         /// </summary>
         [JsonProperty("limit_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -100,6 +106,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  taskScope: ").Append(TaskScope).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  sqlModel: ").Append(SqlModel).Append("\n");
             sb.Append("  limitType: ").Append(LimitType).Append("\n");
             sb.Append("  limitTypeValue: ").Append(LimitTypeValue).Append("\n");
             sb.Append("  keyWords: ").Append(KeyWords).Append("\n");
@@ -130,6 +137,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.TaskScope != input.TaskScope || (this.TaskScope != null && !this.TaskScope.Equals(input.TaskScope))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.SqlModel != input.SqlModel || (this.SqlModel != null && !this.SqlModel.Equals(input.SqlModel))) return false;
             if (this.LimitType != input.LimitType || (this.LimitType != null && !this.LimitType.Equals(input.LimitType))) return false;
             if (this.LimitTypeValue != input.LimitTypeValue || (this.LimitTypeValue != null && !this.LimitTypeValue.Equals(input.LimitTypeValue))) return false;
             if (this.KeyWords != input.KeyWords || (this.KeyWords != null && !this.KeyWords.Equals(input.KeyWords))) return false;
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.TaskScope != null) hashCode = hashCode * 59 + this.TaskScope.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.SqlModel != null) hashCode = hashCode * 59 + this.SqlModel.GetHashCode();
                 if (this.LimitType != null) hashCode = hashCode * 59 + this.LimitType.GetHashCode();
                 if (this.LimitTypeValue != null) hashCode = hashCode * 59 + this.LimitTypeValue.GetHashCode();
                 if (this.KeyWords != null) hashCode = hashCode * 59 + this.KeyWords.GetHashCode();

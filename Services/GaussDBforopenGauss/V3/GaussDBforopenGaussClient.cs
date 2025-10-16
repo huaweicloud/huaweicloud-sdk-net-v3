@@ -1647,7 +1647,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         /// <summary>
         /// 查询数据库占用空间大小列表
         ///
-        /// 查询限流任务详情
+        /// 查询数据库占用空间大小列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2732,6 +2732,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询会话内存上下文列表
+        ///
+        /// 查询数据库实例节点的会话内存上下文列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSessionMemoryContextResponse ListSessionMemoryContext(ListSessionMemoryContextRequest listSessionMemoryContextRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSessionMemoryContextRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/session/memory-context", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSessionMemoryContextRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSessionMemoryContextResponse>(response);
+        }
+
+        public SyncInvoker<ListSessionMemoryContextResponse> ListSessionMemoryContextInvoker(ListSessionMemoryContextRequest listSessionMemoryContextRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSessionMemoryContextRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/session/memory-context", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSessionMemoryContextRequest);
+            return new SyncInvoker<ListSessionMemoryContextResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSessionMemoryContextResponse>);
+        }
+        
+        /// <summary>
         /// 查询实时会话统计
         ///
         /// 查询数据库实例节点的实时会话统计信息。
@@ -2755,6 +2781,58 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/session-statistics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSessionStatisticsRequest);
             return new SyncInvoker<ListSessionStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSessionStatisticsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实时会话Top SQL统计
+        ///
+        /// 查询实时会话Top SQL统计。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSessionTopSqlStatisticsResponse ListSessionTopSqlStatistics(ListSessionTopSqlStatisticsRequest listSessionTopSqlStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSessionTopSqlStatisticsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/session/statistic/top-sql", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSessionTopSqlStatisticsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSessionTopSqlStatisticsResponse>(response);
+        }
+
+        public SyncInvoker<ListSessionTopSqlStatisticsResponse> ListSessionTopSqlStatisticsInvoker(ListSessionTopSqlStatisticsRequest listSessionTopSqlStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSessionTopSqlStatisticsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/session/statistic/top-sql", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSessionTopSqlStatisticsRequest);
+            return new SyncInvoker<ListSessionTopSqlStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSessionTopSqlStatisticsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实时会话Top等待事件统计
+        ///
+        /// 查询实时会话Top等待事件统计。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSessionWaitEventStatisticsResponse ListSessionWaitEventStatistics(ListSessionWaitEventStatisticsRequest listSessionWaitEventStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSessionWaitEventStatisticsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/session/statistic/wait-event", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSessionWaitEventStatisticsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSessionWaitEventStatisticsResponse>(response);
+        }
+
+        public SyncInvoker<ListSessionWaitEventStatisticsResponse> ListSessionWaitEventStatisticsInvoker(ListSessionWaitEventStatisticsRequest listSessionWaitEventStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSessionWaitEventStatisticsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/session/statistic/wait-event", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSessionWaitEventStatisticsRequest);
+            return new SyncInvoker<ListSessionWaitEventStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSessionWaitEventStatisticsResponse>);
         }
         
         /// <summary>
@@ -5838,7 +5916,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/wdr-snapshots", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createWdrSnapshotRequest);
             var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateWdrSnapshotResponse>(response);
+            return JsonUtils.DeSerializeNull<CreateWdrSnapshotResponse>(response);
         }
 
         public SyncInvoker<CreateWdrSnapshotResponse> CreateWdrSnapshotInvoker(CreateWdrSnapshotRequest createWdrSnapshotRequest)
@@ -5847,7 +5925,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             if (StringUtils.TryConvertToNonEmptyString(createWdrSnapshotRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/wdr-snapshots", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createWdrSnapshotRequest);
-            return new SyncInvoker<CreateWdrSnapshotResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateWdrSnapshotResponse>);
+            return new SyncInvoker<CreateWdrSnapshotResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateWdrSnapshotResponse>);
         }
         
         /// <summary>
@@ -5890,7 +5968,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/wdr-snapshot/status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchWdrSnapshotStatusRequest);
             var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerialize<SwitchWdrSnapshotStatusResponse>(response);
+            return JsonUtils.DeSerializeNull<SwitchWdrSnapshotStatusResponse>(response);
         }
 
         public SyncInvoker<SwitchWdrSnapshotStatusResponse> SwitchWdrSnapshotStatusInvoker(SwitchWdrSnapshotStatusRequest switchWdrSnapshotStatusRequest)
@@ -5899,7 +5977,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             if (StringUtils.TryConvertToNonEmptyString(switchWdrSnapshotStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/wdr-snapshot/status", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchWdrSnapshotStatusRequest);
-            return new SyncInvoker<SwitchWdrSnapshotStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<SwitchWdrSnapshotStatusResponse>);
+            return new SyncInvoker<SwitchWdrSnapshotStatusResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SwitchWdrSnapshotStatusResponse>);
         }
         
     }

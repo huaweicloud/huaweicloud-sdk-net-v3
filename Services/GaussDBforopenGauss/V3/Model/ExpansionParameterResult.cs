@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string Type { get; set; }
 
         /// <summary>
-        /// **参数解释**: 参数描述。 **取值范围**: 不涉及。
+        /// **参数解释**: 参数解释。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }

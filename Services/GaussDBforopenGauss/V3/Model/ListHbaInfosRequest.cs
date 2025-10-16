@@ -145,14 +145,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
         public XLanguageEnum XLanguage { get; set; }
         /// <summary>
-        /// **参数描述**: 分页符。从第一条数据偏移offset页数据后开始查询。例如，该参数指定为1，limit指定为10，则只展示第11-20条数据。 **约束限制**: 不涉及。 **取值范围**: [0, 2^31-1] **默认值**: 默认为0（偏移0条数据，表示从第一条数据开始查询）。 
+        /// **参数解释**: 分页符。从第一条数据偏移offset页数据后开始查询。例如，该参数指定为1，limit指定为10，则只展示第11-20条数据。 **约束限制**: 不涉及。 **取值范围**: [0, 2^31-1] **默认值**: 默认为0（偏移0条数据，表示从第一条数据开始查询）。 
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// **参数描述**: 每页显示的条目数量。 **约束限制**: 不涉及。 **取值范围**: [1, 100] **默认值**: 10 
+        /// **参数解释**: 每页显示的条目数量。 **约束限制**: 不涉及。 **取值范围**: [1, 100] **默认值**: 10 
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

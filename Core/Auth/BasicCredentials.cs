@@ -133,7 +133,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                                                       "Please select one when initializing the credentials: new BasicCredentials(ak, sk, projectId);");
                 }
                 ProjectId = response.Projects[0].Id;
-                logger.LogInformation("Success to obtain project id of region '{}': {}", regionId, ProjectId);
+                logger.LogInformation("Success to obtain project id of region '{}': {}", regionId, StringUtils.Mask(ProjectId));
                 AuthCache.Value[akWithName] = ProjectId;
                 DerivedPredicate = derivedFunc;
                 return this;

@@ -294,6 +294,31 @@ namespace HuaweiCloud.SDK.Live.V2
         }
         
         /// <summary>
+        /// 查询推流域名转码路数
+        ///
+        /// 查询推流域名下的转码路数，根据输入时间点和时间粒度，返回转码路数。
+        /// 最大查询跨度1天，最大查询周期90天，数据延迟5分钟。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTranscodeConcurrencyNumResponse> ListTranscodeConcurrencyNumAsync(ListTranscodeConcurrencyNumRequest listTranscodeConcurrencyNumRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/stats/transcode/concurrency", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTranscodeConcurrencyNumRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListTranscodeConcurrencyNumResponse>(response);
+        }
+
+        public AsyncInvoker<ListTranscodeConcurrencyNumResponse> ListTranscodeConcurrencyNumAsyncInvoker(ListTranscodeConcurrencyNumRequest listTranscodeConcurrencyNumRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/stats/transcode/concurrency", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTranscodeConcurrencyNumRequest);
+            return new AsyncInvoker<ListTranscodeConcurrencyNumResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTranscodeConcurrencyNumResponse>);
+        }
+        
+        /// <summary>
         /// 查询转码用量接口
         ///
         /// 查询直播域名每小时的转码时长数据。  最大查询跨度31天，最大查询周期90天。

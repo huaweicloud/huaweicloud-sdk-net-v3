@@ -124,7 +124,7 @@ namespace HuaweiCloud.SDK.Core.Auth
                                                          "or specify domain id manually: new GlobalCredentials(ak, sk, domainId);");
                 }
                 DomainId = response.Domains[0].Id;
-                logger.LogInformation("Success to obtain domain id: {}", DomainId);
+                logger.LogInformation("Success to obtain domain id: {}", StringUtils.Mask(DomainId));
                 AuthCache.Value[Ak] = DomainId;
                 DerivedPredicate = derivedFunc;
                 return this;

@@ -131,6 +131,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public List<TagV5DTO> Tags { get; set; }
 
         /// <summary>
+        /// 设备的OTA模块列表。
+        /// </summary>
+        [JsonProperty("modules", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ModuleDTO> Modules { get; set; }
+
+        /// <summary>
         /// 设备扩展信息。用户可以自定义任何想要的扩展信息，如果在创建设备时为子设备指定该字段，将会通过MQTT接口“平台通知网关子设备新增“将该信息通知给网关。
         /// </summary>
         [JsonProperty("extension_info", NullValueHandling = NullValueHandling.Ignore)]
@@ -164,6 +170,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  connectionStatusUpdateTime: ").Append(ConnectionStatusUpdateTime).Append("\n");
             sb.Append("  activeTime: ").Append(ActiveTime).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  modules: ").Append(Modules).Append("\n");
             sb.Append("  extensionInfo: ").Append(ExtensionInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -202,6 +209,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             if (this.ConnectionStatusUpdateTime != input.ConnectionStatusUpdateTime || (this.ConnectionStatusUpdateTime != null && !this.ConnectionStatusUpdateTime.Equals(input.ConnectionStatusUpdateTime))) return false;
             if (this.ActiveTime != input.ActiveTime || (this.ActiveTime != null && !this.ActiveTime.Equals(input.ActiveTime))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Modules != input.Modules || (this.Modules != null && input.Modules != null && !this.Modules.SequenceEqual(input.Modules))) return false;
             if (this.ExtensionInfo != input.ExtensionInfo || (this.ExtensionInfo != null && !this.ExtensionInfo.Equals(input.ExtensionInfo))) return false;
 
             return true;
@@ -234,6 +242,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 if (this.ConnectionStatusUpdateTime != null) hashCode = hashCode * 59 + this.ConnectionStatusUpdateTime.GetHashCode();
                 if (this.ActiveTime != null) hashCode = hashCode * 59 + this.ActiveTime.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Modules != null) hashCode = hashCode * 59 + this.Modules.GetHashCode();
                 if (this.ExtensionInfo != null) hashCode = hashCode * 59 + this.ExtensionInfo.GetHashCode();
                 return hashCode;
             }

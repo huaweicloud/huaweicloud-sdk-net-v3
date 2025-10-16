@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }
 
+        /// <summary>
+        /// 告警中的策略全部被停用时是否保留策略信息。true:保留；false:删除。
+        /// </summary>
+        [JsonProperty("retain_when_all_disabled", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? RetainWhenAllDisabled { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             sb.Append("class BatchEnableAlarmPoliciesRequestBody {\n");
             sb.Append("  alarmPolicyIds: ").Append(AlarmPolicyIds).Append("\n");
             sb.Append("  enabled: ").Append(Enabled).Append("\n");
+            sb.Append("  retainWhenAllDisabled: ").Append(RetainWhenAllDisabled).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
             if (input == null) return false;
             if (this.AlarmPolicyIds != input.AlarmPolicyIds || (this.AlarmPolicyIds != null && input.AlarmPolicyIds != null && !this.AlarmPolicyIds.SequenceEqual(input.AlarmPolicyIds))) return false;
             if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.RetainWhenAllDisabled != input.RetainWhenAllDisabled || (this.RetainWhenAllDisabled != null && !this.RetainWhenAllDisabled.Equals(input.RetainWhenAllDisabled))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
                 var hashCode = 41;
                 if (this.AlarmPolicyIds != null) hashCode = hashCode * 59 + this.AlarmPolicyIds.GetHashCode();
                 if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.RetainWhenAllDisabled != null) hashCode = hashCode * 59 + this.RetainWhenAllDisabled.GetHashCode();
                 return hashCode;
             }
         }

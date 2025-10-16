@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
     /// <summary>
     /// **参数解释：** 匹配条件列表 **约束限制：** 不涉及
     /// </summary>
-    public class Criteria 
+    public class CriteriaItem 
     {
 
         /// <summary>
@@ -61,8 +61,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// <summary>
         /// **参数解释：** 嵌套条件列表 **约束限制：** 不涉及
         /// </summary>
-        [JsonProperty("sub_criteria", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Criteria> SubCriteria { get; set; }
+        [JsonProperty("criteria", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CriteriaItem> Criteria { get; set; }
 
 
 
@@ -72,7 +72,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Criteria {\n");
+            sb.Append("class CriteriaItem {\n");
             sb.Append("  matchTargetType: ").Append(MatchTargetType).Append("\n");
             sb.Append("  matchTargetName: ").Append(MatchTargetName).Append("\n");
             sb.Append("  matchType: ").Append(MatchType).Append("\n");
@@ -80,7 +80,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  negate: ").Append(Negate).Append("\n");
             sb.Append("  caseSensitive: ").Append(CaseSensitive).Append("\n");
             sb.Append("  logic: ").Append(Logic).Append("\n");
-            sb.Append("  subCriteria: ").Append(SubCriteria).Append("\n");
+            sb.Append("  criteria: ").Append(Criteria).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,13 +90,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Criteria);
+            return this.Equals(input as CriteriaItem);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(Criteria input)
+        public bool Equals(CriteriaItem input)
         {
             if (input == null) return false;
             if (this.MatchTargetType != input.MatchTargetType || (this.MatchTargetType != null && !this.MatchTargetType.Equals(input.MatchTargetType))) return false;
@@ -106,7 +106,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             if (this.Negate != input.Negate || (this.Negate != null && !this.Negate.Equals(input.Negate))) return false;
             if (this.CaseSensitive != input.CaseSensitive || (this.CaseSensitive != null && !this.CaseSensitive.Equals(input.CaseSensitive))) return false;
             if (this.Logic != input.Logic || (this.Logic != null && !this.Logic.Equals(input.Logic))) return false;
-            if (this.SubCriteria != input.SubCriteria || (this.SubCriteria != null && input.SubCriteria != null && !this.SubCriteria.SequenceEqual(input.SubCriteria))) return false;
+            if (this.Criteria != input.Criteria || (this.Criteria != null && input.Criteria != null && !this.Criteria.SequenceEqual(input.Criteria))) return false;
 
             return true;
         }
@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
                 if (this.Negate != null) hashCode = hashCode * 59 + this.Negate.GetHashCode();
                 if (this.CaseSensitive != null) hashCode = hashCode * 59 + this.CaseSensitive.GetHashCode();
                 if (this.Logic != null) hashCode = hashCode * 59 + this.Logic.GetHashCode();
-                if (this.SubCriteria != null) hashCode = hashCode * 59 + this.SubCriteria.GetHashCode();
+                if (this.Criteria != null) hashCode = hashCode * 59 + this.Criteria.GetHashCode();
                 return hashCode;
             }
         }

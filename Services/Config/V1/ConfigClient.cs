@@ -1485,6 +1485,30 @@ namespace HuaweiCloud.SDK.Config.V1
         }
         
         /// <summary>
+        /// 查询当前账号合规统计趋势
+        ///
+        /// 查询当前账号合规统计趋势
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListPolicyStatesStatisticsResponse ListPolicyStatesStatistics(ListPolicyStatesStatisticsRequest listPolicyStatesStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/policy-states/statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPolicyStatesStatisticsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListPolicyStatesStatisticsResponse>(response);
+        }
+
+        public SyncInvoker<ListPolicyStatesStatisticsResponse> ListPolicyStatesStatisticsInvoker(ListPolicyStatesStatisticsRequest listPolicyStatesStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/resource-manager/domains/{domain_id}/policy-states/statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPolicyStatesStatisticsRequest);
+            return new SyncInvoker<ListPolicyStatesStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPolicyStatesStatisticsResponse>);
+        }
+        
+        /// <summary>
         /// 查询修正例外
         ///
         /// 查询合规规则修正例外。

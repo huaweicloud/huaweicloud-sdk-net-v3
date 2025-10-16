@@ -5972,6 +5972,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 创建订阅
+        ///
+        /// 创建订阅
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateSubscriptionResponse CreateSubscription(CreateSubscriptionRequest createSubscriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createSubscriptionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/subscriptions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubscriptionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateSubscriptionResponse>(response);
+        }
+
+        public SyncInvoker<CreateSubscriptionResponse> CreateSubscriptionInvoker(CreateSubscriptionRequest createSubscriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createSubscriptionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/subscriptions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createSubscriptionRequest);
+            return new SyncInvoker<CreateSubscriptionResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateSubscriptionResponse>);
+        }
+        
+        /// <summary>
         /// 删除MSDTC
         ///
         /// 删除MSDTC相关主机host地址
@@ -5995,6 +6021,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/host", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMsdtcLocalHostRequest);
             return new SyncInvoker<DeleteMsdtcLocalHostResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteMsdtcLocalHostResponse>);
+        }
+        
+        /// <summary>
+        /// 删除发布
+        ///
+        /// 删除发布
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeletePublicationResponse DeletePublication(DeletePublicationRequest deletePublicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deletePublicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/publications", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicationRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeletePublicationResponse>(response);
+        }
+
+        public SyncInvoker<DeletePublicationResponse> DeletePublicationInvoker(DeletePublicationRequest deletePublicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deletePublicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/publications", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePublicationRequest);
+            return new SyncInvoker<DeletePublicationResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeletePublicationResponse>);
         }
         
         /// <summary>
@@ -6132,6 +6184,58 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询当前实例配置的分发服务器
+        ///
+        /// 查询当前实例配置的分发服务器
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDistributionResponse ListDistribution(ListDistributionRequest listDistributionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDistributionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/distribution", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDistributionRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDistributionResponse>(response);
+        }
+
+        public SyncInvoker<ListDistributionResponse> ListDistributionInvoker(ListDistributionRequest listDistributionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDistributionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/distribution", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDistributionRequest);
+            return new SyncInvoker<ListDistributionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDistributionResponse>);
+        }
+        
+        /// <summary>
+        /// 查询可配置为当前实例分发服务器的实例列表
+        ///
+        /// 查询可配置为当前实例分发服务器的实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDistributorInstancesResponse ListDistributorInstances(ListDistributorInstancesRequest listDistributorInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDistributorInstancesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/distributors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDistributorInstancesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDistributorInstancesResponse>(response);
+        }
+
+        public SyncInvoker<ListDistributorInstancesResponse> ListDistributorInstancesInvoker(ListDistributorInstancesRequest listDistributorInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDistributorInstancesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/distributors", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDistributorInstancesRequest);
+            return new SyncInvoker<ListDistributorInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDistributorInstancesResponse>);
+        }
+        
+        /// <summary>
         /// 查询云市场引擎商品列表
         ///
         /// 查询云市场引擎商品列表。
@@ -6181,6 +6285,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/msdtc/hosts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listMsdtcHostsRequest);
             return new SyncInvoker<ListMsdtcHostsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListMsdtcHostsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例发布信息
+        ///
+        /// 查询实例发布信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListPublicationsResponse ListPublications(ListPublicationsRequest listPublicationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPublicationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/publications", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicationsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListPublicationsResponse>(response);
+        }
+
+        public SyncInvoker<ListPublicationsResponse> ListPublicationsInvoker(ListPublicationsRequest listPublicationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listPublicationsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/publications", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPublicationsRequest);
+            return new SyncInvoker<ListPublicationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPublicationsResponse>);
         }
         
         /// <summary>
@@ -6236,6 +6366,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询可配置为当前实例订阅服务器的实例列表
+        ///
+        /// 查询可配置为当前实例订阅服务器的实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSubscriberInstancesResponse ListSubscriberInstances(ListSubscriberInstancesRequest listSubscriberInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSubscriberInstancesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/subscribers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubscriberInstancesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSubscriberInstancesResponse>(response);
+        }
+
+        public SyncInvoker<ListSubscriberInstancesResponse> ListSubscriberInstancesInvoker(ListSubscriberInstancesRequest listSubscriberInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSubscriberInstancesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/subscribers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSubscriberInstancesRequest);
+            return new SyncInvoker<ListSubscriberInstancesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSubscriberInstancesResponse>);
+        }
+        
+        /// <summary>
         /// 修改实例字符集
         ///
         /// 修改实例字符集。
@@ -6259,6 +6415,34 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/collations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyCollationRequest);
             return new SyncInvoker<ModifyCollationResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyCollationResponse>);
+        }
+        
+        /// <summary>
+        /// 修改发布
+        ///
+        /// 修改发布
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyPublicationResponse ModifyPublication(ModifyPublicationRequest modifyPublicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyPublicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(modifyPublicationRequest.PublicationId, out var valueOfPublicationId)) urlParam.Add("publication_id", valueOfPublicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/publications/{publication_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyPublicationRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyPublicationResponse>(response);
+        }
+
+        public SyncInvoker<ModifyPublicationResponse> ModifyPublicationInvoker(ModifyPublicationRequest modifyPublicationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyPublicationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(modifyPublicationRequest.PublicationId, out var valueOfPublicationId)) urlParam.Add("publication_id", valueOfPublicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/publications/{publication_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyPublicationRequest);
+            return new SyncInvoker<ModifyPublicationResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyPublicationResponse>);
         }
         
         /// <summary>

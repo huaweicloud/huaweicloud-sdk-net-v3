@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public string LogGroupName { get; set; }
 
         /// <summary>
-        /// **参数解释**: LTS日志组ID。 **取值范围**: 不涉及。LTS日志组ID
+        /// **参数解释**: LTS日志组ID。 **取值范围**: 不涉及。
         /// </summary>
         [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogGroupId { get; set; }

@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     /// <summary>
     /// Request Object
     /// </summary>
-    public class GetClusterSupportConfigurationRequest 
+    public class ShowClusterSupportConfigurationRequest 
     {
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class GetClusterSupportConfigurationRequest {\n");
+            sb.Append("class ShowClusterSupportConfigurationRequest {\n");
             sb.Append("  clusterType: ").Append(ClusterType).Append("\n");
             sb.Append("  clusterVersion: ").Append(ClusterVersion).Append("\n");
             sb.Append("  clusterID: ").Append(ClusterID).Append("\n");
@@ -66,13 +66,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as GetClusterSupportConfigurationRequest);
+            return this.Equals(input as ShowClusterSupportConfigurationRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(GetClusterSupportConfigurationRequest input)
+        public bool Equals(ShowClusterSupportConfigurationRequest input)
         {
             if (input == null) return false;
             if (this.ClusterType != input.ClusterType || (this.ClusterType != null && !this.ClusterType.Equals(input.ClusterType))) return false;

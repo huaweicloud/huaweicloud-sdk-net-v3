@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Cce.V3.Model
+namespace HuaweiCloud.SDK.Cpcs.V1.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class GetClusterSupportConfigurationResponse : SdkResponse
+    public class DeleteClusterPortResponse : SdkResponse
     {
 
         /// <summary>
-        /// **参数解释**： 集群支持的配置项详情
+        /// 删除资源结果
         /// </summary>
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, List<PackageOptions>> Body { get; set; }
+        [JsonProperty("delete_tenant_resource", NullValueHandling = NullValueHandling.Ignore)]
+        public string DeleteTenantResource { get; set; }
 
 
 
@@ -30,8 +30,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class GetClusterSupportConfigurationResponse {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
+            sb.Append("class DeleteClusterPortResponse {\n");
+            sb.Append("  deleteTenantResource: ").Append(DeleteTenantResource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -41,16 +41,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as GetClusterSupportConfigurationResponse);
+            return this.Equals(input as DeleteClusterPortResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(GetClusterSupportConfigurationResponse input)
+        public bool Equals(DeleteClusterPortResponse input)
         {
             if (input == null) return false;
-            if (this.Body != input.Body || (this.Body != null && input.Body != null && !this.Body.SequenceEqual(input.Body))) return false;
+            if (this.DeleteTenantResource != input.DeleteTenantResource || (this.DeleteTenantResource != null && !this.DeleteTenantResource.Equals(input.DeleteTenantResource))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.DeleteTenantResource != null) hashCode = hashCode * 59 + this.DeleteTenantResource.GetHashCode();
                 return hashCode;
             }
         }

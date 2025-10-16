@@ -107,6 +107,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public Object Tags { get; set; }
 
         /// <summary>
+        /// 设备的OTA模块列表。
+        /// </summary>
+        [JsonProperty("modules", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ModuleSearchDTO> Modules { get; set; }
+
+        /// <summary>
         /// 搜索结果记录Id。
         /// </summary>
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
@@ -136,6 +142,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  groups: ").Append(Groups).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  modules: ").Append(Modules).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -170,6 +177,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             if (this.Groups != input.Groups || (this.Groups != null && !this.Groups.Equals(input.Groups))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.Modules != input.Modules || (this.Modules != null && input.Modules != null && !this.Modules.SequenceEqual(input.Modules))) return false;
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
             return true;
@@ -198,6 +206,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 if (this.Groups != null) hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Modules != null) hashCode = hashCode * 59 + this.Modules.GetHashCode();
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }

@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         public string ObjectKey { get; set; }
 
         /// <summary>
+        /// **参数说明**： **取值范围**：只支持SHA256,不携带默认为SHA256。
+        /// </summary>
+        [JsonProperty("sign_method", NullValueHandling = NullValueHandling.Ignore)]
+        public string SignMethod { get; set; }
+
+        /// <summary>
         /// **参数说明**：SHA256算法计算出的升级包签名值。添加该升级包完成，并创建升级任务后，物联网平台向设备下发升级通知时，会下发该签名给设备。 **取值范围**：长度为64，只允许大小写字母a到f、数字的组合。
         /// </summary>
         [JsonProperty("sign", NullValueHandling = NullValueHandling.Ignore)]
@@ -52,6 +58,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  regionName: ").Append(RegionName).Append("\n");
             sb.Append("  bucketName: ").Append(BucketName).Append("\n");
             sb.Append("  objectKey: ").Append(ObjectKey).Append("\n");
+            sb.Append("  signMethod: ").Append(SignMethod).Append("\n");
             sb.Append("  sign: ").Append(Sign).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -74,6 +81,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             if (this.RegionName != input.RegionName || (this.RegionName != null && !this.RegionName.Equals(input.RegionName))) return false;
             if (this.BucketName != input.BucketName || (this.BucketName != null && !this.BucketName.Equals(input.BucketName))) return false;
             if (this.ObjectKey != input.ObjectKey || (this.ObjectKey != null && !this.ObjectKey.Equals(input.ObjectKey))) return false;
+            if (this.SignMethod != input.SignMethod || (this.SignMethod != null && !this.SignMethod.Equals(input.SignMethod))) return false;
             if (this.Sign != input.Sign || (this.Sign != null && !this.Sign.Equals(input.Sign))) return false;
 
             return true;
@@ -90,6 +98,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 if (this.RegionName != null) hashCode = hashCode * 59 + this.RegionName.GetHashCode();
                 if (this.BucketName != null) hashCode = hashCode * 59 + this.BucketName.GetHashCode();
                 if (this.ObjectKey != null) hashCode = hashCode * 59 + this.ObjectKey.GetHashCode();
+                if (this.SignMethod != null) hashCode = hashCode * 59 + this.SignMethod.GetHashCode();
                 if (this.Sign != null) hashCode = hashCode * 59 + this.Sign.GetHashCode();
                 return hashCode;
             }

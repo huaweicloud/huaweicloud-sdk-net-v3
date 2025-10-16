@@ -692,6 +692,121 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             }
         }
 
+        /// <summary>
+        /// 表示是否开启普英方自动识别，取值为“yes”和“no”，默认为“no”。
+        /// </summary>
+        /// <value>表示是否开启普英方自动识别，取值为“yes”和“no”，默认为“no”。</value>
+        [JsonConverter(typeof(EnumClassConverter<AutoLanguageDetectEnum>))]
+        public class AutoLanguageDetectEnum
+        {
+            /// <summary>
+            /// Enum YES for value: yes
+            /// </summary>
+            public static readonly AutoLanguageDetectEnum YES = new AutoLanguageDetectEnum("yes");
+
+            /// <summary>
+            /// Enum NO for value: no
+            /// </summary>
+            public static readonly AutoLanguageDetectEnum NO = new AutoLanguageDetectEnum("no");
+
+            private static readonly Dictionary<string, AutoLanguageDetectEnum> StaticFields =
+            new Dictionary<string, AutoLanguageDetectEnum>()
+            {
+                { "yes", YES },
+                { "no", NO },
+            };
+
+            private string _value;
+
+            public AutoLanguageDetectEnum()
+            {
+
+            }
+
+            public AutoLanguageDetectEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static AutoLanguageDetectEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as AutoLanguageDetectEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(AutoLanguageDetectEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(AutoLanguageDetectEnum a, AutoLanguageDetectEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(AutoLanguageDetectEnum a, AutoLanguageDetectEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 支持语音的格式。  audio_format取值范围：  pcm16k16bit  16k16bit单通道录音数据。  pcm8k16bit   8k16bit单通道录音数据。  ulaw16k8bit  16k8bit ulaw 单通道录音数据。  ulaw8k8bit   8k8bit ulaw 单通道录音数据。  alaw16k8bit  16k8bit alaw 单通道录音数据。  alaw8k8bit   8k8bit alaw 单通道录音数据。  mp3  mp3格式音频。目前仅支持单通道的音频。  aac  aac格式音频。目前仅支持单通道的音频。  wav  带wav封装头的格式，从封装头中自动确定格式，目前仅支持8k/16k采样率、单通道、pcm, alaw, ulaw三种编码格式  amr  AMR窄带(8k) 压缩录音数据。  amrwb  AMR 宽带(16k) 压缩录音数据。  auto 由引擎自动判断音频数据的格式并解码，支持自动判断wav，mp3，amr/amrwb，aac，m4a，wma格式
@@ -724,6 +839,11 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         [JsonProperty("need_word_info", NullValueHandling = NullValueHandling.Ignore)]
         public NeedWordInfoEnum NeedWordInfo { get; set; }
+        /// <summary>
+        /// 表示是否开启普英方自动识别，取值为“yes”和“no”，默认为“no”。
+        /// </summary>
+        [JsonProperty("auto_language_detect", NullValueHandling = NullValueHandling.Ignore)]
+        public AutoLanguageDetectEnum AutoLanguageDetect { get; set; }
 
 
         /// <summary>
@@ -739,6 +859,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             sb.Append("  vocabularyId: ").Append(VocabularyId).Append("\n");
             sb.Append("  digitNorm: ").Append(DigitNorm).Append("\n");
             sb.Append("  needWordInfo: ").Append(NeedWordInfo).Append("\n");
+            sb.Append("  autoLanguageDetect: ").Append(AutoLanguageDetect).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -763,6 +884,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
             if (this.VocabularyId != input.VocabularyId || (this.VocabularyId != null && !this.VocabularyId.Equals(input.VocabularyId))) return false;
             if (this.DigitNorm != input.DigitNorm) return false;
             if (this.NeedWordInfo != input.NeedWordInfo) return false;
+            if (this.AutoLanguageDetect != input.AutoLanguageDetect) return false;
 
             return true;
         }
@@ -781,6 +903,7 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
                 if (this.VocabularyId != null) hashCode = hashCode * 59 + this.VocabularyId.GetHashCode();
                 hashCode = hashCode * 59 + this.DigitNorm.GetHashCode();
                 hashCode = hashCode * 59 + this.NeedWordInfo.GetHashCode();
+                hashCode = hashCode * 59 + this.AutoLanguageDetect.GetHashCode();
                 return hashCode;
             }
         }

@@ -101,5 +101,28 @@ namespace HuaweiCloud.SDK.Core
             }
             return sb.ToString();
         }
+
+        public static string Mask(string input, double maskRatio = 0.7, char maskChar = '*')
+        {
+            if (string.IsNullOrEmpty(input) || maskRatio <= 0)
+            {
+                return input;
+            }
+
+            if (maskRatio >= 1)
+            {
+                return new string(maskChar, input.Length);
+            }
+
+            var maskLength = (int)(input.Length * maskRatio);
+            var start = Math.Max(0, (input.Length - maskLength) / 2);
+            var end = Math.Min(input.Length, start + maskLength);
+            var chars = input.ToCharArray();
+            for (var i = start; i < end; i++)
+            {
+                chars[i] = maskChar;
+            }
+            return new string(chars);
+        }
     }
 }

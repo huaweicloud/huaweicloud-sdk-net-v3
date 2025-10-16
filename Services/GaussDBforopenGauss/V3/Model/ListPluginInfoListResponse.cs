@@ -17,28 +17,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// 插件名称
+        /// **参数解释**: 插件数量。 **取值范围**: 不涉及。 
         /// </summary>
-        [JsonProperty("plugin_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string PluginName { get; set; }
+        [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalCount { get; set; }
 
         /// <summary>
-        /// 端口
+        /// **参数解释**: 插件详细信息。 
         /// </summary>
-        [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
-        public string Port { get; set; }
-
-        /// <summary>
-        /// 插件版本
-        /// </summary>
-        [JsonProperty("plugin_version", NullValueHandling = NullValueHandling.Ignore)]
-        public string PluginVersion { get; set; }
-
-        /// <summary>
-        /// 是否已安装
-        /// </summary>
-        [JsonProperty("installed", NullValueHandling = NullValueHandling.Ignore)]
-        public string Installed { get; set; }
+        [JsonProperty("plugins", NullValueHandling = NullValueHandling.Ignore)]
+        public List<CustomerPluginInfoResult> Plugins { get; set; }
 
 
 
@@ -49,10 +37,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListPluginInfoListResponse {\n");
-            sb.Append("  pluginName: ").Append(PluginName).Append("\n");
-            sb.Append("  port: ").Append(Port).Append("\n");
-            sb.Append("  pluginVersion: ").Append(PluginVersion).Append("\n");
-            sb.Append("  installed: ").Append(Installed).Append("\n");
+            sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
+            sb.Append("  plugins: ").Append(Plugins).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -71,10 +57,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public bool Equals(ListPluginInfoListResponse input)
         {
             if (input == null) return false;
-            if (this.PluginName != input.PluginName || (this.PluginName != null && !this.PluginName.Equals(input.PluginName))) return false;
-            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
-            if (this.PluginVersion != input.PluginVersion || (this.PluginVersion != null && !this.PluginVersion.Equals(input.PluginVersion))) return false;
-            if (this.Installed != input.Installed || (this.Installed != null && !this.Installed.Equals(input.Installed))) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.Plugins != input.Plugins || (this.Plugins != null && input.Plugins != null && !this.Plugins.SequenceEqual(input.Plugins))) return false;
 
             return true;
         }
@@ -87,10 +71,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.PluginName != null) hashCode = hashCode * 59 + this.PluginName.GetHashCode();
-                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.PluginVersion != null) hashCode = hashCode * 59 + this.PluginVersion.GetHashCode();
-                if (this.Installed != null) hashCode = hashCode * 59 + this.Installed.GetHashCode();
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.Plugins != null) hashCode = hashCode * 59 + this.Plugins.GetHashCode();
                 return hashCode;
             }
         }
