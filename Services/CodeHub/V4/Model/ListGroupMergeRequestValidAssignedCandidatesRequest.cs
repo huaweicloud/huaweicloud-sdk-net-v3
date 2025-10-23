@@ -23,6 +23,20 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? GroupId { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 偏移量，从0开始。
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 返回数量。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
 
 
         /// <summary>
@@ -33,6 +47,8 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             var sb = new StringBuilder();
             sb.Append("class ListGroupMergeRequestValidAssignedCandidatesRequest {\n");
             sb.Append("  groupId: ").Append(GroupId).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -52,6 +68,8 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         {
             if (input == null) return false;
             if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
             return true;
         }
@@ -65,6 +83,8 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             {
                 var hashCode = 41;
                 if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

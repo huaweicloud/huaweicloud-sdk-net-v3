@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeHub.V4.Model
 {
     /// <summary>
-    /// 
+    /// 差异提交数量
     /// </summary>
     public class DivergingCommitCounts 
     {

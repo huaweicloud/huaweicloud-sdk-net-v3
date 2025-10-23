@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public int? RepositoryId { get; set; }
 
         /// <summary>
-        /// **参数解释：**  部署秘钥 ID。
+        /// **参数解释：**  部署密钥 ID。
         /// </summary>
         [SDKProperty("key_id", IsPath = true)]
         [JsonProperty("key_id", NullValueHandling = NullValueHandling.Ignore)]

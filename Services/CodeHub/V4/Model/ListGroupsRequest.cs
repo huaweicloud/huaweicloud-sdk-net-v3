@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     public class ListGroupsRequest 
     {
         /// <summary>
-        /// **参数解释：** 排序字段，name 名称 path 路径 id 唯一标示 created_at 创建时间 updated_at 更新时间
+        /// **参数解释：** 排序字段，name 名称 path 路径 id 唯一标识 created_at 创建时间 updated_at 更新时间
         /// </summary>
-        /// <value>**参数解释：** 排序字段，name 名称 path 路径 id 唯一标示 created_at 创建时间 updated_at 更新时间</value>
+        /// <value>**参数解释：** 排序字段，name 名称 path 路径 id 唯一标识 created_at 创建时间 updated_at 更新时间</value>
         [JsonConverter(typeof(EnumClassConverter<OrderByEnum>))]
         public class OrderByEnum
         {
@@ -279,7 +279,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public bool? AllAvailable { get; set; }
 
         /// <summary>
-        /// **参数解释：** 排序字段，name 名称 path 路径 id 唯一标示 created_at 创建时间 updated_at 更新时间
+        /// **参数解释：** 排序字段，name 名称 path 路径 id 唯一标识 created_at 创建时间 updated_at 更新时间
         /// </summary>
         [SDKProperty("order_by", IsQuery = true)]
         [JsonProperty("order_by", NullValueHandling = NullValueHandling.Ignore)]

@@ -183,6 +183,30 @@ namespace HuaweiCloud.SDK.Aom.V2
         }
         
         /// <summary>
+        /// 批量更新Prometheus监控告警规则
+        ///
+        /// 该接口用于批量启停Prometheus监控告警规则、批量修改Prometheus监控告警规则的告警行动规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchUpdateAlarmRuleResponse BatchUpdateAlarmRule(BatchUpdateAlarmRuleRequest batchUpdateAlarmRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/alarm-rules/batch-update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateAlarmRuleRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<BatchUpdateAlarmRuleResponse>(response);
+        }
+
+        public SyncInvoker<BatchUpdateAlarmRuleResponse> BatchUpdateAlarmRuleInvoker(BatchUpdateAlarmRuleRequest batchUpdateAlarmRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/alarm-rules/batch-update", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateAlarmRuleRequest);
+            return new SyncInvoker<BatchUpdateAlarmRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateAlarmRuleResponse>);
+        }
+        
+        /// <summary>
         /// 统计事件告警信息
         ///
         /// 该接口用于分段统计指定条件下的事件、告警。

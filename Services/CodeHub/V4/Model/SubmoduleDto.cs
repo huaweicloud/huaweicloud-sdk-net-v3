@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public string SubCommitId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 部署秘钥同步状态。 **取值范围：** - 0，不同步。 - 1，同步。
+        /// **参数解释：** 部署密钥同步状态。 **取值范围：** - 0，不同步。 - 1，同步。
         /// </summary>
         [JsonProperty("deployKey_status", NullValueHandling = NullValueHandling.Ignore)]
         public int? DeployKeyStatus { get; set; }

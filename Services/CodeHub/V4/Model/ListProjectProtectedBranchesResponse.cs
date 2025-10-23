@@ -22,13 +22,6 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public List<ProjectProtectedBranchApiDto> Body { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [SDKProperty("X-Total", IsHeader = true)]
-        [JsonProperty("X-Total", NullValueHandling = NullValueHandling.Ignore)]
-        public string XTotal { get; set; }
-
 
 
         /// <summary>
@@ -39,7 +32,6 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             var sb = new StringBuilder();
             sb.Append("class ListProjectProtectedBranchesResponse {\n");
             sb.Append("  body: ").Append(Body).Append("\n");
-            sb.Append("  xTotal: ").Append(XTotal).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,7 +51,6 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         {
             if (input == null) return false;
             if (this.Body != input.Body || (this.Body != null && input.Body != null && !this.Body.SequenceEqual(input.Body))) return false;
-            if (this.XTotal != input.XTotal || (this.XTotal != null && !this.XTotal.Equals(input.XTotal))) return false;
 
             return true;
         }
@@ -73,7 +64,6 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             {
                 var hashCode = 41;
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
-                if (this.XTotal != null) hashCode = hashCode * 59 + this.XTotal.GetHashCode();
                 return hashCode;
             }
         }

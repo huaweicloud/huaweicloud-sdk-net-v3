@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("words_block_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<GeneralTextWordsBlockList> WordsBlockList { get; set; }
 
+        /// <summary>
+        /// 所有文字块拼接的识别结果，同一行的文字块使用“\\t”拼接，不同行的文字块使用“\\n”拼接。 当return_markdown_result为true时，返回该字段值，否则，不返回该字段。 
+        /// </summary>
+        [JsonProperty("markdown_result", NullValueHandling = NullValueHandling.Ignore)]
+        public string MarkdownResult { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  direction: ").Append(Direction).Append("\n");
             sb.Append("  wordsBlockCount: ").Append(WordsBlockCount).Append("\n");
             sb.Append("  wordsBlockList: ").Append(WordsBlockList).Append("\n");
+            sb.Append("  markdownResult: ").Append(MarkdownResult).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.Direction != input.Direction || (this.Direction != null && !this.Direction.Equals(input.Direction))) return false;
             if (this.WordsBlockCount != input.WordsBlockCount || (this.WordsBlockCount != null && !this.WordsBlockCount.Equals(input.WordsBlockCount))) return false;
             if (this.WordsBlockList != input.WordsBlockList || (this.WordsBlockList != null && input.WordsBlockList != null && !this.WordsBlockList.SequenceEqual(input.WordsBlockList))) return false;
+            if (this.MarkdownResult != input.MarkdownResult || (this.MarkdownResult != null && !this.MarkdownResult.Equals(input.MarkdownResult))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.Direction != null) hashCode = hashCode * 59 + this.Direction.GetHashCode();
                 if (this.WordsBlockCount != null) hashCode = hashCode * 59 + this.WordsBlockCount.GetHashCode();
                 if (this.WordsBlockList != null) hashCode = hashCode * 59 + this.WordsBlockList.GetHashCode();
+                if (this.MarkdownResult != null) hashCode = hashCode * 59 + this.MarkdownResult.GetHashCode();
                 return hashCode;
             }
         }

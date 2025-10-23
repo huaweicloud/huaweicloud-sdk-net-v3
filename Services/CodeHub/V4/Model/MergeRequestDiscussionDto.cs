@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     public class MergeRequestDiscussionDto 
     {
         /// <summary>
-        /// **参数解释：** 意见类型。
+        /// **参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。
         /// </summary>
-        /// <value>**参数解释：** 意见类型。</value>
+        /// <value>**参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。</value>
         [JsonConverter(typeof(EnumClassConverter<NoteableTypeEnum>))]
         public class NoteableTypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         }
 
         /// <summary>
-        /// **参数解释：** 严重程度key。
+        /// **参数解释：** 严重程度key。 **取值范围：** - suggestion: 建议。 - minor: 一般。 - major: 严重。 - fatal: 致命。
         /// </summary>
-        /// <value>**参数解释：** 严重程度key。</value>
+        /// <value>**参数解释：** 严重程度key。 **取值范围：** - suggestion: 建议。 - minor: 一般。 - major: 严重。 - fatal: 致命。</value>
         [JsonConverter(typeof(EnumClassConverter<SeverityEnum>))]
         public class SeverityEnum
         {
@@ -258,9 +258,9 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         }
 
         /// <summary>
-        /// **参数解释：** 严重程度英文。
+        /// **参数解释：** 严重程度英文。 **取值范围：** - Suggestion: 建议。 - Minor: 一般。 - major: 严重。 - fatal: 致命。
         /// </summary>
-        /// <value>**参数解释：** 严重程度英文。</value>
+        /// <value>**参数解释：** 严重程度英文。 **取值范围：** - Suggestion: 建议。 - Minor: 一般。 - major: 严重。 - fatal: 致命。</value>
         [JsonConverter(typeof(EnumClassConverter<SeverityEnEnum>))]
         public class SeverityEnEnum
         {
@@ -410,7 +410,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public int? RepositoryId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 意见类型。
+        /// **参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。
         /// </summary>
         [JsonProperty("noteable_type", NullValueHandling = NullValueHandling.Ignore)]
         public NoteableTypeEnum NoteableType { get; set; }
@@ -487,18 +487,18 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public string ReviewModules { get; set; }
 
         /// <summary>
-        /// **参数解释：** 严重程度key。
+        /// **参数解释：** 严重程度key。 **取值范围：** - suggestion: 建议。 - minor: 一般。 - major: 严重。 - fatal: 致命。
         /// </summary>
         [JsonProperty("severity", NullValueHandling = NullValueHandling.Ignore)]
         public SeverityEnum Severity { get; set; }
         /// <summary>
-        /// **参数解释：** 严重程度中文。 **约束限制：** - 建议 - 一般 - 严重 - 致命
+        /// **参数解释：** 严重程度中文。 **取值范围：** - 建议 - 一般 - 严重 - 致命
         /// </summary>
         [JsonProperty("severity_cn", NullValueHandling = NullValueHandling.Ignore)]
         public string SeverityCn { get; set; }
 
         /// <summary>
-        /// **参数解释：** 严重程度英文。
+        /// **参数解释：** 严重程度英文。 **取值范围：** - Suggestion: 建议。 - Minor: 一般。 - major: 严重。 - fatal: 致命。
         /// </summary>
         [JsonProperty("severity_en", NullValueHandling = NullValueHandling.Ignore)]
         public SeverityEnEnum SeverityEn { get; set; }

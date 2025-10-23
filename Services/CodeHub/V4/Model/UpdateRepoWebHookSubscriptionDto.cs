@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public string Url { get; set; }
 
         /// <summary>
-        /// **参数解释：** 秘钥。
+        /// **参数解释：** 密钥。
         /// </summary>
         [JsonProperty("token", NullValueHandling = NullValueHandling.Ignore)]
         public string Token { get; set; }

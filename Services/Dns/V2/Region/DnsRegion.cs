@@ -57,6 +57,10 @@ namespace HuaweiCloud.SDK.Dns.V2
             "https://dns.cn-east-4.myhuaweicloud.com");
         public static readonly Region TR_WEST_1 = new Region("tr-west-1",
             "https://dns.tr-west-1.myhuaweicloud.com");
+        public static readonly Region AF_NORTH_1 = new Region("af-north-1",
+            "https://dns.af-north-1.myhuaweicloud.com");
+        public static readonly Region MY_KUALALUMPUR_1 = new Region("my-kualalumpur-1",
+            "https://dns.my-kualalumpur-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("DNS");
 
@@ -87,6 +91,8 @@ namespace HuaweiCloud.SDK.Dns.V2
                 { "cn-east-5", CN_EAST_5 },
                 { "cn-east-4", CN_EAST_4 },
                 { "tr-west-1", TR_WEST_1 },
+                { "af-north-1", AF_NORTH_1 },
+                { "my-kualalumpur-1", MY_KUALALUMPUR_1 },
         };
 
         public static Region ValueOf(string regionId)

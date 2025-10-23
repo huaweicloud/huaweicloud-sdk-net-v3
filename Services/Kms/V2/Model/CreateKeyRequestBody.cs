@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
     public class CreateKeyRequestBody 
     {
         /// <summary>
-        /// 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SM2
+        /// 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2
         /// </summary>
-        /// <value>密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SM2</value>
+        /// <value>密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2</value>
         [JsonConverter(typeof(EnumClassConverter<KeySpecEnum>))]
         public class KeySpecEnum
         {
@@ -58,6 +58,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
             public static readonly KeySpecEnum EC_P384 = new KeySpecEnum("EC_P384");
 
             /// <summary>
+            /// Enum SECP256K1 for value: SECP256K1
+            /// </summary>
+            public static readonly KeySpecEnum SECP256K1 = new KeySpecEnum("SECP256K1");
+
+            /// <summary>
             /// Enum SM2 for value: SM2
             /// </summary>
             public static readonly KeySpecEnum SM2 = new KeySpecEnum("SM2");
@@ -72,6 +77,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
                 { "RSA_4096", RSA_4096 },
                 { "EC_P256", EC_P256 },
                 { "EC_P384", EC_P384 },
+                { "SECP256K1", SECP256K1 },
                 { "SM2", SM2 },
             };
 
@@ -404,7 +410,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         public string KeyAlias { get; set; }
 
         /// <summary>
-        /// 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SM2
+        /// 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2
         /// </summary>
         [JsonProperty("key_spec", NullValueHandling = NullValueHandling.Ignore)]
         public KeySpecEnum KeySpec { get; set; }

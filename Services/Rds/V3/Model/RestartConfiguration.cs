@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("delay", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Delay { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("restart_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public RestartPolicy RestartPolicy { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  restartServer: ").Append(RestartServer).Append("\n");
             sb.Append("  forcible: ").Append(Forcible).Append("\n");
             sb.Append("  delay: ").Append(Delay).Append("\n");
+            sb.Append("  restartPolicy: ").Append(RestartPolicy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.RestartServer != input.RestartServer || (this.RestartServer != null && !this.RestartServer.Equals(input.RestartServer))) return false;
             if (this.Forcible != input.Forcible || (this.Forcible != null && !this.Forcible.Equals(input.Forcible))) return false;
             if (this.Delay != input.Delay || (this.Delay != null && !this.Delay.Equals(input.Delay))) return false;
+            if (this.RestartPolicy != input.RestartPolicy || (this.RestartPolicy != null && !this.RestartPolicy.Equals(input.RestartPolicy))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.RestartServer != null) hashCode = hashCode * 59 + this.RestartServer.GetHashCode();
                 if (this.Forcible != null) hashCode = hashCode * 59 + this.Forcible.GetHashCode();
                 if (this.Delay != null) hashCode = hashCode * 59 + this.Delay.GetHashCode();
+                if (this.RestartPolicy != null) hashCode = hashCode * 59 + this.RestartPolicy.GetHashCode();
                 return hashCode;
             }
         }

@@ -198,18 +198,6 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public string HttpUrlToRepo { get; set; }
 
         /// <summary>
-        /// **参数解释：** 仓库页面链接。
-        /// </summary>
-        [JsonProperty("web_url", NullValueHandling = NullValueHandling.Ignore)]
-        public string WebUrl { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 仓库readme文件链接。
-        /// </summary>
-        [JsonProperty("readme_url", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReadmeUrl { get; set; }
-
-        /// <summary>
         /// **参数解释：** 仓库所属项目ID。
         /// </summary>
         [JsonProperty("project_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -474,8 +462,6 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             sb.Append("  archived: ").Append(Archived).Append("\n");
             sb.Append("  sshUrlToRepo: ").Append(SshUrlToRepo).Append("\n");
             sb.Append("  httpUrlToRepo: ").Append(HttpUrlToRepo).Append("\n");
-            sb.Append("  webUrl: ").Append(WebUrl).Append("\n");
-            sb.Append("  readmeUrl: ").Append(ReadmeUrl).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  projectName: ").Append(ProjectName).Append("\n");
             sb.Append("  developMode: ").Append(DevelopMode).Append("\n");
@@ -546,8 +532,6 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             if (this.Archived != input.Archived || (this.Archived != null && !this.Archived.Equals(input.Archived))) return false;
             if (this.SshUrlToRepo != input.SshUrlToRepo || (this.SshUrlToRepo != null && !this.SshUrlToRepo.Equals(input.SshUrlToRepo))) return false;
             if (this.HttpUrlToRepo != input.HttpUrlToRepo || (this.HttpUrlToRepo != null && !this.HttpUrlToRepo.Equals(input.HttpUrlToRepo))) return false;
-            if (this.WebUrl != input.WebUrl || (this.WebUrl != null && !this.WebUrl.Equals(input.WebUrl))) return false;
-            if (this.ReadmeUrl != input.ReadmeUrl || (this.ReadmeUrl != null && !this.ReadmeUrl.Equals(input.ReadmeUrl))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.ProjectName != input.ProjectName || (this.ProjectName != null && !this.ProjectName.Equals(input.ProjectName))) return false;
             if (this.DevelopMode != input.DevelopMode) return false;
@@ -612,8 +596,6 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
                 if (this.Archived != null) hashCode = hashCode * 59 + this.Archived.GetHashCode();
                 if (this.SshUrlToRepo != null) hashCode = hashCode * 59 + this.SshUrlToRepo.GetHashCode();
                 if (this.HttpUrlToRepo != null) hashCode = hashCode * 59 + this.HttpUrlToRepo.GetHashCode();
-                if (this.WebUrl != null) hashCode = hashCode * 59 + this.WebUrl.GetHashCode();
-                if (this.ReadmeUrl != null) hashCode = hashCode * 59 + this.ReadmeUrl.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.ProjectName != null) hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
                 hashCode = hashCode * 59 + this.DevelopMode.GetHashCode();

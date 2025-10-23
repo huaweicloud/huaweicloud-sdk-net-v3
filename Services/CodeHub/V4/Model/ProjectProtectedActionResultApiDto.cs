@@ -46,6 +46,12 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         [JsonProperty("roles", NullValueHandling = NullValueHandling.Ignore)]
         public List<RoleBasicDto> Roles { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 操作选择列表。
+        /// </summary>
+        [JsonProperty("addition_switchers", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ForceActionEnableDto> AdditionSwitchers { get; set; }
+
 
 
         /// <summary>
@@ -60,6 +66,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             sb.Append("  users: ").Append(Users).Append("\n");
             sb.Append("  userTeams: ").Append(UserTeams).Append("\n");
             sb.Append("  roles: ").Append(Roles).Append("\n");
+            sb.Append("  additionSwitchers: ").Append(AdditionSwitchers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,6 +90,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             if (this.Users != input.Users || (this.Users != null && input.Users != null && !this.Users.SequenceEqual(input.Users))) return false;
             if (this.UserTeams != input.UserTeams || (this.UserTeams != null && input.UserTeams != null && !this.UserTeams.SequenceEqual(input.UserTeams))) return false;
             if (this.Roles != input.Roles || (this.Roles != null && input.Roles != null && !this.Roles.SequenceEqual(input.Roles))) return false;
+            if (this.AdditionSwitchers != input.AdditionSwitchers || (this.AdditionSwitchers != null && input.AdditionSwitchers != null && !this.AdditionSwitchers.SequenceEqual(input.AdditionSwitchers))) return false;
 
             return true;
         }
@@ -100,6 +108,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
                 if (this.Users != null) hashCode = hashCode * 59 + this.Users.GetHashCode();
                 if (this.UserTeams != null) hashCode = hashCode * 59 + this.UserTeams.GetHashCode();
                 if (this.Roles != null) hashCode = hashCode * 59 + this.Roles.GetHashCode();
+                if (this.AdditionSwitchers != null) hashCode = hashCode * 59 + this.AdditionSwitchers.GetHashCode();
                 return hashCode;
             }
         }

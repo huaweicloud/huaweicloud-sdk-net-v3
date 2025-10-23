@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     public class ListImpersonationTokensRequest 
     {
         /// <summary>
-        /// **参数解释：** 状态 all 所有 active 活跃 inactive 非活跃。
+        /// **参数解释：** 状态 all 所有状态 active 活跃，未过期 inactive 非活跃，失效的。
         /// </summary>
-        /// <value>**参数解释：** 状态 all 所有 active 活跃 inactive 非活跃。</value>
+        /// <value>**参数解释：** 状态 all 所有状态 active 活跃，未过期 inactive 非活跃，失效的。</value>
         [JsonConverter(typeof(EnumClassConverter<StateEnum>))]
         public class StateEnum
         {
@@ -145,7 +145,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public int? GroupId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 状态 all 所有 active 活跃 inactive 非活跃。
+        /// **参数解释：** 状态 all 所有状态 active 活跃，未过期 inactive 非活跃，失效的。
         /// </summary>
         [SDKProperty("state", IsQuery = true)]
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]

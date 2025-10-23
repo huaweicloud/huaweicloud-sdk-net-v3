@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
     public class EncryptDatakeyRequestBody 
     {
         /// <summary>
-        /// 指定生成的密钥算法。有效值： SM2、RSA。
+        /// 指定待加密数据密钥的类型，仅四级密评场景生效。有效值： SM2、RSA。
         /// </summary>
-        /// <value>指定生成的密钥算法。有效值： SM2、RSA。</value>
+        /// <value>指定待加密数据密钥的类型，仅四级密评场景生效。有效值： SM2、RSA。</value>
         [JsonConverter(typeof(EnumClassConverter<KeySpecEnum>))]
         public class KeySpecEnum
         {
@@ -174,7 +174,7 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         public string PinType { get; set; }
 
         /// <summary>
-        /// 指定生成的密钥算法。有效值： SM2、RSA。
+        /// 指定待加密数据密钥的类型，仅四级密评场景生效。有效值： SM2、RSA。
         /// </summary>
         [JsonProperty("key_spec", NullValueHandling = NullValueHandling.Ignore)]
         public KeySpecEnum KeySpec { get; set; }

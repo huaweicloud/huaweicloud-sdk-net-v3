@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     {
 
         /// <summary>
-        /// 关联结果
+        /// **参数解释：** 关联结果。 **取值范围：** - success，关联成功。 - error,关联失败。
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

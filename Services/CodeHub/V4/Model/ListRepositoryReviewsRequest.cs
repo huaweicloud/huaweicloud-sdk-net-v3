@@ -408,7 +408,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// **参数解释：** 是否仅返回todo。 **取值范围：** - true，仅返回带有提交计数和diffs计数的结果。 - false，按照compare_view参数返回结果信息。
+        /// **参数解释：** 是否仅返回带有提交计数和diffs计数的结果。 **取值范围：** - true，仅返回带有提交计数和diffs计数的结果。 - false，按照compare_view参数返回结果信息。
         /// </summary>
         [SDKProperty("only_count", IsQuery = true)]
         [JsonProperty("only_count", NullValueHandling = NullValueHandling.Ignore)]

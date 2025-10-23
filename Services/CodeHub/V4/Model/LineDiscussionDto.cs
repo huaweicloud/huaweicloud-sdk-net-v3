@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     public class LineDiscussionDto 
     {
         /// <summary>
-        /// **参数解释：** 所在的行的类型。 old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。
+        /// **参数解释：** 所在的行的类型。 **取值范围：** old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。
         /// </summary>
-        /// <value>**参数解释：** 所在的行的类型。 old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。</value>
+        /// <value>**参数解释：** 所在的行的类型。 **取值范围：** old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -33,9 +33,9 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             public static readonly TypeEnum NEW = new TypeEnum("new");
 
             /// <summary>
-            /// Enum UNCHANGD_L for value: unchangd-l
+            /// Enum UNCHANGED_L for value: unchanged-l
             /// </summary>
-            public static readonly TypeEnum UNCHANGD_L = new TypeEnum("unchangd-l");
+            public static readonly TypeEnum UNCHANGED_L = new TypeEnum("unchanged-l");
 
             /// <summary>
             /// Enum UNCHANGED_R for value: unchanged-r
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             {
                 { "old", OLD },
                 { "new", NEW },
-                { "unchangd-l", UNCHANGD_L },
+                { "unchanged-l", UNCHANGED_L },
                 { "unchanged-r", UNCHANGED_R },
             };
 
@@ -156,7 +156,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public int? Line { get; set; }
 
         /// <summary>
-        /// **参数解释：** 所在的行的类型。 old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。
+        /// **参数解释：** 所在的行的类型。 **取值范围：** old: 左侧删除行。 new: 右侧新增行。 unchanged-l: 左侧不变行。 unchanged-r: 右侧不变行。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

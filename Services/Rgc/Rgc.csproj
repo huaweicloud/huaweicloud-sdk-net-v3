@@ -15,7 +15,7 @@
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
         <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
         <PackageId>HuaweiCloud.SDK.Rgc</PackageId>
-        <Version>3.1.168</Version>
+        <Version>3.1.169</Version>
         <Authors>HuaweiCloud</Authors>
         <Copyright>Copyright 2023 Huawei Technologies Co., Ltd.</Copyright>
         <Company>Huawei Technologies Co., Ltd.</Company>

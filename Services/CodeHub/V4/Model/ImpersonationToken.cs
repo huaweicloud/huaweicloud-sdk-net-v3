@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     {
 
         /// <summary>
-        /// **参数解释：** 唯一标示id。
+        /// **参数解释：** 唯一标识id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int? Id { get; set; }

@@ -8,25 +8,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
+namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 {
     /// <summary>
     /// Response Object
     /// </summary>
-    public class ListDatabaseVolumeResponse : SdkResponse
+    public class ListBackupsResponse : SdkResponse
     {
 
         /// <summary>
-        /// **参数解释**: 数据库占用空间列表。 
-        /// </summary>
-        [JsonProperty("database_volumes", NullValueHandling = NullValueHandling.Ignore)]
-        public List<DatabaseVolumeResult> DatabaseVolumes { get; set; }
-
-        /// <summary>
-        /// **参数解释**: 总数。 **取值范围**: 不涉及 
+        /// 备份总数量。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("backups", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Backup> Backups { get; set; }
 
 
 
@@ -36,9 +36,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListDatabaseVolumeResponse {\n");
-            sb.Append("  databaseVolumes: ").Append(DatabaseVolumes).Append("\n");
+            sb.Append("class ListBackupsResponse {\n");
             sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
+            sb.Append("  backups: ").Append(Backups).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -48,17 +48,17 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListDatabaseVolumeResponse);
+            return this.Equals(input as ListBackupsResponse);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListDatabaseVolumeResponse input)
+        public bool Equals(ListBackupsResponse input)
         {
             if (input == null) return false;
-            if (this.DatabaseVolumes != input.DatabaseVolumes || (this.DatabaseVolumes != null && input.DatabaseVolumes != null && !this.DatabaseVolumes.SequenceEqual(input.DatabaseVolumes))) return false;
             if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.Backups != input.Backups || (this.Backups != null && input.Backups != null && !this.Backups.SequenceEqual(input.Backups))) return false;
 
             return true;
         }
@@ -71,8 +71,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.DatabaseVolumes != null) hashCode = hashCode * 59 + this.DatabaseVolumes.GetHashCode();
                 if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.Backups != null) hashCode = hashCode * 59 + this.Backups.GetHashCode();
                 return hashCode;
             }
         }

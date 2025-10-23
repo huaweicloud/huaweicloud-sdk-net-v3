@@ -15,6 +15,151 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     /// </summary>
     public class CreateCommitResponse : SdkResponse
     {
+        /// <summary>
+        /// 流水线状态，pending为排队，running为运行中，success为成功，failed为失败，canceled为取消，skipped为跳过，timedout为超时
+        /// </summary>
+        /// <value>流水线状态，pending为排队，running为运行中，success为成功，failed为失败，canceled为取消，skipped为跳过，timedout为超时</value>
+        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
+        public class StatusEnum
+        {
+            /// <summary>
+            /// Enum PENDING for value: pending
+            /// </summary>
+            public static readonly StatusEnum PENDING = new StatusEnum("pending");
+
+            /// <summary>
+            /// Enum RUNNING for value: running
+            /// </summary>
+            public static readonly StatusEnum RUNNING = new StatusEnum("running");
+
+            /// <summary>
+            /// Enum SUCCESS for value: success
+            /// </summary>
+            public static readonly StatusEnum SUCCESS = new StatusEnum("success");
+
+            /// <summary>
+            /// Enum FAILED for value: failed
+            /// </summary>
+            public static readonly StatusEnum FAILED = new StatusEnum("failed");
+
+            /// <summary>
+            /// Enum CANCELED for value: canceled
+            /// </summary>
+            public static readonly StatusEnum CANCELED = new StatusEnum("canceled");
+
+            /// <summary>
+            /// Enum SKIPPED for value: skipped
+            /// </summary>
+            public static readonly StatusEnum SKIPPED = new StatusEnum("skipped");
+
+            /// <summary>
+            /// Enum TIMEDOUT for value: timedout
+            /// </summary>
+            public static readonly StatusEnum TIMEDOUT = new StatusEnum("timedout");
+
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
+            new Dictionary<string, StatusEnum>()
+            {
+                { "pending", PENDING },
+                { "running", RUNNING },
+                { "success", SUCCESS },
+                { "failed", FAILED },
+                { "canceled", CANCELED },
+                { "skipped", SKIPPED },
+                { "timedout", TIMEDOUT },
+            };
+
+            private string _value;
+
+            public StatusEnum()
+            {
+
+            }
+
+            public StatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static StatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(StatusEnum a, StatusEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StatusEnum a, StatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// id
@@ -173,11 +318,10 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public CommitStatsDto Stats { get; set; }
 
         /// <summary>
-        /// **参数解释：** 状态。 **取值范围：** 不涉及。
+        /// 流水线状态，pending为排队，running为运行中，success为成功，failed为失败，canceled为取消，skipped为跳过，timedout为超时
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
-
+        public StatusEnum Status { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -286,7 +430,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             if (this.TenantName != input.TenantName || (this.TenantName != null && !this.TenantName.Equals(input.TenantName))) return false;
             if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
             if (this.Stats != input.Stats || (this.Stats != null && !this.Stats.Equals(input.Stats))) return false;
-            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Status != input.Status) return false;
             if (this.LastPipeline != input.LastPipeline || (this.LastPipeline != null && !this.LastPipeline.Equals(input.LastPipeline))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.MergeRequest != input.MergeRequest || (this.MergeRequest != null && !this.MergeRequest.Equals(input.MergeRequest))) return false;
@@ -329,7 +473,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
                 if (this.TenantName != null) hashCode = hashCode * 59 + this.TenantName.GetHashCode();
                 if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.Stats != null) hashCode = hashCode * 59 + this.Stats.GetHashCode();
-                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.LastPipeline != null) hashCode = hashCode * 59 + this.LastPipeline.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.MergeRequest != null) hashCode = hashCode * 59 + this.MergeRequest.GetHashCode();

@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
     /// <summary>
     /// 
     /// </summary>
-    public class VehicleLicenseback 
+    public class VehicleLicenseBack 
     {
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class VehicleLicenseback {\n");
+            sb.Append("class VehicleLicenseBack {\n");
             sb.Append("  number: ").Append(Number).Append("\n");
             sb.Append("  fileNo: ").Append(FileNo).Append("\n");
             sb.Append("  approvedPassengers: ").Append(ApprovedPassengers).Append("\n");
@@ -125,13 +125,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as VehicleLicenseback);
+            return this.Equals(input as VehicleLicenseBack);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(VehicleLicenseback input)
+        public bool Equals(VehicleLicenseBack input)
         {
             if (input == null) return false;
             if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;

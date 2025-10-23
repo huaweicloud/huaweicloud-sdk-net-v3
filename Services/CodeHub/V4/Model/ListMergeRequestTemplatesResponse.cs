@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         /// 
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public List<MergeRequestTemplateDto> Body { get; set; }
+        public List<RepositoryMergeRequestTemplateDto> Body { get; set; }
 
 
 

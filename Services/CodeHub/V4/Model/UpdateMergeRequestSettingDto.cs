@@ -635,7 +635,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public int? OnlyAllowMergeIfVoteBiggerThan { get; set; }
 
         /// <summary>
-        /// **参数解释：** 仅合并人和合并合并请求。
+        /// **参数解释：** 仅合并人可合并合并请求。
         /// </summary>
         [JsonProperty("only_assignee_can_merge", NullValueHandling = NullValueHandling.Ignore)]
         public bool? OnlyAssigneeCanMerge { get; set; }

@@ -1645,32 +1645,6 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
-        /// 查询数据库占用空间大小列表
-        ///
-        /// 查询数据库占用空间大小列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListDatabaseVolumeResponse ListDatabaseVolume(ListDatabaseVolumeRequest listDatabaseVolumeRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listDatabaseVolumeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database-volume", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatabaseVolumeRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListDatabaseVolumeResponse>(response);
-        }
-
-        public SyncInvoker<ListDatabaseVolumeResponse> ListDatabaseVolumeInvoker(ListDatabaseVolumeRequest listDatabaseVolumeRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listDatabaseVolumeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
-            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/database-volume", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDatabaseVolumeRequest);
-            return new SyncInvoker<ListDatabaseVolumeResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDatabaseVolumeResponse>);
-        }
-        
-        /// <summary>
         /// 查询数据盘空间概况
         ///
         /// 查询数据盘空间概况。
@@ -3082,7 +3056,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyHbaConfRequest);
             var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerialize<ModifyHbaConfResponse>(response);
+            return JsonUtils.DeSerializeNull<ModifyHbaConfResponse>(response);
         }
 
         public SyncInvoker<ModifyHbaConfResponse> ModifyHbaConfInvoker(ModifyHbaConfRequest modifyHbaConfRequest)
@@ -3091,7 +3065,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             if (StringUtils.TryConvertToNonEmptyString(modifyHbaConfRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/hba-info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyHbaConfRequest);
-            return new SyncInvoker<ModifyHbaConfResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyHbaConfResponse>);
+            return new SyncInvoker<ModifyHbaConfResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ModifyHbaConfResponse>);
         }
         
         /// <summary>
@@ -4778,6 +4752,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 修改实例别名
+        ///
+        /// 创建或修改实例备注。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInstanceAliasResponse UpdateInstanceAlias(UpdateInstanceAliasRequest updateInstanceAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceAliasRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceAliasRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateInstanceAliasResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInstanceAliasResponse> UpdateInstanceAliasInvoker(UpdateInstanceAliasRequest updateInstanceAliasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceAliasRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/alias", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateInstanceAliasRequest);
+            return new SyncInvoker<UpdateInstanceAliasResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceAliasResponse>);
+        }
+        
+        /// <summary>
         /// 修改指定实例的参数
         ///
         /// 修改指定实例的参数。
@@ -5576,6 +5576,34 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 查询SQL执行计划绑定情况
+        ///
+        /// 查询SQL执行计划绑定情况。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSqlPlanActionResponse ListSqlPlanAction(ListSqlPlanActionRequest listSqlPlanActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSqlPlanActionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listSqlPlanActionRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql/{node_id}/plans/query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listSqlPlanActionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListSqlPlanActionResponse>(response);
+        }
+
+        public SyncInvoker<ListSqlPlanActionResponse> ListSqlPlanActionInvoker(ListSqlPlanActionRequest listSqlPlanActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSqlPlanActionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listSqlPlanActionRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql/{node_id}/plans/query", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listSqlPlanActionRequest);
+            return new SyncInvoker<ListSqlPlanActionResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSqlPlanActionResponse>);
+        }
+        
+        /// <summary>
         /// 查询GaussDB数据库实例SQL链路
         ///
         /// 查询GaussDB数据库实例SQL链路，包含实例上对应组件的链路列表，如dn_6001、dn_6002、cn_5001、cn_5002。
@@ -5606,6 +5634,34 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
                 listSqlTraceResponse.Body = JsonUtils.DeSerializeList<NodeExecutionInfoResult>(response);
                 return listSqlTraceResponse;
             });
+        }
+        
+        /// <summary>
+        /// 查询单条SQL详情
+        ///
+        /// 查询单条SQL详情。对于分布式版实例，可查询对应SQL的完整执行记录，包含CN和DN上SQL语句执行历史。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowFullSqlResponse ShowFullSql(ShowFullSqlRequest showFullSqlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFullSqlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showFullSqlRequest.SqlExecId, out var valueOfSqlExecId)) urlParam.Add("sql_exec_id", valueOfSqlExecId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/full-sqls/{sql_exec_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFullSqlRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowFullSqlResponse>(response);
+        }
+
+        public SyncInvoker<ShowFullSqlResponse> ShowFullSqlInvoker(ShowFullSqlRequest showFullSqlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showFullSqlRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showFullSqlRequest.SqlExecId, out var valueOfSqlExecId)) urlParam.Add("sql_exec_id", valueOfSqlExecId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/full-sqls/{sql_exec_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFullSqlRequest);
+            return new SyncInvoker<ShowFullSqlResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFullSqlResponse>);
         }
         
         /// <summary>

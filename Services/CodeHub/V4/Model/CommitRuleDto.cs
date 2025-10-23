@@ -107,18 +107,6 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public string UpdatedAt { get; set; }
 
         /// <summary>
-        /// **参数解释：** 是否跳过规则检测。 **约束限制：** 不涉及。 **取值范围：** - true，跳过规则检测。 - false，不跳过规则检测。
-        /// </summary>
-        [JsonProperty("skip_rule_check", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? SkipRuleCheck { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 失效时间。
-        /// </summary>
-        [JsonProperty("skip_rule_end_date", NullValueHandling = NullValueHandling.Ignore)]
-        public string SkipRuleEndDate { get; set; }
-
-        /// <summary>
         /// **参数解释：** 规则名称。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
@@ -135,6 +123,18 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
         public string CreatedAt { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 跳过规则检测。 **约束限制：** 仅CR仓库支持此参数。
+        /// </summary>
+        [JsonProperty("skip_rule_check", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SkipRuleCheck { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 跳过规则检测失效时间， 例如: 2025-8-19。 **约束限制：** 仅CR仓库支持此参数。
+        /// </summary>
+        [JsonProperty("skip_rule_end_date", NullValueHandling = NullValueHandling.Ignore)]
+        public string SkipRuleEndDate { get; set; }
 
 
 
@@ -160,11 +160,11 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             sb.Append("  allowedBinaryFileNameRegex: ").Append(AllowedBinaryFileNameRegex).Append("\n");
             sb.Append("  authorRegex: ").Append(AuthorRegex).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
-            sb.Append("  skipRuleCheck: ").Append(SkipRuleCheck).Append("\n");
-            sb.Append("  skipRuleEndDate: ").Append(SkipRuleEndDate).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  branchName: ").Append(BranchName).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  skipRuleCheck: ").Append(SkipRuleCheck).Append("\n");
+            sb.Append("  skipRuleEndDate: ").Append(SkipRuleEndDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -198,11 +198,11 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             if (this.AllowedBinaryFileNameRegex != input.AllowedBinaryFileNameRegex || (this.AllowedBinaryFileNameRegex != null && !this.AllowedBinaryFileNameRegex.Equals(input.AllowedBinaryFileNameRegex))) return false;
             if (this.AuthorRegex != input.AuthorRegex || (this.AuthorRegex != null && !this.AuthorRegex.Equals(input.AuthorRegex))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
-            if (this.SkipRuleCheck != input.SkipRuleCheck || (this.SkipRuleCheck != null && !this.SkipRuleCheck.Equals(input.SkipRuleCheck))) return false;
-            if (this.SkipRuleEndDate != input.SkipRuleEndDate || (this.SkipRuleEndDate != null && !this.SkipRuleEndDate.Equals(input.SkipRuleEndDate))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.BranchName != input.BranchName || (this.BranchName != null && !this.BranchName.Equals(input.BranchName))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.SkipRuleCheck != input.SkipRuleCheck || (this.SkipRuleCheck != null && !this.SkipRuleCheck.Equals(input.SkipRuleCheck))) return false;
+            if (this.SkipRuleEndDate != input.SkipRuleEndDate || (this.SkipRuleEndDate != null && !this.SkipRuleEndDate.Equals(input.SkipRuleEndDate))) return false;
 
             return true;
         }
@@ -230,11 +230,11 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
                 if (this.AllowedBinaryFileNameRegex != null) hashCode = hashCode * 59 + this.AllowedBinaryFileNameRegex.GetHashCode();
                 if (this.AuthorRegex != null) hashCode = hashCode * 59 + this.AuthorRegex.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.SkipRuleCheck != null) hashCode = hashCode * 59 + this.SkipRuleCheck.GetHashCode();
-                if (this.SkipRuleEndDate != null) hashCode = hashCode * 59 + this.SkipRuleEndDate.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.BranchName != null) hashCode = hashCode * 59 + this.BranchName.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.SkipRuleCheck != null) hashCode = hashCode * 59 + this.SkipRuleCheck.GetHashCode();
+                if (this.SkipRuleEndDate != null) hashCode = hashCode * 59 + this.SkipRuleEndDate.GetHashCode();
                 return hashCode;
             }
         }

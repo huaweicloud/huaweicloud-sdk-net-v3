@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeHub.V4.Model
 {
     /// <summary>
-    /// 部署秘钥
+    /// 部署密钥
     /// </summary>
     public class DeployKeyValueDto 
     {

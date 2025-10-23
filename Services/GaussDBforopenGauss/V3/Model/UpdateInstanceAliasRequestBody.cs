@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class UpdateInstanceAliasRequestBody 
+    {
+
+        /// <summary>
+        /// **参数解释**: 实例别名/备注。 **约束限制**: 不涉及。 **取值范围**: 允许中文，英文，数字及“-“、“_“、“.“，且长度为[1-64]个字符。 **默认取值**: 不涉及。
+        /// </summary>
+        [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string Alias { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class UpdateInstanceAliasRequestBody {\n");
+            sb.Append("  alias: ").Append(Alias).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as UpdateInstanceAliasRequestBody);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(UpdateInstanceAliasRequestBody input)
+        {
+            if (input == null) return false;
+            if (this.Alias != input.Alias || (this.Alias != null && !this.Alias.Equals(input.Alias))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.Alias != null) hashCode = hashCode * 59 + this.Alias.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

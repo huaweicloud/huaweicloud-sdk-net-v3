@@ -145,8 +145,8 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         /// <summary>
         /// **参数解释：** 排序id。
         /// </summary>
-        [JsonProperty("cr_comment_emplates", NullValueHandling = NullValueHandling.Ignore)]
-        public int? CrCommentEmplates { get; set; }
+        [JsonProperty("cr_comment_templates", NullValueHandling = NullValueHandling.Ignore)]
+        public int? CrCommentTemplates { get; set; }
 
         /// <summary>
         /// **参数解释：** 排序id。
@@ -167,7 +167,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public int? RepositorySettings { get; set; }
 
         /// <summary>
-        /// **参数解释：** 部署秘钥策略。
+        /// **参数解释：** 部署密钥策略。
         /// </summary>
         [JsonProperty("deploy_keys", NullValueHandling = NullValueHandling.Ignore)]
         public int? DeployKeys { get; set; }
@@ -220,7 +220,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             sb.Append("  streamEventSettings: ").Append(StreamEventSettings).Append("\n");
             sb.Append("  pipelineSettings: ").Append(PipelineSettings).Append("\n");
             sb.Append("  issueTemplates: ").Append(IssueTemplates).Append("\n");
-            sb.Append("  crCommentEmplates: ").Append(CrCommentEmplates).Append("\n");
+            sb.Append("  crCommentTemplates: ").Append(CrCommentTemplates).Append("\n");
             sb.Append("  mergeRequests: ").Append(MergeRequests).Append("\n");
             sb.Append("  mrBranchPolicies: ").Append(MrBranchPolicies).Append("\n");
             sb.Append("  repositorySettings: ").Append(RepositorySettings).Append("\n");
@@ -267,7 +267,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             if (this.StreamEventSettings != input.StreamEventSettings || (this.StreamEventSettings != null && !this.StreamEventSettings.Equals(input.StreamEventSettings))) return false;
             if (this.PipelineSettings != input.PipelineSettings || (this.PipelineSettings != null && !this.PipelineSettings.Equals(input.PipelineSettings))) return false;
             if (this.IssueTemplates != input.IssueTemplates || (this.IssueTemplates != null && !this.IssueTemplates.Equals(input.IssueTemplates))) return false;
-            if (this.CrCommentEmplates != input.CrCommentEmplates || (this.CrCommentEmplates != null && !this.CrCommentEmplates.Equals(input.CrCommentEmplates))) return false;
+            if (this.CrCommentTemplates != input.CrCommentTemplates || (this.CrCommentTemplates != null && !this.CrCommentTemplates.Equals(input.CrCommentTemplates))) return false;
             if (this.MergeRequests != input.MergeRequests || (this.MergeRequests != null && !this.MergeRequests.Equals(input.MergeRequests))) return false;
             if (this.MrBranchPolicies != input.MrBranchPolicies || (this.MrBranchPolicies != null && !this.MrBranchPolicies.Equals(input.MrBranchPolicies))) return false;
             if (this.RepositorySettings != input.RepositorySettings || (this.RepositorySettings != null && !this.RepositorySettings.Equals(input.RepositorySettings))) return false;
@@ -308,7 +308,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
                 if (this.StreamEventSettings != null) hashCode = hashCode * 59 + this.StreamEventSettings.GetHashCode();
                 if (this.PipelineSettings != null) hashCode = hashCode * 59 + this.PipelineSettings.GetHashCode();
                 if (this.IssueTemplates != null) hashCode = hashCode * 59 + this.IssueTemplates.GetHashCode();
-                if (this.CrCommentEmplates != null) hashCode = hashCode * 59 + this.CrCommentEmplates.GetHashCode();
+                if (this.CrCommentTemplates != null) hashCode = hashCode * 59 + this.CrCommentTemplates.GetHashCode();
                 if (this.MergeRequests != null) hashCode = hashCode * 59 + this.MergeRequests.GetHashCode();
                 if (this.MrBranchPolicies != null) hashCode = hashCode * 59 + this.MrBranchPolicies.GetHashCode();
                 if (this.RepositorySettings != null) hashCode = hashCode * 59 + this.RepositorySettings.GetHashCode();

@@ -879,6 +879,30 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 查询备份列表（推荐）
+        ///
+        /// 根据指定条件查询备份列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListBackupsResponse> ListBackupsAsync(ListBackupsRequest listBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListBackupsResponse>(response);
+        }
+
+        public AsyncInvoker<ListBackupsResponse> ListBackupsAsyncInvoker(ListBackupsRequest listBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupsRequest);
+            return new AsyncInvoker<ListBackupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBackupsResponse>);
+        }
+        
+        /// <summary>
         /// 查询GeminiDB(for Cassandra)数据库慢日志
         ///
         /// 查询GeminiDB(for Cassandra)数据库慢日志信息，支持日志关键字搜索。
@@ -2170,6 +2194,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/recovery", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreExistingInstanceRequest);
             return new AsyncInvoker<RestoreExistingInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreExistingInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 数据文件导入已有实例
+        ///
+        /// 数据导入已有实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RestoreRedisDataResponse> RestoreRedisDataAsync(RestoreRedisDataRequest restoreRedisDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(restoreRedisDataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/recovery", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreRedisDataRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<RestoreRedisDataResponse>(response);
+        }
+
+        public AsyncInvoker<RestoreRedisDataResponse> RestoreRedisDataAsyncInvoker(RestoreRedisDataRequest restoreRedisDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(restoreRedisDataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/redis/instances/{instance_id}/recovery", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", restoreRedisDataRequest);
+            return new AsyncInvoker<RestoreRedisDataResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreRedisDataResponse>);
         }
         
         /// <summary>

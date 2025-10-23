@@ -369,6 +369,20 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public int? RepositoryId { get; set; }
 
         /// <summary>
+        /// **参数解释：** 偏移量，从0开始。
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 返回数量。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
+
+        /// <summary>
         /// **参数解释：**  排序字段。 **约束限制：**  必须为枚举值中的选项。 **取值范围：**  - created_at，创建时间。 - updated_at，更新时间。 **默认取值：**  created_at。
         /// </summary>
         [SDKProperty("order_by", IsQuery = true)]
@@ -396,6 +410,8 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             var sb = new StringBuilder();
             sb.Append("class ListRepositoryForksRequest {\n");
             sb.Append("  repositoryId: ").Append(RepositoryId).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  orderBy: ").Append(OrderBy).Append("\n");
             sb.Append("  sort: ").Append(Sort).Append("\n");
             sb.Append("  view: ").Append(View).Append("\n");
@@ -418,6 +434,8 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         {
             if (input == null) return false;
             if (this.RepositoryId != input.RepositoryId || (this.RepositoryId != null && !this.RepositoryId.Equals(input.RepositoryId))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.OrderBy != input.OrderBy) return false;
             if (this.Sort != input.Sort) return false;
             if (this.View != input.View) return false;
@@ -434,6 +452,8 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             {
                 var hashCode = 41;
                 if (this.RepositoryId != null) hashCode = hashCode * 59 + this.RepositoryId.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 hashCode = hashCode * 59 + this.OrderBy.GetHashCode();
                 hashCode = hashCode * 59 + this.Sort.GetHashCode();
                 hashCode = hashCode * 59 + this.View.GetHashCode();

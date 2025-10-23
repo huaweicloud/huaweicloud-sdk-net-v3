@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     public class ProjectSettingsInheritCfgDto 
     {
         /// <summary>
-        /// **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 **默认取值：** 不涉及。
+        /// **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 - webhook_settings，webhook设置。 - mr_branch_policies，合并分支策略设置。 - reviews，检视设置。 - deploy_keys，部署参数设置。 **默认取值：** 不涉及。
         /// </summary>
-        /// <value>**参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 **默认取值：** 不涉及。</value>
+        /// <value>**参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 - webhook_settings，webhook设置。 - mr_branch_policies，合并分支策略设置。 - reviews，检视设置。 - deploy_keys，部署参数设置。 **默认取值：** 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<NameEnum>))]
         public class NameEnum
         {
@@ -57,6 +57,26 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             /// </summary>
             public static readonly NameEnum WATERMARK = new NameEnum("watermark");
 
+            /// <summary>
+            /// Enum WEBHOOK_SETTINGS for value: webhook_settings
+            /// </summary>
+            public static readonly NameEnum WEBHOOK_SETTINGS = new NameEnum("webhook_settings");
+
+            /// <summary>
+            /// Enum MR_BRANCH_POLICIES for value: mr_branch_policies
+            /// </summary>
+            public static readonly NameEnum MR_BRANCH_POLICIES = new NameEnum("mr_branch_policies");
+
+            /// <summary>
+            /// Enum REVIEWS for value: reviews
+            /// </summary>
+            public static readonly NameEnum REVIEWS = new NameEnum("reviews");
+
+            /// <summary>
+            /// Enum DEPLOY_KEYS for value: deploy_keys
+            /// </summary>
+            public static readonly NameEnum DEPLOY_KEYS = new NameEnum("deploy_keys");
+
             private static readonly Dictionary<string, NameEnum> StaticFields =
             new Dictionary<string, NameEnum>()
             {
@@ -67,6 +87,10 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
                 { "merge_requests", MERGE_REQUESTS },
                 { "e2e_settings", E2E_SETTINGS },
                 { "watermark", WATERMARK },
+                { "webhook_settings", WEBHOOK_SETTINGS },
+                { "mr_branch_policies", MR_BRANCH_POLICIES },
+                { "reviews", REVIEWS },
+                { "deploy_keys", DEPLOY_KEYS },
             };
 
             private string _value;
@@ -277,7 +301,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
 
 
         /// <summary>
-        /// **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 **默认取值：** 不涉及。
+        /// **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 - webhook_settings，webhook设置。 - mr_branch_policies，合并分支策略设置。 - reviews，检视设置。 - deploy_keys，部署参数设置。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public NameEnum Name { get; set; }

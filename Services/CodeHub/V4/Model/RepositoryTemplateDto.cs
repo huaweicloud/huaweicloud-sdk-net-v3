@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// **参数解释：** 是否是系统模版。 **取值范围：** - true，系统模版。 - false，个人模版。
+        /// **参数解释：** 是否是系统模板。 **取值范围：** - true，系统模板。 - false，个人模板。
         /// </summary>
         [JsonProperty("system", NullValueHandling = NullValueHandling.Ignore)]
         public bool? System { get; set; }

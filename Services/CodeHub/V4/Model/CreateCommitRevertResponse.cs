@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         [JsonProperty("revert_branch_name", NullValueHandling = NullValueHandling.Ignore)]
         public string RevertBranchName { get; set; }
 
+        /// <summary>
+        /// 变更请求 iid,仅变更请求返回
+        /// </summary>
+        [JsonProperty("iid", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Iid { get; set; }
+
 
 
         /// <summary>
@@ -193,6 +199,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             sb.Append("  state: ").Append(State).Append("\n");
             sb.Append("  cherryPickBranchName: ").Append(CherryPickBranchName).Append("\n");
             sb.Append("  revertBranchName: ").Append(RevertBranchName).Append("\n");
+            sb.Append("  iid: ").Append(Iid).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,6 +242,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
             if (this.CherryPickBranchName != input.CherryPickBranchName || (this.CherryPickBranchName != null && !this.CherryPickBranchName.Equals(input.CherryPickBranchName))) return false;
             if (this.RevertBranchName != input.RevertBranchName || (this.RevertBranchName != null && !this.RevertBranchName.Equals(input.RevertBranchName))) return false;
+            if (this.Iid != input.Iid || (this.Iid != null && !this.Iid.Equals(input.Iid))) return false;
 
             return true;
         }
@@ -271,6 +279,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
                 if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.CherryPickBranchName != null) hashCode = hashCode * 59 + this.CherryPickBranchName.GetHashCode();
                 if (this.RevertBranchName != null) hashCode = hashCode * 59 + this.RevertBranchName.GetHashCode();
+                if (this.Iid != null) hashCode = hashCode * 59 + this.Iid.GetHashCode();
                 return hashCode;
             }
         }

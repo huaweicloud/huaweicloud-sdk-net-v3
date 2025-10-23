@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     {
 
         /// <summary>
-        /// **参数解释：** 部署秘钥在上层代码组或项目是否配置。 **取值范围：** - true，上层代码组或项目已配置该密钥。 - false，上层代码组或项目未配置该密钥。
+        /// **参数解释：** 部署密钥在上层代码组或项目是否配置。 **取值范围：** - true，上层代码组或项目已配置该密钥。 - false，上层代码组或项目未配置该密钥。
         /// </summary>
         [JsonProperty("exists", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Exists { get; set; }

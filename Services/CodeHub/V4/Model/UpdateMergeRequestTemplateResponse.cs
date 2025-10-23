@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public int? Id { get; set; }
 
         /// <summary>
-        /// **参数解释：** 仓库id
+        /// **参数解释：** 仓库id。
         /// </summary>
         [JsonProperty("repository_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? RepositoryId { get; set; }

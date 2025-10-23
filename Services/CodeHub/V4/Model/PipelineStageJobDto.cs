@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CodeHub.V4.Model
 {
     /// <summary>
-    /// 流水线阶段带任务
+    /// 流水线阶段的任务
     /// </summary>
     public class PipelineStageJobDto 
     {

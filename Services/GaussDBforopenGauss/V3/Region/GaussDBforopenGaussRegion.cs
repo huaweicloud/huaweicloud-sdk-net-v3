@@ -55,6 +55,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
             "https://gaussdb.cn-east-2.myhuaweicloud.com");
         public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
             "https://gaussdb.cn-north-12.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_4 = new Region("cn-south-4",
+            "https://gaussdb-opengauss.cn-south-4.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("GAUSSDBFOROPENGAUSS");
 
@@ -84,6 +86,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
                 { "ap-southeast-4", AP_SOUTHEAST_4 },
                 { "cn-east-2", CN_EAST_2 },
                 { "cn-north-12", CN_NORTH_12 },
+                { "cn-south-4", CN_SOUTH_4 },
         };
 
         public static Region ValueOf(string regionId)

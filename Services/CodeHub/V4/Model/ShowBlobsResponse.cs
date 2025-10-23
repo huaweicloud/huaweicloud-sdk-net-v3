@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public string Content { get; set; }
 
         /// <summary>
-        /// **参数解释：** bolb文件ID。 **约束限制：** 不涉及。
+        /// **参数解释：** blob文件ID。 **约束限制：** 不涉及。
         /// </summary>
         [JsonProperty("blob_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BlobId { get; set; }

@@ -16,124 +16,9 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     public class NoteDto 
     {
         /// <summary>
-        /// **参数解释：** 类型(普通评论、需要解决的普通评论、需要解决的关联代码行的评论)。
+        /// **参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。
         /// </summary>
-        /// <value>**参数解释：** 类型(普通评论、需要解决的普通评论、需要解决的关联代码行的评论)。</value>
-        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
-        public class TypeEnum
-        {
-            /// <summary>
-            /// Enum DISCUSSIONNOTE for value: DiscussionNote
-            /// </summary>
-            public static readonly TypeEnum DISCUSSIONNOTE = new TypeEnum("DiscussionNote");
-
-            /// <summary>
-            /// Enum DIFFNOTE for value: DiffNote
-            /// </summary>
-            public static readonly TypeEnum DIFFNOTE = new TypeEnum("DiffNote");
-
-            private static readonly Dictionary<string, TypeEnum> StaticFields =
-            new Dictionary<string, TypeEnum>()
-            {
-                { "DiscussionNote", DISCUSSIONNOTE },
-                { "DiffNote", DIFFNOTE },
-            };
-
-            private string _value;
-
-            public TypeEnum()
-            {
-
-            }
-
-            public TypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static TypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as TypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(TypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(TypeEnum a, TypeEnum b)
-            {
-                if (ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(TypeEnum a, TypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
-        /// **参数解释：** 意见类型。
-        /// </summary>
-        /// <value>**参数解释：** 意见类型。</value>
+        /// <value>**参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。</value>
         [JsonConverter(typeof(EnumClassConverter<NoteableTypeEnum>))]
         public class NoteableTypeEnum
         {
@@ -507,10 +392,11 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public int? Id { get; set; }
 
         /// <summary>
-        /// **参数解释：** 类型(普通评论、需要解决的普通评论、需要解决的关联代码行的评论)。
+        /// **参数解释：** 评论类型。 **取值范围：** - DiscussionNote: 需要解决的关联代码行的评论。 - DiffNote: 一般。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public TypeEnum Type { get; set; }
+        public string Type { get; set; }
+
         /// <summary>
         /// **参数解释：** 评论内容。
         /// </summary>
@@ -554,7 +440,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public int? NoteableId { get; set; }
 
         /// <summary>
-        /// **参数解释：** 意见类型。
+        /// **参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。
         /// </summary>
         [JsonProperty("noteable_type", NullValueHandling = NullValueHandling.Ignore)]
         public NoteableTypeEnum NoteableType { get; set; }
@@ -783,7 +669,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         {
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
-            if (this.Type != input.Type) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
             if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
             if (this.Attachment != input.Attachment || (this.Attachment != null && !this.Attachment.Equals(input.Attachment))) return false;
             if (this.Author != input.Author || (this.Author != null && !this.Author.Equals(input.Author))) return false;
@@ -832,7 +718,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             {
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 if (this.Attachment != null) hashCode = hashCode * 59 + this.Attachment.GetHashCode();
                 if (this.Author != null) hashCode = hashCode * 59 + this.Author.GetHashCode();

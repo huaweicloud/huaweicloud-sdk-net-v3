@@ -1505,9 +1505,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         }
         
         /// <summary>
-        /// 附加系统策略到权限集
+        /// 添加系统策略
         ///
-        /// 将系统策略附加到权限集。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+        /// 在指定的权限集中添加系统策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1559,7 +1559,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         }
         
         /// <summary>
-        /// 删除指定权限集中的自定义身份策略
+        /// 删除自定义身份策略
         ///
         /// 删除指定权限集中的自定义身份策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
         /// 
@@ -1587,7 +1587,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         }
         
         /// <summary>
-        /// 删除指定权限集中的自定义策略
+        /// 删除自定义策略
         ///
         /// 删除指定权限集中的自定义策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
         /// 
@@ -1699,9 +1699,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         }
         
         /// <summary>
-        /// 从权限集分离系统身份策略
+        /// 删除系统身份策略
         ///
-        /// 将附加的系统身份策略从指定的权限集中分离。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+        /// 删除指定权限集中的系统身份策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1727,9 +1727,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         }
         
         /// <summary>
-        /// 从权限集分离系统策略
+        /// 删除系统策略
         ///
-        /// 将附加的系统策略从指定的权限集中分离。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+        /// 删除指定权限集中的系统策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1755,9 +1755,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         }
         
         /// <summary>
-        /// 获取分配给权限集的自定义身份策略
+        /// 查询自定义身份策略详情
         ///
-        /// 获取分配给权限集的自定义身份策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+        /// 查询指定权限集中的自定义身份策略详情。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1783,9 +1783,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         }
         
         /// <summary>
-        /// 获取分配给权限集的自定义策略
+        /// 查询自定义策略详情
         ///
-        /// 获取分配给权限集的自定义策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+        /// 查询指定权限集中的自定义策略详情。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1865,9 +1865,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         }
         
         /// <summary>
-        /// 列出权限集中附加的系统身份策略
+        /// 列出系统身份策略
         ///
-        /// 获取附加到指定权限集的系统身份策略列表。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+        /// 获取添加到指定权限集中的系统身份策略列表。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1893,9 +1893,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         }
         
         /// <summary>
-        /// 列出权限集中附加的系统策略
+        /// 列出系统策略
         ///
-        /// 获取附加到指定权限集的系统策略列表。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+        /// 获取添加到指定权限集中的系统策略列表。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2055,9 +2055,9 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1
         }
         
         /// <summary>
-        /// 将自定义策略附加到权限集
+        /// 添加自定义策略
         ///
-        /// 将自定义策略附加到权限集。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+        /// 在指定的权限集中添加自定义策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

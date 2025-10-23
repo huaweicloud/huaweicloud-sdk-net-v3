@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("query", NullValueHandling = NullValueHandling.Ignore)]
         public string Query { get; set; }
 
+        /// <summary>
+        /// **参数解释**: SQL执行数量。 **取值范围**: 大于等于0。 
+        /// </summary>
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Count { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  nodeName: ").Append(NodeName).Append("\n");
             sb.Append("  uniqueSqlId: ").Append(UniqueSqlId).Append("\n");
             sb.Append("  query: ").Append(Query).Append("\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.NodeName != input.NodeName || (this.NodeName != null && !this.NodeName.Equals(input.NodeName))) return false;
             if (this.UniqueSqlId != input.UniqueSqlId || (this.UniqueSqlId != null && !this.UniqueSqlId.Equals(input.UniqueSqlId))) return false;
             if (this.Query != input.Query || (this.Query != null && !this.Query.Equals(input.Query))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.NodeName != null) hashCode = hashCode * 59 + this.NodeName.GetHashCode();
                 if (this.UniqueSqlId != null) hashCode = hashCode * 59 + this.UniqueSqlId.GetHashCode();
                 if (this.Query != null) hashCode = hashCode * 59 + this.Query.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("pdf_page_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? PdfPageNumber { get; set; }
 
+        /// <summary>
+        /// 返回文字块拼接结果开关。可选值包括： - true：打开返回文字块拼接结果开关。 - false：关闭返回文字块拼接结果开关。 未传入该参数时默认为false，即默认关闭返回文字块拼接结果开关。 
+        /// </summary>
+        [JsonProperty("return_markdown_result", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ReturnMarkdownResult { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  language: ").Append(Language).Append("\n");
             sb.Append("  singleOrientationMode: ").Append(SingleOrientationMode).Append("\n");
             sb.Append("  pdfPageNumber: ").Append(PdfPageNumber).Append("\n");
+            sb.Append("  returnMarkdownResult: ").Append(ReturnMarkdownResult).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
             if (this.SingleOrientationMode != input.SingleOrientationMode || (this.SingleOrientationMode != null && !this.SingleOrientationMode.Equals(input.SingleOrientationMode))) return false;
             if (this.PdfPageNumber != input.PdfPageNumber || (this.PdfPageNumber != null && !this.PdfPageNumber.Equals(input.PdfPageNumber))) return false;
+            if (this.ReturnMarkdownResult != input.ReturnMarkdownResult || (this.ReturnMarkdownResult != null && !this.ReturnMarkdownResult.Equals(input.ReturnMarkdownResult))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 if (this.SingleOrientationMode != null) hashCode = hashCode * 59 + this.SingleOrientationMode.GetHashCode();
                 if (this.PdfPageNumber != null) hashCode = hashCode * 59 + this.PdfPageNumber.GetHashCode();
+                if (this.ReturnMarkdownResult != null) hashCode = hashCode * 59 + this.ReturnMarkdownResult.GetHashCode();
                 return hashCode;
             }
         }

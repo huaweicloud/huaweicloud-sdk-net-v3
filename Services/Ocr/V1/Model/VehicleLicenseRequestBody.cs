@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("recognize_electronic_license", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RecognizeElectronicLicense { get; set; }
 
+        /// <summary>
+        /// 是否返回纸质行驶证图像的告警信息，可选值包括： - true：返回纸质行驶证图像的告警信息 - false：不返回纸质行驶证图像的告警信息 如果无该参数，系统默认不返回告警信息。如果输入参数不是Boolean类型，则会报非法参数错误。 
+        /// </summary>
+        [JsonProperty("alarm", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Alarm { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  returnIssuingAuthority: ").Append(ReturnIssuingAuthority).Append("\n");
             sb.Append("  returnTextLocation: ").Append(ReturnTextLocation).Append("\n");
             sb.Append("  recognizeElectronicLicense: ").Append(RecognizeElectronicLicense).Append("\n");
+            sb.Append("  alarm: ").Append(Alarm).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.ReturnIssuingAuthority != input.ReturnIssuingAuthority || (this.ReturnIssuingAuthority != null && !this.ReturnIssuingAuthority.Equals(input.ReturnIssuingAuthority))) return false;
             if (this.ReturnTextLocation != input.ReturnTextLocation || (this.ReturnTextLocation != null && !this.ReturnTextLocation.Equals(input.ReturnTextLocation))) return false;
             if (this.RecognizeElectronicLicense != input.RecognizeElectronicLicense || (this.RecognizeElectronicLicense != null && !this.RecognizeElectronicLicense.Equals(input.RecognizeElectronicLicense))) return false;
+            if (this.Alarm != input.Alarm || (this.Alarm != null && !this.Alarm.Equals(input.Alarm))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.ReturnIssuingAuthority != null) hashCode = hashCode * 59 + this.ReturnIssuingAuthority.GetHashCode();
                 if (this.ReturnTextLocation != null) hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
                 if (this.RecognizeElectronicLicense != null) hashCode = hashCode * 59 + this.RecognizeElectronicLicense.GetHashCode();
+                if (this.Alarm != null) hashCode = hashCode * 59 + this.Alarm.GetHashCode();
                 return hashCode;
             }
         }

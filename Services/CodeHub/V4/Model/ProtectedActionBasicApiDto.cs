@@ -160,6 +160,12 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         [JsonProperty("related_role_ids", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> RelatedRoleIds { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 操作选择列表。
+        /// </summary>
+        [JsonProperty("addition_switchers", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ForceActionEnableDto> AdditionSwitchers { get; set; }
+
 
 
         /// <summary>
@@ -174,6 +180,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             sb.Append("  userIds: ").Append(UserIds).Append("\n");
             sb.Append("  userTeamIds: ").Append(UserTeamIds).Append("\n");
             sb.Append("  relatedRoleIds: ").Append(RelatedRoleIds).Append("\n");
+            sb.Append("  additionSwitchers: ").Append(AdditionSwitchers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -197,6 +204,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             if (this.UserIds != input.UserIds || (this.UserIds != null && input.UserIds != null && !this.UserIds.SequenceEqual(input.UserIds))) return false;
             if (this.UserTeamIds != input.UserTeamIds || (this.UserTeamIds != null && input.UserTeamIds != null && !this.UserTeamIds.SequenceEqual(input.UserTeamIds))) return false;
             if (this.RelatedRoleIds != input.RelatedRoleIds || (this.RelatedRoleIds != null && input.RelatedRoleIds != null && !this.RelatedRoleIds.SequenceEqual(input.RelatedRoleIds))) return false;
+            if (this.AdditionSwitchers != input.AdditionSwitchers || (this.AdditionSwitchers != null && input.AdditionSwitchers != null && !this.AdditionSwitchers.SequenceEqual(input.AdditionSwitchers))) return false;
 
             return true;
         }
@@ -214,6 +222,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
                 if (this.UserIds != null) hashCode = hashCode * 59 + this.UserIds.GetHashCode();
                 if (this.UserTeamIds != null) hashCode = hashCode * 59 + this.UserTeamIds.GetHashCode();
                 if (this.RelatedRoleIds != null) hashCode = hashCode * 59 + this.RelatedRoleIds.GetHashCode();
+                if (this.AdditionSwitchers != null) hashCode = hashCode * 59 + this.AdditionSwitchers.GetHashCode();
                 return hashCode;
             }
         }

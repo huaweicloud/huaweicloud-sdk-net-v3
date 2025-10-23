@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     {
 
         /// <summary>
-        /// **参数解释：** 秘钥id。
+        /// **参数解释：** 密钥id。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int? Id { get; set; }
 
         /// <summary>
-        /// **参数解释：** 秘钥名称。 **取值范围：** 字符串长度不少于1，不超过1000。
+        /// **参数解释：** 密钥名称。 **取值范围：** 字符串长度不少于1，不超过1000。
         /// </summary>
         [JsonProperty("title", NullValueHandling = NullValueHandling.Ignore)]
         public string Title { get; set; }

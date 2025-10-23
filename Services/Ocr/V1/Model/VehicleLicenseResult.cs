@@ -188,7 +188,19 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// 
         /// </summary>
         [JsonProperty("back", NullValueHandling = NullValueHandling.Ignore)]
-        public VehicleLicenseback Back { get; set; }
+        public VehicleLicenseBack Back { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("alarm_result", NullValueHandling = NullValueHandling.Ignore)]
+        public VehicleLicenseAlarmResult AlarmResult { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("alarm_confidence", NullValueHandling = NullValueHandling.Ignore)]
+        public VehicleLicenseAlarmConfidence AlarmConfidence { get; set; }
 
 
 
@@ -228,6 +240,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("  front: ").Append(Front).Append("\n");
             sb.Append("  back: ").Append(Back).Append("\n");
+            sb.Append("  alarmResult: ").Append(AlarmResult).Append("\n");
+            sb.Append("  alarmConfidence: ").Append(AlarmConfidence).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -275,6 +289,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.Status != input.Status || (this.Status != null && input.Status != null && !this.Status.SequenceEqual(input.Status))) return false;
             if (this.Front != input.Front || (this.Front != null && !this.Front.Equals(input.Front))) return false;
             if (this.Back != input.Back || (this.Back != null && !this.Back.Equals(input.Back))) return false;
+            if (this.AlarmResult != input.AlarmResult || (this.AlarmResult != null && !this.AlarmResult.Equals(input.AlarmResult))) return false;
+            if (this.AlarmConfidence != input.AlarmConfidence || (this.AlarmConfidence != null && !this.AlarmConfidence.Equals(input.AlarmConfidence))) return false;
 
             return true;
         }
@@ -316,6 +332,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 if (this.Front != null) hashCode = hashCode * 59 + this.Front.GetHashCode();
                 if (this.Back != null) hashCode = hashCode * 59 + this.Back.GetHashCode();
+                if (this.AlarmResult != null) hashCode = hashCode * 59 + this.AlarmResult.GetHashCode();
+                if (this.AlarmConfidence != null) hashCode = hashCode * 59 + this.AlarmConfidence.GetHashCode();
                 return hashCode;
             }
         }

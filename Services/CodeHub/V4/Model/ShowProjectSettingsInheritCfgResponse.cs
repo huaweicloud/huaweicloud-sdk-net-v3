@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     {
 
         /// <summary>
-        /// 
+        /// 项目继承设置列表
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public List<ProjectSettingsInheritCfgDto> Body { get; set; }

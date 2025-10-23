@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
     /// </summary>
     public class UpdateUserEmailsResponse : SdkResponse
     {
+        /// <summary>
+        /// **参数解释：** 用户状态 active 活跃用户 blocked 锁定禁用用户。
+        /// </summary>
+        /// <value>**参数解释：** 用户状态 active 活跃用户 blocked 锁定禁用用户。</value>
+        [JsonConverter(typeof(EnumClassConverter<StateEnum>))]
+        public class StateEnum
+        {
+            /// <summary>
+            /// Enum ACTIVE for value: active
+            /// </summary>
+            public static readonly StateEnum ACTIVE = new StateEnum("active");
+
+            /// <summary>
+            /// Enum BLOCKED for value: blocked
+            /// </summary>
+            public static readonly StateEnum BLOCKED = new StateEnum("blocked");
+
+            private static readonly Dictionary<string, StateEnum> StaticFields =
+            new Dictionary<string, StateEnum>()
+            {
+                { "active", ACTIVE },
+                { "blocked", BLOCKED },
+            };
+
+            private string _value;
+
+            public StateEnum()
+            {
+
+            }
+
+            public StateEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static StateEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StateEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StateEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(StateEnum a, StateEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StateEnum a, StateEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// **参数解释：** 用户id。
@@ -35,11 +150,10 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
         public string Username { get; set; }
 
         /// <summary>
-        /// **参数解释：** 用户状态。 **取值范围：** 字符串长度不少于1，不超过1000。
+        /// **参数解释：** 用户状态 active 活跃用户 blocked 锁定禁用用户。
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public string State { get; set; }
-
+        public StateEnum State { get; set; }
         /// <summary>
         /// **参数解释：** 创建时间。 **取值范围：** 字符串长度不少于1，不超过1000。
         /// </summary>
@@ -102,7 +216,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Username != input.Username || (this.Username != null && !this.Username.Equals(input.Username))) return false;
-            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
+            if (this.State != input.State) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.LastActivityOn != input.LastActivityOn || (this.LastActivityOn != null && !this.LastActivityOn.Equals(input.LastActivityOn))) return false;
@@ -122,7 +236,7 @@ namespace HuaweiCloud.SDK.CodeHub.V4.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Username != null) hashCode = hashCode * 59 + this.Username.GetHashCode();
-                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
+                hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.LastActivityOn != null) hashCode = hashCode * 59 + this.LastActivityOn.GetHashCode();
