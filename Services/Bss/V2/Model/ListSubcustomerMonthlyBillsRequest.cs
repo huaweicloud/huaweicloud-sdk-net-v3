@@ -38,7 +38,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         public string CloudServiceType { get; set; }
 
         /// <summary>
-        /// 计费模式。1：包年/包月3：按需
+        /// 计费模式。1：包年/包月；3：按需；11：节省计划|
         /// </summary>
         [SDKProperty("charge_mode", IsQuery = true)]
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]

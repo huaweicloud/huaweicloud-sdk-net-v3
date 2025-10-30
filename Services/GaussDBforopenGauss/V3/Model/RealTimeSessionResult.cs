@@ -136,6 +136,102 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("sql_num", NullValueHandling = NullValueHandling.Ignore)]
         public string SqlNum { get; set; }
 
+        /// <summary>
+        /// **参数解释**： 客户端用于与后台通讯的TCP端口号，如果使用Unix套接字，则为-1。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("client_port", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClientPort { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 会话执行的sql数。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("query_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string QueryId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 当前用户上一次执行的事务持续时间。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("transaction_time_cost", NullValueHandling = NullValueHandling.Ignore)]
+        public string TransactionTimeCost { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 驱动传入的trace id，用于标识应用的一次请求。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("trace_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TraceId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 当前用户上次执行的全局会话ID。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("global_session_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GlobalSessionId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 当前用户上次执行的顶层事务ID。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("top_transaction_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TopTransactionId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 当前用户上次执行的事务ID。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("current_transaction_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CurrentTransactionId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 当前用户上次执行的事务使用的XLOG量，易读格式。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("xlog_quantity_pretty", NullValueHandling = NullValueHandling.Ignore)]
+        public string XlogQuantityPretty { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 实例线程等待状态。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("wait_status", NullValueHandling = NullValueHandling.Ignore)]
+        public string WaitStatus { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 实例线程的轻量级线程号。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("lwt_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LwtId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 实例线程名。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("thread_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ThreadName { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 实例等锁模式。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("lock_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string LockMode { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 实例父会话ID。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("parent_session_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ParentSessionId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 实例并行线程的ID。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("smp_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SmpId { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 实例线程正等待获取的锁的信息。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("lock_tag", NullValueHandling = NullValueHandling.Ignore)]
+        public string LockTag { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 组件名称。 **取值范围**： 不涉及。
+        /// </summary>
+        [JsonProperty("component_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ComponentName { get; set; }
+
 
 
         /// <summary>
@@ -165,6 +261,22 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  transNum: ").Append(TransNum).Append("\n");
             sb.Append("  rollbackNum: ").Append(RollbackNum).Append("\n");
             sb.Append("  sqlNum: ").Append(SqlNum).Append("\n");
+            sb.Append("  clientPort: ").Append(ClientPort).Append("\n");
+            sb.Append("  queryId: ").Append(QueryId).Append("\n");
+            sb.Append("  transactionTimeCost: ").Append(TransactionTimeCost).Append("\n");
+            sb.Append("  traceId: ").Append(TraceId).Append("\n");
+            sb.Append("  globalSessionId: ").Append(GlobalSessionId).Append("\n");
+            sb.Append("  topTransactionId: ").Append(TopTransactionId).Append("\n");
+            sb.Append("  currentTransactionId: ").Append(CurrentTransactionId).Append("\n");
+            sb.Append("  xlogQuantityPretty: ").Append(XlogQuantityPretty).Append("\n");
+            sb.Append("  waitStatus: ").Append(WaitStatus).Append("\n");
+            sb.Append("  lwtId: ").Append(LwtId).Append("\n");
+            sb.Append("  threadName: ").Append(ThreadName).Append("\n");
+            sb.Append("  lockMode: ").Append(LockMode).Append("\n");
+            sb.Append("  parentSessionId: ").Append(ParentSessionId).Append("\n");
+            sb.Append("  smpId: ").Append(SmpId).Append("\n");
+            sb.Append("  lockTag: ").Append(LockTag).Append("\n");
+            sb.Append("  componentName: ").Append(ComponentName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -203,6 +315,22 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.TransNum != input.TransNum || (this.TransNum != null && !this.TransNum.Equals(input.TransNum))) return false;
             if (this.RollbackNum != input.RollbackNum || (this.RollbackNum != null && !this.RollbackNum.Equals(input.RollbackNum))) return false;
             if (this.SqlNum != input.SqlNum || (this.SqlNum != null && !this.SqlNum.Equals(input.SqlNum))) return false;
+            if (this.ClientPort != input.ClientPort || (this.ClientPort != null && !this.ClientPort.Equals(input.ClientPort))) return false;
+            if (this.QueryId != input.QueryId || (this.QueryId != null && !this.QueryId.Equals(input.QueryId))) return false;
+            if (this.TransactionTimeCost != input.TransactionTimeCost || (this.TransactionTimeCost != null && !this.TransactionTimeCost.Equals(input.TransactionTimeCost))) return false;
+            if (this.TraceId != input.TraceId || (this.TraceId != null && !this.TraceId.Equals(input.TraceId))) return false;
+            if (this.GlobalSessionId != input.GlobalSessionId || (this.GlobalSessionId != null && !this.GlobalSessionId.Equals(input.GlobalSessionId))) return false;
+            if (this.TopTransactionId != input.TopTransactionId || (this.TopTransactionId != null && !this.TopTransactionId.Equals(input.TopTransactionId))) return false;
+            if (this.CurrentTransactionId != input.CurrentTransactionId || (this.CurrentTransactionId != null && !this.CurrentTransactionId.Equals(input.CurrentTransactionId))) return false;
+            if (this.XlogQuantityPretty != input.XlogQuantityPretty || (this.XlogQuantityPretty != null && !this.XlogQuantityPretty.Equals(input.XlogQuantityPretty))) return false;
+            if (this.WaitStatus != input.WaitStatus || (this.WaitStatus != null && !this.WaitStatus.Equals(input.WaitStatus))) return false;
+            if (this.LwtId != input.LwtId || (this.LwtId != null && !this.LwtId.Equals(input.LwtId))) return false;
+            if (this.ThreadName != input.ThreadName || (this.ThreadName != null && !this.ThreadName.Equals(input.ThreadName))) return false;
+            if (this.LockMode != input.LockMode || (this.LockMode != null && !this.LockMode.Equals(input.LockMode))) return false;
+            if (this.ParentSessionId != input.ParentSessionId || (this.ParentSessionId != null && !this.ParentSessionId.Equals(input.ParentSessionId))) return false;
+            if (this.SmpId != input.SmpId || (this.SmpId != null && !this.SmpId.Equals(input.SmpId))) return false;
+            if (this.LockTag != input.LockTag || (this.LockTag != null && !this.LockTag.Equals(input.LockTag))) return false;
+            if (this.ComponentName != input.ComponentName || (this.ComponentName != null && !this.ComponentName.Equals(input.ComponentName))) return false;
 
             return true;
         }
@@ -235,6 +363,22 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.TransNum != null) hashCode = hashCode * 59 + this.TransNum.GetHashCode();
                 if (this.RollbackNum != null) hashCode = hashCode * 59 + this.RollbackNum.GetHashCode();
                 if (this.SqlNum != null) hashCode = hashCode * 59 + this.SqlNum.GetHashCode();
+                if (this.ClientPort != null) hashCode = hashCode * 59 + this.ClientPort.GetHashCode();
+                if (this.QueryId != null) hashCode = hashCode * 59 + this.QueryId.GetHashCode();
+                if (this.TransactionTimeCost != null) hashCode = hashCode * 59 + this.TransactionTimeCost.GetHashCode();
+                if (this.TraceId != null) hashCode = hashCode * 59 + this.TraceId.GetHashCode();
+                if (this.GlobalSessionId != null) hashCode = hashCode * 59 + this.GlobalSessionId.GetHashCode();
+                if (this.TopTransactionId != null) hashCode = hashCode * 59 + this.TopTransactionId.GetHashCode();
+                if (this.CurrentTransactionId != null) hashCode = hashCode * 59 + this.CurrentTransactionId.GetHashCode();
+                if (this.XlogQuantityPretty != null) hashCode = hashCode * 59 + this.XlogQuantityPretty.GetHashCode();
+                if (this.WaitStatus != null) hashCode = hashCode * 59 + this.WaitStatus.GetHashCode();
+                if (this.LwtId != null) hashCode = hashCode * 59 + this.LwtId.GetHashCode();
+                if (this.ThreadName != null) hashCode = hashCode * 59 + this.ThreadName.GetHashCode();
+                if (this.LockMode != null) hashCode = hashCode * 59 + this.LockMode.GetHashCode();
+                if (this.ParentSessionId != null) hashCode = hashCode * 59 + this.ParentSessionId.GetHashCode();
+                if (this.SmpId != null) hashCode = hashCode * 59 + this.SmpId.GetHashCode();
+                if (this.LockTag != null) hashCode = hashCode * 59 + this.LockTag.GetHashCode();
+                if (this.ComponentName != null) hashCode = hashCode * 59 + this.ComponentName.GetHashCode();
                 return hashCode;
             }
         }

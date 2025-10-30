@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public string JobId { get; set; }
 
         /// <summary>
+        /// 是否支持只初始化任务。
+        /// </summary>
+        [JsonProperty("is_only_init_task", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOnlyInitTask { get; set; }
+
+        /// <summary>
         /// 任务启动时间，时间戳格式精确到毫秒，例如：1679966489593，取值为空代表立即启动。
         /// </summary>
         [JsonProperty("start_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,6 +44,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             var sb = new StringBuilder();
             sb.Append("class StartInfo {\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
+            sb.Append("  isOnlyInitTask: ").Append(IsOnlyInitTask).Append("\n");
             sb.Append("  startTime: ").Append(StartTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -58,6 +65,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             if (input == null) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.IsOnlyInitTask != input.IsOnlyInitTask || (this.IsOnlyInitTask != null && !this.IsOnlyInitTask.Equals(input.IsOnlyInitTask))) return false;
             if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
 
             return true;
@@ -72,6 +80,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             {
                 var hashCode = 41;
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.IsOnlyInitTask != null) hashCode = hashCode * 59 + this.IsOnlyInitTask.GetHashCode();
                 if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 return hashCode;
             }

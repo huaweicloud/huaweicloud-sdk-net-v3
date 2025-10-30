@@ -28,12 +28,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("delay", NullValueHandling = NullValueHandling.Ignore)]
         public string Delay { get; set; }
 
-        /// <summary>
-        /// 是否跳过校验。
-        /// </summary>
-        [JsonProperty("is_skip_validate", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsSkipValidate { get; set; }
-
 
 
         /// <summary>
@@ -45,7 +39,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("class BatchUpgradeDatabasesRequestBody {\n");
             sb.Append("  databasesInstanceInfos: ").Append(DatabasesInstanceInfos).Append("\n");
             sb.Append("  delay: ").Append(Delay).Append("\n");
-            sb.Append("  isSkipValidate: ").Append(IsSkipValidate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -66,7 +59,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (input == null) return false;
             if (this.DatabasesInstanceInfos != input.DatabasesInstanceInfos || (this.DatabasesInstanceInfos != null && input.DatabasesInstanceInfos != null && !this.DatabasesInstanceInfos.SequenceEqual(input.DatabasesInstanceInfos))) return false;
             if (this.Delay != input.Delay || (this.Delay != null && !this.Delay.Equals(input.Delay))) return false;
-            if (this.IsSkipValidate != input.IsSkipValidate || (this.IsSkipValidate != null && !this.IsSkipValidate.Equals(input.IsSkipValidate))) return false;
 
             return true;
         }
@@ -81,7 +73,6 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 var hashCode = 41;
                 if (this.DatabasesInstanceInfos != null) hashCode = hashCode * 59 + this.DatabasesInstanceInfos.GetHashCode();
                 if (this.Delay != null) hashCode = hashCode * 59 + this.Delay.GetHashCode();
-                if (this.IsSkipValidate != null) hashCode = hashCode * 59 + this.IsSkipValidate.GetHashCode();
                 return hashCode;
             }
         }

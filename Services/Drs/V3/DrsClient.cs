@@ -1122,6 +1122,84 @@ namespace HuaweiCloud.SDK.Drs.V3
         }
         
         /// <summary>
+        /// 更新LTS配置
+        ///
+        /// 更新任务的LTS配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyGroupAndStreamResponse ModifyGroupAndStream(ModifyGroupAndStreamRequest modifyGroupAndStreamRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyGroupAndStreamRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/lts-log-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyGroupAndStreamRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyGroupAndStreamResponse>(response);
+        }
+
+        public SyncInvoker<ModifyGroupAndStreamResponse> ModifyGroupAndStreamInvoker(ModifyGroupAndStreamRequest modifyGroupAndStreamRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyGroupAndStreamRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/lts-log-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyGroupAndStreamRequest);
+            return new SyncInvoker<ModifyGroupAndStreamResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyGroupAndStreamResponse>);
+        }
+        
+        /// <summary>
+        /// 查询高级设置参数
+        ///
+        /// 查询高级设置参数。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public QueryTuningParamsResponse QueryTuningParams(QueryTuningParamsRequest queryTuningParamsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(queryTuningParamsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/job/{job_id}/tuning-params/query-params", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", queryTuningParamsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<QueryTuningParamsResponse>(response);
+        }
+
+        public SyncInvoker<QueryTuningParamsResponse> QueryTuningParamsInvoker(QueryTuningParamsRequest queryTuningParamsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(queryTuningParamsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/job/{job_id}/tuning-params/query-params", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", queryTuningParamsRequest);
+            return new SyncInvoker<QueryTuningParamsResponse>(this, "GET", request, JsonUtils.DeSerialize<QueryTuningParamsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询LTS配置
+        ///
+        /// 查询任务的LTS配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SelectGroupAndStreamResponse SelectGroupAndStream(SelectGroupAndStreamRequest selectGroupAndStreamRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(selectGroupAndStreamRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/lts-log-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", selectGroupAndStreamRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<SelectGroupAndStreamResponse>(response);
+        }
+
+        public SyncInvoker<SelectGroupAndStreamResponse> SelectGroupAndStreamInvoker(SelectGroupAndStreamRequest selectGroupAndStreamRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(selectGroupAndStreamRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/jobs/{job_id}/lts-log-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", selectGroupAndStreamRequest);
+            return new SyncInvoker<SelectGroupAndStreamResponse>(this, "GET", request, JsonUtils.DeSerialize<SelectGroupAndStreamResponse>);
+        }
+        
+        /// <summary>
         /// 查询租户任务列表
         ///
         /// 查询租户任务列表，可以根据引擎类型，网络类型，任务状态，任务名称，任务ID进行查询。

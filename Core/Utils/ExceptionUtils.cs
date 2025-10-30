@@ -23,6 +23,8 @@ using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Sockets;
+using System.Security.Authentication;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -79,6 +81,17 @@ namespace HuaweiCloud.SDK.Core
                             default:
                                 return new ConnectionException(webException.Message, exception);
                         }
+                    }
+
+                    if (httpRequestException.InnerException is AuthenticationException authExc &&
+                        (authExc.Message.Contains("certificate") || authExc.StackTrace.Contains("SslStream")))
+                    {
+                        return new SslHandShakeException(authExc.Message, exception);
+                    }
+
+                    if (httpRequestException.InnerException is SocketException socketExc && socketExc.NativeErrorCode == 11001)
+                    {
+                        return new HostUnreachableException(httpRequestException.Message, exception);
                     }
                 }
 

@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
     /// <summary>
     /// Response Object
     /// </summary>
-    public class ListInstancesNoIndexTablesResponse : SdkResponse
+    public class GetInstancesNoIndexTablesResponse : SdkResponse
     {
 
 

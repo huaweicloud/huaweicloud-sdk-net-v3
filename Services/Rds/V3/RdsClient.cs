@@ -2209,6 +2209,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询小版本号
+        ///
+        /// 查询小版本号
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSmallVersionResponse ListSmallVersion(ListSmallVersionRequest listSmallVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSmallVersionRequest.DatabaseName, out var valueOfDatabaseName)) urlParam.Add("database_name", valueOfDatabaseName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{database_name}/small-version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSmallVersionRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSmallVersionResponse>(response);
+        }
+
+        public SyncInvoker<ListSmallVersionResponse> ListSmallVersionInvoker(ListSmallVersionRequest listSmallVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSmallVersionRequest.DatabaseName, out var valueOfDatabaseName)) urlParam.Add("database_name", valueOfDatabaseName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/datastores/{database_name}/small-version", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSmallVersionRequest);
+            return new SyncInvoker<ListSmallVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSmallVersionResponse>);
+        }
+        
+        /// <summary>
         /// 查询SQL限流列表
         ///
         /// 查询SQL限流列表
@@ -5948,23 +5974,23 @@ namespace HuaweiCloud.SDK.Rds.V3
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public ListInstancesNoIndexTablesResponse ListInstancesNoIndexTables(ListInstancesNoIndexTablesRequest listInstancesNoIndexTablesRequest)
+        public GetInstancesNoIndexTablesResponse GetInstancesNoIndexTables(GetInstancesNoIndexTablesRequest getInstancesNoIndexTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listInstancesNoIndexTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(getInstancesNoIndexTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/no-index-tables", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesNoIndexTablesRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getInstancesNoIndexTablesRequest);
             var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerializeNull<ListInstancesNoIndexTablesResponse>(response);
+            return JsonUtils.DeSerializeNull<GetInstancesNoIndexTablesResponse>(response);
         }
 
-        public SyncInvoker<ListInstancesNoIndexTablesResponse> ListInstancesNoIndexTablesInvoker(ListInstancesNoIndexTablesRequest listInstancesNoIndexTablesRequest)
+        public SyncInvoker<GetInstancesNoIndexTablesResponse> GetInstancesNoIndexTablesInvoker(GetInstancesNoIndexTablesRequest getInstancesNoIndexTablesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listInstancesNoIndexTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(getInstancesNoIndexTablesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/no-index-tables", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesNoIndexTablesRequest);
-            return new SyncInvoker<ListInstancesNoIndexTablesResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ListInstancesNoIndexTablesResponse>);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getInstancesNoIndexTablesRequest);
+            return new SyncInvoker<GetInstancesNoIndexTablesResponse>(this, "GET", request, JsonUtils.DeSerializeNull<GetInstancesNoIndexTablesResponse>);
         }
         
         /// <summary>

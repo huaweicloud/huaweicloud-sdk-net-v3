@@ -364,6 +364,12 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         [JsonProperty("relative_order_id", NullValueHandling = NullValueHandling.Ignore)]
         public string RelativeOrderId { get; set; }
 
+        /// <summary>
+        /// |参数名称：消费的客户登录名称。| |参数约束及描述：范围限制：0-128，如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户登录名称。 如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户登录名称。如果是企业主自己的消费记录，则为企业主的客户登录名称；如果是某个企业子客户的消费记录，则此处为企业子的客户登录名称。|
+        /// </summary>
+        [JsonProperty("account_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccountName { get; set; }
+
 
 
         /// <summary>
@@ -431,6 +437,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             sb.Append("  subResourceName: ").Append(SubResourceName).Append("\n");
             sb.Append("  consumeTime: ").Append(ConsumeTime).Append("\n");
             sb.Append("  relativeOrderId: ").Append(RelativeOrderId).Append("\n");
+            sb.Append("  accountName: ").Append(AccountName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -507,6 +514,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             if (this.SubResourceName != input.SubResourceName || (this.SubResourceName != null && !this.SubResourceName.Equals(input.SubResourceName))) return false;
             if (this.ConsumeTime != input.ConsumeTime || (this.ConsumeTime != null && !this.ConsumeTime.Equals(input.ConsumeTime))) return false;
             if (this.RelativeOrderId != input.RelativeOrderId || (this.RelativeOrderId != null && !this.RelativeOrderId.Equals(input.RelativeOrderId))) return false;
+            if (this.AccountName != input.AccountName || (this.AccountName != null && !this.AccountName.Equals(input.AccountName))) return false;
 
             return true;
         }
@@ -577,6 +585,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
                 if (this.SubResourceName != null) hashCode = hashCode * 59 + this.SubResourceName.GetHashCode();
                 if (this.ConsumeTime != null) hashCode = hashCode * 59 + this.ConsumeTime.GetHashCode();
                 if (this.RelativeOrderId != null) hashCode = hashCode * 59 + this.RelativeOrderId.GetHashCode();
+                if (this.AccountName != null) hashCode = hashCode * 59 + this.AccountName.GetHashCode();
                 return hashCode;
             }
         }

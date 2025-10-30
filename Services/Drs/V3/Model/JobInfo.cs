@@ -922,16 +922,16 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// 任务描述
-        /// </summary>
-        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
-        public string Description { get; set; }
-
-        /// <summary>
         /// 任务创建时间
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public string CreateTime { get; set; }
+
+        /// <summary>
+        /// 任务描述
+        /// </summary>
+        [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
+        public string Description { get; set; }
 
         /// <summary>
         /// 引擎类型
@@ -965,13 +965,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         [JsonProperty("task_type", NullValueHandling = NullValueHandling.Ignore)]
         public TaskTypeEnum TaskType { get; set; }
         /// <summary>
-        /// 子任务信息体
+        /// 子任务信息体。
         /// </summary>
         [JsonProperty("children", NullValueHandling = NullValueHandling.Ignore)]
         public List<ChildrenJobInfo> Children { get; set; }
 
         /// <summary>
-        /// 是否新框架
+        /// 是否新框架。
         /// </summary>
         [JsonProperty("node_newFramework", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NodeNewFramework { get; set; }
@@ -994,8 +994,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
-            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  engineType: ").Append(EngineType).Append("\n");
             sb.Append("  netType: ").Append(NetType).Append("\n");
             sb.Append("  billingTag: ").Append(BillingTag).Append("\n");
@@ -1026,8 +1026,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Status != input.Status) return false;
-            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.EngineType != input.EngineType) return false;
             if (this.NetType != input.NetType) return false;
             if (this.BillingTag != input.BillingTag || (this.BillingTag != null && !this.BillingTag.Equals(input.BillingTag))) return false;
@@ -1052,8 +1052,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 hashCode = hashCode * 59 + this.EngineType.GetHashCode();
                 hashCode = hashCode * 59 + this.NetType.GetHashCode();
                 if (this.BillingTag != null) hashCode = hashCode * 59 + this.BillingTag.GetHashCode();

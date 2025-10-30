@@ -64,6 +64,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("useSystemTemplate", NullValueHandling = NullValueHandling.Ignore)]
         public bool? UseSystemTemplate { get; set; }
 
+        /// <summary>
+        /// 纯净模式开关
+        /// </summary>
+        [JsonProperty("concise_mode_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ConciseModeEnable { get; set; }
+
+        /// <summary>
+        /// 仪表盘标签
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +93,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  title: ").Append(Title).Append("\n");
             sb.Append("  useSystemTemplate: ").Append(UseSystemTemplate).Append("\n");
+            sb.Append("  conciseModeEnable: ").Append(ConciseModeEnable).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +121,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
             if (this.UseSystemTemplate != input.UseSystemTemplate || (this.UseSystemTemplate != null && !this.UseSystemTemplate.Equals(input.UseSystemTemplate))) return false;
+            if (this.ConciseModeEnable != input.ConciseModeEnable || (this.ConciseModeEnable != null && !this.ConciseModeEnable.Equals(input.ConciseModeEnable))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -127,6 +143,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.UseSystemTemplate != null) hashCode = hashCode * 59 + this.UseSystemTemplate.GetHashCode();
+                if (this.ConciseModeEnable != null) hashCode = hashCode * 59 + this.ConciseModeEnable.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

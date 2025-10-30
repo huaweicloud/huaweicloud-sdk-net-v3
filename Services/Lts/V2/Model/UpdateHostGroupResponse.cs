@@ -172,6 +172,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? UpdateTime { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 主机组类型。分别为IP、LABEL类型。 **取值范围：** - IP。 - LABEL。
+        /// </summary>
+        [JsonProperty("agent_access_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgentAccessType { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 主机组自定义标识。
+        /// </summary>
+        [JsonProperty("labels", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Labels { get; set; }
+
 
 
         /// <summary>
@@ -188,6 +200,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  hostGroupTag: ").Append(HostGroupTag).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
+            sb.Append("  agentAccessType: ").Append(AgentAccessType).Append("\n");
+            sb.Append("  labels: ").Append(Labels).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -213,6 +227,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.HostGroupTag != input.HostGroupTag || (this.HostGroupTag != null && input.HostGroupTag != null && !this.HostGroupTag.SequenceEqual(input.HostGroupTag))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.AgentAccessType != input.AgentAccessType || (this.AgentAccessType != null && !this.AgentAccessType.Equals(input.AgentAccessType))) return false;
+            if (this.Labels != input.Labels || (this.Labels != null && input.Labels != null && !this.Labels.SequenceEqual(input.Labels))) return false;
 
             return true;
         }
@@ -232,6 +248,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.HostGroupTag != null) hashCode = hashCode * 59 + this.HostGroupTag.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.AgentAccessType != null) hashCode = hashCode * 59 + this.AgentAccessType.GetHashCode();
+                if (this.Labels != null) hashCode = hashCode * 59 + this.Labels.GetHashCode();
                 return hashCode;
             }
         }

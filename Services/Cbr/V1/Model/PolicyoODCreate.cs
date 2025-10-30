@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("full_backup_interval", NullValueHandling = NullValueHandling.Ignore)]
         public int? FullBackupInterval { get; set; }
 
+        /// <summary>
+        /// 跨账户复制策略所关联的跨账户复制存储库标识
+        /// </summary>
+        [JsonProperty("cross_account_urn", NullValueHandling = NullValueHandling.Ignore)]
+        public string CrossAccountUrn { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  weekBackups: ").Append(WeekBackups).Append("\n");
             sb.Append("  yearBackups: ").Append(YearBackups).Append("\n");
             sb.Append("  fullBackupInterval: ").Append(FullBackupInterval).Append("\n");
+            sb.Append("  crossAccountUrn: ").Append(CrossAccountUrn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +138,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.WeekBackups != input.WeekBackups || (this.WeekBackups != null && !this.WeekBackups.Equals(input.WeekBackups))) return false;
             if (this.YearBackups != input.YearBackups || (this.YearBackups != null && !this.YearBackups.Equals(input.YearBackups))) return false;
             if (this.FullBackupInterval != input.FullBackupInterval || (this.FullBackupInterval != null && !this.FullBackupInterval.Equals(input.FullBackupInterval))) return false;
+            if (this.CrossAccountUrn != input.CrossAccountUrn || (this.CrossAccountUrn != null && !this.CrossAccountUrn.Equals(input.CrossAccountUrn))) return false;
 
             return true;
         }
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.WeekBackups != null) hashCode = hashCode * 59 + this.WeekBackups.GetHashCode();
                 if (this.YearBackups != null) hashCode = hashCode * 59 + this.YearBackups.GetHashCode();
                 if (this.FullBackupInterval != null) hashCode = hashCode * 59 + this.FullBackupInterval.GetHashCode();
+                if (this.CrossAccountUrn != null) hashCode = hashCode * 59 + this.CrossAccountUrn.GetHashCode();
                 return hashCode;
             }
         }

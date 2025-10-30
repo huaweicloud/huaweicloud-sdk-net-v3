@@ -166,6 +166,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
+        /// <summary>
+        /// **参数解释：**  当消息模板类型为webhook时生效，决定该消息的渲染方式。 **取值范围：**  - HTML - JSON
+        /// </summary>
+        [JsonProperty("sendType", NullValueHandling = NullValueHandling.Ignore)]
+        public string SendType { get; set; }
+
+        /// <summary>
+        /// **参数解释：**  消息模板的适用版本。 **取值范围：**   v1：标识为LTS的消息模板。
+        /// </summary>
+        [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
+        public string Version { get; set; }
+
 
 
         /// <summary>
@@ -178,6 +190,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  subType: ").Append(SubType).Append("\n");
             sb.Append("  content: ").Append(Content).Append("\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
+            sb.Append("  sendType: ").Append(SendType).Append("\n");
+            sb.Append("  version: ").Append(Version).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -199,6 +213,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.SubType != input.SubType) return false;
             if (this.Content != input.Content || (this.Content != null && !this.Content.Equals(input.Content))) return false;
             if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.SendType != input.SendType || (this.SendType != null && !this.SendType.Equals(input.SendType))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
 
             return true;
         }
@@ -214,6 +230,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 hashCode = hashCode * 59 + this.SubType.GetHashCode();
                 if (this.Content != null) hashCode = hashCode * 59 + this.Content.GetHashCode();
                 if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.SendType != null) hashCode = hashCode * 59 + this.SendType.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

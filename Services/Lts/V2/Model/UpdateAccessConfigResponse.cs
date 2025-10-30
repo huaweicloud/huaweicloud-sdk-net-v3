@@ -233,6 +233,24 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public List<Processor> Processors { get; set; }
 
         /// <summary>
+        /// **参数解释：** 拆分日志大小。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("log_split_size", NullValueHandling = NullValueHandling.Ignore)]
+        public int? LogSplitSize { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 采集路径递归最大深度。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("recursive_depth", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RecursiveDepth { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 日志接入自建软件来源。 **取值范围：** - ECS - CCE - BMS - K8S - ServiceStageHost - ServiceStage
+        /// </summary>
+        [JsonProperty("access_config_type_source", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccessConfigTypeSource { get; set; }
+
+        /// <summary>
         /// ServiceStage应用ID
         /// </summary>
         [JsonProperty("application_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -276,6 +294,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  demoLog: ").Append(DemoLog).Append("\n");
             sb.Append("  demoFields: ").Append(DemoFields).Append("\n");
             sb.Append("  processors: ").Append(Processors).Append("\n");
+            sb.Append("  logSplitSize: ").Append(LogSplitSize).Append("\n");
+            sb.Append("  recursiveDepth: ").Append(RecursiveDepth).Append("\n");
+            sb.Append("  accessConfigTypeSource: ").Append(AccessConfigTypeSource).Append("\n");
             sb.Append("  applicationId: ").Append(ApplicationId).Append("\n");
             sb.Append("  environmentId: ").Append(EnvironmentId).Append("\n");
             sb.Append("  componentId: ").Append(ComponentId).Append("\n");
@@ -314,6 +335,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.DemoLog != input.DemoLog || (this.DemoLog != null && !this.DemoLog.Equals(input.DemoLog))) return false;
             if (this.DemoFields != input.DemoFields || (this.DemoFields != null && input.DemoFields != null && !this.DemoFields.SequenceEqual(input.DemoFields))) return false;
             if (this.Processors != input.Processors || (this.Processors != null && input.Processors != null && !this.Processors.SequenceEqual(input.Processors))) return false;
+            if (this.LogSplitSize != input.LogSplitSize || (this.LogSplitSize != null && !this.LogSplitSize.Equals(input.LogSplitSize))) return false;
+            if (this.RecursiveDepth != input.RecursiveDepth || (this.RecursiveDepth != null && !this.RecursiveDepth.Equals(input.RecursiveDepth))) return false;
+            if (this.AccessConfigTypeSource != input.AccessConfigTypeSource || (this.AccessConfigTypeSource != null && !this.AccessConfigTypeSource.Equals(input.AccessConfigTypeSource))) return false;
             if (this.ApplicationId != input.ApplicationId || (this.ApplicationId != null && !this.ApplicationId.Equals(input.ApplicationId))) return false;
             if (this.EnvironmentId != input.EnvironmentId || (this.EnvironmentId != null && !this.EnvironmentId.Equals(input.EnvironmentId))) return false;
             if (this.ComponentId != input.ComponentId || (this.ComponentId != null && input.ComponentId != null && !this.ComponentId.SequenceEqual(input.ComponentId))) return false;
@@ -346,6 +370,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.DemoLog != null) hashCode = hashCode * 59 + this.DemoLog.GetHashCode();
                 if (this.DemoFields != null) hashCode = hashCode * 59 + this.DemoFields.GetHashCode();
                 if (this.Processors != null) hashCode = hashCode * 59 + this.Processors.GetHashCode();
+                if (this.LogSplitSize != null) hashCode = hashCode * 59 + this.LogSplitSize.GetHashCode();
+                if (this.RecursiveDepth != null) hashCode = hashCode * 59 + this.RecursiveDepth.GetHashCode();
+                if (this.AccessConfigTypeSource != null) hashCode = hashCode * 59 + this.AccessConfigTypeSource.GetHashCode();
                 if (this.ApplicationId != null) hashCode = hashCode * 59 + this.ApplicationId.GetHashCode();
                 if (this.EnvironmentId != null) hashCode = hashCode * 59 + this.EnvironmentId.GetHashCode();
                 if (this.ComponentId != null) hashCode = hashCode * 59 + this.ComponentId.GetHashCode();

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     public class ConfigurationPrimitiveTypeHolderConfiguration 
     {
         /// <summary>
-        /// 指定私有hook生效的目标资源栈，有效值为NONE或ALL。  NONE：指定此私有hook不会作用于任何资源栈 ALL：指定此私有hook将会应用于账号下的所有资源栈
+        /// 指定私有hook生效的目标资源栈，有效值为NONE或ALL，默认值为NONE。  NONE：指定此私有hook不会作用于任何资源栈 ALL：指定此私有hook将会应用于账号下的所有资源栈
         /// </summary>
-        /// <value>指定私有hook生效的目标资源栈，有效值为NONE或ALL。  NONE：指定此私有hook不会作用于任何资源栈 ALL：指定此私有hook将会应用于账号下的所有资源栈</value>
+        /// <value>指定私有hook生效的目标资源栈，有效值为NONE或ALL，默认值为NONE。  NONE：指定此私有hook不会作用于任何资源栈 ALL：指定此私有hook将会应用于账号下的所有资源栈</value>
         [JsonConverter(typeof(EnumClassConverter<TargetStacksEnum>))]
         public class TargetStacksEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         }
 
         /// <summary>
-        /// 指定私有hook校验失败后的行为，有效值为FAIL或WARN。  FAIL：指定此私有hook校验失败后资源栈将停止部署，资源栈状态将更新为DEPLOYMENT_FAILED。 WARN：指定此私有hook校验失败后仅通过资源栈事件展示警告消息，但不影响资源栈部署。
+        /// 指定私有hook校验失败后的行为，有效值为FAIL或WARN，默认值为WARN。  FAIL：指定此私有hook校验失败后资源栈将停止部署，资源栈状态将更新为DEPLOYMENT_FAILED。 WARN：指定此私有hook校验失败后仅通过资源栈事件展示警告消息，但不影响资源栈部署。
         /// </summary>
-        /// <value>指定私有hook校验失败后的行为，有效值为FAIL或WARN。  FAIL：指定此私有hook校验失败后资源栈将停止部署，资源栈状态将更新为DEPLOYMENT_FAILED。 WARN：指定此私有hook校验失败后仅通过资源栈事件展示警告消息，但不影响资源栈部署。</value>
+        /// <value>指定私有hook校验失败后的行为，有效值为FAIL或WARN，默认值为WARN。  FAIL：指定此私有hook校验失败后资源栈将停止部署，资源栈状态将更新为DEPLOYMENT_FAILED。 WARN：指定此私有hook校验失败后仅通过资源栈事件展示警告消息，但不影响资源栈部署。</value>
         [JsonConverter(typeof(EnumClassConverter<FailureModeEnum>))]
         public class FailureModeEnum
         {
@@ -247,12 +247,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
 
 
         /// <summary>
-        /// 指定私有hook生效的目标资源栈，有效值为NONE或ALL。  NONE：指定此私有hook不会作用于任何资源栈 ALL：指定此私有hook将会应用于账号下的所有资源栈
+        /// 指定私有hook生效的目标资源栈，有效值为NONE或ALL，默认值为NONE。  NONE：指定此私有hook不会作用于任何资源栈 ALL：指定此私有hook将会应用于账号下的所有资源栈
         /// </summary>
         [JsonProperty("target_stacks", NullValueHandling = NullValueHandling.Ignore)]
         public TargetStacksEnum TargetStacks { get; set; }
         /// <summary>
-        /// 指定私有hook校验失败后的行为，有效值为FAIL或WARN。  FAIL：指定此私有hook校验失败后资源栈将停止部署，资源栈状态将更新为DEPLOYMENT_FAILED。 WARN：指定此私有hook校验失败后仅通过资源栈事件展示警告消息，但不影响资源栈部署。
+        /// 指定私有hook校验失败后的行为，有效值为FAIL或WARN，默认值为WARN。  FAIL：指定此私有hook校验失败后资源栈将停止部署，资源栈状态将更新为DEPLOYMENT_FAILED。 WARN：指定此私有hook校验失败后仅通过资源栈事件展示警告消息，但不影响资源栈部署。
         /// </summary>
         [JsonProperty("failure_mode", NullValueHandling = NullValueHandling.Ignore)]
         public FailureModeEnum FailureMode { get; set; }

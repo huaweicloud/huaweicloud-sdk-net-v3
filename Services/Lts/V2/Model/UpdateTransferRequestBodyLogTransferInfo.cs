@@ -266,7 +266,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// 
         /// </summary>
         [JsonProperty("log_transfer_detail", NullValueHandling = NullValueHandling.Ignore)]
-        public TransferDetail LogTransferDetail { get; set; }
+        public LogTransferDetail LogTransferDetail { get; set; }
 
 
 

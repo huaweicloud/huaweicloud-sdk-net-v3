@@ -88,6 +88,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string LogGroupId { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 是否收藏日志流。 **取值范围：** - true：收藏日志流。 - false：不收藏日志流。
+        /// </summary>
+        [JsonProperty("is_favorite", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsFavorite { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  ttlInDays: ").Append(TtlInDays).Append("\n");
             sb.Append("  hotStorageDays: ").Append(HotStorageDays).Append("\n");
             sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
+            sb.Append("  isFavorite: ").Append(IsFavorite).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +146,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.TtlInDays != input.TtlInDays || (this.TtlInDays != null && !this.TtlInDays.Equals(input.TtlInDays))) return false;
             if (this.HotStorageDays != input.HotStorageDays || (this.HotStorageDays != null && !this.HotStorageDays.Equals(input.HotStorageDays))) return false;
             if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
+            if (this.IsFavorite != input.IsFavorite || (this.IsFavorite != null && !this.IsFavorite.Equals(input.IsFavorite))) return false;
 
             return true;
         }
@@ -163,6 +171,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.TtlInDays != null) hashCode = hashCode * 59 + this.TtlInDays.GetHashCode();
                 if (this.HotStorageDays != null) hashCode = hashCode * 59 + this.HotStorageDays.GetHashCode();
                 if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.IsFavorite != null) hashCode = hashCode * 59 + this.IsFavorite.GetHashCode();
                 return hashCode;
             }
         }

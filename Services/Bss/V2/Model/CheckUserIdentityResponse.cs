@@ -17,22 +17,28 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
     {
 
         /// <summary>
-        /// 状态码。具体请参考状态码。只有失败才会返回这个参数。
+        /// 状态码。具体请参考状态码。
         /// </summary>
         [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorCode { get; set; }
 
         /// <summary>
-        /// 错误描述信息。只有失败才会返回这个参数。
+        /// 错误描述信息。
         /// </summary>
         [JsonProperty("error_msg", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorMsg { get; set; }
 
         /// <summary>
-        /// available：该登录名称/手机号/邮箱有效。used_by_user：该登录名称/手机号/邮箱已被占用。
+        /// 是否可以继续注册。该参数非必填，且只允许字符串,available: 该登录名称/手机号/邮箱可以继续注册,used_by_user: 该登录名称/手机号/邮箱不可以继续注册|
         /// </summary>
         [JsonProperty("check_result", NullValueHandling = NullValueHandling.Ignore)]
         public string CheckResult { get; set; }
+
+        /// <summary>
+        /// 手机号剩余可注册客户数量。该参数非必填，只有search_type&#x3D;mobile时，该字段才返回值。表示可以继续使用该手机号注册客户的数量。
+        /// </summary>
+        [JsonProperty("mobile_remain_available_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MobileRemainAvailableNum { get; set; }
 
 
 
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
             sb.Append("  errorMsg: ").Append(ErrorMsg).Append("\n");
             sb.Append("  checkResult: ").Append(CheckResult).Append("\n");
+            sb.Append("  mobileRemainAvailableNum: ").Append(MobileRemainAvailableNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
             if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
             if (this.CheckResult != input.CheckResult || (this.CheckResult != null && !this.CheckResult.Equals(input.CheckResult))) return false;
+            if (this.MobileRemainAvailableNum != input.MobileRemainAvailableNum || (this.MobileRemainAvailableNum != null && !this.MobileRemainAvailableNum.Equals(input.MobileRemainAvailableNum))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
                 if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
                 if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 if (this.CheckResult != null) hashCode = hashCode * 59 + this.CheckResult.GetHashCode();
+                if (this.MobileRemainAvailableNum != null) hashCode = hashCode * 59 + this.MobileRemainAvailableNum.GetHashCode();
                 return hashCode;
             }
         }

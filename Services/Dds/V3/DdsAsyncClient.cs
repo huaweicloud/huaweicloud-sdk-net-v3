@@ -2848,9 +2848,9 @@ namespace HuaweiCloud.SDK.Dds.V3
         }
         
         /// <summary>
-        /// 切换副本集实例的主备节点
+        /// 切换实例的主备节点
         ///
-        /// 切换副本集实例下的主备节点
+        /// 切换实例下的主备节点
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

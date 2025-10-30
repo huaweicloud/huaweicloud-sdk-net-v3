@@ -310,6 +310,12 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
         [JsonProperty("extend_params", NullValueHandling = NullValueHandling.Ignore)]
         public ResRelation ExtendParams { get; set; }
 
+        /// <summary>
+        /// |参数名称：消费的客户登录名称。| |参数约束及描述：范围限制：0-128，如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户登录名称。 如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户登录名称。如果是企业主自己的消费记录，则为企业主的客户登录名称；如果是某个企业子客户的消费记录，则此处为企业子的客户登录名称。|
+        /// </summary>
+        [JsonProperty("account_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string AccountName { get; set; }
+
 
 
         /// <summary>
@@ -368,6 +374,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             sb.Append("  consumeTime: ").Append(ConsumeTime).Append("\n");
             sb.Append("  beId: ").Append(BeId).Append("\n");
             sb.Append("  extendParams: ").Append(ExtendParams).Append("\n");
+            sb.Append("  accountName: ").Append(AccountName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -435,6 +442,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
             if (this.ConsumeTime != input.ConsumeTime || (this.ConsumeTime != null && !this.ConsumeTime.Equals(input.ConsumeTime))) return false;
             if (this.BeId != input.BeId || (this.BeId != null && !this.BeId.Equals(input.BeId))) return false;
             if (this.ExtendParams != input.ExtendParams || (this.ExtendParams != null && !this.ExtendParams.Equals(input.ExtendParams))) return false;
+            if (this.AccountName != input.AccountName || (this.AccountName != null && !this.AccountName.Equals(input.AccountName))) return false;
 
             return true;
         }
@@ -496,6 +504,7 @@ namespace HuaweiCloud.SDK.Bssintl.V2.Model
                 if (this.ConsumeTime != null) hashCode = hashCode * 59 + this.ConsumeTime.GetHashCode();
                 if (this.BeId != null) hashCode = hashCode * 59 + this.BeId.GetHashCode();
                 if (this.ExtendParams != null) hashCode = hashCode * 59 + this.ExtendParams.GetHashCode();
+                if (this.AccountName != null) hashCode = hashCode * 59 + this.AccountName.GetHashCode();
                 return hashCode;
             }
         }

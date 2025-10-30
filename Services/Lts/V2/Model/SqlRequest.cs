@@ -132,12 +132,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
 
 
         /// <summary>
-        /// 是时间范围相对
-        /// </summary>
-        [JsonProperty("is_time_range_relative", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsTimeRangeRelative { get; set; }
-
-        /// <summary>
         /// 日志流id
         /// </summary>
         [JsonProperty("log_stream_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -193,7 +187,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SqlRequest {\n");
-            sb.Append("  isTimeRangeRelative: ").Append(IsTimeRangeRelative).Append("\n");
             sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("  logStreamName: ").Append(LogStreamName).Append("\n");
             sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
@@ -220,7 +213,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public bool Equals(SqlRequest input)
         {
             if (input == null) return false;
-            if (this.IsTimeRangeRelative != input.IsTimeRangeRelative || (this.IsTimeRangeRelative != null && !this.IsTimeRangeRelative.Equals(input.IsTimeRangeRelative))) return false;
             if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
             if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
             if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
@@ -241,7 +233,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.IsTimeRangeRelative != null) hashCode = hashCode * 59 + this.IsTimeRangeRelative.GetHashCode();
                 if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
                 if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
                 if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();

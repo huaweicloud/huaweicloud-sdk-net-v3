@@ -165,7 +165,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// **参数解释**： 告警策略。 **约束限制**： 当alarm_template_id字段为空时必填，不为空时不填。最多包含50个策略。 
         /// </summary>
         [JsonProperty("policies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Policy> Policies { get; set; }
+        public List<AlarmRulePolicy> Policies { get; set; }
 
         /// <summary>
         /// 

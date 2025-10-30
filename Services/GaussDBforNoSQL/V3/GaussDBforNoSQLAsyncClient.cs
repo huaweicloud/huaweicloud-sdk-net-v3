@@ -1779,6 +1779,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 设置节点自动扩容策略
+        ///
+        /// 设置节点自动扩容策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ModifyAutoNodeExpansionPolicyResponse> ModifyAutoNodeExpansionPolicyAsync(ModifyAutoNodeExpansionPolicyRequest modifyAutoNodeExpansionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyAutoNodeExpansionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/node-auto-expansion-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyAutoNodeExpansionPolicyRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<ModifyAutoNodeExpansionPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ModifyAutoNodeExpansionPolicyResponse> ModifyAutoNodeExpansionPolicyAsyncInvoker(ModifyAutoNodeExpansionPolicyRequest modifyAutoNodeExpansionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyAutoNodeExpansionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/node-auto-expansion-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", modifyAutoNodeExpansionPolicyRequest);
+            return new AsyncInvoker<ModifyAutoNodeExpansionPolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ModifyAutoNodeExpansionPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 修改Redis数据库帐号权限
         ///
         /// 修改Redis数据库帐号权限。
@@ -2574,6 +2600,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/disk-auto-expansion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoEnlargePolicyRequest);
             return new AsyncInvoker<ShowAutoEnlargePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoEnlargePolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询节点自动扩容策略
+        ///
+        /// 查询节点自动扩容策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutoNodeExpansionPolicyResponse> ShowAutoNodeExpansionPolicyAsync(ShowAutoNodeExpansionPolicyRequest showAutoNodeExpansionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAutoNodeExpansionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/node-auto-expansion-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoNodeExpansionPolicyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutoNodeExpansionPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutoNodeExpansionPolicyResponse> ShowAutoNodeExpansionPolicyAsyncInvoker(ShowAutoNodeExpansionPolicyRequest showAutoNodeExpansionPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAutoNodeExpansionPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/node-auto-expansion-policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoNodeExpansionPolicyRequest);
+            return new AsyncInvoker<ShowAutoNodeExpansionPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoNodeExpansionPolicyResponse>);
         }
         
         /// <summary>

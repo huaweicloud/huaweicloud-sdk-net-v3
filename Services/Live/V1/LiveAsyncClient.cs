@@ -352,6 +352,54 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 创建水印规则
+        ///
+        /// 创建水印规则接口，必须先创建水印模板
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateWatermarkRuleResponse> CreateWatermarkRuleAsync(CreateWatermarkRuleRequest createWatermarkRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createWatermarkRuleRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateWatermarkRuleResponse>(response);
+        }
+
+        public AsyncInvoker<CreateWatermarkRuleResponse> CreateWatermarkRuleAsyncInvoker(CreateWatermarkRuleRequest createWatermarkRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createWatermarkRuleRequest);
+            return new AsyncInvoker<CreateWatermarkRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateWatermarkRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 创建水印模板
+        ///
+        /// 创建水印模板接口，需要绑定水印规则才生效
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateWatermarkTemplateResponse> CreateWatermarkTemplateAsync(CreateWatermarkTemplateRequest createWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createWatermarkTemplateRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateWatermarkTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<CreateWatermarkTemplateResponse> CreateWatermarkTemplateAsyncInvoker(CreateWatermarkTemplateRequest createWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", createWatermarkTemplateRequest);
+            return new AsyncInvoker<CreateWatermarkTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateWatermarkTemplateResponse>);
+        }
+        
+        /// <summary>
         /// 删除直播域名
         ///
         /// 删除域名。只有在域名停用（off）状态时才能删除。
@@ -665,6 +713,58 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/template/transcodings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTranscodingsTemplateRequest);
             return new AsyncInvoker<DeleteTranscodingsTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTranscodingsTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 删除水印规则
+        ///
+        /// 删除水印规则接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteWatermarkRuleResponse> DeleteWatermarkRuleAsync(DeleteWatermarkRuleRequest deleteWatermarkRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteWatermarkRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/rules/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWatermarkRuleRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteWatermarkRuleResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteWatermarkRuleResponse> DeleteWatermarkRuleAsyncInvoker(DeleteWatermarkRuleRequest deleteWatermarkRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteWatermarkRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/rules/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWatermarkRuleRequest);
+            return new AsyncInvoker<DeleteWatermarkRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteWatermarkRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 删除水印模板
+        ///
+        /// 删除水印模板接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteWatermarkTemplateResponse> DeleteWatermarkTemplateAsync(DeleteWatermarkTemplateRequest deleteWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteWatermarkTemplateRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/templates/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWatermarkTemplateRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteWatermarkTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteWatermarkTemplateResponse> DeleteWatermarkTemplateAsyncInvoker(DeleteWatermarkTemplateRequest deleteWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteWatermarkTemplateRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/templates/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteWatermarkTemplateRequest);
+            return new AsyncInvoker<DeleteWatermarkTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteWatermarkTemplateResponse>);
         }
         
         /// <summary>
@@ -1004,6 +1104,54 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/stream/blocks", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listStreamForbiddenRequest);
             return new AsyncInvoker<ListStreamForbiddenResponse>(this, "GET", request, JsonUtils.DeSerialize<ListStreamForbiddenResponse>);
+        }
+        
+        /// <summary>
+        /// 查询水印规则列表
+        ///
+        /// 查询水印规则列表接口，通过指定条件，查询满足条件的水印规则列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListWatermarkRuleResponse> ListWatermarkRuleAsync(ListWatermarkRuleRequest listWatermarkRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWatermarkRuleRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListWatermarkRuleResponse>(response);
+        }
+
+        public AsyncInvoker<ListWatermarkRuleResponse> ListWatermarkRuleAsyncInvoker(ListWatermarkRuleRequest listWatermarkRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWatermarkRuleRequest);
+            return new AsyncInvoker<ListWatermarkRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ListWatermarkRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询水印模板列表
+        ///
+        /// 查询水印模板列表接口，通过指定条件，查询满足条件的水印模板列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListWatermarkTemplateResponse> ListWatermarkTemplateAsync(ListWatermarkTemplateRequest listWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWatermarkTemplateRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListWatermarkTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<ListWatermarkTemplateResponse> ListWatermarkTemplateAsyncInvoker(ListWatermarkTemplateRequest listWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listWatermarkTemplateRequest);
+            return new AsyncInvoker<ListWatermarkTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ListWatermarkTemplateResponse>);
         }
         
         /// <summary>
@@ -1371,6 +1519,58 @@ namespace HuaweiCloud.SDK.Live.V1
         }
         
         /// <summary>
+        /// 查询水印规则配置
+        ///
+        /// 查询水印模板规则接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowWatermarkRuleResponse> ShowWatermarkRuleAsync(ShowWatermarkRuleRequest showWatermarkRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showWatermarkRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/rules/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWatermarkRuleRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowWatermarkRuleResponse>(response);
+        }
+
+        public AsyncInvoker<ShowWatermarkRuleResponse> ShowWatermarkRuleAsyncInvoker(ShowWatermarkRuleRequest showWatermarkRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showWatermarkRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/rules/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWatermarkRuleRequest);
+            return new AsyncInvoker<ShowWatermarkRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWatermarkRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询水印模板配置
+        ///
+        /// 查询水印模板详情接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowWatermarkTemplateResponse> ShowWatermarkTemplateAsync(ShowWatermarkTemplateRequest showWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showWatermarkTemplateRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/templates/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWatermarkTemplateRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowWatermarkTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<ShowWatermarkTemplateResponse> ShowWatermarkTemplateAsyncInvoker(ShowWatermarkTemplateRequest showWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showWatermarkTemplateRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/templates/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWatermarkTemplateRequest);
+            return new AsyncInvoker<ShowWatermarkTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWatermarkTemplateResponse>);
+        }
+        
+        /// <summary>
         /// 修改播放域名延时配置
         ///
         /// 修改播放域名延时配置。
@@ -1711,6 +1911,58 @@ namespace HuaweiCloud.SDK.Live.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/template/transcodings", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateTranscodingsTemplateRequest);
             return new AsyncInvoker<UpdateTranscodingsTemplateResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateTranscodingsTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 修改水印规则
+        ///
+        /// 修改水印规则接口，修改后实时生效，只能修改Location
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateWatermarkRuleResponse> UpdateWatermarkRuleAsync(UpdateWatermarkRuleRequest updateWatermarkRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateWatermarkRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/rules/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateWatermarkRuleRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateWatermarkRuleResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateWatermarkRuleResponse> UpdateWatermarkRuleAsyncInvoker(UpdateWatermarkRuleRequest updateWatermarkRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateWatermarkRuleRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/rules/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateWatermarkRuleRequest);
+            return new AsyncInvoker<UpdateWatermarkRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateWatermarkRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 修改水印模板
+        ///
+        /// 修改水印模板接口，修改后实时生效
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateWatermarkTemplateResponse> UpdateWatermarkTemplateAsync(UpdateWatermarkTemplateRequest updateWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateWatermarkTemplateRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/templates/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateWatermarkTemplateRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateWatermarkTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateWatermarkTemplateResponse> UpdateWatermarkTemplateAsyncInvoker(UpdateWatermarkTemplateRequest updateWatermarkTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateWatermarkTemplateRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/watermark/templates/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json; charset=UTF-8", updateWatermarkTemplateRequest);
+            return new AsyncInvoker<UpdateWatermarkTemplateResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateWatermarkTemplateResponse>);
         }
         
         /// <summary>

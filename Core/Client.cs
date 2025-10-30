@@ -98,6 +98,7 @@ namespace HuaweiCloud.SDK.Core
 
             try
             {
+                var exceptions = new List<Exception>();
                 while (true)
                 {
                     var url = GetRealEndpoint(request) + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
@@ -106,15 +107,23 @@ namespace HuaweiCloud.SDK.Core
                     {
                         return await _async_http(url, methodType.ToUpperInvariant(), request);
                     }
-                    catch (HostUnreachableException hostUnreachableException)
+                    catch (ConnectionException exception) when (exception is HostUnreachableException || exception is SslHandShakeException)
                     {
                         if (_endpointIndex < _endpoints.Count - 1)
                         {
                             Interlocked.Increment(ref _endpointIndex);
+                            exceptions.Add(exception);
                         }
                         else
                         {
-                            throw hostUnreachableException;
+                            if (exceptions.Count == 0)
+                            {
+                                throw;
+                            }
+                            
+                            exceptions.Add(exception);
+                            var aggregateException = new AggregateException(exceptions);
+                            throw new ConnectionException(aggregateException.Message, aggregateException);
                         }
                     }
                 }
@@ -189,6 +198,7 @@ namespace HuaweiCloud.SDK.Core
 
             try
             {
+                var exceptions = new List<Exception>();
                 while (true)
                 {
                     var url = GetRealEndpoint(request) + HttpUtils.AddUrlPath(request.Path, _credentials.GetPathParamDictionary())
@@ -197,15 +207,23 @@ namespace HuaweiCloud.SDK.Core
                     {
                         return _sync_http(url, methodType.ToUpperInvariant(), request);
                     }
-                    catch (HostUnreachableException hostUnreachableException)
+                    catch (ConnectionException exception) when (exception is HostUnreachableException || exception is SslHandShakeException)
                     {
                         if (_endpointIndex < _endpoints.Count - 1)
                         {
                             Interlocked.Increment(ref _endpointIndex);
+                            exceptions.Add(exception);
                         }
                         else
                         {
-                            throw hostUnreachableException;
+                            if (exceptions.Count == 0)
+                            {
+                                throw;
+                            }
+
+                            exceptions.Add(exception);
+                            var aggregateException = new AggregateException(exceptions);
+                            throw new ConnectionException(aggregateException.Message, aggregateException);
                         }
                     }
                 }

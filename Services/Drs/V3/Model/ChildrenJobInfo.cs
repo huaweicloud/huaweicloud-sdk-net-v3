@@ -911,7 +911,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
 
 
         /// <summary>
-        /// 计费字段
+        /// 是否计费字段。
         /// </summary>
         [JsonProperty("billing_tag", NullValueHandling = NullValueHandling.Ignore)]
         public bool? BillingTag { get; set; }

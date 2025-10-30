@@ -76,6 +76,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("log_stream_name", NullValueHandling = NullValueHandling.Ignore)]
         public string LogStreamName { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 告警类型。 **取值范围：** - sql： sql告警 - keywords：关键词告警
+        /// </summary>
+        [JsonProperty("event_subtype", NullValueHandling = NullValueHandling.Ignore)]
+        public string EventSubtype { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +101,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  ltsAlarmType: ").Append(LtsAlarmType).Append("\n");
             sb.Append("  logGroupName: ").Append(LogGroupName).Append("\n");
             sb.Append("  logStreamName: ").Append(LogStreamName).Append("\n");
+            sb.Append("  eventSubtype: ").Append(EventSubtype).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +130,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.LtsAlarmType != input.LtsAlarmType || (this.LtsAlarmType != null && !this.LtsAlarmType.Equals(input.LtsAlarmType))) return false;
             if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
             if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
+            if (this.EventSubtype != input.EventSubtype || (this.EventSubtype != null && !this.EventSubtype.Equals(input.EventSubtype))) return false;
 
             return true;
         }
@@ -145,6 +153,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.LtsAlarmType != null) hashCode = hashCode * 59 + this.LtsAlarmType.GetHashCode();
                 if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
                 if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
+                if (this.EventSubtype != null) hashCode = hashCode * 59 + this.EventSubtype.GetHashCode();
                 return hashCode;
             }
         }

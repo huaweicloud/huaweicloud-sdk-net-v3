@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         public int? ReceiverType { get; set; }
 
         /// <summary>
-        /// 发送验证码的超时时间。 此参数不携带或携带值为null时，采用系统默认超时时间10分钟。 此参数值超过60时，取默认值5分钟。 单位：分钟。
+        /// 验证码超时时间。此参数不携带或携带值为null时，采用系统默认超时时间10分钟。此参数值超过60时，取值固定为5分钟。单位：分钟
         /// </summary>
         [JsonProperty("timeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? Timeout { get; set; }

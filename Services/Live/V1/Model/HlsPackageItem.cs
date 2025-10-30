@@ -76,6 +76,54 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         [JsonProperty("ad_marker", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AdMarker { get; set; }
 
+        /// <summary>
+        /// 当频道mode是ONLY_OS类型时，允许本输出可以直接从源站拉流，默认：false true：允许output访问 false：禁止output访问
+        /// </summary>
+        [JsonProperty("enable_access", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableAccess { get; set; }
+
+        /// <summary>
+        /// 是否放通所有的IP访问，默认：false true：允许所有的IP地址访问，ip_whitelist配置不生效 false：不允许所有的IP地址访问，ip_whitelist生效，仅在ip_whitelist配置的ip地址才能访问
+        /// </summary>
+        [JsonProperty("allow_all_ip_access", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? AllowAllIpAccess { get; set; }
+
+        /// <summary>
+        /// 当频道类型mode是ONLY_OS类型时，允许直接从源站拉流的IP白名单
+        /// </summary>
+        [JsonProperty("ip_whitelist", NullValueHandling = NullValueHandling.Ignore)]
+        public string IpWhitelist { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("cdn_identifier_header", NullValueHandling = NullValueHandling.Ignore)]
+        public HttpHeader CdnIdentifierHeader { get; set; }
+
+        /// <summary>
+        /// 源站分发域名-主region 跟CreateOttChannelInfoReq.region一致 满足正则：^(\\[a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?\\.){2,}[a-zA-Z]{2,16}$ 最大长度255
+        /// </summary>
+        [JsonProperty("origin_domain_master", NullValueHandling = NullValueHandling.Ignore)]
+        public string OriginDomainMaster { get; set; }
+
+        /// <summary>
+        /// 源站分发域名-备region 满足正则：^(\\[a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?\\.){2,}[a-zA-Z]{2,16}$ 最大长度255
+        /// </summary>
+        [JsonProperty("origin_domain_slave", NullValueHandling = NullValueHandling.Ignore)]
+        public string OriginDomainSlave { get; set; }
+
+        /// <summary>
+        /// output的索引文件名字 默认：index 长度：0-128 字符集：大小写字母、数字、\&quot;-\&quot;、\&quot;.\&quot;、\&quot;_\&quot;，不能有/路径
+        /// </summary>
+        [JsonProperty("manifest_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ManifestName { get; set; }
+
+        /// <summary>
+        /// 客户自定义的拉流地址，包括方法、域名、路径
+        /// </summary>
+        [JsonProperty("slave_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string SlaveUrl { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +143,14 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             sb.Append("  extArgs: ").Append(ExtArgs).Append("\n");
             sb.Append("  requestArgs: ").Append(RequestArgs).Append("\n");
             sb.Append("  adMarker: ").Append(AdMarker).Append("\n");
+            sb.Append("  enableAccess: ").Append(EnableAccess).Append("\n");
+            sb.Append("  allowAllIpAccess: ").Append(AllowAllIpAccess).Append("\n");
+            sb.Append("  ipWhitelist: ").Append(IpWhitelist).Append("\n");
+            sb.Append("  cdnIdentifierHeader: ").Append(CdnIdentifierHeader).Append("\n");
+            sb.Append("  originDomainMaster: ").Append(OriginDomainMaster).Append("\n");
+            sb.Append("  originDomainSlave: ").Append(OriginDomainSlave).Append("\n");
+            sb.Append("  manifestName: ").Append(ManifestName).Append("\n");
+            sb.Append("  slaveUrl: ").Append(SlaveUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +179,14 @@ namespace HuaweiCloud.SDK.Live.V1.Model
             if (this.ExtArgs != input.ExtArgs || (this.ExtArgs != null && !this.ExtArgs.Equals(input.ExtArgs))) return false;
             if (this.RequestArgs != input.RequestArgs || (this.RequestArgs != null && !this.RequestArgs.Equals(input.RequestArgs))) return false;
             if (this.AdMarker != input.AdMarker || (this.AdMarker != null && input.AdMarker != null && !this.AdMarker.SequenceEqual(input.AdMarker))) return false;
+            if (this.EnableAccess != input.EnableAccess || (this.EnableAccess != null && !this.EnableAccess.Equals(input.EnableAccess))) return false;
+            if (this.AllowAllIpAccess != input.AllowAllIpAccess || (this.AllowAllIpAccess != null && !this.AllowAllIpAccess.Equals(input.AllowAllIpAccess))) return false;
+            if (this.IpWhitelist != input.IpWhitelist || (this.IpWhitelist != null && !this.IpWhitelist.Equals(input.IpWhitelist))) return false;
+            if (this.CdnIdentifierHeader != input.CdnIdentifierHeader || (this.CdnIdentifierHeader != null && !this.CdnIdentifierHeader.Equals(input.CdnIdentifierHeader))) return false;
+            if (this.OriginDomainMaster != input.OriginDomainMaster || (this.OriginDomainMaster != null && !this.OriginDomainMaster.Equals(input.OriginDomainMaster))) return false;
+            if (this.OriginDomainSlave != input.OriginDomainSlave || (this.OriginDomainSlave != null && !this.OriginDomainSlave.Equals(input.OriginDomainSlave))) return false;
+            if (this.ManifestName != input.ManifestName || (this.ManifestName != null && !this.ManifestName.Equals(input.ManifestName))) return false;
+            if (this.SlaveUrl != input.SlaveUrl || (this.SlaveUrl != null && !this.SlaveUrl.Equals(input.SlaveUrl))) return false;
 
             return true;
         }
@@ -145,6 +209,14 @@ namespace HuaweiCloud.SDK.Live.V1.Model
                 if (this.ExtArgs != null) hashCode = hashCode * 59 + this.ExtArgs.GetHashCode();
                 if (this.RequestArgs != null) hashCode = hashCode * 59 + this.RequestArgs.GetHashCode();
                 if (this.AdMarker != null) hashCode = hashCode * 59 + this.AdMarker.GetHashCode();
+                if (this.EnableAccess != null) hashCode = hashCode * 59 + this.EnableAccess.GetHashCode();
+                if (this.AllowAllIpAccess != null) hashCode = hashCode * 59 + this.AllowAllIpAccess.GetHashCode();
+                if (this.IpWhitelist != null) hashCode = hashCode * 59 + this.IpWhitelist.GetHashCode();
+                if (this.CdnIdentifierHeader != null) hashCode = hashCode * 59 + this.CdnIdentifierHeader.GetHashCode();
+                if (this.OriginDomainMaster != null) hashCode = hashCode * 59 + this.OriginDomainMaster.GetHashCode();
+                if (this.OriginDomainSlave != null) hashCode = hashCode * 59 + this.OriginDomainSlave.GetHashCode();
+                if (this.ManifestName != null) hashCode = hashCode * 59 + this.ManifestName.GetHashCode();
+                if (this.SlaveUrl != null) hashCode = hashCode * 59 + this.SlaveUrl.GetHashCode();
                 return hashCode;
             }
         }

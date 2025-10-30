@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string LogGroupName { get; set; }
 
         /// <summary>
+        /// **参数解释：** 日志组名称别名。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("log_group_name_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupNameAlias { get; set; }
+
+        /// <summary>
         /// 日志流id，资源类型为日志流时返回
         /// </summary>
         [JsonProperty("log_stream_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -57,6 +63,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         [JsonProperty("log_stream_name", NullValueHandling = NullValueHandling.Ignore)]
         public string LogStreamName { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 日志流名称别名。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("log_stream_name_alias", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogStreamNameAlias { get; set; }
 
         /// <summary>
         /// 基础转储流量，byte, 查询数据类型中包含basicTransfer时返回
@@ -96,8 +108,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  writeTraffic: ").Append(WriteTraffic).Append("\n");
             sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
             sb.Append("  logGroupName: ").Append(LogGroupName).Append("\n");
+            sb.Append("  logGroupNameAlias: ").Append(LogGroupNameAlias).Append("\n");
             sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
             sb.Append("  logStreamName: ").Append(LogStreamName).Append("\n");
+            sb.Append("  logStreamNameAlias: ").Append(LogStreamNameAlias).Append("\n");
             sb.Append("  basicTransfer: ").Append(BasicTransfer).Append("\n");
             sb.Append("  seniorTransfer: ").Append(SeniorTransfer).Append("\n");
             sb.Append("  isAgencyTransfer: ").Append(IsAgencyTransfer).Append("\n");
@@ -125,8 +139,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.WriteTraffic != input.WriteTraffic || (this.WriteTraffic != null && !this.WriteTraffic.Equals(input.WriteTraffic))) return false;
             if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
             if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
+            if (this.LogGroupNameAlias != input.LogGroupNameAlias || (this.LogGroupNameAlias != null && !this.LogGroupNameAlias.Equals(input.LogGroupNameAlias))) return false;
             if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
             if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
+            if (this.LogStreamNameAlias != input.LogStreamNameAlias || (this.LogStreamNameAlias != null && !this.LogStreamNameAlias.Equals(input.LogStreamNameAlias))) return false;
             if (this.BasicTransfer != input.BasicTransfer || (this.BasicTransfer != null && !this.BasicTransfer.Equals(input.BasicTransfer))) return false;
             if (this.SeniorTransfer != input.SeniorTransfer || (this.SeniorTransfer != null && !this.SeniorTransfer.Equals(input.SeniorTransfer))) return false;
             if (this.IsAgencyTransfer != input.IsAgencyTransfer || (this.IsAgencyTransfer != null && !this.IsAgencyTransfer.Equals(input.IsAgencyTransfer))) return false;
@@ -148,8 +164,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.WriteTraffic != null) hashCode = hashCode * 59 + this.WriteTraffic.GetHashCode();
                 if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
                 if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
+                if (this.LogGroupNameAlias != null) hashCode = hashCode * 59 + this.LogGroupNameAlias.GetHashCode();
                 if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
                 if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
+                if (this.LogStreamNameAlias != null) hashCode = hashCode * 59 + this.LogStreamNameAlias.GetHashCode();
                 if (this.BasicTransfer != null) hashCode = hashCode * 59 + this.BasicTransfer.GetHashCode();
                 if (this.SeniorTransfer != null) hashCode = hashCode * 59 + this.SeniorTransfer.GetHashCode();
                 if (this.IsAgencyTransfer != null) hashCode = hashCode * 59 + this.IsAgencyTransfer.GetHashCode();

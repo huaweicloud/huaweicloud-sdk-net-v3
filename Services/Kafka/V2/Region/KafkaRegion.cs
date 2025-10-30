@@ -73,6 +73,8 @@ namespace HuaweiCloud.SDK.Kafka.V2
             "https://dms.cn-north-12.myhuaweicloud.com");
         public static readonly Region CN_NORTH_11 = new Region("cn-north-11",
             "https://dms.cn-north-11.myhuaweicloud.com");
+        public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
+            "https://dms.cn-southwest-3.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("KAFKA");
 
@@ -111,6 +113,7 @@ namespace HuaweiCloud.SDK.Kafka.V2
                 { "cn-south-4", CN_SOUTH_4 },
                 { "cn-north-12", CN_NORTH_12 },
                 { "cn-north-11", CN_NORTH_11 },
+                { "cn-southwest-3", CN_SOUTHWEST_3 },
         };
 
         public static Region ValueOf(string regionId)

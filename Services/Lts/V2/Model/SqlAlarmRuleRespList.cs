@@ -463,12 +463,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("sql_alarm_level", NullValueHandling = NullValueHandling.Ignore)]
         public SqlAlarmLevelEnum SqlAlarmLevel { get; set; }
         /// <summary>
-        /// 是否发送
-        /// </summary>
-        [JsonProperty("sql_alarm_send", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? SqlAlarmSend { get; set; }
-
-        /// <summary>
         /// domainId
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -532,6 +526,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("alarm_action_rule_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmActionRuleName { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 告警标签信息。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TagsResBody> Tags { get; set; }
+
 
 
         /// <summary>
@@ -550,7 +550,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  conditionExpression: ").Append(ConditionExpression).Append("\n");
             sb.Append("  topics: ").Append(Topics).Append("\n");
             sb.Append("  sqlAlarmLevel: ").Append(SqlAlarmLevel).Append("\n");
-            sb.Append("  sqlAlarmSend: ").Append(SqlAlarmSend).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
@@ -562,6 +561,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  recoveryPolicy: ").Append(RecoveryPolicy).Append("\n");
             sb.Append("  notificationFrequency: ").Append(NotificationFrequency).Append("\n");
             sb.Append("  alarmActionRuleName: ").Append(AlarmActionRuleName).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -589,7 +589,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.ConditionExpression != input.ConditionExpression || (this.ConditionExpression != null && !this.ConditionExpression.Equals(input.ConditionExpression))) return false;
             if (this.Topics != input.Topics || (this.Topics != null && input.Topics != null && !this.Topics.SequenceEqual(input.Topics))) return false;
             if (this.SqlAlarmLevel != input.SqlAlarmLevel) return false;
-            if (this.SqlAlarmSend != input.SqlAlarmSend || (this.SqlAlarmSend != null && !this.SqlAlarmSend.Equals(input.SqlAlarmSend))) return false;
             if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
@@ -601,6 +600,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.RecoveryPolicy != input.RecoveryPolicy || (this.RecoveryPolicy != null && !this.RecoveryPolicy.Equals(input.RecoveryPolicy))) return false;
             if (this.NotificationFrequency != input.NotificationFrequency) return false;
             if (this.AlarmActionRuleName != input.AlarmActionRuleName || (this.AlarmActionRuleName != null && !this.AlarmActionRuleName.Equals(input.AlarmActionRuleName))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -622,7 +622,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.ConditionExpression != null) hashCode = hashCode * 59 + this.ConditionExpression.GetHashCode();
                 if (this.Topics != null) hashCode = hashCode * 59 + this.Topics.GetHashCode();
                 hashCode = hashCode * 59 + this.SqlAlarmLevel.GetHashCode();
-                if (this.SqlAlarmSend != null) hashCode = hashCode * 59 + this.SqlAlarmSend.GetHashCode();
                 if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
@@ -634,6 +633,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.RecoveryPolicy != null) hashCode = hashCode * 59 + this.RecoveryPolicy.GetHashCode();
                 hashCode = hashCode * 59 + this.NotificationFrequency.GetHashCode();
                 if (this.AlarmActionRuleName != null) hashCode = hashCode * 59 + this.AlarmActionRuleName.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

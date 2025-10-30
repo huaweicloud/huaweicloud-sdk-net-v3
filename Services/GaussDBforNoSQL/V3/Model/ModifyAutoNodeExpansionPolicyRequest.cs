@@ -8,34 +8,34 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using HuaweiCloud.SDK.Core;
 
-namespace HuaweiCloud.SDK.Rds.V3.Model
+namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
 {
     /// <summary>
     /// Request Object
     /// </summary>
-    public class ListInstancesNoIndexTablesRequest 
+    public class ModifyAutoNodeExpansionPolicyRequest 
     {
 
         /// <summary>
-        /// 实例ID
+        /// **参数解释：** 实例ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [SDKProperty("instance_id", IsPath = true)]
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 指定查询是否应侧重于检索最新或最新的特殊表。
+        /// **参数解释：** 语言。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
-        [SDKProperty("newest", IsQuery = true)]
-        [JsonProperty("newest", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Newest { get; set; }
+        [SDKProperty("X-Language", IsHeader = true)]
+        [JsonProperty("X-Language", NullValueHandling = NullValueHandling.Ignore)]
+        public string XLanguage { get; set; }
 
         /// <summary>
-        /// 表格类型。
+        /// 
         /// </summary>
-        [SDKProperty("table_type", IsQuery = true)]
-        [JsonProperty("table_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string TableType { get; set; }
+        [SDKProperty("body", IsBody = true)]
+        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
+        public ModifyAutoNodeExpansionPolicyRequestBody Body { get; set; }
 
 
 
@@ -45,10 +45,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ListInstancesNoIndexTablesRequest {\n");
+            sb.Append("class ModifyAutoNodeExpansionPolicyRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  newest: ").Append(Newest).Append("\n");
-            sb.Append("  tableType: ").Append(TableType).Append("\n");
+            sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
+            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,18 +58,18 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListInstancesNoIndexTablesRequest);
+            return this.Equals(input as ModifyAutoNodeExpansionPolicyRequest);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(ListInstancesNoIndexTablesRequest input)
+        public bool Equals(ModifyAutoNodeExpansionPolicyRequest input)
         {
             if (input == null) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.Newest != input.Newest || (this.Newest != null && !this.Newest.Equals(input.Newest))) return false;
-            if (this.TableType != input.TableType || (this.TableType != null && !this.TableType.Equals(input.TableType))) return false;
+            if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
             return true;
         }
@@ -83,8 +83,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             {
                 var hashCode = 41;
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Newest != null) hashCode = hashCode * 59 + this.Newest.GetHashCode();
-                if (this.TableType != null) hashCode = hashCode * 59 + this.TableType.GetHashCode();
+                if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

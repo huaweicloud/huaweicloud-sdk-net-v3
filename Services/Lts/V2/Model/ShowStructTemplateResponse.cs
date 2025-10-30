@@ -88,6 +88,24 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("regex", NullValueHandling = NullValueHandling.Ignore)]
         public string Regex { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("custom_time_info", NullValueHandling = NullValueHandling.Ignore)]
+        public CustomTimeInfo CustomTimeInfo { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 是否上传原始日志。 **取值范围：** - true - fasle
+        /// </summary>
+        [JsonProperty("uploadOriginalLog", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? UploadOriginalLog { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 是否将解析失败的原始上传到指定系统字段日志。 **取值范围：** - true - fasle
+        /// </summary>
+        [JsonProperty("uploadParseFailedLog", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? UploadParseFailedLog { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +127,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  templateName: ").Append(TemplateName).Append("\n");
             sb.Append("  regex: ").Append(Regex).Append("\n");
+            sb.Append("  customTimeInfo: ").Append(CustomTimeInfo).Append("\n");
+            sb.Append("  uploadOriginalLog: ").Append(UploadOriginalLog).Append("\n");
+            sb.Append("  uploadParseFailedLog: ").Append(UploadParseFailedLog).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +160,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
             if (this.Regex != input.Regex || (this.Regex != null && !this.Regex.Equals(input.Regex))) return false;
+            if (this.CustomTimeInfo != input.CustomTimeInfo || (this.CustomTimeInfo != null && !this.CustomTimeInfo.Equals(input.CustomTimeInfo))) return false;
+            if (this.UploadOriginalLog != input.UploadOriginalLog || (this.UploadOriginalLog != null && !this.UploadOriginalLog.Equals(input.UploadOriginalLog))) return false;
+            if (this.UploadParseFailedLog != input.UploadParseFailedLog || (this.UploadParseFailedLog != null && !this.UploadParseFailedLog.Equals(input.UploadParseFailedLog))) return false;
 
             return true;
         }
@@ -163,6 +187,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
                 if (this.Regex != null) hashCode = hashCode * 59 + this.Regex.GetHashCode();
+                if (this.CustomTimeInfo != null) hashCode = hashCode * 59 + this.CustomTimeInfo.GetHashCode();
+                if (this.UploadOriginalLog != null) hashCode = hashCode * 59 + this.UploadOriginalLog.GetHashCode();
+                if (this.UploadParseFailedLog != null) hashCode = hashCode * 59 + this.UploadParseFailedLog.GetHashCode();
                 return hashCode;
             }
         }

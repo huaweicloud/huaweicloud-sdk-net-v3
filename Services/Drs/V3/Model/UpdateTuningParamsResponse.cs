@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         public List<TuningParameter> IncreRelay { get; set; }
 
         /// <summary>
-        /// 参数修改是否成功
+        /// 参数修改是否成功，查询参数时不返回该字段。
         /// </summary>
         [JsonProperty("modify_result", NullValueHandling = NullValueHandling.Ignore)]
         public string ModifyResult { get; set; }

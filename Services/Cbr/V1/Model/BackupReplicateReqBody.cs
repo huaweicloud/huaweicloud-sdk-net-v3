@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// 跨账户复制所需的目标账户的跨账户复制存储库标识
+        /// </summary>
+        [JsonProperty("cross_account_urn", NullValueHandling = NullValueHandling.Ignore)]
+        public string CrossAccountUrn { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             sb.Append("  destinationVaultId: ").Append(DestinationVaultId).Append("\n");
             sb.Append("  enableAcceleration: ").Append(EnableAcceleration).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  crossAccountUrn: ").Append(CrossAccountUrn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
             if (this.DestinationVaultId != input.DestinationVaultId || (this.DestinationVaultId != null && !this.DestinationVaultId.Equals(input.DestinationVaultId))) return false;
             if (this.EnableAcceleration != input.EnableAcceleration || (this.EnableAcceleration != null && !this.EnableAcceleration.Equals(input.EnableAcceleration))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.CrossAccountUrn != input.CrossAccountUrn || (this.CrossAccountUrn != null && !this.CrossAccountUrn.Equals(input.CrossAccountUrn))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
                 if (this.DestinationVaultId != null) hashCode = hashCode * 59 + this.DestinationVaultId.GetHashCode();
                 if (this.EnableAcceleration != null) hashCode = hashCode * 59 + this.EnableAcceleration.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.CrossAccountUrn != null) hashCode = hashCode * 59 + this.CrossAccountUrn.GetHashCode();
                 return hashCode;
             }
         }

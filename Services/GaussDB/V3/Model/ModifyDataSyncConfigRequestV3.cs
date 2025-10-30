@@ -64,6 +64,24 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("target_database_name", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetDatabaseName { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  是否支持实例级同步。  **约束限制**：  不涉及。  **取值范围**：  - true：是。 - false：否。  **默认取值**：  false。
+        /// </summary>
+        [JsonProperty("is_instance_level_sync", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsInstanceLevelSync { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  库同步范围。  **约束限制**：  不涉及。  **取值范围**：  - all：同步全部库。 - part：同步部分库。  **默认取值**：  part。
+        /// </summary>
+        [JsonProperty("database_repl_scope", NullValueHandling = NullValueHandling.Ignore)]
+        public string DatabaseReplScope { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  是否支持通配符。  **约束限制**：  不涉及。  **取值范围**：  - true：支持通配符。 - false：不支持通配符。  **默认取值**：  false。
+        /// </summary>
+        [JsonProperty("is_support_reg_exp", NullValueHandling = NullValueHandling.Ignore)]
+        public string IsSupportRegExp { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +99,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  tablesConfigs: ").Append(TablesConfigs).Append("\n");
             sb.Append("  tableReplConfig: ").Append(TableReplConfig).Append("\n");
             sb.Append("  targetDatabaseName: ").Append(TargetDatabaseName).Append("\n");
+            sb.Append("  isInstanceLevelSync: ").Append(IsInstanceLevelSync).Append("\n");
+            sb.Append("  databaseReplScope: ").Append(DatabaseReplScope).Append("\n");
+            sb.Append("  isSupportRegExp: ").Append(IsSupportRegExp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +128,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.TablesConfigs != input.TablesConfigs || (this.TablesConfigs != null && input.TablesConfigs != null && !this.TablesConfigs.SequenceEqual(input.TablesConfigs))) return false;
             if (this.TableReplConfig != input.TableReplConfig || (this.TableReplConfig != null && !this.TableReplConfig.Equals(input.TableReplConfig))) return false;
             if (this.TargetDatabaseName != input.TargetDatabaseName || (this.TargetDatabaseName != null && !this.TargetDatabaseName.Equals(input.TargetDatabaseName))) return false;
+            if (this.IsInstanceLevelSync != input.IsInstanceLevelSync || (this.IsInstanceLevelSync != null && !this.IsInstanceLevelSync.Equals(input.IsInstanceLevelSync))) return false;
+            if (this.DatabaseReplScope != input.DatabaseReplScope || (this.DatabaseReplScope != null && !this.DatabaseReplScope.Equals(input.DatabaseReplScope))) return false;
+            if (this.IsSupportRegExp != input.IsSupportRegExp || (this.IsSupportRegExp != null && !this.IsSupportRegExp.Equals(input.IsSupportRegExp))) return false;
 
             return true;
         }
@@ -127,6 +151,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.TablesConfigs != null) hashCode = hashCode * 59 + this.TablesConfigs.GetHashCode();
                 if (this.TableReplConfig != null) hashCode = hashCode * 59 + this.TableReplConfig.GetHashCode();
                 if (this.TargetDatabaseName != null) hashCode = hashCode * 59 + this.TargetDatabaseName.GetHashCode();
+                if (this.IsInstanceLevelSync != null) hashCode = hashCode * 59 + this.IsInstanceLevelSync.GetHashCode();
+                if (this.DatabaseReplScope != null) hashCode = hashCode * 59 + this.DatabaseReplScope.GetHashCode();
+                if (this.IsSupportRegExp != null) hashCode = hashCode * 59 + this.IsSupportRegExp.GetHashCode();
                 return hashCode;
             }
         }
