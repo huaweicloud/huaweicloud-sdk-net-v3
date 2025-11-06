@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 资源分组添加资源方式，EPS：同步企业项目，TAG：标签动态匹配，空值：手动添加；
+        /// 资源添加/匹配方式，取值只能为EPS（匹配企业项目）,TAG（匹配标签）,NAME（匹配实例名称）, COMB（组合匹配）,Manual/空值（手动添加）
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -53,10 +53,10 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public InstanceStatistics InstanceStatistics { get; set; }
 
         /// <summary>
-        /// 资源分组的当前状态，值可为health、unhealth、no_alarm_rule；health表示健康，unhealth表示不健康，no_alarm_rule表示未设置告警规则。
+        /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; set; }
+        public StatusSchema? Status { get; set; }
 
         /// <summary>
         /// 创建资源分组时关联的企业项目，默认值为0，表示企业项目为default。

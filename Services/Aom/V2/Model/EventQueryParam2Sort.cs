@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
 
         /// <summary>
-        /// 排序字段列表。会根据列表中定义顺序对返回列表最排序。
+        /// 排序字段列表。会根据列表中定义顺序对返回列表最排序。当sort参数不为空时，order_by参数必填。
         /// </summary>
         [JsonProperty("order_by", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> OrderBy { get; set; }

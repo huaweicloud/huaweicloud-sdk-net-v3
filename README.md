@@ -1015,17 +1015,25 @@ var client = VpcClient.NewBuilder()
     .Build();
 ```
 
-2 Use .NET Framework 4.7 to integrate .NET SDK, a dead lock occurs
+2 ASP.NET MVC/WinForms/WPF projects use .NET SDK, a dead lock occurs
 
-**[Symptom]**: When using synchronized client to call an interface, and the program has been started, but where is no
+**[Symptom]** When using synchronized client to call an interface, and the program has been started, but where is no
 error message or timeout occurs.
 
-**[Cause]**: The inner implementation of sending requests in synchronized client of SDK is to use an asynchronous task,
-and SDK will await this task. In such scenario, **deadlock** occurs between the context of the .NET Framework UI and the
-asynchronous task context of the SDK. As a result, the asynchronous task of the SDK cannot be
-activated. [Original article](https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
+**[Cause]** The SDK uses `System.Net.Http.HttpClient` at the bottom layer to send **asynchronous requests**. In an environment with a **synchronous context**, calling an asynchronous method synchronously and waiting for it to complete can lead to a **deadlock**.
 
-**[Solution]**: **Switch the synchronous client to the asynchronous client**. If the UI events and API requests are both
+Common synchronous context environments:
+- **WinForms** - WindowsFormsSynchronizationContext
+- **WPF** - DispatcherSynchronizationContext
+- **ASP.NET** - AspNetSynchronizationContext
+
+**[Reference]**
+
+- [Don't block on async code](https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
+- [Asynchronous programming with async and await](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/)
+- [Task asynchronous programming model](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/task-asynchronous-programming-model)
+
+**[Solution]** **Switch the synchronous client to the asynchronous client**. If the UI events and API requests are both
 asynchronous, there will be no deadlock. The following are examples of MVC and WPF solutions:
 
 MVC

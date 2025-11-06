@@ -509,7 +509,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public List<AlarmHistoryItemV2AlarmActions> OkActions { get; set; }
 
         /// <summary>
-        /// 计算出该条告警记录的资源监控数据上报时间和监控数值。
+        /// **参数解释**： 计算出该条告警记录的资源监控数据上报时间和监控数值。 
         /// </summary>
         [JsonProperty("data_points", NullValueHandling = NullValueHandling.Ignore)]
         public List<DataPointInfo> DataPoints { get; set; }

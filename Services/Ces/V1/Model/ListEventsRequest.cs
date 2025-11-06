@@ -286,14 +286,14 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public long? To { get; set; }
 
         /// <summary>
-        /// 分页起始值，类型为integer，默认值为0。
+        /// 分页起始值，默认值为0。
         /// </summary>
         [SDKProperty("start", IsQuery = true)]
         [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Start { get; set; }
+        public string Start { get; set; }
 
         /// <summary>
-        /// 单次查询的条数限制，取值范围(0,100]，默认值为100，用于限制结果数据条数。
+        /// 单次查询的条数限制，取值范围[0,100]，默认值为100，用于限制结果数据条数。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

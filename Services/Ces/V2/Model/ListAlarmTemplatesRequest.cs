@@ -191,7 +191,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string TemplateName { get; set; }
 
         /// <summary>
-        /// 支持按照产品名称粒度进行查询告警模板，产品名称一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;
+        /// （已废弃）支持按照产品名称粒度进行查询告警模板，产品名称一般由\&quot;服务命名空间,服务首层维度名称\&quot;组成，如\&quot;SYS.ECS,instance_id\&quot;
         /// </summary>
         [SDKProperty("product_name", IsQuery = true)]
         [JsonProperty("product_name", NullValueHandling = NullValueHandling.Ignore)]

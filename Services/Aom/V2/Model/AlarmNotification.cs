@@ -137,19 +137,19 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         [JsonProperty("notification_type", NullValueHandling = NullValueHandling.Ignore)]
         public NotificationTypeEnum NotificationType { get; set; }
         /// <summary>
-        /// 启用分组规则。 - 当通知类型为“alarm_policy”时：true - 当通知类型为“direct”时：false
+        /// 启用告警分组规则。 - 当通知类型为“alarm_policy”时：true - 当通知类型为“direct”时：false 如果告警触发“notify_triggered”或告警恢复“notify_resolved”都设置为false（即都不进行告警通知），则route_group_enable需设置为false。
         /// </summary>
         [JsonProperty("route_group_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? RouteGroupEnable { get; set; }
 
         /// <summary>
-        /// 分组规则名称。 - 当route_group_enable 为true时，填分组规则名称 - 当route_group_enable 为false时，填“”
+        /// 告警分组规则名称。 - 当route_group_enable 为true时，填告警分组规则名称 - 当route_group_enable 为false时，填“”
         /// </summary>
         [JsonProperty("route_group_rule", NullValueHandling = NullValueHandling.Ignore)]
         public string RouteGroupRule { get; set; }
 
         /// <summary>
-        /// 是否启用告警行动规则。 - 当通知类型为“direct”时，填true - 当通知类型为“alarm_policy”时，填false
+        /// 是否启用告警通知规则。 - 当通知类型为“direct”时，填true - 当通知类型为“alarm_policy”时，填false 如果告警触发“notify_triggered”或告警恢复“notify_resolved”都设置为false（即都不进行告警通知），则notification_enable需设置为false。
         /// </summary>
         [JsonProperty("notification_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotificationEnable { get; set; }

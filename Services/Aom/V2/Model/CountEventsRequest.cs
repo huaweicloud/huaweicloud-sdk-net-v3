@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class CountEventsRequest 
     {
         /// <summary>
-        /// 查询类型。type&#x3D;active_alert代表查询活动告警，type&#x3D;history_alert代表查询历史告警。不传或者传其他值则返回指定查询条件的所有信息。
+        /// 查询类型： - active_alert：代表查询活动告警 - history_alert代表查询历史告警。  不传或者传其他值，则返回指定查询条件的所有信息。
         /// </summary>
-        /// <value>查询类型。type&#x3D;active_alert代表查询活动告警，type&#x3D;history_alert代表查询历史告警。不传或者传其他值则返回指定查询条件的所有信息。</value>
+        /// <value>查询类型： - active_alert：代表查询活动告警 - history_alert代表查询历史告警。  不传或者传其他值，则返回指定查询条件的所有信息。</value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -132,7 +132,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
 
         /// <summary>
-        /// 查询类型。type&#x3D;active_alert代表查询活动告警，type&#x3D;history_alert代表查询历史告警。不传或者传其他值则返回指定查询条件的所有信息。
+        /// 查询类型： - active_alert：代表查询活动告警 - history_alert代表查询历史告警。  不传或者传其他值，则返回指定查询条件的所有信息。
         /// </summary>
         [SDKProperty("type", IsQuery = true)]
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]

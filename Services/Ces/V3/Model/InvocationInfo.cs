@@ -536,13 +536,13 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         [JsonProperty("instance_type", NullValueHandling = NullValueHandling.Ignore)]
         public InstanceTypeEnum InstanceType { get; set; }
         /// <summary>
-        /// **参数解释**: 内网ip列表 **取值范围**: 返回数组长度为[0,10]，数组内元素格式为：长度为1到15个字符的字符串，其中每个字符可以是数字（0-9）或任意其他单个字符 
+        /// **参数解释**: 内网ip列表 
         /// </summary>
         [JsonProperty("intranet_ips", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> IntranetIps { get; set; }
 
         /// <summary>
-        /// **参数解释**: 弹性公网ip列表 **取值范围**: 返回数组长度为[0,10]，数组内元素格式为：长度为1到15个字符的字符串，其中每个字符可以是数字（0-9）或任意其他单个字符 
+        /// **参数解释**: 弹性公网ip列表 
         /// </summary>
         [JsonProperty("elastic_ips", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> ElasticIps { get; set; }

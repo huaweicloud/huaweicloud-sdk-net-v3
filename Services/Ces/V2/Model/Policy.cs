@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public string DimensionName { get; set; }
 
         /// <summary>
-        /// **参数解释**: 告警策略是否生效。true：策略生效，false：策略无效。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。 
+        /// **参数解释**: 告警策略是否生效。 **约束限制**: 不涉及。 **取值范围**: 取值为true、false - true：策略生效 - false：策略无效 **默认取值**: 不涉及。 
         /// </summary>
         [JsonProperty("enabled", NullValueHandling = NullValueHandling.Ignore)]
         public bool? Enabled { get; set; }

@@ -94,6 +94,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("text_location", NullValueHandling = NullValueHandling.Ignore)]
         public Object TextLocation { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("alarm_result", NullValueHandling = NullValueHandling.Ignore)]
+        public VehicleLicenseAlarmResult AlarmResult { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("alarm_confidence", NullValueHandling = NullValueHandling.Ignore)]
+        public VehicleLicenseAlarmConfidence AlarmConfidence { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +128,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  codeNumber: ").Append(CodeNumber).Append("\n");
             sb.Append("  energyType: ").Append(EnergyType).Append("\n");
             sb.Append("  textLocation: ").Append(TextLocation).Append("\n");
+            sb.Append("  alarmResult: ").Append(AlarmResult).Append("\n");
+            sb.Append("  alarmConfidence: ").Append(AlarmConfidence).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,6 +161,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.CodeNumber != input.CodeNumber || (this.CodeNumber != null && !this.CodeNumber.Equals(input.CodeNumber))) return false;
             if (this.EnergyType != input.EnergyType || (this.EnergyType != null && !this.EnergyType.Equals(input.EnergyType))) return false;
             if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
+            if (this.AlarmResult != input.AlarmResult || (this.AlarmResult != null && !this.AlarmResult.Equals(input.AlarmResult))) return false;
+            if (this.AlarmConfidence != input.AlarmConfidence || (this.AlarmConfidence != null && !this.AlarmConfidence.Equals(input.AlarmConfidence))) return false;
 
             return true;
         }
@@ -172,6 +188,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.CodeNumber != null) hashCode = hashCode * 59 + this.CodeNumber.GetHashCode();
                 if (this.EnergyType != null) hashCode = hashCode * 59 + this.EnergyType.GetHashCode();
                 if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                if (this.AlarmResult != null) hashCode = hashCode * 59 + this.AlarmResult.GetHashCode();
+                if (this.AlarmConfidence != null) hashCode = hashCode * 59 + this.AlarmConfidence.GetHashCode();
                 return hashCode;
             }
         }

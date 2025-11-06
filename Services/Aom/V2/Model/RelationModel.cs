@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class RelationModel 
     {
         /// <summary>
-        /// 该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。
+        /// 该条件与其他条件的组合方式。  - AND：必须满足所有条件。 -  OR：可以满足其中一个条件。 -  NOT：必须不满足所有条件。
         /// </summary>
-        /// <value>该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。</value>
+        /// <value>该条件与其他条件的组合方式。  - AND：必须满足所有条件。 -  OR：可以满足其中一个条件。 -  NOT：必须不满足所有条件。</value>
         [JsonConverter(typeof(EnumClassConverter<RelationEnum>))]
         public class RelationEnum
         {
@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
 
         /// <summary>
-        /// 指定查询字段的key，对应metadata里面的key 。
+        /// 指定查询字段的key，对应metadata里面的key 。当metadata_relation参数不为空时 key参数必填。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public List<string> Value { get; set; }
 
         /// <summary>
-        /// 该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。
+        /// 该条件与其他条件的组合方式。  - AND：必须满足所有条件。 -  OR：可以满足其中一个条件。 -  NOT：必须不满足所有条件。
         /// </summary>
         [JsonProperty("relation", NullValueHandling = NullValueHandling.Ignore)]
         public RelationEnum Relation { get; set; }

@@ -1,3 +1,313 @@
+# 3.1.171 2025-11-06
+
+### HuaweiCloud SDK AOM
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持以下接口：
+    - `ListNotificationTemplates`
+    - `UpdateNotificationTemplate`
+    - `CreateNotificationTemplate`
+    - `DeleteNotificationTemplate`
+    - `ListNotificationTemplateByName`
+    - `ListAlarmRuleTemplate`
+    - `DeleteAlarmRuleTemplate`
+    - `ListDashBoards`
+    - `ShowDashBoard`
+    - `DeleteDashboard`
+    - `ListDashboardsFolder`
+    - `DeleteDashboardsFolder`
+    - `UpdatePromInstance`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeletePromInstance**
+    - 响应参数变更
+      - `* : string -> map<string, boolean>`
+  - **ListPromInstance**
+    - 响应参数变更
+      - `+ prometheus.prom_limits`
+      - `+ prometheus.limits_update_time`
+      - `+ prometheus.application`
+      - `- prometheus.prom_type: enum value [default,ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT]`
+  - **CreatePromInstance**
+    - 请求参数变更
+      - `+ aggr_prometheus_info`
+      - `- prom_type: enum value [ECS,VPC,CCE,REMOTE_WRITE,KUBERNETES,CLOUD_SERVICE,ACROSS_ACCOUNT]`
+
+### HuaweiCloud SDK CES
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateAlarmTemplate**
+    - 请求参数变更
+      - `+ template_items.condition.filter: enum value [average,variance,min,max,sum]`
+      - `+ template_items.condition.period: enum value [0,1,300,1200,3600,14400,86400]`
+      - `+ template_items.condition.suppress_duration: enum value [0,300,600,900,1800,3600,10800,21600,43200,86400]`
+  - **ListEvents**
+    - 请求参数变更
+      - `* start: int32 -> string`
+    - 响应参数变更
+      - `+ events.event_type: enum value [EVENT.SYS,EVENT.CUSTOM]`
+  - **CreateEvents**
+    - 请求参数变更
+      - `+ detail.event_type: enum value [EVENT.SYS,EVENT.CUSTOM]`
+      - `* : list<EventItem> -> list<CreateEventsRequestBody>`
+    - 响应参数变更
+      - `+ body`
+  - **BatchListMetricData**
+    - 请求参数变更
+      - `+ period: enum value [1,60,300,1200,3600,14400,86400]`
+      - `+ filter: enum value [average,variance,min,max,sum]`
+  - **ShowMetricData**
+    - 请求参数变更
+      - `+ period: enum value [1,60,300,1200,3600,14400,86400]`
+  - **CreateMetricData**
+    - 请求参数变更
+      - `* : list<MetricDataItem> -> list<CreateMetricDataRequestBody>`
+  - **ShowQuotas**
+    - 响应参数变更
+      - `+ quotas.resources.min`
+      - `+ quotas.resources.max`
+      - `* quotas.resources.used: int32 -> int64`
+      - `* quotas.resources.quota: int32 -> int64`
+      - `* quotas.resources: list<ResourceQuotas> -> list<ResourceQuotasResp>`
+      - `* quotas: object<Quotas> -> object<QuotasResp>`
+  - **ShowResourceGroup**
+    - 请求参数变更
+      - `+ status: enum value [health,unhealth,no_alarm_rule]`
+    - 响应参数变更
+      - `+ status: enum value [health,unhealth,no_alarm_rule]`
+      - `+ resources.status: enum value [health,unhealth,no_alarm_rule]`
+  - **UpdateResourceGroup**
+    - 请求参数变更
+      - `+ type`
+      - `+ relation_ids`
+      - `+ tags`
+  - **ListResourceGroup**
+    - 请求参数变更
+      - `+ status: enum value [health,unhealth,no_alarm_rule]`
+    - 响应参数变更
+      - `+ resource_groups.status: enum value [health,unhealth,no_alarm_rule]`
+  - **CreateResourceGroup**
+    - 请求参数变更
+      - `+ type`
+      - `+ relation_ids`
+      - `+ tags`
+      - `+ enterprise_project_id`
+  - **UpdateAlarm**
+    - 请求参数变更
+      - `+ condition.filter: enum value [average,variance,min,max,sum]`
+      - `+ condition.period: enum value [0,1,300,1200,3600,14400,86400]`
+      - `+ condition.suppress_duration: enum value [0,300,600,900,1800,3600,10800,21600,43200,86400]`
+  - **ShowAlarm**
+    - 响应参数变更
+      - `+ metric_alarms.effective_timezone`
+      - `- metric_alarms.alarm_type: enum value [EVENT.SYS,EVENT.CUSTOM]`
+      - `* metric_alarms.ok_actions: list<AlarmActions> -> list<NotificationResp>`
+      - `* metric_alarms.insufficientdata_actions: list<AlarmActions> -> list<NotificationResp>`
+      - `+ metric_alarms.condition.filter: enum value [average,variance,min,max,sum]`
+      - `+ metric_alarms.condition.period: enum value [0,1,300,1200,3600,14400,86400]`
+      - `+ metric_alarms.condition.suppress_duration: enum value [0,300,600,900,1800,3600,10800,21600,43200,86400]`
+      - `* metric_alarms.condition: object<Condition> -> object<ConditionResp>`
+      - `* metric_alarms.alarm_actions.notificationList: list<string> -> list<SMNUrnResp>`
+      - `* metric_alarms.alarm_actions: list<AlarmActions> -> list<NotificationResp>`
+      - `* metric_alarms.metric.dimensions: list<MetricsDimension> -> list<DimensionResp>`
+      - `* metric_alarms: list<MetricAlarms> -> list<MetricAlarmsResp>`
+  - **CreateAlarm**
+    - 请求参数变更
+      - `+ alarm_action_begin_time`
+      - `+ alarm_action_end_time`
+      - `- alarm_type: enum value [EVENT.SYS,EVENT.CUSTOM,RESOURCE_GROUP]`
+      - `* insufficientdata_actions: list<AlarmActions> -> list<Notification>`
+      - `* ok_actions: list<AlarmActions> -> list<Notification>`
+      - `+ condition.filter: enum value [average,variance,min,max,sum]`
+      - `+ condition.period: enum value [0,1,300,1200,3600,14400,86400]`
+      - `+ condition.suppress_duration: enum value [0,300,600,900,1800,3600,10800,21600,43200,86400]`
+      - `* alarm_actions.notificationList: list<string> -> list<SMNUrn>`
+      - `* alarm_actions: list<AlarmActions> -> list<Notification>`
+      - `* metric.dimensions: list<MetricsDimension> -> list<Dimension>`
+      - `* metric: object<MetricForAlarm> -> object<CreateAlarmMetric>`
+  - **ListAlarms**
+    - 请求参数变更
+      - `+ enterprise_project_id`
+    - 响应参数变更
+      - `* meta_data: object<MetaData> -> object<MetaDataResp>`
+      - `+ metric_alarms.effective_timezone`
+      - `- metric_alarms.alarm_type: enum value [EVENT.SYS,EVENT.CUSTOM]`
+      - `* metric_alarms.ok_actions: list<AlarmActions> -> list<NotificationResp>`
+      - `* metric_alarms.insufficientdata_actions: list<AlarmActions> -> list<NotificationResp>`
+      - `+ metric_alarms.condition.filter: enum value [average,variance,min,max,sum]`
+      - `+ metric_alarms.condition.period: enum value [0,1,300,1200,3600,14400,86400]`
+      - `+ metric_alarms.condition.suppress_duration: enum value [0,300,600,900,1800,3600,10800,21600,43200,86400]`
+      - `* metric_alarms.condition: object<Condition> -> object<ConditionResp>`
+      - `* metric_alarms.alarm_actions.notificationList: list<string> -> list<SMNUrnResp>`
+      - `* metric_alarms.alarm_actions: list<AlarmActions> -> list<NotificationResp>`
+      - `* metric_alarms.metric.dimensions: list<MetricsDimension> -> list<DimensionResp>`
+      - `* metric_alarms: list<MetricAlarms> -> list<MetricAlarmsResp>`
+  - **ListAlarmHistories**
+    - 请求参数变更
+      - `+ alarm_status: enum value [ok,alarm,insufficient_data,invalid]`
+      - `* alarm_level: string -> int32`
+    - 响应参数变更
+      - `* meta_data: object<MetaDataForAlarmHistory> -> object<MetaDataForAlarmHistoryResp>`
+      - `+ alarm_histories.notification_manner`
+      - `* alarm_histories.ok_actions: list<AlarmActions> -> list<AlarmActionsResp>`
+      - `* alarm_histories.insufficientdata_actions: list<AlarmActions> -> list<AlarmActionsResp>`
+      - `+ alarm_histories.condition.filter: enum value [average,variance,min,max,sum]`
+      - `+ alarm_histories.condition.period: enum value [0,1,300,1200,3600,14400,86400]`
+      - `+ alarm_histories.condition.suppress_duration: enum value [0,300,600,900,1800,3600,10800,21600,43200,86400]`
+      - `* alarm_histories.condition: object<Condition> -> object<ConditionResp>`
+      - `* alarm_histories.alarm_actions: list<AlarmActions> -> list<AlarmActionsResp>`
+      - `* alarm_histories.datapoints: list<DataPointForAlarmHistory> -> list<DataPointForAlarmHistoryResp>`
+      - `* alarm_histories.additional_info: object<AdditionalInfo> -> object<AdditionalInfoResp>`
+      - `* alarm_histories.metric: object<MetricInfo> -> object<MetricInfoResp>`
+      - `* alarm_histories: list<AlarmHistoryInfo> -> list<AlarmHistoryInfoResp>`
+  - **CreateAlarmTemplate**
+    - 请求参数变更
+      - `+ template_items.condition.filter: enum value [average,variance,min,max,sum]`
+      - `+ template_items.condition.period: enum value [0,1,300,1200,3600,14400,86400]`
+      - `+ template_items.condition.suppress_duration: enum value [0,300,600,900,1800,3600,10800,21600,43200,86400]`
+  - **ListAlarmTemplates**
+    - 响应参数变更
+      - `+ alarm_templates.template_items.condition.filter: enum value [average,variance,min,max,sum]`
+      - `+ alarm_templates.template_items.condition.period: enum value [0,1,300,1200,3600,14400,86400]`
+      - `+ alarm_templates.template_items.condition.suppress_duration: enum value [0,300,600,900,1800,3600,10800,21600,43200,86400]`
+  - **ListEventDetail**
+    - 请求参数变更
+      - `+ event_level: enum value [Critical,Major,Info,Minor]`
+      - `+ event_state: enum value [normal,warning,incident]`
+      - `* start: int32 -> int64`
+    - 响应参数变更
+      - `* event_info.detail.dimensions: list<MetricsDimension> -> list<MetricsDimensionResp>`
+      - `* event_info.detail: object<ShowEventItemDetail> -> object<ShowEventItemDetailResp>`
+      - `* event_info: list<EventInfoDetail> -> list<EventInfoDetailResp>`
+
+### HuaweiCloud SDK CES
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchUpdateOneClickAlarmsEnabledState**
+    - 请求参数变更
+      - `- retain_when_all_disabled`
+      - `* body: object<BatchUpdateOneClickAlarmsEnabledStateRequestBody> -> object<BatchEnableAlarmsRequestBody>`
+  - **BatchUpdateOneClickAlarmPoliciesEnabledState**
+    - 请求参数变更
+      - `- retain_when_all_disabled`
+  - **BatchUpdateNotificationMasks**
+    - 请求参数变更
+      - `+ relation_type: enum value [EVENT.SYS]`
+  - **UpdateNotificationMask**
+    - 请求参数变更
+      - `+ relation_type: enum value [EVENT.SYS]`
+  - **ListNotificationMasks**
+    - 响应参数变更
+      - `+ notification_masks.relation_type: enum value [EVENT.SYS]`
+
+### HuaweiCloud SDK LTS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **UpdateStructConfig**
+    - 请求参数变更
+      - `- demo_fields`
+      - `- tag_fields`
+      - `- quick_analysis`
+  - **CreateStructConfig**
+    - 请求参数变更
+      - `- demo_fields`
+      - `- tag_fields`
+      - `- quick_analysis`
+  - **UpdateSqlAlarmRule**
+    - 请求参数变更
+      - `+ tags`
+      - `- sql_alarm_send`
+      - `- sql_alarm_send_code`
+      - `- notification_save_rule`
+  - **CreateSqlAlarmRule**
+    - 请求参数变更
+      - `+ tags`
+      - `- sql_alarm_send`
+      - `- notification_save_rule`
+  - **UpdateKeywordsAlarmRule**
+    - 请求参数变更
+      - `+ tags`
+      - `- keywords_alarm_send`
+      - `- keywords_alarm_send_code`
+      - `- notification_save_rule`
+  - **CreateKeywordsAlarmRule**
+    - 请求参数变更
+      - `+ tags`
+      - `- keywords_alarm_send`
+      - `- notification_save_rule`
+  - **UpdateTransfer**
+    - 请求参数变更
+      - `+ log_group_id`
+      - `+ log_streams`
+  - **ListLogStreamIndex**
+    - 响应参数变更
+      - `+ fields.fieldAnalysisAlias`
+      - `+ fields.ltsSubFieldsInfoList.fieldAnalysisAlias`
+      - `- fields.ltsSubFieldsInfoList.caseSensitive`
+      - `- fields.ltsSubFieldsInfoList.includeChinese`
+      - `- fields.ltsSubFieldsInfoList.tokenizer`
+      - `- fields.ltsSubFieldsInfoList.ascii`
+  - **CreateLogStreamIndex**
+    - 请求参数变更
+      - `+ fastAnalysisSampleCount`
+      - `+ fields.fieldAnalysisAlias`
+      - `+ fields.ltsSubFieldsInfoList.fieldAnalysisAlias`
+      - `- fields.ltsSubFieldsInfoList.caseSensitive`
+      - `- fields.ltsSubFieldsInfoList.includeChinese`
+      - `- fields.ltsSubFieldsInfoList.tokenizer`
+      - `- fields.ltsSubFieldsInfoList.ascii`
+  - **CreateAccessConfig**
+    - 请求参数变更
+      - `+ recursive_depth`
+
+### HuaweiCloud SDK OCR
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **RecognizeVehicleLicense**
+    - 响应参数变更
+      - `+ result.front.alarm_result`
+      - `+ result.front.alarm_confidence`
+      - `+ result.back.alarm_result`
+      - `+ result.back.alarm_confidence`
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`CreateIntelligentKillSession`、`ShowIntelligentKillSessionHistory`、`ListAutoScalingPolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
 # 3.1.170 2025-10-30
 
 ### HuaweiCloud SDK AOS

@@ -190,6 +190,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("ltsSubFieldsInfoList", NullValueHandling = NullValueHandling.Ignore)]
         public List<LTSSubFieldsInfo> LtsSubFieldsInfoList { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 别名，设置别名后，只支持使用别名进行SQL搜索分析，不支持使用别名进行关键字搜索。 **约束限制：**  不涉及。 **取值范围：** 长度不能大于256。 **默认取值：** 不涉及。
+        /// </summary>
+        [JsonProperty("fieldAnalysisAlias", NullValueHandling = NullValueHandling.Ignore)]
+        public string FieldAnalysisAlias { get; set; }
+
 
 
         /// <summary>
@@ -207,6 +213,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  quickAnalysis: ").Append(QuickAnalysis).Append("\n");
             sb.Append("  ascii: ").Append(Ascii).Append("\n");
             sb.Append("  ltsSubFieldsInfoList: ").Append(LtsSubFieldsInfoList).Append("\n");
+            sb.Append("  fieldAnalysisAlias: ").Append(FieldAnalysisAlias).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -233,6 +240,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.QuickAnalysis != input.QuickAnalysis || (this.QuickAnalysis != null && !this.QuickAnalysis.Equals(input.QuickAnalysis))) return false;
             if (this.Ascii != input.Ascii || (this.Ascii != null && input.Ascii != null && !this.Ascii.SequenceEqual(input.Ascii))) return false;
             if (this.LtsSubFieldsInfoList != input.LtsSubFieldsInfoList || (this.LtsSubFieldsInfoList != null && input.LtsSubFieldsInfoList != null && !this.LtsSubFieldsInfoList.SequenceEqual(input.LtsSubFieldsInfoList))) return false;
+            if (this.FieldAnalysisAlias != input.FieldAnalysisAlias || (this.FieldAnalysisAlias != null && !this.FieldAnalysisAlias.Equals(input.FieldAnalysisAlias))) return false;
 
             return true;
         }
@@ -253,6 +261,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.QuickAnalysis != null) hashCode = hashCode * 59 + this.QuickAnalysis.GetHashCode();
                 if (this.Ascii != null) hashCode = hashCode * 59 + this.Ascii.GetHashCode();
                 if (this.LtsSubFieldsInfoList != null) hashCode = hashCode * 59 + this.LtsSubFieldsInfoList.GetHashCode();
+                if (this.FieldAnalysisAlias != null) hashCode = hashCode * 59 + this.FieldAnalysisAlias.GetHashCode();
                 return hashCode;
             }
         }

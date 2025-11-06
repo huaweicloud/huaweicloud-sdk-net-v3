@@ -23,13 +23,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public bool? NotificationEnabled { get; set; }
 
         /// <summary>
-        /// **参数解释**： 触发告警时，通知组/主题订阅的信息。 **取值范围**： 包含的通知信息的数量最多为10个。 
+        /// **参数解释**： 触发告警时，通知组/主题订阅的信息。 
         /// </summary>
         [JsonProperty("alarm_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<NotificationResp> AlarmNotifications { get; set; }
 
         /// <summary>
-        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。 **取值范围**： 包含的通知信息的数量最多为10个。 
+        /// **参数解释**： 告警恢复时，通知组/主题订阅的信息。 
         /// </summary>
         [JsonProperty("ok_notifications", NullValueHandling = NullValueHandling.Ignore)]
         public List<NotificationResp> OkNotifications { get; set; }

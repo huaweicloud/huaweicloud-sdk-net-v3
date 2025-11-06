@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class PushEventsRequest 
     {
         /// <summary>
-        /// 接口请求动作。action&#x3D;clear代表清除告警，不传或者传其他值默认为上报动作。
+        /// 接口请求动作： - 不传或者传其他值：代表上报告警或事件动作。该参数值默认为空，即默认上报告警或事件。 - clear：代表清除告警动作。
         /// </summary>
-        /// <value>接口请求动作。action&#x3D;clear代表清除告警，不传或者传其他值默认为上报动作。</value>
+        /// <value>接口请求动作： - 不传或者传其他值：代表上报告警或事件动作。该参数值默认为空，即默认上报告警或事件。 - clear：代表清除告警动作。</value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -126,14 +126,14 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
 
         /// <summary>
-        /// 告警所属的企业项目id。
+        /// 告警所属的企业项目id。获取方式请参见：[获取企业项目ID](aom_04_0024.xml)。 如果不传该参数值，默认为default企业项目，ID为0。
         /// </summary>
         [SDKProperty("enterprise-project-id", IsHeader = true)]
         [JsonProperty("enterprise-project-id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
         /// <summary>
-        /// 接口请求动作。action&#x3D;clear代表清除告警，不传或者传其他值默认为上报动作。
+        /// 接口请求动作： - 不传或者传其他值：代表上报告警或事件动作。该参数值默认为空，即默认上报告警或事件。 - clear：代表清除告警动作。
         /// </summary>
         [SDKProperty("action", IsQuery = true)]
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]

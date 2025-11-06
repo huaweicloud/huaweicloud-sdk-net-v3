@@ -17,28 +17,28 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 自定义告警模的ID，如：at1603330892378wkDm77y6B。
+        /// 自定义告警模版的ID，如：at1603330892378wkDm77y6B。
         /// </summary>
         [SDKProperty("alarmTemplateId", IsQuery = true)]
         [JsonProperty("alarmTemplateId", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmTemplateId { get; set; }
 
         /// <summary>
-        /// 自定义告警模板选择的资源类型。即命名空间，如弹性云服务器的资源命名空间为：SYS.ECS；各服务命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 自定义告警模板选择的资源类型。即命名空间，如弹性云服务器的资源命名空间为：SYS.ECS；各服务命名空间可查看：“[服务命名空间](ces_03_0059.xml)”。
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 自定义告警模板选择的资源维度，如：弹性云服务器，则维度为instance_id，各资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 自定义告警模板选择的资源维度，如：弹性云服务器，则维度为instance_id，各资源的指标维度名称可查看：“[服务指标维度](ces_03_0059.xml)”。
         /// </summary>
         [SDKProperty("dname", IsQuery = true)]
         [JsonProperty("dname", NullValueHandling = NullValueHandling.Ignore)]
         public string Dname { get; set; }
 
         /// <summary>
-        /// 分页起始值，类型为integer，默认值为0。
+        /// 分页起始位置，值为告警模版的ID，如：at1603330892378wkDm77y6B。
         /// </summary>
         [SDKProperty("start", IsQuery = true)]
         [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]

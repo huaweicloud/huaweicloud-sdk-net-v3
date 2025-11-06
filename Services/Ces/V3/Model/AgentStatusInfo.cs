@@ -155,7 +155,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         [JsonProperty("uniagent_status", NullValueHandling = NullValueHandling.Ignore)]
         public UniagentStatusEnum UniagentStatus { get; set; }
         /// <summary>
-        /// **参数解释**: 插件信息列表 **取值范围**: 数组长度为[1,10] 
+        /// **参数解释**: 插件信息列表 
         /// </summary>
         [JsonProperty("extensions", NullValueHandling = NullValueHandling.Ignore)]
         public List<ExtensionInfo> Extensions { get; set; }

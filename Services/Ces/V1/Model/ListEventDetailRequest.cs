@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     public class ListEventDetailRequest 
     {
         /// <summary>
-        /// 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+        /// **参数解释**： 事件类型。 **约束限制**： 不涉及。 **取值范围**： 值为EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS：系统事件。 - EVENT.CUSTOM：自定义事件。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。</value>
+        /// <value>**参数解释**： 事件类型。 **约束限制**： 不涉及。 **取值范围**： 值为EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS：系统事件。 - EVENT.CUSTOM：自定义事件。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<EventTypeEnum>))]
         public class EventTypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         }
 
         /// <summary>
-        /// 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
+        /// **参数解释**： 事件子类。 **约束限制**： 不涉及。 **取值范围**： 枚举类型 - SUB_EVENT.OPS: 运维事件 - SUB_EVENT.PLAN: 计划事件 - SUB_EVENT.CUSTOM: 自定义事件 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。</value>
+        /// <value>**参数解释**： 事件子类。 **约束限制**： 不涉及。 **取值范围**： 枚举类型 - SUB_EVENT.OPS: 运维事件 - SUB_EVENT.PLAN: 计划事件 - SUB_EVENT.CUSTOM: 自定义事件 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<SubEventTypeEnum>))]
         public class SubEventTypeEnum
         {
@@ -251,77 +251,323 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             }
         }
 
+        /// <summary>
+        /// **参数解释**： 事件的级别。 **约束限制**： 不涉及。 **取值范围**： 值为Critical、Major、Minor、Info。 - Critical: 紧急 - Major: 重要 - Minor: 次要 - Info: 提示 **默认取值**： 不涉及。
+        /// </summary>
+        /// <value>**参数解释**： 事件的级别。 **约束限制**： 不涉及。 **取值范围**： 值为Critical、Major、Minor、Info。 - Critical: 紧急 - Major: 重要 - Minor: 次要 - Info: 提示 **默认取值**： 不涉及。</value>
+        [JsonConverter(typeof(EnumClassConverter<EventLevelEnum>))]
+        public class EventLevelEnum
+        {
+            /// <summary>
+            /// Enum CRITICAL for value: Critical
+            /// </summary>
+            public static readonly EventLevelEnum CRITICAL = new EventLevelEnum("Critical");
+
+            /// <summary>
+            /// Enum MAJOR for value: Major
+            /// </summary>
+            public static readonly EventLevelEnum MAJOR = new EventLevelEnum("Major");
+
+            /// <summary>
+            /// Enum INFO for value: Info
+            /// </summary>
+            public static readonly EventLevelEnum INFO = new EventLevelEnum("Info");
+
+            /// <summary>
+            /// Enum MINOR for value: Minor
+            /// </summary>
+            public static readonly EventLevelEnum MINOR = new EventLevelEnum("Minor");
+
+            private static readonly Dictionary<string, EventLevelEnum> StaticFields =
+            new Dictionary<string, EventLevelEnum>()
+            {
+                { "Critical", CRITICAL },
+                { "Major", MAJOR },
+                { "Info", INFO },
+                { "Minor", MINOR },
+            };
+
+            private string _value;
+
+            public EventLevelEnum()
+            {
+
+            }
+
+            public EventLevelEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static EventLevelEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as EventLevelEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(EventLevelEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(EventLevelEnum a, EventLevelEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(EventLevelEnum a, EventLevelEnum b)
+            {
+                return !(a == b);
+            }
+        }
 
         /// <summary>
-        /// 事件名称。
+        /// **参数解释**： 事件的状态。 **约束限制**： 不涉及。 **取值范围**： 值为normal、warning、incident。 - normal: 正常 - warning: 警告 - incident: 故障 **默认取值**： 不涉及。
+        /// </summary>
+        /// <value>**参数解释**： 事件的状态。 **约束限制**： 不涉及。 **取值范围**： 值为normal、warning、incident。 - normal: 正常 - warning: 警告 - incident: 故障 **默认取值**： 不涉及。</value>
+        [JsonConverter(typeof(EnumClassConverter<EventStateEnum>))]
+        public class EventStateEnum
+        {
+            /// <summary>
+            /// Enum NORMAL for value: normal
+            /// </summary>
+            public static readonly EventStateEnum NORMAL = new EventStateEnum("normal");
+
+            /// <summary>
+            /// Enum WARNING for value: warning
+            /// </summary>
+            public static readonly EventStateEnum WARNING = new EventStateEnum("warning");
+
+            /// <summary>
+            /// Enum INCIDENT for value: incident
+            /// </summary>
+            public static readonly EventStateEnum INCIDENT = new EventStateEnum("incident");
+
+            private static readonly Dictionary<string, EventStateEnum> StaticFields =
+            new Dictionary<string, EventStateEnum>()
+            {
+                { "normal", NORMAL },
+                { "warning", WARNING },
+                { "incident", INCIDENT },
+            };
+
+            private string _value;
+
+            public EventStateEnum()
+            {
+
+            }
+
+            public EventStateEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static EventStateEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as EventStateEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(EventStateEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(EventStateEnum a, EventStateEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(EventStateEnum a, EventStateEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// **参数解释**： 事件名称，值为系统产生的事件名称或用户自定义上报的事件名称。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("event_name", IsPath = true)]
         [JsonProperty("event_name", NullValueHandling = NullValueHandling.Ignore)]
         public string EventName { get; set; }
 
         /// <summary>
-        /// 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+        /// **参数解释**： 事件类型。 **约束限制**： 不涉及。 **取值范围**： 值为EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS：系统事件。 - EVENT.CUSTOM：自定义事件。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("event_type", IsQuery = true)]
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
         public EventTypeEnum EventType { get; set; }
         /// <summary>
-        /// 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
+        /// **参数解释**： 事件子类。 **约束限制**： 不涉及。 **取值范围**： 枚举类型 - SUB_EVENT.OPS: 运维事件 - SUB_EVENT.PLAN: 计划事件 - SUB_EVENT.CUSTOM: 自定义事件 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("sub_event_type", IsQuery = true)]
         [JsonProperty("sub_event_type", NullValueHandling = NullValueHandling.Ignore)]
         public SubEventTypeEnum SubEventType { get; set; }
         /// <summary>
-        /// 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
+        /// **参数解释**： 事件来源，取值为各云服务的命名空间。云服务的命名空间请参考“[支持监控的服务列表](ces_03_0059.xml)”。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,32]个字符。 正则匹配：以字母开头，中间有一个点，包含字母、数字、下划线的字符串。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("event_source", IsQuery = true)]
         [JsonProperty("event_source", NullValueHandling = NullValueHandling.Ignore)]
         public string EventSource { get; set; }
 
         /// <summary>
-        /// 事件的级别，值为Critical，Major，Minor，Info；Critical为紧急，Major为重要，Minor为次要，Info为提示。
+        /// **参数解释**： 事件的级别。 **约束限制**： 不涉及。 **取值范围**： 值为Critical、Major、Minor、Info。 - Critical: 紧急 - Major: 重要 - Minor: 次要 - Info: 提示 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("event_level", IsQuery = true)]
         [JsonProperty("event_level", NullValueHandling = NullValueHandling.Ignore)]
-        public string EventLevel { get; set; }
-
+        public EventLevelEnum EventLevel { get; set; }
         /// <summary>
-        /// 上报事件监控数据时用户的名称，也可为projectID。
+        /// **参数解释**： 上报事件监控数据时用户的名称，也可为projectID。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。 正则匹配：由零个或多个字母、数字、下划线、横线、斜杠、空格、@ 符号或点号组成的字符串。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("event_user", IsQuery = true)]
         [JsonProperty("event_user", NullValueHandling = NullValueHandling.Ignore)]
         public string EventUser { get; set; }
 
         /// <summary>
-        /// 事件的状态，值为normal，warning，incident；normal为正常，warning为警告，incident为故障。
+        /// **参数解释**： 事件的状态。 **约束限制**： 不涉及。 **取值范围**： 值为normal、warning、incident。 - normal: 正常 - warning: 警告 - incident: 故障 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("event_state", IsQuery = true)]
         [JsonProperty("event_state", NullValueHandling = NullValueHandling.Ignore)]
-        public string EventState { get; set; }
-
+        public EventStateEnum EventState { get; set; }
         /// <summary>
-        /// 查询数据起始时间，UNIX时间戳，单位毫秒；例如：1605952700911。
+        /// **参数解释**： 查询数据起始时间，UNIX时间戳，单位毫秒。例如：1605952700911。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("from", IsQuery = true)]
         [JsonProperty("from", NullValueHandling = NullValueHandling.Ignore)]
         public long? From { get; set; }
 
         /// <summary>
-        /// 查询数据截止时间UNIX时间戳，单位毫秒。from必须小于to，例如：1606557500911。
+        /// **参数解释**： 查询数据截止时间，UNIX时间戳，单位毫秒。 **约束限制**： 其中from必须小于to。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [SDKProperty("to", IsQuery = true)]
         [JsonProperty("to", NullValueHandling = NullValueHandling.Ignore)]
         public long? To { get; set; }
 
         /// <summary>
-        /// 分页起始值，类型为integer，默认值为0。
+        /// **参数解释**： 分页起始值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
         /// </summary>
         [SDKProperty("start", IsQuery = true)]
         [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Start { get; set; }
+        public long? Start { get; set; }
 
         /// <summary>
-        /// 单次查询的条数限制，取值范围(0,100]，默认值为100，用于限制结果数据条数。
+        /// **参数解释**： 单次查询的条数限制，用于限制结果数据条数。 **约束限制**： 不涉及。 **取值范围**： 大小为[1,100]的整数 **默认取值**： 100
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -369,9 +615,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             if (this.EventType != input.EventType) return false;
             if (this.SubEventType != input.SubEventType) return false;
             if (this.EventSource != input.EventSource || (this.EventSource != null && !this.EventSource.Equals(input.EventSource))) return false;
-            if (this.EventLevel != input.EventLevel || (this.EventLevel != null && !this.EventLevel.Equals(input.EventLevel))) return false;
+            if (this.EventLevel != input.EventLevel) return false;
             if (this.EventUser != input.EventUser || (this.EventUser != null && !this.EventUser.Equals(input.EventUser))) return false;
-            if (this.EventState != input.EventState || (this.EventState != null && !this.EventState.Equals(input.EventState))) return false;
+            if (this.EventState != input.EventState) return false;
             if (this.From != input.From || (this.From != null && !this.From.Equals(input.From))) return false;
             if (this.To != input.To || (this.To != null && !this.To.Equals(input.To))) return false;
             if (this.Start != input.Start || (this.Start != null && !this.Start.Equals(input.Start))) return false;
@@ -392,9 +638,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                 hashCode = hashCode * 59 + this.EventType.GetHashCode();
                 hashCode = hashCode * 59 + this.SubEventType.GetHashCode();
                 if (this.EventSource != null) hashCode = hashCode * 59 + this.EventSource.GetHashCode();
-                if (this.EventLevel != null) hashCode = hashCode * 59 + this.EventLevel.GetHashCode();
+                hashCode = hashCode * 59 + this.EventLevel.GetHashCode();
                 if (this.EventUser != null) hashCode = hashCode * 59 + this.EventUser.GetHashCode();
-                if (this.EventState != null) hashCode = hashCode * 59 + this.EventState.GetHashCode();
+                hashCode = hashCode * 59 + this.EventState.GetHashCode();
                 if (this.From != null) hashCode = hashCode * 59 + this.From.GetHashCode();
                 if (this.To != null) hashCode = hashCode * 59 + this.To.GetHashCode();
                 if (this.Start != null) hashCode = hashCode * 59 + this.Start.GetHashCode();

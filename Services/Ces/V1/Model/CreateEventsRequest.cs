@@ -21,7 +21,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EventItem> Body { get; set; }
+        public List<CreateEventsRequestBody> Body { get; set; }
 
 
 

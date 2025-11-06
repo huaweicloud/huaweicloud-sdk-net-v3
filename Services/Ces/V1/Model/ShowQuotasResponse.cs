@@ -20,7 +20,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 
         /// </summary>
         [JsonProperty("quotas", NullValueHandling = NullValueHandling.Ignore)]
-        public Quotas Quotas { get; set; }
+        public QuotasResp Quotas { get; set; }
 
 
 

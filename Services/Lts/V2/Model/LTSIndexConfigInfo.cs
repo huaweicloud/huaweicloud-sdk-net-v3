@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("logStreamId", NullValueHandling = NullValueHandling.Ignore)]
         public string LogStreamId { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 快速分析采样日志条数。 **约束限制：** 不涉及。 **取值范围：** 最小值：100000 最大值：10000000 **默认取值：** 100000
+        /// </summary>
+        [JsonProperty("fastAnalysisSampleCount", NullValueHandling = NullValueHandling.Ignore)]
+        public long? FastAnalysisSampleCount { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  fields: ").Append(Fields).Append("\n");
             sb.Append("  sqlAnalysisEnable: ").Append(SqlAnalysisEnable).Append("\n");
             sb.Append("  logStreamId: ").Append(LogStreamId).Append("\n");
+            sb.Append("  fastAnalysisSampleCount: ").Append(FastAnalysisSampleCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.Fields != input.Fields || (this.Fields != null && input.Fields != null && !this.Fields.SequenceEqual(input.Fields))) return false;
             if (this.SqlAnalysisEnable != input.SqlAnalysisEnable || (this.SqlAnalysisEnable != null && !this.SqlAnalysisEnable.Equals(input.SqlAnalysisEnable))) return false;
             if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
+            if (this.FastAnalysisSampleCount != input.FastAnalysisSampleCount || (this.FastAnalysisSampleCount != null && !this.FastAnalysisSampleCount.Equals(input.FastAnalysisSampleCount))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.Fields != null) hashCode = hashCode * 59 + this.Fields.GetHashCode();
                 if (this.SqlAnalysisEnable != null) hashCode = hashCode * 59 + this.SqlAnalysisEnable.GetHashCode();
                 if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                if (this.FastAnalysisSampleCount != null) hashCode = hashCode * 59 + this.FastAnalysisSampleCount.GetHashCode();
                 return hashCode;
             }
         }

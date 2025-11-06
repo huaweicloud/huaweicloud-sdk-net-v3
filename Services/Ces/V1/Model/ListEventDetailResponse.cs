@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     public class ListEventDetailResponse : SdkResponse
     {
         /// <summary>
-        /// 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+        /// **参数解释**： 事件类型。 **取值范围**： 值为EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS: 系统事件。 - EVENT.CUSTOM: 自定义事件。 
         /// </summary>
-        /// <value>事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。</value>
+        /// <value>**参数解释**： 事件类型。 **取值范围**： 值为EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS: 系统事件。 - EVENT.CUSTOM: 自定义事件。 </value>
         [JsonConverter(typeof(EnumClassConverter<EventTypeEnum>))]
         public class EventTypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         }
 
         /// <summary>
-        /// 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
+        /// **参数解释**： 事件子类。 **取值范围**： 枚举类型。 当事件类型为系统事件时，参数值为SUB_EVENT.OPS或SUB_EVENT.PLAN。 当事件类型为自定义事件时，参数值为SUB_EVENT.CUSTOM。 - SUB_EVENT.OPS：运维事件。 - SUB_EVENT.PLAN：计划事件。 - SUB_EVENT.CUSTOM：自定义事件。 
         /// </summary>
-        /// <value>事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。</value>
+        /// <value>**参数解释**： 事件子类。 **取值范围**： 枚举类型。 当事件类型为系统事件时，参数值为SUB_EVENT.OPS或SUB_EVENT.PLAN。 当事件类型为自定义事件时，参数值为SUB_EVENT.CUSTOM。 - SUB_EVENT.OPS：运维事件。 - SUB_EVENT.PLAN：计划事件。 - SUB_EVENT.CUSTOM：自定义事件。 </value>
         [JsonConverter(typeof(EnumClassConverter<SubEventTypeEnum>))]
         public class SubEventTypeEnum
         {
@@ -253,38 +253,38 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
 
 
         /// <summary>
-        /// 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
+        /// **参数解释**： 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("event_name", NullValueHandling = NullValueHandling.Ignore)]
         public string EventName { get; set; }
 
         /// <summary>
-        /// 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+        /// **参数解释**： 事件类型。 **取值范围**： 值为EVENT.SYS或EVENT.CUSTOM。 - EVENT.SYS: 系统事件。 - EVENT.CUSTOM: 自定义事件。 
         /// </summary>
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
         public EventTypeEnum EventType { get; set; }
         /// <summary>
-        /// 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
+        /// **参数解释**： 事件子类。 **取值范围**： 枚举类型。 当事件类型为系统事件时，参数值为SUB_EVENT.OPS或SUB_EVENT.PLAN。 当事件类型为自定义事件时，参数值为SUB_EVENT.CUSTOM。 - SUB_EVENT.OPS：运维事件。 - SUB_EVENT.PLAN：计划事件。 - SUB_EVENT.CUSTOM：自定义事件。 
         /// </summary>
         [JsonProperty("sub_event_type", NullValueHandling = NullValueHandling.Ignore)]
         public SubEventTypeEnum SubEventType { get; set; }
         /// <summary>
-        /// 上报事件时用户的名称，也可能为projectID。
+        /// **参数解释**： 上报事件时用户的名称，也可能为projectID。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("event_users", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EventUsers { get; set; }
 
         /// <summary>
-        /// 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”；如果是自定义事件，则为用户自定义上报定义。
+        /// **参数解释**： 事件来源。 如果是系统事件则值为各服务的命名空间，可查看支持监控的服务列表。如果是自定义事件，则为用户自定义上报定义。 **取值范围**： 不涉及。 
         /// </summary>
         [JsonProperty("event_sources", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> EventSources { get; set; }
 
         /// <summary>
-        /// 一条或者多条事件详细信息。
+        /// **参数解释**： 一条或者多条事件详细信息。 
         /// </summary>
         [JsonProperty("event_info", NullValueHandling = NullValueHandling.Ignore)]
-        public List<EventInfoDetail> EventInfo { get; set; }
+        public List<EventInfoDetailResp> EventInfo { get; set; }
 
         /// <summary>
         /// 

@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// **参数解释** 监控视图图表坐标              **取值范围** 不涉及 
+    /// **参数解释** 监控视图图表坐标 
     /// </summary>
     public class BaseWidgetInfoRespLocation 
     {

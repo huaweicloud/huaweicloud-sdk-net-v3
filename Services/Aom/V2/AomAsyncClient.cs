@@ -138,7 +138,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         /// <summary>
         /// 添加或修改指标类或事件类告警规则
         ///
-        /// 添加或修改AOM2.0指标类或事件类告警规则。(注：接口目前开放的region为：华东-上海一)
+        /// 添加或修改AOM2.0指标类或事件类告警规则。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -232,6 +232,30 @@ namespace HuaweiCloud.SDK.Aom.V2
         }
         
         /// <summary>
+        /// 新增消息通知模板
+        ///
+        /// 该接口用于新增消息通知模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateNotificationTemplateResponse> CreateNotificationTemplateAsync(CreateNotificationTemplateRequest createNotificationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/events/notification/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNotificationTemplateRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateNotificationTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<CreateNotificationTemplateResponse> CreateNotificationTemplateAsyncInvoker(CreateNotificationTemplateRequest createNotificationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/events/notification/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createNotificationTemplateRequest);
+            return new AsyncInvoker<CreateNotificationTemplateResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateNotificationTemplateResponse>);
+        }
+        
+        /// <summary>
         /// 删除告警行动规则
         ///
         /// 删除告警行动规则。
@@ -282,6 +306,30 @@ namespace HuaweiCloud.SDK.Aom.V2
         }
         
         /// <summary>
+        /// 删除告警模板
+        ///
+        /// 该接口用于删除告警模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAlarmRuleTemplateResponse> DeleteAlarmRuleTemplateAsync(DeleteAlarmRuleTemplateRequest deleteAlarmRuleTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/alarm-rules-template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlarmRuleTemplateRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteAlarmRuleTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteAlarmRuleTemplateResponse> DeleteAlarmRuleTemplateAsyncInvoker(DeleteAlarmRuleTemplateRequest deleteAlarmRuleTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/alarm-rules-template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlarmRuleTemplateRequest);
+            return new AsyncInvoker<DeleteAlarmRuleTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAlarmRuleTemplateResponse>);
+        }
+        
+        /// <summary>
         /// 批量删除阈值规则
         ///
         /// 该接口用于批量删除阈值规则
@@ -303,6 +351,58 @@ namespace HuaweiCloud.SDK.Aom.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/alarm-rules/delete", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAlarmRulesRequest);
             return new AsyncInvoker<DeleteAlarmRulesResponse>(this, "POST", request, JsonUtils.DeSerializeNull<DeleteAlarmRulesResponse>);
+        }
+        
+        /// <summary>
+        /// 删除仪表盘
+        ///
+        /// 该接口用于删除仪表盘。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDashboardResponse> DeleteDashboardAsync(DeleteDashboardRequest deleteDashboardRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDashboardRequest.DashboardId, out var valueOfDashboardId)) urlParam.Add("dashboard_id", valueOfDashboardId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/aom/dashboards/{dashboard_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDashboardRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDashboardResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDashboardResponse> DeleteDashboardAsyncInvoker(DeleteDashboardRequest deleteDashboardRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDashboardRequest.DashboardId, out var valueOfDashboardId)) urlParam.Add("dashboard_id", valueOfDashboardId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/aom/dashboards/{dashboard_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDashboardRequest);
+            return new AsyncInvoker<DeleteDashboardResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDashboardResponse>);
+        }
+        
+        /// <summary>
+        /// 删除仪表盘分组
+        ///
+        /// 该接口用于删除仪表盘分组。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteDashboardsFolderResponse> DeleteDashboardsFolderAsync(DeleteDashboardsFolderRequest deleteDashboardsFolderRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDashboardsFolderRequest.FolderId, out var valueOfFolderId)) urlParam.Add("folder_id", valueOfFolderId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/aom/dashboards-folder/{folder_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDashboardsFolderRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDashboardsFolderResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteDashboardsFolderResponse> DeleteDashboardsFolderAsyncInvoker(DeleteDashboardsFolderRequest deleteDashboardsFolderRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDashboardsFolderRequest.FolderId, out var valueOfFolderId)) urlParam.Add("folder_id", valueOfFolderId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/aom/dashboards-folder/{folder_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDashboardsFolderRequest);
+            return new AsyncInvoker<DeleteDashboardsFolderResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDashboardsFolderResponse>);
         }
         
         /// <summary>
@@ -332,7 +432,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         /// <summary>
         /// 删除指标类或事件类告警规则
         ///
-        /// 删除AOM2.0指标类或事件类告警规则。(注：接口目前开放的region为：华东-上海一)
+        /// 删除AOM2.0指标类或事件类告警规则。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -375,6 +475,30 @@ namespace HuaweiCloud.SDK.Aom.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/alert/mute-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteMuteRulesRequest);
             return new AsyncInvoker<DeleteMuteRulesResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteMuteRulesResponse>);
+        }
+        
+        /// <summary>
+        /// 删除消息通知模板
+        ///
+        /// 该接口用于删除消息通知模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteNotificationTemplateResponse> DeleteNotificationTemplateAsync(DeleteNotificationTemplateRequest deleteNotificationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/events/notification/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNotificationTemplateRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteNotificationTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteNotificationTemplateResponse> DeleteNotificationTemplateAsyncInvoker(DeleteNotificationTemplateRequest deleteNotificationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/events/notification/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteNotificationTemplateRequest);
+            return new AsyncInvoker<DeleteNotificationTemplateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteNotificationTemplateResponse>);
         }
         
         /// <summary>
@@ -475,6 +599,85 @@ namespace HuaweiCloud.SDK.Aom.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/alarm-rules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAlarmRuleRequest);
             return new AsyncInvoker<ListAlarmRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAlarmRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询告警模板列表
+        ///
+        /// 该接口用于查询告警模板列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAlarmRuleTemplateResponse> ListAlarmRuleTemplateAsync(ListAlarmRuleTemplateRequest listAlarmRuleTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/alarm-rules-template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAlarmRuleTemplateRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAlarmRuleTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<ListAlarmRuleTemplateResponse> ListAlarmRuleTemplateAsyncInvoker(ListAlarmRuleTemplateRequest listAlarmRuleTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/{project_id}/alarm-rules-template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAlarmRuleTemplateRequest);
+            return new AsyncInvoker<ListAlarmRuleTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAlarmRuleTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 查询仪表盘列表
+        ///
+        /// 该接口用于查询仪表盘列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDashBoardsResponse> ListDashBoardsAsync(ListDashBoardsRequest listDashBoardsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/aom/dashboards", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDashBoardsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDashBoardsResponse>(response);
+        }
+
+        public AsyncInvoker<ListDashBoardsResponse> ListDashBoardsAsyncInvoker(ListDashBoardsRequest listDashBoardsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/aom/dashboards", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDashBoardsRequest);
+            return new AsyncInvoker<ListDashBoardsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDashBoardsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询仪表盘分组列表
+        ///
+        /// 该接口用于查询仪表盘分组列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDashboardsFolderResponse> ListDashboardsFolderAsync(ListDashboardsFolderRequest listDashboardsFolderRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/aom/dashboards-folder", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDashboardsFolderRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listDashboardsFolderResponse = JsonUtils.DeSerializeNull<ListDashboardsFolderResponse>(response);
+            listDashboardsFolderResponse.Body = JsonUtils.DeSerializeList<DashBoardsFolder>(response);
+            return listDashboardsFolderResponse;
+        }
+
+        public AsyncInvoker<ListDashboardsFolderResponse> ListDashboardsFolderAsyncInvoker(ListDashboardsFolderRequest listDashboardsFolderRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/aom/dashboards-folder", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDashboardsFolderRequest);
+            return new AsyncInvoker<ListDashboardsFolderResponse>(this, "GET", request, response =>
+            {
+                var listDashboardsFolderResponse = JsonUtils.DeSerializeNull<ListDashboardsFolderResponse>(response);
+                listDashboardsFolderResponse.Body = JsonUtils.DeSerializeList<DashBoardsFolder>(response);
+                return listDashboardsFolderResponse;
+            });
         }
         
         /// <summary>
@@ -583,7 +786,7 @@ namespace HuaweiCloud.SDK.Aom.V2
         /// <summary>
         /// 查询指标类或者事件类告警规则列表
         ///
-        /// 查询AOM2.0指标类或者事件类告警规则列表。(注：接口目前开放的region为：华东-上海一)
+        /// 查询AOM2.0指标类或者事件类告警规则列表。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -632,6 +835,63 @@ namespace HuaweiCloud.SDK.Aom.V2
                 var listMuteRuleResponse = JsonUtils.DeSerializeNull<ListMuteRuleResponse>(response);
                 listMuteRuleResponse.Body = JsonUtils.DeSerializeList<MuteRule>(response);
                 return listMuteRuleResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 根据消息通知模板名称查询消息通知模板
+        ///
+        /// 该接口用于根据消息通知模板名称查询消息通知模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListNotificationTemplateByNameResponse> ListNotificationTemplateByNameAsync(ListNotificationTemplateByNameRequest listNotificationTemplateByNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listNotificationTemplateByNameRequest.Name, out var valueOfName)) urlParam.Add("name", valueOfName);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/events/notification/template/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNotificationTemplateByNameRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListNotificationTemplateByNameResponse>(response);
+        }
+
+        public AsyncInvoker<ListNotificationTemplateByNameResponse> ListNotificationTemplateByNameAsyncInvoker(ListNotificationTemplateByNameRequest listNotificationTemplateByNameRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listNotificationTemplateByNameRequest.Name, out var valueOfName)) urlParam.Add("name", valueOfName);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/events/notification/template/{name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNotificationTemplateByNameRequest);
+            return new AsyncInvoker<ListNotificationTemplateByNameResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNotificationTemplateByNameResponse>);
+        }
+        
+        /// <summary>
+        /// 查询消息通知模板列表
+        ///
+        /// 该接口用于查询消息通知模板列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListNotificationTemplatesResponse> ListNotificationTemplatesAsync(ListNotificationTemplatesRequest listNotificationTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/events/notification/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNotificationTemplatesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listNotificationTemplatesResponse = JsonUtils.DeSerializeNull<ListNotificationTemplatesResponse>(response);
+            listNotificationTemplatesResponse.Body = JsonUtils.DeSerializeList<NotificationTemplate>(response);
+            return listNotificationTemplatesResponse;
+        }
+
+        public AsyncInvoker<ListNotificationTemplatesResponse> ListNotificationTemplatesAsyncInvoker(ListNotificationTemplatesRequest listNotificationTemplatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/events/notification/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNotificationTemplatesRequest);
+            return new AsyncInvoker<ListNotificationTemplatesResponse>(this, "GET", request, response =>
+            {
+                var listNotificationTemplatesResponse = JsonUtils.DeSerializeNull<ListNotificationTemplatesResponse>(response);
+                listNotificationTemplatesResponse.Body = JsonUtils.DeSerializeList<NotificationTemplate>(response);
+                return listNotificationTemplatesResponse;
             });
         }
         
@@ -756,9 +1016,9 @@ namespace HuaweiCloud.SDK.Aom.V2
         }
         
         /// <summary>
-        /// 上报事件告警信息
+        /// 上报事件或告警信息
         ///
-        /// 该接口用于上报对应用户的事件、告警。
+        /// 该接口用于上报事件或告警至AOM，同时支持清除告警信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -829,6 +1089,32 @@ namespace HuaweiCloud.SDK.Aom.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/alarm-rules/{alarm_rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlarmRuleRequest);
             return new AsyncInvoker<ShowAlarmRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAlarmRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 查询仪表盘详情
+        ///
+        /// 该接口用于查询仪表盘详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDashBoardResponse> ShowDashBoardAsync(ShowDashBoardRequest showDashBoardRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDashBoardRequest.DashboardId, out var valueOfDashboardId)) urlParam.Add("dashboard_id", valueOfDashboardId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/aom/dashboards/{dashboard_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDashBoardRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDashBoardResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDashBoardResponse> ShowDashBoardAsyncInvoker(ShowDashBoardRequest showDashBoardRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDashBoardRequest.DashboardId, out var valueOfDashboardId)) urlParam.Add("dashboard_id", valueOfDashboardId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/aom/dashboards/{dashboard_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDashBoardRequest);
+            return new AsyncInvoker<ShowDashBoardResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDashBoardResponse>);
         }
         
         /// <summary>
@@ -952,6 +1238,30 @@ namespace HuaweiCloud.SDK.Aom.V2
         }
         
         /// <summary>
+        /// 修改消息通知模板
+        ///
+        /// 该接口用于修改消息通知模板。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateNotificationTemplateResponse> UpdateNotificationTemplateAsync(UpdateNotificationTemplateRequest updateNotificationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/events/notification/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNotificationTemplateRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateNotificationTemplateResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateNotificationTemplateResponse> UpdateNotificationTemplateAsyncInvoker(UpdateNotificationTemplateRequest updateNotificationTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/events/notification/templates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNotificationTemplateRequest);
+            return new AsyncInvoker<UpdateNotificationTemplateResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateNotificationTemplateResponse>);
+        }
+        
+        /// <summary>
         /// 新增Prometheus实例
         ///
         /// 该接口用于新增Prometheus实例。
@@ -1014,7 +1324,9 @@ namespace HuaweiCloud.SDK.Aom.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aom/prometheus", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePromInstanceRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeletePromInstanceResponse>(response);
+            var deletePromInstanceResponse = JsonUtils.DeSerializeNull<DeletePromInstanceResponse>(response);
+            deletePromInstanceResponse.Body = JsonUtils.DeSerializeMap<string, bool?>(response);
+            return deletePromInstanceResponse;
         }
 
         public AsyncInvoker<DeletePromInstanceResponse> DeletePromInstanceAsyncInvoker(DeletePromInstanceRequest deletePromInstanceRequest)
@@ -1022,7 +1334,12 @@ namespace HuaweiCloud.SDK.Aom.V2
             var urlParam = new Dictionary<string, string>();
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aom/prometheus", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deletePromInstanceRequest);
-            return new AsyncInvoker<DeletePromInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeletePromInstanceResponse>);
+            return new AsyncInvoker<DeletePromInstanceResponse>(this, "DELETE", request, response =>
+            {
+                var deletePromInstanceResponse = JsonUtils.DeSerializeNull<DeletePromInstanceResponse>(response);
+                deletePromInstanceResponse.Body = JsonUtils.DeSerializeMap<string, bool?>(response);
+                return deletePromInstanceResponse;
+            });
         }
         
         /// <summary>
@@ -1265,6 +1582,30 @@ namespace HuaweiCloud.SDK.Aom.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aom/api/v1/query_range", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRangeQueryAomPromPostRequest);
             return new AsyncInvoker<ListRangeQueryAomPromPostResponse>(this, "POST", request, JsonUtils.DeSerialize<ListRangeQueryAomPromPostResponse>);
+        }
+        
+        /// <summary>
+        /// 修改Prometheus实例
+        ///
+        /// 该接口用于修改Prometheus实例。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdatePromInstanceResponse> UpdatePromInstanceAsync(UpdatePromInstanceRequest updatePromInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aom/prometheus", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePromInstanceRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdatePromInstanceResponse>(response);
+        }
+
+        public AsyncInvoker<UpdatePromInstanceResponse> UpdatePromInstanceAsyncInvoker(UpdatePromInstanceRequest updatePromInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aom/prometheus", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updatePromInstanceRequest);
+            return new AsyncInvoker<UpdatePromInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdatePromInstanceResponse>);
         }
         
     }

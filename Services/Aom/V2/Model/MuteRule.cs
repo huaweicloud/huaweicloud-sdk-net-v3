@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Aom.V2.Model
 {
     /// <summary>
-    /// 静默规则
+    /// 静默规则。
     /// </summary>
     public class MuteRule 
     {
 
         /// <summary>
-        /// 创建时间
+        /// 创建时间。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// 规则描述
+        /// 规则描述。
         /// </summary>
         [JsonProperty("desc", NullValueHandling = NullValueHandling.Ignore)]
         public string Desc { get; set; }
@@ -47,19 +47,19 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 时区
+        /// 时区。
         /// </summary>
         [JsonProperty("timezone", NullValueHandling = NullValueHandling.Ignore)]
         public string Timezone { get; set; }
 
         /// <summary>
-        /// 修改时间
+        /// 修改时间。
         /// </summary>
         [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? UpdateTime { get; set; }
 
         /// <summary>
-        /// 用户ID
+        /// 用户ID。
         /// </summary>
         [JsonProperty("user_id", NullValueHandling = NullValueHandling.Ignore)]
         public string UserId { get; set; }

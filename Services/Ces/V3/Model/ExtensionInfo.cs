@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
 
 
         /// <summary>
-        /// **参数解释**: 插件名称 **取值范围**: 数组长度为[1,64] 
+        /// **参数解释**: 插件名称 **取值范围**: 长度为[1,64]个字符 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -161,7 +161,7 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
         /// <summary>
-        /// **参数解释**: 插件版本 **取值范围**: 数组长度为[1,32] 
+        /// **参数解释**: 插件版本 **取值范围**: 长度为[1,32]个字符 
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }

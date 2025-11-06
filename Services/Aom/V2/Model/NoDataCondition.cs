@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class NoDataCondition 
     {
         /// <summary>
-        /// 数据不足时，阈值规则的状态。 - “no_data”：数据不足并发送通知 - “alerting”：告警 - “ok”：正常 - “pre_state”：保持上一个状态
+        /// 数据不足时，阈值规则的状态。（当\&quot;notify_no_data\&quot;为true时，该参数必填，当\&quot;notify_no_data\&quot;为false时，该参数为空） - “no_data”：数据不足并发送通知 - “alerting”：告警 - “ok”：正常 - “pre_state”：保持上一个状态
         /// </summary>
-        /// <value>数据不足时，阈值规则的状态。 - “no_data”：数据不足并发送通知 - “alerting”：告警 - “ok”：正常 - “pre_state”：保持上一个状态</value>
+        /// <value>数据不足时，阈值规则的状态。（当\&quot;notify_no_data\&quot;为true时，该参数必填，当\&quot;notify_no_data\&quot;为false时，该参数为空） - “no_data”：数据不足并发送通知 - “alerting”：告警 - “ok”：正常 - “pre_state”：保持上一个状态</value>
         [JsonConverter(typeof(EnumClassConverter<NoDataAlertStateEnum>))]
         public class NoDataAlertStateEnum
         {
@@ -144,18 +144,18 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
 
 
         /// <summary>
-        /// 无数据周期的个数。
+        /// 无数据处理连续周期。取值范围为1~5。（当\&quot;notify_no_data\&quot;为true时，该参数必填，当\&quot;notify_no_data\&quot;为false时，该参数为空）
         /// </summary>
         [JsonProperty("no_data_timeframe", NullValueHandling = NullValueHandling.Ignore)]
         public int? NoDataTimeframe { get; set; }
 
         /// <summary>
-        /// 数据不足时，阈值规则的状态。 - “no_data”：数据不足并发送通知 - “alerting”：告警 - “ok”：正常 - “pre_state”：保持上一个状态
+        /// 数据不足时，阈值规则的状态。（当\&quot;notify_no_data\&quot;为true时，该参数必填，当\&quot;notify_no_data\&quot;为false时，该参数为空） - “no_data”：数据不足并发送通知 - “alerting”：告警 - “ok”：正常 - “pre_state”：保持上一个状态
         /// </summary>
         [JsonProperty("no_data_alert_state", NullValueHandling = NullValueHandling.Ignore)]
         public NoDataAlertStateEnum NoDataAlertState { get; set; }
         /// <summary>
-        /// 数据不足是否通知。
+        /// 无数据处理开关。true表示启用无数据处理，false表示关闭无数据处理。
         /// </summary>
         [JsonProperty("notify_no_data", NullValueHandling = NullValueHandling.Ignore)]
         public bool? NotifyNoData { get; set; }

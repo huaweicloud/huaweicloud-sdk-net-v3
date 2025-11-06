@@ -16,6 +16,121 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     public class EventInfo 
     {
         /// <summary>
+        /// 枚举类型 EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，EVENT.CUSTOM为自定义事件
+        /// </summary>
+        /// <value>枚举类型 EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，EVENT.CUSTOM为自定义事件</value>
+        [JsonConverter(typeof(EnumClassConverter<EventTypeEnum>))]
+        public class EventTypeEnum
+        {
+            /// <summary>
+            /// Enum EVENT_SYS for value: EVENT.SYS
+            /// </summary>
+            public static readonly EventTypeEnum EVENT_SYS = new EventTypeEnum("EVENT.SYS");
+
+            /// <summary>
+            /// Enum EVENT_CUSTOM for value: EVENT.CUSTOM
+            /// </summary>
+            public static readonly EventTypeEnum EVENT_CUSTOM = new EventTypeEnum("EVENT.CUSTOM");
+
+            private static readonly Dictionary<string, EventTypeEnum> StaticFields =
+            new Dictionary<string, EventTypeEnum>()
+            {
+                { "EVENT.SYS", EVENT_SYS },
+                { "EVENT.CUSTOM", EVENT_CUSTOM },
+            };
+
+            private string _value;
+
+            public EventTypeEnum()
+            {
+
+            }
+
+            public EventTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static EventTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as EventTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(EventTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(EventTypeEnum a, EventTypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(EventTypeEnum a, EventTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
         /// 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
         /// </summary>
         /// <value>事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。</value>
@@ -144,11 +259,10 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public string EventName { get; set; }
 
         /// <summary>
-        /// 事件类型。
+        /// 枚举类型 EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，EVENT.CUSTOM为自定义事件
         /// </summary>
         [JsonProperty("event_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string EventType { get; set; }
-
+        public EventTypeEnum EventType { get; set; }
         /// <summary>
         /// 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。
         /// </summary>
@@ -167,7 +281,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         public long? LatestOccurTime { get; set; }
 
         /// <summary>
-        /// 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”；如果是自定义事件，则为用户自定义上报定义。
+        /// 事件来源，如果是系统事件则值为各服务的命名空间，各服务的命名空间可查看：“[服务命名空间](ces_03_0059.xml)”；如果是自定义事件，则为用户自定义上报定义。
         /// </summary>
         [JsonProperty("latest_event_source", NullValueHandling = NullValueHandling.Ignore)]
         public string LatestEventSource { get; set; }
@@ -206,7 +320,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             if (input == null) return false;
             if (this.EventName != input.EventName || (this.EventName != null && !this.EventName.Equals(input.EventName))) return false;
-            if (this.EventType != input.EventType || (this.EventType != null && !this.EventType.Equals(input.EventType))) return false;
+            if (this.EventType != input.EventType) return false;
             if (this.SubEventType != input.SubEventType) return false;
             if (this.EventCount != input.EventCount || (this.EventCount != null && !this.EventCount.Equals(input.EventCount))) return false;
             if (this.LatestOccurTime != input.LatestOccurTime || (this.LatestOccurTime != null && !this.LatestOccurTime.Equals(input.LatestOccurTime))) return false;
@@ -224,7 +338,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             {
                 var hashCode = 41;
                 if (this.EventName != null) hashCode = hashCode * 59 + this.EventName.GetHashCode();
-                if (this.EventType != null) hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                hashCode = hashCode * 59 + this.EventType.GetHashCode();
                 hashCode = hashCode * 59 + this.SubEventType.GetHashCode();
                 if (this.EventCount != null) hashCode = hashCode * 59 + this.EventCount.GetHashCode();
                 if (this.LatestOccurTime != null) hashCode = hashCode * 59 + this.LatestOccurTime.GetHashCode();

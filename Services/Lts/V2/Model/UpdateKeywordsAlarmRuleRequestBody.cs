@@ -143,133 +143,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         }
 
         /// <summary>
-        /// 发送主题 0:不变 1:新增 2:修改 3:删除
-        /// </summary>
-        /// <value>发送主题 0:不变 1:新增 2:修改 3:删除</value>
-        [JsonConverter(typeof(EnumClassConverter<KeywordsAlarmSendCodeEnum>))]
-        public class KeywordsAlarmSendCodeEnum
-        {
-            /// <summary>
-            /// Enum NUMBER_0 for value: 0
-            /// </summary>
-            public static readonly KeywordsAlarmSendCodeEnum NUMBER_0 = new KeywordsAlarmSendCodeEnum(0);
-
-            /// <summary>
-            /// Enum NUMBER_1 for value: 1
-            /// </summary>
-            public static readonly KeywordsAlarmSendCodeEnum NUMBER_1 = new KeywordsAlarmSendCodeEnum(1);
-
-            /// <summary>
-            /// Enum NUMBER_2 for value: 2
-            /// </summary>
-            public static readonly KeywordsAlarmSendCodeEnum NUMBER_2 = new KeywordsAlarmSendCodeEnum(2);
-
-            /// <summary>
-            /// Enum NUMBER_3 for value: 3
-            /// </summary>
-            public static readonly KeywordsAlarmSendCodeEnum NUMBER_3 = new KeywordsAlarmSendCodeEnum(3);
-
-            private static readonly Dictionary<int?, KeywordsAlarmSendCodeEnum> StaticFields =
-            new Dictionary<int?, KeywordsAlarmSendCodeEnum>()
-            {
-                { 0, NUMBER_0 },
-                { 1, NUMBER_1 },
-                { 2, NUMBER_2 },
-                { 3, NUMBER_3 },
-            };
-
-            private int? _value;
-
-            public KeywordsAlarmSendCodeEnum()
-            {
-
-            }
-
-            public KeywordsAlarmSendCodeEnum(int? value)
-            {
-                _value = value;
-            }
-
-            public static KeywordsAlarmSendCodeEnum FromValue(int? value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public int? GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as KeywordsAlarmSendCodeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(KeywordsAlarmSendCodeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(KeywordsAlarmSendCodeEnum a, KeywordsAlarmSendCodeEnum b)
-            {
-                if (ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(KeywordsAlarmSendCodeEnum a, KeywordsAlarmSendCodeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 通知频率,单位(分钟)
         /// </summary>
         /// <value>通知频率,单位(分钟)</value>
@@ -463,27 +336,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("keywords_alarm_level", NullValueHandling = NullValueHandling.Ignore)]
         public KeywordsAlarmLevelEnum KeywordsAlarmLevel { get; set; }
         /// <summary>
-        /// 是否发送
-        /// </summary>
-        [JsonProperty("keywords_alarm_send", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? KeywordsAlarmSend { get; set; }
-
-        /// <summary>
-        /// 发送主题 0:不变 1:新增 2:修改 3:删除
-        /// </summary>
-        [JsonProperty("keywords_alarm_send_code", NullValueHandling = NullValueHandling.Ignore)]
-        public KeywordsAlarmSendCodeEnum KeywordsAlarmSendCode { get; set; }
-        /// <summary>
         /// domainId
         /// </summary>
         [JsonProperty("domain_id", NullValueHandling = NullValueHandling.Ignore)]
         public string DomainId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("notification_save_rule", NullValueHandling = NullValueHandling.Ignore)]
-        public SqlNotificationSaveRule NotificationSaveRule { get; set; }
 
         /// <summary>
         /// 触发条件：触发次数;默认为1
@@ -520,6 +376,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("alarm_action_rule_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmActionRuleName { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 告警标签信息。标签是以键值对（key-value）的形式表示，key和value为一一对应关系。 **约束限制：** 不涉及。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TagsRequestBody> Tags { get; set; }
+
 
 
         /// <summary>
@@ -536,16 +398,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  keywordsRequests: ").Append(KeywordsRequests).Append("\n");
             sb.Append("  frequency: ").Append(Frequency).Append("\n");
             sb.Append("  keywordsAlarmLevel: ").Append(KeywordsAlarmLevel).Append("\n");
-            sb.Append("  keywordsAlarmSend: ").Append(KeywordsAlarmSend).Append("\n");
-            sb.Append("  keywordsAlarmSendCode: ").Append(KeywordsAlarmSendCode).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
-            sb.Append("  notificationSaveRule: ").Append(NotificationSaveRule).Append("\n");
             sb.Append("  triggerConditionCount: ").Append(TriggerConditionCount).Append("\n");
             sb.Append("  triggerConditionFrequency: ").Append(TriggerConditionFrequency).Append("\n");
             sb.Append("  whetherRecoveryPolicy: ").Append(WhetherRecoveryPolicy).Append("\n");
             sb.Append("  recoveryPolicy: ").Append(RecoveryPolicy).Append("\n");
             sb.Append("  notificationFrequency: ").Append(NotificationFrequency).Append("\n");
             sb.Append("  alarmActionRuleName: ").Append(AlarmActionRuleName).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -571,16 +431,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.KeywordsRequests != input.KeywordsRequests || (this.KeywordsRequests != null && input.KeywordsRequests != null && !this.KeywordsRequests.SequenceEqual(input.KeywordsRequests))) return false;
             if (this.Frequency != input.Frequency || (this.Frequency != null && !this.Frequency.Equals(input.Frequency))) return false;
             if (this.KeywordsAlarmLevel != input.KeywordsAlarmLevel) return false;
-            if (this.KeywordsAlarmSend != input.KeywordsAlarmSend || (this.KeywordsAlarmSend != null && !this.KeywordsAlarmSend.Equals(input.KeywordsAlarmSend))) return false;
-            if (this.KeywordsAlarmSendCode != input.KeywordsAlarmSendCode) return false;
             if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
-            if (this.NotificationSaveRule != input.NotificationSaveRule || (this.NotificationSaveRule != null && !this.NotificationSaveRule.Equals(input.NotificationSaveRule))) return false;
             if (this.TriggerConditionCount != input.TriggerConditionCount || (this.TriggerConditionCount != null && !this.TriggerConditionCount.Equals(input.TriggerConditionCount))) return false;
             if (this.TriggerConditionFrequency != input.TriggerConditionFrequency || (this.TriggerConditionFrequency != null && !this.TriggerConditionFrequency.Equals(input.TriggerConditionFrequency))) return false;
             if (this.WhetherRecoveryPolicy != input.WhetherRecoveryPolicy || (this.WhetherRecoveryPolicy != null && !this.WhetherRecoveryPolicy.Equals(input.WhetherRecoveryPolicy))) return false;
             if (this.RecoveryPolicy != input.RecoveryPolicy || (this.RecoveryPolicy != null && !this.RecoveryPolicy.Equals(input.RecoveryPolicy))) return false;
             if (this.NotificationFrequency != input.NotificationFrequency) return false;
             if (this.AlarmActionRuleName != input.AlarmActionRuleName || (this.AlarmActionRuleName != null && !this.AlarmActionRuleName.Equals(input.AlarmActionRuleName))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -600,16 +458,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.KeywordsRequests != null) hashCode = hashCode * 59 + this.KeywordsRequests.GetHashCode();
                 if (this.Frequency != null) hashCode = hashCode * 59 + this.Frequency.GetHashCode();
                 hashCode = hashCode * 59 + this.KeywordsAlarmLevel.GetHashCode();
-                if (this.KeywordsAlarmSend != null) hashCode = hashCode * 59 + this.KeywordsAlarmSend.GetHashCode();
-                hashCode = hashCode * 59 + this.KeywordsAlarmSendCode.GetHashCode();
                 if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.NotificationSaveRule != null) hashCode = hashCode * 59 + this.NotificationSaveRule.GetHashCode();
                 if (this.TriggerConditionCount != null) hashCode = hashCode * 59 + this.TriggerConditionCount.GetHashCode();
                 if (this.TriggerConditionFrequency != null) hashCode = hashCode * 59 + this.TriggerConditionFrequency.GetHashCode();
                 if (this.WhetherRecoveryPolicy != null) hashCode = hashCode * 59 + this.WhetherRecoveryPolicy.GetHashCode();
                 if (this.RecoveryPolicy != null) hashCode = hashCode * 59 + this.RecoveryPolicy.GetHashCode();
                 hashCode = hashCode * 59 + this.NotificationFrequency.GetHashCode();
                 if (this.AlarmActionRuleName != null) hashCode = hashCode * 59 + this.AlarmActionRuleName.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

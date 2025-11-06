@@ -999,14 +999,24 @@ var client = VpcClient.NewBuilder()
     .Build();
 ```
 
-2、使用 .NET Framework 4.7 集成 .NET SDK，发生死锁问题
+2、ASP.NET MVC/WinForms/WPF项目 集成 .NET SDK，发生死锁问题
 
-【问题现象】：使用 **同步客户端** 调用某接口，任务启动后程序挂死，无任何报错信息，也不会超时退出
+【问题现象】使用 **同步客户端** 调用某接口，任务启动后程序挂死，无任何报错信息，也不会超时退出
 
-【问题原因】：.NET SDK 内部 **同步客户端** 发送请求的实现是先发送 **异步** 请求，然后等待异步任务返回。在此场景下，.Net Framework UI 的线程上下文和 SDK 的异步任务上下文发生了**死锁**，导致
-SDK 的异步任务无法启动。[原文链接](https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
+【问题原因】SDK底层使用`System.Net.Http.HttpClient`发送**异步请求**，在拥有**同步上下文**的环境中，**同步方法调用异步方法并等待**会导致**死锁**。
 
-【解决方案】：**将同步客户端切换成异步客户端**，从 UI 事件到 API 请求均为异步就不会存在死锁问题，以下为MVC和WPF解决方案的示例：
+常见的同步上下文环境：
+- **WinForms** - WindowsFormsSynchronizationContext
+- **WPF** - DispatcherSynchronizationContext
+- **ASP.NET** - AspNetSynchronizationContext
+
+【参考文档】
+
+- [不要阻塞异步代码](https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
+- [C#异步编程指南以及async/await的最佳实践](https://learn.microsoft.com/zh-cn/dotnet/csharp/asynchronous-programming/)
+- [官方推荐的异步编程模式](https://learn.microsoft.com/zh-cn/dotnet/csharp/asynchronous-programming/task-asynchronous-programming-model)
+
+【解决方案】**将同步客户端切换成异步客户端**，从 UI 事件到 API 请求均为异步就不会存在死锁问题，以下为MVC和WPF解决方案的示例：
 
 MVC
 

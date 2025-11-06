@@ -16,16 +16,21 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     public class ShowMetricDataRequest 
     {
         /// <summary>
-        /// 数据聚合方式。支持的值为max, min, average, sum, variance。
+        /// 聚合方式。average：平均值，variance：方差，min：最小值，max：最大值，sum：求和。
         /// </summary>
-        /// <value>数据聚合方式。支持的值为max, min, average, sum, variance。</value>
+        /// <value>聚合方式。average：平均值，variance：方差，min：最小值，max：最大值，sum：求和。</value>
         [JsonConverter(typeof(EnumClassConverter<FilterEnum>))]
         public class FilterEnum
         {
             /// <summary>
-            /// Enum MAX for value: max
+            /// Enum AVERAGE for value: average
             /// </summary>
-            public static readonly FilterEnum MAX = new FilterEnum("max");
+            public static readonly FilterEnum AVERAGE = new FilterEnum("average");
+
+            /// <summary>
+            /// Enum VARIANCE for value: variance
+            /// </summary>
+            public static readonly FilterEnum VARIANCE = new FilterEnum("variance");
 
             /// <summary>
             /// Enum MIN for value: min
@@ -33,28 +38,23 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             public static readonly FilterEnum MIN = new FilterEnum("min");
 
             /// <summary>
-            /// Enum AVERAGE for value: average
+            /// Enum MAX for value: max
             /// </summary>
-            public static readonly FilterEnum AVERAGE = new FilterEnum("average");
+            public static readonly FilterEnum MAX = new FilterEnum("max");
 
             /// <summary>
             /// Enum SUM for value: sum
             /// </summary>
             public static readonly FilterEnum SUM = new FilterEnum("sum");
 
-            /// <summary>
-            /// Enum VARIANCE for value: variance
-            /// </summary>
-            public static readonly FilterEnum VARIANCE = new FilterEnum("variance");
-
             private static readonly Dictionary<string, FilterEnum> StaticFields =
             new Dictionary<string, FilterEnum>()
             {
-                { "max", MAX },
-                { "min", MIN },
                 { "average", AVERAGE },
-                { "sum", SUM },
                 { "variance", VARIANCE },
+                { "min", MIN },
+                { "max", MAX },
+                { "sum", SUM },
             };
 
             private string _value;
@@ -148,62 +148,206 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             }
         }
 
+        /// <summary>
+        /// 指标监控数据的聚合粒度，取值范围：1，60，300，1200，3600，14400，86400；1为监控资源的实时数据；60为聚合1分钟粒度数据，表示1分钟一个数据点；300为聚合5分钟粒度数据，表示5分钟一个数据点；1200为聚合20分钟粒度数据，表示20分钟一个数据点；3600为聚合1小时粒度数据，表示1小时一个数据点；14400为聚合4小时粒度数据，表示4小时一个数据点；86400为聚合1天粒度数据，表示1天一个数据点；聚合解释可查看：“[聚合含义](https://support.huaweicloud.com/ces_faq/ces_faq_0009.html)”。
+        /// </summary>
+        /// <value>指标监控数据的聚合粒度，取值范围：1，60，300，1200，3600，14400，86400；1为监控资源的实时数据；60为聚合1分钟粒度数据，表示1分钟一个数据点；300为聚合5分钟粒度数据，表示5分钟一个数据点；1200为聚合20分钟粒度数据，表示20分钟一个数据点；3600为聚合1小时粒度数据，表示1小时一个数据点；14400为聚合4小时粒度数据，表示4小时一个数据点；86400为聚合1天粒度数据，表示1天一个数据点；聚合解释可查看：“[聚合含义](https://support.huaweicloud.com/ces_faq/ces_faq_0009.html)”。</value>
+        [JsonConverter(typeof(EnumClassConverter<PeriodEnum>))]
+        public class PeriodEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_1 = new PeriodEnum(1);
+
+            /// <summary>
+            /// Enum NUMBER_60 for value: 60
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_60 = new PeriodEnum(60);
+
+            /// <summary>
+            /// Enum NUMBER_300 for value: 300
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_300 = new PeriodEnum(300);
+
+            /// <summary>
+            /// Enum NUMBER_1200 for value: 1200
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_1200 = new PeriodEnum(1200);
+
+            /// <summary>
+            /// Enum NUMBER_3600 for value: 3600
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_3600 = new PeriodEnum(3600);
+
+            /// <summary>
+            /// Enum NUMBER_14400 for value: 14400
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_14400 = new PeriodEnum(14400);
+
+            /// <summary>
+            /// Enum NUMBER_86400 for value: 86400
+            /// </summary>
+            public static readonly PeriodEnum NUMBER_86400 = new PeriodEnum(86400);
+
+            private static readonly Dictionary<int?, PeriodEnum> StaticFields =
+            new Dictionary<int?, PeriodEnum>()
+            {
+                { 1, NUMBER_1 },
+                { 60, NUMBER_60 },
+                { 300, NUMBER_300 },
+                { 1200, NUMBER_1200 },
+                { 3600, NUMBER_3600 },
+                { 14400, NUMBER_14400 },
+                { 86400, NUMBER_86400 },
+            };
+
+            private int? _value;
+
+            public PeriodEnum()
+            {
+
+            }
+
+            public PeriodEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static PeriodEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as PeriodEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(PeriodEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(PeriodEnum a, PeriodEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(PeriodEnum a, PeriodEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 指标命名空间，如：弹性云服务器的命名空间为SYS.ECS，文档数据库的命名空间为SYS.DDS，各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 指标命名空间，如：弹性云服务器的命名空间为SYS.ECS，文档数据库的命名空间为SYS.DDS，各服务的命名空间可查看：“[服务命名空间](ces_03_0059.xml)”。
         /// </summary>
         [SDKProperty("namespace", IsQuery = true)]
         [JsonProperty("namespace", NullValueHandling = NullValueHandling.Ignore)]
         public string Namespace { get; set; }
 
         /// <summary>
-        /// 资源的监控指标名称，如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 资源的监控指标名称，如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务的指标名称可查看：“[服务指标名称](ces_03_0059.xml)”。
         /// </summary>
         [SDKProperty("metric_name", IsQuery = true)]
         [JsonProperty("metric_name", NullValueHandling = NullValueHandling.Ignore)]
         public string MetricName { get; set; }
 
         /// <summary>
-        /// 指标的第一层维度，目前最大支持4个维度，维度编号从0开始；维度格式为dim.0&#x3D;key,value，如mongodb_cluster_id,4270ff17-aba3-4138-89fa-820594c39755；key为指标的维度信息，如：文档数据库服务，则第一层维度为mongodb_cluster_id，value为文档数据库实例ID；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 指标的第一层维度，目前最大支持4个维度，维度编号从0开始；维度格式为dim.0&#x3D;key,value，如mongodb_cluster_id,4270ff17-aba3-4138-89fa-820594c39755；key为指标的维度信息，如：文档数据库服务，则第一层维度为mongodb_cluster_id，value为文档数据库实例ID；各服务资源的指标维度名称可查看：“[服务指标维度](ces_03_0059.xml)”。
         /// </summary>
         [SDKProperty("dim.0", IsQuery = true)]
         [JsonProperty("dim.0", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim0 { get; set; }
 
         /// <summary>
-        /// 指标的第二层维度，目前最大支持4个维度，维度编号从0开始；维度格式为dim.1&#x3D;key,value，如mongos_instance_id,c65d39d7-185c-4616-9aca-ad65703b15f9；key为指标的维度信息，如：文档数据库服务，则第二层维度为mongos_instance_id，value为文档数据库集群实例下的mongos节点ID；各资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 指标的第二层维度，目前最大支持4个维度，维度编号从0开始；维度格式为dim.1&#x3D;key,value，如mongos_instance_id,c65d39d7-185c-4616-9aca-ad65703b15f9；key为指标的维度信息，如：文档数据库服务，则第二层维度为mongos_instance_id，value为文档数据库集群实例下的mongos节点ID；各资源的指标维度名称可查看：“[服务指标维度](ces_03_0059.xml)”。
         /// </summary>
         [SDKProperty("dim.1", IsQuery = true)]
         [JsonProperty("dim.1", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim1 { get; set; }
 
         /// <summary>
-        /// 指标的第三层维度，目前最大支持4个维度，维度编号从0开始；维度格式为dim.2&#x3D;key,value，如mongod_primary_instance_id,5f9498e9-36f8-4317-9ea1-ebe28cba99b4；key为指标的维度信息，如：文档数据库服务，则第三层维度为mongod_primary_instance_id，value为文档数据库实例下的主节点ID；各资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 指标的第三层维度，目前最大支持4个维度，维度编号从0开始；维度格式为dim.2&#x3D;key,value，如mongod_primary_instance_id,5f9498e9-36f8-4317-9ea1-ebe28cba99b4；key为指标的维度信息，如：文档数据库服务，则第三层维度为mongod_primary_instance_id，value为文档数据库实例下的主节点ID；各资源的指标维度名称可查看：“[服务指标维度]ces_03_0059.xml)”。
         /// </summary>
         [SDKProperty("dim.2", IsQuery = true)]
         [JsonProperty("dim.2", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim2 { get; set; }
 
         /// <summary>
-        /// 指标的第四层维度，目前最大支持4个维度，维度编号从0开始；维度格式为dim.3&#x3D;key,value，如mongod_secondary_instance_id,b46fa2c7-aac6-4ae3-9337-f4ea97f885cb；key为指标的维度信息，如：文档数据库服务，则第四层维度为mongod_secondary_instance_id，value为文档数据库实例下的备节点ID；各资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+        /// 指标的第四层维度，目前最大支持4个维度，维度编号从0开始；维度格式为dim.3&#x3D;key,value，如mongod_secondary_instance_id,b46fa2c7-aac6-4ae3-9337-f4ea97f885cb；key为指标的维度信息，如：文档数据库服务，则第四层维度为mongod_secondary_instance_id，value为文档数据库实例下的备节点ID；各资源的指标维度名称可查看：“[服务指标维度](ces_03_0059.xml)”。
         /// </summary>
         [SDKProperty("dim.3", IsQuery = true)]
         [JsonProperty("dim.3", NullValueHandling = NullValueHandling.Ignore)]
         public string Dim3 { get; set; }
 
         /// <summary>
-        /// 数据聚合方式。支持的值为max, min, average, sum, variance。
+        /// 聚合方式。average：平均值，variance：方差，min：最小值，max：最大值，sum：求和。
         /// </summary>
         [SDKProperty("filter", IsQuery = true)]
         [JsonProperty("filter", NullValueHandling = NullValueHandling.Ignore)]
         public FilterEnum Filter { get; set; }
         /// <summary>
-        /// 指标监控数据的聚合粒度，取值范围：1，300，1200，3600，14400，86400；1为监控资源的实时数据；300为聚合5分钟粒度数据，表示5分钟一个数据点；1200为聚合20分钟粒度数据，表示20分钟一个数据点；3600为聚合1小时粒度数据，表示1小时一个数据点；14400为聚合4小时粒度数据，表示4小时一个数据点；86400为聚合1天粒度数据，表示1天一个数据点；聚合解释可查看：“[聚合含义](https://support.huaweicloud.com/ces_faq/ces_faq_0009.html)”。
+        /// 指标监控数据的聚合粒度，取值范围：1，60，300，1200，3600，14400，86400；1为监控资源的实时数据；60为聚合1分钟粒度数据，表示1分钟一个数据点；300为聚合5分钟粒度数据，表示5分钟一个数据点；1200为聚合20分钟粒度数据，表示20分钟一个数据点；3600为聚合1小时粒度数据，表示1小时一个数据点；14400为聚合4小时粒度数据，表示4小时一个数据点；86400为聚合1天粒度数据，表示1天一个数据点；聚合解释可查看：“[聚合含义](https://support.huaweicloud.com/ces_faq/ces_faq_0009.html)”。
         /// </summary>
         [SDKProperty("period", IsQuery = true)]
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Period { get; set; }
-
+        public PeriodEnum Period { get; set; }
         /// <summary>
         /// 查询数据起始时间，UNIX时间戳，单位毫秒。建议from的值相对于当前时间向前偏移至少1个周期。由于聚合运算的过程是将一个聚合周期范围内的数据点聚合到周期起始边界上，如果将from和to的范围设置在聚合周期内，会因为聚合未完成而造成查询数据为空，所以建议from参数相对于当前时间向前偏移至少1个周期。以5分钟聚合周期为例：假设当前时间点为10:35，10:30~10:35之间的原始数据会被聚合到10:30这个点上，所以查询5分钟数据点时from参数应为10:30或之前。云监控会根据所选择的聚合粒度向前取整from参数；如：1607146998177。
         /// </summary>
@@ -262,7 +406,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
             if (this.Dim2 != input.Dim2 || (this.Dim2 != null && !this.Dim2.Equals(input.Dim2))) return false;
             if (this.Dim3 != input.Dim3 || (this.Dim3 != null && !this.Dim3.Equals(input.Dim3))) return false;
             if (this.Filter != input.Filter) return false;
-            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.Period != input.Period) return false;
             if (this.From != input.From || (this.From != null && !this.From.Equals(input.From))) return false;
             if (this.To != input.To || (this.To != null && !this.To.Equals(input.To))) return false;
 
@@ -284,7 +428,7 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
                 if (this.Dim2 != null) hashCode = hashCode * 59 + this.Dim2.GetHashCode();
                 if (this.Dim3 != null) hashCode = hashCode * 59 + this.Dim3.GetHashCode();
                 hashCode = hashCode * 59 + this.Filter.GetHashCode();
-                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                hashCode = hashCode * 59 + this.Period.GetHashCode();
                 if (this.From != null) hashCode = hashCode * 59 + this.From.GetHashCode();
                 if (this.To != null) hashCode = hashCode * 59 + this.To.GetHashCode();
                 return hashCode;

@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public BatchUpdateOneClickAlarmsEnabledStateRequestBody Body { get; set; }
+        public BatchEnableAlarmsRequestBody Body { get; set; }
 
 
 

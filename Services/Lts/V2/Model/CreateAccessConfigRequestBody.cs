@@ -244,6 +244,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("access_config_type_source", NullValueHandling = NullValueHandling.Ignore)]
         public string AccessConfigTypeSource { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 采集路径递归最大深度。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("recursive_depth", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RecursiveDepth { get; set; }
+
 
 
         /// <summary>
@@ -272,6 +278,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  environmentId: ").Append(EnvironmentId).Append("\n");
             sb.Append("  componentId: ").Append(ComponentId).Append("\n");
             sb.Append("  accessConfigTypeSource: ").Append(AccessConfigTypeSource).Append("\n");
+            sb.Append("  recursiveDepth: ").Append(RecursiveDepth).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -309,6 +316,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.EnvironmentId != input.EnvironmentId || (this.EnvironmentId != null && !this.EnvironmentId.Equals(input.EnvironmentId))) return false;
             if (this.ComponentId != input.ComponentId || (this.ComponentId != null && input.ComponentId != null && !this.ComponentId.SequenceEqual(input.ComponentId))) return false;
             if (this.AccessConfigTypeSource != input.AccessConfigTypeSource || (this.AccessConfigTypeSource != null && !this.AccessConfigTypeSource.Equals(input.AccessConfigTypeSource))) return false;
+            if (this.RecursiveDepth != input.RecursiveDepth || (this.RecursiveDepth != null && !this.RecursiveDepth.Equals(input.RecursiveDepth))) return false;
 
             return true;
         }
@@ -340,6 +348,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.EnvironmentId != null) hashCode = hashCode * 59 + this.EnvironmentId.GetHashCode();
                 if (this.ComponentId != null) hashCode = hashCode * 59 + this.ComponentId.GetHashCode();
                 if (this.AccessConfigTypeSource != null) hashCode = hashCode * 59 + this.AccessConfigTypeSource.GetHashCode();
+                if (this.RecursiveDepth != null) hashCode = hashCode * 59 + this.RecursiveDepth.GetHashCode();
                 return hashCode;
             }
         }

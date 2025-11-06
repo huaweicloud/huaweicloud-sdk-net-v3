@@ -957,6 +957,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询自动变配策略
+        ///
+        /// 查询自动变配策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutoScalingPolicyResponse> ListAutoScalingPolicyAsync(ListAutoScalingPolicyRequest listAutoScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listAutoScalingPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-scaling/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutoScalingPolicyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListAutoScalingPolicyResponse>(response);
+        }
+
+        public AsyncInvoker<ListAutoScalingPolicyResponse> ListAutoScalingPolicyAsyncInvoker(ListAutoScalingPolicyRequest listAutoScalingPolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listAutoScalingPolicyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-scaling/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutoScalingPolicyRequest);
+            return new AsyncInvoker<ListAutoScalingPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAutoScalingPolicyResponse>);
+        }
+        
+        /// <summary>
         /// 查询转储任务列表
         ///
         /// 查询转储任务列表
@@ -5969,6 +5995,32 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 一键kill会话
+        ///
+        /// 一键kill会话
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateIntelligentKillSessionResponse> CreateIntelligentKillSessionAsync(CreateIntelligentKillSessionRequest createIntelligentKillSessionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createIntelligentKillSessionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops/intelligent-kill-session", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createIntelligentKillSessionRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<CreateIntelligentKillSessionResponse>(response);
+        }
+
+        public AsyncInvoker<CreateIntelligentKillSessionResponse> CreateIntelligentKillSessionAsyncInvoker(CreateIntelligentKillSessionRequest createIntelligentKillSessionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createIntelligentKillSessionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops/intelligent-kill-session", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createIntelligentKillSessionRequest);
+            return new AsyncInvoker<CreateIntelligentKillSessionResponse>(this, "PUT", request, JsonUtils.DeSerialize<CreateIntelligentKillSessionResponse>);
+        }
+        
+        /// <summary>
         /// 查询无索引表诊断数据
         ///
         /// 查询无索引表诊断数据
@@ -5992,6 +6044,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/no-index-tables", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getInstancesNoIndexTablesRequest);
             return new AsyncInvoker<GetInstancesNoIndexTablesResponse>(this, "GET", request, JsonUtils.DeSerializeNull<GetInstancesNoIndexTablesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询一键kill会话历史
+        ///
+        /// 查询一键kill会话历史
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowIntelligentKillSessionHistoryResponse> ShowIntelligentKillSessionHistoryAsync(ShowIntelligentKillSessionHistoryRequest showIntelligentKillSessionHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showIntelligentKillSessionHistoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops/intelligent-kill-session/history", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIntelligentKillSessionHistoryRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowIntelligentKillSessionHistoryResponse>(response);
+        }
+
+        public AsyncInvoker<ShowIntelligentKillSessionHistoryResponse> ShowIntelligentKillSessionHistoryAsyncInvoker(ShowIntelligentKillSessionHistoryRequest showIntelligentKillSessionHistoryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showIntelligentKillSessionHistoryRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ops/intelligent-kill-session/history", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showIntelligentKillSessionHistoryRequest);
+            return new AsyncInvoker<ShowIntelligentKillSessionHistoryResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowIntelligentKillSessionHistoryResponse>);
         }
         
         /// <summary>

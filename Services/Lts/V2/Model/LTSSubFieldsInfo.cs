@@ -149,34 +149,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string FieldName { get; set; }
 
         /// <summary>
-        /// 是否大小写敏感
-        /// </summary>
-        [JsonProperty("caseSensitive", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? CaseSensitive { get; set; }
-
-        /// <summary>
-        /// 是否包含中文
-        /// </summary>
-        [JsonProperty("includeChinese", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IncludeChinese { get; set; }
-
-        /// <summary>
-        /// 分词符
-        /// </summary>
-        [JsonProperty("tokenizer", NullValueHandling = NullValueHandling.Ignore)]
-        public string Tokenizer { get; set; }
-
-        /// <summary>
         /// 是否快速分析
         /// </summary>
         [JsonProperty("quickAnalysis", NullValueHandling = NullValueHandling.Ignore)]
         public bool? QuickAnalysis { get; set; }
 
         /// <summary>
-        /// 特殊分词符
+        /// **参数解释：** 别名，设置别名后，只支持使用别名进行SQL搜索分析，不支持使用别名进行关键字搜索。 **约束限制：** 不涉及。 **取值范围：** 长度不能大于256。 **默认取值：** 不涉及。
         /// </summary>
-        [JsonProperty("ascii", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> Ascii { get; set; }
+        [JsonProperty("fieldAnalysisAlias", NullValueHandling = NullValueHandling.Ignore)]
+        public string FieldAnalysisAlias { get; set; }
 
 
 
@@ -189,11 +171,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("class LTSSubFieldsInfo {\n");
             sb.Append("  fieldType: ").Append(FieldType).Append("\n");
             sb.Append("  fieldName: ").Append(FieldName).Append("\n");
-            sb.Append("  caseSensitive: ").Append(CaseSensitive).Append("\n");
-            sb.Append("  includeChinese: ").Append(IncludeChinese).Append("\n");
-            sb.Append("  tokenizer: ").Append(Tokenizer).Append("\n");
             sb.Append("  quickAnalysis: ").Append(QuickAnalysis).Append("\n");
-            sb.Append("  ascii: ").Append(Ascii).Append("\n");
+            sb.Append("  fieldAnalysisAlias: ").Append(FieldAnalysisAlias).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -214,11 +193,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (input == null) return false;
             if (this.FieldType != input.FieldType) return false;
             if (this.FieldName != input.FieldName || (this.FieldName != null && !this.FieldName.Equals(input.FieldName))) return false;
-            if (this.CaseSensitive != input.CaseSensitive || (this.CaseSensitive != null && !this.CaseSensitive.Equals(input.CaseSensitive))) return false;
-            if (this.IncludeChinese != input.IncludeChinese || (this.IncludeChinese != null && !this.IncludeChinese.Equals(input.IncludeChinese))) return false;
-            if (this.Tokenizer != input.Tokenizer || (this.Tokenizer != null && !this.Tokenizer.Equals(input.Tokenizer))) return false;
             if (this.QuickAnalysis != input.QuickAnalysis || (this.QuickAnalysis != null && !this.QuickAnalysis.Equals(input.QuickAnalysis))) return false;
-            if (this.Ascii != input.Ascii || (this.Ascii != null && input.Ascii != null && !this.Ascii.SequenceEqual(input.Ascii))) return false;
+            if (this.FieldAnalysisAlias != input.FieldAnalysisAlias || (this.FieldAnalysisAlias != null && !this.FieldAnalysisAlias.Equals(input.FieldAnalysisAlias))) return false;
 
             return true;
         }
@@ -233,11 +209,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.FieldType.GetHashCode();
                 if (this.FieldName != null) hashCode = hashCode * 59 + this.FieldName.GetHashCode();
-                if (this.CaseSensitive != null) hashCode = hashCode * 59 + this.CaseSensitive.GetHashCode();
-                if (this.IncludeChinese != null) hashCode = hashCode * 59 + this.IncludeChinese.GetHashCode();
-                if (this.Tokenizer != null) hashCode = hashCode * 59 + this.Tokenizer.GetHashCode();
                 if (this.QuickAnalysis != null) hashCode = hashCode * 59 + this.QuickAnalysis.GetHashCode();
-                if (this.Ascii != null) hashCode = hashCode * 59 + this.Ascii.GetHashCode();
+                if (this.FieldAnalysisAlias != null) hashCode = hashCode * 59 + this.FieldAnalysisAlias.GetHashCode();
                 return hashCode;
             }
         }

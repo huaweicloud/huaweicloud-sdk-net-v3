@@ -176,19 +176,19 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// 告警触发的动作。 结构样例如下： { \&quot;type\&quot;: \&quot;notification\&quot;,\&quot;notificationList\&quot;: [\&quot;urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\&quot;] } type取值： notification：通知。 autoscaling：弹性伸缩。
         /// </summary>
         [JsonProperty("alarm_actions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AlarmActions> AlarmActions { get; set; }
+        public List<List<Notification>> AlarmActions { get; set; }
 
         /// <summary>
         /// 数据不足触发的动作（该参数已废弃，建议无需配置）。
         /// </summary>
         [JsonProperty("insufficientdata_actions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AlarmActions> InsufficientdataActions { get; set; }
+        public List<List<Notification>> InsufficientdataActions { get; set; }
 
         /// <summary>
         /// 告警恢复触发的动作
         /// </summary>
         [JsonProperty("ok_actions", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AlarmActions> OkActions { get; set; }
+        public List<List<Notification>> OkActions { get; set; }
 
 
 

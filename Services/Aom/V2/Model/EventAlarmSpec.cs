@@ -155,13 +155,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public List<EventTriggerCondition> TriggerConditions { get; set; }
 
         /// <summary>
-        /// 是否绑定告警规则模版（废弃）。
+        /// 是否绑定告警模板（废弃）。
         /// </summary>
         [JsonProperty("alarm_rule_template_bind_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? AlarmRuleTemplateBindEnable { get; set; }
 
         /// <summary>
-        /// 告警规则模版id（废弃）。
+        /// 告警模板id（废弃）。
         /// </summary>
         [JsonProperty("alarm_rule_template_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmRuleTemplateId { get; set; }

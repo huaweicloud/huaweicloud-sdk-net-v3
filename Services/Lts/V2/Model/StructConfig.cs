@@ -160,24 +160,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         [JsonProperty("template_type", NullValueHandling = NullValueHandling.Ignore)]
         public TemplateTypeEnum TemplateType { get; set; }
-        /// <summary>
-        /// 示例字段数组，只需要填写与模板中is_analysis状态不同的字段
-        /// </summary>
-        [JsonProperty("demo_fields", NullValueHandling = NullValueHandling.Ignore)]
-        public List<FieldModel> DemoFields { get; set; }
-
-        /// <summary>
-        /// Tag字段数组，只需要填写与模板中is_analysis状态不同的字段
-        /// </summary>
-        [JsonProperty("tag_fields", NullValueHandling = NullValueHandling.Ignore)]
-        public List<FieldModel> TagFields { get; set; }
-
-        /// <summary>
-        /// 是否开启demo_fields和tag_fields快速分析,为true时，所有的demo_fields和tag_fields全部字段均打开快速分析;不填或者为false，以模板中的demo_fields和tag_fields中的is_analysis决定是否开启快速分析。
-        /// </summary>
-        [JsonProperty("quick_analysis", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? QuickAnalysis { get; set; }
-
 
 
         /// <summary>
@@ -192,9 +174,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  templateId: ").Append(TemplateId).Append("\n");
             sb.Append("  templateName: ").Append(TemplateName).Append("\n");
             sb.Append("  templateType: ").Append(TemplateType).Append("\n");
-            sb.Append("  demoFields: ").Append(DemoFields).Append("\n");
-            sb.Append("  tagFields: ").Append(TagFields).Append("\n");
-            sb.Append("  quickAnalysis: ").Append(QuickAnalysis).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -218,9 +197,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
             if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
             if (this.TemplateType != input.TemplateType) return false;
-            if (this.DemoFields != input.DemoFields || (this.DemoFields != null && input.DemoFields != null && !this.DemoFields.SequenceEqual(input.DemoFields))) return false;
-            if (this.TagFields != input.TagFields || (this.TagFields != null && input.TagFields != null && !this.TagFields.SequenceEqual(input.TagFields))) return false;
-            if (this.QuickAnalysis != input.QuickAnalysis || (this.QuickAnalysis != null && !this.QuickAnalysis.Equals(input.QuickAnalysis))) return false;
 
             return true;
         }
@@ -238,9 +214,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
                 if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
                 hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
-                if (this.DemoFields != null) hashCode = hashCode * 59 + this.DemoFields.GetHashCode();
-                if (this.TagFields != null) hashCode = hashCode * 59 + this.TagFields.GetHashCode();
-                if (this.QuickAnalysis != null) hashCode = hashCode * 59 + this.QuickAnalysis.GetHashCode();
                 return hashCode;
             }
         }

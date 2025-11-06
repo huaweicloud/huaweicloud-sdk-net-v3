@@ -623,7 +623,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         public bool? EnableLegend { get; set; }
 
         /// <summary>
-        /// 大屏展示视图数量, 可以取得值必须与console页面可选值保持一致
+        /// 大屏展示视图数量, 可以取的值必须与console页面可选值保持一致
         /// </summary>
         [JsonProperty("full_screen_widget_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? FullScreenWidgetNum { get; set; }

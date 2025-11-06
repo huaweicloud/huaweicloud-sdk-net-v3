@@ -23,10 +23,22 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string LogTransferId { get; set; }
 
         /// <summary>
+        /// 日志组ID
+        /// </summary>
+        [JsonProperty("log_group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string LogGroupId { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("log_transfer_info", NullValueHandling = NullValueHandling.Ignore)]
         public UpdateTransferRequestBodyLogTransferInfo LogTransferInfo { get; set; }
+
+        /// <summary>
+        /// 日志流信息
+        /// </summary>
+        [JsonProperty("log_streams", NullValueHandling = NullValueHandling.Ignore)]
+        public List<LogStreams> LogStreams { get; set; }
 
 
 
@@ -38,7 +50,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateTransferRequestBody {\n");
             sb.Append("  logTransferId: ").Append(LogTransferId).Append("\n");
+            sb.Append("  logGroupId: ").Append(LogGroupId).Append("\n");
             sb.Append("  logTransferInfo: ").Append(LogTransferInfo).Append("\n");
+            sb.Append("  logStreams: ").Append(LogStreams).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -58,7 +72,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             if (input == null) return false;
             if (this.LogTransferId != input.LogTransferId || (this.LogTransferId != null && !this.LogTransferId.Equals(input.LogTransferId))) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
             if (this.LogTransferInfo != input.LogTransferInfo || (this.LogTransferInfo != null && !this.LogTransferInfo.Equals(input.LogTransferInfo))) return false;
+            if (this.LogStreams != input.LogStreams || (this.LogStreams != null && input.LogStreams != null && !this.LogStreams.SequenceEqual(input.LogStreams))) return false;
 
             return true;
         }
@@ -72,7 +88,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             {
                 var hashCode = 41;
                 if (this.LogTransferId != null) hashCode = hashCode * 59 + this.LogTransferId.GetHashCode();
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
                 if (this.LogTransferInfo != null) hashCode = hashCode * 59 + this.LogTransferInfo.GetHashCode();
+                if (this.LogStreams != null) hashCode = hashCode * 59 + this.LogStreams.GetHashCode();
                 return hashCode;
             }
         }

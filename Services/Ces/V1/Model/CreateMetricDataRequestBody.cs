@@ -1,0 +1,116 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Ces.V1.Model
+{
+    /// <summary>
+    /// 添加一条或多条自定义指标监控数据，请求参数。
+    /// </summary>
+    public class CreateMetricDataRequestBody 
+    {
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metric", NullValueHandling = NullValueHandling.Ignore)]
+        public MetricInfo Metric { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 数据的有效期，超出该有效期则自动删除该数据，单位秒。 **约束限制**： 不涉及。 **取值范围**： 大小为[1,604800]的整数。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("ttl", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Ttl { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 数据收集时间 。UNIX时间戳，单位毫秒。 **约束限制**： 不涉及。 **取值范围**： 因为客户端到服务器端有延时，因此插入数据的时间戳应该在[当前时间-3天+10秒，当前时间+10分钟-10秒]区间内，保证到达服务器时不会因为传输时延造成数据不能插入数据库。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("collect_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? CollectTime { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 待添加的监控指标数据的值。 **约束限制**： 不涉及。 **取值范围**： 数值类型支持“整数”或“浮点数”。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Value { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 数据的单位。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,32]个字符。 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("unit", NullValueHandling = NullValueHandling.Ignore)]
+        public string Unit { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 数据类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值，只能是\&quot;int\&quot;或\&quot;float\&quot;。 - int：整数 - float：浮点数 **默认取值**： 不涉及。 
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class CreateMetricDataRequestBody {\n");
+            sb.Append("  metric: ").Append(Metric).Append("\n");
+            sb.Append("  ttl: ").Append(Ttl).Append("\n");
+            sb.Append("  collectTime: ").Append(CollectTime).Append("\n");
+            sb.Append("  value: ").Append(Value).Append("\n");
+            sb.Append("  unit: ").Append(Unit).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as CreateMetricDataRequestBody);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(CreateMetricDataRequestBody input)
+        {
+            if (input == null) return false;
+            if (this.Metric != input.Metric || (this.Metric != null && !this.Metric.Equals(input.Metric))) return false;
+            if (this.Ttl != input.Ttl || (this.Ttl != null && !this.Ttl.Equals(input.Ttl))) return false;
+            if (this.CollectTime != input.CollectTime || (this.CollectTime != null && !this.CollectTime.Equals(input.CollectTime))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.Metric != null) hashCode = hashCode * 59 + this.Metric.GetHashCode();
+                if (this.Ttl != null) hashCode = hashCode * 59 + this.Ttl.GetHashCode();
+                if (this.CollectTime != null) hashCode = hashCode * 59 + this.CollectTime.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

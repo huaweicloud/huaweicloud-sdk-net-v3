@@ -17,16 +17,16 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 一条或者多条告警历史详细信息
+        /// **参数解释**： 一条或者多条告警历史详细信息 
         /// </summary>
         [JsonProperty("alarm_histories", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AlarmHistoryInfo> AlarmHistories { get; set; }
+        public List<AlarmHistoryInfoResp> AlarmHistories { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty("meta_data", NullValueHandling = NullValueHandling.Ignore)]
-        public MetaDataForAlarmHistory MetaData { get; set; }
+        public MetaDataForAlarmHistoryResp MetaData { get; set; }
 
 
 

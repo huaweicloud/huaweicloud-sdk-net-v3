@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string ActionId { get; set; }
 
         /// <summary>
-        /// 企业项目id。 - 查询单个企业项目下实例，填写企业项目id。  - 查询所有企业项目下实例，填写“all_granted_eps”。
+        /// 企业项目id。获取方式请参见：[获取企业项目ID](aom_04_0024.xml) 。 - 查询单个企业项目下实例，填写企业项目id。  - 查询所有企业项目下实例，填写“all_granted_eps”。
         /// </summary>
         [SDKProperty("Enterprise-Project-Id", IsHeader = true)]
         [JsonProperty("Enterprise-Project-Id", NullValueHandling = NullValueHandling.Ignore)]

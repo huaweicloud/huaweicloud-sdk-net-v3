@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
     {
 
         /// <summary>
-        /// 告警对象列表。
+        /// **参数解释**： 告警对象列表。 
         /// </summary>
         [JsonProperty("metric_alarms", NullValueHandling = NullValueHandling.Ignore)]
-        public List<MetricAlarms> MetricAlarms { get; set; }
+        public List<MetricAlarmsResp> MetricAlarms { get; set; }
 
 
 

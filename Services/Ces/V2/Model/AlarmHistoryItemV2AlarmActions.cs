@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
     public class AlarmHistoryItemV2AlarmActions 
     {
         /// <summary>
-        /// **参数解释**： 通知类型。 **取值范围**： 枚举值。notification为SMN通知，contact为云账号联系人，contactGroup为通知组。autoscaling为AS通知，只在AS中使用，不推荐客户使用。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。 
+        /// **参数解释**： 通知类型。 **取值范围**： 枚举值。notification为通知组或者主题订阅，contact为云账号联系人，contactGroup为（已废弃）通知组。autoscaling为AS通知，只在AS中使用，不推荐客户使用。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。 
         /// </summary>
-        /// <value>**参数解释**： 通知类型。 **取值范围**： 枚举值。notification为SMN通知，contact为云账号联系人，contactGroup为通知组。autoscaling为AS通知，只在AS中使用，不推荐客户使用。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。 </value>
+        /// <value>**参数解释**： 通知类型。 **取值范围**： 枚举值。notification为通知组或者主题订阅，contact为云账号联系人，contactGroup为（已废弃）通知组。autoscaling为AS通知，只在AS中使用，不推荐客户使用。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。 </value>
         [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
         public class TypeEnum
         {
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
 
 
         /// <summary>
-        /// **参数解释**： 通知类型。 **取值范围**： 枚举值。notification为SMN通知，contact为云账号联系人，contactGroup为通知组。autoscaling为AS通知，只在AS中使用，不推荐客户使用。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。 
+        /// **参数解释**： 通知类型。 **取值范围**： 枚举值。notification为通知组或者主题订阅，contact为云账号联系人，contactGroup为（已废弃）通知组。autoscaling为AS通知，只在AS中使用，不推荐客户使用。groupwatch、ecsRecovery及iecAction，已废弃，不推荐使用。 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public TypeEnum Type { get; set; }

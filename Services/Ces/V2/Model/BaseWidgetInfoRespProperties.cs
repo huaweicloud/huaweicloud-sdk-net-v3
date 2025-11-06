@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ces.V2.Model
 {
     /// <summary>
-    /// **参数解释** 额外信息 **取值范围** 不涉及 
+    /// **参数解释** 额外信息 
     /// </summary>
     public class BaseWidgetInfoRespProperties 
     {

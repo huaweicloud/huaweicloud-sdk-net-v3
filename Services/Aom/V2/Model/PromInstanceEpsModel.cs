@@ -16,157 +16,6 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
     public class PromInstanceEpsModel 
     {
         /// <summary>
-        /// Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
-        /// </summary>
-        /// <value>Prometheus实例类型（暂时不支持VPC、KUBERNETES）。</value>
-        [JsonConverter(typeof(EnumClassConverter<PromTypeEnum>))]
-        public class PromTypeEnum
-        {
-            /// <summary>
-            /// Enum DEFAULT for value: default
-            /// </summary>
-            public static readonly PromTypeEnum DEFAULT = new PromTypeEnum("default");
-
-            /// <summary>
-            /// Enum ECS for value: ECS
-            /// </summary>
-            public static readonly PromTypeEnum ECS = new PromTypeEnum("ECS");
-
-            /// <summary>
-            /// Enum VPC for value: VPC
-            /// </summary>
-            public static readonly PromTypeEnum VPC = new PromTypeEnum("VPC");
-
-            /// <summary>
-            /// Enum CCE for value: CCE
-            /// </summary>
-            public static readonly PromTypeEnum CCE = new PromTypeEnum("CCE");
-
-            /// <summary>
-            /// Enum REMOTE_WRITE for value: REMOTE_WRITE
-            /// </summary>
-            public static readonly PromTypeEnum REMOTE_WRITE = new PromTypeEnum("REMOTE_WRITE");
-
-            /// <summary>
-            /// Enum KUBERNETES for value: KUBERNETES
-            /// </summary>
-            public static readonly PromTypeEnum KUBERNETES = new PromTypeEnum("KUBERNETES");
-
-            /// <summary>
-            /// Enum CLOUD_SERVICE for value: CLOUD_SERVICE
-            /// </summary>
-            public static readonly PromTypeEnum CLOUD_SERVICE = new PromTypeEnum("CLOUD_SERVICE");
-
-            /// <summary>
-            /// Enum ACROSS_ACCOUNT for value: ACROSS_ACCOUNT
-            /// </summary>
-            public static readonly PromTypeEnum ACROSS_ACCOUNT = new PromTypeEnum("ACROSS_ACCOUNT");
-
-            private static readonly Dictionary<string, PromTypeEnum> StaticFields =
-            new Dictionary<string, PromTypeEnum>()
-            {
-                { "default", DEFAULT },
-                { "ECS", ECS },
-                { "VPC", VPC },
-                { "CCE", CCE },
-                { "REMOTE_WRITE", REMOTE_WRITE },
-                { "KUBERNETES", KUBERNETES },
-                { "CLOUD_SERVICE", CLOUD_SERVICE },
-                { "ACROSS_ACCOUNT", ACROSS_ACCOUNT },
-            };
-
-            private string _value;
-
-            public PromTypeEnum()
-            {
-
-            }
-
-            public PromTypeEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static PromTypeEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as PromTypeEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(PromTypeEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(PromTypeEnum a, PromTypeEnum b)
-            {
-                if (ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(PromTypeEnum a, PromTypeEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// Prometheus实例状态。
         /// </summary>
         /// <value>Prometheus实例状态。</value>
@@ -301,10 +150,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         public string PromId { get; set; }
 
         /// <summary>
-        /// Prometheus实例类型（暂时不支持VPC、KUBERNETES）。
+        /// Prometheus实例类型。  - default：默认普罗实例 - ECS：Prometheus for ECS - CCE：Prometheus for CCE - REMOTE_WRITE：Prometheus 通用实例 - CLOUD_SERVICE：Prometheus for 云服务 - ACROSS_ACCOUNT：Prometheus for 多账号聚合实例 （暂不支持ACROSS_ACCOUNT类型）
         /// </summary>
         [JsonProperty("prom_type", NullValueHandling = NullValueHandling.Ignore)]
-        public PromTypeEnum PromType { get; set; }
+        public string PromType { get; set; }
+
         /// <summary>
         /// Prometheus实例版本号。
         /// </summary>
@@ -364,6 +214,24 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         [JsonProperty("cce_spec_config", NullValueHandling = NullValueHandling.Ignore)]
         public string CceSpecConfig { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("prom_limits", NullValueHandling = NullValueHandling.Ignore)]
+        public PromLimits PromLimits { get; set; }
+
+        /// <summary>
+        /// 指标存储周期修改时间。
+        /// </summary>
+        [JsonProperty("limits_update_time", NullValueHandling = NullValueHandling.Ignore)]
+        public long? LimitsUpdateTime { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("application", NullValueHandling = NullValueHandling.Ignore)]
+        public ApplicationModel Application { get; set; }
+
 
 
         /// <summary>
@@ -386,6 +254,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             sb.Append("  deletedTime: ").Append(DeletedTime).Append("\n");
             sb.Append("  promSpecConfig: ").Append(PromSpecConfig).Append("\n");
             sb.Append("  cceSpecConfig: ").Append(CceSpecConfig).Append("\n");
+            sb.Append("  promLimits: ").Append(PromLimits).Append("\n");
+            sb.Append("  limitsUpdateTime: ").Append(LimitsUpdateTime).Append("\n");
+            sb.Append("  application: ").Append(Application).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -406,7 +277,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             if (input == null) return false;
             if (this.PromName != input.PromName || (this.PromName != null && !this.PromName.Equals(input.PromName))) return false;
             if (this.PromId != input.PromId || (this.PromId != null && !this.PromId.Equals(input.PromId))) return false;
-            if (this.PromType != input.PromType) return false;
+            if (this.PromType != input.PromType || (this.PromType != null && !this.PromType.Equals(input.PromType))) return false;
             if (this.PromVersion != input.PromVersion || (this.PromVersion != null && !this.PromVersion.Equals(input.PromVersion))) return false;
             if (this.PromCreateTimestamp != input.PromCreateTimestamp || (this.PromCreateTimestamp != null && !this.PromCreateTimestamp.Equals(input.PromCreateTimestamp))) return false;
             if (this.PromUpdateTimestamp != input.PromUpdateTimestamp || (this.PromUpdateTimestamp != null && !this.PromUpdateTimestamp.Equals(input.PromUpdateTimestamp))) return false;
@@ -417,6 +288,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             if (this.DeletedTime != input.DeletedTime || (this.DeletedTime != null && !this.DeletedTime.Equals(input.DeletedTime))) return false;
             if (this.PromSpecConfig != input.PromSpecConfig || (this.PromSpecConfig != null && !this.PromSpecConfig.Equals(input.PromSpecConfig))) return false;
             if (this.CceSpecConfig != input.CceSpecConfig || (this.CceSpecConfig != null && !this.CceSpecConfig.Equals(input.CceSpecConfig))) return false;
+            if (this.PromLimits != input.PromLimits || (this.PromLimits != null && !this.PromLimits.Equals(input.PromLimits))) return false;
+            if (this.LimitsUpdateTime != input.LimitsUpdateTime || (this.LimitsUpdateTime != null && !this.LimitsUpdateTime.Equals(input.LimitsUpdateTime))) return false;
+            if (this.Application != input.Application || (this.Application != null && !this.Application.Equals(input.Application))) return false;
 
             return true;
         }
@@ -431,7 +305,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                 var hashCode = 41;
                 if (this.PromName != null) hashCode = hashCode * 59 + this.PromName.GetHashCode();
                 if (this.PromId != null) hashCode = hashCode * 59 + this.PromId.GetHashCode();
-                hashCode = hashCode * 59 + this.PromType.GetHashCode();
+                if (this.PromType != null) hashCode = hashCode * 59 + this.PromType.GetHashCode();
                 if (this.PromVersion != null) hashCode = hashCode * 59 + this.PromVersion.GetHashCode();
                 if (this.PromCreateTimestamp != null) hashCode = hashCode * 59 + this.PromCreateTimestamp.GetHashCode();
                 if (this.PromUpdateTimestamp != null) hashCode = hashCode * 59 + this.PromUpdateTimestamp.GetHashCode();
@@ -442,6 +316,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
                 if (this.DeletedTime != null) hashCode = hashCode * 59 + this.DeletedTime.GetHashCode();
                 if (this.PromSpecConfig != null) hashCode = hashCode * 59 + this.PromSpecConfig.GetHashCode();
                 if (this.CceSpecConfig != null) hashCode = hashCode * 59 + this.CceSpecConfig.GetHashCode();
+                if (this.PromLimits != null) hashCode = hashCode * 59 + this.PromLimits.GetHashCode();
+                if (this.LimitsUpdateTime != null) hashCode = hashCode * 59 + this.LimitsUpdateTime.GetHashCode();
+                if (this.Application != null) hashCode = hashCode * 59 + this.Application.GetHashCode();
                 return hashCode;
             }
         }
