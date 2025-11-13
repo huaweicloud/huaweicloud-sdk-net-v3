@@ -4957,6 +4957,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// HTAP数据同步模板下载
+        ///
+        /// HTAP数据同步模板下载。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadImportExcelTemplateResponse DownloadImportExcelTemplate(DownloadImportExcelTemplateRequest downloadImportExcelTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadImportExcelTemplateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadImportExcelTemplateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<DownloadImportExcelTemplateResponse>(response);
+        }
+
+        public SyncInvoker<DownloadImportExcelTemplateResponse> DownloadImportExcelTemplateInvoker(DownloadImportExcelTemplateRequest downloadImportExcelTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadImportExcelTemplateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadImportExcelTemplateRequest);
+            return new SyncInvoker<DownloadImportExcelTemplateResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadImportExcelTemplateResponse>);
+        }
+        
+        /// <summary>
         /// 查询数据库列表
         ///
         /// 查询数据库列表。
@@ -6256,6 +6282,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/starrocks/db-upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeSrKernelVersionRequest);
             return new SyncInvoker<UpgradeSrKernelVersionResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeSrKernelVersionResponse>);
+        }
+        
+        /// <summary>
+        /// HTAP库表导入校验
+        ///
+        /// 创建数据同步时支持Excel导入并进行校验。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UploadImportExcelTemplateResponse UploadImportExcelTemplate(UploadImportExcelTemplateRequest uploadImportExcelTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(uploadImportExcelTemplateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadImportExcelTemplateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UploadImportExcelTemplateResponse>(response);
+        }
+
+        public SyncInvoker<UploadImportExcelTemplateResponse> UploadImportExcelTemplateInvoker(UploadImportExcelTemplateRequest uploadImportExcelTemplateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(uploadImportExcelTemplateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/htap/template", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadImportExcelTemplateRequest);
+            return new SyncInvoker<UploadImportExcelTemplateResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadImportExcelTemplateResponse>);
         }
         
     }

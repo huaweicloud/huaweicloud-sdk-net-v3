@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public InsertSecurityGroupOption Port { get; set; }
 
+        /// <summary>
+        /// 功能说明：是否只预检此次请求 取值范围： -true：发送检查请求，不会执行端口插入安全组。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回响应码202。 -false（默认值）：发送正常请求，并直接执行端口插入安全组。
+        /// </summary>
+        [JsonProperty("dry_run", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DryRun { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             var sb = new StringBuilder();
             sb.Append("class AddSecurityGroupsRequestBody {\n");
             sb.Append("  port: ").Append(Port).Append("\n");
+            sb.Append("  dryRun: ").Append(DryRun).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             if (input == null) return false;
             if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             {
                 var hashCode = 41;
                 if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
                 return hashCode;
             }
         }

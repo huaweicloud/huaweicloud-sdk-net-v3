@@ -29,6 +29,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// **参数解释**：  HTAP标准版实例模式。  **取值范围**：  - Cluster：集群模式。 - Single：单机模式。
+        /// </summary>
+        [JsonProperty("mode", NullValueHandling = NullValueHandling.Ignore)]
+        public string Mode { get; set; }
+
+        /// <summary>
         /// **参数解释**： 引擎类型。  **取值范围**：  不涉及。
         /// </summary>
         [JsonProperty("engine_name", NullValueHandling = NullValueHandling.Ignore)]
@@ -69,6 +75,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("class HtapLTSConfigResponseInstance {\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
+            sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  engineName: ").Append(EngineName).Append("\n");
             sb.Append("  engineVersion: ").Append(EngineVersion).Append("\n");
             sb.Append("  status: ").Append(Status).Append("\n");
@@ -94,6 +101,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (input == null) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
             if (this.EngineName != input.EngineName || (this.EngineName != null && !this.EngineName.Equals(input.EngineName))) return false;
             if (this.EngineVersion != input.EngineVersion || (this.EngineVersion != null && !this.EngineVersion.Equals(input.EngineVersion))) return false;
             if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
@@ -113,6 +121,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 var hashCode = 41;
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.EngineName != null) hashCode = hashCode * 59 + this.EngineName.GetHashCode();
                 if (this.EngineVersion != null) hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
                 if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();

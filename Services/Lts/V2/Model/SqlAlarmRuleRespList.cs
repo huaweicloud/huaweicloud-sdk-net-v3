@@ -437,7 +437,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// SQL详细信息
         /// </summary>
         [JsonProperty("sql_requests", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SqlRequest> SqlRequests { get; set; }
+        public List<SqlRequestResponse> SqlRequests { get; set; }
 
         /// <summary>
         /// 

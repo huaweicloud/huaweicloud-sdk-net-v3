@@ -241,6 +241,102 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 创建语音录制配置
+        ///
+        /// 该接口用于创建语音录制配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAudioRecordConfigResponse CreateAudioRecordConfig(CreateAudioRecordConfigRequest createAudioRecordConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/audio-record-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAudioRecordConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateAudioRecordConfigResponse>(response);
+        }
+
+        public SyncInvoker<CreateAudioRecordConfigResponse> CreateAudioRecordConfigInvoker(CreateAudioRecordConfigRequest createAudioRecordConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/audio-record-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAudioRecordConfigRequest);
+            return new SyncInvoker<CreateAudioRecordConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAudioRecordConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 删除语音录制配置
+        ///
+        /// 该接口用于删除语音录制配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteAudioRecordConfigResponse DeleteAudioRecordConfig(DeleteAudioRecordConfigRequest deleteAudioRecordConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/audio-record-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAudioRecordConfigRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAudioRecordConfigResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAudioRecordConfigResponse> DeleteAudioRecordConfigInvoker(DeleteAudioRecordConfigRequest deleteAudioRecordConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/audio-record-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAudioRecordConfigRequest);
+            return new SyncInvoker<DeleteAudioRecordConfigResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAudioRecordConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询语音录制配置
+        ///
+        /// 该接口用于查询语音录制配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAudioRecordConfigResponse ShowAudioRecordConfig(ShowAudioRecordConfigRequest showAudioRecordConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/audio-record-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAudioRecordConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAudioRecordConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowAudioRecordConfigResponse> ShowAudioRecordConfigInvoker(ShowAudioRecordConfigRequest showAudioRecordConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/audio-record-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAudioRecordConfigRequest);
+            return new SyncInvoker<ShowAudioRecordConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAudioRecordConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 修改语音录制配置
+        ///
+        /// 该接口用于修改语音录制配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAudioRecordConfigResponse UpdateAudioRecordConfig(UpdateAudioRecordConfigRequest updateAudioRecordConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/audio-record-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAudioRecordConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAudioRecordConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAudioRecordConfigResponse> UpdateAudioRecordConfigInvoker(UpdateAudioRecordConfigRequest updateAudioRecordConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-chat/audio-record-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateAudioRecordConfigRequest);
+            return new SyncInvoker<UpdateAudioRecordConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAudioRecordConfigResponse>);
+        }
+        
+        /// <summary>
         /// 删除导入导出任务
         ///
         /// 删除导入导出任务
@@ -418,6 +514,54 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/ies/task/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTaskRequest);
             return new SyncInvoker<ShowTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用户数据概览
+        ///
+        /// 获取周期内用户的资源使用情况概览
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSummaryUsageDataResponse ShowSummaryUsageData(ShowSummaryUsageDataRequest showSummaryUsageDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/data-analysis-summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSummaryUsageDataRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSummaryUsageDataResponse>(response);
+        }
+
+        public SyncInvoker<ShowSummaryUsageDataResponse> ShowSummaryUsageDataInvoker(ShowSummaryUsageDataRequest showSummaryUsageDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/data-analysis-summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSummaryUsageDataRequest);
+            return new SyncInvoker<ShowSummaryUsageDataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSummaryUsageDataResponse>);
+        }
+        
+        /// <summary>
+        /// 查询用户数据详情
+        ///
+        /// 获取周期内用户的资源使用情况
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowUsageDataResponse ShowUsageData(ShowUsageDataRequest showUsageDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/data-analysis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUsageDataRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowUsageDataResponse>(response);
+        }
+
+        public SyncInvoker<ShowUsageDataResponse> ShowUsageDataInvoker(ShowUsageDataRequest showUsageDataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/data-analysis", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUsageDataRequest);
+            return new SyncInvoker<ShowUsageDataResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUsageDataResponse>);
         }
         
         /// <summary>
@@ -2181,6 +2325,32 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 互动规则库增加规则
+        ///
+        /// 该接口用于互动规则库增加规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateInteractionRuleResponse CreateInteractionRule(CreateInteractionRuleRequest createInteractionRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createInteractionRuleRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInteractionRuleRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateInteractionRuleResponse>(response);
+        }
+
+        public SyncInvoker<CreateInteractionRuleResponse> CreateInteractionRuleInvoker(CreateInteractionRuleRequest createInteractionRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createInteractionRuleRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}/rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInteractionRuleRequest);
+            return new SyncInvoker<CreateInteractionRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInteractionRuleResponse>);
+        }
+        
+        /// <summary>
         /// 创建智能直播间互动规则库
         ///
         /// 该接口用于创建智能直播间互动规则库。
@@ -2202,6 +2372,34 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInteractionRuleGroupRequest);
             return new SyncInvoker<CreateInteractionRuleGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInteractionRuleGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 互动规则库删除某条规则
+        ///
+        /// 该接口用于互动规则库修改删除规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInteractionRuleResponse DeleteInteractionRule(DeleteInteractionRuleRequest deleteInteractionRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteInteractionRuleRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInteractionRuleRequest.RuleId, out var valueOfRuleId)) urlParam.Add("rule_id", valueOfRuleId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}/rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInteractionRuleRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteInteractionRuleResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInteractionRuleResponse> DeleteInteractionRuleInvoker(DeleteInteractionRuleRequest deleteInteractionRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteInteractionRuleRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(deleteInteractionRuleRequest.RuleId, out var valueOfRuleId)) urlParam.Add("rule_id", valueOfRuleId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}/rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteInteractionRuleRequest);
+            return new SyncInvoker<DeleteInteractionRuleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteInteractionRuleResponse>);
         }
         
         /// <summary>
@@ -2255,6 +2453,84 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 查询智能直播间互动规则库概要列表
+        ///
+        /// 该接口用于智能直播间互动规则库概要列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInteractionRuleGroupsSummaryResponse ListInteractionRuleGroupsSummary(ListInteractionRuleGroupsSummaryRequest listInteractionRuleGroupsSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups-summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInteractionRuleGroupsSummaryRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInteractionRuleGroupsSummaryResponse>(response);
+        }
+
+        public SyncInvoker<ListInteractionRuleGroupsSummaryResponse> ListInteractionRuleGroupsSummaryInvoker(ListInteractionRuleGroupsSummaryRequest listInteractionRuleGroupsSummaryRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups-summary", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInteractionRuleGroupsSummaryRequest);
+            return new SyncInvoker<ListInteractionRuleGroupsSummaryResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInteractionRuleGroupsSummaryResponse>);
+        }
+        
+        /// <summary>
+        /// 查询智能直播间互动规则库详情
+        ///
+        /// 该接口用于查询智能直播间互动规则库详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInteractionRuleGroupResponse ShowInteractionRuleGroup(ShowInteractionRuleGroupRequest showInteractionRuleGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInteractionRuleGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInteractionRuleGroupRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInteractionRuleGroupResponse>(response);
+        }
+
+        public SyncInvoker<ShowInteractionRuleGroupResponse> ShowInteractionRuleGroupInvoker(ShowInteractionRuleGroupRequest showInteractionRuleGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInteractionRuleGroupRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInteractionRuleGroupRequest);
+            return new SyncInvoker<ShowInteractionRuleGroupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInteractionRuleGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 互动规则库修改某条规则
+        ///
+        /// 该接口用于互动规则库修改某条规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateInteractionRuleResponse UpdateInteractionRule(UpdateInteractionRuleRequest updateInteractionRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInteractionRuleRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInteractionRuleRequest.RuleId, out var valueOfRuleId)) urlParam.Add("rule_id", valueOfRuleId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}/rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInteractionRuleRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateInteractionRuleResponse>(response);
+        }
+
+        public SyncInvoker<UpdateInteractionRuleResponse> UpdateInteractionRuleInvoker(UpdateInteractionRuleRequest updateInteractionRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInteractionRuleRequest.GroupId, out var valueOfGroupId)) urlParam.Add("group_id", valueOfGroupId);
+            if (StringUtils.TryConvertToNonEmptyString(updateInteractionRuleRequest.RuleId, out var valueOfRuleId)) urlParam.Add("rule_id", valueOfRuleId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}/rules/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInteractionRuleRequest);
+            return new SyncInvoker<UpdateInteractionRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInteractionRuleResponse>);
+        }
+        
+        /// <summary>
         /// 更新智能直播间互动规则库
         ///
         /// 该接口用于更新智能直播间互动规则库。
@@ -2302,6 +2578,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/chat", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInteractiveChatRequest);
             return new SyncInvoker<CreateInteractiveChatResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInteractiveChatResponse>);
+        }
+        
+        /// <summary>
+        /// 下载加密文件
+        ///
+        /// 下载加密文件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowEncryptFileResponse ShowEncryptFile(ShowEncryptFileRequest showEncryptFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/voice-training-manage/common/encrypt-file-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEncryptFileRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowEncryptFileResponse>(response);
+        }
+
+        public SyncInvoker<ShowEncryptFileResponse> ShowEncryptFileInvoker(ShowEncryptFileRequest showEncryptFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/voice-training-manage/common/encrypt-file-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEncryptFileRequest);
+            return new SyncInvoker<ShowEncryptFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEncryptFileResponse>);
         }
         
         /// <summary>
@@ -3051,6 +3351,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-platforms/platforms/{platform_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLivePlatformRequest);
             return new SyncInvoker<ShowLivePlatformResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLivePlatformResponse>);
+        }
+        
+        /// <summary>
+        /// 查询直播平台对接方式
+        ///
+        /// 该接口用于直播平台对接方式。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowLivePlatformAccessTypeResponse ShowLivePlatformAccessType(ShowLivePlatformAccessTypeRequest showLivePlatformAccessTypeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-platforms/access-types", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLivePlatformAccessTypeRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowLivePlatformAccessTypeResponse>(response);
+        }
+
+        public SyncInvoker<ShowLivePlatformAccessTypeResponse> ShowLivePlatformAccessTypeInvoker(ShowLivePlatformAccessTypeRequest showLivePlatformAccessTypeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/live-platforms/access-types", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLivePlatformAccessTypeRequest);
+            return new SyncInvoker<ShowLivePlatformAccessTypeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLivePlatformAccessTypeResponse>);
         }
         
         /// <summary>
@@ -4169,6 +4493,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 查询声音训练资源
+        ///
+        /// 查询声音训练资源。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowVoiceTrainingQuotasResponse ShowVoiceTrainingQuotas(ShowVoiceTrainingQuotasRequest showVoiceTrainingQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVoiceTrainingQuotasRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowVoiceTrainingQuotasResponse>(response);
+        }
+
+        public SyncInvoker<ShowVoiceTrainingQuotasResponse> ShowVoiceTrainingQuotasInvoker(ShowVoiceTrainingQuotasRequest showVoiceTrainingQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVoiceTrainingQuotasRequest);
+            return new SyncInvoker<ShowVoiceTrainingQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVoiceTrainingQuotasResponse>);
+        }
+        
+        /// <summary>
         /// 创建应用
         ///
         /// 该接口用于创建应用。
@@ -4567,6 +4915,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 租户设置直播租户级配置
+        ///
+        /// 该接口用于租户设置直播租户级配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateSmartLiveUserConfigResponse UpdateSmartLiveUserConfig(UpdateSmartLiveUserConfigRequest updateSmartLiveUserConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-configs/user-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSmartLiveUserConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateSmartLiveUserConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateSmartLiveUserConfigResponse> UpdateSmartLiveUserConfigInvoker(UpdateSmartLiveUserConfigRequest updateSmartLiveUserConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-configs/user-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSmartLiveUserConfigRequest);
+            return new SyncInvoker<UpdateSmartLiveUserConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateSmartLiveUserConfigResponse>);
+        }
+        
+        /// <summary>
         /// 批量确认命令
         ///
         /// 该接口用于批量确认命令列表
@@ -4620,6 +4992,34 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/command", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeSmartLiveCommandRequest);
             return new SyncInvoker<ExecuteSmartLiveCommandResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteSmartLiveCommandResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数字人直播插入命令列表
+        ///
+        /// 该接口用于查询数字人直播插入命令列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListInsertCommandsResponse ListInsertCommands(ListInsertCommandsRequest listInsertCommandsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInsertCommandsRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(listInsertCommandsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/command/insert-commands", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInsertCommandsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListInsertCommandsResponse>(response);
+        }
+
+        public SyncInvoker<ListInsertCommandsResponse> ListInsertCommandsInvoker(ListInsertCommandsRequest listInsertCommandsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInsertCommandsRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            if (StringUtils.TryConvertToNonEmptyString(listInsertCommandsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/command/insert-commands", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInsertCommandsRequest);
+            return new SyncInvoker<ListInsertCommandsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInsertCommandsResponse>);
         }
         
         /// <summary>
@@ -4931,6 +5331,32 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 查询直播建配置风险信息
+        ///
+        /// 该接口用查询直播建配置风险信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowLiveWarningInfoResponse ShowLiveWarningInfo(ShowLiveWarningInfoRequest showLiveWarningInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLiveWarningInfoRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/live-warning-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLiveWarningInfoRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowLiveWarningInfoResponse>(response);
+        }
+
+        public SyncInvoker<ShowLiveWarningInfoResponse> ShowLiveWarningInfoInvoker(ShowLiveWarningInfoRequest showLiveWarningInfoRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showLiveWarningInfoRequest.RoomId, out var valueOfRoomId)) urlParam.Add("room_id", valueOfRoomId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-rooms/{room_id}/live-warning-info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLiveWarningInfoRequest);
+            return new SyncInvoker<ShowLiveWarningInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLiveWarningInfoResponse>);
+        }
+        
+        /// <summary>
         /// 查询智能直播间剧本详情
         ///
         /// 该接口用于查询智能直播间剧本详情。
@@ -5181,6 +5607,32 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 提交短任务
+        ///
+        /// 提交短任务，执行改接口后，任务会正式开始执行。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CommitShortJobResponse CommitShortJob(CommitShortJobRequest commitShortJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(commitShortJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/short-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", commitShortJobRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CommitShortJobResponse>(response);
+        }
+
+        public SyncInvoker<CommitShortJobResponse> CommitShortJobInvoker(CommitShortJobRequest commitShortJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(commitShortJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/short-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", commitShortJobRequest);
+            return new SyncInvoker<CommitShortJobResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CommitShortJobResponse>);
+        }
+        
+        /// <summary>
         /// 提交语音训练任务
         ///
         /// 提交训练任务,执行该接口后,任务会进入审核状态,审核完成后会等待训练。
@@ -5228,6 +5680,31 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/training-segment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", confirmTrainingSegmentRequest);
             return new SyncInvoker<ConfirmTrainingSegmentResponse>(this, "POST", request, JsonUtils.DeSerialize<ConfirmTrainingSegmentResponse>);
+        }
+        
+        /// <summary>
+        /// 创建短任务
+        ///
+        /// 用户创建短任务（音频质量检测等），该接口会返回一个obs上传地址，用于上传语音文件。
+        /// 文件上传后，调用“提交短任务”接口，启动短任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateShortJobResponse CreateShortJob(CreateShortJobRequest createShortJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/short-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createShortJobRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateShortJobResponse>(response);
+        }
+
+        public SyncInvoker<CreateShortJobResponse> CreateShortJobInvoker(CreateShortJobRequest createShortJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/short-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createShortJobRequest);
+            return new SyncInvoker<CreateShortJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateShortJobResponse>);
         }
         
         /// <summary>
@@ -5316,6 +5793,34 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/middle-jobs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTrainingMiddleJobRequest);
             return new SyncInvoker<CreateTrainingMiddleJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTrainingMiddleJobResponse>);
+        }
+        
+        /// <summary>
+        /// 创建第三方平台语音训练任务
+        ///
+        /// 用户创建第三方平台语音训练任务,该接口会返回一个obs上传地址，用于上传语音文件。
+        /// 仅支持zip包方式上传语音文件：
+        /// * 语音文件打包成zip上传：上传的训练数据为一个zip格式压缩文件,其中包含一段wav格式的长音频文件。
+        /// 
+        /// &gt; * 文件上传后，调用“提交语音训练任务”接口，启动审核和训练。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateTrainingThirdPartyJobResponse CreateTrainingThirdPartyJob(CreateTrainingThirdPartyJobRequest createTrainingThirdPartyJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/third-party-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTrainingThirdPartyJobRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateTrainingThirdPartyJobResponse>(response);
+        }
+
+        public SyncInvoker<CreateTrainingThirdPartyJobResponse> CreateTrainingThirdPartyJobInvoker(CreateTrainingThirdPartyJobRequest createTrainingThirdPartyJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/third-party-jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTrainingThirdPartyJobRequest);
+            return new SyncInvoker<CreateTrainingThirdPartyJobResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTrainingThirdPartyJobResponse>);
         }
         
         /// <summary>
@@ -5472,6 +5977,32 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 查询短任务详情
+        ///
+        /// 查询短任务详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowShortJobResponse ShowShortJob(ShowShortJobRequest showShortJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showShortJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/short-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShortJobRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowShortJobResponse>(response);
+        }
+
+        public SyncInvoker<ShowShortJobResponse> ShowShortJobInvoker(ShowShortJobRequest showShortJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showShortJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/short-jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showShortJobRequest);
+            return new SyncInvoker<ShowShortJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowShortJobResponse>);
+        }
+        
+        /// <summary>
         /// 查询用户配置的个性化音频时长
         ///
         /// 查询用户配置的个性化音频时长
@@ -5517,6 +6048,32 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/training-segment", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTrainingSegmentInfoRequest);
             return new SyncInvoker<ShowTrainingSegmentInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTrainingSegmentInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 用户获取附件上传url
+        ///
+        /// 用户获取附件上传url
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowUserReviewAttachmentUploadingAddressResponse ShowUserReviewAttachmentUploadingAddress(ShowUserReviewAttachmentUploadingAddressRequest showUserReviewAttachmentUploadingAddressRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showUserReviewAttachmentUploadingAddressRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/review-attachment-uploading-address-url", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserReviewAttachmentUploadingAddressRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowUserReviewAttachmentUploadingAddressResponse>(response);
+        }
+
+        public SyncInvoker<ShowUserReviewAttachmentUploadingAddressResponse> ShowUserReviewAttachmentUploadingAddressInvoker(ShowUserReviewAttachmentUploadingAddressRequest showUserReviewAttachmentUploadingAddressRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showUserReviewAttachmentUploadingAddressRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/review-attachment-uploading-address-url", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showUserReviewAttachmentUploadingAddressRequest);
+            return new SyncInvoker<ShowUserReviewAttachmentUploadingAddressResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowUserReviewAttachmentUploadingAddressResponse>);
         }
         
         /// <summary>
@@ -6407,6 +6964,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         /// 复制视频制作剧本
         ///
         /// 该接口用于复制视频制作剧本。
+        /// &gt; - 复制的剧本不包含预览字幕信息。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

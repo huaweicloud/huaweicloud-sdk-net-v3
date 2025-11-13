@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("routes", NullValueHandling = NullValueHandling.Ignore)]
         public List<Route> Routes { get; set; }
 
+        /// <summary>
+        /// 功能说明：是否开启VPC内所有子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+        /// </summary>
+        [JsonProperty("enable_network_address_usage_metrics", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableNetworkAddressUsageMetrics { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  cidr: ").Append(Cidr).Append("\n");
             sb.Append("  routes: ").Append(Routes).Append("\n");
+            sb.Append("  enableNetworkAddressUsageMetrics: ").Append(EnableNetworkAddressUsageMetrics).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
             if (this.Routes != input.Routes || (this.Routes != null && input.Routes != null && !this.Routes.SequenceEqual(input.Routes))) return false;
+            if (this.EnableNetworkAddressUsageMetrics != input.EnableNetworkAddressUsageMetrics || (this.EnableNetworkAddressUsageMetrics != null && !this.EnableNetworkAddressUsageMetrics.Equals(input.EnableNetworkAddressUsageMetrics))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
                 if (this.Routes != null) hashCode = hashCode * 59 + this.Routes.GetHashCode();
+                if (this.EnableNetworkAddressUsageMetrics != null) hashCode = hashCode * 59 + this.EnableNetworkAddressUsageMetrics.GetHashCode();
                 return hashCode;
             }
         }

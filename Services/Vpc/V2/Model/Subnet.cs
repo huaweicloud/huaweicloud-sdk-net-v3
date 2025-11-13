@@ -274,6 +274,18 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// 功能说明：是否开启当前子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+        /// </summary>
+        [JsonProperty("enable_network_address_usage_metrics", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableNetworkAddressUsageMetrics { get; set; }
+
+        /// <summary>
+        /// 功能说明：子网内剩余可用的IPv4地址数量。
+        /// </summary>
+        [JsonProperty("available_ip_address_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? AvailableIpAddressCount { get; set; }
+
 
 
         /// <summary>
@@ -306,6 +318,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  tenantId: ").Append(TenantId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  enableNetworkAddressUsageMetrics: ").Append(EnableNetworkAddressUsageMetrics).Append("\n");
+            sb.Append("  availableIpAddressCount: ").Append(AvailableIpAddressCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -347,6 +361,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.EnableNetworkAddressUsageMetrics != input.EnableNetworkAddressUsageMetrics || (this.EnableNetworkAddressUsageMetrics != null && !this.EnableNetworkAddressUsageMetrics.Equals(input.EnableNetworkAddressUsageMetrics))) return false;
+            if (this.AvailableIpAddressCount != input.AvailableIpAddressCount || (this.AvailableIpAddressCount != null && !this.AvailableIpAddressCount.Equals(input.AvailableIpAddressCount))) return false;
 
             return true;
         }
@@ -382,6 +398,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                 if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.EnableNetworkAddressUsageMetrics != null) hashCode = hashCode * 59 + this.EnableNetworkAddressUsageMetrics.GetHashCode();
+                if (this.AvailableIpAddressCount != null) hashCode = hashCode * 59 + this.AvailableIpAddressCount.GetHashCode();
                 return hashCode;
             }
         }

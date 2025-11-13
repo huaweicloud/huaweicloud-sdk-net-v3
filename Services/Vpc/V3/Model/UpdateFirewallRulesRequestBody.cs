@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("firewall", NullValueHandling = NullValueHandling.Ignore)]
         public FirewallUpdateRuleOption Firewall { get; set; }
 
+        /// <summary>
+        /// 功能说明：是否只预检此次请求 取值范围： -true：发送检查请求，不会更新网络ACL规则。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回响应码202。 -false（默认值）：发送正常请求，并直接更新网络ACL规则。
+        /// </summary>
+        [JsonProperty("dry_run", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DryRun { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateFirewallRulesRequestBody {\n");
             sb.Append("  firewall: ").Append(Firewall).Append("\n");
+            sb.Append("  dryRun: ").Append(DryRun).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             if (input == null) return false;
             if (this.Firewall != input.Firewall || (this.Firewall != null && !this.Firewall.Equals(input.Firewall))) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             {
                 var hashCode = 41;
                 if (this.Firewall != null) hashCode = hashCode * 59 + this.Firewall.GetHashCode();
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
                 return hashCode;
             }
         }

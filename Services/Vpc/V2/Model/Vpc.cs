@@ -196,6 +196,18 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// 功能说明：默认情况下，VPC中的资源可以通过内网访问服务终结点。开启该项后，VPC将无法通过内网访问服务终结点，请谨慎操作。 无法访问以下云服务：容器镜像服务SWR、云日志服务LTS、企业主机安全HSS、应用运维管理AOM、应用性能管理APM、对象存储服务OBS、API网关APIG。 取值范围： off：代表禁用。 on：代表开启。
+        /// </summary>
+        [JsonProperty("block_service_endpoint_states", NullValueHandling = NullValueHandling.Ignore)]
+        public string BlockServiceEndpointStates { get; set; }
+
+        /// <summary>
+        /// 功能说明：是否开启VPC内所有子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+        /// </summary>
+        [JsonProperty("enable_network_address_usage_metrics", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableNetworkAddressUsageMetrics { get; set; }
+
 
 
         /// <summary>
@@ -215,6 +227,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  tenantId: ").Append(TenantId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  blockServiceEndpointStates: ").Append(BlockServiceEndpointStates).Append("\n");
+            sb.Append("  enableNetworkAddressUsageMetrics: ").Append(EnableNetworkAddressUsageMetrics).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -243,6 +257,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.BlockServiceEndpointStates != input.BlockServiceEndpointStates || (this.BlockServiceEndpointStates != null && !this.BlockServiceEndpointStates.Equals(input.BlockServiceEndpointStates))) return false;
+            if (this.EnableNetworkAddressUsageMetrics != input.EnableNetworkAddressUsageMetrics || (this.EnableNetworkAddressUsageMetrics != null && !this.EnableNetworkAddressUsageMetrics.Equals(input.EnableNetworkAddressUsageMetrics))) return false;
 
             return true;
         }
@@ -265,6 +281,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                 if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.BlockServiceEndpointStates != null) hashCode = hashCode * 59 + this.BlockServiceEndpointStates.GetHashCode();
+                if (this.EnableNetworkAddressUsageMetrics != null) hashCode = hashCode * 59 + this.EnableNetworkAddressUsageMetrics.GetHashCode();
                 return hashCode;
             }
         }

@@ -196,6 +196,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("search_time_range_unit", NullValueHandling = NullValueHandling.Ignore)]
         public string SearchTimeRangeUnit { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("custom_date", NullValueHandling = NullValueHandling.Ignore)]
+        public CustomDate CustomDate { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 是否是相对时间。（暂不开放，后续aom上线该功能后一起开放） **约束限制：** 不涉及。 **取值范围：** - true - false **默认取值：** true
+        /// </summary>
+        [JsonProperty("is_time_range_relative", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsTimeRangeRelative { get; set; }
+
 
 
         /// <summary>
@@ -214,6 +226,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  number: ").Append(Number).Append("\n");
             sb.Append("  searchTimeRange: ").Append(SearchTimeRange).Append("\n");
             sb.Append("  searchTimeRangeUnit: ").Append(SearchTimeRangeUnit).Append("\n");
+            sb.Append("  customDate: ").Append(CustomDate).Append("\n");
+            sb.Append("  isTimeRangeRelative: ").Append(IsTimeRangeRelative).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -241,6 +255,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
             if (this.SearchTimeRange != input.SearchTimeRange || (this.SearchTimeRange != null && !this.SearchTimeRange.Equals(input.SearchTimeRange))) return false;
             if (this.SearchTimeRangeUnit != input.SearchTimeRangeUnit || (this.SearchTimeRangeUnit != null && !this.SearchTimeRangeUnit.Equals(input.SearchTimeRangeUnit))) return false;
+            if (this.CustomDate != input.CustomDate || (this.CustomDate != null && !this.CustomDate.Equals(input.CustomDate))) return false;
+            if (this.IsTimeRangeRelative != input.IsTimeRangeRelative || (this.IsTimeRangeRelative != null && !this.IsTimeRangeRelative.Equals(input.IsTimeRangeRelative))) return false;
 
             return true;
         }
@@ -262,6 +278,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
                 if (this.SearchTimeRange != null) hashCode = hashCode * 59 + this.SearchTimeRange.GetHashCode();
                 if (this.SearchTimeRangeUnit != null) hashCode = hashCode * 59 + this.SearchTimeRangeUnit.GetHashCode();
+                if (this.CustomDate != null) hashCode = hashCode * 59 + this.CustomDate.GetHashCode();
+                if (this.IsTimeRangeRelative != null) hashCode = hashCode * 59 + this.IsTimeRangeRelative.GetHashCode();
                 return hashCode;
             }
         }

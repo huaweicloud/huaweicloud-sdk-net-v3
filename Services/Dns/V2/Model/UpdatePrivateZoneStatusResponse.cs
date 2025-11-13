@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public string Email { get; set; }
 
         /// <summary>
-        /// **参数解释：** 域名类型。 **取值范围：** public：公网域名。
+        /// **参数解释：** 域名类型。 **取值范围：** private：内网域名。
         /// </summary>
         [JsonProperty("zone_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ZoneType { get; set; }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         public int? Serial { get; set; }
 
         /// <summary>
-        /// **参数解释：** 公网域名状态。 **取值范围：** - ACTIVE：正常 - DISABLE：暂停
+        /// **参数解释：** 内网域名状态。 **取值范围：** - ACTIVE：正常 - DISABLE：暂停
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
     /// <summary>
     /// 
     /// </summary>
-    public class SendMessageRep 
+    public class SendMessageReq 
     {
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SendMessageRep {\n");
+            sb.Append("class SendMessageReq {\n");
             sb.Append("  topic: ").Append(Topic).Append("\n");
             sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("  propertyList: ").Append(PropertyList).Append("\n");
@@ -55,13 +55,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SendMessageRep);
+            return this.Equals(input as SendMessageReq);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(SendMessageRep input)
+        public bool Equals(SendMessageReq input)
         {
             if (input == null) return false;
             if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;

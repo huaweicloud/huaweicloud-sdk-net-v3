@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("max_concurrency", NullValueHandling = NullValueHandling.Ignore)]
         public int? MaxConcurrency { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  SQL限流失效时间，标准秒级时间戳，永久生效SQL限流规则该字段为null。  **约束限制**：  不涉及。  **取值范围**：  0 - 9223372036854775807。  **默认取值**：  不涉及。
+        /// </summary>
+        [JsonProperty("expire_at", NullValueHandling = NullValueHandling.Ignore)]
+        public long? ExpireAt { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("class NodeSqlFilterRulePattern {\n");
             sb.Append("  pattern: ").Append(Pattern).Append("\n");
             sb.Append("  maxConcurrency: ").Append(MaxConcurrency).Append("\n");
+            sb.Append("  expireAt: ").Append(ExpireAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (input == null) return false;
             if (this.Pattern != input.Pattern || (this.Pattern != null && !this.Pattern.Equals(input.Pattern))) return false;
             if (this.MaxConcurrency != input.MaxConcurrency || (this.MaxConcurrency != null && !this.MaxConcurrency.Equals(input.MaxConcurrency))) return false;
+            if (this.ExpireAt != input.ExpireAt || (this.ExpireAt != null && !this.ExpireAt.Equals(input.ExpireAt))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 var hashCode = 41;
                 if (this.Pattern != null) hashCode = hashCode * 59 + this.Pattern.GetHashCode();
                 if (this.MaxConcurrency != null) hashCode = hashCode * 59 + this.MaxConcurrency.GetHashCode();
+                if (this.ExpireAt != null) hashCode = hashCode * 59 + this.ExpireAt.GetHashCode();
                 return hashCode;
             }
         }

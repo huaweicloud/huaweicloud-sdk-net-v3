@@ -166,6 +166,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("generate_time", NullValueHandling = NullValueHandling.Ignore)]
         public string GenerateTime { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("error_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ErrorResponse ErrorInfo { get; set; }
+
 
 
         /// <summary>
@@ -180,6 +186,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  subtitleFileDownloadUrl: ").Append(SubtitleFileDownloadUrl).Append("\n");
             sb.Append("  subtitleFileUploadUrl: ").Append(SubtitleFileUploadUrl).Append("\n");
             sb.Append("  generateTime: ").Append(GenerateTime).Append("\n");
+            sb.Append("  errorInfo: ").Append(ErrorInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -203,6 +210,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.SubtitleFileDownloadUrl != input.SubtitleFileDownloadUrl || (this.SubtitleFileDownloadUrl != null && !this.SubtitleFileDownloadUrl.Equals(input.SubtitleFileDownloadUrl))) return false;
             if (this.SubtitleFileUploadUrl != input.SubtitleFileUploadUrl || (this.SubtitleFileUploadUrl != null && !this.SubtitleFileUploadUrl.Equals(input.SubtitleFileUploadUrl))) return false;
             if (this.GenerateTime != input.GenerateTime || (this.GenerateTime != null && !this.GenerateTime.Equals(input.GenerateTime))) return false;
+            if (this.ErrorInfo != input.ErrorInfo || (this.ErrorInfo != null && !this.ErrorInfo.Equals(input.ErrorInfo))) return false;
 
             return true;
         }
@@ -220,6 +228,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.SubtitleFileDownloadUrl != null) hashCode = hashCode * 59 + this.SubtitleFileDownloadUrl.GetHashCode();
                 if (this.SubtitleFileUploadUrl != null) hashCode = hashCode * 59 + this.SubtitleFileUploadUrl.GetHashCode();
                 if (this.GenerateTime != null) hashCode = hashCode * 59 + this.GenerateTime.GetHashCode();
+                if (this.ErrorInfo != null) hashCode = hashCode * 59 + this.ErrorInfo.GetHashCode();
                 return hashCode;
             }
         }

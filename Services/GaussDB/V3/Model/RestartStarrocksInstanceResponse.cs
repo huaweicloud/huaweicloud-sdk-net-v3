@@ -19,8 +19,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// <summary>
         /// 工作流ID。
         /// </summary>
-        [JsonProperty("workflow_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string WorkflowId { get; set; }
+        [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string JobId { get; set; }
 
 
 
@@ -31,7 +31,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class RestartStarrocksInstanceResponse {\n");
-            sb.Append("  workflowId: ").Append(WorkflowId).Append("\n");
+            sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public bool Equals(RestartStarrocksInstanceResponse input)
         {
             if (input == null) return false;
-            if (this.WorkflowId != input.WorkflowId || (this.WorkflowId != null && !this.WorkflowId.Equals(input.WorkflowId))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
 
             return true;
         }
@@ -63,7 +63,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.WorkflowId != null) hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

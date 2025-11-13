@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.CloudPond.V1.Model
 {
     /// <summary>
-    /// 存储池状态。 - CREATING：创建中 - AVAILABLE：可用 - EXPANDING：扩容中 - PENDING_PAYMENT：待支付
+    /// 存储池状态。 - CREATING：创建中 - AVAILABLE：可用 - EXPANDING：扩容中 - PENDING_PAYMENT：待支付 - FROZEN：已冻结
     /// </summary>
-    /// <value>存储池状态。 - CREATING：创建中 - AVAILABLE：可用 - EXPANDING：扩容中 - PENDING_PAYMENT：待支付</value>
+    /// <value>存储池状态。 - CREATING：创建中 - AVAILABLE：可用 - EXPANDING：扩容中 - PENDING_PAYMENT：待支付 - FROZEN：已冻结</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
@@ -41,7 +41,13 @@ namespace HuaweiCloud.SDK.CloudPond.V1.Model
         /// Enum PENDING_PAYMENT for value: PENDING_PAYMENT
         /// </summary>
         [EnumMember(Value = "PENDING_PAYMENT")]
-        PENDING_PAYMENT = 4
+        PENDING_PAYMENT = 4,
+
+        /// <summary>
+        /// Enum FROZEN for value: FROZEN
+        /// </summary>
+        [EnumMember(Value = "FROZEN")]
+        FROZEN = 5
 
     }
 

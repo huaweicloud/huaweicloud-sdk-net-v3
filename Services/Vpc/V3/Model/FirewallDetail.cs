@@ -94,6 +94,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("egress_rules", NullValueHandling = NullValueHandling.Ignore)]
         public List<FirewallRuleDetail> EgressRules { get; set; }
 
+        /// <summary>
+        /// 参数解释： 网络ACL支持绑定的子网类型。 取值范围： normal：默认值，表示网络ACL支持绑定普通子网。 CloudDCN：表示网络ACL支持绑定CloudDCN子网。
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  associations: ").Append(Associations).Append("\n");
             sb.Append("  ingressRules: ").Append(IngressRules).Append("\n");
             sb.Append("  egressRules: ").Append(EgressRules).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,6 +154,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             if (this.Associations != input.Associations || (this.Associations != null && input.Associations != null && !this.Associations.SequenceEqual(input.Associations))) return false;
             if (this.IngressRules != input.IngressRules || (this.IngressRules != null && input.IngressRules != null && !this.IngressRules.SequenceEqual(input.IngressRules))) return false;
             if (this.EgressRules != input.EgressRules || (this.EgressRules != null && input.EgressRules != null && !this.EgressRules.SequenceEqual(input.EgressRules))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
             return true;
         }
@@ -172,6 +180,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                 if (this.Associations != null) hashCode = hashCode * 59 + this.Associations.GetHashCode();
                 if (this.IngressRules != null) hashCode = hashCode * 59 + this.IngressRules.GetHashCode();
                 if (this.EgressRules != null) hashCode = hashCode * 59 + this.EgressRules.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

@@ -35,7 +35,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public int? LoopCount { get; set; }
 
         /// <summary>
-        /// **参数解释**： 视频声音大小，0 - 100，表示开启视频声音原视频音量的百分比  特殊取值： * 0：表示不开启声音（默认值）  **约束限制**： 不涉及。
+        /// **参数解释**： 按照百分比，调整视频素材的音量，取值为0-100。  特殊取值为0，表示不开启声音（默认值）。  **约束限制**： 不涉及。
         /// </summary>
         [JsonProperty("video_sound", NullValueHandling = NullValueHandling.Ignore)]
         public int? VideoSound { get; set; }

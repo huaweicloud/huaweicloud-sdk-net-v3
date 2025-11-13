@@ -143,121 +143,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         }
 
         /// <summary>
-        /// 邮件附加信息语言
-        /// </summary>
-        /// <value>邮件附加信息语言</value>
-        [JsonConverter(typeof(EnumClassConverter<LanguageEnum>))]
-        public class LanguageEnum
-        {
-            /// <summary>
-            /// Enum ZH_CN for value: zh-cn
-            /// </summary>
-            public static readonly LanguageEnum ZH_CN = new LanguageEnum("zh-cn");
-
-            /// <summary>
-            /// Enum EN_US for value: en-us
-            /// </summary>
-            public static readonly LanguageEnum EN_US = new LanguageEnum("en-us");
-
-            private static readonly Dictionary<string, LanguageEnum> StaticFields =
-            new Dictionary<string, LanguageEnum>()
-            {
-                { "zh-cn", ZH_CN },
-                { "en-us", EN_US },
-            };
-
-            private string _value;
-
-            public LanguageEnum()
-            {
-
-            }
-
-            public LanguageEnum(string value)
-            {
-                _value = value;
-            }
-
-            public static LanguageEnum FromValue(string value)
-            {
-                if(value == null){
-                    return null;
-                }
-
-                if (StaticFields.ContainsKey(value))
-                {
-                    return StaticFields[value];
-                }
-
-                return null;
-            }
-
-            public string GetValue()
-            {
-                return _value;
-            }
-
-            public override string ToString()
-            {
-                return $"{_value}";
-            }
-
-            public override int GetHashCode()
-            {
-                return this._value.GetHashCode();
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (obj == null)
-                {
-                    return false;
-                }
-
-                if (ReferenceEquals(this, obj))
-                {
-                    return true;
-                }
-
-                if (this.Equals(obj as LanguageEnum))
-                {
-                    return true;
-                }
-
-                return false;
-            }
-
-            public bool Equals(LanguageEnum obj)
-            {
-                if ((object)obj == null)
-                {
-                    return false;
-                }
-                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
-            }
-
-            public static bool operator ==(LanguageEnum a, LanguageEnum b)
-            {
-                if (ReferenceEquals(a, b))
-                {
-                    return true;
-                }
-
-                if ((object)a == null)
-                {
-                    return false;
-                }
-
-                return a.Equals(b);
-            }
-
-            public static bool operator !=(LanguageEnum a, LanguageEnum b)
-            {
-                return !(a == b);
-            }
-        }
-
-        /// <summary>
         /// 通知频率,单位(分钟)
         /// </summary>
         /// <value>通知频率,单位(分钟)</value>
@@ -428,12 +313,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public bool? IsCssSql { get; set; }
 
         /// <summary>
-        /// 索引id
-        /// </summary>
-        [JsonProperty("indexId", NullValueHandling = NullValueHandling.Ignore)]
-        public string IndexId { get; set; }
-
-        /// <summary>
         /// 项目id
         /// </summary>
         [JsonProperty("projectId", NullValueHandling = NullValueHandling.Ignore)]
@@ -455,7 +334,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// SQL详细信息
         /// </summary>
         [JsonProperty("sql_requests", NullValueHandling = NullValueHandling.Ignore)]
-        public List<SqlRequest> SqlRequests { get; set; }
+        public List<SqlRequestResponse> SqlRequests { get; set; }
 
         /// <summary>
         /// 
@@ -487,35 +366,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public string DomainId { get; set; }
 
         /// <summary>
-        /// 创建时间（毫秒时间戳）
-        /// </summary>
-        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
-        public long? CreateTime { get; set; }
-
-        /// <summary>
-        /// 更新时间（毫秒时间戳）
-        /// </summary>
-        [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
-        public long? UpdateTime { get; set; }
-
-        /// <summary>
-        /// 主题
-        /// </summary>
-        [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Topics> Topics { get; set; }
-
-        /// <summary>
-        /// 邮件附加信息语言
-        /// </summary>
-        [JsonProperty("language", NullValueHandling = NullValueHandling.Ignore)]
-        public LanguageEnum Language { get; set; }
-        /// <summary>
-        /// 规则ID。
-        /// </summary>
-        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
-
-        /// <summary>
         /// 通知频率,单位(分钟)
         /// </summary>
         [JsonProperty("notification_frequency", NullValueHandling = NullValueHandling.Ignore)]
@@ -525,6 +375,36 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         [JsonProperty("alarm_action_rule_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmActionRuleName { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 告警触发条件：满足条件次数。满足条件次数是指设置的SQL语句。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("trigger_condition_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TriggerConditionCount { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 触发条件：触发周期。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("trigger_condition_frequency", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TriggerConditionFrequency { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 是否打开恢复通知。 **取值范围：** - true：配置告警恢复策略。 - false：不配置告警恢复策略。
+        /// </summary>
+        [JsonProperty("whether_recovery_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WhetherRecoveryPolicy { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 恢复策略周期。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("recovery_policy", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RecoveryPolicy { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 告警标签信息。标签是以键值对（key-value）的形式表示，key和value为一一对应关系。
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<TagsResBody> Tags { get; set; }
 
 
 
@@ -538,7 +418,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  sqlAlarmRuleName: ").Append(SqlAlarmRuleName).Append("\n");
             sb.Append("  alarmRuleAlias: ").Append(AlarmRuleAlias).Append("\n");
             sb.Append("  isCssSql: ").Append(IsCssSql).Append("\n");
-            sb.Append("  indexId: ").Append(IndexId).Append("\n");
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  sqlAlarmRuleId: ").Append(SqlAlarmRuleId).Append("\n");
             sb.Append("  sqlAlarmRuleDescription: ").Append(SqlAlarmRuleDescription).Append("\n");
@@ -548,13 +427,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  sqlAlarmLevel: ").Append(SqlAlarmLevel).Append("\n");
             sb.Append("  sqlAlarmSend: ").Append(SqlAlarmSend).Append("\n");
             sb.Append("  domainId: ").Append(DomainId).Append("\n");
-            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
-            sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
-            sb.Append("  topics: ").Append(Topics).Append("\n");
-            sb.Append("  language: ").Append(Language).Append("\n");
-            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  notificationFrequency: ").Append(NotificationFrequency).Append("\n");
             sb.Append("  alarmActionRuleName: ").Append(AlarmActionRuleName).Append("\n");
+            sb.Append("  triggerConditionCount: ").Append(TriggerConditionCount).Append("\n");
+            sb.Append("  triggerConditionFrequency: ").Append(TriggerConditionFrequency).Append("\n");
+            sb.Append("  whetherRecoveryPolicy: ").Append(WhetherRecoveryPolicy).Append("\n");
+            sb.Append("  recoveryPolicy: ").Append(RecoveryPolicy).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -576,7 +455,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.SqlAlarmRuleName != input.SqlAlarmRuleName || (this.SqlAlarmRuleName != null && !this.SqlAlarmRuleName.Equals(input.SqlAlarmRuleName))) return false;
             if (this.AlarmRuleAlias != input.AlarmRuleAlias || (this.AlarmRuleAlias != null && !this.AlarmRuleAlias.Equals(input.AlarmRuleAlias))) return false;
             if (this.IsCssSql != input.IsCssSql || (this.IsCssSql != null && !this.IsCssSql.Equals(input.IsCssSql))) return false;
-            if (this.IndexId != input.IndexId || (this.IndexId != null && !this.IndexId.Equals(input.IndexId))) return false;
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.SqlAlarmRuleId != input.SqlAlarmRuleId || (this.SqlAlarmRuleId != null && !this.SqlAlarmRuleId.Equals(input.SqlAlarmRuleId))) return false;
             if (this.SqlAlarmRuleDescription != input.SqlAlarmRuleDescription || (this.SqlAlarmRuleDescription != null && !this.SqlAlarmRuleDescription.Equals(input.SqlAlarmRuleDescription))) return false;
@@ -586,13 +464,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.SqlAlarmLevel != input.SqlAlarmLevel) return false;
             if (this.SqlAlarmSend != input.SqlAlarmSend || (this.SqlAlarmSend != null && !this.SqlAlarmSend.Equals(input.SqlAlarmSend))) return false;
             if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
-            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
-            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
-            if (this.Topics != input.Topics || (this.Topics != null && input.Topics != null && !this.Topics.SequenceEqual(input.Topics))) return false;
-            if (this.Language != input.Language) return false;
-            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.NotificationFrequency != input.NotificationFrequency) return false;
             if (this.AlarmActionRuleName != input.AlarmActionRuleName || (this.AlarmActionRuleName != null && !this.AlarmActionRuleName.Equals(input.AlarmActionRuleName))) return false;
+            if (this.TriggerConditionCount != input.TriggerConditionCount || (this.TriggerConditionCount != null && !this.TriggerConditionCount.Equals(input.TriggerConditionCount))) return false;
+            if (this.TriggerConditionFrequency != input.TriggerConditionFrequency || (this.TriggerConditionFrequency != null && !this.TriggerConditionFrequency.Equals(input.TriggerConditionFrequency))) return false;
+            if (this.WhetherRecoveryPolicy != input.WhetherRecoveryPolicy || (this.WhetherRecoveryPolicy != null && !this.WhetherRecoveryPolicy.Equals(input.WhetherRecoveryPolicy))) return false;
+            if (this.RecoveryPolicy != input.RecoveryPolicy || (this.RecoveryPolicy != null && !this.RecoveryPolicy.Equals(input.RecoveryPolicy))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -608,7 +486,6 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.SqlAlarmRuleName != null) hashCode = hashCode * 59 + this.SqlAlarmRuleName.GetHashCode();
                 if (this.AlarmRuleAlias != null) hashCode = hashCode * 59 + this.AlarmRuleAlias.GetHashCode();
                 if (this.IsCssSql != null) hashCode = hashCode * 59 + this.IsCssSql.GetHashCode();
-                if (this.IndexId != null) hashCode = hashCode * 59 + this.IndexId.GetHashCode();
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.SqlAlarmRuleId != null) hashCode = hashCode * 59 + this.SqlAlarmRuleId.GetHashCode();
                 if (this.SqlAlarmRuleDescription != null) hashCode = hashCode * 59 + this.SqlAlarmRuleDescription.GetHashCode();
@@ -618,13 +495,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 hashCode = hashCode * 59 + this.SqlAlarmLevel.GetHashCode();
                 if (this.SqlAlarmSend != null) hashCode = hashCode * 59 + this.SqlAlarmSend.GetHashCode();
                 if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.Topics != null) hashCode = hashCode * 59 + this.Topics.GetHashCode();
-                hashCode = hashCode * 59 + this.Language.GetHashCode();
-                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 hashCode = hashCode * 59 + this.NotificationFrequency.GetHashCode();
                 if (this.AlarmActionRuleName != null) hashCode = hashCode * 59 + this.AlarmActionRuleName.GetHashCode();
+                if (this.TriggerConditionCount != null) hashCode = hashCode * 59 + this.TriggerConditionCount.GetHashCode();
+                if (this.TriggerConditionFrequency != null) hashCode = hashCode * 59 + this.TriggerConditionFrequency.GetHashCode();
+                if (this.WhetherRecoveryPolicy != null) hashCode = hashCode * 59 + this.WhetherRecoveryPolicy.GetHashCode();
+                if (this.RecoveryPolicy != null) hashCode = hashCode * 59 + this.RecoveryPolicy.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

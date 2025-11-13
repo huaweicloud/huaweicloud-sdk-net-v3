@@ -371,6 +371,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("asset_type", NullValueHandling = NullValueHandling.Ignore)]
         public AssetTypeEnum AssetType { get; set; }
         /// <summary>
+        /// 冻结原因编号。
+        /// </summary>
+        [JsonProperty("block_reason_code", NullValueHandling = NullValueHandling.Ignore)]
+        public string BlockReasonCode { get; set; }
+
+        /// <summary>
         /// 封面图片路径。
         /// </summary>
         [JsonProperty("cover_url", NullValueHandling = NullValueHandling.Ignore)]
@@ -395,6 +401,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  assetName: ").Append(AssetName).Append("\n");
             sb.Append("  assetState: ").Append(AssetState).Append("\n");
             sb.Append("  assetType: ").Append(AssetType).Append("\n");
+            sb.Append("  blockReasonCode: ").Append(BlockReasonCode).Append("\n");
             sb.Append("  coverUrl: ").Append(CoverUrl).Append("\n");
             sb.Append("  thumbnailUrl: ").Append(ThumbnailUrl).Append("\n");
             sb.Append("}\n");
@@ -419,6 +426,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.AssetName != input.AssetName || (this.AssetName != null && !this.AssetName.Equals(input.AssetName))) return false;
             if (this.AssetState != input.AssetState) return false;
             if (this.AssetType != input.AssetType) return false;
+            if (this.BlockReasonCode != input.BlockReasonCode || (this.BlockReasonCode != null && !this.BlockReasonCode.Equals(input.BlockReasonCode))) return false;
             if (this.CoverUrl != input.CoverUrl || (this.CoverUrl != null && !this.CoverUrl.Equals(input.CoverUrl))) return false;
             if (this.ThumbnailUrl != input.ThumbnailUrl || (this.ThumbnailUrl != null && !this.ThumbnailUrl.Equals(input.ThumbnailUrl))) return false;
 
@@ -437,6 +445,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.AssetName != null) hashCode = hashCode * 59 + this.AssetName.GetHashCode();
                 hashCode = hashCode * 59 + this.AssetState.GetHashCode();
                 hashCode = hashCode * 59 + this.AssetType.GetHashCode();
+                if (this.BlockReasonCode != null) hashCode = hashCode * 59 + this.BlockReasonCode.GetHashCode();
                 if (this.CoverUrl != null) hashCode = hashCode * 59 + this.CoverUrl.GetHashCode();
                 if (this.ThumbnailUrl != null) hashCode = hashCode * 59 + this.ThumbnailUrl.GetHashCode();
                 return hashCode;

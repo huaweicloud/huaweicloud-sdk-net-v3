@@ -827,6 +827,30 @@ namespace HuaweiCloud.SDK.Aad.V1
         }
         
         /// <summary>
+        /// 查询日志配置
+        ///
+        /// 查询日志配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowLtsConfigResponse ShowLtsConfig(ShowLtsConfigRequest showLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cnad/config/lts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLtsConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowLtsConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowLtsConfigResponse> ShowLtsConfigInvoker(ShowLtsConfigRequest showLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cnad/config/lts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showLtsConfigRequest);
+            return new SyncInvoker<ShowLtsConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowLtsConfigResponse>);
+        }
+        
+        /// <summary>
         /// 查询策略详情
         ///
         /// 查询策略详情
@@ -930,6 +954,30 @@ namespace HuaweiCloud.SDK.Aad.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/aad/instances/{instance_id}/{ip}/rules/{rule_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceIpRuleRequest);
             return new SyncInvoker<UpdateInstanceIpRuleResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateInstanceIpRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 设置日志配置
+        ///
+        /// 设置日志配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateLtsConfigResponse UpdateLtsConfig(UpdateLtsConfigRequest updateLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cnad/config/lts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLtsConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateLtsConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateLtsConfigResponse> UpdateLtsConfigInvoker(UpdateLtsConfigRequest updateLtsConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cnad/config/lts", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLtsConfigRequest);
+            return new SyncInvoker<UpdateLtsConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateLtsConfigResponse>);
         }
         
         /// <summary>

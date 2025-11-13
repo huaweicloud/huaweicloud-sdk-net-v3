@@ -94,6 +94,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Tags { get; set; }
 
+        /// <summary>
+        /// 功能说明：是否开启当前子网的IPv4地址使用量指标监控。 取值范围： true：开启 false：不开启
+        /// </summary>
+        [JsonProperty("enable_network_address_usage_metrics", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableNetworkAddressUsageMetrics { get; set; }
+
 
 
         /// <summary>
@@ -116,6 +122,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
             sb.Append("  extraDhcpOpts: ").Append(ExtraDhcpOpts).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  enableNetworkAddressUsageMetrics: ").Append(EnableNetworkAddressUsageMetrics).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -147,6 +154,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
             if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
             if (this.ExtraDhcpOpts != input.ExtraDhcpOpts || (this.ExtraDhcpOpts != null && input.ExtraDhcpOpts != null && !this.ExtraDhcpOpts.SequenceEqual(input.ExtraDhcpOpts))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.EnableNetworkAddressUsageMetrics != input.EnableNetworkAddressUsageMetrics || (this.EnableNetworkAddressUsageMetrics != null && !this.EnableNetworkAddressUsageMetrics.Equals(input.EnableNetworkAddressUsageMetrics))) return false;
 
             return true;
         }
@@ -172,6 +180,7 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
                 if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 if (this.ExtraDhcpOpts != null) hashCode = hashCode * 59 + this.ExtraDhcpOpts.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.EnableNetworkAddressUsageMetrics != null) hashCode = hashCode * 59 + this.EnableNetworkAddressUsageMetrics.GetHashCode();
                 return hashCode;
             }
         }

@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string Action { get; set; }
 
         /// <summary>
-        /// 操作者,USER(用户),ADMIN(管理员),SYSTEM(用户)
+        /// 操作者,USER(用户),ADMIN(管理员),SYSTEM(系统用户)
         /// </summary>
         [JsonProperty("operator", NullValueHandling = NullValueHandling.Ignore)]
         public string Operator { get; set; }

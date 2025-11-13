@@ -41,6 +41,32 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
+        /// 解析器访问日志关联VPC
+        ///
+        /// 解析器访问日志关联VPC。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AssociateResolverQueryLogConfigResponse AssociateResolverQueryLogConfig(AssociateResolverQueryLogConfigRequest associateResolverQueryLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(associateResolverQueryLogConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig/{id}/associatevpc", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateResolverQueryLogConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AssociateResolverQueryLogConfigResponse>(response);
+        }
+
+        public SyncInvoker<AssociateResolverQueryLogConfigResponse> AssociateResolverQueryLogConfigInvoker(AssociateResolverQueryLogConfigRequest associateResolverQueryLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(associateResolverQueryLogConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig/{id}/associatevpc", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateResolverQueryLogConfigRequest);
+            return new SyncInvoker<AssociateResolverQueryLogConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateResolverQueryLogConfigResponse>);
+        }
+        
+        /// <summary>
         /// 解析器转发规则关联VPC
         ///
         /// 解析器转发规则关联VPC。
@@ -90,6 +116,87 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/zones/{zone_id}/associaterouter", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", associateRouterRequest);
             return new SyncInvoker<AssociateRouterResponse>(this, "POST", request, JsonUtils.DeSerialize<AssociateRouterResponse>);
+        }
+        
+        /// <summary>
+        /// 批量创建公网记录集
+        ///
+        /// 提交批量创建公网记录集任务，返回任务ID。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreateCombinedPublicRecordsetsTaskResponse BatchCreateCombinedPublicRecordsetsTask(BatchCreateCombinedPublicRecordsetsTaskRequest batchCreateCombinedPublicRecordsetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-create-combined-recordset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateCombinedPublicRecordsetsTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchCreateCombinedPublicRecordsetsTaskResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateCombinedPublicRecordsetsTaskResponse> BatchCreateCombinedPublicRecordsetsTaskInvoker(BatchCreateCombinedPublicRecordsetsTaskRequest batchCreateCombinedPublicRecordsetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-create-combined-recordset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateCombinedPublicRecordsetsTaskRequest);
+            return new SyncInvoker<BatchCreateCombinedPublicRecordsetsTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateCombinedPublicRecordsetsTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 批量创建公网记录集
+        ///
+        /// 提交批量创建公网记录集任务，返回任务ID。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreatePublicRecordsetsTaskResponse BatchCreatePublicRecordsetsTask(BatchCreatePublicRecordsetsTaskRequest batchCreatePublicRecordsetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-create-recordset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreatePublicRecordsetsTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchCreatePublicRecordsetsTaskResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreatePublicRecordsetsTaskResponse> BatchCreatePublicRecordsetsTaskInvoker(BatchCreatePublicRecordsetsTaskRequest batchCreatePublicRecordsetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-create-recordset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreatePublicRecordsetsTaskRequest);
+            return new SyncInvoker<BatchCreatePublicRecordsetsTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreatePublicRecordsetsTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 批量创建公网域名
+        ///
+        /// 提交批量创建公网域名任务，返回任务ID。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreatePublicZonesTaskResponse BatchCreatePublicZonesTask(BatchCreatePublicZonesTaskRequest batchCreatePublicZonesTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-create-zone", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreatePublicZonesTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchCreatePublicZonesTaskResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreatePublicZonesTaskResponse> BatchCreatePublicZonesTaskInvoker(BatchCreatePublicZonesTaskRequest batchCreatePublicZonesTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-create-zone", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreatePublicZonesTaskRequest);
+            return new SyncInvoker<BatchCreatePublicZonesTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreatePublicZonesTaskResponse>);
         }
         
         /// <summary>
@@ -145,31 +252,30 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 批量删除域名下的记录集
+        /// 批量删除公网记录集
         ///
-        /// 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
-        /// 响应结果中只包含本次实际删除的资源。
-        /// 支持公网域名和内网域名。
+        /// 提交批量删除公网记录集任务，返回任务ID。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public BatchDeleteRecordSetWithLineResponse BatchDeleteRecordSetWithLine(BatchDeleteRecordSetWithLineRequest batchDeleteRecordSetWithLineRequest)
+        public BatchDeletePublicRecordsetsTaskResponse BatchDeletePublicRecordsetsTask(BatchDeletePublicRecordsetsTaskRequest batchDeletePublicRecordsetsTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRecordSetWithLineRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerialize<BatchDeleteRecordSetWithLineResponse>(response);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-delete-recordset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeletePublicRecordsetsTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeletePublicRecordsetsTaskResponse>(response);
         }
 
-        public SyncInvoker<BatchDeleteRecordSetWithLineResponse> BatchDeleteRecordSetWithLineInvoker(BatchDeleteRecordSetWithLineRequest batchDeleteRecordSetWithLineRequest)
+        public SyncInvoker<BatchDeletePublicRecordsetsTaskResponse> BatchDeletePublicRecordsetsTaskInvoker(BatchDeletePublicRecordsetsTaskRequest batchDeletePublicRecordsetsTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRecordSetWithLineRequest);
-            return new SyncInvoker<BatchDeleteRecordSetWithLineResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteRecordSetWithLineResponse>);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-delete-recordset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeletePublicRecordsetsTaskRequest);
+            return new SyncInvoker<BatchDeletePublicRecordsetsTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeletePublicRecordsetsTaskResponse>);
         }
         
         /// <summary>
@@ -277,30 +383,57 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 批量修改记录集
+        /// 批量转移公网域名
         ///
-        /// 批量修改记录集。属于原子性操作，请求记录集将全部完成修改，或不做任何修改。
-        /// 仅公网域名支持。
+        /// 提交批量转移公网域名任务，返回任务ID。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public BatchUpdateRecordSetWithLineResponse BatchUpdateRecordSetWithLine(BatchUpdateRecordSetWithLineRequest batchUpdateRecordSetWithLineRequest)
+        public BatchTransferPublicZonesTaskResponse BatchTransferPublicZonesTask(BatchTransferPublicZonesTaskRequest batchTransferPublicZonesTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchUpdateRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRecordSetWithLineRequest);
-            var response = DoHttpRequestSync("PUT", request);
-            return JsonUtils.DeSerialize<BatchUpdateRecordSetWithLineResponse>(response);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchTransferPublicZonesTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchTransferPublicZonesTaskResponse>(response);
         }
 
-        public SyncInvoker<BatchUpdateRecordSetWithLineResponse> BatchUpdateRecordSetWithLineInvoker(BatchUpdateRecordSetWithLineRequest batchUpdateRecordSetWithLineRequest)
+        public SyncInvoker<BatchTransferPublicZonesTaskResponse> BatchTransferPublicZonesTaskInvoker(BatchTransferPublicZonesTaskRequest batchTransferPublicZonesTaskRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(batchUpdateRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRecordSetWithLineRequest);
-            return new SyncInvoker<BatchUpdateRecordSetWithLineResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateRecordSetWithLineResponse>);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-transfer", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchTransferPublicZonesTaskRequest);
+            return new SyncInvoker<BatchTransferPublicZonesTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchTransferPublicZonesTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 批量修改公网记录集
+        ///
+        /// 提交批量修改公网记录集任务，返回任务ID。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchUpdatePublicRecordsetsTaskResponse BatchUpdatePublicRecordsetsTask(BatchUpdatePublicRecordsetsTaskRequest batchUpdatePublicRecordsetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-update-recordset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdatePublicRecordsetsTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchUpdatePublicRecordsetsTaskResponse>(response);
+        }
+
+        public SyncInvoker<BatchUpdatePublicRecordsetsTaskResponse> BatchUpdatePublicRecordsetsTaskInvoker(BatchUpdatePublicRecordsetsTaskRequest batchUpdatePublicRecordsetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/operation-task/batch-update-recordset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdatePublicRecordsetsTaskRequest);
+            return new SyncInvoker<BatchUpdatePublicRecordsetsTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchUpdatePublicRecordsetsTaskResponse>);
         }
         
         /// <summary>
@@ -485,29 +618,27 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
-        /// 批量线路创建记录集
+        /// 创建解析器访问日志
         ///
-        /// 批量线路创建记录集。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网域名支持。
+        /// 创建解析器访问日志。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public CreateRecordSetWithBatchLinesResponse CreateRecordSetWithBatchLines(CreateRecordSetWithBatchLinesRequest createRecordSetWithBatchLinesRequest)
+        public CreateResolverQueryLogConfigResponse CreateResolverQueryLogConfig(CreateResolverQueryLogConfigRequest createResolverQueryLogConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createRecordSetWithBatchLinesRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch/lines", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithBatchLinesRequest);
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createResolverQueryLogConfigRequest);
             var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateRecordSetWithBatchLinesResponse>(response);
+            return JsonUtils.DeSerialize<CreateResolverQueryLogConfigResponse>(response);
         }
 
-        public SyncInvoker<CreateRecordSetWithBatchLinesResponse> CreateRecordSetWithBatchLinesInvoker(CreateRecordSetWithBatchLinesRequest createRecordSetWithBatchLinesRequest)
+        public SyncInvoker<CreateResolverQueryLogConfigResponse> CreateResolverQueryLogConfigInvoker(CreateResolverQueryLogConfigRequest createResolverQueryLogConfigRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(createRecordSetWithBatchLinesRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
-            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch/lines", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithBatchLinesRequest);
-            return new SyncInvoker<CreateRecordSetWithBatchLinesResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordSetWithBatchLinesResponse>);
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createResolverQueryLogConfigRequest);
+            return new SyncInvoker<CreateResolverQueryLogConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateResolverQueryLogConfigResponse>);
         }
         
         /// <summary>
@@ -532,6 +663,62 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2.1/resolverrules", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createResolverRuleRequest);
             return new SyncInvoker<CreateResolverRuleResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateResolverRuleResponse>);
+        }
+        
+        /// <summary>
+        /// 创建公网域名找回
+        ///
+        /// 创建公网域名找回请求。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateRetrievalResponse CreateRetrieval(CreateRetrievalRequest createRetrievalRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/retrieval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRetrievalRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateRetrievalResponse>(response);
+        }
+
+        public SyncInvoker<CreateRetrievalResponse> CreateRetrievalInvoker(CreateRetrievalRequest createRetrievalRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/retrieval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRetrievalRequest);
+            return new SyncInvoker<CreateRetrievalResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRetrievalResponse>);
+        }
+        
+        /// <summary>
+        /// 验证公网域名找回
+        ///
+        /// 验证公网域名找回。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateRetrievalVerificationResponse CreateRetrievalVerification(CreateRetrievalVerificationRequest createRetrievalVerificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createRetrievalVerificationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/retrieval/verification/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRetrievalVerificationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateRetrievalVerificationResponse>(response);
+        }
+
+        public SyncInvoker<CreateRetrievalVerificationResponse> CreateRetrievalVerificationInvoker(CreateRetrievalVerificationRequest createRetrievalVerificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createRetrievalVerificationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/retrieval/verification/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRetrievalVerificationRequest);
+            return new SyncInvoker<CreateRetrievalVerificationResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateRetrievalVerificationResponse>);
         }
         
         /// <summary>
@@ -696,6 +883,32 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
+        /// 删除解析器访问日志
+        ///
+        /// 删除解析器访问日志。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteResolverQueryLogConfigResponse DeleteResolverQueryLogConfig(DeleteResolverQueryLogConfigRequest deleteResolverQueryLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteResolverQueryLogConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteResolverQueryLogConfigRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteResolverQueryLogConfigResponse>(response);
+        }
+
+        public SyncInvoker<DeleteResolverQueryLogConfigResponse> DeleteResolverQueryLogConfigInvoker(DeleteResolverQueryLogConfigRequest deleteResolverQueryLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteResolverQueryLogConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteResolverQueryLogConfigRequest);
+            return new SyncInvoker<DeleteResolverQueryLogConfigResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteResolverQueryLogConfigResponse>);
+        }
+        
+        /// <summary>
         /// 删除解析器转发规则
         ///
         /// 删除解析器转发规则。
@@ -780,6 +993,32 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
+        /// 解析器访问日志解关联VPC
+        ///
+        /// 解析器访问日志解关联VPC。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DisassociateResolverQueryLogConfigResponse DisassociateResolverQueryLogConfig(DisassociateResolverQueryLogConfigRequest disassociateResolverQueryLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(disassociateResolverQueryLogConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig/{id}/disassociatevpc", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateResolverQueryLogConfigRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<DisassociateResolverQueryLogConfigResponse>(response);
+        }
+
+        public SyncInvoker<DisassociateResolverQueryLogConfigResponse> DisassociateResolverQueryLogConfigInvoker(DisassociateResolverQueryLogConfigRequest disassociateResolverQueryLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(disassociateResolverQueryLogConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig/{id}/disassociatevpc", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disassociateResolverQueryLogConfigRequest);
+            return new SyncInvoker<DisassociateResolverQueryLogConfigResponse>(this, "POST", request, JsonUtils.DeSerialize<DisassociateResolverQueryLogConfigResponse>);
+        }
+        
+        /// <summary>
         /// 解析器转发规则解关联VPC
         ///
         /// 解析器转发规则解关联VPC。
@@ -853,6 +1092,33 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionsRequest);
             return new SyncInvoker<ListApiVersionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询批量操作任务列表
+        ///
+        /// 查询批量操作任务列表。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListBatchOperationTasksResponse ListBatchOperationTasks(ListBatchOperationTasksRequest listBatchOperationTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/batch-operation-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBatchOperationTasksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListBatchOperationTasksResponse>(response);
+        }
+
+        public SyncInvoker<ListBatchOperationTasksResponse> ListBatchOperationTasksInvoker(ListBatchOperationTasksRequest listBatchOperationTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/batch-operation-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBatchOperationTasksRequest);
+            return new SyncInvoker<ListBatchOperationTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBatchOperationTasksResponse>);
         }
         
         /// <summary>
@@ -1053,6 +1319,30 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
+        /// 查询解析器访问日志列表
+        ///
+        /// 查询解析器访问日志列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListResolverQueryLogConfigsResponse ListResolverQueryLogConfigs(ListResolverQueryLogConfigsRequest listResolverQueryLogConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResolverQueryLogConfigsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListResolverQueryLogConfigsResponse>(response);
+        }
+
+        public SyncInvoker<ListResolverQueryLogConfigsResponse> ListResolverQueryLogConfigsInvoker(ListResolverQueryLogConfigsRequest listResolverQueryLogConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listResolverQueryLogConfigsRequest);
+            return new SyncInvoker<ListResolverQueryLogConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListResolverQueryLogConfigsResponse>);
+        }
+        
+        /// <summary>
         /// 查询解析器转发规则列表
         ///
         /// 查询解析器转发规则列表。
@@ -1208,6 +1498,64 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
+        /// 查询批量操作任务
+        ///
+        /// 查询批量操作任务，分页返回失败条目。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBatchOperationTaskResponse ShowBatchOperationTask(ShowBatchOperationTaskRequest showBatchOperationTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBatchOperationTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/batch-operation-tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBatchOperationTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowBatchOperationTaskResponse>(response);
+        }
+
+        public SyncInvoker<ShowBatchOperationTaskResponse> ShowBatchOperationTaskInvoker(ShowBatchOperationTaskRequest showBatchOperationTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBatchOperationTaskRequest.TaskId, out var valueOfTaskId)) urlParam.Add("task_id", valueOfTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/batch-operation-tasks/{task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBatchOperationTaskRequest);
+            return new SyncInvoker<ShowBatchOperationTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBatchOperationTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公网域名的域名诊断
+        ///
+        /// 查询公网域名的域名诊断。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDomainDetectionResponse ShowDomainDetection(ShowDomainDetectionRequest showDomainDetectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDomainDetectionRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/detection", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainDetectionRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainDetectionResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainDetectionResponse> ShowDomainDetectionInvoker(ShowDomainDetectionRequest showDomainDetectionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDomainDetectionRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/detection", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainDetectionRequest);
+            return new SyncInvoker<ShowDomainDetectionResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainDetectionResponse>);
+        }
+        
+        /// <summary>
         /// 查询租户配额
         ///
         /// 查询租户在DNS服务下的资源配额，包括公网域名配额、内网域名配额、记录集配额、反向解析配额、自定义线路配额、线路分组配额、入站终端节点配额、出站终端节点配额、转发规则配额等。
@@ -1229,6 +1577,35 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/quotamg/dns/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainQuotaRequest);
             return new SyncInvoker<ShowDomainQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainQuotaResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公网域名的邮箱域名
+        ///
+        /// 查询公网域名的邮箱域名。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowEmailRecordSetResponse ShowEmailRecordSet(ShowEmailRecordSetRequest showEmailRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showEmailRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/email-recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEmailRecordSetRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowEmailRecordSetResponse>(response);
+        }
+
+        public SyncInvoker<ShowEmailRecordSetResponse> ShowEmailRecordSetInvoker(ShowEmailRecordSetRequest showEmailRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showEmailRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/email-recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEmailRecordSetRequest);
+            return new SyncInvoker<ShowEmailRecordSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEmailRecordSetResponse>);
         }
         
         /// <summary>
@@ -1394,6 +1771,32 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
+        /// 查询解析器访问日志
+        ///
+        /// 查询解析器访问日志。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowResolverQueryLogConfigResponse ShowResolverQueryLogConfig(ShowResolverQueryLogConfigRequest showResolverQueryLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showResolverQueryLogConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResolverQueryLogConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowResolverQueryLogConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowResolverQueryLogConfigResponse> ShowResolverQueryLogConfigInvoker(ShowResolverQueryLogConfigRequest showResolverQueryLogConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showResolverQueryLogConfigRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/resolver/queryloggingconfig/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResolverQueryLogConfigRequest);
+            return new SyncInvoker<ShowResolverQueryLogConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResolverQueryLogConfigResponse>);
+        }
+        
+        /// <summary>
         /// 查询解析器转发规则
         ///
         /// 查询解析器转发规则。
@@ -1445,6 +1848,120 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/tags", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceTagRequest);
             return new SyncInvoker<ShowResourceTagResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResourceTagResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公网域名找回
+        ///
+        /// 查询公网域名找回请求。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRetrievalResponse ShowRetrieval(ShowRetrievalRequest showRetrievalRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/retrieval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRetrievalRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRetrievalResponse>(response);
+        }
+
+        public SyncInvoker<ShowRetrievalResponse> ShowRetrievalInvoker(ShowRetrievalRequest showRetrievalRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/retrieval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRetrievalRequest);
+            return new SyncInvoker<ShowRetrievalResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRetrievalResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公网域名找回结果
+        ///
+        /// 查询公网域名找回结果。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRetrievalVerificationResponse ShowRetrievalVerification(ShowRetrievalVerificationRequest showRetrievalVerificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRetrievalVerificationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/retrieval/verification/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRetrievalVerificationRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRetrievalVerificationResponse>(response);
+        }
+
+        public SyncInvoker<ShowRetrievalVerificationResponse> ShowRetrievalVerificationInvoker(ShowRetrievalVerificationRequest showRetrievalVerificationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRetrievalVerificationRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/retrieval/verification/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRetrievalVerificationRequest);
+            return new SyncInvoker<ShowRetrievalVerificationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRetrievalVerificationResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公网域名的网站域名
+        ///
+        /// 查询公网域名的网站域名。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowWebsiteRecordSetResponse ShowWebsiteRecordSet(ShowWebsiteRecordSetRequest showWebsiteRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showWebsiteRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/website-recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWebsiteRecordSetRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowWebsiteRecordSetResponse>(response);
+        }
+
+        public SyncInvoker<ShowWebsiteRecordSetResponse> ShowWebsiteRecordSetInvoker(ShowWebsiteRecordSetRequest showWebsiteRecordSetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showWebsiteRecordSetRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/website-recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWebsiteRecordSetRequest);
+            return new SyncInvoker<ShowWebsiteRecordSetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWebsiteRecordSetResponse>);
+        }
+        
+        /// <summary>
+        /// 查询公网域名的DNS服务器地址
+        ///
+        /// 查询域名当前DNS服务器地址及华为云提供的DNS服务器地址。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowZoneNameServerResponse ShowZoneNameServer(ShowZoneNameServerRequest showZoneNameServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showZoneNameServerRequest.DomainName, out var valueOfDomainName)) urlParam.Add("domain_name", valueOfDomainName);
+            var urlPath = HttpUtils.AddUrlPath("/v2/public-zones/dns-servers/{domain_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showZoneNameServerRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowZoneNameServerResponse>(response);
+        }
+
+        public SyncInvoker<ShowZoneNameServerResponse> ShowZoneNameServerInvoker(ShowZoneNameServerRequest showZoneNameServerRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showZoneNameServerRequest.DomainName, out var valueOfDomainName)) urlParam.Add("domain_name", valueOfDomainName);
+            var urlPath = HttpUtils.AddUrlPath("/v2/public-zones/dns-servers/{domain_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showZoneNameServerRequest);
+            return new SyncInvoker<ShowZoneNameServerResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowZoneNameServerResponse>);
         }
         
         /// <summary>
@@ -1666,6 +2183,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 关闭公网域名的DNSSEC。
         /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public DisableDnssecConfigResponse DisableDnssecConfig(DisableDnssecConfigRequest disableDnssecConfigRequest)
@@ -1692,6 +2212,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         ///
         /// 开启公网域名的DNSSEC。
         /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
+        /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
         public EnableDnssecConfigResponse EnableDnssecConfig(EnableDnssecConfigRequest enableDnssecConfigRequest)
@@ -1717,6 +2240,9 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// 查询DNSSEC
         ///
         /// 查询公网域名的DNSSEC。
+        /// 
+        /// **[公网域名为全局资源，请选择“华北-北京四（cn-north-4）”区域调用。](tag:hws)**
+        /// **[公网域名为全局资源，请选择“亚太-新加坡（ap-southeast-3）”区域调用。](tag:hws_hk)**
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1848,7 +2374,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 查询租户记录集列表
         ///
-        /// 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+        /// 当您的记录集创建成功后，您可以通过调用此接口查询所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2036,6 +2562,87 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
+        /// 批量创建记录集
+        ///
+        /// 提交批量创建记录集任务，返回任务ID。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchCreateRecordSetsTaskResponse BatchCreateRecordSetsTask(BatchCreateRecordSetsTaskRequest batchCreateRecordSetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateRecordSetsTaskRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch-create-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateRecordSetsTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<BatchCreateRecordSetsTaskResponse>(response);
+        }
+
+        public SyncInvoker<BatchCreateRecordSetsTaskResponse> BatchCreateRecordSetsTaskInvoker(BatchCreateRecordSetsTaskRequest batchCreateRecordSetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateRecordSetsTaskRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch-create-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateRecordSetsTaskRequest);
+            return new SyncInvoker<BatchCreateRecordSetsTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateRecordSetsTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除域名下的记录集
+        ///
+        /// 批量删除域名下的记录集，当删除的资源不存在时，则默认删除成功。
+        /// 响应结果中只包含本次实际删除的资源。
+        /// 支持公网域名和内网域名。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteRecordSetWithLineResponse BatchDeleteRecordSetWithLine(BatchDeleteRecordSetWithLineRequest batchDeleteRecordSetWithLineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRecordSetWithLineRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<BatchDeleteRecordSetWithLineResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteRecordSetWithLineResponse> BatchDeleteRecordSetWithLineInvoker(BatchDeleteRecordSetWithLineRequest batchDeleteRecordSetWithLineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchDeleteRecordSetWithLineRequest);
+            return new SyncInvoker<BatchDeleteRecordSetWithLineResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteRecordSetWithLineResponse>);
+        }
+        
+        /// <summary>
+        /// 批量修改记录集
+        ///
+        /// 批量修改记录集。属于原子性操作，请求记录集将全部完成修改，或不做任何修改。
+        /// 仅公网域名支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchUpdateRecordSetWithLineResponse BatchUpdateRecordSetWithLine(BatchUpdateRecordSetWithLineRequest batchUpdateRecordSetWithLineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRecordSetWithLineRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<BatchUpdateRecordSetWithLineResponse>(response);
+        }
+
+        public SyncInvoker<BatchUpdateRecordSetWithLineResponse> BatchUpdateRecordSetWithLineInvoker(BatchUpdateRecordSetWithLineRequest batchUpdateRecordSetWithLineRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchUpdateRecordSetWithLineRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateRecordSetWithLineRequest);
+            return new SyncInvoker<BatchUpdateRecordSetWithLineResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateRecordSetWithLineResponse>);
+        }
+        
+        /// <summary>
         /// 创建弹性公网IP的反向解析记录
         ///
         /// 创建弹性公网IP的反向解析记录。
@@ -2057,6 +2664,32 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2.1/ptrs", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createPtrRequest);
             return new SyncInvoker<CreatePtrResponse>(this, "POST", request, JsonUtils.DeSerialize<CreatePtrResponse>);
+        }
+        
+        /// <summary>
+        /// 批量线路创建记录集
+        ///
+        /// 批量线路创建记录集。属于原子性操作，如果存在一个参数校验不通过，则创建失败。仅公网域名支持。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateRecordSetWithBatchLinesResponse CreateRecordSetWithBatchLines(CreateRecordSetWithBatchLinesRequest createRecordSetWithBatchLinesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createRecordSetWithBatchLinesRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch/lines", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithBatchLinesRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateRecordSetWithBatchLinesResponse>(response);
+        }
+
+        public SyncInvoker<CreateRecordSetWithBatchLinesResponse> CreateRecordSetWithBatchLinesInvoker(CreateRecordSetWithBatchLinesRequest createRecordSetWithBatchLinesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createRecordSetWithBatchLinesRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch/lines", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithBatchLinesRequest);
+            return new SyncInvoker<CreateRecordSetWithBatchLinesResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordSetWithBatchLinesResponse>);
         }
         
         /// <summary>
@@ -2083,6 +2716,32 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createRecordSetWithLineRequest);
             return new SyncInvoker<CreateRecordSetWithLineResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateRecordSetWithLineResponse>);
+        }
+        
+        /// <summary>
+        /// 删除批量创建记录集任务
+        ///
+        /// 删除批量创建记录集任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteBatchCreateRecordSetsTaskResponse DeleteBatchCreateRecordSetsTask(DeleteBatchCreateRecordSetsTaskRequest deleteBatchCreateRecordSetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBatchCreateRecordSetsTaskRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch-create-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBatchCreateRecordSetsTaskRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteBatchCreateRecordSetsTaskResponse>(response);
+        }
+
+        public SyncInvoker<DeleteBatchCreateRecordSetsTaskResponse> DeleteBatchCreateRecordSetsTaskInvoker(DeleteBatchCreateRecordSetsTaskRequest deleteBatchCreateRecordSetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBatchCreateRecordSetsTaskRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch-create-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBatchCreateRecordSetsTaskRequest);
+            return new SyncInvoker<DeleteBatchCreateRecordSetsTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteBatchCreateRecordSetsTaskResponse>);
         }
         
         /// <summary>
@@ -2192,7 +2851,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 查询租户记录集列表
         ///
-        /// 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+        /// 当您的记录集创建成功后，您可以通过调用此接口查询所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2214,9 +2873,33 @@ namespace HuaweiCloud.SDK.Dns.V2
         }
         
         /// <summary>
+        /// 查询系统线路
+        ///
+        /// 查询系统预置解析线路。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSystemLinesResponse ListSystemLines(ListSystemLinesRequest listSystemLinesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/system-lines", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSystemLinesRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSystemLinesResponse>(response);
+        }
+
+        public SyncInvoker<ListSystemLinesResponse> ListSystemLinesInvoker(ListSystemLinesRequest listSystemLinesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/system-lines", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSystemLinesRequest);
+            return new SyncInvoker<ListSystemLinesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSystemLinesResponse>);
+        }
+        
+        /// <summary>
         /// 设置记录集状态
         ///
-        /// 当您的内网域名创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
+        /// 当您的记录集创建成功后，您可以通过调用此接口设置记录集的状态，包括暂停、启用。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2237,6 +2920,32 @@ namespace HuaweiCloud.SDK.Dns.V2
             var urlPath = HttpUtils.AddUrlPath("/v2.1/recordsets/{recordset_id}/statuses/set", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setRecordSetsStatusRequest);
             return new SyncInvoker<SetRecordSetsStatusResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetRecordSetsStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 查询批量创建记录集任务
+        ///
+        /// 查询批量创建记录集任务，分页返回失败条目。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBatchCreateRecordSetsTaskResponse ShowBatchCreateRecordSetsTask(ShowBatchCreateRecordSetsTaskRequest showBatchCreateRecordSetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBatchCreateRecordSetsTaskRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch-create-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBatchCreateRecordSetsTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowBatchCreateRecordSetsTaskResponse>(response);
+        }
+
+        public SyncInvoker<ShowBatchCreateRecordSetsTaskResponse> ShowBatchCreateRecordSetsTaskInvoker(ShowBatchCreateRecordSetsTaskRequest showBatchCreateRecordSetsTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBatchCreateRecordSetsTaskRequest.ZoneId, out var valueOfZoneId)) urlParam.Add("zone_id", valueOfZoneId);
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/zones/{zone_id}/recordsets/batch-create-task", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBatchCreateRecordSetsTaskRequest);
+            return new SyncInvoker<ShowBatchCreateRecordSetsTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBatchCreateRecordSetsTaskResponse>);
         }
         
         /// <summary>
@@ -2268,7 +2977,7 @@ namespace HuaweiCloud.SDK.Dns.V2
         /// <summary>
         /// 查询域名下的记录集列表
         ///
-        /// 当您的记录集创建成功后，您可以通过调用此接口查询单个记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
+        /// 当您的记录集创建成功后，您可以通过调用此接口查询指定域名下的所有记录集信息，包括名称、ID、状态、所属域名、解析记录值、标签、TTL、创建时间、修改时间、描述等。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

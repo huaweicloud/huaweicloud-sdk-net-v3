@@ -17,6 +17,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     {
 
         /// <summary>
+        /// **参数解释**：  规格ID。  **取值范围**：  不涉及。
+        /// </summary>
+        [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// **参数解释**：  规格码。  **取值范围**：  不涉及。
         /// </summary>
         [JsonProperty("spec_code", NullValueHandling = NullValueHandling.Ignore)]
@@ -61,6 +67,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ProxyFlavor {\n");
+            sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  specCode: ").Append(SpecCode).Append("\n");
             sb.Append("  vcpus: ").Append(Vcpus).Append("\n");
             sb.Append("  ram: ").Append(Ram).Append("\n");
@@ -85,6 +92,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public bool Equals(ProxyFlavor input)
         {
             if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
             if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
             if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
@@ -103,6 +111,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
                 if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();

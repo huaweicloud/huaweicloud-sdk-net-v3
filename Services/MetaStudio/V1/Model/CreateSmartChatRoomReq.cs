@@ -503,6 +503,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public int? ExitMuteThreshold { get; set; }
 
         /// <summary>
+        /// 是否优先级加载模型资产
+        /// </summary>
+        [JsonProperty("enable_semantic_action", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableSemanticAction { get; set; }
+
+        /// <summary>
         /// 资源配置。
         /// </summary>
         [JsonProperty("chat_resource_config", NullValueHandling = NullValueHandling.Ignore)]
@@ -535,6 +541,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  chatSubtitleConfig: ").Append(ChatSubtitleConfig).Append("\n");
             sb.Append("  chatVideoType: ").Append(ChatVideoType).Append("\n");
             sb.Append("  exitMuteThreshold: ").Append(ExitMuteThreshold).Append("\n");
+            sb.Append("  enableSemanticAction: ").Append(EnableSemanticAction).Append("\n");
             sb.Append("  chatResourceConfig: ").Append(ChatResourceConfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -572,6 +579,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.ChatSubtitleConfig != input.ChatSubtitleConfig || (this.ChatSubtitleConfig != null && !this.ChatSubtitleConfig.Equals(input.ChatSubtitleConfig))) return false;
             if (this.ChatVideoType != input.ChatVideoType) return false;
             if (this.ExitMuteThreshold != input.ExitMuteThreshold || (this.ExitMuteThreshold != null && !this.ExitMuteThreshold.Equals(input.ExitMuteThreshold))) return false;
+            if (this.EnableSemanticAction != input.EnableSemanticAction || (this.EnableSemanticAction != null && !this.EnableSemanticAction.Equals(input.EnableSemanticAction))) return false;
             if (this.ChatResourceConfig != input.ChatResourceConfig || (this.ChatResourceConfig != null && input.ChatResourceConfig != null && !this.ChatResourceConfig.SequenceEqual(input.ChatResourceConfig))) return false;
 
             return true;
@@ -603,6 +611,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.ChatSubtitleConfig != null) hashCode = hashCode * 59 + this.ChatSubtitleConfig.GetHashCode();
                 hashCode = hashCode * 59 + this.ChatVideoType.GetHashCode();
                 if (this.ExitMuteThreshold != null) hashCode = hashCode * 59 + this.ExitMuteThreshold.GetHashCode();
+                if (this.EnableSemanticAction != null) hashCode = hashCode * 59 + this.EnableSemanticAction.GetHashCode();
                 if (this.ChatResourceConfig != null) hashCode = hashCode * 59 + this.ChatResourceConfig.GetHashCode();
                 return hashCode;
             }

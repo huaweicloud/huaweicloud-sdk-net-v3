@@ -125,6 +125,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 云服务器组批量添加成员
+        ///
+        /// 将云服务器加入云服务器组。添加成功后，该云服务器与云服务器组中的其他成员尽量分散地创建在不同主机上。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchAddServerGroupMemberResponse> BatchAddServerGroupMemberAsync(BatchAddServerGroupMemberRequest batchAddServerGroupMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchAddServerGroupMemberRequest.ServerGroupId, out var valueOfServerGroupId)) urlParam.Add("server_group_id", valueOfServerGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/add_members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddServerGroupMemberRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchAddServerGroupMemberResponse>(response);
+        }
+
+        public AsyncInvoker<BatchAddServerGroupMemberResponse> BatchAddServerGroupMemberAsyncInvoker(BatchAddServerGroupMemberRequest batchAddServerGroupMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchAddServerGroupMemberRequest.ServerGroupId, out var valueOfServerGroupId)) urlParam.Add("server_group_id", valueOfServerGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/add_members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddServerGroupMemberRequest);
+            return new AsyncInvoker<BatchAddServerGroupMemberResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchAddServerGroupMemberResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加云服务器网卡
         ///
         /// 给云服务器添加一张或多张网卡。
@@ -202,6 +228,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/{server_id}/tags/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchCreateServerTagsRequest);
             return new AsyncInvoker<BatchCreateServerTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateServerTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 云服务器组批量删除成员
+        ///
+        /// 将弹性云服务器移出云服务器组。移出后，该云服务器与云服务器组中的成员不再遵从反亲和策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchDeleteServerGroupMemberResponse> BatchDeleteServerGroupMemberAsync(BatchDeleteServerGroupMemberRequest batchDeleteServerGroupMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteServerGroupMemberRequest.ServerGroupId, out var valueOfServerGroupId)) urlParam.Add("server_group_id", valueOfServerGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/remove_members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteServerGroupMemberRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchDeleteServerGroupMemberResponse>(response);
+        }
+
+        public AsyncInvoker<BatchDeleteServerGroupMemberResponse> BatchDeleteServerGroupMemberAsyncInvoker(BatchDeleteServerGroupMemberRequest batchDeleteServerGroupMemberRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteServerGroupMemberRequest.ServerGroupId, out var valueOfServerGroupId)) urlParam.Add("server_group_id", valueOfServerGroupId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/remove_members", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteServerGroupMemberRequest);
+            return new AsyncInvoker<BatchDeleteServerGroupMemberResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchDeleteServerGroupMemberResponse>);
         }
         
         /// <summary>

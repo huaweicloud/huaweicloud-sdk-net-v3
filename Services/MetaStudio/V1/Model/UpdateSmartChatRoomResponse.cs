@@ -503,6 +503,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public int? ExitMuteThreshold { get; set; }
 
         /// <summary>
+        /// 是否优先级加载模型资产
+        /// </summary>
+        [JsonProperty("enable_semantic_action", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableSemanticAction { get; set; }
+
+        /// <summary>
         /// 对话ID。
         /// </summary>
         [JsonProperty("room_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -572,6 +578,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  chatSubtitleConfig: ").Append(ChatSubtitleConfig).Append("\n");
             sb.Append("  chatVideoType: ").Append(ChatVideoType).Append("\n");
             sb.Append("  exitMuteThreshold: ").Append(ExitMuteThreshold).Append("\n");
+            sb.Append("  enableSemanticAction: ").Append(EnableSemanticAction).Append("\n");
             sb.Append("  roomId: ").Append(RoomId).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
@@ -615,6 +622,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.ChatSubtitleConfig != input.ChatSubtitleConfig || (this.ChatSubtitleConfig != null && !this.ChatSubtitleConfig.Equals(input.ChatSubtitleConfig))) return false;
             if (this.ChatVideoType != input.ChatVideoType) return false;
             if (this.ExitMuteThreshold != input.ExitMuteThreshold || (this.ExitMuteThreshold != null && !this.ExitMuteThreshold.Equals(input.ExitMuteThreshold))) return false;
+            if (this.EnableSemanticAction != input.EnableSemanticAction || (this.EnableSemanticAction != null && !this.EnableSemanticAction.Equals(input.EnableSemanticAction))) return false;
             if (this.RoomId != input.RoomId || (this.RoomId != null && !this.RoomId.Equals(input.RoomId))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
@@ -652,6 +660,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.ChatSubtitleConfig != null) hashCode = hashCode * 59 + this.ChatSubtitleConfig.GetHashCode();
                 hashCode = hashCode * 59 + this.ChatVideoType.GetHashCode();
                 if (this.ExitMuteThreshold != null) hashCode = hashCode * 59 + this.ExitMuteThreshold.GetHashCode();
+                if (this.EnableSemanticAction != null) hashCode = hashCode * 59 + this.EnableSemanticAction.GetHashCode();
                 if (this.RoomId != null) hashCode = hashCode * 59 + this.RoomId.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();

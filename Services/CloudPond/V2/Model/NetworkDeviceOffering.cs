@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.CloudPond.V2.Model
     {
 
         /// <summary>
-        /// 销售策略ID
+        /// 网络设备商品ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }

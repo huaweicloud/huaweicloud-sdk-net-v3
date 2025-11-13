@@ -64,6 +64,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// 参数解释： 流量镜像筛选条件的镜像源类型。 取值范围： eni：弹性网卡
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public string Type { get; set; }
+
 
 
         /// <summary>
@@ -81,6 +87,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             sb.Append("  egressRules: ").Append(EgressRules).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +114,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
             if (this.EgressRules != input.EgressRules || (this.EgressRules != null && input.EgressRules != null && !this.EgressRules.SequenceEqual(input.EgressRules))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
             return true;
         }
@@ -127,6 +135,7 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
                 if (this.EgressRules != null) hashCode = hashCode * 59 + this.EgressRules.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }
