@@ -11,19 +11,19 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 集群分区信息
+    /// **参数解释**： 集群分区信息 **约束限制**： 不涉及 
     /// </summary>
     public class Partition 
     {
 
         /// <summary>
-        /// 资源类型
+        /// **参数解释**：  API类型  **约束限制**：  不允许修改 **取值范围**：  不涉及  **默认取值**：  Partition 
         /// </summary>
         [JsonProperty("kind", NullValueHandling = NullValueHandling.Ignore)]
         public string Kind { get; set; }
 
         /// <summary>
-        /// API版本
+        /// **参数解释**： API版本 **约束限制**： 不允许修改 **取值范围**： 不涉及 **默认取值**： v3 
         /// </summary>
         [JsonProperty("apiVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string ApiVersion { get; set; }

@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// API类型，固定值“List”
+        /// **参数解释**： API类型 **约束限制**： 固定值，不允许修改 **取值范围**： 不涉及 **默认取值**： List 
         /// </summary>
         [JsonProperty("kind", NullValueHandling = NullValueHandling.Ignore)]
         public string Kind { get; set; }
 
         /// <summary>
-        /// API版本，固定值“v3”
+        /// **参数解释**： API版本 **约束限制**： 固定值,不允许修改 **取值范围**： 不涉及 **默认取值**： v3 
         /// </summary>
         [JsonProperty("apiVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// 节点对象列表，包含了当前集群下所有节点的详细信息。可通过items.metadata.name下的值来找到对应的节点。
+        /// **参数解释**： 节点对象列表，包含了当前集群下所有节点的详细信息。可通过items.metadata.name下的值来找到对应的节点。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("items", NullValueHandling = NullValueHandling.Ignore)]
         public List<Node> Items { get; set; }

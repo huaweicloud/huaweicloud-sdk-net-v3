@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// 
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public MasterEIPResponseStatus Status { get; set; }
+        public OpenAPIResponseStatus Status { get; set; }
 
 
 

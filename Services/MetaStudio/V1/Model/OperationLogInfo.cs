@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     public class OperationLogInfo 
     {
         /// <summary>
-        /// 命令执行结果。 * USER_CREATE_JOD：用户开始分身数字人定制 * USER_VERIFYING_SUBMITTED：用户提交审核 * SYSTEM_VERIFY_FAILED：自动审核失败 * ADMIN_UPDATE_BEAUTY_LEVEL：管理员更新美白等级 * SYSTEM_VERIFY_SUCCESS：自动审核成功 * ADMIN_VERIFY_SUCCESS：人工审核通过 * ADMIN_VERIFY_FAILED：人工审核不通过 * SYSTEM_TRAIN_DATA_PREPROCESSING：训练数据预处理中 * SYSTEM_TRAIN_DATA_PREPROCESS_FAILED：训练数据预处理失败 * SYSTEM_TRAIN_DATA_PREPROCESS_SUCCESS：训练数据预处理成功 * SYSTEM_ACTION_GENERATE_DATA_PREPROCESSING：动作编排原子动作生成中 * SYSTEM_ACTION_GENERATE_DATA_SUCCESS：动作编排原子动作生成成功 * SYSTEM_ACTION_GENERATE_ORI_SUCCESS：动作编排资产数据生成成功 * SYSTEM_ACTION_GENERATE_DATA_FAILED：动作编排原子动作生成失败 * SYSTEM_ACTION_GENERATE_ORI_FAILED：动作编排资产数据生成失败 * SYSTEM_ACTION_GENERATE_ORI_PREPROCESSING：动作编排资产数据生成中 * SYSTEM_TRAINING：开始训练 * ADMIN_STOP_TRAINING_DATA_PREPROCESS：人工中止训练 * ADMIN_STOP_BEAUTY_PREPROCESS：人工中止美白 * ADMIN_STOP_INFERENCE_DATA_PREPROCESS：人工中止推理预处理 * ADMIN_STOP_TRAIN：人工终止训练 * SYSTEM_TRAIN_FAILED：训练失败 * SYSTEM_TRAIN_SUCCESS：训练成功 * SYSTEM_INFERENCE_DATA_PREPROCESSING：推理数据预处理中 * SYSTEM_INFERENCE_DATA_PREPROCESS_FAILED：推理数据预处理失败 * SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS：推理数据预处理成功 * SYSTEM_JOB_SUCCESS：任务处理完成 * ADMIN_MASK_UPLOADED：遮罩文件上传完成（已废弃） * ADMIN_UPDATE_VIDEO：管理员更换视频 * ADMIN_UPDATE_ACTION_VIDEO：管理员更换动作编排视频 * ADMIN_RESET：管理员一键重置 * ADMIN_ACCEPT：管理员通过 * USER_REPAIR：用户修复 * SYSTEM_UPDATE_COVER：更换封面 * ADMIN_SET_SILENCE_REPEAT_NUM：管理员设置静默轮数 * SYSTEM_MARKABLE_VIDEO：标记视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO：校验视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO_SUCCESS：校验视频生成成功 * SYSTEM_MASK_VERIFY_VIDEO_FAILED：校验视频生成失败 * SYSTEM_MARKABLE_VIDEO_SUCCESS：标记视频生成成功 * SYSTEM_BEAUTY_PREPROCESSING：美白处理中 * SYSTEM_BEAUTY_PREPROCESS_FAILED：美白处理失败 * ADMIN_CONFIRM_ACTION：管理员确认动作 * ADMIN_STOP_ACTION_GENERATE_DATA_PREPROCESS：人工中止原子动作生成 * ADMIN_STOP_ACTION_GENERATE_ORI_PREPROCESS：人工中止动作编排 * SYSTEM_BEAUTY_PREPROCESS_SUCCESS：美白视频训练预处理成功 * SYSTEM_COMPILE_FAILED：转编译失败 * SYSTEM_COMPILE_SUCCESS：转编译成功 * SYSTEM_MARKABLE_VIDEO_FAILED：标记视频生成失败 * ADMIN_UPDATE_COMPILE：管理员更新转编译配置 * ADMIN_UPDATE_INFERENCE_DATA_PROCESS_VIDEO：管理员更新推理预处理时间段信息 * SYSTEM_EXECUTE_COMPILE：执行转编译 * SYSTEM_EXECUTE_BEAUTY：执行美白处理 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_SUCCESS：自动标记成功 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_FAILED：自动标记失败 * USER_UPDATE_VIDEO：用户更换视频 * ADMIN_UPDATE_GENERAL_CONFIG：管理员更新通用配置 * ADMIN_MASK_ACTION_TIME：管理员标记 * STOP_COMPILE：人工中止转编译
+        /// 命令执行结果。 * USER_CREATE_JOD：用户开始分身数字人定制 * USER_VERIFYING_SUBMITTED：用户提交审核 * SYSTEM_VERIFY_FAILED：自动审核失败 * ADMIN_UPDATE_BEAUTY_LEVEL：管理员更新美白等级 * ADMIN_UPDATE_JOB_PRIORITY：管理员更新任务等级 * SYSTEM_VERIFY_SUCCESS：自动审核成功 * ADMIN_VERIFY_SUCCESS：人工审核通过 * ADMIN_VERIFY_FAILED：人工审核不通过 * SYSTEM_TRAIN_DATA_PREPROCESSING：训练数据预处理中 * SYSTEM_TRAIN_DATA_PREPROCESS_FAILED：训练数据预处理失败 * SYSTEM_TRAIN_DATA_PREPROCESS_SUCCESS：训练数据预处理成功 * SYSTEM_ACTION_GENERATE_DATA_PREPROCESSING：动作编排原子动作生成中 * SYSTEM_ACTION_GENERATE_DATA_SUCCESS：动作编排原子动作生成成功 * SYSTEM_ACTION_GENERATE_ORI_SUCCESS：动作编排资产数据生成成功 * SYSTEM_ACTION_GENERATE_DATA_FAILED：动作编排原子动作生成失败 * SYSTEM_ACTION_GENERATE_ORI_FAILED：动作编排资产数据生成失败 * SYSTEM_ACTION_GENERATE_ORI_PREPROCESSING：动作编排资产数据生成中 * SYSTEM_TRAINING：开始训练 * ADMIN_STOP_TRAINING_DATA_PREPROCESS：人工中止训练 * ADMIN_STOP_BEAUTY_PREPROCESS：人工中止美白 * ADMIN_STOP_INFERENCE_DATA_PREPROCESS：人工中止推理预处理 * ADMIN_STOP_TRAIN：人工终止训练 * SYSTEM_TRAIN_FAILED：训练失败 * SYSTEM_TRAIN_SUCCESS：训练成功 * SYSTEM_INFERENCE_DATA_PREPROCESSING：推理数据预处理中 * SYSTEM_INFERENCE_DATA_PREPROCESS_FAILED：推理数据预处理失败 * SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS：推理数据预处理成功 * SYSTEM_JOB_SUCCESS：任务处理完成 * ADMIN_MASK_UPLOADED：遮罩文件上传完成（已废弃） * ADMIN_UPDATE_VIDEO：管理员更换视频 * ADMIN_UPDATE_ACTION_VIDEO：管理员更换动作编排视频 * ADMIN_RESET：管理员一键重置 * ADMIN_ACCEPT：管理员通过 * USER_REPAIR：用户修复 * SYSTEM_UPDATE_COVER：更换封面 * SYSTEM_ANALYSE_FILE_INFO：系统解析文件信息 * ADMIN_SET_SILENCE_REPEAT_NUM：管理员设置静默轮数 * SYSTEM_MARKABLE_VIDEO：标记视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO：校验视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO_SUCCESS：校验视频生成成功 * SYSTEM_MASK_VERIFY_VIDEO_FAILED：校验视频生成失败 * SYSTEM_MARKABLE_VIDEO_SUCCESS：标记视频生成成功 * SYSTEM_BEAUTY_PREPROCESSING：美白处理中 * SYSTEM_BEAUTY_PREPROCESS_FAILED：美白处理失败 * ADMIN_CONFIRM_ACTION：管理员确认动作 * ADMIN_STOP_ACTION_GENERATE_DATA_PREPROCESS：人工中止原子动作生成 * ADMIN_STOP_ACTION_GENERATE_ORI_PREPROCESS：人工中止动作编排 * SYSTEM_BEAUTY_PREPROCESS_SUCCESS：美白视频训练预处理成功 * SYSTEM_COMPILE_FAILED：转编译失败 * SYSTEM_COMPILE_SUCCESS：转编译成功 * SYSTEM_MARKABLE_VIDEO_FAILED：标记视频生成失败 * ADMIN_UPDATE_COMPILE：管理员更新转编译配置 * ADMIN_UPDATE_INFERENCE_DATA_PROCESS_VIDEO：管理员更新推理预处理时间段信息 * SYSTEM_EXECUTE_COMPILE：执行转编译 * SYSTEM_EXECUTE_BEAUTY：执行美白处理 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_SUCCESS：自动标记成功 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_FAILED：自动标记失败 * USER_UPDATE_VIDEO：用户更换视频 * ADMIN_UPLOAD_JSON_DATA：管理员上传动作数据 * ADMIN_DELETE_JSON_DATA：管理员删除动作数据 * ADMIN_UPDATE_GENERAL_CONFIG：管理员更新通用配置 * ADMIN_MASK_ACTION_TIME：管理员标记 * STOP_COMPILE：人工中止转编译 * MAKE_TEST_VIDEO：测试视频 * ADMIN_SET_FLEXUS_RETRY_COUNT：管理员设置flexus任务重试次数 * USER_DELETE_JOB_VIDEO：用户删除任务相关视频 * ADMIN_SET_VIDEO_ROTATION_ANGLE：管理员设置视频旋转角度 * ADMIN_RE_SET_VIDEO_ROTATION_ANGLE：管理员恢复视频旋转角度 * SYSTEM_SET_VIDEO_ROTATION_ANGLE_SUCCESS：视频旋转成功 * SYSTEM_SET_VIDEO_ROTATION_ANGLE_FAILED：视频旋转失败 * COMPILE_JOB_IS_CONSUME：转编译任务被消费 * RESTART_TEST_VIDEO_CHECK: 重新执行测试视频检测 * SKIP_TEST_VIDEO_CHECK:跳过测试视频检测 * WAIT_TEST_VIDEO_CHECK:等待测试视频检测 * TEST_VIDEO_CHECK_PROCESSING:测试视频检测中 * TEST_VIDEO_CHECK_SUCCESS:测试视频检测成功 * TEST_VIDEO_CHECK_FAILED:测试视频检测失败 * REDO_INFERENCE_PREPROCESSING：重新预处理推理数据 * REDO_TRAINING_PREPROCESSING：重新预处理训练数据 * REDO_TRAINING：重新训练 * REDO_ACTION_DATA_GENERATE：重新生成原子动作 * REDO_ACTION_ORI_GENERATE：重新动作编排 * VIDEO_ANALYZE_PROCESSING：视频检测中 * VIDEO_ANALYZE_SUCCESS：视频检测通过 * VIDEO_ANALYZE_FAILED：视频检测未通过 * ADMIN_RESOLUTION_NORMALIZE：管理员分辨率归一化 * SYSTEM_SET_RESOLUTION_NORMALIZE_SUCCESS：管理员分辨率归一化成功 * SYSTEM_SET_RESOLUTION_NORMALIZE_FAILED：管理员分辨率归一化失败 * SYSTEM_ACTION_MARK_PREPROCESS_FAILED 动作标定任务失败 * SYSTEM_ACTION_MARK_PREPROCESSING：动作标定任务生成中 * SYSTEM_ACTION_MARK_PREPROCESS_SUCCESS：动作标定任务成功 * REDO_ACTION_MARK：重新生成原子动作标记 * CONFIRM_ACTION_MARK：确定预标记原子动作 * MANUL_STOP_ACTION_MARK：中止动作标定 * TIME_OUT_RETRY：超时重试
         /// </summary>
-        /// <value>命令执行结果。 * USER_CREATE_JOD：用户开始分身数字人定制 * USER_VERIFYING_SUBMITTED：用户提交审核 * SYSTEM_VERIFY_FAILED：自动审核失败 * ADMIN_UPDATE_BEAUTY_LEVEL：管理员更新美白等级 * SYSTEM_VERIFY_SUCCESS：自动审核成功 * ADMIN_VERIFY_SUCCESS：人工审核通过 * ADMIN_VERIFY_FAILED：人工审核不通过 * SYSTEM_TRAIN_DATA_PREPROCESSING：训练数据预处理中 * SYSTEM_TRAIN_DATA_PREPROCESS_FAILED：训练数据预处理失败 * SYSTEM_TRAIN_DATA_PREPROCESS_SUCCESS：训练数据预处理成功 * SYSTEM_ACTION_GENERATE_DATA_PREPROCESSING：动作编排原子动作生成中 * SYSTEM_ACTION_GENERATE_DATA_SUCCESS：动作编排原子动作生成成功 * SYSTEM_ACTION_GENERATE_ORI_SUCCESS：动作编排资产数据生成成功 * SYSTEM_ACTION_GENERATE_DATA_FAILED：动作编排原子动作生成失败 * SYSTEM_ACTION_GENERATE_ORI_FAILED：动作编排资产数据生成失败 * SYSTEM_ACTION_GENERATE_ORI_PREPROCESSING：动作编排资产数据生成中 * SYSTEM_TRAINING：开始训练 * ADMIN_STOP_TRAINING_DATA_PREPROCESS：人工中止训练 * ADMIN_STOP_BEAUTY_PREPROCESS：人工中止美白 * ADMIN_STOP_INFERENCE_DATA_PREPROCESS：人工中止推理预处理 * ADMIN_STOP_TRAIN：人工终止训练 * SYSTEM_TRAIN_FAILED：训练失败 * SYSTEM_TRAIN_SUCCESS：训练成功 * SYSTEM_INFERENCE_DATA_PREPROCESSING：推理数据预处理中 * SYSTEM_INFERENCE_DATA_PREPROCESS_FAILED：推理数据预处理失败 * SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS：推理数据预处理成功 * SYSTEM_JOB_SUCCESS：任务处理完成 * ADMIN_MASK_UPLOADED：遮罩文件上传完成（已废弃） * ADMIN_UPDATE_VIDEO：管理员更换视频 * ADMIN_UPDATE_ACTION_VIDEO：管理员更换动作编排视频 * ADMIN_RESET：管理员一键重置 * ADMIN_ACCEPT：管理员通过 * USER_REPAIR：用户修复 * SYSTEM_UPDATE_COVER：更换封面 * ADMIN_SET_SILENCE_REPEAT_NUM：管理员设置静默轮数 * SYSTEM_MARKABLE_VIDEO：标记视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO：校验视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO_SUCCESS：校验视频生成成功 * SYSTEM_MASK_VERIFY_VIDEO_FAILED：校验视频生成失败 * SYSTEM_MARKABLE_VIDEO_SUCCESS：标记视频生成成功 * SYSTEM_BEAUTY_PREPROCESSING：美白处理中 * SYSTEM_BEAUTY_PREPROCESS_FAILED：美白处理失败 * ADMIN_CONFIRM_ACTION：管理员确认动作 * ADMIN_STOP_ACTION_GENERATE_DATA_PREPROCESS：人工中止原子动作生成 * ADMIN_STOP_ACTION_GENERATE_ORI_PREPROCESS：人工中止动作编排 * SYSTEM_BEAUTY_PREPROCESS_SUCCESS：美白视频训练预处理成功 * SYSTEM_COMPILE_FAILED：转编译失败 * SYSTEM_COMPILE_SUCCESS：转编译成功 * SYSTEM_MARKABLE_VIDEO_FAILED：标记视频生成失败 * ADMIN_UPDATE_COMPILE：管理员更新转编译配置 * ADMIN_UPDATE_INFERENCE_DATA_PROCESS_VIDEO：管理员更新推理预处理时间段信息 * SYSTEM_EXECUTE_COMPILE：执行转编译 * SYSTEM_EXECUTE_BEAUTY：执行美白处理 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_SUCCESS：自动标记成功 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_FAILED：自动标记失败 * USER_UPDATE_VIDEO：用户更换视频 * ADMIN_UPDATE_GENERAL_CONFIG：管理员更新通用配置 * ADMIN_MASK_ACTION_TIME：管理员标记 * STOP_COMPILE：人工中止转编译</value>
+        /// <value>命令执行结果。 * USER_CREATE_JOD：用户开始分身数字人定制 * USER_VERIFYING_SUBMITTED：用户提交审核 * SYSTEM_VERIFY_FAILED：自动审核失败 * ADMIN_UPDATE_BEAUTY_LEVEL：管理员更新美白等级 * ADMIN_UPDATE_JOB_PRIORITY：管理员更新任务等级 * SYSTEM_VERIFY_SUCCESS：自动审核成功 * ADMIN_VERIFY_SUCCESS：人工审核通过 * ADMIN_VERIFY_FAILED：人工审核不通过 * SYSTEM_TRAIN_DATA_PREPROCESSING：训练数据预处理中 * SYSTEM_TRAIN_DATA_PREPROCESS_FAILED：训练数据预处理失败 * SYSTEM_TRAIN_DATA_PREPROCESS_SUCCESS：训练数据预处理成功 * SYSTEM_ACTION_GENERATE_DATA_PREPROCESSING：动作编排原子动作生成中 * SYSTEM_ACTION_GENERATE_DATA_SUCCESS：动作编排原子动作生成成功 * SYSTEM_ACTION_GENERATE_ORI_SUCCESS：动作编排资产数据生成成功 * SYSTEM_ACTION_GENERATE_DATA_FAILED：动作编排原子动作生成失败 * SYSTEM_ACTION_GENERATE_ORI_FAILED：动作编排资产数据生成失败 * SYSTEM_ACTION_GENERATE_ORI_PREPROCESSING：动作编排资产数据生成中 * SYSTEM_TRAINING：开始训练 * ADMIN_STOP_TRAINING_DATA_PREPROCESS：人工中止训练 * ADMIN_STOP_BEAUTY_PREPROCESS：人工中止美白 * ADMIN_STOP_INFERENCE_DATA_PREPROCESS：人工中止推理预处理 * ADMIN_STOP_TRAIN：人工终止训练 * SYSTEM_TRAIN_FAILED：训练失败 * SYSTEM_TRAIN_SUCCESS：训练成功 * SYSTEM_INFERENCE_DATA_PREPROCESSING：推理数据预处理中 * SYSTEM_INFERENCE_DATA_PREPROCESS_FAILED：推理数据预处理失败 * SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS：推理数据预处理成功 * SYSTEM_JOB_SUCCESS：任务处理完成 * ADMIN_MASK_UPLOADED：遮罩文件上传完成（已废弃） * ADMIN_UPDATE_VIDEO：管理员更换视频 * ADMIN_UPDATE_ACTION_VIDEO：管理员更换动作编排视频 * ADMIN_RESET：管理员一键重置 * ADMIN_ACCEPT：管理员通过 * USER_REPAIR：用户修复 * SYSTEM_UPDATE_COVER：更换封面 * SYSTEM_ANALYSE_FILE_INFO：系统解析文件信息 * ADMIN_SET_SILENCE_REPEAT_NUM：管理员设置静默轮数 * SYSTEM_MARKABLE_VIDEO：标记视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO：校验视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO_SUCCESS：校验视频生成成功 * SYSTEM_MASK_VERIFY_VIDEO_FAILED：校验视频生成失败 * SYSTEM_MARKABLE_VIDEO_SUCCESS：标记视频生成成功 * SYSTEM_BEAUTY_PREPROCESSING：美白处理中 * SYSTEM_BEAUTY_PREPROCESS_FAILED：美白处理失败 * ADMIN_CONFIRM_ACTION：管理员确认动作 * ADMIN_STOP_ACTION_GENERATE_DATA_PREPROCESS：人工中止原子动作生成 * ADMIN_STOP_ACTION_GENERATE_ORI_PREPROCESS：人工中止动作编排 * SYSTEM_BEAUTY_PREPROCESS_SUCCESS：美白视频训练预处理成功 * SYSTEM_COMPILE_FAILED：转编译失败 * SYSTEM_COMPILE_SUCCESS：转编译成功 * SYSTEM_MARKABLE_VIDEO_FAILED：标记视频生成失败 * ADMIN_UPDATE_COMPILE：管理员更新转编译配置 * ADMIN_UPDATE_INFERENCE_DATA_PROCESS_VIDEO：管理员更新推理预处理时间段信息 * SYSTEM_EXECUTE_COMPILE：执行转编译 * SYSTEM_EXECUTE_BEAUTY：执行美白处理 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_SUCCESS：自动标记成功 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_FAILED：自动标记失败 * USER_UPDATE_VIDEO：用户更换视频 * ADMIN_UPLOAD_JSON_DATA：管理员上传动作数据 * ADMIN_DELETE_JSON_DATA：管理员删除动作数据 * ADMIN_UPDATE_GENERAL_CONFIG：管理员更新通用配置 * ADMIN_MASK_ACTION_TIME：管理员标记 * STOP_COMPILE：人工中止转编译 * MAKE_TEST_VIDEO：测试视频 * ADMIN_SET_FLEXUS_RETRY_COUNT：管理员设置flexus任务重试次数 * USER_DELETE_JOB_VIDEO：用户删除任务相关视频 * ADMIN_SET_VIDEO_ROTATION_ANGLE：管理员设置视频旋转角度 * ADMIN_RE_SET_VIDEO_ROTATION_ANGLE：管理员恢复视频旋转角度 * SYSTEM_SET_VIDEO_ROTATION_ANGLE_SUCCESS：视频旋转成功 * SYSTEM_SET_VIDEO_ROTATION_ANGLE_FAILED：视频旋转失败 * COMPILE_JOB_IS_CONSUME：转编译任务被消费 * RESTART_TEST_VIDEO_CHECK: 重新执行测试视频检测 * SKIP_TEST_VIDEO_CHECK:跳过测试视频检测 * WAIT_TEST_VIDEO_CHECK:等待测试视频检测 * TEST_VIDEO_CHECK_PROCESSING:测试视频检测中 * TEST_VIDEO_CHECK_SUCCESS:测试视频检测成功 * TEST_VIDEO_CHECK_FAILED:测试视频检测失败 * REDO_INFERENCE_PREPROCESSING：重新预处理推理数据 * REDO_TRAINING_PREPROCESSING：重新预处理训练数据 * REDO_TRAINING：重新训练 * REDO_ACTION_DATA_GENERATE：重新生成原子动作 * REDO_ACTION_ORI_GENERATE：重新动作编排 * VIDEO_ANALYZE_PROCESSING：视频检测中 * VIDEO_ANALYZE_SUCCESS：视频检测通过 * VIDEO_ANALYZE_FAILED：视频检测未通过 * ADMIN_RESOLUTION_NORMALIZE：管理员分辨率归一化 * SYSTEM_SET_RESOLUTION_NORMALIZE_SUCCESS：管理员分辨率归一化成功 * SYSTEM_SET_RESOLUTION_NORMALIZE_FAILED：管理员分辨率归一化失败 * SYSTEM_ACTION_MARK_PREPROCESS_FAILED 动作标定任务失败 * SYSTEM_ACTION_MARK_PREPROCESSING：动作标定任务生成中 * SYSTEM_ACTION_MARK_PREPROCESS_SUCCESS：动作标定任务成功 * REDO_ACTION_MARK：重新生成原子动作标记 * CONFIRM_ACTION_MARK：确定预标记原子动作 * MANUL_STOP_ACTION_MARK：中止动作标定 * TIME_OUT_RETRY：超时重试</value>
         [JsonConverter(typeof(EnumClassConverter<LogTypeEnum>))]
         public class LogTypeEnum
         {
@@ -41,6 +41,16 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// Enum ADMIN_UPDATE_BEAUTY_LEVEL for value: ADMIN_UPDATE_BEAUTY_LEVEL
             /// </summary>
             public static readonly LogTypeEnum ADMIN_UPDATE_BEAUTY_LEVEL = new LogTypeEnum("ADMIN_UPDATE_BEAUTY_LEVEL");
+
+            /// <summary>
+            /// Enum ADMIN_UPDATE_TRAIN_LOCATION for value: ADMIN_UPDATE_TRAIN_LOCATION
+            /// </summary>
+            public static readonly LogTypeEnum ADMIN_UPDATE_TRAIN_LOCATION = new LogTypeEnum("ADMIN_UPDATE_TRAIN_LOCATION");
+
+            /// <summary>
+            /// Enum ADMIN_UPDATE_JOB_PRIORITY for value: ADMIN_UPDATE_JOB_PRIORITY
+            /// </summary>
+            public static readonly LogTypeEnum ADMIN_UPDATE_JOB_PRIORITY = new LogTypeEnum("ADMIN_UPDATE_JOB_PRIORITY");
 
             /// <summary>
             /// Enum SYSTEM_VERIFY_SUCCESS for value: SYSTEM_VERIFY_SUCCESS
@@ -148,6 +158,11 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             public static readonly LogTypeEnum SYSTEM_INFERENCE_DATA_PREPROCESS_FAILED = new LogTypeEnum("SYSTEM_INFERENCE_DATA_PREPROCESS_FAILED");
 
             /// <summary>
+            /// Enum SYSTEM_WAIT_ASSET_SYNC for value: SYSTEM_WAIT_ASSET_SYNC
+            /// </summary>
+            public static readonly LogTypeEnum SYSTEM_WAIT_ASSET_SYNC = new LogTypeEnum("SYSTEM_WAIT_ASSET_SYNC");
+
+            /// <summary>
             /// Enum SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS for value: SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS
             /// </summary>
             public static readonly LogTypeEnum SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS = new LogTypeEnum("SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS");
@@ -191,6 +206,11 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// Enum SYSTEM_UPDATE_COVER for value: SYSTEM_UPDATE_COVER
             /// </summary>
             public static readonly LogTypeEnum SYSTEM_UPDATE_COVER = new LogTypeEnum("SYSTEM_UPDATE_COVER");
+
+            /// <summary>
+            /// Enum SYSTEM_ANALYSE_FILE_INFO for value: SYSTEM_ANALYSE_FILE_INFO
+            /// </summary>
+            public static readonly LogTypeEnum SYSTEM_ANALYSE_FILE_INFO = new LogTypeEnum("SYSTEM_ANALYSE_FILE_INFO");
 
             /// <summary>
             /// Enum ADMIN_SET_SILENCE_REPEAT_NUM for value: ADMIN_SET_SILENCE_REPEAT_NUM
@@ -278,6 +298,11 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             public static readonly LogTypeEnum ADMIN_UPDATE_INFERENCE_DATA_PROCESS_VIDEO = new LogTypeEnum("ADMIN_UPDATE_INFERENCE_DATA_PROCESS_VIDEO");
 
             /// <summary>
+            /// Enum ADMIN_UPDATE_INFERENCE_DATA_CHAT_PROCESS_VIDEO for value: ADMIN_UPDATE_INFERENCE_DATA_CHAT_PROCESS_VIDEO
+            /// </summary>
+            public static readonly LogTypeEnum ADMIN_UPDATE_INFERENCE_DATA_CHAT_PROCESS_VIDEO = new LogTypeEnum("ADMIN_UPDATE_INFERENCE_DATA_CHAT_PROCESS_VIDEO");
+
+            /// <summary>
             /// Enum SYSTEM_EXECUTE_COMPILE for value: SYSTEM_EXECUTE_COMPILE
             /// </summary>
             public static readonly LogTypeEnum SYSTEM_EXECUTE_COMPILE = new LogTypeEnum("SYSTEM_EXECUTE_COMPILE");
@@ -303,6 +328,16 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             public static readonly LogTypeEnum USER_UPDATE_VIDEO = new LogTypeEnum("USER_UPDATE_VIDEO");
 
             /// <summary>
+            /// Enum ADMIN_UPLOAD_JSON_DATA for value: ADMIN_UPLOAD_JSON_DATA
+            /// </summary>
+            public static readonly LogTypeEnum ADMIN_UPLOAD_JSON_DATA = new LogTypeEnum("ADMIN_UPLOAD_JSON_DATA");
+
+            /// <summary>
+            /// Enum ADMIN_DELETE_JSON_DATA for value: ADMIN_DELETE_JSON_DATA
+            /// </summary>
+            public static readonly LogTypeEnum ADMIN_DELETE_JSON_DATA = new LogTypeEnum("ADMIN_DELETE_JSON_DATA");
+
+            /// <summary>
             /// Enum ADMIN_UPDATE_GENERAL_CONFIG for value: ADMIN_UPDATE_GENERAL_CONFIG
             /// </summary>
             public static readonly LogTypeEnum ADMIN_UPDATE_GENERAL_CONFIG = new LogTypeEnum("ADMIN_UPDATE_GENERAL_CONFIG");
@@ -313,9 +348,184 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             public static readonly LogTypeEnum ADMIN_MASK_ACTION_TIME = new LogTypeEnum("ADMIN_MASK_ACTION_TIME");
 
             /// <summary>
+            /// Enum ADMIN_UPDATE_TRAIN_TIME for value: ADMIN_UPDATE_TRAIN_TIME
+            /// </summary>
+            public static readonly LogTypeEnum ADMIN_UPDATE_TRAIN_TIME = new LogTypeEnum("ADMIN_UPDATE_TRAIN_TIME");
+
+            /// <summary>
             /// Enum STOP_COMPILE for value: STOP_COMPILE
             /// </summary>
             public static readonly LogTypeEnum STOP_COMPILE = new LogTypeEnum("STOP_COMPILE");
+
+            /// <summary>
+            /// Enum MAKE_TEST_VIDEO for value: MAKE_TEST_VIDEO
+            /// </summary>
+            public static readonly LogTypeEnum MAKE_TEST_VIDEO = new LogTypeEnum("MAKE_TEST_VIDEO");
+
+            /// <summary>
+            /// Enum ADMIN_SET_FLEXUS_RETRY_COUNT for value: ADMIN_SET_FLEXUS_RETRY_COUNT
+            /// </summary>
+            public static readonly LogTypeEnum ADMIN_SET_FLEXUS_RETRY_COUNT = new LogTypeEnum("ADMIN_SET_FLEXUS_RETRY_COUNT");
+
+            /// <summary>
+            /// Enum USER_DELETE_JOB_VIDEO for value: USER_DELETE_JOB_VIDEO
+            /// </summary>
+            public static readonly LogTypeEnum USER_DELETE_JOB_VIDEO = new LogTypeEnum("USER_DELETE_JOB_VIDEO");
+
+            /// <summary>
+            /// Enum ADMIN_SET_VIDEO_ROTATION_ANGLE for value: ADMIN_SET_VIDEO_ROTATION_ANGLE
+            /// </summary>
+            public static readonly LogTypeEnum ADMIN_SET_VIDEO_ROTATION_ANGLE = new LogTypeEnum("ADMIN_SET_VIDEO_ROTATION_ANGLE");
+
+            /// <summary>
+            /// Enum ADMIN_RE_SET_VIDEO_ROTATION_ANGLE for value: ADMIN_RE_SET_VIDEO_ROTATION_ANGLE
+            /// </summary>
+            public static readonly LogTypeEnum ADMIN_RE_SET_VIDEO_ROTATION_ANGLE = new LogTypeEnum("ADMIN_RE_SET_VIDEO_ROTATION_ANGLE");
+
+            /// <summary>
+            /// Enum SYSTEM_SET_VIDEO_ROTATION_ANGLE_SUCCESS for value: SYSTEM_SET_VIDEO_ROTATION_ANGLE_SUCCESS
+            /// </summary>
+            public static readonly LogTypeEnum SYSTEM_SET_VIDEO_ROTATION_ANGLE_SUCCESS = new LogTypeEnum("SYSTEM_SET_VIDEO_ROTATION_ANGLE_SUCCESS");
+
+            /// <summary>
+            /// Enum SYSTEM_SET_VIDEO_ROTATION_ANGLE_FAILED for value: SYSTEM_SET_VIDEO_ROTATION_ANGLE_FAILED
+            /// </summary>
+            public static readonly LogTypeEnum SYSTEM_SET_VIDEO_ROTATION_ANGLE_FAILED = new LogTypeEnum("SYSTEM_SET_VIDEO_ROTATION_ANGLE_FAILED");
+
+            /// <summary>
+            /// Enum COMPILE_JOB_IS_CONSUME for value: COMPILE_JOB_IS_CONSUME
+            /// </summary>
+            public static readonly LogTypeEnum COMPILE_JOB_IS_CONSUME = new LogTypeEnum("COMPILE_JOB_IS_CONSUME");
+
+            /// <summary>
+            /// Enum RESTART_TEST_VIDEO_CHECK for value: RESTART_TEST_VIDEO_CHECK
+            /// </summary>
+            public static readonly LogTypeEnum RESTART_TEST_VIDEO_CHECK = new LogTypeEnum("RESTART_TEST_VIDEO_CHECK");
+
+            /// <summary>
+            /// Enum SKIP_TEST_VIDEO_CHECK for value: SKIP_TEST_VIDEO_CHECK
+            /// </summary>
+            public static readonly LogTypeEnum SKIP_TEST_VIDEO_CHECK = new LogTypeEnum("SKIP_TEST_VIDEO_CHECK");
+
+            /// <summary>
+            /// Enum WAIT_TEST_VIDEO_CHECK for value: WAIT_TEST_VIDEO_CHECK
+            /// </summary>
+            public static readonly LogTypeEnum WAIT_TEST_VIDEO_CHECK = new LogTypeEnum("WAIT_TEST_VIDEO_CHECK");
+
+            /// <summary>
+            /// Enum TEST_VIDEO_CHECK_PROCESSING for value: TEST_VIDEO_CHECK_PROCESSING
+            /// </summary>
+            public static readonly LogTypeEnum TEST_VIDEO_CHECK_PROCESSING = new LogTypeEnum("TEST_VIDEO_CHECK_PROCESSING");
+
+            /// <summary>
+            /// Enum TEST_VIDEO_CHECK_SUCCESS for value: TEST_VIDEO_CHECK_SUCCESS
+            /// </summary>
+            public static readonly LogTypeEnum TEST_VIDEO_CHECK_SUCCESS = new LogTypeEnum("TEST_VIDEO_CHECK_SUCCESS");
+
+            /// <summary>
+            /// Enum TEST_VIDEO_CHECK_FAILED for value: TEST_VIDEO_CHECK_FAILED
+            /// </summary>
+            public static readonly LogTypeEnum TEST_VIDEO_CHECK_FAILED = new LogTypeEnum("TEST_VIDEO_CHECK_FAILED");
+
+            /// <summary>
+            /// Enum REDO_INFERENCE_PREPROCESSING for value: REDO_INFERENCE_PREPROCESSING
+            /// </summary>
+            public static readonly LogTypeEnum REDO_INFERENCE_PREPROCESSING = new LogTypeEnum("REDO_INFERENCE_PREPROCESSING");
+
+            /// <summary>
+            /// Enum REDO_TRAINING_PREPROCESSING for value: REDO_TRAINING_PREPROCESSING
+            /// </summary>
+            public static readonly LogTypeEnum REDO_TRAINING_PREPROCESSING = new LogTypeEnum("REDO_TRAINING_PREPROCESSING");
+
+            /// <summary>
+            /// Enum REDO_TRAINING for value: REDO_TRAINING
+            /// </summary>
+            public static readonly LogTypeEnum REDO_TRAINING = new LogTypeEnum("REDO_TRAINING");
+
+            /// <summary>
+            /// Enum REDO_ACTION_DATA_GENERATE for value: REDO_ACTION_DATA_GENERATE
+            /// </summary>
+            public static readonly LogTypeEnum REDO_ACTION_DATA_GENERATE = new LogTypeEnum("REDO_ACTION_DATA_GENERATE");
+
+            /// <summary>
+            /// Enum REDO_ACTION_ORI_GENERATE for value: REDO_ACTION_ORI_GENERATE
+            /// </summary>
+            public static readonly LogTypeEnum REDO_ACTION_ORI_GENERATE = new LogTypeEnum("REDO_ACTION_ORI_GENERATE");
+
+            /// <summary>
+            /// Enum VIDEO_ANALYZE_PROCESSING for value: VIDEO_ANALYZE_PROCESSING
+            /// </summary>
+            public static readonly LogTypeEnum VIDEO_ANALYZE_PROCESSING = new LogTypeEnum("VIDEO_ANALYZE_PROCESSING");
+
+            /// <summary>
+            /// Enum VIDEO_ANALYZE_SUCCESS for value: VIDEO_ANALYZE_SUCCESS
+            /// </summary>
+            public static readonly LogTypeEnum VIDEO_ANALYZE_SUCCESS = new LogTypeEnum("VIDEO_ANALYZE_SUCCESS");
+
+            /// <summary>
+            /// Enum VIDEO_ANALYZE_FAILED for value: VIDEO_ANALYZE_FAILED
+            /// </summary>
+            public static readonly LogTypeEnum VIDEO_ANALYZE_FAILED = new LogTypeEnum("VIDEO_ANALYZE_FAILED");
+
+            /// <summary>
+            /// Enum ADMIN_RESOLUTION_NORMALIZE for value: ADMIN_RESOLUTION_NORMALIZE
+            /// </summary>
+            public static readonly LogTypeEnum ADMIN_RESOLUTION_NORMALIZE = new LogTypeEnum("ADMIN_RESOLUTION_NORMALIZE");
+
+            /// <summary>
+            /// Enum SYSTEM_SET_RESOLUTION_NORMALIZE_SUCCESS for value: SYSTEM_SET_RESOLUTION_NORMALIZE_SUCCESS
+            /// </summary>
+            public static readonly LogTypeEnum SYSTEM_SET_RESOLUTION_NORMALIZE_SUCCESS = new LogTypeEnum("SYSTEM_SET_RESOLUTION_NORMALIZE_SUCCESS");
+
+            /// <summary>
+            /// Enum SYSTEM_SET_RESOLUTION_NORMALIZE_FAILED for value: SYSTEM_SET_RESOLUTION_NORMALIZE_FAILED
+            /// </summary>
+            public static readonly LogTypeEnum SYSTEM_SET_RESOLUTION_NORMALIZE_FAILED = new LogTypeEnum("SYSTEM_SET_RESOLUTION_NORMALIZE_FAILED");
+
+            /// <summary>
+            /// Enum SYSTEM_ACTION_MARK_PREPROCESS_FAILED for value: SYSTEM_ACTION_MARK_PREPROCESS_FAILED
+            /// </summary>
+            public static readonly LogTypeEnum SYSTEM_ACTION_MARK_PREPROCESS_FAILED = new LogTypeEnum("SYSTEM_ACTION_MARK_PREPROCESS_FAILED");
+
+            /// <summary>
+            /// Enum SYSTEM_ACTION_MARK_PREPROCESSING for value: SYSTEM_ACTION_MARK_PREPROCESSING
+            /// </summary>
+            public static readonly LogTypeEnum SYSTEM_ACTION_MARK_PREPROCESSING = new LogTypeEnum("SYSTEM_ACTION_MARK_PREPROCESSING");
+
+            /// <summary>
+            /// Enum SYSTEM_ACTION_MARK_PREPROCESS_SUCCESS for value: SYSTEM_ACTION_MARK_PREPROCESS_SUCCESS
+            /// </summary>
+            public static readonly LogTypeEnum SYSTEM_ACTION_MARK_PREPROCESS_SUCCESS = new LogTypeEnum("SYSTEM_ACTION_MARK_PREPROCESS_SUCCESS");
+
+            /// <summary>
+            /// Enum REDO_ACTION_MARK for value: REDO_ACTION_MARK
+            /// </summary>
+            public static readonly LogTypeEnum REDO_ACTION_MARK = new LogTypeEnum("REDO_ACTION_MARK");
+
+            /// <summary>
+            /// Enum CONFIRM_ACTION_MARK for value: CONFIRM_ACTION_MARK
+            /// </summary>
+            public static readonly LogTypeEnum CONFIRM_ACTION_MARK = new LogTypeEnum("CONFIRM_ACTION_MARK");
+
+            /// <summary>
+            /// Enum MANUL_STOP_ACTION_MARK for value: MANUL_STOP_ACTION_MARK
+            /// </summary>
+            public static readonly LogTypeEnum MANUL_STOP_ACTION_MARK = new LogTypeEnum("MANUL_STOP_ACTION_MARK");
+
+            /// <summary>
+            /// Enum SYSTEM_INFERENCE_DATA_REASSEMBLE_WAITING for value: SYSTEM_INFERENCE_DATA_REASSEMBLE_WAITING
+            /// </summary>
+            public static readonly LogTypeEnum SYSTEM_INFERENCE_DATA_REASSEMBLE_WAITING = new LogTypeEnum("SYSTEM_INFERENCE_DATA_REASSEMBLE_WAITING");
+
+            /// <summary>
+            /// Enum SYSTEM_INFERENCE_DATA_REASSEMBLE_PROCESSING for value: SYSTEM_INFERENCE_DATA_REASSEMBLE_PROCESSING
+            /// </summary>
+            public static readonly LogTypeEnum SYSTEM_INFERENCE_DATA_REASSEMBLE_PROCESSING = new LogTypeEnum("SYSTEM_INFERENCE_DATA_REASSEMBLE_PROCESSING");
+
+            /// <summary>
+            /// Enum TIME_OUT_RETRY for value: TIME_OUT_RETRY
+            /// </summary>
+            public static readonly LogTypeEnum TIME_OUT_RETRY = new LogTypeEnum("TIME_OUT_RETRY");
 
             private static readonly Dictionary<string, LogTypeEnum> StaticFields =
             new Dictionary<string, LogTypeEnum>()
@@ -324,6 +534,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 { "USER_VERIFYING_SUBMITTED", USER_VERIFYING_SUBMITTED },
                 { "SYSTEM_VERIFY_FAILED", SYSTEM_VERIFY_FAILED },
                 { "ADMIN_UPDATE_BEAUTY_LEVEL", ADMIN_UPDATE_BEAUTY_LEVEL },
+                { "ADMIN_UPDATE_TRAIN_LOCATION", ADMIN_UPDATE_TRAIN_LOCATION },
+                { "ADMIN_UPDATE_JOB_PRIORITY", ADMIN_UPDATE_JOB_PRIORITY },
                 { "SYSTEM_VERIFY_SUCCESS", SYSTEM_VERIFY_SUCCESS },
                 { "ADMIN_VERIFY_SUCCESS", ADMIN_VERIFY_SUCCESS },
                 { "ADMIN_VERIFY_FAILED", ADMIN_VERIFY_FAILED },
@@ -345,6 +557,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 { "SYSTEM_TRAIN_SUCCESS", SYSTEM_TRAIN_SUCCESS },
                 { "SYSTEM_INFERENCE_DATA_PREPROCESSING", SYSTEM_INFERENCE_DATA_PREPROCESSING },
                 { "SYSTEM_INFERENCE_DATA_PREPROCESS_FAILED", SYSTEM_INFERENCE_DATA_PREPROCESS_FAILED },
+                { "SYSTEM_WAIT_ASSET_SYNC", SYSTEM_WAIT_ASSET_SYNC },
                 { "SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS", SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS },
                 { "SYSTEM_JOB_SUCCESS", SYSTEM_JOB_SUCCESS },
                 { "ADMIN_MASK_UPLOADED", ADMIN_MASK_UPLOADED },
@@ -354,6 +567,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 { "ADMIN_ACCEPT", ADMIN_ACCEPT },
                 { "USER_REPAIR", USER_REPAIR },
                 { "SYSTEM_UPDATE_COVER", SYSTEM_UPDATE_COVER },
+                { "SYSTEM_ANALYSE_FILE_INFO", SYSTEM_ANALYSE_FILE_INFO },
                 { "ADMIN_SET_SILENCE_REPEAT_NUM", ADMIN_SET_SILENCE_REPEAT_NUM },
                 { "SYSTEM_MARKABLE_VIDEO", SYSTEM_MARKABLE_VIDEO },
                 { "SYSTEM_MASK_VERIFY_VIDEO", SYSTEM_MASK_VERIFY_VIDEO },
@@ -371,14 +585,52 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 { "SYSTEM_MARKABLE_VIDEO_FAILED", SYSTEM_MARKABLE_VIDEO_FAILED },
                 { "ADMIN_UPDATE_COMPILE", ADMIN_UPDATE_COMPILE },
                 { "ADMIN_UPDATE_INFERENCE_DATA_PROCESS_VIDEO", ADMIN_UPDATE_INFERENCE_DATA_PROCESS_VIDEO },
+                { "ADMIN_UPDATE_INFERENCE_DATA_CHAT_PROCESS_VIDEO", ADMIN_UPDATE_INFERENCE_DATA_CHAT_PROCESS_VIDEO },
                 { "SYSTEM_EXECUTE_COMPILE", SYSTEM_EXECUTE_COMPILE },
                 { "SYSTEM_EXECUTE_BEAUTY", SYSTEM_EXECUTE_BEAUTY },
                 { "SYSTEM_MASK_VIDEO_AND_ACTION_TIME_SUCCESS", SYSTEM_MASK_VIDEO_AND_ACTION_TIME_SUCCESS },
                 { "SYSTEM_MASK_VIDEO_AND_ACTION_TIME_FAILED", SYSTEM_MASK_VIDEO_AND_ACTION_TIME_FAILED },
                 { "USER_UPDATE_VIDEO", USER_UPDATE_VIDEO },
+                { "ADMIN_UPLOAD_JSON_DATA", ADMIN_UPLOAD_JSON_DATA },
+                { "ADMIN_DELETE_JSON_DATA", ADMIN_DELETE_JSON_DATA },
                 { "ADMIN_UPDATE_GENERAL_CONFIG", ADMIN_UPDATE_GENERAL_CONFIG },
                 { "ADMIN_MASK_ACTION_TIME", ADMIN_MASK_ACTION_TIME },
+                { "ADMIN_UPDATE_TRAIN_TIME", ADMIN_UPDATE_TRAIN_TIME },
                 { "STOP_COMPILE", STOP_COMPILE },
+                { "MAKE_TEST_VIDEO", MAKE_TEST_VIDEO },
+                { "ADMIN_SET_FLEXUS_RETRY_COUNT", ADMIN_SET_FLEXUS_RETRY_COUNT },
+                { "USER_DELETE_JOB_VIDEO", USER_DELETE_JOB_VIDEO },
+                { "ADMIN_SET_VIDEO_ROTATION_ANGLE", ADMIN_SET_VIDEO_ROTATION_ANGLE },
+                { "ADMIN_RE_SET_VIDEO_ROTATION_ANGLE", ADMIN_RE_SET_VIDEO_ROTATION_ANGLE },
+                { "SYSTEM_SET_VIDEO_ROTATION_ANGLE_SUCCESS", SYSTEM_SET_VIDEO_ROTATION_ANGLE_SUCCESS },
+                { "SYSTEM_SET_VIDEO_ROTATION_ANGLE_FAILED", SYSTEM_SET_VIDEO_ROTATION_ANGLE_FAILED },
+                { "COMPILE_JOB_IS_CONSUME", COMPILE_JOB_IS_CONSUME },
+                { "RESTART_TEST_VIDEO_CHECK", RESTART_TEST_VIDEO_CHECK },
+                { "SKIP_TEST_VIDEO_CHECK", SKIP_TEST_VIDEO_CHECK },
+                { "WAIT_TEST_VIDEO_CHECK", WAIT_TEST_VIDEO_CHECK },
+                { "TEST_VIDEO_CHECK_PROCESSING", TEST_VIDEO_CHECK_PROCESSING },
+                { "TEST_VIDEO_CHECK_SUCCESS", TEST_VIDEO_CHECK_SUCCESS },
+                { "TEST_VIDEO_CHECK_FAILED", TEST_VIDEO_CHECK_FAILED },
+                { "REDO_INFERENCE_PREPROCESSING", REDO_INFERENCE_PREPROCESSING },
+                { "REDO_TRAINING_PREPROCESSING", REDO_TRAINING_PREPROCESSING },
+                { "REDO_TRAINING", REDO_TRAINING },
+                { "REDO_ACTION_DATA_GENERATE", REDO_ACTION_DATA_GENERATE },
+                { "REDO_ACTION_ORI_GENERATE", REDO_ACTION_ORI_GENERATE },
+                { "VIDEO_ANALYZE_PROCESSING", VIDEO_ANALYZE_PROCESSING },
+                { "VIDEO_ANALYZE_SUCCESS", VIDEO_ANALYZE_SUCCESS },
+                { "VIDEO_ANALYZE_FAILED", VIDEO_ANALYZE_FAILED },
+                { "ADMIN_RESOLUTION_NORMALIZE", ADMIN_RESOLUTION_NORMALIZE },
+                { "SYSTEM_SET_RESOLUTION_NORMALIZE_SUCCESS", SYSTEM_SET_RESOLUTION_NORMALIZE_SUCCESS },
+                { "SYSTEM_SET_RESOLUTION_NORMALIZE_FAILED", SYSTEM_SET_RESOLUTION_NORMALIZE_FAILED },
+                { "SYSTEM_ACTION_MARK_PREPROCESS_FAILED", SYSTEM_ACTION_MARK_PREPROCESS_FAILED },
+                { "SYSTEM_ACTION_MARK_PREPROCESSING", SYSTEM_ACTION_MARK_PREPROCESSING },
+                { "SYSTEM_ACTION_MARK_PREPROCESS_SUCCESS", SYSTEM_ACTION_MARK_PREPROCESS_SUCCESS },
+                { "REDO_ACTION_MARK", REDO_ACTION_MARK },
+                { "CONFIRM_ACTION_MARK", CONFIRM_ACTION_MARK },
+                { "MANUL_STOP_ACTION_MARK", MANUL_STOP_ACTION_MARK },
+                { "SYSTEM_INFERENCE_DATA_REASSEMBLE_WAITING", SYSTEM_INFERENCE_DATA_REASSEMBLE_WAITING },
+                { "SYSTEM_INFERENCE_DATA_REASSEMBLE_PROCESSING", SYSTEM_INFERENCE_DATA_REASSEMBLE_PROCESSING },
+                { "TIME_OUT_RETRY", TIME_OUT_RETRY },
             };
 
             private string _value;
@@ -601,7 +853,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string OperateTime { get; set; }
 
         /// <summary>
-        /// 命令执行结果。 * USER_CREATE_JOD：用户开始分身数字人定制 * USER_VERIFYING_SUBMITTED：用户提交审核 * SYSTEM_VERIFY_FAILED：自动审核失败 * ADMIN_UPDATE_BEAUTY_LEVEL：管理员更新美白等级 * SYSTEM_VERIFY_SUCCESS：自动审核成功 * ADMIN_VERIFY_SUCCESS：人工审核通过 * ADMIN_VERIFY_FAILED：人工审核不通过 * SYSTEM_TRAIN_DATA_PREPROCESSING：训练数据预处理中 * SYSTEM_TRAIN_DATA_PREPROCESS_FAILED：训练数据预处理失败 * SYSTEM_TRAIN_DATA_PREPROCESS_SUCCESS：训练数据预处理成功 * SYSTEM_ACTION_GENERATE_DATA_PREPROCESSING：动作编排原子动作生成中 * SYSTEM_ACTION_GENERATE_DATA_SUCCESS：动作编排原子动作生成成功 * SYSTEM_ACTION_GENERATE_ORI_SUCCESS：动作编排资产数据生成成功 * SYSTEM_ACTION_GENERATE_DATA_FAILED：动作编排原子动作生成失败 * SYSTEM_ACTION_GENERATE_ORI_FAILED：动作编排资产数据生成失败 * SYSTEM_ACTION_GENERATE_ORI_PREPROCESSING：动作编排资产数据生成中 * SYSTEM_TRAINING：开始训练 * ADMIN_STOP_TRAINING_DATA_PREPROCESS：人工中止训练 * ADMIN_STOP_BEAUTY_PREPROCESS：人工中止美白 * ADMIN_STOP_INFERENCE_DATA_PREPROCESS：人工中止推理预处理 * ADMIN_STOP_TRAIN：人工终止训练 * SYSTEM_TRAIN_FAILED：训练失败 * SYSTEM_TRAIN_SUCCESS：训练成功 * SYSTEM_INFERENCE_DATA_PREPROCESSING：推理数据预处理中 * SYSTEM_INFERENCE_DATA_PREPROCESS_FAILED：推理数据预处理失败 * SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS：推理数据预处理成功 * SYSTEM_JOB_SUCCESS：任务处理完成 * ADMIN_MASK_UPLOADED：遮罩文件上传完成（已废弃） * ADMIN_UPDATE_VIDEO：管理员更换视频 * ADMIN_UPDATE_ACTION_VIDEO：管理员更换动作编排视频 * ADMIN_RESET：管理员一键重置 * ADMIN_ACCEPT：管理员通过 * USER_REPAIR：用户修复 * SYSTEM_UPDATE_COVER：更换封面 * ADMIN_SET_SILENCE_REPEAT_NUM：管理员设置静默轮数 * SYSTEM_MARKABLE_VIDEO：标记视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO：校验视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO_SUCCESS：校验视频生成成功 * SYSTEM_MASK_VERIFY_VIDEO_FAILED：校验视频生成失败 * SYSTEM_MARKABLE_VIDEO_SUCCESS：标记视频生成成功 * SYSTEM_BEAUTY_PREPROCESSING：美白处理中 * SYSTEM_BEAUTY_PREPROCESS_FAILED：美白处理失败 * ADMIN_CONFIRM_ACTION：管理员确认动作 * ADMIN_STOP_ACTION_GENERATE_DATA_PREPROCESS：人工中止原子动作生成 * ADMIN_STOP_ACTION_GENERATE_ORI_PREPROCESS：人工中止动作编排 * SYSTEM_BEAUTY_PREPROCESS_SUCCESS：美白视频训练预处理成功 * SYSTEM_COMPILE_FAILED：转编译失败 * SYSTEM_COMPILE_SUCCESS：转编译成功 * SYSTEM_MARKABLE_VIDEO_FAILED：标记视频生成失败 * ADMIN_UPDATE_COMPILE：管理员更新转编译配置 * ADMIN_UPDATE_INFERENCE_DATA_PROCESS_VIDEO：管理员更新推理预处理时间段信息 * SYSTEM_EXECUTE_COMPILE：执行转编译 * SYSTEM_EXECUTE_BEAUTY：执行美白处理 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_SUCCESS：自动标记成功 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_FAILED：自动标记失败 * USER_UPDATE_VIDEO：用户更换视频 * ADMIN_UPDATE_GENERAL_CONFIG：管理员更新通用配置 * ADMIN_MASK_ACTION_TIME：管理员标记 * STOP_COMPILE：人工中止转编译
+        /// 命令执行结果。 * USER_CREATE_JOD：用户开始分身数字人定制 * USER_VERIFYING_SUBMITTED：用户提交审核 * SYSTEM_VERIFY_FAILED：自动审核失败 * ADMIN_UPDATE_BEAUTY_LEVEL：管理员更新美白等级 * ADMIN_UPDATE_JOB_PRIORITY：管理员更新任务等级 * SYSTEM_VERIFY_SUCCESS：自动审核成功 * ADMIN_VERIFY_SUCCESS：人工审核通过 * ADMIN_VERIFY_FAILED：人工审核不通过 * SYSTEM_TRAIN_DATA_PREPROCESSING：训练数据预处理中 * SYSTEM_TRAIN_DATA_PREPROCESS_FAILED：训练数据预处理失败 * SYSTEM_TRAIN_DATA_PREPROCESS_SUCCESS：训练数据预处理成功 * SYSTEM_ACTION_GENERATE_DATA_PREPROCESSING：动作编排原子动作生成中 * SYSTEM_ACTION_GENERATE_DATA_SUCCESS：动作编排原子动作生成成功 * SYSTEM_ACTION_GENERATE_ORI_SUCCESS：动作编排资产数据生成成功 * SYSTEM_ACTION_GENERATE_DATA_FAILED：动作编排原子动作生成失败 * SYSTEM_ACTION_GENERATE_ORI_FAILED：动作编排资产数据生成失败 * SYSTEM_ACTION_GENERATE_ORI_PREPROCESSING：动作编排资产数据生成中 * SYSTEM_TRAINING：开始训练 * ADMIN_STOP_TRAINING_DATA_PREPROCESS：人工中止训练 * ADMIN_STOP_BEAUTY_PREPROCESS：人工中止美白 * ADMIN_STOP_INFERENCE_DATA_PREPROCESS：人工中止推理预处理 * ADMIN_STOP_TRAIN：人工终止训练 * SYSTEM_TRAIN_FAILED：训练失败 * SYSTEM_TRAIN_SUCCESS：训练成功 * SYSTEM_INFERENCE_DATA_PREPROCESSING：推理数据预处理中 * SYSTEM_INFERENCE_DATA_PREPROCESS_FAILED：推理数据预处理失败 * SYSTEM_INFERENCE_DATA_PREPROCESS_SUCCESS：推理数据预处理成功 * SYSTEM_JOB_SUCCESS：任务处理完成 * ADMIN_MASK_UPLOADED：遮罩文件上传完成（已废弃） * ADMIN_UPDATE_VIDEO：管理员更换视频 * ADMIN_UPDATE_ACTION_VIDEO：管理员更换动作编排视频 * ADMIN_RESET：管理员一键重置 * ADMIN_ACCEPT：管理员通过 * USER_REPAIR：用户修复 * SYSTEM_UPDATE_COVER：更换封面 * SYSTEM_ANALYSE_FILE_INFO：系统解析文件信息 * ADMIN_SET_SILENCE_REPEAT_NUM：管理员设置静默轮数 * SYSTEM_MARKABLE_VIDEO：标记视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO：校验视频生成任务 * SYSTEM_MASK_VERIFY_VIDEO_SUCCESS：校验视频生成成功 * SYSTEM_MASK_VERIFY_VIDEO_FAILED：校验视频生成失败 * SYSTEM_MARKABLE_VIDEO_SUCCESS：标记视频生成成功 * SYSTEM_BEAUTY_PREPROCESSING：美白处理中 * SYSTEM_BEAUTY_PREPROCESS_FAILED：美白处理失败 * ADMIN_CONFIRM_ACTION：管理员确认动作 * ADMIN_STOP_ACTION_GENERATE_DATA_PREPROCESS：人工中止原子动作生成 * ADMIN_STOP_ACTION_GENERATE_ORI_PREPROCESS：人工中止动作编排 * SYSTEM_BEAUTY_PREPROCESS_SUCCESS：美白视频训练预处理成功 * SYSTEM_COMPILE_FAILED：转编译失败 * SYSTEM_COMPILE_SUCCESS：转编译成功 * SYSTEM_MARKABLE_VIDEO_FAILED：标记视频生成失败 * ADMIN_UPDATE_COMPILE：管理员更新转编译配置 * ADMIN_UPDATE_INFERENCE_DATA_PROCESS_VIDEO：管理员更新推理预处理时间段信息 * SYSTEM_EXECUTE_COMPILE：执行转编译 * SYSTEM_EXECUTE_BEAUTY：执行美白处理 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_SUCCESS：自动标记成功 * SYSTEM_MASK_VIDEO_AND_ACTION_TIME_FAILED：自动标记失败 * USER_UPDATE_VIDEO：用户更换视频 * ADMIN_UPLOAD_JSON_DATA：管理员上传动作数据 * ADMIN_DELETE_JSON_DATA：管理员删除动作数据 * ADMIN_UPDATE_GENERAL_CONFIG：管理员更新通用配置 * ADMIN_MASK_ACTION_TIME：管理员标记 * STOP_COMPILE：人工中止转编译 * MAKE_TEST_VIDEO：测试视频 * ADMIN_SET_FLEXUS_RETRY_COUNT：管理员设置flexus任务重试次数 * USER_DELETE_JOB_VIDEO：用户删除任务相关视频 * ADMIN_SET_VIDEO_ROTATION_ANGLE：管理员设置视频旋转角度 * ADMIN_RE_SET_VIDEO_ROTATION_ANGLE：管理员恢复视频旋转角度 * SYSTEM_SET_VIDEO_ROTATION_ANGLE_SUCCESS：视频旋转成功 * SYSTEM_SET_VIDEO_ROTATION_ANGLE_FAILED：视频旋转失败 * COMPILE_JOB_IS_CONSUME：转编译任务被消费 * RESTART_TEST_VIDEO_CHECK: 重新执行测试视频检测 * SKIP_TEST_VIDEO_CHECK:跳过测试视频检测 * WAIT_TEST_VIDEO_CHECK:等待测试视频检测 * TEST_VIDEO_CHECK_PROCESSING:测试视频检测中 * TEST_VIDEO_CHECK_SUCCESS:测试视频检测成功 * TEST_VIDEO_CHECK_FAILED:测试视频检测失败 * REDO_INFERENCE_PREPROCESSING：重新预处理推理数据 * REDO_TRAINING_PREPROCESSING：重新预处理训练数据 * REDO_TRAINING：重新训练 * REDO_ACTION_DATA_GENERATE：重新生成原子动作 * REDO_ACTION_ORI_GENERATE：重新动作编排 * VIDEO_ANALYZE_PROCESSING：视频检测中 * VIDEO_ANALYZE_SUCCESS：视频检测通过 * VIDEO_ANALYZE_FAILED：视频检测未通过 * ADMIN_RESOLUTION_NORMALIZE：管理员分辨率归一化 * SYSTEM_SET_RESOLUTION_NORMALIZE_SUCCESS：管理员分辨率归一化成功 * SYSTEM_SET_RESOLUTION_NORMALIZE_FAILED：管理员分辨率归一化失败 * SYSTEM_ACTION_MARK_PREPROCESS_FAILED 动作标定任务失败 * SYSTEM_ACTION_MARK_PREPROCESSING：动作标定任务生成中 * SYSTEM_ACTION_MARK_PREPROCESS_SUCCESS：动作标定任务成功 * REDO_ACTION_MARK：重新生成原子动作标记 * CONFIRM_ACTION_MARK：确定预标记原子动作 * MANUL_STOP_ACTION_MARK：中止动作标定 * TIME_OUT_RETRY：超时重试
         /// </summary>
         [JsonProperty("log_type", NullValueHandling = NullValueHandling.Ignore)]
         public LogTypeEnum LogType { get; set; }
@@ -622,6 +874,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("error_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ErrorCode { get; set; }
 
+        /// <summary>
+        /// 任务被管理员重新执行的问题原因列表。
+        /// </summary>
+        [JsonProperty("redo_reasons", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> RedoReasons { get; set; }
+
 
 
         /// <summary>
@@ -636,6 +894,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  logDescription: ").Append(LogDescription).Append("\n");
             sb.Append("  operateUser: ").Append(OperateUser).Append("\n");
             sb.Append("  errorCode: ").Append(ErrorCode).Append("\n");
+            sb.Append("  redoReasons: ").Append(RedoReasons).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -659,6 +918,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.LogDescription != input.LogDescription || (this.LogDescription != null && !this.LogDescription.Equals(input.LogDescription))) return false;
             if (this.OperateUser != input.OperateUser) return false;
             if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.RedoReasons != input.RedoReasons || (this.RedoReasons != null && input.RedoReasons != null && !this.RedoReasons.SequenceEqual(input.RedoReasons))) return false;
 
             return true;
         }
@@ -676,6 +936,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.LogDescription != null) hashCode = hashCode * 59 + this.LogDescription.GetHashCode();
                 hashCode = hashCode * 59 + this.OperateUser.GetHashCode();
                 if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.RedoReasons != null) hashCode = hashCode * 59 + this.RedoReasons.GetHashCode();
                 return hashCode;
             }
         }

@@ -310,21 +310,21 @@ namespace HuaweiCloud.SDK.Aad.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public async Task<CreateAadDomainResponse> CreateAadDomainAsync(CreateAadDomainRequest createAadDomainRequest)
+        public async Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest createDomainRequest)
         {
             var urlParam = new Dictionary<string, string>();
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAadDomainRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainRequest);
             var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<CreateAadDomainResponse>(response);
+            return JsonUtils.DeSerialize<CreateDomainResponse>(response);
         }
 
-        public AsyncInvoker<CreateAadDomainResponse> CreateAadDomainAsyncInvoker(CreateAadDomainRequest createAadDomainRequest)
+        public AsyncInvoker<CreateDomainResponse> CreateDomainAsyncInvoker(CreateDomainRequest createDomainRequest)
         {
             var urlParam = new Dictionary<string, string>();
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/aad/external/domains", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAadDomainRequest);
-            return new AsyncInvoker<CreateAadDomainResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAadDomainResponse>);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainRequest);
+            return new AsyncInvoker<CreateDomainResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDomainResponse>);
         }
         
         /// <summary>

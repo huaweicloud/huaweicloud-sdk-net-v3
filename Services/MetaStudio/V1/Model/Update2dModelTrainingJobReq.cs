@@ -306,10 +306,22 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public List<string> Tags { get; set; }
 
         /// <summary>
+        /// 是否极速版flexus
+        /// </summary>
+        [JsonProperty("is_fast_flexus", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsFastFlexus { get; set; }
+
+        /// <summary>
         /// 动作视频样例可修改信息。
         /// </summary>
         [JsonProperty("samples_basic_info", NullValueHandling = NullValueHandling.Ignore)]
         public List<ActionBasicSampleInfo> SamplesBasicInfo { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("voice_properties", NullValueHandling = NullValueHandling.Ignore)]
+        public VoiceProperties VoiceProperties { get; set; }
 
         /// <summary>
         /// 该任务所生成的模型支持的业务类型，可多选。  Flexus版数字人仅支持选择“VIDEO_2D”。
@@ -339,7 +351,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  isBackgroundReplacement: ").Append(IsBackgroundReplacement).Append("\n");
             sb.Append("  batchName: ").Append(BatchName).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  isFastFlexus: ").Append(IsFastFlexus).Append("\n");
             sb.Append("  samplesBasicInfo: ").Append(SamplesBasicInfo).Append("\n");
+            sb.Append("  voiceProperties: ").Append(VoiceProperties).Append("\n");
             sb.Append("  supportedService: ").Append(SupportedService).Append("\n");
             sb.Append("  audioSourceType: ").Append(AudioSourceType).Append("\n");
             sb.Append("}\n");
@@ -368,7 +382,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.IsBackgroundReplacement != input.IsBackgroundReplacement || (this.IsBackgroundReplacement != null && !this.IsBackgroundReplacement.Equals(input.IsBackgroundReplacement))) return false;
             if (this.BatchName != input.BatchName || (this.BatchName != null && !this.BatchName.Equals(input.BatchName))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.IsFastFlexus != input.IsFastFlexus || (this.IsFastFlexus != null && !this.IsFastFlexus.Equals(input.IsFastFlexus))) return false;
             if (this.SamplesBasicInfo != input.SamplesBasicInfo || (this.SamplesBasicInfo != null && input.SamplesBasicInfo != null && !this.SamplesBasicInfo.SequenceEqual(input.SamplesBasicInfo))) return false;
+            if (this.VoiceProperties != input.VoiceProperties || (this.VoiceProperties != null && !this.VoiceProperties.Equals(input.VoiceProperties))) return false;
             if (this.SupportedService != input.SupportedService || (this.SupportedService != null && input.SupportedService != null && !this.SupportedService.SequenceEqual(input.SupportedService))) return false;
             if (this.AudioSourceType != input.AudioSourceType) return false;
 
@@ -391,7 +407,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.IsBackgroundReplacement != null) hashCode = hashCode * 59 + this.IsBackgroundReplacement.GetHashCode();
                 if (this.BatchName != null) hashCode = hashCode * 59 + this.BatchName.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.IsFastFlexus != null) hashCode = hashCode * 59 + this.IsFastFlexus.GetHashCode();
                 if (this.SamplesBasicInfo != null) hashCode = hashCode * 59 + this.SamplesBasicInfo.GetHashCode();
+                if (this.VoiceProperties != null) hashCode = hashCode * 59 + this.VoiceProperties.GetHashCode();
                 if (this.SupportedService != null) hashCode = hashCode * 59 + this.SupportedService.GetHashCode();
                 hashCode = hashCode * 59 + this.AudioSourceType.GetHashCode();
                 return hashCode;

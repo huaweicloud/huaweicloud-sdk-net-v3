@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class MasterEIPResponseSpec 
     {
         /// <summary>
-        /// 绑定动作
+        /// **参数解释**： 绑定动作 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
-        /// <value>绑定动作</value>
+        /// <value>**参数解释**： 绑定动作 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
         public class ActionEnum
         {
@@ -126,7 +126,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 绑定动作
+        /// **参数解释**： 绑定动作 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public ActionEnum Action { get; set; }
@@ -137,7 +137,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public MasterEIPResponseSpecSpec Spec { get; set; }
 
         /// <summary>
-        /// 弹性公网IP
+        /// **参数解释**： 弹性公网IP **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("elasticIp", NullValueHandling = NullValueHandling.Ignore)]
         public string ElasticIp { get; set; }

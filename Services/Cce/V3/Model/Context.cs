@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 上下文cluster信息。 
+        /// **参数解释**： 上下文cluster信息 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("cluster", NullValueHandling = NullValueHandling.Ignore)]
         public string Cluster { get; set; }
 
         /// <summary>
-        /// 上下文user信息。 
+        /// **参数解释**： 上下文user信息 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
         public string User { get; set; }

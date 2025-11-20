@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     public class Show2dModelTrainingJobResponse : SdkResponse
     {
         /// <summary>
-        /// 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   &gt; 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步  - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务
+        /// 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   &gt; 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步   * WAIT_GENERATE_ACTION_MARK 等待动作标定   * ACTION_MARKING: 动作标定生成 - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务   * WAIT_TEST_VIDEO_CHECK: 等待进行测试视频推理任务  * TEST_VIDEO_CHECK_PROCESSING：测试视频推理质量检测中  * TEST_VIDEO_CHECK_SUCCESS：测试视频推理质量检测通过  * TEST_VIDEO_CHECK_FAILED：测试视频推理质量检测未通过  * VIDEO_ANALYZE_PROCESSING：视频检测中  * VIDEO_ANALYZE_SUCCESS：视频检测通过  * VIDEO_ANALYZE_FAILED：视频检测未通过  * ACTION_MARKING：动作标定中  * ACTION_MARK_SUCCESS：动作标定成功  * ACTION_MARK_FAILED：动作标定失败  * ACTION_MARK_UPLOADED：动作标定文件上传成功  * MANUL_STOP_ACTION_MARK：中止动作标定
         /// </summary>
-        /// <value>任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   &gt; 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步  - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务</value>
+        /// <value>任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   &gt; 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步   * WAIT_GENERATE_ACTION_MARK 等待动作标定   * ACTION_MARKING: 动作标定生成 - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务   * WAIT_TEST_VIDEO_CHECK: 等待进行测试视频推理任务  * TEST_VIDEO_CHECK_PROCESSING：测试视频推理质量检测中  * TEST_VIDEO_CHECK_SUCCESS：测试视频推理质量检测通过  * TEST_VIDEO_CHECK_FAILED：测试视频推理质量检测未通过  * VIDEO_ANALYZE_PROCESSING：视频检测中  * VIDEO_ANALYZE_SUCCESS：视频检测通过  * VIDEO_ANALYZE_FAILED：视频检测未通过  * ACTION_MARKING：动作标定中  * ACTION_MARK_SUCCESS：动作标定成功  * ACTION_MARK_FAILED：动作标定失败  * ACTION_MARK_UPLOADED：动作标定文件上传成功  * MANUL_STOP_ACTION_MARK：中止动作标定</value>
         [JsonConverter(typeof(EnumClassConverter<StateEnum>))]
         public class StateEnum
         {
@@ -262,6 +262,71 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly StateEnum BEAUTYFACE_ROCESSING = new StateEnum("BEAUTYFACE_ROCESSING");
 
+            /// <summary>
+            /// Enum WAIT_TEST_VIDEO_CHECK for value: WAIT_TEST_VIDEO_CHECK
+            /// </summary>
+            public static readonly StateEnum WAIT_TEST_VIDEO_CHECK = new StateEnum("WAIT_TEST_VIDEO_CHECK");
+
+            /// <summary>
+            /// Enum TEST_VIDEO_CHECK_PROCESSING for value: TEST_VIDEO_CHECK_PROCESSING
+            /// </summary>
+            public static readonly StateEnum TEST_VIDEO_CHECK_PROCESSING = new StateEnum("TEST_VIDEO_CHECK_PROCESSING");
+
+            /// <summary>
+            /// Enum TEST_VIDEO_CHECK_SUCCESS for value: TEST_VIDEO_CHECK_SUCCESS
+            /// </summary>
+            public static readonly StateEnum TEST_VIDEO_CHECK_SUCCESS = new StateEnum("TEST_VIDEO_CHECK_SUCCESS");
+
+            /// <summary>
+            /// Enum TEST_VIDEO_CHECK_FAILED for value: TEST_VIDEO_CHECK_FAILED
+            /// </summary>
+            public static readonly StateEnum TEST_VIDEO_CHECK_FAILED = new StateEnum("TEST_VIDEO_CHECK_FAILED");
+
+            /// <summary>
+            /// Enum VIDEO_ANALYZE_PROCESSING for value: VIDEO_ANALYZE_PROCESSING
+            /// </summary>
+            public static readonly StateEnum VIDEO_ANALYZE_PROCESSING = new StateEnum("VIDEO_ANALYZE_PROCESSING");
+
+            /// <summary>
+            /// Enum VIDEO_ANALYZE_SUCCESS for value: VIDEO_ANALYZE_SUCCESS
+            /// </summary>
+            public static readonly StateEnum VIDEO_ANALYZE_SUCCESS = new StateEnum("VIDEO_ANALYZE_SUCCESS");
+
+            /// <summary>
+            /// Enum VIDEO_ANALYZE_FAILED for value: VIDEO_ANALYZE_FAILED
+            /// </summary>
+            public static readonly StateEnum VIDEO_ANALYZE_FAILED = new StateEnum("VIDEO_ANALYZE_FAILED");
+
+            /// <summary>
+            /// Enum ACTION_MARKING for value: ACTION_MARKING
+            /// </summary>
+            public static readonly StateEnum ACTION_MARKING = new StateEnum("ACTION_MARKING");
+
+            /// <summary>
+            /// Enum ACTION_MARK_SUCCESS for value: ACTION_MARK_SUCCESS
+            /// </summary>
+            public static readonly StateEnum ACTION_MARK_SUCCESS = new StateEnum("ACTION_MARK_SUCCESS");
+
+            /// <summary>
+            /// Enum ACTION_MARK_FAILED for value: ACTION_MARK_FAILED
+            /// </summary>
+            public static readonly StateEnum ACTION_MARK_FAILED = new StateEnum("ACTION_MARK_FAILED");
+
+            /// <summary>
+            /// Enum ACTION_MARK_UPLOADED for value: ACTION_MARK_UPLOADED
+            /// </summary>
+            public static readonly StateEnum ACTION_MARK_UPLOADED = new StateEnum("ACTION_MARK_UPLOADED");
+
+            /// <summary>
+            /// Enum WAIT_GENERATE_ACTION_MARK for value: WAIT_GENERATE_ACTION_MARK
+            /// </summary>
+            public static readonly StateEnum WAIT_GENERATE_ACTION_MARK = new StateEnum("WAIT_GENERATE_ACTION_MARK");
+
+            /// <summary>
+            /// Enum MANUL_STOP_ACTION_MARK for value: MANUL_STOP_ACTION_MARK
+            /// </summary>
+            public static readonly StateEnum MANUL_STOP_ACTION_MARK = new StateEnum("MANUL_STOP_ACTION_MARK");
+
             private static readonly Dictionary<string, StateEnum> StaticFields =
             new Dictionary<string, StateEnum>()
             {
@@ -313,6 +378,19 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 { "BEAUTYFACE_FAILED", BEAUTYFACE_FAILED },
                 { "WAIT_BEAUTY_VIDEO_FILE_UPLOAD", WAIT_BEAUTY_VIDEO_FILE_UPLOAD },
                 { "BEAUTYFACE_ROCESSING", BEAUTYFACE_ROCESSING },
+                { "WAIT_TEST_VIDEO_CHECK", WAIT_TEST_VIDEO_CHECK },
+                { "TEST_VIDEO_CHECK_PROCESSING", TEST_VIDEO_CHECK_PROCESSING },
+                { "TEST_VIDEO_CHECK_SUCCESS", TEST_VIDEO_CHECK_SUCCESS },
+                { "TEST_VIDEO_CHECK_FAILED", TEST_VIDEO_CHECK_FAILED },
+                { "VIDEO_ANALYZE_PROCESSING", VIDEO_ANALYZE_PROCESSING },
+                { "VIDEO_ANALYZE_SUCCESS", VIDEO_ANALYZE_SUCCESS },
+                { "VIDEO_ANALYZE_FAILED", VIDEO_ANALYZE_FAILED },
+                { "ACTION_MARKING", ACTION_MARKING },
+                { "ACTION_MARK_SUCCESS", ACTION_MARK_SUCCESS },
+                { "ACTION_MARK_FAILED", ACTION_MARK_FAILED },
+                { "ACTION_MARK_UPLOADED", ACTION_MARK_UPLOADED },
+                { "WAIT_GENERATE_ACTION_MARK", WAIT_GENERATE_ACTION_MARK },
+                { "MANUL_STOP_ACTION_MARK", MANUL_STOP_ACTION_MARK },
             };
 
             private string _value;
@@ -407,9 +485,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         }
 
         /// <summary>
-        /// 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 &gt; * V3和V2版本已废弃不用
+        /// 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus用的训练模型 &gt; * V3和V2版本已废弃不用
         /// </summary>
-        /// <value>分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 &gt; * V3和V2版本已废弃不用</value>
+        /// <value>分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus用的训练模型 &gt; * V3和V2版本已废弃不用</value>
         [JsonConverter(typeof(EnumClassConverter<ModelVersionEnum>))]
         public class ModelVersionEnum
         {
@@ -428,12 +506,18 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly ModelVersionEnum V3_2 = new ModelVersionEnum("V3.2");
 
+            /// <summary>
+            /// Enum V3_3 for value: V3.3
+            /// </summary>
+            public static readonly ModelVersionEnum V3_3 = new ModelVersionEnum("V3.3");
+
             private static readonly Dictionary<string, ModelVersionEnum> StaticFields =
             new Dictionary<string, ModelVersionEnum>()
             {
                 { "V2", V2 },
                 { "V3", V3 },
                 { "V3.2", V3_2 },
+                { "V3.3", V3_3 },
             };
 
             private string _value;
@@ -757,6 +841,260 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             }
         }
 
+        /// <summary>
+        /// 训练视频旋转任务状态。 * WAITING：等待中 * PROCESSING：转编译中 * SUCCESS：转编译成功 * FAILED：转编译失败
+        /// </summary>
+        /// <value>训练视频旋转任务状态。 * WAITING：等待中 * PROCESSING：转编译中 * SUCCESS：转编译成功 * FAILED：转编译失败</value>
+        [JsonConverter(typeof(EnumClassConverter<TrainVideoRotationStateEnum>))]
+        public class TrainVideoRotationStateEnum
+        {
+            /// <summary>
+            /// Enum WAITING for value: WAITING
+            /// </summary>
+            public static readonly TrainVideoRotationStateEnum WAITING = new TrainVideoRotationStateEnum("WAITING");
+
+            /// <summary>
+            /// Enum PROCESSING for value: PROCESSING
+            /// </summary>
+            public static readonly TrainVideoRotationStateEnum PROCESSING = new TrainVideoRotationStateEnum("PROCESSING");
+
+            /// <summary>
+            /// Enum SUCCESS for value: SUCCESS
+            /// </summary>
+            public static readonly TrainVideoRotationStateEnum SUCCESS = new TrainVideoRotationStateEnum("SUCCESS");
+
+            /// <summary>
+            /// Enum FAILED for value: FAILED
+            /// </summary>
+            public static readonly TrainVideoRotationStateEnum FAILED = new TrainVideoRotationStateEnum("FAILED");
+
+            private static readonly Dictionary<string, TrainVideoRotationStateEnum> StaticFields =
+            new Dictionary<string, TrainVideoRotationStateEnum>()
+            {
+                { "WAITING", WAITING },
+                { "PROCESSING", PROCESSING },
+                { "SUCCESS", SUCCESS },
+                { "FAILED", FAILED },
+            };
+
+            private string _value;
+
+            public TrainVideoRotationStateEnum()
+            {
+
+            }
+
+            public TrainVideoRotationStateEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static TrainVideoRotationStateEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TrainVideoRotationStateEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TrainVideoRotationStateEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(TrainVideoRotationStateEnum a, TrainVideoRotationStateEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TrainVideoRotationStateEnum a, TrainVideoRotationStateEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 训练视频旋转任务状态。 * WAITING：等待中 * PROCESSING：转编译中 * SUCCESS：转编译成功 * FAILED：转编译失败
+        /// </summary>
+        /// <value>训练视频旋转任务状态。 * WAITING：等待中 * PROCESSING：转编译中 * SUCCESS：转编译成功 * FAILED：转编译失败</value>
+        [JsonConverter(typeof(EnumClassConverter<ActionVideoRotationStateEnum>))]
+        public class ActionVideoRotationStateEnum
+        {
+            /// <summary>
+            /// Enum WAITING for value: WAITING
+            /// </summary>
+            public static readonly ActionVideoRotationStateEnum WAITING = new ActionVideoRotationStateEnum("WAITING");
+
+            /// <summary>
+            /// Enum PROCESSING for value: PROCESSING
+            /// </summary>
+            public static readonly ActionVideoRotationStateEnum PROCESSING = new ActionVideoRotationStateEnum("PROCESSING");
+
+            /// <summary>
+            /// Enum SUCCESS for value: SUCCESS
+            /// </summary>
+            public static readonly ActionVideoRotationStateEnum SUCCESS = new ActionVideoRotationStateEnum("SUCCESS");
+
+            /// <summary>
+            /// Enum FAILED for value: FAILED
+            /// </summary>
+            public static readonly ActionVideoRotationStateEnum FAILED = new ActionVideoRotationStateEnum("FAILED");
+
+            private static readonly Dictionary<string, ActionVideoRotationStateEnum> StaticFields =
+            new Dictionary<string, ActionVideoRotationStateEnum>()
+            {
+                { "WAITING", WAITING },
+                { "PROCESSING", PROCESSING },
+                { "SUCCESS", SUCCESS },
+                { "FAILED", FAILED },
+            };
+
+            private string _value;
+
+            public ActionVideoRotationStateEnum()
+            {
+
+            }
+
+            public ActionVideoRotationStateEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ActionVideoRotationStateEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ActionVideoRotationStateEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ActionVideoRotationStateEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ActionVideoRotationStateEnum a, ActionVideoRotationStateEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ActionVideoRotationStateEnum a, ActionVideoRotationStateEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 任务ID。
@@ -771,7 +1109,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   &gt; 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步  - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务
+        /// 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   &gt; 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步   * WAIT_GENERATE_ACTION_MARK 等待动作标定   * ACTION_MARKING: 动作标定生成 - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务   * WAIT_TEST_VIDEO_CHECK: 等待进行测试视频推理任务  * TEST_VIDEO_CHECK_PROCESSING：测试视频推理质量检测中  * TEST_VIDEO_CHECK_SUCCESS：测试视频推理质量检测通过  * TEST_VIDEO_CHECK_FAILED：测试视频推理质量检测未通过  * VIDEO_ANALYZE_PROCESSING：视频检测中  * VIDEO_ANALYZE_SUCCESS：视频检测通过  * VIDEO_ANALYZE_FAILED：视频检测未通过  * ACTION_MARKING：动作标定中  * ACTION_MARK_SUCCESS：动作标定成功  * ACTION_MARK_FAILED：动作标定失败  * ACTION_MARK_UPLOADED：动作标定文件上传成功  * MANUL_STOP_ACTION_MARK：中止动作标定
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
         public StateEnum State { get; set; }
@@ -824,7 +1162,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public List<string> Tags { get; set; }
 
         /// <summary>
-        /// 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 &gt; * V3和V2版本已废弃不用
+        /// 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus用的训练模型 &gt; * V3和V2版本已废弃不用
         /// </summary>
         [JsonProperty("model_version", NullValueHandling = NullValueHandling.Ignore)]
         public ModelVersionEnum ModelVersion { get; set; }
@@ -852,10 +1190,40 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public bool? IsFlexus { get; set; }
 
         /// <summary>
+        /// 是否是直播间复刻任务
+        /// </summary>
+        [JsonProperty("is_live_copy", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsLiveCopy { get; set; }
+
+        /// <summary>
+        /// 是否极速版flexus
+        /// </summary>
+        [JsonProperty("is_fast_flexus", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsFastFlexus { get; set; }
+
+        /// <summary>
         /// 是否只训练形象模型，不训练声音模型。仅Flexus版本时有效，默认false。
         /// </summary>
         [JsonProperty("is_only_human_model", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsOnlyHumanModel { get; set; }
+
+        /// <summary>
+        /// 可选训练region
+        /// </summary>
+        [JsonProperty("optional_training_location", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> OptionalTrainingLocation { get; set; }
+
+        /// <summary>
+        /// 分身数字人是否需要背景替换。需要背景替换的分身数字人训练视频需要绿幕拍摄。
+        /// </summary>
+        [JsonProperty("is_background_replacement", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsBackgroundReplacement { get; set; }
+
+        /// <summary>
+        /// 是否按需任务
+        /// </summary>
+        [JsonProperty("is_ondemand_resource", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOndemandResource { get; set; }
 
         /// <summary>
         /// 分身数字人训练视频下载URL。24小时内有效。
@@ -888,6 +1256,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string PreBeautyImageDownloadUrl { get; set; }
 
         /// <summary>
+        /// 授权书下载URL。24小时内有效。
+        /// </summary>
+        [JsonProperty("external_action_json_data_download_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string ExternalActionJsonDataDownloadUrl { get; set; }
+
+        /// <summary>
         /// 动作视频
         /// </summary>
         [JsonProperty("action_video_download_url", NullValueHandling = NullValueHandling.Ignore)]
@@ -904,6 +1278,18 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// </summary>
         [JsonProperty("audio_file_download_url", NullValueHandling = NullValueHandling.Ignore)]
         public string AudioFileDownloadUrl { get; set; }
+
+        /// <summary>
+        /// 动作标定文件下载url。
+        /// </summary>
+        [JsonProperty("action_mark_file_download_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string ActionMarkFileDownloadUrl { get; set; }
+
+        /// <summary>
+        /// 动作标定文件上传url。
+        /// </summary>
+        [JsonProperty("action_mark_file_upload_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string ActionMarkFileUploadUrl { get; set; }
 
         /// <summary>
         /// 操作日志列表。
@@ -954,6 +1340,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string MarkableVideoDownloadUrl { get; set; }
 
         /// <summary>
+        /// 动作标注视频url下载链接。24小时内有效。
+        /// </summary>
+        [JsonProperty("markable_action_video_download_url", NullValueHandling = NullValueHandling.Ignore)]
+        public string MarkableActionVideoDownloadUrl { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [JsonProperty("traning_video_mark_info", NullValueHandling = NullValueHandling.Ignore)]
@@ -964,6 +1356,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// </summary>
         [JsonProperty("inference_data_process_video_mark_info", NullValueHandling = NullValueHandling.Ignore)]
         public InferenceVideoMarkInfo InferenceDataProcessVideoMarkInfo { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("voice_properties", NullValueHandling = NullValueHandling.Ignore)]
+        public VoiceProperties VoiceProperties { get; set; }
 
         /// <summary>
         /// 
@@ -982,12 +1380,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// </summary>
         [JsonProperty("inference_data_process_eye_correction_mark_info", NullValueHandling = NullValueHandling.Ignore)]
         public InferenceEyeCorrectionMarkInfo InferenceDataProcessEyeCorrectionMarkInfo { get; set; }
-
-        /// <summary>
-        /// 分身数字人是否需要背景替换。需要背景替换的分身数字人训练视频需要绿幕拍摄。
-        /// </summary>
-        [JsonProperty("is_background_replacement", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsBackgroundReplacement { get; set; }
 
         /// <summary>
         /// 转编译任务机型
@@ -1025,6 +1417,22 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public TrainingAllocatedResource AllocatedResource { get; set; }
 
         /// <summary>
+        /// 训练视频旋转任务状态。 * WAITING：等待中 * PROCESSING：转编译中 * SUCCESS：转编译成功 * FAILED：转编译失败
+        /// </summary>
+        [JsonProperty("train_video_rotation_state", NullValueHandling = NullValueHandling.Ignore)]
+        public TrainVideoRotationStateEnum TrainVideoRotationState { get; set; }
+        /// <summary>
+        /// 训练视频旋转任务状态。 * WAITING：等待中 * PROCESSING：转编译中 * SUCCESS：转编译成功 * FAILED：转编译失败
+        /// </summary>
+        [JsonProperty("action_video_rotation_state", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionVideoRotationStateEnum ActionVideoRotationState { get; set; }
+        /// <summary>
+        /// 子任务信息
+        /// </summary>
+        [JsonProperty("sub_training_job_info", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SubTrainingJobInfoDto> SubTrainingJobInfo { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [SDKProperty("X-Request-Id", IsHeader = true)]
@@ -1056,15 +1464,23 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  modelResolution: ").Append(ModelResolution).Append("\n");
             sb.Append("  appUserId: ").Append(AppUserId).Append("\n");
             sb.Append("  isFlexus: ").Append(IsFlexus).Append("\n");
+            sb.Append("  isLiveCopy: ").Append(IsLiveCopy).Append("\n");
+            sb.Append("  isFastFlexus: ").Append(IsFastFlexus).Append("\n");
             sb.Append("  isOnlyHumanModel: ").Append(IsOnlyHumanModel).Append("\n");
+            sb.Append("  optionalTrainingLocation: ").Append(OptionalTrainingLocation).Append("\n");
+            sb.Append("  isBackgroundReplacement: ").Append(IsBackgroundReplacement).Append("\n");
+            sb.Append("  isOndemandResource: ").Append(IsOndemandResource).Append("\n");
             sb.Append("  trainingVideoDownloadUrl: ").Append(TrainingVideoDownloadUrl).Append("\n");
             sb.Append("  idCardImage1DownloadUrl: ").Append(IdCardImage1DownloadUrl).Append("\n");
             sb.Append("  idCardImage2DownloadUrl: ").Append(IdCardImage2DownloadUrl).Append("\n");
             sb.Append("  grantFileDownloadUrl: ").Append(GrantFileDownloadUrl).Append("\n");
             sb.Append("  preBeautyImageDownloadUrl: ").Append(PreBeautyImageDownloadUrl).Append("\n");
+            sb.Append("  externalActionJsonDataDownloadUrl: ").Append(ExternalActionJsonDataDownloadUrl).Append("\n");
             sb.Append("  actionVideoDownloadUrl: ").Append(ActionVideoDownloadUrl).Append("\n");
             sb.Append("  postBeautyImageDownloadUrl: ").Append(PostBeautyImageDownloadUrl).Append("\n");
             sb.Append("  audioFileDownloadUrl: ").Append(AudioFileDownloadUrl).Append("\n");
+            sb.Append("  actionMarkFileDownloadUrl: ").Append(ActionMarkFileDownloadUrl).Append("\n");
+            sb.Append("  actionMarkFileUploadUrl: ").Append(ActionMarkFileUploadUrl).Append("\n");
             sb.Append("  operationLogs: ").Append(OperationLogs).Append("\n");
             sb.Append("  verifyVideoMattingInfo: ").Append(VerifyVideoMattingInfo).Append("\n");
             sb.Append("  commentLogs: ").Append(CommentLogs).Append("\n");
@@ -1073,18 +1489,22 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  maskFileDownloadUrl: ").Append(MaskFileDownloadUrl).Append("\n");
             sb.Append("  verifyVideoDownloadUrl: ").Append(VerifyVideoDownloadUrl).Append("\n");
             sb.Append("  markableVideoDownloadUrl: ").Append(MarkableVideoDownloadUrl).Append("\n");
+            sb.Append("  markableActionVideoDownloadUrl: ").Append(MarkableActionVideoDownloadUrl).Append("\n");
             sb.Append("  traningVideoMarkInfo: ").Append(TraningVideoMarkInfo).Append("\n");
             sb.Append("  inferenceDataProcessVideoMarkInfo: ").Append(InferenceDataProcessVideoMarkInfo).Append("\n");
+            sb.Append("  voiceProperties: ").Append(VoiceProperties).Append("\n");
             sb.Append("  inferenceDataProcessActionMarkInfo: ").Append(InferenceDataProcessActionMarkInfo).Append("\n");
             sb.Append("  inferenceDataProcessChatActionMarkInfo: ").Append(InferenceDataProcessChatActionMarkInfo).Append("\n");
             sb.Append("  inferenceDataProcessEyeCorrectionMarkInfo: ").Append(InferenceDataProcessEyeCorrectionMarkInfo).Append("\n");
-            sb.Append("  isBackgroundReplacement: ").Append(IsBackgroundReplacement).Append("\n");
             sb.Append("  workerType: ").Append(WorkerType).Append("\n");
             sb.Append("  voiceTrainJobId: ").Append(VoiceTrainJobId).Append("\n");
             sb.Append("  flexusRetryCount: ").Append(FlexusRetryCount).Append("\n");
             sb.Append("  audioSourceType: ").Append(AudioSourceType).Append("\n");
             sb.Append("  supportedService: ").Append(SupportedService).Append("\n");
             sb.Append("  allocatedResource: ").Append(AllocatedResource).Append("\n");
+            sb.Append("  trainVideoRotationState: ").Append(TrainVideoRotationState).Append("\n");
+            sb.Append("  actionVideoRotationState: ").Append(ActionVideoRotationState).Append("\n");
+            sb.Append("  subTrainingJobInfo: ").Append(SubTrainingJobInfo).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -1120,15 +1540,23 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.ModelResolution != input.ModelResolution || (this.ModelResolution != null && !this.ModelResolution.Equals(input.ModelResolution))) return false;
             if (this.AppUserId != input.AppUserId || (this.AppUserId != null && !this.AppUserId.Equals(input.AppUserId))) return false;
             if (this.IsFlexus != input.IsFlexus || (this.IsFlexus != null && !this.IsFlexus.Equals(input.IsFlexus))) return false;
+            if (this.IsLiveCopy != input.IsLiveCopy || (this.IsLiveCopy != null && !this.IsLiveCopy.Equals(input.IsLiveCopy))) return false;
+            if (this.IsFastFlexus != input.IsFastFlexus || (this.IsFastFlexus != null && !this.IsFastFlexus.Equals(input.IsFastFlexus))) return false;
             if (this.IsOnlyHumanModel != input.IsOnlyHumanModel || (this.IsOnlyHumanModel != null && !this.IsOnlyHumanModel.Equals(input.IsOnlyHumanModel))) return false;
+            if (this.OptionalTrainingLocation != input.OptionalTrainingLocation || (this.OptionalTrainingLocation != null && input.OptionalTrainingLocation != null && !this.OptionalTrainingLocation.SequenceEqual(input.OptionalTrainingLocation))) return false;
+            if (this.IsBackgroundReplacement != input.IsBackgroundReplacement || (this.IsBackgroundReplacement != null && !this.IsBackgroundReplacement.Equals(input.IsBackgroundReplacement))) return false;
+            if (this.IsOndemandResource != input.IsOndemandResource || (this.IsOndemandResource != null && !this.IsOndemandResource.Equals(input.IsOndemandResource))) return false;
             if (this.TrainingVideoDownloadUrl != input.TrainingVideoDownloadUrl || (this.TrainingVideoDownloadUrl != null && !this.TrainingVideoDownloadUrl.Equals(input.TrainingVideoDownloadUrl))) return false;
             if (this.IdCardImage1DownloadUrl != input.IdCardImage1DownloadUrl || (this.IdCardImage1DownloadUrl != null && !this.IdCardImage1DownloadUrl.Equals(input.IdCardImage1DownloadUrl))) return false;
             if (this.IdCardImage2DownloadUrl != input.IdCardImage2DownloadUrl || (this.IdCardImage2DownloadUrl != null && !this.IdCardImage2DownloadUrl.Equals(input.IdCardImage2DownloadUrl))) return false;
             if (this.GrantFileDownloadUrl != input.GrantFileDownloadUrl || (this.GrantFileDownloadUrl != null && !this.GrantFileDownloadUrl.Equals(input.GrantFileDownloadUrl))) return false;
             if (this.PreBeautyImageDownloadUrl != input.PreBeautyImageDownloadUrl || (this.PreBeautyImageDownloadUrl != null && !this.PreBeautyImageDownloadUrl.Equals(input.PreBeautyImageDownloadUrl))) return false;
+            if (this.ExternalActionJsonDataDownloadUrl != input.ExternalActionJsonDataDownloadUrl || (this.ExternalActionJsonDataDownloadUrl != null && !this.ExternalActionJsonDataDownloadUrl.Equals(input.ExternalActionJsonDataDownloadUrl))) return false;
             if (this.ActionVideoDownloadUrl != input.ActionVideoDownloadUrl || (this.ActionVideoDownloadUrl != null && !this.ActionVideoDownloadUrl.Equals(input.ActionVideoDownloadUrl))) return false;
             if (this.PostBeautyImageDownloadUrl != input.PostBeautyImageDownloadUrl || (this.PostBeautyImageDownloadUrl != null && !this.PostBeautyImageDownloadUrl.Equals(input.PostBeautyImageDownloadUrl))) return false;
             if (this.AudioFileDownloadUrl != input.AudioFileDownloadUrl || (this.AudioFileDownloadUrl != null && !this.AudioFileDownloadUrl.Equals(input.AudioFileDownloadUrl))) return false;
+            if (this.ActionMarkFileDownloadUrl != input.ActionMarkFileDownloadUrl || (this.ActionMarkFileDownloadUrl != null && !this.ActionMarkFileDownloadUrl.Equals(input.ActionMarkFileDownloadUrl))) return false;
+            if (this.ActionMarkFileUploadUrl != input.ActionMarkFileUploadUrl || (this.ActionMarkFileUploadUrl != null && !this.ActionMarkFileUploadUrl.Equals(input.ActionMarkFileUploadUrl))) return false;
             if (this.OperationLogs != input.OperationLogs || (this.OperationLogs != null && input.OperationLogs != null && !this.OperationLogs.SequenceEqual(input.OperationLogs))) return false;
             if (this.VerifyVideoMattingInfo != input.VerifyVideoMattingInfo || (this.VerifyVideoMattingInfo != null && input.VerifyVideoMattingInfo != null && !this.VerifyVideoMattingInfo.SequenceEqual(input.VerifyVideoMattingInfo))) return false;
             if (this.CommentLogs != input.CommentLogs || (this.CommentLogs != null && input.CommentLogs != null && !this.CommentLogs.SequenceEqual(input.CommentLogs))) return false;
@@ -1137,18 +1565,22 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.MaskFileDownloadUrl != input.MaskFileDownloadUrl || (this.MaskFileDownloadUrl != null && !this.MaskFileDownloadUrl.Equals(input.MaskFileDownloadUrl))) return false;
             if (this.VerifyVideoDownloadUrl != input.VerifyVideoDownloadUrl || (this.VerifyVideoDownloadUrl != null && !this.VerifyVideoDownloadUrl.Equals(input.VerifyVideoDownloadUrl))) return false;
             if (this.MarkableVideoDownloadUrl != input.MarkableVideoDownloadUrl || (this.MarkableVideoDownloadUrl != null && !this.MarkableVideoDownloadUrl.Equals(input.MarkableVideoDownloadUrl))) return false;
+            if (this.MarkableActionVideoDownloadUrl != input.MarkableActionVideoDownloadUrl || (this.MarkableActionVideoDownloadUrl != null && !this.MarkableActionVideoDownloadUrl.Equals(input.MarkableActionVideoDownloadUrl))) return false;
             if (this.TraningVideoMarkInfo != input.TraningVideoMarkInfo || (this.TraningVideoMarkInfo != null && !this.TraningVideoMarkInfo.Equals(input.TraningVideoMarkInfo))) return false;
             if (this.InferenceDataProcessVideoMarkInfo != input.InferenceDataProcessVideoMarkInfo || (this.InferenceDataProcessVideoMarkInfo != null && !this.InferenceDataProcessVideoMarkInfo.Equals(input.InferenceDataProcessVideoMarkInfo))) return false;
+            if (this.VoiceProperties != input.VoiceProperties || (this.VoiceProperties != null && !this.VoiceProperties.Equals(input.VoiceProperties))) return false;
             if (this.InferenceDataProcessActionMarkInfo != input.InferenceDataProcessActionMarkInfo || (this.InferenceDataProcessActionMarkInfo != null && !this.InferenceDataProcessActionMarkInfo.Equals(input.InferenceDataProcessActionMarkInfo))) return false;
             if (this.InferenceDataProcessChatActionMarkInfo != input.InferenceDataProcessChatActionMarkInfo || (this.InferenceDataProcessChatActionMarkInfo != null && !this.InferenceDataProcessChatActionMarkInfo.Equals(input.InferenceDataProcessChatActionMarkInfo))) return false;
             if (this.InferenceDataProcessEyeCorrectionMarkInfo != input.InferenceDataProcessEyeCorrectionMarkInfo || (this.InferenceDataProcessEyeCorrectionMarkInfo != null && !this.InferenceDataProcessEyeCorrectionMarkInfo.Equals(input.InferenceDataProcessEyeCorrectionMarkInfo))) return false;
-            if (this.IsBackgroundReplacement != input.IsBackgroundReplacement || (this.IsBackgroundReplacement != null && !this.IsBackgroundReplacement.Equals(input.IsBackgroundReplacement))) return false;
             if (this.WorkerType != input.WorkerType || (this.WorkerType != null && input.WorkerType != null && !this.WorkerType.SequenceEqual(input.WorkerType))) return false;
             if (this.VoiceTrainJobId != input.VoiceTrainJobId || (this.VoiceTrainJobId != null && !this.VoiceTrainJobId.Equals(input.VoiceTrainJobId))) return false;
             if (this.FlexusRetryCount != input.FlexusRetryCount || (this.FlexusRetryCount != null && !this.FlexusRetryCount.Equals(input.FlexusRetryCount))) return false;
             if (this.AudioSourceType != input.AudioSourceType) return false;
             if (this.SupportedService != input.SupportedService || (this.SupportedService != null && input.SupportedService != null && !this.SupportedService.SequenceEqual(input.SupportedService))) return false;
             if (this.AllocatedResource != input.AllocatedResource || (this.AllocatedResource != null && !this.AllocatedResource.Equals(input.AllocatedResource))) return false;
+            if (this.TrainVideoRotationState != input.TrainVideoRotationState) return false;
+            if (this.ActionVideoRotationState != input.ActionVideoRotationState) return false;
+            if (this.SubTrainingJobInfo != input.SubTrainingJobInfo || (this.SubTrainingJobInfo != null && input.SubTrainingJobInfo != null && !this.SubTrainingJobInfo.SequenceEqual(input.SubTrainingJobInfo))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
             return true;
@@ -1178,15 +1610,23 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.ModelResolution != null) hashCode = hashCode * 59 + this.ModelResolution.GetHashCode();
                 if (this.AppUserId != null) hashCode = hashCode * 59 + this.AppUserId.GetHashCode();
                 if (this.IsFlexus != null) hashCode = hashCode * 59 + this.IsFlexus.GetHashCode();
+                if (this.IsLiveCopy != null) hashCode = hashCode * 59 + this.IsLiveCopy.GetHashCode();
+                if (this.IsFastFlexus != null) hashCode = hashCode * 59 + this.IsFastFlexus.GetHashCode();
                 if (this.IsOnlyHumanModel != null) hashCode = hashCode * 59 + this.IsOnlyHumanModel.GetHashCode();
+                if (this.OptionalTrainingLocation != null) hashCode = hashCode * 59 + this.OptionalTrainingLocation.GetHashCode();
+                if (this.IsBackgroundReplacement != null) hashCode = hashCode * 59 + this.IsBackgroundReplacement.GetHashCode();
+                if (this.IsOndemandResource != null) hashCode = hashCode * 59 + this.IsOndemandResource.GetHashCode();
                 if (this.TrainingVideoDownloadUrl != null) hashCode = hashCode * 59 + this.TrainingVideoDownloadUrl.GetHashCode();
                 if (this.IdCardImage1DownloadUrl != null) hashCode = hashCode * 59 + this.IdCardImage1DownloadUrl.GetHashCode();
                 if (this.IdCardImage2DownloadUrl != null) hashCode = hashCode * 59 + this.IdCardImage2DownloadUrl.GetHashCode();
                 if (this.GrantFileDownloadUrl != null) hashCode = hashCode * 59 + this.GrantFileDownloadUrl.GetHashCode();
                 if (this.PreBeautyImageDownloadUrl != null) hashCode = hashCode * 59 + this.PreBeautyImageDownloadUrl.GetHashCode();
+                if (this.ExternalActionJsonDataDownloadUrl != null) hashCode = hashCode * 59 + this.ExternalActionJsonDataDownloadUrl.GetHashCode();
                 if (this.ActionVideoDownloadUrl != null) hashCode = hashCode * 59 + this.ActionVideoDownloadUrl.GetHashCode();
                 if (this.PostBeautyImageDownloadUrl != null) hashCode = hashCode * 59 + this.PostBeautyImageDownloadUrl.GetHashCode();
                 if (this.AudioFileDownloadUrl != null) hashCode = hashCode * 59 + this.AudioFileDownloadUrl.GetHashCode();
+                if (this.ActionMarkFileDownloadUrl != null) hashCode = hashCode * 59 + this.ActionMarkFileDownloadUrl.GetHashCode();
+                if (this.ActionMarkFileUploadUrl != null) hashCode = hashCode * 59 + this.ActionMarkFileUploadUrl.GetHashCode();
                 if (this.OperationLogs != null) hashCode = hashCode * 59 + this.OperationLogs.GetHashCode();
                 if (this.VerifyVideoMattingInfo != null) hashCode = hashCode * 59 + this.VerifyVideoMattingInfo.GetHashCode();
                 if (this.CommentLogs != null) hashCode = hashCode * 59 + this.CommentLogs.GetHashCode();
@@ -1195,18 +1635,22 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.MaskFileDownloadUrl != null) hashCode = hashCode * 59 + this.MaskFileDownloadUrl.GetHashCode();
                 if (this.VerifyVideoDownloadUrl != null) hashCode = hashCode * 59 + this.VerifyVideoDownloadUrl.GetHashCode();
                 if (this.MarkableVideoDownloadUrl != null) hashCode = hashCode * 59 + this.MarkableVideoDownloadUrl.GetHashCode();
+                if (this.MarkableActionVideoDownloadUrl != null) hashCode = hashCode * 59 + this.MarkableActionVideoDownloadUrl.GetHashCode();
                 if (this.TraningVideoMarkInfo != null) hashCode = hashCode * 59 + this.TraningVideoMarkInfo.GetHashCode();
                 if (this.InferenceDataProcessVideoMarkInfo != null) hashCode = hashCode * 59 + this.InferenceDataProcessVideoMarkInfo.GetHashCode();
+                if (this.VoiceProperties != null) hashCode = hashCode * 59 + this.VoiceProperties.GetHashCode();
                 if (this.InferenceDataProcessActionMarkInfo != null) hashCode = hashCode * 59 + this.InferenceDataProcessActionMarkInfo.GetHashCode();
                 if (this.InferenceDataProcessChatActionMarkInfo != null) hashCode = hashCode * 59 + this.InferenceDataProcessChatActionMarkInfo.GetHashCode();
                 if (this.InferenceDataProcessEyeCorrectionMarkInfo != null) hashCode = hashCode * 59 + this.InferenceDataProcessEyeCorrectionMarkInfo.GetHashCode();
-                if (this.IsBackgroundReplacement != null) hashCode = hashCode * 59 + this.IsBackgroundReplacement.GetHashCode();
                 if (this.WorkerType != null) hashCode = hashCode * 59 + this.WorkerType.GetHashCode();
                 if (this.VoiceTrainJobId != null) hashCode = hashCode * 59 + this.VoiceTrainJobId.GetHashCode();
                 if (this.FlexusRetryCount != null) hashCode = hashCode * 59 + this.FlexusRetryCount.GetHashCode();
                 hashCode = hashCode * 59 + this.AudioSourceType.GetHashCode();
                 if (this.SupportedService != null) hashCode = hashCode * 59 + this.SupportedService.GetHashCode();
                 if (this.AllocatedResource != null) hashCode = hashCode * 59 + this.AllocatedResource.GetHashCode();
+                hashCode = hashCode * 59 + this.TrainVideoRotationState.GetHashCode();
+                hashCode = hashCode * 59 + this.ActionVideoRotationState.GetHashCode();
+                if (this.SubTrainingJobInfo != null) hashCode = hashCode * 59 + this.SubTrainingJobInfo.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }

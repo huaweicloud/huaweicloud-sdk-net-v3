@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 分区的元数据信息
+    /// **参数解释**： 分区的元数据信息 **约束限制**： 不涉及 
     /// </summary>
     public class PartitionReqBodyMetadata 
     {
 
         /// <summary>
-        /// 分区名称
+        /// **参数解释**： 分区名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

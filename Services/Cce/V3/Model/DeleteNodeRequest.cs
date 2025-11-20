@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     public class DeleteNodeRequest 
     {
         /// <summary>
-        /// 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数
+        /// **参数解释**： 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
-        /// <value>标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数</value>
+        /// <value>**参数解释**： 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<NodepoolScaleDownEnum>))]
         public class NodepoolScaleDownEnum
         {
@@ -133,14 +133,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string ClusterId { get; set; }
 
         /// <summary>
-        /// 节点ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。
+        /// **参数解释**： 节点ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [SDKProperty("node_id", IsPath = true)]
         [JsonProperty("node_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NodeId { get; set; }
 
         /// <summary>
-        /// 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数
+        /// **参数解释**： 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [SDKProperty("nodepoolScaleDown", IsQuery = true)]
         [JsonProperty("nodepoolScaleDown", NullValueHandling = NullValueHandling.Ignore)]

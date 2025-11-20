@@ -137,6 +137,30 @@ namespace HuaweiCloud.SDK.Aad.V2
         }
         
         /// <summary>
+        /// 黑洞事件列表
+        ///
+        /// 黑洞事件列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDDoSBlackHoleEventResponse ListDDoSBlackHoleEvent(ListDDoSBlackHoleEventRequest listDDoSBlackHoleEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/ddos-info/attack/blackhole-event", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDDoSBlackHoleEventRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDDoSBlackHoleEventResponse>(response);
+        }
+
+        public SyncInvoker<ListDDoSBlackHoleEventResponse> ListDDoSBlackHoleEventInvoker(ListDDoSBlackHoleEventRequest listDDoSBlackHoleEventRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/ddos-info/attack/blackhole-event", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDDoSBlackHoleEventRequest);
+            return new SyncInvoker<ListDDoSBlackHoleEventResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDDoSBlackHoleEventResponse>);
+        }
+        
+        /// <summary>
         /// 查询新建连接数和并发连接数
         ///
         /// 查询新建连接数和并发连接数
@@ -213,6 +237,30 @@ namespace HuaweiCloud.SDK.Aad.V2
         }
         
         /// <summary>
+        /// 查询控制台WAF全局配置
+        ///
+        /// 查询控制台WAF全局配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListGlobalConfigResponse ListGlobalConfig(ListGlobalConfigRequest listGlobalConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains/global-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGlobalConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListGlobalConfigResponse>(response);
+        }
+
+        public SyncInvoker<ListGlobalConfigResponse> ListGlobalConfigInvoker(ListGlobalConfigRequest listGlobalConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains/global-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listGlobalConfigRequest);
+            return new SyncInvoker<ListGlobalConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ListGlobalConfigResponse>);
+        }
+        
+        /// <summary>
         /// 查询实例关联的域名信息
         ///
         /// 查询实例关联的域名信息
@@ -236,6 +284,30 @@ namespace HuaweiCloud.SDK.Aad.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}/domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceDomainsRequest);
             return new SyncInvoker<ListInstanceDomainsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListInstanceDomainsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询回源ip列表
+        ///
+        /// 查询回源ip列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSourceIpResponse ListSourceIp(ListSourceIpRequest listSourceIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/source-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSourceIpRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSourceIpResponse>(response);
+        }
+
+        public SyncInvoker<ListSourceIpResponse> ListSourceIpInvoker(ListSourceIpRequest listSourceIpRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/source-ip", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSourceIpRequest);
+            return new SyncInvoker<ListSourceIpResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSourceIpResponse>);
         }
         
         /// <summary>
@@ -407,6 +479,56 @@ namespace HuaweiCloud.SDK.Aad.V2
         }
         
         /// <summary>
+        /// 查询告警设置
+        ///
+        /// 查询告警设置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAlarmConfigResponse ShowAlarmConfig(ShowAlarmConfigRequest showAlarmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/alarm", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlarmConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAlarmConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowAlarmConfigResponse> ShowAlarmConfigInvoker(ShowAlarmConfigRequest showAlarmConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/alarm", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAlarmConfigRequest);
+            return new SyncInvoker<ShowAlarmConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAlarmConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 查询高防入流量峰值、攻击流量峰值、DDoS攻击次数
+        ///
+        /// 查询高防入流量峰值、攻击流量峰值、DDoS攻击次数
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDDoSPeakResponse ShowDDoSPeak(ShowDDoSPeakRequest showDDoSPeakRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDDoSPeakRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}/ddos-info/flow/peak", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDDoSPeakRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDDoSPeakResponse>(response);
+        }
+
+        public SyncInvoker<ShowDDoSPeakResponse> ShowDDoSPeakInvoker(ShowDDoSPeakRequest showDDoSPeakRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDDoSPeakRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}/ddos-info/flow/peak", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDDoSPeakRequest);
+            return new SyncInvoker<ShowDDoSPeakResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDDoSPeakResponse>);
+        }
+        
+        /// <summary>
         /// 查询域名关联的证书信息
         ///
         /// 查询域名关联的证书信息
@@ -433,6 +555,58 @@ namespace HuaweiCloud.SDK.Aad.V2
         }
         
         /// <summary>
+        /// 查询域名详情
+        ///
+        /// 查询域名详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDomainDetailResponse ShowDomainDetail(ShowDomainDetailRequest showDomainDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDomainDetailRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains/{domain_id}/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainDetailResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainDetailResponse> ShowDomainDetailInvoker(ShowDomainDetailRequest showDomainDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDomainDetailRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains/{domain_id}/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainDetailRequest);
+            return new SyncInvoker<ShowDomainDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainDetailResponse>);
+        }
+        
+        /// <summary>
+        /// 查看域名配置
+        ///
+        /// 查看域名配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDomainNameConfigResponse ShowDomainNameConfig(ShowDomainNameConfigRequest showDomainNameConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDomainNameConfigRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains/{domain_id}/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainNameConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainNameConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainNameConfigResponse> ShowDomainNameConfigInvoker(ShowDomainNameConfigRequest showDomainNameConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDomainNameConfigRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains/{domain_id}/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainNameConfigRequest);
+            return new SyncInvoker<ShowDomainNameConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainNameConfigResponse>);
+        }
+        
+        /// <summary>
         /// 查询流量封禁信息
         ///
         /// 查询流量封禁信息
@@ -454,6 +628,32 @@ namespace HuaweiCloud.SDK.Aad.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/policies/ddos/flow-block", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showFlowBlockRequest);
             return new SyncInvoker<ShowFlowBlockResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowFlowBlockResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例详情
+        ///
+        /// 查询实例详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceByInstanceIdResponse ShowInstanceByInstanceId(ShowInstanceByInstanceIdRequest showInstanceByInstanceIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceByInstanceIdRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceByInstanceIdRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceByInstanceIdResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceByInstanceIdResponse> ShowInstanceByInstanceIdInvoker(ShowInstanceByInstanceIdRequest showInstanceByInstanceIdRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceByInstanceIdRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceByInstanceIdRequest);
+            return new SyncInvoker<ShowInstanceByInstanceIdResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceByInstanceIdResponse>);
         }
         
         /// <summary>
@@ -502,6 +702,62 @@ namespace HuaweiCloud.SDK.Aad.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains/waf-info/flow/request/peak", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showWafQpsRequest);
             return new SyncInvoker<ShowWafQpsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowWafQpsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改域名配置
+        ///
+        /// 修改域名配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDomainConfigResponse UpdateDomainConfig(UpdateDomainConfigRequest updateDomainConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainConfigRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains/{domain_id}/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainConfigRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateDomainConfigResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDomainConfigResponse> UpdateDomainConfigInvoker(UpdateDomainConfigRequest updateDomainConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainConfigRequest.DomainId, out var valueOfDomainId)) urlParam.Add("domain_id", valueOfDomainId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/domains/{domain_id}/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainConfigRequest);
+            return new SyncInvoker<UpdateDomainConfigResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 修改转发规则中的源站IP
+        ///
+        /// 修改转发规则中的源站IP
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateForwardRuleResponse UpdateForwardRule(UpdateForwardRuleRequest updateForwardRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateForwardRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateForwardRuleRequest.RuleId, out var valueOfRuleId)) urlParam.Add("rule_id", valueOfRuleId);
+            if (StringUtils.TryConvertToNonEmptyString(updateForwardRuleRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/forward-rules/{instance_id}/{ip}/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateForwardRuleRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateForwardRuleResponse>(response);
+        }
+
+        public SyncInvoker<UpdateForwardRuleResponse> UpdateForwardRuleInvoker(UpdateForwardRuleRequest updateForwardRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateForwardRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(updateForwardRuleRequest.RuleId, out var valueOfRuleId)) urlParam.Add("rule_id", valueOfRuleId);
+            if (StringUtils.TryConvertToNonEmptyString(updateForwardRuleRequest.Ip, out var valueOfIp)) urlParam.Add("ip", valueOfIp);
+            var urlPath = HttpUtils.AddUrlPath("/v2/aad/forward-rules/{instance_id}/{ip}/{rule_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateForwardRuleRequest);
+            return new SyncInvoker<UpdateForwardRuleResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateForwardRuleResponse>);
         }
         
         /// <summary>

@@ -6549,6 +6549,62 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 查询数据库代理作业执行历史步骤
+        ///
+        /// 查询数据库代理作业执行历史步骤。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDbAgentJobHistoryStepsResponse> ListDbAgentJobHistoryStepsAsync(ListDbAgentJobHistoryStepsRequest listDbAgentJobHistoryStepsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDbAgentJobHistoryStepsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listDbAgentJobHistoryStepsRequest.HistoryId, out var valueOfHistoryId)) urlParam.Add("history_id", valueOfHistoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-jobs/histories/{history_id}/steps", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbAgentJobHistoryStepsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDbAgentJobHistoryStepsResponse>(response);
+        }
+
+        public AsyncInvoker<ListDbAgentJobHistoryStepsResponse> ListDbAgentJobHistoryStepsAsyncInvoker(ListDbAgentJobHistoryStepsRequest listDbAgentJobHistoryStepsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDbAgentJobHistoryStepsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listDbAgentJobHistoryStepsRequest.HistoryId, out var valueOfHistoryId)) urlParam.Add("history_id", valueOfHistoryId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-jobs/histories/{history_id}/steps", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbAgentJobHistoryStepsRequest);
+            return new AsyncInvoker<ListDbAgentJobHistoryStepsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDbAgentJobHistoryStepsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据库代理作业执行历史
+        ///
+        /// 查询数据库代理作业执行历史。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListDbAgentJobHistorysResponse> ListDbAgentJobHistorysAsync(ListDbAgentJobHistorysRequest listDbAgentJobHistorysRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDbAgentJobHistorysRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listDbAgentJobHistorysRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-jobs/{job_id}/histories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbAgentJobHistorysRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListDbAgentJobHistorysResponse>(response);
+        }
+
+        public AsyncInvoker<ListDbAgentJobHistorysResponse> ListDbAgentJobHistorysAsyncInvoker(ListDbAgentJobHistorysRequest listDbAgentJobHistorysRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listDbAgentJobHistorysRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listDbAgentJobHistorysRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/db-jobs/{job_id}/histories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDbAgentJobHistorysRequest);
+            return new AsyncInvoker<ListDbAgentJobHistorysResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDbAgentJobHistorysResponse>);
+        }
+        
+        /// <summary>
         /// 查询数据库代理作业列表
         ///
         /// 查询数据库代理作业列表。
@@ -6915,6 +6971,62 @@ namespace HuaweiCloud.SDK.Rds.V3
         }
         
         /// <summary>
+        /// 重新生成发布快照
+        ///
+        /// 重新生成发布快照。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RefreshPublicationSnapshotResponse> RefreshPublicationSnapshotAsync(RefreshPublicationSnapshotRequest refreshPublicationSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(refreshPublicationSnapshotRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(refreshPublicationSnapshotRequest.PublicationId, out var valueOfPublicationId)) urlParam.Add("publication_id", valueOfPublicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/publications/{publication_id}/reinitialize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", refreshPublicationSnapshotRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<RefreshPublicationSnapshotResponse>(response);
+        }
+
+        public AsyncInvoker<RefreshPublicationSnapshotResponse> RefreshPublicationSnapshotAsyncInvoker(RefreshPublicationSnapshotRequest refreshPublicationSnapshotRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(refreshPublicationSnapshotRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(refreshPublicationSnapshotRequest.PublicationId, out var valueOfPublicationId)) urlParam.Add("publication_id", valueOfPublicationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/publications/{publication_id}/reinitialize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", refreshPublicationSnapshotRequest);
+            return new AsyncInvoker<RefreshPublicationSnapshotResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RefreshPublicationSnapshotResponse>);
+        }
+        
+        /// <summary>
+        /// 重新生成订阅
+        ///
+        /// 重新生成订阅。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<RefreshSubscriptionResponse> RefreshSubscriptionAsync(RefreshSubscriptionRequest refreshSubscriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(refreshSubscriptionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(refreshSubscriptionRequest.SubscriptionId, out var valueOfSubscriptionId)) urlParam.Add("subscription_id", valueOfSubscriptionId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/subscriptions/{subscription_id}/reinitialize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", refreshSubscriptionRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<RefreshSubscriptionResponse>(response);
+        }
+
+        public AsyncInvoker<RefreshSubscriptionResponse> RefreshSubscriptionAsyncInvoker(RefreshSubscriptionRequest refreshSubscriptionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(refreshSubscriptionRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(refreshSubscriptionRequest.SubscriptionId, out var valueOfSubscriptionId)) urlParam.Add("subscription_id", valueOfSubscriptionId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/subscriptions/{subscription_id}/reinitialize", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", refreshSubscriptionRequest);
+            return new AsyncInvoker<RefreshSubscriptionResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RefreshSubscriptionResponse>);
+        }
+        
+        /// <summary>
         /// 解除数据库帐号权限
         ///
         /// 解除数据库帐号权限。
@@ -6990,6 +7102,32 @@ namespace HuaweiCloud.SDK.Rds.V3
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/db-shrink", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setInstancesNewDbShrinkRequest);
             return new AsyncInvoker<SetInstancesNewDbShrinkResponse>(this, "POST", request, JsonUtils.DeSerialize<SetInstancesNewDbShrinkResponse>);
+        }
+        
+        /// <summary>
+        /// 同步发布订阅元数据
+        ///
+        /// 同步发布订阅元数据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SyncReplicationMetadataResponse> SyncReplicationMetadataAsync(SyncReplicationMetadataRequest syncReplicationMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(syncReplicationMetadataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/metadata/sync", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncReplicationMetadataRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<SyncReplicationMetadataResponse>(response);
+        }
+
+        public AsyncInvoker<SyncReplicationMetadataResponse> SyncReplicationMetadataAsyncInvoker(SyncReplicationMetadataRequest syncReplicationMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(syncReplicationMetadataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/replication/metadata/sync", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", syncReplicationMetadataRequest);
+            return new AsyncInvoker<SyncReplicationMetadataResponse>(this, "POST", request, JsonUtils.DeSerialize<SyncReplicationMetadataResponse>);
         }
         
         /// <summary>

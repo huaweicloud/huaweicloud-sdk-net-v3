@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 分区的配置信息
+    /// **参数解释**： 分区的配置信息 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
     public class PartitionSpec 
     {
@@ -23,19 +23,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public PartitionSpecHostNetwork HostNetwork { get; set; }
 
         /// <summary>
-        /// 分区容器子网
+        /// **参数解释**： 分区容器子网 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("containerNetwork", NullValueHandling = NullValueHandling.Ignore)]
         public List<PartitionSpecContainerNetwork> ContainerNetwork { get; set; }
 
         /// <summary>
-        /// 群组
+        /// **参数解释**： 群组，IES边缘场景为可用区ID，中心区统一为“center”。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("publicBorderGroup", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicBorderGroup { get; set; }
 
         /// <summary>
-        /// 类别
+        /// **参数解释**： 可用区分类 **约束限制**： 不涉及 **取值范围**： - Default: 中心云可用区 - IES: 专属云可用区 - HomeZone: 智能边缘云可用区  **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("category", NullValueHandling = NullValueHandling.Ignore)]
         public string Category { get; set; }

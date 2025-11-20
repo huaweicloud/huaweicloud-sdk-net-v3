@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     public class Execute2dModelTrainingCommandByUserReq 
     {
         /// <summary>
-        /// 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_REPAIR:用户发起优化模型请求 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 &gt; * CONFIRM_ACCEPT、CONFIRM_REJECT、CONFIRM_ANSWER、CONFIRM_PENDING、CONFIRM_ACTIVE命令仅NA白名单用户可用。
+        /// 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_REPAIR:用户发起优化模型请求 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 * CONFIRM_AUTHORIZATION_LETTER：确认授权书已上传 &gt; * CONFIRM_ACCEPT、CONFIRM_REJECT、CONFIRM_ANSWER、CONFIRM_PENDING、CONFIRM_ACTIVE命令仅NA白名单用户可用。 * DELETE_JOB_VIDEO：删除任务相关视频
         /// </summary>
-        /// <value>命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_REPAIR:用户发起优化模型请求 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 &gt; * CONFIRM_ACCEPT、CONFIRM_REJECT、CONFIRM_ANSWER、CONFIRM_PENDING、CONFIRM_ACTIVE命令仅NA白名单用户可用。</value>
+        /// <value>命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_REPAIR:用户发起优化模型请求 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 * CONFIRM_AUTHORIZATION_LETTER：确认授权书已上传 &gt; * CONFIRM_ACCEPT、CONFIRM_REJECT、CONFIRM_ANSWER、CONFIRM_PENDING、CONFIRM_ACTIVE命令仅NA白名单用户可用。 * DELETE_JOB_VIDEO：删除任务相关视频</value>
         [JsonConverter(typeof(EnumClassConverter<CommandEnum>))]
         public class CommandEnum
         {
@@ -77,6 +77,16 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly CommandEnum CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED = new CommandEnum("CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED");
 
+            /// <summary>
+            /// Enum CONFIRM_AUTHORIZATION_LETTER for value: CONFIRM_AUTHORIZATION_LETTER
+            /// </summary>
+            public static readonly CommandEnum CONFIRM_AUTHORIZATION_LETTER = new CommandEnum("CONFIRM_AUTHORIZATION_LETTER");
+
+            /// <summary>
+            /// Enum DELETE_JOB_VIDEO for value: DELETE_JOB_VIDEO
+            /// </summary>
+            public static readonly CommandEnum DELETE_JOB_VIDEO = new CommandEnum("DELETE_JOB_VIDEO");
+
             private static readonly Dictionary<string, CommandEnum> StaticFields =
             new Dictionary<string, CommandEnum>()
             {
@@ -91,6 +101,8 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 { "CONFIRM_MULTIPART_UPLOADED", CONFIRM_MULTIPART_UPLOADED },
                 { "GET_ACTION_VIDEO_MULTIPART_UPLOADED", GET_ACTION_VIDEO_MULTIPART_UPLOADED },
                 { "CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED", CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED },
+                { "CONFIRM_AUTHORIZATION_LETTER", CONFIRM_AUTHORIZATION_LETTER },
+                { "DELETE_JOB_VIDEO", DELETE_JOB_VIDEO },
             };
 
             private string _value;
@@ -313,7 +325,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
 
 
         /// <summary>
-        /// 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_REPAIR:用户发起优化模型请求 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 &gt; * CONFIRM_ACCEPT、CONFIRM_REJECT、CONFIRM_ANSWER、CONFIRM_PENDING、CONFIRM_ACTIVE命令仅NA白名单用户可用。
+        /// 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_REPAIR:用户发起优化模型请求 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 * CONFIRM_AUTHORIZATION_LETTER：确认授权书已上传 &gt; * CONFIRM_ACCEPT、CONFIRM_REJECT、CONFIRM_ANSWER、CONFIRM_PENDING、CONFIRM_ACTIVE命令仅NA白名单用户可用。 * DELETE_JOB_VIDEO：删除任务相关视频
         /// </summary>
         [JsonProperty("command", NullValueHandling = NullValueHandling.Ignore)]
         public CommandEnum Command { get; set; }
@@ -328,6 +340,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("comment_data", NullValueHandling = NullValueHandling.Ignore)]
         public CommentData CommentData { get; set; }
 
+        /// <summary>
+        /// 操作原因
+        /// </summary>
+        [JsonProperty("operation_reason", NullValueHandling = NullValueHandling.Ignore)]
+        public string OperationReason { get; set; }
+
 
 
         /// <summary>
@@ -340,6 +358,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  command: ").Append(Command).Append("\n");
             sb.Append("  commandMessage: ").Append(CommandMessage).Append("\n");
             sb.Append("  commentData: ").Append(CommentData).Append("\n");
+            sb.Append("  operationReason: ").Append(OperationReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -361,6 +380,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.Command != input.Command) return false;
             if (this.CommandMessage != input.CommandMessage) return false;
             if (this.CommentData != input.CommentData || (this.CommentData != null && !this.CommentData.Equals(input.CommentData))) return false;
+            if (this.OperationReason != input.OperationReason || (this.OperationReason != null && !this.OperationReason.Equals(input.OperationReason))) return false;
 
             return true;
         }
@@ -376,6 +396,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 hashCode = hashCode * 59 + this.Command.GetHashCode();
                 hashCode = hashCode * 59 + this.CommandMessage.GetHashCode();
                 if (this.CommentData != null) hashCode = hashCode * 59 + this.CommentData.GetHashCode();
+                if (this.OperationReason != null) hashCode = hashCode * 59 + this.OperationReason.GetHashCode();
                 return hashCode;
             }
         }

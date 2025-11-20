@@ -143,9 +143,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         }
 
         /// <summary>
-        /// 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 &gt; * V3和V2版本已废弃不用
+        /// 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus训练用的模型 &gt; * V3和V2版本已废弃不用
         /// </summary>
-        /// <value>分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 &gt; * V3和V2版本已废弃不用</value>
+        /// <value>分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus训练用的模型 &gt; * V3和V2版本已废弃不用</value>
         [JsonConverter(typeof(EnumClassConverter<ModelVersionEnum>))]
         public class ModelVersionEnum
         {
@@ -164,12 +164,18 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly ModelVersionEnum V3_2 = new ModelVersionEnum("V3.2");
 
+            /// <summary>
+            /// Enum V3_3 for value: V3.3
+            /// </summary>
+            public static readonly ModelVersionEnum V3_3 = new ModelVersionEnum("V3.3");
+
             private static readonly Dictionary<string, ModelVersionEnum> StaticFields =
             new Dictionary<string, ModelVersionEnum>()
             {
                 { "V2", V2 },
                 { "V3", V3 },
                 { "V3.2", V3_2 },
+                { "V3.3", V3_3 },
             };
 
             private string _value;
@@ -386,7 +392,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 分身数字人训练任务创建者的手机号。
+        /// 分身数字人训练任务创建者的手机号
         /// </summary>
         [JsonProperty("contact", NullValueHandling = NullValueHandling.Ignore)]
         public string Contact { get; set; }
@@ -427,15 +433,33 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public List<string> Tags { get; set; }
 
         /// <summary>
-        /// 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 &gt; * V3和V2版本已废弃不用
+        /// 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 * V3.3: 极速版flexus训练用的模型 &gt; * V3和V2版本已废弃不用
         /// </summary>
         [JsonProperty("model_version", NullValueHandling = NullValueHandling.Ignore)]
         public ModelVersionEnum ModelVersion { get; set; }
+        /// <summary>
+        /// 分身数字人训练任务类型 true 按需任务 false 普通任务
+        /// </summary>
+        [JsonProperty("is_ondemand_resource", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsOndemandResource { get; set; }
+
         /// <summary>
         /// 是否是基础版的形象训练
         /// </summary>
         [JsonProperty("is_flexus", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsFlexus { get; set; }
+
+        /// <summary>
+        /// 是否极速版flexus
+        /// </summary>
+        [JsonProperty("is_fast_flexus", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsFastFlexus { get; set; }
+
+        /// <summary>
+        /// 是否是直播间复刻任务
+        /// </summary>
+        [JsonProperty("is_live_copy", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? IsLiveCopy { get; set; }
 
         /// <summary>
         /// 是否只训练形象模型，不训练声音模型。仅Flexus版本时有效，默认false。
@@ -478,7 +502,10 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  batchName: ").Append(BatchName).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  modelVersion: ").Append(ModelVersion).Append("\n");
+            sb.Append("  isOndemandResource: ").Append(IsOndemandResource).Append("\n");
             sb.Append("  isFlexus: ").Append(IsFlexus).Append("\n");
+            sb.Append("  isFastFlexus: ").Append(IsFastFlexus).Append("\n");
+            sb.Append("  isLiveCopy: ").Append(IsLiveCopy).Append("\n");
             sb.Append("  isOnlyHumanModel: ").Append(IsOnlyHumanModel).Append("\n");
             sb.Append("  audioSourceType: ").Append(AudioSourceType).Append("\n");
             sb.Append("  voiceProperties: ").Append(VoiceProperties).Append("\n");
@@ -510,7 +537,10 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.BatchName != input.BatchName || (this.BatchName != null && !this.BatchName.Equals(input.BatchName))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.ModelVersion != input.ModelVersion) return false;
+            if (this.IsOndemandResource != input.IsOndemandResource || (this.IsOndemandResource != null && !this.IsOndemandResource.Equals(input.IsOndemandResource))) return false;
             if (this.IsFlexus != input.IsFlexus || (this.IsFlexus != null && !this.IsFlexus.Equals(input.IsFlexus))) return false;
+            if (this.IsFastFlexus != input.IsFastFlexus || (this.IsFastFlexus != null && !this.IsFastFlexus.Equals(input.IsFastFlexus))) return false;
+            if (this.IsLiveCopy != input.IsLiveCopy || (this.IsLiveCopy != null && !this.IsLiveCopy.Equals(input.IsLiveCopy))) return false;
             if (this.IsOnlyHumanModel != input.IsOnlyHumanModel || (this.IsOnlyHumanModel != null && !this.IsOnlyHumanModel.Equals(input.IsOnlyHumanModel))) return false;
             if (this.AudioSourceType != input.AudioSourceType) return false;
             if (this.VoiceProperties != input.VoiceProperties || (this.VoiceProperties != null && !this.VoiceProperties.Equals(input.VoiceProperties))) return false;
@@ -536,7 +566,10 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.BatchName != null) hashCode = hashCode * 59 + this.BatchName.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 hashCode = hashCode * 59 + this.ModelVersion.GetHashCode();
+                if (this.IsOndemandResource != null) hashCode = hashCode * 59 + this.IsOndemandResource.GetHashCode();
                 if (this.IsFlexus != null) hashCode = hashCode * 59 + this.IsFlexus.GetHashCode();
+                if (this.IsFastFlexus != null) hashCode = hashCode * 59 + this.IsFastFlexus.GetHashCode();
+                if (this.IsLiveCopy != null) hashCode = hashCode * 59 + this.IsLiveCopy.GetHashCode();
                 if (this.IsOnlyHumanModel != null) hashCode = hashCode * 59 + this.IsOnlyHumanModel.GetHashCode();
                 hashCode = hashCode * 59 + this.AudioSourceType.GetHashCode();
                 if (this.VoiceProperties != null) hashCode = hashCode * 59 + this.VoiceProperties.GetHashCode();

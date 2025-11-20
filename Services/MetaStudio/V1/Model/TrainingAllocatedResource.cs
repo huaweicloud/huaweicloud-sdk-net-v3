@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
     public class TrainingAllocatedResource 
     {
         /// <summary>
-        /// 资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 &gt; * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。
+        /// 资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 &gt; * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。 * ON_DEMAND: 按需
         /// </summary>
-        /// <value>资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 &gt; * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。</value>
+        /// <value>资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 &gt; * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。 * ON_DEMAND: 按需</value>
         [JsonConverter(typeof(EnumClassConverter<ChargeModeEnum>))]
         public class ChargeModeEnum
         {
@@ -32,11 +32,17 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             /// </summary>
             public static readonly ChargeModeEnum ONE_TIME = new ChargeModeEnum("ONE_TIME");
 
+            /// <summary>
+            /// Enum ON_DEMAND for value: ON_DEMAND
+            /// </summary>
+            public static readonly ChargeModeEnum ON_DEMAND = new ChargeModeEnum("ON_DEMAND");
+
             private static readonly Dictionary<string, ChargeModeEnum> StaticFields =
             new Dictionary<string, ChargeModeEnum>()
             {
                 { "PERIODIC", PERIODIC },
                 { "ONE_TIME", ONE_TIME },
+                { "ON_DEMAND", ON_DEMAND },
             };
 
             private string _value;
@@ -138,7 +144,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string ResourceId { get; set; }
 
         /// <summary>
-        /// 资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 &gt; * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。
+        /// 资源计费类型。 * PERIODIC: 包周期 * ONE_TIME：一次性计费 &gt; * 一次性计费包括：租户订购的一次性资源，SP管理员分配给租户的一次性资源。 * ON_DEMAND: 按需
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public ChargeModeEnum ChargeMode { get; set; }

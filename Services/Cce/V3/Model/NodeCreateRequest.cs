@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**： API类型，固定值“Node”。 **约束限制**： 不涉及 **取值范围**： 只能为固定值“Node”。 **默认取值**： 不涉及 
+        /// **参数解释**： API类型 **约束限制**： 该值不可修改 **取值范围**： 不涉及 **默认取值**： Node 
         /// </summary>
         [JsonProperty("kind", NullValueHandling = NullValueHandling.Ignore)]
         public string Kind { get; set; }
 
         /// <summary>
-        /// **参数解释**： API版本，固定值“v3”。 **约束限制**： 不涉及 **取值范围**： 只能为固定值“v3”。 **默认取值**： 不涉及
+        /// **参数解释**： API版本 **约束限制**： 该值不可修改 **取值范围**： 不涉及 **默认取值**： v3 
         /// </summary>
         [JsonProperty("apiVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string ApiVersion { get; set; }

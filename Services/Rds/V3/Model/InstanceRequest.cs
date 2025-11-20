@@ -190,6 +190,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("is_auto_upgrade", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAutoUpgrade { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("auto_enlarge_strategy", NullValueHandling = NullValueHandling.Ignore)]
+        public AutoEnlargeStrategyForConsoleApi AutoEnlargeStrategy { get; set; }
+
 
 
         /// <summary>
@@ -228,6 +234,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  serverlessInfo: ").Append(ServerlessInfo).Append("\n");
             sb.Append("  isAutoUpgrade: ").Append(IsAutoUpgrade).Append("\n");
+            sb.Append("  autoEnlargeStrategy: ").Append(AutoEnlargeStrategy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -275,6 +282,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
             if (this.ServerlessInfo != input.ServerlessInfo || (this.ServerlessInfo != null && !this.ServerlessInfo.Equals(input.ServerlessInfo))) return false;
             if (this.IsAutoUpgrade != input.IsAutoUpgrade || (this.IsAutoUpgrade != null && !this.IsAutoUpgrade.Equals(input.IsAutoUpgrade))) return false;
+            if (this.AutoEnlargeStrategy != input.AutoEnlargeStrategy || (this.AutoEnlargeStrategy != null && !this.AutoEnlargeStrategy.Equals(input.AutoEnlargeStrategy))) return false;
 
             return true;
         }
@@ -316,6 +324,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.ServerlessInfo != null) hashCode = hashCode * 59 + this.ServerlessInfo.GetHashCode();
                 if (this.IsAutoUpgrade != null) hashCode = hashCode * 59 + this.IsAutoUpgrade.GetHashCode();
+                if (this.AutoEnlargeStrategy != null) hashCode = hashCode * 59 + this.AutoEnlargeStrategy.GetHashCode();
                 return hashCode;
             }
         }

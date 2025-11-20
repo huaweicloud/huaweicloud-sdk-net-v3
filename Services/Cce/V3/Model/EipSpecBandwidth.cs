@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 带宽信息
+    /// **参数解释**： 带宽信息 **约束限制**： 不涉及 
     /// </summary>
     public class EipSpecBandwidth 
     {
         /// <summary>
-        /// 带宽类型
+        /// **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
-        /// <value>带宽类型</value>
+        /// <value>**参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 </value>
         [JsonConverter(typeof(EnumClassConverter<SharetypeEnum>))]
         public class SharetypeEnum
         {
@@ -132,13 +132,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
 
 
         /// <summary>
-        /// 带宽大小
+        /// **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
 
         /// <summary>
-        /// 带宽类型
+        /// **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("sharetype", NullValueHandling = NullValueHandling.Ignore)]
         public SharetypeEnum Sharetype { get; set; }

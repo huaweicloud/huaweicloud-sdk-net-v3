@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 资源描述基本信息，集合类的元素类型，包含一组由不同名称定义的属性。
+    /// **参数解释**： 资源描述基本信息，集合类的元素类型，包含一组由不同名称定义的属性。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
     public class Metadata 
     {
 
         /// <summary>
-        /// 唯一id标识
+        /// **参数解释**： 唯一id标识 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
         public string Uid { get; set; }
 
         /// <summary>
-        /// 资源名称
+        /// **参数解释**： 资源名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 资源标签，key/value对格式，接口保留字段，填写不会生效
+        /// **参数解释**： 资源标签，key/value对格式，接口保留字段，填写不会生效 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("labels", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Labels { get; set; }
 
         /// <summary>
-        /// 资源注解，由key/value组成 
+        /// **参数解释**： 资源注解，由key/value组成 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("annotations", NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Annotations { get; set; }
 
         /// <summary>
-        /// 更新时间
+        /// **参数解释**： 更新时间 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("updateTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? UpdateTimestamp { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// **参数解释**： 创建时间 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("creationTimestamp", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? CreationTimestamp { get; set; }

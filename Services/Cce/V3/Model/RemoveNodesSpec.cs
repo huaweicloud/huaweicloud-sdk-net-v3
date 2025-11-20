@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Login Login { get; set; }
 
         /// <summary>
-        /// 待操作节点列表
+        /// **参数解释**： 待操作节点列表，当前最多支持同时移除200个节点。 **约束限制**： 不涉及 
         /// </summary>
         [JsonProperty("nodes", NullValueHandling = NullValueHandling.Ignore)]
         public List<NodeItem> Nodes { get; set; }

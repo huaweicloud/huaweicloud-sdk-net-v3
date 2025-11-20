@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 分区子网
+    /// **参数解释**： 分区子网 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
     /// </summary>
     public class PartitionSpecHostNetwork 
     {
 
         /// <summary>
-        /// 子网ID
+        /// **参数解释**： 子网ID **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("subnetID", NullValueHandling = NullValueHandling.Ignore)]
         public string SubnetID { get; set; }

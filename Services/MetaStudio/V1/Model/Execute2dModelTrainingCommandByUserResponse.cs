@@ -157,6 +157,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty("error_info", NullValueHandling = NullValueHandling.Ignore)]
+        public ErrorResponse ErrorInfo { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [SDKProperty("X-Request-Id", IsHeader = true)]
         [JsonProperty("X-Request-Id", NullValueHandling = NullValueHandling.Ignore)]
         public string XRequestId { get; set; }
@@ -174,6 +180,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  attachmentUploadUrl: ").Append(AttachmentUploadUrl).Append("\n");
             sb.Append("  multipartData: ").Append(MultipartData).Append("\n");
             sb.Append("  excuteFailedMsg: ").Append(ExcuteFailedMsg).Append("\n");
+            sb.Append("  errorInfo: ").Append(ErrorInfo).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -197,6 +204,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.AttachmentUploadUrl != input.AttachmentUploadUrl || (this.AttachmentUploadUrl != null && input.AttachmentUploadUrl != null && !this.AttachmentUploadUrl.SequenceEqual(input.AttachmentUploadUrl))) return false;
             if (this.MultipartData != input.MultipartData || (this.MultipartData != null && input.MultipartData != null && !this.MultipartData.SequenceEqual(input.MultipartData))) return false;
             if (this.ExcuteFailedMsg != input.ExcuteFailedMsg || (this.ExcuteFailedMsg != null && !this.ExcuteFailedMsg.Equals(input.ExcuteFailedMsg))) return false;
+            if (this.ErrorInfo != input.ErrorInfo || (this.ErrorInfo != null && !this.ErrorInfo.Equals(input.ErrorInfo))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
             return true;
@@ -214,6 +222,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.AttachmentUploadUrl != null) hashCode = hashCode * 59 + this.AttachmentUploadUrl.GetHashCode();
                 if (this.MultipartData != null) hashCode = hashCode * 59 + this.MultipartData.GetHashCode();
                 if (this.ExcuteFailedMsg != null) hashCode = hashCode * 59 + this.ExcuteFailedMsg.GetHashCode();
+                if (this.ErrorInfo != null) hashCode = hashCode * 59 + this.ErrorInfo.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }

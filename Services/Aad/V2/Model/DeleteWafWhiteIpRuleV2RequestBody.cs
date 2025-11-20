@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         public string DomainName { get; set; }
 
         /// <summary>
-        /// 防护区域
+        /// 防护区域,0-大陆,1-海外
         /// </summary>
         [JsonProperty("overseas_type", NullValueHandling = NullValueHandling.Ignore)]
         public int? OverseasType { get; set; }

@@ -41,6 +41,56 @@ namespace HuaweiCloud.SDK.Ddm.V1
         }
         
         /// <summary>
+        /// 创建参数组
+        ///
+        /// 创建参数组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDdmConfigurationsResponse CreateDdmConfigurations(CreateDdmConfigurationsRequest createDdmConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDdmConfigurationsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateDdmConfigurationsResponse>(response);
+        }
+
+        public SyncInvoker<CreateDdmConfigurationsResponse> CreateDdmConfigurationsInvoker(CreateDdmConfigurationsRequest createDdmConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createDdmConfigurationsRequest);
+            return new SyncInvoker<CreateDdmConfigurationsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDdmConfigurationsResponse>);
+        }
+        
+        /// <summary>
+        /// 删除参数组
+        ///
+        /// 删除参数组
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteConfigurationResponse DeleteConfiguration(DeleteConfigurationRequest deleteConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteConfigurationRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<DeleteConfigurationResponse> DeleteConfigurationInvoker(DeleteConfigurationRequest deleteConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteConfigurationRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteConfigurationRequest);
+            return new SyncInvoker<DeleteConfigurationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteConfigurationResponse>);
+        }
+        
+        /// <summary>
         /// 查询可变更内核版本
         ///
         /// 查询可变更内核版本
@@ -88,6 +138,32 @@ namespace HuaweiCloud.SDK.Ddm.V1
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDdmConfigurationsRequest);
             return new SyncInvoker<ListDdmConfigurationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDdmConfigurationsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改实例参数
+        ///
+        /// 修改实例参数
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ModifyConfigurationResponse ModifyConfiguration(ModifyConfigurationRequest modifyConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyConfigurationRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ModifyConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<ModifyConfigurationResponse> ModifyConfigurationInvoker(ModifyConfigurationRequest modifyConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(modifyConfigurationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", modifyConfigurationRequest);
+            return new SyncInvoker<ModifyConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<ModifyConfigurationResponse>);
         }
         
         /// <summary>
@@ -190,6 +266,154 @@ namespace HuaweiCloud.SDK.Ddm.V1
             var urlPath = HttpUtils.AddUrlPath("/", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listApiVersionRequest);
             return new SyncInvoker<ListApiVersionResponse>(this, "GET", request, JsonUtils.DeSerialize<ListApiVersionResponse>);
+        }
+        
+        /// <summary>
+        /// 取消分片变更
+        ///
+        /// 取消分片变更
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CancelMigrationResponse CancelMigration(CancelMigrationRequest cancelMigrationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(cancelMigrationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(cancelMigrationRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(cancelMigrationRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/cancel", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelMigrationRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<CancelMigrationResponse>(response);
+        }
+
+        public SyncInvoker<CancelMigrationResponse> CancelMigrationInvoker(CancelMigrationRequest cancelMigrationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(cancelMigrationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(cancelMigrationRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(cancelMigrationRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/cancel", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cancelMigrationRequest);
+            return new SyncInvoker<CancelMigrationResponse>(this, "PUT", request, JsonUtils.DeSerialize<CancelMigrationResponse>);
+        }
+        
+        /// <summary>
+        /// 修改切换路由策略
+        ///
+        /// 修改切换路由策略
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ChangeStrategyResponse ChangeStrategy(ChangeStrategyRequest changeStrategyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeStrategyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(changeStrategyRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(changeStrategyRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/route-switch-strategy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeStrategyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<ChangeStrategyResponse>(response);
+        }
+
+        public SyncInvoker<ChangeStrategyResponse> ChangeStrategyInvoker(ChangeStrategyRequest changeStrategyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(changeStrategyRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(changeStrategyRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(changeStrategyRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/route-switch-strategy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", changeStrategyRequest);
+            return new SyncInvoker<ChangeStrategyResponse>(this, "PUT", request, JsonUtils.DeSerialize<ChangeStrategyResponse>);
+        }
+        
+        /// <summary>
+        /// 分片变更预校验
+        ///
+        /// 分片变更预校验
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckMigrateLogicDbResponse CheckMigrateLogicDb(CheckMigrateLogicDbRequest checkMigrateLogicDbRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkMigrateLogicDbRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(checkMigrateLogicDbRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/precheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkMigrateLogicDbRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CheckMigrateLogicDbResponse>(response);
+        }
+
+        public SyncInvoker<CheckMigrateLogicDbResponse> CheckMigrateLogicDbInvoker(CheckMigrateLogicDbRequest checkMigrateLogicDbRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkMigrateLogicDbRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(checkMigrateLogicDbRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/precheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkMigrateLogicDbRequest);
+            return new SyncInvoker<CheckMigrateLogicDbResponse>(this, "POST", request, JsonUtils.DeSerialize<CheckMigrateLogicDbResponse>);
+        }
+        
+        /// <summary>
+        /// 查询分片变更预校验异步结果
+        ///
+        /// 查询分片变更预校验异步结果
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CheckPreliminaryResultsResponse CheckPreliminaryResults(CheckPreliminaryResultsRequest checkPreliminaryResultsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkPreliminaryResultsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(checkPreliminaryResultsRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(checkPreliminaryResultsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/precheck/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkPreliminaryResultsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<CheckPreliminaryResultsResponse>(response);
+        }
+
+        public SyncInvoker<CheckPreliminaryResultsResponse> CheckPreliminaryResultsInvoker(CheckPreliminaryResultsRequest checkPreliminaryResultsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(checkPreliminaryResultsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(checkPreliminaryResultsRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(checkPreliminaryResultsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/precheck/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkPreliminaryResultsRequest);
+            return new SyncInvoker<CheckPreliminaryResultsResponse>(this, "GET", request, JsonUtils.DeSerialize<CheckPreliminaryResultsResponse>);
+        }
+        
+        /// <summary>
+        /// 清理分片变更
+        ///
+        /// 清理分片变更
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CleanMigrationResponse CleanMigration(CleanMigrationRequest cleanMigrationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(cleanMigrationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(cleanMigrationRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(cleanMigrationRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/clean", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cleanMigrationRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<CleanMigrationResponse>(response);
+        }
+
+        public SyncInvoker<CleanMigrationResponse> CleanMigrationInvoker(CleanMigrationRequest cleanMigrationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(cleanMigrationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(cleanMigrationRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(cleanMigrationRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/clean", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", cleanMigrationRequest);
+            return new SyncInvoker<CleanMigrationResponse>(this, "PUT", request, JsonUtils.DeSerialize<CleanMigrationResponse>);
         }
         
         /// <summary>
@@ -320,6 +544,32 @@ namespace HuaweiCloud.SDK.Ddm.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/users", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createUsersRequest);
             return new SyncInvoker<CreateUsersResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateUsersResponse>);
+        }
+        
+        /// <summary>
+        /// 删除备份
+        ///
+        /// 删除备份
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteBackupResponse DeleteBackup(DeleteBackupRequest deleteBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackupRequest.BackupId, out var valueOfBackupId)) urlParam.Add("backup_id", valueOfBackupId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackupRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteBackupResponse>(response);
+        }
+
+        public SyncInvoker<DeleteBackupResponse> DeleteBackupInvoker(DeleteBackupRequest deleteBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteBackupRequest.BackupId, out var valueOfBackupId)) urlParam.Add("backup_id", valueOfBackupId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups/{backup_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteBackupRequest);
+            return new SyncInvoker<DeleteBackupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteBackupResponse>);
         }
         
         /// <summary>
@@ -459,6 +709,32 @@ namespace HuaweiCloud.SDK.Ddm.V1
         }
         
         /// <summary>
+        /// 导出逻辑库元数据
+        ///
+        /// 导出所有逻辑库物理分片在数据节点上的分布关系
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadSchemaMetadataResponse DownloadSchemaMetadata(DownloadSchemaMetadataRequest downloadSchemaMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadSchemaMetadataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schema-metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSchemaMetadataRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<DownloadSchemaMetadataResponse>(response);
+        }
+
+        public SyncInvoker<DownloadSchemaMetadataResponse> DownloadSchemaMetadataInvoker(DownloadSchemaMetadataRequest downloadSchemaMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadSchemaMetadataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schema-metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadSchemaMetadataRequest);
+            return new SyncInvoker<DownloadSchemaMetadataResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadSchemaMetadataResponse>);
+        }
+        
+        /// <summary>
         /// kill逻辑会话
         ///
         /// kill逻辑会话
@@ -563,6 +839,60 @@ namespace HuaweiCloud.SDK.Ddm.V1
         }
         
         /// <summary>
+        /// 查询创建逻辑库可选取的数据节点实例列表
+        ///
+        /// 查询创建逻辑库可选取的数据节点实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAvailableRdsResponse ListAvailableRds(ListAvailableRdsRequest listAvailableRdsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listAvailableRdsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/available-data-nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableRdsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAvailableRdsResponse>(response);
+        }
+
+        public SyncInvoker<ListAvailableRdsResponse> ListAvailableRdsInvoker(ListAvailableRdsRequest listAvailableRdsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listAvailableRdsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/available-data-nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableRdsRequest);
+            return new SyncInvoker<ListAvailableRdsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAvailableRdsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询分片变更可选取的数据节点实例列表
+        ///
+        /// 查询分片变更可选取的数据节点实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAvailableRdsForMigrateResponse ListAvailableRdsForMigrate(ListAvailableRdsForMigrateRequest listAvailableRdsForMigrateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listAvailableRdsForMigrateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listAvailableRdsForMigrateRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/available-data-nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableRdsForMigrateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAvailableRdsForMigrateResponse>(response);
+        }
+
+        public SyncInvoker<ListAvailableRdsForMigrateResponse> ListAvailableRdsForMigrateInvoker(ListAvailableRdsForMigrateRequest listAvailableRdsForMigrateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listAvailableRdsForMigrateRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listAvailableRdsForMigrateRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/available-data-nodes", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableRdsForMigrateRequest);
+            return new SyncInvoker<ListAvailableRdsForMigrateResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAvailableRdsForMigrateResponse>);
+        }
+        
+        /// <summary>
         /// 查询创建逻辑库可选取的数据库实例列表
         ///
         /// 查询创建逻辑库可选取的数据库实例列表。
@@ -586,6 +916,30 @@ namespace HuaweiCloud.SDK.Ddm.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/rds", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAvailableRdsListRequest);
             return new SyncInvoker<ListAvailableRdsListResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAvailableRdsListResponse>);
+        }
+        
+        /// <summary>
+        /// 获取备份列表
+        ///
+        /// 获取备份列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListBackupsResponse ListBackups(ListBackupsRequest listBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListBackupsResponse>(response);
+        }
+
+        public SyncInvoker<ListBackupsResponse> ListBackupsInvoker(ListBackupsRequest listBackupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBackupsRequest);
+            return new SyncInvoker<ListBackupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBackupsResponse>);
         }
         
         /// <summary>
@@ -891,6 +1245,64 @@ namespace HuaweiCloud.SDK.Ddm.V1
         }
         
         /// <summary>
+        /// 分片变更
+        ///
+        /// 分片变更
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public MigrateLogicDbResponse MigrateLogicDb(MigrateLogicDbRequest migrateLogicDbRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(migrateLogicDbRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(migrateLogicDbRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", migrateLogicDbRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<MigrateLogicDbResponse>(response);
+        }
+
+        public SyncInvoker<MigrateLogicDbResponse> MigrateLogicDbInvoker(MigrateLogicDbRequest migrateLogicDbRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(migrateLogicDbRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(migrateLogicDbRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", migrateLogicDbRequest);
+            return new SyncInvoker<MigrateLogicDbResponse>(this, "POST", request, JsonUtils.DeSerialize<MigrateLogicDbResponse>);
+        }
+        
+        /// <summary>
+        /// 查询分片变更任务详情
+        ///
+        /// 查询分片变更任务详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public MigrateResultsResponse MigrateResults(MigrateResultsRequest migrateResultsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(migrateResultsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(migrateResultsRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(migrateResultsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateResultsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<MigrateResultsResponse>(response);
+        }
+
+        public SyncInvoker<MigrateResultsResponse> MigrateResultsInvoker(MigrateResultsRequest migrateResultsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(migrateResultsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(migrateResultsRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(migrateResultsRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateResultsRequest);
+            return new SyncInvoker<MigrateResultsResponse>(this, "GET", request, JsonUtils.DeSerialize<MigrateResultsResponse>);
+        }
+        
+        /// <summary>
         /// DDM表数据重载
         ///
         /// DDM实例跨region容灾场景下，针对目标DDM实例实现表数据reload，使数据同步。
@@ -1023,6 +1435,224 @@ namespace HuaweiCloud.SDK.Ddm.V1
         }
         
         /// <summary>
+        /// 恢复到新实例
+        ///
+        /// 恢复到新实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public Restore2ExistResponse Restore2Exist(Restore2ExistRequest restore2ExistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(restore2ExistRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/recovery", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restore2ExistRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<Restore2ExistResponse>(response);
+        }
+
+        public SyncInvoker<Restore2ExistResponse> Restore2ExistInvoker(Restore2ExistRequest restore2ExistRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(restore2ExistRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/recovery", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restore2ExistRequest);
+            return new SyncInvoker<Restore2ExistResponse>(this, "POST", request, JsonUtils.DeSerialize<Restore2ExistResponse>);
+        }
+        
+        /// <summary>
+        /// 元数据恢复
+        ///
+        /// 元数据恢复
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RestoreMetadataResponse RestoreMetadata(RestoreMetadataRequest restoreMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(restoreMetadataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/metadata-recovery", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restoreMetadataRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RestoreMetadataResponse>(response);
+        }
+
+        public SyncInvoker<RestoreMetadataResponse> RestoreMetadataInvoker(RestoreMetadataRequest restoreMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(restoreMetadataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/metadata-recovery", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", restoreMetadataRequest);
+            return new SyncInvoker<RestoreMetadataResponse>(this, "POST", request, JsonUtils.DeSerialize<RestoreMetadataResponse>);
+        }
+        
+        /// <summary>
+        /// 重试分片变更
+        ///
+        /// 重试分片变更
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RetryMigrationResponse RetryMigration(RetryMigrationRequest retryMigrationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(retryMigrationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(retryMigrationRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(retryMigrationRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryMigrationRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<RetryMigrationResponse>(response);
+        }
+
+        public SyncInvoker<RetryMigrationResponse> RetryMigrationInvoker(RetryMigrationRequest retryMigrationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(retryMigrationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(retryMigrationRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(retryMigrationRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/retry", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", retryMigrationRequest);
+            return new SyncInvoker<RetryMigrationResponse>(this, "PUT", request, JsonUtils.DeSerialize<RetryMigrationResponse>);
+        }
+        
+        /// <summary>
+        /// 回滚分片变更
+        ///
+        /// 回滚分片变更
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RollbackMigrationResponse RollbackMigration(RollbackMigrationRequest rollbackMigrationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rollbackMigrationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(rollbackMigrationRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(rollbackMigrationRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/rollback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rollbackMigrationRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<RollbackMigrationResponse>(response);
+        }
+
+        public SyncInvoker<RollbackMigrationResponse> RollbackMigrationInvoker(RollbackMigrationRequest rollbackMigrationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(rollbackMigrationRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(rollbackMigrationRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(rollbackMigrationRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/rollback", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", rollbackMigrationRequest);
+            return new SyncInvoker<RollbackMigrationResponse>(this, "PUT", request, JsonUtils.DeSerialize<RollbackMigrationResponse>);
+        }
+        
+        /// <summary>
+        /// 查询可用于恢复的实例列表
+        ///
+        /// 查询可用于恢复的实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAvalibleDdmsResponse ShowAvalibleDdms(ShowAvalibleDdmsRequest showAvalibleDdmsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAvalibleDdmsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restorable-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvalibleDdmsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAvalibleDdmsResponse>(response);
+        }
+
+        public SyncInvoker<ShowAvalibleDdmsResponse> ShowAvalibleDdmsInvoker(ShowAvalibleDdmsRequest showAvalibleDdmsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAvalibleDdmsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restorable-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvalibleDdmsRequest);
+            return new SyncInvoker<ShowAvalibleDdmsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAvalibleDdmsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询可用于时间点恢复的数据节点列表
+        ///
+        /// 查询可用于时间点恢复的数据节点列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAvalibleRdsResponse ShowAvalibleRds(ShowAvalibleRdsRequest showAvalibleRdsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAvalibleRdsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restorable-data-node", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvalibleRdsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAvalibleRdsResponse>(response);
+        }
+
+        public SyncInvoker<ShowAvalibleRdsResponse> ShowAvalibleRdsInvoker(ShowAvalibleRdsRequest showAvalibleRdsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAvalibleRdsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restorable-data-node", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvalibleRdsRequest);
+            return new SyncInvoker<ShowAvalibleRdsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAvalibleRdsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询可恢复时间段
+        ///
+        /// 查询可恢复时间段
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAvalibleTimeResponse ShowAvalibleTime(ShowAvalibleTimeRequest showAvalibleTimeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAvalibleTimeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restorable-time-interval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvalibleTimeRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAvalibleTimeResponse>(response);
+        }
+
+        public SyncInvoker<ShowAvalibleTimeResponse> ShowAvalibleTimeInvoker(ShowAvalibleTimeRequest showAvalibleTimeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAvalibleTimeRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/restorable-time-interval", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAvalibleTimeRequest);
+            return new SyncInvoker<ShowAvalibleTimeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAvalibleTimeResponse>);
+        }
+        
+        /// <summary>
+        /// 查询备份详情
+        ///
+        /// 查询备份详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowBackupResponse ShowBackup(ShowBackupRequest showBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBackupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showBackupRequest.BackupId, out var valueOfBackupId)) urlParam.Add("backup_id", valueOfBackupId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/{backup_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowBackupResponse>(response);
+        }
+
+        public SyncInvoker<ShowBackupResponse> ShowBackupInvoker(ShowBackupRequest showBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showBackupRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showBackupRequest.BackupId, out var valueOfBackupId)) urlParam.Add("backup_id", valueOfBackupId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/{backup_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showBackupRequest);
+            return new SyncInvoker<ShowBackupResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowBackupResponse>);
+        }
+        
+        /// <summary>
         /// 查询DDM逻辑库详细信息
         ///
         /// 查询指定逻辑库的详细信息。
@@ -1100,6 +1730,34 @@ namespace HuaweiCloud.SDK.Ddm.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceRequest);
             return new SyncInvoker<ShowInstanceResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 查询逻辑库详情
+        ///
+        /// 查询逻辑库详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowInstanceDatabaseResponse ShowInstanceDatabase(ShowInstanceDatabaseRequest showInstanceDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceDatabaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceDatabaseRequest.DatabaseName, out var valueOfDatabaseName)) urlParam.Add("database_name", valueOfDatabaseName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{database_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceDatabaseRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowInstanceDatabaseResponse>(response);
+        }
+
+        public SyncInvoker<ShowInstanceDatabaseResponse> ShowInstanceDatabaseInvoker(ShowInstanceDatabaseRequest showInstanceDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceDatabaseRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showInstanceDatabaseRequest.DatabaseName, out var valueOfDatabaseName)) urlParam.Add("database_name", valueOfDatabaseName);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{database_name}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showInstanceDatabaseRequest);
+            return new SyncInvoker<ShowInstanceDatabaseResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowInstanceDatabaseResponse>);
         }
         
         /// <summary>
@@ -1235,6 +1893,32 @@ namespace HuaweiCloud.SDK.Ddm.V1
         }
         
         /// <summary>
+        /// 查询实例在恢复时间点关联的数据节点
+        ///
+        /// 查询实例在恢复时间点关联的数据节点
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRelatedDnsResponse ShowRelatedDns(ShowRelatedDnsRequest showRelatedDnsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRelatedDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/related-dn", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRelatedDnsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRelatedDnsResponse>(response);
+        }
+
+        public SyncInvoker<ShowRelatedDnsResponse> ShowRelatedDnsInvoker(ShowRelatedDnsRequest showRelatedDnsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showRelatedDnsRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/backups/related-dn", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRelatedDnsRequest);
+            return new SyncInvoker<ShowRelatedDnsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRelatedDnsResponse>);
+        }
+        
+        /// <summary>
         /// DDM实例节点缩容
         ///
         /// 对指定的DDM实例的节点个数进行缩容。
@@ -1258,6 +1942,36 @@ namespace HuaweiCloud.SDK.Ddm.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/action/reduce", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", shrinkInstanceNodesRequest);
             return new SyncInvoker<ShrinkInstanceNodesResponse>(this, "POST", request, JsonUtils.DeSerialize<ShrinkInstanceNodesResponse>);
+        }
+        
+        /// <summary>
+        /// 切换路由
+        ///
+        /// 切换路由
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchRouteResponse SwitchRoute(SwitchRouteRequest switchRouteRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchRouteRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchRouteRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(switchRouteRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/route-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchRouteRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<SwitchRouteResponse>(response);
+        }
+
+        public SyncInvoker<SwitchRouteResponse> SwitchRouteInvoker(SwitchRouteRequest switchRouteRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchRouteRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchRouteRequest.DbName, out var valueOfDbName)) urlParam.Add("db_name", valueOfDbName);
+            if (StringUtils.TryConvertToNonEmptyString(switchRouteRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/databases/{db_name}/migration/jobs/{job_id}/route-switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchRouteRequest);
+            return new SyncInvoker<SwitchRouteResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SwitchRouteResponse>);
         }
         
         /// <summary>
@@ -1468,6 +2182,32 @@ namespace HuaweiCloud.SDK.Ddm.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/instances/{instance_id}/users/{username}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateUserRequest);
             return new SyncInvoker<UpdateUserResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateUserResponse>);
+        }
+        
+        /// <summary>
+        /// 导入逻辑库元数据
+        ///
+        /// 导入所有逻辑库物理分片分布关系，以此创建相同物理分片分布关系的逻辑库。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UploadSchemaMetadataResponse UploadSchemaMetadata(UploadSchemaMetadataRequest uploadSchemaMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(uploadSchemaMetadataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schema-metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", uploadSchemaMetadataRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UploadSchemaMetadataResponse>(response);
+        }
+
+        public SyncInvoker<UploadSchemaMetadataResponse> UploadSchemaMetadataInvoker(UploadSchemaMetadataRequest uploadSchemaMetadataRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(uploadSchemaMetadataRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/schema-metadata", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", uploadSchemaMetadataRequest);
+            return new SyncInvoker<UploadSchemaMetadataResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadSchemaMetadataResponse>);
         }
         
         /// <summary>

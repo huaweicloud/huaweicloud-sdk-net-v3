@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// **参数解释**: 可用区列表信息
+        /// **参数解释**: 可用区列表信息 **约束限制**： 不涉及
         /// </summary>
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
         public List<GetAvailableZoneResponseBody> Body { get; set; }

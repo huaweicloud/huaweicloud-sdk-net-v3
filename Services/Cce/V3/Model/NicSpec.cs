@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string SubnetId { get; set; }
 
         /// <summary>
-        /// **参数解释**： 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。 **约束限制**： - fixedIps或ipBlock同时只能指定一个 - 扩展网卡不支持指定fiexdIps - 创建节点池场景不支持该配置参数
+        /// **参数解释**： 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。 **约束限制**： - fixedIps或ipBlock同时只能指定一个 - 扩展网卡不支持指定fixedIps - 创建节点池场景不支持该配置参数
         /// </summary>
         [JsonProperty("fixedIps", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> FixedIps { get; set; }

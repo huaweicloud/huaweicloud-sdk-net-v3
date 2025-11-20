@@ -24,7 +24,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public string ClusterId { get; set; }
 
         /// <summary>
-        /// 分区名称
+        /// **参数解释**： 分区名称 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [SDKProperty("partition_name", IsPath = true)]
         [JsonProperty("partition_name", NullValueHandling = NullValueHandling.Ignore)]

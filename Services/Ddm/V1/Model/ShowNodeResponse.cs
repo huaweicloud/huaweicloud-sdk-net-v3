@@ -76,6 +76,18 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
         [JsonProperty("systemvolume_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SystemvolumeId { get; set; }
 
+        /// <summary>
+        /// 节点所在组ID。
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
+        /// <summary>
+        /// 子网ID。
+        /// </summary>
+        [JsonProperty("subnet_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string SubnetId { get; set; }
+
 
 
         /// <summary>
@@ -95,6 +107,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             sb.Append("  datavolumeId: ").Append(DatavolumeId).Append("\n");
             sb.Append("  resSubnetIp: ").Append(ResSubnetIp).Append("\n");
             sb.Append("  systemvolumeId: ").Append(SystemvolumeId).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
+            sb.Append("  subnetId: ").Append(SubnetId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +137,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
             if (this.DatavolumeId != input.DatavolumeId || (this.DatavolumeId != null && !this.DatavolumeId.Equals(input.DatavolumeId))) return false;
             if (this.ResSubnetIp != input.ResSubnetIp || (this.ResSubnetIp != null && !this.ResSubnetIp.Equals(input.ResSubnetIp))) return false;
             if (this.SystemvolumeId != input.SystemvolumeId || (this.SystemvolumeId != null && !this.SystemvolumeId.Equals(input.SystemvolumeId))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
 
             return true;
         }
@@ -145,6 +161,8 @@ namespace HuaweiCloud.SDK.Ddm.V1.Model
                 if (this.DatavolumeId != null) hashCode = hashCode * 59 + this.DatavolumeId.GetHashCode();
                 if (this.ResSubnetIp != null) hashCode = hashCode * 59 + this.ResSubnetIp.GetHashCode();
                 if (this.SystemvolumeId != null) hashCode = hashCode * 59 + this.SystemvolumeId.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 return hashCode;
             }
         }

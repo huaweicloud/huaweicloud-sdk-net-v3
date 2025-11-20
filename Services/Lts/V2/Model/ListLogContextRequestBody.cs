@@ -31,13 +31,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// <summary>
         /// 指定起始日志往前（上文）的日志条数，取值范围 [0, 500] ，默认值100
         /// </summary>
-        [JsonProperty("backwardsSize", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("backwards_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? BackwardsSize { get; set; }
 
         /// <summary>
         /// 指定起始日志往后（下文）的日志条数，取值范围 [0, 500] ，默认值100
         /// </summary>
-        [JsonProperty("forwardsSize", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("forwards_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? ForwardsSize { get; set; }
 
 

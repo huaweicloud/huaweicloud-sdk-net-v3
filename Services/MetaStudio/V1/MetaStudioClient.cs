@@ -895,6 +895,34 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 转移资产任务控制
+        ///
+        /// 转移资产任务控制
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExecuteTransferAssetActionResponse ExecuteTransferAssetAction(ExecuteTransferAssetActionRequest executeTransferAssetActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(executeTransferAssetActionRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(executeTransferAssetActionRequest.Action, out var valueOfAction)) urlParam.Add("action", valueOfAction);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets-action/transfers/{job_id}/{action}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeTransferAssetActionRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ExecuteTransferAssetActionResponse>(response);
+        }
+
+        public SyncInvoker<ExecuteTransferAssetActionResponse> ExecuteTransferAssetActionInvoker(ExecuteTransferAssetActionRequest executeTransferAssetActionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(executeTransferAssetActionRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            if (StringUtils.TryConvertToNonEmptyString(executeTransferAssetActionRequest.Action, out var valueOfAction)) urlParam.Add("action", valueOfAction);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets-action/transfers/{job_id}/{action}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", executeTransferAssetActionRequest);
+            return new SyncInvoker<ExecuteTransferAssetActionResponse>(this, "POST", request, JsonUtils.DeSerialize<ExecuteTransferAssetActionResponse>);
+        }
+        
+        /// <summary>
         /// 查询资产概要
         ///
         /// 该接口用于查询媒体资产库中指定的多个资产的概要信息。
@@ -940,6 +968,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAssetsRequest);
             return new SyncInvoker<ListAssetsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAssetsResponse>);
+        }
+        
+        /// <summary>
+        /// 资产转移任务列表
+        ///
+        /// 资产转移任务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListTransferAssetJobsResponse ListTransferAssetJobs(ListTransferAssetJobsRequest listTransferAssetJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets-action/transfers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTransferAssetJobsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListTransferAssetJobsResponse>(response);
+        }
+
+        public SyncInvoker<ListTransferAssetJobsResponse> ListTransferAssetJobsInvoker(ListTransferAssetJobsRequest listTransferAssetJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets-action/transfers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTransferAssetJobsRequest);
+            return new SyncInvoker<ListTransferAssetJobsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTransferAssetJobsResponse>);
         }
         
         /// <summary>
@@ -1018,6 +1070,56 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets/{asset_id}/replication-info", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAssetReplicationInfoRequest);
             return new SyncInvoker<ShowAssetReplicationInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAssetReplicationInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询转移资产任务详情
+        ///
+        /// 查询转移资产任务详情
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTransferAssetJobResponse ShowTransferAssetJob(ShowTransferAssetJobRequest showTransferAssetJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTransferAssetJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets-action/transfers/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransferAssetJobRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTransferAssetJobResponse>(response);
+        }
+
+        public SyncInvoker<ShowTransferAssetJobResponse> ShowTransferAssetJobInvoker(ShowTransferAssetJobRequest showTransferAssetJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTransferAssetJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets-action/transfers/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransferAssetJobRequest);
+            return new SyncInvoker<ShowTransferAssetJobResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTransferAssetJobResponse>);
+        }
+        
+        /// <summary>
+        /// 转移资产给其他用户
+        ///
+        /// 转移资产给其他用户
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public TransferAssetResponse TransferAsset(TransferAssetRequest transferAssetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets-action/transfers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", transferAssetRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<TransferAssetResponse>(response);
+        }
+
+        public SyncInvoker<TransferAssetResponse> TransferAssetInvoker(TransferAssetRequest transferAssetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-assets-action/transfers", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", transferAssetRequest);
+            return new SyncInvoker<TransferAssetResponse>(this, "POST", request, JsonUtils.DeSerialize<TransferAssetResponse>);
         }
         
         /// <summary>
@@ -2578,30 +2680,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/wise-brain-manager/chat", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createInteractiveChatRequest);
             return new SyncInvoker<CreateInteractiveChatResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInteractiveChatResponse>);
-        }
-        
-        /// <summary>
-        /// 下载加密文件
-        ///
-        /// 下载加密文件
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ShowEncryptFileResponse ShowEncryptFile(ShowEncryptFileRequest showEncryptFileRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/voice-training-manage/common/encrypt-file-download", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEncryptFileRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ShowEncryptFileResponse>(response);
-        }
-
-        public SyncInvoker<ShowEncryptFileResponse> ShowEncryptFileInvoker(ShowEncryptFileRequest showEncryptFileRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/voice-training-manage/common/encrypt-file-download", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEncryptFileRequest);
-            return new SyncInvoker<ShowEncryptFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEncryptFileResponse>);
         }
         
         /// <summary>
@@ -4915,6 +4993,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 租户查询直播租户级配置
+        ///
+        /// 该接口用于租户设置直播租户级配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSmartLiveUserConfigResponse ShowSmartLiveUserConfig(ShowSmartLiveUserConfigRequest showSmartLiveUserConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-configs/user-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmartLiveUserConfigRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSmartLiveUserConfigResponse>(response);
+        }
+
+        public SyncInvoker<ShowSmartLiveUserConfigResponse> ShowSmartLiveUserConfigInvoker(ShowSmartLiveUserConfigRequest showSmartLiveUserConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/smart-live-configs/user-config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSmartLiveUserConfigRequest);
+            return new SyncInvoker<ShowSmartLiveUserConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSmartLiveUserConfigResponse>);
+        }
+        
+        /// <summary>
         /// 租户设置直播租户级配置
         ///
         /// 该接口用于租户设置直播租户级配置。
@@ -5483,6 +5585,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 资源绑定接口
+        ///
+        /// 资源绑定接口。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BindUserAssetResourceResponse BindUserAssetResource(BindUserAssetResourceRequest bindUserAssetResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/bind-resource", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", bindUserAssetResourceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BindUserAssetResourceResponse>(response);
+        }
+
+        public SyncInvoker<BindUserAssetResourceResponse> BindUserAssetResourceInvoker(BindUserAssetResourceRequest bindUserAssetResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/bind-resource", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", bindUserAssetResourceRequest);
+            return new SyncInvoker<BindUserAssetResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BindUserAssetResourceResponse>);
+        }
+        
+        /// <summary>
         /// 统计时间段内过期的资源数量
         ///
         /// 统计指定时间段内即将过期的包周期与一次性资源数量。
@@ -5504,6 +5630,80 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/resources-count", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", countTenantResourcesRequest);
             return new SyncInvoker<CountTenantResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<CountTenantResourcesResponse>);
+        }
+        
+        /// <summary>
+        /// 创建子账户配额
+        ///
+        /// 创建子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可创建。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateUserQuotasResponse CreateUserQuotas(CreateUserQuotasRequest createUserQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/user/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserQuotasRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateUserQuotasResponse>(response);
+        }
+
+        public SyncInvoker<CreateUserQuotasResponse> CreateUserQuotasInvoker(CreateUserQuotasRequest createUserQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/user/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createUserQuotasRequest);
+            return new SyncInvoker<CreateUserQuotasResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateUserQuotasResponse>);
+        }
+        
+        /// <summary>
+        /// 删除租户个性化配置
+        ///
+        /// 删除租户个性化配置。由租户下用户操作设置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteTenantUserConfigurationResponse DeleteTenantUserConfiguration(DeleteTenantUserConfigurationRequest deleteTenantUserConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/user-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTenantUserConfigurationRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteTenantUserConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<DeleteTenantUserConfigurationResponse> DeleteTenantUserConfigurationInvoker(DeleteTenantUserConfigurationRequest deleteTenantUserConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/user-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTenantUserConfigurationRequest);
+            return new SyncInvoker<DeleteTenantUserConfigurationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTenantUserConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 删除子账户配额
+        ///
+        /// 删除子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可删除。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteUserQuotasResponse DeleteUserQuotas(DeleteUserQuotasRequest deleteUserQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserQuotasRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/user/quotas/{user_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserQuotasRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteUserQuotasResponse>(response);
+        }
+
+        public SyncInvoker<DeleteUserQuotasResponse> DeleteUserQuotasInvoker(DeleteUserQuotasRequest deleteUserQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteUserQuotasRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/user/quotas/{user_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteUserQuotasRequest);
+            return new SyncInvoker<DeleteUserQuotasResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteUserQuotasResponse>);
         }
         
         /// <summary>
@@ -5533,6 +5733,78 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 查询子账户配额
+        ///
+        /// 查询子账户（IAM用户）配额。只有根账户可查询。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListUserQuotasResponse ListUserQuotas(ListUserQuotasRequest listUserQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/user/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserQuotasRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListUserQuotasResponse>(response);
+        }
+
+        public SyncInvoker<ListUserQuotasResponse> ListUserQuotasInvoker(ListUserQuotasRequest listUserQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/user/quotas", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listUserQuotasRequest);
+            return new SyncInvoker<ListUserQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ListUserQuotasResponse>);
+        }
+        
+        /// <summary>
+        /// 设置租户个性化通知配置
+        ///
+        /// 设置租户个性化通知配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetTenantNoticeConfigurationResponse SetTenantNoticeConfiguration(SetTenantNoticeConfigurationRequest setTenantNoticeConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/notice-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTenantNoticeConfigurationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<SetTenantNoticeConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<SetTenantNoticeConfigurationResponse> SetTenantNoticeConfigurationInvoker(SetTenantNoticeConfigurationRequest setTenantNoticeConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/notice-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTenantNoticeConfigurationRequest);
+            return new SyncInvoker<SetTenantNoticeConfigurationResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SetTenantNoticeConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 设置租户个性化配置
+        ///
+        /// 设置租户个性化配置。由租户下用户操作设置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetTenantUserConfigurationResponse SetTenantUserConfiguration(SetTenantUserConfigurationRequest setTenantUserConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/user-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTenantUserConfigurationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<SetTenantUserConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<SetTenantUserConfigurationResponse> SetTenantUserConfigurationInvoker(SetTenantUserConfigurationRequest setTenantUserConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/user-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setTenantUserConfigurationRequest);
+            return new SyncInvoker<SetTenantUserConfigurationResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SetTenantUserConfigurationResponse>);
+        }
+        
+        /// <summary>
         /// 查看租户资源用量信息
         ///
         /// 查询租户一次性和包周期（包年/包月）资源用量信息。
@@ -5556,6 +5828,102 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/resources-usage", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showResourceUsageRequest);
             return new SyncInvoker<ShowResourceUsageResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowResourceUsageResponse>);
+        }
+        
+        /// <summary>
+        /// 查询租户下分配的资源详情
+        ///
+        /// 该接口用于普通租户查询租户下的资源详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTenantAssginRecordResponse ShowTenantAssginRecord(ShowTenantAssginRecordRequest showTenantAssginRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/resource/assignrecourd", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantAssginRecordRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTenantAssginRecordResponse>(response);
+        }
+
+        public SyncInvoker<ShowTenantAssginRecordResponse> ShowTenantAssginRecordInvoker(ShowTenantAssginRecordRequest showTenantAssginRecordRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/resource/assignrecourd", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantAssginRecordRequest);
+            return new SyncInvoker<ShowTenantAssginRecordResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTenantAssginRecordResponse>);
+        }
+        
+        /// <summary>
+        /// 查询租户个性化通知配置
+        ///
+        /// 查询租户个性化通知配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTenantNoticeConfigurationResponse ShowTenantNoticeConfiguration(ShowTenantNoticeConfigurationRequest showTenantNoticeConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/notice-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantNoticeConfigurationRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTenantNoticeConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<ShowTenantNoticeConfigurationResponse> ShowTenantNoticeConfigurationInvoker(ShowTenantNoticeConfigurationRequest showTenantNoticeConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/notice-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantNoticeConfigurationRequest);
+            return new SyncInvoker<ShowTenantNoticeConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTenantNoticeConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 查看租户服务业务配置
+        ///
+        /// 查看租户服务业务配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTenantServiceConfigsResponse ShowTenantServiceConfigs(ShowTenantServiceConfigsRequest showTenantServiceConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/service-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantServiceConfigsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTenantServiceConfigsResponse>(response);
+        }
+
+        public SyncInvoker<ShowTenantServiceConfigsResponse> ShowTenantServiceConfigsInvoker(ShowTenantServiceConfigsRequest showTenantServiceConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/service-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantServiceConfigsRequest);
+            return new SyncInvoker<ShowTenantServiceConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTenantServiceConfigsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询租户个性化配置
+        ///
+        /// 查询租户个性化配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowTenantUserConfigurationResponse ShowTenantUserConfiguration(ShowTenantUserConfigurationRequest showTenantUserConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/user-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantUserConfigurationRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowTenantUserConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<ShowTenantUserConfigurationResponse> ShowTenantUserConfigurationInvoker(ShowTenantUserConfigurationRequest showTenantUserConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/user-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTenantUserConfigurationRequest);
+            return new SyncInvoker<ShowTenantUserConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTenantUserConfigurationResponse>);
         }
         
         /// <summary>
@@ -5604,6 +5972,56 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/special-agreements/signed", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", signSpecialAgreementRequest);
             return new SyncInvoker<SignSpecialAgreementResponse>(this, "POST", request, JsonUtils.DeSerialize<SignSpecialAgreementResponse>);
+        }
+        
+        /// <summary>
+        /// 设置租户服务配置
+        ///
+        /// 设置租户服务业务配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateTenantServiceConfigsResponse UpdateTenantServiceConfigs(UpdateTenantServiceConfigsRequest updateTenantServiceConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/service-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTenantServiceConfigsRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateTenantServiceConfigsResponse>(response);
+        }
+
+        public SyncInvoker<UpdateTenantServiceConfigsResponse> UpdateTenantServiceConfigsInvoker(UpdateTenantServiceConfigsRequest updateTenantServiceConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/tenants/service-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTenantServiceConfigsRequest);
+            return new SyncInvoker<UpdateTenantServiceConfigsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTenantServiceConfigsResponse>);
+        }
+        
+        /// <summary>
+        /// 设置子账户配额
+        ///
+        /// 设置子账户（IAM用户）配额，需要先开启子账户隔离后才能配置。只有根账户可修改。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateUserQuotasResponse UpdateUserQuotas(UpdateUserQuotasRequest updateUserQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateUserQuotasRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/user/quotas/{user_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserQuotasRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateUserQuotasResponse>(response);
+        }
+
+        public SyncInvoker<UpdateUserQuotasResponse> UpdateUserQuotasInvoker(UpdateUserQuotasRequest updateUserQuotasRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateUserQuotasRequest.UserId, out var valueOfUserId)) urlParam.Add("user_id", valueOfUserId);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/user/quotas/{user_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateUserQuotasRequest);
+            return new SyncInvoker<UpdateUserQuotasResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateUserQuotasResponse>);
         }
         
         /// <summary>
@@ -5925,6 +6343,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 下载加密文件
+        ///
+        /// 下载加密文件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowEncryptFileResponse ShowEncryptFile(ShowEncryptFileRequest showEncryptFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/voice-training-manage/common/encrypt-file-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEncryptFileRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowEncryptFileResponse>(response);
+        }
+
+        public SyncInvoker<ShowEncryptFileResponse> ShowEncryptFileInvoker(ShowEncryptFileRequest showEncryptFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/voice-training-manage/common/encrypt-file-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showEncryptFileRequest);
+            return new SyncInvoker<ShowEncryptFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowEncryptFileResponse>);
+        }
+        
+        /// <summary>
         /// 获取语音训练任务审核结果
         ///
         /// 获取语音训练任务审核结果。
@@ -6154,6 +6596,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
         }
         
         /// <summary>
+        /// 下载加密文件
+        ///
+        /// 下载加密文件
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public Download2dModelTraningEncryptFileResponse Download2dModelTraningEncryptFile(Download2dModelTraningEncryptFileRequest download2dModelTraningEncryptFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/digital-human-training-manage/user/encrypt-file-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", download2dModelTraningEncryptFileRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<Download2dModelTraningEncryptFileResponse>(response);
+        }
+
+        public SyncInvoker<Download2dModelTraningEncryptFileResponse> Download2dModelTraningEncryptFileInvoker(Download2dModelTraningEncryptFileRequest download2dModelTraningEncryptFileRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/digital-human-training-manage/user/encrypt-file-download", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", download2dModelTraningEncryptFileRequest);
+            return new SyncInvoker<Download2dModelTraningEncryptFileResponse>(this, "GET", request, JsonUtils.DeSerialize<Download2dModelTraningEncryptFileResponse>);
+        }
+        
+        /// <summary>
         /// 租户执行分身数字人模型训练任务命令
         ///
         /// 该接口用于租户执行分身数字人模型训练任务命令，如提交训练审核等。
@@ -6254,130 +6720,6 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/digital-human-training-manage/user/jobs/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", update2dModelTrainingJobRequest);
             return new SyncInvoker<Update2dModelTrainingJobResponse>(this, "PUT", request, JsonUtils.DeSerialize<Update2dModelTrainingJobResponse>);
-        }
-        
-        /// <summary>
-        /// 创建语音驱动表情动画任务
-        ///
-        /// 该接口用于创建驱动数字人表情的任务。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateFacialAnimationsResponse CreateFacialAnimations(CreateFacialAnimationsRequest createFacialAnimationsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsa/fas", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createFacialAnimationsRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateFacialAnimationsResponse>(response);
-        }
-
-        public SyncInvoker<CreateFacialAnimationsResponse> CreateFacialAnimationsInvoker(CreateFacialAnimationsRequest createFacialAnimationsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsa/fas", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=utf-8", createFacialAnimationsRequest);
-            return new SyncInvoker<CreateFacialAnimationsResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateFacialAnimationsResponse>);
-        }
-        
-        /// <summary>
-        /// 创建语音驱动任务
-        ///
-        /// 该接口用于创建驱动数字人表情、动作及语音的任务。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CreateTtsaResponse CreateTtsa(CreateTtsaRequest createTtsaRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsa-jobs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTtsaRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CreateTtsaResponse>(response);
-        }
-
-        public SyncInvoker<CreateTtsaResponse> CreateTtsaInvoker(CreateTtsaRequest createTtsaRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsa-jobs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTtsaRequest);
-            return new SyncInvoker<CreateTtsaResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTtsaResponse>);
-        }
-        
-        /// <summary>
-        /// 获取语音驱动表情数据
-        ///
-        /// 该接口用于获取生成的数字人表情驱动数据
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListFacialAnimationsDataResponse ListFacialAnimationsData(ListFacialAnimationsDataRequest listFacialAnimationsDataRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listFacialAnimationsDataRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fas-jobs/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFacialAnimationsDataRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListFacialAnimationsDataResponse>(response);
-        }
-
-        public SyncInvoker<ListFacialAnimationsDataResponse> ListFacialAnimationsDataInvoker(ListFacialAnimationsDataRequest listFacialAnimationsDataRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listFacialAnimationsDataRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/fas-jobs/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listFacialAnimationsDataRequest);
-            return new SyncInvoker<ListFacialAnimationsDataResponse>(this, "GET", request, JsonUtils.DeSerialize<ListFacialAnimationsDataResponse>);
-        }
-        
-        /// <summary>
-        /// 获取语音驱动数据
-        ///
-        /// 该接口用于获取生成的数字人驱动数据，包括语音、表情、动作等。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListTtsaDataResponse ListTtsaData(ListTtsaDataRequest listTtsaDataRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listTtsaDataRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsa-jobs/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTtsaDataRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListTtsaDataResponse>(response);
-        }
-
-        public SyncInvoker<ListTtsaDataResponse> ListTtsaDataInvoker(ListTtsaDataRequest listTtsaDataRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(listTtsaDataRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsa-jobs/{job_id}", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTtsaDataRequest);
-            return new SyncInvoker<ListTtsaDataResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTtsaDataResponse>);
-        }
-        
-        /// <summary>
-        /// 获取语音驱动任务列表
-        ///
-        /// 该接口用于查询驱动数字人表情、动作及语音的任务列表。
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListTtsaJobsResponse ListTtsaJobs(ListTtsaJobsRequest listTtsaJobsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsa-jobs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTtsaJobsRequest);
-            var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListTtsaJobsResponse>(response);
-        }
-
-        public SyncInvoker<ListTtsaJobsResponse> ListTtsaJobsInvoker(ListTtsaJobsRequest listTtsaJobsRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsa-jobs", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTtsaJobsRequest);
-            return new SyncInvoker<ListTtsaJobsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTtsaJobsResponse>);
         }
         
         /// <summary>
@@ -6560,6 +6902,30 @@ namespace HuaweiCloud.SDK.MetaStudio.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/audition-file/{job_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTtsAuditionFileRequest);
             return new SyncInvoker<ShowTtsAuditionFileResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTtsAuditionFileResponse>);
+        }
+        
+        /// <summary>
+        /// 外部接口-获取TTS一次性token
+        ///
+        /// 该接口用于获取TTS租户级一次性token。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateTtsOnceCodeResponse CreateTtsOnceCode(CreateTtsOnceCodeRequest createTtsOnceCodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/once-code", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTtsOnceCodeRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateTtsOnceCodeResponse>(response);
+        }
+
+        public SyncInvoker<CreateTtsOnceCodeResponse> CreateTtsOnceCodeInvoker(CreateTtsOnceCodeRequest createTtsOnceCodeRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/ttsc/once-code", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTtsOnceCodeRequest);
+            return new SyncInvoker<CreateTtsOnceCodeResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTtsOnceCodeResponse>);
         }
         
         /// <summary>

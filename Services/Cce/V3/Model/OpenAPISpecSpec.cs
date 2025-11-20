@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Cce.V3.Model
 {
     /// <summary>
-    /// 集群访问的地址
+    /// **参数解释**： 集群访问的地址 **约束限制**： 不涉及 
     /// </summary>
     public class OpenAPISpecSpec 
     {
@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public EipSpec Eip { get; set; }
 
         /// <summary>
-        /// 是否动态创建
+        /// **参数解释**： 是否动态创建 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
         /// </summary>
         [JsonProperty("IsDynamic", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsDynamic { get; set; }

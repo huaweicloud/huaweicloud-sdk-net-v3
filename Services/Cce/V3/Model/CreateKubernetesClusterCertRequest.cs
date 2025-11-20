@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public CertDuration Body { get; set; }
+        public ClusterCertDuration Body { get; set; }
 
 
 

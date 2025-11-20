@@ -2263,6 +2263,132 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 添加域配置
+        ///
+        /// 应用服务器可调用此接口在物联网平台上添加域配置，域配置配额上限为：1个。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDomainConfigurationResponse CreateDomainConfiguration(CreateDomainConfigurationRequest createDomainConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainConfigurationRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateDomainConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<CreateDomainConfigurationResponse> CreateDomainConfigurationInvoker(CreateDomainConfigurationRequest createDomainConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainConfigurationRequest);
+            return new SyncInvoker<CreateDomainConfigurationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDomainConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 删除域配置
+        ///
+        /// 应用服务器可调用此接口在物联网平台删除域配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteDomainConfigurationResponse DeleteDomainConfiguration(DeleteDomainConfigurationRequest deleteDomainConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainConfigurationRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteDomainConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<DeleteDomainConfigurationResponse> DeleteDomainConfigurationInvoker(DeleteDomainConfigurationRequest deleteDomainConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainConfigurationRequest);
+            return new SyncInvoker<DeleteDomainConfigurationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDomainConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 获取域配置列表
+        ///
+        /// 应用服务器可调用此接口在物联网平台获取域配置列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDomainConfigurationsResponse ListDomainConfigurations(ListDomainConfigurationsRequest listDomainConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainConfigurationsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDomainConfigurationsResponse>(response);
+        }
+
+        public SyncInvoker<ListDomainConfigurationsResponse> ListDomainConfigurationsInvoker(ListDomainConfigurationsRequest listDomainConfigurationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainConfigurationsRequest);
+            return new SyncInvoker<ListDomainConfigurationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainConfigurationsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询域配置
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询域配置
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDomainConfigurationResponse ShowDomainConfiguration(ShowDomainConfigurationRequest showDomainConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainConfigurationRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainConfigurationResponse> ShowDomainConfigurationInvoker(ShowDomainConfigurationRequest showDomainConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainConfigurationRequest);
+            return new SyncInvoker<ShowDomainConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 更新域配置
+        ///
+        /// 应用服务器可调用此接口在物联网平台上更新域配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateDomainConfigurationResponse UpdateDomainConfiguration(UpdateDomainConfigurationRequest updateDomainConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainConfigurationRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateDomainConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<UpdateDomainConfigurationResponse> UpdateDomainConfigurationInvoker(UpdateDomainConfigurationRequest updateDomainConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainConfigurationRequest);
+            return new SyncInvoker<UpdateDomainConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainConfigurationResponse>);
+        }
+        
+        /// <summary>
         /// 新建数据流转流控策略
         ///
         /// 应用服务器可调用此接口在物联网平台创建数据流转流控策略。
@@ -4020,6 +4146,106 @@ namespace HuaweiCloud.SDK.IoTDA.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/security-profiles/{profile_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateSecurityProfileRequest);
             return new SyncInvoker<UpdateSecurityProfileResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateSecurityProfileResponse>);
+        }
+        
+        /// <summary>
+        /// 添加服务器证书
+        ///
+        /// 应用服务器可调用此接口在物联网平台上添加服务器证书，服务器证书配额限制为：2个。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateServerCertificateResponse CreateServerCertificate(CreateServerCertificateRequest createServerCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createServerCertificateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateServerCertificateResponse>(response);
+        }
+
+        public SyncInvoker<CreateServerCertificateResponse> CreateServerCertificateInvoker(CreateServerCertificateRequest createServerCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createServerCertificateRequest);
+            return new SyncInvoker<CreateServerCertificateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateServerCertificateResponse>);
+        }
+        
+        /// <summary>
+        /// 删除服务端证书
+        ///
+        /// 应用服务器可调用此接口在物联网平台删除服务器证书
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteServerCertificateResponse DeleteServerCertificate(DeleteServerCertificateRequest deleteServerCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteServerCertificateRequest.ServerCertificateId, out var valueOfServerCertificateId)) urlParam.Add("server_certificate_id", valueOfServerCertificateId);
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates/{server_certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteServerCertificateRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteServerCertificateResponse>(response);
+        }
+
+        public SyncInvoker<DeleteServerCertificateResponse> DeleteServerCertificateInvoker(DeleteServerCertificateRequest deleteServerCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteServerCertificateRequest.ServerCertificateId, out var valueOfServerCertificateId)) urlParam.Add("server_certificate_id", valueOfServerCertificateId);
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates/{server_certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteServerCertificateRequest);
+            return new SyncInvoker<DeleteServerCertificateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteServerCertificateResponse>);
+        }
+        
+        /// <summary>
+        /// 获取服务器证书列表
+        ///
+        /// 应用服务器可调用此接口在物联网平台上获取服务器证书列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListServerCertificateResponse ListServerCertificate(ListServerCertificateRequest listServerCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerCertificateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListServerCertificateResponse>(response);
+        }
+
+        public SyncInvoker<ListServerCertificateResponse> ListServerCertificateInvoker(ListServerCertificateRequest listServerCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerCertificateRequest);
+            return new SyncInvoker<ListServerCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ListServerCertificateResponse>);
+        }
+        
+        /// <summary>
+        /// 查询服务器证书
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询服务器证书
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowServerCertificateResponse ShowServerCertificate(ShowServerCertificateRequest showServerCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showServerCertificateRequest.ServerCertificateId, out var valueOfServerCertificateId)) urlParam.Add("server_certificate_id", valueOfServerCertificateId);
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates/{server_certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerCertificateRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowServerCertificateResponse>(response);
+        }
+
+        public SyncInvoker<ShowServerCertificateResponse> ShowServerCertificateInvoker(ShowServerCertificateRequest showServerCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showServerCertificateRequest.ServerCertificateId, out var valueOfServerCertificateId)) urlParam.Add("server_certificate_id", valueOfServerCertificateId);
+            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates/{server_certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerCertificateRequest);
+            return new SyncInvoker<ShowServerCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowServerCertificateResponse>);
         }
         
         /// <summary>

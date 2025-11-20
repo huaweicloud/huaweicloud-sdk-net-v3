@@ -367,6 +367,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("category", NullValueHandling = NullValueHandling.Ignore)]
         public CategoryEnum Category { get; set; }
         /// <summary>
+        /// **参数解释：** 指定集群使用的委托。该委托用于生成集群中组件使用的临时访问凭证，在集群中自动创建其他相关云服务的资源时会使用该委托权限。当不传或为空时，集群将自动选择使用CCE的系统委托cce_admin_trust或cce_cluster_agency。  [ &gt; 关于CCE系统委托的说明详情参见[系统委托说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0556.html)](tag:hws) [ &gt; 关于CCE系统委托的说明详情参见[系统委托说明](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0556.html)](tag:hws_hk)  **约束限制：** 仅1.27及以上版本集群支持该参数  **取值范围：** 不涉及 **默认取值：** 空 
+        /// </summary>
+        [JsonProperty("agencyName", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyName { get; set; }
+
+        /// <summary>
         /// **参数解释：** 集群Master节点架构 **约束限制：** 不涉及 **取值范围：** - VirtualMachine：Master节点为x86架构服务器 - [ARM64: Master节点为鲲鹏（ARM架构）服务器](tag:hws,hws_hk,hcs)  **默认取值：** VirtualMachine[，如若VirtualMachine资源不足，取值为ARM64](tag:hws,hws_hk,hcs) 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
@@ -536,6 +542,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ClusterSpec {\n");
             sb.Append("  category: ").Append(Category).Append("\n");
+            sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
             sb.Append("  flavor: ").Append(Flavor).Append("\n");
             sb.Append("  version: ").Append(Version).Append("\n");
@@ -582,6 +589,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             if (input == null) return false;
             if (this.Category != input.Category) return false;
+            if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
             if (this.Type != input.Type) return false;
             if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
             if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
@@ -622,6 +630,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             {
                 var hashCode = 41;
                 hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
                 if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();

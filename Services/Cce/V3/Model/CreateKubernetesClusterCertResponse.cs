@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// API类型，固定值“Config”，该值不可修改。 
+        /// **参数解释**： API类型 **约束限制**： 该值不可修改 **取值范围**： 不涉及 **默认取值**： Config 
         /// </summary>
         [JsonProperty("kind", NullValueHandling = NullValueHandling.Ignore)]
         public string Kind { get; set; }
 
         /// <summary>
-        /// API版本，固定值“v1”。
+        /// **参数解释**： API版本 **约束限制**： 该值不可修改 **取值范围**： 不涉及 **默认取值**： v1 
         /// </summary>
         [JsonProperty("apiVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// 当前未使用该字段，当前默认为空。
+        /// **参数解释**： 当前未使用该字段 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 默认为空 
         /// </summary>
         [JsonProperty("preferences", NullValueHandling = NullValueHandling.Ignore)]
         public Object Preferences { get; set; }
 
         /// <summary>
-        /// 集群列表。
+        /// **参数解释**： 集群列表。 **约束限制**： 不涉及 
         /// </summary>
         [JsonProperty("clusters", NullValueHandling = NullValueHandling.Ignore)]
         public List<Clusters> Clusters { get; set; }
 
         /// <summary>
-        /// 存放了指定用户的一些证书信息和ClientKey信息。
+        /// **参数解释**： 存放了指定用户的一些证书信息和ClientKey信息。 **约束限制**： 不涉及 
         /// </summary>
         [JsonProperty("users", NullValueHandling = NullValueHandling.Ignore)]
         public List<Users> Users { get; set; }
 
         /// <summary>
-        /// 上下文列表。
+        /// **参数解释**： 上下文列表。 **约束限制**： 不涉及 
         /// </summary>
         [JsonProperty("contexts", NullValueHandling = NullValueHandling.Ignore)]
         public List<Contexts> Contexts { get; set; }
 
         /// <summary>
-        /// 当前上下文，若存在publicIp（虚拟机弹性IP）时为 external; 若不存在publicIp为 internal。
+        /// **参数解释**： 当前上下文 **约束限制**： 不涉及 **取值范围**： - external：公网访问  - internal：私网访问  **默认取值**： - 若存在publicIp（虚拟机弹性IP）时为 external。 - 若不存在publicIp为 internal。 
         /// </summary>
         [JsonProperty("current-context", NullValueHandling = NullValueHandling.Ignore)]
         public string CurrentContext { get; set; }

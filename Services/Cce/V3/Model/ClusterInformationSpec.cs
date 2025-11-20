@@ -17,7 +17,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 集群的描述信息。  1. 字符取值范围[0,200]。不包含~$%^&amp;*&lt;&gt;[]{}()&#39;\&quot;#\\等特殊字符。 2. 仅运行和扩容状态（Available、ScalingUp、ScalingDown）的集群允许修改。
+        /// **参数解释：** 指定集群使用的委托。该委托用于生成集群中组件使用的临时访问凭证，在集群中自动创建其他相关云服务的资源时会使用该委托权限。当不传或为空时，集群将自动选择使用CCE的系统委托cce_admin_trust或cce_cluster_agency。  [ &gt; 关于CCE系统委托的说明详情参见[系统委托说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0556.html)](tag:hws) [ &gt; 关于CCE系统委托的说明详情参见[系统委托说明](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0556.html)](tag:hws_hk)  **约束限制：** 仅1.27及以上版本集群支持该参数  **取值范围：** 不涉及 **默认取值：** 空 
+        /// </summary>
+        [JsonProperty("agencyName", NullValueHandling = NullValueHandling.Ignore)]
+        public string AgencyName { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 集群的描述信息。 **约束限制：** 仅运行和扩容状态（Available、ScalingUp、ScalingDown）的集群允许修改。 **取值范围：** 字符取值范围[0,200]。不包含~$%^&amp;*&lt;&gt;[]{}()&#39;\&quot;#\\等特殊字符。 **默认取值：** 无
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
@@ -47,7 +53,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public ClusterInformationSpecHostNetwork HostNetwork { get; set; }
 
         /// <summary>
-        /// 集群删除保护，默认为false关闭，如果开启后用户将无法删除该集群。
+        /// **参数解释：** 集群删除保护，如果开启后用户将无法删除该集群。 **约束限制：** 不涉及 **取值范围：** - true: 开启集群删除保护 - false: 关闭集群删除保护  **默认取值：** 默认false
         /// </summary>
         [JsonProperty("deletionProtection", NullValueHandling = NullValueHandling.Ignore)]
         public bool? DeletionProtection { get; set; }
@@ -61,6 +67,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ClusterInformationSpec {\n");
+            sb.Append("  agencyName: ").Append(AgencyName).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  customSan: ").Append(CustomSan).Append("\n");
             sb.Append("  containerNetwork: ").Append(ContainerNetwork).Append("\n");
@@ -85,6 +92,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public bool Equals(ClusterInformationSpec input)
         {
             if (input == null) return false;
+            if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.CustomSan != input.CustomSan || (this.CustomSan != null && input.CustomSan != null && !this.CustomSan.SequenceEqual(input.CustomSan))) return false;
             if (this.ContainerNetwork != input.ContainerNetwork || (this.ContainerNetwork != null && !this.ContainerNetwork.Equals(input.ContainerNetwork))) return false;
@@ -103,6 +111,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.CustomSan != null) hashCode = hashCode * 59 + this.CustomSan.GetHashCode();
                 if (this.ContainerNetwork != null) hashCode = hashCode * 59 + this.ContainerNetwork.GetHashCode();

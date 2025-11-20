@@ -343,6 +343,31 @@ namespace HuaweiCloud.SDK.Live.V2
         }
         
         /// <summary>
+        /// 查询转码明细
+        ///
+        /// 查询流粒度转码明细，包含流名、模版、格式、时长。
+        /// 最大查询跨度1天，最大查询周期14天。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTranscodeTaskDetailResponse> ListTranscodeTaskDetailAsync(ListTranscodeTaskDetailRequest listTranscodeTaskDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/stats/transcode/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTranscodeTaskDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListTranscodeTaskDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ListTranscodeTaskDetailResponse> ListTranscodeTaskDetailAsyncInvoker(ListTranscodeTaskDetailRequest listTranscodeTaskDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/stats/transcode/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTranscodeTaskDetailRequest);
+            return new AsyncInvoker<ListTranscodeTaskDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTranscodeTaskDetailResponse>);
+        }
+        
+        /// <summary>
         /// 查询观众趋势接口
         ///
         /// 查询观众趋势。  最大查询跨度31天，最大查询周期一年。
