@@ -57,6 +57,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             "https://gaussdb-nosql.cn-north-9.myhuaweicloud.com");
         public static readonly Region EU_WEST_101 = new Region("eu-west-101",
             "https://gaussdb-nosql.eu-west-101.myhuaweicloud.eu");
+        public static readonly Region CN_NORTH_11 = new Region("cn-north-11",
+            "https://gaussdb-nosql.cn-north-11.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("GAUSSDBFORNOSQL");
 
@@ -87,6 +89,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
                 { "la-south-2", LA_SOUTH_2 },
                 { "cn-north-9", CN_NORTH_9 },
                 { "eu-west-101", EU_WEST_101 },
+                { "cn-north-11", CN_NORTH_11 },
         };
 
         public static Region ValueOf(string regionId)

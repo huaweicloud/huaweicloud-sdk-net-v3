@@ -70,6 +70,12 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         [JsonProperty("service_type_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ServiceTypeCode { get; set; }
 
+        /// <summary>
+        /// 客户账号ID，非必填，范围限制:0-64，伙伴查询子客户包年/包月资源列表时必须携带该字段。除此之外，此参数不做处理。
+        /// </summary>
+        [JsonProperty("customer_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string CustomerId { get; set; }
+
 
 
         /// <summary>
@@ -88,6 +94,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             sb.Append("  expireTimeBegin: ").Append(ExpireTimeBegin).Append("\n");
             sb.Append("  expireTimeEnd: ").Append(ExpireTimeEnd).Append("\n");
             sb.Append("  serviceTypeCode: ").Append(ServiceTypeCode).Append("\n");
+            sb.Append("  customerId: ").Append(CustomerId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +122,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             if (this.ExpireTimeBegin != input.ExpireTimeBegin || (this.ExpireTimeBegin != null && !this.ExpireTimeBegin.Equals(input.ExpireTimeBegin))) return false;
             if (this.ExpireTimeEnd != input.ExpireTimeEnd || (this.ExpireTimeEnd != null && !this.ExpireTimeEnd.Equals(input.ExpireTimeEnd))) return false;
             if (this.ServiceTypeCode != input.ServiceTypeCode || (this.ServiceTypeCode != null && !this.ServiceTypeCode.Equals(input.ServiceTypeCode))) return false;
+            if (this.CustomerId != input.CustomerId || (this.CustomerId != null && !this.CustomerId.Equals(input.CustomerId))) return false;
 
             return true;
         }
@@ -136,6 +144,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
                 if (this.ExpireTimeBegin != null) hashCode = hashCode * 59 + this.ExpireTimeBegin.GetHashCode();
                 if (this.ExpireTimeEnd != null) hashCode = hashCode * 59 + this.ExpireTimeEnd.GetHashCode();
                 if (this.ServiceTypeCode != null) hashCode = hashCode * 59 + this.ServiceTypeCode.GetHashCode();
+                if (this.CustomerId != null) hashCode = hashCode * 59 + this.CustomerId.GetHashCode();
                 return hashCode;
             }
         }

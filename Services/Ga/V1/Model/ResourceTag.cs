@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ga.V1.Model
     {
 
         /// <summary>
-        /// 标签键，规则： - 1.key不能为空，长度1~128个字符（中文也可以输入128个字符）。 - 2.可用 UTF-8 格式表示的字母（包含中文）、数字和空格，以及以下字符_ . : &#x3D; + - @。 - 3._sys_开头属于系统标签，租户不能输入。
+        /// 标签键，取值范围： - key不能为空，长度1~128个字符（中文也可以输入128个字符）。 - 可用 UTF-8 格式表示的字母（包含中文）、数字和空格，以及以下字符_ . : &#x3D; + - @。 - _sys_开头属于系统标签，租户不能输入。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签值，规则： - 1.长度0~255个字符（中文也可以输入255个字符）。 - 2.可用 UTF-8 格式表示的字母（包含中文）、数字和空格，以及以下字符_ . : / &#x3D; + - @。 - 3.资源标签值可以为空（empty or null）。
+        /// 标签值，取值范围： - 长度0~255个字符（中文也可以输入255个字符）。 - 可用 UTF-8 格式表示的字母（包含中文）、数字和空格，以及以下字符_ . : / &#x3D; + - @。 - 资源标签值可以为空（empty or null）。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

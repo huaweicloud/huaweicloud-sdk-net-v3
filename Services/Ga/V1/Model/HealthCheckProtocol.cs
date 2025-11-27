@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ga.V1.Model
 {
     /// <summary>
-    /// 健康检查的协议。
+    /// 监听的网络传输协议类型。 取值范围：TCP、UDP
     /// </summary>
-    /// <value>健康检查的协议。</value>
+    /// <value>监听的网络传输协议类型。 取值范围：TCP、UDP</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
@@ -23,7 +23,13 @@ namespace HuaweiCloud.SDK.Ga.V1.Model
         /// Enum TCP for value: TCP
         /// </summary>
         [EnumMember(Value = "TCP")]
-        TCP = 1
+        TCP = 1,
+
+        /// <summary>
+        /// Enum UDP for value: UDP
+        /// </summary>
+        [EnumMember(Value = "UDP")]
+        UDP = 2
 
     }
 

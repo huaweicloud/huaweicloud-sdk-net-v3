@@ -80,7 +80,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Type { get; set; }
 
         /// <summary>
-        /// **参数解释**：云证书管理服务（CCM）中的证书ID。 支持多值查询，查询条件格式：scm_certificate_id&#x3D;xxx&amp;scm_certificate_id&#x3D;xxx。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+        /// **参数解释**：云证书与管理服务（CCM）中的证书ID。 支持多值查询，查询条件格式：scm_certificate_id&#x3D;xxx&amp;scm_certificate_id&#x3D;xxx。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("scm_certificate_id", IsQuery = true)]
         [JsonProperty("scm_certificate_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> Fingerprint { get; set; }
 
         /// <summary>
-        /// **参数解释**：证书来源。 支持多值查询，查询条件格式：source&#x3D;xxx&amp;source&#x3D;xxx。  **约束限制**：不涉及  **取值范围**： - scm：表示关联云证书管理服务（CCM）中的证书。 - 空值：表示自有证书。  **默认取值**：不涉及
+        /// **参数解释**：证书来源。 支持多值查询，查询条件格式：source&#x3D;xxx&amp;source&#x3D;xxx。  **约束限制**：不涉及  **取值范围**： - scm：表示关联云证书与管理服务（CCM）中的证书。 - 空值：表示自有证书。  **默认取值**：不涉及
         /// </summary>
         [SDKProperty("source", IsQuery = true)]
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]

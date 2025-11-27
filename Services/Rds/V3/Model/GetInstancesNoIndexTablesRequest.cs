@@ -37,6 +37,20 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("table_type", NullValueHandling = NullValueHandling.Ignore)]
         public string TableType { get; set; }
 
+        /// <summary>
+        /// 索引位置，偏移量。
+        /// </summary>
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public string Offset { get; set; }
+
+        /// <summary>
+        /// 查询记录数。
+        /// </summary>
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public string Limit { get; set; }
+
 
 
         /// <summary>
@@ -49,6 +63,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  newest: ").Append(Newest).Append("\n");
             sb.Append("  tableType: ").Append(TableType).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -70,6 +86,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
             if (this.Newest != input.Newest || (this.Newest != null && !this.Newest.Equals(input.Newest))) return false;
             if (this.TableType != input.TableType || (this.TableType != null && !this.TableType.Equals(input.TableType))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
             return true;
         }
@@ -85,6 +103,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 if (this.Newest != null) hashCode = hashCode * 59 + this.Newest.GetHashCode();
                 if (this.TableType != null) hashCode = hashCode * 59 + this.TableType.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

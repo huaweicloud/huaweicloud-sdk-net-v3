@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class CreateNatGatewayOption 
     {
         /// <summary>
-        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
+        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
         /// </summary>
-        /// <value>公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 </value>
+        /// <value>公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 </value>
         [JsonConverter(typeof(EnumClassConverter<SpecEnum>))]
         public class SpecEnum
         {
@@ -42,6 +42,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             /// </summary>
             public static readonly SpecEnum _4 = new SpecEnum("4");
 
+            /// <summary>
+            /// Enum _5 for value: 5
+            /// </summary>
+            public static readonly SpecEnum _5 = new SpecEnum("5");
+
             private static readonly Dictionary<string, SpecEnum> StaticFields =
             new Dictionary<string, SpecEnum>()
             {
@@ -49,6 +54,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 { "2", _2 },
                 { "3", _3 },
                 { "4", _4 },
+                { "5", _5 },
             };
 
             private string _value;
@@ -162,13 +168,25 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string InternalNetworkId { get; set; }
 
         /// <summary>
+        /// 公网NAT网关ng口占用的ip。
+        /// </summary>
+        [JsonProperty("ngport_ip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string NgportIpAddress { get; set; }
+
+        /// <summary>
         /// 公网NAT网关实例的描述，长度范围小于等于255个字符，不能包含“&lt;”和“&gt;”。
         /// </summary>
         [JsonProperty("description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
-        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
+        /// 标签列表, 用以标识资源类型
+        /// </summary>
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
+        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public SpecEnum Spec { get; set; }
@@ -185,10 +203,10 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public SessionConfiguration SessionConf { get; set; }
 
         /// <summary>
-        /// 公网NAT网关私有IP地址，由VPC中子网分配。
+        /// 
         /// </summary>
-        [JsonProperty("ngport_ip_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string NgportIpAddress { get; set; }
+        [JsonProperty("prepaid_options", NullValueHandling = NullValueHandling.Ignore)]
+        public PrepaidOptions PrepaidOptions { get; set; }
 
 
 
@@ -202,11 +220,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  routerId: ").Append(RouterId).Append("\n");
             sb.Append("  internalNetworkId: ").Append(InternalNetworkId).Append("\n");
+            sb.Append("  ngportIpAddress: ").Append(NgportIpAddress).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  spec: ").Append(Spec).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  sessionConf: ").Append(SessionConf).Append("\n");
-            sb.Append("  ngportIpAddress: ").Append(NgportIpAddress).Append("\n");
+            sb.Append("  prepaidOptions: ").Append(PrepaidOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -228,11 +248,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.RouterId != input.RouterId || (this.RouterId != null && !this.RouterId.Equals(input.RouterId))) return false;
             if (this.InternalNetworkId != input.InternalNetworkId || (this.InternalNetworkId != null && !this.InternalNetworkId.Equals(input.InternalNetworkId))) return false;
+            if (this.NgportIpAddress != input.NgportIpAddress || (this.NgportIpAddress != null && !this.NgportIpAddress.Equals(input.NgportIpAddress))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.Spec != input.Spec) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.SessionConf != input.SessionConf || (this.SessionConf != null && !this.SessionConf.Equals(input.SessionConf))) return false;
-            if (this.NgportIpAddress != input.NgportIpAddress || (this.NgportIpAddress != null && !this.NgportIpAddress.Equals(input.NgportIpAddress))) return false;
+            if (this.PrepaidOptions != input.PrepaidOptions || (this.PrepaidOptions != null && !this.PrepaidOptions.Equals(input.PrepaidOptions))) return false;
 
             return true;
         }
@@ -248,11 +270,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.RouterId != null) hashCode = hashCode * 59 + this.RouterId.GetHashCode();
                 if (this.InternalNetworkId != null) hashCode = hashCode * 59 + this.InternalNetworkId.GetHashCode();
+                if (this.NgportIpAddress != null) hashCode = hashCode * 59 + this.NgportIpAddress.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 hashCode = hashCode * 59 + this.Spec.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.SessionConf != null) hashCode = hashCode * 59 + this.SessionConf.GetHashCode();
-                if (this.NgportIpAddress != null) hashCode = hashCode * 59 + this.NgportIpAddress.GetHashCode();
+                if (this.PrepaidOptions != null) hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
                 return hashCode;
             }
         }

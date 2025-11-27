@@ -143,9 +143,9 @@ namespace HuaweiCloud.SDK.Ga.V1.Model
         }
 
         /// <summary>
-        /// 关联云日志的资源类型。
+        /// 云日志的资源类型。 取值范围： LISTENER：监听器
         /// </summary>
-        /// <value>关联云日志的资源类型。</value>
+        /// <value>云日志的资源类型。 取值范围： LISTENER：监听器</value>
         [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
         public class ResourceTypeEnum
         {
@@ -287,7 +287,7 @@ namespace HuaweiCloud.SDK.Ga.V1.Model
         public List<string> ResourceIds { get; set; }
 
         /// <summary>
-        /// 关联云日志的资源类型。
+        /// 云日志的资源类型。 取值范围： LISTENER：监听器
         /// </summary>
         [SDKProperty("resource_type", IsQuery = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]

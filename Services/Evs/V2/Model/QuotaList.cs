@@ -109,42 +109,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("gigabytes_ESSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetailGigabytesESSD GigabytesESSD { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("snapshots_ESSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetailSnapshotsESSD SnapshotsESSD { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("volumes_ESSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetailVolumesESSD VolumesESSD { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("gigabytes_GPSSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetailGigabytesGPSSD GigabytesGPSSD { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("snapshots_GPSSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetailSnapshotsGPSSD SnapshotsGPSSD { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("volumes_GPSSD", NullValueHandling = NullValueHandling.Ignore)]
-        public QuotaDetailVolumesGPSSD VolumesGPSSD { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [JsonProperty("per_volume_gigabytes", NullValueHandling = NullValueHandling.Ignore)]
         public QuotaDetailPerVolumeGigabytes PerVolumeGigabytes { get; set; }
 
@@ -172,12 +136,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("  gigabytesSSD: ").Append(GigabytesSSD).Append("\n");
             sb.Append("  snapshotsSSD: ").Append(SnapshotsSSD).Append("\n");
             sb.Append("  volumesSSD: ").Append(VolumesSSD).Append("\n");
-            sb.Append("  gigabytesESSD: ").Append(GigabytesESSD).Append("\n");
-            sb.Append("  snapshotsESSD: ").Append(SnapshotsESSD).Append("\n");
-            sb.Append("  volumesESSD: ").Append(VolumesESSD).Append("\n");
-            sb.Append("  gigabytesGPSSD: ").Append(GigabytesGPSSD).Append("\n");
-            sb.Append("  snapshotsGPSSD: ").Append(SnapshotsGPSSD).Append("\n");
-            sb.Append("  volumesGPSSD: ").Append(VolumesGPSSD).Append("\n");
             sb.Append("  perVolumeGigabytes: ").Append(PerVolumeGigabytes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -212,12 +170,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             if (this.GigabytesSSD != input.GigabytesSSD || (this.GigabytesSSD != null && !this.GigabytesSSD.Equals(input.GigabytesSSD))) return false;
             if (this.SnapshotsSSD != input.SnapshotsSSD || (this.SnapshotsSSD != null && !this.SnapshotsSSD.Equals(input.SnapshotsSSD))) return false;
             if (this.VolumesSSD != input.VolumesSSD || (this.VolumesSSD != null && !this.VolumesSSD.Equals(input.VolumesSSD))) return false;
-            if (this.GigabytesESSD != input.GigabytesESSD || (this.GigabytesESSD != null && !this.GigabytesESSD.Equals(input.GigabytesESSD))) return false;
-            if (this.SnapshotsESSD != input.SnapshotsESSD || (this.SnapshotsESSD != null && !this.SnapshotsESSD.Equals(input.SnapshotsESSD))) return false;
-            if (this.VolumesESSD != input.VolumesESSD || (this.VolumesESSD != null && !this.VolumesESSD.Equals(input.VolumesESSD))) return false;
-            if (this.GigabytesGPSSD != input.GigabytesGPSSD || (this.GigabytesGPSSD != null && !this.GigabytesGPSSD.Equals(input.GigabytesGPSSD))) return false;
-            if (this.SnapshotsGPSSD != input.SnapshotsGPSSD || (this.SnapshotsGPSSD != null && !this.SnapshotsGPSSD.Equals(input.SnapshotsGPSSD))) return false;
-            if (this.VolumesGPSSD != input.VolumesGPSSD || (this.VolumesGPSSD != null && !this.VolumesGPSSD.Equals(input.VolumesGPSSD))) return false;
             if (this.PerVolumeGigabytes != input.PerVolumeGigabytes || (this.PerVolumeGigabytes != null && !this.PerVolumeGigabytes.Equals(input.PerVolumeGigabytes))) return false;
 
             return true;
@@ -246,12 +198,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                 if (this.GigabytesSSD != null) hashCode = hashCode * 59 + this.GigabytesSSD.GetHashCode();
                 if (this.SnapshotsSSD != null) hashCode = hashCode * 59 + this.SnapshotsSSD.GetHashCode();
                 if (this.VolumesSSD != null) hashCode = hashCode * 59 + this.VolumesSSD.GetHashCode();
-                if (this.GigabytesESSD != null) hashCode = hashCode * 59 + this.GigabytesESSD.GetHashCode();
-                if (this.SnapshotsESSD != null) hashCode = hashCode * 59 + this.SnapshotsESSD.GetHashCode();
-                if (this.VolumesESSD != null) hashCode = hashCode * 59 + this.VolumesESSD.GetHashCode();
-                if (this.GigabytesGPSSD != null) hashCode = hashCode * 59 + this.GigabytesGPSSD.GetHashCode();
-                if (this.SnapshotsGPSSD != null) hashCode = hashCode * 59 + this.SnapshotsGPSSD.GetHashCode();
-                if (this.VolumesGPSSD != null) hashCode = hashCode * 59 + this.VolumesGPSSD.GetHashCode();
                 if (this.PerVolumeGigabytes != null) hashCode = hashCode * 59 + this.PerVolumeGigabytes.GetHashCode();
                 return hashCode;
             }

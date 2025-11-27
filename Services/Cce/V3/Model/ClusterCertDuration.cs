@@ -26,7 +26,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// **参数解释：** 集群证书到期时间。 **约束限制：** duration和expire_at参数至少需要指定一个，若同时指定则以expire_at参数为准。 **取值范围：** 证书到期时间须在当前时间后15分钟至5年之间，参数格式为：2025-01-01 16:00:00 +0000 UTC。 **默认取值：** 不涉及
         /// </summary>
         [JsonProperty("expire_at", NullValueHandling = NullValueHandling.Ignore)]
-        public DateTime? ExpireAt { get; set; }
+        public string ExpireAt { get; set; }
 
 
 

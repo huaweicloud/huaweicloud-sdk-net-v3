@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ga.V1.Model
     {
 
         /// <summary>
-        /// 资源类型。
+        /// 资源类型，取值范围： - ga-accelerators：加速实例 - ga-listeners：监听器
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]

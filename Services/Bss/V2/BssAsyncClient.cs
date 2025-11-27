@@ -622,6 +622,30 @@ namespace HuaweiCloud.SDK.Bss.V2
         }
         
         /// <summary>
+        /// 查询优惠券收支明细
+        ///
+        /// 功能描述：客户可以查询自身优惠券的收支明细情况(此接口不适用于伙伴的转售类客户。)
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListCustomerCouponChangeRecordsResponse> ListCustomerCouponChangeRecordsAsync(ListCustomerCouponChangeRecordsRequest listCustomerCouponChangeRecordsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/promotions/benefits/account-change-records", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCustomerCouponChangeRecordsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListCustomerCouponChangeRecordsResponse>(response);
+        }
+
+        public AsyncInvoker<ListCustomerCouponChangeRecordsResponse> ListCustomerCouponChangeRecordsAsyncInvoker(ListCustomerCouponChangeRecordsRequest listCustomerCouponChangeRecordsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/promotions/benefits/account-change-records", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCustomerCouponChangeRecordsRequest);
+            return new AsyncInvoker<ListCustomerCouponChangeRecordsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCustomerCouponChangeRecordsResponse>);
+        }
+        
+        /// <summary>
         /// 查询客户按需资源列表
         ///
         /// 合作伙伴可以查询关联的代售类客户已开通的按需资源。
@@ -1275,10 +1299,7 @@ namespace HuaweiCloud.SDK.Bss.V2
         /// <summary>
         /// 查询客户包年/包月资源列表
         ///
-        /// 客户在伙伴销售平台查询某个或所有的包年/包月资源。
-        /// 
-        /// &gt;![](public_sys-resources/icon-note.gif) **说明：** 
-        /// &gt;成功调用本接口后，如果您需要对已生效状态的资源进行续订，您可以调用“[查询包年/包月产品价格](https://support.huaweicloud.com/api-bpconsole/bcloud_01002.html)”接口对查询到的包年/包月资源进行续订询价，然后再调用“[续订包年/包月资源](https://support.huaweicloud.com/api-bpconsole/api_order_00018.html)”接口进行续订。
+        /// 功能描述：伙伴/客户在伙伴/客户自建平台查询某个或所有的包年/包月资源
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1484,7 +1505,7 @@ namespace HuaweiCloud.SDK.Bss.V2
         }
         
         /// <summary>
-        /// 根据云服务类型查询资源列表
+        /// 根据云服务类型查询资源类型列表
         ///
         /// 伙伴在伙伴销售平台根据云服务类型查询关联的资源类型编码和名称，用于查询按需产品的价格或包年/包月产品的价格。
         /// 
@@ -2150,11 +2171,7 @@ namespace HuaweiCloud.SDK.Bss.V2
         /// <summary>
         /// 查询退款订单的金额详情
         ///
-        /// 客户在伙伴销售平台查询某次退订订单或者降配订单的退款金额来自哪些资源和对应订单。
-        /// 
-        /// &gt;![](public_sys-resources/icon-note.gif) **说明：** 
-        /// &gt;-   可以在调用完“[退订包年/包月资源](https://support.huaweicloud.com/api-oce/api_order_00019.html)”接口生成退订订单ID后，调用该接口查询退订订单对应的金额所属资源和订单。例如，调用“[退订包年/包月资源](https://support.huaweicloud.com/api-oce/api_order_00019.html)”接口退订资源及其已续费周期后，您可以调用本小节的接口查询到退订金额归属的原开通订单ID和原续费订单ID。
-        /// &gt;-   2018年5月份之后退订的订单才能查询到归属的原订单ID。
+        /// 功能描述：伙伴/客户在伙伴/客户销售平台查询某次退订订单或者降配订单的退款金额来自哪些资源和对应订单
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

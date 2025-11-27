@@ -404,6 +404,32 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 删除回收站中单个云硬盘
+        ///
+        /// 删除回收站中单个云硬盘。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteVolumeInRecycleResponse DeleteVolumeInRecycle(DeleteVolumeInRecycleRequest deleteVolumeInRecycleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteVolumeInRecycleRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVolumeInRecycleRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteVolumeInRecycleResponse>(response);
+        }
+
+        public SyncInvoker<DeleteVolumeInRecycleResponse> DeleteVolumeInRecycleInvoker(DeleteVolumeInRecycleRequest deleteVolumeInRecycleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteVolumeInRecycleRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVolumeInRecycleRequest);
+            return new SyncInvoker<DeleteVolumeInRecycleResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVolumeInRecycleResponse>);
+        }
+        
+        /// <summary>
         /// 查询云硬盘快照详情列表
         ///
         /// 查询云硬盘快照详细列表信息。
@@ -500,6 +526,30 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 查询回收站中所有云硬盘详情
+        ///
+        /// 查询回收站中所有云硬盘的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListVolumesInRecycleResponse ListVolumesInRecycle(ListVolumesInRecycleRequest listVolumesInRecycleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVolumesInRecycleRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListVolumesInRecycleResponse>(response);
+        }
+
+        public SyncInvoker<ListVolumesInRecycleResponse> ListVolumesInRecycleInvoker(ListVolumesInRecycleRequest listVolumesInRecycleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVolumesInRecycleRequest);
+            return new SyncInvoker<ListVolumesInRecycleResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVolumesInRecycleResponse>);
+        }
+        
+        /// <summary>
         /// 修改云硬盘QoS
         ///
         /// 调整云硬盘的iops或者吞吐量。
@@ -588,6 +638,32 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 还原回收站中单个云硬盘
+        ///
+        /// 还原回收站中单个云硬盘。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RevertVolumeInRecycleResponse RevertVolumeInRecycle(RevertVolumeInRecycleRequest revertVolumeInRecycleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(revertVolumeInRecycleRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/{volume_id}/revert", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revertVolumeInRecycleRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<RevertVolumeInRecycleResponse>(response);
+        }
+
+        public SyncInvoker<RevertVolumeInRecycleResponse> RevertVolumeInRecycleInvoker(RevertVolumeInRecycleRequest revertVolumeInRecycleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(revertVolumeInRecycleRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/{volume_id}/revert", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", revertVolumeInRecycleRequest);
+            return new SyncInvoker<RevertVolumeInRecycleResponse>(this, "POST", request, JsonUtils.DeSerializeNull<RevertVolumeInRecycleResponse>);
+        }
+        
+        /// <summary>
         /// 回滚快照到云硬盘
         ///
         /// 将快照数据回滚到云硬盘。支持企业项目授权功能。
@@ -641,6 +717,30 @@ namespace HuaweiCloud.SDK.Evs.V2
         }
         
         /// <summary>
+        /// 查询回收站策略
+        ///
+        /// 查询回收站策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowRecyclePolicyResponse ShowRecyclePolicy(ShowRecyclePolicyRequest showRecyclePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecyclePolicyRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowRecyclePolicyResponse>(response);
+        }
+
+        public SyncInvoker<ShowRecyclePolicyResponse> ShowRecyclePolicyInvoker(ShowRecyclePolicyRequest showRecyclePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showRecyclePolicyRequest);
+            return new SyncInvoker<ShowRecyclePolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowRecyclePolicyResponse>);
+        }
+        
+        /// <summary>
         /// 查询单个云硬盘快照详情
         ///
         /// 查询单个云硬盘快照信息。支持企业项目授权功能。
@@ -690,6 +790,32 @@ namespace HuaweiCloud.SDK.Evs.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/cloudvolumes/{volume_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeRequest);
             return new SyncInvoker<ShowVolumeResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVolumeResponse>);
+        }
+        
+        /// <summary>
+        /// 查询回收站中单个云硬盘详情
+        ///
+        /// 查询回收站中单个云硬盘的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowVolumeInRecycleResponse ShowVolumeInRecycle(ShowVolumeInRecycleRequest showVolumeInRecycleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVolumeInRecycleRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeInRecycleRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowVolumeInRecycleResponse>(response);
+        }
+
+        public SyncInvoker<ShowVolumeInRecycleResponse> ShowVolumeInRecycleInvoker(ShowVolumeInRecycleRequest showVolumeInRecycleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVolumeInRecycleRequest.VolumeId, out var valueOfVolumeId)) urlParam.Add("volume_id", valueOfVolumeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/{volume_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVolumeInRecycleRequest);
+            return new SyncInvoker<ShowVolumeInRecycleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVolumeInRecycleResponse>);
         }
         
         /// <summary>
@@ -749,6 +875,30 @@ namespace HuaweiCloud.SDK.Evs.V2
                 unsubscribePostpaidVolumeResponse.Body = JsonUtils.DeSerializeList<UnsubscribeVolumeResponseBody>(response);
                 return unsubscribePostpaidVolumeResponse;
             });
+        }
+        
+        /// <summary>
+        /// 更新回收站策略
+        ///
+        /// 更新回收站策略。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateRecyclePolicyResponse UpdateRecyclePolicy(UpdateRecyclePolicyRequest updateRecyclePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRecyclePolicyRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateRecyclePolicyResponse>(response);
+        }
+
+        public SyncInvoker<UpdateRecyclePolicyResponse> UpdateRecyclePolicyInvoker(UpdateRecyclePolicyRequest updateRecyclePolicyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/recycle-bin-volumes/policy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateRecyclePolicyRequest);
+            return new SyncInvoker<UpdateRecyclePolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateRecyclePolicyResponse>);
         }
         
         /// <summary>

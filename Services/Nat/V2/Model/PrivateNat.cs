@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class PrivateNat 
     {
         /// <summary>
-        /// 私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型
+        /// 私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型 \&quot;Extra-xlarge\&quot;：企业型
         /// </summary>
-        /// <value>私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型</value>
+        /// <value>私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型 \&quot;Extra-xlarge\&quot;：企业型</value>
         [JsonConverter(typeof(EnumClassConverter<SpecEnum>))]
         public class SpecEnum
         {
@@ -42,6 +42,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             /// </summary>
             public static readonly SpecEnum EXTRA_LARGE = new SpecEnum("Extra-large");
 
+            /// <summary>
+            /// Enum EXTRA_XLARGE for value: Extra-xlarge
+            /// </summary>
+            public static readonly SpecEnum EXTRA_XLARGE = new SpecEnum("Extra-xlarge");
+
             private static readonly Dictionary<string, SpecEnum> StaticFields =
             new Dictionary<string, SpecEnum>()
             {
@@ -49,6 +54,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 { "Medium", MEDIUM },
                 { "Large", LARGE },
                 { "Extra-large", EXTRA_LARGE },
+                { "Extra-xlarge", EXTRA_XLARGE },
             };
 
             private string _value;
@@ -143,9 +149,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         }
 
         /// <summary>
-        /// 私网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结
+        /// 私网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
-        /// <value>私网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结</value>
+        /// <value>私网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -159,11 +165,17 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             /// </summary>
             public static readonly StatusEnum FROZEN = new StatusEnum("FROZEN");
 
+            /// <summary>
+            /// Enum INACTIVE for value: INACTIVE
+            /// </summary>
+            public static readonly StatusEnum INACTIVE = new StatusEnum("INACTIVE");
+
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
                 { "ACTIVE", ACTIVE },
                 { "FROZEN", FROZEN },
+                { "INACTIVE", INACTIVE },
             };
 
             private string _value;
@@ -283,12 +295,12 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型
+        /// 私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型 \&quot;Extra-xlarge\&quot;：企业型
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public SpecEnum Spec { get; set; }
         /// <summary>
-        /// 私网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结
+        /// 私网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -314,13 +326,25 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// 标签列表。
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<PrivateTag> Tags { get; set; }
+        public List<Tag> Tags { get; set; }
 
         /// <summary>
         /// 企业项目ID。 创建私网NAT网关实例时，关联的企业项目ID。
         /// </summary>
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
+
+        /// <summary>
+        /// 最大规则数。
+        /// </summary>
+        [JsonProperty("rule_max", NullValueHandling = NullValueHandling.Ignore)]
+        public int? RuleMax { get; set; }
+
+        /// <summary>
+        /// 中转ip池大小
+        /// </summary>
+        [JsonProperty("transit_ip_pool_size_max", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TransitIpPoolSizeMax { get; set; }
 
 
 
@@ -342,6 +366,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  downlinkVpcs: ").Append(DownlinkVpcs).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  ruleMax: ").Append(RuleMax).Append("\n");
+            sb.Append("  transitIpPoolSizeMax: ").Append(TransitIpPoolSizeMax).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -371,6 +397,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.DownlinkVpcs != input.DownlinkVpcs || (this.DownlinkVpcs != null && input.DownlinkVpcs != null && !this.DownlinkVpcs.SequenceEqual(input.DownlinkVpcs))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.RuleMax != input.RuleMax || (this.RuleMax != null && !this.RuleMax.Equals(input.RuleMax))) return false;
+            if (this.TransitIpPoolSizeMax != input.TransitIpPoolSizeMax || (this.TransitIpPoolSizeMax != null && !this.TransitIpPoolSizeMax.Equals(input.TransitIpPoolSizeMax))) return false;
 
             return true;
         }
@@ -394,6 +422,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.DownlinkVpcs != null) hashCode = hashCode * 59 + this.DownlinkVpcs.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.RuleMax != null) hashCode = hashCode * 59 + this.RuleMax.GetHashCode();
+                if (this.TransitIpPoolSizeMax != null) hashCode = hashCode * 59 + this.TransitIpPoolSizeMax.GetHashCode();
                 return hashCode;
             }
         }

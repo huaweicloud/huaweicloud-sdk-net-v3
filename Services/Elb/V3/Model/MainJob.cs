@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// **参数解释**：实例复制等异步任务查询的响应体定义。
+    /// **参数解释**：实例复制等异步任务信息。
     /// </summary>
     public class MainJob 
     {

@@ -82,6 +82,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         [JsonProperty("dms_rocketmq_forwarding", NullValueHandling = NullValueHandling.Ignore)]
         public DmsRocketMQForwarding DmsRocketmqForwarding { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("mqtt_device_forwarding", NullValueHandling = NullValueHandling.Ignore)]
+        public MqttDeviceForwarding MqttDeviceForwarding { get; set; }
+
 
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             sb.Append("  functiongraphForwarding: ").Append(FunctiongraphForwarding).Append("\n");
             sb.Append("  mrsKafkaForwarding: ").Append(MrsKafkaForwarding).Append("\n");
             sb.Append("  dmsRocketmqForwarding: ").Append(DmsRocketmqForwarding).Append("\n");
+            sb.Append("  mqttDeviceForwarding: ").Append(MqttDeviceForwarding).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -131,6 +138,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
             if (this.FunctiongraphForwarding != input.FunctiongraphForwarding || (this.FunctiongraphForwarding != null && !this.FunctiongraphForwarding.Equals(input.FunctiongraphForwarding))) return false;
             if (this.MrsKafkaForwarding != input.MrsKafkaForwarding || (this.MrsKafkaForwarding != null && !this.MrsKafkaForwarding.Equals(input.MrsKafkaForwarding))) return false;
             if (this.DmsRocketmqForwarding != input.DmsRocketmqForwarding || (this.DmsRocketmqForwarding != null && !this.DmsRocketmqForwarding.Equals(input.DmsRocketmqForwarding))) return false;
+            if (this.MqttDeviceForwarding != input.MqttDeviceForwarding || (this.MqttDeviceForwarding != null && !this.MqttDeviceForwarding.Equals(input.MqttDeviceForwarding))) return false;
 
             return true;
         }
@@ -154,6 +162,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
                 if (this.FunctiongraphForwarding != null) hashCode = hashCode * 59 + this.FunctiongraphForwarding.GetHashCode();
                 if (this.MrsKafkaForwarding != null) hashCode = hashCode * 59 + this.MrsKafkaForwarding.GetHashCode();
                 if (this.DmsRocketmqForwarding != null) hashCode = hashCode * 59 + this.DmsRocketmqForwarding.GetHashCode();
+                if (this.MqttDeviceForwarding != null) hashCode = hashCode * 59 + this.MqttDeviceForwarding.GetHashCode();
                 return hashCode;
             }
         }

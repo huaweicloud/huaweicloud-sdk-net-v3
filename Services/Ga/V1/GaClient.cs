@@ -141,6 +141,30 @@ namespace HuaweiCloud.SDK.Ga.V1
         }
         
         /// <summary>
+        /// 查询自带IP地址池列表
+        ///
+        /// 查询自带IP地址池列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListByoipPoolsResponse ListByoipPools(ListByoipPoolsRequest listByoipPoolsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/byoip-pools", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listByoipPoolsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListByoipPoolsResponse>(response);
+        }
+
+        public SyncInvoker<ListByoipPoolsResponse> ListByoipPoolsInvoker(ListByoipPoolsRequest listByoipPoolsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/byoip-pools", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listByoipPoolsRequest);
+            return new SyncInvoker<ListByoipPoolsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListByoipPoolsResponse>);
+        }
+        
+        /// <summary>
         /// 创建终端节点
         ///
         /// 创建终端节点。

@@ -29,12 +29,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         public string SystemEncrypted { get; set; }
 
         /// <summary>
-        /// 从快照创建云硬盘时的创建方式。 * 0表示使用链接克隆方式。 * 1表示使用全量克隆方式。
-        /// </summary>
-        [JsonProperty("full_clone", NullValueHandling = NullValueHandling.Ignore)]
-        public string FullClone { get; set; }
-
-        /// <summary>
         /// * true表示云硬盘的设备类型为SCSI类型，即允许ECS操作系统直接访问底层存储介质。支持SCSI锁命令。 * false表示云硬盘的设备类型为VBD (虚拟块存储设备 , Virtual Block Device)类型，即为默认类型，VBD只能支持简单的SCSI读写命令。 * 该字段不存在时，云硬盘默认为VBD类型。
         /// </summary>
         [JsonProperty("hw:passthrough", NullValueHandling = NullValueHandling.Ignore)]
@@ -57,7 +51,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             sb.Append("class VolumeMetadata {\n");
             sb.Append("  systemCmkid: ").Append(SystemCmkid).Append("\n");
             sb.Append("  systemEncrypted: ").Append(SystemEncrypted).Append("\n");
-            sb.Append("  fullClone: ").Append(FullClone).Append("\n");
             sb.Append("  hwpassthrough: ").Append(Hwpassthrough).Append("\n");
             sb.Append("  orderID: ").Append(OrderID).Append("\n");
             sb.Append("}\n");
@@ -80,7 +73,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
             if (input == null) return false;
             if (this.SystemCmkid != input.SystemCmkid || (this.SystemCmkid != null && !this.SystemCmkid.Equals(input.SystemCmkid))) return false;
             if (this.SystemEncrypted != input.SystemEncrypted || (this.SystemEncrypted != null && !this.SystemEncrypted.Equals(input.SystemEncrypted))) return false;
-            if (this.FullClone != input.FullClone || (this.FullClone != null && !this.FullClone.Equals(input.FullClone))) return false;
             if (this.Hwpassthrough != input.Hwpassthrough || (this.Hwpassthrough != null && !this.Hwpassthrough.Equals(input.Hwpassthrough))) return false;
             if (this.OrderID != input.OrderID || (this.OrderID != null && !this.OrderID.Equals(input.OrderID))) return false;
 
@@ -97,7 +89,6 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
                 var hashCode = 41;
                 if (this.SystemCmkid != null) hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
                 if (this.SystemEncrypted != null) hashCode = hashCode * 59 + this.SystemEncrypted.GetHashCode();
-                if (this.FullClone != null) hashCode = hashCode * 59 + this.FullClone.GetHashCode();
                 if (this.Hwpassthrough != null) hashCode = hashCode * 59 + this.Hwpassthrough.GetHashCode();
                 if (this.OrderID != null) hashCode = hashCode * 59 + this.OrderID.GetHashCode();
                 return hashCode;

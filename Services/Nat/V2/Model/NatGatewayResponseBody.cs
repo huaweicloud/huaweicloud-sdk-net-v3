@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class NatGatewayResponseBody 
     {
         /// <summary>
-        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
+        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
         /// </summary>
-        /// <value>公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 </value>
+        /// <value>公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 </value>
         [JsonConverter(typeof(EnumClassConverter<SpecEnum>))]
         public class SpecEnum
         {
@@ -42,6 +42,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             /// </summary>
             public static readonly SpecEnum _4 = new SpecEnum("4");
 
+            /// <summary>
+            /// Enum _5 for value: 5
+            /// </summary>
+            public static readonly SpecEnum _5 = new SpecEnum("5");
+
             private static readonly Dictionary<string, SpecEnum> StaticFields =
             new Dictionary<string, SpecEnum>()
             {
@@ -49,6 +54,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 { "2", _2 },
                 { "3", _3 },
                 { "4", _4 },
+                { "5", _5 },
             };
 
             private string _value;
@@ -143,9 +149,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         }
 
         /// <summary>
-        /// 公网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;INACTIVE\&quot;：不可用
+        /// 公网NAT网关实例的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 INACTIVE: 不可用
         /// </summary>
-        /// <value>公网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;INACTIVE\&quot;：不可用</value>
+        /// <value>公网NAT网关实例的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 INACTIVE: 不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -301,12 +307,12 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
+        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public SpecEnum Spec { get; set; }
         /// <summary>
-        /// 公网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;INACTIVE\&quot;：不可用
+        /// 公网NAT网关实例的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 INACTIVE: 不可用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -317,10 +323,10 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public bool? AdminStateUp { get; set; }
 
         /// <summary>
-        /// 公网NAT网关实例的创建时间，格式是yyyy-mm-dd hh:mm:ss.SSSSSS。
+        /// 公网NAT网关实例的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// VPC的id。
@@ -370,6 +376,18 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("snat_rule_public_ip_limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? SnatRulePublicIpLimit { get; set; }
 
+        /// <summary>
+        /// 网关每秒能够接收或发送的数据包数量，代表网络设备的流量处理能力。
+        /// </summary>
+        [JsonProperty("pps_max", NullValueHandling = NullValueHandling.Ignore)]
+        public int? PpsMax { get; set; }
+
+        /// <summary>
+        /// 网关每秒能够接收或发送的带宽大小，代表网络设备的流量处理能力。单位M
+        /// </summary>
+        [JsonProperty("bps_max", NullValueHandling = NullValueHandling.Ignore)]
+        public int? BpsMax { get; set; }
+
 
 
         /// <summary>
@@ -395,6 +413,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  billingInfo: ").Append(BillingInfo).Append("\n");
             sb.Append("  dnatRulesLimit: ").Append(DnatRulesLimit).Append("\n");
             sb.Append("  snatRulePublicIpLimit: ").Append(SnatRulePublicIpLimit).Append("\n");
+            sb.Append("  ppsMax: ").Append(PpsMax).Append("\n");
+            sb.Append("  bpsMax: ").Append(BpsMax).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -429,6 +449,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.BillingInfo != input.BillingInfo || (this.BillingInfo != null && !this.BillingInfo.Equals(input.BillingInfo))) return false;
             if (this.DnatRulesLimit != input.DnatRulesLimit || (this.DnatRulesLimit != null && !this.DnatRulesLimit.Equals(input.DnatRulesLimit))) return false;
             if (this.SnatRulePublicIpLimit != input.SnatRulePublicIpLimit || (this.SnatRulePublicIpLimit != null && !this.SnatRulePublicIpLimit.Equals(input.SnatRulePublicIpLimit))) return false;
+            if (this.PpsMax != input.PpsMax || (this.PpsMax != null && !this.PpsMax.Equals(input.PpsMax))) return false;
+            if (this.BpsMax != input.BpsMax || (this.BpsMax != null && !this.BpsMax.Equals(input.BpsMax))) return false;
 
             return true;
         }
@@ -457,6 +479,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.BillingInfo != null) hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
                 if (this.DnatRulesLimit != null) hashCode = hashCode * 59 + this.DnatRulesLimit.GetHashCode();
                 if (this.SnatRulePublicIpLimit != null) hashCode = hashCode * 59 + this.SnatRulePublicIpLimit.GetHashCode();
+                if (this.PpsMax != null) hashCode = hashCode * 59 + this.PpsMax.GetHashCode();
+                if (this.BpsMax != null) hashCode = hashCode * 59 + this.BpsMax.GetHashCode();
                 return hashCode;
             }
         }

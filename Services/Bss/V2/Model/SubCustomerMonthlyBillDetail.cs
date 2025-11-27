@@ -298,6 +298,12 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         [JsonProperty("sub_resource_name", NullValueHandling = NullValueHandling.Ignore)]
         public string SubResourceName { get; set; }
 
+        /// <summary>
+        /// 周期数量，该参数非必填
+        /// </summary>
+        [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? PeriodNum { get; set; }
+
 
 
         /// <summary>
@@ -354,6 +360,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             sb.Append("  subResourceTypeName: ").Append(SubResourceTypeName).Append("\n");
             sb.Append("  subResourceId: ").Append(SubResourceId).Append("\n");
             sb.Append("  subResourceName: ").Append(SubResourceName).Append("\n");
+            sb.Append("  periodNum: ").Append(PeriodNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -419,6 +426,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             if (this.SubResourceTypeName != input.SubResourceTypeName || (this.SubResourceTypeName != null && !this.SubResourceTypeName.Equals(input.SubResourceTypeName))) return false;
             if (this.SubResourceId != input.SubResourceId || (this.SubResourceId != null && !this.SubResourceId.Equals(input.SubResourceId))) return false;
             if (this.SubResourceName != input.SubResourceName || (this.SubResourceName != null && !this.SubResourceName.Equals(input.SubResourceName))) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
 
             return true;
         }
@@ -478,6 +486,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
                 if (this.SubResourceTypeName != null) hashCode = hashCode * 59 + this.SubResourceTypeName.GetHashCode();
                 if (this.SubResourceId != null) hashCode = hashCode * 59 + this.SubResourceId.GetHashCode();
                 if (this.SubResourceName != null) hashCode = hashCode * 59 + this.SubResourceName.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
                 return hashCode;
             }
         }

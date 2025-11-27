@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ga.V1.Model
     public class AccelerateIp 
     {
         /// <summary>
-        /// IP地址类型。
+        /// IP地址类型。 取值范围：IPV4、IPV6
         /// </summary>
-        /// <value>IP地址类型。</value>
+        /// <value>IP地址类型。 取值范围：IPV4、IPV6</value>
         [JsonConverter(typeof(EnumClassConverter<IpTypeEnum>))]
         public class IpTypeEnum
         {
@@ -27,10 +27,16 @@ namespace HuaweiCloud.SDK.Ga.V1.Model
             /// </summary>
             public static readonly IpTypeEnum IPV4 = new IpTypeEnum("IPV4");
 
+            /// <summary>
+            /// Enum IPV6 for value: IPV6
+            /// </summary>
+            public static readonly IpTypeEnum IPV6 = new IpTypeEnum("IPV6");
+
             private static readonly Dictionary<string, IpTypeEnum> StaticFields =
             new Dictionary<string, IpTypeEnum>()
             {
                 { "IPV4", IPV4 },
+                { "IPV6", IPV6 },
             };
 
             private string _value;
@@ -126,7 +132,7 @@ namespace HuaweiCloud.SDK.Ga.V1.Model
 
 
         /// <summary>
-        /// IP地址类型。
+        /// IP地址类型。 取值范围：IPV4、IPV6
         /// </summary>
         [JsonProperty("ip_type", NullValueHandling = NullValueHandling.Ignore)]
         public IpTypeEnum IpType { get; set; }

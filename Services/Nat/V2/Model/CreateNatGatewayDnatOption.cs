@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string NatGatewayId { get; set; }
 
         /// <summary>
-        /// 虚拟机或者裸机对外提供服务的协议端口号。 取值范围：0~65535。
+        /// 虚拟机或者裸机对外提供服务的协议端口号。 取值范围: 0~65535。
         /// </summary>
         [JsonProperty("internal_service_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? InternalServicePort { get; set; }
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string FloatingIpId { get; set; }
 
         /// <summary>
-        /// Floatingip对外提供服务的端口号。 取值范围：0~65535。
+        /// Floatingip对外提供服务的端口号。 取值范围: 0~65535。
         /// </summary>
         [JsonProperty("external_service_port", NullValueHandling = NullValueHandling.Ignore)]
         public int? ExternalServicePort { get; set; }
@@ -65,13 +65,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Protocol { get; set; }
 
         /// <summary>
-        /// 虚拟机或者裸机对外提供服务的协议端口号范围。 功能说明：该端口范围与external _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。 
+        /// 虚拟机或者裸机对外提供服务的协议端口号范围。 功能说明: 该端口范围与external _service_port_range按顺序实现1:1映射。 取值范围: 1~65535。 约束: 只能以’-’字符连接端口范围。 
         /// </summary>
         [JsonProperty("internal_service_port_range", NullValueHandling = NullValueHandling.Ignore)]
         public string InternalServicePortRange { get; set; }
 
         /// <summary>
-        /// Floatingip对外提供服务的端口号范围。 功能说明：该端口范围与internal _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。 
+        /// Floatingip对外提供服务的端口号范围。 功能说明: 该端口范围与internal _service_port_range按顺序实现1:1映射。 取值范围: 1~65535。 约束: 只能以’-’字符连接端口范围。 
         /// </summary>
         [JsonProperty("external_service_port_range", NullValueHandling = NullValueHandling.Ignore)]
         public string ExternalServicePortRange { get; set; }

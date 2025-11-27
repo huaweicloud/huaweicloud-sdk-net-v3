@@ -1,0 +1,89 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Ucs.V1.Model
+{
+    /// <summary>
+    /// Response Object
+    /// </summary>
+    public class ListRecordSetsResponse : SdkResponse
+    {
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("links", NullValueHandling = NullValueHandling.Ignore)]
+        public Links Links { get; set; }
+
+        /// <summary>
+        /// 记录信息，例如id,name,description等
+        /// </summary>
+        [JsonProperty("recordsets", NullValueHandling = NullValueHandling.Ignore)]
+        public List<RecordSet> Recordsets { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
+        public Metadata Metadata { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ListRecordSetsResponse {\n");
+            sb.Append("  links: ").Append(Links).Append("\n");
+            sb.Append("  recordsets: ").Append(Recordsets).Append("\n");
+            sb.Append("  metadata: ").Append(Metadata).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ListRecordSetsResponse);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ListRecordSetsResponse input)
+        {
+            if (input == null) return false;
+            if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
+            if (this.Recordsets != input.Recordsets || (this.Recordsets != null && input.Recordsets != null && !this.Recordsets.SequenceEqual(input.Recordsets))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.Recordsets != null) hashCode = hashCode * 59 + this.Recordsets.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

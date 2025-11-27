@@ -257,6 +257,30 @@ namespace HuaweiCloud.SDK.Cloudtest.V1
         }
         
         /// <summary>
+        /// 在不同分支或者迭代下批量修改用例
+        ///
+        /// 在不同分支或者迭代下批量修改用例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchUpdateTestCasesInDiffVersionResponse BatchUpdateTestCasesInDiffVersion(BatchUpdateTestCasesInDiffVersionRequest batchUpdateTestCasesInDiffVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/batch/update/testcases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateTestCasesInDiffVersionRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<BatchUpdateTestCasesInDiffVersionResponse>(response);
+        }
+
+        public SyncInvoker<BatchUpdateTestCasesInDiffVersionResponse> BatchUpdateTestCasesInDiffVersionInvoker(BatchUpdateTestCasesInDiffVersionRequest batchUpdateTestCasesInDiffVersionRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v4/batch/update/testcases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchUpdateTestCasesInDiffVersionRequest);
+            return new SyncInvoker<BatchUpdateTestCasesInDiffVersionResponse>(this, "PUT", request, JsonUtils.DeSerialize<BatchUpdateTestCasesInDiffVersionResponse>);
+        }
+        
+        /// <summary>
         /// 批量更新用例属性
         ///
         /// 批量更新用例属性

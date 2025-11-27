@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public string VirsubnetId { get; set; }
 
+        /// <summary>
+        /// 私网NAT网关的ngport_ip_addrss。
+        /// </summary>
+        [JsonProperty("ngport_ip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string NgportIpAddress { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("class DownlinkVpc {\n");
             sb.Append("  vpcId: ").Append(VpcId).Append("\n");
             sb.Append("  virsubnetId: ").Append(VirsubnetId).Append("\n");
+            sb.Append("  ngportIpAddress: ").Append(NgportIpAddress).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (input == null) return false;
             if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
             if (this.VirsubnetId != input.VirsubnetId || (this.VirsubnetId != null && !this.VirsubnetId.Equals(input.VirsubnetId))) return false;
+            if (this.NgportIpAddress != input.NgportIpAddress || (this.NgportIpAddress != null && !this.NgportIpAddress.Equals(input.NgportIpAddress))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 var hashCode = 41;
                 if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 if (this.VirsubnetId != null) hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
+                if (this.NgportIpAddress != null) hashCode = hashCode * 59 + this.NgportIpAddress.GetHashCode();
                 return hashCode;
             }
         }

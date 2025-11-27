@@ -4648,6 +4648,34 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 修改错误日志采集开关状态
+        ///
+        /// 打开或者关闭数据库错误日志采集的开关。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchLogCollectionStatusResponse SwitchLogCollectionStatus(SwitchLogCollectionStatusRequest switchLogCollectionStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchLogCollectionStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchLogCollectionStatusRequest.Status, out var valueOfStatus)) urlParam.Add("status", valueOfStatus);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log/switch/{status}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchLogCollectionStatusRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<SwitchLogCollectionStatusResponse>(response);
+        }
+
+        public SyncInvoker<SwitchLogCollectionStatusResponse> SwitchLogCollectionStatusInvoker(SwitchLogCollectionStatusRequest switchLogCollectionStatusRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(switchLogCollectionStatusRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(switchLogCollectionStatusRequest.Status, out var valueOfStatus)) urlParam.Add("status", valueOfStatus);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/error-log/switch/{status}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", switchLogCollectionStatusRequest);
+            return new SyncInvoker<SwitchLogCollectionStatusResponse>(this, "POST", request, JsonUtils.DeSerializeNull<SwitchLogCollectionStatusResponse>);
+        }
+        
+        /// <summary>
         /// 分布式实例一主一备一日志形态切换到一主两备形态
         ///
         /// 当前只支持分布式独立部署一主一备一日志切换至一主两备形态。

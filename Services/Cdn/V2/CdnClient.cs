@@ -116,6 +116,33 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 创建封禁/解禁URL任务
+        ///
+        /// 创建封禁/解禁URL任务，如需使用本接口，请提交工单申请。
+        /// - 单租户调用频率：10次/s。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateAccessControlTaskResponse CreateAccessControlTask(CreateAccessControlTaskRequest createAccessControlTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createAccessControlTaskRequest.Action, out var valueOfAction)) urlParam.Add("action", valueOfAction);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/access-control-urls/{action}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAccessControlTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CreateAccessControlTaskResponse>(response);
+        }
+
+        public SyncInvoker<CreateAccessControlTaskResponse> CreateAccessControlTaskInvoker(CreateAccessControlTaskRequest createAccessControlTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createAccessControlTaskRequest.Action, out var valueOfAction)) urlParam.Add("action", valueOfAction);
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/access-control-urls/{action}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAccessControlTaskRequest);
+            return new SyncInvoker<CreateAccessControlTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateAccessControlTaskResponse>);
+        }
+        
+        /// <summary>
         /// 创建加速域名
         ///
         /// 创建加速域名。
@@ -140,6 +167,33 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 复制配置到新添加域名
+        ///
+        /// 将存量加速域名的配置复制给新添加的域名。
+        /// - 已开通CDN服务。
+        /// - 如果加速域名的服务范围包含中国大陆，加速域名需要已完成备案。
+        /// - 单租户调用频率：20次/min。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateDomainByDuplicateResponse CreateDomainByDuplicate(CreateDomainByDuplicateRequest createDomainByDuplicateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/duplicate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainByDuplicateRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateDomainByDuplicateResponse>(response);
+        }
+
+        public SyncInvoker<CreateDomainByDuplicateResponse> CreateDomainByDuplicateInvoker(CreateDomainByDuplicateRequest createDomainByDuplicateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains/duplicate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainByDuplicateRequest);
+            return new SyncInvoker<CreateDomainByDuplicateResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateDomainByDuplicateResponse>);
+        }
+        
+        /// <summary>
         /// 创建域名模板。
         ///
         /// 创建域名模板。
@@ -161,6 +215,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/templates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainTemplateRequest);
             return new SyncInvoker<CreateDomainTemplateResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateDomainTemplateResponse>);
+        }
+        
+        /// <summary>
+        /// 创建统计数据异步导出任务
+        ///
+        /// 创建统计数据异步导出任务，目前支持话单数据导出、top url导出
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CreateExportTaskResponse CreateExportTask(CreateExportTaskRequest createExportTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/export-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExportTaskRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateExportTaskResponse>(response);
+        }
+
+        public SyncInvoker<CreateExportTaskResponse> CreateExportTaskInvoker(CreateExportTaskRequest createExportTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/export-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createExportTaskRequest);
+            return new SyncInvoker<CreateExportTaskResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateExportTaskResponse>);
         }
         
         /// <summary>
@@ -572,6 +650,80 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// CDN数据导出
+        ///
+        /// CDN数据导出
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ExportStatsOpenResponse ExportStatsOpen(ExportStatsOpenRequest exportStatsOpenRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/stats/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportStatsOpenRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<ExportStatsOpenResponse>(response);
+        }
+
+        public SyncInvoker<ExportStatsOpenResponse> ExportStatsOpenInvoker(ExportStatsOpenRequest exportStatsOpenRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/stats/export", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", exportStatsOpenRequest);
+            return new SyncInvoker<ExportStatsOpenResponse>(this, "POST", request, JsonUtils.DeSerializeNull<ExportStatsOpenResponse>);
+        }
+        
+        /// <summary>
+        /// 查询封禁/解禁URL任务
+        ///
+        /// 查询封禁/解禁URL任务，如需使用本接口，请提交工单申请。
+        /// - 单租户调用频率：30次/s。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAccessControlTaskResponse ListAccessControlTask(ListAccessControlTaskRequest listAccessControlTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/access-control-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccessControlTaskRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAccessControlTaskResponse>(response);
+        }
+
+        public SyncInvoker<ListAccessControlTaskResponse> ListAccessControlTaskInvoker(ListAccessControlTaskRequest listAccessControlTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/access-control-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAccessControlTaskRequest);
+            return new SyncInvoker<ListAccessControlTaskResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAccessControlTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询已封禁的URL
+        ///
+        /// 查询已封禁的URL，如需使用本接口，请提交工单申请。
+        /// - 单租户调用频率：30次/s。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListBanUrlResponse ListBanUrl(ListBanUrlRequest listBanUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/ban-urls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBanUrlRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListBanUrlResponse>(response);
+        }
+
+        public SyncInvoker<ListBanUrlResponse> ListBanUrlInvoker(ListBanUrlRequest listBanUrlRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/content/ban-urls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listBanUrlRequest);
+            return new SyncInvoker<ListBanUrlResponse>(this, "GET", request, JsonUtils.DeSerialize<ListBanUrlResponse>);
+        }
+        
+        /// <summary>
         /// 查询域名top ip统计分析数据
         ///
         /// - 查询域名top ip统计分析数据
@@ -617,6 +769,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-origin-urls", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopOriginUrlRequest);
             return new SyncInvoker<ListCdnDomainTopOriginUrlResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCdnDomainTopOriginUrlResponse>);
+        }
+        
+        /// <summary>
+        /// 查询 TOP Path明细
+        ///
+        /// 查询 TOP Path明细
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCdnDomainTopPathResponse ListCdnDomainTopPath(ListCdnDomainTopPathRequest listCdnDomainTopPathRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-path", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopPathRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListCdnDomainTopPathResponse>(response);
+        }
+
+        public SyncInvoker<ListCdnDomainTopPathResponse> ListCdnDomainTopPathInvoker(ListCdnDomainTopPathRequest listCdnDomainTopPathRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/top-path", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnDomainTopPathRequest);
+            return new SyncInvoker<ListCdnDomainTopPathResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCdnDomainTopPathResponse>);
         }
         
         /// <summary>
@@ -703,6 +879,31 @@ namespace HuaweiCloud.SDK.Cdn.V2
         }
         
         /// <summary>
+        /// 查询加速域名基础信息
+        ///
+        /// 查询加速域名的基础信息，包含cname状态、加速域名是否支持复制配置。
+        /// - 单租户调用频率：5次/s。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListDomainConfigsResponse ListDomainConfigs(ListDomainConfigsRequest listDomainConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainConfigsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListDomainConfigsResponse>(response);
+        }
+
+        public SyncInvoker<ListDomainConfigsResponse> ListDomainConfigsInvoker(ListDomainConfigsRequest listDomainConfigsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/domains", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainConfigsRequest);
+            return new SyncInvoker<ListDomainConfigsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainConfigsResponse>);
+        }
+        
+        /// <summary>
         /// 查询加速域名
         ///
         /// 查询加速域名。
@@ -724,6 +925,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/domains", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainsRequest);
             return new SyncInvoker<ListDomainsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainsResponse>);
+        }
+        
+        /// <summary>
+        /// 分页查询统计数据异步导出
+        ///
+        /// 分页查询统计数据异步导出任务，按修改时间降序排列，当任务状态为success时，返回参数中会包含download_link
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListExportTasksResponse ListExportTasks(ListExportTasksRequest listExportTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/export-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExportTasksRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListExportTasksResponse>(response);
+        }
+
+        public SyncInvoker<ListExportTasksResponse> ListExportTasksInvoker(ListExportTasksRequest listExportTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/cdn/statistics/export-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExportTasksRequest);
+            return new SyncInvoker<ListExportTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListExportTasksResponse>);
         }
         
         /// <summary>
@@ -775,6 +1000,31 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/share-cache-groups", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listShareCacheGroupsRequest);
             return new SyncInvoker<ListShareCacheGroupsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListShareCacheGroupsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询加速域名的特殊配置
+        ///
+        /// 查询加速域名的特殊配置，当前支持查询备忘录信息。
+        /// - 单租户调用频率：15次/s。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListSpecialConfigurationResponse ListSpecialConfiguration(ListSpecialConfigurationRequest listSpecialConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/special-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSpecialConfigurationRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListSpecialConfigurationResponse>(response);
+        }
+
+        public SyncInvoker<ListSpecialConfigurationResponse> ListSpecialConfigurationInvoker(ListSpecialConfigurationRequest listSpecialConfigurationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/configuration/special-configurations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSpecialConfigurationRequest);
+            return new SyncInvoker<ListSpecialConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSpecialConfigurationResponse>);
         }
         
         /// <summary>
@@ -997,6 +1247,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/charge/charge-modes", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showChargeModesRequest);
             return new SyncInvoker<ShowChargeModesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowChargeModesResponse>);
+        }
+        
+        /// <summary>
+        /// CDN查询域名的国家统计数据
+        ///
+        /// CDN查询域名的国家统计数据
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowDomainCountryStatResponse ShowDomainCountryStat(ShowDomainCountryStatRequest showDomainCountryStatRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-country-stats", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainCountryStatRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowDomainCountryStatResponse>(response);
+        }
+
+        public SyncInvoker<ShowDomainCountryStatResponse> ShowDomainCountryStatInvoker(ShowDomainCountryStatRequest showDomainCountryStatRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/domain-country-stats", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainCountryStatRequest);
+            return new SyncInvoker<ShowDomainCountryStatResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainCountryStatResponse>);
         }
         
         /// <summary>
@@ -1267,6 +1541,30 @@ namespace HuaweiCloud.SDK.Cdn.V2
             var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/quota", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showQuotaRequest);
             return new SyncInvoker<ShowQuotaResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowQuotaResponse>);
+        }
+        
+        /// <summary>
+        /// 查询CDN特殊用户接口
+        ///
+        /// 查询CDN特殊用户接口
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSpecialUserResponse ShowSpecialUser(ShowSpecialUserRequest showSpecialUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/special-user", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSpecialUserRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowSpecialUserResponse>(response);
+        }
+
+        public SyncInvoker<ShowSpecialUserResponse> ShowSpecialUserInvoker(ShowSpecialUserRequest showSpecialUserRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1.0/cdn/statistics/special-user", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSpecialUserRequest);
+            return new SyncInvoker<ShowSpecialUserResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSpecialUserResponse>);
         }
         
         /// <summary>

@@ -991,6 +991,32 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         }
         
         /// <summary>
+        /// 查询CA证书
+        ///
+        /// 应用服务器可调用此接口在物联网平台查询CA证书
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowCertificateResponse> ShowCertificateAsync(ShowCertificateRequest showCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificateRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowCertificateResponse>(response);
+        }
+
+        public AsyncInvoker<ShowCertificateResponse> ShowCertificateAsyncInvoker(ShowCertificateRequest showCertificateRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showCertificateRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/certificates/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showCertificateRequest);
+            return new AsyncInvoker<ShowCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowCertificateResponse>);
+        }
+        
+        /// <summary>
         /// 更新CA证书
         ///
         /// 应用服务器可调用此接口在物联网平台上更新CA证书。仅标准版实例、企业版实例支持该接口调用，基础版不支持。
@@ -2273,7 +2299,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         public async Task<CreateDomainConfigurationResponse> CreateDomainConfigurationAsync(CreateDomainConfigurationRequest createDomainConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/domain-configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainConfigurationRequest);
             var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateDomainConfigurationResponse>(response);
@@ -2282,7 +2308,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         public AsyncInvoker<CreateDomainConfigurationResponse> CreateDomainConfigurationAsyncInvoker(CreateDomainConfigurationRequest createDomainConfigurationRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/domain-configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createDomainConfigurationRequest);
             return new AsyncInvoker<CreateDomainConfigurationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateDomainConfigurationResponse>);
         }
@@ -2298,7 +2324,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(deleteDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/domain-configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainConfigurationRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteDomainConfigurationResponse>(response);
@@ -2308,7 +2334,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(deleteDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/domain-configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteDomainConfigurationRequest);
             return new AsyncInvoker<DeleteDomainConfigurationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteDomainConfigurationResponse>);
         }
@@ -2323,7 +2349,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         public async Task<ListDomainConfigurationsResponse> ListDomainConfigurationsAsync(ListDomainConfigurationsRequest listDomainConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/domain-configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainConfigurationsRequest);
             var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListDomainConfigurationsResponse>(response);
@@ -2332,7 +2358,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         public AsyncInvoker<ListDomainConfigurationsResponse> ListDomainConfigurationsAsyncInvoker(ListDomainConfigurationsRequest listDomainConfigurationsRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/domain-configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listDomainConfigurationsRequest);
             return new AsyncInvoker<ListDomainConfigurationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListDomainConfigurationsResponse>);
         }
@@ -2348,7 +2374,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(showDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/domain-configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainConfigurationRequest);
             var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowDomainConfigurationResponse>(response);
@@ -2358,7 +2384,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(showDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/domain-configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDomainConfigurationRequest);
             return new AsyncInvoker<ShowDomainConfigurationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDomainConfigurationResponse>);
         }
@@ -2374,7 +2400,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(updateDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/domain-configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainConfigurationRequest);
             var response = await DoHttpRequestAsync("PUT", request);
             return JsonUtils.DeSerialize<UpdateDomainConfigurationResponse>(response);
@@ -2384,9 +2410,109 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(updateDomainConfigurationRequest.ConfigurationId, out var valueOfConfigurationId)) urlParam.Add("configuration_id", valueOfConfigurationId);
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/domain-configurations/{configuration_id}", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/domain-configurations/{configuration_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateDomainConfigurationRequest);
             return new AsyncInvoker<UpdateDomainConfigurationResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateDomainConfigurationResponse>);
+        }
+        
+        /// <summary>
+        /// 创建导出任务
+        ///
+        /// 应用服务器可调用此接口创建资源导出任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateExportTaskResponse> CreateExportTaskAsync(CreateExportTaskRequest createExportTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/export-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createExportTaskRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateExportTaskResponse>(response);
+        }
+
+        public AsyncInvoker<CreateExportTaskResponse> CreateExportTaskAsyncInvoker(CreateExportTaskRequest createExportTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/export-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createExportTaskRequest);
+            return new AsyncInvoker<CreateExportTaskResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateExportTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 删除导出任务
+        ///
+        /// 应用服务器可调用此接口删除在平台创建的导出任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteExportTaskResponse> DeleteExportTaskAsync(DeleteExportTaskRequest deleteExportTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteExportTaskRequest.ExportTaskId, out var valueOfExportTaskId)) urlParam.Add("export_task_id", valueOfExportTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/export-tasks/{export_task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExportTaskRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteExportTaskResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteExportTaskResponse> DeleteExportTaskAsyncInvoker(DeleteExportTaskRequest deleteExportTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteExportTaskRequest.ExportTaskId, out var valueOfExportTaskId)) urlParam.Add("export_task_id", valueOfExportTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/export-tasks/{export_task_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteExportTaskRequest);
+            return new AsyncInvoker<DeleteExportTaskResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteExportTaskResponse>);
+        }
+        
+        /// <summary>
+        /// 查询导出任务列表
+        ///
+        /// 应用服务器可调用此接口查询已创建的导出任务列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListExportTasksResponse> ListExportTasksAsync(ListExportTasksRequest listExportTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/export-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExportTasksRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListExportTasksResponse>(response);
+        }
+
+        public AsyncInvoker<ListExportTasksResponse> ListExportTasksAsyncInvoker(ListExportTasksRequest listExportTasksRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/export-tasks", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listExportTasksRequest);
+            return new AsyncInvoker<ListExportTasksResponse>(this, "GET", request, JsonUtils.DeSerialize<ListExportTasksResponse>);
+        }
+        
+        /// <summary>
+        /// 下载导出文件
+        ///
+        /// 应用服务器可调用此接口下载已经完成的导出任务生成的文件。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowExportTaskResponse> ShowExportTaskAsync(ShowExportTaskRequest showExportTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showExportTaskRequest.ExportTaskId, out var valueOfExportTaskId)) urlParam.Add("export_task_id", valueOfExportTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/export-tasks/{export_task_id}/file", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showExportTaskRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerializeNull<ShowExportTaskResponse>(response);
+        }
+
+        public AsyncInvoker<ShowExportTaskResponse> ShowExportTaskAsyncInvoker(ShowExportTaskRequest showExportTaskRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showExportTaskRequest.ExportTaskId, out var valueOfExportTaskId)) urlParam.Add("export_task_id", valueOfExportTaskId);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/export-tasks/{export_task_id}/file", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showExportTaskRequest);
+            return new AsyncInvoker<ShowExportTaskResponse>(this, "GET", request, JsonUtils.DeSerializeNull<ShowExportTaskResponse>);
         }
         
         /// <summary>
@@ -4159,7 +4285,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         public async Task<CreateServerCertificateResponse> CreateServerCertificateAsync(CreateServerCertificateRequest createServerCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/server-certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createServerCertificateRequest);
             var response = await DoHttpRequestAsync("POST", request);
             return JsonUtils.DeSerialize<CreateServerCertificateResponse>(response);
@@ -4168,7 +4294,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         public AsyncInvoker<CreateServerCertificateResponse> CreateServerCertificateAsyncInvoker(CreateServerCertificateRequest createServerCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/server-certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createServerCertificateRequest);
             return new AsyncInvoker<CreateServerCertificateResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateServerCertificateResponse>);
         }
@@ -4184,7 +4310,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(deleteServerCertificateRequest.ServerCertificateId, out var valueOfServerCertificateId)) urlParam.Add("server_certificate_id", valueOfServerCertificateId);
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates/{server_certificate_id}", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/server-certificates/{server_certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteServerCertificateRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
             return JsonUtils.DeSerializeNull<DeleteServerCertificateResponse>(response);
@@ -4194,7 +4320,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(deleteServerCertificateRequest.ServerCertificateId, out var valueOfServerCertificateId)) urlParam.Add("server_certificate_id", valueOfServerCertificateId);
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates/{server_certificate_id}", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/server-certificates/{server_certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteServerCertificateRequest);
             return new AsyncInvoker<DeleteServerCertificateResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteServerCertificateResponse>);
         }
@@ -4209,7 +4335,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         public async Task<ListServerCertificateResponse> ListServerCertificateAsync(ListServerCertificateRequest listServerCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/server-certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerCertificateRequest);
             var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ListServerCertificateResponse>(response);
@@ -4218,7 +4344,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         public AsyncInvoker<ListServerCertificateResponse> ListServerCertificateAsyncInvoker(ListServerCertificateRequest listServerCertificateRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/server-certificates", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listServerCertificateRequest);
             return new AsyncInvoker<ListServerCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ListServerCertificateResponse>);
         }
@@ -4234,7 +4360,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(showServerCertificateRequest.ServerCertificateId, out var valueOfServerCertificateId)) urlParam.Add("server_certificate_id", valueOfServerCertificateId);
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates/{server_certificate_id}", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/server-certificates/{server_certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerCertificateRequest);
             var response = await DoHttpRequestAsync("GET", request);
             return JsonUtils.DeSerialize<ShowServerCertificateResponse>(response);
@@ -4244,7 +4370,7 @@ namespace HuaweiCloud.SDK.IoTDA.V5
         {
             var urlParam = new Dictionary<string, string>();
             if (StringUtils.TryConvertToNonEmptyString(showServerCertificateRequest.ServerCertificateId, out var valueOfServerCertificateId)) urlParam.Add("server_certificate_id", valueOfServerCertificateId);
-            var urlPath = HttpUtils.AddUrlPath("/{project_id}/server-certificates/{server_certificate_id}", urlParam);
+            var urlPath = HttpUtils.AddUrlPath("/v5/iot/{project_id}/server-certificates/{server_certificate_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showServerCertificateRequest);
             return new AsyncInvoker<ShowServerCertificateResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowServerCertificateResponse>);
         }

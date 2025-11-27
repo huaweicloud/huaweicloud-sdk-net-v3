@@ -1779,6 +1779,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
+        /// 获取SSL证书下载地址
+        ///
+        /// 获取SSL证书下载地址。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSslCertDownloadAddressesResponse> ListSslCertDownloadAddressesAsync(ListSslCertDownloadAddressesRequest listSslCertDownloadAddressesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSslCertDownloadAddressesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSslCertDownloadAddressesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSslCertDownloadAddressesResponse>(response);
+        }
+
+        public AsyncInvoker<ListSslCertDownloadAddressesResponse> ListSslCertDownloadAddressesAsyncInvoker(ListSslCertDownloadAddressesRequest listSslCertDownloadAddressesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listSslCertDownloadAddressesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/ssl-cert/download-link", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSslCertDownloadAddressesRequest);
+            return new AsyncInvoker<ListSslCertDownloadAddressesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSslCertDownloadAddressesResponse>);
+        }
+        
+        /// <summary>
         /// 设置节点自动扩容策略
         ///
         /// 设置节点自动扩容策略。

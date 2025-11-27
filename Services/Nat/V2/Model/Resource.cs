@@ -37,8 +37,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// <summary>
         /// 标签列表，没有标签默认为空数组。
         /// </summary>
-        [JsonProperty("resource_tag", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ResourceTag> ResourceTag { get; set; }
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ResourceTag> Tags { get; set; }
 
 
 
@@ -52,7 +52,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  resourceDetail: ").Append(ResourceDetail).Append("\n");
             sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  resourceName: ").Append(ResourceName).Append("\n");
-            sb.Append("  resourceTag: ").Append(ResourceTag).Append("\n");
+            sb.Append("  tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,7 +74,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.ResourceDetail != input.ResourceDetail || (this.ResourceDetail != null && !this.ResourceDetail.Equals(input.ResourceDetail))) return false;
             if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
             if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
-            if (this.ResourceTag != input.ResourceTag || (this.ResourceTag != null && input.ResourceTag != null && !this.ResourceTag.SequenceEqual(input.ResourceTag))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
             return true;
         }
@@ -90,7 +90,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.ResourceDetail != null) hashCode = hashCode * 59 + this.ResourceDetail.GetHashCode();
                 if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.ResourceTag != null) hashCode = hashCode * 59 + this.ResourceTag.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

@@ -41,6 +41,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             /// </summary>
             public static readonly SpecEnum EXTRA_LARGE = new SpecEnum("Extra-large");
 
+            /// <summary>
+            /// Enum EXTRA_XLARGE for value: Extra-xlarge
+            /// </summary>
+            public static readonly SpecEnum EXTRA_XLARGE = new SpecEnum("Extra-xlarge");
+
             private static readonly Dictionary<string, SpecEnum> StaticFields =
             new Dictionary<string, SpecEnum>()
             {
@@ -48,6 +53,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 { "Medium", MEDIUM },
                 { "Large", LARGE },
                 { "Extra-large", EXTRA_LARGE },
+                { "Extra-xlarge", EXTRA_XLARGE },
             };
 
             private string _value;
@@ -158,11 +164,17 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             /// </summary>
             public static readonly StatusEnum FROZEN = new StatusEnum("FROZEN");
 
+            /// <summary>
+            /// Enum INACTIVE for value: INACTIVE
+            /// </summary>
+            public static readonly StatusEnum INACTIVE = new StatusEnum("INACTIVE");
+
             private static readonly Dictionary<string, StatusEnum> StaticFields =
             new Dictionary<string, StatusEnum>()
             {
                 { "ACTIVE", ACTIVE },
                 { "FROZEN", FROZEN },
+                { "INACTIVE", INACTIVE },
             };
 
             private string _value;
@@ -259,7 +271,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
 
 
         /// <summary>
-        /// 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
+        /// 功能说明：每页返回的个数。 取值范围：1~2000。 默认值：2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -301,13 +313,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public List<string> Description { get; set; }
 
         /// <summary>
-        /// 私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型
+        /// 私网NAT网关实例的规格。 取值为： \&quot;Small\&quot;：小型 \&quot;Medium\&quot;：中型 \&quot;Large\&quot;：大型 \&quot;Extra-large\&quot;：超大型 \&quot;Extra-xlarge\&quot;：企业型
         /// </summary>
         [SDKProperty("spec", IsQuery = true)]
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public List<SpecEnum> Spec { get; set; }
         /// <summary>
-        /// 私网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结
+        /// 私网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]

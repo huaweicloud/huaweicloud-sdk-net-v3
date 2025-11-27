@@ -22,6 +22,18 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("nat_gateway", NullValueHandling = NullValueHandling.Ignore)]
         public NatGatewayResponseBody NatGateway { get; set; }
 
+        /// <summary>
+        /// 订单ID。
+        /// </summary>
+        [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// 公网NAT网关实例的ID。
+        /// </summary>
+        [JsonProperty("nat_gateway_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string NatGatewayId { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +44,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             var sb = new StringBuilder();
             sb.Append("class CreateNatGatewayResponse {\n");
             sb.Append("  natGateway: ").Append(NatGateway).Append("\n");
+            sb.Append("  orderId: ").Append(OrderId).Append("\n");
+            sb.Append("  natGatewayId: ").Append(NatGatewayId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +65,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             if (input == null) return false;
             if (this.NatGateway != input.NatGateway || (this.NatGateway != null && !this.NatGateway.Equals(input.NatGateway))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.NatGatewayId != input.NatGatewayId || (this.NatGatewayId != null && !this.NatGatewayId.Equals(input.NatGatewayId))) return false;
 
             return true;
         }
@@ -64,6 +80,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             {
                 var hashCode = 41;
                 if (this.NatGateway != null) hashCode = hashCode * 59 + this.NatGateway.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.NatGatewayId != null) hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
                 return hashCode;
             }
         }

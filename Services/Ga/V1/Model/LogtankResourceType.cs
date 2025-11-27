@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ga.V1.Model
 {
     /// <summary>
-    /// 云日志的资源类型。
+    /// 云日志的资源类型。 取值范围： LISTENER：监听器
     /// </summary>
-    /// <value>云日志的资源类型。</value>
+    /// <value>云日志的资源类型。 取值范围： LISTENER：监听器</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

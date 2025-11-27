@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Ga.V1.Model
     public class Match 
     {
         /// <summary>
-        /// 匹配的KEY。
+        /// 匹配资源实例的属性类型。 取值范围： resource_name：通过资源名称匹配
         /// </summary>
-        /// <value>匹配的KEY。</value>
+        /// <value>匹配资源实例的属性类型。 取值范围： resource_name：通过资源名称匹配</value>
         [JsonConverter(typeof(EnumClassConverter<KeyEnum>))]
         public class KeyEnum
         {
@@ -126,12 +126,12 @@ namespace HuaweiCloud.SDK.Ga.V1.Model
 
 
         /// <summary>
-        /// 匹配的KEY。
+        /// 匹配资源实例的属性类型。 取值范围： resource_name：通过资源名称匹配
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public KeyEnum Key { get; set; }
         /// <summary>
-        /// 匹配的VALUE。
+        /// 匹配资源实例的属性值。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

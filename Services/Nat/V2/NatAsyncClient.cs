@@ -16,6 +16,295 @@ namespace HuaweiCloud.SDK.Nat.V2
 
         
         /// <summary>
+        /// 批量添加删除中转子网标签
+        ///
+        /// - 为指定中转子网实例批量添加或删除标签
+        /// - 标签管理服务需要使用该接口批量管理中转子网实例的标签。
+        /// - 一个中转子网上最多有20个标签。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreateDeleteTransitSubnetTagsResponse> BatchCreateDeleteTransitSubnetTagsAsync(BatchCreateDeleteTransitSubnetTagsRequest batchCreateDeleteTransitSubnetTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateDeleteTransitSubnetTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/{resource_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateDeleteTransitSubnetTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchCreateDeleteTransitSubnetTagsResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreateDeleteTransitSubnetTagsResponse> BatchCreateDeleteTransitSubnetTagsAsyncInvoker(BatchCreateDeleteTransitSubnetTagsRequest batchCreateDeleteTransitSubnetTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateDeleteTransitSubnetTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/{resource_id}/tags/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateDeleteTransitSubnetTagsRequest);
+            return new AsyncInvoker<BatchCreateDeleteTransitSubnetTagsResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchCreateDeleteTransitSubnetTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 创建中转子网
+        ///
+        /// 创建中转子网。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTransitSubnetResponse> CreateTransitSubnetAsync(CreateTransitSubnetRequest createTransitSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-subnets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTransitSubnetRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateTransitSubnetResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTransitSubnetResponse> CreateTransitSubnetAsyncInvoker(CreateTransitSubnetRequest createTransitSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-subnets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTransitSubnetRequest);
+            return new AsyncInvoker<CreateTransitSubnetResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTransitSubnetResponse>);
+        }
+        
+        /// <summary>
+        /// 添加中转子网标签
+        ///
+        /// - 为指定中转子网添加标签
+        /// - 一个中转子网上最多有20个标签。
+        /// - 此接口为幂等接口：
+        /// - 创建时，如果创建的标签已经存在（key相同），则覆盖。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateTransitSubnetTagResponse> CreateTransitSubnetTagAsync(CreateTransitSubnetTagRequest createTransitSubnetTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createTransitSubnetTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTransitSubnetTagRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateTransitSubnetTagResponse>(response);
+        }
+
+        public AsyncInvoker<CreateTransitSubnetTagResponse> CreateTransitSubnetTagAsyncInvoker(CreateTransitSubnetTagRequest createTransitSubnetTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createTransitSubnetTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createTransitSubnetTagRequest);
+            return new AsyncInvoker<CreateTransitSubnetTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateTransitSubnetTagResponse>);
+        }
+        
+        /// <summary>
+        /// 删除中转子网
+        ///
+        /// 删除中转子网。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTransitSubnetResponse> DeleteTransitSubnetAsync(DeleteTransitSubnetRequest deleteTransitSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitSubnetRequest.TransitSubnetId, out var valueOfTransitSubnetId)) urlParam.Add("transit_subnet_id", valueOfTransitSubnetId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-subnets/{transit_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTransitSubnetRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteTransitSubnetResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTransitSubnetResponse> DeleteTransitSubnetAsyncInvoker(DeleteTransitSubnetRequest deleteTransitSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitSubnetRequest.TransitSubnetId, out var valueOfTransitSubnetId)) urlParam.Add("transit_subnet_id", valueOfTransitSubnetId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-subnets/{transit_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTransitSubnetRequest);
+            return new AsyncInvoker<DeleteTransitSubnetResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTransitSubnetResponse>);
+        }
+        
+        /// <summary>
+        /// 删除中转子网标签
+        ///
+        /// - 幂等接口：
+        /// - 删除时，不对标签字符集做校验，调用接口前必须要做encodeURI，服务端需要对接口uri做decodeURI。删除的key不存在报404，key不能为空或者空字符串。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteTransitSubnetTagResponse> DeleteTransitSubnetTagAsync(DeleteTransitSubnetTagRequest deleteTransitSubnetTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitSubnetTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitSubnetTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/{resource_id}/tags/{key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTransitSubnetTagRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteTransitSubnetTagResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteTransitSubnetTagResponse> DeleteTransitSubnetTagAsyncInvoker(DeleteTransitSubnetTagRequest deleteTransitSubnetTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitSubnetTagRequest.Key, out var valueOfKey)) urlParam.Add("key", valueOfKey);
+            if (StringUtils.TryConvertToNonEmptyString(deleteTransitSubnetTagRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/{resource_id}/tags/{key}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTransitSubnetTagRequest);
+            return new AsyncInvoker<DeleteTransitSubnetTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTransitSubnetTagResponse>);
+        }
+        
+        /// <summary>
+        /// 查询中转子网列表
+        ///
+        /// 查询中转子网列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTransitSubnetResponse> ListTransitSubnetAsync(ListTransitSubnetRequest listTransitSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-subnets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTransitSubnetRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListTransitSubnetResponse>(response);
+        }
+
+        public AsyncInvoker<ListTransitSubnetResponse> ListTransitSubnetAsyncInvoker(ListTransitSubnetRequest listTransitSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-subnets", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTransitSubnetRequest);
+            return new AsyncInvoker<ListTransitSubnetResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTransitSubnetResponse>);
+        }
+        
+        /// <summary>
+        /// 查询中转子网项目标签
+        ///
+        /// - 查询租户在指定Project的所有中转子网标签集合。
+        /// - 标签管理服务需要能够列出当前租户全部已使用的中转子网标签集合，为打中转子网标签和过滤中转子网实例时提供标签联想功能。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTransitSubnetTagsResponse> ListTransitSubnetTagsAsync(ListTransitSubnetTagsRequest listTransitSubnetTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTransitSubnetTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListTransitSubnetTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListTransitSubnetTagsResponse> ListTransitSubnetTagsAsyncInvoker(ListTransitSubnetTagsRequest listTransitSubnetTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTransitSubnetTagsRequest);
+            return new AsyncInvoker<ListTransitSubnetTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTransitSubnetTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询中转子网实例
+        ///
+        /// - 使用标签过滤中转子网实例。
+        /// - 标签管理服务需要提供按标签过滤中转子网服务实例并汇总显示在列表中，需要中转子网服务提供查询能力。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTransitSubnetsByTagsResponse> ListTransitSubnetsByTagsAsync(ListTransitSubnetsByTagsRequest listTransitSubnetsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/resource_instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTransitSubnetsByTagsRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<ListTransitSubnetsByTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ListTransitSubnetsByTagsResponse> ListTransitSubnetsByTagsAsyncInvoker(ListTransitSubnetsByTagsRequest listTransitSubnetsByTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/resource_instances/action", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTransitSubnetsByTagsRequest);
+            return new AsyncInvoker<ListTransitSubnetsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListTransitSubnetsByTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询指定的中转子网详情
+        ///
+        /// 查询指定的中转子网详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTransitSubnetResponse> ShowTransitSubnetAsync(ShowTransitSubnetRequest showTransitSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTransitSubnetRequest.TransitSubnetId, out var valueOfTransitSubnetId)) urlParam.Add("transit_subnet_id", valueOfTransitSubnetId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-subnets/{transit_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransitSubnetRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTransitSubnetResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTransitSubnetResponse> ShowTransitSubnetAsyncInvoker(ShowTransitSubnetRequest showTransitSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTransitSubnetRequest.TransitSubnetId, out var valueOfTransitSubnetId)) urlParam.Add("transit_subnet_id", valueOfTransitSubnetId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-subnets/{transit_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransitSubnetRequest);
+            return new AsyncInvoker<ShowTransitSubnetResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTransitSubnetResponse>);
+        }
+        
+        /// <summary>
+        /// 查询中转子网标签
+        ///
+        /// - 查询指定中转子网实例的标签信息。
+        /// - 标签管理服务需要使用该接口查询指定中转子网实例的全部标签数据。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowTransitSubnetTagsResponse> ShowTransitSubnetTagsAsync(ShowTransitSubnetTagsRequest showTransitSubnetTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTransitSubnetTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransitSubnetTagsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowTransitSubnetTagsResponse>(response);
+        }
+
+        public AsyncInvoker<ShowTransitSubnetTagsResponse> ShowTransitSubnetTagsAsyncInvoker(ShowTransitSubnetTagsRequest showTransitSubnetTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showTransitSubnetTagsRequest.ResourceId, out var valueOfResourceId)) urlParam.Add("resource_id", valueOfResourceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/transit-subnets/{resource_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showTransitSubnetTagsRequest);
+            return new AsyncInvoker<ShowTransitSubnetTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowTransitSubnetTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 更新中转子网
+        ///
+        /// 更新指定的中转子网。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateTransitSubnetResponse> UpdateTransitSubnetAsync(UpdateTransitSubnetRequest updateTransitSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTransitSubnetRequest.TransitSubnetId, out var valueOfTransitSubnetId)) urlParam.Add("transit_subnet_id", valueOfTransitSubnetId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-subnets/{transit_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTransitSubnetRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateTransitSubnetResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateTransitSubnetResponse> UpdateTransitSubnetAsyncInvoker(UpdateTransitSubnetRequest updateTransitSubnetRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateTransitSubnetRequest.TransitSubnetId, out var valueOfTransitSubnetId)) urlParam.Add("transit_subnet_id", valueOfTransitSubnetId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/transit-subnets/{transit_subnet_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTransitSubnetRequest);
+            return new AsyncInvoker<UpdateTransitSubnetResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTransitSubnetResponse>);
+        }
+        
+        /// <summary>
         /// 批量创建DNAT规则
         ///
         /// 批量创建DNAT规则。
@@ -749,6 +1038,30 @@ namespace HuaweiCloud.SDK.Nat.V2
         }
         
         /// <summary>
+        /// 支持创建的NAT网关规格列表
+        ///
+        /// 支持创建的NAT网关规格列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListNatGatewaySpecsResponse> ListNatGatewaySpecsAsync(ListNatGatewaySpecsRequest listNatGatewaySpecsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateway_specs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewaySpecsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListNatGatewaySpecsResponse>(response);
+        }
+
+        public AsyncInvoker<ListNatGatewaySpecsResponse> ListNatGatewaySpecsAsyncInvoker(ListNatGatewaySpecsRequest listNatGatewaySpecsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateway_specs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listNatGatewaySpecsRequest);
+            return new AsyncInvoker<ListNatGatewaySpecsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListNatGatewaySpecsResponse>);
+        }
+        
+        /// <summary>
         /// 查询公网NAT网关项目标签
         ///
         /// - 查询租户在指定项目和公网NAT网关实例类型的所有标签集合。
@@ -869,6 +1182,30 @@ namespace HuaweiCloud.SDK.Nat.V2
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat-gateways/resource_instances/action", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPrivateNatsByTagsRequest);
             return new AsyncInvoker<ListPrivateNatsByTagsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListPrivateNatsByTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询项目支持的网关规格列表
+        ///
+        /// 查询项目支持的网关规格列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSpecsResponse> ListSpecsAsync(ListSpecsRequest listSpecsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/specs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSpecsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListSpecsResponse>(response);
+        }
+
+        public AsyncInvoker<ListSpecsResponse> ListSpecsAsyncInvoker(ListSpecsRequest listSpecsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/private-nat/specs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSpecsRequest);
+            return new AsyncInvoker<ListSpecsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListSpecsResponse>);
         }
         
         /// <summary>

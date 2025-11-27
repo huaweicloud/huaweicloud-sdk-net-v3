@@ -234,7 +234,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string SecurityPolicyId { get; set; }
 
         /// <summary>
-        /// **参数解释**：是否开启后端服务器的重试。  [**约束限制**： - 若关联是共享型LB，仅在protocol为HTTP、TERMINATED_HTTPS时才能传入该字段。 - 若关联是独享型LB，仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt)  [**约束限制**： - 仅在protocol为HTTP、HTTPS时才能传入该字段。](tag:hws_eu,hcso_dt)  **取值范围**：true 开启重试，false 不开启重试。默认：true。  **默认取值**：不涉及  [不支持QUIC。](tag:tm,dt)
+        /// **参数解释**：是否开启后端服务器的重试。  [**约束限制**： - 若关联是共享型LB，仅在protocol为HTTP、TERMINATED_HTTPS时才能传入该字段。 - 若关联是独享型LB，仅在protocol为HTTP、HTTPS和QUIC时才能传入该字段。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt)  [**约束限制**： - 仅在protocol为HTTP、HTTPS时才能传入该字段。](tag:hws_eu,hcso_dt)  **取值范围**：true 开启重试，false 不开启重试。  **默认取值**：true  [不支持QUIC。](tag:tm,dt)
         /// </summary>
         [JsonProperty("enable_member_retry", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableMemberRetry { get; set; }

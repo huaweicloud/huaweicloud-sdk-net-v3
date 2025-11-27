@@ -316,6 +316,12 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         [JsonProperty("account_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AccountName { get; set; }
 
+        /// <summary>
+        /// |参数名称：周期数量| |参数的约束及描述：该参数非必填|
+        /// </summary>
+        [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? PeriodNum { get; set; }
+
 
 
         /// <summary>
@@ -375,6 +381,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             sb.Append("  beId: ").Append(BeId).Append("\n");
             sb.Append("  extendParams: ").Append(ExtendParams).Append("\n");
             sb.Append("  accountName: ").Append(AccountName).Append("\n");
+            sb.Append("  periodNum: ").Append(PeriodNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -443,6 +450,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             if (this.BeId != input.BeId || (this.BeId != null && !this.BeId.Equals(input.BeId))) return false;
             if (this.ExtendParams != input.ExtendParams || (this.ExtendParams != null && !this.ExtendParams.Equals(input.ExtendParams))) return false;
             if (this.AccountName != input.AccountName || (this.AccountName != null && !this.AccountName.Equals(input.AccountName))) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
 
             return true;
         }
@@ -505,6 +513,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
                 if (this.BeId != null) hashCode = hashCode * 59 + this.BeId.GetHashCode();
                 if (this.ExtendParams != null) hashCode = hashCode * 59 + this.ExtendParams.GetHashCode();
                 if (this.AccountName != null) hashCode = hashCode * 59 + this.AccountName.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
                 return hashCode;
             }
         }

@@ -136,6 +136,127 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             }
         }
 
+        /// <summary>
+        /// 私网NAT的DNAT规则状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用
+        /// </summary>
+        /// <value>私网NAT的DNAT规则状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用</value>
+        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
+        public class StatusEnum
+        {
+            /// <summary>
+            /// Enum ACTIVE for value: ACTIVE
+            /// </summary>
+            public static readonly StatusEnum ACTIVE = new StatusEnum("ACTIVE");
+
+            /// <summary>
+            /// Enum FROZEN for value: FROZEN
+            /// </summary>
+            public static readonly StatusEnum FROZEN = new StatusEnum("FROZEN");
+
+            /// <summary>
+            /// Enum INACTIVE for value: INACTIVE
+            /// </summary>
+            public static readonly StatusEnum INACTIVE = new StatusEnum("INACTIVE");
+
+            private static readonly Dictionary<string, StatusEnum> StaticFields =
+            new Dictionary<string, StatusEnum>()
+            {
+                { "ACTIVE", ACTIVE },
+                { "FROZEN", FROZEN },
+                { "INACTIVE", INACTIVE },
+            };
+
+            private string _value;
+
+            public StatusEnum()
+            {
+
+            }
+
+            public StatusEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static StatusEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(StatusEnum a, StatusEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StatusEnum a, StatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// DNAT规则的ID。
@@ -162,19 +283,25 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string TransitIpId { get; set; }
 
         /// <summary>
+        /// 中转IP的地址。
+        /// </summary>
+        [JsonProperty("transit_ip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string TransitIpAddress { get; set; }
+
+        /// <summary>
         /// 私网NAT网关实例的ID。
         /// </summary>
         [JsonProperty("gateway_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GatewayId { get; set; }
 
         /// <summary>
-        /// 网络接口ID，支持计算、ELB、VIP等实例的端口。
+        /// 网络接口ID，支持计算、ELBV2、ELBV3、VIP等实例的端口。
         /// </summary>
         [JsonProperty("network_interface_id", NullValueHandling = NullValueHandling.Ignore)]
         public string NetworkInterfaceId { get; set; }
 
         /// <summary>
-        /// DNAT规则后端的类型。 取值：     COMPUTE：后端为计算实例。     VIP：后端为VIP的实例。     ELB：后端为ELB的实例。     ELBv3：后端为ELBv3的实例。     CUSTOMIZE：后端为自定义IP。
+        /// DNAT规则后端的类型。 取值：     COMPUTE：后端为计算实例。     VIP：后端为VIP的实例。     ELB：后端为ELBv2的实例。     ELBv3：后端为ELBv3的实例。     CUSTOMIZE：后端为自定义IP。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -185,13 +312,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("protocol", NullValueHandling = NullValueHandling.Ignore)]
         public ProtocolEnum Protocol { get; set; }
         /// <summary>
-        /// 后端实例的私网IP地址。
+        /// 后端资源（计算实例、ELBV2、ELBV3、VIP等）的私网IP地址。
         /// </summary>
         [JsonProperty("private_ip_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateIpAddress { get; set; }
 
         /// <summary>
-        /// 后端实例的端口号。
+        /// 后端实例的端口号（计算实例、ELBV2、ELBV3、VIP等)。
         /// </summary>
         [JsonProperty("internal_service_port", NullValueHandling = NullValueHandling.Ignore)]
         public string InternalServicePort { get; set; }
@@ -220,6 +347,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// 私网NAT的DNAT规则状态。 取值为： \&quot;ACTIVE\&quot;：正常运行 \&quot;FROZEN\&quot;：冻结 \&quot;INACTIVE\&quot;：不可用
+        /// </summary>
+        [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
+        public StatusEnum Status { get; set; }
 
 
         /// <summary>
@@ -233,6 +365,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  projectId: ").Append(ProjectId).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  transitIpId: ").Append(TransitIpId).Append("\n");
+            sb.Append("  transitIpAddress: ").Append(TransitIpAddress).Append("\n");
             sb.Append("  gatewayId: ").Append(GatewayId).Append("\n");
             sb.Append("  networkInterfaceId: ").Append(NetworkInterfaceId).Append("\n");
             sb.Append("  type: ").Append(Type).Append("\n");
@@ -243,6 +376,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -265,6 +399,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.TransitIpId != input.TransitIpId || (this.TransitIpId != null && !this.TransitIpId.Equals(input.TransitIpId))) return false;
+            if (this.TransitIpAddress != input.TransitIpAddress || (this.TransitIpAddress != null && !this.TransitIpAddress.Equals(input.TransitIpAddress))) return false;
             if (this.GatewayId != input.GatewayId || (this.GatewayId != null && !this.GatewayId.Equals(input.GatewayId))) return false;
             if (this.NetworkInterfaceId != input.NetworkInterfaceId || (this.NetworkInterfaceId != null && !this.NetworkInterfaceId.Equals(input.NetworkInterfaceId))) return false;
             if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
@@ -275,6 +410,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Status != input.Status) return false;
 
             return true;
         }
@@ -291,6 +427,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.TransitIpId != null) hashCode = hashCode * 59 + this.TransitIpId.GetHashCode();
+                if (this.TransitIpAddress != null) hashCode = hashCode * 59 + this.TransitIpAddress.GetHashCode();
                 if (this.GatewayId != null) hashCode = hashCode * 59 + this.GatewayId.GetHashCode();
                 if (this.NetworkInterfaceId != null) hashCode = hashCode * 59 + this.NetworkInterfaceId.GetHashCode();
                 if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
@@ -301,6 +438,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

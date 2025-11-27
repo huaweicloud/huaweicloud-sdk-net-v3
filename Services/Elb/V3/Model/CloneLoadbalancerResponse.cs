@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
     {
 
         /// <summary>
-        /// 
+        /// **参数解释**：新实例信息。
         /// </summary>
         [JsonProperty("loadbalancer_list", NullValueHandling = NullValueHandling.Ignore)]
         public List<CloneLoadbalancerResponseBodyLoadbalancerList> LoadbalancerList { get; set; }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     {
 
         /// <summary>
-        /// 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
+        /// 功能说明：每页返回的个数。 取值范围：1~2000。 默认值：2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -79,6 +79,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("virsubnet_id", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> VirsubnetId { get; set; }
 
+        /// <summary>
+        /// 中转子网的ID。
+        /// </summary>
+        [SDKProperty("transit_subnet_id", IsQuery = true)]
+        [JsonProperty("transit_subnet_id", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> TransitSubnetId { get; set; }
+
 
 
         /// <summary>
@@ -97,6 +104,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  gatewayId: ").Append(GatewayId).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  virsubnetId: ").Append(VirsubnetId).Append("\n");
+            sb.Append("  transitSubnetId: ").Append(TransitSubnetId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,6 +132,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.GatewayId != input.GatewayId || (this.GatewayId != null && input.GatewayId != null && !this.GatewayId.SequenceEqual(input.GatewayId))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
             if (this.VirsubnetId != input.VirsubnetId || (this.VirsubnetId != null && input.VirsubnetId != null && !this.VirsubnetId.SequenceEqual(input.VirsubnetId))) return false;
+            if (this.TransitSubnetId != input.TransitSubnetId || (this.TransitSubnetId != null && input.TransitSubnetId != null && !this.TransitSubnetId.SequenceEqual(input.TransitSubnetId))) return false;
 
             return true;
         }
@@ -145,6 +154,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.GatewayId != null) hashCode = hashCode * 59 + this.GatewayId.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.VirsubnetId != null) hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
+                if (this.TransitSubnetId != null) hashCode = hashCode * 59 + this.TransitSubnetId.GetHashCode();
                 return hashCode;
             }
         }

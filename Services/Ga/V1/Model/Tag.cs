@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Ga.V1.Model
     {
 
         /// <summary>
-        /// 标签的KEY。
+        /// 匹配的标签键。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签的VALUES。
+        /// 匹配的标签值列表。
         /// </summary>
         [JsonProperty("values", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Values { get; set; }

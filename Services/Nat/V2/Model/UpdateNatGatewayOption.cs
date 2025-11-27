@@ -11,14 +11,14 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Nat.V2.Model
 {
     /// <summary>
-    /// 更新公网NAT网关实例的请求体。
+    /// 
     /// </summary>
     public class UpdateNatGatewayOption 
     {
         /// <summary>
-        /// 公网NAT网关的规格。 取值为： \&quot;1\&quot;：小型，SNAT最大连接数10000 \&quot;2\&quot;：中型，SNAT最大连接数50000 \&quot;3\&quot;：大型，SNAT最大连接数200000 \&quot;4\&quot;：超大型，SNAT最大连接数1000000 
+        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
         /// </summary>
-        /// <value>公网NAT网关的规格。 取值为： \&quot;1\&quot;：小型，SNAT最大连接数10000 \&quot;2\&quot;：中型，SNAT最大连接数50000 \&quot;3\&quot;：大型，SNAT最大连接数200000 \&quot;4\&quot;：超大型，SNAT最大连接数1000000 </value>
+        /// <value>公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 </value>
         [JsonConverter(typeof(EnumClassConverter<SpecEnum>))]
         public class SpecEnum
         {
@@ -42,6 +42,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             /// </summary>
             public static readonly SpecEnum _4 = new SpecEnum("4");
 
+            /// <summary>
+            /// Enum _5 for value: 5
+            /// </summary>
+            public static readonly SpecEnum _5 = new SpecEnum("5");
+
             private static readonly Dictionary<string, SpecEnum> StaticFields =
             new Dictionary<string, SpecEnum>()
             {
@@ -49,6 +54,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 { "2", _2 },
                 { "3", _3 },
                 { "4", _4 },
+                { "5", _5 },
             };
 
             private string _value;
@@ -156,7 +162,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 公网NAT网关的规格。 取值为： \&quot;1\&quot;：小型，SNAT最大连接数10000 \&quot;2\&quot;：中型，SNAT最大连接数50000 \&quot;3\&quot;：大型，SNAT最大连接数200000 \&quot;4\&quot;：超大型，SNAT最大连接数1000000 
+        /// 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
         /// </summary>
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
         public SpecEnum Spec { get; set; }
@@ -165,6 +171,12 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         [JsonProperty("session_conf", NullValueHandling = NullValueHandling.Ignore)]
         public SessionConfiguration SessionConf { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("prepaid_options", NullValueHandling = NullValueHandling.Ignore)]
+        public UpdateNatGatewayOptionPrepaidOptions PrepaidOptions { get; set; }
 
 
 
@@ -179,6 +191,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  spec: ").Append(Spec).Append("\n");
             sb.Append("  sessionConf: ").Append(SessionConf).Append("\n");
+            sb.Append("  prepaidOptions: ").Append(PrepaidOptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -201,6 +214,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.Spec != input.Spec) return false;
             if (this.SessionConf != input.SessionConf || (this.SessionConf != null && !this.SessionConf.Equals(input.SessionConf))) return false;
+            if (this.PrepaidOptions != input.PrepaidOptions || (this.PrepaidOptions != null && !this.PrepaidOptions.Equals(input.PrepaidOptions))) return false;
 
             return true;
         }
@@ -217,6 +231,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 hashCode = hashCode * 59 + this.Spec.GetHashCode();
                 if (this.SessionConf != null) hashCode = hashCode * 59 + this.SessionConf.GetHashCode();
+                if (this.PrepaidOptions != null) hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
                 return hashCode;
             }
         }

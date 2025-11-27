@@ -370,6 +370,12 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
         [JsonProperty("account_name", NullValueHandling = NullValueHandling.Ignore)]
         public string AccountName { get; set; }
 
+        /// <summary>
+        /// |参数名称：周期数量| |参数的约束及描述：该参数非必填|
+        /// </summary>
+        [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? PeriodNum { get; set; }
+
 
 
         /// <summary>
@@ -438,6 +444,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             sb.Append("  consumeTime: ").Append(ConsumeTime).Append("\n");
             sb.Append("  relativeOrderId: ").Append(RelativeOrderId).Append("\n");
             sb.Append("  accountName: ").Append(AccountName).Append("\n");
+            sb.Append("  periodNum: ").Append(PeriodNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -515,6 +522,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
             if (this.ConsumeTime != input.ConsumeTime || (this.ConsumeTime != null && !this.ConsumeTime.Equals(input.ConsumeTime))) return false;
             if (this.RelativeOrderId != input.RelativeOrderId || (this.RelativeOrderId != null && !this.RelativeOrderId.Equals(input.RelativeOrderId))) return false;
             if (this.AccountName != input.AccountName || (this.AccountName != null && !this.AccountName.Equals(input.AccountName))) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
 
             return true;
         }
@@ -586,6 +594,7 @@ namespace HuaweiCloud.SDK.Bss.V2.Model
                 if (this.ConsumeTime != null) hashCode = hashCode * 59 + this.ConsumeTime.GetHashCode();
                 if (this.RelativeOrderId != null) hashCode = hashCode * 59 + this.RelativeOrderId.GetHashCode();
                 if (this.AccountName != null) hashCode = hashCode * 59 + this.AccountName.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
                 return hashCode;
             }
         }

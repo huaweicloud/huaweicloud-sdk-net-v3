@@ -67,6 +67,16 @@ namespace HuaweiCloud.SDK.Swr.V2
             "https://swr-api.cn-east-5.myhuaweicloud.com");
         public static readonly Region AF_NORTH_1 = new Region("af-north-1",
             "https://swr-api.af-north-1.myhuaweicloud.com");
+        public static readonly Region AP_SOUTHEAST_4 = new Region("ap-southeast-4",
+            "https://swr-api.ap-southeast-4.myhuaweicloud.com");
+        public static readonly Region CN_SOUTH_4 = new Region("cn-south-4",
+            "https://swr-api.cn-south-4.myhuaweicloud.com");
+        public static readonly Region CN_SOUTHWEST_3 = new Region("cn-southwest-3",
+            "https://swr-api.cn-southwest-3.myhuaweicloud.com");
+        public static readonly Region CN_NORTH_12 = new Region("cn-north-12",
+            "https://swr-api.cn-north-12.myhuaweicloud.com");
+        public static readonly Region SA_PERU_1 = new Region("sa-peru-1",
+            "https://swr-api.sa-peru-1.myhuaweicloud.com");
         
         private static readonly IRegionProvider Provider = RegionProviderChain.GetDefault("SWR");
 
@@ -102,6 +112,11 @@ namespace HuaweiCloud.SDK.Swr.V2
                 { "ap-southeast-5", AP_SOUTHEAST_5 },
                 { "cn-east-5", CN_EAST_5 },
                 { "af-north-1", AF_NORTH_1 },
+                { "ap-southeast-4", AP_SOUTHEAST_4 },
+                { "cn-south-4", CN_SOUTH_4 },
+                { "cn-southwest-3", CN_SOUTHWEST_3 },
+                { "cn-north-12", CN_NORTH_12 },
+                { "sa-peru-1", SA_PERU_1 },
         };
 
         public static Region ValueOf(string regionId)

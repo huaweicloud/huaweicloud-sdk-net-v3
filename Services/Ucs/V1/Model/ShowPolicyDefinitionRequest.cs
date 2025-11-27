@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Runtime.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using HuaweiCloud.SDK.Core;
+
+namespace HuaweiCloud.SDK.Ucs.V1.Model
+{
+    /// <summary>
+    /// Request Object
+    /// </summary>
+    public class ShowPolicyDefinitionRequest 
+    {
+
+        /// <summary>
+        /// 策略定义id
+        /// </summary>
+        [SDKProperty("policydefinitionid", IsPath = true)]
+        [JsonProperty("policydefinitionid", NullValueHandling = NullValueHandling.Ignore)]
+        public string Policydefinitionid { get; set; }
+
+
+
+        /// <summary>
+        /// Get the string
+        /// </summary>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class ShowPolicyDefinitionRequest {\n");
+            sb.Append("  policydefinitionid: ").Append(Policydefinitionid).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as ShowPolicyDefinitionRequest);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        public bool Equals(ShowPolicyDefinitionRequest input)
+        {
+            if (input == null) return false;
+            if (this.Policydefinitionid != input.Policydefinitionid || (this.Policydefinitionid != null && !this.Policydefinitionid.Equals(input.Policydefinitionid))) return false;
+
+            return true;
+        }
+
+        /// <summary>
+        /// Get hash code
+        /// </summary>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                var hashCode = 41;
+                if (this.Policydefinitionid != null) hashCode = hashCode * 59 + this.Policydefinitionid.GetHashCode();
+                return hashCode;
+            }
+        }
+    }
+}

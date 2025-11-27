@@ -11,7 +11,7 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Elb.V3.Model
 {
     /// <summary>
-    /// **参数解释**：负载均衡相关各类资源的配额信息。仅返回资源的总配额，不包括剩余可用配额。
+    /// 
     /// </summary>
     public class Quota 
     {

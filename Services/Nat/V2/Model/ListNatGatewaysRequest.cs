@@ -174,6 +174,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             /// </summary>
             public static readonly SpecEnum _4 = new SpecEnum("4");
 
+            /// <summary>
+            /// Enum _5 for value: 5
+            /// </summary>
+            public static readonly SpecEnum _5 = new SpecEnum("5");
+
             private static readonly Dictionary<string, SpecEnum> StaticFields =
             new Dictionary<string, SpecEnum>()
             {
@@ -181,6 +186,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 { "2", _2 },
                 { "3", _3 },
                 { "4", _4 },
+                { "5", _5 },
             };
 
             private string _value;
@@ -275,6 +281,255 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         }
 
 
+        /// <summary>
+        /// 排序使用的key
+        /// </summary>
+        /// <value>排序使用的key</value>
+        [JsonConverter(typeof(EnumClassConverter<SortKeyEnum>))]
+        public class SortKeyEnum
+        {
+            /// <summary>
+            /// Enum ID for value: id
+            /// </summary>
+            public static readonly SortKeyEnum ID = new SortKeyEnum("id");
+
+            /// <summary>
+            /// Enum NAME for value: name
+            /// </summary>
+            public static readonly SortKeyEnum NAME = new SortKeyEnum("name");
+
+            /// <summary>
+            /// Enum STATUS for value: status
+            /// </summary>
+            public static readonly SortKeyEnum STATUS = new SortKeyEnum("status");
+
+            /// <summary>
+            /// Enum CREATED_AT for value: created_at
+            /// </summary>
+            public static readonly SortKeyEnum CREATED_AT = new SortKeyEnum("created_at");
+
+            private static readonly Dictionary<string, SortKeyEnum> StaticFields =
+            new Dictionary<string, SortKeyEnum>()
+            {
+                { "id", ID },
+                { "name", NAME },
+                { "status", STATUS },
+                { "created_at", CREATED_AT },
+            };
+
+            private string _value;
+
+            public SortKeyEnum()
+            {
+
+            }
+
+            public SortKeyEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SortKeyEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SortKeyEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SortKeyEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SortKeyEnum a, SortKeyEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SortKeyEnum a, SortKeyEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 返回结果按照升序或降序排列，默认降序desc，升序为asc
+        /// </summary>
+        /// <value>返回结果按照升序或降序排列，默认降序desc，升序为asc</value>
+        [JsonConverter(typeof(EnumClassConverter<SortDirEnum>))]
+        public class SortDirEnum
+        {
+            /// <summary>
+            /// Enum DESC for value: desc
+            /// </summary>
+            public static readonly SortDirEnum DESC = new SortDirEnum("desc");
+
+            /// <summary>
+            /// Enum ASC for value: asc
+            /// </summary>
+            public static readonly SortDirEnum ASC = new SortDirEnum("asc");
+
+            private static readonly Dictionary<string, SortDirEnum> StaticFields =
+            new Dictionary<string, SortDirEnum>()
+            {
+                { "desc", DESC },
+                { "asc", ASC },
+            };
+
+            private string _value;
+
+            public SortDirEnum()
+            {
+
+            }
+
+            public SortDirEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static SortDirEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as SortDirEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(SortDirEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(SortDirEnum a, SortDirEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(SortDirEnum a, SortDirEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+
+        /// <summary>
+        /// 项目的ID。
+        /// </summary>
+        [SDKProperty("tenant_id", IsQuery = true)]
+        [JsonProperty("tenant_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TenantId { get; set; }
 
         /// <summary>
         /// 公网NAT网关实例的ID。
@@ -298,11 +553,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// 公网NAT网关实例的创建时间，格式是yyyy-mm-dd hh:mm:ss.SSSSSS。
+        /// 公网NAT网关实例的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
         /// </summary>
         [SDKProperty("created_at", IsQuery = true)]
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 公网NAT网关实例的名字，长度限制为64。 公网NAT网关实例的名字仅支持数字、字母、_（下划线）、-（中划线）、中文
@@ -312,13 +567,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 公网NAT网关实例的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;INACTIVE\&quot;：不可用
+        /// 公网NAT网关实例的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 INACTIVE: 不可用
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public List<StatusEnum> Status { get; set; }
         /// <summary>
-        /// 公网NAT网关实例的规格。 取值为： \&quot;1\&quot;：小型，SNAT最大连接数10000 \&quot;2\&quot;：中型，SNAT最大连接数50000 \&quot;3\&quot;：大型，SNAT最大连接数200000 \&quot;4\&quot;：超大型，SNAT最大连接数1000000 
+        /// 公网NAT网关实例的规格。 取值为： \&quot;1\&quot;：小型，SNAT最大连接数10000 \&quot;2\&quot;：中型，SNAT最大连接数50000 \&quot;3\&quot;：大型，SNAT最大连接数200000 \&quot;4\&quot;：超大型，SNAT最大连接数1000000 “5”：企业型，SNAT最大连接数10000000 
         /// </summary>
         [SDKProperty("spec", IsQuery = true)]
         [JsonProperty("spec", NullValueHandling = NullValueHandling.Ignore)]
@@ -345,7 +600,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string RouterId { get; set; }
 
         /// <summary>
-        /// 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
+        /// 功能说明：每页返回的个数。 取值范围：1~2000。 默认值：2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
@@ -358,6 +613,18 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         [JsonProperty("marker", NullValueHandling = NullValueHandling.Ignore)]
         public string Marker { get; set; }
 
+        /// <summary>
+        /// 排序使用的key
+        /// </summary>
+        [SDKProperty("sort_key", IsQuery = true)]
+        [JsonProperty("sort_key", NullValueHandling = NullValueHandling.Ignore)]
+        public SortKeyEnum SortKey { get; set; }
+        /// <summary>
+        /// 返回结果按照升序或降序排列，默认降序desc，升序为asc
+        /// </summary>
+        [SDKProperty("sort_dir", IsQuery = true)]
+        [JsonProperty("sort_dir", NullValueHandling = NullValueHandling.Ignore)]
+        public SortDirEnum SortDir { get; set; }
 
 
         /// <summary>
@@ -367,6 +634,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ListNatGatewaysRequest {\n");
+            sb.Append("  tenantId: ").Append(TenantId).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
@@ -379,6 +647,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  routerId: ").Append(RouterId).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
+            sb.Append("  sortKey: ").Append(SortKey).Append("\n");
+            sb.Append("  sortDir: ").Append(SortDir).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -397,6 +667,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public bool Equals(ListNatGatewaysRequest input)
         {
             if (input == null) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
@@ -409,6 +680,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.RouterId != input.RouterId || (this.RouterId != null && !this.RouterId.Equals(input.RouterId))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.SortKey != input.SortKey) return false;
+            if (this.SortDir != input.SortDir) return false;
 
             return true;
         }
@@ -421,6 +694,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
@@ -433,6 +707,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.RouterId != null) hashCode = hashCode * 59 + this.RouterId.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                hashCode = hashCode * 59 + this.SortDir.GetHashCode();
                 return hashCode;
             }
         }

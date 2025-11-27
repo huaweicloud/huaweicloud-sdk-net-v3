@@ -29,6 +29,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public int? Cps { get; set; }
 
         /// <summary>
+        /// **参数解释**：tls最大并发连接数。单位：个。  **取值范围**：不涉及
+        /// </summary>
+        [JsonProperty("tls_connection", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TlsConnection { get; set; }
+
+        /// <summary>
+        /// **参数解释**：tls每秒新建连接数。单位：个。  **取值范围**：不涉及
+        /// </summary>
+        [JsonProperty("tls_cps", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TlsCps { get; set; }
+
+        /// <summary>
         /// **参数解释**：每秒查询速率。单位：个。仅7层LB有该指标。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("qps", NullValueHandling = NullValueHandling.Ignore)]
@@ -63,6 +75,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             sb.Append("class FlavorInfo {\n");
             sb.Append("  connection: ").Append(Connection).Append("\n");
             sb.Append("  cps: ").Append(Cps).Append("\n");
+            sb.Append("  tlsConnection: ").Append(TlsConnection).Append("\n");
+            sb.Append("  tlsCps: ").Append(TlsCps).Append("\n");
             sb.Append("  qps: ").Append(Qps).Append("\n");
             sb.Append("  bandwidth: ").Append(Bandwidth).Append("\n");
             sb.Append("  lcu: ").Append(Lcu).Append("\n");
@@ -87,6 +101,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
             if (input == null) return false;
             if (this.Connection != input.Connection || (this.Connection != null && !this.Connection.Equals(input.Connection))) return false;
             if (this.Cps != input.Cps || (this.Cps != null && !this.Cps.Equals(input.Cps))) return false;
+            if (this.TlsConnection != input.TlsConnection || (this.TlsConnection != null && !this.TlsConnection.Equals(input.TlsConnection))) return false;
+            if (this.TlsCps != input.TlsCps || (this.TlsCps != null && !this.TlsCps.Equals(input.TlsCps))) return false;
             if (this.Qps != input.Qps || (this.Qps != null && !this.Qps.Equals(input.Qps))) return false;
             if (this.Bandwidth != input.Bandwidth || (this.Bandwidth != null && !this.Bandwidth.Equals(input.Bandwidth))) return false;
             if (this.Lcu != input.Lcu || (this.Lcu != null && !this.Lcu.Equals(input.Lcu))) return false;
@@ -105,6 +121,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
                 var hashCode = 41;
                 if (this.Connection != null) hashCode = hashCode * 59 + this.Connection.GetHashCode();
                 if (this.Cps != null) hashCode = hashCode * 59 + this.Cps.GetHashCode();
+                if (this.TlsConnection != null) hashCode = hashCode * 59 + this.TlsConnection.GetHashCode();
+                if (this.TlsCps != null) hashCode = hashCode * 59 + this.TlsCps.GetHashCode();
                 if (this.Qps != null) hashCode = hashCode * 59 + this.Qps.GetHashCode();
                 if (this.Bandwidth != null) hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
                 if (this.Lcu != null) hashCode = hashCode * 59 + this.Lcu.GetHashCode();

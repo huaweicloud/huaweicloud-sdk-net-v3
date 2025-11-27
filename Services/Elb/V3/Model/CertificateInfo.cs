@@ -216,7 +216,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public string EncPrivateKey { get; set; }
 
         /// <summary>
-        /// **参数解释**：云证书管理服务（CCM）中的证书ID。  **取值范围**：不涉及
+        /// **参数解释**：云证书与管理服务（CCM）中的证书ID。  **取值范围**：不涉及
         /// </summary>
         [JsonProperty("scm_certificate_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ScmCertificateId { get; set; }
@@ -240,7 +240,7 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         public List<string> SubjectAlternativeNames { get; set; }
 
         /// <summary>
-        /// **参数解释**：标记当前证书来源。  **取值范围**： - scm：表示关联云证书管理服务（CCM）中的证书。 - 空值：表示自有证书。
+        /// **参数解释**：标记当前证书来源。  **取值范围**： - scm：表示关联云证书与管理服务（CCM）中的证书。 - 空值：表示自有证书。
         /// </summary>
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
         public string Source { get; set; }

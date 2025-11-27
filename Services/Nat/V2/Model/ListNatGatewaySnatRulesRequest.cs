@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class ListNatGatewaySnatRulesRequest 
     {
         /// <summary>
-        /// SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用
+        /// SNAT规则的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 EIP_FREEZED: EIP冻结 INACTIVE: 不可用
         /// </summary>
-        /// <value>SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用</value>
+        /// <value>SNAT规则的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 EIP_FREEZED: EIP冻结 INACTIVE: 不可用</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -170,25 +170,39 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public string Cidr { get; set; }
 
         /// <summary>
-        /// 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
+        /// 功能说明：每页返回的个数。 取值范围：1~2000。 默认值：2000。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
         /// <summary>
-        /// 功能说明：弹性公网IP。
+        /// 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。
         /// </summary>
         [SDKProperty("floating_ip_address", IsQuery = true)]
         [JsonProperty("floating_ip_address", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> FloatingIpAddress { get; set; }
+        public string FloatingIpAddress { get; set; }
 
         /// <summary>
-        /// 功能说明：弹性公网IP的id。
+        /// 功能说明：全域弹性公网IP，多个全域弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。
+        /// </summary>
+        [SDKProperty("global_eip_address", IsQuery = true)]
+        [JsonProperty("global_eip_address", NullValueHandling = NullValueHandling.Ignore)]
+        public string GlobalEipAddress { get; set; }
+
+        /// <summary>
+        /// 功能说明：弹性公网IP的id，多个弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。
         /// </summary>
         [SDKProperty("floating_ip_id", IsQuery = true)]
         [JsonProperty("floating_ip_id", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> FloatingIpId { get; set; }
+        public string FloatingIpId { get; set; }
+
+        /// <summary>
+        /// 功能说明：全域弹性公网IP的id，多个全域弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。
+        /// </summary>
+        [SDKProperty("global_eip_id", IsQuery = true)]
+        [JsonProperty("global_eip_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GlobalEipId { get; set; }
 
         /// <summary>
         /// SNAT规则的ID。
@@ -209,7 +223,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         [SDKProperty("created_at", IsQuery = true)]
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 公网NAT网关实例的ID。
@@ -233,7 +247,7 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         public int? SourceType { get; set; }
 
         /// <summary>
-        /// SNAT规则的状态。 取值为： \&quot;ACTIVE\&quot;: 可用 \&quot;PENDING_CREATE\&quot;：创建中 \&quot;PENDING_UPDATE\&quot;：更新中 \&quot;PENDING_DELETE\&quot;：删除中 \&quot;EIP_FREEZED\&quot;：EIP冻结 \&quot;INACTIVE\&quot;：不可用
+        /// SNAT规则的状态。 取值为:  ACTIVE: 可用 PENDING_CREATE: 创建中 PENDING_UPDATE: 更新中 PENDING_DELETE: 删除中 EIP_FREEZED: EIP冻结 INACTIVE: 不可用
         /// </summary>
         [SDKProperty("status", IsQuery = true)]
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
@@ -258,7 +272,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             sb.Append("  cidr: ").Append(Cidr).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  floatingIpAddress: ").Append(FloatingIpAddress).Append("\n");
+            sb.Append("  globalEipAddress: ").Append(GlobalEipAddress).Append("\n");
             sb.Append("  floatingIpId: ").Append(FloatingIpId).Append("\n");
+            sb.Append("  globalEipId: ").Append(GlobalEipId).Append("\n");
             sb.Append("  id: ").Append(Id).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
@@ -288,8 +304,10 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
             if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
             if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
-            if (this.FloatingIpAddress != input.FloatingIpAddress || (this.FloatingIpAddress != null && input.FloatingIpAddress != null && !this.FloatingIpAddress.SequenceEqual(input.FloatingIpAddress))) return false;
-            if (this.FloatingIpId != input.FloatingIpId || (this.FloatingIpId != null && input.FloatingIpId != null && !this.FloatingIpId.SequenceEqual(input.FloatingIpId))) return false;
+            if (this.FloatingIpAddress != input.FloatingIpAddress || (this.FloatingIpAddress != null && !this.FloatingIpAddress.Equals(input.FloatingIpAddress))) return false;
+            if (this.GlobalEipAddress != input.GlobalEipAddress || (this.GlobalEipAddress != null && !this.GlobalEipAddress.Equals(input.GlobalEipAddress))) return false;
+            if (this.FloatingIpId != input.FloatingIpId || (this.FloatingIpId != null && !this.FloatingIpId.Equals(input.FloatingIpId))) return false;
+            if (this.GlobalEipId != input.GlobalEipId || (this.GlobalEipId != null && !this.GlobalEipId.Equals(input.GlobalEipId))) return false;
             if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
@@ -314,7 +332,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
                 if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.FloatingIpAddress != null) hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
+                if (this.GlobalEipAddress != null) hashCode = hashCode * 59 + this.GlobalEipAddress.GetHashCode();
                 if (this.FloatingIpId != null) hashCode = hashCode * 59 + this.FloatingIpId.GetHashCode();
+                if (this.GlobalEipId != null) hashCode = hashCode * 59 + this.GlobalEipId.GetHashCode();
                 if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();

@@ -11,9 +11,9 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Ga.V1.Model
 {
     /// <summary>
-    /// 监听的网络传输协议类型。
+    /// 监听的网络传输协议类型。 取值范围：TCP、UDP
     /// </summary>
-    /// <value>监听的网络传输协议类型。</value>
+    /// <value>监听的网络传输协议类型。 取值范围：TCP、UDP</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

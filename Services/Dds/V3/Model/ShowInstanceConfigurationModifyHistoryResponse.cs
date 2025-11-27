@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("histories", NullValueHandling = NullValueHandling.Ignore)]
         public List<ConfigurationModifyHistoryInfo> Histories { get; set; }
 
+        /// <summary>
+        /// 总数。
+        /// </summary>
+        [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalCount { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ShowInstanceConfigurationModifyHistoryResponse {\n");
             sb.Append("  histories: ").Append(Histories).Append("\n");
+            sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             if (input == null) return false;
             if (this.Histories != input.Histories || (this.Histories != null && input.Histories != null && !this.Histories.SequenceEqual(input.Histories))) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             {
                 var hashCode = 41;
                 if (this.Histories != null) hashCode = hashCode * 59 + this.Histories.GetHashCode();
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;
             }
         }
