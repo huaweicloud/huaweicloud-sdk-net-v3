@@ -180,6 +180,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         public bool? IsDesc { get; set; }
 
         /// <summary>
+        /// **参数解释：** 分页查询时，若上次查询的返回结果中包含该字段，需要增加该字段参与分页查询。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+        /// </summary>
+        [JsonProperty("scroll_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScrollId { get; set; }
+
+        /// <summary>
         /// 首次查询为 “init”, 分页查询时为 “forwards”或者“backwards”, 默认为首次查询“init”, 与 is_desc 参数配合进行分页查询。
         /// </summary>
         [JsonProperty("search_type", NullValueHandling = NullValueHandling.Ignore)]
@@ -231,6 +237,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  lineNum: ").Append(LineNum).Append("\n");
             sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  isDesc: ").Append(IsDesc).Append("\n");
+            sb.Append("  scrollId: ").Append(ScrollId).Append("\n");
             sb.Append("  searchType: ").Append(SearchType).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  highlight: ").Append(Highlight).Append("\n");
@@ -263,6 +270,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.LineNum != input.LineNum || (this.LineNum != null && !this.LineNum.Equals(input.LineNum))) return false;
             if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
             if (this.IsDesc != input.IsDesc || (this.IsDesc != null && !this.IsDesc.Equals(input.IsDesc))) return false;
+            if (this.ScrollId != input.ScrollId || (this.ScrollId != null && !this.ScrollId.Equals(input.ScrollId))) return false;
             if (this.SearchType != input.SearchType) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Highlight != input.Highlight || (this.Highlight != null && !this.Highlight.Equals(input.Highlight))) return false;
@@ -289,6 +297,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.LineNum != null) hashCode = hashCode * 59 + this.LineNum.GetHashCode();
                 if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 if (this.IsDesc != null) hashCode = hashCode * 59 + this.IsDesc.GetHashCode();
+                if (this.ScrollId != null) hashCode = hashCode * 59 + this.ScrollId.GetHashCode();
                 hashCode = hashCode * 59 + this.SearchType.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Highlight != null) hashCode = hashCode * 59 + this.Highlight.GetHashCode();

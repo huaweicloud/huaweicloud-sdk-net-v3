@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Value { get; set; }
 
         /// <summary>
-        /// **参数解释**： 配置值类型。 **取值范围**： 不涉及
+        /// **参数解释**： 配置值类型。 **取值范围**： - string：字符串类型。 - integer：整数类型。 - enum：枚举值类型。
         /// </summary>
         [JsonProperty("value_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ValueType { get; set; }

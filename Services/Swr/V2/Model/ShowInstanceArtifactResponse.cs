@@ -88,6 +88,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<ArtifactTag> Tags { get; set; }
 
+        /// <summary>
+        /// 制品扫描摘要,支持制品扫描报告类型为application/vnd.security.vulnerability.report; version&#x3D;1.1的制品扫描摘要
+        /// </summary>
+        [JsonProperty("scan_overview", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, NativeReportSummary> ScanOverview { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +115,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  pushTime: ").Append(PushTime).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  tags: ").Append(Tags).Append("\n");
+            sb.Append("  scanOverview: ").Append(ScanOverview).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +146,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.PushTime != input.PushTime || (this.PushTime != null && !this.PushTime.Equals(input.PushTime))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.ScanOverview != input.ScanOverview || (this.ScanOverview != null && input.ScanOverview != null && !this.ScanOverview.SequenceEqual(input.ScanOverview))) return false;
 
             return true;
         }
@@ -163,6 +171,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.PushTime != null) hashCode = hashCode * 59 + this.PushTime.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.ScanOverview != null) hashCode = hashCode * 59 + this.ScanOverview.GetHashCode();
                 return hashCode;
             }
         }

@@ -26,9 +26,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// 开启查询的任务编号。
         /// </summary>
-        [SDKProperty("start", IsQuery = true)]
-        [JsonProperty("start", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Start { get; set; }
+        [SDKProperty("offset", IsQuery = true)]
+        [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Offset { get; set; }
 
         /// <summary>
         /// 查询的任务个数。
@@ -61,7 +61,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ListBackgroundTasksRequest {\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
-            sb.Append("  start: ").Append(Start).Append("\n");
+            sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  beginTime: ").Append(BeginTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
@@ -84,7 +84,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             if (input == null) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
-            if (this.Start != input.Start || (this.Start != null && !this.Start.Equals(input.Start))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
@@ -101,7 +101,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
             {
                 var hashCode = 41;
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Start != null) hashCode = hashCode * 59 + this.Start.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();

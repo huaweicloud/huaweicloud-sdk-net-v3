@@ -44,6 +44,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("reference", NullValueHandling = NullValueHandling.Ignore)]
         public string Reference { get; set; }
 
+        /// <summary>
+        /// 是否返回制品扫描摘要
+        /// </summary>
+        [SDKProperty("with_scan_overview", IsQuery = true)]
+        [JsonProperty("with_scan_overview", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? WithScanOverview { get; set; }
+
 
 
         /// <summary>
@@ -57,6 +64,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  namespaceName: ").Append(NamespaceName).Append("\n");
             sb.Append("  repositoryName: ").Append(RepositoryName).Append("\n");
             sb.Append("  reference: ").Append(Reference).Append("\n");
+            sb.Append("  withScanOverview: ").Append(WithScanOverview).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -79,6 +87,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.NamespaceName != input.NamespaceName || (this.NamespaceName != null && !this.NamespaceName.Equals(input.NamespaceName))) return false;
             if (this.RepositoryName != input.RepositoryName || (this.RepositoryName != null && !this.RepositoryName.Equals(input.RepositoryName))) return false;
             if (this.Reference != input.Reference || (this.Reference != null && !this.Reference.Equals(input.Reference))) return false;
+            if (this.WithScanOverview != input.WithScanOverview || (this.WithScanOverview != null && !this.WithScanOverview.Equals(input.WithScanOverview))) return false;
 
             return true;
         }
@@ -95,6 +104,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.NamespaceName != null) hashCode = hashCode * 59 + this.NamespaceName.GetHashCode();
                 if (this.RepositoryName != null) hashCode = hashCode * 59 + this.RepositoryName.GetHashCode();
                 if (this.Reference != null) hashCode = hashCode * 59 + this.Reference.GetHashCode();
+                if (this.WithScanOverview != null) hashCode = hashCode * 59 + this.WithScanOverview.GetHashCode();
                 return hashCode;
             }
         }

@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
     public class PrepaidOptions 
     {
         /// <summary>
-        /// month: 包月 year: 包年
+        /// 订购周期类型，当前支持包月和包年: month: 包月 year: 包年
         /// </summary>
-        /// <value>month: 包月 year: 包年</value>
+        /// <value>订购周期类型，当前支持包月和包年: month: 包月 year: 包年</value>
         [JsonConverter(typeof(EnumClassConverter<PeriodTypeEnum>))]
         public class PeriodTypeEnum
         {
@@ -132,24 +132,24 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
 
 
         /// <summary>
-        /// month: 包月 year: 包年
+        /// 订购周期类型，当前支持包月和包年: month: 包月 year: 包年
         /// </summary>
         [JsonProperty("period_type", NullValueHandling = NullValueHandling.Ignore)]
         public PeriodTypeEnum PeriodType { get; set; }
         /// <summary>
-        /// 周期大小
+        /// 订购周期数，取值会随运营策略变化。 period_type为month时，为[1,9]， period_type为year时，为[1,3]
         /// </summary>
         [JsonProperty("period_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? PeriodNum { get; set; }
 
         /// <summary>
-        /// 是否自动续费
+        /// 是否自动续订； true：自动续订 false：不自动续订
         /// </summary>
         [JsonProperty("is_auto_renew", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAutoRenew { get; set; }
 
         /// <summary>
-        /// 是否自动支付
+        /// 下单订购后，是否自动从客户的账户中支付; true：自动支付 false：不自动支付。
         /// </summary>
         [JsonProperty("is_auto_pay", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsAutoPay { get; set; }

@@ -35,6 +35,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public string LlmUrl { get; set; }
 
         /// <summary>
+        /// model参数
+        /// </summary>
+        [JsonProperty("model", NullValueHandling = NullValueHandling.Ignore)]
+        public string Model { get; set; }
+
+        /// <summary>
         /// 创建时间，格式遵循：RFC 3339 如\&quot;2021-01-10T08:43:17Z\&quot;。
         /// </summary>
         [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -65,6 +71,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  llmConfigId: ").Append(LlmConfigId).Append("\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  llmUrl: ").Append(LlmUrl).Append("\n");
+            sb.Append("  model: ").Append(Model).Append("\n");
             sb.Append("  createTime: ").Append(CreateTime).Append("\n");
             sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  xRequestId: ").Append(XRequestId).Append("\n");
@@ -89,6 +96,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.LlmConfigId != input.LlmConfigId || (this.LlmConfigId != null && !this.LlmConfigId.Equals(input.LlmConfigId))) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.LlmUrl != input.LlmUrl || (this.LlmUrl != null && !this.LlmUrl.Equals(input.LlmUrl))) return false;
+            if (this.Model != input.Model || (this.Model != null && !this.Model.Equals(input.Model))) return false;
             if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
             if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
@@ -107,6 +115,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.LlmConfigId != null) hashCode = hashCode * 59 + this.LlmConfigId.GetHashCode();
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.LlmUrl != null) hashCode = hashCode * 59 + this.LlmUrl.GetHashCode();
+                if (this.Model != null) hashCode = hashCode * 59 + this.Model.GetHashCode();
                 if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();

@@ -31,14 +31,14 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 实例ID
+        /// 订阅实例ID
         /// </summary>
         [SDKProperty("subscriber_instance_id", IsQuery = true)]
         [JsonProperty("subscriber_instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string SubscriberInstanceId { get; set; }
 
         /// <summary>
-        /// 实例名
+        /// 订阅实例名
         /// </summary>
         [SDKProperty("subscriber_instance_name", IsQuery = true)]
         [JsonProperty("subscriber_instance_name", NullValueHandling = NullValueHandling.Ignore)]

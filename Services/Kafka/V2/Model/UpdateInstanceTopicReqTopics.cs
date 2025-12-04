@@ -11,55 +11,55 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 修改的Topic。
+    /// 
     /// </summary>
     public class UpdateInstanceTopicReqTopics 
     {
 
         /// <summary>
-        /// Topic名称，不支持修改。
+        /// **参数解释**： Topic名称，不支持修改。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 老化时间，单位小时。
+        /// **参数解释**： 老化时间，单位小时。 **约束限制**： 不涉及。 **取值范围**： 0-720。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("retention_time", NullValueHandling = NullValueHandling.Ignore)]
         public int? RetentionTime { get; set; }
 
         /// <summary>
-        /// 是否同步复制。
+        /// **参数解释**： 是否同步复制。 **约束限制**： 不涉及。 **取值范围**： - true：开启同步复制。 - false：不开启同步复制。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("sync_replication", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SyncReplication { get; set; }
 
         /// <summary>
-        /// 是否同步落盘。
+        /// **参数解释**： 是否同步落盘。 **约束限制**： 不涉及。 **取值范围**： - true：开启同步落盘。 - false：不开启同步落盘。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("sync_message_flush", NullValueHandling = NullValueHandling.Ignore)]
         public bool? SyncMessageFlush { get; set; }
 
         /// <summary>
-        /// 分区数。
+        /// **参数解释**： 分区数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("new_partition_numbers", NullValueHandling = NullValueHandling.Ignore)]
         public int? NewPartitionNumbers { get; set; }
 
         /// <summary>
-        /// 增加分区时指定broker列表
+        /// **参数解释**： 增加分区时指定broker列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("new_partition_brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<int?> NewPartitionBrokers { get; set; }
 
         /// <summary>
-        /// Topic配置
+        /// **参数解释**： Topic配置。 **约束限制**： 不涉及。
         /// </summary>
         [JsonProperty("topic_other_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpdateInstanceTopicReqTopicOtherConfigs> TopicOtherConfigs { get; set; }
 
         /// <summary>
-        /// Topic描述
+        /// **参数解释**： Topic描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("topic_desc", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicDesc { get; set; }

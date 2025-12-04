@@ -25,13 +25,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// <summary>
         /// 生产者速率
         /// </summary>
-        [JsonProperty("producer-byte-rate", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("producer_byte_rate", NullValueHandling = NullValueHandling.Ignore)]
         public int? ProducerByteRate { get; set; }
 
         /// <summary>
         /// 消费者速率
         /// </summary>
-        [JsonProperty("consumer-byte-rate", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("consumer_byte_rate", NullValueHandling = NullValueHandling.Ignore)]
         public int? ConsumerByteRate { get; set; }
 
 

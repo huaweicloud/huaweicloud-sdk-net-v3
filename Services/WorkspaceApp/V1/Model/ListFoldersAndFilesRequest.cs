@@ -45,11 +45,11 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
         public string Marker { get; set; }
 
         /// <summary>
-        /// 列举文件系统的最大数目，返回的文件系统列表将是按照字典顺序的最多前 maxKeys 个，默认取值为1000。
+        /// 列举文件系统的最大数目，返回的文件系统列表将是按照字典顺序的最多前 limit 个，默认取值为1000。
         /// </summary>
-        [SDKProperty("max_keys", IsQuery = true)]
-        [JsonProperty("max_keys", NullValueHandling = NullValueHandling.Ignore)]
-        public int? MaxKeys { get; set; }
+        [SDKProperty("limit", IsQuery = true)]
+        [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
+        public int? Limit { get; set; }
 
 
 
@@ -64,7 +64,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             sb.Append("  cloudStorageAssignmentId: ").Append(CloudStorageAssignmentId).Append("\n");
             sb.Append("  folderUrl: ").Append(FolderUrl).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
-            sb.Append("  maxKeys: ").Append(MaxKeys).Append("\n");
+            sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,7 +87,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
             if (this.CloudStorageAssignmentId != input.CloudStorageAssignmentId || (this.CloudStorageAssignmentId != null && !this.CloudStorageAssignmentId.Equals(input.CloudStorageAssignmentId))) return false;
             if (this.FolderUrl != input.FolderUrl || (this.FolderUrl != null && !this.FolderUrl.Equals(input.FolderUrl))) return false;
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
-            if (this.MaxKeys != input.MaxKeys || (this.MaxKeys != null && !this.MaxKeys.Equals(input.MaxKeys))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
             return true;
         }
@@ -104,7 +104,7 @@ namespace HuaweiCloud.SDK.WorkspaceApp.V1.Model
                 if (this.CloudStorageAssignmentId != null) hashCode = hashCode * 59 + this.CloudStorageAssignmentId.GetHashCode();
                 if (this.FolderUrl != null) hashCode = hashCode * 59 + this.FolderUrl.GetHashCode();
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.MaxKeys != null) hashCode = hashCode * 59 + this.MaxKeys.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

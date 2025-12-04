@@ -52,6 +52,20 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         public string Tag { get; set; }
 
         /// <summary>
+        /// 按列排序，可设置为updated_at（按更新时间排序）或者tag（按照镜像版本排序）。注意：order_column和order_type参数需要配套使用。
+        /// </summary>
+        [SDKProperty("order_column", IsQuery = true)]
+        [JsonProperty("order_column", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderColumn { get; set; }
+
+        /// <summary>
+        /// 排序类型，可设置为desc（降序）、asc（升序）。注意：order_column和order_type参数需要配套使用。
+        /// </summary>
+        [SDKProperty("order_type", IsQuery = true)]
+        [JsonProperty("order_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string OrderType { get; set; }
+
+        /// <summary>
         /// 是否返回镜像的manifest信息
         /// </summary>
         [SDKProperty("with_manifest", IsQuery = true)]
@@ -72,6 +86,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  marker: ").Append(Marker).Append("\n");
             sb.Append("  tag: ").Append(Tag).Append("\n");
+            sb.Append("  orderColumn: ").Append(OrderColumn).Append("\n");
+            sb.Append("  orderType: ").Append(OrderType).Append("\n");
             sb.Append("  withManifest: ").Append(WithManifest).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -96,6 +112,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
             if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
+            if (this.OrderColumn != input.OrderColumn || (this.OrderColumn != null && !this.OrderColumn.Equals(input.OrderColumn))) return false;
+            if (this.OrderType != input.OrderType || (this.OrderType != null && !this.OrderType.Equals(input.OrderType))) return false;
             if (this.WithManifest != input.WithManifest || (this.WithManifest != null && !this.WithManifest.Equals(input.WithManifest))) return false;
 
             return true;
@@ -114,6 +132,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
+                if (this.OrderColumn != null) hashCode = hashCode * 59 + this.OrderColumn.GetHashCode();
+                if (this.OrderType != null) hashCode = hashCode * 59 + this.OrderType.GetHashCode();
                 if (this.WithManifest != null) hashCode = hashCode * 59 + this.WithManifest.GetHashCode();
                 return hashCode;
             }

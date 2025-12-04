@@ -557,7 +557,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// Prometheus语句模板。
         /// </summary>
         [JsonProperty("promql_expr", NullValueHandling = NullValueHandling.Ignore)]
-        public List<string> PromqlExpr { get; set; }
+        public string PromqlExpr { get; set; }
 
         /// <summary>
         /// 连续周期个数。
@@ -708,7 +708,7 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
             if (this.MetricUnit != input.MetricUnit || (this.MetricUnit != null && !this.MetricUnit.Equals(input.MetricUnit))) return false;
             if (this.MetricLabels != input.MetricLabels || (this.MetricLabels != null && input.MetricLabels != null && !this.MetricLabels.SequenceEqual(input.MetricLabels))) return false;
             if (this.Promql != input.Promql || (this.Promql != null && !this.Promql.Equals(input.Promql))) return false;
-            if (this.PromqlExpr != input.PromqlExpr || (this.PromqlExpr != null && input.PromqlExpr != null && !this.PromqlExpr.SequenceEqual(input.PromqlExpr))) return false;
+            if (this.PromqlExpr != input.PromqlExpr || (this.PromqlExpr != null && !this.PromqlExpr.Equals(input.PromqlExpr))) return false;
             if (this.TriggerTimes != input.TriggerTimes || (this.TriggerTimes != null && !this.TriggerTimes.Equals(input.TriggerTimes))) return false;
             if (this.TriggerInterval != input.TriggerInterval || (this.TriggerInterval != null && !this.TriggerInterval.Equals(input.TriggerInterval))) return false;
             if (this.TriggerType != input.TriggerType) return false;

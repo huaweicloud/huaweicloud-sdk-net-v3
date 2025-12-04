@@ -17,19 +17,19 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 消息列表。
+        /// **参数解释**： 消息列表。
         /// </summary>
         [JsonProperty("messages", NullValueHandling = NullValueHandling.Ignore)]
         public List<MessagesEntity> Messages { get; set; }
 
         /// <summary>
-        /// 消息总条数。
+        /// **参数解释**： 消息总条数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public long? Total { get; set; }
 
         /// <summary>
-        /// 每页消息条数。
+        /// **参数解释**： 每页消息条数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public long? Size { get; set; }

@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 修改的Topic列表。
+    /// 
     /// </summary>
     public class UpdateInstanceTopicReq 
     {
 
         /// <summary>
-        /// 修改的Topic列表。
+        /// **参数解释**： 待修改的Topic列表。 **约束限制**： 不涉及。
         /// </summary>
         [JsonProperty("topics", NullValueHandling = NullValueHandling.Ignore)]
         public List<UpdateInstanceTopicReqTopics> Topics { get; set; }

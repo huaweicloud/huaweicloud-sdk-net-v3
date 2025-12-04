@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 标签键。  - 不能为空。  - 对于同一个实例，Key值唯一。  - 长度为1~128个字符（中文也可以输入128个字符）。  - 由任意语种字母、数字、空格和字符组成，字符仅支持_ . : &#x3D; + - @  - 不能以_sys_开头。  - 首尾字符不能为空格。
+        /// **参数解释**： 标签键。 **约束限制**： - 不能为空。  - 对于同一个实例，Key值唯一。  - 长度为1~128个字符（中文也可以输入128个字符）。  - 由任意语种字母、数字、空格和字符组成，字符仅支持_ . : &#x3D; + - @  - 不能以_sys_开头。  - 首尾字符不能为空格。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 标签值。  - 长度为0~255个字符（中文也可以输入255个字符）。  - 由任意语种字母、数字、空格和字符组成，字符仅支持_ . : &#x3D; + - @
+        /// **参数解释**： 标签值。 **约束限制**： - 长度为0~255个字符（中文也可以输入255个字符）。  - 由任意语种字母、数字、空格和字符组成，字符仅支持_ . : &#x3D; + - @ **取值范围**： 不涉及。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }

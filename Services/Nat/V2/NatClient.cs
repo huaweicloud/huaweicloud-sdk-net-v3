@@ -1340,6 +1340,32 @@ namespace HuaweiCloud.SDK.Nat.V2
         }
         
         /// <summary>
+        /// 公网NAT网关按需转包
+        ///
+        /// 公网NAT网关按需转包。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateNatGatewayToPeriodResponse UpdateNatGatewayToPeriod(UpdateNatGatewayToPeriodRequest updateNatGatewayToPeriodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateNatGatewayToPeriodRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}/change_to_period", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNatGatewayToPeriodRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<UpdateNatGatewayToPeriodResponse>(response);
+        }
+
+        public SyncInvoker<UpdateNatGatewayToPeriodResponse> UpdateNatGatewayToPeriodInvoker(UpdateNatGatewayToPeriodRequest updateNatGatewayToPeriodRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateNatGatewayToPeriodRequest.NatGatewayId, out var valueOfNatGatewayId)) urlParam.Add("nat_gateway_id", valueOfNatGatewayId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/nat_gateways/{nat_gateway_id}/change_to_period", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateNatGatewayToPeriodRequest);
+            return new SyncInvoker<UpdateNatGatewayToPeriodResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateNatGatewayToPeriodResponse>);
+        }
+        
+        /// <summary>
         /// 更新私网NAT网关
         ///
         /// 更新私网NAT网关实例。

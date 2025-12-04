@@ -11,49 +11,49 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 节点。
+    /// **参数解释**： 节点。
     /// </summary>
     public class ShowClusterRespClusterBrokers 
     {
 
         /// <summary>
-        /// 节点IP。
+        /// **参数解释**： 节点IP。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("host", NullValueHandling = NullValueHandling.Ignore)]
         public string Host { get; set; }
 
         /// <summary>
-        /// 端口号。
+        /// **参数解释**： 端口号。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public int? Port { get; set; }
 
         /// <summary>
-        /// 节点ID。
+        /// **参数解释**： 节点ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("broker_id", NullValueHandling = NullValueHandling.Ignore)]
         public string BrokerId { get; set; }
 
         /// <summary>
-        /// 是否为contoller节点。
+        /// **参数解释**： 是否为controller节点。 **取值范围**： - true：是controller节点。 - false：不是controller节点。
         /// </summary>
         [JsonProperty("is_controller", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsController { get; set; }
 
         /// <summary>
-        /// 服务端版本。
+        /// **参数解释**： 服务端版本。 **取值范围**： [- 1.1.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,sbc,cmcc,ax) [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,sbc,cmcc) - 2.7 [- 3.x](tag:hws,hws_hk,dt,sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu,ax)
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
         public string Version { get; set; }
 
         /// <summary>
-        /// broker注册时间，为unix时间戳格式。
+        /// **参数解释**： broker注册时间，为unix时间戳格式。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("register_time", NullValueHandling = NullValueHandling.Ignore)]
         public long? RegisterTime { get; set; }
 
         /// <summary>
-        /// Kafka实例节点的连通性是否正常。
+        /// **参数解释**： Kafka实例节点的连通性是否正常。 **取值范围**： - true：正常。 - false：不正常。
         /// </summary>
         [JsonProperty("is_health", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsHealth { get; set; }

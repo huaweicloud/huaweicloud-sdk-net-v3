@@ -271,6 +271,32 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 主题绑定KMS密钥
+        ///
+        /// 为主题绑定KMS密钥。KMS密钥于绑定后五分钟生效，生效后该主题下发布的消息（确认订阅消息、取消订阅消息、主题消息）均使用指定密钥的数据密钥进行加解密，并将消息内容在SMN服务内部加密传输。执行绑定KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。SMN会使用该委托进行创建数据密钥操作。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateKmsKeyResponse> CreateKmsKeyAsync(CreateKmsKeyRequest createKmsKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createKmsKeyRequest.TopicUrn, out var valueOfTopicUrn)) urlParam.Add("topic_urn", valueOfTopicUrn);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/kms", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKmsKeyRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateKmsKeyResponse>(response);
+        }
+
+        public AsyncInvoker<CreateKmsKeyResponse> CreateKmsKeyAsyncInvoker(CreateKmsKeyRequest createKmsKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(createKmsKeyRequest.TopicUrn, out var valueOfTopicUrn)) urlParam.Add("topic_urn", valueOfTopicUrn);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/kms", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createKmsKeyRequest);
+            return new AsyncInvoker<CreateKmsKeyResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateKmsKeyResponse>);
+        }
+        
+        /// <summary>
         /// 绑定云日志
         ///
         /// 为指定Topic绑定一个云日志，用于记录主题消息发送状态等信息。
@@ -398,6 +424,34 @@ namespace HuaweiCloud.SDK.Smn.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createTopicRequest);
             return new AsyncInvoker<CreateTopicResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateTopicResponse>);
+        }
+        
+        /// <summary>
+        /// 删除主题下KMS密钥
+        ///
+        /// 删除主题绑定的密钥。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteKmsKeyResponse> DeleteKmsKeyAsync(DeleteKmsKeyRequest deleteKmsKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteKmsKeyRequest.TopicUrn, out var valueOfTopicUrn)) urlParam.Add("topic_urn", valueOfTopicUrn);
+            if (StringUtils.TryConvertToNonEmptyString(deleteKmsKeyRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/kms/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKmsKeyRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteKmsKeyResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteKmsKeyResponse> DeleteKmsKeyAsyncInvoker(DeleteKmsKeyRequest deleteKmsKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteKmsKeyRequest.TopicUrn, out var valueOfTopicUrn)) urlParam.Add("topic_urn", valueOfTopicUrn);
+            if (StringUtils.TryConvertToNonEmptyString(deleteKmsKeyRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/kms/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteKmsKeyRequest);
+            return new AsyncInvoker<DeleteKmsKeyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteKmsKeyResponse>);
         }
         
         /// <summary>
@@ -647,6 +701,32 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 下载HTTP签名证书
+        ///
+        /// 下载HTTP签名证书
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DownloadHttpSignCertResponse> DownloadHttpSignCertAsync(DownloadHttpSignCertRequest downloadHttpSignCertRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadHttpSignCertRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/notifications/certifications/download/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadHttpSignCertRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerializeNull<DownloadHttpSignCertResponse>(response);
+        }
+
+        public AsyncInvoker<DownloadHttpSignCertResponse> DownloadHttpSignCertAsyncInvoker(DownloadHttpSignCertRequest downloadHttpSignCertRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(downloadHttpSignCertRequest.CertificateId, out var valueOfCertificateId)) urlParam.Add("certificate_id", valueOfCertificateId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/notifications/certifications/download/{certificate_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadHttpSignCertRequest);
+            return new AsyncInvoker<DownloadHttpSignCertResponse>(this, "GET", request, JsonUtils.DeSerializeNull<DownloadHttpSignCertResponse>);
+        }
+        
+        /// <summary>
         /// 查询授权云服务列表
         ///
         /// 查询授权云服务列表。
@@ -668,6 +748,30 @@ namespace HuaweiCloud.SDK.Smn.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/notifications/cloud_service", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCloudServiceRequest);
             return new AsyncInvoker<ListCloudServiceResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCloudServiceResponse>);
+        }
+        
+        /// <summary>
+        /// 查询授权服务列表
+        ///
+        /// 查询授权服务列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListCloudServicesResponse> ListCloudServicesAsync(ListCloudServicesRequest listCloudServicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/notifications/cloud-services", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCloudServicesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListCloudServicesResponse>(response);
+        }
+
+        public AsyncInvoker<ListCloudServicesResponse> ListCloudServicesAsyncInvoker(ListCloudServicesRequest listCloudServicesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/notifications/cloud-services", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCloudServicesRequest);
+            return new AsyncInvoker<ListCloudServicesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCloudServicesResponse>);
         }
         
         /// <summary>
@@ -1003,6 +1107,30 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 查询主题列表及主题关联资源信息
+        ///
+        /// 查询Topic及Topic关联资源信息列表，关联资源信息随业务演进会持续扩展。Topic列表默认按照创建时间进行降序排列。分页查询可以指定offset以及limit。如果不存在Topic，则返回空列表。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListTopicsWithAssociatedResourcesResponse> ListTopicsWithAssociatedResourcesAsync(ListTopicsWithAssociatedResourcesRequest listTopicsWithAssociatedResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics-with-associated-resources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicsWithAssociatedResourcesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListTopicsWithAssociatedResourcesResponse>(response);
+        }
+
+        public AsyncInvoker<ListTopicsWithAssociatedResourcesResponse> ListTopicsWithAssociatedResourcesAsyncInvoker(ListTopicsWithAssociatedResourcesRequest listTopicsWithAssociatedResourcesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics-with-associated-resources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTopicsWithAssociatedResourcesRequest);
+            return new AsyncInvoker<ListTopicsWithAssociatedResourcesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTopicsWithAssociatedResourcesResponse>);
+        }
+        
+        /// <summary>
         /// 查询SMN API V2版本信息
         ///
         /// 查询SMN API V2版本信息。
@@ -1090,6 +1218,7 @@ namespace HuaweiCloud.SDK.Smn.V2
         /// 
         /// 只需要设置其中一个，如果同时设置，生效的优先级为
         /// message_structure &gt; message_template_name &gt; message。
+        /// 若发布消息的主题下绑定了KMS密钥，请确保发布消息前，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。当发布消息时，SMN会使用该委托进行创建数据密钥和解密数据密钥操作。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -1141,6 +1270,32 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 查询主题下KMS密钥
+        ///
+        /// 查询主题下密钥ID。执行绑定KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。SMN会使用该委托进行查询密钥信息操作。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowKmsKeyResponse> ShowKmsKeyAsync(ShowKmsKeyRequest showKmsKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showKmsKeyRequest.TopicUrn, out var valueOfTopicUrn)) urlParam.Add("topic_urn", valueOfTopicUrn);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/kms", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKmsKeyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowKmsKeyResponse>(response);
+        }
+
+        public AsyncInvoker<ShowKmsKeyResponse> ShowKmsKeyAsyncInvoker(ShowKmsKeyRequest showKmsKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showKmsKeyRequest.TopicUrn, out var valueOfTopicUrn)) urlParam.Add("topic_urn", valueOfTopicUrn);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/kms", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showKmsKeyRequest);
+            return new AsyncInvoker<ShowKmsKeyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowKmsKeyResponse>);
+        }
+        
+        /// <summary>
         /// 查询通知策略
         ///
         /// 查询通知策略
@@ -1167,6 +1322,30 @@ namespace HuaweiCloud.SDK.Smn.V2
         }
         
         /// <summary>
+        /// 订阅主题
+        ///
+        /// 订阅终端确认订阅主题消息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<SubscribeTopicResponse> SubscribeTopicAsync(SubscribeTopicRequest subscribeTopicRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/notifications/subscriptions/subscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", subscribeTopicRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<SubscribeTopicResponse>(response);
+        }
+
+        public AsyncInvoker<SubscribeTopicResponse> SubscribeTopicAsyncInvoker(SubscribeTopicRequest subscribeTopicRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/notifications/subscriptions/subscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", subscribeTopicRequest);
+            return new AsyncInvoker<SubscribeTopicResponse>(this, "GET", request, JsonUtils.DeSerialize<SubscribeTopicResponse>);
+        }
+        
+        /// <summary>
         /// 取消订阅
         ///
         /// 取消订阅主题
@@ -1188,6 +1367,58 @@ namespace HuaweiCloud.SDK.Smn.V2
             var urlPath = HttpUtils.AddUrlPath("/rest/v2/notifications/subscription/unsubscribe", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unsubscribeSubscriptionRequest);
             return new AsyncInvoker<UnsubscribeSubscriptionResponse>(this, "GET", request, JsonUtils.DeSerialize<UnsubscribeSubscriptionResponse>);
+        }
+        
+        /// <summary>
+        /// 取消订阅主题
+        ///
+        /// 订阅终端取消订阅主题消息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UnsubscribeTopicResponse> UnsubscribeTopicAsync(UnsubscribeTopicRequest unsubscribeTopicRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/notifications/subscriptions/unsubscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unsubscribeTopicRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<UnsubscribeTopicResponse>(response);
+        }
+
+        public AsyncInvoker<UnsubscribeTopicResponse> UnsubscribeTopicAsyncInvoker(UnsubscribeTopicRequest unsubscribeTopicRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/notifications/subscriptions/unsubscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", unsubscribeTopicRequest);
+            return new AsyncInvoker<UnsubscribeTopicResponse>(this, "GET", request, JsonUtils.DeSerialize<UnsubscribeTopicResponse>);
+        }
+        
+        /// <summary>
+        /// 更新主题下KMS密钥
+        ///
+        /// 更新密钥ID。执行更新KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将对应的资源操作权限授权给SMN服务。SMN会使用该委托进行查询密钥状态和创建数据密钥操作。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateKmsKeyResponse> UpdateKmsKeyAsync(UpdateKmsKeyRequest updateKmsKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateKmsKeyRequest.TopicUrn, out var valueOfTopicUrn)) urlParam.Add("topic_urn", valueOfTopicUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateKmsKeyRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/kms/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKmsKeyRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateKmsKeyResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateKmsKeyResponse> UpdateKmsKeyAsyncInvoker(UpdateKmsKeyRequest updateKmsKeyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateKmsKeyRequest.TopicUrn, out var valueOfTopicUrn)) urlParam.Add("topic_urn", valueOfTopicUrn);
+            if (StringUtils.TryConvertToNonEmptyString(updateKmsKeyRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/notifications/topics/{topic_urn}/kms/{id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateKmsKeyRequest);
+            return new AsyncInvoker<UpdateKmsKeyResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateKmsKeyResponse>);
         }
         
         /// <summary>

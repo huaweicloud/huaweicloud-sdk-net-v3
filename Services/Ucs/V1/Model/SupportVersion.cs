@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
     {
 
         /// <summary>
-        /// 支持的集群类型（CCE，thirdParty等）
+        /// 支持的集群类型
         /// </summary>
         [JsonProperty("category", NullValueHandling = NullValueHandling.Ignore)]
         public string Category { get; set; }

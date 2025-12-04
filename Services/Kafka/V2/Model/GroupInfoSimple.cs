@@ -17,37 +17,37 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 创建时间。
+        /// **参数解释**： 创建时间。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("createdAt", NullValueHandling = NullValueHandling.Ignore)]
         public long? CreatedAt { get; set; }
 
         /// <summary>
-        /// 消费组ID。
+        /// **参数解释**： 消费组ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
         /// <summary>
-        /// 消费组状态。包含以下状态： - Dead：消费组内没有任何成员，且没有任何元数据。 - Empty：消费组内没有任何成员，存在元数据。 - PreparingRebalance：准备开启rebalance。 - CompletingRebalance：所有成员加入group。 - Stable：消费组内成员可正常消费。
+        /// **参数解释**： 消费组状态。 **取值范围**： - Dead：消费组内没有任何成员，且没有任何元数据。 - Empty：消费组内没有任何成员，存在元数据。 - PreparingRebalance：准备开启rebalance。 - CompletingRebalance：所有成员加入group。 - Stable：消费组内成员可正常消费。
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
         public string State { get; set; }
 
         /// <summary>
-        /// 协调器编号。
+        /// **参数解释**： 协调器编号。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("coordinator_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? CoordinatorId { get; set; }
 
         /// <summary>
-        /// 消费组描述。
+        /// **参数解释**： 消费组的描述信息。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("group_desc", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupDesc { get; set; }
 
         /// <summary>
-        /// 堆积数。
+        /// **参数解释**： 堆积数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("lag", NullValueHandling = NullValueHandling.Ignore)]
         public long? Lag { get; set; }

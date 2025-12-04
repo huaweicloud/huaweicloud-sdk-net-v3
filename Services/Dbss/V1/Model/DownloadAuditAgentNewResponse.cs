@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     /// <summary>
     /// Response Object
     /// </summary>
-    public class DownloadAuditAgentNewResponse : SdkResponse
+    public class DownloadAuditAgentNewResponse : SdkStreamResponse
     {
 
 

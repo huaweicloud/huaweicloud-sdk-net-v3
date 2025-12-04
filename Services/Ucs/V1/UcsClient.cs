@@ -434,23 +434,23 @@ namespace HuaweiCloud.SDK.Ucs.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public DisableClustergroupPolicyResponse DisableClustergroupPolicy(DisableClustergroupPolicyRequest disableClustergroupPolicyRequest)
+        public DisableClusterGroupPolicyResponse DisableClusterGroupPolicy(DisableClusterGroupPolicyRequest disableClusterGroupPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(disableClustergroupPolicyRequest.Clustergroupid, out var valueOfClustergroupid)) urlParam.Add("clustergroupid", valueOfClustergroupid);
+            if (StringUtils.TryConvertToNonEmptyString(disableClusterGroupPolicyRequest.Clustergroupid, out var valueOfClustergroupid)) urlParam.Add("clustergroupid", valueOfClustergroupid);
             var urlPath = HttpUtils.AddUrlPath("/v1/clustergroups/{clustergroupid}/policy", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableClustergroupPolicyRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableClusterGroupPolicyRequest);
             var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerialize<DisableClustergroupPolicyResponse>(response);
+            return JsonUtils.DeSerialize<DisableClusterGroupPolicyResponse>(response);
         }
 
-        public SyncInvoker<DisableClustergroupPolicyResponse> DisableClustergroupPolicyInvoker(DisableClustergroupPolicyRequest disableClustergroupPolicyRequest)
+        public SyncInvoker<DisableClusterGroupPolicyResponse> DisableClusterGroupPolicyInvoker(DisableClusterGroupPolicyRequest disableClusterGroupPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(disableClustergroupPolicyRequest.Clustergroupid, out var valueOfClustergroupid)) urlParam.Add("clustergroupid", valueOfClustergroupid);
+            if (StringUtils.TryConvertToNonEmptyString(disableClusterGroupPolicyRequest.Clustergroupid, out var valueOfClustergroupid)) urlParam.Add("clustergroupid", valueOfClustergroupid);
             var urlPath = HttpUtils.AddUrlPath("/v1/clustergroups/{clustergroupid}/policy", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableClustergroupPolicyRequest);
-            return new SyncInvoker<DisableClustergroupPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DisableClustergroupPolicyResponse>);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", disableClusterGroupPolicyRequest);
+            return new SyncInvoker<DisableClusterGroupPolicyResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DisableClusterGroupPolicyResponse>);
         }
         
         /// <summary>
@@ -512,23 +512,23 @@ namespace HuaweiCloud.SDK.Ucs.V1
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public EnableClustergroupPolicyResponse EnableClustergroupPolicy(EnableClustergroupPolicyRequest enableClustergroupPolicyRequest)
+        public EnableClusterGroupPolicyResponse EnableClusterGroupPolicy(EnableClusterGroupPolicyRequest enableClusterGroupPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(enableClustergroupPolicyRequest.Clustergroupid, out var valueOfClustergroupid)) urlParam.Add("clustergroupid", valueOfClustergroupid);
+            if (StringUtils.TryConvertToNonEmptyString(enableClusterGroupPolicyRequest.Clustergroupid, out var valueOfClustergroupid)) urlParam.Add("clustergroupid", valueOfClustergroupid);
             var urlPath = HttpUtils.AddUrlPath("/v1/clustergroups/{clustergroupid}/policy", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableClustergroupPolicyRequest);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableClusterGroupPolicyRequest);
             var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<EnableClustergroupPolicyResponse>(response);
+            return JsonUtils.DeSerialize<EnableClusterGroupPolicyResponse>(response);
         }
 
-        public SyncInvoker<EnableClustergroupPolicyResponse> EnableClustergroupPolicyInvoker(EnableClustergroupPolicyRequest enableClustergroupPolicyRequest)
+        public SyncInvoker<EnableClusterGroupPolicyResponse> EnableClusterGroupPolicyInvoker(EnableClusterGroupPolicyRequest enableClusterGroupPolicyRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            if (StringUtils.TryConvertToNonEmptyString(enableClustergroupPolicyRequest.Clustergroupid, out var valueOfClustergroupid)) urlParam.Add("clustergroupid", valueOfClustergroupid);
+            if (StringUtils.TryConvertToNonEmptyString(enableClusterGroupPolicyRequest.Clustergroupid, out var valueOfClustergroupid)) urlParam.Add("clustergroupid", valueOfClustergroupid);
             var urlPath = HttpUtils.AddUrlPath("/v1/clustergroups/{clustergroupid}/policy", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableClustergroupPolicyRequest);
-            return new SyncInvoker<EnableClustergroupPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<EnableClustergroupPolicyResponse>);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", enableClusterGroupPolicyRequest);
+            return new SyncInvoker<EnableClusterGroupPolicyResponse>(this, "POST", request, JsonUtils.DeSerialize<EnableClusterGroupPolicyResponse>);
         }
         
         /// <summary>
@@ -1527,9 +1527,9 @@ namespace HuaweiCloud.SDK.Ucs.V1
         }
         
         /// <summary>
-        /// 创建集群建策略实例
+        /// 创建集群策略实例
         ///
-        /// 创建集群建策略实例
+        /// 创建集群策略实例
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>

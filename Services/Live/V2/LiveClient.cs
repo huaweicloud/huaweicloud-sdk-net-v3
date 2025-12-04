@@ -464,6 +464,34 @@ namespace HuaweiCloud.SDK.Live.V2
         }
         
         /// <summary>
+        /// 查询轮播任务监控数据接口
+        ///
+        /// 查询轮播任务监控数据接口，包括轮播任务帧率码率情况。
+        /// 
+        /// 最大查询跨度3小时，最大查询周期7天。
+        /// 
+        /// 返回的帧率码率数据列表粒度为1秒钟。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListCarouselTaskDetailResponse ListCarouselTaskDetail(ListCarouselTaskDetailRequest listCarouselTaskDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/stats/carousel-task/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCarouselTaskDetailRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListCarouselTaskDetailResponse>(response);
+        }
+
+        public SyncInvoker<ListCarouselTaskDetailResponse> ListCarouselTaskDetailInvoker(ListCarouselTaskDetailRequest listCarouselTaskDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/stats/carousel-task/detail", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCarouselTaskDetailRequest);
+            return new SyncInvoker<ListCarouselTaskDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCarouselTaskDetailResponse>);
+        }
+        
+        /// <summary>
         /// 查询推流码率数据接口
         ///
         /// 查询推流监控码率数据接口。

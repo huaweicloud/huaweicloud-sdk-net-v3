@@ -11,115 +11,115 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 实例支持的连接方式及其连接地址。
+    /// 
     /// </summary>
     public class PortProtocolsEntity 
     {
 
         /// <summary>
-        /// 实例是否支持内网PLAINTEXT访问接入方式。  - true：实例支持内网PLAINTEXT访问方式接入方式。  - false：实例不支持内网PLAINTEXT访问接入方式。
+        /// **参数解释**： 实例是否支持内网PLAINTEXT访问接入方式。 **取值范围**： - true：实例支持内网PLAINTEXT访问方式接入方式。 - false：实例不支持内网PLAINTEXT访问接入方式。
         /// </summary>
         [JsonProperty("private_plain_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PrivatePlainEnable { get; set; }
 
         /// <summary>
-        /// kafka内网PLAINTEXT接入方式连接地址。
+        /// **参数解释**： Kafka内网PLAINTEXT接入方式连接地址。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("private_plain_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivatePlainAddress { get; set; }
 
         /// <summary>
-        /// 内网明文连接域名
+        /// **参数解释**： 内网明文连接域名。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("private_plain_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivatePlainDomainName { get; set; }
 
         /// <summary>
-        /// 实例是否支持内网SASL_SSL访问接入方式。  - true：实例支持内网SASL_SSL访问方式接入方式。  - false：实例不支持内网SASL_SSL访问接入方式。
+        /// **参数解释**： 实例是否支持内网SASL_SSL访问接入方式。 **取值范围**： - true：实例支持内网SASL_SSL访问方式接入方式。 - false：实例不支持内网SASL_SSL访问接入方式。
         /// </summary>
         [JsonProperty("private_sasl_ssl_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PrivateSaslSslEnable { get; set; }
 
         /// <summary>
-        /// kafka内网SASL_SSL接入方式连接地址。
+        /// **参数解释**： Kafka内网SASL_SSL接入方式连接地址。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("private_sasl_ssl_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateSaslSslAddress { get; set; }
 
         /// <summary>
-        /// 内网SASL_SSL连接域名
+        /// **参数解释**： 内网SASL_SSL连接域名。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("private_sasl_ssl_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateSaslSslDomainName { get; set; }
 
         /// <summary>
-        /// 实例是否支持内网SASL_PLAINTEXT访问接入方式。  - true，实例支持内网SASL_PLAINTEXT访问方式接入方式。  - false，实例不支持内网SASL_PLAINTEXT访问接入方式。
+        /// **参数解释**： 实例是否支持内网SASL_PLAINTEXT访问接入方式。 **取值范围**： - true：实例支持内网SASL_PLAINTEXT访问方式接入方式。 - false：实例不支持内网SASL_PLAINTEXT访问接入方式。
         /// </summary>
         [JsonProperty("private_sasl_plaintext_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PrivateSaslPlaintextEnable { get; set; }
 
         /// <summary>
-        /// kafka内网SASL_PLAINTEXT接入方式连接地址。
+        /// **参数解释**： Kafka内网SASL_PLAINTEXT接入方式连接地址。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("private_sasl_plaintext_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateSaslPlaintextAddress { get; set; }
 
         /// <summary>
-        /// 内网SASL_PLAINTEXT连接域名
+        /// **参数解释**： 内网SASL_PLAINTEXT连接域名。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("private_sasl_plaintext_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PrivateSaslPlaintextDomainName { get; set; }
 
         /// <summary>
-        /// 实例是否支持公网PLAINTEXT访问接入方式。  - true，实例支持公网PLAINTEXT访问方式接入方式。  - false，实例不支持公网PLAINTEXT访问接入方式。
+        /// **参数解释**： 实例是否支持公网PLAINTEXT访问接入方式。 **取值范围**： - true：实例支持公网PLAINTEXT访问方式接入方式。 - false：实例不支持公网PLAINTEXT访问接入方式。
         /// </summary>
         [JsonProperty("public_plain_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PublicPlainEnable { get; set; }
 
         /// <summary>
-        /// kafka公网PLAINTEXT接入方式连接地址。
+        /// **参数解释**： Kafka公网PLAINTEXT接入方式连接地址。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("public_plain_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicPlainAddress { get; set; }
 
         /// <summary>
-        /// 公网明文连接域名
+        /// **参数解释**： 公网明文连接域名。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("public_plain_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicPlainDomainName { get; set; }
 
         /// <summary>
-        /// 实例是否支持公网SASL_SSL访问接入方式。  - true，实例支持内网SASL_SSL访问方式接入方式。  - false，实例不支持公网SASL_SSL访问接入方式。
+        /// **参数解释**： 实例是否支持公网SASL_SSL访问接入方式。 **取值范围**： - true：实例支持内网SASL_SSL访问方式接入方式。 - false：实例不支持公网SASL_SSL访问接入方式。
         /// </summary>
         [JsonProperty("public_sasl_ssl_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PublicSaslSslEnable { get; set; }
 
         /// <summary>
-        /// kafka公网SASL_SSL接入方式连接地址。
+        /// **参数解释**： Kafka公网SASL_SSL接入方式连接地址。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("public_sasl_ssl_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicSaslSslAddress { get; set; }
 
         /// <summary>
-        /// 公网SASL_SSL连接域名
+        /// **参数解释**： 公网SASL_SSL连接域名。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("public_sasl_ssl_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicSaslSslDomainName { get; set; }
 
         /// <summary>
-        /// 实例是否支持公网SASL_PLAINTEXT访问接入方式。  - true，实例支持公网SASL_PLAINTEXT访问方式接入方式。  - false，实例不支持公网SASL_PLAINTEXT访问接入方式。
+        /// **参数解释**： 实例是否支持公网SASL_PLAINTEXT访问接入方式。 **取值范围**： - true：实例支持公网SASL_PLAINTEXT访问方式接入方式。 - false：实例不支持公网SASL_PLAINTEXT访问接入方式。
         /// </summary>
         [JsonProperty("public_sasl_plaintext_enable", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PublicSaslPlaintextEnable { get; set; }
 
         /// <summary>
-        /// kafka公网SASL_PLAINTEXT接入方式连接地址。
+        /// **参数解释**： Kafka公网SASL_PLAINTEXT接入方式连接地址。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("public_sasl_plaintext_address", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicSaslPlaintextAddress { get; set; }
 
         /// <summary>
-        /// 公网SASL_PLAINTEXT连接域名
+        /// **参数解释**： 公网SASL_PLAINTEXT连接域名。 **取值范围**： 不涉及
         /// </summary>
         [JsonProperty("public_sasl_plaintext_domain_name", NullValueHandling = NullValueHandling.Ignore)]
         public string PublicSaslPlaintextDomainName { get; set; }

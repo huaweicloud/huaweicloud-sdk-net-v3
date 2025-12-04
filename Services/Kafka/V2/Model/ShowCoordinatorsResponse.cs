@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 所有消费组对应的协调器列表。
+        /// **参数解释**： 所有消费组对应的协调器列表。
         /// </summary>
         [JsonProperty("coordinators", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCoordinatorsRespCoordinators> Coordinators { get; set; }

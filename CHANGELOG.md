@@ -1,3 +1,485 @@
+# 3.1.175 2025-12-04
+
+### HuaweiCloud SDK AAD
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateLtsConfig**
+    - changes of request param
+      - `* enterprise_project_id: optional -> required`
+
+### HuaweiCloud SDK AOM
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **AddOrUpdateMetricOrEventAlarmRule**
+    - changes of request param
+      - `* metric_alarm_spec.trigger_conditions.promql_expr: list<string> -> string`
+  - **ListMetricOrEventAlarmRule**
+    - changes of response param
+      - `* alarm_rules.metric_alarm_spec.trigger_conditions.promql_expr: list<string> -> string`
+
+### HuaweiCloud SDK BMS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ModifyVmNic**
+    - changes of request param
+      - `+ nic`
+      - `- subnet_id`
+      - `- device_owner`
+      - `- ip_addresses`
+      - `- reverse_binding`
+      - `* body: object<BareMetalModifyPortRequest> -> object<BareMetalModifyPortRequestBody>`
+
+### HuaweiCloud SDK DDM
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `CreateDdmInstance`
+    - `DeleteGroup`
+    - `RestartDdmInstance`
+    - `RestartNode`
+    - `BindEip`
+    - `UnbindEip`
+    - `ModifyEip`
+    - `BatchDeleteNodes`
+    - `ShowDdmNodeDetail`
+    - `SyncDnInformation`
+    - `ListTasks`
+    - `ShowPublicIp`
+    - `DeleteNodes`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `RestoreNewInstance`, `ListInstances`
+- _Bug Fix_
+  - None
+- _Change_
+  - **CreateInstance**
+    - changes of request param
+      - `+ datastore`
+      - `+ region`
+      - `+ port`
+      - `+ mode`
+      - `+ tags`
+      - `- restore_point`
+      - `+ flavor.storage`
+      - `* flavor: list<RestoreNewInstanceFlavorOption> -> list<CreateInstanceFlavorOption>`
+      - `* body: object<RestoreNewInstanceRequestBody> -> object<CreateInstanceRequestBody>`
+    - changes of response param
+      - `+ tags`
+      - `+ port`
+      - `+ flavor.storage`
+      - `* flavor: list<RestoreNewInstanceFlavorOption> -> list<CreateInstanceFlavorOption>`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **RestartStarrocksInstance**
+    - changes of response param
+      - `+ workflow_id`
+      - `- job_id`
+  - **RestartStarrocksNode**
+    - changes of response param
+      - `+ workflow_id`
+      - `- job_id`
+  - **DeleteStarrocksInstance**
+    - changes of response param
+      - `+ workflow_id`
+      - `- job_id`
+
+### HuaweiCloud SDK IAM
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdateDomainApiAclPolicy**
+    - changes of request param
+      - `+ api_acl_policy.allow_vpc_endpoints`
+
+### HuaweiCloud SDK IAM
+
+- _API Version_
+  - V5
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the APIs `ShowTokenPolicyV5`, `UpdateTokenPolicyV5`
+
+### HuaweiCloud SDK Kafka
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ListObsBuckets`
+    - `ListScheduledTasks`
+    - `ShowBackgroundTaskProgress`
+    - `UpdateScheduledTask`
+    - `DeleteScheduledTask`
+    - `ShowKafkaTopicDetail`
+    - `ShowRecycleInstances`
+    - `ModifyRecyclePolicy`
+    - `RestoreRecycleInstance`
+    - `ListUserPolicies`
+    - `SetUserPolicies`
+    - `ShowVolumeExpandConfig`
+    - `UpdateVolumeExpansionConfig`
+    - `ShowKafkaScalePreCheckInfo`
+    - `ModifyKafkaPublicIpAccessSwitch`
+    - `ShowKafkaCluster`
+    - `ShowSpecConvertProduct`
+    - `ListConfigFeatures`
+    - `ShowUpgradeInstanceVersion`
+    - `UpgradeInstance`
+    - `ShowKafkaProductCores`
+    - `ShowConnectorResourceInfo`
+    - `DeleteUser`
+    - `DeleteInstanceConsumerGroup`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListBackgroundTasks**
+    - changes of request param
+      - `+ offset`
+      - `- start`
+  - **ListInstanceConsumerGroup**
+    - changes of response param
+      - `+ group.createdAt`
+      - `+ group.group_desc`
+      - `- group.members`
+      - `- group.group_message_offsets`
+  - **CreateInstanceByEngine**
+    - changes of request param
+      - `+ storage_spec_code: enum value [[dms.physical.storage.general](tag:hws,hws_hk,dt,ax),[dms.physical.storage.extreme](tag:hws,hws_hk,dt,ax)]`
+  - **CreatePostPaidKafkaInstance**
+    - changes of request param
+      - `+ storage_spec_code: enum value [[dms.physical.storage.general](tag:hws,hws_hk,dt,ax),[dms.physical.storage.extreme](tag:hws,hws_hk,dt,ax)]`
+  - **UpdateKafkaUserClientQuotaTask**
+    - changes of request param
+      - `+ user_default`
+      - `+ client_default`
+      - `+ producer_byte_rate`
+      - `+ consumer_byte_rate`
+      - `- user-default`
+      - `- client-default`
+      - `- producer-byte-rate`
+      - `- consumer-byte-rate`
+  - **CreateKafkaUserClientQuotaTask**
+    - changes of request param
+      - `+ user_default`
+      - `+ client_default`
+      - `+ producer_byte_rate`
+      - `+ consumer_byte_rate`
+      - `- user-default`
+      - `- client-default`
+      - `- producer-byte-rate`
+      - `- consumer-byte-rate`
+  - **DeleteKafkaUserClientQuotaTask**
+    - changes of request param
+      - `+ user_default`
+      - `+ client_default`
+      - `- user-default`
+      - `- client-default`
+  - **ModifyKafkaTopicQuota**
+    - changes of request param
+      - `+ producer_byte_rate`
+      - `+ consumer_byte_rate`
+      - `- producer-byte-rate`
+      - `- consumer-byte-rate`
+  - **CreateKafkaTopicQuota**
+    - changes of request param
+      - `+ producer_byte_rate`
+      - `+ consumer_byte_rate`
+      - `- producer-byte-rate`
+      - `- consumer-byte-rate`
+  - **DeleteKafkaTopicQuota**
+    - changes of request param
+      - `+ producer_byte_rate`
+      - `+ consumer_byte_rate`
+      - `- producer-byte-rate`
+      - `- consumer-byte-rate`
+  - **ShowKafkaTopicQuota**
+    - changes of response param
+      - `+ quotas.producer_byte_rate`
+      - `+ quotas.consumer_byte_rate`
+      - `- quotas.producer-byte-rate`
+      - `- quotas.consumer-byte-rate`
+  - **ShowInstanceMessages**
+    - changes of request param
+      - `+ key`
+      - `+ include`
+      - `+ exclude`
+  - **UpdateInstanceGroup**
+    - changes of request param
+      - `* body: object<BatchModifyGroupDescriptionReq> -> object<BatchModiftGroupDescriptionReq>`
+
+### HuaweiCloud SDK Live
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListCarouselTaskDetail`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK LTS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListLogs**
+    - changes of request param
+      - `+ scroll_id`
+  - **ListLogContext**
+    - changes of request param
+      - `+ scroll_id`
+
+### HuaweiCloud SDK MetaStudio
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Remove the following APIs:
+    - `ListVideoMotionCaptureJobs`
+    - `CreateVideoMotionCaptureJob`
+    - `ShowVideoMotionCaptureJob`
+    - `StopVideoMotionCaptureJob`
+    - `ExecuteVideoMotionCaptureCommand`
+  - **ShowLlmConfig**
+    - changes of response param
+      - `+ model`
+  - **UpdateLlmConfig**
+    - changes of request param
+      - `+ model`
+  - **CreateLlmConfig**
+    - changes of request param
+      - `+ model`
+  - **ListLlmConfig**
+    - changes of response param
+      - `+ model`
+      - `+ data.model`
+
+### HuaweiCloud SDK NAT
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `UpdateNatGatewayToPeriod`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK RDS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `BatchDeleteInstance`
+    - `ShowIntelligentKillSessionStatistic`
+    - `ListPackLogInfos`
+    - `CompareConfiguration`
+    - `ResetConfiguration`
+    - `ShowAutoCesAlarm`
+    - `ListScheduleEvents`
+    - `BatchExecuteEvents`
+    - `ShowRebuildSlaveStatus`
+    - `CreateRebuildSlave`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SMN
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ShowKmsKey`
+    - `CreateKmsKey`
+    - `UpdateKmsKey`
+    - `DeleteKmsKey`
+    - `ListTopicsWithAssociatedResources`
+    - `SubscribeTopic`
+    - `UnsubscribeTopic`
+    - `ListCloudServices`
+    - `DownloadHttpSignCert`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTopics**
+    - changes of response param
+      - `+ topics.create_time`
+      - `+ topics.update_time`
+  - **ListTopicAttributes**
+    - changes of response param
+      - `+ attributes.create_time`
+      - `+ attributes.update_time`
+
+### HuaweiCloud SDK SWR
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `StartManualScanning`, `ListInstanceArtifactVulnerabilities`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowInstanceArtifact**
+    - changes of request param
+      - `+ with_scan_overview`
+    - changes of response param
+      - `+ scan_overview`
+  - **ListFeatureGates**
+    - changes of response param
+      - `+ enableArtifactScanning`
+  - **ListRepositoryTag**
+    - changes of request param
+      - `+ order_column`
+      - `+ order_type`
+    - changes of response param
+      - `+ has_more`
+  - **ShowInstanceNamespace**
+    - changes of response param
+      - `+ cve_allowlist`
+      - `+ metadata.auto_scan`
+      - `+ metadata.prevent_vul`
+      - `+ metadata.severity`
+  - **UpdateInstanceNamespace**
+    - changes of request param
+      - `+ cve_allowlist`
+      - `+ metadata.auto_scan`
+      - `+ metadata.prevent_vul`
+      - `+ metadata.severity`
+    - changes of response param
+      - `+ cve_allowlist`
+      - `+ metadata.auto_scan`
+      - `+ metadata.prevent_vul`
+      - `+ metadata.severity`
+  - **CreateInstanceNamespace**
+    - changes of request param
+      - `+ metadata.auto_scan`
+      - `+ metadata.prevent_vul`
+      - `+ metadata.severity`
+  - **ListInstanceNamespaces**
+    - changes of response param
+      - `+ cve_allowlist`
+      - `+ namespaces.cve_allowlist`
+      - `+ namespaces.metadata.auto_scan`
+      - `+ namespaces.metadata.prevent_vul`
+      - `+ namespaces.metadata.severity`
+  - **ShowInstanceReplicationPolicy**
+    - changes of response param
+      - `+ trigger.type: enum value [manual,scheduled,event_based]`
+  - **UpdateInstanceReplicationPolicy**
+    - changes of request param
+      - `+ trigger.type: enum value [manual,scheduled,event_based]`
+  - **CreateInstanceSignPolicy**
+    - changes of request param
+      - `+ trigger.type: enum value [manual,scheduled,event_based]`
+  - **ShowInstanceSignPolicy**
+    - changes of response param
+      - `+ trigger.type: enum value [manual,scheduled,event_based]`
+  - **UpdateInstanceSignPolicy**
+    - changes of request param
+      - `+ trigger.type: enum value [manual,scheduled,event_based]`
+  - **CreateInstanceRetentionPolicy**
+    - changes of request param
+      - `+ trigger.type: enum value [manual,scheduled,event_based]`
+  - **ShowInstanceRetentionPolicy**
+    - changes of response param
+      - `+ trigger.type: enum value [manual,scheduled,event_based]`
+  - **UpdateInstanceRetentionPolicy**
+    - changes of request param
+      - `+ trigger.type: enum value [manual,scheduled,event_based]`
+  - **CreateInstanceReplicationPolicy**
+    - changes of request param
+      - `+ trigger.type: enum value [manual,scheduled,event_based]`
+  - **ListInstanceReplicationPolicies**
+    - changes of response param
+      - `+ policies.trigger.type: enum value [manual,scheduled,event_based]`
+  - **ListInstanceSignPolicies**
+    - changes of response param
+      - `+ policies.trigger.type: enum value [manual,scheduled,event_based]`
+  - **ListInstanceRetentionPolicies**
+    - changes of response param
+      - `+ retentions.trigger.type: enum value [manual,scheduled,event_based]`
+
+### HuaweiCloud SDK VOD
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `ListCdnStatistics`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK WorkspaceApp
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFoldersAndFiles**
+    - changes of request param
+      - `+ limit`
+      - `- max_keys`
+
 # 3.1.174 2025-11-27
 
 ### HuaweiCloud SDK BSS

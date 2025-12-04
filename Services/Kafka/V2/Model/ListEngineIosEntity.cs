@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 支持的磁盘IO类型信息。
+    /// **参数解释**： 支持的磁盘IO类型信息。 **取值范围**： 不涉及。
     /// </summary>
     public class ListEngineIosEntity 
     {
 
         /// <summary>
-        /// 磁盘IO编码。
+        /// **参数解释**： 磁盘IO编码。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("io_spec", NullValueHandling = NullValueHandling.Ignore)]
         public string IoSpec { get; set; }
 
         /// <summary>
-        /// 磁盘类型。
+        /// **参数解释**： 磁盘类型。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
 
         /// <summary>
-        /// 可用区。
+        /// **参数解释**： 可用区。
         /// </summary>
         [JsonProperty("available_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> AvailableZones { get; set; }
 
         /// <summary>
-        /// 不可用区。
+        /// **参数解释**： 不可用区。
         /// </summary>
         [JsonProperty("unavailable_zones", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> UnavailableZones { get; set; }

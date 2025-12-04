@@ -23,6 +23,18 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public string AccessPolicy { get; set; }
 
         /// <summary>
+        /// topic的访问策略创建时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+        /// </summary>
+        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// topic的访问策略更新时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+        /// </summary>
+        [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdateTime { get; set; }
+
+        /// <summary>
         /// topic的简介
         /// </summary>
         [JsonProperty("introduction", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,6 +50,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             var sb = new StringBuilder();
             sb.Append("class TopicAttribute {\n");
             sb.Append("  accessPolicy: ").Append(AccessPolicy).Append("\n");
+            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("  introduction: ").Append(Introduction).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -58,6 +72,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             if (input == null) return false;
             if (this.AccessPolicy != input.AccessPolicy || (this.AccessPolicy != null && !this.AccessPolicy.Equals(input.AccessPolicy))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
             if (this.Introduction != input.Introduction || (this.Introduction != null && !this.Introduction.Equals(input.Introduction))) return false;
 
             return true;
@@ -72,6 +88,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             {
                 var hashCode = 41;
                 if (this.AccessPolicy != null) hashCode = hashCode * 59 + this.AccessPolicy.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 if (this.Introduction != null) hashCode = hashCode * 59 + this.Introduction.GetHashCode();
                 return hashCode;
             }

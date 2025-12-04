@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("repo_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? RepoCount { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("cve_allowlist", NullValueHandling = NullValueHandling.Ignore)]
+        public CVEAllowlist CveAllowlist { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  repoCount: ").Append(RepoCount).Append("\n");
+            sb.Append("  cveAllowlist: ").Append(CveAllowlist).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
             if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
             if (this.RepoCount != input.RepoCount || (this.RepoCount != null && !this.RepoCount.Equals(input.RepoCount))) return false;
+            if (this.CveAllowlist != input.CveAllowlist || (this.CveAllowlist != null && !this.CveAllowlist.Equals(input.CveAllowlist))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 if (this.RepoCount != null) hashCode = hashCode * 59 + this.RepoCount.GetHashCode();
+                if (this.CveAllowlist != null) hashCode = hashCode * 59 + this.CveAllowlist.GetHashCode();
                 return hashCode;
             }
         }

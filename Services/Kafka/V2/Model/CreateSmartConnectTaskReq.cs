@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     public class CreateSmartConnectTaskReq 
     {
         /// <summary>
-        /// SmartConnect任务的源端类型。
+        /// **参数解释**： SmartConnect任务的源端类型。 **约束限制**： 不涉及。 **取值范围**： - KAFKA_REPLICATOR_SOURCE：Kafka数据复制。 - NONE：不配置。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>SmartConnect任务的源端类型。</value>
+        /// <value>**参数解释**： SmartConnect任务的源端类型。 **约束限制**： 不涉及。 **取值范围**： - KAFKA_REPLICATOR_SOURCE：Kafka数据复制。 - NONE：不配置。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<SourceTypeEnum>))]
         public class SourceTypeEnum
         {
@@ -131,9 +131,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         }
 
         /// <summary>
-        /// SmartConnect任务的目标端类型。
+        /// **参数解释**： SmartConnect任务的目标端类型。 **约束限制**： 不涉及。 **取值范围**： - OBS_SINK：转储。 - NONE：不配置。 **默认取值**： 不涉及。
         /// </summary>
-        /// <value>SmartConnect任务的目标端类型。</value>
+        /// <value>**参数解释**： SmartConnect任务的目标端类型。 **约束限制**： 不涉及。 **取值范围**： - OBS_SINK：转储。 - NONE：不配置。 **默认取值**： 不涉及。</value>
         [JsonConverter(typeof(EnumClassConverter<SinkTypeEnum>))]
         public class SinkTypeEnum
         {
@@ -271,7 +271,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string TopicsRegex { get; set; }
 
         /// <summary>
-        /// SmartConnect任务的源端类型。
+        /// **参数解释**： SmartConnect任务的源端类型。 **约束限制**： 不涉及。 **取值范围**： - KAFKA_REPLICATOR_SOURCE：Kafka数据复制。 - NONE：不配置。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("source_type", NullValueHandling = NullValueHandling.Ignore)]
         public SourceTypeEnum SourceType { get; set; }
@@ -282,7 +282,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public SmartConnectTaskReqSourceConfig SourceTask { get; set; }
 
         /// <summary>
-        /// SmartConnect任务的目标端类型。
+        /// **参数解释**： SmartConnect任务的目标端类型。 **约束限制**： 不涉及。 **取值范围**： - OBS_SINK：转储。 - NONE：不配置。 **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("sink_type", NullValueHandling = NullValueHandling.Ignore)]
         public SinkTypeEnum SinkType { get; set; }

@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         [JsonProperty("api_key", NullValueHandling = NullValueHandling.Ignore)]
         public string ApiKey { get; set; }
 
+        /// <summary>
+        /// model参数
+        /// </summary>
+        [JsonProperty("model", NullValueHandling = NullValueHandling.Ignore)]
+        public string Model { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  llmUrl: ").Append(LlmUrl).Append("\n");
             sb.Append("  apiKey: ").Append(ApiKey).Append("\n");
+            sb.Append("  model: ").Append(Model).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.LlmUrl != input.LlmUrl || (this.LlmUrl != null && !this.LlmUrl.Equals(input.LlmUrl))) return false;
             if (this.ApiKey != input.ApiKey || (this.ApiKey != null && !this.ApiKey.Equals(input.ApiKey))) return false;
+            if (this.Model != input.Model || (this.Model != null && !this.Model.Equals(input.Model))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.LlmUrl != null) hashCode = hashCode * 59 + this.LlmUrl.GetHashCode();
                 if (this.ApiKey != null) hashCode = hashCode * 59 + this.ApiKey.GetHashCode();
+                if (this.Model != null) hashCode = hashCode * 59 + this.Model.GetHashCode();
                 return hashCode;
             }
         }

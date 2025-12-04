@@ -107,7 +107,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string ConsumerStrategy { get; set; }
 
         /// <summary>
-        /// 复制消息所使用的压缩算法。（仅源端类型为Kafka时需要填写） - none - gzip - snappy - lz4 - zstd 
+        /// **参数解释**： 压缩算法。（仅源端类型为Kafka时会显示） **约束限制**： 不涉及。 **取值范围**： - none - gzip - snappy - lz4 - zstd **默认取值**： 不涉及。
         /// </summary>
         [JsonProperty("compression_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CompressionType { get; set; }

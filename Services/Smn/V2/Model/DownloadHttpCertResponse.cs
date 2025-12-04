@@ -19,12 +19,6 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public string Body { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [SDKProperty("content-type", IsHeader = true)]
         [JsonProperty("content-type", NullValueHandling = NullValueHandling.Ignore)]
         public string ContentType { get; set; }
@@ -38,7 +32,6 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DownloadHttpCertResponse {\n");
-            sb.Append("  body: ").Append(Body).Append("\n");
             sb.Append("  contentType: ").Append(ContentType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -58,7 +51,6 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         public bool Equals(DownloadHttpCertResponse input)
         {
             if (input == null) return false;
-            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
             if (this.ContentType != input.ContentType || (this.ContentType != null && !this.ContentType.Equals(input.ContentType))) return false;
 
             return true;
@@ -72,7 +64,6 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 if (this.ContentType != null) hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 return hashCode;
             }

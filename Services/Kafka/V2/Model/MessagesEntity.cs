@@ -17,67 +17,67 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// Topic名称。
+        /// **参数解释**： Topic名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 消息所在的分区。
+        /// **参数解释**： 消息所在的分区。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }
 
         /// <summary>
-        /// 消息key。
+        /// **参数解释**： 消息key。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("key", NullValueHandling = NullValueHandling.Ignore)]
         public string Key { get; set; }
 
         /// <summary>
-        /// 消息内容。
+        /// **参数解释**： 消息内容。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
         public string Value { get; set; }
 
         /// <summary>
-        /// 消息大小。
+        /// **参数解释**： 消息大小。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("size", NullValueHandling = NullValueHandling.Ignore)]
         public int? Size { get; set; }
 
         /// <summary>
-        /// 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+        /// **参数解释**： 生产消息的时间。 格式为Unix时间戳。单位为毫秒。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("timestamp", NullValueHandling = NullValueHandling.Ignore)]
         public long? Timestamp { get; set; }
 
         /// <summary>
-        /// 大数据标识。
+        /// **参数解释**： 大数据标识。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("huge_message", NullValueHandling = NullValueHandling.Ignore)]
         public bool? HugeMessage { get; set; }
 
         /// <summary>
-        /// 消息偏移量。
+        /// **参数解释**： 消息偏移量。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("message_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? MessageOffset { get; set; }
 
         /// <summary>
-        /// 消息ID。
+        /// **参数解释**： 消息ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("message_id", NullValueHandling = NullValueHandling.Ignore)]
         public string MessageId { get; set; }
 
         /// <summary>
-        /// 应用ID。
+        /// **参数解释**： 应用ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("app_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AppId { get; set; }
 
         /// <summary>
-        /// 消息标签。
+        /// **参数解释**： 消息标签。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("tag", NullValueHandling = NullValueHandling.Ignore)]
         public string Tag { get; set; }

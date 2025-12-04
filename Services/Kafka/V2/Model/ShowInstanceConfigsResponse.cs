@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// kafka配置列表。
+        /// Kafka配置列表。
         /// </summary>
         [JsonProperty("kafka_configs", NullValueHandling = NullValueHandling.Ignore)]
         public List<InstanceConfig> KafkaConfigs { get; set; }

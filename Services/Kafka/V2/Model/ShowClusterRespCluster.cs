@@ -11,55 +11,55 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 集群基本信息。
+    /// **参数解释**： 集群基本信息。
     /// </summary>
     public class ShowClusterRespCluster 
     {
 
         /// <summary>
-        /// 控制器ID。
+        /// **参数解释**： 控制器ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("controller", NullValueHandling = NullValueHandling.Ignore)]
         public string Controller { get; set; }
 
         /// <summary>
-        /// 节点列表。
+        /// **参数解释**： 节点列表。
         /// </summary>
         [JsonProperty("brokers", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowClusterRespClusterBrokers> Brokers { get; set; }
 
         /// <summary>
-        /// 主题数量。
+        /// **参数解释**： 主题数量。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("topics_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TopicsCount { get; set; }
 
         /// <summary>
-        /// 分区数量。
+        /// **参数解释**： 分区数量。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("partitions_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? PartitionsCount { get; set; }
 
         /// <summary>
-        /// 在线分区数量。
+        /// **参数解释**： 在线分区数量。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("online_partitions_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? OnlinePartitionsCount { get; set; }
 
         /// <summary>
-        /// 副本数量。
+        /// **参数解释**： 副本数量。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("replicas_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? ReplicasCount { get; set; }
 
         /// <summary>
-        /// ISR（In-Sync Replicas） 副本总数。
+        /// **参数解释**： ISR（In-Sync Replicas） 副本总数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("isr_replicas_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? IsrReplicasCount { get; set; }
 
         /// <summary>
-        /// 消费组数量。
+        /// **参数解释**： 消费组数量。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("consumers_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? ConsumersCount { get; set; }

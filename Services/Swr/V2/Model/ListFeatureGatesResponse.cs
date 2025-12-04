@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("enableCombinationRetention", NullValueHandling = NullValueHandling.Ignore)]
         public bool? EnableCombinationRetention { get; set; }
 
+        /// <summary>
+        /// 是否支持制品扫描
+        /// </summary>
+        [JsonProperty("enableArtifactScanning", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableArtifactScanning { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("class ListFeatureGatesResponse {\n");
             sb.Append("  enableDomainName: ").Append(EnableDomainName).Append("\n");
             sb.Append("  enableCombinationRetention: ").Append(EnableCombinationRetention).Append("\n");
+            sb.Append("  enableArtifactScanning: ").Append(EnableArtifactScanning).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (input == null) return false;
             if (this.EnableDomainName != input.EnableDomainName || (this.EnableDomainName != null && !this.EnableDomainName.Equals(input.EnableDomainName))) return false;
             if (this.EnableCombinationRetention != input.EnableCombinationRetention || (this.EnableCombinationRetention != null && !this.EnableCombinationRetention.Equals(input.EnableCombinationRetention))) return false;
+            if (this.EnableArtifactScanning != input.EnableArtifactScanning || (this.EnableArtifactScanning != null && !this.EnableArtifactScanning.Equals(input.EnableArtifactScanning))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 var hashCode = 41;
                 if (this.EnableDomainName != null) hashCode = hashCode * 59 + this.EnableDomainName.GetHashCode();
                 if (this.EnableCombinationRetention != null) hashCode = hashCode * 59 + this.EnableCombinationRetention.GetHashCode();
+                if (this.EnableArtifactScanning != null) hashCode = hashCode * 59 + this.EnableArtifactScanning.GetHashCode();
                 return hashCode;
             }
         }

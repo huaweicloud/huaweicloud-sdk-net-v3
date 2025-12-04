@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
     {
 
         /// <summary>
-        /// 插件示例id
+        /// 插件实例id
         /// </summary>
         [SDKProperty("id", IsPath = true)]
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]

@@ -50,7 +50,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// IO信息。
         /// </summary>
         [JsonProperty("io", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListProductsRespIo> Io { get; set; }
+        public List<ShowInstanceExtendProductInfoRespIo> Io { get; set; }
 
         /// <summary>
         /// Kafka实例的基准带宽。

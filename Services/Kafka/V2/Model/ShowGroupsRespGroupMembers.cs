@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 消费组consumer地址。
+        /// **参数解释**： 消费组consumer地址。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("host", NullValueHandling = NullValueHandling.Ignore)]
         public string Host { get; set; }
 
         /// <summary>
-        /// consumer分配到的分区信息。
+        /// **参数解释**： consumer分配到的分区信息。
         /// </summary>
         [JsonProperty("assignment", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowGroupsRespGroupAssignment> Assignment { get; set; }
 
         /// <summary>
-        /// 消费组consumer的ID。
+        /// **参数解释**： 消费组consumer的ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("member_id", NullValueHandling = NullValueHandling.Ignore)]
         public string MemberId { get; set; }
 
         /// <summary>
-        /// 客户端ID。
+        /// **参数解释**： 客户端ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("client_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ClientId { get; set; }

@@ -2750,6 +2750,45 @@ namespace HuaweiCloud.SDK.Swr.V2
         }
         
         /// <summary>
+        /// 获取制品扫描的漏洞信息
+        ///
+        /// 获取制品扫描的漏洞信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstanceArtifactVulnerabilitiesResponse> ListInstanceArtifactVulnerabilitiesAsync(ListInstanceArtifactVulnerabilitiesRequest listInstanceArtifactVulnerabilitiesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactVulnerabilitiesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactVulnerabilitiesRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactVulnerabilitiesRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactVulnerabilitiesRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/vulnerabilities", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceArtifactVulnerabilitiesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listInstanceArtifactVulnerabilitiesResponse = JsonUtils.DeSerializeNull<ListInstanceArtifactVulnerabilitiesResponse>(response);
+            listInstanceArtifactVulnerabilitiesResponse.Body = JsonUtils.DeSerializeMap<string, VulnerabilityReports>(response);
+            return listInstanceArtifactVulnerabilitiesResponse;
+        }
+
+        public AsyncInvoker<ListInstanceArtifactVulnerabilitiesResponse> ListInstanceArtifactVulnerabilitiesAsyncInvoker(ListInstanceArtifactVulnerabilitiesRequest listInstanceArtifactVulnerabilitiesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactVulnerabilitiesRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactVulnerabilitiesRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactVulnerabilitiesRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(listInstanceArtifactVulnerabilitiesRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/vulnerabilities", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstanceArtifactVulnerabilitiesRequest);
+            return new AsyncInvoker<ListInstanceArtifactVulnerabilitiesResponse>(this, "GET", request, response =>
+            {
+                var listInstanceArtifactVulnerabilitiesResponse = JsonUtils.DeSerializeNull<ListInstanceArtifactVulnerabilitiesResponse>(response);
+                listInstanceArtifactVulnerabilitiesResponse.Body = JsonUtils.DeSerializeMap<string, VulnerabilityReports>(response);
+                return listInstanceArtifactVulnerabilitiesResponse;
+            });
+        }
+        
+        /// <summary>
         /// 获取制品版本列表
         ///
         /// 获取制品版本列表
@@ -4049,6 +4088,38 @@ namespace HuaweiCloud.SDK.Swr.V2
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{resource_type}/{resource_id}/{sub_resource_type}/resource-instances/count", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSubResourceInstancesCountRequest);
             return new AsyncInvoker<ShowSubResourceInstancesCountResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowSubResourceInstancesCountResponse>);
+        }
+        
+        /// <summary>
+        /// 手动启动制品扫描
+        ///
+        /// 手动启动制品扫描
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<StartManualScanningResponse> StartManualScanningAsync(StartManualScanningRequest startManualScanningRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(startManualScanningRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(startManualScanningRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(startManualScanningRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(startManualScanningRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/scan", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startManualScanningRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<StartManualScanningResponse>(response);
+        }
+
+        public AsyncInvoker<StartManualScanningResponse> StartManualScanningAsyncInvoker(StartManualScanningRequest startManualScanningRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(startManualScanningRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(startManualScanningRequest.NamespaceName, out var valueOfNamespaceName)) urlParam.Add("namespace_name", valueOfNamespaceName);
+            if (StringUtils.TryConvertToNonEmptyString(startManualScanningRequest.RepositoryName, out var valueOfRepositoryName)) urlParam.Add("repository_name", valueOfRepositoryName);
+            if (StringUtils.TryConvertToNonEmptyString(startManualScanningRequest.Reference, out var valueOfReference)) urlParam.Add("reference", valueOfReference);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/scan", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", startManualScanningRequest);
+            return new AsyncInvoker<StartManualScanningResponse>(this, "POST", request, JsonUtils.DeSerializeNull<StartManualScanningResponse>);
         }
         
         /// <summary>

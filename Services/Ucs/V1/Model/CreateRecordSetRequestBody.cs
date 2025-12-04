@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Ucs.V1.Model
         public int? Ttl { get; set; }
 
         /// <summary>
-        /// 解析记录的值，不同类型解析记录对应的值的规则不同，必须是合法IP信息
+        /// 解析记录的值，不同类型解析记录对应的值的规则不同
         /// </summary>
         [JsonProperty("records", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Records { get; set; }

@@ -167,7 +167,7 @@ namespace HuaweiCloud.SDK.MetaStudio.V1.Model
         public List<BackgroundConfigInfo> BackgroundConfig { get; set; }
 
         /// <summary>
-        /// 图层配置。
+        /// 图层配置。 &gt; * 视频编码格式采用VP8且数字人模型和输出视频的分辨率不一致时，该参数必须携带
         /// </summary>
         [JsonProperty("layer_config", NullValueHandling = NullValueHandling.Ignore)]
         public List<LayerConfig> LayerConfig { get; set; }

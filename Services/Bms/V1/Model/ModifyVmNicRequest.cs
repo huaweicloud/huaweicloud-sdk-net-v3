@@ -28,7 +28,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         [SDKProperty("body", IsBody = true)]
         [JsonProperty("body", NullValueHandling = NullValueHandling.Ignore)]
-        public BareMetalModifyPortRequest Body { get; set; }
+        public BareMetalModifyPortRequestBody Body { get; set; }
 
 
 

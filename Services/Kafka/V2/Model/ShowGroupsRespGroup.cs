@@ -11,43 +11,43 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 消费组信息。
+    /// **参数解释**： 消费组信息。
     /// </summary>
     public class ShowGroupsRespGroup 
     {
 
         /// <summary>
-        /// 消费组名称。
+        /// **参数解释**： 消费组名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
         /// <summary>
-        /// 消费组状态。包含以下状态： - Dead：消费组内没有任何成员，且没有任何元数据。 - Empty：消费组内没有任何成员，存在元数据。 - PreparingRebalance：准备开启rebalance。 - CompletingRebalance：所有成员加入group。 - Stable：消费组内成员可正常消费。
+        /// **参数解释**： 消费组状态。 **取值范围**： - Dead：消费组内没有任何成员，且没有任何元数据。 - Empty：消费组内没有任何成员，存在元数据。 - PreparingRebalance：准备开启rebalance。 - CompletingRebalance：所有成员加入group。 - Stable：消费组内成员可正常消费。
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
         public string State { get; set; }
 
         /// <summary>
-        /// 协调器编号。
+        /// **参数解释**： 协调器编号。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("coordinator_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? CoordinatorId { get; set; }
 
         /// <summary>
-        /// 消费者列表。
+        /// **参数解释**： 消费者列表。
         /// </summary>
         [JsonProperty("members", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowGroupsRespGroupMembers> Members { get; set; }
 
         /// <summary>
-        /// 消费进度。
+        /// **参数解释**： 消费进度。
         /// </summary>
         [JsonProperty("group_message_offsets", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowGroupsRespGroupGroupMessageOffsets> GroupMessageOffsets { get; set; }
 
         /// <summary>
-        /// 分区分配策略。
+        /// **参数解释**： 分区分配策略。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("assignment_strategy", NullValueHandling = NullValueHandling.Ignore)]
         public string AssignmentStrategy { get; set; }

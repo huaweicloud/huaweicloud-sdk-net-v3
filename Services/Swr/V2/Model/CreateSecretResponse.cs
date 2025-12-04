@@ -29,6 +29,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("X-Swr-Dockerlogin", NullValueHandling = NullValueHandling.Ignore)]
         public string XSwrDockerlogin { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("X-Swr-Expireat", IsHeader = true)]
+        [JsonProperty("X-Swr-Expireat", NullValueHandling = NullValueHandling.Ignore)]
+        public string XSwrExpireat { get; set; }
+
 
 
         /// <summary>
@@ -40,6 +47,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             sb.Append("class CreateSecretResponse {\n");
             sb.Append("  auths: ").Append(Auths).Append("\n");
             sb.Append("  xSwrDockerlogin: ").Append(XSwrDockerlogin).Append("\n");
+            sb.Append("  xSwrExpireat: ").Append(XSwrExpireat).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -60,6 +68,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             if (input == null) return false;
             if (this.Auths != input.Auths || (this.Auths != null && input.Auths != null && !this.Auths.SequenceEqual(input.Auths))) return false;
             if (this.XSwrDockerlogin != input.XSwrDockerlogin || (this.XSwrDockerlogin != null && !this.XSwrDockerlogin.Equals(input.XSwrDockerlogin))) return false;
+            if (this.XSwrExpireat != input.XSwrExpireat || (this.XSwrExpireat != null && !this.XSwrExpireat.Equals(input.XSwrExpireat))) return false;
 
             return true;
         }
@@ -74,6 +83,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
                 var hashCode = 41;
                 if (this.Auths != null) hashCode = hashCode * 59 + this.Auths.GetHashCode();
                 if (this.XSwrDockerlogin != null) hashCode = hashCode * 59 + this.XSwrDockerlogin.GetHashCode();
+                if (this.XSwrExpireat != null) hashCode = hashCode * 59 + this.XSwrExpireat.GetHashCode();
                 return hashCode;
             }
         }

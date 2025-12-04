@@ -40,6 +40,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         [JsonProperty("forwards_size", NullValueHandling = NullValueHandling.Ignore)]
         public int? ForwardsSize { get; set; }
 
+        /// <summary>
+        /// 分页查询时，若上次查询的返回结果中包含该字段，需要增加该字段参与分页查询。
+        /// </summary>
+        [JsonProperty("scroll_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ScrollId { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  backwardsSize: ").Append(BackwardsSize).Append("\n");
             sb.Append("  forwardsSize: ").Append(ForwardsSize).Append("\n");
+            sb.Append("  scrollId: ").Append(ScrollId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +82,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
             if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
             if (this.BackwardsSize != input.BackwardsSize || (this.BackwardsSize != null && !this.BackwardsSize.Equals(input.BackwardsSize))) return false;
             if (this.ForwardsSize != input.ForwardsSize || (this.ForwardsSize != null && !this.ForwardsSize.Equals(input.ForwardsSize))) return false;
+            if (this.ScrollId != input.ScrollId || (this.ScrollId != null && !this.ScrollId.Equals(input.ScrollId))) return false;
 
             return true;
         }
@@ -91,6 +99,7 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
                 if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 if (this.BackwardsSize != null) hashCode = hashCode * 59 + this.BackwardsSize.GetHashCode();
                 if (this.ForwardsSize != null) hashCode = hashCode * 59 + this.ForwardsSize.GetHashCode();
+                if (this.ScrollId != null) hashCode = hashCode * 59 + this.ScrollId.GetHashCode();
                 return hashCode;
             }
         }

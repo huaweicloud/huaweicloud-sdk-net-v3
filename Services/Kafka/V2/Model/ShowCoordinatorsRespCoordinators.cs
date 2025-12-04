@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 协调器信息。
+    /// **参数解释**： 协调器信息。
     /// </summary>
     public class ShowCoordinatorsRespCoordinators 
     {
 
         /// <summary>
-        /// 消费组ID。
+        /// **参数解释**： 消费组ID。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
         public string GroupId { get; set; }
 
         /// <summary>
-        /// 对应协调器的broker id。
+        /// **参数解释**： 对应协调器的broker id。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int? Id { get; set; }
 
         /// <summary>
-        /// 对应协调器的地址。
+        /// **参数解释**： 对应协调器的地址。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("host", NullValueHandling = NullValueHandling.Ignore)]
         public string Host { get; set; }
 
         /// <summary>
-        /// 端口号。
+        /// **参数解释**： 端口号。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("port", NullValueHandling = NullValueHandling.Ignore)]
         public int? Port { get; set; }

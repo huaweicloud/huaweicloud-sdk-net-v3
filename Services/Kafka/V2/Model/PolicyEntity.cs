@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     public class PolicyEntity 
     {
         /// <summary>
-        /// 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
+        /// 权限类型。 - all：拥有发布、订阅权限。 - pub：拥有发布权限。 - sub：拥有订阅权限。
         /// </summary>
-        /// <value>权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。</value>
+        /// <value>权限类型。 - all：拥有发布、订阅权限。 - pub：拥有发布权限。 - sub：拥有订阅权限。</value>
         [JsonConverter(typeof(EnumClassConverter<AccessPolicyEnum>))]
         public class AccessPolicyEnum
         {
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string UserName { get; set; }
 
         /// <summary>
-        /// 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
+        /// 权限类型。 - all：拥有发布、订阅权限。 - pub：拥有发布权限。 - sub：拥有订阅权限。
         /// </summary>
         [JsonProperty("access_policy", NullValueHandling = NullValueHandling.Ignore)]
         public AccessPolicyEnum AccessPolicy { get; set; }

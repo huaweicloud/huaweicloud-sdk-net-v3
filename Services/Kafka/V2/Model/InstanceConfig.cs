@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     public class InstanceConfig 
     {
         /// <summary>
-        /// 配置类型：static/dynamic。
+        /// **参数解释**： 配置类型。 **取值范围**： - dynamic：动态。 - static：静态。
         /// </summary>
-        /// <value>配置类型：static/dynamic。</value>
+        /// <value>**参数解释**： 配置类型。 **取值范围**： - dynamic：动态。 - static：静态。</value>
         [JsonConverter(typeof(EnumClassConverter<ConfigTypeEnum>))]
         public class ConfigTypeEnum
         {
@@ -150,7 +150,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string DefaultValue { get; set; }
 
         /// <summary>
-        /// 配置类型：static/dynamic。
+        /// **参数解释**： 配置类型。 **取值范围**： - dynamic：动态。 - static：静态。
         /// </summary>
         [JsonProperty("config_type", NullValueHandling = NullValueHandling.Ignore)]
         public ConfigTypeEnum ConfigType { get; set; }
@@ -161,7 +161,7 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Value { get; set; }
 
         /// <summary>
-        /// 值类型。
+        /// **参数解释**： 值类型。 **取值范围**： - string：字符串类型。 - integer：整数类型。 - enum：枚举值类型。
         /// </summary>
         [JsonProperty("value_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ValueType { get; set; }

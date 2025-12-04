@@ -11,13 +11,13 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 实例支持的功能特性。
+    /// **参数解释**： 实例支持的功能特性。 **取值范围**： 不涉及。
     /// </summary>
     public class ListEngineSupportFeaturesEntity 
     {
 
         /// <summary>
-        /// 功能名称。
+        /// **参数解释**： 功能名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

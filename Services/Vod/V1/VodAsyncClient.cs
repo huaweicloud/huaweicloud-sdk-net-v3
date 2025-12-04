@@ -836,6 +836,30 @@ namespace HuaweiCloud.SDK.Vod.V1
         }
         
         /// <summary>
+        /// 查询CDN统计信息
+        ///
+        /// 查询CDN的统计数据，包括流量、峰值带宽、请求总数、请求命中率、流量命中率。查询存在1小时误差。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListCdnStatisticsResponse> ListCdnStatisticsAsync(ListCdnStatisticsRequest listCdnStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/cdn-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnStatisticsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListCdnStatisticsResponse>(response);
+        }
+
+        public AsyncInvoker<ListCdnStatisticsResponse> ListCdnStatisticsAsyncInvoker(ListCdnStatisticsRequest listCdnStatisticsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/asset/cdn-statistics", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listCdnStatisticsRequest);
+            return new AsyncInvoker<ListCdnStatisticsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListCdnStatisticsResponse>);
+        }
+        
+        /// <summary>
         /// 查询域名播放日志
         ///
         /// 查询指定点播域名某段时间内在CDN的相关日志。

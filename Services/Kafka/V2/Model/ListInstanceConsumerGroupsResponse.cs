@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 所有的消费组。
+        /// **参数解释**： 所有消费组的信息。
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
         public List<GroupInfoSimple> Groups { get; set; }
 
         /// <summary>
-        /// 所有的消费组总数。
+        /// **参数解释**： 消费组总数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("total", NullValueHandling = NullValueHandling.Ignore)]
         public int? Total { get; set; }

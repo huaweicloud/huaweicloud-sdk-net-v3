@@ -22,6 +22,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
         public NamespaceMetadata Metadata { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("cve_allowlist", NullValueHandling = NullValueHandling.Ignore)]
+        public UpdateCVEAllowlistRequest CveAllowlist { get; set; }
+
 
 
         /// <summary>
@@ -32,6 +38,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             var sb = new StringBuilder();
             sb.Append("class UpdateNamespaceRequestBody {\n");
             sb.Append("  metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  cveAllowlist: ").Append(CveAllowlist).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -51,6 +58,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             if (input == null) return false;
             if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.CveAllowlist != input.CveAllowlist || (this.CveAllowlist != null && !this.CveAllowlist.Equals(input.CveAllowlist))) return false;
 
             return true;
         }
@@ -64,6 +72,7 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
             {
                 var hashCode = 41;
                 if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.CveAllowlist != null) hashCode = hashCode * 59 + this.CveAllowlist.GetHashCode();
                 return hashCode;
             }
         }

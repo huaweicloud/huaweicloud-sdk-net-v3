@@ -52,6 +52,18 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         [JsonProperty("topic_id", NullValueHandling = NullValueHandling.Ignore)]
         public string TopicId { get; set; }
 
+        /// <summary>
+        /// 创建时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+        /// </summary>
+        [JsonProperty("create_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// 更新时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+        /// </summary>
+        [JsonProperty("update_time", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdateTime { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +79,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             sb.Append("  pushPolicy: ").Append(PushPolicy).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
             sb.Append("  topicId: ").Append(TopicId).Append("\n");
+            sb.Append("  createTime: ").Append(CreateTime).Append("\n");
+            sb.Append("  updateTime: ").Append(UpdateTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +105,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
             if (this.PushPolicy != input.PushPolicy || (this.PushPolicy != null && !this.PushPolicy.Equals(input.PushPolicy))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
             if (this.TopicId != input.TopicId || (this.TopicId != null && !this.TopicId.Equals(input.TopicId))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
             return true;
         }
@@ -109,6 +125,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
                 if (this.PushPolicy != null) hashCode = hashCode * 59 + this.PushPolicy.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 if (this.TopicId != null) hashCode = hashCode * 59 + this.TopicId.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

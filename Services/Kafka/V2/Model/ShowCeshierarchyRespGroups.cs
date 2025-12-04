@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 消费组名称。
+        /// **参数解释**： 消费组名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Topic信息。
+        /// **参数解释**： Topic信息。
         /// </summary>
         [JsonProperty("queues", NullValueHandling = NullValueHandling.Ignore)]
         public List<ShowCeshierarchyRespQueues1> Queues { get; set; }

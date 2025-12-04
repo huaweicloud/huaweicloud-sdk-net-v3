@@ -17,16 +17,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 表示按需付费的产品列表。
+        /// **参数解释**： 表示按需付费的产品列表。
         /// </summary>
         [JsonProperty("Hourly", NullValueHandling = NullValueHandling.Ignore)]
         public List<ListProductsRespHourly> Hourly { get; set; }
 
         /// <summary>
-        /// 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的Kafka实例。
+        /// **参数解释**： 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的Kafka实例。
         /// </summary>
         [JsonProperty("Monthly", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ListProductsRespHourly> Monthly { get; set; }
+        public List<ListProductsRespMonthly> Monthly { get; set; }
 
 
 

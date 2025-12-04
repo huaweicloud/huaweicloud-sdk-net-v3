@@ -11,31 +11,31 @@ using HuaweiCloud.SDK.Core;
 namespace HuaweiCloud.SDK.Kafka.V2.Model
 {
     /// <summary>
-    /// 实例支持的功能属性描述。
+    /// **参数解释**： 实例支持的功能属性描述。
     /// </summary>
     public class ListEngineSupportFeaturesPropertiesEntity 
     {
 
         /// <summary>
-        /// 转储功能的最大任务数。
+        /// **参数解释**： Smart Connect的最大任务数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("max_task", NullValueHandling = NullValueHandling.Ignore)]
         public string MaxTask { get; set; }
 
         /// <summary>
-        /// 转储功能的最小任务数。
+        /// **参数解释**： Smart Connect的最小任务数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("min_task", NullValueHandling = NullValueHandling.Ignore)]
         public string MinTask { get; set; }
 
         /// <summary>
-        /// 转储功能的最大节点数。
+        /// **参数解释**： Smart Connect的最大节点数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("max_node", NullValueHandling = NullValueHandling.Ignore)]
         public string MaxNode { get; set; }
 
         /// <summary>
-        /// 转储功能的最小节点数。
+        /// **参数解释**： Smart Connect的最小节点数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("min_node", NullValueHandling = NullValueHandling.Ignore)]
         public string MinNode { get; set; }

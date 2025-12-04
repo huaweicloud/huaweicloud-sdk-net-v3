@@ -29,27 +29,27 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         public string Client { get; set; }
 
         /// <summary>
-        /// 是否使用用户默认设置。   - 是，表示对全部用户限流。此时不能同时设置用户名。   - 否，表示对特定用户限流。此时需要设置用户名。
+        /// 是否使用用户默认设置。   - 是：表示对全部用户限流。此时不能同时设置用户名。   - 否：表示对特定用户限流。此时需要设置用户名。
         /// </summary>
-        [JsonProperty("user-default", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("user_default", NullValueHandling = NullValueHandling.Ignore)]
         public bool? UserDefault { get; set; }
 
         /// <summary>
-        /// 是否使用客户端默认设置。   - 是，表示对全部客户端限流。此时不能设置客户端ID。   - 否，表示对特定客户端限流。此时需要设置客户端ID。
+        /// 是否使用客户端默认设置。   - 是：表示对全部客户端限流。此时不能设置客户端ID。   - 否：表示对特定客户端限流。此时需要设置客户端ID。
         /// </summary>
-        [JsonProperty("client-default", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("client_default", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ClientDefault { get; set; }
 
         /// <summary>
         /// 生产上限速率（单位为B/s）。
         /// </summary>
-        [JsonProperty("producer-byte-rate", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("producer_byte_rate", NullValueHandling = NullValueHandling.Ignore)]
         public long? ProducerByteRate { get; set; }
 
         /// <summary>
         /// 消费上限速率（单位为B/s）。  &gt; “生产上限速率”和“消费上限速率”不可同时为空。
         /// </summary>
-        [JsonProperty("consumer-byte-rate", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("consumer_byte_rate", NullValueHandling = NullValueHandling.Ignore)]
         public long? ConsumerByteRate { get; set; }
 
 

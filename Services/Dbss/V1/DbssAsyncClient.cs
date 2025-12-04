@@ -1188,7 +1188,7 @@ namespace HuaweiCloud.SDK.Dbss.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/audit/{instance_id}/reports/{id}/download", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadAuditReportRequest);
             var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerializeNull<DownloadAuditReportResponse>(response);
+            return JsonUtils.DeSerialize<DownloadAuditReportResponse>(response);
         }
 
         public AsyncInvoker<DownloadAuditReportResponse> DownloadAuditReportAsyncInvoker(DownloadAuditReportRequest downloadAuditReportRequest)
@@ -1198,7 +1198,7 @@ namespace HuaweiCloud.SDK.Dbss.V1
             if (StringUtils.TryConvertToNonEmptyString(downloadAuditReportRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/audit/{instance_id}/reports/{id}/download", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadAuditReportRequest);
-            return new AsyncInvoker<DownloadAuditReportResponse>(this, "GET", request, JsonUtils.DeSerializeNull<DownloadAuditReportResponse>);
+            return new AsyncInvoker<DownloadAuditReportResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadAuditReportResponse>);
         }
         
         /// <summary>
@@ -3957,7 +3957,7 @@ namespace HuaweiCloud.SDK.Dbss.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/audit/{instance_id}/agents/{agent_id}/download", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadAuditAgentNewRequest);
             var response = await DoHttpRequestAsync("GET", request);
-            return JsonUtils.DeSerializeNull<DownloadAuditAgentNewResponse>(response);
+            return JsonUtils.DeSerialize<DownloadAuditAgentNewResponse>(response);
         }
 
         public AsyncInvoker<DownloadAuditAgentNewResponse> DownloadAuditAgentNewAsyncInvoker(DownloadAuditAgentNewRequest downloadAuditAgentNewRequest)
@@ -3967,7 +3967,7 @@ namespace HuaweiCloud.SDK.Dbss.V1
             if (StringUtils.TryConvertToNonEmptyString(downloadAuditAgentNewRequest.AgentId, out var valueOfAgentId)) urlParam.Add("agent_id", valueOfAgentId);
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/audit/{instance_id}/agents/{agent_id}/download", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadAuditAgentNewRequest);
-            return new AsyncInvoker<DownloadAuditAgentNewResponse>(this, "GET", request, JsonUtils.DeSerializeNull<DownloadAuditAgentNewResponse>);
+            return new AsyncInvoker<DownloadAuditAgentNewResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadAuditAgentNewResponse>);
         }
         
         /// <summary>

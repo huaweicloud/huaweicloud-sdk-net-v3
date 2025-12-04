@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
     {
 
         /// <summary>
-        /// 分区编号。
+        /// **参数解释**： 分区编号。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("partition", NullValueHandling = NullValueHandling.Ignore)]
         public int? Partition { get; set; }
 
         /// <summary>
-        /// 剩余可消费消息数，即消息堆积数。
+        /// **参数解释**： 剩余可消费消息数，即消息堆积数。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("lag", NullValueHandling = NullValueHandling.Ignore)]
         public long? Lag { get; set; }
 
         /// <summary>
-        /// Topic名称。
+        /// **参数解释**： Topic名称。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("topic", NullValueHandling = NullValueHandling.Ignore)]
         public string Topic { get; set; }
 
         /// <summary>
-        /// 当前消费进度。
+        /// **参数解释**： 当前消费进度。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("message_current_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? MessageCurrentOffset { get; set; }
 
         /// <summary>
-        /// 最大消息位置（LEO）。
+        /// **参数解释**： 最大消息位置（LEO）。 **取值范围**： 不涉及。
         /// </summary>
         [JsonProperty("message_log_end_offset", NullValueHandling = NullValueHandling.Ignore)]
         public long? MessageLogEndOffset { get; set; }
