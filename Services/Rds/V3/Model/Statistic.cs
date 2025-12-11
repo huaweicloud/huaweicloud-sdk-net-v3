@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// 由SQL的语法解析树计算出的内部哈希码。
         /// </summary>
         [JsonProperty("query_id", NullValueHandling = NullValueHandling.Ignore)]
-        public long? QueryId { get; set; }
+        public string QueryId { get; set; }
 
         /// <summary>
         /// 调用次数
@@ -55,7 +55,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// <summary>
         /// 是否可以执行sql限流
         /// </summary>
-        [JsonProperty("can_use", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("canUse", NullValueHandling = NullValueHandling.Ignore)]
         public double? CanUse { get; set; }
 
 

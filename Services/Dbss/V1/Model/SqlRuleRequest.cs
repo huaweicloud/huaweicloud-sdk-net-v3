@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public int? Size { get; set; }
 
         /// <summary>
-        /// 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
+        /// 风险级别 - HIGH：高 - MEDIUM：中 - LOW：低 - NO_RISK：无风险
         /// </summary>
         [JsonProperty("risk_levels", NullValueHandling = NullValueHandling.Ignore)]
         public string RiskLevels { get; set; }

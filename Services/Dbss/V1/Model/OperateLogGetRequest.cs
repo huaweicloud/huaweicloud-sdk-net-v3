@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class OperateLogGetRequest 
     {
         /// <summary>
-        /// 执行结果 - success - fail
+        /// 执行结果 - success：成功 - fail：失败
         /// </summary>
-        /// <value>执行结果 - success - fail</value>
+        /// <value>执行结果 - success：成功 - fail：失败</value>
         [JsonConverter(typeof(EnumClassConverter<ResultEnum>))]
         public class ResultEnum
         {
@@ -144,13 +144,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string UserName { get; set; }
 
         /// <summary>
-        /// 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
+        /// 动作名称 - CREATE：创建 - DELETE：删除 - DOWNLOAD：下载 - UPDATE：更新
         /// </summary>
         [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
         public string Action { get; set; }
 
         /// <summary>
-        /// 执行结果 - success - fail
+        /// 执行结果 - success：成功 - fail：失败
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
         public ResultEnum Result { get; set; }

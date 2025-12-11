@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("can_upgrade", NullValueHandling = NullValueHandling.Ignore)]
         public bool? CanUpgrade { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("risk", NullValueHandling = NullValueHandling.Ignore)]
+        public ProxyEngineRisk Risk { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  currentVersion: ").Append(CurrentVersion).Append("\n");
             sb.Append("  latestVersion: ").Append(LatestVersion).Append("\n");
             sb.Append("  canUpgrade: ").Append(CanUpgrade).Append("\n");
+            sb.Append("  risk: ").Append(Risk).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.CurrentVersion != input.CurrentVersion || (this.CurrentVersion != null && !this.CurrentVersion.Equals(input.CurrentVersion))) return false;
             if (this.LatestVersion != input.LatestVersion || (this.LatestVersion != null && !this.LatestVersion.Equals(input.LatestVersion))) return false;
             if (this.CanUpgrade != input.CanUpgrade || (this.CanUpgrade != null && !this.CanUpgrade.Equals(input.CanUpgrade))) return false;
+            if (this.Risk != input.Risk || (this.Risk != null && !this.Risk.Equals(input.Risk))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.CurrentVersion != null) hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
                 if (this.LatestVersion != null) hashCode = hashCode * 59 + this.LatestVersion.GetHashCode();
                 if (this.CanUpgrade != null) hashCode = hashCode * 59 + this.CanUpgrade.GetHashCode();
+                if (this.Risk != null) hashCode = hashCode * 59 + this.Risk.GetHashCode();
                 return hashCode;
             }
         }

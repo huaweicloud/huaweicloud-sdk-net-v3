@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 参数组名称是否存在。 - true：参数组名称存在 - false：参数组名称不存在
+        /// **参数解释：** 参数组名称是否存在。 **取值范围：** - true：参数组名称存在。 - false：参数组名称不存在。
         /// </summary>
         [JsonProperty("is_existed", NullValueHandling = NullValueHandling.Ignore)]
         public bool? IsExisted { get; set; }

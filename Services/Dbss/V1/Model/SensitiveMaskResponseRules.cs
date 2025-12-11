@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 规则类型
+        /// 规则类型 - BUILD_IN：系统内置 - USER_DEFINE：自定义
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string MaskValue { get; set; }
 
         /// <summary>
-        /// 规则状态
+        /// 规则状态 - ON：启用 - OFF：禁用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }

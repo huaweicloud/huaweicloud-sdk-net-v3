@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public int? Vcpus { get; set; }
 
         /// <summary>
-        /// 可用区类型 - DEDICATED - DEC - EDGE
+        /// 可用区类型 - DEDICATED: 大网 - DEC: 边缘小站 - EDGE: 专属
         /// </summary>
         [JsonProperty("az_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AzType { get; set; }

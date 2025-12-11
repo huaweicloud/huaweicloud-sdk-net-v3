@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string AgentId { get; set; }
 
         /// <summary>
-        /// agent 类型
+        /// agent 类型 - DB: 数据库端 - APP: 应用端
         /// </summary>
         [JsonProperty("agent_type", NullValueHandling = NullValueHandling.Ignore)]
         public string AgentType { get; set; }
@@ -53,7 +53,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public int? CpuThreshold { get; set; }
 
         /// <summary>
-        /// agent状态
+        /// agent状态 - 1：开启 - 0：关闭
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public int? Status { get; set; }
@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string DbName { get; set; }
 
         /// <summary>
-        /// 数据流量抓取状态
+        /// 数据流量抓取状态 - 1：运行中 - 2：休眠中 - 3：已停止 - 4：异常
         /// </summary>
         [JsonProperty("datacap_status", NullValueHandling = NullValueHandling.Ignore)]
         public int? DatacapStatus { get; set; }

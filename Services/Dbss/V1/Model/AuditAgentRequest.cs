@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class AuditAgentRequest 
     {
         /// <summary>
-        /// agent OS类型: - LINUX64_X86 - LINUX64_ARM - WINDOWS64
+        /// agent OS类型: - LINUX64_X86：LINUX64_X86 - LINUX64_ARM：LINUX64_ARM - WINDOWS64：WINDOWS64
         /// </summary>
-        /// <value>agent OS类型: - LINUX64_X86 - LINUX64_ARM - WINDOWS64</value>
+        /// <value>agent OS类型: - LINUX64_X86：LINUX64_X86 - LINUX64_ARM：LINUX64_ARM - WINDOWS64：WINDOWS64</value>
         [JsonConverter(typeof(EnumClassConverter<AgentOsEnum>))]
         public class AgentOsEnum
         {
@@ -162,7 +162,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string AgentType { get; set; }
 
         /// <summary>
-        /// agent OS类型: - LINUX64_X86 - LINUX64_ARM - WINDOWS64
+        /// agent OS类型: - LINUX64_X86：LINUX64_X86 - LINUX64_ARM：LINUX64_ARM - WINDOWS64：WINDOWS64
         /// </summary>
         [JsonProperty("agent_os", NullValueHandling = NullValueHandling.Ignore)]
         public AgentOsEnum AgentOs { get; set; }

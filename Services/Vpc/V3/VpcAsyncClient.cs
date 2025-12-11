@@ -371,6 +371,30 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 创建子网预留网段
+        ///
+        /// 子网预留网段是子网网段范围的IP网段，此IP网段内的IP不会被子网内的实例占用。用户可以通过创建子网预留网段来预留某个IP网段，用于后续的特殊场景使用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateVirsubnetCidrReservationResponse> CreateVirsubnetCidrReservationAsync(CreateVirsubnetCidrReservationRequest createVirsubnetCidrReservationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnet-cidr-reservations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createVirsubnetCidrReservationRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CreateVirsubnetCidrReservationResponse>(response);
+        }
+
+        public AsyncInvoker<CreateVirsubnetCidrReservationResponse> CreateVirsubnetCidrReservationAsyncInvoker(CreateVirsubnetCidrReservationRequest createVirsubnetCidrReservationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnet-cidr-reservations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createVirsubnetCidrReservationRequest);
+            return new AsyncInvoker<CreateVirsubnetCidrReservationResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateVirsubnetCidrReservationResponse>);
+        }
+        
+        /// <summary>
         /// 删除端口资源标签
         ///
         /// 删除指定端口的标签信息
@@ -554,6 +578,32 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteTrafficMirrorSessionRequest);
             return new AsyncInvoker<DeleteTrafficMirrorSessionResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteTrafficMirrorSessionResponse>);
+        }
+        
+        /// <summary>
+        /// 删除子网预留网段
+        ///
+        /// 当您已创建的子网预留网段不再使用时，您可以通过调用该接口删除子网预留网段资源。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteVirsubnetCidrReservationResponse> DeleteVirsubnetCidrReservationAsync(DeleteVirsubnetCidrReservationRequest deleteVirsubnetCidrReservationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteVirsubnetCidrReservationRequest.VirsubnetCidrReservationId, out var valueOfVirsubnetCidrReservationId)) urlParam.Add("virsubnet_cidr_reservation_id", valueOfVirsubnetCidrReservationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnet-cidr-reservations/{virsubnet_cidr_reservation_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVirsubnetCidrReservationRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteVirsubnetCidrReservationResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteVirsubnetCidrReservationResponse> DeleteVirsubnetCidrReservationAsyncInvoker(DeleteVirsubnetCidrReservationRequest deleteVirsubnetCidrReservationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteVirsubnetCidrReservationRequest.VirsubnetCidrReservationId, out var valueOfVirsubnetCidrReservationId)) urlParam.Add("virsubnet_cidr_reservation_id", valueOfVirsubnetCidrReservationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnet-cidr-reservations/{virsubnet_cidr_reservation_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteVirsubnetCidrReservationRequest);
+            return new AsyncInvoker<DeleteVirsubnetCidrReservationResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteVirsubnetCidrReservationResponse>);
         }
         
         /// <summary>
@@ -748,6 +798,30 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listTrafficMirrorSessionsRequest);
             return new AsyncInvoker<ListTrafficMirrorSessionsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListTrafficMirrorSessionsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询子网预留网段列表
+        ///
+        /// 当您的子网预留网段创建成功后，您可以通过调用该接口查询所有子网预留网段信息，包括子网预留网段名称、IP网段等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListVirsubnetCidrReservationsResponse> ListVirsubnetCidrReservationsAsync(ListVirsubnetCidrReservationsRequest listVirsubnetCidrReservationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnet-cidr-reservations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVirsubnetCidrReservationsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListVirsubnetCidrReservationsResponse>(response);
+        }
+
+        public AsyncInvoker<ListVirsubnetCidrReservationsResponse> ListVirsubnetCidrReservationsAsyncInvoker(ListVirsubnetCidrReservationsRequest listVirsubnetCidrReservationsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnet-cidr-reservations", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listVirsubnetCidrReservationsRequest);
+            return new AsyncInvoker<ListVirsubnetCidrReservationsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListVirsubnetCidrReservationsResponse>);
         }
         
         /// <summary>
@@ -1034,6 +1108,32 @@ namespace HuaweiCloud.SDK.Vpc.V3
         }
         
         /// <summary>
+        /// 查询子网预留网段
+        ///
+        /// 当您的子网预留网段创建成功后，您可以通过调用该接口查询单个子网预留网段的详细信息，包括子网预留网段的名称、IP网段等。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowVirsubnetCidrReservationResponse> ShowVirsubnetCidrReservationAsync(ShowVirsubnetCidrReservationRequest showVirsubnetCidrReservationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVirsubnetCidrReservationRequest.VirsubnetCidrReservationId, out var valueOfVirsubnetCidrReservationId)) urlParam.Add("virsubnet_cidr_reservation_id", valueOfVirsubnetCidrReservationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnet-cidr-reservations/{virsubnet_cidr_reservation_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVirsubnetCidrReservationRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowVirsubnetCidrReservationResponse>(response);
+        }
+
+        public AsyncInvoker<ShowVirsubnetCidrReservationResponse> ShowVirsubnetCidrReservationAsyncInvoker(ShowVirsubnetCidrReservationRequest showVirsubnetCidrReservationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showVirsubnetCidrReservationRequest.VirsubnetCidrReservationId, out var valueOfVirsubnetCidrReservationId)) urlParam.Add("virsubnet_cidr_reservation_id", valueOfVirsubnetCidrReservationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnet-cidr-reservations/{virsubnet_cidr_reservation_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showVirsubnetCidrReservationRequest);
+            return new AsyncInvoker<ShowVirsubnetCidrReservationResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowVirsubnetCidrReservationResponse>);
+        }
+        
+        /// <summary>
         /// 更新安全组
         ///
         /// 更新安全组
@@ -1161,6 +1261,32 @@ namespace HuaweiCloud.SDK.Vpc.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/traffic-mirror-sessions/{traffic_mirror_session_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateTrafficMirrorSessionRequest);
             return new AsyncInvoker<UpdateTrafficMirrorSessionResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateTrafficMirrorSessionResponse>);
+        }
+        
+        /// <summary>
+        /// 更新子网预留网段
+        ///
+        /// 当您的子网预留网段创建成功后，您可以通过调用该接口更新子网预留网段的基本信息，包括子网预留网段的名称、描述信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateVirsubnetCidrReservationResponse> UpdateVirsubnetCidrReservationAsync(UpdateVirsubnetCidrReservationRequest updateVirsubnetCidrReservationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateVirsubnetCidrReservationRequest.VirsubnetCidrReservationId, out var valueOfVirsubnetCidrReservationId)) urlParam.Add("virsubnet_cidr_reservation_id", valueOfVirsubnetCidrReservationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnet-cidr-reservations/{virsubnet_cidr_reservation_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVirsubnetCidrReservationRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateVirsubnetCidrReservationResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateVirsubnetCidrReservationResponse> UpdateVirsubnetCidrReservationAsyncInvoker(UpdateVirsubnetCidrReservationRequest updateVirsubnetCidrReservationRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateVirsubnetCidrReservationRequest.VirsubnetCidrReservationId, out var valueOfVirsubnetCidrReservationId)) urlParam.Add("virsubnet_cidr_reservation_id", valueOfVirsubnetCidrReservationId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/vpc/virsubnet-cidr-reservations/{virsubnet_cidr_reservation_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateVirsubnetCidrReservationRequest);
+            return new AsyncInvoker<UpdateVirsubnetCidrReservationResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateVirsubnetCidrReservationResponse>);
         }
         
         /// <summary>

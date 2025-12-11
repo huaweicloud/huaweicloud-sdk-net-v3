@@ -16,6 +16,54 @@ namespace HuaweiCloud.SDK.Swr.V2
 
         
         /// <summary>
+        /// 查询委托是否存在
+        ///
+        /// 检查租户是否已委托SWR服务通过触发器功能调用CCE、CCI服务，一般由前端控制台自动调用，用户无需手动调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CheckAgencyResponse> CheckAgencyAsync(CheckAgencyRequest checkAgencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/agency", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkAgencyRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<CheckAgencyResponse>(response);
+        }
+
+        public AsyncInvoker<CheckAgencyResponse> CheckAgencyAsyncInvoker(CheckAgencyRequest checkAgencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/agency", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", checkAgencyRequest);
+            return new AsyncInvoker<CheckAgencyResponse>(this, "GET", request, JsonUtils.DeSerialize<CheckAgencyResponse>);
+        }
+        
+        /// <summary>
+        /// 创建委托
+        ///
+        /// 租户首次使用SWR服务时创建SWR服务内部委托，一般由前端控制台自动调用，用户无需手动调用。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CreateAgencyResponse> CreateAgencyAsync(CreateAgencyRequest createAgencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/agency", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAgencyRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CreateAgencyResponse>(response);
+        }
+
+        public AsyncInvoker<CreateAgencyResponse> CreateAgencyAsyncInvoker(CreateAgencyRequest createAgencyRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/agency", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", createAgencyRequest);
+            return new AsyncInvoker<CreateAgencyResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CreateAgencyResponse>);
+        }
+        
+        /// <summary>
         /// 生成增强型登录指令(新)
         ///
         /// 调用该接口，通过获取响应消息头的X-Swr-Dockerlogin的值及响应消息体的host值，可生成增强型登录指令,注：此接口只支持IAM新平面的调用方式。
@@ -949,6 +997,37 @@ namespace HuaweiCloud.SDK.Swr.V2
                 var listSharedReposDetailsResponse = JsonUtils.DeSerializeNull<ListSharedReposDetailsResponse>(response);
                 listSharedReposDetailsResponse.Body = JsonUtils.DeSerializeList<ShowReposResp>(response);
                 return listSharedReposDetailsResponse;
+            });
+        }
+        
+        /// <summary>
+        /// 获取可进行镜像同步的区域列表
+        ///
+        /// 获取可进行镜像同步的区域列表，用户可以将镜像手动或自动同步到此接口返回的区域。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListSyncRegionsResponse> ListSyncRegionsAsync(ListSyncRegionsRequest listSyncRegionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/regions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSyncRegionsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listSyncRegionsResponse = JsonUtils.DeSerializeNull<ListSyncRegionsResponse>(response);
+            listSyncRegionsResponse.Body = JsonUtils.DeSerializeList<RegionInfo>(response);
+            return listSyncRegionsResponse;
+        }
+
+        public AsyncInvoker<ListSyncRegionsResponse> ListSyncRegionsAsyncInvoker(ListSyncRegionsRequest listSyncRegionsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/manage/regions", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listSyncRegionsRequest);
+            return new AsyncInvoker<ListSyncRegionsResponse>(this, "GET", request, response =>
+            {
+                var listSyncRegionsResponse = JsonUtils.DeSerializeNull<ListSyncRegionsResponse>(response);
+                listSyncRegionsResponse.Body = JsonUtils.DeSerializeList<RegionInfo>(response);
+                return listSyncRegionsResponse;
             });
         }
         

@@ -41,6 +41,30 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 批量删除手动备份
+        ///
+        /// 批量删除手动备份。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteBackupResponse BatchDeleteBackup(BatchDeleteBackupRequest batchDeleteBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteBackupRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<BatchDeleteBackupResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteBackupResponse> BatchDeleteBackupInvoker(BatchDeleteBackupRequest batchDeleteBackupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/backups", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteBackupRequest);
+            return new SyncInvoker<BatchDeleteBackupResponse>(this, "DELETE", request, JsonUtils.DeSerialize<BatchDeleteBackupResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加或删除标签
         ///
         /// 批量添加或删除指定实例的标签。
@@ -2054,6 +2078,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
         }
         
         /// <summary>
+        /// 开启自治限流
+        ///
+        /// 开启自治限流。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SetAutoSqlLimitingResponse SetAutoSqlLimiting(SetAutoSqlLimitingRequest setAutoSqlLimitingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(setAutoSqlLimitingRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-sql-limiting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setAutoSqlLimitingRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<SetAutoSqlLimitingResponse>(response);
+        }
+
+        public SyncInvoker<SetAutoSqlLimitingResponse> SetAutoSqlLimitingInvoker(SetAutoSqlLimitingRequest setAutoSqlLimitingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(setAutoSqlLimitingRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-sql-limiting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", setAutoSqlLimitingRequest);
+            return new SyncInvoker<SetAutoSqlLimitingResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetAutoSqlLimitingResponse>);
+        }
+        
+        /// <summary>
         /// 设置读写分离权重
         ///
         /// 设置读写分离权重。
@@ -2309,6 +2359,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-scaling/policy", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoScalingPolicyRequest);
             return new SyncInvoker<ShowAutoScalingPolicyResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoScalingPolicyResponse>);
+        }
+        
+        /// <summary>
+        /// 查询自治限流执行记录
+        ///
+        /// 查询自治限流执行记录。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowAutoSqlLimitingLogResponse ShowAutoSqlLimitingLog(ShowAutoSqlLimitingLogRequest showAutoSqlLimitingLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAutoSqlLimitingLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showAutoSqlLimitingLogRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/auto-sql-limiting/log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoSqlLimitingLogRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutoSqlLimitingLogResponse>(response);
+        }
+
+        public SyncInvoker<ShowAutoSqlLimitingLogResponse> ShowAutoSqlLimitingLogInvoker(ShowAutoSqlLimitingLogRequest showAutoSqlLimitingLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAutoSqlLimitingLogRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            if (StringUtils.TryConvertToNonEmptyString(showAutoSqlLimitingLogRequest.NodeId, out var valueOfNodeId)) urlParam.Add("node_id", valueOfNodeId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/auto-sql-limiting/log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutoSqlLimitingLogRequest);
+            return new SyncInvoker<ShowAutoSqlLimitingLogResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutoSqlLimitingLogResponse>);
         }
         
         /// <summary>
@@ -2719,6 +2797,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/quotas", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showGaussMySqlQuotasRequest);
             return new SyncInvoker<ShowGaussMySqlQuotasResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowGaussMySqlQuotasResponse>);
+        }
+        
+        /// <summary>
+        /// 查询历史SQL限流规则
+        ///
+        /// 查询历史SQL限流规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowHistoricalSqlFilterRuleResponse ShowHistoricalSqlFilterRule(ShowHistoricalSqlFilterRuleRequest showHistoricalSqlFilterRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showHistoricalSqlFilterRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/history-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoricalSqlFilterRuleRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ShowHistoricalSqlFilterRuleResponse>(response);
+        }
+
+        public SyncInvoker<ShowHistoricalSqlFilterRuleResponse> ShowHistoricalSqlFilterRuleInvoker(ShowHistoricalSqlFilterRuleRequest showHistoricalSqlFilterRuleRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showHistoricalSqlFilterRuleRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/sql-filter/history-rules", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showHistoricalSqlFilterRuleRequest);
+            return new SyncInvoker<ShowHistoricalSqlFilterRuleResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowHistoricalSqlFilterRuleResponse>);
         }
         
         /// <summary>
@@ -3211,6 +3315,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/slowlog/query", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showSlowlogSensitiveStatusRequest);
             return new SyncInvoker<ShowSlowlogSensitiveStatusResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowSlowlogSensitiveStatusResponse>);
+        }
+        
+        /// <summary>
+        /// 查询自治限流规则
+        ///
+        /// 查询自治限流规则。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ShowSqlAutoSqlLimitingResponse ShowSqlAutoSqlLimiting(ShowSqlAutoSqlLimitingRequest showSqlAutoSqlLimitingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSqlAutoSqlLimitingRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-sql-limiting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showSqlAutoSqlLimitingRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ShowSqlAutoSqlLimitingResponse>(response);
+        }
+
+        public SyncInvoker<ShowSqlAutoSqlLimitingResponse> ShowSqlAutoSqlLimitingInvoker(ShowSqlAutoSqlLimitingRequest showSqlAutoSqlLimitingRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showSqlAutoSqlLimitingRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/auto-sql-limiting", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", showSqlAutoSqlLimitingRequest);
+            return new SyncInvoker<ShowSqlAutoSqlLimitingResponse>(this, "POST", request, JsonUtils.DeSerialize<ShowSqlAutoSqlLimitingResponse>);
         }
         
         /// <summary>

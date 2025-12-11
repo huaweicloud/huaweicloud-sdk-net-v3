@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public List<List<int?>> Location { get; set; }
 
         /// <summary>
-        /// 文档区域类别，包含text、title、sub_title、image、image_caption、form、table、table_caption、header、footer、page_number、reference、formula、stamp、directory共15个类别。     
+        /// 文档区域类别，包含text、title、sub_title、image、image_caption、form、table、table_caption、header、footer、page_number、reference、formula、stamp、directory、footnote共16个类别。 
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -52,6 +52,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         [JsonProperty("form_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? FormId { get; set; }
 
+        /// <summary>
+        /// 仅当type为\&quot;formula\&quot;且入参formula为True时返回该字段，表示当前公式识别区域对应formula_result中哪一项识别结果。 
+        /// </summary>
+        [JsonProperty("formula_id", NullValueHandling = NullValueHandling.Ignore)]
+        public int? FormulaId { get; set; }
+
 
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  wordsIds: ").Append(WordsIds).Append("\n");
             sb.Append("  tableId: ").Append(TableId).Append("\n");
             sb.Append("  formId: ").Append(FormId).Append("\n");
+            sb.Append("  formulaId: ").Append(FormulaId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +98,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.WordsIds != input.WordsIds || (this.WordsIds != null && input.WordsIds != null && !this.WordsIds.SequenceEqual(input.WordsIds))) return false;
             if (this.TableId != input.TableId || (this.TableId != null && !this.TableId.Equals(input.TableId))) return false;
             if (this.FormId != input.FormId || (this.FormId != null && !this.FormId.Equals(input.FormId))) return false;
+            if (this.FormulaId != input.FormulaId || (this.FormulaId != null && !this.FormulaId.Equals(input.FormulaId))) return false;
 
             return true;
         }
@@ -109,6 +117,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.WordsIds != null) hashCode = hashCode * 59 + this.WordsIds.GetHashCode();
                 if (this.TableId != null) hashCode = hashCode * 59 + this.TableId.GetHashCode();
                 if (this.FormId != null) hashCode = hashCode * 59 + this.FormId.GetHashCode();
+                if (this.FormulaId != null) hashCode = hashCode * 59 + this.FormulaId.GetHashCode();
                 return hashCode;
             }
         }

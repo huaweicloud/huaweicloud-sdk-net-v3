@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
     {
 
         /// <summary>
-        /// 实例列表。
+        /// **参数解释：** 实例列表。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("instances", NullValueHandling = NullValueHandling.Ignore)]
         public List<InstanceItem> Instances { get; set; }
 
         /// <summary>
-        /// 总记录数。
+        /// **参数解释：** 总记录数。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
         public int? TotalCount { get; set; }

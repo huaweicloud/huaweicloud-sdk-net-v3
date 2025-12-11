@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string DbName { get; set; }
 
         /// <summary>
-        /// 数据库状态
+        /// 数据库状态 - ON：启用 - OFF：关闭
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Version { get; set; }
 
         /// <summary>
-        /// 数据库类型
+        /// 数据库类型 - MYSQL: MySQL - ORACLE: Oracle - POSTGRESQL: PostgreSQL - TAURUS: Taurus DB - DWS: GaussDB(DWS) - GAUSSDBOPENGAUSS：GaussDB/openGauss - DDS： DDS(MongoDB)
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

@@ -23,6 +23,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         public int? TotalRecord { get; set; }
 
         /// <summary>
+        /// 当前实例审计日志使用总量，单位：byte。
+        /// </summary>
+        [JsonProperty("total_size", NullValueHandling = NullValueHandling.Ignore)]
+        public long? TotalSize { get; set; }
+
+        /// <summary>
         /// 审计日志具体信息。
         /// </summary>
         [JsonProperty("audit_logs", NullValueHandling = NullValueHandling.Ignore)]
@@ -38,6 +44,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             var sb = new StringBuilder();
             sb.Append("class ListAuditlogsResponse {\n");
             sb.Append("  totalRecord: ").Append(TotalRecord).Append("\n");
+            sb.Append("  totalSize: ").Append(TotalSize).Append("\n");
             sb.Append("  auditLogs: ").Append(AuditLogs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -58,6 +65,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             if (input == null) return false;
             if (this.TotalRecord != input.TotalRecord || (this.TotalRecord != null && !this.TotalRecord.Equals(input.TotalRecord))) return false;
+            if (this.TotalSize != input.TotalSize || (this.TotalSize != null && !this.TotalSize.Equals(input.TotalSize))) return false;
             if (this.AuditLogs != input.AuditLogs || (this.AuditLogs != null && input.AuditLogs != null && !this.AuditLogs.SequenceEqual(input.AuditLogs))) return false;
 
             return true;
@@ -72,6 +80,7 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             {
                 var hashCode = 41;
                 if (this.TotalRecord != null) hashCode = hashCode * 59 + this.TotalRecord.GetHashCode();
+                if (this.TotalSize != null) hashCode = hashCode * 59 + this.TotalSize.GetHashCode();
                 if (this.AuditLogs != null) hashCode = hashCode * 59 + this.AuditLogs.GetHashCode();
                 return hashCode;
             }

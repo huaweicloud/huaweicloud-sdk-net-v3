@@ -29,10 +29,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public List<List<int?>> Location { get; set; }
 
         /// <summary>
-        /// 文字块识别结果的置信度。  
+        /// 文字块识别结果的置信度。 
         /// </summary>
         [JsonProperty("confidence", NullValueHandling = NullValueHandling.Ignore)]
         public float? Confidence { get; set; }
+
+        /// <summary>
+        /// 当入参character_mode为True时返回该字段，表示当前文字块对应的单字符识别列表，输出顺序从左到右，先上后下。 
+        /// </summary>
+        [JsonProperty("char_list", NullValueHandling = NullValueHandling.Ignore)]
+        public List<SmartDocumentRecognizerCharList> CharList { get; set; }
 
 
 
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  words: ").Append(Words).Append("\n");
             sb.Append("  location: ").Append(Location).Append("\n");
             sb.Append("  confidence: ").Append(Confidence).Append("\n");
+            sb.Append("  charList: ").Append(CharList).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.Words != input.Words || (this.Words != null && !this.Words.Equals(input.Words))) return false;
             if (this.Location != input.Location || (this.Location != null && input.Location != null && !this.Location.SequenceEqual(input.Location))) return false;
             if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.CharList != input.CharList || (this.CharList != null && input.CharList != null && !this.CharList.SequenceEqual(input.CharList))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.Words != null) hashCode = hashCode * 59 + this.Words.GetHashCode();
                 if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
                 if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.CharList != null) hashCode = hashCode * 59 + this.CharList.GetHashCode();
                 return hashCode;
             }
         }

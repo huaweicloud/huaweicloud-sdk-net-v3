@@ -17,21 +17,21 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 参数组id
+        /// **参数解释：** 参数组id。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [SDKProperty("config_id", IsPath = true)]
         [JsonProperty("config_id", NullValueHandling = NullValueHandling.Ignore)]
         public string ConfigId { get; set; }
 
         /// <summary>
-        /// 索引位置，偏移量。  从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。  取值必须为数字，不能为负数。
+        /// **参数解释：** 索引位置，偏移量。 **约束限制：** 不涉及。 **取值范围：** 取值必须为数字，不能为负数。 **默认取值：** 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。
         /// </summary>
         [SDKProperty("offset", IsQuery = true)]
         [JsonProperty("offset", NullValueHandling = NullValueHandling.Ignore)]
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 查询个数上限值。   - 取值范围: 1~100。   - 不传该参数时，默认查询前100条信息。
+        /// **参数解释：** 查询个数上限值。 **约束限制：** 不涉及。 **取值范围：** 取值范围: 1~100。 **默认取值：** 不传该参数时，默认查询前100条信息。
         /// </summary>
         [SDKProperty("limit", IsQuery = true)]
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]

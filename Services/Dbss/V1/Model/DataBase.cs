@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 添加的数据库类型： - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - GAUSSDBOPENGAUSS - GREENPLUM - HIGHGO - SHENTONG - GBASE8A - GBASE8S - GBASEXDM - MONGODB - DDS
+        /// 添加的数据库类型： - MYSQL：MySQL - ORACLE：Oracle - POSTGRESQL: PostgreSQL - SQLSERVER: SqlServer - DAMENG: Dameng - TAURUS: Taurus - DWS: Dws - KINGBASE: Kingbase - GAUSSDBOPENGAUSS：GaussDB(for openGauss) - GREENPLUM：Greenplum - HIGHGO：HighGo - SHENTONG：ShenTong - GBASE8A：GBase 8a - GBASE8S：GBase 8s - GBASEXDM：GBase XDM - MONGODB：MongoDB - DDS：DDS（Document Database Service）
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Version { get; set; }
 
         /// <summary>
-        /// 数据库字符集 - GBK - UTF8
+        /// 数据库字符集 - GBK：GBK - UTF8：UTF8
         /// </summary>
         [JsonProperty("charset", NullValueHandling = NullValueHandling.Ignore)]
         public string Charset { get; set; }
@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string InstanceName { get; set; }
 
         /// <summary>
-        /// 数据库的运行状态 - ACTIVE - SHUTOFF - ERROR
+        /// 数据库的运行状态 - ACTIVE：运行中 - SHUTOFF：已关闭 - ERROR：故障
         /// </summary>
         [JsonProperty("audit_status", NullValueHandling = NullValueHandling.Ignore)]
         public string AuditStatus { get; set; }
@@ -89,7 +89,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public List<string> AgentUrl { get; set; }
 
         /// <summary>
-        /// 数据库分类 - RDS: 表示RDS数据库 - ECS:自建数据库
+        /// 数据库分类 - RDS: 表示RDS数据库 - ECS: 自建数据库
         /// </summary>
         [JsonProperty("db_classification", NullValueHandling = NullValueHandling.Ignore)]
         public string DbClassification { get; set; }

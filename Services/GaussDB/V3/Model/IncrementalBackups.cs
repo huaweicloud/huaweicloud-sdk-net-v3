@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public decimal? Size { get; set; }
 
         /// <summary>
+        /// **参数解释**：  增量备份类型。  **取值范围**：  - Log: 同区域增量备份。 - OffSiteLog：跨区域增量备份。
+        /// </summary>
+        [JsonProperty("backup_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupType { get; set; }
+
+        /// <summary>
         /// 实例ID。
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
@@ -66,6 +72,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  beginTime: ").Append(BeginTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
+            sb.Append("  backupType: ").Append(BackupType).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -90,6 +97,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.BackupType != input.BackupType || (this.BackupType != null && !this.BackupType.Equals(input.BackupType))) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
 
             return true;
@@ -108,6 +116,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.BackupType != null) hashCode = hashCode * 59 + this.BackupType.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }

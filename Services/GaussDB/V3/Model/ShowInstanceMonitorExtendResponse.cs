@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("period", NullValueHandling = NullValueHandling.Ignore)]
         public int? Period { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  能否开启秒级监控。  **取值范围**： - true: 可以开启。 - false：不能开启，8vcpu以下规格不允许开启秒级监控。
+        /// </summary>
+        [JsonProperty("allow", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Allow { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("class ShowInstanceMonitorExtendResponse {\n");
             sb.Append("  monitorSwitch: ").Append(MonitorSwitch).Append("\n");
             sb.Append("  period: ").Append(Period).Append("\n");
+            sb.Append("  allow: ").Append(Allow).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (input == null) return false;
             if (this.MonitorSwitch != input.MonitorSwitch || (this.MonitorSwitch != null && !this.MonitorSwitch.Equals(input.MonitorSwitch))) return false;
             if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.Allow != input.Allow || (this.Allow != null && !this.Allow.Equals(input.Allow))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 var hashCode = 41;
                 if (this.MonitorSwitch != null) hashCode = hashCode * 59 + this.MonitorSwitch.GetHashCode();
                 if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.Allow != null) hashCode = hashCode * 59 + this.Allow.GetHashCode();
                 return hashCode;
             }
         }

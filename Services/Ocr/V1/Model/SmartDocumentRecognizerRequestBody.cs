@@ -77,6 +77,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         public bool? Formula { get; set; }
 
         /// <summary>
+        /// 是否对文档中的图片进行二次版面分析。若是，结果会在“layout_result”中返回，并带有“image_layout”的关键字。 
+        /// </summary>
+        [JsonProperty("image_layout", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? ImageLayout { get; set; }
+
+        /// <summary>
         /// 需要传入字典的json序列化后字符串，用于对kv_result中的特定key值进行归一化映射。例如，kv_result中包含{\&quot;名称\&quot;：\&quot;小明\&quot;}的键值对，若传入{\&quot;名称\&quot;：\&quot;姓名\&quot;}的kv_map，则返回结果为{“姓名”：“小明”}。  &gt; 参数传入示例： - \&quot;kv_map\&quot;:\&quot;{\\\&quot;名称\\\&quot;:\\\&quot;姓名\\\&quot;}\&quot; 
         /// </summary>
         [JsonProperty("kv_map", NullValueHandling = NullValueHandling.Ignore)]
@@ -93,6 +99,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         [JsonProperty("pdf_page_number", NullValueHandling = NullValueHandling.Ignore)]
         public int? PdfPageNumber { get; set; }
+
+        /// <summary>
+        /// 是否返回单字符信息。开启后，单字符识别结果将会在“ocr_result”中的“char_list”返回单字符信息。如果不传入该参数，则默认不返回单字符信息。 
+        /// </summary>
+        [JsonProperty("character_mode", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? CharacterMode { get; set; }
 
 
 
@@ -113,9 +125,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             sb.Append("  returnExcel: ").Append(ReturnExcel).Append("\n");
             sb.Append("  form: ").Append(Form).Append("\n");
             sb.Append("  formula: ").Append(Formula).Append("\n");
+            sb.Append("  imageLayout: ").Append(ImageLayout).Append("\n");
             sb.Append("  kvMap: ").Append(KvMap).Append("\n");
             sb.Append("  eraseSeal: ").Append(EraseSeal).Append("\n");
             sb.Append("  pdfPageNumber: ").Append(PdfPageNumber).Append("\n");
+            sb.Append("  characterMode: ").Append(CharacterMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -144,9 +158,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
             if (this.ReturnExcel != input.ReturnExcel || (this.ReturnExcel != null && !this.ReturnExcel.Equals(input.ReturnExcel))) return false;
             if (this.Form != input.Form || (this.Form != null && !this.Form.Equals(input.Form))) return false;
             if (this.Formula != input.Formula || (this.Formula != null && !this.Formula.Equals(input.Formula))) return false;
+            if (this.ImageLayout != input.ImageLayout || (this.ImageLayout != null && !this.ImageLayout.Equals(input.ImageLayout))) return false;
             if (this.KvMap != input.KvMap || (this.KvMap != null && !this.KvMap.Equals(input.KvMap))) return false;
             if (this.EraseSeal != input.EraseSeal || (this.EraseSeal != null && !this.EraseSeal.Equals(input.EraseSeal))) return false;
             if (this.PdfPageNumber != input.PdfPageNumber || (this.PdfPageNumber != null && !this.PdfPageNumber.Equals(input.PdfPageNumber))) return false;
+            if (this.CharacterMode != input.CharacterMode || (this.CharacterMode != null && !this.CharacterMode.Equals(input.CharacterMode))) return false;
 
             return true;
         }
@@ -169,9 +185,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
                 if (this.ReturnExcel != null) hashCode = hashCode * 59 + this.ReturnExcel.GetHashCode();
                 if (this.Form != null) hashCode = hashCode * 59 + this.Form.GetHashCode();
                 if (this.Formula != null) hashCode = hashCode * 59 + this.Formula.GetHashCode();
+                if (this.ImageLayout != null) hashCode = hashCode * 59 + this.ImageLayout.GetHashCode();
                 if (this.KvMap != null) hashCode = hashCode * 59 + this.KvMap.GetHashCode();
                 if (this.EraseSeal != null) hashCode = hashCode * 59 + this.EraseSeal.GetHashCode();
                 if (this.PdfPageNumber != null) hashCode = hashCode * 59 + this.PdfPageNumber.GetHashCode();
+                if (this.CharacterMode != null) hashCode = hashCode * 59 + this.CharacterMode.GetHashCode();
                 return hashCode;
             }
         }

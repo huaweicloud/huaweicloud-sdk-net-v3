@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Region { get; set; }
 
         /// <summary>
-        /// 服务类型： - hws.service.type.dbss
+        /// 服务类型： - hws.service.type.dbss: 数据库审计
         /// </summary>
         [JsonProperty("cloud_service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CloudServiceType { get; set; }

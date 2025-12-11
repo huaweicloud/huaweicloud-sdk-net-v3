@@ -72,6 +72,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("job_name", NullValueHandling = NullValueHandling.Ignore)]
         public string JobName { get; set; }
 
+        /// <summary>
+        /// 实例ID，此参数是实例的唯一标识。
+        /// </summary>
+        [SDKProperty("instance_id", IsQuery = true)]
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
+
 
 
         /// <summary>
@@ -89,6 +96,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  jobName: ").Append(JobName).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,6 +123,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
             if (this.JobName != input.JobName || (this.JobName != null && !this.JobName.Equals(input.JobName))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
 
             return true;
         }
@@ -135,6 +144,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.JobName != null) hashCode = hashCode * 59 + this.JobName.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
                 return hashCode;
             }
         }

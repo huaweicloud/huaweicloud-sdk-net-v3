@@ -23,19 +23,19 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string ProductId { get; set; }
 
         /// <summary>
-        /// 服务类型： - hws.service.type.dbss
+        /// 服务类型： - hws.service.type.dbss: 数据库审计
         /// </summary>
         [JsonProperty("cloud_service_type", NullValueHandling = NullValueHandling.Ignore)]
         public string CloudServiceType { get; set; }
 
         /// <summary>
-        /// 资源类型: - hws.resource.type.dbss
+        /// 资源类型: - hws.resource.type.dbss：数据库审计
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }
 
         /// <summary>
-        /// 资源规格： - dbss.bypassaudit.low - dbss.bypassaudit.medium - dbss.bypassaudit.high
+        /// 资源规格： - dbss.bypassaudit.low：基础版 - dbss.bypassaudit.medium：高级版 - dbss.bypassaudit.high：专业版
         /// </summary>
         [JsonProperty("resource_spec_code", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceSpecCode { get; set; }

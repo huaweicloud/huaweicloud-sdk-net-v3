@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 风险规则类型
+        /// 风险规则类型 - LOGIN：登录  - OPERATE：操作
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -53,13 +53,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public int? Rank { get; set; }
 
         /// <summary>
-        /// 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
+        /// 风险级别 - LOW：低 - MEDIUM：中 - HIGH：高 - NO_RISK：无风险
         /// </summary>
         [JsonProperty("risk_level", NullValueHandling = NullValueHandling.Ignore)]
         public string RiskLevel { get; set; }
 
         /// <summary>
-        /// 规则类型
+        /// 规则类型 - SYSTEM: 系统  - CUSTOMIZE: 自定义
         /// </summary>
         [JsonProperty("rule_type", NullValueHandling = NullValueHandling.Ignore)]
         public string RuleType { get; set; }

@@ -58,6 +58,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("end_time", NullValueHandling = NullValueHandling.Ignore)]
         public string EndTime { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  是否展示跨区域增量备份。  **约束限制**：  不涉及。  **取值范围**：  - true：展示同区域和跨区域增量备份。 - false：仅展示同区域增量备份。  **默认取值**：  false。
+        /// </summary>
+        [SDKProperty("display_offsite_backup", IsQuery = true)]
+        [JsonProperty("display_offsite_backup", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DisplayOffsiteBackup { get; set; }
+
 
 
         /// <summary>
@@ -73,6 +80,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  beginTime: ").Append(BeginTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
+            sb.Append("  displayOffsiteBackup: ").Append(DisplayOffsiteBackup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,6 +105,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
             if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.DisplayOffsiteBackup != input.DisplayOffsiteBackup || (this.DisplayOffsiteBackup != null && !this.DisplayOffsiteBackup.Equals(input.DisplayOffsiteBackup))) return false;
 
             return true;
         }
@@ -115,6 +124,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
                 if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.DisplayOffsiteBackup != null) hashCode = hashCode * 59 + this.DisplayOffsiteBackup.GetHashCode();
                 return hashCode;
             }
         }

@@ -32,7 +32,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// 允许访问的VPC端点。
         /// </summary>
         [JsonProperty("allow_vpc_endpoints", NullValueHandling = NullValueHandling.Ignore)]
-        public List<AllowVpcEndpointsResult> AllowVpcEndpoints { get; set; }
+        public List<AllowVpcEndpointsOption> AllowVpcEndpoints { get; set; }
 
 
 

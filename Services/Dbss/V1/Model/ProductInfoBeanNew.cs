@@ -59,7 +59,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string ResourceSpecCode { get; set; }
 
         /// <summary>
-        /// 资源类型
+        /// 资源类型: - hws.resource.type.dbss：数据库审计
         /// </summary>
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
         public string ResourceType { get; set; }

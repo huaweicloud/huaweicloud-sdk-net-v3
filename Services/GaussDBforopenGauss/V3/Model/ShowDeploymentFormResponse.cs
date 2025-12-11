@@ -40,6 +40,24 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("replica_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? ReplicaNum { get; set; }
 
+        /// <summary>
+        /// **参数解释**: 每次扩容的最小节点数。 **取值范围**: 不涉及。
+        /// </summary>
+        [JsonProperty("each_expand_nodes", NullValueHandling = NullValueHandling.Ignore)]
+        public int? EachExpandNodes { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 最大分片数。 **取值范围**: 不涉及。
+        /// </summary>
+        [JsonProperty("max_shard_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? MaxShardCount { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 每分片节点数。 **取值范围**: 不涉及。
+        /// </summary>
+        [JsonProperty("each_shard_num", NullValueHandling = NullValueHandling.Ignore)]
+        public int? EachShardNum { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +71,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  solution: ").Append(Solution).Append("\n");
             sb.Append("  shardNum: ").Append(ShardNum).Append("\n");
             sb.Append("  replicaNum: ").Append(ReplicaNum).Append("\n");
+            sb.Append("  eachExpandNodes: ").Append(EachExpandNodes).Append("\n");
+            sb.Append("  maxShardCount: ").Append(MaxShardCount).Append("\n");
+            sb.Append("  eachShardNum: ").Append(EachShardNum).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +96,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.Solution != input.Solution || (this.Solution != null && !this.Solution.Equals(input.Solution))) return false;
             if (this.ShardNum != input.ShardNum || (this.ShardNum != null && !this.ShardNum.Equals(input.ShardNum))) return false;
             if (this.ReplicaNum != input.ReplicaNum || (this.ReplicaNum != null && !this.ReplicaNum.Equals(input.ReplicaNum))) return false;
+            if (this.EachExpandNodes != input.EachExpandNodes || (this.EachExpandNodes != null && !this.EachExpandNodes.Equals(input.EachExpandNodes))) return false;
+            if (this.MaxShardCount != input.MaxShardCount || (this.MaxShardCount != null && !this.MaxShardCount.Equals(input.MaxShardCount))) return false;
+            if (this.EachShardNum != input.EachShardNum || (this.EachShardNum != null && !this.EachShardNum.Equals(input.EachShardNum))) return false;
 
             return true;
         }
@@ -91,6 +115,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.Solution != null) hashCode = hashCode * 59 + this.Solution.GetHashCode();
                 if (this.ShardNum != null) hashCode = hashCode * 59 + this.ShardNum.GetHashCode();
                 if (this.ReplicaNum != null) hashCode = hashCode * 59 + this.ReplicaNum.GetHashCode();
+                if (this.EachExpandNodes != null) hashCode = hashCode * 59 + this.EachExpandNodes.GetHashCode();
+                if (this.MaxShardCount != null) hashCode = hashCode * 59 + this.MaxShardCount.GetHashCode();
+                if (this.EachShardNum != null) hashCode = hashCode * 59 + this.EachShardNum.GetHashCode();
                 return hashCode;
             }
         }

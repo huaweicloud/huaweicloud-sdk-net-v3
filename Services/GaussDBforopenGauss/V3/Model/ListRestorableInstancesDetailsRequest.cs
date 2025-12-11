@@ -58,6 +58,34 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("limit", NullValueHandling = NullValueHandling.Ignore)]
         public int? Limit { get; set; }
 
+        /// <summary>
+        /// **参数解释**: 查备份恢复的粒度。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE   - DATABASE **默认取值**: INSTANCE
+        /// </summary>
+        [SDKProperty("backup_restore_type", IsQuery = true)]
+        [JsonProperty("backup_restore_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string BackupRestoreType { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 源实例的备份类型。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE **默认取值**: INSTANCE
+        /// </summary>
+        [SDKProperty("source_backup_schema", IsQuery = true)]
+        [JsonProperty("source_backup_schema", NullValueHandling = NullValueHandling.Ignore)]
+        public string SourceBackupSchema { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 目标实例ID，通过此参数过滤实例列表。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+        /// </summary>
+        [SDKProperty("target_instance_id", IsQuery = true)]
+        [JsonProperty("target_instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string TargetInstanceId { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 目标实例名称，通过此参数过滤实例列表。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+        /// </summary>
+        [SDKProperty("instance_name", IsQuery = true)]
+        [JsonProperty("instance_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceName { get; set; }
+
 
 
         /// <summary>
@@ -73,6 +101,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  restoreTime: ").Append(RestoreTime).Append("\n");
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
+            sb.Append("  backupRestoreType: ").Append(BackupRestoreType).Append("\n");
+            sb.Append("  sourceBackupSchema: ").Append(SourceBackupSchema).Append("\n");
+            sb.Append("  targetInstanceId: ").Append(TargetInstanceId).Append("\n");
+            sb.Append("  instanceName: ").Append(InstanceName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,6 +129,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.RestoreTime != input.RestoreTime || (this.RestoreTime != null && !this.RestoreTime.Equals(input.RestoreTime))) return false;
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.BackupRestoreType != input.BackupRestoreType || (this.BackupRestoreType != null && !this.BackupRestoreType.Equals(input.BackupRestoreType))) return false;
+            if (this.SourceBackupSchema != input.SourceBackupSchema || (this.SourceBackupSchema != null && !this.SourceBackupSchema.Equals(input.SourceBackupSchema))) return false;
+            if (this.TargetInstanceId != input.TargetInstanceId || (this.TargetInstanceId != null && !this.TargetInstanceId.Equals(input.TargetInstanceId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
 
             return true;
         }
@@ -115,6 +151,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.RestoreTime != null) hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.BackupRestoreType != null) hashCode = hashCode * 59 + this.BackupRestoreType.GetHashCode();
+                if (this.SourceBackupSchema != null) hashCode = hashCode * 59 + this.SourceBackupSchema.GetHashCode();
+                if (this.TargetInstanceId != null) hashCode = hashCode * 59 + this.TargetInstanceId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 return hashCode;
             }
         }

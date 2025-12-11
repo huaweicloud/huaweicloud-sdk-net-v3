@@ -494,9 +494,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         }
 
         /// <summary>
-        /// 模板状态
+        /// 模板状态 - ON: 开启 - OFF：关闭
         /// </summary>
-        /// <value>模板状态</value>
+        /// <value>模板状态 - ON: 开启 - OFF：关闭</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -648,7 +648,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 模板状态
+        /// 模板状态 - ON: 开启 - OFF：关闭
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }

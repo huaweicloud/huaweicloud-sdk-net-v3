@@ -173,6 +173,32 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3
         }
         
         /// <summary>
+        /// 批量删除实例标签
+        ///
+        /// 批量删除实例标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteInstanceTagResponse BatchDeleteInstanceTag(BatchDeleteInstanceTagRequest batchDeleteInstanceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteInstanceTagRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteInstanceTagResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteInstanceTagResponse> BatchDeleteInstanceTagInvoker(BatchDeleteInstanceTagRequest batchDeleteInstanceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchDeleteInstanceTagRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteInstanceTagRequest);
+            return new SyncInvoker<BatchDeleteInstanceTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<BatchDeleteInstanceTagResponse>);
+        }
+        
+        /// <summary>
         /// 批量设置自动备份策略
         ///
         /// 批量设置自动备份策略。

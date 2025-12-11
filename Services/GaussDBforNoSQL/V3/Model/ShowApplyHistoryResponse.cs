@@ -17,7 +17,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 参数组模板应用历史列表
+        /// **参数解释：** 总记录数。 **取值范围：** 不涉及。
+        /// </summary>
+        [JsonProperty("total_count", NullValueHandling = NullValueHandling.Ignore)]
+        public int? TotalCount { get; set; }
+
+        /// <summary>
+        /// **参数解释：** 参数组模板应用历史列表。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("histories", NullValueHandling = NullValueHandling.Ignore)]
         public List<ApplyHistoryRsp> Histories { get; set; }
@@ -31,6 +37,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowApplyHistoryResponse {\n");
+            sb.Append("  totalCount: ").Append(TotalCount).Append("\n");
             sb.Append("  histories: ").Append(Histories).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -50,6 +57,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         public bool Equals(ShowApplyHistoryResponse input)
         {
             if (input == null) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
             if (this.Histories != input.Histories || (this.Histories != null && input.Histories != null && !this.Histories.SequenceEqual(input.Histories))) return false;
 
             return true;
@@ -63,6 +71,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 if (this.Histories != null) hashCode = hashCode * 59 + this.Histories.GetHashCode();
                 return hashCode;
             }

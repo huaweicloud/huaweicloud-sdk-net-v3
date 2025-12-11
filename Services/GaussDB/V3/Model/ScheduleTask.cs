@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// 任务名称。取值有：    - \&quot;CreateGaussDBforMySQLInstance\&quot;表示创建实例。    - \&quot;RestoreGaussDBforMySQLNewInstance\&quot;表示恢复新实例。    - \&quot;AddGaussDBforMySQLNodes\&quot;表示添加节点。    - \&quot;DeleteGaussDBforMySQLNode\&quot;表示删除节点。    - \&quot;RebootGaussDBforMySQLInstance\&quot;表示重启实例。    - \&quot;ModifyGaussDBforMySQLPort\&quot;表示修改实例端口。    - \&quot;ModifyGaussDBforMySQLSecurityGroup\&quot;表示修改实例安全组。    - \&quot;ResizeGaussDBforMySQLFlavor\&quot;表示实例规格变更。    - \&quot;SwitchoverGaussDBforMySQLMasterNode\&quot;表示只读升主。    - \&quot;GaussDBforMySQLBindEIP\&quot;表示绑定弹性公网IP。    - \&quot;GaussDBforMySQLUnbindEIP\&quot;表示解绑弹性公网IP。    - \&quot;RenameGaussDBforMySQLInstance\&quot;表示修改实例名称。    - \&quot;DeleteGaussDBforMySQLInstance\&quot;表示删除实例集群。    - \&quot;UpgradeGaussDBforMySQLDatabaseVersion\&quot;表示版本升级。    - \&quot;EnlargeGaussDBforMySQLProxy\&quot;表示实例的数据库代理节点扩容。    - \&quot;ReduceGaussDBforMySQLProxy\&quot;表示实例的数据库代理节点缩容。    - \&quot;OpenGaussDBforMySQLProxy\&quot;表示开启实例的数据库代理。    - \&quot;CloseGaussDBforMySQLProxy\&quot;表示关闭实例的数据库代理。    - \&quot;GaussdbforMySQLModifyProxyIp\&quot;表示修改数据库代理ip。    - \&quot;ScaleGaussDBforMySQLProxy\&quot;表示实例的数据库代理节点规格变更。    - \&quot;GaussDBforMySQLModifyInstanceMetricExtend\&quot;表示实例秒级监控。    - \&quot;GaussDBforMySQLModifyInstanceDataVip\&quot;表示修改实例数据Vip。    - \&quot;GaussDBforMySQLSwitchSSL\&quot;表示切换实例SSL开关。    - \&quot;GaussDBforMySQLModifyProxyConsist\&quot;表示修改代理一致性。    - \&quot;GaussDBforMySQLModifyProxyWeight\&quot;表示修改代理权重。
+        /// **参数解释**： 任务名称。  **取值范围**：   - PROXY_VERSION_UPGRADE：表示数据库代理版本升级。   - VERSION_UPGRADE：表示实例版本升级。   - RESIZE_FLAVOR：表示实例规格变更。   - REBOOT_NODE：表示重启节点。   - REBOOT_INSTANCE：表示重启实例。
         /// </summary>
         [JsonProperty("job_name", NullValueHandling = NullValueHandling.Ignore)]
         public string JobName { get; set; }
@@ -88,6 +88,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("target_config", NullValueHandling = NullValueHandling.Ignore)]
         public Object TargetConfig { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  数据库代理ID，严格匹配UUID规则。  **取值范围**：  只能由英文字母、数字组成，后缀为po01，长度为36个字符。
+        /// </summary>
+        [JsonProperty("proxy_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxyId { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  数据库代理名称。  **取值范围**：  不涉及。
+        /// </summary>
+        [JsonProperty("proxy_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string ProxyName { get; set; }
+
 
 
         /// <summary>
@@ -109,6 +121,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  jobStatus: ").Append(JobStatus).Append("\n");
             sb.Append("  datastoreType: ").Append(DatastoreType).Append("\n");
             sb.Append("  targetConfig: ").Append(TargetConfig).Append("\n");
+            sb.Append("  proxyId: ").Append(ProxyId).Append("\n");
+            sb.Append("  proxyName: ").Append(ProxyName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,6 +153,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.JobStatus != input.JobStatus || (this.JobStatus != null && !this.JobStatus.Equals(input.JobStatus))) return false;
             if (this.DatastoreType != input.DatastoreType || (this.DatastoreType != null && !this.DatastoreType.Equals(input.DatastoreType))) return false;
             if (this.TargetConfig != input.TargetConfig || (this.TargetConfig != null && !this.TargetConfig.Equals(input.TargetConfig))) return false;
+            if (this.ProxyId != input.ProxyId || (this.ProxyId != null && !this.ProxyId.Equals(input.ProxyId))) return false;
+            if (this.ProxyName != input.ProxyName || (this.ProxyName != null && !this.ProxyName.Equals(input.ProxyName))) return false;
 
             return true;
         }
@@ -163,6 +179,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.JobStatus != null) hashCode = hashCode * 59 + this.JobStatus.GetHashCode();
                 if (this.DatastoreType != null) hashCode = hashCode * 59 + this.DatastoreType.GetHashCode();
                 if (this.TargetConfig != null) hashCode = hashCode * 59 + this.TargetConfig.GetHashCode();
+                if (this.ProxyId != null) hashCode = hashCode * 59 + this.ProxyId.GetHashCode();
+                if (this.ProxyName != null) hashCode = hashCode * 59 + this.ProxyName.GetHashCode();
                 return hashCode;
             }
         }

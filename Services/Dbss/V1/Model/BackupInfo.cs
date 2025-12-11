@@ -47,7 +47,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public long? FileSize { get; set; }
 
         /// <summary>
-        /// 文件大小单位 - Byte - KB - MB - GB
+        /// 文件大小单位 - Byte：Byte - KB：kb - MB: mb - GB: gb
         /// </summary>
         [JsonProperty("file_size_unit", NullValueHandling = NullValueHandling.Ignore)]
         public string FileSizeUnit { get; set; }

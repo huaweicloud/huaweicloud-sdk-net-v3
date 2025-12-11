@@ -29,19 +29,19 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 规则的状态： - ON - OFF
+        /// 规则的状态： - ON： 启用 - OFF： 禁用
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
 
         /// <summary>
-        /// 风险级别 - HIGH - MEDIUM - LOW
+        /// 风险级别 - HIGH： 高 - MEDIUM：中 - LOW：低
         /// </summary>
         [JsonProperty("risk_level", NullValueHandling = NullValueHandling.Ignore)]
         public string RiskLevel { get; set; }
 
         /// <summary>
-        /// 风险类型
+        /// 风险类型 - SYSTEM: 系统  - CUSTOMIZE：自定义
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }

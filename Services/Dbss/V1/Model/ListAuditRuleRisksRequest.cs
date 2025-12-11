@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class ListAuditRuleRisksRequest 
     {
         /// <summary>
-        /// 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
+        /// 风险级别 - LOW：低 - MEDIUM：中 - HIGH：高 - NO_RISK：无风险
         /// </summary>
-        /// <value>风险级别 - LOW - MEDIUM - HIGH - NO_RISK</value>
+        /// <value>风险级别 - LOW：低 - MEDIUM：中 - HIGH：高 - NO_RISK：无风险</value>
         [JsonConverter(typeof(EnumClassConverter<RiskLevelsEnum>))]
         public class RiskLevelsEnum
         {
@@ -158,7 +158,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
+        /// 风险级别 - LOW：低 - MEDIUM：中 - HIGH：高 - NO_RISK：无风险
         /// </summary>
         [SDKProperty("risk_levels", IsQuery = true)]
         [JsonProperty("risk_levels", NullValueHandling = NullValueHandling.Ignore)]

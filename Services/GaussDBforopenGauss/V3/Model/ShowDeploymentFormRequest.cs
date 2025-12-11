@@ -151,6 +151,27 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
+        /// <summary>
+        /// **参数解释**: 事务一致性类型。 **约束限制**: 不涉及。 **取值范围**: - strong - eventual **默认取值**: 不涉及。
+        /// </summary>
+        [SDKProperty("consistency", IsQuery = true)]
+        [JsonProperty("consistency", NullValueHandling = NullValueHandling.Ignore)]
+        public string Consistency { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 副本一致性协议类型。 **约束限制**: 不涉及。 **取值范围**: - quorum - paxos **默认取值**: 不涉及。
+        /// </summary>
+        [SDKProperty("consistency_protocol", IsQuery = true)]
+        [JsonProperty("consistency_protocol", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConsistencyProtocol { get; set; }
+
+        /// <summary>
+        /// **参数解释**: 引擎版本号。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+        /// </summary>
+        [SDKProperty("engine_version", IsQuery = true)]
+        [JsonProperty("engine_version", NullValueHandling = NullValueHandling.Ignore)]
+        public string EngineVersion { get; set; }
+
 
 
         /// <summary>
@@ -163,6 +184,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  xLanguage: ").Append(XLanguage).Append("\n");
             sb.Append("  solution: ").Append(Solution).Append("\n");
             sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
+            sb.Append("  consistency: ").Append(Consistency).Append("\n");
+            sb.Append("  consistencyProtocol: ").Append(ConsistencyProtocol).Append("\n");
+            sb.Append("  engineVersion: ").Append(EngineVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -184,6 +208,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
             if (this.Solution != input.Solution) return false;
             if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Consistency != input.Consistency || (this.Consistency != null && !this.Consistency.Equals(input.Consistency))) return false;
+            if (this.ConsistencyProtocol != input.ConsistencyProtocol || (this.ConsistencyProtocol != null && !this.ConsistencyProtocol.Equals(input.ConsistencyProtocol))) return false;
+            if (this.EngineVersion != input.EngineVersion || (this.EngineVersion != null && !this.EngineVersion.Equals(input.EngineVersion))) return false;
 
             return true;
         }
@@ -199,6 +226,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 hashCode = hashCode * 59 + this.Solution.GetHashCode();
                 if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Consistency != null) hashCode = hashCode * 59 + this.Consistency.GetHashCode();
+                if (this.ConsistencyProtocol != null) hashCode = hashCode * 59 + this.ConsistencyProtocol.GetHashCode();
+                if (this.EngineVersion != null) hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
                 return hashCode;
             }
         }

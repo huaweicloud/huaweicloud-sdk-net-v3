@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 实例ID。
+        /// **参数解释：** 实例ID。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceId { get; set; }
 
         /// <summary>
-        /// 实例名称
+        /// **参数解释：** 实例名称。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("instance_name", NullValueHandling = NullValueHandling.Ignore)]
         public string InstanceName { get; set; }
 
         /// <summary>
-        /// 生效时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。  [其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。](tag:hc)  [其中，T指某个时间的开始；Z指时区偏移量。](tag:hk)
+        /// **参数解释：** 生效时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("applied_at", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? AppliedAt { get; set; }
 
         /// <summary>
-        /// - SUCCESS：应用成功。 - FAILED:应用失败。
+        /// **参数解释：** 应用结果。 **取值范围：** - SUCCESS：应用成功。 - FAILED:应用失败。 - APPLYING: 应用中。
         /// </summary>
         [JsonProperty("apply_result", NullValueHandling = NullValueHandling.Ignore)]
         public string ApplyResult { get; set; }
 
         /// <summary>
-        /// 失败原因
+        /// **参数解释：** 失败原因。 **取值范围：** 不涉及。
         /// </summary>
         [JsonProperty("failure_reason", NullValueHandling = NullValueHandling.Ignore)]
         public string FailureReason { get; set; }

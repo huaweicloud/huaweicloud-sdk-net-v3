@@ -15,6 +15,121 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
     /// </summary>
     public class MysqlProxyV3 
     {
+        /// <summary>
+        /// **参数解释**：  数据库代理读写模式。  **取值范围**：  - readwrite：读写模式 - readonly：只读模式 
+        /// </summary>
+        /// <value>**参数解释**：  数据库代理读写模式。  **取值范围**：  - readwrite：读写模式 - readonly：只读模式 </value>
+        [JsonConverter(typeof(EnumClassConverter<TypeEnum>))]
+        public class TypeEnum
+        {
+            /// <summary>
+            /// Enum READWRITE for value: readwrite
+            /// </summary>
+            public static readonly TypeEnum READWRITE = new TypeEnum("readwrite");
+
+            /// <summary>
+            /// Enum READONLY for value: readonly
+            /// </summary>
+            public static readonly TypeEnum READONLY = new TypeEnum("readonly");
+
+            private static readonly Dictionary<string, TypeEnum> StaticFields =
+            new Dictionary<string, TypeEnum>()
+            {
+                { "readwrite", READWRITE },
+                { "readonly", READONLY },
+            };
+
+            private string _value;
+
+            public TypeEnum()
+            {
+
+            }
+
+            public TypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static TypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as TypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(TypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(TypeEnum a, TypeEnum b)
+            {
+                if (ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(TypeEnum a, TypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// Proxy实例ID。
@@ -81,6 +196,29 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         [JsonProperty("node_num", NullValueHandling = NullValueHandling.Ignore)]
         public int? NodeNum { get; set; }
+
+        /// <summary>
+        /// **参数解释**：  数据库代理读写模式。  **取值范围**：  - readwrite：读写模式 - readonly：只读模式 
+        /// </summary>
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
+        public TypeEnum Type { get; set; }
+        /// <summary>
+        /// 数据库代理创建时间。
+        /// </summary>
+        [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string CreatedAt { get; set; }
+
+        /// <summary>
+        /// 数据库代更新时间。
+        /// </summary>
+        [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
+        public string UpdatedAt { get; set; }
+
+        /// <summary>
+        /// 是否支持HTAP节点。
+        /// </summary>
+        [JsonProperty("support_ap_node", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? SupportApNode { get; set; }
 
         /// <summary>
         /// Proxy主备模式，取值范围：Cluster。
@@ -186,6 +324,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  vcpus: ").Append(Vcpus).Append("\n");
             sb.Append("  ram: ").Append(Ram).Append("\n");
             sb.Append("  nodeNum: ").Append(NodeNum).Append("\n");
+            sb.Append("  type: ").Append(Type).Append("\n");
+            sb.Append("  createdAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  updatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  supportApNode: ").Append(SupportApNode).Append("\n");
             sb.Append("  mode: ").Append(Mode).Append("\n");
             sb.Append("  nodes: ").Append(Nodes).Append("\n");
             sb.Append("  flavorRef: ").Append(FlavorRef).Append("\n");
@@ -229,6 +371,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
             if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
             if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.SupportApNode != input.SupportApNode || (this.SupportApNode != null && !this.SupportApNode.Equals(input.SupportApNode))) return false;
             if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
             if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
             if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
@@ -266,6 +412,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
                 if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();
                 if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.SupportApNode != null) hashCode = hashCode * 59 + this.SupportApNode.GetHashCode();
                 if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
                 if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();

@@ -23,7 +23,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// 告警状态 - ON - OFF
+        /// 告警状态 - ON：持续中 - OFF：已关闭
         /// </summary>
         [JsonProperty("alarmLife", NullValueHandling = NullValueHandling.Ignore)]
         public string AlarmLife { get; set; }

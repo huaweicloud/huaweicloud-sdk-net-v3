@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         [JsonProperty("readonly_nodes", NullValueHandling = NullValueHandling.Ignore)]
         public List<MysqlProxyNodeV3> ReadonlyNodes { get; set; }
 
+        /// <summary>
+        /// **参数解释**：  HTAP节点信息。 
+        /// </summary>
+        [JsonProperty("htap_nodes", NullValueHandling = NullValueHandling.Ignore)]
+        public List<MysqlProxyNodeV3> HtapNodes { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             sb.Append("  proxy: ").Append(Proxy).Append("\n");
             sb.Append("  masterNode: ").Append(MasterNode).Append("\n");
             sb.Append("  readonlyNodes: ").Append(ReadonlyNodes).Append("\n");
+            sb.Append("  htapNodes: ").Append(HtapNodes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
             if (this.Proxy != input.Proxy || (this.Proxy != null && !this.Proxy.Equals(input.Proxy))) return false;
             if (this.MasterNode != input.MasterNode || (this.MasterNode != null && !this.MasterNode.Equals(input.MasterNode))) return false;
             if (this.ReadonlyNodes != input.ReadonlyNodes || (this.ReadonlyNodes != null && input.ReadonlyNodes != null && !this.ReadonlyNodes.SequenceEqual(input.ReadonlyNodes))) return false;
+            if (this.HtapNodes != input.HtapNodes || (this.HtapNodes != null && input.HtapNodes != null && !this.HtapNodes.SequenceEqual(input.HtapNodes))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
                 if (this.Proxy != null) hashCode = hashCode * 59 + this.Proxy.GetHashCode();
                 if (this.MasterNode != null) hashCode = hashCode * 59 + this.MasterNode.GetHashCode();
                 if (this.ReadonlyNodes != null) hashCode = hashCode * 59 + this.ReadonlyNodes.GetHashCode();
+                if (this.HtapNodes != null) hashCode = hashCode * 59 + this.HtapNodes.GetHashCode();
                 return hashCode;
             }
         }

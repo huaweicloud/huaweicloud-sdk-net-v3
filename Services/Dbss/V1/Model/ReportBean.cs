@@ -71,7 +71,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string StartTime { get; set; }
 
         /// <summary>
-        /// 报表类型 - PDF - ZIP
+        /// 报表类型 - PDF: pdf - ZIP: zip
         /// </summary>
         [JsonProperty("template_type", NullValueHandling = NullValueHandling.Ignore)]
         public string TemplateType { get; set; }
