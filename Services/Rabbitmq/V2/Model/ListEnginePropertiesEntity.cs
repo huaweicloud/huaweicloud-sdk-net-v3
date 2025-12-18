@@ -35,12 +35,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string MaxConnectionPerBroker { get; set; }
 
         /// <summary>
-        /// 每个Broker的最大分区数。
-        /// </summary>
-        [JsonProperty("max_partition_per_broker", NullValueHandling = NullValueHandling.Ignore)]
-        public string MaxPartitionPerBroker { get; set; }
-
-        /// <summary>
         /// Broker的最大个数。
         /// </summary>
         [JsonProperty("max_broker", NullValueHandling = NullValueHandling.Ignore)]
@@ -100,7 +94,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("  stepLength: ").Append(StepLength).Append("\n");
             sb.Append("  maxQueuePerBroker: ").Append(MaxQueuePerBroker).Append("\n");
             sb.Append("  maxConnectionPerBroker: ").Append(MaxConnectionPerBroker).Append("\n");
-            sb.Append("  maxPartitionPerBroker: ").Append(MaxPartitionPerBroker).Append("\n");
             sb.Append("  maxBroker: ").Append(MaxBroker).Append("\n");
             sb.Append("  maxStoragePerNode: ").Append(MaxStoragePerNode).Append("\n");
             sb.Append("  maxConsumerPerBroker: ").Append(MaxConsumerPerBroker).Append("\n");
@@ -130,7 +123,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (this.StepLength != input.StepLength || (this.StepLength != null && !this.StepLength.Equals(input.StepLength))) return false;
             if (this.MaxQueuePerBroker != input.MaxQueuePerBroker || (this.MaxQueuePerBroker != null && !this.MaxQueuePerBroker.Equals(input.MaxQueuePerBroker))) return false;
             if (this.MaxConnectionPerBroker != input.MaxConnectionPerBroker || (this.MaxConnectionPerBroker != null && !this.MaxConnectionPerBroker.Equals(input.MaxConnectionPerBroker))) return false;
-            if (this.MaxPartitionPerBroker != input.MaxPartitionPerBroker || (this.MaxPartitionPerBroker != null && !this.MaxPartitionPerBroker.Equals(input.MaxPartitionPerBroker))) return false;
             if (this.MaxBroker != input.MaxBroker || (this.MaxBroker != null && !this.MaxBroker.Equals(input.MaxBroker))) return false;
             if (this.MaxStoragePerNode != input.MaxStoragePerNode || (this.MaxStoragePerNode != null && !this.MaxStoragePerNode.Equals(input.MaxStoragePerNode))) return false;
             if (this.MaxConsumerPerBroker != input.MaxConsumerPerBroker || (this.MaxConsumerPerBroker != null && !this.MaxConsumerPerBroker.Equals(input.MaxConsumerPerBroker))) return false;
@@ -154,7 +146,6 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 if (this.StepLength != null) hashCode = hashCode * 59 + this.StepLength.GetHashCode();
                 if (this.MaxQueuePerBroker != null) hashCode = hashCode * 59 + this.MaxQueuePerBroker.GetHashCode();
                 if (this.MaxConnectionPerBroker != null) hashCode = hashCode * 59 + this.MaxConnectionPerBroker.GetHashCode();
-                if (this.MaxPartitionPerBroker != null) hashCode = hashCode * 59 + this.MaxPartitionPerBroker.GetHashCode();
                 if (this.MaxBroker != null) hashCode = hashCode * 59 + this.MaxBroker.GetHashCode();
                 if (this.MaxStoragePerNode != null) hashCode = hashCode * 59 + this.MaxStoragePerNode.GetHashCode();
                 if (this.MaxConsumerPerBroker != null) hashCode = hashCode * 59 + this.MaxConsumerPerBroker.GetHashCode();

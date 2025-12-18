@@ -450,6 +450,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public Authentication Authentication { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("publicAccess", NullValueHandling = NullValueHandling.Ignore)]
+        public PublicAccess PublicAccess { get; set; }
+
+        /// <summary>
         /// 集群的计费方式。 - 0: 按需计费 [- 1: 包周期](tag:hws,hws_hk)  默认为“按需计费”。 
         /// </summary>
         [JsonProperty("billingMode", NullValueHandling = NullValueHandling.Ignore)]
@@ -556,6 +562,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  eniNetwork: ").Append(EniNetwork).Append("\n");
             sb.Append("  serviceNetwork: ").Append(ServiceNetwork).Append("\n");
             sb.Append("  authentication: ").Append(Authentication).Append("\n");
+            sb.Append("  publicAccess: ").Append(PublicAccess).Append("\n");
             sb.Append("  billingMode: ").Append(BillingMode).Append("\n");
             sb.Append("  masters: ").Append(Masters).Append("\n");
             sb.Append("  kubernetesSvcIpRange: ").Append(KubernetesSvcIpRange).Append("\n");
@@ -603,6 +610,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.EniNetwork != input.EniNetwork || (this.EniNetwork != null && !this.EniNetwork.Equals(input.EniNetwork))) return false;
             if (this.ServiceNetwork != input.ServiceNetwork || (this.ServiceNetwork != null && !this.ServiceNetwork.Equals(input.ServiceNetwork))) return false;
             if (this.Authentication != input.Authentication || (this.Authentication != null && !this.Authentication.Equals(input.Authentication))) return false;
+            if (this.PublicAccess != input.PublicAccess || (this.PublicAccess != null && !this.PublicAccess.Equals(input.PublicAccess))) return false;
             if (this.BillingMode != input.BillingMode || (this.BillingMode != null && !this.BillingMode.Equals(input.BillingMode))) return false;
             if (this.Masters != input.Masters || (this.Masters != null && input.Masters != null && !this.Masters.SequenceEqual(input.Masters))) return false;
             if (this.KubernetesSvcIpRange != input.KubernetesSvcIpRange || (this.KubernetesSvcIpRange != null && !this.KubernetesSvcIpRange.Equals(input.KubernetesSvcIpRange))) return false;
@@ -644,6 +652,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.EniNetwork != null) hashCode = hashCode * 59 + this.EniNetwork.GetHashCode();
                 if (this.ServiceNetwork != null) hashCode = hashCode * 59 + this.ServiceNetwork.GetHashCode();
                 if (this.Authentication != null) hashCode = hashCode * 59 + this.Authentication.GetHashCode();
+                if (this.PublicAccess != null) hashCode = hashCode * 59 + this.PublicAccess.GetHashCode();
                 if (this.BillingMode != null) hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
                 if (this.Masters != null) hashCode = hashCode * 59 + this.Masters.GetHashCode();
                 if (this.KubernetesSvcIpRange != null) hashCode = hashCode * 59 + this.KubernetesSvcIpRange.GetHashCode();

@@ -25,8 +25,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// <summary>
         /// **参数解释**：  随机选取符合sql限流关键字的用户某条sql样例。  **约束限制**：  不涉及。
         /// </summary>
-        [JsonProperty("raw_sql", NullValueHandling = NullValueHandling.Ignore)]
-        public string RawSql { get; set; }
+        [JsonProperty("raw_sql_text", NullValueHandling = NullValueHandling.Ignore)]
+        public string RawSqlText { get; set; }
 
         /// <summary>
         /// **参数解释**：  符合该统计维度的线程id。  **约束限制**：  不涉及。
@@ -86,7 +86,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             var sb = new StringBuilder();
             sb.Append("class IntelligentKillSessionStatistic {\n");
             sb.Append("  keyword: ").Append(Keyword).Append("\n");
-            sb.Append("  rawSql: ").Append(RawSql).Append("\n");
+            sb.Append("  rawSqlText: ").Append(RawSqlText).Append("\n");
             sb.Append("  ids: ").Append(Ids).Append("\n");
             sb.Append("  count: ").Append(Count).Append("\n");
             sb.Append("  totalTime: ").Append(TotalTime).Append("\n");
@@ -114,7 +114,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             if (input == null) return false;
             if (this.Keyword != input.Keyword || (this.Keyword != null && !this.Keyword.Equals(input.Keyword))) return false;
-            if (this.RawSql != input.RawSql || (this.RawSql != null && !this.RawSql.Equals(input.RawSql))) return false;
+            if (this.RawSqlText != input.RawSqlText || (this.RawSqlText != null && !this.RawSqlText.Equals(input.RawSqlText))) return false;
             if (this.Ids != input.Ids || (this.Ids != null && input.Ids != null && !this.Ids.SequenceEqual(input.Ids))) return false;
             if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
             if (this.TotalTime != input.TotalTime || (this.TotalTime != null && !this.TotalTime.Equals(input.TotalTime))) return false;
@@ -136,7 +136,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             {
                 var hashCode = 41;
                 if (this.Keyword != null) hashCode = hashCode * 59 + this.Keyword.GetHashCode();
-                if (this.RawSql != null) hashCode = hashCode * 59 + this.RawSql.GetHashCode();
+                if (this.RawSqlText != null) hashCode = hashCode * 59 + this.RawSqlText.GetHashCode();
                 if (this.Ids != null) hashCode = hashCode * 59 + this.Ids.GetHashCode();
                 if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 if (this.TotalTime != null) hashCode = hashCode * 59 + this.TotalTime.GetHashCode();

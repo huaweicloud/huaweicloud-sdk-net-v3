@@ -28,6 +28,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         [JsonProperty("password", NullValueHandling = NullValueHandling.Ignore)]
         public string Password { get; set; }
 
+        /// <summary>
+        /// 是否创建实例级只读账号。
+        /// </summary>
+        [JsonProperty("instance_readonly", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? InstanceReadonly { get; set; }
+
 
 
         /// <summary>
@@ -39,6 +45,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             sb.Append("class SqlserverUserForCreation {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  password: ").Append(Password).Append("\n");
+            sb.Append("  instanceReadonly: ").Append(InstanceReadonly).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -59,6 +66,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.InstanceReadonly != input.InstanceReadonly || (this.InstanceReadonly != null && !this.InstanceReadonly.Equals(input.InstanceReadonly))) return false;
 
             return true;
         }
@@ -73,6 +81,7 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
                 var hashCode = 41;
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.InstanceReadonly != null) hashCode = hashCode * 59 + this.InstanceReadonly.GetHashCode();
                 return hashCode;
             }
         }

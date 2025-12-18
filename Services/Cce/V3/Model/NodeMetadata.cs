@@ -49,8 +49,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("ownerReference", NullValueHandling = NullValueHandling.Ignore)]
-        public NodeMetadataOwnerReference OwnerReference { get; set; }
+        [JsonProperty("ownerReferences", NullValueHandling = NullValueHandling.Ignore)]
+        public NodeMetadataOwnerReferences OwnerReferences { get; set; }
 
 
 
@@ -66,7 +66,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  annotations: ").Append(Annotations).Append("\n");
             sb.Append("  creationTimestamp: ").Append(CreationTimestamp).Append("\n");
             sb.Append("  updateTimestamp: ").Append(UpdateTimestamp).Append("\n");
-            sb.Append("  ownerReference: ").Append(OwnerReference).Append("\n");
+            sb.Append("  ownerReferences: ").Append(OwnerReferences).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,7 +90,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Annotations != input.Annotations || (this.Annotations != null && input.Annotations != null && !this.Annotations.SequenceEqual(input.Annotations))) return false;
             if (this.CreationTimestamp != input.CreationTimestamp || (this.CreationTimestamp != null && !this.CreationTimestamp.Equals(input.CreationTimestamp))) return false;
             if (this.UpdateTimestamp != input.UpdateTimestamp || (this.UpdateTimestamp != null && !this.UpdateTimestamp.Equals(input.UpdateTimestamp))) return false;
-            if (this.OwnerReference != input.OwnerReference || (this.OwnerReference != null && !this.OwnerReference.Equals(input.OwnerReference))) return false;
+            if (this.OwnerReferences != input.OwnerReferences || (this.OwnerReferences != null && !this.OwnerReferences.Equals(input.OwnerReferences))) return false;
 
             return true;
         }
@@ -108,7 +108,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.Annotations != null) hashCode = hashCode * 59 + this.Annotations.GetHashCode();
                 if (this.CreationTimestamp != null) hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
                 if (this.UpdateTimestamp != null) hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
-                if (this.OwnerReference != null) hashCode = hashCode * 59 + this.OwnerReference.GetHashCode();
+                if (this.OwnerReferences != null) hashCode = hashCode * 59 + this.OwnerReferences.GetHashCode();
                 return hashCode;
             }
         }

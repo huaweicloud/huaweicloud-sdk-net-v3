@@ -467,24 +467,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public AutopilotClusterExtendParam ExtendParam { get; set; }
 
         /// <summary>
-        /// **参数解释：** 集群控制节点系统盘、数据盘加密。默认使用AES_256加密算法。CCE、Turbo集群1.25及以上版本开始支持。 **约束限制：** 集群创建后不支持修改。开启后存在一定的磁盘读写性能损耗。 **取值范围：** - true: 开启控制节点磁盘加密 - false: 关闭控制节点磁盘加密  **默认取值：** 默认false 
-        /// </summary>
-        [JsonProperty("enableMasterVolumeEncryption", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? EnableMasterVolumeEncryption { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 集群开启对分布式云支持。 **约束限制：** 目前只有Turbo集群支持。 **取值范围：** - true: 开启对分布式云支持 - false: 关闭对分布式云支持  **默认取值：** 默认false 
-        /// </summary>
-        [JsonProperty("enableDistMgt", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? EnableDistMgt { get; set; }
-
-        /// <summary>
-        /// **参数解释：** 集群删除保护，如果开启后用户将无法删除该集群。 **约束限制：** 不涉及。 **取值范围：** - true: 开启集群删除保护 - false: 关闭集群删除保护  **默认取值：** 默认false 
-        /// </summary>
-        [JsonProperty("deletionProtection", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? DeletionProtection { get; set; }
-
-        /// <summary>
         /// 覆盖集群默认组件配置  若指定了不支持的组件或组件不支持的参数，该配置项将被忽略。  当前支持的可配置组件及其参数详见 [[配置管理](https://support.huaweicloud.com/usermanual-cce/cce_10_0213.html)](tag:hws) [[配置管理](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0213.html)](tag:hws_hk) 
         /// </summary>
         [JsonProperty("configurationsOverride", NullValueHandling = NullValueHandling.Ignore)]
@@ -520,9 +502,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  kubeProxyMode: ").Append(KubeProxyMode).Append("\n");
             sb.Append("  az: ").Append(Az).Append("\n");
             sb.Append("  extendParam: ").Append(ExtendParam).Append("\n");
-            sb.Append("  enableMasterVolumeEncryption: ").Append(EnableMasterVolumeEncryption).Append("\n");
-            sb.Append("  enableDistMgt: ").Append(EnableDistMgt).Append("\n");
-            sb.Append("  deletionProtection: ").Append(DeletionProtection).Append("\n");
             sb.Append("  configurationsOverride: ").Append(ConfigurationsOverride).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -563,9 +542,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.KubeProxyMode != input.KubeProxyMode) return false;
             if (this.Az != input.Az || (this.Az != null && !this.Az.Equals(input.Az))) return false;
             if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
-            if (this.EnableMasterVolumeEncryption != input.EnableMasterVolumeEncryption || (this.EnableMasterVolumeEncryption != null && !this.EnableMasterVolumeEncryption.Equals(input.EnableMasterVolumeEncryption))) return false;
-            if (this.EnableDistMgt != input.EnableDistMgt || (this.EnableDistMgt != null && !this.EnableDistMgt.Equals(input.EnableDistMgt))) return false;
-            if (this.DeletionProtection != input.DeletionProtection || (this.DeletionProtection != null && !this.DeletionProtection.Equals(input.DeletionProtection))) return false;
             if (this.ConfigurationsOverride != input.ConfigurationsOverride || (this.ConfigurationsOverride != null && input.ConfigurationsOverride != null && !this.ConfigurationsOverride.SequenceEqual(input.ConfigurationsOverride))) return false;
 
             return true;
@@ -600,9 +576,6 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 hashCode = hashCode * 59 + this.KubeProxyMode.GetHashCode();
                 if (this.Az != null) hashCode = hashCode * 59 + this.Az.GetHashCode();
                 if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
-                if (this.EnableMasterVolumeEncryption != null) hashCode = hashCode * 59 + this.EnableMasterVolumeEncryption.GetHashCode();
-                if (this.EnableDistMgt != null) hashCode = hashCode * 59 + this.EnableDistMgt.GetHashCode();
-                if (this.DeletionProtection != null) hashCode = hashCode * 59 + this.DeletionProtection.GetHashCode();
                 if (this.ConfigurationsOverride != null) hashCode = hashCode * 59 + this.ConfigurationsOverride.GetHashCode();
                 return hashCode;
             }

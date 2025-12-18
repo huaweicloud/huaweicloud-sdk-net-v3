@@ -2575,5 +2575,183 @@ namespace HuaweiCloud.SDK.Ddm.V1
             return new AsyncInvoker<ValidateWeakPasswordResponse>(this, "POST", request, JsonUtils.DeSerialize<ValidateWeakPasswordResponse>);
         }
         
+        /// <summary>
+        /// rds连通性检查V3
+        ///
+        /// rds连通性检查V3
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CheckDataNodeConnectionV0V3Response> CheckDataNodeConnectionV0V3Async(CheckDataNodeConnectionV0V3Request checkDataNodeConnectionV0V3Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ddm/instance/rds/connection", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkDataNodeConnectionV0V3Request);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<CheckDataNodeConnectionV0V3Response>(response);
+        }
+
+        public AsyncInvoker<CheckDataNodeConnectionV0V3Response> CheckDataNodeConnectionV0V3AsyncInvoker(CheckDataNodeConnectionV0V3Request checkDataNodeConnectionV0V3Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/ddm/instance/rds/connection", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", checkDataNodeConnectionV0V3Request);
+            return new AsyncInvoker<CheckDataNodeConnectionV0V3Response>(this, "POST", request, JsonUtils.DeSerialize<CheckDataNodeConnectionV0V3Response>);
+        }
+        
+        /// <summary>
+        /// 比较参数组V3
+        ///
+        /// 比较参数组V3
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CompareParameterGroupsResponse> CompareParameterGroupsAsync(CompareParameterGroupsRequest compareParameterGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/diff", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", compareParameterGroupsRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<CompareParameterGroupsResponse>(response);
+        }
+
+        public AsyncInvoker<CompareParameterGroupsResponse> CompareParameterGroupsAsyncInvoker(CompareParameterGroupsRequest compareParameterGroupsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/diff", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", compareParameterGroupsRequest);
+            return new AsyncInvoker<CompareParameterGroupsResponse>(this, "PUT", request, JsonUtils.DeSerialize<CompareParameterGroupsResponse>);
+        }
+        
+        /// <summary>
+        /// 复制参数组V3
+        ///
+        /// 复制参数组V3
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<CopyParameterGroupResponse> CopyParameterGroupAsync(CopyParameterGroupRequest copyParameterGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(copyParameterGroupRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/copy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyParameterGroupRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<CopyParameterGroupResponse>(response);
+        }
+
+        public AsyncInvoker<CopyParameterGroupResponse> CopyParameterGroupAsyncInvoker(CopyParameterGroupRequest copyParameterGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(copyParameterGroupRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/copy", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", copyParameterGroupRequest);
+            return new AsyncInvoker<CopyParameterGroupResponse>(this, "POST", request, JsonUtils.DeSerializeNull<CopyParameterGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 查询可应用的实例列表V3
+        ///
+        /// 查询可应用的实例列表V3
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListInstancesAppliedParameterGroupV0V3Response> ListInstancesAppliedParameterGroupV0V3Async(ListInstancesAppliedParameterGroupV0V3Request listInstancesAppliedParameterGroupV0V3Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstancesAppliedParameterGroupV0V3Request.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/query-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesAppliedParameterGroupV0V3Request);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListInstancesAppliedParameterGroupV0V3Response>(response);
+        }
+
+        public AsyncInvoker<ListInstancesAppliedParameterGroupV0V3Response> ListInstancesAppliedParameterGroupV0V3AsyncInvoker(ListInstancesAppliedParameterGroupV0V3Request listInstancesAppliedParameterGroupV0V3Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listInstancesAppliedParameterGroupV0V3Request.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/query-instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listInstancesAppliedParameterGroupV0V3Request);
+            return new AsyncInvoker<ListInstancesAppliedParameterGroupV0V3Response>(this, "GET", request, JsonUtils.DeSerialize<ListInstancesAppliedParameterGroupV0V3Response>);
+        }
+        
+        /// <summary>
+        /// 参数组应用记录V3
+        ///
+        /// 参数组应用记录V3
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListParameterGroupApplyHistoryV0V3Response> ListParameterGroupApplyHistoryV0V3Async(ListParameterGroupApplyHistoryV0V3Request listParameterGroupApplyHistoryV0V3Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listParameterGroupApplyHistoryV0V3Request.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply-histories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listParameterGroupApplyHistoryV0V3Request);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ListParameterGroupApplyHistoryV0V3Response>(response);
+        }
+
+        public AsyncInvoker<ListParameterGroupApplyHistoryV0V3Response> ListParameterGroupApplyHistoryV0V3AsyncInvoker(ListParameterGroupApplyHistoryV0V3Request listParameterGroupApplyHistoryV0V3Request)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(listParameterGroupApplyHistoryV0V3Request.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/apply-histories", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listParameterGroupApplyHistoryV0V3Request);
+            return new AsyncInvoker<ListParameterGroupApplyHistoryV0V3Response>(this, "GET", request, JsonUtils.DeSerialize<ListParameterGroupApplyHistoryV0V3Response>);
+        }
+        
+        /// <summary>
+        /// 更新参数组V3
+        ///
+        /// 更新参数组V3
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ResetParameterGroupResponse> ResetParameterGroupAsync(ResetParameterGroupRequest resetParameterGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(resetParameterGroupRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/reset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetParameterGroupRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<ResetParameterGroupResponse>(response);
+        }
+
+        public AsyncInvoker<ResetParameterGroupResponse> ResetParameterGroupAsyncInvoker(ResetParameterGroupRequest resetParameterGroupRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(resetParameterGroupRequest.ConfigId, out var valueOfConfigId)) urlParam.Add("config_id", valueOfConfigId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/configurations/{config_id}/reset", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", resetParameterGroupRequest);
+            return new AsyncInvoker<ResetParameterGroupResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<ResetParameterGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 查询实例详情V3
+        ///
+        /// 查询实例详情V3
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowDdmDetailResponse> ShowDdmDetailAsync(ShowDdmDetailRequest showDdmDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDdmDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDdmDetailRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowDdmDetailResponse>(response);
+        }
+
+        public AsyncInvoker<ShowDdmDetailResponse> ShowDdmDetailAsyncInvoker(ShowDdmDetailRequest showDdmDetailRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showDdmDetailRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showDdmDetailRequest);
+            return new AsyncInvoker<ShowDdmDetailResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowDdmDetailResponse>);
+        }
+        
     }
 }

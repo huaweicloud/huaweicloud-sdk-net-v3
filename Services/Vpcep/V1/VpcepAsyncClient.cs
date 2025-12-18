@@ -42,6 +42,32 @@ namespace HuaweiCloud.SDK.Vpcep.V1
         }
         
         /// <summary>
+        /// 添加终端节点服务后端服务资源
+        ///
+        /// 添加终端节点服务后端服务资源。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<AddEndpointServiceServerResourceResponse> AddEndpointServiceServerResourceAsync(AddEndpointServiceServerResourceRequest addEndpointServiceServerResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addEndpointServiceServerResourceRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/add-server-resources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addEndpointServiceServerResourceRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<AddEndpointServiceServerResourceResponse>(response);
+        }
+
+        public AsyncInvoker<AddEndpointServiceServerResourceResponse> AddEndpointServiceServerResourceAsyncInvoker(AddEndpointServiceServerResourceRequest addEndpointServiceServerResourceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(addEndpointServiceServerResourceRequest.VpcEndpointServiceId, out var valueOfVpcEndpointServiceId)) urlParam.Add("vpc_endpoint_service_id", valueOfVpcEndpointServiceId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/add-server-resources", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addEndpointServiceServerResourceRequest);
+            return new AsyncInvoker<AddEndpointServiceServerResourceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<AddEndpointServiceServerResourceResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加或移除终端节点服务的白名单
         ///
         /// 批量添加或移除当前用户下终端节点服务的白名单。
@@ -747,6 +773,32 @@ namespace HuaweiCloud.SDK.Vpcep.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeEndpointServiceRequest);
             return new AsyncInvoker<UpgradeEndpointServiceResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpgradeEndpointServiceResponse>);
+        }
+        
+        /// <summary>
+        /// 升级终端节点
+        ///
+        /// 升级终端节点，由基础型升级为专业型。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpgradeEndpointResponse> UpgradeEndpointAsync(UpgradeEndpointRequest upgradeEndpointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(upgradeEndpointRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/vpc-endpoints/{vpc_endpoint_id}/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeEndpointRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerializeNull<UpgradeEndpointResponse>(response);
+        }
+
+        public AsyncInvoker<UpgradeEndpointResponse> UpgradeEndpointAsyncInvoker(UpgradeEndpointRequest upgradeEndpointRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(upgradeEndpointRequest.VpcEndpointId, out var valueOfVpcEndpointId)) urlParam.Add("vpc_endpoint_id", valueOfVpcEndpointId);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/vpc-endpoints/{vpc_endpoint_id}/upgrade", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", upgradeEndpointRequest);
+            return new AsyncInvoker<UpgradeEndpointResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpgradeEndpointResponse>);
         }
         
         /// <summary>

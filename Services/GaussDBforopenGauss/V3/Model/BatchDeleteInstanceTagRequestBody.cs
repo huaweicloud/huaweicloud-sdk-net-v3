@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
     {
 
         /// <summary>
-        /// 需要删除的标签列表
+        /// **参数解释**: 需要删除的标签列表。
         /// </summary>
         [JsonProperty("keys", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Keys { get; set; }

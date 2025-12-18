@@ -98,6 +98,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 批量创建插件检查任务
+        ///
+        /// 该API用于在指定集群下批量创建插件检查任务。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<BatchCreateAddonPrecheckResponse> BatchCreateAddonPrecheckAsync(BatchCreateAddonPrecheckRequest batchCreateAddonPrecheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateAddonPrecheckRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/addons/precheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateAddonPrecheckRequest);
+            var response = await DoHttpRequestAsync("POST", request);
+            return JsonUtils.DeSerialize<BatchCreateAddonPrecheckResponse>(response);
+        }
+
+        public AsyncInvoker<BatchCreateAddonPrecheckResponse> BatchCreateAddonPrecheckAsyncInvoker(BatchCreateAddonPrecheckRequest batchCreateAddonPrecheckRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(batchCreateAddonPrecheckRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/addons/precheck", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", batchCreateAddonPrecheckRequest);
+            return new AsyncInvoker<BatchCreateAddonPrecheckResponse>(this, "POST", request, JsonUtils.DeSerialize<BatchCreateAddonPrecheckResponse>);
+        }
+        
+        /// <summary>
         /// 批量添加指定集群的资源标签
         ///
         /// 该API用于批量添加指定集群的资源标签。
@@ -595,7 +621,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAddonInstanceRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteAddonInstanceResponse>(response);
+            return JsonUtils.DeSerialize<DeleteAddonInstanceResponse>(response);
         }
 
         public AsyncInvoker<DeleteAddonInstanceResponse> DeleteAddonInstanceAsyncInvoker(DeleteAddonInstanceRequest deleteAddonInstanceRequest)
@@ -604,7 +630,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             if (StringUtils.TryConvertToNonEmptyString(deleteAddonInstanceRequest.Id, out var valueOfId)) urlParam.Add("id", valueOfId);
             var urlPath = HttpUtils.AddUrlPath("/api/v3/addons/{id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAddonInstanceRequest);
-            return new AsyncInvoker<DeleteAddonInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAddonInstanceResponse>);
+            return new AsyncInvoker<DeleteAddonInstanceResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAddonInstanceResponse>);
         }
         
         /// <summary>
@@ -621,7 +647,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteChartRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteChartResponse>(response);
+            return JsonUtils.DeSerialize<DeleteChartResponse>(response);
         }
 
         public AsyncInvoker<DeleteChartResponse> DeleteChartAsyncInvoker(DeleteChartRequest deleteChartRequest)
@@ -630,7 +656,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             if (StringUtils.TryConvertToNonEmptyString(deleteChartRequest.ChartId, out var valueOfChartId)) urlParam.Add("chart_id", valueOfChartId);
             var urlPath = HttpUtils.AddUrlPath("/v2/charts/{chart_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteChartRequest);
-            return new AsyncInvoker<DeleteChartResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteChartResponse>);
+            return new AsyncInvoker<DeleteChartResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteChartResponse>);
         }
         
         /// <summary>
@@ -763,7 +789,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReleaseRequest);
             var response = await DoHttpRequestAsync("DELETE", request);
-            return JsonUtils.DeSerializeNull<DeleteReleaseResponse>(response);
+            return JsonUtils.DeSerialize<DeleteReleaseResponse>(response);
         }
 
         public AsyncInvoker<DeleteReleaseResponse> DeleteReleaseAsyncInvoker(DeleteReleaseRequest deleteReleaseRequest)
@@ -774,7 +800,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             if (StringUtils.TryConvertToNonEmptyString(deleteReleaseRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
             var urlPath = HttpUtils.AddUrlPath("/cce/cam/v3/clusters/{cluster_id}/namespace/{namespace}/releases/{name}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteReleaseRequest);
-            return new AsyncInvoker<DeleteReleaseResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteReleaseResponse>);
+            return new AsyncInvoker<DeleteReleaseResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteReleaseResponse>);
         }
         
         /// <summary>
@@ -886,6 +912,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 获取集群LongAKSK配置
+        ///
+        /// 该API用于获取集群longaksk的配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<GetClusterLongAkskConfigResponse> GetClusterLongAkskConfigAsync(GetClusterLongAkskConfigRequest getClusterLongAkskConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getClusterLongAkskConfigRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/longaksk/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getClusterLongAkskConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<GetClusterLongAkskConfigResponse>(response);
+        }
+
+        public AsyncInvoker<GetClusterLongAkskConfigResponse> GetClusterLongAkskConfigAsyncInvoker(GetClusterLongAkskConfigRequest getClusterLongAkskConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getClusterLongAkskConfigRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/longaksk/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getClusterLongAkskConfigRequest);
+            return new AsyncInvoker<GetClusterLongAkskConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<GetClusterLongAkskConfigResponse>);
+        }
+        
+        /// <summary>
         /// 获取集群配额
         ///
         /// 该API用于获取集群配额
@@ -959,6 +1011,30 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/labels", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getLabelsRequest);
             return new AsyncInvoker<GetLabelsResponse>(this, "GET", request, JsonUtils.DeSerialize<GetLabelsResponse>);
+        }
+        
+        /// <summary>
+        /// 获取项目LongAKSK配置
+        ///
+        /// 该API用于获取项目LongAKSK的配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<GetLongAkskConfigResponse> GetLongAkskConfigAsync(GetLongAkskConfigRequest getLongAkskConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/longaksk/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getLongAkskConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<GetLongAkskConfigResponse>(response);
+        }
+
+        public AsyncInvoker<GetLongAkskConfigResponse> GetLongAkskConfigAsyncInvoker(GetLongAkskConfigRequest getLongAkskConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/longaksk/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getLongAkskConfigRequest);
+            return new AsyncInvoker<GetLongAkskConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<GetLongAkskConfigResponse>);
         }
         
         /// <summary>
@@ -1514,6 +1590,35 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/migrateto/{target_cluster_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateNodeRequest);
             return new AsyncInvoker<MigrateNodeResponse>(this, "PUT", request, JsonUtils.DeSerialize<MigrateNodeResponse>);
+        }
+        
+        /// <summary>
+        /// 节点迁移到自定义节点池。
+        ///
+        /// 该API用于将节点迁移到自定义节点池，仅default节点池下节点支持迁移。迁移过程节点无重置无重启，原节点密码将保留。
+        /// &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<MigrateToNodePoolResponse> MigrateToNodePoolAsync(MigrateToNodePoolRequest migrateToNodePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(migrateToNodePoolRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(migrateToNodePoolRequest.NodepoolId, out var valueOfNodepoolId)) urlParam.Add("nodepool_id", valueOfNodepoolId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/nodes/migrate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateToNodePoolRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<MigrateToNodePoolResponse>(response);
+        }
+
+        public AsyncInvoker<MigrateToNodePoolResponse> MigrateToNodePoolAsyncInvoker(MigrateToNodePoolRequest migrateToNodePoolRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(migrateToNodePoolRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            if (StringUtils.TryConvertToNonEmptyString(migrateToNodePoolRequest.NodepoolId, out var valueOfNodepoolId)) urlParam.Add("nodepool_id", valueOfNodepoolId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/nodes/migrate", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", migrateToNodePoolRequest);
+            return new AsyncInvoker<MigrateToNodePoolResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<MigrateToNodePoolResponse>);
         }
         
         /// <summary>
@@ -2605,6 +2710,56 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 更新集群LongAKSK配置
+        ///
+        /// 该API用于更新集群LongAKSK的配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateClusterLongAkskConfigResponse> UpdateClusterLongAkskConfigAsync(UpdateClusterLongAkskConfigRequest updateClusterLongAkskConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateClusterLongAkskConfigRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/longaksk/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClusterLongAkskConfigRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateClusterLongAkskConfigResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateClusterLongAkskConfigResponse> UpdateClusterLongAkskConfigAsyncInvoker(UpdateClusterLongAkskConfigRequest updateClusterLongAkskConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateClusterLongAkskConfigRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/longaksk/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateClusterLongAkskConfigRequest);
+            return new AsyncInvoker<UpdateClusterLongAkskConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateClusterLongAkskConfigResponse>);
+        }
+        
+        /// <summary>
+        /// 更新项目LongAKSK配置
+        ///
+        /// 该API用于更新项目longaksk的配置。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateLongAkskConfigResponse> UpdateLongAkskConfigAsync(UpdateLongAkskConfigRequest updateLongAkskConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/longaksk/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLongAkskConfigRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerializeNull<UpdateLongAkskConfigResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateLongAkskConfigResponse> UpdateLongAkskConfigAsyncInvoker(UpdateLongAkskConfigRequest updateLongAkskConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/longaksk/config", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateLongAkskConfigRequest);
+            return new AsyncInvoker<UpdateLongAkskConfigResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<UpdateLongAkskConfigResponse>);
+        }
+        
+        /// <summary>
         /// 更新指定的节点
         ///
         /// 该API用于更新指定的节点。
@@ -2785,6 +2940,7 @@ namespace HuaweiCloud.SDK.Cce.V3
         /// 同步节点池
         ///
         /// 该API用于同步节点池中已有节点的配置
+        /// &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -2796,7 +2952,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/operation/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeNodePoolRequest);
             var response = await DoHttpRequestAsync("POST", request);
-            return JsonUtils.DeSerialize<UpgradeNodePoolResponse>(response);
+            return JsonUtils.DeSerializeNull<UpgradeNodePoolResponse>(response);
         }
 
         public AsyncInvoker<UpgradeNodePoolResponse> UpgradeNodePoolAsyncInvoker(UpgradeNodePoolRequest upgradeNodePoolRequest)
@@ -2806,7 +2962,7 @@ namespace HuaweiCloud.SDK.Cce.V3
             if (StringUtils.TryConvertToNonEmptyString(upgradeNodePoolRequest.NodepoolId, out var valueOfNodepoolId)) urlParam.Add("nodepool_id", valueOfNodepoolId);
             var urlPath = HttpUtils.AddUrlPath("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/operation/upgrade", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", upgradeNodePoolRequest);
-            return new AsyncInvoker<UpgradeNodePoolResponse>(this, "POST", request, JsonUtils.DeSerialize<UpgradeNodePoolResponse>);
+            return new AsyncInvoker<UpgradeNodePoolResponse>(this, "POST", request, JsonUtils.DeSerializeNull<UpgradeNodePoolResponse>);
         }
         
         /// <summary>
@@ -3811,6 +3967,32 @@ namespace HuaweiCloud.SDK.Cce.V3
         }
         
         /// <summary>
+        /// 查询集群日志配置信息
+        ///
+        /// 获取集群组件上报的LTS的配置信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotClusterConfigResponse> ShowAutopilotClusterConfigAsync(ShowAutopilotClusterConfigRequest showAutopilotClusterConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAutopilotClusterConfigRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/cluster/{cluster_id}/log-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotClusterConfigRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotClusterConfigResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotClusterConfigResponse> ShowAutopilotClusterConfigAsyncInvoker(ShowAutopilotClusterConfigRequest showAutopilotClusterConfigRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(showAutopilotClusterConfigRequest.ClusterId, out var valueOfClusterId)) urlParam.Add("cluster_id", valueOfClusterId);
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/cluster/{cluster_id}/log-configs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotClusterConfigRequest);
+            return new AsyncInvoker<ShowAutopilotClusterConfigResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotClusterConfigResponse>);
+        }
+        
+        /// <summary>
         /// 获取集群访问的地址
         ///
         /// 该API用于通过集群ID获取集群访问的地址，包括PrivateIP(HA集群返回VIP)与PublicIP
@@ -3861,6 +4043,31 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/upgradeinfo", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotClusterUpgradeInfoRequest);
             return new AsyncInvoker<ShowAutopilotClusterUpgradeInfoResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotClusterUpgradeInfoResponse>);
+        }
+        
+        /// <summary>
+        /// 查询特性开关状态
+        ///
+        /// 该API用于查询特性开关状态
+        /// &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ShowAutopilotFeatureGatesResponse> ShowAutopilotFeatureGatesAsync(ShowAutopilotFeatureGatesRequest showAutopilotFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3.1/feature-gates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotFeatureGatesRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<ShowAutopilotFeatureGatesResponse>(response);
+        }
+
+        public AsyncInvoker<ShowAutopilotFeatureGatesResponse> ShowAutopilotFeatureGatesAsyncInvoker(ShowAutopilotFeatureGatesRequest showAutopilotFeatureGatesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v3.1/feature-gates", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showAutopilotFeatureGatesRequest);
+            return new AsyncInvoker<ShowAutopilotFeatureGatesResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowAutopilotFeatureGatesResponse>);
         }
         
         /// <summary>
@@ -4389,6 +4596,89 @@ namespace HuaweiCloud.SDK.Cce.V3
             var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/charts", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "multipart/form-data", uploadAutopilotChartRequest);
             return new AsyncInvoker<UploadAutopilotChartResponse>(this, "POST", request, JsonUtils.DeSerialize<UploadAutopilotChartResponse>);
+        }
+        
+        /// <summary>
+        /// 删除Job
+        ///
+        /// 该API用于删除指定项目下的Job。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<DeleteAutopilotJobResponse> DeleteAutopilotJobAsync(DeleteAutopilotJobRequest deleteAutopilotJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAutopilotJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/projects/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotJobRequest);
+            var response = await DoHttpRequestAsync("DELETE", request);
+            return JsonUtils.DeSerializeNull<DeleteAutopilotJobResponse>(response);
+        }
+
+        public AsyncInvoker<DeleteAutopilotJobResponse> DeleteAutopilotJobAsyncInvoker(DeleteAutopilotJobRequest deleteAutopilotJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(deleteAutopilotJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/projects/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAutopilotJobRequest);
+            return new AsyncInvoker<DeleteAutopilotJobResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<DeleteAutopilotJobResponse>);
+        }
+        
+        /// <summary>
+        /// 获取Job详情
+        ///
+        /// 该API用于获取指定项目下的Job详情。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<GetAutopilotOneJobResponse> GetAutopilotOneJobAsync(GetAutopilotOneJobRequest getAutopilotOneJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getAutopilotOneJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/projects/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getAutopilotOneJobRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            return JsonUtils.DeSerialize<GetAutopilotOneJobResponse>(response);
+        }
+
+        public AsyncInvoker<GetAutopilotOneJobResponse> GetAutopilotOneJobAsyncInvoker(GetAutopilotOneJobRequest getAutopilotOneJobRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(getAutopilotOneJobRequest.JobId, out var valueOfJobId)) urlParam.Add("job_id", valueOfJobId);
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/projects/{project_id}/jobs/{job_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", getAutopilotOneJobRequest);
+            return new AsyncInvoker<GetAutopilotOneJobResponse>(this, "GET", request, JsonUtils.DeSerialize<GetAutopilotOneJobResponse>);
+        }
+        
+        /// <summary>
+        /// 获取Job列表
+        ///
+        /// 该API用于获取指定项目下的所有jobs。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<ListAutopilotJobsResponse> ListAutopilotJobsAsync(ListAutopilotJobsRequest listAutopilotJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/projects/{project_id}/jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotJobsRequest);
+            var response = await DoHttpRequestAsync("GET", request);
+            var listAutopilotJobsResponse = JsonUtils.DeSerializeNull<ListAutopilotJobsResponse>(response);
+            listAutopilotJobsResponse.Body = JsonUtils.DeSerializeList<V2Job>(response);
+            return listAutopilotJobsResponse;
+        }
+
+        public AsyncInvoker<ListAutopilotJobsResponse> ListAutopilotJobsAsyncInvoker(ListAutopilotJobsRequest listAutopilotJobsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/autopilot/v2/projects/{project_id}/jobs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAutopilotJobsRequest);
+            return new AsyncInvoker<ListAutopilotJobsResponse>(this, "GET", request, response =>
+            {
+                var listAutopilotJobsResponse = JsonUtils.DeSerializeNull<ListAutopilotJobsResponse>(response);
+                listAutopilotJobsResponse.Body = JsonUtils.DeSerializeList<V2Job>(response);
+                return listAutopilotJobsResponse;
+            });
         }
         
     }

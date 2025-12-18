@@ -392,6 +392,18 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// **参数解释**： 是否开启磁盘加密。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： false。
+        /// </summary>
+        [JsonProperty("disk_encrypted_enable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? DiskEncryptedEnable { get; set; }
+
+        /// <summary>
+        /// **参数解释**： 磁盘加密key，未开启磁盘加密时为空。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+        /// </summary>
+        [JsonProperty("disk_encrypted_key", NullValueHandling = NullValueHandling.Ignore)]
+        public string DiskEncryptedKey { get; set; }
+
+        /// <summary>
         /// 消息引擎：rabbitmq。
         /// </summary>
         [JsonProperty("engine", NullValueHandling = NullValueHandling.Ignore)]
@@ -525,6 +537,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             sb.Append("class CreateInstanceReq {\n");
             sb.Append("  name: ").Append(Name).Append("\n");
             sb.Append("  description: ").Append(Description).Append("\n");
+            sb.Append("  diskEncryptedEnable: ").Append(DiskEncryptedEnable).Append("\n");
+            sb.Append("  diskEncryptedKey: ").Append(DiskEncryptedKey).Append("\n");
             sb.Append("  engine: ").Append(Engine).Append("\n");
             sb.Append("  engineVersion: ").Append(EngineVersion).Append("\n");
             sb.Append("  enableAcl: ").Append(EnableAcl).Append("\n");
@@ -566,6 +580,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
             if (input == null) return false;
             if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
             if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.DiskEncryptedEnable != input.DiskEncryptedEnable || (this.DiskEncryptedEnable != null && !this.DiskEncryptedEnable.Equals(input.DiskEncryptedEnable))) return false;
+            if (this.DiskEncryptedKey != input.DiskEncryptedKey || (this.DiskEncryptedKey != null && !this.DiskEncryptedKey.Equals(input.DiskEncryptedKey))) return false;
             if (this.Engine != input.Engine) return false;
             if (this.EngineVersion != input.EngineVersion || (this.EngineVersion != null && !this.EngineVersion.Equals(input.EngineVersion))) return false;
             if (this.EnableAcl != input.EnableAcl || (this.EnableAcl != null && !this.EnableAcl.Equals(input.EnableAcl))) return false;
@@ -601,6 +617,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
                 var hashCode = 41;
                 if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.DiskEncryptedEnable != null) hashCode = hashCode * 59 + this.DiskEncryptedEnable.GetHashCode();
+                if (this.DiskEncryptedKey != null) hashCode = hashCode * 59 + this.DiskEncryptedKey.GetHashCode();
                 hashCode = hashCode * 59 + this.Engine.GetHashCode();
                 if (this.EngineVersion != null) hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
                 if (this.EnableAcl != null) hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();

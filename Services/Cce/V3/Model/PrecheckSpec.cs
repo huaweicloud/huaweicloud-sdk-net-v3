@@ -17,25 +17,25 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     {
 
         /// <summary>
-        /// 集群ID
+        /// **参数解释：** 集群ID **约束限制：** 不涉及 **取值范围：** 不涉及 
         /// </summary>
         [JsonProperty("clusterID", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterID { get; set; }
 
         /// <summary>
-        /// 集群版本
+        /// **参数解释：** 集群版本，请填写当前集群的补丁版本，可登录控制台在总览页面进行查看 **约束限制：** 不涉及 **取值范围：** 不涉及 
         /// </summary>
         [JsonProperty("clusterVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string ClusterVersion { get; set; }
 
         /// <summary>
-        /// 升级目标版本
+        /// **参数解释：** 升级目标版本，如果填写大版本，则自动选择最新补丁版本 **约束限制：** 不涉及 **取值范围：** 高于集群当前版本的可用集群版本 
         /// </summary>
         [JsonProperty("targetVersion", NullValueHandling = NullValueHandling.Ignore)]
         public string TargetVersion { get; set; }
 
         /// <summary>
-        /// 跳过检查的项目列表
+        /// **参数解释：** 跳过检查的项目列表 **约束限制：** 不涉及 **取值范围：** 不涉及 
         /// </summary>
         [JsonProperty("skippedCheckItemList", NullValueHandling = NullValueHandling.Ignore)]
         public List<SkippedCheckItemList> SkippedCheckItemList { get; set; }

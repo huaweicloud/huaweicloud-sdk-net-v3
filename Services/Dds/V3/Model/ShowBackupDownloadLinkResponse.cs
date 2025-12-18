@@ -28,18 +28,6 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("bucket", NullValueHandling = NullValueHandling.Ignore)]
         public string Bucket { get; set; }
 
-        /// <summary>
-        /// 组ID。
-        /// </summary>
-        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string GroupId { get; set; }
-
-        /// <summary>
-        /// 组名。
-        /// </summary>
-        [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string GroupName { get; set; }
-
 
 
         /// <summary>
@@ -51,8 +39,6 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("class ShowBackupDownloadLinkResponse {\n");
             sb.Append("  files: ").Append(Files).Append("\n");
             sb.Append("  bucket: ").Append(Bucket).Append("\n");
-            sb.Append("  groupId: ").Append(GroupId).Append("\n");
-            sb.Append("  groupName: ").Append(GroupName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -73,8 +59,6 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             if (input == null) return false;
             if (this.Files != input.Files || (this.Files != null && input.Files != null && !this.Files.SequenceEqual(input.Files))) return false;
             if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
-            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
-            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
 
             return true;
         }
@@ -89,8 +73,6 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                 var hashCode = 41;
                 if (this.Files != null) hashCode = hashCode * 59 + this.Files.GetHashCode();
                 if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
-                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
                 return hashCode;
             }
         }

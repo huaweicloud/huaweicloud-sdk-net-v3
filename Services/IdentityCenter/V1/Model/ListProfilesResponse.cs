@@ -19,7 +19,7 @@ namespace HuaweiCloud.SDK.IdentityCenter.V1.Model
         /// <summary>
         /// 应用程序Profile
         /// </summary>
-        [JsonProperty("applicationProfiles", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("application_profiles", NullValueHandling = NullValueHandling.Ignore)]
         public List<ApplicationProfileDto> ApplicationProfiles { get; set; }
 
 

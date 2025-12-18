@@ -17,43 +17,43 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
     {
 
         /// <summary>
-        /// 参数名称。
+        /// **参数解释：** 参数名称。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("parameter_name", NullValueHandling = NullValueHandling.Ignore)]
         public string ParameterName { get; set; }
 
         /// <summary>
-        /// 参数旧值
+        /// **参数解释：** 参数旧值。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("old_value", NullValueHandling = NullValueHandling.Ignore)]
         public string OldValue { get; set; }
 
         /// <summary>
-        /// 参数新值
+        /// **参数解释：** 参数新值。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("new_value", NullValueHandling = NullValueHandling.Ignore)]
         public string NewValue { get; set; }
 
         /// <summary>
-        /// 更新结果
+        /// **参数解释：** 更新结果。 **约束限制：** 不涉及。 **取值范围：** - SUCCESS：成功。 - FAILED：失败。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("update_result", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdateResult { get; set; }
 
         /// <summary>
-        /// - true:已生效 - false:未生效
+        /// **参数解释：** 是否生效。 **约束限制：** 不涉及。 **取值范围：** - true:已生效。 - false:未生效。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("applied", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Applied { get; set; }
+        public string Applied { get; set; }
 
         /// <summary>
-        /// 更新时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。  [其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。](tag:hc)  [其中，T指某个时间的开始；Z指时区偏移量。](tag:hk)
+        /// **参数解释：** 更新时间。 **约束限制：** 不涉及。 **取值范围：** 格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
-        /// 生效时间，格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。  [其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。](tag:hc)  [其中，T指某个时间的开始；Z指时区偏移量。](tag:hk)
+        /// **参数解释：** 生效时间。 **约束限制：** 不涉及。 **取值范围：** 格式为\&quot;yyyy-MM-ddTHH:mm:ssZ\&quot;。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 **默认取值：** 不涉及。
         /// </summary>
         [JsonProperty("applied_at", NullValueHandling = NullValueHandling.Ignore)]
         public string AppliedAt { get; set; }

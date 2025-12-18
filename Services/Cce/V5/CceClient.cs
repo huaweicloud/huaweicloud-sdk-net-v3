@@ -89,6 +89,30 @@ namespace HuaweiCloud.SDK.Cce.V5
         }
         
         /// <summary>
+        /// 查询套餐包列表
+        ///
+        /// 查询套餐包列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListPackageProductsResponse ListPackageProducts(ListPackageProductsRequest listPackageProductsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/package-products", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPackageProductsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListPackageProductsResponse>(response);
+        }
+
+        public SyncInvoker<ListPackageProductsResponse> ListPackageProductsInvoker(ListPackageProductsRequest listPackageProductsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/package-products", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listPackageProductsRequest);
+            return new SyncInvoker<ListPackageProductsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListPackageProductsResponse>);
+        }
+        
+        /// <summary>
         /// 查询镜像缓存详情
         ///
         /// 查询镜像缓存详情
@@ -112,6 +136,30 @@ namespace HuaweiCloud.SDK.Cce.V5
             var urlPath = HttpUtils.AddUrlPath("/v5/imagecaches/{image_cache_id}", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", showImageCacheRequest);
             return new SyncInvoker<ShowImageCacheResponse>(this, "GET", request, JsonUtils.DeSerialize<ShowImageCacheResponse>);
+        }
+        
+        /// <summary>
+        /// 订购套餐包
+        ///
+        /// 订购套餐包
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SubscribePackageProductsResponse SubscribePackageProducts(SubscribePackageProductsRequest subscribePackageProductsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/package-products/subscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", subscribePackageProductsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SubscribePackageProductsResponse>(response);
+        }
+
+        public SyncInvoker<SubscribePackageProductsResponse> SubscribePackageProductsInvoker(SubscribePackageProductsRequest subscribePackageProductsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v5/package-products/subscribe", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", subscribePackageProductsRequest);
+            return new SyncInvoker<SubscribePackageProductsResponse>(this, "POST", request, JsonUtils.DeSerialize<SubscribePackageProductsResponse>);
         }
         
     }

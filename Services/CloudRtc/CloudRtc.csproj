@@ -15,7 +15,7 @@
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
         <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
         <PackageId>HuaweiCloud.SDK.CloudRtc</PackageId>
-        <Version>3.1.176</Version>
+        <Version>3.1.177</Version>
         <Authors>HuaweiCloud</Authors>
         <Copyright>Copyright 2023 Huawei Technologies Co., Ltd.</Copyright>
         <Company>Huawei Technologies Co., Ltd.</Company>

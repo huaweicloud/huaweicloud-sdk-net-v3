@@ -13,7 +13,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
     /// <summary>
     /// **参数解释**： 属主对象。 **约束限制**： - 创建成功后自动生成，填写无效。 - 创建节点接口返回内容中无该参数  **取值范围**： 不涉及 **默认取值**： 不涉及
     /// </summary>
-    public class NodeMetadataOwnerReference 
+    public class NodeMetadataOwnerReferences 
     {
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class NodeMetadataOwnerReference {\n");
+            sb.Append("class NodeMetadataOwnerReferences {\n");
             sb.Append("  nodepoolName: ").Append(NodepoolName).Append("\n");
             sb.Append("  nodepoolID: ").Append(NodepoolID).Append("\n");
             sb.Append("  hyperNodeName: ").Append(HyperNodeName).Append("\n");
@@ -62,13 +62,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public override bool Equals(object input)
         {
-            return this.Equals(input as NodeMetadataOwnerReference);
+            return this.Equals(input as NodeMetadataOwnerReferences);
         }
 
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        public bool Equals(NodeMetadataOwnerReference input)
+        public bool Equals(NodeMetadataOwnerReferences input)
         {
             if (input == null) return false;
             if (this.NodepoolName != input.NodepoolName || (this.NodepoolName != null && !this.NodepoolName.Equals(input.NodepoolName))) return false;

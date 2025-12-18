@@ -168,6 +168,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         public int? DeletingNode { get; set; }
 
         /// <summary>
+        /// **参数解释** 当前节点池中已经同步了节点池配置参数的节点数量。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
+        /// </summary>
+        [JsonProperty("configurationSyncedNodeCount", NullValueHandling = NullValueHandling.Ignore)]
+        public int? ConfigurationSyncedNodeCount { get; set; }
+
+        /// <summary>
         /// 节点池状态。 - 空值：可用（节点池当前节点数已达到预期，且无伸缩中的节点） - Synchronizing：伸缩中（节点池当前节点数未达到预期，且无伸缩中的节点） - Synchronized：伸缩等待中（节点池当前节点数未达到预期，或者存在伸缩中的节点） - SoldOut：节点池当前不可扩容（兼容字段，标记节点池资源售罄、资源配额不足等不可扩容状态） &gt; 上述节点池状态已废弃，仅兼容保留，不建议使用，替代感知方式如下： &gt; - 节点池扩缩状态：可通过currentNode/creatingNode/deletingNode节点状态统计信息，精确感知当前节点池扩缩状态。 &gt; - 节点池可扩容状态：可通过conditions感知节点池详细状态，其中\&quot;Scalable\&quot;可替代SoldOut语义。 - Deleting：删除中 - Error：错误 
         /// </summary>
         [JsonProperty("phase", NullValueHandling = NullValueHandling.Ignore)]
@@ -202,6 +208,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  currentNode: ").Append(CurrentNode).Append("\n");
             sb.Append("  creatingNode: ").Append(CreatingNode).Append("\n");
             sb.Append("  deletingNode: ").Append(DeletingNode).Append("\n");
+            sb.Append("  configurationSyncedNodeCount: ").Append(ConfigurationSyncedNodeCount).Append("\n");
             sb.Append("  phase: ").Append(Phase).Append("\n");
             sb.Append("  jobId: ").Append(JobId).Append("\n");
             sb.Append("  conditions: ").Append(Conditions).Append("\n");
@@ -227,6 +234,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.CurrentNode != input.CurrentNode || (this.CurrentNode != null && !this.CurrentNode.Equals(input.CurrentNode))) return false;
             if (this.CreatingNode != input.CreatingNode || (this.CreatingNode != null && !this.CreatingNode.Equals(input.CreatingNode))) return false;
             if (this.DeletingNode != input.DeletingNode || (this.DeletingNode != null && !this.DeletingNode.Equals(input.DeletingNode))) return false;
+            if (this.ConfigurationSyncedNodeCount != input.ConfigurationSyncedNodeCount || (this.ConfigurationSyncedNodeCount != null && !this.ConfigurationSyncedNodeCount.Equals(input.ConfigurationSyncedNodeCount))) return false;
             if (this.Phase != input.Phase) return false;
             if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
             if (this.Conditions != input.Conditions || (this.Conditions != null && input.Conditions != null && !this.Conditions.SequenceEqual(input.Conditions))) return false;
@@ -246,6 +254,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.CurrentNode != null) hashCode = hashCode * 59 + this.CurrentNode.GetHashCode();
                 if (this.CreatingNode != null) hashCode = hashCode * 59 + this.CreatingNode.GetHashCode();
                 if (this.DeletingNode != null) hashCode = hashCode * 59 + this.DeletingNode.GetHashCode();
+                if (this.ConfigurationSyncedNodeCount != null) hashCode = hashCode * 59 + this.ConfigurationSyncedNodeCount.GetHashCode();
                 hashCode = hashCode * 59 + this.Phase.GetHashCode();
                 if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 if (this.Conditions != null) hashCode = hashCode * 59 + this.Conditions.GetHashCode();

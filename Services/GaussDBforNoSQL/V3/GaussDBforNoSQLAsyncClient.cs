@@ -2365,7 +2365,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disk-auto-expansion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAutoEnlargePolicyRequest);
             var response = await DoHttpRequestAsync("PUT", request);
-            return JsonUtils.DeSerializeNull<SetAutoEnlargePolicyResponse>(response);
+            return JsonUtils.DeSerialize<SetAutoEnlargePolicyResponse>(response);
         }
 
         public AsyncInvoker<SetAutoEnlargePolicyResponse> SetAutoEnlargePolicyAsyncInvoker(SetAutoEnlargePolicyRequest setAutoEnlargePolicyRequest)
@@ -2373,7 +2373,7 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlParam = new Dictionary<string, string>();
             var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/disk-auto-expansion", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", setAutoEnlargePolicyRequest);
-            return new AsyncInvoker<SetAutoEnlargePolicyResponse>(this, "PUT", request, JsonUtils.DeSerializeNull<SetAutoEnlargePolicyResponse>);
+            return new AsyncInvoker<SetAutoEnlargePolicyResponse>(this, "PUT", request, JsonUtils.DeSerialize<SetAutoEnlargePolicyResponse>);
         }
         
         /// <summary>
@@ -2937,9 +2937,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
         }
         
         /// <summary>
-        /// 查询实例参数的修改历史
+        /// 查询参数组修改历史。
         ///
-        /// 查询实例参数的修改历史
+        /// 查询指定实例的参数组修改历史记录，支持分页查询，支持参数搜索。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -3682,6 +3682,32 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3
             var urlPath = HttpUtils.AddUrlPath("/v3.1/{project_id}/instances/{instance_id}/configurations", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceConfigurationsRequest);
             return new AsyncInvoker<UpdateInstanceConfigurationsResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceConfigurationsResponse>);
+        }
+        
+        /// <summary>
+        /// 修改负载均衡地址
+        ///
+        /// 修改负载均衡地址。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public async Task<UpdateInstanceLbResponse> UpdateInstanceLbAsync(UpdateInstanceLbRequest updateInstanceLbRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceLbRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceLbRequest);
+            var response = await DoHttpRequestAsync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateInstanceLbResponse>(response);
+        }
+
+        public AsyncInvoker<UpdateInstanceLbResponse> UpdateInstanceLbAsyncInvoker(UpdateInstanceLbRequest updateInstanceLbRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            if (StringUtils.TryConvertToNonEmptyString(updateInstanceLbRequest.InstanceId, out var valueOfInstanceId)) urlParam.Add("instance_id", valueOfInstanceId);
+            var urlPath = HttpUtils.AddUrlPath("/v3/{project_id}/instances/{instance_id}/lb", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", updateInstanceLbRequest);
+            return new AsyncInvoker<UpdateInstanceLbResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateInstanceLbResponse>);
         }
         
         /// <summary>

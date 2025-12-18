@@ -158,6 +158,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         [JsonProperty("enterprise_project_id", NullValueHandling = NullValueHandling.Ignore)]
         public string EnterpriseProjectId { get; set; }
 
+        /// <summary>
+        /// 企业项目名称。
+        /// </summary>
+        [SDKProperty("enterprise_project_name", IsQuery = true)]
+        [JsonProperty("enterprise_project_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string EnterpriseProjectName { get; set; }
+
 
 
         /// <summary>
@@ -171,6 +178,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             sb.Append("  offset: ").Append(Offset).Append("\n");
             sb.Append("  limit: ").Append(Limit).Append("\n");
             sb.Append("  enterpriseProjectId: ").Append(EnterpriseProjectId).Append("\n");
+            sb.Append("  enterpriseProjectName: ").Append(EnterpriseProjectName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -193,6 +201,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
             if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
             if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
             if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.EnterpriseProjectName != input.EnterpriseProjectName || (this.EnterpriseProjectName != null && !this.EnterpriseProjectName.Equals(input.EnterpriseProjectName))) return false;
 
             return true;
         }
@@ -209,6 +218,7 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
                 if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnterpriseProjectName != null) hashCode = hashCode * 59 + this.EnterpriseProjectName.GetHashCode();
                 return hashCode;
             }
         }

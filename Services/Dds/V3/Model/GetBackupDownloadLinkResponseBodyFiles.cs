@@ -40,6 +40,18 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         [JsonProperty("link_expired_time", NullValueHandling = NullValueHandling.Ignore)]
         public string LinkExpiredTime { get; set; }
 
+        /// <summary>
+        /// 组ID。
+        /// </summary>
+        [JsonProperty("group_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupId { get; set; }
+
+        /// <summary>
+        /// 组名。
+        /// </summary>
+        [JsonProperty("group_name", NullValueHandling = NullValueHandling.Ignore)]
+        public string GroupName { get; set; }
+
 
 
         /// <summary>
@@ -53,6 +65,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             sb.Append("  size: ").Append(Size).Append("\n");
             sb.Append("  downloadLink: ").Append(DownloadLink).Append("\n");
             sb.Append("  linkExpiredTime: ").Append(LinkExpiredTime).Append("\n");
+            sb.Append("  groupId: ").Append(GroupId).Append("\n");
+            sb.Append("  groupName: ").Append(GroupName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,6 +89,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
             if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
             if (this.DownloadLink != input.DownloadLink || (this.DownloadLink != null && !this.DownloadLink.Equals(input.DownloadLink))) return false;
             if (this.LinkExpiredTime != input.LinkExpiredTime || (this.LinkExpiredTime != null && !this.LinkExpiredTime.Equals(input.LinkExpiredTime))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
 
             return true;
         }
@@ -91,6 +107,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
                 if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 if (this.DownloadLink != null) hashCode = hashCode * 59 + this.DownloadLink.GetHashCode();
                 if (this.LinkExpiredTime != null) hashCode = hashCode * 59 + this.LinkExpiredTime.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
                 return hashCode;
             }
         }

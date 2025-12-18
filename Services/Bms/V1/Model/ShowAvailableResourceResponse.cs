@@ -19,14 +19,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty("availability_zone", NullValueHandling = NullValueHandling.Ignore)]
-        public string AvailabilityZone { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [JsonProperty("flavors", NullValueHandling = NullValueHandling.Ignore)]
-        public List<FlavorResource> Flavors { get; set; }
+        [JsonProperty("available_resource", NullValueHandling = NullValueHandling.Ignore)]
+        public List<AvailableResourceResp> AvailableResource { get; set; }
 
 
 
@@ -37,8 +31,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ShowAvailableResourceResponse {\n");
-            sb.Append("  availabilityZone: ").Append(AvailabilityZone).Append("\n");
-            sb.Append("  flavors: ").Append(Flavors).Append("\n");
+            sb.Append("  availableResource: ").Append(AvailableResource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -57,8 +50,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         public bool Equals(ShowAvailableResourceResponse input)
         {
             if (input == null) return false;
-            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
-            if (this.Flavors != input.Flavors || (this.Flavors != null && input.Flavors != null && !this.Flavors.SequenceEqual(input.Flavors))) return false;
+            if (this.AvailableResource != input.AvailableResource || (this.AvailableResource != null && input.AvailableResource != null && !this.AvailableResource.SequenceEqual(input.AvailableResource))) return false;
 
             return true;
         }
@@ -71,8 +63,7 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
             unchecked // Overflow is fine, just wrap
             {
                 var hashCode = 41;
-                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.Flavors != null) hashCode = hashCode * 59 + this.Flavors.GetHashCode();
+                if (this.AvailableResource != null) hashCode = hashCode * 59 + this.AvailableResource.GetHashCode();
                 return hashCode;
             }
         }

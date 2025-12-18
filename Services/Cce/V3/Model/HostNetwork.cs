@@ -34,6 +34,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         [JsonProperty("SecurityGroup", NullValueHandling = NullValueHandling.Ignore)]
         public string SecurityGroup { get; set; }
 
+        /// <summary>
+        /// **参数解释：** 集群控制面节点安全组ID。 **约束限制：** 创建成功后自动生成，填写无效。 **取值范围：** 不涉及 **默认取值：** 不涉及 
+        /// </summary>
+        [JsonProperty("controlPlaneSecurityGroup", NullValueHandling = NullValueHandling.Ignore)]
+        public string ControlPlaneSecurityGroup { get; set; }
+
 
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             sb.Append("  vpc: ").Append(Vpc).Append("\n");
             sb.Append("  subnet: ").Append(Subnet).Append("\n");
             sb.Append("  securityGroup: ").Append(SecurityGroup).Append("\n");
+            sb.Append("  controlPlaneSecurityGroup: ").Append(ControlPlaneSecurityGroup).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -67,6 +74,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
             if (this.Vpc != input.Vpc || (this.Vpc != null && !this.Vpc.Equals(input.Vpc))) return false;
             if (this.Subnet != input.Subnet || (this.Subnet != null && !this.Subnet.Equals(input.Subnet))) return false;
             if (this.SecurityGroup != input.SecurityGroup || (this.SecurityGroup != null && !this.SecurityGroup.Equals(input.SecurityGroup))) return false;
+            if (this.ControlPlaneSecurityGroup != input.ControlPlaneSecurityGroup || (this.ControlPlaneSecurityGroup != null && !this.ControlPlaneSecurityGroup.Equals(input.ControlPlaneSecurityGroup))) return false;
 
             return true;
         }
@@ -82,6 +90,7 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
                 if (this.Vpc != null) hashCode = hashCode * 59 + this.Vpc.GetHashCode();
                 if (this.Subnet != null) hashCode = hashCode * 59 + this.Subnet.GetHashCode();
                 if (this.SecurityGroup != null) hashCode = hashCode * 59 + this.SecurityGroup.GetHashCode();
+                if (this.ControlPlaneSecurityGroup != null) hashCode = hashCode * 59 + this.ControlPlaneSecurityGroup.GetHashCode();
                 return hashCode;
             }
         }

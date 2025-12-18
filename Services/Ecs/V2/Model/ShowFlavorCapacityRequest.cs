@@ -23,6 +23,20 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         [JsonProperty("flavor_id", NullValueHandling = NullValueHandling.Ignore)]
         public string FlavorId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("count", IsQuery = true)]
+        [JsonProperty("count", NullValueHandling = NullValueHandling.Ignore)]
+        public string Count { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SDKProperty("region_ids", IsQuery = true)]
+        [JsonProperty("region_ids", NullValueHandling = NullValueHandling.Ignore)]
+        public string RegionIds { get; set; }
+
 
 
         /// <summary>
@@ -33,6 +47,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             var sb = new StringBuilder();
             sb.Append("class ShowFlavorCapacityRequest {\n");
             sb.Append("  flavorId: ").Append(FlavorId).Append("\n");
+            sb.Append("  count: ").Append(Count).Append("\n");
+            sb.Append("  regionIds: ").Append(RegionIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -52,6 +68,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             if (input == null) return false;
             if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.RegionIds != input.RegionIds || (this.RegionIds != null && !this.RegionIds.Equals(input.RegionIds))) return false;
 
             return true;
         }
@@ -65,6 +83,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
             {
                 var hashCode = 41;
                 if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.RegionIds != null) hashCode = hashCode * 59 + this.RegionIds.GetHashCode();
                 return hashCode;
             }
         }

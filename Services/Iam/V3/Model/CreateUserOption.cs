@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// IAM用户首次登录是否重置密码，默认需要重置。
+        /// IAM用户首次登录是否重置密码，当password参数不为空时生效，默认需要重置。
         /// </summary>
         [JsonProperty("pwd_status", NullValueHandling = NullValueHandling.Ignore)]
         public bool? PwdStatus { get; set; }
